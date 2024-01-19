@@ -16,11 +16,19 @@
 
 package com.google.cloud.vmwareengine.v1.stub;
 
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.FetchNetworkPolicyExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListClustersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAccessRulesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListHcxActivationKeysPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLoggingServersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListManagementDnsZoneBindingsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPeeringsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
@@ -41,34 +49,73 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.vmwareengine.v1.Cluster;
 import com.google.cloud.vmwareengine.v1.CreateClusterRequest;
+import com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest;
 import com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest;
+import com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.Credentials;
 import com.google.cloud.vmwareengine.v1.DeleteClusterRequest;
+import com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest;
+import com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest;
+import com.google.cloud.vmwareengine.v1.DnsBindPermission;
+import com.google.cloud.vmwareengine.v1.DnsForwarding;
+import com.google.cloud.vmwareengine.v1.ExternalAccessRule;
+import com.google.cloud.vmwareengine.v1.ExternalAddress;
+import com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest;
+import com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse;
 import com.google.cloud.vmwareengine.v1.GetClusterRequest;
+import com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest;
+import com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest;
+import com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.GetExternalAddressRequest;
 import com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest;
+import com.google.cloud.vmwareengine.v1.GetLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest;
+import com.google.cloud.vmwareengine.v1.GetNodeRequest;
 import com.google.cloud.vmwareengine.v1.GetNodeTypeRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.GetSubnetRequest;
 import com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest;
+import com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest;
 import com.google.cloud.vmwareengine.v1.HcxActivationKey;
 import com.google.cloud.vmwareengine.v1.ListClustersRequest;
 import com.google.cloud.vmwareengine.v1.ListClustersResponse;
+import com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest;
+import com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse;
+import com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest;
+import com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse;
 import com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest;
 import com.google.cloud.vmwareengine.v1.ListHcxActivationKeysResponse;
+import com.google.cloud.vmwareengine.v1.ListLoggingServersRequest;
+import com.google.cloud.vmwareengine.v1.ListLoggingServersResponse;
+import com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest;
+import com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse;
+import com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest;
+import com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse;
 import com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest;
 import com.google.cloud.vmwareengine.v1.ListNetworkPoliciesResponse;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesRequest;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesResponse;
+import com.google.cloud.vmwareengine.v1.ListNodesRequest;
+import com.google.cloud.vmwareengine.v1.ListNodesResponse;
+import com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest;
+import com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest;
@@ -79,18 +126,30 @@ import com.google.cloud.vmwareengine.v1.ListSubnetsRequest;
 import com.google.cloud.vmwareengine.v1.ListSubnetsResponse;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse;
+import com.google.cloud.vmwareengine.v1.LoggingServer;
+import com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding;
+import com.google.cloud.vmwareengine.v1.NetworkPeering;
 import com.google.cloud.vmwareengine.v1.NetworkPolicy;
+import com.google.cloud.vmwareengine.v1.Node;
 import com.google.cloud.vmwareengine.v1.NodeType;
 import com.google.cloud.vmwareengine.v1.OperationMetadata;
 import com.google.cloud.vmwareengine.v1.PrivateCloud;
 import com.google.cloud.vmwareengine.v1.PrivateConnection;
+import com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest;
 import com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest;
+import com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest;
 import com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.Subnet;
 import com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateClusterRequest;
+import com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest;
+import com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest;
+import com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest;
@@ -228,6 +287,92 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListNodesRequest, ListNodesResponse>
+      listNodesMethodDescriptor =
+          MethodDescriptor.<ListNodesRequest, ListNodesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListNodes")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListNodesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListNodesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetNodeRequest, Node> getNodeMethodDescriptor =
+      MethodDescriptor.<GetNodeRequest, Node>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetNode")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetNodeRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Node.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListExternalAddressesRequest, ListExternalAddressesResponse>
+      listExternalAddressesMethodDescriptor =
+          MethodDescriptor.<ListExternalAddressesRequest, ListExternalAddressesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListExternalAddresses")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExternalAddressesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExternalAddressesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
+      fetchNetworkPolicyExternalAddressesMethodDescriptor =
+          MethodDescriptor
+              .<FetchNetworkPolicyExternalAddressesRequest,
+                  FetchNetworkPolicyExternalAddressesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/FetchNetworkPolicyExternalAddresses")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchNetworkPolicyExternalAddressesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchNetworkPolicyExternalAddressesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetExternalAddressRequest, ExternalAddress>
+      getExternalAddressMethodDescriptor =
+          MethodDescriptor.<GetExternalAddressRequest, ExternalAddress>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetExternalAddress")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetExternalAddressRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExternalAddress.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateExternalAddressRequest, Operation>
+      createExternalAddressMethodDescriptor =
+          MethodDescriptor.<CreateExternalAddressRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/CreateExternalAddress")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateExternalAddressRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateExternalAddressRequest, Operation>
+      updateExternalAddressMethodDescriptor =
+          MethodDescriptor.<UpdateExternalAddressRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateExternalAddress")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExternalAddressRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteExternalAddressRequest, Operation>
+      deleteExternalAddressMethodDescriptor =
+          MethodDescriptor.<DeleteExternalAddressRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/DeleteExternalAddress")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExternalAddressRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListSubnetsRequest, ListSubnetsResponse>
       listSubnetsMethodDescriptor =
           MethodDescriptor.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
@@ -252,6 +397,114 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateSubnet")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>
+      listExternalAccessRulesMethodDescriptor =
+          MethodDescriptor
+              .<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/ListExternalAccessRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExternalAccessRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExternalAccessRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetExternalAccessRuleRequest, ExternalAccessRule>
+      getExternalAccessRuleMethodDescriptor =
+          MethodDescriptor.<GetExternalAccessRuleRequest, ExternalAccessRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetExternalAccessRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetExternalAccessRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExternalAccessRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateExternalAccessRuleRequest, Operation>
+      createExternalAccessRuleMethodDescriptor =
+          MethodDescriptor.<CreateExternalAccessRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/CreateExternalAccessRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateExternalAccessRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateExternalAccessRuleRequest, Operation>
+      updateExternalAccessRuleMethodDescriptor =
+          MethodDescriptor.<UpdateExternalAccessRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/UpdateExternalAccessRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExternalAccessRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteExternalAccessRuleRequest, Operation>
+      deleteExternalAccessRuleMethodDescriptor =
+          MethodDescriptor.<DeleteExternalAccessRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/DeleteExternalAccessRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExternalAccessRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLoggingServersRequest, ListLoggingServersResponse>
+      listLoggingServersMethodDescriptor =
+          MethodDescriptor.<ListLoggingServersRequest, ListLoggingServersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListLoggingServers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLoggingServersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLoggingServersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLoggingServerRequest, LoggingServer>
+      getLoggingServerMethodDescriptor =
+          MethodDescriptor.<GetLoggingServerRequest, LoggingServer>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetLoggingServer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetLoggingServerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LoggingServer.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateLoggingServerRequest, Operation>
+      createLoggingServerMethodDescriptor =
+          MethodDescriptor.<CreateLoggingServerRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/CreateLoggingServer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateLoggingServerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateLoggingServerRequest, Operation>
+      updateLoggingServerMethodDescriptor =
+          MethodDescriptor.<UpdateLoggingServerRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateLoggingServer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLoggingServerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteLoggingServerRequest, Operation>
+      deleteLoggingServerMethodDescriptor =
+          MethodDescriptor.<DeleteLoggingServerRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/DeleteLoggingServer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLoggingServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -313,6 +566,88 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetVcenterCredentialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDnsForwardingRequest, DnsForwarding>
+      getDnsForwardingMethodDescriptor =
+          MethodDescriptor.<GetDnsForwardingRequest, DnsForwarding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetDnsForwarding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDnsForwardingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DnsForwarding.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDnsForwardingRequest, Operation>
+      updateDnsForwardingMethodDescriptor =
+          MethodDescriptor.<UpdateDnsForwardingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateDnsForwarding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDnsForwardingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetNetworkPeeringRequest, NetworkPeering>
+      getNetworkPeeringMethodDescriptor =
+          MethodDescriptor.<GetNetworkPeeringRequest, NetworkPeering>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetNetworkPeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNetworkPeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NetworkPeering.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
+      listNetworkPeeringsMethodDescriptor =
+          MethodDescriptor.<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListNetworkPeerings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNetworkPeeringsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNetworkPeeringsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateNetworkPeeringRequest, Operation>
+      createNetworkPeeringMethodDescriptor =
+          MethodDescriptor.<CreateNetworkPeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/CreateNetworkPeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateNetworkPeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteNetworkPeeringRequest, Operation>
+      deleteNetworkPeeringMethodDescriptor =
+          MethodDescriptor.<DeleteNetworkPeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/DeleteNetworkPeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteNetworkPeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateNetworkPeeringRequest, Operation>
+      updateNetworkPeeringMethodDescriptor =
+          MethodDescriptor.<UpdateNetworkPeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateNetworkPeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateNetworkPeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
+      listPeeringRoutesMethodDescriptor =
+          MethodDescriptor.<ListPeeringRoutesRequest, ListPeeringRoutesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListPeeringRoutes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPeeringRoutesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPeeringRoutesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateHcxActivationKeyRequest, Operation>
@@ -394,6 +729,79 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/DeleteNetworkPolicy")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNetworkPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+      listManagementDnsZoneBindingsMethodDescriptor =
+          MethodDescriptor
+              .<ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/ListManagementDnsZoneBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListManagementDnsZoneBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListManagementDnsZoneBindingsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+      getManagementDnsZoneBindingMethodDescriptor =
+          MethodDescriptor
+              .<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/GetManagementDnsZoneBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetManagementDnsZoneBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ManagementDnsZoneBinding.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateManagementDnsZoneBindingRequest, Operation>
+      createManagementDnsZoneBindingMethodDescriptor =
+          MethodDescriptor.<CreateManagementDnsZoneBindingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/CreateManagementDnsZoneBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateManagementDnsZoneBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateManagementDnsZoneBindingRequest, Operation>
+      updateManagementDnsZoneBindingMethodDescriptor =
+          MethodDescriptor.<UpdateManagementDnsZoneBindingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/UpdateManagementDnsZoneBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateManagementDnsZoneBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteManagementDnsZoneBindingRequest, Operation>
+      deleteManagementDnsZoneBindingMethodDescriptor =
+          MethodDescriptor.<DeleteManagementDnsZoneBindingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/DeleteManagementDnsZoneBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteManagementDnsZoneBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RepairManagementDnsZoneBindingRequest, Operation>
+      repairManagementDnsZoneBindingMethodDescriptor =
+          MethodDescriptor.<RepairManagementDnsZoneBindingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/RepairManagementDnsZoneBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RepairManagementDnsZoneBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -529,6 +937,37 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       ListPrivateConnectionPeeringRoutesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GrantDnsBindPermissionRequest, Operation>
+      grantDnsBindPermissionMethodDescriptor =
+          MethodDescriptor.<GrantDnsBindPermissionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GrantDnsBindPermission")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GrantDnsBindPermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDnsBindPermissionRequest, DnsBindPermission>
+      getDnsBindPermissionMethodDescriptor =
+          MethodDescriptor.<GetDnsBindPermissionRequest, DnsBindPermission>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetDnsBindPermission")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDnsBindPermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DnsBindPermission.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RevokeDnsBindPermissionRequest, Operation>
+      revokeDnsBindPermissionMethodDescriptor =
+          MethodDescriptor.<RevokeDnsBindPermissionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/RevokeDnsBindPermission")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RevokeDnsBindPermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -605,6 +1044,34 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable;
+  private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;
+  private final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable;
+  private final UnaryCallable<GetNodeRequest, Node> getNodeCallable;
+  private final UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesResponse>
+      listExternalAddressesCallable;
+  private final UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesPagedResponse>
+      listExternalAddressesPagedCallable;
+  private final UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
+      fetchNetworkPolicyExternalAddressesCallable;
+  private final UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesPagedResponse>
+      fetchNetworkPolicyExternalAddressesPagedCallable;
+  private final UnaryCallable<GetExternalAddressRequest, ExternalAddress>
+      getExternalAddressCallable;
+  private final UnaryCallable<CreateExternalAddressRequest, Operation>
+      createExternalAddressCallable;
+  private final OperationCallable<CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      createExternalAddressOperationCallable;
+  private final UnaryCallable<UpdateExternalAddressRequest, Operation>
+      updateExternalAddressCallable;
+  private final OperationCallable<UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      updateExternalAddressOperationCallable;
+  private final UnaryCallable<DeleteExternalAddressRequest, Operation>
+      deleteExternalAddressCallable;
+  private final OperationCallable<DeleteExternalAddressRequest, Empty, OperationMetadata>
+      deleteExternalAddressOperationCallable;
   private final UnaryCallable<ListSubnetsRequest, ListSubnetsResponse> listSubnetsCallable;
   private final UnaryCallable<ListSubnetsRequest, ListSubnetsPagedResponse>
       listSubnetsPagedCallable;
@@ -612,6 +1079,40 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable;
   private final OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
       updateSubnetOperationCallable;
+  private final UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>
+      listExternalAccessRulesCallable;
+  private final UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesPagedResponse>
+      listExternalAccessRulesPagedCallable;
+  private final UnaryCallable<GetExternalAccessRuleRequest, ExternalAccessRule>
+      getExternalAccessRuleCallable;
+  private final UnaryCallable<CreateExternalAccessRuleRequest, Operation>
+      createExternalAccessRuleCallable;
+  private final OperationCallable<
+          CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      createExternalAccessRuleOperationCallable;
+  private final UnaryCallable<UpdateExternalAccessRuleRequest, Operation>
+      updateExternalAccessRuleCallable;
+  private final OperationCallable<
+          UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      updateExternalAccessRuleOperationCallable;
+  private final UnaryCallable<DeleteExternalAccessRuleRequest, Operation>
+      deleteExternalAccessRuleCallable;
+  private final OperationCallable<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
+      deleteExternalAccessRuleOperationCallable;
+  private final UnaryCallable<ListLoggingServersRequest, ListLoggingServersResponse>
+      listLoggingServersCallable;
+  private final UnaryCallable<ListLoggingServersRequest, ListLoggingServersPagedResponse>
+      listLoggingServersPagedCallable;
+  private final UnaryCallable<GetLoggingServerRequest, LoggingServer> getLoggingServerCallable;
+  private final UnaryCallable<CreateLoggingServerRequest, Operation> createLoggingServerCallable;
+  private final OperationCallable<CreateLoggingServerRequest, LoggingServer, OperationMetadata>
+      createLoggingServerOperationCallable;
+  private final UnaryCallable<UpdateLoggingServerRequest, Operation> updateLoggingServerCallable;
+  private final OperationCallable<UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
+      updateLoggingServerOperationCallable;
+  private final UnaryCallable<DeleteLoggingServerRequest, Operation> deleteLoggingServerCallable;
+  private final OperationCallable<DeleteLoggingServerRequest, Empty, OperationMetadata>
+      deleteLoggingServerOperationCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListNodeTypesPagedResponse>
       listNodeTypesPagedCallable;
@@ -626,6 +1127,28 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
       resetVcenterCredentialsCallable;
   private final OperationCallable<ResetVcenterCredentialsRequest, PrivateCloud, OperationMetadata>
       resetVcenterCredentialsOperationCallable;
+  private final UnaryCallable<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingCallable;
+  private final UnaryCallable<UpdateDnsForwardingRequest, Operation> updateDnsForwardingCallable;
+  private final OperationCallable<UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
+      updateDnsForwardingOperationCallable;
+  private final UnaryCallable<GetNetworkPeeringRequest, NetworkPeering> getNetworkPeeringCallable;
+  private final UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
+      listNetworkPeeringsCallable;
+  private final UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsPagedResponse>
+      listNetworkPeeringsPagedCallable;
+  private final UnaryCallable<CreateNetworkPeeringRequest, Operation> createNetworkPeeringCallable;
+  private final OperationCallable<CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      createNetworkPeeringOperationCallable;
+  private final UnaryCallable<DeleteNetworkPeeringRequest, Operation> deleteNetworkPeeringCallable;
+  private final OperationCallable<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
+      deleteNetworkPeeringOperationCallable;
+  private final UnaryCallable<UpdateNetworkPeeringRequest, Operation> updateNetworkPeeringCallable;
+  private final OperationCallable<UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      updateNetworkPeeringOperationCallable;
+  private final UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
+      listPeeringRoutesCallable;
+  private final UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesPagedResponse>
+      listPeeringRoutesPagedCallable;
   private final UnaryCallable<CreateHcxActivationKeyRequest, Operation>
       createHcxActivationKeyCallable;
   private final OperationCallable<
@@ -651,6 +1174,33 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<DeleteNetworkPolicyRequest, Operation> deleteNetworkPolicyCallable;
   private final OperationCallable<DeleteNetworkPolicyRequest, Empty, OperationMetadata>
       deleteNetworkPolicyOperationCallable;
+  private final UnaryCallable<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+      listManagementDnsZoneBindingsCallable;
+  private final UnaryCallable<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsPagedResponse>
+      listManagementDnsZoneBindingsPagedCallable;
+  private final UnaryCallable<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+      getManagementDnsZoneBindingCallable;
+  private final UnaryCallable<CreateManagementDnsZoneBindingRequest, Operation>
+      createManagementDnsZoneBindingCallable;
+  private final OperationCallable<
+          CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingOperationCallable;
+  private final UnaryCallable<UpdateManagementDnsZoneBindingRequest, Operation>
+      updateManagementDnsZoneBindingCallable;
+  private final OperationCallable<
+          UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingOperationCallable;
+  private final UnaryCallable<DeleteManagementDnsZoneBindingRequest, Operation>
+      deleteManagementDnsZoneBindingCallable;
+  private final OperationCallable<DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
+      deleteManagementDnsZoneBindingOperationCallable;
+  private final UnaryCallable<RepairManagementDnsZoneBindingRequest, Operation>
+      repairManagementDnsZoneBindingCallable;
+  private final OperationCallable<
+          RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingOperationCallable;
   private final UnaryCallable<CreateVmwareEngineNetworkRequest, Operation>
       createVmwareEngineNetworkCallable;
   private final OperationCallable<
@@ -699,6 +1249,18 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           ListPrivateConnectionPeeringRoutesRequest,
           ListPrivateConnectionPeeringRoutesPagedResponse>
       listPrivateConnectionPeeringRoutesPagedCallable;
+  private final UnaryCallable<GrantDnsBindPermissionRequest, Operation>
+      grantDnsBindPermissionCallable;
+  private final OperationCallable<
+          GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      grantDnsBindPermissionOperationCallable;
+  private final UnaryCallable<GetDnsBindPermissionRequest, DnsBindPermission>
+      getDnsBindPermissionCallable;
+  private final UnaryCallable<RevokeDnsBindPermissionRequest, Operation>
+      revokeDnsBindPermissionCallable;
+  private final OperationCallable<
+          RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      revokeDnsBindPermissionOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -862,6 +1424,99 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListNodesRequest, ListNodesResponse> listNodesTransportSettings =
+        GrpcCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
+            .setMethodDescriptor(listNodesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
+        GrpcCallSettings.<GetNodeRequest, Node>newBuilder()
+            .setMethodDescriptor(getNodeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListExternalAddressesRequest, ListExternalAddressesResponse>
+        listExternalAddressesTransportSettings =
+            GrpcCallSettings
+                .<ListExternalAddressesRequest, ListExternalAddressesResponse>newBuilder()
+                .setMethodDescriptor(listExternalAddressesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
+        fetchNetworkPolicyExternalAddressesTransportSettings =
+            GrpcCallSettings
+                .<FetchNetworkPolicyExternalAddressesRequest,
+                    FetchNetworkPolicyExternalAddressesResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchNetworkPolicyExternalAddressesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("network_policy", String.valueOf(request.getNetworkPolicy()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetExternalAddressRequest, ExternalAddress>
+        getExternalAddressTransportSettings =
+            GrpcCallSettings.<GetExternalAddressRequest, ExternalAddress>newBuilder()
+                .setMethodDescriptor(getExternalAddressMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateExternalAddressRequest, Operation>
+        createExternalAddressTransportSettings =
+            GrpcCallSettings.<CreateExternalAddressRequest, Operation>newBuilder()
+                .setMethodDescriptor(createExternalAddressMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateExternalAddressRequest, Operation>
+        updateExternalAddressTransportSettings =
+            GrpcCallSettings.<UpdateExternalAddressRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateExternalAddressMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "external_address.name",
+                          String.valueOf(request.getExternalAddress().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteExternalAddressRequest, Operation>
+        deleteExternalAddressTransportSettings =
+            GrpcCallSettings.<DeleteExternalAddressRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteExternalAddressMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
         GrpcCallSettings.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
             .setMethodDescriptor(listSubnetsMethodDescriptor)
@@ -889,6 +1544,116 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("subnet.name", String.valueOf(request.getSubnet().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>
+        listExternalAccessRulesTransportSettings =
+            GrpcCallSettings
+                .<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>newBuilder()
+                .setMethodDescriptor(listExternalAccessRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetExternalAccessRuleRequest, ExternalAccessRule>
+        getExternalAccessRuleTransportSettings =
+            GrpcCallSettings.<GetExternalAccessRuleRequest, ExternalAccessRule>newBuilder()
+                .setMethodDescriptor(getExternalAccessRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateExternalAccessRuleRequest, Operation>
+        createExternalAccessRuleTransportSettings =
+            GrpcCallSettings.<CreateExternalAccessRuleRequest, Operation>newBuilder()
+                .setMethodDescriptor(createExternalAccessRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateExternalAccessRuleRequest, Operation>
+        updateExternalAccessRuleTransportSettings =
+            GrpcCallSettings.<UpdateExternalAccessRuleRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateExternalAccessRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "external_access_rule.name",
+                          String.valueOf(request.getExternalAccessRule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteExternalAccessRuleRequest, Operation>
+        deleteExternalAccessRuleTransportSettings =
+            GrpcCallSettings.<DeleteExternalAccessRuleRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteExternalAccessRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListLoggingServersRequest, ListLoggingServersResponse>
+        listLoggingServersTransportSettings =
+            GrpcCallSettings.<ListLoggingServersRequest, ListLoggingServersResponse>newBuilder()
+                .setMethodDescriptor(listLoggingServersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetLoggingServerRequest, LoggingServer> getLoggingServerTransportSettings =
+        GrpcCallSettings.<GetLoggingServerRequest, LoggingServer>newBuilder()
+            .setMethodDescriptor(getLoggingServerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateLoggingServerRequest, Operation> createLoggingServerTransportSettings =
+        GrpcCallSettings.<CreateLoggingServerRequest, Operation>newBuilder()
+            .setMethodDescriptor(createLoggingServerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateLoggingServerRequest, Operation> updateLoggingServerTransportSettings =
+        GrpcCallSettings.<UpdateLoggingServerRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateLoggingServerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "logging_server.name", String.valueOf(request.getLoggingServer().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteLoggingServerRequest, Operation> deleteLoggingServerTransportSettings =
+        GrpcCallSettings.<DeleteLoggingServerRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteLoggingServerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -951,6 +1716,91 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingTransportSettings =
+        GrpcCallSettings.<GetDnsForwardingRequest, DnsForwarding>newBuilder()
+            .setMethodDescriptor(getDnsForwardingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateDnsForwardingRequest, Operation> updateDnsForwardingTransportSettings =
+        GrpcCallSettings.<UpdateDnsForwardingRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDnsForwardingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "dns_forwarding.name", String.valueOf(request.getDnsForwarding().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetNetworkPeeringRequest, NetworkPeering> getNetworkPeeringTransportSettings =
+        GrpcCallSettings.<GetNetworkPeeringRequest, NetworkPeering>newBuilder()
+            .setMethodDescriptor(getNetworkPeeringMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
+        listNetworkPeeringsTransportSettings =
+            GrpcCallSettings.<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>newBuilder()
+                .setMethodDescriptor(listNetworkPeeringsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateNetworkPeeringRequest, Operation> createNetworkPeeringTransportSettings =
+        GrpcCallSettings.<CreateNetworkPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(createNetworkPeeringMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteNetworkPeeringRequest, Operation> deleteNetworkPeeringTransportSettings =
+        GrpcCallSettings.<DeleteNetworkPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteNetworkPeeringMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateNetworkPeeringRequest, Operation> updateNetworkPeeringTransportSettings =
+        GrpcCallSettings.<UpdateNetworkPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateNetworkPeeringMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "network_peering.name",
+                      String.valueOf(request.getNetworkPeering().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
+        listPeeringRoutesTransportSettings =
+            GrpcCallSettings.<ListPeeringRoutesRequest, ListPeeringRoutesResponse>newBuilder()
+                .setMethodDescriptor(listPeeringRoutesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
                 .build();
@@ -1040,6 +1890,77 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+        listManagementDnsZoneBindingsTransportSettings =
+            GrpcCallSettings
+                .<ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listManagementDnsZoneBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+        getManagementDnsZoneBindingTransportSettings =
+            GrpcCallSettings
+                .<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>newBuilder()
+                .setMethodDescriptor(getManagementDnsZoneBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateManagementDnsZoneBindingRequest, Operation>
+        createManagementDnsZoneBindingTransportSettings =
+            GrpcCallSettings.<CreateManagementDnsZoneBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(createManagementDnsZoneBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateManagementDnsZoneBindingRequest, Operation>
+        updateManagementDnsZoneBindingTransportSettings =
+            GrpcCallSettings.<UpdateManagementDnsZoneBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateManagementDnsZoneBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "management_dns_zone_binding.name",
+                          String.valueOf(request.getManagementDnsZoneBinding().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteManagementDnsZoneBindingRequest, Operation>
+        deleteManagementDnsZoneBindingTransportSettings =
+            GrpcCallSettings.<DeleteManagementDnsZoneBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteManagementDnsZoneBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RepairManagementDnsZoneBindingRequest, Operation>
+        repairManagementDnsZoneBindingTransportSettings =
+            GrpcCallSettings.<RepairManagementDnsZoneBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(repairManagementDnsZoneBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateVmwareEngineNetworkRequest, Operation>
         createVmwareEngineNetworkTransportSettings =
             GrpcCallSettings.<CreateVmwareEngineNetworkRequest, Operation>newBuilder()
@@ -1168,6 +2089,39 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GrantDnsBindPermissionRequest, Operation>
+        grantDnsBindPermissionTransportSettings =
+            GrpcCallSettings.<GrantDnsBindPermissionRequest, Operation>newBuilder()
+                .setMethodDescriptor(grantDnsBindPermissionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDnsBindPermissionRequest, DnsBindPermission>
+        getDnsBindPermissionTransportSettings =
+            GrpcCallSettings.<GetDnsBindPermissionRequest, DnsBindPermission>newBuilder()
+                .setMethodDescriptor(getDnsBindPermissionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RevokeDnsBindPermissionRequest, Operation>
+        revokeDnsBindPermissionTransportSettings =
+            GrpcCallSettings.<RevokeDnsBindPermissionRequest, Operation>newBuilder()
+                .setMethodDescriptor(revokeDnsBindPermissionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
                 .build();
@@ -1316,6 +2270,73 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.listNodesCallable =
+        callableFactory.createUnaryCallable(
+            listNodesTransportSettings, settings.listNodesSettings(), clientContext);
+    this.listNodesPagedCallable =
+        callableFactory.createPagedCallable(
+            listNodesTransportSettings, settings.listNodesSettings(), clientContext);
+    this.getNodeCallable =
+        callableFactory.createUnaryCallable(
+            getNodeTransportSettings, settings.getNodeSettings(), clientContext);
+    this.listExternalAddressesCallable =
+        callableFactory.createUnaryCallable(
+            listExternalAddressesTransportSettings,
+            settings.listExternalAddressesSettings(),
+            clientContext);
+    this.listExternalAddressesPagedCallable =
+        callableFactory.createPagedCallable(
+            listExternalAddressesTransportSettings,
+            settings.listExternalAddressesSettings(),
+            clientContext);
+    this.fetchNetworkPolicyExternalAddressesCallable =
+        callableFactory.createUnaryCallable(
+            fetchNetworkPolicyExternalAddressesTransportSettings,
+            settings.fetchNetworkPolicyExternalAddressesSettings(),
+            clientContext);
+    this.fetchNetworkPolicyExternalAddressesPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchNetworkPolicyExternalAddressesTransportSettings,
+            settings.fetchNetworkPolicyExternalAddressesSettings(),
+            clientContext);
+    this.getExternalAddressCallable =
+        callableFactory.createUnaryCallable(
+            getExternalAddressTransportSettings,
+            settings.getExternalAddressSettings(),
+            clientContext);
+    this.createExternalAddressCallable =
+        callableFactory.createUnaryCallable(
+            createExternalAddressTransportSettings,
+            settings.createExternalAddressSettings(),
+            clientContext);
+    this.createExternalAddressOperationCallable =
+        callableFactory.createOperationCallable(
+            createExternalAddressTransportSettings,
+            settings.createExternalAddressOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateExternalAddressCallable =
+        callableFactory.createUnaryCallable(
+            updateExternalAddressTransportSettings,
+            settings.updateExternalAddressSettings(),
+            clientContext);
+    this.updateExternalAddressOperationCallable =
+        callableFactory.createOperationCallable(
+            updateExternalAddressTransportSettings,
+            settings.updateExternalAddressOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteExternalAddressCallable =
+        callableFactory.createUnaryCallable(
+            deleteExternalAddressTransportSettings,
+            settings.deleteExternalAddressSettings(),
+            clientContext);
+    this.deleteExternalAddressOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteExternalAddressTransportSettings,
+            settings.deleteExternalAddressOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listSubnetsCallable =
         callableFactory.createUnaryCallable(
             listSubnetsTransportSettings, settings.listSubnetsSettings(), clientContext);
@@ -1332,6 +2353,100 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
         callableFactory.createOperationCallable(
             updateSubnetTransportSettings,
             settings.updateSubnetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listExternalAccessRulesCallable =
+        callableFactory.createUnaryCallable(
+            listExternalAccessRulesTransportSettings,
+            settings.listExternalAccessRulesSettings(),
+            clientContext);
+    this.listExternalAccessRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listExternalAccessRulesTransportSettings,
+            settings.listExternalAccessRulesSettings(),
+            clientContext);
+    this.getExternalAccessRuleCallable =
+        callableFactory.createUnaryCallable(
+            getExternalAccessRuleTransportSettings,
+            settings.getExternalAccessRuleSettings(),
+            clientContext);
+    this.createExternalAccessRuleCallable =
+        callableFactory.createUnaryCallable(
+            createExternalAccessRuleTransportSettings,
+            settings.createExternalAccessRuleSettings(),
+            clientContext);
+    this.createExternalAccessRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createExternalAccessRuleTransportSettings,
+            settings.createExternalAccessRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateExternalAccessRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateExternalAccessRuleTransportSettings,
+            settings.updateExternalAccessRuleSettings(),
+            clientContext);
+    this.updateExternalAccessRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateExternalAccessRuleTransportSettings,
+            settings.updateExternalAccessRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteExternalAccessRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteExternalAccessRuleTransportSettings,
+            settings.deleteExternalAccessRuleSettings(),
+            clientContext);
+    this.deleteExternalAccessRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteExternalAccessRuleTransportSettings,
+            settings.deleteExternalAccessRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listLoggingServersCallable =
+        callableFactory.createUnaryCallable(
+            listLoggingServersTransportSettings,
+            settings.listLoggingServersSettings(),
+            clientContext);
+    this.listLoggingServersPagedCallable =
+        callableFactory.createPagedCallable(
+            listLoggingServersTransportSettings,
+            settings.listLoggingServersSettings(),
+            clientContext);
+    this.getLoggingServerCallable =
+        callableFactory.createUnaryCallable(
+            getLoggingServerTransportSettings, settings.getLoggingServerSettings(), clientContext);
+    this.createLoggingServerCallable =
+        callableFactory.createUnaryCallable(
+            createLoggingServerTransportSettings,
+            settings.createLoggingServerSettings(),
+            clientContext);
+    this.createLoggingServerOperationCallable =
+        callableFactory.createOperationCallable(
+            createLoggingServerTransportSettings,
+            settings.createLoggingServerOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateLoggingServerCallable =
+        callableFactory.createUnaryCallable(
+            updateLoggingServerTransportSettings,
+            settings.updateLoggingServerSettings(),
+            clientContext);
+    this.updateLoggingServerOperationCallable =
+        callableFactory.createOperationCallable(
+            updateLoggingServerTransportSettings,
+            settings.updateLoggingServerOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteLoggingServerCallable =
+        callableFactory.createUnaryCallable(
+            deleteLoggingServerTransportSettings,
+            settings.deleteLoggingServerSettings(),
+            clientContext);
+    this.deleteLoggingServerOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteLoggingServerTransportSettings,
+            settings.deleteLoggingServerOperationSettings(),
             clientContext,
             operationsStub);
     this.listNodeTypesCallable =
@@ -1375,6 +2490,78 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             settings.resetVcenterCredentialsOperationSettings(),
             clientContext,
             operationsStub);
+    this.getDnsForwardingCallable =
+        callableFactory.createUnaryCallable(
+            getDnsForwardingTransportSettings, settings.getDnsForwardingSettings(), clientContext);
+    this.updateDnsForwardingCallable =
+        callableFactory.createUnaryCallable(
+            updateDnsForwardingTransportSettings,
+            settings.updateDnsForwardingSettings(),
+            clientContext);
+    this.updateDnsForwardingOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDnsForwardingTransportSettings,
+            settings.updateDnsForwardingOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getNetworkPeeringCallable =
+        callableFactory.createUnaryCallable(
+            getNetworkPeeringTransportSettings,
+            settings.getNetworkPeeringSettings(),
+            clientContext);
+    this.listNetworkPeeringsCallable =
+        callableFactory.createUnaryCallable(
+            listNetworkPeeringsTransportSettings,
+            settings.listNetworkPeeringsSettings(),
+            clientContext);
+    this.listNetworkPeeringsPagedCallable =
+        callableFactory.createPagedCallable(
+            listNetworkPeeringsTransportSettings,
+            settings.listNetworkPeeringsSettings(),
+            clientContext);
+    this.createNetworkPeeringCallable =
+        callableFactory.createUnaryCallable(
+            createNetworkPeeringTransportSettings,
+            settings.createNetworkPeeringSettings(),
+            clientContext);
+    this.createNetworkPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            createNetworkPeeringTransportSettings,
+            settings.createNetworkPeeringOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteNetworkPeeringCallable =
+        callableFactory.createUnaryCallable(
+            deleteNetworkPeeringTransportSettings,
+            settings.deleteNetworkPeeringSettings(),
+            clientContext);
+    this.deleteNetworkPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteNetworkPeeringTransportSettings,
+            settings.deleteNetworkPeeringOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateNetworkPeeringCallable =
+        callableFactory.createUnaryCallable(
+            updateNetworkPeeringTransportSettings,
+            settings.updateNetworkPeeringSettings(),
+            clientContext);
+    this.updateNetworkPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            updateNetworkPeeringTransportSettings,
+            settings.updateNetworkPeeringOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listPeeringRoutesCallable =
+        callableFactory.createUnaryCallable(
+            listPeeringRoutesTransportSettings,
+            settings.listPeeringRoutesSettings(),
+            clientContext);
+    this.listPeeringRoutesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPeeringRoutesTransportSettings,
+            settings.listPeeringRoutesSettings(),
+            clientContext);
     this.createHcxActivationKeyCallable =
         callableFactory.createUnaryCallable(
             createHcxActivationKeyTransportSettings,
@@ -1445,6 +2632,65 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
         callableFactory.createOperationCallable(
             deleteNetworkPolicyTransportSettings,
             settings.deleteNetworkPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listManagementDnsZoneBindingsCallable =
+        callableFactory.createUnaryCallable(
+            listManagementDnsZoneBindingsTransportSettings,
+            settings.listManagementDnsZoneBindingsSettings(),
+            clientContext);
+    this.listManagementDnsZoneBindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listManagementDnsZoneBindingsTransportSettings,
+            settings.listManagementDnsZoneBindingsSettings(),
+            clientContext);
+    this.getManagementDnsZoneBindingCallable =
+        callableFactory.createUnaryCallable(
+            getManagementDnsZoneBindingTransportSettings,
+            settings.getManagementDnsZoneBindingSettings(),
+            clientContext);
+    this.createManagementDnsZoneBindingCallable =
+        callableFactory.createUnaryCallable(
+            createManagementDnsZoneBindingTransportSettings,
+            settings.createManagementDnsZoneBindingSettings(),
+            clientContext);
+    this.createManagementDnsZoneBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            createManagementDnsZoneBindingTransportSettings,
+            settings.createManagementDnsZoneBindingOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateManagementDnsZoneBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateManagementDnsZoneBindingTransportSettings,
+            settings.updateManagementDnsZoneBindingSettings(),
+            clientContext);
+    this.updateManagementDnsZoneBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            updateManagementDnsZoneBindingTransportSettings,
+            settings.updateManagementDnsZoneBindingOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteManagementDnsZoneBindingCallable =
+        callableFactory.createUnaryCallable(
+            deleteManagementDnsZoneBindingTransportSettings,
+            settings.deleteManagementDnsZoneBindingSettings(),
+            clientContext);
+    this.deleteManagementDnsZoneBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteManagementDnsZoneBindingTransportSettings,
+            settings.deleteManagementDnsZoneBindingOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.repairManagementDnsZoneBindingCallable =
+        callableFactory.createUnaryCallable(
+            repairManagementDnsZoneBindingTransportSettings,
+            settings.repairManagementDnsZoneBindingSettings(),
+            clientContext);
+    this.repairManagementDnsZoneBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            repairManagementDnsZoneBindingTransportSettings,
+            settings.repairManagementDnsZoneBindingOperationSettings(),
             clientContext,
             operationsStub);
     this.createVmwareEngineNetworkCallable =
@@ -1553,6 +2799,33 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             listPrivateConnectionPeeringRoutesTransportSettings,
             settings.listPrivateConnectionPeeringRoutesSettings(),
             clientContext);
+    this.grantDnsBindPermissionCallable =
+        callableFactory.createUnaryCallable(
+            grantDnsBindPermissionTransportSettings,
+            settings.grantDnsBindPermissionSettings(),
+            clientContext);
+    this.grantDnsBindPermissionOperationCallable =
+        callableFactory.createOperationCallable(
+            grantDnsBindPermissionTransportSettings,
+            settings.grantDnsBindPermissionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getDnsBindPermissionCallable =
+        callableFactory.createUnaryCallable(
+            getDnsBindPermissionTransportSettings,
+            settings.getDnsBindPermissionSettings(),
+            clientContext);
+    this.revokeDnsBindPermissionCallable =
+        callableFactory.createUnaryCallable(
+            revokeDnsBindPermissionTransportSettings,
+            settings.revokeDnsBindPermissionSettings(),
+            clientContext);
+    this.revokeDnsBindPermissionOperationCallable =
+        callableFactory.createOperationCallable(
+            revokeDnsBindPermissionTransportSettings,
+            settings.revokeDnsBindPermissionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1692,6 +2965,86 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   }
 
   @Override
+  public UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    return listNodesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    return listNodesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNodeRequest, Node> getNodeCallable() {
+    return getNodeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesResponse>
+      listExternalAddressesCallable() {
+    return listExternalAddressesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesPagedResponse>
+      listExternalAddressesPagedCallable() {
+    return listExternalAddressesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
+      fetchNetworkPolicyExternalAddressesCallable() {
+    return fetchNetworkPolicyExternalAddressesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesPagedResponse>
+      fetchNetworkPolicyExternalAddressesPagedCallable() {
+    return fetchNetworkPolicyExternalAddressesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExternalAddressRequest, ExternalAddress> getExternalAddressCallable() {
+    return getExternalAddressCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateExternalAddressRequest, Operation> createExternalAddressCallable() {
+    return createExternalAddressCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      createExternalAddressOperationCallable() {
+    return createExternalAddressOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateExternalAddressRequest, Operation> updateExternalAddressCallable() {
+    return updateExternalAddressCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      updateExternalAddressOperationCallable() {
+    return updateExternalAddressOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExternalAddressRequest, Operation> deleteExternalAddressCallable() {
+    return deleteExternalAddressCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteExternalAddressRequest, Empty, OperationMetadata>
+      deleteExternalAddressOperationCallable() {
+    return deleteExternalAddressOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListSubnetsRequest, ListSubnetsResponse> listSubnetsCallable() {
     return listSubnetsCallable;
   }
@@ -1715,6 +3068,110 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   public OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
       updateSubnetOperationCallable() {
     return updateSubnetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>
+      listExternalAccessRulesCallable() {
+    return listExternalAccessRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesPagedResponse>
+      listExternalAccessRulesPagedCallable() {
+    return listExternalAccessRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExternalAccessRuleRequest, ExternalAccessRule>
+      getExternalAccessRuleCallable() {
+    return getExternalAccessRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateExternalAccessRuleRequest, Operation>
+      createExternalAccessRuleCallable() {
+    return createExternalAccessRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      createExternalAccessRuleOperationCallable() {
+    return createExternalAccessRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateExternalAccessRuleRequest, Operation>
+      updateExternalAccessRuleCallable() {
+    return updateExternalAccessRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      updateExternalAccessRuleOperationCallable() {
+    return updateExternalAccessRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExternalAccessRuleRequest, Operation>
+      deleteExternalAccessRuleCallable() {
+    return deleteExternalAccessRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
+      deleteExternalAccessRuleOperationCallable() {
+    return deleteExternalAccessRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLoggingServersRequest, ListLoggingServersResponse>
+      listLoggingServersCallable() {
+    return listLoggingServersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLoggingServersRequest, ListLoggingServersPagedResponse>
+      listLoggingServersPagedCallable() {
+    return listLoggingServersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLoggingServerRequest, LoggingServer> getLoggingServerCallable() {
+    return getLoggingServerCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLoggingServerRequest, Operation> createLoggingServerCallable() {
+    return createLoggingServerCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLoggingServerRequest, LoggingServer, OperationMetadata>
+      createLoggingServerOperationCallable() {
+    return createLoggingServerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLoggingServerRequest, Operation> updateLoggingServerCallable() {
+    return updateLoggingServerCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
+      updateLoggingServerOperationCallable() {
+    return updateLoggingServerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLoggingServerRequest, Operation> deleteLoggingServerCallable() {
+    return deleteLoggingServerCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteLoggingServerRequest, Empty, OperationMetadata>
+      deleteLoggingServerOperationCallable() {
+    return deleteLoggingServerOperationCallable;
   }
 
   @Override
@@ -1765,6 +3222,84 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   public OperationCallable<ResetVcenterCredentialsRequest, PrivateCloud, OperationMetadata>
       resetVcenterCredentialsOperationCallable() {
     return resetVcenterCredentialsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingCallable() {
+    return getDnsForwardingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDnsForwardingRequest, Operation> updateDnsForwardingCallable() {
+    return updateDnsForwardingCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
+      updateDnsForwardingOperationCallable() {
+    return updateDnsForwardingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNetworkPeeringRequest, NetworkPeering> getNetworkPeeringCallable() {
+    return getNetworkPeeringCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
+      listNetworkPeeringsCallable() {
+    return listNetworkPeeringsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsPagedResponse>
+      listNetworkPeeringsPagedCallable() {
+    return listNetworkPeeringsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateNetworkPeeringRequest, Operation> createNetworkPeeringCallable() {
+    return createNetworkPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      createNetworkPeeringOperationCallable() {
+    return createNetworkPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteNetworkPeeringRequest, Operation> deleteNetworkPeeringCallable() {
+    return deleteNetworkPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
+      deleteNetworkPeeringOperationCallable() {
+    return deleteNetworkPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateNetworkPeeringRequest, Operation> updateNetworkPeeringCallable() {
+    return updateNetworkPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      updateNetworkPeeringOperationCallable() {
+    return updateNetworkPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
+      listPeeringRoutesCallable() {
+    return listPeeringRoutesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesPagedResponse>
+      listPeeringRoutesPagedCallable() {
+    return listPeeringRoutesPagedCallable;
   }
 
   @Override
@@ -1843,6 +3378,76 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   public OperationCallable<DeleteNetworkPolicyRequest, Empty, OperationMetadata>
       deleteNetworkPolicyOperationCallable() {
     return deleteNetworkPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+      listManagementDnsZoneBindingsCallable() {
+    return listManagementDnsZoneBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsPagedResponse>
+      listManagementDnsZoneBindingsPagedCallable() {
+    return listManagementDnsZoneBindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+      getManagementDnsZoneBindingCallable() {
+    return getManagementDnsZoneBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateManagementDnsZoneBindingRequest, Operation>
+      createManagementDnsZoneBindingCallable() {
+    return createManagementDnsZoneBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingOperationCallable() {
+    return createManagementDnsZoneBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateManagementDnsZoneBindingRequest, Operation>
+      updateManagementDnsZoneBindingCallable() {
+    return updateManagementDnsZoneBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingOperationCallable() {
+    return updateManagementDnsZoneBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteManagementDnsZoneBindingRequest, Operation>
+      deleteManagementDnsZoneBindingCallable() {
+    return deleteManagementDnsZoneBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
+      deleteManagementDnsZoneBindingOperationCallable() {
+    return deleteManagementDnsZoneBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RepairManagementDnsZoneBindingRequest, Operation>
+      repairManagementDnsZoneBindingCallable() {
+    return repairManagementDnsZoneBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingOperationCallable() {
+    return repairManagementDnsZoneBindingOperationCallable;
   }
 
   @Override
@@ -1966,6 +3571,35 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           ListPrivateConnectionPeeringRoutesPagedResponse>
       listPrivateConnectionPeeringRoutesPagedCallable() {
     return listPrivateConnectionPeeringRoutesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GrantDnsBindPermissionRequest, Operation> grantDnsBindPermissionCallable() {
+    return grantDnsBindPermissionCallable;
+  }
+
+  @Override
+  public OperationCallable<GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      grantDnsBindPermissionOperationCallable() {
+    return grantDnsBindPermissionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDnsBindPermissionRequest, DnsBindPermission>
+      getDnsBindPermissionCallable() {
+    return getDnsBindPermissionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RevokeDnsBindPermissionRequest, Operation>
+      revokeDnsBindPermissionCallable() {
+    return revokeDnsBindPermissionCallable;
+  }
+
+  @Override
+  public OperationCallable<RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      revokeDnsBindPermissionOperationCallable() {
+    return revokeDnsBindPermissionOperationCallable;
   }
 
   @Override

@@ -22,7 +22,9 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Represents a private cloud resource. Private clouds are zonal resources.
+ * Represents a private cloud resource. Private clouds of type `STANDARD` and
+ * `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are
+ * regional.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.PrivateCloud}
@@ -348,6 +350,17 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>TIME_LIMITED = 1;</code>
      */
     TIME_LIMITED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Stretched private cloud is a regional resource with redundancy,
+     * with a minimum of 6 nodes, nodes count has to be even.
+     * </pre>
+     *
+     * <code>STRETCHED = 2;</code>
+     */
+    STRETCHED(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -374,6 +387,17 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <code>TIME_LIMITED = 1;</code>
      */
     public static final int TIME_LIMITED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Stretched private cloud is a regional resource with redundancy,
+     * with a minimum of 6 nodes, nodes count has to be even.
+     * </pre>
+     *
+     * <code>STRETCHED = 2;</code>
+     */
+    public static final int STRETCHED_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -403,6 +427,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           return STANDARD;
         case 1:
           return TIME_LIMITED;
+        case 2:
+          return STRETCHED;
         default:
           return null;
       }
@@ -576,6 +602,51 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.vmwareengine.v1.NodeTypeConfig getNodeTypeConfigsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of a stretched cluster. Required for STRETCHED
+     * private clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the stretchedClusterConfig field is set.
+     */
+    boolean hasStretchedClusterConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of a stretched cluster. Required for STRETCHED
+     * private clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The stretchedClusterConfig.
+     */
+    com.google.cloud.vmwareengine.v1.StretchedClusterConfig getStretchedClusterConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of a stretched cluster. Required for STRETCHED
+     * private clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder
+        getStretchedClusterConfigOrBuilder();
   }
   /**
    *
@@ -828,6 +899,66 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int STRETCHED_CLUSTER_CONFIG_FIELD_NUMBER = 8;
+    private com.google.cloud.vmwareengine.v1.StretchedClusterConfig stretchedClusterConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of a stretched cluster. Required for STRETCHED
+     * private clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the stretchedClusterConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasStretchedClusterConfig() {
+      return stretchedClusterConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of a stretched cluster. Required for STRETCHED
+     * private clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The stretchedClusterConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmwareengine.v1.StretchedClusterConfig getStretchedClusterConfig() {
+      return stretchedClusterConfig_ == null
+          ? com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()
+          : stretchedClusterConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of a stretched cluster. Required for STRETCHED
+     * private clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder
+        getStretchedClusterConfigOrBuilder() {
+      return stretchedClusterConfig_ == null
+          ? com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()
+          : stretchedClusterConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -847,6 +978,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetNodeTypeConfigs(), NodeTypeConfigsDefaultEntryHolder.defaultEntry, 7);
+      if (stretchedClusterConfig_ != null) {
+        output.writeMessage(8, getStretchedClusterConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -871,6 +1005,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, nodeTypeConfigs__);
       }
+      if (stretchedClusterConfig_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8, getStretchedClusterConfig());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -889,6 +1028,10 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
 
       if (!getClusterId().equals(other.getClusterId())) return false;
       if (!internalGetNodeTypeConfigs().equals(other.internalGetNodeTypeConfigs())) return false;
+      if (hasStretchedClusterConfig() != other.hasStretchedClusterConfig()) return false;
+      if (hasStretchedClusterConfig()) {
+        if (!getStretchedClusterConfig().equals(other.getStretchedClusterConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -905,6 +1048,10 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetNodeTypeConfigs().getMap().isEmpty()) {
         hash = (37 * hash) + NODE_TYPE_CONFIGS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetNodeTypeConfigs().hashCode();
+      }
+      if (hasStretchedClusterConfig()) {
+        hash = (37 * hash) + STRETCHED_CLUSTER_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getStretchedClusterConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1072,6 +1219,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         clusterId_ = "";
         internalGetMutableNodeTypeConfigs().clear();
+        stretchedClusterConfig_ = null;
+        if (stretchedClusterConfigBuilder_ != null) {
+          stretchedClusterConfigBuilder_.dispose();
+          stretchedClusterConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -1116,6 +1268,12 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.nodeTypeConfigs_ = internalGetNodeTypeConfigs();
           result.nodeTypeConfigs_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stretchedClusterConfig_ =
+              stretchedClusterConfigBuilder_ == null
+                  ? stretchedClusterConfig_
+                  : stretchedClusterConfigBuilder_.build();
         }
       }
 
@@ -1176,6 +1334,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         }
         internalGetMutableNodeTypeConfigs().mergeFrom(other.internalGetNodeTypeConfigs());
         bitField0_ |= 0x00000002;
+        if (other.hasStretchedClusterConfig()) {
+          mergeStretchedClusterConfig(other.getStretchedClusterConfig());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1222,6 +1383,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getStretchedClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1586,6 +1754,222 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableNodeTypeConfigs().getMutableMap().putAll(values);
         bitField0_ |= 0x00000002;
         return this;
+      }
+
+      private com.google.cloud.vmwareengine.v1.StretchedClusterConfig stretchedClusterConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.vmwareengine.v1.StretchedClusterConfig,
+              com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder,
+              com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder>
+          stretchedClusterConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the stretchedClusterConfig field is set.
+       */
+      public boolean hasStretchedClusterConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The stretchedClusterConfig.
+       */
+      public com.google.cloud.vmwareengine.v1.StretchedClusterConfig getStretchedClusterConfig() {
+        if (stretchedClusterConfigBuilder_ == null) {
+          return stretchedClusterConfig_ == null
+              ? com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()
+              : stretchedClusterConfig_;
+        } else {
+          return stretchedClusterConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setStretchedClusterConfig(
+          com.google.cloud.vmwareengine.v1.StretchedClusterConfig value) {
+        if (stretchedClusterConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stretchedClusterConfig_ = value;
+        } else {
+          stretchedClusterConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setStretchedClusterConfig(
+          com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder builderForValue) {
+        if (stretchedClusterConfigBuilder_ == null) {
+          stretchedClusterConfig_ = builderForValue.build();
+        } else {
+          stretchedClusterConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeStretchedClusterConfig(
+          com.google.cloud.vmwareengine.v1.StretchedClusterConfig value) {
+        if (stretchedClusterConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && stretchedClusterConfig_ != null
+              && stretchedClusterConfig_
+                  != com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()) {
+            getStretchedClusterConfigBuilder().mergeFrom(value);
+          } else {
+            stretchedClusterConfig_ = value;
+          }
+        } else {
+          stretchedClusterConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearStretchedClusterConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        stretchedClusterConfig_ = null;
+        if (stretchedClusterConfigBuilder_ != null) {
+          stretchedClusterConfigBuilder_.dispose();
+          stretchedClusterConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder
+          getStretchedClusterConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStretchedClusterConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder
+          getStretchedClusterConfigOrBuilder() {
+        if (stretchedClusterConfigBuilder_ != null) {
+          return stretchedClusterConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return stretchedClusterConfig_ == null
+              ? com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()
+              : stretchedClusterConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration of a stretched cluster. Required for STRETCHED
+       * private clouds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.vmwareengine.v1.StretchedClusterConfig,
+              com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder,
+              com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder>
+          getStretchedClusterConfigFieldBuilder() {
+        if (stretchedClusterConfigBuilder_ == null) {
+          stretchedClusterConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.vmwareengine.v1.StretchedClusterConfig,
+                  com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder,
+                  com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder>(
+                  getStretchedClusterConfig(), getParentForChildren(), isClean());
+          stretchedClusterConfig_ = null;
+        }
+        return stretchedClusterConfigBuilder_;
       }
 
       @java.lang.Override
@@ -2705,7 +3089,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a private cloud resource. Private clouds are zonal resources.
+   * Represents a private cloud resource. Private clouds of type `STANDARD` and
+   * `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are
+   * regional.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.PrivateCloud}

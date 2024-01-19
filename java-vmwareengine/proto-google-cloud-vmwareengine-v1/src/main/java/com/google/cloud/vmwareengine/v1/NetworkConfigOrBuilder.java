@@ -135,4 +135,35 @@ public interface NetworkConfigOrBuilder
    * @return The managementIpAddressLayoutVersion.
    */
   int getManagementIpAddressLayoutVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DNS Server IP of the Private Cloud.
+   * All DNS queries can be forwarded to this address for name resolution of
+   * Private Cloud's management entities like vCenter, NSX-T Manager and
+   * ESXi hosts.
+   * </pre>
+   *
+   * <code>string dns_server_ip = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dnsServerIp.
+   */
+  java.lang.String getDnsServerIp();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DNS Server IP of the Private Cloud.
+   * All DNS queries can be forwarded to this address for name resolution of
+   * Private Cloud's management entities like vCenter, NSX-T Manager and
+   * ESXi hosts.
+   * </pre>
+   *
+   * <code>string dns_server_ip = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for dnsServerIp.
+   */
+  com.google.protobuf.ByteString getDnsServerIpBytes();
 }

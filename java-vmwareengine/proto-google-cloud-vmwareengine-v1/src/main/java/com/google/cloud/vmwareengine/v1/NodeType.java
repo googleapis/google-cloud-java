@@ -42,6 +42,9 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     nodeTypeId_ = "";
     displayName_ = "";
     availableCustomCoreCounts_ = emptyIntList();
+    kind_ = 0;
+    families_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    capabilities_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -63,6 +66,300 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.vmwareengine.v1.NodeType.class,
             com.google.cloud.vmwareengine.v1.NodeType.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum Kind defines possible types of a NodeType.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.vmwareengine.v1.NodeType.Kind}
+   */
+  public enum Kind implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default value. This value should never be used.
+     * </pre>
+     *
+     * <code>KIND_UNSPECIFIED = 0;</code>
+     */
+    KIND_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Standard HCI node.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    STANDARD(1),
+    /**
+     *
+     *
+     * <pre>
+     * Storage only Node.
+     * </pre>
+     *
+     * <code>STORAGE_ONLY = 2;</code>
+     */
+    STORAGE_ONLY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default value. This value should never be used.
+     * </pre>
+     *
+     * <code>KIND_UNSPECIFIED = 0;</code>
+     */
+    public static final int KIND_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Standard HCI node.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    public static final int STANDARD_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Storage only Node.
+     * </pre>
+     *
+     * <code>STORAGE_ONLY = 2;</code>
+     */
+    public static final int STORAGE_ONLY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Kind valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Kind forNumber(int value) {
+      switch (value) {
+        case 0:
+          return KIND_UNSPECIFIED;
+        case 1:
+          return STANDARD;
+        case 2:
+          return STORAGE_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Kind> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Kind> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Kind>() {
+          public Kind findValueByNumber(int number) {
+            return Kind.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.vmwareengine.v1.NodeType.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Kind[] VALUES = values();
+
+    public static Kind valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Kind(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.vmwareengine.v1.NodeType.Kind)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Capability of a node type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.vmwareengine.v1.NodeType.Capability}
+   */
+  public enum Capability implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default value. This value is used if the capability is omitted or
+     * unknown.
+     * </pre>
+     *
+     * <code>CAPABILITY_UNSPECIFIED = 0;</code>
+     */
+    CAPABILITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * This node type supports stretch clusters.
+     * </pre>
+     *
+     * <code>STRETCHED_CLUSTERS = 1;</code>
+     */
+    STRETCHED_CLUSTERS(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default value. This value is used if the capability is omitted or
+     * unknown.
+     * </pre>
+     *
+     * <code>CAPABILITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int CAPABILITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This node type supports stretch clusters.
+     * </pre>
+     *
+     * <code>STRETCHED_CLUSTERS = 1;</code>
+     */
+    public static final int STRETCHED_CLUSTERS_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Capability valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Capability forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CAPABILITY_UNSPECIFIED;
+        case 1:
+          return STRETCHED_CLUSTERS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Capability> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Capability> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Capability>() {
+          public Capability findValueByNumber(int number) {
+            return Capability.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.vmwareengine.v1.NodeType.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Capability[] VALUES = values();
+
+    public static Capability valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Capability(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.vmwareengine.v1.NodeType.Capability)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -359,6 +656,229 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
   private int availableCustomCoreCountsMemoizedSerializedSize = -1;
 
+  public static final int KIND_FIELD_NUMBER = 12;
+  private int kind_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for kind.
+   */
+  @java.lang.Override
+  public int getKindValue() {
+    return kind_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kind.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmwareengine.v1.NodeType.Kind getKind() {
+    com.google.cloud.vmwareengine.v1.NodeType.Kind result =
+        com.google.cloud.vmwareengine.v1.NodeType.Kind.forNumber(kind_);
+    return result == null ? com.google.cloud.vmwareengine.v1.NodeType.Kind.UNRECOGNIZED : result;
+  }
+
+  public static final int FAMILIES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList families_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the families.
+   */
+  public com.google.protobuf.ProtocolStringList getFamiliesList() {
+    return families_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of families.
+   */
+  public int getFamiliesCount() {
+    return families_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The families at the given index.
+   */
+  public java.lang.String getFamilies(int index) {
+    return families_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the families at the given index.
+   */
+  public com.google.protobuf.ByteString getFamiliesBytes(int index) {
+    return families_.getByteString(index);
+  }
+
+  public static final int CAPABILITIES_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> capabilities_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.vmwareengine.v1.NodeType.Capability>
+      capabilities_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.vmwareengine.v1.NodeType.Capability>() {
+            public com.google.cloud.vmwareengine.v1.NodeType.Capability convert(
+                java.lang.Integer from) {
+              com.google.cloud.vmwareengine.v1.NodeType.Capability result =
+                  com.google.cloud.vmwareengine.v1.NodeType.Capability.forNumber(from);
+              return result == null
+                  ? com.google.cloud.vmwareengine.v1.NodeType.Capability.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the capabilities.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmwareengine.v1.NodeType.Capability>
+      getCapabilitiesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.vmwareengine.v1.NodeType.Capability>(
+        capabilities_, capabilities_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of capabilities.
+   */
+  @java.lang.Override
+  public int getCapabilitiesCount() {
+    return capabilities_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The capabilities at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmwareengine.v1.NodeType.Capability getCapabilities(int index) {
+    return capabilities_converter_.convert(capabilities_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for capabilities.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getCapabilitiesValueList() {
+    return capabilities_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of capabilities at the given index.
+   */
+  @java.lang.Override
+  public int getCapabilitiesValue(int index) {
+    return capabilities_.get(index);
+  }
+
+  private int capabilitiesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -401,6 +921,19 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < availableCustomCoreCounts_.size(); i++) {
       output.writeInt32NoTag(availableCustomCoreCounts_.getInt(i));
+    }
+    if (kind_ != com.google.cloud.vmwareengine.v1.NodeType.Kind.KIND_UNSPECIFIED.getNumber()) {
+      output.writeEnum(12, kind_);
+    }
+    for (int i = 0; i < families_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, families_.getRaw(i));
+    }
+    if (getCapabilitiesList().size() > 0) {
+      output.writeUInt32NoTag(114);
+      output.writeUInt32NoTag(capabilitiesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < capabilities_.size(); i++) {
+      output.writeEnumNoTag(capabilities_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -446,6 +979,30 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       }
       availableCustomCoreCountsMemoizedSerializedSize = dataSize;
     }
+    if (kind_ != com.google.cloud.vmwareengine.v1.NodeType.Kind.KIND_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, kind_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < families_.size(); i++) {
+        dataSize += computeStringSizeNoTag(families_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFamiliesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < capabilities_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(capabilities_.get(i));
+      }
+      size += dataSize;
+      if (!getCapabilitiesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      capabilitiesMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -471,6 +1028,9 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     if (!getAvailableCustomCoreCountsList().equals(other.getAvailableCustomCoreCountsList()))
       return false;
+    if (kind_ != other.kind_) return false;
+    if (!getFamiliesList().equals(other.getFamiliesList())) return false;
+    if (!capabilities_.equals(other.capabilities_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -499,6 +1059,16 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (getAvailableCustomCoreCountsCount() > 0) {
       hash = (37 * hash) + AVAILABLE_CUSTOM_CORE_COUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getAvailableCustomCoreCountsList().hashCode();
+    }
+    hash = (37 * hash) + KIND_FIELD_NUMBER;
+    hash = (53 * hash) + kind_;
+    if (getFamiliesCount() > 0) {
+      hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
+      hash = (53 * hash) + getFamiliesList().hashCode();
+    }
+    if (getCapabilitiesCount() > 0) {
+      hash = (37 * hash) + CAPABILITIES_FIELD_NUMBER;
+      hash = (53 * hash) + capabilities_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -647,6 +1217,10 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       memoryGb_ = 0;
       diskSizeGb_ = 0;
       availableCustomCoreCounts_ = emptyIntList();
+      kind_ = 0;
+      families_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      capabilities_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -688,6 +1262,11 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.availableCustomCoreCounts_ = availableCustomCoreCounts_;
+      if (((bitField0_ & 0x00000400) != 0)) {
+        capabilities_ = java.util.Collections.unmodifiableList(capabilities_);
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.capabilities_ = capabilities_;
     }
 
     private void buildPartial0(com.google.cloud.vmwareengine.v1.NodeType result) {
@@ -712,6 +1291,13 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.diskSizeGb_ = diskSizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        families_.makeImmutable();
+        result.families_ = families_;
       }
     }
 
@@ -794,6 +1380,29 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         } else {
           ensureAvailableCustomCoreCountsIsMutable();
           availableCustomCoreCounts_.addAll(other.availableCustomCoreCounts_);
+        }
+        onChanged();
+      }
+      if (other.kind_ != 0) {
+        setKindValue(other.getKindValue());
+      }
+      if (!other.families_.isEmpty()) {
+        if (families_.isEmpty()) {
+          families_ = other.families_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureFamiliesIsMutable();
+          families_.addAll(other.families_);
+        }
+        onChanged();
+      }
+      if (!other.capabilities_.isEmpty()) {
+        if (capabilities_.isEmpty()) {
+          capabilities_ = other.capabilities_;
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          ensureCapabilitiesIsMutable();
+          capabilities_.addAll(other.capabilities_);
         }
         onChanged();
       }
@@ -883,6 +1492,38 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(limit);
                 break;
               } // case 90
+            case 96:
+              {
+                kind_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 96
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureFamiliesIsMutable();
+                families_.add(s);
+                break;
+              } // case 106
+            case 112:
+              {
+                int tmpRaw = input.readEnum();
+                ensureCapabilitiesIsMutable();
+                capabilities_.add(tmpRaw);
+                break;
+              } // case 112
+            case 114:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureCapabilitiesIsMutable();
+                  capabilities_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1601,6 +2242,545 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAvailableCustomCoreCounts() {
       availableCustomCoreCounts_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    private int kind_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for kind.
+     */
+    @java.lang.Override
+    public int getKindValue() {
+      return kind_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKindValue(int value) {
+      kind_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The kind.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmwareengine.v1.NodeType.Kind getKind() {
+      com.google.cloud.vmwareengine.v1.NodeType.Kind result =
+          com.google.cloud.vmwareengine.v1.NodeType.Kind.forNumber(kind_);
+      return result == null ? com.google.cloud.vmwareengine.v1.NodeType.Kind.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKind(com.google.cloud.vmwareengine.v1.NodeType.Kind value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      kind_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKind() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      kind_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList families_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureFamiliesIsMutable() {
+      if (!families_.isModifiable()) {
+        families_ = new com.google.protobuf.LazyStringArrayList(families_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the families.
+     */
+    public com.google.protobuf.ProtocolStringList getFamiliesList() {
+      families_.makeImmutable();
+      return families_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of families.
+     */
+    public int getFamiliesCount() {
+      return families_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The families at the given index.
+     */
+    public java.lang.String getFamilies(int index) {
+      return families_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the families at the given index.
+     */
+    public com.google.protobuf.ByteString getFamiliesBytes(int index) {
+      return families_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The families to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFamilies(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFamiliesIsMutable();
+      families_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The families to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFamilies(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFamiliesIsMutable();
+      families_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The families to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFamilies(java.lang.Iterable<java.lang.String> values) {
+      ensureFamiliesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, families_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFamilies() {
+      families_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Families of the node type.
+     * For node types to be in the same cluster
+     * they must share at least one element in the `families`.
+     * </pre>
+     *
+     * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the families to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFamiliesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureFamiliesIsMutable();
+      families_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> capabilities_ = java.util.Collections.emptyList();
+
+    private void ensureCapabilitiesIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        capabilities_ = new java.util.ArrayList<java.lang.Integer>(capabilities_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the capabilities.
+     */
+    public java.util.List<com.google.cloud.vmwareengine.v1.NodeType.Capability>
+        getCapabilitiesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.vmwareengine.v1.NodeType.Capability>(
+          capabilities_, capabilities_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of capabilities.
+     */
+    public int getCapabilitiesCount() {
+      return capabilities_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The capabilities at the given index.
+     */
+    public com.google.cloud.vmwareengine.v1.NodeType.Capability getCapabilities(int index) {
+      return capabilities_converter_.convert(capabilities_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The capabilities to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapabilities(
+        int index, com.google.cloud.vmwareengine.v1.NodeType.Capability value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCapabilitiesIsMutable();
+      capabilities_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCapabilities(com.google.cloud.vmwareengine.v1.NodeType.Capability value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCapabilitiesIsMutable();
+      capabilities_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCapabilities(
+        java.lang.Iterable<? extends com.google.cloud.vmwareengine.v1.NodeType.Capability> values) {
+      ensureCapabilitiesIsMutable();
+      for (com.google.cloud.vmwareengine.v1.NodeType.Capability value : values) {
+        capabilities_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCapabilities() {
+      capabilities_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for capabilities.
+     */
+    public java.util.List<java.lang.Integer> getCapabilitiesValueList() {
+      return java.util.Collections.unmodifiableList(capabilities_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of capabilities at the given index.
+     */
+    public int getCapabilitiesValue(int index) {
+      return capabilities_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for capabilities to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapabilitiesValue(int index, int value) {
+      ensureCapabilitiesIsMutable();
+      capabilities_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCapabilitiesValue(int value) {
+      ensureCapabilitiesIsMutable();
+      capabilities_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Capabilities of this node type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCapabilitiesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureCapabilitiesIsMutable();
+      for (int value : values) {
+        capabilities_.add(value);
+      }
       onChanged();
       return this;
     }

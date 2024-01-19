@@ -569,6 +569,24 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.vmwareengine.v1.Subnet.State.UNRECOGNIZED : result;
   }
 
+  public static final int VLAN_ID_FIELD_NUMBER = 16;
+  private int vlanId_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. VLAN ID of the VLAN on which the subnet is configured
+   * </pre>
+   *
+   * <code>int32 vlan_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The vlanId.
+   */
+  @java.lang.Override
+  public int getVlanId() {
+    return vlanId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -598,6 +616,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.vmwareengine.v1.Subnet.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(13, state_);
     }
+    if (vlanId_ != 0) {
+      output.writeInt32(16, vlanId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -622,6 +643,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.vmwareengine.v1.Subnet.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, state_);
     }
+    if (vlanId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(16, vlanId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -642,6 +666,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     if (!getGatewayIp().equals(other.getGatewayIp())) return false;
     if (!getType().equals(other.getType())) return false;
     if (state_ != other.state_) return false;
+    if (getVlanId() != other.getVlanId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -663,6 +688,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + VLAN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVlanId();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -808,6 +835,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       gatewayIp_ = "";
       type_ = "";
       state_ = 0;
+      vlanId_ = 0;
       return this;
     }
 
@@ -858,6 +886,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.vlanId_ = vlanId_;
       }
     }
 
@@ -929,6 +960,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.getVlanId() != 0) {
+        setVlanId(other.getVlanId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -985,6 +1019,12 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 104
+            case 128:
+              {
+                vlanId_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1554,6 +1594,59 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int vlanId_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. VLAN ID of the VLAN on which the subnet is configured
+     * </pre>
+     *
+     * <code>int32 vlan_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The vlanId.
+     */
+    @java.lang.Override
+    public int getVlanId() {
+      return vlanId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. VLAN ID of the VLAN on which the subnet is configured
+     * </pre>
+     *
+     * <code>int32 vlan_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The vlanId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVlanId(int value) {
+
+      vlanId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. VLAN ID of the VLAN on which the subnet is configured
+     * </pre>
+     *
+     * <code>int32 vlan_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVlanId() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      vlanId_ = 0;
       onChanged();
       return this;
     }

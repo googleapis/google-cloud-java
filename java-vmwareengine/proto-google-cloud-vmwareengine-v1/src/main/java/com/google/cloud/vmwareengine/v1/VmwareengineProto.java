@@ -80,6 +80,50 @@ public final class VmwareengineProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_DeleteClusterRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListNodesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListNodesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListNodesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListNodesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetNodeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetNodeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetExternalAddressRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetExternalAddressRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_CreateExternalAddressRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_CreateExternalAddressRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_UpdateExternalAddressRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_UpdateExternalAddressRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_DeleteExternalAddressRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_DeleteExternalAddressRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vmwareengine_v1_ListSubnetsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_ListSubnetsRequest_fieldAccessorTable;
@@ -95,6 +139,54 @@ public final class VmwareengineProto {
       internal_static_google_cloud_vmwareengine_v1_UpdateSubnetRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_UpdateSubnetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetExternalAccessRuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetExternalAccessRuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_CreateExternalAccessRuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_CreateExternalAccessRuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_UpdateExternalAccessRuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_UpdateExternalAccessRuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_DeleteExternalAccessRuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_DeleteExternalAccessRuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListLoggingServersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListLoggingServersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListLoggingServersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListLoggingServersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetLoggingServerRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetLoggingServerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_CreateLoggingServerRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_CreateLoggingServerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_UpdateLoggingServerRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_UpdateLoggingServerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_DeleteLoggingServerRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_DeleteLoggingServerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vmwareengine_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -144,6 +236,46 @@ public final class VmwareengineProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_CreateHcxActivationKeyRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetDnsForwardingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetDnsForwardingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_UpdateDnsForwardingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_UpdateDnsForwardingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_CreateNetworkPeeringRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_CreateNetworkPeeringRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPeeringRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPeeringRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetNetworkPeeringRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetNetworkPeeringRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPeeringRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPeeringRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesRequest_fieldAccessorTable;
@@ -167,6 +299,34 @@ public final class VmwareengineProto {
       internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPolicyRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPolicyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetManagementDnsZoneBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetManagementDnsZoneBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_CreateManagementDnsZoneBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_CreateManagementDnsZoneBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_UpdateManagementDnsZoneBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_UpdateManagementDnsZoneBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_DeleteManagementDnsZoneBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_DeleteManagementDnsZoneBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_RepairManagementDnsZoneBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_RepairManagementDnsZoneBindingRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vmwareengine_v1_CreateVmwareEngineNetworkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -223,6 +383,18 @@ public final class VmwareengineProto {
       internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GrantDnsBindPermissionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GrantDnsBindPermissionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_RevokeDnsBindPermissionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_RevokeDnsBindPermissionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_GetDnsBindPermissionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_GetDnsBindPermissionRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -234,458 +406,857 @@ public final class VmwareengineProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/vmwareengine/v1/vmwareeng"
           + "ine.proto\022\034google.cloud.vmwareengine.v1\032"
-          + "\034google/api/annotations.proto\032\027google/ap"
-          + "i/client.proto\032\037google/api/field_behavio"
-          + "r.proto\032\031google/api/resource.proto\0329goog"
-          + "le/cloud/vmwareengine/v1/vmwareengine_re"
-          + "sources.proto\032#google/longrunning/operat"
-          + "ions.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\237\001\n\030ListPriva"
-          + "teCloudsRequest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#"
-          + "\n!locations.googleapis.com/Location\022\021\n\tp"
-          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006fi"
-          + "lter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\215\001\n\031ListPri"
-          + "vateCloudsResponse\022B\n\016private_clouds\030\001 \003"
-          + "(\0132*.google.cloud.vmwareengine.v1.Privat"
-          + "eCloud\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
-          + "chable\030\003 \003(\t\"Y\n\026GetPrivateCloudRequest\022?"
-          + "\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.goog"
-          + "leapis.com/PrivateCloud\"\367\001\n\031CreatePrivat"
-          + "eCloudRequest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!"
-          + "locations.googleapis.com/Location\022\036\n\020pri"
-          + "vate_cloud_id\030\002 \001(\tB\004\342A\001\002\022G\n\rprivate_clo"
-          + "ud\030\003 \001(\0132*.google.cloud.vmwareengine.v1."
-          + "PrivateCloudB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004"
-          + "\342A\001\001\022\033\n\rvalidate_only\030\005 \001(\010B\004\342A\001\001\"\265\001\n\031Up"
-          + "datePrivateCloudRequest\022G\n\rprivate_cloud"
-          + "\030\001 \001(\0132*.google.cloud.vmwareengine.v1.Pr"
-          + "ivateCloudB\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032."
-          + "google.protobuf.FieldMaskB\004\342A\001\002\022\030\n\nreque"
-          + "st_id\030\003 \001(\tB\004\342A\001\001\"\273\001\n\031DeletePrivateCloud"
-          + "Request\022?\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareen"
-          + "gine.googleapis.com/PrivateCloud\022\030\n\nrequ"
-          + "est_id\030\002 \001(\tB\004\342A\001\001\022\023\n\005force\030\003 \001(\010B\004\342A\001\001\022"
-          + "\036\n\013delay_hours\030\004 \001(\005B\004\342A\001\001H\000\210\001\001B\016\n\014_dela"
-          + "y_hours\"x\n\033UndeletePrivateCloudRequest\022?"
-          + "\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.goog"
-          + "leapis.com/PrivateCloud\022\030\n\nrequest_id\030\002 "
-          + "\001(\tB\004\342A\001\001\"\241\001\n\023ListClustersRequest\022A\n\006par"
-          + "ent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.googlea"
-          + "pis.com/PrivateCloud\022\021\n\tpage_size\030\002 \001(\005\022"
-          + "\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010o"
-          + "rder_by\030\005 \001(\t\"}\n\024ListClustersResponse\0227\n"
-          + "\010clusters\030\001 \003(\0132%.google.cloud.vmwareeng"
-          + "ine.v1.Cluster\022\027\n\017next_page_token\030\002 \001(\t\022"
-          + "\023\n\013unreachable\030\003 \003(\t\"O\n\021GetClusterReques"
-          + "t\022:\n\004name\030\001 \001(\tB,\342A\001\002\372A%\n#vmwareengine.g"
-          + "oogleapis.com/Cluster\"\350\001\n\024CreateClusterR"
-          + "equest\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwaree"
-          + "ngine.googleapis.com/PrivateCloud\022\030\n\nclu"
-          + "ster_id\030\002 \001(\tB\004\342A\001\002\022<\n\007cluster\030\003 \001(\0132%.g"
-          + "oogle.cloud.vmwareengine.v1.ClusterB\004\342A\001"
-          + "\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\022\033\n\rvalidate_"
-          + "only\030\005 \001(\010B\004\342A\001\001\"\302\001\n\024UpdateClusterReques"
-          + "t\0225\n\013update_mask\030\001 \001(\0132\032.google.protobuf"
-          + ".FieldMaskB\004\342A\001\002\022<\n\007cluster\030\002 \001(\0132%.goog"
-          + "le.cloud.vmwareengine.v1.ClusterB\004\342A\001\002\022\030"
-          + "\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_onl"
-          + "y\030\004 \001(\010B\004\342A\001\001\"l\n\024DeleteClusterRequest\022:\n"
-          + "\004name\030\001 \001(\tB,\342A\001\002\372A%\n#vmwareengine.googl"
-          + "eapis.com/Cluster\022\030\n\nrequest_id\030\002 \001(\tB\004\342"
-          + "A\001\001\"~\n\022ListSubnetsRequest\022A\n\006parent\030\001 \001("
-          + "\tB1\342A\001\002\372A*\n(vmwareengine.googleapis.com/"
-          + "PrivateCloud\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
-          + "token\030\003 \001(\t\"z\n\023ListSubnetsResponse\0225\n\007su"
-          + "bnets\030\001 \003(\0132$.google.cloud.vmwareengine."
-          + "v1.Subnet\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013un"
-          + "reachable\030\003 \003(\t\"M\n\020GetSubnetRequest\0229\n\004n"
-          + "ame\030\001 \001(\tB+\342A\001\002\372A$\n\"vmwareengine.googlea"
-          + "pis.com/Subnet\"\210\001\n\023UpdateSubnetRequest\0225"
-          + "\n\013update_mask\030\001 \001(\0132\032.google.protobuf.Fi"
-          + "eldMaskB\004\342A\001\002\022:\n\006subnet\030\002 \001(\0132$.google.c"
-          + "loud.vmwareengine.v1.SubnetB\004\342A\001\002\"\207\002\n\021Op"
-          + "erationMetadata\0225\n\013create_time\030\001 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\004\342A\001\003\0222\n\010end_ti"
-          + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A"
-          + "\001\003\022\024\n\006target\030\003 \001(\tB\004\342A\001\003\022\022\n\004verb\030\004 \001(\tB\004"
-          + "\342A\001\003\022\034\n\016status_message\030\005 \001(\tB\004\342A\001\003\022$\n\026re"
-          + "quested_cancellation\030\006 \001(\010B\004\342A\001\003\022\031\n\013api_"
-          + "version\030\007 \001(\tB\004\342A\001\003\"\211\001\n\024ListNodeTypesReq"
+          + "#google/longrunning/operations.proto\032\037go"
+          + "ogle/protobuf/timestamp.proto\032 google/pr"
+          + "otobuf/field_mask.proto\032\034google/api/anno"
+          + "tations.proto\032\027google/api/client.proto\032\037"
+          + "google/api/field_behavior.proto\032\033google/"
+          + "api/field_info.proto\032\031google/api/resourc"
+          + "e.proto\0329google/cloud/vmwareengine/v1/vm"
+          + "wareengine_resources.proto\032\033google/proto"
+          + "buf/empty.proto\"\237\001\n\030ListPrivateCloudsReq"
           + "uest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations"
           + ".googleapis.com/Location\022\021\n\tpage_size\030\002 "
-          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\""
-          + "\201\001\n\025ListNodeTypesResponse\022:\n\nnode_types\030"
-          + "\001 \003(\0132&.google.cloud.vmwareengine.v1.Nod"
-          + "eType\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreac"
-          + "hable\030\003 \003(\t\"Q\n\022GetNodeTypeRequest\022;\n\004nam"
-          + "e\030\001 \001(\tB-\342A\001\002\372A&\n$vmwareengine.googleapi"
-          + "s.com/NodeType\"e\n\031ShowNsxCredentialsRequ"
-          + "est\022H\n\rprivate_cloud\030\001 \001(\tB1\342A\001\002\372A*\n(vmw"
-          + "areengine.googleapis.com/PrivateCloud\"i\n"
-          + "\035ShowVcenterCredentialsRequest\022H\n\rprivat"
-          + "e_cloud\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.goo"
-          + "gleapis.com/PrivateCloud\"\200\001\n\032ResetNsxCre"
-          + "dentialsRequest\022H\n\rprivate_cloud\030\001 \001(\tB1"
-          + "\342A\001\002\372A*\n(vmwareengine.googleapis.com/Pri"
-          + "vateCloud\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\204\001\n\036"
-          + "ResetVcenterCredentialsRequest\022H\n\rprivat"
-          + "e_cloud\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.goo"
-          + "gleapis.com/PrivateCloud\022\030\n\nrequest_id\030\002"
-          + " \001(\tB\004\342A\001\001\"\232\001\n\035ListHcxActivationKeysResp"
-          + "onse\022K\n\023hcx_activation_keys\030\001 \003(\0132..goog"
-          + "le.cloud.vmwareengine.v1.HcxActivationKe"
-          + "y\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachabl"
-          + "e\030\003 \003(\t\"\210\001\n\034ListHcxActivationKeysRequest"
-          + "\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine."
-          + "googleapis.com/PrivateCloud\022\021\n\tpage_size"
-          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"a\n\032GetHcxActi"
-          + "vationKeyRequest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n"
-          + ",vmwareengine.googleapis.com/HcxActivati"
-          + "onKey\"\355\001\n\035CreateHcxActivationKeyRequest\022"
-          + "A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.g"
-          + "oogleapis.com/PrivateCloud\022P\n\022hcx_activa"
-          + "tion_key\030\002 \001(\0132..google.cloud.vmwareengi"
-          + "ne.v1.HcxActivationKeyB\004\342A\001\002\022#\n\025hcx_acti"
-          + "vation_key_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nrequest_id\030"
-          + "\004 \001(\t\"\251\001\n\032ListNetworkPoliciesRequest\022B\n\006"
-          + "parent\030\001 \001(\tB2\342A\001\002\372A+\022)vmwareengine.goog"
-          + "leapis.com/NetworkPolicy\022\021\n\tpage_size\030\002 "
           + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022"
-          + "\020\n\010order_by\030\005 \001(\t\"\222\001\n\033ListNetworkPolicie"
-          + "sResponse\022E\n\020network_policies\030\001 \003(\0132+.go"
-          + "ogle.cloud.vmwareengine.v1.NetworkPolicy"
-          + "\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable"
-          + "\030\003 \003(\t\"[\n\027GetNetworkPolicyRequest\022@\n\004nam"
-          + "e\030\001 \001(\tB2\342A\001\002\372A+\n)vmwareengine.googleapi"
-          + "s.com/NetworkPolicy\"\270\001\n\032UpdateNetworkPol"
-          + "icyRequest\022I\n\016network_policy\030\001 \001(\0132+.goo"
-          + "gle.cloud.vmwareengine.v1.NetworkPolicyB"
+          + "\020\n\010order_by\030\005 \001(\t\"\215\001\n\031ListPrivateCloudsR"
+          + "esponse\022B\n\016private_clouds\030\001 \003(\0132*.google"
+          + ".cloud.vmwareengine.v1.PrivateCloud\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003("
+          + "\t\"Y\n\026GetPrivateCloudRequest\022?\n\004name\030\001 \001("
+          + "\tB1\342A\001\002\372A*\n(vmwareengine.googleapis.com/"
+          + "PrivateCloud\"\367\001\n\031CreatePrivateCloudReque"
+          + "st\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.g"
+          + "oogleapis.com/Location\022\036\n\020private_cloud_"
+          + "id\030\002 \001(\tB\004\342A\001\002\022G\n\rprivate_cloud\030\003 \001(\0132*."
+          + "google.cloud.vmwareengine.v1.PrivateClou"
+          + "dB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\022\033\n\rval"
+          + "idate_only\030\005 \001(\010B\004\342A\001\001\"\265\001\n\031UpdatePrivate"
+          + "CloudRequest\022G\n\rprivate_cloud\030\001 \001(\0132*.go"
+          + "ogle.cloud.vmwareengine.v1.PrivateCloudB"
           + "\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032.google.prot"
           + "obuf.FieldMaskB\004\342A\001\002\022\030\n\nrequest_id\030\003 \001(\t"
-          + "B\004\342A\001\001\"\346\001\n\032CreateNetworkPolicyRequest\022B\n"
-          + "\006parent\030\001 \001(\tB2\342A\001\002\372A+\022)vmwareengine.goo"
-          + "gleapis.com/NetworkPolicy\022\037\n\021network_pol"
-          + "icy_id\030\002 \001(\tB\004\342A\001\002\022I\n\016network_policy\030\003 \001"
-          + "(\0132+.google.cloud.vmwareengine.v1.Networ"
-          + "kPolicyB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\""
-          + "x\n\032DeleteNetworkPolicyRequest\022@\n\004name\030\001 "
-          + "\001(\tB2\342A\001\002\372A+\n)vmwareengine.googleapis.co"
-          + "m/NetworkPolicy\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001"
-          + "\001\"\206\002\n CreateVmwareEngineNetworkRequest\022H"
-          + "\n\006parent\030\001 \001(\tB8\342A\001\002\372A1\022/vmwareengine.go"
-          + "ogleapis.com/VmwareEngineNetwork\022&\n\030vmwa"
-          + "re_engine_network_id\030\002 \001(\tB\004\342A\001\002\022V\n\025vmwa"
-          + "re_engine_network\030\003 \001(\01321.google.cloud.v"
-          + "mwareengine.v1.VmwareEngineNetworkB\004\342A\001\002"
-          + "\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\"\313\001\n UpdateVmw"
-          + "areEngineNetworkRequest\022V\n\025vmware_engine"
-          + "_network\030\001 \001(\01321.google.cloud.vmwareengi"
-          + "ne.v1.VmwareEngineNetworkB\004\342A\001\002\0225\n\013updat"
-          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
-          + "B\004\342A\001\002\022\030\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\"\230\001\n Del"
-          + "eteVmwareEngineNetworkRequest\022F\n\004name\030\001 "
-          + "\001(\tB8\342A\001\002\372A1\n/vmwareengine.googleapis.co"
-          + "m/VmwareEngineNetwork\022\030\n\nrequest_id\030\002 \001("
-          + "\tB\004\342A\001\001\022\022\n\004etag\030\003 \001(\tB\004\342A\001\001\"g\n\035GetVmware"
-          + "EngineNetworkRequest\022F\n\004name\030\001 \001(\tB8\342A\001\002"
-          + "\372A1\n/vmwareengine.googleapis.com/VmwareE"
-          + "ngineNetwork\"\246\001\n\037ListVmwareEngineNetwork"
-          + "sRequest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locat"
-          + "ions.googleapis.com/Location\022\021\n\tpage_siz"
+          + "B\004\342A\001\001\"\273\001\n\031DeletePrivateCloudRequest\022?\n\004"
+          + "name\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.google"
+          + "apis.com/PrivateCloud\022\030\n\nrequest_id\030\002 \001("
+          + "\tB\004\342A\001\001\022\023\n\005force\030\003 \001(\010B\004\342A\001\001\022\036\n\013delay_ho"
+          + "urs\030\004 \001(\005B\004\342A\001\001H\000\210\001\001B\016\n\014_delay_hours\"x\n\033"
+          + "UndeletePrivateCloudRequest\022?\n\004name\030\001 \001("
+          + "\tB1\342A\001\002\372A*\n(vmwareengine.googleapis.com/"
+          + "PrivateCloud\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\241"
+          + "\001\n\023ListClustersRequest\022A\n\006parent\030\001 \001(\tB1"
+          + "\342A\001\002\372A*\n(vmwareengine.googleapis.com/Pri"
+          + "vateCloud\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+          + "en\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001"
+          + "(\t\"}\n\024ListClustersResponse\0227\n\010clusters\030\001"
+          + " \003(\0132%.google.cloud.vmwareengine.v1.Clus"
+          + "ter\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreacha"
+          + "ble\030\003 \003(\t\"O\n\021GetClusterRequest\022:\n\004name\030\001"
+          + " \001(\tB,\342A\001\002\372A%\n#vmwareengine.googleapis.c"
+          + "om/Cluster\"\350\001\n\024CreateClusterRequest\022A\n\006p"
+          + "arent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.googl"
+          + "eapis.com/PrivateCloud\022\030\n\ncluster_id\030\002 \001"
+          + "(\tB\004\342A\001\002\022<\n\007cluster\030\003 \001(\0132%.google.cloud"
+          + ".vmwareengine.v1.ClusterB\004\342A\001\002\022\030\n\nreques"
+          + "t_id\030\004 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\005 \001(\010B"
+          + "\004\342A\001\001\"\302\001\n\024UpdateClusterRequest\0225\n\013update"
+          + "_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB"
+          + "\004\342A\001\002\022<\n\007cluster\030\002 \001(\0132%.google.cloud.vm"
+          + "wareengine.v1.ClusterB\004\342A\001\002\022\030\n\nrequest_i"
+          + "d\030\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001(\010B\004\342A"
+          + "\001\001\"l\n\024DeleteClusterRequest\022:\n\004name\030\001 \001(\t"
+          + "B,\342A\001\002\372A%\n#vmwareengine.googleapis.com/C"
+          + "luster\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"w\n\020List"
+          + "NodesRequest\022<\n\006parent\030\001 \001(\tB,\342A\001\002\372A%\n#v"
+          + "mwareengine.googleapis.com/Cluster\022\021\n\tpa"
+          + "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"_\n\021Lis"
+          + "tNodesResponse\0221\n\005nodes\030\001 \003(\0132\".google.c"
+          + "loud.vmwareengine.v1.Node\022\027\n\017next_page_t"
+          + "oken\030\002 \001(\t\"I\n\016GetNodeRequest\0227\n\004name\030\001 \001"
+          + "(\tB)\342A\001\002\372A\"\n vmwareengine.googleapis.com"
+          + "/Node\"\252\001\n\034ListExternalAddressesRequest\022A"
+          + "\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.go"
+          + "ogleapis.com/PrivateCloud\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t"
+          + "\022\020\n\010order_by\030\005 \001(\t\"\230\001\n\035ListExternalAddre"
+          + "ssesResponse\022I\n\022external_addresses\030\001 \003(\013"
+          + "2-.google.cloud.vmwareengine.v1.External"
+          + "Address\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unre"
+          + "achable\030\003 \003(\t\"\237\001\n*FetchNetworkPolicyExte"
+          + "rnalAddressesRequest\022J\n\016network_policy\030\001"
+          + " \001(\tB2\342A\001\002\372A+\n)vmwareengine.googleapis.c"
+          + "om/NetworkPolicy\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np"
+          + "age_token\030\003 \001(\t\"\221\001\n+FetchNetworkPolicyEx"
+          + "ternalAddressesResponse\022I\n\022external_addr"
+          + "esses\030\001 \003(\0132-.google.cloud.vmwareengine."
+          + "v1.ExternalAddress\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"_\n\031GetExternalAddressRequest\022B\n\004name"
+          + "\030\001 \001(\tB4\342A\001\002\372A-\n+vmwareengine.googleapis"
+          + ".com/ExternalAddress\"\355\001\n\034CreateExternalA"
+          + "ddressRequest\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n("
+          + "vmwareengine.googleapis.com/PrivateCloud"
+          + "\022M\n\020external_address\030\002 \001(\0132-.google.clou"
+          + "d.vmwareengine.v1.ExternalAddressB\004\342A\001\002\022"
+          + "!\n\023external_address_id\030\003 \001(\tB\004\342A\001\002\022\030\n\nre"
+          + "quest_id\030\004 \001(\tB\004\342A\001\001\"\276\001\n\034UpdateExternalA"
+          + "ddressRequest\0225\n\013update_mask\030\001 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMaskB\004\342A\001\002\022M\n\020external"
+          + "_address\030\002 \001(\0132-.google.cloud.vmwareengi"
+          + "ne.v1.ExternalAddressB\004\342A\001\002\022\030\n\nrequest_i"
+          + "d\030\003 \001(\tB\004\342A\001\001\"|\n\034DeleteExternalAddressRe"
+          + "quest\022B\n\004name\030\001 \001(\tB4\342A\001\002\372A-\n+vmwareengi"
+          + "ne.googleapis.com/ExternalAddress\022\030\n\nreq"
+          + "uest_id\030\002 \001(\tB\004\342A\001\001\"~\n\022ListSubnetsReques"
+          + "t\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine"
+          + ".googleapis.com/PrivateCloud\022\021\n\tpage_siz"
+          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"z\n\023ListSubne"
+          + "tsResponse\0225\n\007subnets\030\001 \003(\0132$.google.clo"
+          + "ud.vmwareengine.v1.Subnet\022\027\n\017next_page_t"
+          + "oken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"M\n\020GetSu"
+          + "bnetRequest\0229\n\004name\030\001 \001(\tB+\342A\001\002\372A$\n\"vmwa"
+          + "reengine.googleapis.com/Subnet\"\210\001\n\023Updat"
+          + "eSubnetRequest\0225\n\013update_mask\030\001 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMaskB\004\342A\001\002\022:\n\006subnet\030"
+          + "\002 \001(\0132$.google.cloud.vmwareengine.v1.Sub"
+          + "netB\004\342A\001\002\"\255\001\n\036ListExternalAccessRulesReq"
+          + "uest\022B\n\006parent\030\001 \001(\tB2\342A\001\002\372A+\n)vmwareeng"
+          + "ine.googleapis.com/NetworkPolicy\022\021\n\tpage"
+          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filte"
+          + "r\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\240\001\n\037ListExtern"
+          + "alAccessRulesResponse\022O\n\025external_access"
+          + "_rules\030\001 \003(\01320.google.cloud.vmwareengine"
+          + ".v1.ExternalAccessRule\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"e\n\034GetExter"
+          + "nalAccessRuleRequest\022E\n\004name\030\001 \001(\tB7\342A\001\002"
+          + "\372A0\n.vmwareengine.googleapis.com/Externa"
+          + "lAccessRule\"\366\001\n\037CreateExternalAccessRule"
+          + "Request\022B\n\006parent\030\001 \001(\tB2\342A\001\002\372A+\n)vmware"
+          + "engine.googleapis.com/NetworkPolicy\022T\n\024e"
+          + "xternal_access_rule\030\002 \001(\01320.google.cloud"
+          + ".vmwareengine.v1.ExternalAccessRuleB\004\342A\001"
+          + "\002\022%\n\027external_access_rule_id\030\003 \001(\tB\004\342A\001\002"
+          + "\022\022\n\nrequest_id\030\004 \001(\t\"\310\001\n\037UpdateExternalA"
+          + "ccessRuleRequest\0225\n\013update_mask\030\001 \001(\0132\032."
+          + "google.protobuf.FieldMaskB\004\342A\001\002\022T\n\024exter"
+          + "nal_access_rule\030\002 \001(\01320.google.cloud.vmw"
+          + "areengine.v1.ExternalAccessRuleB\004\342A\001\002\022\030\n"
+          + "\nrequest_id\030\003 \001(\tB\004\342A\001\001\"\202\001\n\037DeleteExtern"
+          + "alAccessRuleRequest\022E\n\004name\030\001 \001(\tB7\342A\001\002\372"
+          + "A0\n.vmwareengine.googleapis.com/External"
+          + "AccessRule\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\247\001\n"
+          + "\031ListLoggingServersRequest\022A\n\006parent\030\001 \001"
+          + "(\tB1\342A\001\002\372A*\n(vmwareengine.googleapis.com"
+          + "/PrivateCloud\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage"
+          + "_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by"
+          + "\030\005 \001(\t\"\220\001\n\032ListLoggingServersResponse\022D\n"
+          + "\017logging_servers\030\001 \003(\0132+.google.cloud.vm"
+          + "wareengine.v1.LoggingServer\022\027\n\017next_page"
+          + "_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"[\n\027Get"
+          + "LoggingServerRequest\022@\n\004name\030\001 \001(\tB2\342A\001\002"
+          + "\372A+\n)vmwareengine.googleapis.com/Logging"
+          + "Server\"\345\001\n\032CreateLoggingServerRequest\022A\n"
+          + "\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.goo"
+          + "gleapis.com/PrivateCloud\022I\n\016logging_serv"
+          + "er\030\002 \001(\0132+.google.cloud.vmwareengine.v1."
+          + "LoggingServerB\004\342A\001\002\022\037\n\021logging_server_id"
+          + "\030\003 \001(\tB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\"\270"
+          + "\001\n\032UpdateLoggingServerRequest\0225\n\013update_"
+          + "mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\004"
+          + "\342A\001\002\022I\n\016logging_server\030\002 \001(\0132+.google.cl"
+          + "oud.vmwareengine.v1.LoggingServerB\004\342A\001\002\022"
+          + "\030\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\"x\n\032DeleteLoggi"
+          + "ngServerRequest\022@\n\004name\030\001 \001(\tB2\342A\001\002\372A+\n)"
+          + "vmwareengine.googleapis.com/LoggingServe"
+          + "r\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\207\002\n\021Operatio"
+          + "nMetadata\0225\n\013create_time\030\001 \001(\0132\032.google."
+          + "protobuf.TimestampB\004\342A\001\003\0222\n\010end_time\030\002 \001"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\024\n\006"
+          + "target\030\003 \001(\tB\004\342A\001\003\022\022\n\004verb\030\004 \001(\tB\004\342A\001\003\022\034"
+          + "\n\016status_message\030\005 \001(\tB\004\342A\001\003\022$\n\026requeste"
+          + "d_cancellation\030\006 \001(\010B\004\342A\001\003\022\031\n\013api_versio"
+          + "n\030\007 \001(\tB\004\342A\001\003\"\211\001\n\024ListNodeTypesRequest\022:"
+          + "\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.googl"
+          + "eapis.com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n"
+          + "\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\201\001\n\025Li"
+          + "stNodeTypesResponse\022:\n\nnode_types\030\001 \003(\0132"
+          + "&.google.cloud.vmwareengine.v1.NodeType\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030"
+          + "\003 \003(\t\"Q\n\022GetNodeTypeRequest\022;\n\004name\030\001 \001("
+          + "\tB-\342A\001\002\372A&\n$vmwareengine.googleapis.com/"
+          + "NodeType\"e\n\031ShowNsxCredentialsRequest\022H\n"
+          + "\rprivate_cloud\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareeng"
+          + "ine.googleapis.com/PrivateCloud\"\201\001\n\035Show"
+          + "VcenterCredentialsRequest\022H\n\rprivate_clo"
+          + "ud\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine.googleap"
+          + "is.com/PrivateCloud\022\026\n\010username\030\002 \001(\tB\004\342"
+          + "A\001\001\"\200\001\n\032ResetNsxCredentialsRequest\022H\n\rpr"
+          + "ivate_cloud\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine"
+          + ".googleapis.com/PrivateCloud\022\030\n\nrequest_"
+          + "id\030\002 \001(\tB\004\342A\001\001\"\234\001\n\036ResetVcenterCredentia"
+          + "lsRequest\022H\n\rprivate_cloud\030\001 \001(\tB1\342A\001\002\372A"
+          + "*\n(vmwareengine.googleapis.com/PrivateCl"
+          + "oud\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\022\026\n\010usernam"
+          + "e\030\003 \001(\tB\004\342A\001\001\"\232\001\n\035ListHcxActivationKeysR"
+          + "esponse\022K\n\023hcx_activation_keys\030\001 \003(\0132..g"
+          + "oogle.cloud.vmwareengine.v1.HcxActivatio"
+          + "nKey\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreach"
+          + "able\030\003 \003(\t\"\210\001\n\034ListHcxActivationKeysRequ"
+          + "est\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengi"
+          + "ne.googleapis.com/PrivateCloud\022\021\n\tpage_s"
+          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"a\n\032GetHcxA"
+          + "ctivationKeyRequest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372"
+          + "A.\n,vmwareengine.googleapis.com/HcxActiv"
+          + "ationKey\"\355\001\n\035CreateHcxActivationKeyReque"
+          + "st\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengin"
+          + "e.googleapis.com/PrivateCloud\022P\n\022hcx_act"
+          + "ivation_key\030\002 \001(\0132..google.cloud.vmwaree"
+          + "ngine.v1.HcxActivationKeyB\004\342A\001\002\022#\n\025hcx_a"
+          + "ctivation_key_id\030\003 \001(\tB\004\342A\001\002\022\022\n\nrequest_"
+          + "id\030\004 \001(\t\"[\n\027GetDnsForwardingRequest\022@\n\004n"
+          + "ame\030\001 \001(\tB2\342A\001\002\372A+\n)vmwareengine.googlea"
+          + "pis.com/DnsForwarding\"\270\001\n\032UpdateDnsForwa"
+          + "rdingRequest\022I\n\016dns_forwarding\030\001 \001(\0132+.g"
+          + "oogle.cloud.vmwareengine.v1.DnsForwardin"
+          + "gB\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032.google.pr"
+          + "otobuf.FieldMaskB\004\342A\001\002\022\030\n\nrequest_id\030\003 \001"
+          + "(\tB\004\342A\001\001\"\342\001\n\033CreateNetworkPeeringRequest"
+          + "\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.goo"
+          + "gleapis.com/Location\022 \n\022network_peering_"
+          + "id\030\002 \001(\tB\004\342A\001\002\022K\n\017network_peering\030\003 \001(\0132"
+          + ",.google.cloud.vmwareengine.v1.NetworkPe"
+          + "eringB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\"z\n"
+          + "\033DeleteNetworkPeeringRequest\022A\n\004name\030\001 \001"
+          + "(\tB3\342A\001\002\372A,\n*vmwareengine.googleapis.com"
+          + "/NetworkPeering\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001"
+          + "\001\"]\n\030GetNetworkPeeringRequest\022A\n\004name\030\001 "
+          + "\001(\tB3\342A\001\002\372A,\n*vmwareengine.googleapis.co"
+          + "m/NetworkPeering\"\252\001\n\032ListNetworkPeerings"
+          + "Request\022C\n\006parent\030\001 \001(\tB3\342A\001\002\372A,\022*vmware"
+          + "engine.googleapis.com/NetworkPeering\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006f"
+          + "ilter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\273\001\n\033Update"
+          + "NetworkPeeringRequest\022K\n\017network_peering"
+          + "\030\001 \001(\0132,.google.cloud.vmwareengine.v1.Ne"
+          + "tworkPeeringB\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132"
+          + "\032.google.protobuf.FieldMaskB\004\342A\001\002\022\030\n\nreq"
+          + "uest_id\030\003 \001(\tB\004\342A\001\001\"\223\001\n\033ListNetworkPeeri"
+          + "ngsResponse\022F\n\020network_peerings\030\001 \003(\0132,."
+          + "google.cloud.vmwareengine.v1.NetworkPeer"
+          + "ing\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreacha"
+          + "ble\030\003 \003(\t\"\226\001\n\030ListPeeringRoutesRequest\022C"
+          + "\n\006parent\030\001 \001(\tB3\342A\001\002\372A,\n*vmwareengine.go"
+          + "ogleapis.com/NetworkPeering\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\006 \001"
+          + "(\t\"x\n\031ListPeeringRoutesResponse\022B\n\016peeri"
+          + "ng_routes\030\001 \003(\0132*.google.cloud.vmwareeng"
+          + "ine.v1.PeeringRoute\022\027\n\017next_page_token\030\002"
+          + " \001(\t\"\251\001\n\032ListNetworkPoliciesRequest\022B\n\006p"
+          + "arent\030\001 \001(\tB2\342A\001\002\372A+\022)vmwareengine.googl"
+          + "eapis.com/NetworkPolicy\022\021\n\tpage_size\030\002 \001"
+          + "(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020"
+          + "\n\010order_by\030\005 \001(\t\"\222\001\n\033ListNetworkPolicies"
+          + "Response\022E\n\020network_policies\030\001 \003(\0132+.goo"
+          + "gle.cloud.vmwareengine.v1.NetworkPolicy\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030"
+          + "\003 \003(\t\"[\n\027GetNetworkPolicyRequest\022@\n\004name"
+          + "\030\001 \001(\tB2\342A\001\002\372A+\n)vmwareengine.googleapis"
+          + ".com/NetworkPolicy\"\270\001\n\032UpdateNetworkPoli"
+          + "cyRequest\022I\n\016network_policy\030\001 \001(\0132+.goog"
+          + "le.cloud.vmwareengine.v1.NetworkPolicyB\004"
+          + "\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032.google.proto"
+          + "buf.FieldMaskB\004\342A\001\002\022\030\n\nrequest_id\030\003 \001(\tB"
+          + "\004\342A\001\001\"\346\001\n\032CreateNetworkPolicyRequest\022B\n\006"
+          + "parent\030\001 \001(\tB2\342A\001\002\372A+\022)vmwareengine.goog"
+          + "leapis.com/NetworkPolicy\022\037\n\021network_poli"
+          + "cy_id\030\002 \001(\tB\004\342A\001\002\022I\n\016network_policy\030\003 \001("
+          + "\0132+.google.cloud.vmwareengine.v1.Network"
+          + "PolicyB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\"x"
+          + "\n\032DeleteNetworkPolicyRequest\022@\n\004name\030\001 \001"
+          + "(\tB2\342A\001\002\372A+\n)vmwareengine.googleapis.com"
+          + "/NetworkPolicy\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001"
+          + "\"\262\001\n$ListManagementDnsZoneBindingsReques"
+          + "t\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine"
+          + ".googleapis.com/PrivateCloud\022\021\n\tpage_siz"
           + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 "
-          + "\001(\t\022\020\n\010order_by\030\005 \001(\t\"\243\001\n ListVmwareEngi"
-          + "neNetworksResponse\022Q\n\026vmware_engine_netw"
-          + "orks\030\001 \003(\01321.google.cloud.vmwareengine.v"
-          + "1.VmwareEngineNetwork\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\372\001\n\036CreatePr"
-          + "ivateConnectionRequest\022F\n\006parent\030\001 \001(\tB6"
-          + "\342A\001\002\372A/\022-vmwareengine.googleapis.com/Pri"
-          + "vateConnection\022#\n\025private_connection_id\030"
-          + "\002 \001(\tB\004\342A\001\002\022Q\n\022private_connection\030\003 \001(\0132"
-          + "/.google.cloud.vmwareengine.v1.PrivateCo"
-          + "nnectionB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001"
-          + "\"c\n\033GetPrivateConnectionRequest\022D\n\004name\030"
-          + "\001 \001(\tB6\342A\001\002\372A/\n-vmwareengine.googleapis."
-          + "com/PrivateConnection\"\260\001\n\035ListPrivateCon"
-          + "nectionsRequest\022F\n\006parent\030\001 \001(\tB6\342A\001\002\372A/"
-          + "\022-vmwareengine.googleapis.com/PrivateCon"
-          + "nection\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-          + "\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t"
-          + "\"\234\001\n\036ListPrivateConnectionsResponse\022L\n\023p"
-          + "rivate_connections\030\001 \003(\0132/.google.cloud."
-          + "vmwareengine.v1.PrivateConnection\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\""
-          + "\304\001\n\036UpdatePrivateConnectionRequest\022Q\n\022pr"
-          + "ivate_connection\030\001 \001(\0132/.google.cloud.vm"
-          + "wareengine.v1.PrivateConnectionB\004\342A\001\002\0225\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
-          + "ldMaskB\004\342A\001\002\022\030\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\"\200"
-          + "\001\n\036DeletePrivateConnectionRequest\022D\n\004nam"
-          + "e\030\001 \001(\tB6\342A\001\002\372A/\n-vmwareengine.googleapi"
-          + "s.com/PrivateConnection\022\030\n\nrequest_id\030\002 "
-          + "\001(\tB\004\342A\001\001\"\232\001\n)ListPrivateConnectionPeeri"
-          + "ngRoutesRequest\022F\n\006parent\030\001 \001(\tB6\342A\001\002\372A/"
-          + "\n-vmwareengine.googleapis.com/PrivateCon"
-          + "nection\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-          + "\030\003 \001(\t\"\211\001\n*ListPrivateConnectionPeeringR"
-          + "outesResponse\022B\n\016peering_routes\030\001 \003(\0132*."
-          + "google.cloud.vmwareengine.v1.PeeringRout"
-          + "e\022\027\n\017next_page_token\030\002 \001(\t2\260H\n\014VmwareEng"
-          + "ine\022\310\001\n\021ListPrivateClouds\0226.google.cloud"
-          + ".vmwareengine.v1.ListPrivateCloudsReques"
-          + "t\0327.google.cloud.vmwareengine.v1.ListPri"
-          + "vateCloudsResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1"
-          + "/{parent=projects/*/locations/*}/private"
-          + "Clouds\022\265\001\n\017GetPrivateCloud\0224.google.clou"
-          + "d.vmwareengine.v1.GetPrivateCloudRequest"
-          + "\032*.google.cloud.vmwareengine.v1.PrivateC"
-          + "loud\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=projects/"
-          + "*/locations/*/privateClouds/*}\022\203\002\n\022Creat"
-          + "ePrivateCloud\0227.google.cloud.vmwareengin"
-          + "e.v1.CreatePrivateCloudRequest\032\035.google."
-          + "longrunning.Operation\"\224\001\312A!\n\014PrivateClou"
-          + "d\022\021OperationMetadata\332A%parent,private_cl"
-          + "oud,private_cloud_id\202\323\344\223\002B\"1/v1/{parent="
-          + "projects/*/locations/*}/privateClouds:\rp"
-          + "rivate_cloud\022\205\002\n\022UpdatePrivateCloud\0227.go"
-          + "ogle.cloud.vmwareengine.v1.UpdatePrivate"
-          + "CloudRequest\032\035.google.longrunning.Operat"
-          + "ion\"\226\001\312A!\n\014PrivateCloud\022\021OperationMetada"
-          + "ta\332A\031private_cloud,update_mask\202\323\344\223\002P2?/v"
-          + "1/{private_cloud.name=projects/*/locatio"
-          + "ns/*/privateClouds/*}:\rprivate_cloud\022\322\001\n"
-          + "\022DeletePrivateCloud\0227.google.cloud.vmwar"
-          + "eengine.v1.DeletePrivateCloudRequest\032\035.g"
-          + "oogle.longrunning.Operation\"d\312A!\n\014Privat"
-          + "eCloud\022\021OperationMetadata\332A\004name\202\323\344\223\0023*1"
-          + "/v1/{name=projects/*/locations/*/private"
-          + "Clouds/*}\022\342\001\n\024UndeletePrivateCloud\0229.goo"
-          + "gle.cloud.vmwareengine.v1.UndeletePrivat"
-          + "eCloudRequest\032\035.google.longrunning.Opera"
-          + "tion\"p\312A!\n\014PrivateCloud\022\021OperationMetada"
-          + "ta\332A\004name\202\323\344\223\002?\":/v1/{name=projects/*/lo"
-          + "cations/*/privateClouds/*}:undelete:\001*\022\304"
-          + "\001\n\014ListClusters\0221.google.cloud.vmwareeng"
-          + "ine.v1.ListClustersRequest\0322.google.clou"
-          + "d.vmwareengine.v1.ListClustersResponse\"M"
-          + "\332A\006parent\202\323\344\223\002>\022</v1/{parent=projects/*/"
-          + "locations/*/privateClouds/*}/clusters\022\261\001"
-          + "\n\nGetCluster\022/.google.cloud.vmwareengine"
-          + ".v1.GetClusterRequest\032%.google.cloud.vmw"
-          + "areengine.v1.Cluster\"K\332A\004name\202\323\344\223\002>\022</v1"
-          + "/{name=projects/*/locations/*/privateClo"
-          + "uds/*/clusters/*}\022\355\001\n\rCreateCluster\0222.go"
-          + "ogle.cloud.vmwareengine.v1.CreateCluster"
-          + "Request\032\035.google.longrunning.Operation\"\210"
-          + "\001\312A\034\n\007Cluster\022\021OperationMetadata\332A\031paren"
-          + "t,cluster,cluster_id\202\323\344\223\002G\"</v1/{parent="
-          + "projects/*/locations/*/privateClouds/*}/"
-          + "clusters:\007cluster\022\357\001\n\rUpdateCluster\0222.go"
-          + "ogle.cloud.vmwareengine.v1.UpdateCluster"
-          + "Request\032\035.google.longrunning.Operation\"\212"
-          + "\001\312A\034\n\007Cluster\022\021OperationMetadata\332A\023clust"
-          + "er,update_mask\202\323\344\223\002O2D/v1/{cluster.name="
-          + "projects/*/locations/*/privateClouds/*/c"
-          + "lusters/*}:\007cluster\022\334\001\n\rDeleteCluster\0222."
-          + "google.cloud.vmwareengine.v1.DeleteClust"
-          + "erRequest\032\035.google.longrunning.Operation"
-          + "\"x\312A*\n\025google.protobuf.Empty\022\021OperationM"
-          + "etadata\332A\004name\202\323\344\223\002>*</v1/{name=projects"
-          + "/*/locations/*/privateClouds/*/clusters/"
-          + "*}\022\300\001\n\013ListSubnets\0220.google.cloud.vmware"
-          + "engine.v1.ListSubnetsRequest\0321.google.cl"
-          + "oud.vmwareengine.v1.ListSubnetsResponse\""
-          + "L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=projects/*"
-          + "/locations/*/privateClouds/*}/subnets\022\255\001"
-          + "\n\tGetSubnet\022..google.cloud.vmwareengine."
-          + "v1.GetSubnetRequest\032$.google.cloud.vmwar"
-          + "eengine.v1.Subnet\"J\332A\004name\202\323\344\223\002=\022;/v1/{n"
+          + "\001(\t\022\020\n\010order_by\030\005 \001(\t\"\263\001\n%ListManagement"
+          + "DnsZoneBindingsResponse\022\\\n\034management_dn"
+          + "s_zone_bindings\030\001 \003(\01326.google.cloud.vmw"
+          + "areengine.v1.ManagementDnsZoneBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 "
+          + "\003(\t\"q\n\"GetManagementDnsZoneBindingReques"
+          + "t\022K\n\004name\030\001 \001(\tB=\342A\001\002\372A6\n4vmwareengine.g"
+          + "oogleapis.com/ManagementDnsZoneBinding\"\225"
+          + "\002\n%CreateManagementDnsZoneBindingRequest"
+          + "\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(vmwareengine."
+          + "googleapis.com/PrivateCloud\022a\n\033managemen"
+          + "t_dns_zone_binding\030\002 \001(\01326.google.cloud."
+          + "vmwareengine.v1.ManagementDnsZoneBinding"
+          + "B\004\342A\001\002\022,\n\036management_dns_zone_binding_id"
+          + "\030\003 \001(\tB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\"\333"
+          + "\001\n%UpdateManagementDnsZoneBindingRequest"
+          + "\0225\n\013update_mask\030\001 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\004\342A\001\002\022a\n\033management_dns_zone_b"
+          + "inding\030\002 \001(\01326.google.cloud.vmwareengine"
+          + ".v1.ManagementDnsZoneBindingB\004\342A\001\002\022\030\n\nre"
+          + "quest_id\030\003 \001(\tB\004\342A\001\001\"\216\001\n%DeleteManagemen"
+          + "tDnsZoneBindingRequest\022K\n\004name\030\001 \001(\tB=\342A"
+          + "\001\002\372A6\n4vmwareengine.googleapis.com/Manag"
+          + "ementDnsZoneBinding\022\030\n\nrequest_id\030\002 \001(\tB"
+          + "\004\342A\001\001\"\216\001\n%RepairManagementDnsZoneBinding"
+          + "Request\022K\n\004name\030\001 \001(\tB=\342A\001\002\372A6\n4vmwareen"
+          + "gine.googleapis.com/ManagementDnsZoneBin"
+          + "ding\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\206\002\n Creat"
+          + "eVmwareEngineNetworkRequest\022H\n\006parent\030\001 "
+          + "\001(\tB8\342A\001\002\372A1\022/vmwareengine.googleapis.co"
+          + "m/VmwareEngineNetwork\022&\n\030vmware_engine_n"
+          + "etwork_id\030\002 \001(\tB\004\342A\001\002\022V\n\025vmware_engine_n"
+          + "etwork\030\003 \001(\01321.google.cloud.vmwareengine"
+          + ".v1.VmwareEngineNetworkB\004\342A\001\002\022\030\n\nrequest"
+          + "_id\030\004 \001(\tB\004\342A\001\001\"\313\001\n UpdateVmwareEngineNe"
+          + "tworkRequest\022V\n\025vmware_engine_network\030\001 "
+          + "\001(\01321.google.cloud.vmwareengine.v1.Vmwar"
+          + "eEngineNetworkB\004\342A\001\002\0225\n\013update_mask\030\002 \001("
+          + "\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\022\030\n\nr"
+          + "equest_id\030\003 \001(\tB\004\342A\001\001\"\230\001\n DeleteVmwareEn"
+          + "gineNetworkRequest\022F\n\004name\030\001 \001(\tB8\342A\001\002\372A"
+          + "1\n/vmwareengine.googleapis.com/VmwareEng"
+          + "ineNetwork\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\022\022\n\004"
+          + "etag\030\003 \001(\tB\004\342A\001\001\"g\n\035GetVmwareEngineNetwo"
+          + "rkRequest\022F\n\004name\030\001 \001(\tB8\342A\001\002\372A1\n/vmware"
+          + "engine.googleapis.com/VmwareEngineNetwor"
+          + "k\"\246\001\n\037ListVmwareEngineNetworksRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.google"
+          + "apis.com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010orde"
+          + "r_by\030\005 \001(\t\"\243\001\n ListVmwareEngineNetworksR"
+          + "esponse\022Q\n\026vmware_engine_networks\030\001 \003(\0132"
+          + "1.google.cloud.vmwareengine.v1.VmwareEng"
+          + "ineNetwork\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013u"
+          + "nreachable\030\003 \003(\t\"\372\001\n\036CreatePrivateConnec"
+          + "tionRequest\022F\n\006parent\030\001 \001(\tB6\342A\001\002\372A/\022-vm"
+          + "wareengine.googleapis.com/PrivateConnect"
+          + "ion\022#\n\025private_connection_id\030\002 \001(\tB\004\342A\001\002"
+          + "\022Q\n\022private_connection\030\003 \001(\0132/.google.cl"
+          + "oud.vmwareengine.v1.PrivateConnectionB\004\342"
+          + "A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\"c\n\033GetPriv"
+          + "ateConnectionRequest\022D\n\004name\030\001 \001(\tB6\342A\001\002"
+          + "\372A/\n-vmwareengine.googleapis.com/Private"
+          + "Connection\"\260\001\n\035ListPrivateConnectionsReq"
+          + "uest\022F\n\006parent\030\001 \001(\tB6\342A\001\002\372A/\022-vmwareeng"
+          + "ine.googleapis.com/PrivateConnection\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006f"
+          + "ilter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\234\001\n\036ListPr"
+          + "ivateConnectionsResponse\022L\n\023private_conn"
+          + "ections\030\001 \003(\0132/.google.cloud.vmwareengin"
+          + "e.v1.PrivateConnection\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\304\001\n\036UpdateP"
+          + "rivateConnectionRequest\022Q\n\022private_conne"
+          + "ction\030\001 \001(\0132/.google.cloud.vmwareengine."
+          + "v1.PrivateConnectionB\004\342A\001\002\0225\n\013update_mas"
+          + "k\030\002 \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001"
+          + "\002\022\030\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\"\200\001\n\036DeletePr"
+          + "ivateConnectionRequest\022D\n\004name\030\001 \001(\tB6\342A"
+          + "\001\002\372A/\n-vmwareengine.googleapis.com/Priva"
+          + "teConnection\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\232"
+          + "\001\n)ListPrivateConnectionPeeringRoutesReq"
+          + "uest\022F\n\006parent\030\001 \001(\tB6\342A\001\002\372A/\n-vmwareeng"
+          + "ine.googleapis.com/PrivateConnection\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\211\001\n*"
+          + "ListPrivateConnectionPeeringRoutesRespon"
+          + "se\022B\n\016peering_routes\030\001 \003(\0132*.google.clou"
+          + "d.vmwareengine.v1.PeeringRoute\022\027\n\017next_p"
+          + "age_token\030\002 \001(\t\"\301\001\n\035GrantDnsBindPermissi"
+          + "onRequest\022D\n\004name\030\001 \001(\tB6\342A\001\002\372A/\n-vmware"
+          + "engine.googleapis.com/DnsBindPermission\022"
+          + "@\n\tprincipal\030\002 \001(\0132\'.google.cloud.vmware"
+          + "engine.v1.PrincipalB\004\342A\001\002\022\030\n\nrequest_id\030"
+          + "\003 \001(\tB\004\342A\001\001\"\302\001\n\036RevokeDnsBindPermissionR"
+          + "equest\022D\n\004name\030\001 \001(\tB6\342A\001\002\372A/\n-vmwareeng"
+          + "ine.googleapis.com/DnsBindPermission\022@\n\t"
+          + "principal\030\002 \001(\0132\'.google.cloud.vmwareeng"
+          + "ine.v1.PrincipalB\004\342A\001\002\022\030\n\nrequest_id\030\003 \001"
+          + "(\tB\004\342A\001\001\"c\n\033GetDnsBindPermissionRequest\022"
+          + "D\n\004name\030\001 \001(\tB6\342A\001\002\372A/\n-vmwareengine.goo"
+          + "gleapis.com/DnsBindPermission2\334\216\001\n\014Vmwar"
+          + "eEngine\022\310\001\n\021ListPrivateClouds\0226.google.c"
+          + "loud.vmwareengine.v1.ListPrivateCloudsRe"
+          + "quest\0327.google.cloud.vmwareengine.v1.Lis"
+          + "tPrivateCloudsResponse\"B\332A\006parent\202\323\344\223\0023\022"
+          + "1/v1/{parent=projects/*/locations/*}/pri"
+          + "vateClouds\022\265\001\n\017GetPrivateCloud\0224.google."
+          + "cloud.vmwareengine.v1.GetPrivateCloudReq"
+          + "uest\032*.google.cloud.vmwareengine.v1.Priv"
+          + "ateCloud\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=proje"
+          + "cts/*/locations/*/privateClouds/*}\022\203\002\n\022C"
+          + "reatePrivateCloud\0227.google.cloud.vmwaree"
+          + "ngine.v1.CreatePrivateCloudRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\224\001\312A!\n\014Private"
+          + "Cloud\022\021OperationMetadata\332A%parent,privat"
+          + "e_cloud,private_cloud_id\202\323\344\223\002B\"1/v1/{par"
+          + "ent=projects/*/locations/*}/privateCloud"
+          + "s:\rprivate_cloud\022\205\002\n\022UpdatePrivateCloud\022"
+          + "7.google.cloud.vmwareengine.v1.UpdatePri"
+          + "vateCloudRequest\032\035.google.longrunning.Op"
+          + "eration\"\226\001\312A!\n\014PrivateCloud\022\021OperationMe"
+          + "tadata\332A\031private_cloud,update_mask\202\323\344\223\002P"
+          + "2?/v1/{private_cloud.name=projects/*/loc"
+          + "ations/*/privateClouds/*}:\rprivate_cloud"
+          + "\022\322\001\n\022DeletePrivateCloud\0227.google.cloud.v"
+          + "mwareengine.v1.DeletePrivateCloudRequest"
+          + "\032\035.google.longrunning.Operation\"d\312A!\n\014Pr"
+          + "ivateCloud\022\021OperationMetadata\332A\004name\202\323\344\223",
+      "\0023*1/v1/{name=projects/*/locations/*/pri"
+          + "vateClouds/*}\022\342\001\n\024UndeletePrivateCloud\0229"
+          + ".google.cloud.vmwareengine.v1.UndeletePr"
+          + "ivateCloudRequest\032\035.google.longrunning.O"
+          + "peration\"p\312A!\n\014PrivateCloud\022\021OperationMe"
+          + "tadata\332A\004name\202\323\344\223\002?\":/v1/{name=projects/"
+          + "*/locations/*/privateClouds/*}:undelete:"
+          + "\001*\022\304\001\n\014ListClusters\0221.google.cloud.vmwar"
+          + "eengine.v1.ListClustersRequest\0322.google."
+          + "cloud.vmwareengine.v1.ListClustersRespon"
+          + "se\"M\332A\006parent\202\323\344\223\002>\022</v1/{parent=project"
+          + "s/*/locations/*/privateClouds/*}/cluster"
+          + "s\022\261\001\n\nGetCluster\022/.google.cloud.vmwareen"
+          + "gine.v1.GetClusterRequest\032%.google.cloud"
+          + ".vmwareengine.v1.Cluster\"K\332A\004name\202\323\344\223\002>\022"
+          + "</v1/{name=projects/*/locations/*/privat"
+          + "eClouds/*/clusters/*}\022\355\001\n\rCreateCluster\022"
+          + "2.google.cloud.vmwareengine.v1.CreateClu"
+          + "sterRequest\032\035.google.longrunning.Operati"
+          + "on\"\210\001\312A\034\n\007Cluster\022\021OperationMetadata\332A\031p"
+          + "arent,cluster,cluster_id\202\323\344\223\002G\"</v1/{par"
+          + "ent=projects/*/locations/*/privateClouds"
+          + "/*}/clusters:\007cluster\022\357\001\n\rUpdateCluster\022"
+          + "2.google.cloud.vmwareengine.v1.UpdateClu"
+          + "sterRequest\032\035.google.longrunning.Operati"
+          + "on\"\212\001\312A\034\n\007Cluster\022\021OperationMetadata\332A\023c"
+          + "luster,update_mask\202\323\344\223\002O2D/v1/{cluster.n"
           + "ame=projects/*/locations/*/privateClouds"
-          + "/*/subnets/*}\022\350\001\n\014UpdateSubnet\0221.google."
-          + "cloud.vmwareengine.v1.UpdateSubnetReques"
-          + "t\032\035.google.longrunning.Operation\"\205\001\312A\033\n\006"
-          + "Subnet\022\021OperationMetadata\332A\022subnet,updat"
-          + "e_mask\202\323\344\223\002L2B/v1/{subnet.name=projects/"
-          + "*/locations/*/privateClouds/*/subnets/*}"
-          + ":\006subnet\022\270\001\n\rListNodeTypes\0222.google.clou"
-          + "d.vmwareengine.v1.ListNodeTypesRequest\0323"
-          + ".google.cloud.vmwareengine.v1.ListNodeTy"
-          + "pesResponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{paren"
-          + "t=projects/*/locations/*}/nodeTypes\022\245\001\n\013"
-          + "GetNodeType\0220.google.cloud.vmwareengine."
-          + "v1.GetNodeTypeRequest\032&.google.cloud.vmw"
-          + "areengine.v1.NodeType\"<\332A\004name\202\323\344\223\002/\022-/v"
-          + "1/{name=projects/*/locations/*/nodeTypes"
-          + "/*}\022\337\001\n\022ShowNsxCredentials\0227.google.clou"
-          + "d.vmwareengine.v1.ShowNsxCredentialsRequ"
-          + "est\032).google.cloud.vmwareengine.v1.Crede"
-          + "ntials\"e\332A\rprivate_cloud\202\323\344\223\002O\022M/v1/{pri"
-          + "vate_cloud=projects/*/locations/*/privat"
-          + "eClouds/*}:showNsxCredentials\022\353\001\n\026ShowVc"
-          + "enterCredentials\022;.google.cloud.vmwareen"
-          + "gine.v1.ShowVcenterCredentialsRequest\032)."
-          + "google.cloud.vmwareengine.v1.Credentials"
-          + "\"i\332A\rprivate_cloud\202\323\344\223\002S\022Q/v1/{private_c"
-          + "loud=projects/*/locations/*/privateCloud"
-          + "s/*}:showVcenterCredentials\022\376\001\n\023ResetNsx"
-          + "Credentials\0228.google.cloud.vmwareengine."
-          + "v1.ResetNsxCredentialsRequest\032\035.google.l"
-          + "ongrunning.Operation\"\215\001\312A!\n\014PrivateCloud"
-          + "\022\021OperationMetadata\332A\rprivate_cloud\202\323\344\223\002"
-          + "S\"N/v1/{private_cloud=projects/*/locatio"
-          + "ns/*/privateClouds/*}:resetNsxCredential"
-          + "s:\001*\022\212\002\n\027ResetVcenterCredentials\022<.googl"
-          + "e.cloud.vmwareengine.v1.ResetVcenterCred"
-          + "entialsRequest\032\035.google.longrunning.Oper"
-          + "ation\"\221\001\312A!\n\014PrivateCloud\022\021OperationMeta"
-          + "data\332A\rprivate_cloud\202\323\344\223\002W\"R/v1/{private"
+          + "/*/clusters/*}:\007cluster\022\334\001\n\rDeleteCluste"
+          + "r\0222.google.cloud.vmwareengine.v1.DeleteC"
+          + "lusterRequest\032\035.google.longrunning.Opera"
+          + "tion\"x\312A*\n\025google.protobuf.Empty\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\002>*</v1/{name=proj"
+          + "ects/*/locations/*/privateClouds/*/clust"
+          + "ers/*}\022\303\001\n\tListNodes\022..google.cloud.vmwa"
+          + "reengine.v1.ListNodesRequest\032/.google.cl"
+          + "oud.vmwareengine.v1.ListNodesResponse\"U\332"
+          + "A\006parent\202\323\344\223\002F\022D/v1/{parent=projects/*/l"
+          + "ocations/*/privateClouds/*/clusters/*}/n"
+          + "odes\022\260\001\n\007GetNode\022,.google.cloud.vmwareen"
+          + "gine.v1.GetNodeRequest\032\".google.cloud.vm"
+          + "wareengine.v1.Node\"S\332A\004name\202\323\344\223\002F\022D/v1/{"
+          + "name=projects/*/locations/*/privateCloud"
+          + "s/*/clusters/*/nodes/*}\022\350\001\n\025ListExternal"
+          + "Addresses\022:.google.cloud.vmwareengine.v1"
+          + ".ListExternalAddressesRequest\032;.google.c"
+          + "loud.vmwareengine.v1.ListExternalAddress"
+          + "esResponse\"V\332A\006parent\202\323\344\223\002G\022E/v1/{parent"
+          + "=projects/*/locations/*/privateClouds/*}"
+          + "/externalAddresses\022\251\002\n#FetchNetworkPolic"
+          + "yExternalAddresses\022H.google.cloud.vmware"
+          + "engine.v1.FetchNetworkPolicyExternalAddr"
+          + "essesRequest\032I.google.cloud.vmwareengine"
+          + ".v1.FetchNetworkPolicyExternalAddressesR"
+          + "esponse\"m\332A\016network_policy\202\323\344\223\002V\022T/v1/{n"
+          + "etwork_policy=projects/*/locations/*/net"
+          + "workPolicies/*}:fetchExternalAddresses\022\322"
+          + "\001\n\022GetExternalAddress\0227.google.cloud.vmw"
+          + "areengine.v1.GetExternalAddressRequest\032-"
+          + ".google.cloud.vmwareengine.v1.ExternalAd"
+          + "dress\"T\332A\004name\202\323\344\223\002G\022E/v1/{name=projects"
+          + "/*/locations/*/privateClouds/*/externalA"
+          + "ddresses/*}\022\251\002\n\025CreateExternalAddress\022:."
+          + "google.cloud.vmwareengine.v1.CreateExter"
+          + "nalAddressRequest\032\035.google.longrunning.O"
+          + "peration\"\264\001\312A$\n\017ExternalAddress\022\021Operati"
+          + "onMetadata\332A+parent,external_address,ext"
+          + "ernal_address_id\202\323\344\223\002Y\"E/v1/{parent=proj"
+          + "ects/*/locations/*/privateClouds/*}/exte"
+          + "rnalAddresses:\020external_address\022\253\002\n\025Upda"
+          + "teExternalAddress\022:.google.cloud.vmwaree"
+          + "ngine.v1.UpdateExternalAddressRequest\032\035."
+          + "google.longrunning.Operation\"\266\001\312A$\n\017Exte"
+          + "rnalAddress\022\021OperationMetadata\332A\034externa"
+          + "l_address,update_mask\202\323\344\223\002j2V/v1/{extern"
+          + "al_address.name=projects/*/locations/*/p"
+          + "rivateClouds/*/externalAddresses/*}:\020ext"
+          + "ernal_address\022\366\001\n\025DeleteExternalAddress\022"
+          + ":.google.cloud.vmwareengine.v1.DeleteExt"
+          + "ernalAddressRequest\032\035.google.longrunning"
+          + ".Operation\"\201\001\312A*\n\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\002G*E/v1/{na"
+          + "me=projects/*/locations/*/privateClouds/"
+          + "*/externalAddresses/*}\022\300\001\n\013ListSubnets\0220"
+          + ".google.cloud.vmwareengine.v1.ListSubnet"
+          + "sRequest\0321.google.cloud.vmwareengine.v1."
+          + "ListSubnetsResponse\"L\332A\006parent\202\323\344\223\002=\022;/v"
+          + "1/{parent=projects/*/locations/*/private"
+          + "Clouds/*}/subnets\022\255\001\n\tGetSubnet\022..google"
+          + ".cloud.vmwareengine.v1.GetSubnetRequest\032"
+          + "$.google.cloud.vmwareengine.v1.Subnet\"J\332"
+          + "A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/locat"
+          + "ions/*/privateClouds/*/subnets/*}\022\350\001\n\014Up"
+          + "dateSubnet\0221.google.cloud.vmwareengine.v"
+          + "1.UpdateSubnetRequest\032\035.google.longrunni"
+          + "ng.Operation\"\205\001\312A\033\n\006Subnet\022\021OperationMet"
+          + "adata\332A\022subnet,update_mask\202\323\344\223\002L2B/v1/{s"
+          + "ubnet.name=projects/*/locations/*/privat"
+          + "eClouds/*/subnets/*}:\006subnet\022\362\001\n\027ListExt"
+          + "ernalAccessRules\022<.google.cloud.vmwareen"
+          + "gine.v1.ListExternalAccessRulesRequest\032="
+          + ".google.cloud.vmwareengine.v1.ListExtern"
+          + "alAccessRulesResponse\"Z\332A\006parent\202\323\344\223\002K\022I"
+          + "/v1/{parent=projects/*/locations/*/netwo"
+          + "rkPolicies/*}/externalAccessRules\022\337\001\n\025Ge"
+          + "tExternalAccessRule\022:.google.cloud.vmwar"
+          + "eengine.v1.GetExternalAccessRuleRequest\032"
+          + "0.google.cloud.vmwareengine.v1.ExternalA"
+          + "ccessRule\"X\332A\004name\202\323\344\223\002K\022I/v1/{name=proj"
+          + "ects/*/locations/*/networkPolicies/*/ext"
+          + "ernalAccessRules/*}\022\302\002\n\030CreateExternalAc"
+          + "cessRule\022=.google.cloud.vmwareengine.v1."
+          + "CreateExternalAccessRuleRequest\032\035.google"
+          + ".longrunning.Operation\"\307\001\312A\'\n\022ExternalAc"
+          + "cessRule\022\021OperationMetadata\332A3parent,ext"
+          + "ernal_access_rule,external_access_rule_i"
+          + "d\202\323\344\223\002a\"I/v1/{parent=projects/*/location"
+          + "s/*/networkPolicies/*}/externalAccessRul"
+          + "es:\024external_access_rule\022\304\002\n\030UpdateExter"
+          + "nalAccessRule\022=.google.cloud.vmwareengin"
+          + "e.v1.UpdateExternalAccessRuleRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\311\001\312A\'\n\022Exter"
+          + "nalAccessRule\022\021OperationMetadata\332A exter"
+          + "nal_access_rule,update_mask\202\323\344\223\002v2^/v1/{"
+          + "external_access_rule.name=projects/*/loc"
+          + "ations/*/networkPolicies/*/externalAcces"
+          + "sRules/*}:\024external_access_rule\022\200\002\n\030Dele"
+          + "teExternalAccessRule\022=.google.cloud.vmwa"
+          + "reengine.v1.DeleteExternalAccessRuleRequ"
+          + "est\032\035.google.longrunning.Operation\"\205\001\312A*"
+          + "\n\025google.protobuf.Empty\022\021OperationMetada"
+          + "ta\332A\004name\202\323\344\223\002K*I/v1/{name=projects/*/lo"
+          + "cations/*/networkPolicies/*/externalAcce"
+          + "ssRules/*}\022\334\001\n\022ListLoggingServers\0227.goog"
+          + "le.cloud.vmwareengine.v1.ListLoggingServ"
+          + "ersRequest\0328.google.cloud.vmwareengine.v"
+          + "1.ListLoggingServersResponse\"S\332A\006parent\202"
+          + "\323\344\223\002D\022B/v1/{parent=projects/*/locations/"
+          + "*/privateClouds/*}/loggingServers\022\311\001\n\020Ge"
+          + "tLoggingServer\0225.google.cloud.vmwareengi"
+          + "ne.v1.GetLoggingServerRequest\032+.google.c"
+          + "loud.vmwareengine.v1.LoggingServer\"Q\332A\004n"
+          + "ame\202\323\344\223\002D\022B/v1/{name=projects/*/location"
+          + "s/*/privateClouds/*/loggingServers/*}\022\232\002"
+          + "\n\023CreateLoggingServer\0228.google.cloud.vmw"
+          + "areengine.v1.CreateLoggingServerRequest\032"
+          + "\035.google.longrunning.Operation\"\251\001\312A\"\n\rLo"
+          + "ggingServer\022\021OperationMetadata\332A\'parent,"
+          + "logging_server,logging_server_id\202\323\344\223\002T\"B"
+          + "/v1/{parent=projects/*/locations/*/priva"
+          + "teClouds/*}/loggingServers:\016logging_serv"
+          + "er\022\234\002\n\023UpdateLoggingServer\0228.google.clou"
+          + "d.vmwareengine.v1.UpdateLoggingServerReq"
+          + "uest\032\035.google.longrunning.Operation\"\253\001\312A"
+          + "\"\n\rLoggingServer\022\021OperationMetadata\332A\032lo"
+          + "gging_server,update_mask\202\323\344\223\002c2Q/v1/{log"
+          + "ging_server.name=projects/*/locations/*/"
+          + "privateClouds/*/loggingServers/*}:\016loggi"
+          + "ng_server\022\356\001\n\023DeleteLoggingServer\0228.goog"
+          + "le.cloud.vmwareengine.v1.DeleteLoggingSe"
+          + "rverRequest\032\035.google.longrunning.Operati"
+          + "on\"~\312A*\n\025google.protobuf.Empty\022\021Operatio"
+          + "nMetadata\332A\004name\202\323\344\223\002D*B/v1/{name=projec"
+          + "ts/*/locations/*/privateClouds/*/logging"
+          + "Servers/*}\022\270\001\n\rListNodeTypes\0222.google.cl"
+          + "oud.vmwareengine.v1.ListNodeTypesRequest"
+          + "\0323.google.cloud.vmwareengine.v1.ListNode"
+          + "TypesResponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{par"
+          + "ent=projects/*/locations/*}/nodeTypes\022\245\001"
+          + "\n\013GetNodeType\0220.google.cloud.vmwareengin"
+          + "e.v1.GetNodeTypeRequest\032&.google.cloud.v"
+          + "mwareengine.v1.NodeType\"<\332A\004name\202\323\344\223\002/\022-"
+          + "/v1/{name=projects/*/locations/*/nodeTyp"
+          + "es/*}\022\337\001\n\022ShowNsxCredentials\0227.google.cl"
+          + "oud.vmwareengine.v1.ShowNsxCredentialsRe"
+          + "quest\032).google.cloud.vmwareengine.v1.Cre"
+          + "dentials\"e\332A\rprivate_cloud\202\323\344\223\002O\022M/v1/{p"
+          + "rivate_cloud=projects/*/locations/*/priv"
+          + "ateClouds/*}:showNsxCredentials\022\353\001\n\026Show"
+          + "VcenterCredentials\022;.google.cloud.vmware"
+          + "engine.v1.ShowVcenterCredentialsRequest\032"
+          + ").google.cloud.vmwareengine.v1.Credentia"
+          + "ls\"i\332A\rprivate_cloud\202\323\344\223\002S\022Q/v1/{private"
           + "_cloud=projects/*/locations/*/privateClo"
-          + "uds/*}:resetVcenterCredentials:\001*\022\262\002\n\026Cr"
-          + "eateHcxActivationKey\022;.google.cloud.vmwa"
-          + "reengine.v1.CreateHcxActivationKeyReques"
-          + "t\032\035.google.longrunning.Operation\"\273\001\312A%\n\020"
-          + "HcxActivationKey\022\021OperationMetadata\332A/pa"
-          + "rent,hcx_activation_key,hcx_activation_k"
-          + "ey_id\202\323\344\223\002[\"E/v1/{parent=projects/*/loca"
-          + "tions/*/privateClouds/*}/hcxActivationKe"
-          + "ys:\022hcx_activation_key\022\350\001\n\025ListHcxActiva"
-          + "tionKeys\022:.google.cloud.vmwareengine.v1."
-          + "ListHcxActivationKeysRequest\032;.google.cl"
-          + "oud.vmwareengine.v1.ListHcxActivationKey"
-          + "sResponse\"V\332A\006parent\202\323\344\223\002G\022E/v1/{parent="
-          + "projects/*/locations/*/privateClouds/*}/"
-          + "hcxActivationKeys\022\325\001\n\023GetHcxActivationKe"
-          + "y\0228.google.cloud.vmwareengine.v1.GetHcxA"
-          + "ctivationKeyRequest\032..google.cloud.vmwar"
-          + "eengine.v1.HcxActivationKey\"T\332A\004name\202\323\344\223"
-          + "\002G\022E/v1/{name=projects/*/locations/*/pri"
-          + "vateClouds/*/hcxActivationKeys/*}\022\272\001\n\020Ge"
-          + "tNetworkPolicy\0225.google.cloud.vmwareengi"
-          + "ne.v1.GetNetworkPolicyRequest\032+.google.c"
-          + "loud.vmwareengine.v1.NetworkPolicy\"B\332A\004n"
-          + "ame\202\323\344\223\0025\0223/v1/{name=projects/*/location"
-          + "s/*/networkPolicies/*}\022\320\001\n\023ListNetworkPo"
-          + "licies\0228.google.cloud.vmwareengine.v1.Li"
-          + "stNetworkPoliciesRequest\0329.google.cloud."
-          + "vmwareengine.v1.ListNetworkPoliciesRespo"
-          + "nse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{parent=projec"
-          + "ts/*/locations/*}/networkPolicies\022\213\002\n\023Cr"
-          + "eateNetworkPolicy\0228.google.cloud.vmwaree"
-          + "ngine.v1.CreateNetworkPolicyRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\232\001\312A\"\n\rNetwor"
-          + "kPolicy\022\021OperationMetadata\332A\'parent,netw"
-          + "ork_policy,network_policy_id\202\323\344\223\002E\"3/v1/"
-          + "{parent=projects/*/locations/*}/networkP"
-          + "olicies:\016network_policy\022\215\002\n\023UpdateNetwor"
-          + "kPolicy\0228.google.cloud.vmwareengine.v1.U"
-          + "pdateNetworkPolicyRequest\032\035.google.longr"
-          + "unning.Operation\"\234\001\312A\"\n\rNetworkPolicy\022\021O"
-          + "perationMetadata\332A\032network_policy,update"
-          + "_mask\202\323\344\223\002T2B/v1/{network_policy.name=pr"
-          + "ojects/*/locations/*/networkPolicies/*}:"
-          + "\016network_policy\022\337\001\n\023DeleteNetworkPolicy\022"
-          + "8.google.cloud.vmwareengine.v1.DeleteNet"
-          + "workPolicyRequest\032\035.google.longrunning.O"
-          + "peration\"o\312A*\n\025google.protobuf.Empty\022\021Op"
-          + "erationMetadata\332A\004name\202\323\344\223\0025*3/v1/{name="
-          + "projects/*/locations/*/networkPolicies/*"
-          + "}\022\267\002\n\031CreateVmwareEngineNetwork\022>.google"
-          + ".cloud.vmwareengine.v1.CreateVmwareEngin"
-          + "eNetworkRequest\032\035.google.longrunning.Ope"
-          + "ration\"\272\001\312A(\n\023VmwareEngineNetwork\022\021Opera"
-          + "tionMetadata\332A5parent,vmware_engine_netw"
-          + "ork,vmware_engine_network_id\202\323\344\223\002Q\"8/v1/"
-          + "{parent=projects/*/locations/*}/vmwareEn"
-          + "gineNetworks:\025vmware_engine_network\022\271\002\n\031"
-          + "UpdateVmwareEngineNetwork\022>.google.cloud"
-          + ".vmwareengine.v1.UpdateVmwareEngineNetwo"
-          + "rkRequest\032\035.google.longrunning.Operation"
-          + "\"\274\001\312A(\n\023VmwareEngineNetwork\022\021OperationMe"
-          + "tadata\332A!vmware_engine_network,update_ma"
-          + "sk\202\323\344\223\002g2N/v1/{vmware_engine_network.nam"
-          + "e=projects/*/locations/*/vmwareEngineNet"
-          + "works/*}:\025vmware_engine_network\022\360\001\n\031Dele"
-          + "teVmwareEngineNetwork\022>.google.cloud.vmw"
-          + "areengine.v1.DeleteVmwareEngineNetworkRe"
-          + "quest\032\035.google.longrunning.Operation\"t\312A"
-          + "*\n\025google.protobuf.Empty\022\021OperationMetad"
-          + "ata\332A\004name\202\323\344\223\002:*8/v1/{name=projects/*/l"
-          + "ocations/*/vmwareEngineNetworks/*}\022\321\001\n\026G"
-          + "etVmwareEngineNetwork\022;.google.cloud.vmw"
-          + "areengine.v1.GetVmwareEngineNetworkReque"
-          + "st\0321.google.cloud.vmwareengine.v1.Vmware"
-          + "EngineNetwork\"G\332A\004name\202\323\344\223\002:\0228/v1/{name="
-          + "projects/*/locations/*/vmwareEngineNetwo"
-          + "rks/*}\022\344\001\n\030ListVmwareEngineNetworks\022=.go"
-          + "ogle.cloud.vmwareengine.v1.ListVmwareEng"
-          + "ineNetworksRequest\032>.google.cloud.vmware"
-          + "engine.v1.ListVmwareEngineNetworksRespon"
-          + "se\"I\332A\006parent\202\323\344\223\002:\0228/v1/{parent=project"
-          + "s/*/locations/*}/vmwareEngineNetworks\022\246\002"
-          + "\n\027CreatePrivateConnection\022<.google.cloud"
-          + ".vmwareengine.v1.CreatePrivateConnection"
-          + "Request\032\035.google.longrunning.Operation\"\255"
-          + "\001\312A&\n\021PrivateConnection\022\021OperationMetada"
-          + "ta\332A/parent,private_connection,private_c"
-          + "onnection_id\202\323\344\223\002L\"6/v1/{parent=projects"
-          + "/*/locations/*}/privateConnections:\022priv"
-          + "ate_connection\022\311\001\n\024GetPrivateConnection\022"
-          + "9.google.cloud.vmwareengine.v1.GetPrivat",
-      "eConnectionRequest\032/.google.cloud.vmware"
-          + "engine.v1.PrivateConnection\"E\332A\004name\202\323\344\223"
-          + "\0028\0226/v1/{name=projects/*/locations/*/pri"
-          + "vateConnections/*}\022\334\001\n\026ListPrivateConnec"
-          + "tions\022;.google.cloud.vmwareengine.v1.Lis"
-          + "tPrivateConnectionsRequest\032<.google.clou"
-          + "d.vmwareengine.v1.ListPrivateConnections"
-          + "Response\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=p"
-          + "rojects/*/locations/*}/privateConnection"
-          + "s\022\250\002\n\027UpdatePrivateConnection\022<.google.c"
-          + "loud.vmwareengine.v1.UpdatePrivateConnec"
-          + "tionRequest\032\035.google.longrunning.Operati"
-          + "on\"\257\001\312A&\n\021PrivateConnection\022\021OperationMe"
-          + "tadata\332A\036private_connection,update_mask\202"
-          + "\323\344\223\002_2I/v1/{private_connection.name=proj"
-          + "ects/*/locations/*/privateConnections/*}"
-          + ":\022private_connection\022\352\001\n\027DeletePrivateCo"
-          + "nnection\022<.google.cloud.vmwareengine.v1."
-          + "DeletePrivateConnectionRequest\032\035.google."
-          + "longrunning.Operation\"r\312A*\n\025google.proto"
+          + "uds/*}:showVcenterCredentials\022\376\001\n\023ResetN"
+          + "sxCredentials\0228.google.cloud.vmwareengin"
+          + "e.v1.ResetNsxCredentialsRequest\032\035.google"
+          + ".longrunning.Operation\"\215\001\312A!\n\014PrivateClo"
+          + "ud\022\021OperationMetadata\332A\rprivate_cloud\202\323\344"
+          + "\223\002S\"N/v1/{private_cloud=projects/*/locat"
+          + "ions/*/privateClouds/*}:resetNsxCredenti"
+          + "als:\001*\022\212\002\n\027ResetVcenterCredentials\022<.goo"
+          + "gle.cloud.vmwareengine.v1.ResetVcenterCr"
+          + "edentialsRequest\032\035.google.longrunning.Op"
+          + "eration\"\221\001\312A!\n\014PrivateCloud\022\021OperationMe"
+          + "tadata\332A\rprivate_cloud\202\323\344\223\002W\"R/v1/{priva"
+          + "te_cloud=projects/*/locations/*/privateC"
+          + "louds/*}:resetVcenterCredentials:\001*\022\306\001\n\020"
+          + "GetDnsForwarding\0225.google.cloud.vmwareen"
+          + "gine.v1.GetDnsForwardingRequest\032+.google"
+          + ".cloud.vmwareengine.v1.DnsForwarding\"N\332A"
+          + "\004name\202\323\344\223\002A\022?/v1/{name=projects/*/locati"
+          + "ons/*/privateClouds/*/dnsForwarding}\022\231\002\n"
+          + "\023UpdateDnsForwarding\0228.google.cloud.vmwa"
+          + "reengine.v1.UpdateDnsForwardingRequest\032\035"
+          + ".google.longrunning.Operation\"\250\001\312A\"\n\rDns"
+          + "Forwarding\022\021OperationMetadata\332A\032dns_forw"
+          + "arding,update_mask\202\323\344\223\002`2N/v1/{dns_forwa"
+          + "rding.name=projects/*/locations/*/privat"
+          + "eClouds/*/dnsForwarding}:\016dns_forwarding"
+          + "\022\275\001\n\021GetNetworkPeering\0226.google.cloud.vm"
+          + "wareengine.v1.GetNetworkPeeringRequest\032,"
+          + ".google.cloud.vmwareengine.v1.NetworkPee"
+          + "ring\"B\332A\004name\202\323\344\223\0025\0223/v1/{name=projects/"
+          + "*/locations/*/networkPeerings/*}\022\320\001\n\023Lis"
+          + "tNetworkPeerings\0228.google.cloud.vmwareen"
+          + "gine.v1.ListNetworkPeeringsRequest\0329.goo"
+          + "gle.cloud.vmwareengine.v1.ListNetworkPee"
+          + "ringsResponse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{par"
+          + "ent=projects/*/locations/*}/networkPeeri"
+          + "ngs\022\221\002\n\024CreateNetworkPeering\0229.google.cl"
+          + "oud.vmwareengine.v1.CreateNetworkPeering"
+          + "Request\032\035.google.longrunning.Operation\"\236"
+          + "\001\312A#\n\016NetworkPeering\022\021OperationMetadata\332"
+          + "A)parent,network_peering,network_peering"
+          + "_id\202\323\344\223\002F\"3/v1/{parent=projects/*/locati"
+          + "ons/*}/networkPeerings:\017network_peering\022"
+          + "\341\001\n\024DeleteNetworkPeering\0229.google.cloud."
+          + "vmwareengine.v1.DeleteNetworkPeeringRequ"
+          + "est\032\035.google.longrunning.Operation\"o\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadat"
+          + "a\332A\004name\202\323\344\223\0025*3/v1/{name=projects/*/loc"
+          + "ations/*/networkPeerings/*}\022\223\002\n\024UpdateNe"
+          + "tworkPeering\0229.google.cloud.vmwareengine"
+          + ".v1.UpdateNetworkPeeringRequest\032\035.google"
+          + ".longrunning.Operation\"\240\001\312A#\n\016NetworkPee"
+          + "ring\022\021OperationMetadata\332A\033network_peerin"
+          + "g,update_mask\202\323\344\223\002V2C/v1/{network_peerin"
+          + "g.name=projects/*/locations/*/networkPee"
+          + "rings/*}:\017network_peering\022\332\001\n\021ListPeerin"
+          + "gRoutes\0226.google.cloud.vmwareengine.v1.L"
+          + "istPeeringRoutesRequest\0327.google.cloud.v"
+          + "mwareengine.v1.ListPeeringRoutesResponse"
+          + "\"T\332A\006parent\202\323\344\223\002E\022C/v1/{parent=projects/"
+          + "*/locations/*/networkPeerings/*}/peering"
+          + "Routes\022\262\002\n\026CreateHcxActivationKey\022;.goog"
+          + "le.cloud.vmwareengine.v1.CreateHcxActiva"
+          + "tionKeyRequest\032\035.google.longrunning.Oper"
+          + "ation\"\273\001\312A%\n\020HcxActivationKey\022\021Operation"
+          + "Metadata\332A/parent,hcx_activation_key,hcx"
+          + "_activation_key_id\202\323\344\223\002[\"E/v1/{parent=pr"
+          + "ojects/*/locations/*/privateClouds/*}/hc"
+          + "xActivationKeys:\022hcx_activation_key\022\350\001\n\025"
+          + "ListHcxActivationKeys\022:.google.cloud.vmw"
+          + "areengine.v1.ListHcxActivationKeysReques"
+          + "t\032;.google.cloud.vmwareengine.v1.ListHcx"
+          + "ActivationKeysResponse\"V\332A\006parent\202\323\344\223\002G\022"
+          + "E/v1/{parent=projects/*/locations/*/priv"
+          + "ateClouds/*}/hcxActivationKeys\022\325\001\n\023GetHc"
+          + "xActivationKey\0228.google.cloud.vmwareengi"
+          + "ne.v1.GetHcxActivationKeyRequest\032..googl"
+          + "e.cloud.vmwareengine.v1.HcxActivationKey"
+          + "\"T\332A\004name\202\323\344\223\002G\022E/v1/{name=projects/*/lo"
+          + "cations/*/privateClouds/*/hcxActivationK"
+          + "eys/*}\022\272\001\n\020GetNetworkPolicy\0225.google.clo"
+          + "ud.vmwareengine.v1.GetNetworkPolicyReque"
+          + "st\032+.google.cloud.vmwareengine.v1.Networ"
+          + "kPolicy\"B\332A\004name\202\323\344\223\0025\0223/v1/{name=projec"
+          + "ts/*/locations/*/networkPolicies/*}\022\320\001\n\023"
+          + "ListNetworkPolicies\0228.google.cloud.vmwar"
+          + "eengine.v1.ListNetworkPoliciesRequest\0329."
+          + "google.cloud.vmwareengine.v1.ListNetwork"
+          + "PoliciesResponse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{"
+          + "parent=projects/*/locations/*}/networkPo"
+          + "licies\022\213\002\n\023CreateNetworkPolicy\0228.google."
+          + "cloud.vmwareengine.v1.CreateNetworkPolic"
+          + "yRequest\032\035.google.longrunning.Operation\""
+          + "\232\001\312A\"\n\rNetworkPolicy\022\021OperationMetadata\332"
+          + "A\'parent,network_policy,network_policy_i"
+          + "d\202\323\344\223\002E\"3/v1/{parent=projects/*/location"
+          + "s/*}/networkPolicies:\016network_policy\022\215\002\n"
+          + "\023UpdateNetworkPolicy\0228.google.cloud.vmwa"
+          + "reengine.v1.UpdateNetworkPolicyRequest\032\035"
+          + ".google.longrunning.Operation\"\234\001\312A\"\n\rNet"
+          + "workPolicy\022\021OperationMetadata\332A\032network_"
+          + "policy,update_mask\202\323\344\223\002T2B/v1/{network_p"
+          + "olicy.name=projects/*/locations/*/networ"
+          + "kPolicies/*}:\016network_policy\022\337\001\n\023DeleteN"
+          + "etworkPolicy\0228.google.cloud.vmwareengine"
+          + ".v1.DeleteNetworkPolicyRequest\032\035.google."
+          + "longrunning.Operation\"o\312A*\n\025google.proto"
           + "buf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
-          + "8*6/v1/{name=projects/*/locations/*/priv"
-          + "ateConnections/*}\022\220\002\n\"ListPrivateConnect"
-          + "ionPeeringRoutes\022G.google.cloud.vmwareen"
-          + "gine.v1.ListPrivateConnectionPeeringRout"
-          + "esRequest\032H.google.cloud.vmwareengine.v1"
-          + ".ListPrivateConnectionPeeringRoutesRespo"
-          + "nse\"W\332A\006parent\202\323\344\223\002H\022F/v1/{parent=projec"
-          + "ts/*/locations/*/privateConnections/*}/p"
-          + "eeringRoutes\032O\312A\033vmwareengine.googleapis"
-          + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\256\002\n com.google.cloud.vmwar"
-          + "eengine.v1B\021VmwareengineProtoP\001ZDcloud.g"
-          + "oogle.com/go/vmwareengine/apiv1/vmwareen"
-          + "ginepb;vmwareenginepb\252\002\034Google.Cloud.Vmw"
-          + "areEngine.V1\312\002\034Google\\Cloud\\VmwareEngine"
-          + "\\V1\352\002\037Google::Cloud::VmwareEngine::V1\352AN"
-          + "\n\036compute.googleapis.com/Network\022,projec"
-          + "ts/{project}/global/networks/{network}b\006"
-          + "proto3"
+          + "5*3/v1/{name=projects/*/locations/*/netw"
+          + "orkPolicies/*}\022\210\002\n\035ListManagementDnsZone"
+          + "Bindings\022B.google.cloud.vmwareengine.v1."
+          + "ListManagementDnsZoneBindingsRequest\032C.g"
+          + "oogle.cloud.vmwareengine.v1.ListManageme"
+          + "ntDnsZoneBindingsResponse\"^\332A\006parent\202\323\344\223"
+          + "\002O\022M/v1/{parent=projects/*/locations/*/p"
+          + "rivateClouds/*}/managementDnsZoneBinding"
+          + "s\022\365\001\n\033GetManagementDnsZoneBinding\022@.goog"
+          + "le.cloud.vmwareengine.v1.GetManagementDn"
+          + "sZoneBindingRequest\0326.google.cloud.vmwar"
+          + "eengine.v1.ManagementDnsZoneBinding\"\\\332A\004"
+          + "name\202\323\344\223\002O\022M/v1/{name=projects/*/locatio"
+          + "ns/*/privateClouds/*/managementDnsZoneBi"
+          + "ndings/*}\022\355\002\n\036CreateManagementDnsZoneBin"
+          + "ding\022C.google.cloud.vmwareengine.v1.Crea"
+          + "teManagementDnsZoneBindingRequest\032\035.goog"
+          + "le.longrunning.Operation\"\346\001\312A-\n\030Manageme"
+          + "ntDnsZoneBinding\022\021OperationMetadata\332AApa"
+          + "rent,management_dns_zone_binding,managem"
+          + "ent_dns_zone_binding_id\202\323\344\223\002l\"M/v1/{pare"
+          + "nt=projects/*/locations/*/privateClouds/"
+          + "*}/managementDnsZoneBindings:\033management"
+          + "_dns_zone_binding\022\360\002\n\036UpdateManagementDn"
+          + "sZoneBinding\022C.google.cloud.vmwareengine"
+          + ".v1.UpdateManagementDnsZoneBindingReques"
+          + "t\032\035.google.longrunning.Operation\"\351\001\312A-\n\030"
+          + "ManagementDnsZoneBinding\022\021OperationMetad"
+          + "ata\332A\'management_dns_zone_binding,update"
+          + "_mask\202\323\344\223\002\210\0012i/v1/{management_dns_zone_b"
+          + "inding.name=projects/*/locations/*/priva"
+          + "teClouds/*/managementDnsZoneBindings/*}:"
+          + "\033management_dns_zone_binding\022\220\002\n\036DeleteM"
+          + "anagementDnsZoneBinding\022C.google.cloud.v"
+          + "mwareengine.v1.DeleteManagementDnsZoneBi"
+          + "ndingRequest\032\035.google.longrunning.Operat"
+          + "ion\"\211\001\312A*\n\025google.protobuf.Empty\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\002O*M/v1/{name=proj"
+          + "ects/*/locations/*/privateClouds/*/manag"
+          + "ementDnsZoneBindings/*}\022\235\002\n\036RepairManage"
+          + "mentDnsZoneBinding\022C.google.cloud.vmware"
+          + "engine.v1.RepairManagementDnsZoneBinding"
+          + "Request\032\035.google.longrunning.Operation\"\226"
+          + "\001\312A-\n\030ManagementDnsZoneBinding\022\021Operatio"
+          + "nMetadata\332A\004name\202\323\344\223\002Y\"T/v1/{name=projec"
+          + "ts/*/locations/*/privateClouds/*/managem"
+          + "entDnsZoneBindings/*}:repair:\001*\022\267\002\n\031Crea"
+          + "teVmwareEngineNetwork\022>.google.cloud.vmw"
+          + "areengine.v1.CreateVmwareEngineNetworkRe"
+          + "quest\032\035.google.longrunning.Operation\"\272\001\312"
+          + "A(\n\023VmwareEngineNetwork\022\021OperationMetada"
+          + "ta\332A5parent,vmware_engine_network,vmware"
+          + "_engine_network_id\202\323\344\223\002Q\"8/v1/{parent=pr"
+          + "ojects/*/locations/*}/vmwareEngineNetwor"
+          + "ks:\025vmware_engine_network\022\271\002\n\031UpdateVmwa"
+          + "reEngineNetwork\022>.google.cloud.vmwareeng"
+          + "ine.v1.UpdateVmwareEngineNetworkRequest\032"
+          + "\035.google.longrunning.Operation\"\274\001\312A(\n\023Vm"
+          + "wareEngineNetwork\022\021OperationMetadata\332A!v"
+          + "mware_engine_network,update_mask\202\323\344\223\002g2N"
+          + "/v1/{vmware_engine_network.name=projects"
+          + "/*/locations/*/vmwareEngineNetworks/*}:\025"
+          + "vmware_engine_network\022\360\001\n\031DeleteVmwareEn"
+          + "gineNetwork\022>.google.cloud.vmwareengine."
+          + "v1.DeleteVmwareEngineNetworkRequest\032\035.go"
+          + "ogle.longrunning.Operation\"t\312A*\n\025google."
+          + "protobuf.Empty\022\021OperationMetadata\332A\004name"
+          + "\202\323\344\223\002:*8/v1/{name=projects/*/locations/*"
+          + "/vmwareEngineNetworks/*}\022\321\001\n\026GetVmwareEn"
+          + "gineNetwork\022;.google.cloud.vmwareengine."
+          + "v1.GetVmwareEngineNetworkRequest\0321.googl"
+          + "e.cloud.vmwareengine.v1.VmwareEngineNetw"
+          + "ork\"G\332A\004name\202\323\344\223\002:\0228/v1/{name=projects/*"
+          + "/locations/*/vmwareEngineNetworks/*}\022\344\001\n"
+          + "\030ListVmwareEngineNetworks\022=.google.cloud"
+          + ".vmwareengine.v1.ListVmwareEngineNetwork"
+          + "sRequest\032>.google.cloud.vmwareengine.v1."
+          + "ListVmwareEngineNetworksResponse\"I\332A\006par"
+          + "ent\202\323\344\223\002:\0228/v1/{parent=projects/*/locati"
+          + "ons/*}/vmwareEngineNetworks\022\246\002\n\027CreatePr"
+          + "ivateConnection\022<.google.cloud.vmwareeng"
+          + "ine.v1.CreatePrivateConnectionRequest\032\035."
+          + "google.longrunning.Operation\"\255\001\312A&\n\021Priv"
+          + "ateConnection\022\021OperationMetadata\332A/paren"
+          + "t,private_connection,private_connection_"
+          + "id\202\323\344\223\002L\"6/v1/{parent=projects/*/locatio"
+          + "ns/*}/privateConnections:\022private_connec"
+          + "tion\022\311\001\n\024GetPrivateConnection\0229.google.c"
+          + "loud.vmwareengine.v1.GetPrivateConnectio"
+          + "nRequest\032/.google.cloud.vmwareengine.v1."
+          + "PrivateConnection\"E\332A\004name\202\323\344\223\0028\0226/v1/{n"
+          + "ame=projects/*/locations/*/privateConnec"
+          + "tions/*}\022\334\001\n\026ListPrivateConnections\022;.go"
+          + "ogle.cloud.vmwareengine.v1.ListPrivateCo"
+          + "nnectionsRequest\032<.google.cloud.vmwareen"
+          + "gine.v1.ListPrivateConnectionsResponse\"G"
+          + "\332A\006parent\202\323\344\223\0028\0226/v1/{parent=projects/*/"
+          + "locations/*}/privateConnections\022\250\002\n\027Upda"
+          + "tePrivateConnection\022<.google.cloud.vmwar"
+          + "eengine.v1.UpdatePrivateConnectionReques"
+          + "t\032\035.google.longrunning.Operation\"\257\001\312A&\n\021"
+          + "PrivateConnection\022\021OperationMetadata\332A\036p"
+          + "rivate_connection,update_mask\202\323\344\223\002_2I/v1"
+          + "/{private_connection.name=projects/*/loc"
+          + "ations/*/privateConnections/*}:\022private_"
+          + "connection\022\352\001\n\027DeletePrivateConnection\022<"
+          + ".google.cloud.vmwareengine.v1.DeletePriv"
+          + "ateConnectionRequest\032\035.google.longrunnin",
+      "g.Operation\"r\312A*\n\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\0028*6/v1/{na"
+          + "me=projects/*/locations/*/privateConnect"
+          + "ions/*}\022\220\002\n\"ListPrivateConnectionPeering"
+          + "Routes\022G.google.cloud.vmwareengine.v1.Li"
+          + "stPrivateConnectionPeeringRoutesRequest\032"
+          + "H.google.cloud.vmwareengine.v1.ListPriva"
+          + "teConnectionPeeringRoutesResponse\"W\332A\006pa"
+          + "rent\202\323\344\223\002H\022F/v1/{parent=projects/*/locat"
+          + "ions/*/privateConnections/*}/peeringRout"
+          + "es\022\364\001\n\026GrantDnsBindPermission\022;.google.c"
+          + "loud.vmwareengine.v1.GrantDnsBindPermiss"
+          + "ionRequest\032\035.google.longrunning.Operatio"
+          + "n\"~\312A&\n\021DnsBindPermission\022\021OperationMeta"
+          + "data\332A\016name,principal\202\323\344\223\002>\"9/v1/{name=p"
+          + "rojects/*/locations/*/dnsBindPermission}"
+          + ":grant:\001*\022\306\001\n\024GetDnsBindPermission\0229.goo"
+          + "gle.cloud.vmwareengine.v1.GetDnsBindPerm"
+          + "issionRequest\032/.google.cloud.vmwareengin"
+          + "e.v1.DnsBindPermission\"B\332A\004name\202\323\344\223\0025\0223/"
+          + "v1/{name=projects/*/locations/*/dnsBindP"
+          + "ermission}\022\367\001\n\027RevokeDnsBindPermission\022<"
+          + ".google.cloud.vmwareengine.v1.RevokeDnsB"
+          + "indPermissionRequest\032\035.google.longrunnin"
+          + "g.Operation\"\177\312A&\n\021DnsBindPermission\022\021Ope"
+          + "rationMetadata\332A\016name,principal\202\323\344\223\002?\":/"
+          + "v1/{name=projects/*/locations/*/dnsBindP"
+          + "ermission}:revoke:\001*\032O\312A\033vmwareengine.go"
+          + "ogleapis.com\322A.https://www.googleapis.co"
+          + "m/auth/cloud-platformB\256\002\n com.google.clo"
+          + "ud.vmwareengine.v1B\021VmwareengineProtoP\001Z"
+          + "Dcloud.google.com/go/vmwareengine/apiv1/"
+          + "vmwareenginepb;vmwareenginepb\252\002\034Google.C"
+          + "loud.VmwareEngine.V1\312\002\034Google\\Cloud\\Vmwa"
+          + "reEngine\\V1\352\002\037Google::Cloud::VmwareEngin"
+          + "e::V1\352AN\n\036compute.googleapis.com/Network"
+          + "\022,projects/{project}/global/networks/{ne"
+          + "twork}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto.getDescriptor(),
-              com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
-              com.google.protobuf.FieldMaskProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_vmwareengine_v1_ListPrivateCloudsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -791,8 +1362,96 @@ public final class VmwareengineProto {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_vmwareengine_v1_ListSubnetsRequest_descriptor =
+    internal_static_google_cloud_vmwareengine_v1_ListNodesRequest_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_vmwareengine_v1_ListNodesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListNodesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListNodesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_vmwareengine_v1_ListNodesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListNodesResponse_descriptor,
+            new java.lang.String[] {
+              "Nodes", "NextPageToken",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetNodeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_vmwareengine_v1_GetNodeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetNodeRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListExternalAddressesResponse_descriptor,
+            new java.lang.String[] {
+              "ExternalAddresses", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesRequest_descriptor,
+            new java.lang.String[] {
+              "NetworkPolicy", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_FetchNetworkPolicyExternalAddressesResponse_descriptor,
+            new java.lang.String[] {
+              "ExternalAddresses", "NextPageToken",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetExternalAddressRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_vmwareengine_v1_GetExternalAddressRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetExternalAddressRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_CreateExternalAddressRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_vmwareengine_v1_CreateExternalAddressRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_CreateExternalAddressRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ExternalAddress", "ExternalAddressId", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_UpdateExternalAddressRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_vmwareengine_v1_UpdateExternalAddressRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_UpdateExternalAddressRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "ExternalAddress", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_DeleteExternalAddressRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_vmwareengine_v1_DeleteExternalAddressRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_DeleteExternalAddressRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListSubnetsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_vmwareengine_v1_ListSubnetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListSubnetsRequest_descriptor,
@@ -800,7 +1459,7 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_vmwareengine_v1_ListSubnetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_vmwareengine_v1_ListSubnetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListSubnetsResponse_descriptor,
@@ -808,7 +1467,7 @@ public final class VmwareengineProto {
               "Subnets", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmwareengine_v1_GetSubnetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_vmwareengine_v1_GetSubnetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_GetSubnetRequest_descriptor,
@@ -816,15 +1475,111 @@ public final class VmwareengineProto {
               "Name",
             });
     internal_static_google_cloud_vmwareengine_v1_UpdateSubnetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_vmwareengine_v1_UpdateSubnetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_UpdateSubnetRequest_descriptor,
             new java.lang.String[] {
               "UpdateMask", "Subnet",
             });
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(28);
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListExternalAccessRulesResponse_descriptor,
+            new java.lang.String[] {
+              "ExternalAccessRules", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetExternalAccessRuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_vmwareengine_v1_GetExternalAccessRuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetExternalAccessRuleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_CreateExternalAccessRuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_vmwareengine_v1_CreateExternalAccessRuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_CreateExternalAccessRuleRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ExternalAccessRule", "ExternalAccessRuleId", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_UpdateExternalAccessRuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_vmwareengine_v1_UpdateExternalAccessRuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_UpdateExternalAccessRuleRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "ExternalAccessRule", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_DeleteExternalAccessRuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_vmwareengine_v1_DeleteExternalAccessRuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_DeleteExternalAccessRuleRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListLoggingServersRequest_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_vmwareengine_v1_ListLoggingServersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListLoggingServersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListLoggingServersResponse_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_vmwareengine_v1_ListLoggingServersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListLoggingServersResponse_descriptor,
+            new java.lang.String[] {
+              "LoggingServers", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetLoggingServerRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_vmwareengine_v1_GetLoggingServerRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetLoggingServerRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_CreateLoggingServerRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_vmwareengine_v1_CreateLoggingServerRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_CreateLoggingServerRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "LoggingServer", "LoggingServerId", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_UpdateLoggingServerRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_vmwareengine_v1_UpdateLoggingServerRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_UpdateLoggingServerRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "LoggingServer", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_DeleteLoggingServerRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_vmwareengine_v1_DeleteLoggingServerRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_DeleteLoggingServerRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
     internal_static_google_cloud_vmwareengine_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_vmwareengine_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_OperationMetadata_descriptor,
@@ -838,7 +1593,7 @@ public final class VmwareengineProto {
               "ApiVersion",
             });
     internal_static_google_cloud_vmwareengine_v1_ListNodeTypesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_vmwareengine_v1_ListNodeTypesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListNodeTypesRequest_descriptor,
@@ -846,7 +1601,7 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_vmwareengine_v1_ListNodeTypesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_vmwareengine_v1_ListNodeTypesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListNodeTypesResponse_descriptor,
@@ -854,7 +1609,7 @@ public final class VmwareengineProto {
               "NodeTypes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmwareengine_v1_GetNodeTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_vmwareengine_v1_GetNodeTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_GetNodeTypeRequest_descriptor,
@@ -862,7 +1617,7 @@ public final class VmwareengineProto {
               "Name",
             });
     internal_static_google_cloud_vmwareengine_v1_ShowNsxCredentialsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_vmwareengine_v1_ShowNsxCredentialsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ShowNsxCredentialsRequest_descriptor,
@@ -870,15 +1625,15 @@ public final class VmwareengineProto {
               "PrivateCloud",
             });
     internal_static_google_cloud_vmwareengine_v1_ShowVcenterCredentialsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_vmwareengine_v1_ShowVcenterCredentialsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ShowVcenterCredentialsRequest_descriptor,
             new java.lang.String[] {
-              "PrivateCloud",
+              "PrivateCloud", "Username",
             });
     internal_static_google_cloud_vmwareengine_v1_ResetNsxCredentialsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_vmwareengine_v1_ResetNsxCredentialsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ResetNsxCredentialsRequest_descriptor,
@@ -886,15 +1641,15 @@ public final class VmwareengineProto {
               "PrivateCloud", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_ResetVcenterCredentialsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_vmwareengine_v1_ResetVcenterCredentialsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ResetVcenterCredentialsRequest_descriptor,
             new java.lang.String[] {
-              "PrivateCloud", "RequestId",
+              "PrivateCloud", "RequestId", "Username",
             });
     internal_static_google_cloud_vmwareengine_v1_ListHcxActivationKeysResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_vmwareengine_v1_ListHcxActivationKeysResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListHcxActivationKeysResponse_descriptor,
@@ -902,7 +1657,7 @@ public final class VmwareengineProto {
               "HcxActivationKeys", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmwareengine_v1_ListHcxActivationKeysRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_vmwareengine_v1_ListHcxActivationKeysRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListHcxActivationKeysRequest_descriptor,
@@ -910,7 +1665,7 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_vmwareengine_v1_GetHcxActivationKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_vmwareengine_v1_GetHcxActivationKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_GetHcxActivationKeyRequest_descriptor,
@@ -918,15 +1673,95 @@ public final class VmwareengineProto {
               "Name",
             });
     internal_static_google_cloud_vmwareengine_v1_CreateHcxActivationKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_vmwareengine_v1_CreateHcxActivationKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_CreateHcxActivationKeyRequest_descriptor,
             new java.lang.String[] {
               "Parent", "HcxActivationKey", "HcxActivationKeyId", "RequestId",
             });
+    internal_static_google_cloud_vmwareengine_v1_GetDnsForwardingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(52);
+    internal_static_google_cloud_vmwareengine_v1_GetDnsForwardingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetDnsForwardingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_UpdateDnsForwardingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(53);
+    internal_static_google_cloud_vmwareengine_v1_UpdateDnsForwardingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_UpdateDnsForwardingRequest_descriptor,
+            new java.lang.String[] {
+              "DnsForwarding", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_CreateNetworkPeeringRequest_descriptor =
+        getDescriptor().getMessageTypes().get(54);
+    internal_static_google_cloud_vmwareengine_v1_CreateNetworkPeeringRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_CreateNetworkPeeringRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "NetworkPeeringId", "NetworkPeering", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPeeringRequest_descriptor =
+        getDescriptor().getMessageTypes().get(55);
+    internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPeeringRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPeeringRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetNetworkPeeringRequest_descriptor =
+        getDescriptor().getMessageTypes().get(56);
+    internal_static_google_cloud_vmwareengine_v1_GetNetworkPeeringRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetNetworkPeeringRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(57);
+    internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPeeringRequest_descriptor =
+        getDescriptor().getMessageTypes().get(58);
+    internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPeeringRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPeeringRequest_descriptor,
+            new java.lang.String[] {
+              "NetworkPeering", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(59);
+    internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListNetworkPeeringsResponse_descriptor,
+            new java.lang.String[] {
+              "NetworkPeerings", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(60);
+    internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(61);
+    internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListPeeringRoutesResponse_descriptor,
+            new java.lang.String[] {
+              "PeeringRoutes", "NextPageToken",
+            });
     internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesRequest_descriptor,
@@ -934,7 +1769,7 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListNetworkPoliciesResponse_descriptor,
@@ -942,7 +1777,7 @@ public final class VmwareengineProto {
               "NetworkPolicies", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmwareengine_v1_GetNetworkPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(64);
     internal_static_google_cloud_vmwareengine_v1_GetNetworkPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_GetNetworkPolicyRequest_descriptor,
@@ -950,7 +1785,7 @@ public final class VmwareengineProto {
               "Name",
             });
     internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(65);
     internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_UpdateNetworkPolicyRequest_descriptor,
@@ -958,7 +1793,7 @@ public final class VmwareengineProto {
               "NetworkPolicy", "UpdateMask", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_CreateNetworkPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_cloud_vmwareengine_v1_CreateNetworkPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_CreateNetworkPolicyRequest_descriptor,
@@ -966,15 +1801,71 @@ public final class VmwareengineProto {
               "Parent", "NetworkPolicyId", "NetworkPolicy", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_DeleteNetworkPolicyRequest_descriptor,
             new java.lang.String[] {
               "Name", "RequestId",
             });
+    internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(68);
+    internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(69);
+    internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_ListManagementDnsZoneBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "ManagementDnsZoneBindings", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetManagementDnsZoneBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(70);
+    internal_static_google_cloud_vmwareengine_v1_GetManagementDnsZoneBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetManagementDnsZoneBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_vmwareengine_v1_CreateManagementDnsZoneBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(71);
+    internal_static_google_cloud_vmwareengine_v1_CreateManagementDnsZoneBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_CreateManagementDnsZoneBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ManagementDnsZoneBinding", "ManagementDnsZoneBindingId", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_UpdateManagementDnsZoneBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(72);
+    internal_static_google_cloud_vmwareengine_v1_UpdateManagementDnsZoneBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_UpdateManagementDnsZoneBindingRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "ManagementDnsZoneBinding", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_DeleteManagementDnsZoneBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(73);
+    internal_static_google_cloud_vmwareengine_v1_DeleteManagementDnsZoneBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_DeleteManagementDnsZoneBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_RepairManagementDnsZoneBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(74);
+    internal_static_google_cloud_vmwareengine_v1_RepairManagementDnsZoneBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_RepairManagementDnsZoneBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
     internal_static_google_cloud_vmwareengine_v1_CreateVmwareEngineNetworkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(75);
     internal_static_google_cloud_vmwareengine_v1_CreateVmwareEngineNetworkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_CreateVmwareEngineNetworkRequest_descriptor,
@@ -982,7 +1873,7 @@ public final class VmwareengineProto {
               "Parent", "VmwareEngineNetworkId", "VmwareEngineNetwork", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_UpdateVmwareEngineNetworkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(76);
     internal_static_google_cloud_vmwareengine_v1_UpdateVmwareEngineNetworkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_UpdateVmwareEngineNetworkRequest_descriptor,
@@ -990,7 +1881,7 @@ public final class VmwareengineProto {
               "VmwareEngineNetwork", "UpdateMask", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_DeleteVmwareEngineNetworkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(77);
     internal_static_google_cloud_vmwareengine_v1_DeleteVmwareEngineNetworkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_DeleteVmwareEngineNetworkRequest_descriptor,
@@ -998,7 +1889,7 @@ public final class VmwareengineProto {
               "Name", "RequestId", "Etag",
             });
     internal_static_google_cloud_vmwareengine_v1_GetVmwareEngineNetworkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(78);
     internal_static_google_cloud_vmwareengine_v1_GetVmwareEngineNetworkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_GetVmwareEngineNetworkRequest_descriptor,
@@ -1006,7 +1897,7 @@ public final class VmwareengineProto {
               "Name",
             });
     internal_static_google_cloud_vmwareengine_v1_ListVmwareEngineNetworksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(79);
     internal_static_google_cloud_vmwareengine_v1_ListVmwareEngineNetworksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListVmwareEngineNetworksRequest_descriptor,
@@ -1014,7 +1905,7 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmwareengine_v1_ListVmwareEngineNetworksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(80);
     internal_static_google_cloud_vmwareengine_v1_ListVmwareEngineNetworksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListVmwareEngineNetworksResponse_descriptor,
@@ -1022,7 +1913,7 @@ public final class VmwareengineProto {
               "VmwareEngineNetworks", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmwareengine_v1_CreatePrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(81);
     internal_static_google_cloud_vmwareengine_v1_CreatePrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_CreatePrivateConnectionRequest_descriptor,
@@ -1030,7 +1921,7 @@ public final class VmwareengineProto {
               "Parent", "PrivateConnectionId", "PrivateConnection", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_GetPrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(82);
     internal_static_google_cloud_vmwareengine_v1_GetPrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_GetPrivateConnectionRequest_descriptor,
@@ -1038,7 +1929,7 @@ public final class VmwareengineProto {
               "Name",
             });
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(83);
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionsRequest_descriptor,
@@ -1046,7 +1937,7 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(84);
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionsResponse_descriptor,
@@ -1054,7 +1945,7 @@ public final class VmwareengineProto {
               "PrivateConnections", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmwareengine_v1_UpdatePrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(85);
     internal_static_google_cloud_vmwareengine_v1_UpdatePrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_UpdatePrivateConnectionRequest_descriptor,
@@ -1062,7 +1953,7 @@ public final class VmwareengineProto {
               "PrivateConnection", "UpdateMask", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_DeletePrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(86);
     internal_static_google_cloud_vmwareengine_v1_DeletePrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_DeletePrivateConnectionRequest_descriptor,
@@ -1070,7 +1961,7 @@ public final class VmwareengineProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(87);
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesRequest_descriptor,
@@ -1078,12 +1969,36 @@ public final class VmwareengineProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(88);
     internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_ListPrivateConnectionPeeringRoutesResponse_descriptor,
             new java.lang.String[] {
               "PeeringRoutes", "NextPageToken",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GrantDnsBindPermissionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(89);
+    internal_static_google_cloud_vmwareengine_v1_GrantDnsBindPermissionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GrantDnsBindPermissionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Principal", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_RevokeDnsBindPermissionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(90);
+    internal_static_google_cloud_vmwareengine_v1_RevokeDnsBindPermissionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_RevokeDnsBindPermissionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Principal", "RequestId",
+            });
+    internal_static_google_cloud_vmwareengine_v1_GetDnsBindPermissionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(91);
+    internal_static_google_cloud_vmwareengine_v1_GetDnsBindPermissionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_GetDnsBindPermissionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -1097,15 +2012,16 @@ public final class VmwareengineProto {
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto.getDescriptor();
-    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

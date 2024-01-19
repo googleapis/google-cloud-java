@@ -40,6 +40,7 @@ public class AsyncShowVcenterCredentials {
           ShowVcenterCredentialsRequest.newBuilder()
               .setPrivateCloud(
                   PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+              .setUsername("username-265713450")
               .build();
       ApiFuture<Credentials> future =
           vmwareEngineClient.showVcenterCredentialsCallable().futureCall(request);

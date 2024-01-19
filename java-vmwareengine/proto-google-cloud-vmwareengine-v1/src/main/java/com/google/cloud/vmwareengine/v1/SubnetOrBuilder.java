@@ -163,4 +163,17 @@ public interface SubnetOrBuilder
    * @return The state.
    */
   com.google.cloud.vmwareengine.v1.Subnet.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. VLAN ID of the VLAN on which the subnet is configured
+   * </pre>
+   *
+   * <code>int32 vlan_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The vlanId.
+   */
+  int getVlanId();
 }

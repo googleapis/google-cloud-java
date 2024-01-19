@@ -39,6 +39,7 @@ public class SyncShowVcenterCredentials {
           ShowVcenterCredentialsRequest.newBuilder()
               .setPrivateCloud(
                   PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+              .setUsername("username-265713450")
               .build();
       Credentials response = vmwareEngineClient.showVcenterCredentials(request);
     }

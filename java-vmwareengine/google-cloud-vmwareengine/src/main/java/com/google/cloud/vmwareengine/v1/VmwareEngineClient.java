@@ -116,8 +116,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td>CreatePrivateCloud</td>
- *      <td><p> Creates a new `PrivateCloud` resource in a given project and location. Private clouds can only be created in zones, regional private clouds are not supported.
- * <p>  Creating a private cloud also creates a [management cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that private cloud.</td>
+ *      <td><p> Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional. Creating a private cloud also creates a [management cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -257,7 +256,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td>UpdateCluster</td>
- *      <td><p> Modifies a `Cluster` resource. Only the following fields can be updated: `node_type_configs.&#42;.node_count`. Only fields specified in `updateMask` are applied.
+ *      <td><p> Modifies a `Cluster` resource. Only fields specified in `updateMask` are applied.
  * <p>  During operation processing, the resource is temporarily in the `ACTIVE` state before the operation fully completes. For that period of time, you can't update the resource. Use the operation status to determine when the processing fully completes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -292,6 +291,164 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li>deleteClusterOperationCallable()
  *           <li>deleteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListNodes</td>
+ *      <td><p> Lists nodes in a given cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listNodes(ListNodesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listNodes(ClusterName parent)
+ *           <li>listNodes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listNodesPagedCallable()
+ *           <li>listNodesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetNode</td>
+ *      <td><p> Gets details of a single node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getNode(GetNodeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getNode(NodeName name)
+ *           <li>getNode(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListExternalAddresses</td>
+ *      <td><p> Lists external IP addresses assigned to VMware workload VMs in a given private cloud.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listExternalAddresses(ListExternalAddressesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listExternalAddresses(PrivateCloudName parent)
+ *           <li>listExternalAddresses(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listExternalAddressesPagedCallable()
+ *           <li>listExternalAddressesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>FetchNetworkPolicyExternalAddresses</td>
+ *      <td><p> Lists external IP addresses assigned to VMware workload VMs within the scope of the given network policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>fetchNetworkPolicyExternalAddresses(FetchNetworkPolicyExternalAddressesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>fetchNetworkPolicyExternalAddresses(NetworkPolicyName networkPolicy)
+ *           <li>fetchNetworkPolicyExternalAddresses(String networkPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>fetchNetworkPolicyExternalAddressesPagedCallable()
+ *           <li>fetchNetworkPolicyExternalAddressesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetExternalAddress</td>
+ *      <td><p> Gets details of a single external IP address.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getExternalAddress(GetExternalAddressRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getExternalAddress(ExternalAddressName name)
+ *           <li>getExternalAddress(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getExternalAddressCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateExternalAddress</td>
+ *      <td><p> Creates a new `ExternalAddress` resource in a given private cloud. The network policy that corresponds to the private cloud must have the external IP address network service enabled (`NetworkPolicy.external_ip`).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createExternalAddressAsync(CreateExternalAddressRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createExternalAddressAsync(PrivateCloudName parent, ExternalAddress externalAddress, String externalAddressId)
+ *           <li>createExternalAddressAsync(String parent, ExternalAddress externalAddress, String externalAddressId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createExternalAddressOperationCallable()
+ *           <li>createExternalAddressCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateExternalAddress</td>
+ *      <td><p> Updates the parameters of a single external IP address. Only fields specified in `update_mask` are applied.
+ * <p>  During operation processing, the resource is temporarily in the `ACTIVE` state before the operation fully completes. For that period of time, you can't update the resource. Use the operation status to determine when the processing fully completes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateExternalAddressAsync(UpdateExternalAddressRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateExternalAddressAsync(ExternalAddress externalAddress, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateExternalAddressOperationCallable()
+ *           <li>updateExternalAddressCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteExternalAddress</td>
+ *      <td><p> Deletes a single external IP address. When you delete an external IP address, connectivity between the external IP address and the corresponding internal IP address is lost.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteExternalAddressAsync(DeleteExternalAddressRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteExternalAddressAsync(ExternalAddressName name)
+ *           <li>deleteExternalAddressAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteExternalAddressOperationCallable()
+ *           <li>deleteExternalAddressCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -351,6 +508,202 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li>updateSubnetOperationCallable()
  *           <li>updateSubnetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListExternalAccessRules</td>
+ *      <td><p> Lists `ExternalAccessRule` resources in the specified network policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listExternalAccessRules(ListExternalAccessRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listExternalAccessRules(NetworkPolicyName parent)
+ *           <li>listExternalAccessRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listExternalAccessRulesPagedCallable()
+ *           <li>listExternalAccessRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetExternalAccessRule</td>
+ *      <td><p> Gets details of a single external access rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getExternalAccessRule(GetExternalAccessRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getExternalAccessRule(ExternalAccessRuleName name)
+ *           <li>getExternalAccessRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getExternalAccessRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateExternalAccessRule</td>
+ *      <td><p> Creates a new external access rule in a given network policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createExternalAccessRuleAsync(CreateExternalAccessRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createExternalAccessRuleAsync(NetworkPolicyName parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId)
+ *           <li>createExternalAccessRuleAsync(String parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createExternalAccessRuleOperationCallable()
+ *           <li>createExternalAccessRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateExternalAccessRule</td>
+ *      <td><p> Updates the parameters of a single external access rule. Only fields specified in `update_mask` are applied.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateExternalAccessRuleAsync(UpdateExternalAccessRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateExternalAccessRuleAsync(ExternalAccessRule externalAccessRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateExternalAccessRuleOperationCallable()
+ *           <li>updateExternalAccessRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteExternalAccessRule</td>
+ *      <td><p> Deletes a single external access rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteExternalAccessRuleAsync(DeleteExternalAccessRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteExternalAccessRuleAsync(ExternalAccessRuleName name)
+ *           <li>deleteExternalAccessRuleAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteExternalAccessRuleOperationCallable()
+ *           <li>deleteExternalAccessRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListLoggingServers</td>
+ *      <td><p> Lists logging servers configured for a given private cloud.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listLoggingServers(ListLoggingServersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listLoggingServers(PrivateCloudName parent)
+ *           <li>listLoggingServers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listLoggingServersPagedCallable()
+ *           <li>listLoggingServersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetLoggingServer</td>
+ *      <td><p> Gets details of a logging server.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getLoggingServer(GetLoggingServerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getLoggingServer(LoggingServerName name)
+ *           <li>getLoggingServer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getLoggingServerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateLoggingServer</td>
+ *      <td><p> Create a new logging server for a given private cloud.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createLoggingServerAsync(CreateLoggingServerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createLoggingServerAsync(PrivateCloudName parent, LoggingServer loggingServer, String loggingServerId)
+ *           <li>createLoggingServerAsync(String parent, LoggingServer loggingServer, String loggingServerId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createLoggingServerOperationCallable()
+ *           <li>createLoggingServerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateLoggingServer</td>
+ *      <td><p> Updates the parameters of a single logging server. Only fields specified in `update_mask` are applied.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateLoggingServerAsync(UpdateLoggingServerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateLoggingServerAsync(LoggingServer loggingServer, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateLoggingServerOperationCallable()
+ *           <li>updateLoggingServerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteLoggingServer</td>
+ *      <td><p> Deletes a single logging server.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteLoggingServerAsync(DeleteLoggingServerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteLoggingServerAsync(LoggingServerName name)
+ *           <li>deleteLoggingServerAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteLoggingServerOperationCallable()
+ *           <li>deleteLoggingServerCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -468,6 +821,162 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li>resetVcenterCredentialsOperationCallable()
  *           <li>resetVcenterCredentialsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetDnsForwarding</td>
+ *      <td><p> Gets details of the `DnsForwarding` config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getDnsForwarding(GetDnsForwardingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getDnsForwarding(DnsForwardingName name)
+ *           <li>getDnsForwarding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getDnsForwardingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateDnsForwarding</td>
+ *      <td><p> Updates the parameters of the `DnsForwarding` config, like associated domains. Only fields specified in `update_mask` are applied.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateDnsForwardingAsync(UpdateDnsForwardingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateDnsForwardingAsync(DnsForwarding dnsForwarding, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateDnsForwardingOperationCallable()
+ *           <li>updateDnsForwardingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetNetworkPeering</td>
+ *      <td><p> Retrieves a `NetworkPeering` resource by its resource name. The resource contains details of the network peering, such as peered networks, import and export custom route configurations, and peering state. NetworkPeering is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getNetworkPeering(GetNetworkPeeringRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getNetworkPeering(NetworkPeeringName name)
+ *           <li>getNetworkPeering(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getNetworkPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListNetworkPeerings</td>
+ *      <td><p> Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listNetworkPeerings(ListNetworkPeeringsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listNetworkPeerings(LocationName parent)
+ *           <li>listNetworkPeerings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listNetworkPeeringsPagedCallable()
+ *           <li>listNetworkPeeringsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateNetworkPeering</td>
+ *      <td><p> Creates a new network peering between the peer network and VMware Engine network provided in a `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createNetworkPeeringAsync(CreateNetworkPeeringRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createNetworkPeeringAsync(LocationName parent, NetworkPeering networkPeering, String networkPeeringId)
+ *           <li>createNetworkPeeringAsync(String parent, NetworkPeering networkPeering, String networkPeeringId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createNetworkPeeringOperationCallable()
+ *           <li>createNetworkPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteNetworkPeering</td>
+ *      <td><p> Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteNetworkPeeringAsync(DeleteNetworkPeeringRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteNetworkPeeringAsync(NetworkPeeringName name)
+ *           <li>deleteNetworkPeeringAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteNetworkPeeringOperationCallable()
+ *           <li>deleteNetworkPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateNetworkPeering</td>
+ *      <td><p> Modifies a `NetworkPeering` resource. Only the `description` field can be updated. Only fields specified in `updateMask` are applied. NetworkPeering is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateNetworkPeeringAsync(UpdateNetworkPeeringRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateNetworkPeeringAsync(NetworkPeering networkPeering, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateNetworkPeeringOperationCallable()
+ *           <li>updateNetworkPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListPeeringRoutes</td>
+ *      <td><p> Lists the network peering routes exchanged over a peering connection. NetworkPeering is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listPeeringRoutes(ListPeeringRoutesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listPeeringRoutes(NetworkPeeringName parent)
+ *           <li>listPeeringRoutes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPeeringRoutesPagedCallable()
+ *           <li>listPeeringRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -626,6 +1135,124 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li>deleteNetworkPolicyOperationCallable()
  *           <li>deleteNetworkPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListManagementDnsZoneBindings</td>
+ *      <td><p> Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listManagementDnsZoneBindings(ListManagementDnsZoneBindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listManagementDnsZoneBindings(PrivateCloudName parent)
+ *           <li>listManagementDnsZoneBindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listManagementDnsZoneBindingsPagedCallable()
+ *           <li>listManagementDnsZoneBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetManagementDnsZoneBinding</td>
+ *      <td><p> Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getManagementDnsZoneBinding(GetManagementDnsZoneBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getManagementDnsZoneBinding(ManagementDnsZoneBindingName name)
+ *           <li>getManagementDnsZoneBinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getManagementDnsZoneBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateManagementDnsZoneBinding</td>
+ *      <td><p> Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS binding and the resource that represents the DNS binding of the consumer VPC network to the management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createManagementDnsZoneBindingAsync(CreateManagementDnsZoneBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createManagementDnsZoneBindingAsync(PrivateCloudName parent, ManagementDnsZoneBinding managementDnsZoneBinding, String managementDnsZoneBindingId)
+ *           <li>createManagementDnsZoneBindingAsync(String parent, ManagementDnsZoneBinding managementDnsZoneBinding, String managementDnsZoneBindingId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createManagementDnsZoneBindingOperationCallable()
+ *           <li>createManagementDnsZoneBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateManagementDnsZoneBinding</td>
+ *      <td><p> Updates a `ManagementDnsZoneBinding` resource. Only fields specified in `update_mask` are applied.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateManagementDnsZoneBindingAsync(UpdateManagementDnsZoneBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateManagementDnsZoneBindingAsync(ManagementDnsZoneBinding managementDnsZoneBinding, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateManagementDnsZoneBindingOperationCallable()
+ *           <li>updateManagementDnsZoneBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteManagementDnsZoneBinding</td>
+ *      <td><p> Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted, the corresponding consumer VPC network is no longer bound to the management DNS zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteManagementDnsZoneBindingAsync(DeleteManagementDnsZoneBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name)
+ *           <li>deleteManagementDnsZoneBindingAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteManagementDnsZoneBindingOperationCallable()
+ *           <li>deleteManagementDnsZoneBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RepairManagementDnsZoneBinding</td>
+ *      <td><p> Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>repairManagementDnsZoneBindingAsync(RepairManagementDnsZoneBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>repairManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name)
+ *           <li>repairManagementDnsZoneBindingAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>repairManagementDnsZoneBindingOperationCallable()
+ *           <li>repairManagementDnsZoneBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -842,6 +1469,65 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li>listPrivateConnectionPeeringRoutesPagedCallable()
  *           <li>listPrivateConnectionPeeringRoutesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GrantDnsBindPermission</td>
+ *      <td><p> Grants the bind permission to the customer provided principal(user / service account) to bind their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>grantDnsBindPermissionAsync(GrantDnsBindPermissionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>grantDnsBindPermissionAsync(DnsBindPermissionName name, Principal principal)
+ *           <li>grantDnsBindPermissionAsync(String name, Principal principal)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>grantDnsBindPermissionOperationCallable()
+ *           <li>grantDnsBindPermissionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetDnsBindPermission</td>
+ *      <td><p> Gets all the principals having bind permission on the intranet VPC associated with the consumer project granted by the Grant API. DnsBindPermission is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getDnsBindPermission(GetDnsBindPermissionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getDnsBindPermission(DnsBindPermissionName name)
+ *           <li>getDnsBindPermission(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getDnsBindPermissionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RevokeDnsBindPermission</td>
+ *      <td><p> Revokes the bind permission from the customer provided principal(user / service account) on the intranet VPC associated with the consumer project. DnsBindPermission is a global resource and location can only be global.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>revokeDnsBindPermissionAsync(RevokeDnsBindPermissionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>revokeDnsBindPermissionAsync(DnsBindPermissionName name, Principal principal)
+ *           <li>revokeDnsBindPermissionAsync(String name, Principal principal)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>revokeDnsBindPermissionOperationCallable()
+ *           <li>revokeDnsBindPermissionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1341,10 +2027,9 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds can only
-   * be created in zones, regional private clouds are not supported.
-   *
-   * <p>Creating a private cloud also creates a [management
+   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type
+   * `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional.
+   * Creating a private cloud also creates a [management
    * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that
    * private cloud.
    *
@@ -1397,10 +2082,9 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds can only
-   * be created in zones, regional private clouds are not supported.
-   *
-   * <p>Creating a private cloud also creates a [management
+   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type
+   * `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional.
+   * Creating a private cloud also creates a [management
    * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that
    * private cloud.
    *
@@ -1453,10 +2137,9 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds can only
-   * be created in zones, regional private clouds are not supported.
-   *
-   * <p>Creating a private cloud also creates a [management
+   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type
+   * `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional.
+   * Creating a private cloud also creates a [management
    * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that
    * private cloud.
    *
@@ -1491,10 +2174,9 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds can only
-   * be created in zones, regional private clouds are not supported.
-   *
-   * <p>Creating a private cloud also creates a [management
+   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type
+   * `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional.
+   * Creating a private cloud also creates a [management
    * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that
    * private cloud.
    *
@@ -1529,10 +2211,9 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds can only
-   * be created in zones, regional private clouds are not supported.
-   *
-   * <p>Creating a private cloud also creates a [management
+   * Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type
+   * `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional.
+   * Creating a private cloud also creates a [management
    * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that
    * private cloud.
    *
@@ -2597,8 +3278,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies a `Cluster` resource. Only the following fields can be updated:
-   * `node_type_configs.&#42;.node_count`. Only fields specified in `updateMask` are applied.
+   * Modifies a `Cluster` resource. Only fields specified in `updateMask` are applied.
    *
    * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
    * operation fully completes. For that period of time, you can't update the resource. Use the
@@ -2635,8 +3315,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies a `Cluster` resource. Only the following fields can be updated:
-   * `node_type_configs.&#42;.node_count`. Only fields specified in `updateMask` are applied.
+   * Modifies a `Cluster` resource. Only fields specified in `updateMask` are applied.
    *
    * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
    * operation fully completes. For that period of time, you can't update the resource. Use the
@@ -2672,8 +3351,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies a `Cluster` resource. Only the following fields can be updated:
-   * `node_type_configs.&#42;.node_count`. Only fields specified in `updateMask` are applied.
+   * Modifies a `Cluster` resource. Only fields specified in `updateMask` are applied.
    *
    * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
    * operation fully completes. For that period of time, you can't update the resource. Use the
@@ -2709,8 +3387,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies a `Cluster` resource. Only the following fields can be updated:
-   * `node_type_configs.&#42;.node_count`. Only fields specified in `updateMask` are applied.
+   * Modifies a `Cluster` resource. Only fields specified in `updateMask` are applied.
    *
    * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
    * operation fully completes. For that period of time, you can't update the resource. Use the
@@ -2904,6 +3581,1336 @@ public class VmwareEngineClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ClusterName parent =
+   *       ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]");
+   *   for (Node element : vmwareEngineClient.listNodes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the cluster to be queried for nodes. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNodesPagedResponse listNodes(ClusterName parent) {
+    ListNodesRequest request =
+        ListNodesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listNodes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent =
+   *       ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]").toString();
+   *   for (Node element : vmwareEngineClient.listNodes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the cluster to be queried for nodes. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNodesPagedResponse listNodes(String parent) {
+    ListNodesRequest request = ListNodesRequest.newBuilder().setParent(parent).build();
+    return listNodes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListNodesRequest request =
+   *       ListNodesRequest.newBuilder()
+   *           .setParent(
+   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Node element : vmwareEngineClient.listNodes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNodesPagedResponse listNodes(ListNodesRequest request) {
+    return listNodesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListNodesRequest request =
+   *       ListNodesRequest.newBuilder()
+   *           .setParent(
+   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Node> future = vmwareEngineClient.listNodesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Node element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    return stub.listNodesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListNodesRequest request =
+   *       ListNodesRequest.newBuilder()
+   *           .setParent(
+   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListNodesResponse response = vmwareEngineClient.listNodesCallable().call(request);
+   *     for (Node element : response.getNodesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    return stub.listNodesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NodeName name =
+   *       NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]");
+   *   Node response = vmwareEngineClient.getNode(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the node to retrieve. For example:
+   *     `projects/{project}/locations/{location}/privateClouds/{private_cloud}/clusters/{cluster}/nodes/{node}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Node getNode(NodeName name) {
+    GetNodeRequest request =
+        GetNodeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getNode(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]")
+   *           .toString();
+   *   Node response = vmwareEngineClient.getNode(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the node to retrieve. For example:
+   *     `projects/{project}/locations/{location}/privateClouds/{private_cloud}/clusters/{cluster}/nodes/{node}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Node getNode(String name) {
+    GetNodeRequest request = GetNodeRequest.newBuilder().setName(name).build();
+    return getNode(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetNodeRequest request =
+   *       GetNodeRequest.newBuilder()
+   *           .setName(
+   *               NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]")
+   *                   .toString())
+   *           .build();
+   *   Node response = vmwareEngineClient.getNode(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Node getNode(GetNodeRequest request) {
+    return getNodeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetNodeRequest request =
+   *       GetNodeRequest.newBuilder()
+   *           .setName(
+   *               NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Node> future = vmwareEngineClient.getNodeCallable().futureCall(request);
+   *   // Do something.
+   *   Node response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNodeRequest, Node> getNodeCallable() {
+    return stub.getNodeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs in a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   for (ExternalAddress element :
+   *       vmwareEngineClient.listExternalAddresses(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to be queried for external IP
+   *     addresses. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExternalAddressesPagedResponse listExternalAddresses(PrivateCloudName parent) {
+    ListExternalAddressesRequest request =
+        ListExternalAddressesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExternalAddresses(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs in a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   for (ExternalAddress element :
+   *       vmwareEngineClient.listExternalAddresses(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to be queried for external IP
+   *     addresses. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExternalAddressesPagedResponse listExternalAddresses(String parent) {
+    ListExternalAddressesRequest request =
+        ListExternalAddressesRequest.newBuilder().setParent(parent).build();
+    return listExternalAddresses(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs in a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListExternalAddressesRequest request =
+   *       ListExternalAddressesRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ExternalAddress element :
+   *       vmwareEngineClient.listExternalAddresses(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExternalAddressesPagedResponse listExternalAddresses(
+      ListExternalAddressesRequest request) {
+    return listExternalAddressesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs in a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListExternalAddressesRequest request =
+   *       ListExternalAddressesRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ExternalAddress> future =
+   *       vmwareEngineClient.listExternalAddressesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ExternalAddress element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesPagedResponse>
+      listExternalAddressesPagedCallable() {
+    return stub.listExternalAddressesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs in a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListExternalAddressesRequest request =
+   *       ListExternalAddressesRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListExternalAddressesResponse response =
+   *         vmwareEngineClient.listExternalAddressesCallable().call(request);
+   *     for (ExternalAddress element : response.getExternalAddressesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesResponse>
+      listExternalAddressesCallable() {
+    return stub.listExternalAddressesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs within the scope of the given
+   * network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPolicyName networkPolicy =
+   *       NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+   *   for (ExternalAddress element :
+   *       vmwareEngineClient.fetchNetworkPolicyExternalAddresses(networkPolicy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param networkPolicy Required. The resource name of the network policy to query for assigned
+   *     external IP addresses. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchNetworkPolicyExternalAddressesPagedResponse fetchNetworkPolicyExternalAddresses(
+      NetworkPolicyName networkPolicy) {
+    FetchNetworkPolicyExternalAddressesRequest request =
+        FetchNetworkPolicyExternalAddressesRequest.newBuilder()
+            .setNetworkPolicy(networkPolicy == null ? null : networkPolicy.toString())
+            .build();
+    return fetchNetworkPolicyExternalAddresses(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs within the scope of the given
+   * network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String networkPolicy =
+   *       NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString();
+   *   for (ExternalAddress element :
+   *       vmwareEngineClient.fetchNetworkPolicyExternalAddresses(networkPolicy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param networkPolicy Required. The resource name of the network policy to query for assigned
+   *     external IP addresses. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchNetworkPolicyExternalAddressesPagedResponse fetchNetworkPolicyExternalAddresses(
+      String networkPolicy) {
+    FetchNetworkPolicyExternalAddressesRequest request =
+        FetchNetworkPolicyExternalAddressesRequest.newBuilder()
+            .setNetworkPolicy(networkPolicy)
+            .build();
+    return fetchNetworkPolicyExternalAddresses(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs within the scope of the given
+   * network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   FetchNetworkPolicyExternalAddressesRequest request =
+   *       FetchNetworkPolicyExternalAddressesRequest.newBuilder()
+   *           .setNetworkPolicy(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ExternalAddress element :
+   *       vmwareEngineClient.fetchNetworkPolicyExternalAddresses(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchNetworkPolicyExternalAddressesPagedResponse fetchNetworkPolicyExternalAddresses(
+      FetchNetworkPolicyExternalAddressesRequest request) {
+    return fetchNetworkPolicyExternalAddressesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs within the scope of the given
+   * network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   FetchNetworkPolicyExternalAddressesRequest request =
+   *       FetchNetworkPolicyExternalAddressesRequest.newBuilder()
+   *           .setNetworkPolicy(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ExternalAddress> future =
+   *       vmwareEngineClient.fetchNetworkPolicyExternalAddressesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ExternalAddress element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesPagedResponse>
+      fetchNetworkPolicyExternalAddressesPagedCallable() {
+    return stub.fetchNetworkPolicyExternalAddressesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists external IP addresses assigned to VMware workload VMs within the scope of the given
+   * network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   FetchNetworkPolicyExternalAddressesRequest request =
+   *       FetchNetworkPolicyExternalAddressesRequest.newBuilder()
+   *           .setNetworkPolicy(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchNetworkPolicyExternalAddressesResponse response =
+   *         vmwareEngineClient.fetchNetworkPolicyExternalAddressesCallable().call(request);
+   *     for (ExternalAddress element : response.getExternalAddressesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
+      fetchNetworkPolicyExternalAddressesCallable() {
+    return stub.fetchNetworkPolicyExternalAddressesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external IP address.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ExternalAddressName name =
+   *       ExternalAddressName.of(
+   *           "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]");
+   *   ExternalAddress response = vmwareEngineClient.getExternalAddress(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external IP address to retrieve. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-ip`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalAddress getExternalAddress(ExternalAddressName name) {
+    GetExternalAddressRequest request =
+        GetExternalAddressRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getExternalAddress(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external IP address.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ExternalAddressName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *           .toString();
+   *   ExternalAddress response = vmwareEngineClient.getExternalAddress(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external IP address to retrieve. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-ip`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalAddress getExternalAddress(String name) {
+    GetExternalAddressRequest request =
+        GetExternalAddressRequest.newBuilder().setName(name).build();
+    return getExternalAddress(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external IP address.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetExternalAddressRequest request =
+   *       GetExternalAddressRequest.newBuilder()
+   *           .setName(
+   *               ExternalAddressName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *                   .toString())
+   *           .build();
+   *   ExternalAddress response = vmwareEngineClient.getExternalAddress(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalAddress getExternalAddress(GetExternalAddressRequest request) {
+    return getExternalAddressCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external IP address.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetExternalAddressRequest request =
+   *       GetExternalAddressRequest.newBuilder()
+   *           .setName(
+   *               ExternalAddressName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ExternalAddress> future =
+   *       vmwareEngineClient.getExternalAddressCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalAddress response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetExternalAddressRequest, ExternalAddress>
+      getExternalAddressCallable() {
+    return stub.getExternalAddressCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ExternalAddress` resource in a given private cloud. The network policy that
+   * corresponds to the private cloud must have the external IP address network service enabled
+   * (`NetworkPolicy.external_ip`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+   *   String externalAddressId = "externalAddressId221595812";
+   *   ExternalAddress response =
+   *       vmwareEngineClient
+   *           .createExternalAddressAsync(parent, externalAddress, externalAddressId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to create a new external IP
+   *     address in. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @param externalAddress Required. The initial description of a new external IP address.
+   * @param externalAddressId Required. The user-provided identifier of the `ExternalAddress` to be
+   *     created. This identifier must be unique among `ExternalAddress` resources within the parent
+   *     and becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAddress, OperationMetadata> createExternalAddressAsync(
+      PrivateCloudName parent, ExternalAddress externalAddress, String externalAddressId) {
+    CreateExternalAddressRequest request =
+        CreateExternalAddressRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setExternalAddress(externalAddress)
+            .setExternalAddressId(externalAddressId)
+            .build();
+    return createExternalAddressAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ExternalAddress` resource in a given private cloud. The network policy that
+   * corresponds to the private cloud must have the external IP address network service enabled
+   * (`NetworkPolicy.external_ip`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+   *   String externalAddressId = "externalAddressId221595812";
+   *   ExternalAddress response =
+   *       vmwareEngineClient
+   *           .createExternalAddressAsync(parent, externalAddress, externalAddressId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to create a new external IP
+   *     address in. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @param externalAddress Required. The initial description of a new external IP address.
+   * @param externalAddressId Required. The user-provided identifier of the `ExternalAddress` to be
+   *     created. This identifier must be unique among `ExternalAddress` resources within the parent
+   *     and becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAddress, OperationMetadata> createExternalAddressAsync(
+      String parent, ExternalAddress externalAddress, String externalAddressId) {
+    CreateExternalAddressRequest request =
+        CreateExternalAddressRequest.newBuilder()
+            .setParent(parent)
+            .setExternalAddress(externalAddress)
+            .setExternalAddressId(externalAddressId)
+            .build();
+    return createExternalAddressAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ExternalAddress` resource in a given private cloud. The network policy that
+   * corresponds to the private cloud must have the external IP address network service enabled
+   * (`NetworkPolicy.external_ip`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateExternalAddressRequest request =
+   *       CreateExternalAddressRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setExternalAddress(ExternalAddress.newBuilder().build())
+   *           .setExternalAddressId("externalAddressId221595812")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ExternalAddress response = vmwareEngineClient.createExternalAddressAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAddress, OperationMetadata> createExternalAddressAsync(
+      CreateExternalAddressRequest request) {
+    return createExternalAddressOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ExternalAddress` resource in a given private cloud. The network policy that
+   * corresponds to the private cloud must have the external IP address network service enabled
+   * (`NetworkPolicy.external_ip`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateExternalAddressRequest request =
+   *       CreateExternalAddressRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setExternalAddress(ExternalAddress.newBuilder().build())
+   *           .setExternalAddressId("externalAddressId221595812")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ExternalAddress, OperationMetadata> future =
+   *       vmwareEngineClient.createExternalAddressOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalAddress response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      createExternalAddressOperationCallable() {
+    return stub.createExternalAddressOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ExternalAddress` resource in a given private cloud. The network policy that
+   * corresponds to the private cloud must have the external IP address network service enabled
+   * (`NetworkPolicy.external_ip`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateExternalAddressRequest request =
+   *       CreateExternalAddressRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setExternalAddress(ExternalAddress.newBuilder().build())
+   *           .setExternalAddressId("externalAddressId221595812")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.createExternalAddressCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateExternalAddressRequest, Operation>
+      createExternalAddressCallable() {
+    return stub.createExternalAddressCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external IP address. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
+   * operation fully completes. For that period of time, you can't update the resource. Use the
+   * operation status to determine when the processing fully completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ExternalAddress response =
+   *       vmwareEngineClient.updateExternalAddressAsync(externalAddress, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param externalAddress Required. External IP address description.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `ExternalAddress` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAddress, OperationMetadata> updateExternalAddressAsync(
+      ExternalAddress externalAddress, FieldMask updateMask) {
+    UpdateExternalAddressRequest request =
+        UpdateExternalAddressRequest.newBuilder()
+            .setExternalAddress(externalAddress)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateExternalAddressAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external IP address. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
+   * operation fully completes. For that period of time, you can't update the resource. Use the
+   * operation status to determine when the processing fully completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateExternalAddressRequest request =
+   *       UpdateExternalAddressRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExternalAddress(ExternalAddress.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ExternalAddress response = vmwareEngineClient.updateExternalAddressAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAddress, OperationMetadata> updateExternalAddressAsync(
+      UpdateExternalAddressRequest request) {
+    return updateExternalAddressOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external IP address. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
+   * operation fully completes. For that period of time, you can't update the resource. Use the
+   * operation status to determine when the processing fully completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateExternalAddressRequest request =
+   *       UpdateExternalAddressRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExternalAddress(ExternalAddress.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ExternalAddress, OperationMetadata> future =
+   *       vmwareEngineClient.updateExternalAddressOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalAddress response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      updateExternalAddressOperationCallable() {
+    return stub.updateExternalAddressOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external IP address. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>During operation processing, the resource is temporarily in the `ACTIVE` state before the
+   * operation fully completes. For that period of time, you can't update the resource. Use the
+   * operation status to determine when the processing fully completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateExternalAddressRequest request =
+   *       UpdateExternalAddressRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExternalAddress(ExternalAddress.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updateExternalAddressCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateExternalAddressRequest, Operation>
+      updateExternalAddressCallable() {
+    return stub.updateExternalAddressCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external IP address. When you delete an external IP address, connectivity
+   * between the external IP address and the corresponding internal IP address is lost.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ExternalAddressName name =
+   *       ExternalAddressName.of(
+   *           "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]");
+   *   vmwareEngineClient.deleteExternalAddressAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external IP address to delete. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-ip`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteExternalAddressAsync(
+      ExternalAddressName name) {
+    DeleteExternalAddressRequest request =
+        DeleteExternalAddressRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteExternalAddressAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external IP address. When you delete an external IP address, connectivity
+   * between the external IP address and the corresponding internal IP address is lost.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ExternalAddressName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *           .toString();
+   *   vmwareEngineClient.deleteExternalAddressAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external IP address to delete. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-ip`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteExternalAddressAsync(String name) {
+    DeleteExternalAddressRequest request =
+        DeleteExternalAddressRequest.newBuilder().setName(name).build();
+    return deleteExternalAddressAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external IP address. When you delete an external IP address, connectivity
+   * between the external IP address and the corresponding internal IP address is lost.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteExternalAddressRequest request =
+   *       DeleteExternalAddressRequest.newBuilder()
+   *           .setName(
+   *               ExternalAddressName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmwareEngineClient.deleteExternalAddressAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteExternalAddressAsync(
+      DeleteExternalAddressRequest request) {
+    return deleteExternalAddressOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external IP address. When you delete an external IP address, connectivity
+   * between the external IP address and the corresponding internal IP address is lost.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteExternalAddressRequest request =
+   *       DeleteExternalAddressRequest.newBuilder()
+   *           .setName(
+   *               ExternalAddressName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmwareEngineClient.deleteExternalAddressOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteExternalAddressRequest, Empty, OperationMetadata>
+      deleteExternalAddressOperationCallable() {
+    return stub.deleteExternalAddressOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external IP address. When you delete an external IP address, connectivity
+   * between the external IP address and the corresponding internal IP address is lost.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteExternalAddressRequest request =
+   *       DeleteExternalAddressRequest.newBuilder()
+   *           .setName(
+   *               ExternalAddressName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.deleteExternalAddressCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteExternalAddressRequest, Operation>
+      deleteExternalAddressCallable() {
+    return stub.deleteExternalAddressCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3330,6 +5337,1638 @@ public class VmwareEngineClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable() {
     return stub.updateSubnetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `ExternalAccessRule` resources in the specified network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPolicyName parent =
+   *       NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+   *   for (ExternalAccessRule element :
+   *       vmwareEngineClient.listExternalAccessRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the network policy to query for external access
+   *     firewall rules. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExternalAccessRulesPagedResponse listExternalAccessRules(
+      NetworkPolicyName parent) {
+    ListExternalAccessRulesRequest request =
+        ListExternalAccessRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExternalAccessRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `ExternalAccessRule` resources in the specified network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent =
+   *       NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString();
+   *   for (ExternalAccessRule element :
+   *       vmwareEngineClient.listExternalAccessRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the network policy to query for external access
+   *     firewall rules. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExternalAccessRulesPagedResponse listExternalAccessRules(String parent) {
+    ListExternalAccessRulesRequest request =
+        ListExternalAccessRulesRequest.newBuilder().setParent(parent).build();
+    return listExternalAccessRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `ExternalAccessRule` resources in the specified network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListExternalAccessRulesRequest request =
+   *       ListExternalAccessRulesRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ExternalAccessRule element :
+   *       vmwareEngineClient.listExternalAccessRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExternalAccessRulesPagedResponse listExternalAccessRules(
+      ListExternalAccessRulesRequest request) {
+    return listExternalAccessRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `ExternalAccessRule` resources in the specified network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListExternalAccessRulesRequest request =
+   *       ListExternalAccessRulesRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ExternalAccessRule> future =
+   *       vmwareEngineClient.listExternalAccessRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ExternalAccessRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesPagedResponse>
+      listExternalAccessRulesPagedCallable() {
+    return stub.listExternalAccessRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `ExternalAccessRule` resources in the specified network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListExternalAccessRulesRequest request =
+   *       ListExternalAccessRulesRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListExternalAccessRulesResponse response =
+   *         vmwareEngineClient.listExternalAccessRulesCallable().call(request);
+   *     for (ExternalAccessRule element : response.getExternalAccessRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>
+      listExternalAccessRulesCallable() {
+    return stub.listExternalAccessRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ExternalAccessRuleName name =
+   *       ExternalAccessRuleName.of(
+   *           "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]");
+   *   ExternalAccessRule response = vmwareEngineClient.getExternalAccessRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external access firewall rule to retrieve.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy/externalAccessRules/my-rule`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalAccessRule getExternalAccessRule(ExternalAccessRuleName name) {
+    GetExternalAccessRuleRequest request =
+        GetExternalAccessRuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getExternalAccessRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ExternalAccessRuleName.of(
+   *               "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *           .toString();
+   *   ExternalAccessRule response = vmwareEngineClient.getExternalAccessRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external access firewall rule to retrieve.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy/externalAccessRules/my-rule`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalAccessRule getExternalAccessRule(String name) {
+    GetExternalAccessRuleRequest request =
+        GetExternalAccessRuleRequest.newBuilder().setName(name).build();
+    return getExternalAccessRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetExternalAccessRuleRequest request =
+   *       GetExternalAccessRuleRequest.newBuilder()
+   *           .setName(
+   *               ExternalAccessRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ExternalAccessRule response = vmwareEngineClient.getExternalAccessRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExternalAccessRule getExternalAccessRule(GetExternalAccessRuleRequest request) {
+    return getExternalAccessRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetExternalAccessRuleRequest request =
+   *       GetExternalAccessRuleRequest.newBuilder()
+   *           .setName(
+   *               ExternalAccessRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ExternalAccessRule> future =
+   *       vmwareEngineClient.getExternalAccessRuleCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalAccessRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetExternalAccessRuleRequest, ExternalAccessRule>
+      getExternalAccessRuleCallable() {
+    return stub.getExternalAccessRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new external access rule in a given network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPolicyName parent =
+   *       NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+   *   ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+   *   String externalAccessRuleId = "externalAccessRuleId1937389350";
+   *   ExternalAccessRule response =
+   *       vmwareEngineClient
+   *           .createExternalAccessRuleAsync(parent, externalAccessRule, externalAccessRuleId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the network policy to create a new external access
+   *     firewall rule in. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy`
+   * @param externalAccessRule Required. The initial description of a new external access rule.
+   * @param externalAccessRuleId Required. The user-provided identifier of the `ExternalAccessRule`
+   *     to be created. This identifier must be unique among `ExternalAccessRule` resources within
+   *     the parent and becomes the final token in the name URI. The identifier must meet the
+   *     following requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAccessRule, OperationMetadata> createExternalAccessRuleAsync(
+      NetworkPolicyName parent,
+      ExternalAccessRule externalAccessRule,
+      String externalAccessRuleId) {
+    CreateExternalAccessRuleRequest request =
+        CreateExternalAccessRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setExternalAccessRule(externalAccessRule)
+            .setExternalAccessRuleId(externalAccessRuleId)
+            .build();
+    return createExternalAccessRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new external access rule in a given network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent =
+   *       NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString();
+   *   ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+   *   String externalAccessRuleId = "externalAccessRuleId1937389350";
+   *   ExternalAccessRule response =
+   *       vmwareEngineClient
+   *           .createExternalAccessRuleAsync(parent, externalAccessRule, externalAccessRuleId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the network policy to create a new external access
+   *     firewall rule in. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy`
+   * @param externalAccessRule Required. The initial description of a new external access rule.
+   * @param externalAccessRuleId Required. The user-provided identifier of the `ExternalAccessRule`
+   *     to be created. This identifier must be unique among `ExternalAccessRule` resources within
+   *     the parent and becomes the final token in the name URI. The identifier must meet the
+   *     following requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAccessRule, OperationMetadata> createExternalAccessRuleAsync(
+      String parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId) {
+    CreateExternalAccessRuleRequest request =
+        CreateExternalAccessRuleRequest.newBuilder()
+            .setParent(parent)
+            .setExternalAccessRule(externalAccessRule)
+            .setExternalAccessRuleId(externalAccessRuleId)
+            .build();
+    return createExternalAccessRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new external access rule in a given network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateExternalAccessRuleRequest request =
+   *       CreateExternalAccessRuleRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setExternalAccessRule(ExternalAccessRule.newBuilder().build())
+   *           .setExternalAccessRuleId("externalAccessRuleId1937389350")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ExternalAccessRule response = vmwareEngineClient.createExternalAccessRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAccessRule, OperationMetadata> createExternalAccessRuleAsync(
+      CreateExternalAccessRuleRequest request) {
+    return createExternalAccessRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new external access rule in a given network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateExternalAccessRuleRequest request =
+   *       CreateExternalAccessRuleRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setExternalAccessRule(ExternalAccessRule.newBuilder().build())
+   *           .setExternalAccessRuleId("externalAccessRuleId1937389350")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ExternalAccessRule, OperationMetadata> future =
+   *       vmwareEngineClient.createExternalAccessRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalAccessRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      createExternalAccessRuleOperationCallable() {
+    return stub.createExternalAccessRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new external access rule in a given network policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateExternalAccessRuleRequest request =
+   *       CreateExternalAccessRuleRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]").toString())
+   *           .setExternalAccessRule(ExternalAccessRule.newBuilder().build())
+   *           .setExternalAccessRuleId("externalAccessRuleId1937389350")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.createExternalAccessRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateExternalAccessRuleRequest, Operation>
+      createExternalAccessRuleCallable() {
+    return stub.createExternalAccessRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external access rule. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ExternalAccessRule response =
+   *       vmwareEngineClient.updateExternalAccessRuleAsync(externalAccessRule, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param externalAccessRule Required. Description of the external access rule.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `ExternalAccessRule` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAccessRule, OperationMetadata> updateExternalAccessRuleAsync(
+      ExternalAccessRule externalAccessRule, FieldMask updateMask) {
+    UpdateExternalAccessRuleRequest request =
+        UpdateExternalAccessRuleRequest.newBuilder()
+            .setExternalAccessRule(externalAccessRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateExternalAccessRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external access rule. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateExternalAccessRuleRequest request =
+   *       UpdateExternalAccessRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExternalAccessRule(ExternalAccessRule.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ExternalAccessRule response = vmwareEngineClient.updateExternalAccessRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExternalAccessRule, OperationMetadata> updateExternalAccessRuleAsync(
+      UpdateExternalAccessRuleRequest request) {
+    return updateExternalAccessRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external access rule. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateExternalAccessRuleRequest request =
+   *       UpdateExternalAccessRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExternalAccessRule(ExternalAccessRule.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ExternalAccessRule, OperationMetadata> future =
+   *       vmwareEngineClient.updateExternalAccessRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExternalAccessRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      updateExternalAccessRuleOperationCallable() {
+    return stub.updateExternalAccessRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single external access rule. Only fields specified in `update_mask`
+   * are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateExternalAccessRuleRequest request =
+   *       UpdateExternalAccessRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExternalAccessRule(ExternalAccessRule.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updateExternalAccessRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateExternalAccessRuleRequest, Operation>
+      updateExternalAccessRuleCallable() {
+    return stub.updateExternalAccessRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ExternalAccessRuleName name =
+   *       ExternalAccessRuleName.of(
+   *           "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]");
+   *   vmwareEngineClient.deleteExternalAccessRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external access firewall rule to delete.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy/externalAccessRules/my-rule`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteExternalAccessRuleAsync(
+      ExternalAccessRuleName name) {
+    DeleteExternalAccessRuleRequest request =
+        DeleteExternalAccessRuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteExternalAccessRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ExternalAccessRuleName.of(
+   *               "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *           .toString();
+   *   vmwareEngineClient.deleteExternalAccessRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the external access firewall rule to delete.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/networkPolicies/my-policy/externalAccessRules/my-rule`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteExternalAccessRuleAsync(
+      String name) {
+    DeleteExternalAccessRuleRequest request =
+        DeleteExternalAccessRuleRequest.newBuilder().setName(name).build();
+    return deleteExternalAccessRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteExternalAccessRuleRequest request =
+   *       DeleteExternalAccessRuleRequest.newBuilder()
+   *           .setName(
+   *               ExternalAccessRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmwareEngineClient.deleteExternalAccessRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteExternalAccessRuleAsync(
+      DeleteExternalAccessRuleRequest request) {
+    return deleteExternalAccessRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteExternalAccessRuleRequest request =
+   *       DeleteExternalAccessRuleRequest.newBuilder()
+   *           .setName(
+   *               ExternalAccessRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmwareEngineClient.deleteExternalAccessRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
+      deleteExternalAccessRuleOperationCallable() {
+    return stub.deleteExternalAccessRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single external access rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteExternalAccessRuleRequest request =
+   *       DeleteExternalAccessRuleRequest.newBuilder()
+   *           .setName(
+   *               ExternalAccessRuleName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.deleteExternalAccessRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteExternalAccessRuleRequest, Operation>
+      deleteExternalAccessRuleCallable() {
+    return stub.deleteExternalAccessRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logging servers configured for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   for (LoggingServer element : vmwareEngineClient.listLoggingServers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to be queried for logging
+   *     servers. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLoggingServersPagedResponse listLoggingServers(PrivateCloudName parent) {
+    ListLoggingServersRequest request =
+        ListLoggingServersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listLoggingServers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logging servers configured for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   for (LoggingServer element : vmwareEngineClient.listLoggingServers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to be queried for logging
+   *     servers. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLoggingServersPagedResponse listLoggingServers(String parent) {
+    ListLoggingServersRequest request =
+        ListLoggingServersRequest.newBuilder().setParent(parent).build();
+    return listLoggingServers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logging servers configured for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListLoggingServersRequest request =
+   *       ListLoggingServersRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (LoggingServer element : vmwareEngineClient.listLoggingServers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLoggingServersPagedResponse listLoggingServers(
+      ListLoggingServersRequest request) {
+    return listLoggingServersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logging servers configured for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListLoggingServersRequest request =
+   *       ListLoggingServersRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<LoggingServer> future =
+   *       vmwareEngineClient.listLoggingServersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (LoggingServer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLoggingServersRequest, ListLoggingServersPagedResponse>
+      listLoggingServersPagedCallable() {
+    return stub.listLoggingServersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logging servers configured for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListLoggingServersRequest request =
+   *       ListLoggingServersRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListLoggingServersResponse response =
+   *         vmwareEngineClient.listLoggingServersCallable().call(request);
+   *     for (LoggingServer element : response.getLoggingServersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLoggingServersRequest, ListLoggingServersResponse>
+      listLoggingServersCallable() {
+    return stub.listLoggingServersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LoggingServerName name =
+   *       LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]");
+   *   LoggingServer response = vmwareEngineClient.getLoggingServer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Logging Server to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LoggingServer getLoggingServer(LoggingServerName name) {
+    GetLoggingServerRequest request =
+        GetLoggingServerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getLoggingServer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *           .toString();
+   *   LoggingServer response = vmwareEngineClient.getLoggingServer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Logging Server to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LoggingServer getLoggingServer(String name) {
+    GetLoggingServerRequest request = GetLoggingServerRequest.newBuilder().setName(name).build();
+    return getLoggingServer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetLoggingServerRequest request =
+   *       GetLoggingServerRequest.newBuilder()
+   *           .setName(
+   *               LoggingServerName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *                   .toString())
+   *           .build();
+   *   LoggingServer response = vmwareEngineClient.getLoggingServer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LoggingServer getLoggingServer(GetLoggingServerRequest request) {
+    return getLoggingServerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetLoggingServerRequest request =
+   *       GetLoggingServerRequest.newBuilder()
+   *           .setName(
+   *               LoggingServerName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<LoggingServer> future =
+   *       vmwareEngineClient.getLoggingServerCallable().futureCall(request);
+   *   // Do something.
+   *   LoggingServer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLoggingServerRequest, LoggingServer> getLoggingServerCallable() {
+    return stub.getLoggingServerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new logging server for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   LoggingServer loggingServer = LoggingServer.newBuilder().build();
+   *   String loggingServerId = "loggingServerId-304163779";
+   *   LoggingServer response =
+   *       vmwareEngineClient.createLoggingServerAsync(parent, loggingServer, loggingServerId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to create a new Logging Server
+   *     in. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @param loggingServer Required. The initial description of a new logging server.
+   * @param loggingServerId Required. The user-provided identifier of the `LoggingServer` to be
+   *     created. This identifier must be unique among `LoggingServer` resources within the parent
+   *     and becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LoggingServer, OperationMetadata> createLoggingServerAsync(
+      PrivateCloudName parent, LoggingServer loggingServer, String loggingServerId) {
+    CreateLoggingServerRequest request =
+        CreateLoggingServerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setLoggingServer(loggingServer)
+            .setLoggingServerId(loggingServerId)
+            .build();
+    return createLoggingServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new logging server for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   LoggingServer loggingServer = LoggingServer.newBuilder().build();
+   *   String loggingServerId = "loggingServerId-304163779";
+   *   LoggingServer response =
+   *       vmwareEngineClient.createLoggingServerAsync(parent, loggingServer, loggingServerId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to create a new Logging Server
+   *     in. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @param loggingServer Required. The initial description of a new logging server.
+   * @param loggingServerId Required. The user-provided identifier of the `LoggingServer` to be
+   *     created. This identifier must be unique among `LoggingServer` resources within the parent
+   *     and becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LoggingServer, OperationMetadata> createLoggingServerAsync(
+      String parent, LoggingServer loggingServer, String loggingServerId) {
+    CreateLoggingServerRequest request =
+        CreateLoggingServerRequest.newBuilder()
+            .setParent(parent)
+            .setLoggingServer(loggingServer)
+            .setLoggingServerId(loggingServerId)
+            .build();
+    return createLoggingServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new logging server for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateLoggingServerRequest request =
+   *       CreateLoggingServerRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setLoggingServer(LoggingServer.newBuilder().build())
+   *           .setLoggingServerId("loggingServerId-304163779")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   LoggingServer response = vmwareEngineClient.createLoggingServerAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LoggingServer, OperationMetadata> createLoggingServerAsync(
+      CreateLoggingServerRequest request) {
+    return createLoggingServerOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new logging server for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateLoggingServerRequest request =
+   *       CreateLoggingServerRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setLoggingServer(LoggingServer.newBuilder().build())
+   *           .setLoggingServerId("loggingServerId-304163779")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<LoggingServer, OperationMetadata> future =
+   *       vmwareEngineClient.createLoggingServerOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LoggingServer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateLoggingServerRequest, LoggingServer, OperationMetadata>
+      createLoggingServerOperationCallable() {
+    return stub.createLoggingServerOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new logging server for a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateLoggingServerRequest request =
+   *       CreateLoggingServerRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setLoggingServer(LoggingServer.newBuilder().build())
+   *           .setLoggingServerId("loggingServerId-304163779")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.createLoggingServerCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateLoggingServerRequest, Operation> createLoggingServerCallable() {
+    return stub.createLoggingServerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single logging server. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LoggingServer loggingServer = LoggingServer.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LoggingServer response =
+   *       vmwareEngineClient.updateLoggingServerAsync(loggingServer, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param loggingServer Required. Logging server description.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `LoggingServer` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LoggingServer, OperationMetadata> updateLoggingServerAsync(
+      LoggingServer loggingServer, FieldMask updateMask) {
+    UpdateLoggingServerRequest request =
+        UpdateLoggingServerRequest.newBuilder()
+            .setLoggingServer(loggingServer)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateLoggingServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single logging server. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateLoggingServerRequest request =
+   *       UpdateLoggingServerRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setLoggingServer(LoggingServer.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   LoggingServer response = vmwareEngineClient.updateLoggingServerAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LoggingServer, OperationMetadata> updateLoggingServerAsync(
+      UpdateLoggingServerRequest request) {
+    return updateLoggingServerOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single logging server. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateLoggingServerRequest request =
+   *       UpdateLoggingServerRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setLoggingServer(LoggingServer.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<LoggingServer, OperationMetadata> future =
+   *       vmwareEngineClient.updateLoggingServerOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LoggingServer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
+      updateLoggingServerOperationCallable() {
+    return stub.updateLoggingServerOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single logging server. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateLoggingServerRequest request =
+   *       UpdateLoggingServerRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setLoggingServer(LoggingServer.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updateLoggingServerCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateLoggingServerRequest, Operation> updateLoggingServerCallable() {
+    return stub.updateLoggingServerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LoggingServerName name =
+   *       LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]");
+   *   vmwareEngineClient.deleteLoggingServerAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the logging server to delete. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteLoggingServerAsync(
+      LoggingServerName name) {
+    DeleteLoggingServerRequest request =
+        DeleteLoggingServerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteLoggingServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *           .toString();
+   *   vmwareEngineClient.deleteLoggingServerAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the logging server to delete. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteLoggingServerAsync(String name) {
+    DeleteLoggingServerRequest request =
+        DeleteLoggingServerRequest.newBuilder().setName(name).build();
+    return deleteLoggingServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteLoggingServerRequest request =
+   *       DeleteLoggingServerRequest.newBuilder()
+   *           .setName(
+   *               LoggingServerName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmwareEngineClient.deleteLoggingServerAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteLoggingServerAsync(
+      DeleteLoggingServerRequest request) {
+    return deleteLoggingServerOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteLoggingServerRequest request =
+   *       DeleteLoggingServerRequest.newBuilder()
+   *           .setName(
+   *               LoggingServerName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmwareEngineClient.deleteLoggingServerOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteLoggingServerRequest, Empty, OperationMetadata>
+      deleteLoggingServerOperationCallable() {
+    return stub.deleteLoggingServerOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single logging server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteLoggingServerRequest request =
+   *       DeleteLoggingServerRequest.newBuilder()
+   *           .setName(
+   *               LoggingServerName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.deleteLoggingServerCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteLoggingServerRequest, Operation> deleteLoggingServerCallable() {
+    return stub.deleteLoggingServerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3820,6 +7459,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *       ShowVcenterCredentialsRequest.newBuilder()
    *           .setPrivateCloud(
    *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setUsername("username-265713450")
    *           .build();
    *   Credentials response = vmwareEngineClient.showVcenterCredentials(request);
    * }
@@ -3849,6 +7489,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *       ShowVcenterCredentialsRequest.newBuilder()
    *           .setPrivateCloud(
    *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setUsername("username-265713450")
    *           .build();
    *   ApiFuture<Credentials> future =
    *       vmwareEngineClient.showVcenterCredentialsCallable().futureCall(request);
@@ -4104,6 +7745,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *           .setPrivateCloud(
    *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setUsername("username-265713450")
    *           .build();
    *   PrivateCloud response = vmwareEngineClient.resetVcenterCredentialsAsync(request).get();
    * }
@@ -4135,6 +7777,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *           .setPrivateCloud(
    *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setUsername("username-265713450")
    *           .build();
    *   OperationFuture<PrivateCloud, OperationMetadata> future =
    *       vmwareEngineClient.resetVcenterCredentialsOperationCallable().futureCall(request);
@@ -4166,6 +7809,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *           .setPrivateCloud(
    *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setUsername("username-265713450")
    *           .build();
    *   ApiFuture<Operation> future =
    *       vmwareEngineClient.resetVcenterCredentialsCallable().futureCall(request);
@@ -4177,6 +7821,1267 @@ public class VmwareEngineClient implements BackgroundResource {
   public final UnaryCallable<ResetVcenterCredentialsRequest, Operation>
       resetVcenterCredentialsCallable() {
     return stub.resetVcenterCredentialsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the `DnsForwarding` config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DnsForwardingName name = DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   DnsForwarding response = vmwareEngineClient.getDnsForwarding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of a `DnsForwarding` to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DnsForwarding getDnsForwarding(DnsForwardingName name) {
+    GetDnsForwardingRequest request =
+        GetDnsForwardingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDnsForwarding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the `DnsForwarding` config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name = DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   DnsForwarding response = vmwareEngineClient.getDnsForwarding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of a `DnsForwarding` to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DnsForwarding getDnsForwarding(String name) {
+    GetDnsForwardingRequest request = GetDnsForwardingRequest.newBuilder().setName(name).build();
+    return getDnsForwarding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the `DnsForwarding` config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetDnsForwardingRequest request =
+   *       GetDnsForwardingRequest.newBuilder()
+   *           .setName(
+   *               DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .build();
+   *   DnsForwarding response = vmwareEngineClient.getDnsForwarding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DnsForwarding getDnsForwarding(GetDnsForwardingRequest request) {
+    return getDnsForwardingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the `DnsForwarding` config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetDnsForwardingRequest request =
+   *       GetDnsForwardingRequest.newBuilder()
+   *           .setName(
+   *               DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .build();
+   *   ApiFuture<DnsForwarding> future =
+   *       vmwareEngineClient.getDnsForwardingCallable().futureCall(request);
+   *   // Do something.
+   *   DnsForwarding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingCallable() {
+    return stub.getDnsForwardingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the `DnsForwarding` config, like associated domains. Only fields
+   * specified in `update_mask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DnsForwarding dnsForwarding = DnsForwarding.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DnsForwarding response =
+   *       vmwareEngineClient.updateDnsForwardingAsync(dnsForwarding, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param dnsForwarding Required. DnsForwarding config details.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `DnsForwarding` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsForwarding, OperationMetadata> updateDnsForwardingAsync(
+      DnsForwarding dnsForwarding, FieldMask updateMask) {
+    UpdateDnsForwardingRequest request =
+        UpdateDnsForwardingRequest.newBuilder()
+            .setDnsForwarding(dnsForwarding)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDnsForwardingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the `DnsForwarding` config, like associated domains. Only fields
+   * specified in `update_mask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateDnsForwardingRequest request =
+   *       UpdateDnsForwardingRequest.newBuilder()
+   *           .setDnsForwarding(DnsForwarding.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DnsForwarding response = vmwareEngineClient.updateDnsForwardingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsForwarding, OperationMetadata> updateDnsForwardingAsync(
+      UpdateDnsForwardingRequest request) {
+    return updateDnsForwardingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the `DnsForwarding` config, like associated domains. Only fields
+   * specified in `update_mask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateDnsForwardingRequest request =
+   *       UpdateDnsForwardingRequest.newBuilder()
+   *           .setDnsForwarding(DnsForwarding.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DnsForwarding, OperationMetadata> future =
+   *       vmwareEngineClient.updateDnsForwardingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DnsForwarding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
+      updateDnsForwardingOperationCallable() {
+    return stub.updateDnsForwardingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the `DnsForwarding` config, like associated domains. Only fields
+   * specified in `update_mask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateDnsForwardingRequest request =
+   *       UpdateDnsForwardingRequest.newBuilder()
+   *           .setDnsForwarding(DnsForwarding.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updateDnsForwardingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDnsForwardingRequest, Operation> updateDnsForwardingCallable() {
+    return stub.updateDnsForwardingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `NetworkPeering` resource by its resource name. The resource contains details of
+   * the network peering, such as peered networks, import and export custom route configurations,
+   * and peering state. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPeeringName name =
+   *       NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+   *   NetworkPeering response = vmwareEngineClient.getNetworkPeering(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the network peering to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/networkPeerings/my-peering`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NetworkPeering getNetworkPeering(NetworkPeeringName name) {
+    GetNetworkPeeringRequest request =
+        GetNetworkPeeringRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNetworkPeering(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `NetworkPeering` resource by its resource name. The resource contains details of
+   * the network peering, such as peered networks, import and export custom route configurations,
+   * and peering state. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString();
+   *   NetworkPeering response = vmwareEngineClient.getNetworkPeering(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the network peering to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/networkPeerings/my-peering`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NetworkPeering getNetworkPeering(String name) {
+    GetNetworkPeeringRequest request = GetNetworkPeeringRequest.newBuilder().setName(name).build();
+    return getNetworkPeering(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `NetworkPeering` resource by its resource name. The resource contains details of
+   * the network peering, such as peered networks, import and export custom route configurations,
+   * and peering state. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetNetworkPeeringRequest request =
+   *       GetNetworkPeeringRequest.newBuilder()
+   *           .setName(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .build();
+   *   NetworkPeering response = vmwareEngineClient.getNetworkPeering(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NetworkPeering getNetworkPeering(GetNetworkPeeringRequest request) {
+    return getNetworkPeeringCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `NetworkPeering` resource by its resource name. The resource contains details of
+   * the network peering, such as peered networks, import and export custom route configurations,
+   * and peering state. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetNetworkPeeringRequest request =
+   *       GetNetworkPeeringRequest.newBuilder()
+   *           .setName(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .build();
+   *   ApiFuture<NetworkPeering> future =
+   *       vmwareEngineClient.getNetworkPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   NetworkPeering response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNetworkPeeringRequest, NetworkPeering> getNetworkPeeringCallable() {
+    return stub.getNetworkPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (NetworkPeering element : vmwareEngineClient.listNetworkPeerings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location (global) to query for network
+   *     peerings. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkPeeringsPagedResponse listNetworkPeerings(LocationName parent) {
+    ListNetworkPeeringsRequest request =
+        ListNetworkPeeringsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNetworkPeerings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (NetworkPeering element : vmwareEngineClient.listNetworkPeerings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location (global) to query for network
+   *     peerings. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkPeeringsPagedResponse listNetworkPeerings(String parent) {
+    ListNetworkPeeringsRequest request =
+        ListNetworkPeeringsRequest.newBuilder().setParent(parent).build();
+    return listNetworkPeerings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListNetworkPeeringsRequest request =
+   *       ListNetworkPeeringsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (NetworkPeering element : vmwareEngineClient.listNetworkPeerings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkPeeringsPagedResponse listNetworkPeerings(
+      ListNetworkPeeringsRequest request) {
+    return listNetworkPeeringsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListNetworkPeeringsRequest request =
+   *       ListNetworkPeeringsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<NetworkPeering> future =
+   *       vmwareEngineClient.listNetworkPeeringsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NetworkPeering element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsPagedResponse>
+      listNetworkPeeringsPagedCallable() {
+    return stub.listNetworkPeeringsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListNetworkPeeringsRequest request =
+   *       ListNetworkPeeringsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListNetworkPeeringsResponse response =
+   *         vmwareEngineClient.listNetworkPeeringsCallable().call(request);
+   *     for (NetworkPeering element : response.getNetworkPeeringsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
+      listNetworkPeeringsCallable() {
+    return stub.listNetworkPeeringsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new network peering between the peer network and VMware Engine network provided in a
+   * `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+   *   String networkPeeringId = "networkPeeringId1321772525";
+   *   NetworkPeering response =
+   *       vmwareEngineClient
+   *           .createNetworkPeeringAsync(parent, networkPeering, networkPeeringId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to create the new network peering in.
+   *     This value is always `global`, because `NetworkPeering` is a global resource. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global`
+   * @param networkPeering Required. The initial description of the new network peering.
+   * @param networkPeeringId Required. The user-provided identifier of the new `NetworkPeering`.
+   *     This identifier must be unique among `NetworkPeering` resources within the parent and
+   *     becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NetworkPeering, OperationMetadata> createNetworkPeeringAsync(
+      LocationName parent, NetworkPeering networkPeering, String networkPeeringId) {
+    CreateNetworkPeeringRequest request =
+        CreateNetworkPeeringRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNetworkPeering(networkPeering)
+            .setNetworkPeeringId(networkPeeringId)
+            .build();
+    return createNetworkPeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new network peering between the peer network and VMware Engine network provided in a
+   * `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+   *   String networkPeeringId = "networkPeeringId1321772525";
+   *   NetworkPeering response =
+   *       vmwareEngineClient
+   *           .createNetworkPeeringAsync(parent, networkPeering, networkPeeringId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to create the new network peering in.
+   *     This value is always `global`, because `NetworkPeering` is a global resource. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global`
+   * @param networkPeering Required. The initial description of the new network peering.
+   * @param networkPeeringId Required. The user-provided identifier of the new `NetworkPeering`.
+   *     This identifier must be unique among `NetworkPeering` resources within the parent and
+   *     becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NetworkPeering, OperationMetadata> createNetworkPeeringAsync(
+      String parent, NetworkPeering networkPeering, String networkPeeringId) {
+    CreateNetworkPeeringRequest request =
+        CreateNetworkPeeringRequest.newBuilder()
+            .setParent(parent)
+            .setNetworkPeering(networkPeering)
+            .setNetworkPeeringId(networkPeeringId)
+            .build();
+    return createNetworkPeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new network peering between the peer network and VMware Engine network provided in a
+   * `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateNetworkPeeringRequest request =
+   *       CreateNetworkPeeringRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNetworkPeeringId("networkPeeringId1321772525")
+   *           .setNetworkPeering(NetworkPeering.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   NetworkPeering response = vmwareEngineClient.createNetworkPeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NetworkPeering, OperationMetadata> createNetworkPeeringAsync(
+      CreateNetworkPeeringRequest request) {
+    return createNetworkPeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new network peering between the peer network and VMware Engine network provided in a
+   * `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateNetworkPeeringRequest request =
+   *       CreateNetworkPeeringRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNetworkPeeringId("networkPeeringId1321772525")
+   *           .setNetworkPeering(NetworkPeering.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<NetworkPeering, OperationMetadata> future =
+   *       vmwareEngineClient.createNetworkPeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   NetworkPeering response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      createNetworkPeeringOperationCallable() {
+    return stub.createNetworkPeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new network peering between the peer network and VMware Engine network provided in a
+   * `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateNetworkPeeringRequest request =
+   *       CreateNetworkPeeringRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNetworkPeeringId("networkPeeringId1321772525")
+   *           .setNetworkPeering(NetworkPeering.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.createNetworkPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateNetworkPeeringRequest, Operation>
+      createNetworkPeeringCallable() {
+    return stub.createNetworkPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine
+   * network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is
+   * a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPeeringName name =
+   *       NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+   *   vmwareEngineClient.deleteNetworkPeeringAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the network peering to be deleted. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/networkPeerings/my-peering`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteNetworkPeeringAsync(
+      NetworkPeeringName name) {
+    DeleteNetworkPeeringRequest request =
+        DeleteNetworkPeeringRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteNetworkPeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine
+   * network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is
+   * a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString();
+   *   vmwareEngineClient.deleteNetworkPeeringAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the network peering to be deleted. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/networkPeerings/my-peering`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteNetworkPeeringAsync(String name) {
+    DeleteNetworkPeeringRequest request =
+        DeleteNetworkPeeringRequest.newBuilder().setName(name).build();
+    return deleteNetworkPeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine
+   * network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is
+   * a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteNetworkPeeringRequest request =
+   *       DeleteNetworkPeeringRequest.newBuilder()
+   *           .setName(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmwareEngineClient.deleteNetworkPeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteNetworkPeeringAsync(
+      DeleteNetworkPeeringRequest request) {
+    return deleteNetworkPeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine
+   * network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is
+   * a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteNetworkPeeringRequest request =
+   *       DeleteNetworkPeeringRequest.newBuilder()
+   *           .setName(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmwareEngineClient.deleteNetworkPeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
+      deleteNetworkPeeringOperationCallable() {
+    return stub.deleteNetworkPeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine
+   * network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is
+   * a global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteNetworkPeeringRequest request =
+   *       DeleteNetworkPeeringRequest.newBuilder()
+   *           .setName(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.deleteNetworkPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteNetworkPeeringRequest, Operation>
+      deleteNetworkPeeringCallable() {
+    return stub.deleteNetworkPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `NetworkPeering` resource. Only the `description` field can be updated. Only fields
+   * specified in `updateMask` are applied. NetworkPeering is a global resource and location can
+   * only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   NetworkPeering response =
+   *       vmwareEngineClient.updateNetworkPeeringAsync(networkPeering, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param networkPeering Required. Network peering description.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `NetworkPeering` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NetworkPeering, OperationMetadata> updateNetworkPeeringAsync(
+      NetworkPeering networkPeering, FieldMask updateMask) {
+    UpdateNetworkPeeringRequest request =
+        UpdateNetworkPeeringRequest.newBuilder()
+            .setNetworkPeering(networkPeering)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateNetworkPeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `NetworkPeering` resource. Only the `description` field can be updated. Only fields
+   * specified in `updateMask` are applied. NetworkPeering is a global resource and location can
+   * only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateNetworkPeeringRequest request =
+   *       UpdateNetworkPeeringRequest.newBuilder()
+   *           .setNetworkPeering(NetworkPeering.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   NetworkPeering response = vmwareEngineClient.updateNetworkPeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NetworkPeering, OperationMetadata> updateNetworkPeeringAsync(
+      UpdateNetworkPeeringRequest request) {
+    return updateNetworkPeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `NetworkPeering` resource. Only the `description` field can be updated. Only fields
+   * specified in `updateMask` are applied. NetworkPeering is a global resource and location can
+   * only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateNetworkPeeringRequest request =
+   *       UpdateNetworkPeeringRequest.newBuilder()
+   *           .setNetworkPeering(NetworkPeering.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<NetworkPeering, OperationMetadata> future =
+   *       vmwareEngineClient.updateNetworkPeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   NetworkPeering response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      updateNetworkPeeringOperationCallable() {
+    return stub.updateNetworkPeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `NetworkPeering` resource. Only the `description` field can be updated. Only fields
+   * specified in `updateMask` are applied. NetworkPeering is a global resource and location can
+   * only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateNetworkPeeringRequest request =
+   *       UpdateNetworkPeeringRequest.newBuilder()
+   *           .setNetworkPeering(NetworkPeering.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updateNetworkPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateNetworkPeeringRequest, Operation>
+      updateNetworkPeeringCallable() {
+    return stub.updateNetworkPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network peering routes exchanged over a peering connection. NetworkPeering is a
+   * global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   NetworkPeeringName parent =
+   *       NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+   *   for (PeeringRoute element : vmwareEngineClient.listPeeringRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the network peering to retrieve peering routes
+   *     from. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/networkPeerings/my-peering`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPeeringRoutesPagedResponse listPeeringRoutes(NetworkPeeringName parent) {
+    ListPeeringRoutesRequest request =
+        ListPeeringRoutesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPeeringRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network peering routes exchanged over a peering connection. NetworkPeering is a
+   * global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent =
+   *       NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString();
+   *   for (PeeringRoute element : vmwareEngineClient.listPeeringRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the network peering to retrieve peering routes
+   *     from. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/networkPeerings/my-peering`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPeeringRoutesPagedResponse listPeeringRoutes(String parent) {
+    ListPeeringRoutesRequest request =
+        ListPeeringRoutesRequest.newBuilder().setParent(parent).build();
+    return listPeeringRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network peering routes exchanged over a peering connection. NetworkPeering is a
+   * global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPeeringRoutesRequest request =
+   *       ListPeeringRoutesRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (PeeringRoute element : vmwareEngineClient.listPeeringRoutes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPeeringRoutesPagedResponse listPeeringRoutes(ListPeeringRoutesRequest request) {
+    return listPeeringRoutesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network peering routes exchanged over a peering connection. NetworkPeering is a
+   * global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPeeringRoutesRequest request =
+   *       ListPeeringRoutesRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<PeeringRoute> future =
+   *       vmwareEngineClient.listPeeringRoutesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PeeringRoute element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesPagedResponse>
+      listPeeringRoutesPagedCallable() {
+    return stub.listPeeringRoutesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network peering routes exchanged over a peering connection. NetworkPeering is a
+   * global resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPeeringRoutesRequest request =
+   *       ListPeeringRoutesRequest.newBuilder()
+   *           .setParent(
+   *               NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListPeeringRoutesResponse response =
+   *         vmwareEngineClient.listPeeringRoutesCallable().call(request);
+   *     for (PeeringRoute element : response.getPeeringRoutesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
+      listPeeringRoutesCallable() {
+    return stub.listPeeringRoutesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5520,6 +10425,1076 @@ public class VmwareEngineClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteNetworkPolicyRequest, Operation> deleteNetworkPolicyCallable() {
     return stub.deleteNetworkPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   for (ManagementDnsZoneBinding element :
+   *       vmwareEngineClient.listManagementDnsZoneBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to be queried for management DNS
+   *     zone bindings. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListManagementDnsZoneBindingsPagedResponse listManagementDnsZoneBindings(
+      PrivateCloudName parent) {
+    ListManagementDnsZoneBindingsRequest request =
+        ListManagementDnsZoneBindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listManagementDnsZoneBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   for (ManagementDnsZoneBinding element :
+   *       vmwareEngineClient.listManagementDnsZoneBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to be queried for management DNS
+   *     zone bindings. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListManagementDnsZoneBindingsPagedResponse listManagementDnsZoneBindings(
+      String parent) {
+    ListManagementDnsZoneBindingsRequest request =
+        ListManagementDnsZoneBindingsRequest.newBuilder().setParent(parent).build();
+    return listManagementDnsZoneBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListManagementDnsZoneBindingsRequest request =
+   *       ListManagementDnsZoneBindingsRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ManagementDnsZoneBinding element :
+   *       vmwareEngineClient.listManagementDnsZoneBindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListManagementDnsZoneBindingsPagedResponse listManagementDnsZoneBindings(
+      ListManagementDnsZoneBindingsRequest request) {
+    return listManagementDnsZoneBindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListManagementDnsZoneBindingsRequest request =
+   *       ListManagementDnsZoneBindingsRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ManagementDnsZoneBinding> future =
+   *       vmwareEngineClient.listManagementDnsZoneBindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ManagementDnsZoneBinding element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsPagedResponse>
+      listManagementDnsZoneBindingsPagedCallable() {
+    return stub.listManagementDnsZoneBindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListManagementDnsZoneBindingsRequest request =
+   *       ListManagementDnsZoneBindingsRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListManagementDnsZoneBindingsResponse response =
+   *         vmwareEngineClient.listManagementDnsZoneBindingsCallable().call(request);
+   *     for (ManagementDnsZoneBinding element : response.getManagementDnsZoneBindingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+      listManagementDnsZoneBindingsCallable() {
+    return stub.listManagementDnsZoneBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ManagementDnsZoneBindingName name =
+   *       ManagementDnsZoneBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+   *   ManagementDnsZoneBinding response = vmwareEngineClient.getManagementDnsZoneBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the management DNS zone binding to retrieve.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagementDnsZoneBinding getManagementDnsZoneBinding(
+      ManagementDnsZoneBindingName name) {
+    GetManagementDnsZoneBindingRequest request =
+        GetManagementDnsZoneBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getManagementDnsZoneBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ManagementDnsZoneBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *           .toString();
+   *   ManagementDnsZoneBinding response = vmwareEngineClient.getManagementDnsZoneBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the management DNS zone binding to retrieve.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagementDnsZoneBinding getManagementDnsZoneBinding(String name) {
+    GetManagementDnsZoneBindingRequest request =
+        GetManagementDnsZoneBindingRequest.newBuilder().setName(name).build();
+    return getManagementDnsZoneBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetManagementDnsZoneBindingRequest request =
+   *       GetManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .build();
+   *   ManagementDnsZoneBinding response = vmwareEngineClient.getManagementDnsZoneBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagementDnsZoneBinding getManagementDnsZoneBinding(
+      GetManagementDnsZoneBindingRequest request) {
+    return getManagementDnsZoneBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetManagementDnsZoneBindingRequest request =
+   *       GetManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ManagementDnsZoneBinding> future =
+   *       vmwareEngineClient.getManagementDnsZoneBindingCallable().futureCall(request);
+   *   // Do something.
+   *   ManagementDnsZoneBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+      getManagementDnsZoneBindingCallable() {
+    return stub.getManagementDnsZoneBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS
+   * binding and the resource that represents the DNS binding of the consumer VPC network to the
+   * management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that
+   * VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses
+   * for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+   *   ManagementDnsZoneBinding managementDnsZoneBinding =
+   *       ManagementDnsZoneBinding.newBuilder().build();
+   *   String managementDnsZoneBindingId = "managementDnsZoneBindingId-288984082";
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient
+   *           .createManagementDnsZoneBindingAsync(
+   *               parent, managementDnsZoneBinding, managementDnsZoneBindingId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to create a new management DNS
+   *     zone binding for. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @param managementDnsZoneBinding Required. The initial values for a new management DNS zone
+   *     binding.
+   * @param managementDnsZoneBindingId Required. The user-provided identifier of the
+   *     `ManagementDnsZoneBinding` resource to be created. This identifier must be unique among
+   *     `ManagementDnsZoneBinding` resources within the parent and becomes the final token in the
+   *     name URI. The identifier must meet the following requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingAsync(
+          PrivateCloudName parent,
+          ManagementDnsZoneBinding managementDnsZoneBinding,
+          String managementDnsZoneBindingId) {
+    CreateManagementDnsZoneBindingRequest request =
+        CreateManagementDnsZoneBindingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setManagementDnsZoneBinding(managementDnsZoneBinding)
+            .setManagementDnsZoneBindingId(managementDnsZoneBindingId)
+            .build();
+    return createManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS
+   * binding and the resource that represents the DNS binding of the consumer VPC network to the
+   * management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that
+   * VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses
+   * for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString();
+   *   ManagementDnsZoneBinding managementDnsZoneBinding =
+   *       ManagementDnsZoneBinding.newBuilder().build();
+   *   String managementDnsZoneBindingId = "managementDnsZoneBindingId-288984082";
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient
+   *           .createManagementDnsZoneBindingAsync(
+   *               parent, managementDnsZoneBinding, managementDnsZoneBindingId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private cloud to create a new management DNS
+   *     zone binding for. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+   * @param managementDnsZoneBinding Required. The initial values for a new management DNS zone
+   *     binding.
+   * @param managementDnsZoneBindingId Required. The user-provided identifier of the
+   *     `ManagementDnsZoneBinding` resource to be created. This identifier must be unique among
+   *     `ManagementDnsZoneBinding` resources within the parent and becomes the final token in the
+   *     name URI. The identifier must meet the following requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingAsync(
+          String parent,
+          ManagementDnsZoneBinding managementDnsZoneBinding,
+          String managementDnsZoneBindingId) {
+    CreateManagementDnsZoneBindingRequest request =
+        CreateManagementDnsZoneBindingRequest.newBuilder()
+            .setParent(parent)
+            .setManagementDnsZoneBinding(managementDnsZoneBinding)
+            .setManagementDnsZoneBindingId(managementDnsZoneBindingId)
+            .build();
+    return createManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS
+   * binding and the resource that represents the DNS binding of the consumer VPC network to the
+   * management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that
+   * VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses
+   * for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateManagementDnsZoneBindingRequest request =
+   *       CreateManagementDnsZoneBindingRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setManagementDnsZoneBinding(ManagementDnsZoneBinding.newBuilder().build())
+   *           .setManagementDnsZoneBindingId("managementDnsZoneBindingId-288984082")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient.createManagementDnsZoneBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingAsync(CreateManagementDnsZoneBindingRequest request) {
+    return createManagementDnsZoneBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS
+   * binding and the resource that represents the DNS binding of the consumer VPC network to the
+   * management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that
+   * VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses
+   * for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateManagementDnsZoneBindingRequest request =
+   *       CreateManagementDnsZoneBindingRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setManagementDnsZoneBinding(ManagementDnsZoneBinding.newBuilder().build())
+   *           .setManagementDnsZoneBindingId("managementDnsZoneBindingId-288984082")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ManagementDnsZoneBinding, OperationMetadata> future =
+   *       vmwareEngineClient.createManagementDnsZoneBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ManagementDnsZoneBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingOperationCallable() {
+    return stub.createManagementDnsZoneBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS
+   * binding and the resource that represents the DNS binding of the consumer VPC network to the
+   * management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that
+   * VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses
+   * for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreateManagementDnsZoneBindingRequest request =
+   *       CreateManagementDnsZoneBindingRequest.newBuilder()
+   *           .setParent(
+   *               PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+   *           .setManagementDnsZoneBinding(ManagementDnsZoneBinding.newBuilder().build())
+   *           .setManagementDnsZoneBindingId("managementDnsZoneBindingId-288984082")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.createManagementDnsZoneBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateManagementDnsZoneBindingRequest, Operation>
+      createManagementDnsZoneBindingCallable() {
+    return stub.createManagementDnsZoneBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `ManagementDnsZoneBinding` resource. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ManagementDnsZoneBinding managementDnsZoneBinding =
+   *       ManagementDnsZoneBinding.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient
+   *           .updateManagementDnsZoneBindingAsync(managementDnsZoneBinding, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param managementDnsZoneBinding Required. New values to update the management DNS zone binding
+   *     with.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `ManagementDnsZoneBinding` resource by the update. The fields specified in the
+   *     `update_mask` are relative to the resource, not the full request. A field will be
+   *     overwritten if it is in the mask. If the user does not provide a mask then all fields will
+   *     be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingAsync(
+          ManagementDnsZoneBinding managementDnsZoneBinding, FieldMask updateMask) {
+    UpdateManagementDnsZoneBindingRequest request =
+        UpdateManagementDnsZoneBindingRequest.newBuilder()
+            .setManagementDnsZoneBinding(managementDnsZoneBinding)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `ManagementDnsZoneBinding` resource. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateManagementDnsZoneBindingRequest request =
+   *       UpdateManagementDnsZoneBindingRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setManagementDnsZoneBinding(ManagementDnsZoneBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient.updateManagementDnsZoneBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingAsync(UpdateManagementDnsZoneBindingRequest request) {
+    return updateManagementDnsZoneBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `ManagementDnsZoneBinding` resource. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateManagementDnsZoneBindingRequest request =
+   *       UpdateManagementDnsZoneBindingRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setManagementDnsZoneBinding(ManagementDnsZoneBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ManagementDnsZoneBinding, OperationMetadata> future =
+   *       vmwareEngineClient.updateManagementDnsZoneBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ManagementDnsZoneBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingOperationCallable() {
+    return stub.updateManagementDnsZoneBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `ManagementDnsZoneBinding` resource. Only fields specified in `update_mask` are
+   * applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateManagementDnsZoneBindingRequest request =
+   *       UpdateManagementDnsZoneBindingRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setManagementDnsZoneBinding(ManagementDnsZoneBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updateManagementDnsZoneBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateManagementDnsZoneBindingRequest, Operation>
+      updateManagementDnsZoneBindingCallable() {
+    return stub.updateManagementDnsZoneBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted,
+   * the corresponding consumer VPC network is no longer bound to the management DNS zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ManagementDnsZoneBindingName name =
+   *       ManagementDnsZoneBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+   *   vmwareEngineClient.deleteManagementDnsZoneBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the management DNS zone binding to delete. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteManagementDnsZoneBindingAsync(
+      ManagementDnsZoneBindingName name) {
+    DeleteManagementDnsZoneBindingRequest request =
+        DeleteManagementDnsZoneBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted,
+   * the corresponding consumer VPC network is no longer bound to the management DNS zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ManagementDnsZoneBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *           .toString();
+   *   vmwareEngineClient.deleteManagementDnsZoneBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the management DNS zone binding to delete. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteManagementDnsZoneBindingAsync(
+      String name) {
+    DeleteManagementDnsZoneBindingRequest request =
+        DeleteManagementDnsZoneBindingRequest.newBuilder().setName(name).build();
+    return deleteManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted,
+   * the corresponding consumer VPC network is no longer bound to the management DNS zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteManagementDnsZoneBindingRequest request =
+   *       DeleteManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmwareEngineClient.deleteManagementDnsZoneBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteManagementDnsZoneBindingAsync(
+      DeleteManagementDnsZoneBindingRequest request) {
+    return deleteManagementDnsZoneBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted,
+   * the corresponding consumer VPC network is no longer bound to the management DNS zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteManagementDnsZoneBindingRequest request =
+   *       DeleteManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmwareEngineClient.deleteManagementDnsZoneBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
+      deleteManagementDnsZoneBindingOperationCallable() {
+    return stub.deleteManagementDnsZoneBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted,
+   * the corresponding consumer VPC network is no longer bound to the management DNS zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeleteManagementDnsZoneBindingRequest request =
+   *       DeleteManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.deleteManagementDnsZoneBindingCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteManagementDnsZoneBindingRequest, Operation>
+      deleteManagementDnsZoneBindingCallable() {
+    return stub.deleteManagementDnsZoneBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ManagementDnsZoneBindingName name =
+   *       ManagementDnsZoneBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient.repairManagementDnsZoneBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the management DNS zone binding to repair. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name) {
+    RepairManagementDnsZoneBindingRequest request =
+        RepairManagementDnsZoneBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return repairManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       ManagementDnsZoneBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *           .toString();
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient.repairManagementDnsZoneBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the management DNS zone binding to repair. Resource
+   *     names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingAsync(String name) {
+    RepairManagementDnsZoneBindingRequest request =
+        RepairManagementDnsZoneBindingRequest.newBuilder().setName(name).build();
+    return repairManagementDnsZoneBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   RepairManagementDnsZoneBindingRequest request =
+   *       RepairManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ManagementDnsZoneBinding response =
+   *       vmwareEngineClient.repairManagementDnsZoneBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingAsync(RepairManagementDnsZoneBindingRequest request) {
+    return repairManagementDnsZoneBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   RepairManagementDnsZoneBindingRequest request =
+   *       RepairManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ManagementDnsZoneBinding, OperationMetadata> future =
+   *       vmwareEngineClient.repairManagementDnsZoneBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ManagementDnsZoneBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingOperationCallable() {
+    return stub.repairManagementDnsZoneBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   RepairManagementDnsZoneBindingRequest request =
+   *       RepairManagementDnsZoneBindingRequest.newBuilder()
+   *           .setName(
+   *               ManagementDnsZoneBindingName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PRIVATE_CLOUD]",
+   *                       "[MANAGEMENT_DNS_ZONE_BINDING]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.repairManagementDnsZoneBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RepairManagementDnsZoneBindingRequest, Operation>
+      repairManagementDnsZoneBindingCallable() {
+    return stub.repairManagementDnsZoneBindingCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -7371,6 +13346,493 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Grants the bind permission to the customer provided principal(user / service account) to bind
+   * their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global
+   * resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+   *   Principal principal = Principal.newBuilder().build();
+   *   DnsBindPermission response =
+   *       vmwareEngineClient.grantDnsBindPermissionAsync(name, principal).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource which stores the users/service accounts having
+   *     the permission to bind to the corresponding intranet VPC of the consumer project.
+   *     DnsBindPermission is a global resource. Resource names are schemeless URIs that follow the
+   *     conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/dnsBindPermission`
+   * @param principal Required. The consumer provided user/service account which needs to be granted
+   *     permission to bind with the intranet VPC corresponding to the consumer project.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsBindPermission, OperationMetadata> grantDnsBindPermissionAsync(
+      DnsBindPermissionName name, Principal principal) {
+    GrantDnsBindPermissionRequest request =
+        GrantDnsBindPermissionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPrincipal(principal)
+            .build();
+    return grantDnsBindPermissionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Grants the bind permission to the customer provided principal(user / service account) to bind
+   * their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global
+   * resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Principal principal = Principal.newBuilder().build();
+   *   DnsBindPermission response =
+   *       vmwareEngineClient.grantDnsBindPermissionAsync(name, principal).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource which stores the users/service accounts having
+   *     the permission to bind to the corresponding intranet VPC of the consumer project.
+   *     DnsBindPermission is a global resource. Resource names are schemeless URIs that follow the
+   *     conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/dnsBindPermission`
+   * @param principal Required. The consumer provided user/service account which needs to be granted
+   *     permission to bind with the intranet VPC corresponding to the consumer project.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsBindPermission, OperationMetadata> grantDnsBindPermissionAsync(
+      String name, Principal principal) {
+    GrantDnsBindPermissionRequest request =
+        GrantDnsBindPermissionRequest.newBuilder().setName(name).setPrincipal(principal).build();
+    return grantDnsBindPermissionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Grants the bind permission to the customer provided principal(user / service account) to bind
+   * their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global
+   * resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GrantDnsBindPermissionRequest request =
+   *       GrantDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrincipal(Principal.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DnsBindPermission response = vmwareEngineClient.grantDnsBindPermissionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsBindPermission, OperationMetadata> grantDnsBindPermissionAsync(
+      GrantDnsBindPermissionRequest request) {
+    return grantDnsBindPermissionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Grants the bind permission to the customer provided principal(user / service account) to bind
+   * their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global
+   * resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GrantDnsBindPermissionRequest request =
+   *       GrantDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrincipal(Principal.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DnsBindPermission, OperationMetadata> future =
+   *       vmwareEngineClient.grantDnsBindPermissionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DnsBindPermission response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      grantDnsBindPermissionOperationCallable() {
+    return stub.grantDnsBindPermissionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Grants the bind permission to the customer provided principal(user / service account) to bind
+   * their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global
+   * resource and location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GrantDnsBindPermissionRequest request =
+   *       GrantDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrincipal(Principal.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.grantDnsBindPermissionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GrantDnsBindPermissionRequest, Operation>
+      grantDnsBindPermissionCallable() {
+    return stub.grantDnsBindPermissionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the principals having bind permission on the intranet VPC associated with the consumer
+   * project granted by the Grant API. DnsBindPermission is a global resource and location can only
+   * be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+   *   DnsBindPermission response = vmwareEngineClient.getDnsBindPermission(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource which stores the users/service accounts having
+   *     the permission to bind to the corresponding intranet VPC of the consumer project.
+   *     DnsBindPermission is a global resource. Resource names are schemeless URIs that follow the
+   *     conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/dnsBindPermission`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DnsBindPermission getDnsBindPermission(DnsBindPermissionName name) {
+    GetDnsBindPermissionRequest request =
+        GetDnsBindPermissionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDnsBindPermission(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the principals having bind permission on the intranet VPC associated with the consumer
+   * project granted by the Grant API. DnsBindPermission is a global resource and location can only
+   * be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DnsBindPermission response = vmwareEngineClient.getDnsBindPermission(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource which stores the users/service accounts having
+   *     the permission to bind to the corresponding intranet VPC of the consumer project.
+   *     DnsBindPermission is a global resource. Resource names are schemeless URIs that follow the
+   *     conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/dnsBindPermission`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DnsBindPermission getDnsBindPermission(String name) {
+    GetDnsBindPermissionRequest request =
+        GetDnsBindPermissionRequest.newBuilder().setName(name).build();
+    return getDnsBindPermission(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the principals having bind permission on the intranet VPC associated with the consumer
+   * project granted by the Grant API. DnsBindPermission is a global resource and location can only
+   * be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetDnsBindPermissionRequest request =
+   *       GetDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   DnsBindPermission response = vmwareEngineClient.getDnsBindPermission(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DnsBindPermission getDnsBindPermission(GetDnsBindPermissionRequest request) {
+    return getDnsBindPermissionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the principals having bind permission on the intranet VPC associated with the consumer
+   * project granted by the Grant API. DnsBindPermission is a global resource and location can only
+   * be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetDnsBindPermissionRequest request =
+   *       GetDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<DnsBindPermission> future =
+   *       vmwareEngineClient.getDnsBindPermissionCallable().futureCall(request);
+   *   // Do something.
+   *   DnsBindPermission response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDnsBindPermissionRequest, DnsBindPermission>
+      getDnsBindPermissionCallable() {
+    return stub.getDnsBindPermissionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes the bind permission from the customer provided principal(user / service account) on the
+   * intranet VPC associated with the consumer project. DnsBindPermission is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+   *   Principal principal = Principal.newBuilder().build();
+   *   DnsBindPermission response =
+   *       vmwareEngineClient.revokeDnsBindPermissionAsync(name, principal).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource which stores the users/service accounts having
+   *     the permission to bind to the corresponding intranet VPC of the consumer project.
+   *     DnsBindPermission is a global resource. Resource names are schemeless URIs that follow the
+   *     conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/dnsBindPermission`
+   * @param principal Required. The consumer provided user/service account which needs to be granted
+   *     permission to bind with the intranet VPC corresponding to the consumer project.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsBindPermission, OperationMetadata> revokeDnsBindPermissionAsync(
+      DnsBindPermissionName name, Principal principal) {
+    RevokeDnsBindPermissionRequest request =
+        RevokeDnsBindPermissionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPrincipal(principal)
+            .build();
+    return revokeDnsBindPermissionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes the bind permission from the customer provided principal(user / service account) on the
+   * intranet VPC associated with the consumer project. DnsBindPermission is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Principal principal = Principal.newBuilder().build();
+   *   DnsBindPermission response =
+   *       vmwareEngineClient.revokeDnsBindPermissionAsync(name, principal).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource which stores the users/service accounts having
+   *     the permission to bind to the corresponding intranet VPC of the consumer project.
+   *     DnsBindPermission is a global resource. Resource names are schemeless URIs that follow the
+   *     conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/global/dnsBindPermission`
+   * @param principal Required. The consumer provided user/service account which needs to be granted
+   *     permission to bind with the intranet VPC corresponding to the consumer project.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsBindPermission, OperationMetadata> revokeDnsBindPermissionAsync(
+      String name, Principal principal) {
+    RevokeDnsBindPermissionRequest request =
+        RevokeDnsBindPermissionRequest.newBuilder().setName(name).setPrincipal(principal).build();
+    return revokeDnsBindPermissionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes the bind permission from the customer provided principal(user / service account) on the
+   * intranet VPC associated with the consumer project. DnsBindPermission is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   RevokeDnsBindPermissionRequest request =
+   *       RevokeDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrincipal(Principal.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DnsBindPermission response = vmwareEngineClient.revokeDnsBindPermissionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DnsBindPermission, OperationMetadata> revokeDnsBindPermissionAsync(
+      RevokeDnsBindPermissionRequest request) {
+    return revokeDnsBindPermissionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes the bind permission from the customer provided principal(user / service account) on the
+   * intranet VPC associated with the consumer project. DnsBindPermission is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   RevokeDnsBindPermissionRequest request =
+   *       RevokeDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrincipal(Principal.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DnsBindPermission, OperationMetadata> future =
+   *       vmwareEngineClient.revokeDnsBindPermissionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DnsBindPermission response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      revokeDnsBindPermissionOperationCallable() {
+    return stub.revokeDnsBindPermissionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes the bind permission from the customer provided principal(user / service account) on the
+   * intranet VPC associated with the consumer project. DnsBindPermission is a global resource and
+   * location can only be global.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   RevokeDnsBindPermissionRequest request =
+   *       RevokeDnsBindPermissionRequest.newBuilder()
+   *           .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrincipal(Principal.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.revokeDnsBindPermissionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RevokeDnsBindPermissionRequest, Operation>
+      revokeDnsBindPermissionCallable() {
+    return stub.revokeDnsBindPermissionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -7912,6 +14374,253 @@ public class VmwareEngineClient implements BackgroundResource {
     }
   }
 
+  public static class ListNodesPagedResponse
+      extends AbstractPagedListResponse<
+          ListNodesRequest, ListNodesResponse, Node, ListNodesPage, ListNodesFixedSizeCollection> {
+
+    public static ApiFuture<ListNodesPagedResponse> createAsync(
+        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        ApiFuture<ListNodesResponse> futureResponse) {
+      ApiFuture<ListNodesPage> futurePage =
+          ListNodesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListNodesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListNodesPagedResponse(ListNodesPage page) {
+      super(page, ListNodesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNodesPage
+      extends AbstractPage<ListNodesRequest, ListNodesResponse, Node, ListNodesPage> {
+
+    private ListNodesPage(
+        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        ListNodesResponse response) {
+      super(context, response);
+    }
+
+    private static ListNodesPage createEmptyPage() {
+      return new ListNodesPage(null, null);
+    }
+
+    @Override
+    protected ListNodesPage createPage(
+        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        ListNodesResponse response) {
+      return new ListNodesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNodesPage> createPageAsync(
+        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        ApiFuture<ListNodesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNodesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNodesRequest, ListNodesResponse, Node, ListNodesPage, ListNodesFixedSizeCollection> {
+
+    private ListNodesFixedSizeCollection(List<ListNodesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNodesFixedSizeCollection createEmptyCollection() {
+      return new ListNodesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNodesFixedSizeCollection createCollection(
+        List<ListNodesPage> pages, int collectionSize) {
+      return new ListNodesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListExternalAddressesPagedResponse
+      extends AbstractPagedListResponse<
+          ListExternalAddressesRequest,
+          ListExternalAddressesResponse,
+          ExternalAddress,
+          ListExternalAddressesPage,
+          ListExternalAddressesFixedSizeCollection> {
+
+    public static ApiFuture<ListExternalAddressesPagedResponse> createAsync(
+        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+            context,
+        ApiFuture<ListExternalAddressesResponse> futureResponse) {
+      ApiFuture<ListExternalAddressesPage> futurePage =
+          ListExternalAddressesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListExternalAddressesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListExternalAddressesPagedResponse(ListExternalAddressesPage page) {
+      super(page, ListExternalAddressesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListExternalAddressesPage
+      extends AbstractPage<
+          ListExternalAddressesRequest,
+          ListExternalAddressesResponse,
+          ExternalAddress,
+          ListExternalAddressesPage> {
+
+    private ListExternalAddressesPage(
+        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+            context,
+        ListExternalAddressesResponse response) {
+      super(context, response);
+    }
+
+    private static ListExternalAddressesPage createEmptyPage() {
+      return new ListExternalAddressesPage(null, null);
+    }
+
+    @Override
+    protected ListExternalAddressesPage createPage(
+        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+            context,
+        ListExternalAddressesResponse response) {
+      return new ListExternalAddressesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListExternalAddressesPage> createPageAsync(
+        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+            context,
+        ApiFuture<ListExternalAddressesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListExternalAddressesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListExternalAddressesRequest,
+          ListExternalAddressesResponse,
+          ExternalAddress,
+          ListExternalAddressesPage,
+          ListExternalAddressesFixedSizeCollection> {
+
+    private ListExternalAddressesFixedSizeCollection(
+        List<ListExternalAddressesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListExternalAddressesFixedSizeCollection createEmptyCollection() {
+      return new ListExternalAddressesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListExternalAddressesFixedSizeCollection createCollection(
+        List<ListExternalAddressesPage> pages, int collectionSize) {
+      return new ListExternalAddressesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchNetworkPolicyExternalAddressesPagedResponse
+      extends AbstractPagedListResponse<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesResponse,
+          ExternalAddress,
+          FetchNetworkPolicyExternalAddressesPage,
+          FetchNetworkPolicyExternalAddressesFixedSizeCollection> {
+
+    public static ApiFuture<FetchNetworkPolicyExternalAddressesPagedResponse> createAsync(
+        PageContext<
+                FetchNetworkPolicyExternalAddressesRequest,
+                FetchNetworkPolicyExternalAddressesResponse,
+                ExternalAddress>
+            context,
+        ApiFuture<FetchNetworkPolicyExternalAddressesResponse> futureResponse) {
+      ApiFuture<FetchNetworkPolicyExternalAddressesPage> futurePage =
+          FetchNetworkPolicyExternalAddressesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchNetworkPolicyExternalAddressesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchNetworkPolicyExternalAddressesPagedResponse(
+        FetchNetworkPolicyExternalAddressesPage page) {
+      super(page, FetchNetworkPolicyExternalAddressesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchNetworkPolicyExternalAddressesPage
+      extends AbstractPage<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesResponse,
+          ExternalAddress,
+          FetchNetworkPolicyExternalAddressesPage> {
+
+    private FetchNetworkPolicyExternalAddressesPage(
+        PageContext<
+                FetchNetworkPolicyExternalAddressesRequest,
+                FetchNetworkPolicyExternalAddressesResponse,
+                ExternalAddress>
+            context,
+        FetchNetworkPolicyExternalAddressesResponse response) {
+      super(context, response);
+    }
+
+    private static FetchNetworkPolicyExternalAddressesPage createEmptyPage() {
+      return new FetchNetworkPolicyExternalAddressesPage(null, null);
+    }
+
+    @Override
+    protected FetchNetworkPolicyExternalAddressesPage createPage(
+        PageContext<
+                FetchNetworkPolicyExternalAddressesRequest,
+                FetchNetworkPolicyExternalAddressesResponse,
+                ExternalAddress>
+            context,
+        FetchNetworkPolicyExternalAddressesResponse response) {
+      return new FetchNetworkPolicyExternalAddressesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchNetworkPolicyExternalAddressesPage> createPageAsync(
+        PageContext<
+                FetchNetworkPolicyExternalAddressesRequest,
+                FetchNetworkPolicyExternalAddressesResponse,
+                ExternalAddress>
+            context,
+        ApiFuture<FetchNetworkPolicyExternalAddressesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchNetworkPolicyExternalAddressesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesResponse,
+          ExternalAddress,
+          FetchNetworkPolicyExternalAddressesPage,
+          FetchNetworkPolicyExternalAddressesFixedSizeCollection> {
+
+    private FetchNetworkPolicyExternalAddressesFixedSizeCollection(
+        List<FetchNetworkPolicyExternalAddressesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchNetworkPolicyExternalAddressesFixedSizeCollection createEmptyCollection() {
+      return new FetchNetworkPolicyExternalAddressesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchNetworkPolicyExternalAddressesFixedSizeCollection createCollection(
+        List<FetchNetworkPolicyExternalAddressesPage> pages, int collectionSize) {
+      return new FetchNetworkPolicyExternalAddressesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListSubnetsPagedResponse
       extends AbstractPagedListResponse<
           ListSubnetsRequest,
@@ -7982,6 +14691,174 @@ public class VmwareEngineClient implements BackgroundResource {
     protected ListSubnetsFixedSizeCollection createCollection(
         List<ListSubnetsPage> pages, int collectionSize) {
       return new ListSubnetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListExternalAccessRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListExternalAccessRulesRequest,
+          ListExternalAccessRulesResponse,
+          ExternalAccessRule,
+          ListExternalAccessRulesPage,
+          ListExternalAccessRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListExternalAccessRulesPagedResponse> createAsync(
+        PageContext<
+                ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
+            context,
+        ApiFuture<ListExternalAccessRulesResponse> futureResponse) {
+      ApiFuture<ListExternalAccessRulesPage> futurePage =
+          ListExternalAccessRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListExternalAccessRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListExternalAccessRulesPagedResponse(ListExternalAccessRulesPage page) {
+      super(page, ListExternalAccessRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListExternalAccessRulesPage
+      extends AbstractPage<
+          ListExternalAccessRulesRequest,
+          ListExternalAccessRulesResponse,
+          ExternalAccessRule,
+          ListExternalAccessRulesPage> {
+
+    private ListExternalAccessRulesPage(
+        PageContext<
+                ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
+            context,
+        ListExternalAccessRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListExternalAccessRulesPage createEmptyPage() {
+      return new ListExternalAccessRulesPage(null, null);
+    }
+
+    @Override
+    protected ListExternalAccessRulesPage createPage(
+        PageContext<
+                ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
+            context,
+        ListExternalAccessRulesResponse response) {
+      return new ListExternalAccessRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListExternalAccessRulesPage> createPageAsync(
+        PageContext<
+                ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
+            context,
+        ApiFuture<ListExternalAccessRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListExternalAccessRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListExternalAccessRulesRequest,
+          ListExternalAccessRulesResponse,
+          ExternalAccessRule,
+          ListExternalAccessRulesPage,
+          ListExternalAccessRulesFixedSizeCollection> {
+
+    private ListExternalAccessRulesFixedSizeCollection(
+        List<ListExternalAccessRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListExternalAccessRulesFixedSizeCollection createEmptyCollection() {
+      return new ListExternalAccessRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListExternalAccessRulesFixedSizeCollection createCollection(
+        List<ListExternalAccessRulesPage> pages, int collectionSize) {
+      return new ListExternalAccessRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLoggingServersPagedResponse
+      extends AbstractPagedListResponse<
+          ListLoggingServersRequest,
+          ListLoggingServersResponse,
+          LoggingServer,
+          ListLoggingServersPage,
+          ListLoggingServersFixedSizeCollection> {
+
+    public static ApiFuture<ListLoggingServersPagedResponse> createAsync(
+        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
+        ApiFuture<ListLoggingServersResponse> futureResponse) {
+      ApiFuture<ListLoggingServersPage> futurePage =
+          ListLoggingServersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLoggingServersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLoggingServersPagedResponse(ListLoggingServersPage page) {
+      super(page, ListLoggingServersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLoggingServersPage
+      extends AbstractPage<
+          ListLoggingServersRequest,
+          ListLoggingServersResponse,
+          LoggingServer,
+          ListLoggingServersPage> {
+
+    private ListLoggingServersPage(
+        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
+        ListLoggingServersResponse response) {
+      super(context, response);
+    }
+
+    private static ListLoggingServersPage createEmptyPage() {
+      return new ListLoggingServersPage(null, null);
+    }
+
+    @Override
+    protected ListLoggingServersPage createPage(
+        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
+        ListLoggingServersResponse response) {
+      return new ListLoggingServersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLoggingServersPage> createPageAsync(
+        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
+        ApiFuture<ListLoggingServersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLoggingServersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLoggingServersRequest,
+          ListLoggingServersResponse,
+          LoggingServer,
+          ListLoggingServersPage,
+          ListLoggingServersFixedSizeCollection> {
+
+    private ListLoggingServersFixedSizeCollection(
+        List<ListLoggingServersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLoggingServersFixedSizeCollection createEmptyCollection() {
+      return new ListLoggingServersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLoggingServersFixedSizeCollection createCollection(
+        List<ListLoggingServersPage> pages, int collectionSize) {
+      return new ListLoggingServersFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -8058,6 +14935,170 @@ public class VmwareEngineClient implements BackgroundResource {
     protected ListNodeTypesFixedSizeCollection createCollection(
         List<ListNodeTypesPage> pages, int collectionSize) {
       return new ListNodeTypesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNetworkPeeringsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNetworkPeeringsRequest,
+          ListNetworkPeeringsResponse,
+          NetworkPeering,
+          ListNetworkPeeringsPage,
+          ListNetworkPeeringsFixedSizeCollection> {
+
+    public static ApiFuture<ListNetworkPeeringsPagedResponse> createAsync(
+        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+            context,
+        ApiFuture<ListNetworkPeeringsResponse> futureResponse) {
+      ApiFuture<ListNetworkPeeringsPage> futurePage =
+          ListNetworkPeeringsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNetworkPeeringsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNetworkPeeringsPagedResponse(ListNetworkPeeringsPage page) {
+      super(page, ListNetworkPeeringsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNetworkPeeringsPage
+      extends AbstractPage<
+          ListNetworkPeeringsRequest,
+          ListNetworkPeeringsResponse,
+          NetworkPeering,
+          ListNetworkPeeringsPage> {
+
+    private ListNetworkPeeringsPage(
+        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+            context,
+        ListNetworkPeeringsResponse response) {
+      super(context, response);
+    }
+
+    private static ListNetworkPeeringsPage createEmptyPage() {
+      return new ListNetworkPeeringsPage(null, null);
+    }
+
+    @Override
+    protected ListNetworkPeeringsPage createPage(
+        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+            context,
+        ListNetworkPeeringsResponse response) {
+      return new ListNetworkPeeringsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNetworkPeeringsPage> createPageAsync(
+        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+            context,
+        ApiFuture<ListNetworkPeeringsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNetworkPeeringsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNetworkPeeringsRequest,
+          ListNetworkPeeringsResponse,
+          NetworkPeering,
+          ListNetworkPeeringsPage,
+          ListNetworkPeeringsFixedSizeCollection> {
+
+    private ListNetworkPeeringsFixedSizeCollection(
+        List<ListNetworkPeeringsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNetworkPeeringsFixedSizeCollection createEmptyCollection() {
+      return new ListNetworkPeeringsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNetworkPeeringsFixedSizeCollection createCollection(
+        List<ListNetworkPeeringsPage> pages, int collectionSize) {
+      return new ListNetworkPeeringsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPeeringRoutesPagedResponse
+      extends AbstractPagedListResponse<
+          ListPeeringRoutesRequest,
+          ListPeeringRoutesResponse,
+          PeeringRoute,
+          ListPeeringRoutesPage,
+          ListPeeringRoutesFixedSizeCollection> {
+
+    public static ApiFuture<ListPeeringRoutesPagedResponse> createAsync(
+        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
+        ApiFuture<ListPeeringRoutesResponse> futureResponse) {
+      ApiFuture<ListPeeringRoutesPage> futurePage =
+          ListPeeringRoutesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPeeringRoutesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPeeringRoutesPagedResponse(ListPeeringRoutesPage page) {
+      super(page, ListPeeringRoutesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPeeringRoutesPage
+      extends AbstractPage<
+          ListPeeringRoutesRequest,
+          ListPeeringRoutesResponse,
+          PeeringRoute,
+          ListPeeringRoutesPage> {
+
+    private ListPeeringRoutesPage(
+        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
+        ListPeeringRoutesResponse response) {
+      super(context, response);
+    }
+
+    private static ListPeeringRoutesPage createEmptyPage() {
+      return new ListPeeringRoutesPage(null, null);
+    }
+
+    @Override
+    protected ListPeeringRoutesPage createPage(
+        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
+        ListPeeringRoutesResponse response) {
+      return new ListPeeringRoutesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPeeringRoutesPage> createPageAsync(
+        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
+        ApiFuture<ListPeeringRoutesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPeeringRoutesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPeeringRoutesRequest,
+          ListPeeringRoutesResponse,
+          PeeringRoute,
+          ListPeeringRoutesPage,
+          ListPeeringRoutesFixedSizeCollection> {
+
+    private ListPeeringRoutesFixedSizeCollection(
+        List<ListPeeringRoutesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPeeringRoutesFixedSizeCollection createEmptyCollection() {
+      return new ListPeeringRoutesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPeeringRoutesFixedSizeCollection createCollection(
+        List<ListPeeringRoutesPage> pages, int collectionSize) {
+      return new ListPeeringRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -8222,6 +15263,103 @@ public class VmwareEngineClient implements BackgroundResource {
     protected ListNetworkPoliciesFixedSizeCollection createCollection(
         List<ListNetworkPoliciesPage> pages, int collectionSize) {
       return new ListNetworkPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListManagementDnsZoneBindingsPagedResponse
+      extends AbstractPagedListResponse<
+          ListManagementDnsZoneBindingsRequest,
+          ListManagementDnsZoneBindingsResponse,
+          ManagementDnsZoneBinding,
+          ListManagementDnsZoneBindingsPage,
+          ListManagementDnsZoneBindingsFixedSizeCollection> {
+
+    public static ApiFuture<ListManagementDnsZoneBindingsPagedResponse> createAsync(
+        PageContext<
+                ListManagementDnsZoneBindingsRequest,
+                ListManagementDnsZoneBindingsResponse,
+                ManagementDnsZoneBinding>
+            context,
+        ApiFuture<ListManagementDnsZoneBindingsResponse> futureResponse) {
+      ApiFuture<ListManagementDnsZoneBindingsPage> futurePage =
+          ListManagementDnsZoneBindingsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListManagementDnsZoneBindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListManagementDnsZoneBindingsPagedResponse(ListManagementDnsZoneBindingsPage page) {
+      super(page, ListManagementDnsZoneBindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListManagementDnsZoneBindingsPage
+      extends AbstractPage<
+          ListManagementDnsZoneBindingsRequest,
+          ListManagementDnsZoneBindingsResponse,
+          ManagementDnsZoneBinding,
+          ListManagementDnsZoneBindingsPage> {
+
+    private ListManagementDnsZoneBindingsPage(
+        PageContext<
+                ListManagementDnsZoneBindingsRequest,
+                ListManagementDnsZoneBindingsResponse,
+                ManagementDnsZoneBinding>
+            context,
+        ListManagementDnsZoneBindingsResponse response) {
+      super(context, response);
+    }
+
+    private static ListManagementDnsZoneBindingsPage createEmptyPage() {
+      return new ListManagementDnsZoneBindingsPage(null, null);
+    }
+
+    @Override
+    protected ListManagementDnsZoneBindingsPage createPage(
+        PageContext<
+                ListManagementDnsZoneBindingsRequest,
+                ListManagementDnsZoneBindingsResponse,
+                ManagementDnsZoneBinding>
+            context,
+        ListManagementDnsZoneBindingsResponse response) {
+      return new ListManagementDnsZoneBindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListManagementDnsZoneBindingsPage> createPageAsync(
+        PageContext<
+                ListManagementDnsZoneBindingsRequest,
+                ListManagementDnsZoneBindingsResponse,
+                ManagementDnsZoneBinding>
+            context,
+        ApiFuture<ListManagementDnsZoneBindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListManagementDnsZoneBindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListManagementDnsZoneBindingsRequest,
+          ListManagementDnsZoneBindingsResponse,
+          ManagementDnsZoneBinding,
+          ListManagementDnsZoneBindingsPage,
+          ListManagementDnsZoneBindingsFixedSizeCollection> {
+
+    private ListManagementDnsZoneBindingsFixedSizeCollection(
+        List<ListManagementDnsZoneBindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListManagementDnsZoneBindingsFixedSizeCollection createEmptyCollection() {
+      return new ListManagementDnsZoneBindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListManagementDnsZoneBindingsFixedSizeCollection createCollection(
+        List<ListManagementDnsZoneBindingsPage> pages, int collectionSize) {
+      return new ListManagementDnsZoneBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
 

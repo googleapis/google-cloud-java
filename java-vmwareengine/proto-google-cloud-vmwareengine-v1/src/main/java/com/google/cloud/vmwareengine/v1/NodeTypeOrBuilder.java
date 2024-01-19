@@ -205,4 +205,165 @@ public interface NodeTypeOrBuilder
    * @return The availableCustomCoreCounts at the given index.
    */
   int getAvailableCustomCoreCounts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for kind.
+   */
+  int getKindValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.NodeType.Kind kind = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kind.
+   */
+  com.google.cloud.vmwareengine.v1.NodeType.Kind getKind();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the families.
+   */
+  java.util.List<java.lang.String> getFamiliesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of families.
+   */
+  int getFamiliesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The families at the given index.
+   */
+  java.lang.String getFamilies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Families of the node type.
+   * For node types to be in the same cluster
+   * they must share at least one element in the `families`.
+   * </pre>
+   *
+   * <code>repeated string families = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the families at the given index.
+   */
+  com.google.protobuf.ByteString getFamiliesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the capabilities.
+   */
+  java.util.List<com.google.cloud.vmwareengine.v1.NodeType.Capability> getCapabilitiesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of capabilities.
+   */
+  int getCapabilitiesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The capabilities at the given index.
+   */
+  com.google.cloud.vmwareengine.v1.NodeType.Capability getCapabilities(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for capabilities.
+   */
+  java.util.List<java.lang.Integer> getCapabilitiesValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Capabilities of this node type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmwareengine.v1.NodeType.Capability capabilities = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of capabilities at the given index.
+   */
+  int getCapabilitiesValue(int index);
 }

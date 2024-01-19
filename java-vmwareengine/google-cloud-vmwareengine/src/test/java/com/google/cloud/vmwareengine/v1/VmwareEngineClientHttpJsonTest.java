@@ -16,11 +16,19 @@
 
 package com.google.cloud.vmwareengine.v1;
 
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.FetchNetworkPolicyExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListClustersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAccessRulesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListHcxActivationKeysPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLoggingServersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListManagementDnsZoneBindingsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPeeringsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
@@ -888,6 +896,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setManagement(true)
             .setUid("uid115792")
             .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+            .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -939,6 +948,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setManagement(true)
             .setUid("uid115792")
             .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+            .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -992,6 +1002,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setManagement(true)
             .setUid("uid115792")
             .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+            .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1052,6 +1063,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setManagement(true)
             .setUid("uid115792")
             .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+            .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1113,6 +1125,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setManagement(true)
             .setUid("uid115792")
             .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+            .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1132,6 +1145,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setManagement(true)
             .setUid("uid115792")
             .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+            .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1171,6 +1185,7 @@ public class VmwareEngineClientHttpJsonTest {
               .setManagement(true)
               .setUid("uid115792")
               .putAllNodeTypeConfigs(new HashMap<String, NodeTypeConfig>())
+              .setStretchedClusterConfig(StretchedClusterConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -1266,6 +1281,840 @@ public class VmwareEngineClientHttpJsonTest {
       String name =
           "projects/project-1428/locations/location-1428/privateClouds/privateCloud-1428/clusters/cluster-1428";
       client.deleteClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listNodesTest() throws Exception {
+    Node responsesElement = Node.newBuilder().build();
+    ListNodesResponse expectedResponse =
+        ListNodesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]");
+
+    ListNodesPagedResponse pagedListResponse = client.listNodes(parent);
+
+    List<Node> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNodesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent =
+          ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]");
+      client.listNodes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNodesTest2() throws Exception {
+    Node responsesElement = Node.newBuilder().build();
+    ListNodesResponse expectedResponse =
+        ListNodesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9101/locations/location-9101/privateClouds/privateCloud-9101/clusters/cluster-9101";
+
+    ListNodesPagedResponse pagedListResponse = client.listNodes(parent);
+
+    List<Node> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNodesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9101/locations/location-9101/privateClouds/privateCloud-9101/clusters/cluster-9101";
+      client.listNodes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNodeTest() throws Exception {
+    Node expectedResponse =
+        Node.newBuilder()
+            .setName(
+                NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]")
+                    .toString())
+            .setFqdn("fqdn3150485")
+            .setInternalIp("internalIp-1591143228")
+            .setNodeTypeId("nodeTypeId1245332119")
+            .setVersion("version351608024")
+            .setCustomCoreCount(2091833853)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NodeName name =
+        NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]");
+
+    Node actualResponse = client.getNode(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNodeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NodeName name =
+          NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]");
+      client.getNode(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNodeTest2() throws Exception {
+    Node expectedResponse =
+        Node.newBuilder()
+            .setName(
+                NodeName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]", "[NODE]")
+                    .toString())
+            .setFqdn("fqdn3150485")
+            .setInternalIp("internalIp-1591143228")
+            .setNodeTypeId("nodeTypeId1245332119")
+            .setVersion("version351608024")
+            .setCustomCoreCount(2091833853)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9257/locations/location-9257/privateClouds/privateCloud-9257/clusters/cluster-9257/nodes/node-9257";
+
+    Node actualResponse = client.getNode(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNodeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9257/locations/location-9257/privateClouds/privateCloud-9257/clusters/cluster-9257/nodes/node-9257";
+      client.getNode(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExternalAddressesTest() throws Exception {
+    ExternalAddress responsesElement = ExternalAddress.newBuilder().build();
+    ListExternalAddressesResponse expectedResponse =
+        ListExternalAddressesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExternalAddresses(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+
+    ListExternalAddressesPagedResponse pagedListResponse = client.listExternalAddresses(parent);
+
+    List<ExternalAddress> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExternalAddressesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExternalAddressesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      client.listExternalAddresses(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExternalAddressesTest2() throws Exception {
+    ExternalAddress responsesElement = ExternalAddress.newBuilder().build();
+    ListExternalAddressesResponse expectedResponse =
+        ListExternalAddressesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExternalAddresses(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+
+    ListExternalAddressesPagedResponse pagedListResponse = client.listExternalAddresses(parent);
+
+    List<ExternalAddress> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExternalAddressesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExternalAddressesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+      client.listExternalAddresses(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchNetworkPolicyExternalAddressesTest() throws Exception {
+    ExternalAddress responsesElement = ExternalAddress.newBuilder().build();
+    FetchNetworkPolicyExternalAddressesResponse expectedResponse =
+        FetchNetworkPolicyExternalAddressesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExternalAddresses(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkPolicyName networkPolicy =
+        NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+
+    FetchNetworkPolicyExternalAddressesPagedResponse pagedListResponse =
+        client.fetchNetworkPolicyExternalAddresses(networkPolicy);
+
+    List<ExternalAddress> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExternalAddressesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchNetworkPolicyExternalAddressesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPolicyName networkPolicy =
+          NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+      client.fetchNetworkPolicyExternalAddresses(networkPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchNetworkPolicyExternalAddressesTest2() throws Exception {
+    ExternalAddress responsesElement = ExternalAddress.newBuilder().build();
+    FetchNetworkPolicyExternalAddressesResponse expectedResponse =
+        FetchNetworkPolicyExternalAddressesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExternalAddresses(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String networkPolicy =
+        "projects/project-8039/locations/location-8039/networkPolicies/networkPolicie-8039";
+
+    FetchNetworkPolicyExternalAddressesPagedResponse pagedListResponse =
+        client.fetchNetworkPolicyExternalAddresses(networkPolicy);
+
+    List<ExternalAddress> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExternalAddressesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchNetworkPolicyExternalAddressesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String networkPolicy =
+          "projects/project-8039/locations/location-8039/networkPolicies/networkPolicie-8039";
+      client.fetchNetworkPolicyExternalAddresses(networkPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExternalAddressTest() throws Exception {
+    ExternalAddress expectedResponse =
+        ExternalAddress.newBuilder()
+            .setName(
+                ExternalAddressName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalIp("internalIp-1591143228")
+            .setExternalIp("externalIp-1699764654")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExternalAddressName name =
+        ExternalAddressName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]");
+
+    ExternalAddress actualResponse = client.getExternalAddress(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExternalAddressExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExternalAddressName name =
+          ExternalAddressName.of(
+              "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]");
+      client.getExternalAddress(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExternalAddressTest2() throws Exception {
+    ExternalAddress expectedResponse =
+        ExternalAddress.newBuilder()
+            .setName(
+                ExternalAddressName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalIp("internalIp-1591143228")
+            .setExternalIp("externalIp-1699764654")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7690/locations/location-7690/privateClouds/privateCloud-7690/externalAddresses/externalAddresse-7690";
+
+    ExternalAddress actualResponse = client.getExternalAddress(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExternalAddressExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7690/locations/location-7690/privateClouds/privateCloud-7690/externalAddresses/externalAddresse-7690";
+      client.getExternalAddress(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExternalAddressTest() throws Exception {
+    ExternalAddress expectedResponse =
+        ExternalAddress.newBuilder()
+            .setName(
+                ExternalAddressName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalIp("internalIp-1591143228")
+            .setExternalIp("externalIp-1699764654")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExternalAddressTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+    ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+    String externalAddressId = "externalAddressId221595812";
+
+    ExternalAddress actualResponse =
+        client.createExternalAddressAsync(parent, externalAddress, externalAddressId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExternalAddressExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+      String externalAddressId = "externalAddressId221595812";
+      client.createExternalAddressAsync(parent, externalAddress, externalAddressId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createExternalAddressTest2() throws Exception {
+    ExternalAddress expectedResponse =
+        ExternalAddress.newBuilder()
+            .setName(
+                ExternalAddressName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalIp("internalIp-1591143228")
+            .setExternalIp("externalIp-1699764654")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExternalAddressTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+    ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+    String externalAddressId = "externalAddressId221595812";
+
+    ExternalAddress actualResponse =
+        client.createExternalAddressAsync(parent, externalAddress, externalAddressId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExternalAddressExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+      ExternalAddress externalAddress = ExternalAddress.newBuilder().build();
+      String externalAddressId = "externalAddressId221595812";
+      client.createExternalAddressAsync(parent, externalAddress, externalAddressId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateExternalAddressTest() throws Exception {
+    ExternalAddress expectedResponse =
+        ExternalAddress.newBuilder()
+            .setName(
+                ExternalAddressName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalIp("internalIp-1591143228")
+            .setExternalIp("externalIp-1699764654")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateExternalAddressTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExternalAddress externalAddress =
+        ExternalAddress.newBuilder()
+            .setName(
+                ExternalAddressName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalIp("internalIp-1591143228")
+            .setExternalIp("externalIp-1699764654")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ExternalAddress actualResponse =
+        client.updateExternalAddressAsync(externalAddress, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateExternalAddressExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExternalAddress externalAddress =
+          ExternalAddress.newBuilder()
+              .setName(
+                  ExternalAddressName.of(
+                          "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setInternalIp("internalIp-1591143228")
+              .setExternalIp("externalIp-1699764654")
+              .setUid("uid115792")
+              .setDescription("description-1724546052")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateExternalAddressAsync(externalAddress, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExternalAddressTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExternalAddressTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExternalAddressName name =
+        ExternalAddressName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]");
+
+    client.deleteExternalAddressAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExternalAddressExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExternalAddressName name =
+          ExternalAddressName.of(
+              "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[EXTERNAL_ADDRESS]");
+      client.deleteExternalAddressAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExternalAddressTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExternalAddressTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-7690/locations/location-7690/privateClouds/privateCloud-7690/externalAddresses/externalAddresse-7690";
+
+    client.deleteExternalAddressAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExternalAddressExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7690/locations/location-7690/privateClouds/privateCloud-7690/externalAddresses/externalAddresse-7690";
+      client.deleteExternalAddressAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1381,6 +2230,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setIpCidrRange("ipCidrRange-866375486")
             .setGatewayIp("gatewayIp-1354641781")
             .setType("type3575610")
+            .setVlanId(536153463)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1429,6 +2279,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setIpCidrRange("ipCidrRange-866375486")
             .setGatewayIp("gatewayIp-1354641781")
             .setType("type3575610")
+            .setVlanId(536153463)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1479,6 +2330,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setIpCidrRange("ipCidrRange-866375486")
             .setGatewayIp("gatewayIp-1354641781")
             .setType("type3575610")
+            .setVlanId(536153463)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1495,6 +2347,7 @@ public class VmwareEngineClientHttpJsonTest {
             .setIpCidrRange("ipCidrRange-866375486")
             .setGatewayIp("gatewayIp-1354641781")
             .setType("type3575610")
+            .setVlanId(536153463)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1532,9 +2385,1076 @@ public class VmwareEngineClientHttpJsonTest {
               .setIpCidrRange("ipCidrRange-866375486")
               .setGatewayIp("gatewayIp-1354641781")
               .setType("type3575610")
+              .setVlanId(536153463)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSubnetAsync(subnet, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listExternalAccessRulesTest() throws Exception {
+    ExternalAccessRule responsesElement = ExternalAccessRule.newBuilder().build();
+    ListExternalAccessRulesResponse expectedResponse =
+        ListExternalAccessRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExternalAccessRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkPolicyName parent = NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+
+    ListExternalAccessRulesPagedResponse pagedListResponse = client.listExternalAccessRules(parent);
+
+    List<ExternalAccessRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExternalAccessRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExternalAccessRulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPolicyName parent =
+          NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+      client.listExternalAccessRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExternalAccessRulesTest2() throws Exception {
+    ExternalAccessRule responsesElement = ExternalAccessRule.newBuilder().build();
+    ListExternalAccessRulesResponse expectedResponse =
+        ListExternalAccessRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExternalAccessRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-5651/locations/location-5651/networkPolicies/networkPolicie-5651";
+
+    ListExternalAccessRulesPagedResponse pagedListResponse = client.listExternalAccessRules(parent);
+
+    List<ExternalAccessRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExternalAccessRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExternalAccessRulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-5651/locations/location-5651/networkPolicies/networkPolicie-5651";
+      client.listExternalAccessRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExternalAccessRuleTest() throws Exception {
+    ExternalAccessRule expectedResponse =
+        ExternalAccessRule.newBuilder()
+            .setName(
+                ExternalAccessRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setPriority(-1165461084)
+            .setIpProtocol("ipProtocol-655038241")
+            .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllSourcePorts(new ArrayList<String>())
+            .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllDestinationPorts(new ArrayList<String>())
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExternalAccessRuleName name =
+        ExternalAccessRuleName.of(
+            "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]");
+
+    ExternalAccessRule actualResponse = client.getExternalAccessRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExternalAccessRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExternalAccessRuleName name =
+          ExternalAccessRuleName.of(
+              "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]");
+      client.getExternalAccessRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExternalAccessRuleTest2() throws Exception {
+    ExternalAccessRule expectedResponse =
+        ExternalAccessRule.newBuilder()
+            .setName(
+                ExternalAccessRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setPriority(-1165461084)
+            .setIpProtocol("ipProtocol-655038241")
+            .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllSourcePorts(new ArrayList<String>())
+            .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllDestinationPorts(new ArrayList<String>())
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8120/locations/location-8120/networkPolicies/networkPolicie-8120/externalAccessRules/externalAccessRule-8120";
+
+    ExternalAccessRule actualResponse = client.getExternalAccessRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExternalAccessRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8120/locations/location-8120/networkPolicies/networkPolicie-8120/externalAccessRules/externalAccessRule-8120";
+      client.getExternalAccessRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExternalAccessRuleTest() throws Exception {
+    ExternalAccessRule expectedResponse =
+        ExternalAccessRule.newBuilder()
+            .setName(
+                ExternalAccessRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setPriority(-1165461084)
+            .setIpProtocol("ipProtocol-655038241")
+            .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllSourcePorts(new ArrayList<String>())
+            .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllDestinationPorts(new ArrayList<String>())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExternalAccessRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    NetworkPolicyName parent = NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+    ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+    String externalAccessRuleId = "externalAccessRuleId1937389350";
+
+    ExternalAccessRule actualResponse =
+        client
+            .createExternalAccessRuleAsync(parent, externalAccessRule, externalAccessRuleId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExternalAccessRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPolicyName parent =
+          NetworkPolicyName.of("[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]");
+      ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+      String externalAccessRuleId = "externalAccessRuleId1937389350";
+      client.createExternalAccessRuleAsync(parent, externalAccessRule, externalAccessRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createExternalAccessRuleTest2() throws Exception {
+    ExternalAccessRule expectedResponse =
+        ExternalAccessRule.newBuilder()
+            .setName(
+                ExternalAccessRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setPriority(-1165461084)
+            .setIpProtocol("ipProtocol-655038241")
+            .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllSourcePorts(new ArrayList<String>())
+            .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllDestinationPorts(new ArrayList<String>())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExternalAccessRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-5651/locations/location-5651/networkPolicies/networkPolicie-5651";
+    ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+    String externalAccessRuleId = "externalAccessRuleId1937389350";
+
+    ExternalAccessRule actualResponse =
+        client
+            .createExternalAccessRuleAsync(parent, externalAccessRule, externalAccessRuleId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExternalAccessRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-5651/locations/location-5651/networkPolicies/networkPolicie-5651";
+      ExternalAccessRule externalAccessRule = ExternalAccessRule.newBuilder().build();
+      String externalAccessRuleId = "externalAccessRuleId1937389350";
+      client.createExternalAccessRuleAsync(parent, externalAccessRule, externalAccessRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateExternalAccessRuleTest() throws Exception {
+    ExternalAccessRule expectedResponse =
+        ExternalAccessRule.newBuilder()
+            .setName(
+                ExternalAccessRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setPriority(-1165461084)
+            .setIpProtocol("ipProtocol-655038241")
+            .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllSourcePorts(new ArrayList<String>())
+            .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllDestinationPorts(new ArrayList<String>())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateExternalAccessRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExternalAccessRule externalAccessRule =
+        ExternalAccessRule.newBuilder()
+            .setName(
+                ExternalAccessRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setPriority(-1165461084)
+            .setIpProtocol("ipProtocol-655038241")
+            .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllSourcePorts(new ArrayList<String>())
+            .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+            .addAllDestinationPorts(new ArrayList<String>())
+            .setUid("uid115792")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ExternalAccessRule actualResponse =
+        client.updateExternalAccessRuleAsync(externalAccessRule, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateExternalAccessRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExternalAccessRule externalAccessRule =
+          ExternalAccessRule.newBuilder()
+              .setName(
+                  ExternalAccessRuleName.of(
+                          "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDescription("description-1724546052")
+              .setPriority(-1165461084)
+              .setIpProtocol("ipProtocol-655038241")
+              .addAllSourceIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+              .addAllSourcePorts(new ArrayList<String>())
+              .addAllDestinationIpRanges(new ArrayList<ExternalAccessRule.IpRange>())
+              .addAllDestinationPorts(new ArrayList<String>())
+              .setUid("uid115792")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateExternalAccessRuleAsync(externalAccessRule, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExternalAccessRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExternalAccessRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExternalAccessRuleName name =
+        ExternalAccessRuleName.of(
+            "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]");
+
+    client.deleteExternalAccessRuleAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExternalAccessRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExternalAccessRuleName name =
+          ExternalAccessRuleName.of(
+              "[PROJECT]", "[LOCATION]", "[NETWORK_POLICY]", "[EXTERNAL_ACCESS_RULE]");
+      client.deleteExternalAccessRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExternalAccessRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExternalAccessRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8120/locations/location-8120/networkPolicies/networkPolicie-8120/externalAccessRules/externalAccessRule-8120";
+
+    client.deleteExternalAccessRuleAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExternalAccessRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8120/locations/location-8120/networkPolicies/networkPolicie-8120/externalAccessRules/externalAccessRule-8120";
+      client.deleteExternalAccessRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listLoggingServersTest() throws Exception {
+    LoggingServer responsesElement = LoggingServer.newBuilder().build();
+    ListLoggingServersResponse expectedResponse =
+        ListLoggingServersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLoggingServers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+
+    ListLoggingServersPagedResponse pagedListResponse = client.listLoggingServers(parent);
+
+    List<LoggingServer> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLoggingServersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLoggingServersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      client.listLoggingServers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLoggingServersTest2() throws Exception {
+    LoggingServer responsesElement = LoggingServer.newBuilder().build();
+    ListLoggingServersResponse expectedResponse =
+        ListLoggingServersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLoggingServers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+
+    ListLoggingServersPagedResponse pagedListResponse = client.listLoggingServers(parent);
+
+    List<LoggingServer> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLoggingServersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLoggingServersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+      client.listLoggingServers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLoggingServerTest() throws Exception {
+    LoggingServer expectedResponse =
+        LoggingServer.newBuilder()
+            .setName(
+                LoggingServerName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setHostname("hostname-299803597")
+            .setPort(3446913)
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LoggingServerName name =
+        LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]");
+
+    LoggingServer actualResponse = client.getLoggingServer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLoggingServerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LoggingServerName name =
+          LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]");
+      client.getLoggingServer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLoggingServerTest2() throws Exception {
+    LoggingServer expectedResponse =
+        LoggingServer.newBuilder()
+            .setName(
+                LoggingServerName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setHostname("hostname-299803597")
+            .setPort(3446913)
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4740/locations/location-4740/privateClouds/privateCloud-4740/loggingServers/loggingServer-4740";
+
+    LoggingServer actualResponse = client.getLoggingServer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLoggingServerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4740/locations/location-4740/privateClouds/privateCloud-4740/loggingServers/loggingServer-4740";
+      client.getLoggingServer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createLoggingServerTest() throws Exception {
+    LoggingServer expectedResponse =
+        LoggingServer.newBuilder()
+            .setName(
+                LoggingServerName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setHostname("hostname-299803597")
+            .setPort(3446913)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLoggingServerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+    LoggingServer loggingServer = LoggingServer.newBuilder().build();
+    String loggingServerId = "loggingServerId-304163779";
+
+    LoggingServer actualResponse =
+        client.createLoggingServerAsync(parent, loggingServer, loggingServerId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createLoggingServerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      LoggingServer loggingServer = LoggingServer.newBuilder().build();
+      String loggingServerId = "loggingServerId-304163779";
+      client.createLoggingServerAsync(parent, loggingServer, loggingServerId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createLoggingServerTest2() throws Exception {
+    LoggingServer expectedResponse =
+        LoggingServer.newBuilder()
+            .setName(
+                LoggingServerName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setHostname("hostname-299803597")
+            .setPort(3446913)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLoggingServerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+    LoggingServer loggingServer = LoggingServer.newBuilder().build();
+    String loggingServerId = "loggingServerId-304163779";
+
+    LoggingServer actualResponse =
+        client.createLoggingServerAsync(parent, loggingServer, loggingServerId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createLoggingServerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+      LoggingServer loggingServer = LoggingServer.newBuilder().build();
+      String loggingServerId = "loggingServerId-304163779";
+      client.createLoggingServerAsync(parent, loggingServer, loggingServerId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateLoggingServerTest() throws Exception {
+    LoggingServer expectedResponse =
+        LoggingServer.newBuilder()
+            .setName(
+                LoggingServerName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setHostname("hostname-299803597")
+            .setPort(3446913)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateLoggingServerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LoggingServer loggingServer =
+        LoggingServer.newBuilder()
+            .setName(
+                LoggingServerName.of(
+                        "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setHostname("hostname-299803597")
+            .setPort(3446913)
+            .setUid("uid115792")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    LoggingServer actualResponse = client.updateLoggingServerAsync(loggingServer, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateLoggingServerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LoggingServer loggingServer =
+          LoggingServer.newBuilder()
+              .setName(
+                  LoggingServerName.of(
+                          "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setHostname("hostname-299803597")
+              .setPort(3446913)
+              .setUid("uid115792")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateLoggingServerAsync(loggingServer, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteLoggingServerTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteLoggingServerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LoggingServerName name =
+        LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]");
+
+    client.deleteLoggingServerAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteLoggingServerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LoggingServerName name =
+          LoggingServerName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[LOGGING_SERVER]");
+      client.deleteLoggingServerAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteLoggingServerTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteLoggingServerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-4740/locations/location-4740/privateClouds/privateCloud-4740/loggingServers/loggingServer-4740";
+
+    client.deleteLoggingServerAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteLoggingServerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4740/locations/location-4740/privateClouds/privateCloud-4740/loggingServers/loggingServer-4740";
+      client.deleteLoggingServerAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1652,6 +3572,8 @@ public class VmwareEngineClientHttpJsonTest {
             .setMemoryGb(1726613721)
             .setDiskSizeGb(-757478089)
             .addAllAvailableCustomCoreCounts(new ArrayList<Integer>())
+            .addAllFamilies(new ArrayList<String>())
+            .addAllCapabilities(new ArrayList<NodeType.Capability>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1703,6 +3625,8 @@ public class VmwareEngineClientHttpJsonTest {
             .setMemoryGb(1726613721)
             .setDiskSizeGb(-757478089)
             .addAllAvailableCustomCoreCounts(new ArrayList<Integer>())
+            .addAllFamilies(new ArrayList<String>())
+            .addAllCapabilities(new ArrayList<NodeType.Capability>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2175,6 +4099,835 @@ public class VmwareEngineClientHttpJsonTest {
       client.resetVcenterCredentialsAsync(privateCloud).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getDnsForwardingTest() throws Exception {
+    DnsForwarding expectedResponse =
+        DnsForwarding.newBuilder()
+            .setName(DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllForwardingRules(new ArrayList<DnsForwarding.ForwardingRule>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DnsForwardingName name = DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+
+    DnsForwarding actualResponse = client.getDnsForwarding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDnsForwardingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DnsForwardingName name = DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      client.getDnsForwarding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDnsForwardingTest2() throws Exception {
+    DnsForwarding expectedResponse =
+        DnsForwarding.newBuilder()
+            .setName(DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllForwardingRules(new ArrayList<DnsForwarding.ForwardingRule>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9806/locations/location-9806/privateClouds/privateCloud-9806/dnsForwarding";
+
+    DnsForwarding actualResponse = client.getDnsForwarding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDnsForwardingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9806/locations/location-9806/privateClouds/privateCloud-9806/dnsForwarding";
+      client.getDnsForwarding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDnsForwardingTest() throws Exception {
+    DnsForwarding expectedResponse =
+        DnsForwarding.newBuilder()
+            .setName(DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllForwardingRules(new ArrayList<DnsForwarding.ForwardingRule>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDnsForwardingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DnsForwarding dnsForwarding =
+        DnsForwarding.newBuilder()
+            .setName(DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllForwardingRules(new ArrayList<DnsForwarding.ForwardingRule>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DnsForwarding actualResponse = client.updateDnsForwardingAsync(dnsForwarding, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDnsForwardingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DnsForwarding dnsForwarding =
+          DnsForwarding.newBuilder()
+              .setName(
+                  DnsForwardingName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllForwardingRules(new ArrayList<DnsForwarding.ForwardingRule>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDnsForwardingAsync(dnsForwarding, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getNetworkPeeringTest() throws Exception {
+    NetworkPeering expectedResponse =
+        NetworkPeering.newBuilder()
+            .setName(
+                NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPeerNetwork("peerNetwork392662636")
+            .setExportCustomRoutes(true)
+            .setImportCustomRoutes(true)
+            .setExchangeSubnetRoutes(true)
+            .setExportCustomRoutesWithPublicIp(true)
+            .setImportCustomRoutesWithPublicIp(true)
+            .setStateDetails("stateDetails1730982001")
+            .setPeerMtu(69584721)
+            .setUid("uid115792")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkPeeringName name = NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+
+    NetworkPeering actualResponse = client.getNetworkPeering(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNetworkPeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPeeringName name =
+          NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+      client.getNetworkPeering(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNetworkPeeringTest2() throws Exception {
+    NetworkPeering expectedResponse =
+        NetworkPeering.newBuilder()
+            .setName(
+                NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPeerNetwork("peerNetwork392662636")
+            .setExportCustomRoutes(true)
+            .setImportCustomRoutes(true)
+            .setExchangeSubnetRoutes(true)
+            .setExportCustomRoutesWithPublicIp(true)
+            .setImportCustomRoutesWithPublicIp(true)
+            .setStateDetails("stateDetails1730982001")
+            .setPeerMtu(69584721)
+            .setUid("uid115792")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9207/locations/location-9207/networkPeerings/networkPeering-9207";
+
+    NetworkPeering actualResponse = client.getNetworkPeering(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNetworkPeeringExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9207/locations/location-9207/networkPeerings/networkPeering-9207";
+      client.getNetworkPeering(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNetworkPeeringsTest() throws Exception {
+    NetworkPeering responsesElement = NetworkPeering.newBuilder().build();
+    ListNetworkPeeringsResponse expectedResponse =
+        ListNetworkPeeringsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNetworkPeerings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListNetworkPeeringsPagedResponse pagedListResponse = client.listNetworkPeerings(parent);
+
+    List<NetworkPeering> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNetworkPeeringsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNetworkPeeringsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listNetworkPeerings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNetworkPeeringsTest2() throws Exception {
+    NetworkPeering responsesElement = NetworkPeering.newBuilder().build();
+    ListNetworkPeeringsResponse expectedResponse =
+        ListNetworkPeeringsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNetworkPeerings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListNetworkPeeringsPagedResponse pagedListResponse = client.listNetworkPeerings(parent);
+
+    List<NetworkPeering> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNetworkPeeringsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNetworkPeeringsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listNetworkPeerings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNetworkPeeringTest() throws Exception {
+    NetworkPeering expectedResponse =
+        NetworkPeering.newBuilder()
+            .setName(
+                NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPeerNetwork("peerNetwork392662636")
+            .setExportCustomRoutes(true)
+            .setImportCustomRoutes(true)
+            .setExchangeSubnetRoutes(true)
+            .setExportCustomRoutesWithPublicIp(true)
+            .setImportCustomRoutesWithPublicIp(true)
+            .setStateDetails("stateDetails1730982001")
+            .setPeerMtu(69584721)
+            .setUid("uid115792")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createNetworkPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+    String networkPeeringId = "networkPeeringId1321772525";
+
+    NetworkPeering actualResponse =
+        client.createNetworkPeeringAsync(parent, networkPeering, networkPeeringId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNetworkPeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+      String networkPeeringId = "networkPeeringId1321772525";
+      client.createNetworkPeeringAsync(parent, networkPeering, networkPeeringId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createNetworkPeeringTest2() throws Exception {
+    NetworkPeering expectedResponse =
+        NetworkPeering.newBuilder()
+            .setName(
+                NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPeerNetwork("peerNetwork392662636")
+            .setExportCustomRoutes(true)
+            .setImportCustomRoutes(true)
+            .setExchangeSubnetRoutes(true)
+            .setExportCustomRoutesWithPublicIp(true)
+            .setImportCustomRoutesWithPublicIp(true)
+            .setStateDetails("stateDetails1730982001")
+            .setPeerMtu(69584721)
+            .setUid("uid115792")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createNetworkPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+    String networkPeeringId = "networkPeeringId1321772525";
+
+    NetworkPeering actualResponse =
+        client.createNetworkPeeringAsync(parent, networkPeering, networkPeeringId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNetworkPeeringExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      NetworkPeering networkPeering = NetworkPeering.newBuilder().build();
+      String networkPeeringId = "networkPeeringId1321772525";
+      client.createNetworkPeeringAsync(parent, networkPeering, networkPeeringId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteNetworkPeeringTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteNetworkPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    NetworkPeeringName name = NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+
+    client.deleteNetworkPeeringAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteNetworkPeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPeeringName name =
+          NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+      client.deleteNetworkPeeringAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteNetworkPeeringTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteNetworkPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9207/locations/location-9207/networkPeerings/networkPeering-9207";
+
+    client.deleteNetworkPeeringAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteNetworkPeeringExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9207/locations/location-9207/networkPeerings/networkPeering-9207";
+      client.deleteNetworkPeeringAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateNetworkPeeringTest() throws Exception {
+    NetworkPeering expectedResponse =
+        NetworkPeering.newBuilder()
+            .setName(
+                NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPeerNetwork("peerNetwork392662636")
+            .setExportCustomRoutes(true)
+            .setImportCustomRoutes(true)
+            .setExchangeSubnetRoutes(true)
+            .setExportCustomRoutesWithPublicIp(true)
+            .setImportCustomRoutesWithPublicIp(true)
+            .setStateDetails("stateDetails1730982001")
+            .setPeerMtu(69584721)
+            .setUid("uid115792")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateNetworkPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    NetworkPeering networkPeering =
+        NetworkPeering.newBuilder()
+            .setName(
+                NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPeerNetwork("peerNetwork392662636")
+            .setExportCustomRoutes(true)
+            .setImportCustomRoutes(true)
+            .setExchangeSubnetRoutes(true)
+            .setExportCustomRoutesWithPublicIp(true)
+            .setImportCustomRoutesWithPublicIp(true)
+            .setStateDetails("stateDetails1730982001")
+            .setPeerMtu(69584721)
+            .setUid("uid115792")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    NetworkPeering actualResponse =
+        client.updateNetworkPeeringAsync(networkPeering, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateNetworkPeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPeering networkPeering =
+          NetworkPeering.newBuilder()
+              .setName(
+                  NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setPeerNetwork("peerNetwork392662636")
+              .setExportCustomRoutes(true)
+              .setImportCustomRoutes(true)
+              .setExchangeSubnetRoutes(true)
+              .setExportCustomRoutesWithPublicIp(true)
+              .setImportCustomRoutesWithPublicIp(true)
+              .setStateDetails("stateDetails1730982001")
+              .setPeerMtu(69584721)
+              .setUid("uid115792")
+              .setVmwareEngineNetwork(
+                  VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                      .toString())
+              .setDescription("description-1724546052")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateNetworkPeeringAsync(networkPeering, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listPeeringRoutesTest() throws Exception {
+    PeeringRoute responsesElement = PeeringRoute.newBuilder().build();
+    ListPeeringRoutesResponse expectedResponse =
+        ListPeeringRoutesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPeeringRoutes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkPeeringName parent =
+        NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+
+    ListPeeringRoutesPagedResponse pagedListResponse = client.listPeeringRoutes(parent);
+
+    List<PeeringRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPeeringRoutesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPeeringRoutesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkPeeringName parent =
+          NetworkPeeringName.of("[PROJECT]", "[LOCATION]", "[NETWORK_PEERING]");
+      client.listPeeringRoutes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPeeringRoutesTest2() throws Exception {
+    PeeringRoute responsesElement = PeeringRoute.newBuilder().build();
+    ListPeeringRoutesResponse expectedResponse =
+        ListPeeringRoutesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPeeringRoutes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-6026/locations/location-6026/networkPeerings/networkPeering-6026";
+
+    ListPeeringRoutesPagedResponse pagedListResponse = client.listPeeringRoutes(parent);
+
+    List<PeeringRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPeeringRoutesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPeeringRoutesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-6026/locations/location-6026/networkPeerings/networkPeering-6026";
+      client.listPeeringRoutes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -3040,6 +5793,680 @@ public class VmwareEngineClientHttpJsonTest {
       String name =
           "projects/project-6412/locations/location-6412/networkPolicies/networkPolicie-6412";
       client.deleteNetworkPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listManagementDnsZoneBindingsTest() throws Exception {
+    ManagementDnsZoneBinding responsesElement = ManagementDnsZoneBinding.newBuilder().build();
+    ListManagementDnsZoneBindingsResponse expectedResponse =
+        ListManagementDnsZoneBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllManagementDnsZoneBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+
+    ListManagementDnsZoneBindingsPagedResponse pagedListResponse =
+        client.listManagementDnsZoneBindings(parent);
+
+    List<ManagementDnsZoneBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getManagementDnsZoneBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listManagementDnsZoneBindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      client.listManagementDnsZoneBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listManagementDnsZoneBindingsTest2() throws Exception {
+    ManagementDnsZoneBinding responsesElement = ManagementDnsZoneBinding.newBuilder().build();
+    ListManagementDnsZoneBindingsResponse expectedResponse =
+        ListManagementDnsZoneBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllManagementDnsZoneBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+
+    ListManagementDnsZoneBindingsPagedResponse pagedListResponse =
+        client.listManagementDnsZoneBindings(parent);
+
+    List<ManagementDnsZoneBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getManagementDnsZoneBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listManagementDnsZoneBindingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+      client.listManagementDnsZoneBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getManagementDnsZoneBindingTest() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ManagementDnsZoneBindingName name =
+        ManagementDnsZoneBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+
+    ManagementDnsZoneBinding actualResponse = client.getManagementDnsZoneBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getManagementDnsZoneBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ManagementDnsZoneBindingName name =
+          ManagementDnsZoneBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+      client.getManagementDnsZoneBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getManagementDnsZoneBindingTest2() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4541/locations/location-4541/privateClouds/privateCloud-4541/managementDnsZoneBindings/managementDnsZoneBinding-4541";
+
+    ManagementDnsZoneBinding actualResponse = client.getManagementDnsZoneBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getManagementDnsZoneBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4541/locations/location-4541/privateClouds/privateCloud-4541/managementDnsZoneBindings/managementDnsZoneBinding-4541";
+      client.getManagementDnsZoneBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createManagementDnsZoneBindingTest() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+    ManagementDnsZoneBinding managementDnsZoneBinding =
+        ManagementDnsZoneBinding.newBuilder().build();
+    String managementDnsZoneBindingId = "managementDnsZoneBindingId-288984082";
+
+    ManagementDnsZoneBinding actualResponse =
+        client
+            .createManagementDnsZoneBindingAsync(
+                parent, managementDnsZoneBinding, managementDnsZoneBindingId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createManagementDnsZoneBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PrivateCloudName parent = PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]");
+      ManagementDnsZoneBinding managementDnsZoneBinding =
+          ManagementDnsZoneBinding.newBuilder().build();
+      String managementDnsZoneBindingId = "managementDnsZoneBindingId-288984082";
+      client
+          .createManagementDnsZoneBindingAsync(
+              parent, managementDnsZoneBinding, managementDnsZoneBindingId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createManagementDnsZoneBindingTest2() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+    ManagementDnsZoneBinding managementDnsZoneBinding =
+        ManagementDnsZoneBinding.newBuilder().build();
+    String managementDnsZoneBindingId = "managementDnsZoneBindingId-288984082";
+
+    ManagementDnsZoneBinding actualResponse =
+        client
+            .createManagementDnsZoneBindingAsync(
+                parent, managementDnsZoneBinding, managementDnsZoneBindingId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createManagementDnsZoneBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4854/locations/location-4854/privateClouds/privateCloud-4854";
+      ManagementDnsZoneBinding managementDnsZoneBinding =
+          ManagementDnsZoneBinding.newBuilder().build();
+      String managementDnsZoneBindingId = "managementDnsZoneBindingId-288984082";
+      client
+          .createManagementDnsZoneBindingAsync(
+              parent, managementDnsZoneBinding, managementDnsZoneBindingId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateManagementDnsZoneBindingTest() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ManagementDnsZoneBinding managementDnsZoneBinding =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ManagementDnsZoneBinding actualResponse =
+        client.updateManagementDnsZoneBindingAsync(managementDnsZoneBinding, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateManagementDnsZoneBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ManagementDnsZoneBinding managementDnsZoneBinding =
+          ManagementDnsZoneBinding.newBuilder()
+              .setName(
+                  ManagementDnsZoneBindingName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[PRIVATE_CLOUD]",
+                          "[MANAGEMENT_DNS_ZONE_BINDING]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDescription("description-1724546052")
+              .setUid("uid115792")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateManagementDnsZoneBindingAsync(managementDnsZoneBinding, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteManagementDnsZoneBindingTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ManagementDnsZoneBindingName name =
+        ManagementDnsZoneBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+
+    client.deleteManagementDnsZoneBindingAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteManagementDnsZoneBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ManagementDnsZoneBindingName name =
+          ManagementDnsZoneBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+      client.deleteManagementDnsZoneBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteManagementDnsZoneBindingTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-4541/locations/location-4541/privateClouds/privateCloud-4541/managementDnsZoneBindings/managementDnsZoneBinding-4541";
+
+    client.deleteManagementDnsZoneBindingAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteManagementDnsZoneBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4541/locations/location-4541/privateClouds/privateCloud-4541/managementDnsZoneBindings/managementDnsZoneBinding-4541";
+      client.deleteManagementDnsZoneBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void repairManagementDnsZoneBindingTest() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("repairManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ManagementDnsZoneBindingName name =
+        ManagementDnsZoneBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+
+    ManagementDnsZoneBinding actualResponse =
+        client.repairManagementDnsZoneBindingAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repairManagementDnsZoneBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ManagementDnsZoneBindingName name =
+          ManagementDnsZoneBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[MANAGEMENT_DNS_ZONE_BINDING]");
+      client.repairManagementDnsZoneBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void repairManagementDnsZoneBindingTest2() throws Exception {
+    ManagementDnsZoneBinding expectedResponse =
+        ManagementDnsZoneBinding.newBuilder()
+            .setName(
+                ManagementDnsZoneBindingName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PRIVATE_CLOUD]",
+                        "[MANAGEMENT_DNS_ZONE_BINDING]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("repairManagementDnsZoneBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-4541/locations/location-4541/privateClouds/privateCloud-4541/managementDnsZoneBindings/managementDnsZoneBinding-4541";
+
+    ManagementDnsZoneBinding actualResponse =
+        client.repairManagementDnsZoneBindingAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repairManagementDnsZoneBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4541/locations/location-4541/privateClouds/privateCloud-4541/managementDnsZoneBindings/managementDnsZoneBinding-4541";
+      client.repairManagementDnsZoneBindingAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -4216,6 +7643,304 @@ public class VmwareEngineClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void grantDnsBindPermissionTest() throws Exception {
+    DnsBindPermission expectedResponse =
+        DnsBindPermission.newBuilder()
+            .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllPrincipals(new ArrayList<Principal>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("grantDnsBindPermissionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+    Principal principal = Principal.newBuilder().build();
+
+    DnsBindPermission actualResponse = client.grantDnsBindPermissionAsync(name, principal).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void grantDnsBindPermissionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+      Principal principal = Principal.newBuilder().build();
+      client.grantDnsBindPermissionAsync(name, principal).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void grantDnsBindPermissionTest2() throws Exception {
+    DnsBindPermission expectedResponse =
+        DnsBindPermission.newBuilder()
+            .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllPrincipals(new ArrayList<Principal>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("grantDnsBindPermissionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4464/locations/location-4464/dnsBindPermission";
+    Principal principal = Principal.newBuilder().build();
+
+    DnsBindPermission actualResponse = client.grantDnsBindPermissionAsync(name, principal).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void grantDnsBindPermissionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4464/locations/location-4464/dnsBindPermission";
+      Principal principal = Principal.newBuilder().build();
+      client.grantDnsBindPermissionAsync(name, principal).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getDnsBindPermissionTest() throws Exception {
+    DnsBindPermission expectedResponse =
+        DnsBindPermission.newBuilder()
+            .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllPrincipals(new ArrayList<Principal>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+
+    DnsBindPermission actualResponse = client.getDnsBindPermission(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDnsBindPermissionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+      client.getDnsBindPermission(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDnsBindPermissionTest2() throws Exception {
+    DnsBindPermission expectedResponse =
+        DnsBindPermission.newBuilder()
+            .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllPrincipals(new ArrayList<Principal>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-4464/locations/location-4464/dnsBindPermission";
+
+    DnsBindPermission actualResponse = client.getDnsBindPermission(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDnsBindPermissionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4464/locations/location-4464/dnsBindPermission";
+      client.getDnsBindPermission(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void revokeDnsBindPermissionTest() throws Exception {
+    DnsBindPermission expectedResponse =
+        DnsBindPermission.newBuilder()
+            .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllPrincipals(new ArrayList<Principal>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("revokeDnsBindPermissionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+    Principal principal = Principal.newBuilder().build();
+
+    DnsBindPermission actualResponse = client.revokeDnsBindPermissionAsync(name, principal).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void revokeDnsBindPermissionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DnsBindPermissionName name = DnsBindPermissionName.of("[PROJECT]", "[LOCATION]");
+      Principal principal = Principal.newBuilder().build();
+      client.revokeDnsBindPermissionAsync(name, principal).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void revokeDnsBindPermissionTest2() throws Exception {
+    DnsBindPermission expectedResponse =
+        DnsBindPermission.newBuilder()
+            .setName(DnsBindPermissionName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllPrincipals(new ArrayList<Principal>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("revokeDnsBindPermissionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4464/locations/location-4464/dnsBindPermission";
+    Principal principal = Principal.newBuilder().build();
+
+    DnsBindPermission actualResponse = client.revokeDnsBindPermissionAsync(name, principal).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void revokeDnsBindPermissionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4464/locations/location-4464/dnsBindPermission";
+      Principal principal = Principal.newBuilder().build();
+      client.revokeDnsBindPermissionAsync(name, principal).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

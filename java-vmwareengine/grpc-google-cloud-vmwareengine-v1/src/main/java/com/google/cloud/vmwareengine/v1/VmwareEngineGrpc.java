@@ -535,6 +535,395 @@ public final class VmwareEngineGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListNodesRequest,
+          com.google.cloud.vmwareengine.v1.ListNodesResponse>
+      getListNodesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNodes",
+      requestType = com.google.cloud.vmwareengine.v1.ListNodesRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListNodesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListNodesRequest,
+          com.google.cloud.vmwareengine.v1.ListNodesResponse>
+      getListNodesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListNodesRequest,
+            com.google.cloud.vmwareengine.v1.ListNodesResponse>
+        getListNodesMethod;
+    if ((getListNodesMethod = VmwareEngineGrpc.getListNodesMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListNodesMethod = VmwareEngineGrpc.getListNodesMethod) == null) {
+          VmwareEngineGrpc.getListNodesMethod =
+              getListNodesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListNodesRequest,
+                          com.google.cloud.vmwareengine.v1.ListNodesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNodes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListNodesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListNodesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new VmwareEngineMethodDescriptorSupplier("ListNodes"))
+                      .build();
+        }
+      }
+    }
+    return getListNodesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetNodeRequest, com.google.cloud.vmwareengine.v1.Node>
+      getGetNodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNode",
+      requestType = com.google.cloud.vmwareengine.v1.GetNodeRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.Node.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetNodeRequest, com.google.cloud.vmwareengine.v1.Node>
+      getGetNodeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetNodeRequest, com.google.cloud.vmwareengine.v1.Node>
+        getGetNodeMethod;
+    if ((getGetNodeMethod = VmwareEngineGrpc.getGetNodeMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetNodeMethod = VmwareEngineGrpc.getGetNodeMethod) == null) {
+          VmwareEngineGrpc.getGetNodeMethod =
+              getGetNodeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetNodeRequest,
+                          com.google.cloud.vmwareengine.v1.Node>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNode"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetNodeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.Node.getDefaultInstance()))
+                      .setSchemaDescriptor(new VmwareEngineMethodDescriptorSupplier("GetNode"))
+                      .build();
+        }
+      }
+    }
+    return getGetNodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest,
+          com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+      getListExternalAddressesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListExternalAddresses",
+      requestType = com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest,
+          com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+      getListExternalAddressesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest,
+            com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+        getListExternalAddressesMethod;
+    if ((getListExternalAddressesMethod = VmwareEngineGrpc.getListExternalAddressesMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListExternalAddressesMethod = VmwareEngineGrpc.getListExternalAddressesMethod)
+            == null) {
+          VmwareEngineGrpc.getListExternalAddressesMethod =
+              getListExternalAddressesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest,
+                          com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListExternalAddresses"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListExternalAddresses"))
+                      .build();
+        }
+      }
+    }
+    return getListExternalAddressesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest,
+          com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>
+      getFetchNetworkPolicyExternalAddressesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchNetworkPolicyExternalAddresses",
+      requestType =
+          com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest.class,
+      responseType =
+          com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest,
+          com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>
+      getFetchNetworkPolicyExternalAddressesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest,
+            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>
+        getFetchNetworkPolicyExternalAddressesMethod;
+    if ((getFetchNetworkPolicyExternalAddressesMethod =
+            VmwareEngineGrpc.getFetchNetworkPolicyExternalAddressesMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getFetchNetworkPolicyExternalAddressesMethod =
+                VmwareEngineGrpc.getFetchNetworkPolicyExternalAddressesMethod)
+            == null) {
+          VmwareEngineGrpc.getFetchNetworkPolicyExternalAddressesMethod =
+              getFetchNetworkPolicyExternalAddressesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest,
+                          com.google.cloud.vmwareengine.v1
+                              .FetchNetworkPolicyExternalAddressesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "FetchNetworkPolicyExternalAddresses"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1
+                                  .FetchNetworkPolicyExternalAddressesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1
+                                  .FetchNetworkPolicyExternalAddressesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier(
+                              "FetchNetworkPolicyExternalAddresses"))
+                      .build();
+        }
+      }
+    }
+    return getFetchNetworkPolicyExternalAddressesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetExternalAddressRequest,
+          com.google.cloud.vmwareengine.v1.ExternalAddress>
+      getGetExternalAddressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetExternalAddress",
+      requestType = com.google.cloud.vmwareengine.v1.GetExternalAddressRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ExternalAddress.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetExternalAddressRequest,
+          com.google.cloud.vmwareengine.v1.ExternalAddress>
+      getGetExternalAddressMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetExternalAddressRequest,
+            com.google.cloud.vmwareengine.v1.ExternalAddress>
+        getGetExternalAddressMethod;
+    if ((getGetExternalAddressMethod = VmwareEngineGrpc.getGetExternalAddressMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetExternalAddressMethod = VmwareEngineGrpc.getGetExternalAddressMethod) == null) {
+          VmwareEngineGrpc.getGetExternalAddressMethod =
+              getGetExternalAddressMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetExternalAddressRequest,
+                          com.google.cloud.vmwareengine.v1.ExternalAddress>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetExternalAddress"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetExternalAddressRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ExternalAddress
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetExternalAddress"))
+                      .build();
+        }
+      }
+    }
+    return getGetExternalAddressMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest,
+          com.google.longrunning.Operation>
+      getCreateExternalAddressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateExternalAddress",
+      requestType = com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest,
+          com.google.longrunning.Operation>
+      getCreateExternalAddressMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest,
+            com.google.longrunning.Operation>
+        getCreateExternalAddressMethod;
+    if ((getCreateExternalAddressMethod = VmwareEngineGrpc.getCreateExternalAddressMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getCreateExternalAddressMethod = VmwareEngineGrpc.getCreateExternalAddressMethod)
+            == null) {
+          VmwareEngineGrpc.getCreateExternalAddressMethod =
+              getCreateExternalAddressMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateExternalAddress"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("CreateExternalAddress"))
+                      .build();
+        }
+      }
+    }
+    return getCreateExternalAddressMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest,
+          com.google.longrunning.Operation>
+      getUpdateExternalAddressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExternalAddress",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest,
+          com.google.longrunning.Operation>
+      getUpdateExternalAddressMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest,
+            com.google.longrunning.Operation>
+        getUpdateExternalAddressMethod;
+    if ((getUpdateExternalAddressMethod = VmwareEngineGrpc.getUpdateExternalAddressMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateExternalAddressMethod = VmwareEngineGrpc.getUpdateExternalAddressMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdateExternalAddressMethod =
+              getUpdateExternalAddressMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateExternalAddress"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("UpdateExternalAddress"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateExternalAddressMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest,
+          com.google.longrunning.Operation>
+      getDeleteExternalAddressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteExternalAddress",
+      requestType = com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest,
+          com.google.longrunning.Operation>
+      getDeleteExternalAddressMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest,
+            com.google.longrunning.Operation>
+        getDeleteExternalAddressMethod;
+    if ((getDeleteExternalAddressMethod = VmwareEngineGrpc.getDeleteExternalAddressMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getDeleteExternalAddressMethod = VmwareEngineGrpc.getDeleteExternalAddressMethod)
+            == null) {
+          VmwareEngineGrpc.getDeleteExternalAddressMethod =
+              getDeleteExternalAddressMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteExternalAddress"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("DeleteExternalAddress"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteExternalAddressMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vmwareengine.v1.ListSubnetsRequest,
           com.google.cloud.vmwareengine.v1.ListSubnetsResponse>
       getListSubnetsMethod;
@@ -665,6 +1054,490 @@ public final class VmwareEngineGrpc {
       }
     }
     return getUpdateSubnetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest,
+          com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+      getListExternalAccessRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListExternalAccessRules",
+      requestType = com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest,
+          com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+      getListExternalAccessRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest,
+            com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+        getListExternalAccessRulesMethod;
+    if ((getListExternalAccessRulesMethod = VmwareEngineGrpc.getListExternalAccessRulesMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListExternalAccessRulesMethod = VmwareEngineGrpc.getListExternalAccessRulesMethod)
+            == null) {
+          VmwareEngineGrpc.getListExternalAccessRulesMethod =
+              getListExternalAccessRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest,
+                          com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListExternalAccessRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListExternalAccessRules"))
+                      .build();
+        }
+      }
+    }
+    return getListExternalAccessRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest,
+          com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+      getGetExternalAccessRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetExternalAccessRule",
+      requestType = com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ExternalAccessRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest,
+          com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+      getGetExternalAccessRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest,
+            com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+        getGetExternalAccessRuleMethod;
+    if ((getGetExternalAccessRuleMethod = VmwareEngineGrpc.getGetExternalAccessRuleMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetExternalAccessRuleMethod = VmwareEngineGrpc.getGetExternalAccessRuleMethod)
+            == null) {
+          VmwareEngineGrpc.getGetExternalAccessRuleMethod =
+              getGetExternalAccessRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest,
+                          com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetExternalAccessRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ExternalAccessRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetExternalAccessRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetExternalAccessRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest,
+          com.google.longrunning.Operation>
+      getCreateExternalAccessRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateExternalAccessRule",
+      requestType = com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest,
+          com.google.longrunning.Operation>
+      getCreateExternalAccessRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest,
+            com.google.longrunning.Operation>
+        getCreateExternalAccessRuleMethod;
+    if ((getCreateExternalAccessRuleMethod = VmwareEngineGrpc.getCreateExternalAccessRuleMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getCreateExternalAccessRuleMethod = VmwareEngineGrpc.getCreateExternalAccessRuleMethod)
+            == null) {
+          VmwareEngineGrpc.getCreateExternalAccessRuleMethod =
+              getCreateExternalAccessRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateExternalAccessRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("CreateExternalAccessRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateExternalAccessRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest,
+          com.google.longrunning.Operation>
+      getUpdateExternalAccessRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExternalAccessRule",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest,
+          com.google.longrunning.Operation>
+      getUpdateExternalAccessRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest,
+            com.google.longrunning.Operation>
+        getUpdateExternalAccessRuleMethod;
+    if ((getUpdateExternalAccessRuleMethod = VmwareEngineGrpc.getUpdateExternalAccessRuleMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateExternalAccessRuleMethod = VmwareEngineGrpc.getUpdateExternalAccessRuleMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdateExternalAccessRuleMethod =
+              getUpdateExternalAccessRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateExternalAccessRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("UpdateExternalAccessRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateExternalAccessRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest,
+          com.google.longrunning.Operation>
+      getDeleteExternalAccessRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteExternalAccessRule",
+      requestType = com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest,
+          com.google.longrunning.Operation>
+      getDeleteExternalAccessRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest,
+            com.google.longrunning.Operation>
+        getDeleteExternalAccessRuleMethod;
+    if ((getDeleteExternalAccessRuleMethod = VmwareEngineGrpc.getDeleteExternalAccessRuleMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getDeleteExternalAccessRuleMethod = VmwareEngineGrpc.getDeleteExternalAccessRuleMethod)
+            == null) {
+          VmwareEngineGrpc.getDeleteExternalAccessRuleMethod =
+              getDeleteExternalAccessRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteExternalAccessRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("DeleteExternalAccessRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteExternalAccessRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListLoggingServersRequest,
+          com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+      getListLoggingServersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLoggingServers",
+      requestType = com.google.cloud.vmwareengine.v1.ListLoggingServersRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListLoggingServersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListLoggingServersRequest,
+          com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+      getListLoggingServersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListLoggingServersRequest,
+            com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+        getListLoggingServersMethod;
+    if ((getListLoggingServersMethod = VmwareEngineGrpc.getListLoggingServersMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListLoggingServersMethod = VmwareEngineGrpc.getListLoggingServersMethod) == null) {
+          VmwareEngineGrpc.getListLoggingServersMethod =
+              getListLoggingServersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListLoggingServersRequest,
+                          com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLoggingServers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListLoggingServersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListLoggingServersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListLoggingServers"))
+                      .build();
+        }
+      }
+    }
+    return getListLoggingServersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetLoggingServerRequest,
+          com.google.cloud.vmwareengine.v1.LoggingServer>
+      getGetLoggingServerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLoggingServer",
+      requestType = com.google.cloud.vmwareengine.v1.GetLoggingServerRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.LoggingServer.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetLoggingServerRequest,
+          com.google.cloud.vmwareengine.v1.LoggingServer>
+      getGetLoggingServerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetLoggingServerRequest,
+            com.google.cloud.vmwareengine.v1.LoggingServer>
+        getGetLoggingServerMethod;
+    if ((getGetLoggingServerMethod = VmwareEngineGrpc.getGetLoggingServerMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetLoggingServerMethod = VmwareEngineGrpc.getGetLoggingServerMethod) == null) {
+          VmwareEngineGrpc.getGetLoggingServerMethod =
+              getGetLoggingServerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetLoggingServerRequest,
+                          com.google.cloud.vmwareengine.v1.LoggingServer>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLoggingServer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetLoggingServerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.LoggingServer.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetLoggingServer"))
+                      .build();
+        }
+      }
+    }
+    return getGetLoggingServerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest,
+          com.google.longrunning.Operation>
+      getCreateLoggingServerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateLoggingServer",
+      requestType = com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest,
+          com.google.longrunning.Operation>
+      getCreateLoggingServerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest,
+            com.google.longrunning.Operation>
+        getCreateLoggingServerMethod;
+    if ((getCreateLoggingServerMethod = VmwareEngineGrpc.getCreateLoggingServerMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getCreateLoggingServerMethod = VmwareEngineGrpc.getCreateLoggingServerMethod)
+            == null) {
+          VmwareEngineGrpc.getCreateLoggingServerMethod =
+              getCreateLoggingServerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateLoggingServer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("CreateLoggingServer"))
+                      .build();
+        }
+      }
+    }
+    return getCreateLoggingServerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest,
+          com.google.longrunning.Operation>
+      getUpdateLoggingServerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLoggingServer",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest,
+          com.google.longrunning.Operation>
+      getUpdateLoggingServerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest,
+            com.google.longrunning.Operation>
+        getUpdateLoggingServerMethod;
+    if ((getUpdateLoggingServerMethod = VmwareEngineGrpc.getUpdateLoggingServerMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateLoggingServerMethod = VmwareEngineGrpc.getUpdateLoggingServerMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdateLoggingServerMethod =
+              getUpdateLoggingServerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateLoggingServer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("UpdateLoggingServer"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateLoggingServerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest,
+          com.google.longrunning.Operation>
+      getDeleteLoggingServerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteLoggingServer",
+      requestType = com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest,
+          com.google.longrunning.Operation>
+      getDeleteLoggingServerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest,
+            com.google.longrunning.Operation>
+        getDeleteLoggingServerMethod;
+    if ((getDeleteLoggingServerMethod = VmwareEngineGrpc.getDeleteLoggingServerMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getDeleteLoggingServerMethod = VmwareEngineGrpc.getDeleteLoggingServerMethod)
+            == null) {
+          VmwareEngineGrpc.getDeleteLoggingServerMethod =
+              getDeleteLoggingServerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteLoggingServer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("DeleteLoggingServer"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteLoggingServerMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -949,6 +1822,386 @@ public final class VmwareEngineGrpc {
       }
     }
     return getResetVcenterCredentialsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest,
+          com.google.cloud.vmwareengine.v1.DnsForwarding>
+      getGetDnsForwardingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDnsForwarding",
+      requestType = com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.DnsForwarding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest,
+          com.google.cloud.vmwareengine.v1.DnsForwarding>
+      getGetDnsForwardingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest,
+            com.google.cloud.vmwareengine.v1.DnsForwarding>
+        getGetDnsForwardingMethod;
+    if ((getGetDnsForwardingMethod = VmwareEngineGrpc.getGetDnsForwardingMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetDnsForwardingMethod = VmwareEngineGrpc.getGetDnsForwardingMethod) == null) {
+          VmwareEngineGrpc.getGetDnsForwardingMethod =
+              getGetDnsForwardingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest,
+                          com.google.cloud.vmwareengine.v1.DnsForwarding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDnsForwarding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DnsForwarding.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetDnsForwarding"))
+                      .build();
+        }
+      }
+    }
+    return getGetDnsForwardingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest,
+          com.google.longrunning.Operation>
+      getUpdateDnsForwardingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDnsForwarding",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest,
+          com.google.longrunning.Operation>
+      getUpdateDnsForwardingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest,
+            com.google.longrunning.Operation>
+        getUpdateDnsForwardingMethod;
+    if ((getUpdateDnsForwardingMethod = VmwareEngineGrpc.getUpdateDnsForwardingMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateDnsForwardingMethod = VmwareEngineGrpc.getUpdateDnsForwardingMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdateDnsForwardingMethod =
+              getUpdateDnsForwardingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDnsForwarding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("UpdateDnsForwarding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDnsForwardingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest,
+          com.google.cloud.vmwareengine.v1.NetworkPeering>
+      getGetNetworkPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNetworkPeering",
+      requestType = com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.NetworkPeering.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest,
+          com.google.cloud.vmwareengine.v1.NetworkPeering>
+      getGetNetworkPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest,
+            com.google.cloud.vmwareengine.v1.NetworkPeering>
+        getGetNetworkPeeringMethod;
+    if ((getGetNetworkPeeringMethod = VmwareEngineGrpc.getGetNetworkPeeringMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetNetworkPeeringMethod = VmwareEngineGrpc.getGetNetworkPeeringMethod) == null) {
+          VmwareEngineGrpc.getGetNetworkPeeringMethod =
+              getGetNetworkPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest,
+                          com.google.cloud.vmwareengine.v1.NetworkPeering>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNetworkPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.NetworkPeering.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetNetworkPeering"))
+                      .build();
+        }
+      }
+    }
+    return getGetNetworkPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest,
+          com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+      getListNetworkPeeringsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNetworkPeerings",
+      requestType = com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest,
+          com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+      getListNetworkPeeringsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest,
+            com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+        getListNetworkPeeringsMethod;
+    if ((getListNetworkPeeringsMethod = VmwareEngineGrpc.getListNetworkPeeringsMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListNetworkPeeringsMethod = VmwareEngineGrpc.getListNetworkPeeringsMethod)
+            == null) {
+          VmwareEngineGrpc.getListNetworkPeeringsMethod =
+              getListNetworkPeeringsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest,
+                          com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListNetworkPeerings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListNetworkPeerings"))
+                      .build();
+        }
+      }
+    }
+    return getListNetworkPeeringsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest,
+          com.google.longrunning.Operation>
+      getCreateNetworkPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNetworkPeering",
+      requestType = com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest,
+          com.google.longrunning.Operation>
+      getCreateNetworkPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest,
+            com.google.longrunning.Operation>
+        getCreateNetworkPeeringMethod;
+    if ((getCreateNetworkPeeringMethod = VmwareEngineGrpc.getCreateNetworkPeeringMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getCreateNetworkPeeringMethod = VmwareEngineGrpc.getCreateNetworkPeeringMethod)
+            == null) {
+          VmwareEngineGrpc.getCreateNetworkPeeringMethod =
+              getCreateNetworkPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateNetworkPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("CreateNetworkPeering"))
+                      .build();
+        }
+      }
+    }
+    return getCreateNetworkPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest,
+          com.google.longrunning.Operation>
+      getDeleteNetworkPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNetworkPeering",
+      requestType = com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest,
+          com.google.longrunning.Operation>
+      getDeleteNetworkPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest,
+            com.google.longrunning.Operation>
+        getDeleteNetworkPeeringMethod;
+    if ((getDeleteNetworkPeeringMethod = VmwareEngineGrpc.getDeleteNetworkPeeringMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getDeleteNetworkPeeringMethod = VmwareEngineGrpc.getDeleteNetworkPeeringMethod)
+            == null) {
+          VmwareEngineGrpc.getDeleteNetworkPeeringMethod =
+              getDeleteNetworkPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteNetworkPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("DeleteNetworkPeering"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteNetworkPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest,
+          com.google.longrunning.Operation>
+      getUpdateNetworkPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNetworkPeering",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest,
+          com.google.longrunning.Operation>
+      getUpdateNetworkPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest,
+            com.google.longrunning.Operation>
+        getUpdateNetworkPeeringMethod;
+    if ((getUpdateNetworkPeeringMethod = VmwareEngineGrpc.getUpdateNetworkPeeringMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateNetworkPeeringMethod = VmwareEngineGrpc.getUpdateNetworkPeeringMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdateNetworkPeeringMethod =
+              getUpdateNetworkPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateNetworkPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("UpdateNetworkPeering"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateNetworkPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest,
+          com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+      getListPeeringRoutesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPeeringRoutes",
+      requestType = com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest,
+          com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+      getListPeeringRoutesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest,
+            com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+        getListPeeringRoutesMethod;
+    if ((getListPeeringRoutesMethod = VmwareEngineGrpc.getListPeeringRoutesMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListPeeringRoutesMethod = VmwareEngineGrpc.getListPeeringRoutesMethod) == null) {
+          VmwareEngineGrpc.getListPeeringRoutesMethod =
+              getListPeeringRoutesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest,
+                          com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPeeringRoutes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListPeeringRoutes"))
+                      .build();
+        }
+      }
+    }
+    return getListPeeringRoutesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1336,6 +2589,318 @@ public final class VmwareEngineGrpc {
       }
     }
     return getDeleteNetworkPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest,
+          com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+      getListManagementDnsZoneBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListManagementDnsZoneBindings",
+      requestType = com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest,
+          com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+      getListManagementDnsZoneBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest,
+            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+        getListManagementDnsZoneBindingsMethod;
+    if ((getListManagementDnsZoneBindingsMethod =
+            VmwareEngineGrpc.getListManagementDnsZoneBindingsMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListManagementDnsZoneBindingsMethod =
+                VmwareEngineGrpc.getListManagementDnsZoneBindingsMethod)
+            == null) {
+          VmwareEngineGrpc.getListManagementDnsZoneBindingsMethod =
+              getListManagementDnsZoneBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest,
+                          com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListManagementDnsZoneBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListManagementDnsZoneBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListManagementDnsZoneBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest,
+          com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+      getGetManagementDnsZoneBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetManagementDnsZoneBinding",
+      requestType = com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest,
+          com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+      getGetManagementDnsZoneBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest,
+            com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+        getGetManagementDnsZoneBindingMethod;
+    if ((getGetManagementDnsZoneBindingMethod =
+            VmwareEngineGrpc.getGetManagementDnsZoneBindingMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetManagementDnsZoneBindingMethod =
+                VmwareEngineGrpc.getGetManagementDnsZoneBindingMethod)
+            == null) {
+          VmwareEngineGrpc.getGetManagementDnsZoneBindingMethod =
+              getGetManagementDnsZoneBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest,
+                          com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetManagementDnsZoneBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetManagementDnsZoneBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetManagementDnsZoneBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateManagementDnsZoneBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateManagementDnsZoneBinding",
+      requestType = com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateManagementDnsZoneBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest,
+            com.google.longrunning.Operation>
+        getCreateManagementDnsZoneBindingMethod;
+    if ((getCreateManagementDnsZoneBindingMethod =
+            VmwareEngineGrpc.getCreateManagementDnsZoneBindingMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getCreateManagementDnsZoneBindingMethod =
+                VmwareEngineGrpc.getCreateManagementDnsZoneBindingMethod)
+            == null) {
+          VmwareEngineGrpc.getCreateManagementDnsZoneBindingMethod =
+              getCreateManagementDnsZoneBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateManagementDnsZoneBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier(
+                              "CreateManagementDnsZoneBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateManagementDnsZoneBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateManagementDnsZoneBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateManagementDnsZoneBinding",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateManagementDnsZoneBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest,
+            com.google.longrunning.Operation>
+        getUpdateManagementDnsZoneBindingMethod;
+    if ((getUpdateManagementDnsZoneBindingMethod =
+            VmwareEngineGrpc.getUpdateManagementDnsZoneBindingMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateManagementDnsZoneBindingMethod =
+                VmwareEngineGrpc.getUpdateManagementDnsZoneBindingMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdateManagementDnsZoneBindingMethod =
+              getUpdateManagementDnsZoneBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateManagementDnsZoneBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier(
+                              "UpdateManagementDnsZoneBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateManagementDnsZoneBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteManagementDnsZoneBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteManagementDnsZoneBinding",
+      requestType = com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteManagementDnsZoneBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest,
+            com.google.longrunning.Operation>
+        getDeleteManagementDnsZoneBindingMethod;
+    if ((getDeleteManagementDnsZoneBindingMethod =
+            VmwareEngineGrpc.getDeleteManagementDnsZoneBindingMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getDeleteManagementDnsZoneBindingMethod =
+                VmwareEngineGrpc.getDeleteManagementDnsZoneBindingMethod)
+            == null) {
+          VmwareEngineGrpc.getDeleteManagementDnsZoneBindingMethod =
+              getDeleteManagementDnsZoneBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteManagementDnsZoneBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier(
+                              "DeleteManagementDnsZoneBinding"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteManagementDnsZoneBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getRepairManagementDnsZoneBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RepairManagementDnsZoneBinding",
+      requestType = com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest,
+          com.google.longrunning.Operation>
+      getRepairManagementDnsZoneBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest,
+            com.google.longrunning.Operation>
+        getRepairManagementDnsZoneBindingMethod;
+    if ((getRepairManagementDnsZoneBindingMethod =
+            VmwareEngineGrpc.getRepairManagementDnsZoneBindingMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getRepairManagementDnsZoneBindingMethod =
+                VmwareEngineGrpc.getRepairManagementDnsZoneBindingMethod)
+            == null) {
+          VmwareEngineGrpc.getRepairManagementDnsZoneBindingMethod =
+              getRepairManagementDnsZoneBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RepairManagementDnsZoneBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier(
+                              "RepairManagementDnsZoneBinding"))
+                      .build();
+        }
+      }
+    }
+    return getRepairManagementDnsZoneBindingMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1891,6 +3456,153 @@ public final class VmwareEngineGrpc {
     return getListPrivateConnectionPeeringRoutesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest,
+          com.google.longrunning.Operation>
+      getGrantDnsBindPermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GrantDnsBindPermission",
+      requestType = com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest,
+          com.google.longrunning.Operation>
+      getGrantDnsBindPermissionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest,
+            com.google.longrunning.Operation>
+        getGrantDnsBindPermissionMethod;
+    if ((getGrantDnsBindPermissionMethod = VmwareEngineGrpc.getGrantDnsBindPermissionMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGrantDnsBindPermissionMethod = VmwareEngineGrpc.getGrantDnsBindPermissionMethod)
+            == null) {
+          VmwareEngineGrpc.getGrantDnsBindPermissionMethod =
+              getGrantDnsBindPermissionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GrantDnsBindPermission"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GrantDnsBindPermission"))
+                      .build();
+        }
+      }
+    }
+    return getGrantDnsBindPermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest,
+          com.google.cloud.vmwareengine.v1.DnsBindPermission>
+      getGetDnsBindPermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDnsBindPermission",
+      requestType = com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.DnsBindPermission.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest,
+          com.google.cloud.vmwareengine.v1.DnsBindPermission>
+      getGetDnsBindPermissionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest,
+            com.google.cloud.vmwareengine.v1.DnsBindPermission>
+        getGetDnsBindPermissionMethod;
+    if ((getGetDnsBindPermissionMethod = VmwareEngineGrpc.getGetDnsBindPermissionMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetDnsBindPermissionMethod = VmwareEngineGrpc.getGetDnsBindPermissionMethod)
+            == null) {
+          VmwareEngineGrpc.getGetDnsBindPermissionMethod =
+              getGetDnsBindPermissionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest,
+                          com.google.cloud.vmwareengine.v1.DnsBindPermission>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDnsBindPermission"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DnsBindPermission
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetDnsBindPermission"))
+                      .build();
+        }
+      }
+    }
+    return getGetDnsBindPermissionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest,
+          com.google.longrunning.Operation>
+      getRevokeDnsBindPermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RevokeDnsBindPermission",
+      requestType = com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest,
+          com.google.longrunning.Operation>
+      getRevokeDnsBindPermissionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest,
+            com.google.longrunning.Operation>
+        getRevokeDnsBindPermissionMethod;
+    if ((getRevokeDnsBindPermissionMethod = VmwareEngineGrpc.getRevokeDnsBindPermissionMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getRevokeDnsBindPermissionMethod = VmwareEngineGrpc.getRevokeDnsBindPermissionMethod)
+            == null) {
+          VmwareEngineGrpc.getRevokeDnsBindPermissionMethod =
+              getRevokeDnsBindPermissionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RevokeDnsBindPermission"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("RevokeDnsBindPermission"))
+                      .build();
+        }
+      }
+    }
+    return getRevokeDnsBindPermissionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VmwareEngineStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VmwareEngineStub> factory =
@@ -1976,8 +3688,9 @@ public final class VmwareEngineGrpc {
      *
      * <pre>
      * Creates a new `PrivateCloud` resource in a given project and location.
-     * Private clouds can only be created in zones, regional private clouds are
-     * not supported.
+     * Private clouds of type `STANDARD` and
+     * `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are
+     * regional.
      * Creating a private cloud also creates a [management
      * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components)
      * for that private cloud.
@@ -2103,8 +3816,7 @@ public final class VmwareEngineGrpc {
      *
      *
      * <pre>
-     * Modifies a `Cluster` resource. Only the following fields can be updated:
-     * `node_type_configs.*.node_count`. Only fields specified in `updateMask` are
+     * Modifies a `Cluster` resource. Only fields specified in `updateMask` are
      * applied.
      * During operation processing, the resource is temporarily in the `ACTIVE`
      * state before the operation fully completes. For that period of time, you
@@ -2134,6 +3846,132 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes in a given cluster.
+     * </pre>
+     */
+    default void listNodes(
+        com.google.cloud.vmwareengine.v1.ListNodesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNodesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNodesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single node.
+     * </pre>
+     */
+    default void getNode(
+        com.google.cloud.vmwareengine.v1.GetNodeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Node> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNodeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs in a given
+     * private cloud.
+     * </pre>
+     */
+    default void listExternalAddresses(
+        com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListExternalAddressesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs within the
+     * scope of the given network policy.
+     * </pre>
+     */
+    default void fetchNetworkPolicyExternalAddresses(
+        com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchNetworkPolicyExternalAddressesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external IP address.
+     * </pre>
+     */
+    default void getExternalAddress(
+        com.google.cloud.vmwareengine.v1.GetExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ExternalAddress>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetExternalAddressMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ExternalAddress` resource in a given private cloud. The
+     * network policy that corresponds to the private cloud must have the external
+     * IP address network service enabled (`NetworkPolicy.external_ip`).
+     * </pre>
+     */
+    default void createExternalAddress(
+        com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateExternalAddressMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external IP address.
+     * Only fields specified in `update_mask` are applied.
+     * During operation processing, the resource is temporarily in the `ACTIVE`
+     * state before the operation fully completes. For that period of time, you
+     * can't update the resource. Use the operation status to determine when the
+     * processing fully completes.
+     * </pre>
+     */
+    default void updateExternalAddress(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExternalAddressMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external IP address. When you delete an external IP
+     * address, connectivity between the external IP address and the corresponding
+     * internal IP address is lost.
+     * </pre>
+     */
+    default void deleteExternalAddress(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteExternalAddressMethod(), responseObserver);
     }
 
     /**
@@ -2180,6 +4018,154 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSubnetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `ExternalAccessRule` resources in the specified network policy.
+     * </pre>
+     */
+    default void listExternalAccessRules(
+        com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListExternalAccessRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external access rule.
+     * </pre>
+     */
+    default void getExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetExternalAccessRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new external access rule in a given network policy.
+     * </pre>
+     */
+    default void createExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateExternalAccessRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external access rule.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    default void updateExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExternalAccessRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external access rule.
+     * </pre>
+     */
+    default void deleteExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteExternalAccessRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists logging servers configured for a given private
+     * cloud.
+     * </pre>
+     */
+    default void listLoggingServers(
+        com.google.cloud.vmwareengine.v1.ListLoggingServersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListLoggingServersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a logging server.
+     * </pre>
+     */
+    default void getLoggingServer(
+        com.google.cloud.vmwareengine.v1.GetLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.LoggingServer>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetLoggingServerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new logging server for a given private cloud.
+     * </pre>
+     */
+    default void createLoggingServer(
+        com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateLoggingServerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single logging server.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    default void updateLoggingServer(
+        com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateLoggingServerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single logging server.
+     * </pre>
+     */
+    default void deleteLoggingServer(
+        com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteLoggingServerMethod(), responseObserver);
     }
 
     /**
@@ -2267,6 +4253,135 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResetVcenterCredentialsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the `DnsForwarding` config.
+     * </pre>
+     */
+    default void getDnsForwarding(
+        com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.DnsForwarding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDnsForwardingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the `DnsForwarding` config, like associated
+     * domains. Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    default void updateDnsForwarding(
+        com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDnsForwardingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `NetworkPeering` resource by its resource name. The resource
+     * contains details of the network peering, such as peered
+     * networks, import and export custom route configurations, and peering state.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    default void getNetworkPeering(
+        com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.NetworkPeering>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNetworkPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `NetworkPeering` resources in a given project. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    default void listNetworkPeerings(
+        com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNetworkPeeringsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new network peering between the peer network and VMware Engine
+     * network provided in a `NetworkPeering` resource. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    default void createNetworkPeering(
+        com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNetworkPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `NetworkPeering` resource. When a network peering is deleted for
+     * a VMware Engine network, the peer network becomes inaccessible to that
+     * VMware Engine network. NetworkPeering is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    default void deleteNetworkPeering(
+        com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNetworkPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `NetworkPeering` resource. Only the `description` field can be
+     * updated. Only fields specified in `updateMask` are applied. NetworkPeering
+     * is a global resource and location can only be global.
+     * </pre>
+     */
+    default void updateNetworkPeering(
+        com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNetworkPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the network peering routes exchanged over a peering connection.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    default void listPeeringRoutes(
+        com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPeeringRoutesMethod(), responseObserver);
     }
 
     /**
@@ -2397,6 +4512,103 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteNetworkPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+     * </pre>
+     */
+    default void listManagementDnsZoneBindings(
+        com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListManagementDnsZoneBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+     * </pre>
+     */
+    default void getManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetManagementDnsZoneBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ManagementDnsZoneBinding` resource in a private cloud.
+     * This RPC creates the DNS binding and the resource that represents the
+     * DNS binding of the consumer VPC network to the management DNS zone. A
+     * management DNS zone is the Cloud DNS cross-project binding zone that
+     * VMware Engine creates for each private cloud. It contains FQDNs and
+     * corresponding IP addresses for the private cloud's ESXi hosts and
+     * management VM appliances like vCenter and NSX Manager.
+     * </pre>
+     */
+    default void createManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateManagementDnsZoneBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `ManagementDnsZoneBinding` resource.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    default void updateManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateManagementDnsZoneBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone
+     * binding is deleted, the corresponding consumer VPC network is no longer
+     * bound to the management DNS zone.
+     * </pre>
+     */
+    default void deleteManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteManagementDnsZoneBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries to create a `ManagementDnsZoneBinding` resource that is
+     * in failed state.
+     * </pre>
+     */
+    default void repairManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRepairManagementDnsZoneBindingMethod(), responseObserver);
     }
 
     /**
@@ -2574,6 +4786,56 @@ public final class VmwareEngineGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListPrivateConnectionPeeringRoutesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grants the bind permission to the customer provided principal(user /
+     * service account) to bind their DNS zone with the intranet VPC associated
+     * with the project. DnsBindPermission is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    default void grantDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGrantDnsBindPermissionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets all the principals having bind permission on the intranet VPC
+     * associated with the consumer project granted by the Grant API.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    default void getDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.DnsBindPermission>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDnsBindPermissionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes the bind permission from the customer provided principal(user /
+     * service account) on the intranet VPC associated with the consumer project.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    default void revokeDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRevokeDnsBindPermissionMethod(), responseObserver);
+    }
   }
 
   /**
@@ -2649,8 +4911,9 @@ public final class VmwareEngineGrpc {
      *
      * <pre>
      * Creates a new `PrivateCloud` resource in a given project and location.
-     * Private clouds can only be created in zones, regional private clouds are
-     * not supported.
+     * Private clouds of type `STANDARD` and
+     * `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are
+     * regional.
      * Creating a private cloud also creates a [management
      * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components)
      * for that private cloud.
@@ -2789,8 +5052,7 @@ public final class VmwareEngineGrpc {
      *
      *
      * <pre>
-     * Modifies a `Cluster` resource. Only the following fields can be updated:
-     * `node_type_configs.*.node_count`. Only fields specified in `updateMask` are
+     * Modifies a `Cluster` resource. Only fields specified in `updateMask` are
      * applied.
      * During operation processing, the resource is temporarily in the `ACTIVE`
      * state before the operation fully completes. For that period of time, you
@@ -2822,6 +5084,146 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes in a given cluster.
+     * </pre>
+     */
+    public void listNodes(
+        com.google.cloud.vmwareengine.v1.ListNodesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNodesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNodesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single node.
+     * </pre>
+     */
+    public void getNode(
+        com.google.cloud.vmwareengine.v1.GetNodeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Node> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs in a given
+     * private cloud.
+     * </pre>
+     */
+    public void listExternalAddresses(
+        com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListExternalAddressesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs within the
+     * scope of the given network policy.
+     * </pre>
+     */
+    public void fetchNetworkPolicyExternalAddresses(
+        com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchNetworkPolicyExternalAddressesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external IP address.
+     * </pre>
+     */
+    public void getExternalAddress(
+        com.google.cloud.vmwareengine.v1.GetExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ExternalAddress>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetExternalAddressMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ExternalAddress` resource in a given private cloud. The
+     * network policy that corresponds to the private cloud must have the external
+     * IP address network service enabled (`NetworkPolicy.external_ip`).
+     * </pre>
+     */
+    public void createExternalAddress(
+        com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateExternalAddressMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external IP address.
+     * Only fields specified in `update_mask` are applied.
+     * During operation processing, the resource is temporarily in the `ACTIVE`
+     * state before the operation fully completes. For that period of time, you
+     * can't update the resource. Use the operation status to determine when the
+     * processing fully completes.
+     * </pre>
+     */
+    public void updateExternalAddress(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateExternalAddressMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external IP address. When you delete an external IP
+     * address, connectivity between the external IP address and the corresponding
+     * internal IP address is lost.
+     * </pre>
+     */
+    public void deleteExternalAddress(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteExternalAddressMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2873,6 +5275,174 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSubnetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `ExternalAccessRule` resources in the specified network policy.
+     * </pre>
+     */
+    public void listExternalAccessRules(
+        com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListExternalAccessRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external access rule.
+     * </pre>
+     */
+    public void getExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetExternalAccessRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new external access rule in a given network policy.
+     * </pre>
+     */
+    public void createExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateExternalAccessRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external access rule.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public void updateExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateExternalAccessRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external access rule.
+     * </pre>
+     */
+    public void deleteExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteExternalAccessRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists logging servers configured for a given private
+     * cloud.
+     * </pre>
+     */
+    public void listLoggingServers(
+        com.google.cloud.vmwareengine.v1.ListLoggingServersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListLoggingServersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a logging server.
+     * </pre>
+     */
+    public void getLoggingServer(
+        com.google.cloud.vmwareengine.v1.GetLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.LoggingServer>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLoggingServerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new logging server for a given private cloud.
+     * </pre>
+     */
+    public void createLoggingServer(
+        com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateLoggingServerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single logging server.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public void updateLoggingServer(
+        com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateLoggingServerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single logging server.
+     * </pre>
+     */
+    public void deleteLoggingServer(
+        com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteLoggingServerMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2972,6 +5542,151 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResetVcenterCredentialsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the `DnsForwarding` config.
+     * </pre>
+     */
+    public void getDnsForwarding(
+        com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.DnsForwarding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDnsForwardingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the `DnsForwarding` config, like associated
+     * domains. Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public void updateDnsForwarding(
+        com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDnsForwardingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `NetworkPeering` resource by its resource name. The resource
+     * contains details of the network peering, such as peered
+     * networks, import and export custom route configurations, and peering state.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    public void getNetworkPeering(
+        com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.NetworkPeering>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNetworkPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `NetworkPeering` resources in a given project. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    public void listNetworkPeerings(
+        com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNetworkPeeringsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new network peering between the peer network and VMware Engine
+     * network provided in a `NetworkPeering` resource. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    public void createNetworkPeering(
+        com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateNetworkPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `NetworkPeering` resource. When a network peering is deleted for
+     * a VMware Engine network, the peer network becomes inaccessible to that
+     * VMware Engine network. NetworkPeering is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    public void deleteNetworkPeering(
+        com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNetworkPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `NetworkPeering` resource. Only the `description` field can be
+     * updated. Only fields specified in `updateMask` are applied. NetworkPeering
+     * is a global resource and location can only be global.
+     * </pre>
+     */
+    public void updateNetworkPeering(
+        com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateNetworkPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the network peering routes exchanged over a peering connection.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    public void listPeeringRoutes(
+        com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPeeringRoutesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3118,6 +5833,115 @@ public final class VmwareEngineGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNetworkPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+     * </pre>
+     */
+    public void listManagementDnsZoneBindings(
+        com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListManagementDnsZoneBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+     * </pre>
+     */
+    public void getManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetManagementDnsZoneBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ManagementDnsZoneBinding` resource in a private cloud.
+     * This RPC creates the DNS binding and the resource that represents the
+     * DNS binding of the consumer VPC network to the management DNS zone. A
+     * management DNS zone is the Cloud DNS cross-project binding zone that
+     * VMware Engine creates for each private cloud. It contains FQDNs and
+     * corresponding IP addresses for the private cloud's ESXi hosts and
+     * management VM appliances like vCenter and NSX Manager.
+     * </pre>
+     */
+    public void createManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateManagementDnsZoneBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `ManagementDnsZoneBinding` resource.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public void updateManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateManagementDnsZoneBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone
+     * binding is deleted, the corresponding consumer VPC network is no longer
+     * bound to the management DNS zone.
+     * </pre>
+     */
+    public void deleteManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteManagementDnsZoneBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries to create a `ManagementDnsZoneBinding` resource that is
+     * in failed state.
+     * </pre>
+     */
+    public void repairManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRepairManagementDnsZoneBindingMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3319,6 +6143,62 @@ public final class VmwareEngineGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grants the bind permission to the customer provided principal(user /
+     * service account) to bind their DNS zone with the intranet VPC associated
+     * with the project. DnsBindPermission is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    public void grantDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGrantDnsBindPermissionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets all the principals having bind permission on the intranet VPC
+     * associated with the consumer project granted by the Grant API.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    public void getDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.DnsBindPermission>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDnsBindPermissionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes the bind permission from the customer provided principal(user /
+     * service account) on the intranet VPC associated with the consumer project.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    public void revokeDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRevokeDnsBindPermissionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3371,8 +6251,9 @@ public final class VmwareEngineGrpc {
      *
      * <pre>
      * Creates a new `PrivateCloud` resource in a given project and location.
-     * Private clouds can only be created in zones, regional private clouds are
-     * not supported.
+     * Private clouds of type `STANDARD` and
+     * `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are
+     * regional.
      * Creating a private cloud also creates a [management
      * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components)
      * for that private cloud.
@@ -3491,8 +6372,7 @@ public final class VmwareEngineGrpc {
      *
      *
      * <pre>
-     * Modifies a `Cluster` resource. Only the following fields can be updated:
-     * `node_type_configs.*.node_count`. Only fields specified in `updateMask` are
+     * Modifies a `Cluster` resource. Only fields specified in `updateMask` are
      * applied.
      * During operation processing, the resource is temporarily in the `ACTIVE`
      * state before the operation fully completes. For that period of time, you
@@ -3520,6 +6400,122 @@ public final class VmwareEngineGrpc {
         com.google.cloud.vmwareengine.v1.DeleteClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListNodesResponse listNodes(
+        com.google.cloud.vmwareengine.v1.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single node.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.Node getNode(
+        com.google.cloud.vmwareengine.v1.GetNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs in a given
+     * private cloud.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse listExternalAddresses(
+        com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExternalAddressesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs within the
+     * scope of the given network policy.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse
+        fetchNetworkPolicyExternalAddresses(
+            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchNetworkPolicyExternalAddressesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external IP address.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddress(
+        com.google.cloud.vmwareengine.v1.GetExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExternalAddressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ExternalAddress` resource in a given private cloud. The
+     * network policy that corresponds to the private cloud must have the external
+     * IP address network service enabled (`NetworkPolicy.external_ip`).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createExternalAddress(
+        com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExternalAddressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external IP address.
+     * Only fields specified in `update_mask` are applied.
+     * During operation processing, the resource is temporarily in the `ACTIVE`
+     * state before the operation fully completes. For that period of time, you
+     * can't update the resource. Use the operation status to determine when the
+     * processing fully completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExternalAddress(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExternalAddressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external IP address. When you delete an external IP
+     * address, connectivity between the external IP address and the corresponding
+     * internal IP address is lost.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteExternalAddress(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExternalAddressMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3563,6 +6559,139 @@ public final class VmwareEngineGrpc {
         com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `ExternalAccessRule` resources in the specified network policy.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse listExternalAccessRules(
+        com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExternalAccessRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external access rule.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ExternalAccessRule getExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExternalAccessRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new external access rule in a given network policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExternalAccessRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external access rule.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExternalAccessRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external access rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteExternalAccessRule(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExternalAccessRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists logging servers configured for a given private
+     * cloud.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListLoggingServersResponse listLoggingServers(
+        com.google.cloud.vmwareengine.v1.ListLoggingServersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLoggingServersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a logging server.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.LoggingServer getLoggingServer(
+        com.google.cloud.vmwareengine.v1.GetLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLoggingServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new logging server for a given private cloud.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLoggingServer(
+        com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLoggingServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single logging server.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLoggingServer(
+        com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLoggingServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single logging server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteLoggingServer(
+        com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLoggingServerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3641,6 +6770,123 @@ public final class VmwareEngineGrpc {
         com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResetVcenterCredentialsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the `DnsForwarding` config.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.DnsForwarding getDnsForwarding(
+        com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDnsForwardingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the `DnsForwarding` config, like associated
+     * domains. Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDnsForwarding(
+        com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDnsForwardingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `NetworkPeering` resource by its resource name. The resource
+     * contains details of the network peering, such as peered
+     * networks, import and export custom route configurations, and peering state.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.NetworkPeering getNetworkPeering(
+        com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNetworkPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `NetworkPeering` resources in a given project. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse listNetworkPeerings(
+        com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNetworkPeeringsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new network peering between the peer network and VMware Engine
+     * network provided in a `NetworkPeering` resource. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNetworkPeering(
+        com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNetworkPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `NetworkPeering` resource. When a network peering is deleted for
+     * a VMware Engine network, the peer network becomes inaccessible to that
+     * VMware Engine network. NetworkPeering is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNetworkPeering(
+        com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNetworkPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `NetworkPeering` resource. Only the `description` field can be
+     * updated. Only fields specified in `updateMask` are applied. NetworkPeering
+     * is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateNetworkPeering(
+        com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNetworkPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the network peering routes exchanged over a peering connection.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse listPeeringRoutes(
+        com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPeeringRoutesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3759,6 +7005,95 @@ public final class VmwareEngineGrpc {
         com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNetworkPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse
+        listManagementDnsZoneBindings(
+            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListManagementDnsZoneBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding getManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetManagementDnsZoneBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ManagementDnsZoneBinding` resource in a private cloud.
+     * This RPC creates the DNS binding and the resource that represents the
+     * DNS binding of the consumer VPC network to the management DNS zone. A
+     * management DNS zone is the Cloud DNS cross-project binding zone that
+     * VMware Engine creates for each private cloud. It contains FQDNs and
+     * corresponding IP addresses for the private cloud's ESXi hosts and
+     * management VM appliances like vCenter and NSX Manager.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateManagementDnsZoneBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `ManagementDnsZoneBinding` resource.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateManagementDnsZoneBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone
+     * binding is deleted, the corresponding consumer VPC network is no longer
+     * bound to the management DNS zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteManagementDnsZoneBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries to create a `ManagementDnsZoneBinding` resource that is
+     * in failed state.
+     * </pre>
+     */
+    public com.google.longrunning.Operation repairManagementDnsZoneBinding(
+        com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRepairManagementDnsZoneBindingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3920,6 +7255,52 @@ public final class VmwareEngineGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPrivateConnectionPeeringRoutesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grants the bind permission to the customer provided principal(user /
+     * service account) to bind their DNS zone with the intranet VPC associated
+     * with the project. DnsBindPermission is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    public com.google.longrunning.Operation grantDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGrantDnsBindPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets all the principals having bind permission on the intranet VPC
+     * associated with the consumer project granted by the Grant API.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.DnsBindPermission getDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDnsBindPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes the bind permission from the customer provided principal(user /
+     * service account) on the intranet VPC associated with the consumer project.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.longrunning.Operation revokeDnsBindPermission(
+        com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevokeDnsBindPermissionMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3974,8 +7355,9 @@ public final class VmwareEngineGrpc {
      *
      * <pre>
      * Creates a new `PrivateCloud` resource in a given project and location.
-     * Private clouds can only be created in zones, regional private clouds are
-     * not supported.
+     * Private clouds of type `STANDARD` and
+     * `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are
+     * regional.
      * Creating a private cloud also creates a [management
      * cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components)
      * for that private cloud.
@@ -4096,8 +7478,7 @@ public final class VmwareEngineGrpc {
      *
      *
      * <pre>
-     * Modifies a `Cluster` resource. Only the following fields can be updated:
-     * `node_type_configs.*.node_count`. Only fields specified in `updateMask` are
+     * Modifies a `Cluster` resource. Only fields specified in `updateMask` are
      * applied.
      * During operation processing, the resource is temporarily in the `ACTIVE`
      * state before the operation fully completes. For that period of time, you
@@ -4125,6 +7506,131 @@ public final class VmwareEngineGrpc {
         deleteCluster(com.google.cloud.vmwareengine.v1.DeleteClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes in a given cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListNodesResponse>
+        listNodes(com.google.cloud.vmwareengine.v1.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNodesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single node.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vmwareengine.v1.Node>
+        getNode(com.google.cloud.vmwareengine.v1.GetNodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNodeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs in a given
+     * private cloud.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>
+        listExternalAddresses(
+            com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListExternalAddressesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists external IP addresses assigned to VMware workload VMs within the
+     * scope of the given network policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>
+        fetchNetworkPolicyExternalAddresses(
+            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchNetworkPolicyExternalAddressesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external IP address.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ExternalAddress>
+        getExternalAddress(com.google.cloud.vmwareengine.v1.GetExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetExternalAddressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ExternalAddress` resource in a given private cloud. The
+     * network policy that corresponds to the private cloud must have the external
+     * IP address network service enabled (`NetworkPolicy.external_ip`).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createExternalAddress(
+            com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateExternalAddressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external IP address.
+     * Only fields specified in `update_mask` are applied.
+     * During operation processing, the resource is temporarily in the `ACTIVE`
+     * state before the operation fully completes. For that period of time, you
+     * can't update the resource. Use the operation status to determine when the
+     * processing fully completes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateExternalAddress(
+            com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateExternalAddressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external IP address. When you delete an external IP
+     * address, connectivity between the external IP address and the corresponding
+     * internal IP address is lost.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteExternalAddress(
+            com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteExternalAddressMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4170,6 +7676,148 @@ public final class VmwareEngineGrpc {
         updateSubnet(com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSubnetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `ExternalAccessRule` resources in the specified network policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>
+        listExternalAccessRules(
+            com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListExternalAccessRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single external access rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ExternalAccessRule>
+        getExternalAccessRule(
+            com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetExternalAccessRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new external access rule in a given network policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createExternalAccessRule(
+            com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateExternalAccessRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single external access rule.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateExternalAccessRule(
+            com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateExternalAccessRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single external access rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteExternalAccessRule(
+            com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteExternalAccessRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists logging servers configured for a given private
+     * cloud.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>
+        listLoggingServers(com.google.cloud.vmwareengine.v1.ListLoggingServersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListLoggingServersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a logging server.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.LoggingServer>
+        getLoggingServer(com.google.cloud.vmwareengine.v1.GetLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLoggingServerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new logging server for a given private cloud.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createLoggingServer(com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateLoggingServerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single logging server.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateLoggingServer(com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateLoggingServerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single logging server.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteLoggingServer(com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteLoggingServerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4254,6 +7902,127 @@ public final class VmwareEngineGrpc {
             com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResetVcenterCredentialsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the `DnsForwarding` config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.DnsForwarding>
+        getDnsForwarding(com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDnsForwardingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the `DnsForwarding` config, like associated
+     * domains. Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDnsForwarding(com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDnsForwardingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `NetworkPeering` resource by its resource name. The resource
+     * contains details of the network peering, such as peered
+     * networks, import and export custom route configurations, and peering state.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.NetworkPeering>
+        getNetworkPeering(com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNetworkPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `NetworkPeering` resources in a given project. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>
+        listNetworkPeerings(com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNetworkPeeringsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new network peering between the peer network and VMware Engine
+     * network provided in a `NetworkPeering` resource. NetworkPeering is a
+     * global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createNetworkPeering(com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateNetworkPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `NetworkPeering` resource. When a network peering is deleted for
+     * a VMware Engine network, the peer network becomes inaccessible to that
+     * VMware Engine network. NetworkPeering is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteNetworkPeering(com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNetworkPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `NetworkPeering` resource. Only the `description` field can be
+     * updated. Only fields specified in `updateMask` are applied. NetworkPeering
+     * is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateNetworkPeering(com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateNetworkPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the network peering routes exchanged over a peering connection.
+     * NetworkPeering is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>
+        listPeeringRoutes(com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPeeringRoutesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4378,6 +8147,107 @@ public final class VmwareEngineGrpc {
         deleteNetworkPolicy(com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNetworkPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>
+        listManagementDnsZoneBindings(
+            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListManagementDnsZoneBindingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
+        getManagementDnsZoneBinding(
+            com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetManagementDnsZoneBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `ManagementDnsZoneBinding` resource in a private cloud.
+     * This RPC creates the DNS binding and the resource that represents the
+     * DNS binding of the consumer VPC network to the management DNS zone. A
+     * management DNS zone is the Cloud DNS cross-project binding zone that
+     * VMware Engine creates for each private cloud. It contains FQDNs and
+     * corresponding IP addresses for the private cloud's ESXi hosts and
+     * management VM appliances like vCenter and NSX Manager.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createManagementDnsZoneBinding(
+            com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateManagementDnsZoneBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `ManagementDnsZoneBinding` resource.
+     * Only fields specified in `update_mask` are applied.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateManagementDnsZoneBinding(
+            com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateManagementDnsZoneBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone
+     * binding is deleted, the corresponding consumer VPC network is no longer
+     * bound to the management DNS zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteManagementDnsZoneBinding(
+            com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteManagementDnsZoneBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries to create a `ManagementDnsZoneBinding` resource that is
+     * in failed state.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        repairManagementDnsZoneBinding(
+            com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRepairManagementDnsZoneBindingMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -4553,6 +8423,55 @@ public final class VmwareEngineGrpc {
           getChannel().newCall(getListPrivateConnectionPeeringRoutesMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grants the bind permission to the customer provided principal(user /
+     * service account) to bind their DNS zone with the intranet VPC associated
+     * with the project. DnsBindPermission is a global resource and location can
+     * only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        grantDnsBindPermission(
+            com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGrantDnsBindPermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets all the principals having bind permission on the intranet VPC
+     * associated with the consumer project granted by the Grant API.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.DnsBindPermission>
+        getDnsBindPermission(com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDnsBindPermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes the bind permission from the customer provided principal(user /
+     * service account) on the intranet VPC associated with the consumer project.
+     * DnsBindPermission is a global resource and location can only be global.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        revokeDnsBindPermission(
+            com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRevokeDnsBindPermissionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_PRIVATE_CLOUDS = 0;
@@ -4566,34 +8485,69 @@ public final class VmwareEngineGrpc {
   private static final int METHODID_CREATE_CLUSTER = 8;
   private static final int METHODID_UPDATE_CLUSTER = 9;
   private static final int METHODID_DELETE_CLUSTER = 10;
-  private static final int METHODID_LIST_SUBNETS = 11;
-  private static final int METHODID_GET_SUBNET = 12;
-  private static final int METHODID_UPDATE_SUBNET = 13;
-  private static final int METHODID_LIST_NODE_TYPES = 14;
-  private static final int METHODID_GET_NODE_TYPE = 15;
-  private static final int METHODID_SHOW_NSX_CREDENTIALS = 16;
-  private static final int METHODID_SHOW_VCENTER_CREDENTIALS = 17;
-  private static final int METHODID_RESET_NSX_CREDENTIALS = 18;
-  private static final int METHODID_RESET_VCENTER_CREDENTIALS = 19;
-  private static final int METHODID_CREATE_HCX_ACTIVATION_KEY = 20;
-  private static final int METHODID_LIST_HCX_ACTIVATION_KEYS = 21;
-  private static final int METHODID_GET_HCX_ACTIVATION_KEY = 22;
-  private static final int METHODID_GET_NETWORK_POLICY = 23;
-  private static final int METHODID_LIST_NETWORK_POLICIES = 24;
-  private static final int METHODID_CREATE_NETWORK_POLICY = 25;
-  private static final int METHODID_UPDATE_NETWORK_POLICY = 26;
-  private static final int METHODID_DELETE_NETWORK_POLICY = 27;
-  private static final int METHODID_CREATE_VMWARE_ENGINE_NETWORK = 28;
-  private static final int METHODID_UPDATE_VMWARE_ENGINE_NETWORK = 29;
-  private static final int METHODID_DELETE_VMWARE_ENGINE_NETWORK = 30;
-  private static final int METHODID_GET_VMWARE_ENGINE_NETWORK = 31;
-  private static final int METHODID_LIST_VMWARE_ENGINE_NETWORKS = 32;
-  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 33;
-  private static final int METHODID_GET_PRIVATE_CONNECTION = 34;
-  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 35;
-  private static final int METHODID_UPDATE_PRIVATE_CONNECTION = 36;
-  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 37;
-  private static final int METHODID_LIST_PRIVATE_CONNECTION_PEERING_ROUTES = 38;
+  private static final int METHODID_LIST_NODES = 11;
+  private static final int METHODID_GET_NODE = 12;
+  private static final int METHODID_LIST_EXTERNAL_ADDRESSES = 13;
+  private static final int METHODID_FETCH_NETWORK_POLICY_EXTERNAL_ADDRESSES = 14;
+  private static final int METHODID_GET_EXTERNAL_ADDRESS = 15;
+  private static final int METHODID_CREATE_EXTERNAL_ADDRESS = 16;
+  private static final int METHODID_UPDATE_EXTERNAL_ADDRESS = 17;
+  private static final int METHODID_DELETE_EXTERNAL_ADDRESS = 18;
+  private static final int METHODID_LIST_SUBNETS = 19;
+  private static final int METHODID_GET_SUBNET = 20;
+  private static final int METHODID_UPDATE_SUBNET = 21;
+  private static final int METHODID_LIST_EXTERNAL_ACCESS_RULES = 22;
+  private static final int METHODID_GET_EXTERNAL_ACCESS_RULE = 23;
+  private static final int METHODID_CREATE_EXTERNAL_ACCESS_RULE = 24;
+  private static final int METHODID_UPDATE_EXTERNAL_ACCESS_RULE = 25;
+  private static final int METHODID_DELETE_EXTERNAL_ACCESS_RULE = 26;
+  private static final int METHODID_LIST_LOGGING_SERVERS = 27;
+  private static final int METHODID_GET_LOGGING_SERVER = 28;
+  private static final int METHODID_CREATE_LOGGING_SERVER = 29;
+  private static final int METHODID_UPDATE_LOGGING_SERVER = 30;
+  private static final int METHODID_DELETE_LOGGING_SERVER = 31;
+  private static final int METHODID_LIST_NODE_TYPES = 32;
+  private static final int METHODID_GET_NODE_TYPE = 33;
+  private static final int METHODID_SHOW_NSX_CREDENTIALS = 34;
+  private static final int METHODID_SHOW_VCENTER_CREDENTIALS = 35;
+  private static final int METHODID_RESET_NSX_CREDENTIALS = 36;
+  private static final int METHODID_RESET_VCENTER_CREDENTIALS = 37;
+  private static final int METHODID_GET_DNS_FORWARDING = 38;
+  private static final int METHODID_UPDATE_DNS_FORWARDING = 39;
+  private static final int METHODID_GET_NETWORK_PEERING = 40;
+  private static final int METHODID_LIST_NETWORK_PEERINGS = 41;
+  private static final int METHODID_CREATE_NETWORK_PEERING = 42;
+  private static final int METHODID_DELETE_NETWORK_PEERING = 43;
+  private static final int METHODID_UPDATE_NETWORK_PEERING = 44;
+  private static final int METHODID_LIST_PEERING_ROUTES = 45;
+  private static final int METHODID_CREATE_HCX_ACTIVATION_KEY = 46;
+  private static final int METHODID_LIST_HCX_ACTIVATION_KEYS = 47;
+  private static final int METHODID_GET_HCX_ACTIVATION_KEY = 48;
+  private static final int METHODID_GET_NETWORK_POLICY = 49;
+  private static final int METHODID_LIST_NETWORK_POLICIES = 50;
+  private static final int METHODID_CREATE_NETWORK_POLICY = 51;
+  private static final int METHODID_UPDATE_NETWORK_POLICY = 52;
+  private static final int METHODID_DELETE_NETWORK_POLICY = 53;
+  private static final int METHODID_LIST_MANAGEMENT_DNS_ZONE_BINDINGS = 54;
+  private static final int METHODID_GET_MANAGEMENT_DNS_ZONE_BINDING = 55;
+  private static final int METHODID_CREATE_MANAGEMENT_DNS_ZONE_BINDING = 56;
+  private static final int METHODID_UPDATE_MANAGEMENT_DNS_ZONE_BINDING = 57;
+  private static final int METHODID_DELETE_MANAGEMENT_DNS_ZONE_BINDING = 58;
+  private static final int METHODID_REPAIR_MANAGEMENT_DNS_ZONE_BINDING = 59;
+  private static final int METHODID_CREATE_VMWARE_ENGINE_NETWORK = 60;
+  private static final int METHODID_UPDATE_VMWARE_ENGINE_NETWORK = 61;
+  private static final int METHODID_DELETE_VMWARE_ENGINE_NETWORK = 62;
+  private static final int METHODID_GET_VMWARE_ENGINE_NETWORK = 63;
+  private static final int METHODID_LIST_VMWARE_ENGINE_NETWORKS = 64;
+  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 65;
+  private static final int METHODID_GET_PRIVATE_CONNECTION = 66;
+  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 67;
+  private static final int METHODID_UPDATE_PRIVATE_CONNECTION = 68;
+  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 69;
+  private static final int METHODID_LIST_PRIVATE_CONNECTION_PEERING_ROUTES = 70;
+  private static final int METHODID_GRANT_DNS_BIND_PERMISSION = 71;
+  private static final int METHODID_GET_DNS_BIND_PERMISSION = 72;
+  private static final int METHODID_REVOKE_DNS_BIND_PERMISSION = 73;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4672,6 +8626,53 @@ public final class VmwareEngineGrpc {
               (com.google.cloud.vmwareengine.v1.DeleteClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_LIST_NODES:
+          serviceImpl.listNodes(
+              (com.google.cloud.vmwareengine.v1.ListNodesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNodesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_NODE:
+          serviceImpl.getNode(
+              (com.google.cloud.vmwareengine.v1.GetNodeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Node>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_EXTERNAL_ADDRESSES:
+          serviceImpl.listExternalAddresses(
+              (com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_NETWORK_POLICY_EXTERNAL_ADDRESSES:
+          serviceImpl.fetchNetworkPolicyExternalAddresses(
+              (com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_EXTERNAL_ADDRESS:
+          serviceImpl.getExternalAddress(
+              (com.google.cloud.vmwareengine.v1.GetExternalAddressRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ExternalAddress>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_EXTERNAL_ADDRESS:
+          serviceImpl.createExternalAddress(
+              (com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_EXTERNAL_ADDRESS:
+          serviceImpl.updateExternalAddress(
+              (com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_EXTERNAL_ADDRESS:
+          serviceImpl.deleteExternalAddress(
+              (com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_LIST_SUBNETS:
           serviceImpl.listSubnets(
               (com.google.cloud.vmwareengine.v1.ListSubnetsRequest) request,
@@ -4687,6 +8688,62 @@ public final class VmwareEngineGrpc {
         case METHODID_UPDATE_SUBNET:
           serviceImpl.updateSubnet(
               (com.google.cloud.vmwareengine.v1.UpdateSubnetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_EXTERNAL_ACCESS_RULES:
+          serviceImpl.listExternalAccessRules(
+              (com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_EXTERNAL_ACCESS_RULE:
+          serviceImpl.getExternalAccessRule(
+              (com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ExternalAccessRule>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_EXTERNAL_ACCESS_RULE:
+          serviceImpl.createExternalAccessRule(
+              (com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_EXTERNAL_ACCESS_RULE:
+          serviceImpl.updateExternalAccessRule(
+              (com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_EXTERNAL_ACCESS_RULE:
+          serviceImpl.deleteExternalAccessRule(
+              (com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_LOGGING_SERVERS:
+          serviceImpl.listLoggingServers(
+              (com.google.cloud.vmwareengine.v1.ListLoggingServersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_LOGGING_SERVER:
+          serviceImpl.getLoggingServer(
+              (com.google.cloud.vmwareengine.v1.GetLoggingServerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.LoggingServer>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_LOGGING_SERVER:
+          serviceImpl.createLoggingServer(
+              (com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_LOGGING_SERVER:
+          serviceImpl.updateLoggingServer(
+              (com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_LOGGING_SERVER:
+          serviceImpl.deleteLoggingServer(
+              (com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_NODE_TYPES:
@@ -4722,6 +8779,52 @@ public final class VmwareEngineGrpc {
           serviceImpl.resetVcenterCredentials(
               (com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DNS_FORWARDING:
+          serviceImpl.getDnsForwarding(
+              (com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.DnsForwarding>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_DNS_FORWARDING:
+          serviceImpl.updateDnsForwarding(
+              (com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_NETWORK_PEERING:
+          serviceImpl.getNetworkPeering(
+              (com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.NetworkPeering>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NETWORK_PEERINGS:
+          serviceImpl.listNetworkPeerings(
+              (com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_NETWORK_PEERING:
+          serviceImpl.createNetworkPeering(
+              (com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_NETWORK_PEERING:
+          serviceImpl.deleteNetworkPeering(
+              (com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_NETWORK_PEERING:
+          serviceImpl.updateNetworkPeering(
+              (com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_PEERING_ROUTES:
+          serviceImpl.listPeeringRoutes(
+              (com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_HCX_ACTIVATION_KEY:
           serviceImpl.createHcxActivationKey(
@@ -4767,6 +8870,40 @@ public final class VmwareEngineGrpc {
         case METHODID_DELETE_NETWORK_POLICY:
           serviceImpl.deleteNetworkPolicy(
               (com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_MANAGEMENT_DNS_ZONE_BINDINGS:
+          serviceImpl.listManagementDnsZoneBindings(
+              (com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MANAGEMENT_DNS_ZONE_BINDING:
+          serviceImpl.getManagementDnsZoneBinding(
+              (com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_MANAGEMENT_DNS_ZONE_BINDING:
+          serviceImpl.createManagementDnsZoneBinding(
+              (com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_MANAGEMENT_DNS_ZONE_BINDING:
+          serviceImpl.updateManagementDnsZoneBinding(
+              (com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MANAGEMENT_DNS_ZONE_BINDING:
+          serviceImpl.deleteManagementDnsZoneBinding(
+              (com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REPAIR_MANAGEMENT_DNS_ZONE_BINDING:
+          serviceImpl.repairManagementDnsZoneBinding(
+              (com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_VMWARE_ENGINE_NETWORK:
@@ -4831,6 +8968,22 @@ public final class VmwareEngineGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>)
                   responseObserver);
+          break;
+        case METHODID_GRANT_DNS_BIND_PERMISSION:
+          serviceImpl.grantDnsBindPermission(
+              (com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DNS_BIND_PERMISSION:
+          serviceImpl.getDnsBindPermission(
+              (com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.DnsBindPermission>)
+                  responseObserver);
+          break;
+        case METHODID_REVOKE_DNS_BIND_PERMISSION:
+          serviceImpl.revokeDnsBindPermission(
+              (com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4920,6 +9073,58 @@ public final class VmwareEngineGrpc {
                     com.google.cloud.vmwareengine.v1.DeleteClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_CLUSTER)))
         .addMethod(
+            getListNodesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListNodesRequest,
+                    com.google.cloud.vmwareengine.v1.ListNodesResponse>(
+                    service, METHODID_LIST_NODES)))
+        .addMethod(
+            getGetNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetNodeRequest,
+                    com.google.cloud.vmwareengine.v1.Node>(service, METHODID_GET_NODE)))
+        .addMethod(
+            getListExternalAddressesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest,
+                    com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse>(
+                    service, METHODID_LIST_EXTERNAL_ADDRESSES)))
+        .addMethod(
+            getFetchNetworkPolicyExternalAddressesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest,
+                    com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse>(
+                    service, METHODID_FETCH_NETWORK_POLICY_EXTERNAL_ADDRESSES)))
+        .addMethod(
+            getGetExternalAddressMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetExternalAddressRequest,
+                    com.google.cloud.vmwareengine.v1.ExternalAddress>(
+                    service, METHODID_GET_EXTERNAL_ADDRESS)))
+        .addMethod(
+            getCreateExternalAddressMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_EXTERNAL_ADDRESS)))
+        .addMethod(
+            getUpdateExternalAddressMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_EXTERNAL_ADDRESS)))
+        .addMethod(
+            getDeleteExternalAddressMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_EXTERNAL_ADDRESS)))
+        .addMethod(
             getListSubnetsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4938,6 +9143,73 @@ public final class VmwareEngineGrpc {
                 new MethodHandlers<
                     com.google.cloud.vmwareengine.v1.UpdateSubnetRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_SUBNET)))
+        .addMethod(
+            getListExternalAccessRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest,
+                    com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse>(
+                    service, METHODID_LIST_EXTERNAL_ACCESS_RULES)))
+        .addMethod(
+            getGetExternalAccessRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest,
+                    com.google.cloud.vmwareengine.v1.ExternalAccessRule>(
+                    service, METHODID_GET_EXTERNAL_ACCESS_RULE)))
+        .addMethod(
+            getCreateExternalAccessRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_EXTERNAL_ACCESS_RULE)))
+        .addMethod(
+            getUpdateExternalAccessRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_EXTERNAL_ACCESS_RULE)))
+        .addMethod(
+            getDeleteExternalAccessRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_EXTERNAL_ACCESS_RULE)))
+        .addMethod(
+            getListLoggingServersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListLoggingServersRequest,
+                    com.google.cloud.vmwareengine.v1.ListLoggingServersResponse>(
+                    service, METHODID_LIST_LOGGING_SERVERS)))
+        .addMethod(
+            getGetLoggingServerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetLoggingServerRequest,
+                    com.google.cloud.vmwareengine.v1.LoggingServer>(
+                    service, METHODID_GET_LOGGING_SERVER)))
+        .addMethod(
+            getCreateLoggingServerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_LOGGING_SERVER)))
+        .addMethod(
+            getUpdateLoggingServerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_LOGGING_SERVER)))
+        .addMethod(
+            getDeleteLoggingServerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_LOGGING_SERVER)))
         .addMethod(
             getListNodeTypesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4977,6 +9249,58 @@ public final class VmwareEngineGrpc {
                 new MethodHandlers<
                     com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest,
                     com.google.longrunning.Operation>(service, METHODID_RESET_VCENTER_CREDENTIALS)))
+        .addMethod(
+            getGetDnsForwardingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest,
+                    com.google.cloud.vmwareengine.v1.DnsForwarding>(
+                    service, METHODID_GET_DNS_FORWARDING)))
+        .addMethod(
+            getUpdateDnsForwardingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DNS_FORWARDING)))
+        .addMethod(
+            getGetNetworkPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest,
+                    com.google.cloud.vmwareengine.v1.NetworkPeering>(
+                    service, METHODID_GET_NETWORK_PEERING)))
+        .addMethod(
+            getListNetworkPeeringsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest,
+                    com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse>(
+                    service, METHODID_LIST_NETWORK_PEERINGS)))
+        .addMethod(
+            getCreateNetworkPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_NETWORK_PEERING)))
+        .addMethod(
+            getDeleteNetworkPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_NETWORK_PEERING)))
+        .addMethod(
+            getUpdateNetworkPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_NETWORK_PEERING)))
+        .addMethod(
+            getListPeeringRoutesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest,
+                    com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse>(
+                    service, METHODID_LIST_PEERING_ROUTES)))
         .addMethod(
             getCreateHcxActivationKeyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5029,6 +9353,48 @@ public final class VmwareEngineGrpc {
                 new MethodHandlers<
                     com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_NETWORK_POLICY)))
+        .addMethod(
+            getListManagementDnsZoneBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest,
+                    com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse>(
+                    service, METHODID_LIST_MANAGEMENT_DNS_ZONE_BINDINGS)))
+        .addMethod(
+            getGetManagementDnsZoneBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest,
+                    com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>(
+                    service, METHODID_GET_MANAGEMENT_DNS_ZONE_BINDING)))
+        .addMethod(
+            getCreateManagementDnsZoneBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_MANAGEMENT_DNS_ZONE_BINDING)))
+        .addMethod(
+            getUpdateManagementDnsZoneBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_MANAGEMENT_DNS_ZONE_BINDING)))
+        .addMethod(
+            getDeleteManagementDnsZoneBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_MANAGEMENT_DNS_ZONE_BINDING)))
+        .addMethod(
+            getRepairManagementDnsZoneBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_REPAIR_MANAGEMENT_DNS_ZONE_BINDING)))
         .addMethod(
             getCreateVmwareEngineNetworkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5103,6 +9469,26 @@ public final class VmwareEngineGrpc {
                     com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest,
                     com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>(
                     service, METHODID_LIST_PRIVATE_CONNECTION_PEERING_ROUTES)))
+        .addMethod(
+            getGrantDnsBindPermissionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_GRANT_DNS_BIND_PERMISSION)))
+        .addMethod(
+            getGetDnsBindPermissionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest,
+                    com.google.cloud.vmwareengine.v1.DnsBindPermission>(
+                    service, METHODID_GET_DNS_BIND_PERMISSION)))
+        .addMethod(
+            getRevokeDnsBindPermissionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_REVOKE_DNS_BIND_PERMISSION)))
         .build();
   }
 
@@ -5165,15 +9551,41 @@ public final class VmwareEngineGrpc {
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
+                      .addMethod(getListNodesMethod())
+                      .addMethod(getGetNodeMethod())
+                      .addMethod(getListExternalAddressesMethod())
+                      .addMethod(getFetchNetworkPolicyExternalAddressesMethod())
+                      .addMethod(getGetExternalAddressMethod())
+                      .addMethod(getCreateExternalAddressMethod())
+                      .addMethod(getUpdateExternalAddressMethod())
+                      .addMethod(getDeleteExternalAddressMethod())
                       .addMethod(getListSubnetsMethod())
                       .addMethod(getGetSubnetMethod())
                       .addMethod(getUpdateSubnetMethod())
+                      .addMethod(getListExternalAccessRulesMethod())
+                      .addMethod(getGetExternalAccessRuleMethod())
+                      .addMethod(getCreateExternalAccessRuleMethod())
+                      .addMethod(getUpdateExternalAccessRuleMethod())
+                      .addMethod(getDeleteExternalAccessRuleMethod())
+                      .addMethod(getListLoggingServersMethod())
+                      .addMethod(getGetLoggingServerMethod())
+                      .addMethod(getCreateLoggingServerMethod())
+                      .addMethod(getUpdateLoggingServerMethod())
+                      .addMethod(getDeleteLoggingServerMethod())
                       .addMethod(getListNodeTypesMethod())
                       .addMethod(getGetNodeTypeMethod())
                       .addMethod(getShowNsxCredentialsMethod())
                       .addMethod(getShowVcenterCredentialsMethod())
                       .addMethod(getResetNsxCredentialsMethod())
                       .addMethod(getResetVcenterCredentialsMethod())
+                      .addMethod(getGetDnsForwardingMethod())
+                      .addMethod(getUpdateDnsForwardingMethod())
+                      .addMethod(getGetNetworkPeeringMethod())
+                      .addMethod(getListNetworkPeeringsMethod())
+                      .addMethod(getCreateNetworkPeeringMethod())
+                      .addMethod(getDeleteNetworkPeeringMethod())
+                      .addMethod(getUpdateNetworkPeeringMethod())
+                      .addMethod(getListPeeringRoutesMethod())
                       .addMethod(getCreateHcxActivationKeyMethod())
                       .addMethod(getListHcxActivationKeysMethod())
                       .addMethod(getGetHcxActivationKeyMethod())
@@ -5182,6 +9594,12 @@ public final class VmwareEngineGrpc {
                       .addMethod(getCreateNetworkPolicyMethod())
                       .addMethod(getUpdateNetworkPolicyMethod())
                       .addMethod(getDeleteNetworkPolicyMethod())
+                      .addMethod(getListManagementDnsZoneBindingsMethod())
+                      .addMethod(getGetManagementDnsZoneBindingMethod())
+                      .addMethod(getCreateManagementDnsZoneBindingMethod())
+                      .addMethod(getUpdateManagementDnsZoneBindingMethod())
+                      .addMethod(getDeleteManagementDnsZoneBindingMethod())
+                      .addMethod(getRepairManagementDnsZoneBindingMethod())
                       .addMethod(getCreateVmwareEngineNetworkMethod())
                       .addMethod(getUpdateVmwareEngineNetworkMethod())
                       .addMethod(getDeleteVmwareEngineNetworkMethod())
@@ -5193,6 +9611,9 @@ public final class VmwareEngineGrpc {
                       .addMethod(getUpdatePrivateConnectionMethod())
                       .addMethod(getDeletePrivateConnectionMethod())
                       .addMethod(getListPrivateConnectionPeeringRoutesMethod())
+                      .addMethod(getGrantDnsBindPermissionMethod())
+                      .addMethod(getGetDnsBindPermissionMethod())
+                      .addMethod(getRevokeDnsBindPermissionMethod())
                       .build();
         }
       }

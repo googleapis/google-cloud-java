@@ -16,11 +16,19 @@
 
 package com.google.cloud.vmwareengine.v1.stub;
 
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.FetchNetworkPolicyExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListClustersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAccessRulesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListHcxActivationKeysPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLoggingServersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListManagementDnsZoneBindingsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPeeringsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
@@ -36,34 +44,73 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.vmwareengine.v1.Cluster;
 import com.google.cloud.vmwareengine.v1.CreateClusterRequest;
+import com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest;
 import com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest;
+import com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.Credentials;
 import com.google.cloud.vmwareengine.v1.DeleteClusterRequest;
+import com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest;
+import com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest;
+import com.google.cloud.vmwareengine.v1.DnsBindPermission;
+import com.google.cloud.vmwareengine.v1.DnsForwarding;
+import com.google.cloud.vmwareengine.v1.ExternalAccessRule;
+import com.google.cloud.vmwareengine.v1.ExternalAddress;
+import com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest;
+import com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse;
 import com.google.cloud.vmwareengine.v1.GetClusterRequest;
+import com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest;
+import com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest;
+import com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.GetExternalAddressRequest;
 import com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest;
+import com.google.cloud.vmwareengine.v1.GetLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest;
+import com.google.cloud.vmwareengine.v1.GetNodeRequest;
 import com.google.cloud.vmwareengine.v1.GetNodeTypeRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.GetSubnetRequest;
 import com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest;
+import com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest;
 import com.google.cloud.vmwareengine.v1.HcxActivationKey;
 import com.google.cloud.vmwareengine.v1.ListClustersRequest;
 import com.google.cloud.vmwareengine.v1.ListClustersResponse;
+import com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest;
+import com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse;
+import com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest;
+import com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse;
 import com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest;
 import com.google.cloud.vmwareengine.v1.ListHcxActivationKeysResponse;
+import com.google.cloud.vmwareengine.v1.ListLoggingServersRequest;
+import com.google.cloud.vmwareengine.v1.ListLoggingServersResponse;
+import com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest;
+import com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse;
+import com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest;
+import com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse;
 import com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest;
 import com.google.cloud.vmwareengine.v1.ListNetworkPoliciesResponse;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesRequest;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesResponse;
+import com.google.cloud.vmwareengine.v1.ListNodesRequest;
+import com.google.cloud.vmwareengine.v1.ListNodesResponse;
+import com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest;
+import com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest;
@@ -74,18 +121,30 @@ import com.google.cloud.vmwareengine.v1.ListSubnetsRequest;
 import com.google.cloud.vmwareengine.v1.ListSubnetsResponse;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse;
+import com.google.cloud.vmwareengine.v1.LoggingServer;
+import com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding;
+import com.google.cloud.vmwareengine.v1.NetworkPeering;
 import com.google.cloud.vmwareengine.v1.NetworkPolicy;
+import com.google.cloud.vmwareengine.v1.Node;
 import com.google.cloud.vmwareengine.v1.NodeType;
 import com.google.cloud.vmwareengine.v1.OperationMetadata;
 import com.google.cloud.vmwareengine.v1.PrivateCloud;
 import com.google.cloud.vmwareengine.v1.PrivateConnection;
+import com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest;
 import com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest;
+import com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest;
 import com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.Subnet;
 import com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateClusterRequest;
+import com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest;
+import com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest;
+import com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest;
+import com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest;
+import com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest;
+import com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest;
 import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest;
@@ -212,6 +271,78 @@ public abstract class VmwareEngineStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
   }
 
+  public UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNodesPagedCallable()");
+  }
+
+  public UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNodesCallable()");
+  }
+
+  public UnaryCallable<GetNodeRequest, Node> getNodeCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNodeCallable()");
+  }
+
+  public UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesPagedResponse>
+      listExternalAddressesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listExternalAddressesPagedCallable()");
+  }
+
+  public UnaryCallable<ListExternalAddressesRequest, ListExternalAddressesResponse>
+      listExternalAddressesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExternalAddressesCallable()");
+  }
+
+  public UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesPagedResponse>
+      fetchNetworkPolicyExternalAddressesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchNetworkPolicyExternalAddressesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
+      fetchNetworkPolicyExternalAddressesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchNetworkPolicyExternalAddressesCallable()");
+  }
+
+  public UnaryCallable<GetExternalAddressRequest, ExternalAddress> getExternalAddressCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExternalAddressCallable()");
+  }
+
+  public OperationCallable<CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      createExternalAddressOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createExternalAddressOperationCallable()");
+  }
+
+  public UnaryCallable<CreateExternalAddressRequest, Operation> createExternalAddressCallable() {
+    throw new UnsupportedOperationException("Not implemented: createExternalAddressCallable()");
+  }
+
+  public OperationCallable<UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      updateExternalAddressOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateExternalAddressOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateExternalAddressRequest, Operation> updateExternalAddressCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateExternalAddressCallable()");
+  }
+
+  public OperationCallable<DeleteExternalAddressRequest, Empty, OperationMetadata>
+      deleteExternalAddressOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteExternalAddressOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteExternalAddressRequest, Operation> deleteExternalAddressCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExternalAddressCallable()");
+  }
+
   public UnaryCallable<ListSubnetsRequest, ListSubnetsPagedResponse> listSubnetsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSubnetsPagedCallable()");
   }
@@ -231,6 +362,99 @@ public abstract class VmwareEngineStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSubnetCallable()");
+  }
+
+  public UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesPagedResponse>
+      listExternalAccessRulesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listExternalAccessRulesPagedCallable()");
+  }
+
+  public UnaryCallable<ListExternalAccessRulesRequest, ListExternalAccessRulesResponse>
+      listExternalAccessRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExternalAccessRulesCallable()");
+  }
+
+  public UnaryCallable<GetExternalAccessRuleRequest, ExternalAccessRule>
+      getExternalAccessRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExternalAccessRuleCallable()");
+  }
+
+  public OperationCallable<CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      createExternalAccessRuleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createExternalAccessRuleOperationCallable()");
+  }
+
+  public UnaryCallable<CreateExternalAccessRuleRequest, Operation>
+      createExternalAccessRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createExternalAccessRuleCallable()");
+  }
+
+  public OperationCallable<UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      updateExternalAccessRuleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateExternalAccessRuleOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateExternalAccessRuleRequest, Operation>
+      updateExternalAccessRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateExternalAccessRuleCallable()");
+  }
+
+  public OperationCallable<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
+      deleteExternalAccessRuleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteExternalAccessRuleOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteExternalAccessRuleRequest, Operation>
+      deleteExternalAccessRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExternalAccessRuleCallable()");
+  }
+
+  public UnaryCallable<ListLoggingServersRequest, ListLoggingServersPagedResponse>
+      listLoggingServersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLoggingServersPagedCallable()");
+  }
+
+  public UnaryCallable<ListLoggingServersRequest, ListLoggingServersResponse>
+      listLoggingServersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLoggingServersCallable()");
+  }
+
+  public UnaryCallable<GetLoggingServerRequest, LoggingServer> getLoggingServerCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLoggingServerCallable()");
+  }
+
+  public OperationCallable<CreateLoggingServerRequest, LoggingServer, OperationMetadata>
+      createLoggingServerOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createLoggingServerOperationCallable()");
+  }
+
+  public UnaryCallable<CreateLoggingServerRequest, Operation> createLoggingServerCallable() {
+    throw new UnsupportedOperationException("Not implemented: createLoggingServerCallable()");
+  }
+
+  public OperationCallable<UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
+      updateLoggingServerOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateLoggingServerOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateLoggingServerRequest, Operation> updateLoggingServerCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateLoggingServerCallable()");
+  }
+
+  public OperationCallable<DeleteLoggingServerRequest, Empty, OperationMetadata>
+      deleteLoggingServerOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteLoggingServerOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteLoggingServerRequest, Operation> deleteLoggingServerCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteLoggingServerCallable()");
   }
 
   public UnaryCallable<ListNodeTypesRequest, ListNodeTypesPagedResponse>
@@ -274,6 +498,74 @@ public abstract class VmwareEngineStub implements BackgroundResource {
   public UnaryCallable<ResetVcenterCredentialsRequest, Operation>
       resetVcenterCredentialsCallable() {
     throw new UnsupportedOperationException("Not implemented: resetVcenterCredentialsCallable()");
+  }
+
+  public UnaryCallable<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDnsForwardingCallable()");
+  }
+
+  public OperationCallable<UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
+      updateDnsForwardingOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDnsForwardingOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDnsForwardingRequest, Operation> updateDnsForwardingCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDnsForwardingCallable()");
+  }
+
+  public UnaryCallable<GetNetworkPeeringRequest, NetworkPeering> getNetworkPeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNetworkPeeringCallable()");
+  }
+
+  public UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsPagedResponse>
+      listNetworkPeeringsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworkPeeringsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
+      listNetworkPeeringsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworkPeeringsCallable()");
+  }
+
+  public OperationCallable<CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      createNetworkPeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createNetworkPeeringOperationCallable()");
+  }
+
+  public UnaryCallable<CreateNetworkPeeringRequest, Operation> createNetworkPeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: createNetworkPeeringCallable()");
+  }
+
+  public OperationCallable<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
+      deleteNetworkPeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteNetworkPeeringOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNetworkPeeringRequest, Operation> deleteNetworkPeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNetworkPeeringCallable()");
+  }
+
+  public OperationCallable<UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      updateNetworkPeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateNetworkPeeringOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateNetworkPeeringRequest, Operation> updateNetworkPeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNetworkPeeringCallable()");
+  }
+
+  public UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesPagedResponse>
+      listPeeringRoutesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPeeringRoutesPagedCallable()");
+  }
+
+  public UnaryCallable<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
+      listPeeringRoutesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPeeringRoutesCallable()");
   }
 
   public OperationCallable<CreateHcxActivationKeyRequest, HcxActivationKey, OperationMetadata>
@@ -343,6 +635,76 @@ public abstract class VmwareEngineStub implements BackgroundResource {
 
   public UnaryCallable<DeleteNetworkPolicyRequest, Operation> deleteNetworkPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteNetworkPolicyCallable()");
+  }
+
+  public UnaryCallable<
+          ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsPagedResponse>
+      listManagementDnsZoneBindingsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listManagementDnsZoneBindingsPagedCallable()");
+  }
+
+  public UnaryCallable<ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
+      listManagementDnsZoneBindingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listManagementDnsZoneBindingsCallable()");
+  }
+
+  public UnaryCallable<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+      getManagementDnsZoneBindingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getManagementDnsZoneBindingCallable()");
+  }
+
+  public OperationCallable<
+          CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createManagementDnsZoneBindingOperationCallable()");
+  }
+
+  public UnaryCallable<CreateManagementDnsZoneBindingRequest, Operation>
+      createManagementDnsZoneBindingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createManagementDnsZoneBindingCallable()");
+  }
+
+  public OperationCallable<
+          UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateManagementDnsZoneBindingOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateManagementDnsZoneBindingRequest, Operation>
+      updateManagementDnsZoneBindingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateManagementDnsZoneBindingCallable()");
+  }
+
+  public OperationCallable<DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
+      deleteManagementDnsZoneBindingOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteManagementDnsZoneBindingOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteManagementDnsZoneBindingRequest, Operation>
+      deleteManagementDnsZoneBindingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteManagementDnsZoneBindingCallable()");
+  }
+
+  public OperationCallable<
+          RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: repairManagementDnsZoneBindingOperationCallable()");
+  }
+
+  public UnaryCallable<RepairManagementDnsZoneBindingRequest, Operation>
+      repairManagementDnsZoneBindingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: repairManagementDnsZoneBindingCallable()");
   }
 
   public OperationCallable<CreateVmwareEngineNetworkRequest, VmwareEngineNetwork, OperationMetadata>
@@ -456,6 +818,32 @@ public abstract class VmwareEngineStub implements BackgroundResource {
       listPrivateConnectionPeeringRoutesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listPrivateConnectionPeeringRoutesCallable()");
+  }
+
+  public OperationCallable<GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      grantDnsBindPermissionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: grantDnsBindPermissionOperationCallable()");
+  }
+
+  public UnaryCallable<GrantDnsBindPermissionRequest, Operation> grantDnsBindPermissionCallable() {
+    throw new UnsupportedOperationException("Not implemented: grantDnsBindPermissionCallable()");
+  }
+
+  public UnaryCallable<GetDnsBindPermissionRequest, DnsBindPermission>
+      getDnsBindPermissionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDnsBindPermissionCallable()");
+  }
+
+  public OperationCallable<RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      revokeDnsBindPermissionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: revokeDnsBindPermissionOperationCallable()");
+  }
+
+  public UnaryCallable<RevokeDnsBindPermissionRequest, Operation>
+      revokeDnsBindPermissionCallable() {
+    throw new UnsupportedOperationException("Not implemented: revokeDnsBindPermissionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

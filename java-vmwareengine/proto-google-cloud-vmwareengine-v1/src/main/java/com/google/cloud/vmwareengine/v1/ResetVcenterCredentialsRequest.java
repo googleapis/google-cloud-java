@@ -42,6 +42,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
   private ResetVcenterCredentialsRequest() {
     privateCloud_ = "";
     requestId_ = "";
+    username_ = "";
   }
 
   @java.lang.Override
@@ -207,6 +208,73 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
     }
   }
 
+  public static final int USERNAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The username of the user to be to reset the credentials.
+   * The default value of this field is CloudOwner&#64;gve.local.
+   * The provided value should be one of the following:
+   * solution-user-01&#64;gve.local,
+   * solution-user-02&#64;gve.local,
+   * solution-user-03&#64;gve.local,
+   * solution-user-04&#64;gve.local,
+   * solution-user-05&#64;gve.local,
+   * zertoadmin&#64;gve.local.
+   * </pre>
+   *
+   * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The username of the user to be to reset the credentials.
+   * The default value of this field is CloudOwner&#64;gve.local.
+   * The provided value should be one of the following:
+   * solution-user-01&#64;gve.local,
+   * solution-user-02&#64;gve.local,
+   * solution-user-03&#64;gve.local,
+   * solution-user-04&#64;gve.local,
+   * solution-user-05&#64;gve.local,
+   * zertoadmin&#64;gve.local.
+   * </pre>
+   *
+   * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -227,6 +295,9 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -241,6 +312,9 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -260,6 +334,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
 
     if (!getPrivateCloud().equals(other.getPrivateCloud())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!getUsername().equals(other.getUsername())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -275,6 +350,8 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getPrivateCloud().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -418,6 +495,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
       bitField0_ = 0;
       privateCloud_ = "";
       requestId_ = "";
+      username_ = "";
       return this;
     }
 
@@ -461,6 +539,9 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.username_ = username_;
       }
     }
 
@@ -522,6 +603,11 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -560,6 +646,12 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                username_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -887,6 +979,152 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object username_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The username of the user to be to reset the credentials.
+     * The default value of this field is CloudOwner&#64;gve.local.
+     * The provided value should be one of the following:
+     * solution-user-01&#64;gve.local,
+     * solution-user-02&#64;gve.local,
+     * solution-user-03&#64;gve.local,
+     * solution-user-04&#64;gve.local,
+     * solution-user-05&#64;gve.local,
+     * zertoadmin&#64;gve.local.
+     * </pre>
+     *
+     * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The username.
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The username of the user to be to reset the credentials.
+     * The default value of this field is CloudOwner&#64;gve.local.
+     * The provided value should be one of the following:
+     * solution-user-01&#64;gve.local,
+     * solution-user-02&#64;gve.local,
+     * solution-user-03&#64;gve.local,
+     * solution-user-04&#64;gve.local,
+     * solution-user-05&#64;gve.local,
+     * zertoadmin&#64;gve.local.
+     * </pre>
+     *
+     * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for username.
+     */
+    public com.google.protobuf.ByteString getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The username of the user to be to reset the credentials.
+     * The default value of this field is CloudOwner&#64;gve.local.
+     * The provided value should be one of the following:
+     * solution-user-01&#64;gve.local,
+     * solution-user-02&#64;gve.local,
+     * solution-user-03&#64;gve.local,
+     * solution-user-04&#64;gve.local,
+     * solution-user-05&#64;gve.local,
+     * zertoadmin&#64;gve.local.
+     * </pre>
+     *
+     * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      username_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The username of the user to be to reset the credentials.
+     * The default value of this field is CloudOwner&#64;gve.local.
+     * The provided value should be one of the following:
+     * solution-user-01&#64;gve.local,
+     * solution-user-02&#64;gve.local,
+     * solution-user-03&#64;gve.local,
+     * solution-user-04&#64;gve.local,
+     * solution-user-05&#64;gve.local,
+     * zertoadmin&#64;gve.local.
+     * </pre>
+     *
+     * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The username of the user to be to reset the credentials.
+     * The default value of this field is CloudOwner&#64;gve.local.
+     * The provided value should be one of the following:
+     * solution-user-01&#64;gve.local,
+     * solution-user-02&#64;gve.local,
+     * solution-user-03&#64;gve.local,
+     * solution-user-04&#64;gve.local,
+     * solution-user-05&#64;gve.local,
+     * zertoadmin&#64;gve.local.
+     * </pre>
+     *
+     * <code>string username = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      username_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

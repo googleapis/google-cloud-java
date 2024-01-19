@@ -41,6 +41,7 @@ public class AsyncResetVcenterCredentials {
               .setPrivateCloud(
                   PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
               .setRequestId("requestId693933066")
+              .setUsername("username-265713450")
               .build();
       ApiFuture<Operation> future =
           vmwareEngineClient.resetVcenterCredentialsCallable().futureCall(request);

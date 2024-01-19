@@ -40,6 +40,7 @@ public class SyncResetVcenterCredentials {
               .setPrivateCloud(
                   PrivateCloudName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]").toString())
               .setRequestId("requestId693933066")
+              .setUsername("username-265713450")
               .build();
       PrivateCloud response = vmwareEngineClient.resetVcenterCredentialsAsync(request).get();
     }

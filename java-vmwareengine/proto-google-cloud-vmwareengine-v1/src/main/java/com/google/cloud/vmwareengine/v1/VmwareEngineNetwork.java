@@ -304,6 +304,16 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>LEGACY = 1;</code>
      */
     LEGACY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Standard network type used for private cloud connectivity.
+     * </pre>
+     *
+     * <code>STANDARD = 2;</code>
+     */
+    STANDARD(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -329,6 +339,16 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * <code>LEGACY = 1;</code>
      */
     public static final int LEGACY_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Standard network type used for private cloud connectivity.
+     * </pre>
+     *
+     * <code>STANDARD = 2;</code>
+     */
+    public static final int STANDARD_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -358,6 +378,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           return TYPE_UNSPECIFIED;
         case 1:
           return LEGACY;
+        case 2:
+          return STANDARD;
         default:
           return null;
       }

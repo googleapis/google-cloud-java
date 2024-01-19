@@ -61,4 +61,47 @@ public interface ShowVcenterCredentialsRequestOrBuilder
    * @return The bytes for privateCloud.
    */
   com.google.protobuf.ByteString getPrivateCloudBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The username of the user to be queried for credentials.
+   * The default value of this field is CloudOwner&#64;gve.local.
+   * The provided value must be one of the following:
+   * CloudOwner&#64;gve.local,
+   * solution-user-01&#64;gve.local,
+   * solution-user-02&#64;gve.local,
+   * solution-user-03&#64;gve.local,
+   * solution-user-04&#64;gve.local,
+   * solution-user-05&#64;gve.local,
+   * zertoadmin&#64;gve.local.
+   * </pre>
+   *
+   * <code>string username = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The username of the user to be queried for credentials.
+   * The default value of this field is CloudOwner&#64;gve.local.
+   * The provided value must be one of the following:
+   * CloudOwner&#64;gve.local,
+   * solution-user-01&#64;gve.local,
+   * solution-user-02&#64;gve.local,
+   * solution-user-03&#64;gve.local,
+   * solution-user-04&#64;gve.local,
+   * solution-user-05&#64;gve.local,
+   * zertoadmin&#64;gve.local.
+   * </pre>
+   *
+   * <code>string username = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString getUsernameBytes();
 }

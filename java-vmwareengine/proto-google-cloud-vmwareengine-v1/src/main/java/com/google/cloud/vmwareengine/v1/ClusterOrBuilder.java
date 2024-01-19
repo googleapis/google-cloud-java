@@ -275,4 +275,49 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.NodeTypeConfig getNodeTypeConfigsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of a stretched cluster. Required for clusters that
+   * belong to a STRETCHED private cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the stretchedClusterConfig field is set.
+   */
+  boolean hasStretchedClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of a stretched cluster. Required for clusters that
+   * belong to a STRETCHED private cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The stretchedClusterConfig.
+   */
+  com.google.cloud.vmwareengine.v1.StretchedClusterConfig getStretchedClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of a stretched cluster. Required for clusters that
+   * belong to a STRETCHED private cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.StretchedClusterConfig stretched_cluster_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmwareengine.v1.StretchedClusterConfigOrBuilder
+      getStretchedClusterConfigOrBuilder();
 }
