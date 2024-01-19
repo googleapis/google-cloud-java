@@ -60,69 +60,71 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListPolicies</td>
+ *      <td><p> ListPolicies</td>
  *      <td><p> Retrieves the policies of the specified kind that are attached to a resource.
  * <p>  The response lists only policy metadata. In particular, policy rules are omitted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPolicies(ListPoliciesRequest request)
+ *           <li><p> listPolicies(ListPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPolicies(String parent)
+ *           <li><p> listPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPoliciesPagedCallable()
- *           <li>listPoliciesCallable()
+ *           <li><p> listPoliciesPagedCallable()
+ *           <li><p> listPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPolicy</td>
+ *      <td><p> GetPolicy</td>
  *      <td><p> Gets a policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPolicy(GetPolicyRequest request)
+ *           <li><p> getPolicy(GetPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPolicy(String name)
+ *           <li><p> getPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPolicyCallable()
+ *           <li><p> getPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePolicy</td>
+ *      <td><p> CreatePolicy</td>
  *      <td><p> Creates a policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPolicyAsync(CreatePolicyRequest request)
+ *           <li><p> createPolicyAsync(CreatePolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createPolicyAsync(String parent, Policy policy, String policyId)
+ *           <li><p> createPolicyAsync(String parent, Policy policy, String policyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPolicyOperationCallable()
- *           <li>createPolicyCallable()
+ *           <li><p> createPolicyOperationCallable()
+ *           <li><p> createPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePolicy</td>
+ *      <td><p> UpdatePolicy</td>
  *      <td><p> Updates the specified policy.
  * <p>  You can update only the rules and the display name for the policy.
  * <p>  To update a policy, you should use a read-modify-write loop:
@@ -131,34 +133,33 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePolicyAsync(UpdatePolicyRequest request)
+ *           <li><p> updatePolicyAsync(UpdatePolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePolicyOperationCallable()
- *           <li>updatePolicyCallable()
+ *           <li><p> updatePolicyOperationCallable()
+ *           <li><p> updatePolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePolicy</td>
+ *      <td><p> DeletePolicy</td>
  *      <td><p> Deletes a policy. This action is permanent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePolicyAsync(DeletePolicyRequest request)
+ *           <li><p> deletePolicyAsync(DeletePolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePolicyAsync(String name)
+ *           <li><p> deletePolicyAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePolicyOperationCallable()
- *           <li>deletePolicyCallable()
+ *           <li><p> deletePolicyOperationCallable()
+ *           <li><p> deletePolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
