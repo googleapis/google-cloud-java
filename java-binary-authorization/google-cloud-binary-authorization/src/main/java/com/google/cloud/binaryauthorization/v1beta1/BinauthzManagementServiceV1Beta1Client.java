@@ -67,143 +67,144 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetPolicy</td>
+ *      <td><p> GetPolicy</td>
  *      <td><p> A [policy][google.cloud.binaryauthorization.v1beta1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] that must attest to a container image, before the project is allowed to deploy that image. There is at most one policy per project. All image admission requests are permitted if a project has no policy.
  * <p>  Gets the [policy][google.cloud.binaryauthorization.v1beta1.Policy] for this project. Returns a default [policy][google.cloud.binaryauthorization.v1beta1.Policy] if the project does not have one.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPolicy(GetPolicyRequest request)
+ *           <li><p> getPolicy(GetPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPolicy(PolicyName name)
- *           <li>getPolicy(String name)
+ *           <li><p> getPolicy(PolicyName name)
+ *           <li><p> getPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPolicyCallable()
+ *           <li><p> getPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePolicy</td>
+ *      <td><p> UpdatePolicy</td>
  *      <td><p> Creates or updates a project's [policy][google.cloud.binaryauthorization.v1beta1.Policy], and returns a copy of the new [policy][google.cloud.binaryauthorization.v1beta1.Policy]. A policy is always updated as a whole, to avoid race conditions with concurrent policy enforcement (or management!) requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is malformed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePolicy(UpdatePolicyRequest request)
+ *           <li><p> updatePolicy(UpdatePolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updatePolicy(Policy policy)
+ *           <li><p> updatePolicy(Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePolicyCallable()
+ *           <li><p> updatePolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAttestor</td>
+ *      <td><p> CreateAttestor</td>
  *      <td><p> Creates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor], and returns a copy of the new [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] already exists.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAttestor(CreateAttestorRequest request)
+ *           <li><p> createAttestor(CreateAttestorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAttestor(ProjectName parent, String attestorId, Attestor attestor)
- *           <li>createAttestor(String parent, String attestorId, Attestor attestor)
+ *           <li><p> createAttestor(ProjectName parent, String attestorId, Attestor attestor)
+ *           <li><p> createAttestor(String parent, String attestorId, Attestor attestor)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAttestorCallable()
+ *           <li><p> createAttestorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAttestor</td>
+ *      <td><p> GetAttestor</td>
  *      <td><p> Gets an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAttestor(GetAttestorRequest request)
+ *           <li><p> getAttestor(GetAttestorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAttestor(AttestorName name)
- *           <li>getAttestor(String name)
+ *           <li><p> getAttestor(AttestorName name)
+ *           <li><p> getAttestor(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAttestorCallable()
+ *           <li><p> getAttestorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAttestor</td>
+ *      <td><p> UpdateAttestor</td>
  *      <td><p> Updates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAttestor(UpdateAttestorRequest request)
+ *           <li><p> updateAttestor(UpdateAttestorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAttestor(Attestor attestor)
+ *           <li><p> updateAttestor(Attestor attestor)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAttestorCallable()
+ *           <li><p> updateAttestorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAttestors</td>
+ *      <td><p> ListAttestors</td>
  *      <td><p> Lists [attestors][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns INVALID_ARGUMENT if the project does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAttestors(ListAttestorsRequest request)
+ *           <li><p> listAttestors(ListAttestorsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAttestors(ProjectName parent)
- *           <li>listAttestors(String parent)
+ *           <li><p> listAttestors(ProjectName parent)
+ *           <li><p> listAttestors(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAttestorsPagedCallable()
- *           <li>listAttestorsCallable()
+ *           <li><p> listAttestorsPagedCallable()
+ *           <li><p> listAttestorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAttestor</td>
+ *      <td><p> DeleteAttestor</td>
  *      <td><p> Deletes an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAttestor(DeleteAttestorRequest request)
+ *           <li><p> deleteAttestor(DeleteAttestorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAttestor(AttestorName name)
- *           <li>deleteAttestor(String name)
+ *           <li><p> deleteAttestor(AttestorName name)
+ *           <li><p> deleteAttestor(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAttestorCallable()
+ *           <li><p> deleteAttestorCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -54,29 +54,30 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>TranslateQuery</td>
+ *      <td><p> TranslateQuery</td>
  *      <td><p> Translates input queries from source dialects to GoogleSQL.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>translateQuery(TranslateQueryRequest request)
+ *           <li><p> translateQuery(TranslateQueryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>translateQuery(LocationName parent, TranslateQueryRequest.SqlTranslationSourceDialect sourceDialect, String query)
- *           <li>translateQuery(String parent, TranslateQueryRequest.SqlTranslationSourceDialect sourceDialect, String query)
+ *           <li><p> translateQuery(LocationName parent, TranslateQueryRequest.SqlTranslationSourceDialect sourceDialect, String query)
+ *           <li><p> translateQuery(String parent, TranslateQueryRequest.SqlTranslationSourceDialect sourceDialect, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>translateQueryCallable()
+ *           <li><p> translateQueryCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

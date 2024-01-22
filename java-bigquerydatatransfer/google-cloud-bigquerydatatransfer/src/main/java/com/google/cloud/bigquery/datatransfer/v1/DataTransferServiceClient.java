@@ -65,320 +65,321 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetDataSource</td>
+ *      <td><p> GetDataSource</td>
  *      <td><p> Retrieves a supported data source and returns its settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataSource(GetDataSourceRequest request)
+ *           <li><p> getDataSource(GetDataSourceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataSource(DataSourceName name)
- *           <li>getDataSource(String name)
+ *           <li><p> getDataSource(DataSourceName name)
+ *           <li><p> getDataSource(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataSourceCallable()
+ *           <li><p> getDataSourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataSources</td>
+ *      <td><p> ListDataSources</td>
  *      <td><p> Lists supported data sources and returns their settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataSources(ListDataSourcesRequest request)
+ *           <li><p> listDataSources(ListDataSourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataSources(LocationName parent)
- *           <li>listDataSources(ProjectName parent)
- *           <li>listDataSources(String parent)
+ *           <li><p> listDataSources(LocationName parent)
+ *           <li><p> listDataSources(ProjectName parent)
+ *           <li><p> listDataSources(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataSourcesPagedCallable()
- *           <li>listDataSourcesCallable()
+ *           <li><p> listDataSourcesPagedCallable()
+ *           <li><p> listDataSourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTransferConfig</td>
+ *      <td><p> CreateTransferConfig</td>
  *      <td><p> Creates a new data transfer configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTransferConfig(CreateTransferConfigRequest request)
+ *           <li><p> createTransferConfig(CreateTransferConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTransferConfig(LocationName parent, TransferConfig transferConfig)
- *           <li>createTransferConfig(ProjectName parent, TransferConfig transferConfig)
- *           <li>createTransferConfig(String parent, TransferConfig transferConfig)
+ *           <li><p> createTransferConfig(LocationName parent, TransferConfig transferConfig)
+ *           <li><p> createTransferConfig(ProjectName parent, TransferConfig transferConfig)
+ *           <li><p> createTransferConfig(String parent, TransferConfig transferConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTransferConfigCallable()
+ *           <li><p> createTransferConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTransferConfig</td>
+ *      <td><p> UpdateTransferConfig</td>
  *      <td><p> Updates a data transfer configuration. All fields must be set, even if they are not updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTransferConfig(UpdateTransferConfigRequest request)
+ *           <li><p> updateTransferConfig(UpdateTransferConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTransferConfig(TransferConfig transferConfig, FieldMask updateMask)
+ *           <li><p> updateTransferConfig(TransferConfig transferConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTransferConfigCallable()
+ *           <li><p> updateTransferConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTransferConfig</td>
+ *      <td><p> DeleteTransferConfig</td>
  *      <td><p> Deletes a data transfer configuration, including any associated transfer runs and logs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTransferConfig(DeleteTransferConfigRequest request)
+ *           <li><p> deleteTransferConfig(DeleteTransferConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTransferConfig(TransferConfigName name)
- *           <li>deleteTransferConfig(String name)
+ *           <li><p> deleteTransferConfig(TransferConfigName name)
+ *           <li><p> deleteTransferConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTransferConfigCallable()
+ *           <li><p> deleteTransferConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTransferConfig</td>
+ *      <td><p> GetTransferConfig</td>
  *      <td><p> Returns information about a data transfer config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTransferConfig(GetTransferConfigRequest request)
+ *           <li><p> getTransferConfig(GetTransferConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTransferConfig(TransferConfigName name)
- *           <li>getTransferConfig(String name)
+ *           <li><p> getTransferConfig(TransferConfigName name)
+ *           <li><p> getTransferConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTransferConfigCallable()
+ *           <li><p> getTransferConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTransferConfigs</td>
+ *      <td><p> ListTransferConfigs</td>
  *      <td><p> Returns information about all transfer configs owned by a project in the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTransferConfigs(ListTransferConfigsRequest request)
+ *           <li><p> listTransferConfigs(ListTransferConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTransferConfigs(LocationName parent)
- *           <li>listTransferConfigs(ProjectName parent)
- *           <li>listTransferConfigs(String parent)
+ *           <li><p> listTransferConfigs(LocationName parent)
+ *           <li><p> listTransferConfigs(ProjectName parent)
+ *           <li><p> listTransferConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTransferConfigsPagedCallable()
- *           <li>listTransferConfigsCallable()
+ *           <li><p> listTransferConfigsPagedCallable()
+ *           <li><p> listTransferConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ScheduleTransferRuns</td>
+ *      <td><p> ScheduleTransferRuns</td>
  *      <td><p> Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever granularity the data source supports - in the range, one transfer run is created. Note that runs are created per UTC time in the time range. DEPRECATED: use StartManualTransferRuns instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>scheduleTransferRuns(ScheduleTransferRunsRequest request)
+ *           <li><p> scheduleTransferRuns(ScheduleTransferRunsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>scheduleTransferRuns(TransferConfigName parent, Timestamp startTime, Timestamp endTime)
- *           <li>scheduleTransferRuns(String parent, Timestamp startTime, Timestamp endTime)
+ *           <li><p> scheduleTransferRuns(TransferConfigName parent, Timestamp startTime, Timestamp endTime)
+ *           <li><p> scheduleTransferRuns(String parent, Timestamp startTime, Timestamp endTime)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>scheduleTransferRunsCallable()
+ *           <li><p> scheduleTransferRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartManualTransferRuns</td>
+ *      <td><p> StartManualTransferRuns</td>
  *      <td><p> Start manual transfer runs to be executed now with schedule_time equal to current time. The transfer runs can be created for a time range where the run_time is between start_time (inclusive) and end_time (exclusive), or for a specific run_time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startManualTransferRuns(StartManualTransferRunsRequest request)
+ *           <li><p> startManualTransferRuns(StartManualTransferRunsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startManualTransferRunsCallable()
+ *           <li><p> startManualTransferRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTransferRun</td>
+ *      <td><p> GetTransferRun</td>
  *      <td><p> Returns information about the particular transfer run.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTransferRun(GetTransferRunRequest request)
+ *           <li><p> getTransferRun(GetTransferRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTransferRun(RunName name)
- *           <li>getTransferRun(String name)
+ *           <li><p> getTransferRun(RunName name)
+ *           <li><p> getTransferRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTransferRunCallable()
+ *           <li><p> getTransferRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTransferRun</td>
+ *      <td><p> DeleteTransferRun</td>
  *      <td><p> Deletes the specified transfer run.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTransferRun(DeleteTransferRunRequest request)
+ *           <li><p> deleteTransferRun(DeleteTransferRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTransferRun(RunName name)
- *           <li>deleteTransferRun(String name)
+ *           <li><p> deleteTransferRun(RunName name)
+ *           <li><p> deleteTransferRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTransferRunCallable()
+ *           <li><p> deleteTransferRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTransferRuns</td>
+ *      <td><p> ListTransferRuns</td>
  *      <td><p> Returns information about running and completed transfer runs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTransferRuns(ListTransferRunsRequest request)
+ *           <li><p> listTransferRuns(ListTransferRunsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTransferRuns(TransferConfigName parent)
- *           <li>listTransferRuns(String parent)
+ *           <li><p> listTransferRuns(TransferConfigName parent)
+ *           <li><p> listTransferRuns(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTransferRunsPagedCallable()
- *           <li>listTransferRunsCallable()
+ *           <li><p> listTransferRunsPagedCallable()
+ *           <li><p> listTransferRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTransferLogs</td>
+ *      <td><p> ListTransferLogs</td>
  *      <td><p> Returns log messages for the transfer run.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTransferLogs(ListTransferLogsRequest request)
+ *           <li><p> listTransferLogs(ListTransferLogsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTransferLogs(RunName parent)
- *           <li>listTransferLogs(String parent)
+ *           <li><p> listTransferLogs(RunName parent)
+ *           <li><p> listTransferLogs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTransferLogsPagedCallable()
- *           <li>listTransferLogsCallable()
+ *           <li><p> listTransferLogsPagedCallable()
+ *           <li><p> listTransferLogsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CheckValidCreds</td>
+ *      <td><p> CheckValidCreds</td>
  *      <td><p> Returns true if valid credentials exist for the given data source and requesting user.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>checkValidCreds(CheckValidCredsRequest request)
+ *           <li><p> checkValidCreds(CheckValidCredsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>checkValidCreds(DataSourceName name)
- *           <li>checkValidCreds(String name)
+ *           <li><p> checkValidCreds(DataSourceName name)
+ *           <li><p> checkValidCreds(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkValidCredsCallable()
+ *           <li><p> checkValidCredsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EnrollDataSources</td>
+ *      <td><p> EnrollDataSources</td>
  *      <td><p> Enroll data sources in a user project. This allows users to create transfer configurations for these data sources. They will also appear in the ListDataSources RPC and as such, will appear in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>enrollDataSources(EnrollDataSourcesRequest request)
+ *           <li><p> enrollDataSources(EnrollDataSourcesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>enrollDataSourcesCallable()
+ *           <li><p> enrollDataSourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

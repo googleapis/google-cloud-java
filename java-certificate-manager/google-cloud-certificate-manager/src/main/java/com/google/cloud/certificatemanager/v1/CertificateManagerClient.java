@@ -91,510 +91,511 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListCertificates</td>
+ *      <td><p> ListCertificates</td>
  *      <td><p> Lists Certificates in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificates(ListCertificatesRequest request)
+ *           <li><p> listCertificates(ListCertificatesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificates(LocationName parent)
- *           <li>listCertificates(String parent)
+ *           <li><p> listCertificates(LocationName parent)
+ *           <li><p> listCertificates(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificatesPagedCallable()
- *           <li>listCertificatesCallable()
+ *           <li><p> listCertificatesPagedCallable()
+ *           <li><p> listCertificatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificate</td>
+ *      <td><p> GetCertificate</td>
  *      <td><p> Gets details of a single Certificate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificate(GetCertificateRequest request)
+ *           <li><p> getCertificate(GetCertificateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificate(CertificateName name)
- *           <li>getCertificate(String name)
+ *           <li><p> getCertificate(CertificateName name)
+ *           <li><p> getCertificate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateCallable()
+ *           <li><p> getCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCertificate</td>
+ *      <td><p> CreateCertificate</td>
  *      <td><p> Creates a new Certificate in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCertificateAsync(CreateCertificateRequest request)
+ *           <li><p> createCertificateAsync(CreateCertificateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCertificateAsync(LocationName parent, Certificate certificate, String certificateId)
- *           <li>createCertificateAsync(String parent, Certificate certificate, String certificateId)
+ *           <li><p> createCertificateAsync(LocationName parent, Certificate certificate, String certificateId)
+ *           <li><p> createCertificateAsync(String parent, Certificate certificate, String certificateId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCertificateOperationCallable()
- *           <li>createCertificateCallable()
+ *           <li><p> createCertificateOperationCallable()
+ *           <li><p> createCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCertificate</td>
+ *      <td><p> UpdateCertificate</td>
  *      <td><p> Updates a Certificate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCertificateAsync(UpdateCertificateRequest request)
+ *           <li><p> updateCertificateAsync(UpdateCertificateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCertificateAsync(Certificate certificate, FieldMask updateMask)
+ *           <li><p> updateCertificateAsync(Certificate certificate, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCertificateOperationCallable()
- *           <li>updateCertificateCallable()
+ *           <li><p> updateCertificateOperationCallable()
+ *           <li><p> updateCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCertificate</td>
+ *      <td><p> DeleteCertificate</td>
  *      <td><p> Deletes a single Certificate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCertificateAsync(DeleteCertificateRequest request)
+ *           <li><p> deleteCertificateAsync(DeleteCertificateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCertificateAsync(CertificateName name)
- *           <li>deleteCertificateAsync(String name)
+ *           <li><p> deleteCertificateAsync(CertificateName name)
+ *           <li><p> deleteCertificateAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCertificateOperationCallable()
- *           <li>deleteCertificateCallable()
+ *           <li><p> deleteCertificateOperationCallable()
+ *           <li><p> deleteCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCertificateMaps</td>
+ *      <td><p> ListCertificateMaps</td>
  *      <td><p> Lists CertificateMaps in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificateMaps(ListCertificateMapsRequest request)
+ *           <li><p> listCertificateMaps(ListCertificateMapsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificateMaps(LocationName parent)
- *           <li>listCertificateMaps(String parent)
+ *           <li><p> listCertificateMaps(LocationName parent)
+ *           <li><p> listCertificateMaps(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificateMapsPagedCallable()
- *           <li>listCertificateMapsCallable()
+ *           <li><p> listCertificateMapsPagedCallable()
+ *           <li><p> listCertificateMapsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificateMap</td>
+ *      <td><p> GetCertificateMap</td>
  *      <td><p> Gets details of a single CertificateMap.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificateMap(GetCertificateMapRequest request)
+ *           <li><p> getCertificateMap(GetCertificateMapRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificateMap(CertificateMapName name)
- *           <li>getCertificateMap(String name)
+ *           <li><p> getCertificateMap(CertificateMapName name)
+ *           <li><p> getCertificateMap(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateMapCallable()
+ *           <li><p> getCertificateMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCertificateMap</td>
+ *      <td><p> CreateCertificateMap</td>
  *      <td><p> Creates a new CertificateMap in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCertificateMapAsync(CreateCertificateMapRequest request)
+ *           <li><p> createCertificateMapAsync(CreateCertificateMapRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCertificateMapAsync(LocationName parent, CertificateMap certificateMap, String certificateMapId)
- *           <li>createCertificateMapAsync(String parent, CertificateMap certificateMap, String certificateMapId)
+ *           <li><p> createCertificateMapAsync(LocationName parent, CertificateMap certificateMap, String certificateMapId)
+ *           <li><p> createCertificateMapAsync(String parent, CertificateMap certificateMap, String certificateMapId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCertificateMapOperationCallable()
- *           <li>createCertificateMapCallable()
+ *           <li><p> createCertificateMapOperationCallable()
+ *           <li><p> createCertificateMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCertificateMap</td>
+ *      <td><p> UpdateCertificateMap</td>
  *      <td><p> Updates a CertificateMap.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCertificateMapAsync(UpdateCertificateMapRequest request)
+ *           <li><p> updateCertificateMapAsync(UpdateCertificateMapRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCertificateMapAsync(CertificateMap certificateMap, FieldMask updateMask)
+ *           <li><p> updateCertificateMapAsync(CertificateMap certificateMap, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCertificateMapOperationCallable()
- *           <li>updateCertificateMapCallable()
+ *           <li><p> updateCertificateMapOperationCallable()
+ *           <li><p> updateCertificateMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCertificateMap</td>
+ *      <td><p> DeleteCertificateMap</td>
  *      <td><p> Deletes a single CertificateMap. A Certificate Map can't be deleted if it contains Certificate Map Entries. Remove all the entries from the map before calling this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCertificateMapAsync(DeleteCertificateMapRequest request)
+ *           <li><p> deleteCertificateMapAsync(DeleteCertificateMapRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCertificateMapAsync(CertificateMapName name)
- *           <li>deleteCertificateMapAsync(String name)
+ *           <li><p> deleteCertificateMapAsync(CertificateMapName name)
+ *           <li><p> deleteCertificateMapAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCertificateMapOperationCallable()
- *           <li>deleteCertificateMapCallable()
+ *           <li><p> deleteCertificateMapOperationCallable()
+ *           <li><p> deleteCertificateMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCertificateMapEntries</td>
+ *      <td><p> ListCertificateMapEntries</td>
  *      <td><p> Lists CertificateMapEntries in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificateMapEntries(ListCertificateMapEntriesRequest request)
+ *           <li><p> listCertificateMapEntries(ListCertificateMapEntriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificateMapEntries(CertificateMapName parent)
- *           <li>listCertificateMapEntries(String parent)
+ *           <li><p> listCertificateMapEntries(CertificateMapName parent)
+ *           <li><p> listCertificateMapEntries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificateMapEntriesPagedCallable()
- *           <li>listCertificateMapEntriesCallable()
+ *           <li><p> listCertificateMapEntriesPagedCallable()
+ *           <li><p> listCertificateMapEntriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificateMapEntry</td>
+ *      <td><p> GetCertificateMapEntry</td>
  *      <td><p> Gets details of a single CertificateMapEntry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificateMapEntry(GetCertificateMapEntryRequest request)
+ *           <li><p> getCertificateMapEntry(GetCertificateMapEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificateMapEntry(CertificateMapEntryName name)
- *           <li>getCertificateMapEntry(String name)
+ *           <li><p> getCertificateMapEntry(CertificateMapEntryName name)
+ *           <li><p> getCertificateMapEntry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateMapEntryCallable()
+ *           <li><p> getCertificateMapEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCertificateMapEntry</td>
+ *      <td><p> CreateCertificateMapEntry</td>
  *      <td><p> Creates a new CertificateMapEntry in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCertificateMapEntryAsync(CreateCertificateMapEntryRequest request)
+ *           <li><p> createCertificateMapEntryAsync(CreateCertificateMapEntryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCertificateMapEntryAsync(CertificateMapName parent, CertificateMapEntry certificateMapEntry, String certificateMapEntryId)
- *           <li>createCertificateMapEntryAsync(String parent, CertificateMapEntry certificateMapEntry, String certificateMapEntryId)
+ *           <li><p> createCertificateMapEntryAsync(CertificateMapName parent, CertificateMapEntry certificateMapEntry, String certificateMapEntryId)
+ *           <li><p> createCertificateMapEntryAsync(String parent, CertificateMapEntry certificateMapEntry, String certificateMapEntryId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCertificateMapEntryOperationCallable()
- *           <li>createCertificateMapEntryCallable()
+ *           <li><p> createCertificateMapEntryOperationCallable()
+ *           <li><p> createCertificateMapEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCertificateMapEntry</td>
+ *      <td><p> UpdateCertificateMapEntry</td>
  *      <td><p> Updates a CertificateMapEntry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCertificateMapEntryAsync(UpdateCertificateMapEntryRequest request)
+ *           <li><p> updateCertificateMapEntryAsync(UpdateCertificateMapEntryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCertificateMapEntryAsync(CertificateMapEntry certificateMapEntry, FieldMask updateMask)
+ *           <li><p> updateCertificateMapEntryAsync(CertificateMapEntry certificateMapEntry, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCertificateMapEntryOperationCallable()
- *           <li>updateCertificateMapEntryCallable()
+ *           <li><p> updateCertificateMapEntryOperationCallable()
+ *           <li><p> updateCertificateMapEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCertificateMapEntry</td>
+ *      <td><p> DeleteCertificateMapEntry</td>
  *      <td><p> Deletes a single CertificateMapEntry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCertificateMapEntryAsync(DeleteCertificateMapEntryRequest request)
+ *           <li><p> deleteCertificateMapEntryAsync(DeleteCertificateMapEntryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCertificateMapEntryAsync(CertificateMapEntryName name)
- *           <li>deleteCertificateMapEntryAsync(String name)
+ *           <li><p> deleteCertificateMapEntryAsync(CertificateMapEntryName name)
+ *           <li><p> deleteCertificateMapEntryAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCertificateMapEntryOperationCallable()
- *           <li>deleteCertificateMapEntryCallable()
+ *           <li><p> deleteCertificateMapEntryOperationCallable()
+ *           <li><p> deleteCertificateMapEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDnsAuthorizations</td>
+ *      <td><p> ListDnsAuthorizations</td>
  *      <td><p> Lists DnsAuthorizations in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDnsAuthorizations(ListDnsAuthorizationsRequest request)
+ *           <li><p> listDnsAuthorizations(ListDnsAuthorizationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDnsAuthorizations(LocationName parent)
- *           <li>listDnsAuthorizations(String parent)
+ *           <li><p> listDnsAuthorizations(LocationName parent)
+ *           <li><p> listDnsAuthorizations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDnsAuthorizationsPagedCallable()
- *           <li>listDnsAuthorizationsCallable()
+ *           <li><p> listDnsAuthorizationsPagedCallable()
+ *           <li><p> listDnsAuthorizationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDnsAuthorization</td>
+ *      <td><p> GetDnsAuthorization</td>
  *      <td><p> Gets details of a single DnsAuthorization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDnsAuthorization(GetDnsAuthorizationRequest request)
+ *           <li><p> getDnsAuthorization(GetDnsAuthorizationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDnsAuthorization(DnsAuthorizationName name)
- *           <li>getDnsAuthorization(String name)
+ *           <li><p> getDnsAuthorization(DnsAuthorizationName name)
+ *           <li><p> getDnsAuthorization(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDnsAuthorizationCallable()
+ *           <li><p> getDnsAuthorizationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDnsAuthorization</td>
+ *      <td><p> CreateDnsAuthorization</td>
  *      <td><p> Creates a new DnsAuthorization in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDnsAuthorizationAsync(CreateDnsAuthorizationRequest request)
+ *           <li><p> createDnsAuthorizationAsync(CreateDnsAuthorizationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createDnsAuthorizationAsync(LocationName parent, DnsAuthorization dnsAuthorization, String dnsAuthorizationId)
- *           <li>createDnsAuthorizationAsync(String parent, DnsAuthorization dnsAuthorization, String dnsAuthorizationId)
+ *           <li><p> createDnsAuthorizationAsync(LocationName parent, DnsAuthorization dnsAuthorization, String dnsAuthorizationId)
+ *           <li><p> createDnsAuthorizationAsync(String parent, DnsAuthorization dnsAuthorization, String dnsAuthorizationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDnsAuthorizationOperationCallable()
- *           <li>createDnsAuthorizationCallable()
+ *           <li><p> createDnsAuthorizationOperationCallable()
+ *           <li><p> createDnsAuthorizationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDnsAuthorization</td>
+ *      <td><p> UpdateDnsAuthorization</td>
  *      <td><p> Updates a DnsAuthorization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDnsAuthorizationAsync(UpdateDnsAuthorizationRequest request)
+ *           <li><p> updateDnsAuthorizationAsync(UpdateDnsAuthorizationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDnsAuthorizationAsync(DnsAuthorization dnsAuthorization, FieldMask updateMask)
+ *           <li><p> updateDnsAuthorizationAsync(DnsAuthorization dnsAuthorization, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDnsAuthorizationOperationCallable()
- *           <li>updateDnsAuthorizationCallable()
+ *           <li><p> updateDnsAuthorizationOperationCallable()
+ *           <li><p> updateDnsAuthorizationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDnsAuthorization</td>
+ *      <td><p> DeleteDnsAuthorization</td>
  *      <td><p> Deletes a single DnsAuthorization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDnsAuthorizationAsync(DeleteDnsAuthorizationRequest request)
+ *           <li><p> deleteDnsAuthorizationAsync(DeleteDnsAuthorizationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDnsAuthorizationAsync(DnsAuthorizationName name)
- *           <li>deleteDnsAuthorizationAsync(String name)
+ *           <li><p> deleteDnsAuthorizationAsync(DnsAuthorizationName name)
+ *           <li><p> deleteDnsAuthorizationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDnsAuthorizationOperationCallable()
- *           <li>deleteDnsAuthorizationCallable()
+ *           <li><p> deleteDnsAuthorizationOperationCallable()
+ *           <li><p> deleteDnsAuthorizationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCertificateIssuanceConfigs</td>
+ *      <td><p> ListCertificateIssuanceConfigs</td>
  *      <td><p> Lists CertificateIssuanceConfigs in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificateIssuanceConfigs(ListCertificateIssuanceConfigsRequest request)
+ *           <li><p> listCertificateIssuanceConfigs(ListCertificateIssuanceConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificateIssuanceConfigs(LocationName parent)
- *           <li>listCertificateIssuanceConfigs(String parent)
+ *           <li><p> listCertificateIssuanceConfigs(LocationName parent)
+ *           <li><p> listCertificateIssuanceConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificateIssuanceConfigsPagedCallable()
- *           <li>listCertificateIssuanceConfigsCallable()
+ *           <li><p> listCertificateIssuanceConfigsPagedCallable()
+ *           <li><p> listCertificateIssuanceConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificateIssuanceConfig</td>
+ *      <td><p> GetCertificateIssuanceConfig</td>
  *      <td><p> Gets details of a single CertificateIssuanceConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificateIssuanceConfig(GetCertificateIssuanceConfigRequest request)
+ *           <li><p> getCertificateIssuanceConfig(GetCertificateIssuanceConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificateIssuanceConfig(CertificateIssuanceConfigName name)
- *           <li>getCertificateIssuanceConfig(String name)
+ *           <li><p> getCertificateIssuanceConfig(CertificateIssuanceConfigName name)
+ *           <li><p> getCertificateIssuanceConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateIssuanceConfigCallable()
+ *           <li><p> getCertificateIssuanceConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCertificateIssuanceConfig</td>
+ *      <td><p> CreateCertificateIssuanceConfig</td>
  *      <td><p> Creates a new CertificateIssuanceConfig in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCertificateIssuanceConfigAsync(CreateCertificateIssuanceConfigRequest request)
+ *           <li><p> createCertificateIssuanceConfigAsync(CreateCertificateIssuanceConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCertificateIssuanceConfigAsync(LocationName parent, CertificateIssuanceConfig certificateIssuanceConfig, String certificateIssuanceConfigId)
- *           <li>createCertificateIssuanceConfigAsync(String parent, CertificateIssuanceConfig certificateIssuanceConfig, String certificateIssuanceConfigId)
+ *           <li><p> createCertificateIssuanceConfigAsync(LocationName parent, CertificateIssuanceConfig certificateIssuanceConfig, String certificateIssuanceConfigId)
+ *           <li><p> createCertificateIssuanceConfigAsync(String parent, CertificateIssuanceConfig certificateIssuanceConfig, String certificateIssuanceConfigId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCertificateIssuanceConfigOperationCallable()
- *           <li>createCertificateIssuanceConfigCallable()
+ *           <li><p> createCertificateIssuanceConfigOperationCallable()
+ *           <li><p> createCertificateIssuanceConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCertificateIssuanceConfig</td>
+ *      <td><p> DeleteCertificateIssuanceConfig</td>
  *      <td><p> Deletes a single CertificateIssuanceConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCertificateIssuanceConfigAsync(DeleteCertificateIssuanceConfigRequest request)
+ *           <li><p> deleteCertificateIssuanceConfigAsync(DeleteCertificateIssuanceConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCertificateIssuanceConfigAsync(CertificateIssuanceConfigName name)
- *           <li>deleteCertificateIssuanceConfigAsync(String name)
+ *           <li><p> deleteCertificateIssuanceConfigAsync(CertificateIssuanceConfigName name)
+ *           <li><p> deleteCertificateIssuanceConfigAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCertificateIssuanceConfigOperationCallable()
- *           <li>deleteCertificateIssuanceConfigCallable()
+ *           <li><p> deleteCertificateIssuanceConfigOperationCallable()
+ *           <li><p> deleteCertificateIssuanceConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -78,12 +78,14 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListCustomers</td>
+ *      <td><p> ListCustomers</td>
  *      <td><p> List [Customer][google.cloud.channel.v1.Customer]s.
  * <p>  Possible error codes:
  * <ul>
@@ -94,17 +96,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomers(ListCustomersRequest request)
+ *           <li><p> listCustomers(ListCustomersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomersPagedCallable()
- *           <li>listCustomersCallable()
+ *           <li><p> listCustomersPagedCallable()
+ *           <li><p> listCustomersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomer</td>
+ *      <td><p> GetCustomer</td>
  *      <td><p> Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
  * <p>  Possible error codes:
  * <ul>
@@ -116,21 +118,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomer(GetCustomerRequest request)
+ *           <li><p> getCustomer(GetCustomerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomer(CustomerName name)
- *           <li>getCustomer(String name)
+ *           <li><p> getCustomer(CustomerName name)
+ *           <li><p> getCustomer(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomerCallable()
+ *           <li><p> getCustomerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CheckCloudIdentityAccountsExist</td>
+ *      <td><p> CheckCloudIdentityAccountsExist</td>
  *      <td><p> Confirms the existence of Cloud Identity accounts based on the domain and if the Cloud Identity accounts are owned by the reseller.
  * <p>  Possible error codes:
  * <ul>
@@ -143,16 +145,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>checkCloudIdentityAccountsExist(CheckCloudIdentityAccountsExistRequest request)
+ *           <li><p> checkCloudIdentityAccountsExist(CheckCloudIdentityAccountsExistRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkCloudIdentityAccountsExistCallable()
+ *           <li><p> checkCloudIdentityAccountsExistCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomer</td>
+ *      <td><p> CreateCustomer</td>
  *      <td><p> Creates a new [Customer][google.cloud.channel.v1.Customer] resource under the reseller or distributor account.
  * <p>  Possible error codes:
  * <ul>
@@ -163,16 +165,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomer(CreateCustomerRequest request)
+ *           <li><p> createCustomer(CreateCustomerRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomerCallable()
+ *           <li><p> createCustomerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomer</td>
+ *      <td><p> UpdateCustomer</td>
  *      <td><p> Updates an existing [Customer][google.cloud.channel.v1.Customer] resource for the reseller or distributor.
  * <p>  Possible error codes:
  * <ul>
@@ -184,16 +186,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomer(UpdateCustomerRequest request)
+ *           <li><p> updateCustomer(UpdateCustomerRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomerCallable()
+ *           <li><p> updateCustomerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCustomer</td>
+ *      <td><p> DeleteCustomer</td>
  *      <td><p> Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
  * <p>  Possible error codes:
  * <ul>
@@ -205,21 +207,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCustomer(DeleteCustomerRequest request)
+ *           <li><p> deleteCustomer(DeleteCustomerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCustomer(CustomerName name)
- *           <li>deleteCustomer(String name)
+ *           <li><p> deleteCustomer(CustomerName name)
+ *           <li><p> deleteCustomer(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCustomerCallable()
+ *           <li><p> deleteCustomerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportCustomer</td>
+ *      <td><p> ImportCustomer</td>
  *      <td><p> Imports a [Customer][google.cloud.channel.v1.Customer] from the Cloud Identity associated with the provided Cloud Identity ID or domain before a TransferEntitlements call. If a linked Customer already exists and overwrite_if_exists is true, it will update that Customer's data.
  * <p>  Possible error codes:
  * <ul>
@@ -232,16 +234,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importCustomer(ImportCustomerRequest request)
+ *           <li><p> importCustomer(ImportCustomerRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importCustomerCallable()
+ *           <li><p> importCustomerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ProvisionCloudIdentity</td>
+ *      <td><p> ProvisionCloudIdentity</td>
  *      <td><p> Creates a Cloud Identity for the given customer using the customer's information, or the information provided here.
  * <p>  Possible error codes:
  * <ul>
@@ -257,17 +259,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>provisionCloudIdentityAsync(ProvisionCloudIdentityRequest request)
+ *           <li><p> provisionCloudIdentityAsync(ProvisionCloudIdentityRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>provisionCloudIdentityOperationCallable()
- *           <li>provisionCloudIdentityCallable()
+ *           <li><p> provisionCloudIdentityOperationCallable()
+ *           <li><p> provisionCloudIdentityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEntitlements</td>
+ *      <td><p> ListEntitlements</td>
  *      <td><p> Lists [Entitlement][google.cloud.channel.v1.Entitlement]s belonging to a customer.
  * <p>  Possible error codes:
  * <ul>
@@ -278,17 +280,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntitlements(ListEntitlementsRequest request)
+ *           <li><p> listEntitlements(ListEntitlementsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntitlementsPagedCallable()
- *           <li>listEntitlementsCallable()
+ *           <li><p> listEntitlementsPagedCallable()
+ *           <li><p> listEntitlementsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTransferableSkus</td>
+ *      <td><p> ListTransferableSkus</td>
  *      <td><p> List [TransferableSku][google.cloud.channel.v1.TransferableSku]s of a customer based on the Cloud Identity ID or Customer Name in the request.
  * <p>  Use this method to list the entitlements information of an unowned customer. You should provide the customer's Cloud Identity ID or Customer Name.
  * <p>  Possible error codes:
@@ -300,17 +302,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTransferableSkus(ListTransferableSkusRequest request)
+ *           <li><p> listTransferableSkus(ListTransferableSkusRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTransferableSkusPagedCallable()
- *           <li>listTransferableSkusCallable()
+ *           <li><p> listTransferableSkusPagedCallable()
+ *           <li><p> listTransferableSkusCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTransferableOffers</td>
+ *      <td><p> ListTransferableOffers</td>
  *      <td><p> List [TransferableOffer][google.cloud.channel.v1.TransferableOffer]s of a customer based on Cloud Identity ID or Customer Name in the request.
  * <p>  Use this method when a reseller gets the entitlement information of an unowned customer. The reseller should provide the customer's Cloud Identity ID or Customer Name.
  * <p>  Possible error codes:
@@ -322,17 +324,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTransferableOffers(ListTransferableOffersRequest request)
+ *           <li><p> listTransferableOffers(ListTransferableOffersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTransferableOffersPagedCallable()
- *           <li>listTransferableOffersCallable()
+ *           <li><p> listTransferableOffersPagedCallable()
+ *           <li><p> listTransferableOffersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEntitlement</td>
+ *      <td><p> GetEntitlement</td>
  *      <td><p> Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
  * <p>  Possible error codes:
  * <ul>
@@ -344,16 +346,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEntitlement(GetEntitlementRequest request)
+ *           <li><p> getEntitlement(GetEntitlementRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEntitlementCallable()
+ *           <li><p> getEntitlementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEntitlement</td>
+ *      <td><p> CreateEntitlement</td>
  *      <td><p> Creates an entitlement for a customer.
  * <p>  Possible error codes:
  * <ul>
@@ -371,17 +373,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEntitlementAsync(CreateEntitlementRequest request)
+ *           <li><p> createEntitlementAsync(CreateEntitlementRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEntitlementOperationCallable()
- *           <li>createEntitlementCallable()
+ *           <li><p> createEntitlementOperationCallable()
+ *           <li><p> createEntitlementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ChangeParameters</td>
+ *      <td><p> ChangeParameters</td>
  *      <td><p> Change parameters of the entitlement.
  * <p>  An entitlement update is a long-running operation and it updates the entitlement as a result of fulfillment.
  * <p>  Possible error codes:
@@ -397,17 +399,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>changeParametersAsync(ChangeParametersRequest request)
+ *           <li><p> changeParametersAsync(ChangeParametersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>changeParametersOperationCallable()
- *           <li>changeParametersCallable()
+ *           <li><p> changeParametersOperationCallable()
+ *           <li><p> changeParametersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ChangeRenewalSettings</td>
+ *      <td><p> ChangeRenewalSettings</td>
  *      <td><p> Updates the renewal settings for an existing customer entitlement.
  * <p>  An entitlement update is a long-running operation and it updates the entitlement as a result of fulfillment.
  * <p>  Possible error codes:
@@ -424,17 +426,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>changeRenewalSettingsAsync(ChangeRenewalSettingsRequest request)
+ *           <li><p> changeRenewalSettingsAsync(ChangeRenewalSettingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>changeRenewalSettingsOperationCallable()
- *           <li>changeRenewalSettingsCallable()
+ *           <li><p> changeRenewalSettingsOperationCallable()
+ *           <li><p> changeRenewalSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ChangeOffer</td>
+ *      <td><p> ChangeOffer</td>
  *      <td><p> Updates the Offer for an existing customer entitlement.
  * <p>  An entitlement update is a long-running operation and it updates the entitlement as a result of fulfillment.
  * <p>  Possible error codes:
@@ -450,17 +452,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>changeOfferAsync(ChangeOfferRequest request)
+ *           <li><p> changeOfferAsync(ChangeOfferRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>changeOfferOperationCallable()
- *           <li>changeOfferCallable()
+ *           <li><p> changeOfferOperationCallable()
+ *           <li><p> changeOfferCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartPaidService</td>
+ *      <td><p> StartPaidService</td>
  *      <td><p> Starts paid service for a trial entitlement.
  * <p>  Starts paid service for a trial entitlement immediately. This method is only applicable if a plan is set up for a trial entitlement but has some trial days remaining.
  * <p>  Possible error codes:
@@ -477,17 +479,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startPaidServiceAsync(StartPaidServiceRequest request)
+ *           <li><p> startPaidServiceAsync(StartPaidServiceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startPaidServiceOperationCallable()
- *           <li>startPaidServiceCallable()
+ *           <li><p> startPaidServiceOperationCallable()
+ *           <li><p> startPaidServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SuspendEntitlement</td>
+ *      <td><p> SuspendEntitlement</td>
  *      <td><p> Suspends a previously fulfilled entitlement.
  * <p>  An entitlement suspension is a long-running operation.
  * <p>  Possible error codes:
@@ -504,17 +506,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>suspendEntitlementAsync(SuspendEntitlementRequest request)
+ *           <li><p> suspendEntitlementAsync(SuspendEntitlementRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>suspendEntitlementOperationCallable()
- *           <li>suspendEntitlementCallable()
+ *           <li><p> suspendEntitlementOperationCallable()
+ *           <li><p> suspendEntitlementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelEntitlement</td>
+ *      <td><p> CancelEntitlement</td>
  *      <td><p> Cancels a previously fulfilled entitlement.
  * <p>  An entitlement cancellation is a long-running operation.
  * <p>  Possible error codes:
@@ -532,17 +534,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelEntitlementAsync(CancelEntitlementRequest request)
+ *           <li><p> cancelEntitlementAsync(CancelEntitlementRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelEntitlementOperationCallable()
- *           <li>cancelEntitlementCallable()
+ *           <li><p> cancelEntitlementOperationCallable()
+ *           <li><p> cancelEntitlementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ActivateEntitlement</td>
+ *      <td><p> ActivateEntitlement</td>
  *      <td><p> Activates a previously suspended entitlement. Entitlements suspended for pending ToS acceptance can't be activated using this method.
  * <p>  An entitlement activation is a long-running operation and it updates the state of the customer entitlement.
  * <p>  Possible error codes:
@@ -560,17 +562,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>activateEntitlementAsync(ActivateEntitlementRequest request)
+ *           <li><p> activateEntitlementAsync(ActivateEntitlementRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>activateEntitlementOperationCallable()
- *           <li>activateEntitlementCallable()
+ *           <li><p> activateEntitlementOperationCallable()
+ *           <li><p> activateEntitlementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TransferEntitlements</td>
+ *      <td><p> TransferEntitlements</td>
  *      <td><p> Transfers customer entitlements to new reseller.
  * <p>  Possible error codes:
  * <ul>
@@ -587,17 +589,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>transferEntitlementsAsync(TransferEntitlementsRequest request)
+ *           <li><p> transferEntitlementsAsync(TransferEntitlementsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>transferEntitlementsOperationCallable()
- *           <li>transferEntitlementsCallable()
+ *           <li><p> transferEntitlementsOperationCallable()
+ *           <li><p> transferEntitlementsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TransferEntitlementsToGoogle</td>
+ *      <td><p> TransferEntitlementsToGoogle</td>
  *      <td><p> Transfers customer entitlements from their current reseller to Google.
  * <p>  Possible error codes:
  * <ul>
@@ -614,17 +616,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>transferEntitlementsToGoogleAsync(TransferEntitlementsToGoogleRequest request)
+ *           <li><p> transferEntitlementsToGoogleAsync(TransferEntitlementsToGoogleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>transferEntitlementsToGoogleOperationCallable()
- *           <li>transferEntitlementsToGoogleCallable()
+ *           <li><p> transferEntitlementsToGoogleOperationCallable()
+ *           <li><p> transferEntitlementsToGoogleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListChannelPartnerLinks</td>
+ *      <td><p> ListChannelPartnerLinks</td>
  *      <td><p> List [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]s belonging to a distributor. You must be a distributor to call this method.
  * <p>  Possible error codes:
  * <ul>
@@ -635,17 +637,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listChannelPartnerLinks(ListChannelPartnerLinksRequest request)
+ *           <li><p> listChannelPartnerLinks(ListChannelPartnerLinksRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listChannelPartnerLinksPagedCallable()
- *           <li>listChannelPartnerLinksCallable()
+ *           <li><p> listChannelPartnerLinksPagedCallable()
+ *           <li><p> listChannelPartnerLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetChannelPartnerLink</td>
+ *      <td><p> GetChannelPartnerLink</td>
  *      <td><p> Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource. You must be a distributor to call this method.
  * <p>  Possible error codes:
  * <ul>
@@ -657,16 +659,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getChannelPartnerLink(GetChannelPartnerLinkRequest request)
+ *           <li><p> getChannelPartnerLink(GetChannelPartnerLinkRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getChannelPartnerLinkCallable()
+ *           <li><p> getChannelPartnerLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateChannelPartnerLink</td>
+ *      <td><p> CreateChannelPartnerLink</td>
  *      <td><p> Initiates a channel partner link between a distributor and a reseller, or between resellers in an n-tier reseller channel. Invited partners need to follow the invite_link_uri provided in the response to accept. After accepting the invitation, a link is set up between the two parties. You must be a distributor to call this method.
  * <p>  Possible error codes:
  * <ul>
@@ -681,16 +683,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createChannelPartnerLink(CreateChannelPartnerLinkRequest request)
+ *           <li><p> createChannelPartnerLink(CreateChannelPartnerLinkRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createChannelPartnerLinkCallable()
+ *           <li><p> createChannelPartnerLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateChannelPartnerLink</td>
+ *      <td><p> UpdateChannelPartnerLink</td>
  *      <td><p> Updates a channel partner link. Distributors call this method to change a link's status. For example, to suspend a partner link. You must be a distributor to call this method.
  * <p>  Possible error codes:
  * <ul>
@@ -704,16 +706,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateChannelPartnerLink(UpdateChannelPartnerLinkRequest request)
+ *           <li><p> updateChannelPartnerLink(UpdateChannelPartnerLinkRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateChannelPartnerLinkCallable()
+ *           <li><p> updateChannelPartnerLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomerRepricingConfig</td>
+ *      <td><p> GetCustomerRepricingConfig</td>
  *      <td><p> Gets information about how a Reseller modifies their bill before sending it to a Customer.
  * <p>  Possible Error Codes:
  * <ul>
@@ -725,21 +727,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomerRepricingConfig(GetCustomerRepricingConfigRequest request)
+ *           <li><p> getCustomerRepricingConfig(GetCustomerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomerRepricingConfig(CustomerRepricingConfigName name)
- *           <li>getCustomerRepricingConfig(String name)
+ *           <li><p> getCustomerRepricingConfig(CustomerRepricingConfigName name)
+ *           <li><p> getCustomerRepricingConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomerRepricingConfigCallable()
+ *           <li><p> getCustomerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCustomerRepricingConfigs</td>
+ *      <td><p> ListCustomerRepricingConfigs</td>
  *      <td><p> Lists information about how a Reseller modifies their bill before sending it to a Customer.
  * <p>  Possible Error Codes:
  * <ul>
@@ -758,22 +760,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomerRepricingConfigs(ListCustomerRepricingConfigsRequest request)
+ *           <li><p> listCustomerRepricingConfigs(ListCustomerRepricingConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCustomerRepricingConfigs(CustomerName parent)
- *           <li>listCustomerRepricingConfigs(String parent)
+ *           <li><p> listCustomerRepricingConfigs(CustomerName parent)
+ *           <li><p> listCustomerRepricingConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomerRepricingConfigsPagedCallable()
- *           <li>listCustomerRepricingConfigsCallable()
+ *           <li><p> listCustomerRepricingConfigsPagedCallable()
+ *           <li><p> listCustomerRepricingConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomerRepricingConfig</td>
+ *      <td><p> CreateCustomerRepricingConfig</td>
  *      <td><p> Creates a CustomerRepricingConfig. Call this method to set modifications for a specific customer's bill. You can only create configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. If needed, you can create a config for the current month, with some restrictions.
  * <p>  When creating a config for a future month, make sure there are no existing configs for that [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
  * <p>  The following restrictions are for creating configs in the current month.
@@ -794,21 +796,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomerRepricingConfig(CreateCustomerRepricingConfigRequest request)
+ *           <li><p> createCustomerRepricingConfig(CreateCustomerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCustomerRepricingConfig(CustomerName parent, CustomerRepricingConfig customerRepricingConfig)
- *           <li>createCustomerRepricingConfig(String parent, CustomerRepricingConfig customerRepricingConfig)
+ *           <li><p> createCustomerRepricingConfig(CustomerName parent, CustomerRepricingConfig customerRepricingConfig)
+ *           <li><p> createCustomerRepricingConfig(String parent, CustomerRepricingConfig customerRepricingConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomerRepricingConfigCallable()
+ *           <li><p> createCustomerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomerRepricingConfig</td>
+ *      <td><p> UpdateCustomerRepricingConfig</td>
  *      <td><p> Updates a CustomerRepricingConfig. Call this method to set modifications for a specific customer's bill. This method overwrites the existing CustomerRepricingConfig.
  * <p>  You can only update configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. To make changes to configs for the current month, use [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig], taking note of its restrictions. You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
  * <p>  When updating a config in the future:
@@ -826,20 +828,20 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomerRepricingConfig(UpdateCustomerRepricingConfigRequest request)
+ *           <li><p> updateCustomerRepricingConfig(UpdateCustomerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCustomerRepricingConfig(CustomerRepricingConfig customerRepricingConfig)
+ *           <li><p> updateCustomerRepricingConfig(CustomerRepricingConfig customerRepricingConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomerRepricingConfigCallable()
+ *           <li><p> updateCustomerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCustomerRepricingConfig</td>
+ *      <td><p> DeleteCustomerRepricingConfig</td>
  *      <td><p> Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] permanently. You can only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set to a date after the current month.
  * <p>  Possible error codes:
  * <ul>
@@ -851,21 +853,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCustomerRepricingConfig(DeleteCustomerRepricingConfigRequest request)
+ *           <li><p> deleteCustomerRepricingConfig(DeleteCustomerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCustomerRepricingConfig(CustomerRepricingConfigName name)
- *           <li>deleteCustomerRepricingConfig(String name)
+ *           <li><p> deleteCustomerRepricingConfig(CustomerRepricingConfigName name)
+ *           <li><p> deleteCustomerRepricingConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCustomerRepricingConfigCallable()
+ *           <li><p> deleteCustomerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetChannelPartnerRepricingConfig</td>
+ *      <td><p> GetChannelPartnerRepricingConfig</td>
  *      <td><p> Gets information about how a Distributor modifies their bill before sending it to a ChannelPartner.
  * <p>  Possible Error Codes:
  * <ul>
@@ -877,21 +879,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getChannelPartnerRepricingConfig(GetChannelPartnerRepricingConfigRequest request)
+ *           <li><p> getChannelPartnerRepricingConfig(GetChannelPartnerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name)
- *           <li>getChannelPartnerRepricingConfig(String name)
+ *           <li><p> getChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name)
+ *           <li><p> getChannelPartnerRepricingConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getChannelPartnerRepricingConfigCallable()
+ *           <li><p> getChannelPartnerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListChannelPartnerRepricingConfigs</td>
+ *      <td><p> ListChannelPartnerRepricingConfigs</td>
  *      <td><p> Lists information about how a Reseller modifies their bill before sending it to a ChannelPartner.
  * <p>  Possible Error Codes:
  * <ul>
@@ -909,22 +911,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listChannelPartnerRepricingConfigs(ListChannelPartnerRepricingConfigsRequest request)
+ *           <li><p> listChannelPartnerRepricingConfigs(ListChannelPartnerRepricingConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listChannelPartnerRepricingConfigs(ChannelPartnerLinkName parent)
- *           <li>listChannelPartnerRepricingConfigs(String parent)
+ *           <li><p> listChannelPartnerRepricingConfigs(ChannelPartnerLinkName parent)
+ *           <li><p> listChannelPartnerRepricingConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listChannelPartnerRepricingConfigsPagedCallable()
- *           <li>listChannelPartnerRepricingConfigsCallable()
+ *           <li><p> listChannelPartnerRepricingConfigsPagedCallable()
+ *           <li><p> listChannelPartnerRepricingConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateChannelPartnerRepricingConfig</td>
+ *      <td><p> CreateChannelPartnerRepricingConfig</td>
  *      <td><p> Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific ChannelPartner's bill. You can only create configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. If needed, you can create a config for the current month, with some restrictions.
  * <p>  When creating a config for a future month, make sure there are no existing configs for that [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
  * <p>  The following restrictions are for creating configs in the current month.
@@ -945,21 +947,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createChannelPartnerRepricingConfig(CreateChannelPartnerRepricingConfigRequest request)
+ *           <li><p> createChannelPartnerRepricingConfig(CreateChannelPartnerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createChannelPartnerRepricingConfig(ChannelPartnerLinkName parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
- *           <li>createChannelPartnerRepricingConfig(String parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
+ *           <li><p> createChannelPartnerRepricingConfig(ChannelPartnerLinkName parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
+ *           <li><p> createChannelPartnerRepricingConfig(String parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createChannelPartnerRepricingConfigCallable()
+ *           <li><p> createChannelPartnerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateChannelPartnerRepricingConfig</td>
+ *      <td><p> UpdateChannelPartnerRepricingConfig</td>
  *      <td><p> Updates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific ChannelPartner's bill. This method overwrites the existing CustomerRepricingConfig.
  * <p>  You can only update configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. To make changes to configs for the current month, use [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig], taking note of its restrictions. You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
  * <p>  When updating a config in the future:
@@ -977,20 +979,20 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateChannelPartnerRepricingConfig(UpdateChannelPartnerRepricingConfigRequest request)
+ *           <li><p> updateChannelPartnerRepricingConfig(UpdateChannelPartnerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
+ *           <li><p> updateChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateChannelPartnerRepricingConfigCallable()
+ *           <li><p> updateChannelPartnerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteChannelPartnerRepricingConfig</td>
+ *      <td><p> DeleteChannelPartnerRepricingConfig</td>
  *      <td><p> Deletes the given [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] permanently. You can only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set to a date after the current month.
  * <p>  Possible error codes:
  * <ul>
@@ -1002,21 +1004,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteChannelPartnerRepricingConfig(DeleteChannelPartnerRepricingConfigRequest request)
+ *           <li><p> deleteChannelPartnerRepricingConfig(DeleteChannelPartnerRepricingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name)
- *           <li>deleteChannelPartnerRepricingConfig(String name)
+ *           <li><p> deleteChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name)
+ *           <li><p> deleteChannelPartnerRepricingConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteChannelPartnerRepricingConfigCallable()
+ *           <li><p> deleteChannelPartnerRepricingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSkuGroups</td>
+ *      <td><p> ListSkuGroups</td>
  *      <td><p> Lists the Rebilling supported SKU groups the account is authorized to sell. Reference: https://cloud.google.com/skus/sku-groups
  * <p>  Possible Error Codes:
  * <ul>
@@ -1028,21 +1030,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSkuGroups(ListSkuGroupsRequest request)
+ *           <li><p> listSkuGroups(ListSkuGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSkuGroups(String parent)
+ *           <li><p> listSkuGroups(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSkuGroupsPagedCallable()
- *           <li>listSkuGroupsCallable()
+ *           <li><p> listSkuGroupsPagedCallable()
+ *           <li><p> listSkuGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSkuGroupBillableSkus</td>
+ *      <td><p> ListSkuGroupBillableSkus</td>
  *      <td><p> Lists the Billable SKUs in a given SKU group.
  * <p>  Possible error codes: PERMISSION_DENIED: If the account making the request and the account being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or invalid required parameters in the request. INTERNAL: Any non-user error related to technical issue in the backend. In this case, contact cloud channel support.
  * <p>  Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku] resources. The data for each resource is displayed in the ascending order of:
@@ -1054,22 +1056,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSkuGroupBillableSkus(ListSkuGroupBillableSkusRequest request)
+ *           <li><p> listSkuGroupBillableSkus(ListSkuGroupBillableSkusRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSkuGroupBillableSkus(SkuGroupName parent)
- *           <li>listSkuGroupBillableSkus(String parent)
+ *           <li><p> listSkuGroupBillableSkus(SkuGroupName parent)
+ *           <li><p> listSkuGroupBillableSkus(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSkuGroupBillableSkusPagedCallable()
- *           <li>listSkuGroupBillableSkusCallable()
+ *           <li><p> listSkuGroupBillableSkusPagedCallable()
+ *           <li><p> listSkuGroupBillableSkusCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupOffer</td>
+ *      <td><p> LookupOffer</td>
  *      <td><p> Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
  * <p>  Possible error codes:
  * <ul>
@@ -1081,16 +1083,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupOffer(LookupOfferRequest request)
+ *           <li><p> lookupOffer(LookupOfferRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupOfferCallable()
+ *           <li><p> lookupOfferCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListProducts</td>
+ *      <td><p> ListProducts</td>
  *      <td><p> Lists the Products the reseller is authorized to sell.
  * <p>  Possible error codes:
  * <ul>
@@ -1099,17 +1101,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProducts(ListProductsRequest request)
+ *           <li><p> listProducts(ListProductsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listProductsPagedCallable()
- *           <li>listProductsCallable()
+ *           <li><p> listProductsPagedCallable()
+ *           <li><p> listProductsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSkus</td>
+ *      <td><p> ListSkus</td>
  *      <td><p> Lists the SKUs for a product the reseller is authorized to sell.
  * <p>  Possible error codes:
  * <ul>
@@ -1118,17 +1120,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSkus(ListSkusRequest request)
+ *           <li><p> listSkus(ListSkusRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSkusPagedCallable()
- *           <li>listSkusCallable()
+ *           <li><p> listSkusPagedCallable()
+ *           <li><p> listSkusCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListOffers</td>
+ *      <td><p> ListOffers</td>
  *      <td><p> Lists the Offers the reseller can sell.
  * <p>  Possible error codes:
  * <ul>
@@ -1137,17 +1139,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listOffers(ListOffersRequest request)
+ *           <li><p> listOffers(ListOffersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listOffersPagedCallable()
- *           <li>listOffersCallable()
+ *           <li><p> listOffersPagedCallable()
+ *           <li><p> listOffersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPurchasableSkus</td>
+ *      <td><p> ListPurchasableSkus</td>
  *      <td><p> Lists the following:
  * <ul>
  * <li>  SKUs that you can purchase for a customer
@@ -1161,17 +1163,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPurchasableSkus(ListPurchasableSkusRequest request)
+ *           <li><p> listPurchasableSkus(ListPurchasableSkusRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPurchasableSkusPagedCallable()
- *           <li>listPurchasableSkusCallable()
+ *           <li><p> listPurchasableSkusPagedCallable()
+ *           <li><p> listPurchasableSkusCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPurchasableOffers</td>
+ *      <td><p> ListPurchasableOffers</td>
  *      <td><p> Lists the following:
  * <ul>
  * <li>  Offers that you can purchase for a customer.
@@ -1185,17 +1187,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPurchasableOffers(ListPurchasableOffersRequest request)
+ *           <li><p> listPurchasableOffers(ListPurchasableOffersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPurchasableOffersPagedCallable()
- *           <li>listPurchasableOffersCallable()
+ *           <li><p> listPurchasableOffersPagedCallable()
+ *           <li><p> listPurchasableOffersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryEligibleBillingAccounts</td>
+ *      <td><p> QueryEligibleBillingAccounts</td>
  *      <td><p> Lists the billing accounts that are eligible to purchase particular SKUs for a given customer.
  * <p>  Possible error codes:
  * <ul>
@@ -1206,16 +1208,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryEligibleBillingAccounts(QueryEligibleBillingAccountsRequest request)
+ *           <li><p> queryEligibleBillingAccounts(QueryEligibleBillingAccountsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryEligibleBillingAccountsCallable()
+ *           <li><p> queryEligibleBillingAccountsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RegisterSubscriber</td>
+ *      <td><p> RegisterSubscriber</td>
  *      <td><p> Registers a service account with subscriber privileges on the Cloud Pub/Sub topic for this Channel Services account. After you create a subscriber, you get the events through [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
  * <p>  Possible error codes:
  * <ul>
@@ -1228,16 +1230,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>registerSubscriber(RegisterSubscriberRequest request)
+ *           <li><p> registerSubscriber(RegisterSubscriberRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>registerSubscriberCallable()
+ *           <li><p> registerSubscriberCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UnregisterSubscriber</td>
+ *      <td><p> UnregisterSubscriber</td>
  *      <td><p> Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for this Channel Services account. If there are no service accounts left with subscriber privileges, this deletes the topic. You can call ListSubscribers to check for these accounts.
  * <p>  Possible error codes:
  * <ul>
@@ -1251,16 +1253,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>unregisterSubscriber(UnregisterSubscriberRequest request)
+ *           <li><p> unregisterSubscriber(UnregisterSubscriberRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>unregisterSubscriberCallable()
+ *           <li><p> unregisterSubscriberCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSubscribers</td>
+ *      <td><p> ListSubscribers</td>
  *      <td><p> Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this Channel Services account.
  * <p>  Possible error codes:
  * <ul>
@@ -1274,17 +1276,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSubscribers(ListSubscribersRequest request)
+ *           <li><p> listSubscribers(ListSubscribersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSubscribersPagedCallable()
- *           <li>listSubscribersCallable()
+ *           <li><p> listSubscribersPagedCallable()
+ *           <li><p> listSubscribersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEntitlementChanges</td>
+ *      <td><p> ListEntitlementChanges</td>
  *      <td><p> List entitlement history.
  * <p>  Possible error codes:
  * <ul>
@@ -1298,20 +1300,19 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntitlementChanges(ListEntitlementChangesRequest request)
+ *           <li><p> listEntitlementChanges(ListEntitlementChangesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEntitlementChanges(EntitlementName parent)
- *           <li>listEntitlementChanges(String parent)
+ *           <li><p> listEntitlementChanges(EntitlementName parent)
+ *           <li><p> listEntitlementChanges(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntitlementChangesPagedCallable()
- *           <li>listEntitlementChangesCallable()
+ *           <li><p> listEntitlementChangesPagedCallable()
+ *           <li><p> listEntitlementChangesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

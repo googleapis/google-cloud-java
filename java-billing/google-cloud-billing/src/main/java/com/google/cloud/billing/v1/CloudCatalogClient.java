@@ -57,49 +57,50 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListServices</td>
+ *      <td><p> ListServices</td>
  *      <td><p> Lists all public cloud services.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServices(ListServicesRequest request)
+ *           <li><p> listServices(ListServicesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServices()
+ *           <li><p> listServices()
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServicesPagedCallable()
- *           <li>listServicesCallable()
+ *           <li><p> listServicesPagedCallable()
+ *           <li><p> listServicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSkus</td>
+ *      <td><p> ListSkus</td>
  *      <td><p> Lists all publicly available SKUs for a given cloud service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSkus(ListSkusRequest request)
+ *           <li><p> listSkus(ListSkusRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSkus(ServiceName parent)
- *           <li>listSkus(String parent)
+ *           <li><p> listSkus(ServiceName parent)
+ *           <li><p> listSkus(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSkusPagedCallable()
- *           <li>listSkusCallable()
+ *           <li><p> listSkusPagedCallable()
+ *           <li><p> listSkusCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

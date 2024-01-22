@@ -55,24 +55,25 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ValidateAttestationOccurrence</td>
+ *      <td><p> ValidateAttestationOccurrence</td>
  *      <td><p> Returns whether the given Attestation for the given image URI was signed by the given Attestor</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateAttestationOccurrence(Service.ValidateAttestationOccurrenceRequest request)
+ *           <li><p> validateAttestationOccurrence(Service.ValidateAttestationOccurrenceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateAttestationOccurrenceCallable()
+ *           <li><p> validateAttestationOccurrenceCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

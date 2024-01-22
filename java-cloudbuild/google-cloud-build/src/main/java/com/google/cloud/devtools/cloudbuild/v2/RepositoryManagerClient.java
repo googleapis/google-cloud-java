@@ -95,320 +95,321 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateConnection</td>
+ *      <td><p> CreateConnection</td>
  *      <td><p> Creates a Connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConnectionAsync(CreateConnectionRequest request)
+ *           <li><p> createConnectionAsync(CreateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createConnectionAsync(LocationName parent, Connection connection, String connectionId)
- *           <li>createConnectionAsync(String parent, Connection connection, String connectionId)
+ *           <li><p> createConnectionAsync(LocationName parent, Connection connection, String connectionId)
+ *           <li><p> createConnectionAsync(String parent, Connection connection, String connectionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConnectionOperationCallable()
- *           <li>createConnectionCallable()
+ *           <li><p> createConnectionOperationCallable()
+ *           <li><p> createConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConnection</td>
+ *      <td><p> GetConnection</td>
  *      <td><p> Gets details of a single connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConnection(GetConnectionRequest request)
+ *           <li><p> getConnection(GetConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConnection(ConnectionName name)
- *           <li>getConnection(String name)
+ *           <li><p> getConnection(ConnectionName name)
+ *           <li><p> getConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConnectionCallable()
+ *           <li><p> getConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConnections</td>
+ *      <td><p> ListConnections</td>
  *      <td><p> Lists Connections in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConnections(ListConnectionsRequest request)
+ *           <li><p> listConnections(ListConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConnections(LocationName parent)
- *           <li>listConnections(String parent)
+ *           <li><p> listConnections(LocationName parent)
+ *           <li><p> listConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConnectionsPagedCallable()
- *           <li>listConnectionsCallable()
+ *           <li><p> listConnectionsPagedCallable()
+ *           <li><p> listConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConnection</td>
+ *      <td><p> UpdateConnection</td>
  *      <td><p> Updates a single connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConnectionAsync(UpdateConnectionRequest request)
+ *           <li><p> updateConnectionAsync(UpdateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateConnectionAsync(Connection connection, FieldMask updateMask)
+ *           <li><p> updateConnectionAsync(Connection connection, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConnectionOperationCallable()
- *           <li>updateConnectionCallable()
+ *           <li><p> updateConnectionOperationCallable()
+ *           <li><p> updateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConnection</td>
+ *      <td><p> DeleteConnection</td>
  *      <td><p> Deletes a single connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConnectionAsync(DeleteConnectionRequest request)
+ *           <li><p> deleteConnectionAsync(DeleteConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteConnectionAsync(ConnectionName name)
- *           <li>deleteConnectionAsync(String name)
+ *           <li><p> deleteConnectionAsync(ConnectionName name)
+ *           <li><p> deleteConnectionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConnectionOperationCallable()
- *           <li>deleteConnectionCallable()
+ *           <li><p> deleteConnectionOperationCallable()
+ *           <li><p> deleteConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRepository</td>
+ *      <td><p> CreateRepository</td>
  *      <td><p> Creates a Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRepositoryAsync(CreateRepositoryRequest request)
+ *           <li><p> createRepositoryAsync(CreateRepositoryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createRepositoryAsync(ConnectionName parent, Repository repository, String repositoryId)
- *           <li>createRepositoryAsync(String parent, Repository repository, String repositoryId)
+ *           <li><p> createRepositoryAsync(ConnectionName parent, Repository repository, String repositoryId)
+ *           <li><p> createRepositoryAsync(String parent, Repository repository, String repositoryId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRepositoryOperationCallable()
- *           <li>createRepositoryCallable()
+ *           <li><p> createRepositoryOperationCallable()
+ *           <li><p> createRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateRepositories</td>
+ *      <td><p> BatchCreateRepositories</td>
  *      <td><p> Creates multiple repositories inside a connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateRepositoriesAsync(ConnectionName parent, List<CreateRepositoryRequest> requests)
- *           <li>batchCreateRepositoriesAsync(String parent, List<CreateRepositoryRequest> requests)
- *           <li>batchCreateRepositoriesAsync(BatchCreateRepositoriesRequest request)
+ *           <li><p> batchCreateRepositoriesAsync(ConnectionName parent, List&lt;CreateRepositoryRequest&gt; requests)
+ *           <li><p> batchCreateRepositoriesAsync(String parent, List&lt;CreateRepositoryRequest&gt; requests)
+ *           <li><p> batchCreateRepositoriesAsync(BatchCreateRepositoriesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateRepositoriesOperationCallable()
- *           <li>batchCreateRepositoriesCallable()
+ *           <li><p> batchCreateRepositoriesOperationCallable()
+ *           <li><p> batchCreateRepositoriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRepository</td>
+ *      <td><p> GetRepository</td>
  *      <td><p> Gets details of a single repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRepository(GetRepositoryRequest request)
+ *           <li><p> getRepository(GetRepositoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRepository(RepositoryName name)
- *           <li>getRepository(String name)
+ *           <li><p> getRepository(RepositoryName name)
+ *           <li><p> getRepository(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRepositoryCallable()
+ *           <li><p> getRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRepositories</td>
+ *      <td><p> ListRepositories</td>
  *      <td><p> Lists Repositories in a given connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRepositories(ListRepositoriesRequest request)
+ *           <li><p> listRepositories(ListRepositoriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRepositories(ConnectionName parent)
- *           <li>listRepositories(String parent)
+ *           <li><p> listRepositories(ConnectionName parent)
+ *           <li><p> listRepositories(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRepositoriesPagedCallable()
- *           <li>listRepositoriesCallable()
+ *           <li><p> listRepositoriesPagedCallable()
+ *           <li><p> listRepositoriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRepository</td>
+ *      <td><p> DeleteRepository</td>
  *      <td><p> Deletes a single repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRepositoryAsync(DeleteRepositoryRequest request)
+ *           <li><p> deleteRepositoryAsync(DeleteRepositoryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteRepositoryAsync(RepositoryName name)
- *           <li>deleteRepositoryAsync(String name)
+ *           <li><p> deleteRepositoryAsync(RepositoryName name)
+ *           <li><p> deleteRepositoryAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRepositoryOperationCallable()
- *           <li>deleteRepositoryCallable()
+ *           <li><p> deleteRepositoryOperationCallable()
+ *           <li><p> deleteRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchReadWriteToken</td>
+ *      <td><p> FetchReadWriteToken</td>
  *      <td><p> Fetches read/write token of a given repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchReadWriteToken(FetchReadWriteTokenRequest request)
+ *           <li><p> fetchReadWriteToken(FetchReadWriteTokenRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchReadWriteToken(RepositoryName repository)
- *           <li>fetchReadWriteToken(String repository)
+ *           <li><p> fetchReadWriteToken(RepositoryName repository)
+ *           <li><p> fetchReadWriteToken(String repository)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchReadWriteTokenCallable()
+ *           <li><p> fetchReadWriteTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchReadToken</td>
+ *      <td><p> FetchReadToken</td>
  *      <td><p> Fetches read token of a given repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchReadToken(FetchReadTokenRequest request)
+ *           <li><p> fetchReadToken(FetchReadTokenRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchReadToken(RepositoryName repository)
- *           <li>fetchReadToken(String repository)
+ *           <li><p> fetchReadToken(RepositoryName repository)
+ *           <li><p> fetchReadToken(String repository)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchReadTokenCallable()
+ *           <li><p> fetchReadTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchLinkableRepositories</td>
+ *      <td><p> FetchLinkableRepositories</td>
  *      <td><p> FetchLinkableRepositories get repositories from SCM that are accessible and could be added to the connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchLinkableRepositories(FetchLinkableRepositoriesRequest request)
+ *           <li><p> fetchLinkableRepositories(FetchLinkableRepositoriesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchLinkableRepositoriesPagedCallable()
- *           <li>fetchLinkableRepositoriesCallable()
+ *           <li><p> fetchLinkableRepositoriesPagedCallable()
+ *           <li><p> fetchLinkableRepositoriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchGitRefs</td>
+ *      <td><p> FetchGitRefs</td>
  *      <td><p> Fetch the list of branches or tags for a given repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchGitRefs(FetchGitRefsRequest request)
+ *           <li><p> fetchGitRefs(FetchGitRefsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchGitRefs(RepositoryName repository)
- *           <li>fetchGitRefs(String repository)
+ *           <li><p> fetchGitRefs(RepositoryName repository)
+ *           <li><p> fetchGitRefs(String repository)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchGitRefsCallable()
+ *           <li><p> fetchGitRefsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -86,201 +86,202 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAppConnections</td>
+ *      <td><p> ListAppConnections</td>
  *      <td><p> Lists AppConnections in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAppConnections(ListAppConnectionsRequest request)
+ *           <li><p> listAppConnections(ListAppConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAppConnections(LocationName parent)
- *           <li>listAppConnections(String parent)
+ *           <li><p> listAppConnections(LocationName parent)
+ *           <li><p> listAppConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAppConnectionsPagedCallable()
- *           <li>listAppConnectionsCallable()
+ *           <li><p> listAppConnectionsPagedCallable()
+ *           <li><p> listAppConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAppConnection</td>
+ *      <td><p> GetAppConnection</td>
  *      <td><p> Gets details of a single AppConnection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAppConnection(GetAppConnectionRequest request)
+ *           <li><p> getAppConnection(GetAppConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAppConnection(AppConnectionName name)
- *           <li>getAppConnection(String name)
+ *           <li><p> getAppConnection(AppConnectionName name)
+ *           <li><p> getAppConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAppConnectionCallable()
+ *           <li><p> getAppConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAppConnection</td>
+ *      <td><p> CreateAppConnection</td>
  *      <td><p> Creates a new AppConnection in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAppConnectionAsync(CreateAppConnectionRequest request)
+ *           <li><p> createAppConnectionAsync(CreateAppConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAppConnectionAsync(LocationName parent, AppConnection appConnection, String appConnectionId)
- *           <li>createAppConnectionAsync(String parent, AppConnection appConnection, String appConnectionId)
+ *           <li><p> createAppConnectionAsync(LocationName parent, AppConnection appConnection, String appConnectionId)
+ *           <li><p> createAppConnectionAsync(String parent, AppConnection appConnection, String appConnectionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAppConnectionOperationCallable()
- *           <li>createAppConnectionCallable()
+ *           <li><p> createAppConnectionOperationCallable()
+ *           <li><p> createAppConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAppConnection</td>
+ *      <td><p> UpdateAppConnection</td>
  *      <td><p> Updates the parameters of a single AppConnection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAppConnectionAsync(UpdateAppConnectionRequest request)
+ *           <li><p> updateAppConnectionAsync(UpdateAppConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAppConnectionAsync(AppConnection appConnection, FieldMask updateMask)
+ *           <li><p> updateAppConnectionAsync(AppConnection appConnection, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAppConnectionOperationCallable()
- *           <li>updateAppConnectionCallable()
+ *           <li><p> updateAppConnectionOperationCallable()
+ *           <li><p> updateAppConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAppConnection</td>
+ *      <td><p> DeleteAppConnection</td>
  *      <td><p> Deletes a single AppConnection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAppConnectionAsync(DeleteAppConnectionRequest request)
+ *           <li><p> deleteAppConnectionAsync(DeleteAppConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAppConnectionAsync(AppConnectionName name)
- *           <li>deleteAppConnectionAsync(String name)
+ *           <li><p> deleteAppConnectionAsync(AppConnectionName name)
+ *           <li><p> deleteAppConnectionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAppConnectionOperationCallable()
- *           <li>deleteAppConnectionCallable()
+ *           <li><p> deleteAppConnectionOperationCallable()
+ *           <li><p> deleteAppConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResolveAppConnections</td>
+ *      <td><p> ResolveAppConnections</td>
  *      <td><p> Resolves AppConnections details for a given AppConnector. An internal method called by a connector to find AppConnections to connect to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resolveAppConnections(ResolveAppConnectionsRequest request)
+ *           <li><p> resolveAppConnections(ResolveAppConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resolveAppConnections(LocationName parent)
- *           <li>resolveAppConnections(String parent)
+ *           <li><p> resolveAppConnections(LocationName parent)
+ *           <li><p> resolveAppConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resolveAppConnectionsPagedCallable()
- *           <li>resolveAppConnectionsCallable()
+ *           <li><p> resolveAppConnectionsPagedCallable()
+ *           <li><p> resolveAppConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

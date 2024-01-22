@@ -85,181 +85,182 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListClientConnectorServices</td>
+ *      <td><p> ListClientConnectorServices</td>
  *      <td><p> Lists ClientConnectorServices in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClientConnectorServices(ListClientConnectorServicesRequest request)
+ *           <li><p> listClientConnectorServices(ListClientConnectorServicesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClientConnectorServices(LocationName parent)
- *           <li>listClientConnectorServices(String parent)
+ *           <li><p> listClientConnectorServices(LocationName parent)
+ *           <li><p> listClientConnectorServices(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClientConnectorServicesPagedCallable()
- *           <li>listClientConnectorServicesCallable()
+ *           <li><p> listClientConnectorServicesPagedCallable()
+ *           <li><p> listClientConnectorServicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetClientConnectorService</td>
+ *      <td><p> GetClientConnectorService</td>
  *      <td><p> Gets details of a single ClientConnectorService.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getClientConnectorService(GetClientConnectorServiceRequest request)
+ *           <li><p> getClientConnectorService(GetClientConnectorServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getClientConnectorService(ClientConnectorServiceName name)
- *           <li>getClientConnectorService(String name)
+ *           <li><p> getClientConnectorService(ClientConnectorServiceName name)
+ *           <li><p> getClientConnectorService(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClientConnectorServiceCallable()
+ *           <li><p> getClientConnectorServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateClientConnectorService</td>
+ *      <td><p> CreateClientConnectorService</td>
  *      <td><p> Creates a new ClientConnectorService in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClientConnectorServiceAsync(CreateClientConnectorServiceRequest request)
+ *           <li><p> createClientConnectorServiceAsync(CreateClientConnectorServiceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createClientConnectorServiceAsync(LocationName parent, ClientConnectorService clientConnectorService, String clientConnectorServiceId)
- *           <li>createClientConnectorServiceAsync(String parent, ClientConnectorService clientConnectorService, String clientConnectorServiceId)
+ *           <li><p> createClientConnectorServiceAsync(LocationName parent, ClientConnectorService clientConnectorService, String clientConnectorServiceId)
+ *           <li><p> createClientConnectorServiceAsync(String parent, ClientConnectorService clientConnectorService, String clientConnectorServiceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClientConnectorServiceOperationCallable()
- *           <li>createClientConnectorServiceCallable()
+ *           <li><p> createClientConnectorServiceOperationCallable()
+ *           <li><p> createClientConnectorServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateClientConnectorService</td>
+ *      <td><p> UpdateClientConnectorService</td>
  *      <td><p> Updates the parameters of a single ClientConnectorService.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateClientConnectorServiceAsync(UpdateClientConnectorServiceRequest request)
+ *           <li><p> updateClientConnectorServiceAsync(UpdateClientConnectorServiceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateClientConnectorServiceAsync(ClientConnectorService clientConnectorService, FieldMask updateMask)
+ *           <li><p> updateClientConnectorServiceAsync(ClientConnectorService clientConnectorService, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClientConnectorServiceOperationCallable()
- *           <li>updateClientConnectorServiceCallable()
+ *           <li><p> updateClientConnectorServiceOperationCallable()
+ *           <li><p> updateClientConnectorServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteClientConnectorService</td>
+ *      <td><p> DeleteClientConnectorService</td>
  *      <td><p> Deletes a single ClientConnectorService.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteClientConnectorServiceAsync(DeleteClientConnectorServiceRequest request)
+ *           <li><p> deleteClientConnectorServiceAsync(DeleteClientConnectorServiceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteClientConnectorServiceAsync(ClientConnectorServiceName name)
- *           <li>deleteClientConnectorServiceAsync(String name)
+ *           <li><p> deleteClientConnectorServiceAsync(ClientConnectorServiceName name)
+ *           <li><p> deleteClientConnectorServiceAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClientConnectorServiceOperationCallable()
- *           <li>deleteClientConnectorServiceCallable()
+ *           <li><p> deleteClientConnectorServiceOperationCallable()
+ *           <li><p> deleteClientConnectorServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

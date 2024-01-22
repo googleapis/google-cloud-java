@@ -65,147 +65,148 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDataPolicy</td>
+ *      <td><p> CreateDataPolicy</td>
  *      <td><p> Creates a new data policy under a project with the given `dataPolicyId` (used as the display name), policy tag, and data policy type.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDataPolicy(CreateDataPolicyRequest request)
+ *           <li><p> createDataPolicy(CreateDataPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDataPolicy(LocationName parent, DataPolicy dataPolicy)
- *           <li>createDataPolicy(String parent, DataPolicy dataPolicy)
+ *           <li><p> createDataPolicy(LocationName parent, DataPolicy dataPolicy)
+ *           <li><p> createDataPolicy(String parent, DataPolicy dataPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDataPolicyCallable()
+ *           <li><p> createDataPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDataPolicy</td>
+ *      <td><p> UpdateDataPolicy</td>
  *      <td><p> Updates the metadata for an existing data policy. The target data policy can be specified by the resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDataPolicy(UpdateDataPolicyRequest request)
+ *           <li><p> updateDataPolicy(UpdateDataPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDataPolicy(DataPolicy dataPolicy, FieldMask updateMask)
+ *           <li><p> updateDataPolicy(DataPolicy dataPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDataPolicyCallable()
+ *           <li><p> updateDataPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDataPolicy</td>
+ *      <td><p> DeleteDataPolicy</td>
  *      <td><p> Deletes the data policy specified by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDataPolicy(DeleteDataPolicyRequest request)
+ *           <li><p> deleteDataPolicy(DeleteDataPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDataPolicy(DataPolicyName name)
- *           <li>deleteDataPolicy(String name)
+ *           <li><p> deleteDataPolicy(DataPolicyName name)
+ *           <li><p> deleteDataPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDataPolicyCallable()
+ *           <li><p> deleteDataPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataPolicy</td>
+ *      <td><p> GetDataPolicy</td>
  *      <td><p> Gets the data policy specified by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataPolicy(GetDataPolicyRequest request)
+ *           <li><p> getDataPolicy(GetDataPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataPolicy(DataPolicyName name)
- *           <li>getDataPolicy(String name)
+ *           <li><p> getDataPolicy(DataPolicyName name)
+ *           <li><p> getDataPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataPolicyCallable()
+ *           <li><p> getDataPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataPolicies</td>
+ *      <td><p> ListDataPolicies</td>
  *      <td><p> List all of the data policies in the specified parent project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataPolicies(ListDataPoliciesRequest request)
+ *           <li><p> listDataPolicies(ListDataPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataPolicies(LocationName parent)
- *           <li>listDataPolicies(String parent)
+ *           <li><p> listDataPolicies(LocationName parent)
+ *           <li><p> listDataPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataPoliciesPagedCallable()
- *           <li>listDataPoliciesCallable()
+ *           <li><p> listDataPoliciesPagedCallable()
+ *           <li><p> listDataPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the IAM policy for the specified data policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM policy for the specified data policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns the caller's permission on the specified data policy resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

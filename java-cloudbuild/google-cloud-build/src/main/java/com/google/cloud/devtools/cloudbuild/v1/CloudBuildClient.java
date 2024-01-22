@@ -102,89 +102,91 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateBuild</td>
+ *      <td><p> CreateBuild</td>
  *      <td><p> Starts a build with the specified configuration.
  * <p>  This method returns a long-running `Operation`, which includes the build ID. Pass the build ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createBuildAsync(CreateBuildRequest request)
+ *           <li><p> createBuildAsync(CreateBuildRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createBuildAsync(String projectId, Build build)
+ *           <li><p> createBuildAsync(String projectId, Build build)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createBuildOperationCallable()
- *           <li>createBuildCallable()
+ *           <li><p> createBuildOperationCallable()
+ *           <li><p> createBuildCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBuild</td>
+ *      <td><p> GetBuild</td>
  *      <td><p> Returns information about a previously requested build.
  * <p>  The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or `WORKING`), and timing information.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBuild(GetBuildRequest request)
+ *           <li><p> getBuild(GetBuildRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBuild(String projectId, String id)
+ *           <li><p> getBuild(String projectId, String id)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBuildCallable()
+ *           <li><p> getBuildCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBuilds</td>
+ *      <td><p> ListBuilds</td>
  *      <td><p> Lists previously requested builds.
  * <p>  Previously requested builds may still be in-progress, or may have finished successfully or unsuccessfully.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBuilds(ListBuildsRequest request)
+ *           <li><p> listBuilds(ListBuildsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listBuilds(String projectId, String filter)
+ *           <li><p> listBuilds(String projectId, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBuildsPagedCallable()
- *           <li>listBuildsCallable()
+ *           <li><p> listBuildsPagedCallable()
+ *           <li><p> listBuildsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelBuild</td>
+ *      <td><p> CancelBuild</td>
  *      <td><p> Cancels a build in progress.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelBuild(CancelBuildRequest request)
+ *           <li><p> cancelBuild(CancelBuildRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelBuild(String projectId, String id)
+ *           <li><p> cancelBuild(String projectId, String id)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelBuildCallable()
+ *           <li><p> cancelBuildCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RetryBuild</td>
+ *      <td><p> RetryBuild</td>
  *      <td><p> Creates a new build based on the specified build.
  * <p>  This method creates a new build using the original build request, which may or may not result in an identical build.
  * <p>  For triggered builds:
@@ -204,268 +206,267 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>retryBuildAsync(RetryBuildRequest request)
+ *           <li><p> retryBuildAsync(RetryBuildRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>retryBuildAsync(String projectId, String id)
+ *           <li><p> retryBuildAsync(String projectId, String id)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>retryBuildOperationCallable()
- *           <li>retryBuildCallable()
+ *           <li><p> retryBuildOperationCallable()
+ *           <li><p> retryBuildCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApproveBuild</td>
+ *      <td><p> ApproveBuild</td>
  *      <td><p> Approves or rejects a pending build.
  * <p>  If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
  * <p>  If rejected, the returned LRO will be immediately done.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>approveBuildAsync(ApproveBuildRequest request)
+ *           <li><p> approveBuildAsync(ApproveBuildRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>approveBuildAsync(String name, ApprovalResult approvalResult)
+ *           <li><p> approveBuildAsync(String name, ApprovalResult approvalResult)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>approveBuildOperationCallable()
- *           <li>approveBuildCallable()
+ *           <li><p> approveBuildOperationCallable()
+ *           <li><p> approveBuildCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateBuildTrigger</td>
+ *      <td><p> CreateBuildTrigger</td>
  *      <td><p> Creates a new `BuildTrigger`.
  * <p>  This API is experimental.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createBuildTrigger(CreateBuildTriggerRequest request)
+ *           <li><p> createBuildTrigger(CreateBuildTriggerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createBuildTrigger(String projectId, BuildTrigger trigger)
+ *           <li><p> createBuildTrigger(String projectId, BuildTrigger trigger)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createBuildTriggerCallable()
+ *           <li><p> createBuildTriggerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBuildTrigger</td>
+ *      <td><p> GetBuildTrigger</td>
  *      <td><p> Returns information about a `BuildTrigger`.
  * <p>  This API is experimental.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBuildTrigger(GetBuildTriggerRequest request)
+ *           <li><p> getBuildTrigger(GetBuildTriggerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBuildTrigger(String projectId, String triggerId)
+ *           <li><p> getBuildTrigger(String projectId, String triggerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBuildTriggerCallable()
+ *           <li><p> getBuildTriggerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBuildTriggers</td>
+ *      <td><p> ListBuildTriggers</td>
  *      <td><p> Lists existing `BuildTrigger`s.
  * <p>  This API is experimental.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBuildTriggers(ListBuildTriggersRequest request)
+ *           <li><p> listBuildTriggers(ListBuildTriggersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listBuildTriggers(String projectId)
+ *           <li><p> listBuildTriggers(String projectId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBuildTriggersPagedCallable()
- *           <li>listBuildTriggersCallable()
+ *           <li><p> listBuildTriggersPagedCallable()
+ *           <li><p> listBuildTriggersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteBuildTrigger</td>
+ *      <td><p> DeleteBuildTrigger</td>
  *      <td><p> Deletes a `BuildTrigger` by its project ID and trigger ID.
  * <p>  This API is experimental.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteBuildTrigger(DeleteBuildTriggerRequest request)
+ *           <li><p> deleteBuildTrigger(DeleteBuildTriggerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteBuildTrigger(String projectId, String triggerId)
+ *           <li><p> deleteBuildTrigger(String projectId, String triggerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteBuildTriggerCallable()
+ *           <li><p> deleteBuildTriggerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateBuildTrigger</td>
+ *      <td><p> UpdateBuildTrigger</td>
  *      <td><p> Updates a `BuildTrigger` by its project ID and trigger ID.
  * <p>  This API is experimental.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateBuildTrigger(UpdateBuildTriggerRequest request)
+ *           <li><p> updateBuildTrigger(UpdateBuildTriggerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateBuildTrigger(String projectId, String triggerId, BuildTrigger trigger)
+ *           <li><p> updateBuildTrigger(String projectId, String triggerId, BuildTrigger trigger)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateBuildTriggerCallable()
+ *           <li><p> updateBuildTriggerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunBuildTrigger</td>
+ *      <td><p> RunBuildTrigger</td>
  *      <td><p> Runs a `BuildTrigger` at a particular source revision.
  * <p>  To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runBuildTriggerAsync(RunBuildTriggerRequest request)
+ *           <li><p> runBuildTriggerAsync(RunBuildTriggerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>runBuildTriggerAsync(String projectId, String triggerId, RepoSource source)
+ *           <li><p> runBuildTriggerAsync(String projectId, String triggerId, RepoSource source)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runBuildTriggerOperationCallable()
- *           <li>runBuildTriggerCallable()
+ *           <li><p> runBuildTriggerOperationCallable()
+ *           <li><p> runBuildTriggerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReceiveTriggerWebhook</td>
+ *      <td><p> ReceiveTriggerWebhook</td>
  *      <td><p> ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted at a specific trigger.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>receiveTriggerWebhook(ReceiveTriggerWebhookRequest request)
+ *           <li><p> receiveTriggerWebhook(ReceiveTriggerWebhookRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>receiveTriggerWebhookCallable()
+ *           <li><p> receiveTriggerWebhookCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkerPool</td>
+ *      <td><p> CreateWorkerPool</td>
  *      <td><p> Creates a `WorkerPool`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkerPoolAsync(CreateWorkerPoolRequest request)
+ *           <li><p> createWorkerPoolAsync(CreateWorkerPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createWorkerPoolAsync(LocationName parent, WorkerPool workerPool, String workerPoolId)
- *           <li>createWorkerPoolAsync(String parent, WorkerPool workerPool, String workerPoolId)
+ *           <li><p> createWorkerPoolAsync(LocationName parent, WorkerPool workerPool, String workerPoolId)
+ *           <li><p> createWorkerPoolAsync(String parent, WorkerPool workerPool, String workerPoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkerPoolOperationCallable()
- *           <li>createWorkerPoolCallable()
+ *           <li><p> createWorkerPoolOperationCallable()
+ *           <li><p> createWorkerPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkerPool</td>
+ *      <td><p> GetWorkerPool</td>
  *      <td><p> Returns details of a `WorkerPool`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkerPool(GetWorkerPoolRequest request)
+ *           <li><p> getWorkerPool(GetWorkerPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkerPool(WorkerPoolName name)
- *           <li>getWorkerPool(String name)
+ *           <li><p> getWorkerPool(WorkerPoolName name)
+ *           <li><p> getWorkerPool(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkerPoolCallable()
+ *           <li><p> getWorkerPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkerPool</td>
+ *      <td><p> DeleteWorkerPool</td>
  *      <td><p> Deletes a `WorkerPool`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkerPoolAsync(DeleteWorkerPoolRequest request)
+ *           <li><p> deleteWorkerPoolAsync(DeleteWorkerPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteWorkerPoolAsync(WorkerPoolName name)
- *           <li>deleteWorkerPoolAsync(String name)
+ *           <li><p> deleteWorkerPoolAsync(WorkerPoolName name)
+ *           <li><p> deleteWorkerPoolAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkerPoolOperationCallable()
- *           <li>deleteWorkerPoolCallable()
+ *           <li><p> deleteWorkerPoolOperationCallable()
+ *           <li><p> deleteWorkerPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkerPool</td>
+ *      <td><p> UpdateWorkerPool</td>
  *      <td><p> Updates a `WorkerPool`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkerPoolAsync(UpdateWorkerPoolRequest request)
+ *           <li><p> updateWorkerPoolAsync(UpdateWorkerPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateWorkerPoolAsync(WorkerPool workerPool, FieldMask updateMask)
+ *           <li><p> updateWorkerPoolAsync(WorkerPool workerPool, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkerPoolOperationCallable()
- *           <li>updateWorkerPoolCallable()
+ *           <li><p> updateWorkerPoolOperationCallable()
+ *           <li><p> updateWorkerPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkerPools</td>
+ *      <td><p> ListWorkerPools</td>
  *      <td><p> Lists `WorkerPool`s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkerPools(ListWorkerPoolsRequest request)
+ *           <li><p> listWorkerPools(ListWorkerPoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkerPools(LocationName parent)
- *           <li>listWorkerPools(String parent)
+ *           <li><p> listWorkerPools(LocationName parent)
+ *           <li><p> listWorkerPools(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkerPoolsPagedCallable()
- *           <li>listWorkerPoolsCallable()
+ *           <li><p> listWorkerPoolsPagedCallable()
+ *           <li><p> listWorkerPoolsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -63,182 +63,183 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateConnection</td>
+ *      <td><p> CreateConnection</td>
  *      <td><p> Creates a new connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConnection(ConnectionProto.CreateConnectionRequest request)
+ *           <li><p> createConnection(ConnectionProto.CreateConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createConnection(LocationName parent, ConnectionProto.Connection connection, String connectionId)
- *           <li>createConnection(String parent, ConnectionProto.Connection connection, String connectionId)
+ *           <li><p> createConnection(LocationName parent, ConnectionProto.Connection connection, String connectionId)
+ *           <li><p> createConnection(String parent, ConnectionProto.Connection connection, String connectionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConnectionCallable()
+ *           <li><p> createConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConnection</td>
+ *      <td><p> GetConnection</td>
  *      <td><p> Returns specified connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConnection(ConnectionProto.GetConnectionRequest request)
+ *           <li><p> getConnection(ConnectionProto.GetConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConnection(ConnectionName name)
- *           <li>getConnection(String name)
+ *           <li><p> getConnection(ConnectionName name)
+ *           <li><p> getConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConnectionCallable()
+ *           <li><p> getConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConnections</td>
+ *      <td><p> ListConnections</td>
  *      <td><p> Returns a list of connections in the given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConnections(ConnectionProto.ListConnectionsRequest request)
+ *           <li><p> listConnections(ConnectionProto.ListConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConnections(LocationName parent, UInt32Value maxResults)
- *           <li>listConnections(String parent, UInt32Value maxResults)
+ *           <li><p> listConnections(LocationName parent, UInt32Value maxResults)
+ *           <li><p> listConnections(String parent, UInt32Value maxResults)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConnectionsCallable()
+ *           <li><p> listConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConnection</td>
+ *      <td><p> UpdateConnection</td>
  *      <td><p> Updates the specified connection. For security reasons, also resets credential if connection properties are in the update field mask.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConnection(ConnectionProto.UpdateConnectionRequest request)
+ *           <li><p> updateConnection(ConnectionProto.UpdateConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateConnection(ConnectionName name, ConnectionProto.Connection connection, FieldMask updateMask)
- *           <li>updateConnection(String name, ConnectionProto.Connection connection, FieldMask updateMask)
+ *           <li><p> updateConnection(ConnectionName name, ConnectionProto.Connection connection, FieldMask updateMask)
+ *           <li><p> updateConnection(String name, ConnectionProto.Connection connection, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConnectionCallable()
+ *           <li><p> updateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConnectionCredential</td>
+ *      <td><p> UpdateConnectionCredential</td>
  *      <td><p> Sets the credential for the specified connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConnectionCredential(ConnectionProto.UpdateConnectionCredentialRequest request)
+ *           <li><p> updateConnectionCredential(ConnectionProto.UpdateConnectionCredentialRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateConnectionCredential(String name, ConnectionProto.ConnectionCredential credential)
+ *           <li><p> updateConnectionCredential(String name, ConnectionProto.ConnectionCredential credential)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConnectionCredentialCallable()
+ *           <li><p> updateConnectionCredentialCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConnection</td>
+ *      <td><p> DeleteConnection</td>
  *      <td><p> Deletes connection and associated credential.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConnection(ConnectionProto.DeleteConnectionRequest request)
+ *           <li><p> deleteConnection(ConnectionProto.DeleteConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteConnection(ConnectionName name)
- *           <li>deleteConnection(String name)
+ *           <li><p> deleteConnection(ConnectionName name)
+ *           <li><p> deleteConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConnectionCallable()
+ *           <li><p> deleteConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource, GetPolicyOptions options)
- *           <li>getIamPolicy(String resource, GetPolicyOptions options)
+ *           <li><p> getIamPolicy(ResourceName resource, GetPolicyOptions options)
+ *           <li><p> getIamPolicy(String resource, GetPolicyOptions options)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.
  * <p>  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
  * <p>  Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(ResourceName resource, List<String> permissions)
- *           <li>testIamPermissions(String resource, List<String> permissions)
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

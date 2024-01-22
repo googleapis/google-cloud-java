@@ -60,145 +60,146 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateMigrationWorkflow</td>
+ *      <td><p> CreateMigrationWorkflow</td>
  *      <td><p> Creates a migration workflow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMigrationWorkflow(CreateMigrationWorkflowRequest request)
+ *           <li><p> createMigrationWorkflow(CreateMigrationWorkflowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createMigrationWorkflow(LocationName parent, MigrationWorkflow migrationWorkflow)
- *           <li>createMigrationWorkflow(String parent, MigrationWorkflow migrationWorkflow)
+ *           <li><p> createMigrationWorkflow(LocationName parent, MigrationWorkflow migrationWorkflow)
+ *           <li><p> createMigrationWorkflow(String parent, MigrationWorkflow migrationWorkflow)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMigrationWorkflowCallable()
+ *           <li><p> createMigrationWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMigrationWorkflow</td>
+ *      <td><p> GetMigrationWorkflow</td>
  *      <td><p> Gets a previously created migration workflow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMigrationWorkflow(GetMigrationWorkflowRequest request)
+ *           <li><p> getMigrationWorkflow(GetMigrationWorkflowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMigrationWorkflow(MigrationWorkflowName name)
- *           <li>getMigrationWorkflow(String name)
+ *           <li><p> getMigrationWorkflow(MigrationWorkflowName name)
+ *           <li><p> getMigrationWorkflow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMigrationWorkflowCallable()
+ *           <li><p> getMigrationWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMigrationWorkflows</td>
+ *      <td><p> ListMigrationWorkflows</td>
  *      <td><p> Lists previously created migration workflow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMigrationWorkflows(ListMigrationWorkflowsRequest request)
+ *           <li><p> listMigrationWorkflows(ListMigrationWorkflowsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMigrationWorkflows(LocationName parent)
- *           <li>listMigrationWorkflows(String parent)
+ *           <li><p> listMigrationWorkflows(LocationName parent)
+ *           <li><p> listMigrationWorkflows(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMigrationWorkflowsPagedCallable()
- *           <li>listMigrationWorkflowsCallable()
+ *           <li><p> listMigrationWorkflowsPagedCallable()
+ *           <li><p> listMigrationWorkflowsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteMigrationWorkflow</td>
+ *      <td><p> DeleteMigrationWorkflow</td>
  *      <td><p> Deletes a migration workflow by name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteMigrationWorkflow(DeleteMigrationWorkflowRequest request)
+ *           <li><p> deleteMigrationWorkflow(DeleteMigrationWorkflowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteMigrationWorkflow(MigrationWorkflowName name)
- *           <li>deleteMigrationWorkflow(String name)
+ *           <li><p> deleteMigrationWorkflow(MigrationWorkflowName name)
+ *           <li><p> deleteMigrationWorkflow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteMigrationWorkflowCallable()
+ *           <li><p> deleteMigrationWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartMigrationWorkflow</td>
+ *      <td><p> StartMigrationWorkflow</td>
  *      <td><p> Starts a previously created migration workflow. I.e., the state transitions from DRAFT to RUNNING. This is a no-op if the state is already RUNNING. An error will be signaled if the state is anything other than DRAFT or RUNNING.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startMigrationWorkflow(StartMigrationWorkflowRequest request)
+ *           <li><p> startMigrationWorkflow(StartMigrationWorkflowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>startMigrationWorkflow(MigrationWorkflowName name)
- *           <li>startMigrationWorkflow(String name)
+ *           <li><p> startMigrationWorkflow(MigrationWorkflowName name)
+ *           <li><p> startMigrationWorkflow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startMigrationWorkflowCallable()
+ *           <li><p> startMigrationWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMigrationSubtask</td>
+ *      <td><p> GetMigrationSubtask</td>
  *      <td><p> Gets a previously created migration subtask.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMigrationSubtask(GetMigrationSubtaskRequest request)
+ *           <li><p> getMigrationSubtask(GetMigrationSubtaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMigrationSubtask(MigrationSubtaskName name)
- *           <li>getMigrationSubtask(String name)
+ *           <li><p> getMigrationSubtask(MigrationSubtaskName name)
+ *           <li><p> getMigrationSubtask(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMigrationSubtaskCallable()
+ *           <li><p> getMigrationSubtaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMigrationSubtasks</td>
+ *      <td><p> ListMigrationSubtasks</td>
  *      <td><p> Lists previously created migration subtasks.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMigrationSubtasks(ListMigrationSubtasksRequest request)
+ *           <li><p> listMigrationSubtasks(ListMigrationSubtasksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMigrationSubtasks(MigrationWorkflowName parent)
- *           <li>listMigrationSubtasks(String parent)
+ *           <li><p> listMigrationSubtasks(MigrationWorkflowName parent)
+ *           <li><p> listMigrationSubtasks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMigrationSubtasksPagedCallable()
- *           <li>listMigrationSubtasksCallable()
+ *           <li><p> listMigrationSubtasksPagedCallable()
+ *           <li><p> listMigrationSubtasksCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -73,246 +73,248 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateReservation</td>
+ *      <td><p> CreateReservation</td>
  *      <td><p> Creates a new reservation resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createReservation(CreateReservationRequest request)
+ *           <li><p> createReservation(CreateReservationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createReservation(LocationName parent, Reservation reservation, String reservationId)
- *           <li>createReservation(String parent, Reservation reservation, String reservationId)
+ *           <li><p> createReservation(LocationName parent, Reservation reservation, String reservationId)
+ *           <li><p> createReservation(String parent, Reservation reservation, String reservationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createReservationCallable()
+ *           <li><p> createReservationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListReservations</td>
+ *      <td><p> ListReservations</td>
  *      <td><p> Lists all the reservations for the project in the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listReservations(ListReservationsRequest request)
+ *           <li><p> listReservations(ListReservationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listReservations(LocationName parent)
- *           <li>listReservations(String parent)
+ *           <li><p> listReservations(LocationName parent)
+ *           <li><p> listReservations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listReservationsPagedCallable()
- *           <li>listReservationsCallable()
+ *           <li><p> listReservationsPagedCallable()
+ *           <li><p> listReservationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetReservation</td>
+ *      <td><p> GetReservation</td>
  *      <td><p> Returns information about the reservation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getReservation(GetReservationRequest request)
+ *           <li><p> getReservation(GetReservationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getReservation(ReservationName name)
- *           <li>getReservation(String name)
+ *           <li><p> getReservation(ReservationName name)
+ *           <li><p> getReservation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getReservationCallable()
+ *           <li><p> getReservationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteReservation</td>
+ *      <td><p> DeleteReservation</td>
  *      <td><p> Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has assignments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteReservation(DeleteReservationRequest request)
+ *           <li><p> deleteReservation(DeleteReservationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteReservation(ReservationName name)
- *           <li>deleteReservation(String name)
+ *           <li><p> deleteReservation(ReservationName name)
+ *           <li><p> deleteReservation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteReservationCallable()
+ *           <li><p> deleteReservationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateReservation</td>
+ *      <td><p> UpdateReservation</td>
  *      <td><p> Updates an existing reservation resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateReservation(UpdateReservationRequest request)
+ *           <li><p> updateReservation(UpdateReservationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateReservation(Reservation reservation, FieldMask updateMask)
+ *           <li><p> updateReservation(Reservation reservation, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateReservationCallable()
+ *           <li><p> updateReservationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCapacityCommitment</td>
+ *      <td><p> CreateCapacityCommitment</td>
  *      <td><p> Creates a new capacity commitment resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCapacityCommitment(CreateCapacityCommitmentRequest request)
+ *           <li><p> createCapacityCommitment(CreateCapacityCommitmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCapacityCommitment(LocationName parent, CapacityCommitment capacityCommitment)
- *           <li>createCapacityCommitment(String parent, CapacityCommitment capacityCommitment)
+ *           <li><p> createCapacityCommitment(LocationName parent, CapacityCommitment capacityCommitment)
+ *           <li><p> createCapacityCommitment(String parent, CapacityCommitment capacityCommitment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCapacityCommitmentCallable()
+ *           <li><p> createCapacityCommitmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCapacityCommitments</td>
+ *      <td><p> ListCapacityCommitments</td>
  *      <td><p> Lists all the capacity commitments for the admin project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCapacityCommitments(ListCapacityCommitmentsRequest request)
+ *           <li><p> listCapacityCommitments(ListCapacityCommitmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCapacityCommitments(LocationName parent)
- *           <li>listCapacityCommitments(String parent)
+ *           <li><p> listCapacityCommitments(LocationName parent)
+ *           <li><p> listCapacityCommitments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCapacityCommitmentsPagedCallable()
- *           <li>listCapacityCommitmentsCallable()
+ *           <li><p> listCapacityCommitmentsPagedCallable()
+ *           <li><p> listCapacityCommitmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCapacityCommitment</td>
+ *      <td><p> GetCapacityCommitment</td>
  *      <td><p> Returns information about the capacity commitment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCapacityCommitment(GetCapacityCommitmentRequest request)
+ *           <li><p> getCapacityCommitment(GetCapacityCommitmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCapacityCommitment(CapacityCommitmentName name)
- *           <li>getCapacityCommitment(String name)
+ *           <li><p> getCapacityCommitment(CapacityCommitmentName name)
+ *           <li><p> getCapacityCommitment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCapacityCommitmentCallable()
+ *           <li><p> getCapacityCommitmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCapacityCommitment</td>
+ *      <td><p> DeleteCapacityCommitment</td>
  *      <td><p> Deletes a capacity commitment. Attempting to delete capacity commitment before its commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCapacityCommitment(DeleteCapacityCommitmentRequest request)
+ *           <li><p> deleteCapacityCommitment(DeleteCapacityCommitmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCapacityCommitment(CapacityCommitmentName name)
- *           <li>deleteCapacityCommitment(String name)
+ *           <li><p> deleteCapacityCommitment(CapacityCommitmentName name)
+ *           <li><p> deleteCapacityCommitment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCapacityCommitmentCallable()
+ *           <li><p> deleteCapacityCommitmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCapacityCommitment</td>
+ *      <td><p> UpdateCapacityCommitment</td>
  *      <td><p> Updates an existing capacity commitment.
  * <p>  Only `plan` and `renewal_plan` fields can be updated.
  * <p>  Plan can only be changed to a plan of a longer commitment period. Attempting to change to a plan with shorter commitment period will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCapacityCommitment(UpdateCapacityCommitmentRequest request)
+ *           <li><p> updateCapacityCommitment(UpdateCapacityCommitmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCapacityCommitment(CapacityCommitment capacityCommitment, FieldMask updateMask)
+ *           <li><p> updateCapacityCommitment(CapacityCommitment capacityCommitment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCapacityCommitmentCallable()
+ *           <li><p> updateCapacityCommitmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SplitCapacityCommitment</td>
+ *      <td><p> SplitCapacityCommitment</td>
  *      <td><p> Splits capacity commitment to two commitments of the same plan and `commitment_end_time`.
  * <p>  A common use case is to enable downgrading commitments.
  * <p>  For example, in order to downgrade from 10000 slots to 8000, you might split a 10000 capacity commitment into commitments of 2000 and 8000. Then, you delete the first one after the commitment end time passes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>splitCapacityCommitment(SplitCapacityCommitmentRequest request)
+ *           <li><p> splitCapacityCommitment(SplitCapacityCommitmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>splitCapacityCommitment(CapacityCommitmentName name, long slotCount)
- *           <li>splitCapacityCommitment(String name, long slotCount)
+ *           <li><p> splitCapacityCommitment(CapacityCommitmentName name, long slotCount)
+ *           <li><p> splitCapacityCommitment(String name, long slotCount)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>splitCapacityCommitmentCallable()
+ *           <li><p> splitCapacityCommitmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MergeCapacityCommitments</td>
+ *      <td><p> MergeCapacityCommitments</td>
  *      <td><p> Merges capacity commitments of the same plan into a single commitment.
  * <p>  The resulting capacity commitment has the greater commitment_end_time out of the to-be-merged capacity commitments.
  * <p>  Attempting to merge capacity commitments of different plan will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>mergeCapacityCommitments(MergeCapacityCommitmentsRequest request)
+ *           <li><p> mergeCapacityCommitments(MergeCapacityCommitmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>mergeCapacityCommitments(LocationName parent, List<String> capacityCommitmentIds)
- *           <li>mergeCapacityCommitments(String parent, List<String> capacityCommitmentIds)
+ *           <li><p> mergeCapacityCommitments(LocationName parent, List&lt;String&gt; capacityCommitmentIds)
+ *           <li><p> mergeCapacityCommitments(String parent, List&lt;String&gt; capacityCommitmentIds)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>mergeCapacityCommitmentsCallable()
+ *           <li><p> mergeCapacityCommitmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAssignment</td>
+ *      <td><p> CreateAssignment</td>
  *      <td><p> Creates an assignment object which allows the given project to submit jobs of a certain type using slots from the specified reservation.
  * <p>  Currently a resource (project, folder, organization) can only have one assignment per each (job_type, location) combination, and that reservation will be used for all jobs of the matching type.
  * <p>  Different assignments can be created on different levels of the projects, folders or organization hierarchy.  During query execution, the assignment is looked up at the project, folder and organization levels in that order. The first assignment found is applied to the query.
@@ -328,21 +330,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAssignment(CreateAssignmentRequest request)
+ *           <li><p> createAssignment(CreateAssignmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAssignment(ReservationName parent, Assignment assignment)
- *           <li>createAssignment(String parent, Assignment assignment)
+ *           <li><p> createAssignment(ReservationName parent, Assignment assignment)
+ *           <li><p> createAssignment(String parent, Assignment assignment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAssignmentCallable()
+ *           <li><p> createAssignmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAssignments</td>
+ *      <td><p> ListAssignments</td>
  *      <td><p> Lists assignments.
  * <p>  Only explicitly created assignments will be returned.
  * <p>  Example:
@@ -357,22 +359,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAssignments(ListAssignmentsRequest request)
+ *           <li><p> listAssignments(ListAssignmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAssignments(ReservationName parent)
- *           <li>listAssignments(String parent)
+ *           <li><p> listAssignments(ReservationName parent)
+ *           <li><p> listAssignments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAssignmentsPagedCallable()
- *           <li>listAssignmentsCallable()
+ *           <li><p> listAssignmentsPagedCallable()
+ *           <li><p> listAssignmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAssignment</td>
+ *      <td><p> DeleteAssignment</td>
  *      <td><p> Deletes a assignment. No expansion will happen.
  * <p>  Example:
  * <ul>
@@ -384,21 +386,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAssignment(DeleteAssignmentRequest request)
+ *           <li><p> deleteAssignment(DeleteAssignmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAssignment(AssignmentName name)
- *           <li>deleteAssignment(String name)
+ *           <li><p> deleteAssignment(AssignmentName name)
+ *           <li><p> deleteAssignment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAssignmentCallable()
+ *           <li><p> deleteAssignmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchAssignments</td>
+ *      <td><p> SearchAssignments</td>
  *      <td><p> Deprecated: Looks up assignments for a specified resource for a particular region. If the request is about a project:
  * <p>  1. Assignments created on the project will be returned if they exist. 2. Otherwise assignments created on the closest ancestor will be    returned. 3. Assignments for different JobTypes will all be returned.
  * <p>  The same logic applies if the request is about a folder.
@@ -409,22 +411,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchAssignments(SearchAssignmentsRequest request)
+ *           <li><p> searchAssignments(SearchAssignmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchAssignments(LocationName parent, String query)
- *           <li>searchAssignments(String parent, String query)
+ *           <li><p> searchAssignments(LocationName parent, String query)
+ *           <li><p> searchAssignments(String parent, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchAssignmentsPagedCallable()
- *           <li>searchAssignmentsCallable()
+ *           <li><p> searchAssignmentsPagedCallable()
+ *           <li><p> searchAssignmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchAllAssignments</td>
+ *      <td><p> SearchAllAssignments</td>
  *      <td><p> Looks up assignments for a specified resource for a particular region. If the request is about a project:
  * <p>  1. Assignments created on the project will be returned if they exist. 2. Otherwise assignments created on the closest ancestor will be    returned. 3. Assignments for different JobTypes will all be returned.
  * <p>  The same logic applies if the request is about a folder.
@@ -434,100 +436,99 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchAllAssignments(SearchAllAssignmentsRequest request)
+ *           <li><p> searchAllAssignments(SearchAllAssignmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchAllAssignments(LocationName parent, String query)
- *           <li>searchAllAssignments(String parent, String query)
+ *           <li><p> searchAllAssignments(LocationName parent, String query)
+ *           <li><p> searchAllAssignments(String parent, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchAllAssignmentsPagedCallable()
- *           <li>searchAllAssignmentsCallable()
+ *           <li><p> searchAllAssignmentsPagedCallable()
+ *           <li><p> searchAllAssignmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MoveAssignment</td>
+ *      <td><p> MoveAssignment</td>
  *      <td><p> Moves an assignment under a new reservation.
  * <p>  This differs from removing an existing assignment and recreating a new one by providing a transactional change that ensures an assignee always has an associated reservation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>moveAssignment(MoveAssignmentRequest request)
+ *           <li><p> moveAssignment(MoveAssignmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>moveAssignment(AssignmentName name, ReservationName destinationId)
- *           <li>moveAssignment(AssignmentName name, String destinationId)
- *           <li>moveAssignment(String name, ReservationName destinationId)
- *           <li>moveAssignment(String name, String destinationId)
+ *           <li><p> moveAssignment(AssignmentName name, ReservationName destinationId)
+ *           <li><p> moveAssignment(AssignmentName name, String destinationId)
+ *           <li><p> moveAssignment(String name, ReservationName destinationId)
+ *           <li><p> moveAssignment(String name, String destinationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>moveAssignmentCallable()
+ *           <li><p> moveAssignmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAssignment</td>
+ *      <td><p> UpdateAssignment</td>
  *      <td><p> Updates an existing assignment.
  * <p>  Only the `priority` field can be updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAssignment(UpdateAssignmentRequest request)
+ *           <li><p> updateAssignment(UpdateAssignmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAssignment(Assignment assignment, FieldMask updateMask)
+ *           <li><p> updateAssignment(Assignment assignment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAssignmentCallable()
+ *           <li><p> updateAssignmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBiReservation</td>
+ *      <td><p> GetBiReservation</td>
  *      <td><p> Retrieves a BI reservation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBiReservation(GetBiReservationRequest request)
+ *           <li><p> getBiReservation(GetBiReservationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBiReservation(BiReservationName name)
- *           <li>getBiReservation(String name)
+ *           <li><p> getBiReservation(BiReservationName name)
+ *           <li><p> getBiReservation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBiReservationCallable()
+ *           <li><p> getBiReservationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateBiReservation</td>
+ *      <td><p> UpdateBiReservation</td>
  *      <td><p> Updates a BI reservation.
  * <p>  Only fields specified in the `field_mask` are updated.
  * <p>  A singleton BI reservation always exists with default size 0. In order to reserve BI capacity it needs to be updated to an amount greater than 0. In order to release BI capacity reservation size must be set to 0.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateBiReservation(UpdateBiReservationRequest request)
+ *           <li><p> updateBiReservation(UpdateBiReservationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateBiReservation(BiReservation biReservation, FieldMask updateMask)
+ *           <li><p> updateBiReservation(BiReservation biReservation, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateBiReservationCallable()
+ *           <li><p> updateBiReservationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -62,84 +62,85 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateBudget</td>
+ *      <td><p> CreateBudget</td>
  *      <td><p> Creates a new budget. See [Quotas and limits](https://cloud.google.com/billing/quotas) for more information on the limits of the number of budgets you can create.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createBudget(CreateBudgetRequest request)
+ *           <li><p> createBudget(CreateBudgetRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createBudgetCallable()
+ *           <li><p> createBudgetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateBudget</td>
+ *      <td><p> UpdateBudget</td>
  *      <td><p> Updates a budget and returns the updated budget.
  * <p>  WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. Budget fields that are not exposed in this API will not be changed by this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateBudget(UpdateBudgetRequest request)
+ *           <li><p> updateBudget(UpdateBudgetRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateBudgetCallable()
+ *           <li><p> updateBudgetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBudget</td>
+ *      <td><p> GetBudget</td>
  *      <td><p> Returns a budget.
  * <p>  WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBudget(GetBudgetRequest request)
+ *           <li><p> getBudget(GetBudgetRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBudgetCallable()
+ *           <li><p> getBudgetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBudgets</td>
+ *      <td><p> ListBudgets</td>
  *      <td><p> Returns a list of budgets for a billing account.
  * <p>  WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBudgets(ListBudgetsRequest request)
+ *           <li><p> listBudgets(ListBudgetsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBudgetsPagedCallable()
- *           <li>listBudgetsCallable()
+ *           <li><p> listBudgetsPagedCallable()
+ *           <li><p> listBudgetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteBudget</td>
+ *      <td><p> DeleteBudget</td>
  *      <td><p> Deletes a budget. Returns successfully if already deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteBudget(DeleteBudgetRequest request)
+ *           <li><p> deleteBudget(DeleteBudgetRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteBudgetCallable()
+ *           <li><p> deleteBudgetCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
