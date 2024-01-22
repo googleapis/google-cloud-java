@@ -1,0 +1,17 @@
+{
+  "api_shortname": "servicehealth",
+  "name_pretty": "Service Health API",
+  "product_documentation": "https://cloud.google.com/service-health/docs/overview",
+  "api_description": "Personalized Service Health helps you gain visibility into disruptive events impacting Google Cloud products.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-servicehealth/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/java-servicehealth",
+  "repo_short": "java-servicehealth",
+  "distribution_name": "com.google.cloud:google-cloud-servicehealth",
+  "api_id": "servicehealth.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rpc_documentation": "https://cloud.google.com/service-health/docs/reference/rpc"
+}
