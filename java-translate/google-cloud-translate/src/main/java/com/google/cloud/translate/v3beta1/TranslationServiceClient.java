@@ -71,192 +71,193 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>TranslateText</td>
+ *      <td><p> TranslateText</td>
  *      <td><p> Translates input text and returns translated text.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>translateText(TranslateTextRequest request)
+ *           <li><p> translateText(TranslateTextRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>translateTextCallable()
+ *           <li><p> translateTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DetectLanguage</td>
+ *      <td><p> DetectLanguage</td>
  *      <td><p> Detects the language of text within a request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>detectLanguage(DetectLanguageRequest request)
+ *           <li><p> detectLanguage(DetectLanguageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>detectLanguage(LocationName parent, String model, String mimeType)
- *           <li>detectLanguage(String parent, String model, String mimeType)
+ *           <li><p> detectLanguage(LocationName parent, String model, String mimeType)
+ *           <li><p> detectLanguage(String parent, String model, String mimeType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>detectLanguageCallable()
+ *           <li><p> detectLanguageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSupportedLanguages</td>
+ *      <td><p> GetSupportedLanguages</td>
  *      <td><p> Returns a list of supported languages for translation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSupportedLanguages(GetSupportedLanguagesRequest request)
+ *           <li><p> getSupportedLanguages(GetSupportedLanguagesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSupportedLanguages(LocationName parent, String displayLanguageCode, String model)
- *           <li>getSupportedLanguages(String parent, String displayLanguageCode, String model)
+ *           <li><p> getSupportedLanguages(LocationName parent, String displayLanguageCode, String model)
+ *           <li><p> getSupportedLanguages(String parent, String displayLanguageCode, String model)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSupportedLanguagesCallable()
+ *           <li><p> getSupportedLanguagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TranslateDocument</td>
+ *      <td><p> TranslateDocument</td>
  *      <td><p> Translates documents in synchronous mode.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>translateDocument(TranslateDocumentRequest request)
+ *           <li><p> translateDocument(TranslateDocumentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>translateDocumentCallable()
+ *           <li><p> translateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchTranslateText</td>
+ *      <td><p> BatchTranslateText</td>
  *      <td><p> Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location.
  * <p>  This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchTranslateTextAsync(BatchTranslateTextRequest request)
+ *           <li><p> batchTranslateTextAsync(BatchTranslateTextRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchTranslateTextOperationCallable()
- *           <li>batchTranslateTextCallable()
+ *           <li><p> batchTranslateTextOperationCallable()
+ *           <li><p> batchTranslateTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchTranslateDocument</td>
+ *      <td><p> BatchTranslateDocument</td>
  *      <td><p> Translates a large volume of document in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location.
  * <p>  This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchTranslateDocumentAsync(BatchTranslateDocumentRequest request)
+ *           <li><p> batchTranslateDocumentAsync(BatchTranslateDocumentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchTranslateDocumentAsync(LocationName parent, String sourceLanguageCode, List<String> targetLanguageCodes, List<BatchDocumentInputConfig> inputConfigs, BatchDocumentOutputConfig outputConfig)
- *           <li>batchTranslateDocumentAsync(String parent, String sourceLanguageCode, List<String> targetLanguageCodes, List<BatchDocumentInputConfig> inputConfigs, BatchDocumentOutputConfig outputConfig)
+ *           <li><p> batchTranslateDocumentAsync(LocationName parent, String sourceLanguageCode, List&lt;String&gt; targetLanguageCodes, List&lt;BatchDocumentInputConfig&gt; inputConfigs, BatchDocumentOutputConfig outputConfig)
+ *           <li><p> batchTranslateDocumentAsync(String parent, String sourceLanguageCode, List&lt;String&gt; targetLanguageCodes, List&lt;BatchDocumentInputConfig&gt; inputConfigs, BatchDocumentOutputConfig outputConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchTranslateDocumentOperationCallable()
- *           <li>batchTranslateDocumentCallable()
+ *           <li><p> batchTranslateDocumentOperationCallable()
+ *           <li><p> batchTranslateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateGlossary</td>
+ *      <td><p> CreateGlossary</td>
  *      <td><p> Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createGlossaryAsync(CreateGlossaryRequest request)
+ *           <li><p> createGlossaryAsync(CreateGlossaryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createGlossaryAsync(LocationName parent, Glossary glossary)
- *           <li>createGlossaryAsync(String parent, Glossary glossary)
+ *           <li><p> createGlossaryAsync(LocationName parent, Glossary glossary)
+ *           <li><p> createGlossaryAsync(String parent, Glossary glossary)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createGlossaryOperationCallable()
- *           <li>createGlossaryCallable()
+ *           <li><p> createGlossaryOperationCallable()
+ *           <li><p> createGlossaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListGlossaries</td>
+ *      <td><p> ListGlossaries</td>
  *      <td><p> Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGlossaries(ListGlossariesRequest request)
+ *           <li><p> listGlossaries(ListGlossariesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGlossaries(LocationName parent, String filter)
- *           <li>listGlossaries(String parent, String filter)
+ *           <li><p> listGlossaries(LocationName parent, String filter)
+ *           <li><p> listGlossaries(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGlossariesPagedCallable()
- *           <li>listGlossariesCallable()
+ *           <li><p> listGlossariesPagedCallable()
+ *           <li><p> listGlossariesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGlossary</td>
+ *      <td><p> GetGlossary</td>
  *      <td><p> Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGlossary(GetGlossaryRequest request)
+ *           <li><p> getGlossary(GetGlossaryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGlossary(GlossaryName name)
- *           <li>getGlossary(String name)
+ *           <li><p> getGlossary(GlossaryName name)
+ *           <li><p> getGlossary(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGlossaryCallable()
+ *           <li><p> getGlossaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteGlossary</td>
+ *      <td><p> DeleteGlossary</td>
  *      <td><p> Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns NOT_FOUND, if the glossary doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteGlossaryAsync(DeleteGlossaryRequest request)
+ *           <li><p> deleteGlossaryAsync(DeleteGlossaryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteGlossaryAsync(GlossaryName name)
- *           <li>deleteGlossaryAsync(String name)
+ *           <li><p> deleteGlossaryAsync(GlossaryName name)
+ *           <li><p> deleteGlossaryAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteGlossaryOperationCallable()
- *           <li>deleteGlossaryCallable()
+ *           <li><p> deleteGlossaryOperationCallable()
+ *           <li><p> deleteGlossaryCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

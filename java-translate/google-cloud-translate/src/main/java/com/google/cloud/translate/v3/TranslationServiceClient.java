@@ -65,392 +65,393 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>TranslateText</td>
+ *      <td><p> TranslateText</td>
  *      <td><p> Translates input text and returns translated text.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>translateText(TranslateTextRequest request)
+ *           <li><p> translateText(TranslateTextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>translateText(LocationName parent, String targetLanguageCode, List<String> contents)
- *           <li>translateText(String parent, String targetLanguageCode, List<String> contents)
- *           <li>translateText(LocationName parent, String model, String mimeType, String sourceLanguageCode, String targetLanguageCode, List<String> contents)
- *           <li>translateText(String parent, String model, String mimeType, String sourceLanguageCode, String targetLanguageCode, List<String> contents)
+ *           <li><p> translateText(LocationName parent, String targetLanguageCode, List&lt;String&gt; contents)
+ *           <li><p> translateText(String parent, String targetLanguageCode, List&lt;String&gt; contents)
+ *           <li><p> translateText(LocationName parent, String model, String mimeType, String sourceLanguageCode, String targetLanguageCode, List&lt;String&gt; contents)
+ *           <li><p> translateText(String parent, String model, String mimeType, String sourceLanguageCode, String targetLanguageCode, List&lt;String&gt; contents)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>translateTextCallable()
+ *           <li><p> translateTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DetectLanguage</td>
+ *      <td><p> DetectLanguage</td>
  *      <td><p> Detects the language of text within a request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>detectLanguage(DetectLanguageRequest request)
+ *           <li><p> detectLanguage(DetectLanguageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>detectLanguage(LocationName parent, String model, String mimeType, String content)
- *           <li>detectLanguage(String parent, String model, String mimeType, String content)
+ *           <li><p> detectLanguage(LocationName parent, String model, String mimeType, String content)
+ *           <li><p> detectLanguage(String parent, String model, String mimeType, String content)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>detectLanguageCallable()
+ *           <li><p> detectLanguageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSupportedLanguages</td>
+ *      <td><p> GetSupportedLanguages</td>
  *      <td><p> Returns a list of supported languages for translation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSupportedLanguages(GetSupportedLanguagesRequest request)
+ *           <li><p> getSupportedLanguages(GetSupportedLanguagesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSupportedLanguages(LocationName parent, String model, String displayLanguageCode)
- *           <li>getSupportedLanguages(String parent, String model, String displayLanguageCode)
+ *           <li><p> getSupportedLanguages(LocationName parent, String model, String displayLanguageCode)
+ *           <li><p> getSupportedLanguages(String parent, String model, String displayLanguageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSupportedLanguagesCallable()
+ *           <li><p> getSupportedLanguagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TranslateDocument</td>
+ *      <td><p> TranslateDocument</td>
  *      <td><p> Translates documents in synchronous mode.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>translateDocument(TranslateDocumentRequest request)
+ *           <li><p> translateDocument(TranslateDocumentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>translateDocumentCallable()
+ *           <li><p> translateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchTranslateText</td>
+ *      <td><p> BatchTranslateText</td>
  *      <td><p> Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location.
  * <p>  This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchTranslateTextAsync(BatchTranslateTextRequest request)
+ *           <li><p> batchTranslateTextAsync(BatchTranslateTextRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchTranslateTextOperationCallable()
- *           <li>batchTranslateTextCallable()
+ *           <li><p> batchTranslateTextOperationCallable()
+ *           <li><p> batchTranslateTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchTranslateDocument</td>
+ *      <td><p> BatchTranslateDocument</td>
  *      <td><p> Translates a large volume of document in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location.
  * <p>  This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchTranslateDocumentAsync(BatchTranslateDocumentRequest request)
+ *           <li><p> batchTranslateDocumentAsync(BatchTranslateDocumentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchTranslateDocumentAsync(LocationName parent, String sourceLanguageCode, List<String> targetLanguageCodes, List<BatchDocumentInputConfig> inputConfigs, BatchDocumentOutputConfig outputConfig)
- *           <li>batchTranslateDocumentAsync(String parent, String sourceLanguageCode, List<String> targetLanguageCodes, List<BatchDocumentInputConfig> inputConfigs, BatchDocumentOutputConfig outputConfig)
+ *           <li><p> batchTranslateDocumentAsync(LocationName parent, String sourceLanguageCode, List&lt;String&gt; targetLanguageCodes, List&lt;BatchDocumentInputConfig&gt; inputConfigs, BatchDocumentOutputConfig outputConfig)
+ *           <li><p> batchTranslateDocumentAsync(String parent, String sourceLanguageCode, List&lt;String&gt; targetLanguageCodes, List&lt;BatchDocumentInputConfig&gt; inputConfigs, BatchDocumentOutputConfig outputConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchTranslateDocumentOperationCallable()
- *           <li>batchTranslateDocumentCallable()
+ *           <li><p> batchTranslateDocumentOperationCallable()
+ *           <li><p> batchTranslateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateGlossary</td>
+ *      <td><p> CreateGlossary</td>
  *      <td><p> Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createGlossaryAsync(CreateGlossaryRequest request)
+ *           <li><p> createGlossaryAsync(CreateGlossaryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createGlossaryAsync(LocationName parent, Glossary glossary)
- *           <li>createGlossaryAsync(String parent, Glossary glossary)
+ *           <li><p> createGlossaryAsync(LocationName parent, Glossary glossary)
+ *           <li><p> createGlossaryAsync(String parent, Glossary glossary)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createGlossaryOperationCallable()
- *           <li>createGlossaryCallable()
+ *           <li><p> createGlossaryOperationCallable()
+ *           <li><p> createGlossaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListGlossaries</td>
+ *      <td><p> ListGlossaries</td>
  *      <td><p> Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGlossaries(ListGlossariesRequest request)
+ *           <li><p> listGlossaries(ListGlossariesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGlossaries(LocationName parent)
- *           <li>listGlossaries(String parent)
+ *           <li><p> listGlossaries(LocationName parent)
+ *           <li><p> listGlossaries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGlossariesPagedCallable()
- *           <li>listGlossariesCallable()
+ *           <li><p> listGlossariesPagedCallable()
+ *           <li><p> listGlossariesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGlossary</td>
+ *      <td><p> GetGlossary</td>
  *      <td><p> Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGlossary(GetGlossaryRequest request)
+ *           <li><p> getGlossary(GetGlossaryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGlossary(GlossaryName name)
- *           <li>getGlossary(String name)
+ *           <li><p> getGlossary(GlossaryName name)
+ *           <li><p> getGlossary(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGlossaryCallable()
+ *           <li><p> getGlossaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteGlossary</td>
+ *      <td><p> DeleteGlossary</td>
  *      <td><p> Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns NOT_FOUND, if the glossary doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteGlossaryAsync(DeleteGlossaryRequest request)
+ *           <li><p> deleteGlossaryAsync(DeleteGlossaryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteGlossaryAsync(GlossaryName name)
- *           <li>deleteGlossaryAsync(String name)
+ *           <li><p> deleteGlossaryAsync(GlossaryName name)
+ *           <li><p> deleteGlossaryAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteGlossaryOperationCallable()
- *           <li>deleteGlossaryCallable()
+ *           <li><p> deleteGlossaryOperationCallable()
+ *           <li><p> deleteGlossaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAdaptiveMtDataset</td>
+ *      <td><p> CreateAdaptiveMtDataset</td>
  *      <td><p> Creates an Adaptive MT dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAdaptiveMtDataset(CreateAdaptiveMtDatasetRequest request)
+ *           <li><p> createAdaptiveMtDataset(CreateAdaptiveMtDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAdaptiveMtDataset(LocationName parent, AdaptiveMtDataset adaptiveMtDataset)
- *           <li>createAdaptiveMtDataset(String parent, AdaptiveMtDataset adaptiveMtDataset)
+ *           <li><p> createAdaptiveMtDataset(LocationName parent, AdaptiveMtDataset adaptiveMtDataset)
+ *           <li><p> createAdaptiveMtDataset(String parent, AdaptiveMtDataset adaptiveMtDataset)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAdaptiveMtDatasetCallable()
+ *           <li><p> createAdaptiveMtDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAdaptiveMtDataset</td>
+ *      <td><p> DeleteAdaptiveMtDataset</td>
  *      <td><p> Deletes an Adaptive MT dataset, including all its entries and associated metadata.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAdaptiveMtDataset(DeleteAdaptiveMtDatasetRequest request)
+ *           <li><p> deleteAdaptiveMtDataset(DeleteAdaptiveMtDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAdaptiveMtDataset(AdaptiveMtDatasetName name)
- *           <li>deleteAdaptiveMtDataset(String name)
+ *           <li><p> deleteAdaptiveMtDataset(AdaptiveMtDatasetName name)
+ *           <li><p> deleteAdaptiveMtDataset(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAdaptiveMtDatasetCallable()
+ *           <li><p> deleteAdaptiveMtDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAdaptiveMtDataset</td>
+ *      <td><p> GetAdaptiveMtDataset</td>
  *      <td><p> Gets the Adaptive MT dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAdaptiveMtDataset(GetAdaptiveMtDatasetRequest request)
+ *           <li><p> getAdaptiveMtDataset(GetAdaptiveMtDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAdaptiveMtDataset(AdaptiveMtDatasetName name)
- *           <li>getAdaptiveMtDataset(String name)
+ *           <li><p> getAdaptiveMtDataset(AdaptiveMtDatasetName name)
+ *           <li><p> getAdaptiveMtDataset(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAdaptiveMtDatasetCallable()
+ *           <li><p> getAdaptiveMtDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAdaptiveMtDatasets</td>
+ *      <td><p> ListAdaptiveMtDatasets</td>
  *      <td><p> Lists all Adaptive MT datasets for which the caller has read permission.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAdaptiveMtDatasets(ListAdaptiveMtDatasetsRequest request)
+ *           <li><p> listAdaptiveMtDatasets(ListAdaptiveMtDatasetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAdaptiveMtDatasets(LocationName parent)
- *           <li>listAdaptiveMtDatasets(String parent)
+ *           <li><p> listAdaptiveMtDatasets(LocationName parent)
+ *           <li><p> listAdaptiveMtDatasets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAdaptiveMtDatasetsPagedCallable()
- *           <li>listAdaptiveMtDatasetsCallable()
+ *           <li><p> listAdaptiveMtDatasetsPagedCallable()
+ *           <li><p> listAdaptiveMtDatasetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AdaptiveMtTranslate</td>
+ *      <td><p> AdaptiveMtTranslate</td>
  *      <td><p> Translate text using Adaptive MT.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>adaptiveMtTranslate(AdaptiveMtTranslateRequest request)
+ *           <li><p> adaptiveMtTranslate(AdaptiveMtTranslateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>adaptiveMtTranslate(LocationName parent, List<String> content)
- *           <li>adaptiveMtTranslate(String parent, List<String> content)
+ *           <li><p> adaptiveMtTranslate(LocationName parent, List&lt;String&gt; content)
+ *           <li><p> adaptiveMtTranslate(String parent, List&lt;String&gt; content)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>adaptiveMtTranslateCallable()
+ *           <li><p> adaptiveMtTranslateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAdaptiveMtFile</td>
+ *      <td><p> GetAdaptiveMtFile</td>
  *      <td><p> Gets and AdaptiveMtFile</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAdaptiveMtFile(GetAdaptiveMtFileRequest request)
+ *           <li><p> getAdaptiveMtFile(GetAdaptiveMtFileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAdaptiveMtFile(AdaptiveMtFileName name)
- *           <li>getAdaptiveMtFile(String name)
+ *           <li><p> getAdaptiveMtFile(AdaptiveMtFileName name)
+ *           <li><p> getAdaptiveMtFile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAdaptiveMtFileCallable()
+ *           <li><p> getAdaptiveMtFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAdaptiveMtFile</td>
+ *      <td><p> DeleteAdaptiveMtFile</td>
  *      <td><p> Deletes an AdaptiveMtFile along with its sentences.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAdaptiveMtFile(DeleteAdaptiveMtFileRequest request)
+ *           <li><p> deleteAdaptiveMtFile(DeleteAdaptiveMtFileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAdaptiveMtFile(AdaptiveMtFileName name)
- *           <li>deleteAdaptiveMtFile(String name)
+ *           <li><p> deleteAdaptiveMtFile(AdaptiveMtFileName name)
+ *           <li><p> deleteAdaptiveMtFile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAdaptiveMtFileCallable()
+ *           <li><p> deleteAdaptiveMtFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportAdaptiveMtFile</td>
+ *      <td><p> ImportAdaptiveMtFile</td>
  *      <td><p> Imports an AdaptiveMtFile and adds all of its sentences into the AdaptiveMtDataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importAdaptiveMtFile(ImportAdaptiveMtFileRequest request)
+ *           <li><p> importAdaptiveMtFile(ImportAdaptiveMtFileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>importAdaptiveMtFile(AdaptiveMtDatasetName parent)
- *           <li>importAdaptiveMtFile(String parent)
+ *           <li><p> importAdaptiveMtFile(AdaptiveMtDatasetName parent)
+ *           <li><p> importAdaptiveMtFile(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importAdaptiveMtFileCallable()
+ *           <li><p> importAdaptiveMtFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAdaptiveMtFiles</td>
+ *      <td><p> ListAdaptiveMtFiles</td>
  *      <td><p> Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAdaptiveMtFiles(ListAdaptiveMtFilesRequest request)
+ *           <li><p> listAdaptiveMtFiles(ListAdaptiveMtFilesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAdaptiveMtFiles(AdaptiveMtDatasetName parent)
- *           <li>listAdaptiveMtFiles(String parent)
+ *           <li><p> listAdaptiveMtFiles(AdaptiveMtDatasetName parent)
+ *           <li><p> listAdaptiveMtFiles(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAdaptiveMtFilesPagedCallable()
- *           <li>listAdaptiveMtFilesCallable()
+ *           <li><p> listAdaptiveMtFilesPagedCallable()
+ *           <li><p> listAdaptiveMtFilesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAdaptiveMtSentences</td>
+ *      <td><p> ListAdaptiveMtSentences</td>
  *      <td><p> Lists all AdaptiveMtSentences under a given file/dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAdaptiveMtSentences(ListAdaptiveMtSentencesRequest request)
+ *           <li><p> listAdaptiveMtSentences(ListAdaptiveMtSentencesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAdaptiveMtSentences(AdaptiveMtFileName parent)
- *           <li>listAdaptiveMtSentences(String parent)
+ *           <li><p> listAdaptiveMtSentences(AdaptiveMtFileName parent)
+ *           <li><p> listAdaptiveMtSentences(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAdaptiveMtSentencesPagedCallable()
- *           <li>listAdaptiveMtSentencesCallable()
+ *           <li><p> listAdaptiveMtSentencesPagedCallable()
+ *           <li><p> listAdaptiveMtSentencesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
