@@ -79,55 +79,56 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SearchCatalogs</td>
+ *      <td><p> SearchCatalogs</td>
  *      <td><p> Search [Catalog][google.cloud.privatecatalog.v1beta1.Catalog] resources that consumers have access to, within the scope of the consumer cloud resource hierarchy context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchCatalogs(SearchCatalogsRequest request)
+ *           <li><p> searchCatalogs(SearchCatalogsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchCatalogsPagedCallable()
- *           <li>searchCatalogsCallable()
+ *           <li><p> searchCatalogsPagedCallable()
+ *           <li><p> searchCatalogsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchProducts</td>
+ *      <td><p> SearchProducts</td>
  *      <td><p> Search [Product][google.cloud.privatecatalog.v1beta1.Product] resources that consumers have access to, within the scope of the consumer cloud resource hierarchy context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchProducts(SearchProductsRequest request)
+ *           <li><p> searchProducts(SearchProductsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchProductsPagedCallable()
- *           <li>searchProductsCallable()
+ *           <li><p> searchProductsPagedCallable()
+ *           <li><p> searchProductsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchVersions</td>
+ *      <td><p> SearchVersions</td>
  *      <td><p> Search [Version][google.cloud.privatecatalog.v1beta1.Version] resources that consumers have access to, within the scope of the consumer cloud resource hierarchy context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchVersions(SearchVersionsRequest request)
+ *           <li><p> searchVersions(SearchVersionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchVersionsPagedCallable()
- *           <li>searchVersionsCallable()
+ *           <li><p> searchVersionsPagedCallable()
+ *           <li><p> searchVersionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

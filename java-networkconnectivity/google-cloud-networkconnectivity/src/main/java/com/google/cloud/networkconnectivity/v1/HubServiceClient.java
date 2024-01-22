@@ -72,460 +72,461 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListHubs</td>
+ *      <td><p> ListHubs</td>
  *      <td><p> Lists the Network Connectivity Center hubs associated with a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listHubs(ListHubsRequest request)
+ *           <li><p> listHubs(ListHubsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listHubs(LocationName parent)
- *           <li>listHubs(String parent)
+ *           <li><p> listHubs(LocationName parent)
+ *           <li><p> listHubs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listHubsPagedCallable()
- *           <li>listHubsCallable()
+ *           <li><p> listHubsPagedCallable()
+ *           <li><p> listHubsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetHub</td>
+ *      <td><p> GetHub</td>
  *      <td><p> Gets details about a Network Connectivity Center hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getHub(GetHubRequest request)
+ *           <li><p> getHub(GetHubRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getHub(HubName name)
- *           <li>getHub(String name)
+ *           <li><p> getHub(HubName name)
+ *           <li><p> getHub(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getHubCallable()
+ *           <li><p> getHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateHub</td>
+ *      <td><p> CreateHub</td>
  *      <td><p> Creates a new Network Connectivity Center hub in the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createHubAsync(CreateHubRequest request)
+ *           <li><p> createHubAsync(CreateHubRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createHubAsync(LocationName parent, Hub hub, String hubId)
- *           <li>createHubAsync(String parent, Hub hub, String hubId)
+ *           <li><p> createHubAsync(LocationName parent, Hub hub, String hubId)
+ *           <li><p> createHubAsync(String parent, Hub hub, String hubId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createHubOperationCallable()
- *           <li>createHubCallable()
+ *           <li><p> createHubOperationCallable()
+ *           <li><p> createHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateHub</td>
+ *      <td><p> UpdateHub</td>
  *      <td><p> Updates the description and/or labels of a Network Connectivity Center hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateHubAsync(UpdateHubRequest request)
+ *           <li><p> updateHubAsync(UpdateHubRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateHubAsync(Hub hub, FieldMask updateMask)
+ *           <li><p> updateHubAsync(Hub hub, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateHubOperationCallable()
- *           <li>updateHubCallable()
+ *           <li><p> updateHubOperationCallable()
+ *           <li><p> updateHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteHub</td>
+ *      <td><p> DeleteHub</td>
  *      <td><p> Deletes a Network Connectivity Center hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteHubAsync(DeleteHubRequest request)
+ *           <li><p> deleteHubAsync(DeleteHubRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteHubAsync(HubName name)
- *           <li>deleteHubAsync(String name)
+ *           <li><p> deleteHubAsync(HubName name)
+ *           <li><p> deleteHubAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteHubOperationCallable()
- *           <li>deleteHubCallable()
+ *           <li><p> deleteHubOperationCallable()
+ *           <li><p> deleteHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListHubSpokes</td>
+ *      <td><p> ListHubSpokes</td>
  *      <td><p> Lists the Network Connectivity Center spokes associated with a specified hub and location. The list includes both spokes that are attached to the hub and spokes that have been proposed but not yet accepted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listHubSpokes(ListHubSpokesRequest request)
+ *           <li><p> listHubSpokes(ListHubSpokesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listHubSpokes(HubName name)
- *           <li>listHubSpokes(String name)
+ *           <li><p> listHubSpokes(HubName name)
+ *           <li><p> listHubSpokes(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listHubSpokesPagedCallable()
- *           <li>listHubSpokesCallable()
+ *           <li><p> listHubSpokesPagedCallable()
+ *           <li><p> listHubSpokesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSpokes</td>
+ *      <td><p> ListSpokes</td>
  *      <td><p> Lists the Network Connectivity Center spokes in a specified project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSpokes(ListSpokesRequest request)
+ *           <li><p> listSpokes(ListSpokesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSpokes(LocationName parent)
- *           <li>listSpokes(String parent)
+ *           <li><p> listSpokes(LocationName parent)
+ *           <li><p> listSpokes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSpokesPagedCallable()
- *           <li>listSpokesCallable()
+ *           <li><p> listSpokesPagedCallable()
+ *           <li><p> listSpokesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSpoke</td>
+ *      <td><p> GetSpoke</td>
  *      <td><p> Gets details about a Network Connectivity Center spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSpoke(GetSpokeRequest request)
+ *           <li><p> getSpoke(GetSpokeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSpoke(SpokeName name)
- *           <li>getSpoke(String name)
+ *           <li><p> getSpoke(SpokeName name)
+ *           <li><p> getSpoke(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSpokeCallable()
+ *           <li><p> getSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSpoke</td>
+ *      <td><p> CreateSpoke</td>
  *      <td><p> Creates a Network Connectivity Center spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSpokeAsync(CreateSpokeRequest request)
+ *           <li><p> createSpokeAsync(CreateSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createSpokeAsync(LocationName parent, Spoke spoke, String spokeId)
- *           <li>createSpokeAsync(String parent, Spoke spoke, String spokeId)
+ *           <li><p> createSpokeAsync(LocationName parent, Spoke spoke, String spokeId)
+ *           <li><p> createSpokeAsync(String parent, Spoke spoke, String spokeId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSpokeOperationCallable()
- *           <li>createSpokeCallable()
+ *           <li><p> createSpokeOperationCallable()
+ *           <li><p> createSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSpoke</td>
+ *      <td><p> UpdateSpoke</td>
  *      <td><p> Updates the parameters of a Network Connectivity Center spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSpokeAsync(UpdateSpokeRequest request)
+ *           <li><p> updateSpokeAsync(UpdateSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateSpokeAsync(Spoke spoke, FieldMask updateMask)
+ *           <li><p> updateSpokeAsync(Spoke spoke, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSpokeOperationCallable()
- *           <li>updateSpokeCallable()
+ *           <li><p> updateSpokeOperationCallable()
+ *           <li><p> updateSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RejectHubSpoke</td>
+ *      <td><p> RejectHubSpoke</td>
  *      <td><p> Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able to connect to other spokes that are attached to the hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rejectHubSpokeAsync(RejectHubSpokeRequest request)
+ *           <li><p> rejectHubSpokeAsync(RejectHubSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>rejectHubSpokeAsync(HubName name, SpokeName spokeUri)
- *           <li>rejectHubSpokeAsync(HubName name, String spokeUri)
- *           <li>rejectHubSpokeAsync(String name, SpokeName spokeUri)
- *           <li>rejectHubSpokeAsync(String name, String spokeUri)
+ *           <li><p> rejectHubSpokeAsync(HubName name, SpokeName spokeUri)
+ *           <li><p> rejectHubSpokeAsync(HubName name, String spokeUri)
+ *           <li><p> rejectHubSpokeAsync(String name, SpokeName spokeUri)
+ *           <li><p> rejectHubSpokeAsync(String name, String spokeUri)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rejectHubSpokeOperationCallable()
- *           <li>rejectHubSpokeCallable()
+ *           <li><p> rejectHubSpokeOperationCallable()
+ *           <li><p> rejectHubSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AcceptHubSpoke</td>
+ *      <td><p> AcceptHubSpoke</td>
  *      <td><p> Accepts a proposal to attach a Network Connectivity Center spoke to a hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>acceptHubSpokeAsync(AcceptHubSpokeRequest request)
+ *           <li><p> acceptHubSpokeAsync(AcceptHubSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>acceptHubSpokeAsync(HubName name, SpokeName spokeUri)
- *           <li>acceptHubSpokeAsync(HubName name, String spokeUri)
- *           <li>acceptHubSpokeAsync(String name, SpokeName spokeUri)
- *           <li>acceptHubSpokeAsync(String name, String spokeUri)
+ *           <li><p> acceptHubSpokeAsync(HubName name, SpokeName spokeUri)
+ *           <li><p> acceptHubSpokeAsync(HubName name, String spokeUri)
+ *           <li><p> acceptHubSpokeAsync(String name, SpokeName spokeUri)
+ *           <li><p> acceptHubSpokeAsync(String name, String spokeUri)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>acceptHubSpokeOperationCallable()
- *           <li>acceptHubSpokeCallable()
+ *           <li><p> acceptHubSpokeOperationCallable()
+ *           <li><p> acceptHubSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSpoke</td>
+ *      <td><p> DeleteSpoke</td>
  *      <td><p> Deletes a Network Connectivity Center spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSpokeAsync(DeleteSpokeRequest request)
+ *           <li><p> deleteSpokeAsync(DeleteSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteSpokeAsync(SpokeName name)
- *           <li>deleteSpokeAsync(String name)
+ *           <li><p> deleteSpokeAsync(SpokeName name)
+ *           <li><p> deleteSpokeAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSpokeOperationCallable()
- *           <li>deleteSpokeCallable()
+ *           <li><p> deleteSpokeOperationCallable()
+ *           <li><p> deleteSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRouteTable</td>
+ *      <td><p> GetRouteTable</td>
  *      <td><p> Gets details about a Network Connectivity Center route table.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRouteTable(GetRouteTableRequest request)
+ *           <li><p> getRouteTable(GetRouteTableRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRouteTable(RouteTableName name)
- *           <li>getRouteTable(String name)
+ *           <li><p> getRouteTable(RouteTableName name)
+ *           <li><p> getRouteTable(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRouteTableCallable()
+ *           <li><p> getRouteTableCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRoute</td>
+ *      <td><p> GetRoute</td>
  *      <td><p> Gets details about the specified route.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRoute(GetRouteRequest request)
+ *           <li><p> getRoute(GetRouteRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRoute(HubRouteName name)
- *           <li>getRoute(String name)
+ *           <li><p> getRoute(HubRouteName name)
+ *           <li><p> getRoute(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRouteCallable()
+ *           <li><p> getRouteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRoutes</td>
+ *      <td><p> ListRoutes</td>
  *      <td><p> Lists routes in a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRoutes(ListRoutesRequest request)
+ *           <li><p> listRoutes(ListRoutesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRoutes(RouteTableName parent)
- *           <li>listRoutes(String parent)
+ *           <li><p> listRoutes(RouteTableName parent)
+ *           <li><p> listRoutes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRoutesPagedCallable()
- *           <li>listRoutesCallable()
+ *           <li><p> listRoutesPagedCallable()
+ *           <li><p> listRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRouteTables</td>
+ *      <td><p> ListRouteTables</td>
  *      <td><p> Lists route tables in a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRouteTables(ListRouteTablesRequest request)
+ *           <li><p> listRouteTables(ListRouteTablesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRouteTables(HubName parent)
- *           <li>listRouteTables(String parent)
+ *           <li><p> listRouteTables(HubName parent)
+ *           <li><p> listRouteTables(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRouteTablesPagedCallable()
- *           <li>listRouteTablesCallable()
+ *           <li><p> listRouteTablesPagedCallable()
+ *           <li><p> listRouteTablesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGroup</td>
+ *      <td><p> GetGroup</td>
  *      <td><p> Gets details about a Network Connectivity Center group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGroup(GetGroupRequest request)
+ *           <li><p> getGroup(GetGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGroup(GroupName name)
- *           <li>getGroup(String name)
+ *           <li><p> getGroup(GroupName name)
+ *           <li><p> getGroup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGroupCallable()
+ *           <li><p> getGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListGroups</td>
+ *      <td><p> ListGroups</td>
  *      <td><p> Lists groups in a given hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGroups(ListGroupsRequest request)
+ *           <li><p> listGroups(ListGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGroups(HubName parent)
- *           <li>listGroups(String parent)
+ *           <li><p> listGroups(HubName parent)
+ *           <li><p> listGroups(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGroupsPagedCallable()
- *           <li>listGroupsCallable()
+ *           <li><p> listGroupsPagedCallable()
+ *           <li><p> listGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

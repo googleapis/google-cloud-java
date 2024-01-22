@@ -53,83 +53,84 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetMetricsScope</td>
+ *      <td><p> GetMetricsScope</td>
  *      <td><p> Returns a specific `Metrics Scope`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMetricsScope(GetMetricsScopeRequest request)
+ *           <li><p> getMetricsScope(GetMetricsScopeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMetricsScope(MetricsScopeName name)
- *           <li>getMetricsScope(String name)
+ *           <li><p> getMetricsScope(MetricsScopeName name)
+ *           <li><p> getMetricsScope(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMetricsScopeCallable()
+ *           <li><p> getMetricsScopeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMetricsScopesByMonitoredProject</td>
+ *      <td><p> ListMetricsScopesByMonitoredProject</td>
  *      <td><p> Returns a list of every `Metrics Scope` that a specific `MonitoredProject` has been added to. The metrics scope representing the specified monitored project will always be the first entry in the response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMetricsScopesByMonitoredProject(ListMetricsScopesByMonitoredProjectRequest request)
+ *           <li><p> listMetricsScopesByMonitoredProject(ListMetricsScopesByMonitoredProjectRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMetricsScopesByMonitoredProjectCallable()
+ *           <li><p> listMetricsScopesByMonitoredProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateMonitoredProject</td>
+ *      <td><p> CreateMonitoredProject</td>
  *      <td><p> Adds a `MonitoredProject` with the given project ID to the specified `Metrics Scope`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMonitoredProjectAsync(CreateMonitoredProjectRequest request)
+ *           <li><p> createMonitoredProjectAsync(CreateMonitoredProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createMonitoredProjectAsync(MetricsScopeName parent, MonitoredProject monitoredProject)
- *           <li>createMonitoredProjectAsync(String parent, MonitoredProject monitoredProject)
+ *           <li><p> createMonitoredProjectAsync(MetricsScopeName parent, MonitoredProject monitoredProject)
+ *           <li><p> createMonitoredProjectAsync(String parent, MonitoredProject monitoredProject)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMonitoredProjectOperationCallable()
- *           <li>createMonitoredProjectCallable()
+ *           <li><p> createMonitoredProjectOperationCallable()
+ *           <li><p> createMonitoredProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteMonitoredProject</td>
+ *      <td><p> DeleteMonitoredProject</td>
  *      <td><p> Deletes a `MonitoredProject` from the specified `Metrics Scope`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteMonitoredProjectAsync(DeleteMonitoredProjectRequest request)
+ *           <li><p> deleteMonitoredProjectAsync(DeleteMonitoredProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteMonitoredProjectAsync(MonitoredProjectName name)
- *           <li>deleteMonitoredProjectAsync(String name)
+ *           <li><p> deleteMonitoredProjectAsync(MonitoredProjectName name)
+ *           <li><p> deleteMonitoredProjectAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteMonitoredProjectOperationCallable()
- *           <li>deleteMonitoredProjectCallable()
+ *           <li><p> deleteMonitoredProjectOperationCallable()
+ *           <li><p> deleteMonitoredProjectCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

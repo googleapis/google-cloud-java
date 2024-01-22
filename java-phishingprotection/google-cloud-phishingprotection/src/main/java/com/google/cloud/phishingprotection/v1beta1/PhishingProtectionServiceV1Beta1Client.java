@@ -55,29 +55,30 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ReportPhishing</td>
+ *      <td><p> ReportPhishing</td>
  *      <td><p> Reports a URI suspected of containing phishing content to be reviewed. Once the report review is complete, its result can be found in the Cloud Security Command Center findings dashboard for Phishing Protection. If the result verifies the existence of malicious phishing content, the site will be added the to [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that could get exposed to this threat in the future.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>reportPhishing(ReportPhishingRequest request)
+ *           <li><p> reportPhishing(ReportPhishingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>reportPhishing(ProjectName parent, String uri)
- *           <li>reportPhishing(String parent, String uri)
+ *           <li><p> reportPhishing(ProjectName parent, String uri)
+ *           <li><p> reportPhishing(String parent, String uri)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>reportPhishingCallable()
+ *           <li><p> reportPhishingCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -85,217 +85,218 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListInstances</td>
+ *      <td><p> ListInstances</td>
  *      <td><p> Lists Instances in a given location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listInstances(ListInstancesRequest request)
+ *           <li><p> listInstances(ListInstancesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listInstances(LocationName parent)
- *           <li>listInstances(String parent)
+ *           <li><p> listInstances(LocationName parent)
+ *           <li><p> listInstances(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listInstancesPagedCallable()
- *           <li>listInstancesCallable()
+ *           <li><p> listInstancesPagedCallable()
+ *           <li><p> listInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInstance</td>
+ *      <td><p> GetInstance</td>
  *      <td><p> Gets details of a single Instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInstance(GetInstanceRequest request)
+ *           <li><p> getInstance(GetInstanceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getInstance(InstanceName name)
- *           <li>getInstance(String name)
+ *           <li><p> getInstance(InstanceName name)
+ *           <li><p> getInstance(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInstanceCallable()
+ *           <li><p> getInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateInstance</td>
+ *      <td><p> CreateInstance</td>
  *      <td><p> Creates a new Instance in a given location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createInstanceAsync(CreateInstanceRequest request)
+ *           <li><p> createInstanceAsync(CreateInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createInstanceAsync(LocationName parent, String instanceId, Instance resource)
- *           <li>createInstanceAsync(String parent, String instanceId, Instance resource)
+ *           <li><p> createInstanceAsync(LocationName parent, String instanceId, Instance resource)
+ *           <li><p> createInstanceAsync(String parent, String instanceId, Instance resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createInstanceOperationCallable()
- *           <li>createInstanceCallable()
+ *           <li><p> createInstanceOperationCallable()
+ *           <li><p> createInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateInstance</td>
+ *      <td><p> UpdateInstance</td>
  *      <td><p> Updates an existing Instance in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateInstanceAsync(UpdateInstanceRequest request)
+ *           <li><p> updateInstanceAsync(UpdateInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateInstanceAsync(FieldMask updateMask, Instance resource)
+ *           <li><p> updateInstanceAsync(FieldMask updateMask, Instance resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateInstanceOperationCallable()
- *           <li>updateInstanceCallable()
+ *           <li><p> updateInstanceOperationCallable()
+ *           <li><p> updateInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateParameters</td>
+ *      <td><p> UpdateParameters</td>
  *      <td><p> Updates the defined Memcached parameters for an existing instance. This method only stages the parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the Memcached instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateParametersAsync(UpdateParametersRequest request)
+ *           <li><p> updateParametersAsync(UpdateParametersRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateParametersAsync(InstanceName name, FieldMask updateMask, MemcacheParameters parameters)
- *           <li>updateParametersAsync(String name, FieldMask updateMask, MemcacheParameters parameters)
+ *           <li><p> updateParametersAsync(InstanceName name, FieldMask updateMask, MemcacheParameters parameters)
+ *           <li><p> updateParametersAsync(String name, FieldMask updateMask, MemcacheParameters parameters)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateParametersOperationCallable()
- *           <li>updateParametersCallable()
+ *           <li><p> updateParametersOperationCallable()
+ *           <li><p> updateParametersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteInstance</td>
+ *      <td><p> DeleteInstance</td>
  *      <td><p> Deletes a single Instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteInstanceAsync(DeleteInstanceRequest request)
+ *           <li><p> deleteInstanceAsync(DeleteInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteInstanceAsync(InstanceName name)
- *           <li>deleteInstanceAsync(String name)
+ *           <li><p> deleteInstanceAsync(InstanceName name)
+ *           <li><p> deleteInstanceAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteInstanceOperationCallable()
- *           <li>deleteInstanceCallable()
+ *           <li><p> deleteInstanceOperationCallable()
+ *           <li><p> deleteInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApplyParameters</td>
+ *      <td><p> ApplyParameters</td>
  *      <td><p> `ApplyParameters` restarts the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>applyParametersAsync(ApplyParametersRequest request)
+ *           <li><p> applyParametersAsync(ApplyParametersRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>applyParametersAsync(InstanceName name, List<String> nodeIds, boolean applyAll)
- *           <li>applyParametersAsync(String name, List<String> nodeIds, boolean applyAll)
+ *           <li><p> applyParametersAsync(InstanceName name, List&lt;String&gt; nodeIds, boolean applyAll)
+ *           <li><p> applyParametersAsync(String name, List&lt;String&gt; nodeIds, boolean applyAll)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>applyParametersOperationCallable()
- *           <li>applyParametersCallable()
+ *           <li><p> applyParametersOperationCallable()
+ *           <li><p> applyParametersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApplySoftwareUpdate</td>
+ *      <td><p> ApplySoftwareUpdate</td>
  *      <td><p> Updates software on the selected nodes of the Instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>applySoftwareUpdateAsync(ApplySoftwareUpdateRequest request)
+ *           <li><p> applySoftwareUpdateAsync(ApplySoftwareUpdateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>applySoftwareUpdateAsync(InstanceName instance, List<String> nodeIds, boolean applyAll)
- *           <li>applySoftwareUpdateAsync(String instance, List<String> nodeIds, boolean applyAll)
+ *           <li><p> applySoftwareUpdateAsync(InstanceName instance, List&lt;String&gt; nodeIds, boolean applyAll)
+ *           <li><p> applySoftwareUpdateAsync(String instance, List&lt;String&gt; nodeIds, boolean applyAll)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>applySoftwareUpdateOperationCallable()
- *           <li>applySoftwareUpdateCallable()
+ *           <li><p> applySoftwareUpdateOperationCallable()
+ *           <li><p> applySoftwareUpdateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RescheduleMaintenance</td>
+ *      <td><p> RescheduleMaintenance</td>
  *      <td><p> Performs the apply phase of the RescheduleMaintenance verb.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rescheduleMaintenanceAsync(RescheduleMaintenanceRequest request)
+ *           <li><p> rescheduleMaintenanceAsync(RescheduleMaintenanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>rescheduleMaintenanceAsync(InstanceName instance, RescheduleMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
- *           <li>rescheduleMaintenanceAsync(String instance, RescheduleMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
+ *           <li><p> rescheduleMaintenanceAsync(InstanceName instance, RescheduleMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
+ *           <li><p> rescheduleMaintenanceAsync(String instance, RescheduleMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rescheduleMaintenanceOperationCallable()
- *           <li>rescheduleMaintenanceCallable()
+ *           <li><p> rescheduleMaintenanceOperationCallable()
+ *           <li><p> rescheduleMaintenanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

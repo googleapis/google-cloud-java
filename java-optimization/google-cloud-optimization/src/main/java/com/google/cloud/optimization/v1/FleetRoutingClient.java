@@ -80,42 +80,43 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>OptimizeTours</td>
+ *      <td><p> OptimizeTours</td>
  *      <td><p> Sends an `OptimizeToursRequest` containing a `ShipmentModel` and returns an `OptimizeToursResponse` containing `ShipmentRoute`s, which are a set of routes to be performed by vehicles minimizing the overall cost.
  * <p>  A `ShipmentModel` model consists mainly of `Shipment`s that need to be carried out and `Vehicle`s that can be used to transport the `Shipment`s. The `ShipmentRoute`s assign `Shipment`s to `Vehicle`s. More specifically, they assign a series of `Visit`s to each vehicle, where a `Visit` corresponds to a `VisitRequest`, which is a pickup or delivery for a `Shipment`.
  * <p>  The goal is to provide an assignment of `ShipmentRoute`s to `Vehicle`s that minimizes the total cost where cost has many components defined in the `ShipmentModel`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>optimizeTours(OptimizeToursRequest request)
+ *           <li><p> optimizeTours(OptimizeToursRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>optimizeToursCallable()
+ *           <li><p> optimizeToursCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchOptimizeTours</td>
+ *      <td><p> BatchOptimizeTours</td>
  *      <td><p> Optimizes vehicle tours for one or more `OptimizeToursRequest` messages as a batch.
  * <p>  This method is a Long Running Operation (LRO). The inputs for optimization (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are read/written from/to Cloud Storage in user-specified format. Like the `OptimizeTours` method, each `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse` containing `ShipmentRoute`s, which are a set of routes to be performed by vehicles minimizing the overall cost.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchOptimizeToursAsync(BatchOptimizeToursRequest request)
+ *           <li><p> batchOptimizeToursAsync(BatchOptimizeToursRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchOptimizeToursOperationCallable()
- *           <li>batchOptimizeToursCallable()
+ *           <li><p> batchOptimizeToursOperationCallable()
+ *           <li><p> batchOptimizeToursCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

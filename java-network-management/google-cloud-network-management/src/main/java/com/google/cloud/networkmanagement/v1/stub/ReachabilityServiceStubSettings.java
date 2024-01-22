@@ -283,6 +283,15 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -517,7 +526,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -530,7 +538,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -754,6 +761,15 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     public OperationCallSettings.Builder<DeleteConnectivityTestRequest, Empty, OperationMetadata>
         deleteConnectivityTestOperationSettings() {
       return deleteConnectivityTestOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

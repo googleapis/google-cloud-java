@@ -214,6 +214,15 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -419,7 +428,6 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -432,7 +440,6 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -508,6 +515,15 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
     /** Returns the builder for the settings used for calls to updateDashboard. */
     public UnaryCallSettings.Builder<UpdateDashboardRequest, Dashboard> updateDashboardSettings() {
       return updateDashboardSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

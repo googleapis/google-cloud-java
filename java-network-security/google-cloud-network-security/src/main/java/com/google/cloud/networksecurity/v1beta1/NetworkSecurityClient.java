@@ -74,377 +74,378 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAuthorizationPolicies</td>
+ *      <td><p> ListAuthorizationPolicies</td>
  *      <td><p> Lists AuthorizationPolicies in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAuthorizationPolicies(ListAuthorizationPoliciesRequest request)
+ *           <li><p> listAuthorizationPolicies(ListAuthorizationPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAuthorizationPolicies(LocationName parent)
- *           <li>listAuthorizationPolicies(String parent)
+ *           <li><p> listAuthorizationPolicies(LocationName parent)
+ *           <li><p> listAuthorizationPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAuthorizationPoliciesPagedCallable()
- *           <li>listAuthorizationPoliciesCallable()
+ *           <li><p> listAuthorizationPoliciesPagedCallable()
+ *           <li><p> listAuthorizationPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAuthorizationPolicy</td>
+ *      <td><p> GetAuthorizationPolicy</td>
  *      <td><p> Gets details of a single AuthorizationPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAuthorizationPolicy(GetAuthorizationPolicyRequest request)
+ *           <li><p> getAuthorizationPolicy(GetAuthorizationPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAuthorizationPolicy(AuthorizationPolicyName name)
- *           <li>getAuthorizationPolicy(String name)
+ *           <li><p> getAuthorizationPolicy(AuthorizationPolicyName name)
+ *           <li><p> getAuthorizationPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAuthorizationPolicyCallable()
+ *           <li><p> getAuthorizationPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAuthorizationPolicy</td>
+ *      <td><p> CreateAuthorizationPolicy</td>
  *      <td><p> Creates a new AuthorizationPolicy in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAuthorizationPolicyAsync(CreateAuthorizationPolicyRequest request)
+ *           <li><p> createAuthorizationPolicyAsync(CreateAuthorizationPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAuthorizationPolicyAsync(LocationName parent, AuthorizationPolicy authorizationPolicy, String authorizationPolicyId)
- *           <li>createAuthorizationPolicyAsync(String parent, AuthorizationPolicy authorizationPolicy, String authorizationPolicyId)
+ *           <li><p> createAuthorizationPolicyAsync(LocationName parent, AuthorizationPolicy authorizationPolicy, String authorizationPolicyId)
+ *           <li><p> createAuthorizationPolicyAsync(String parent, AuthorizationPolicy authorizationPolicy, String authorizationPolicyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAuthorizationPolicyOperationCallable()
- *           <li>createAuthorizationPolicyCallable()
+ *           <li><p> createAuthorizationPolicyOperationCallable()
+ *           <li><p> createAuthorizationPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAuthorizationPolicy</td>
+ *      <td><p> UpdateAuthorizationPolicy</td>
  *      <td><p> Updates the parameters of a single AuthorizationPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAuthorizationPolicyAsync(UpdateAuthorizationPolicyRequest request)
+ *           <li><p> updateAuthorizationPolicyAsync(UpdateAuthorizationPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAuthorizationPolicyAsync(AuthorizationPolicy authorizationPolicy, FieldMask updateMask)
+ *           <li><p> updateAuthorizationPolicyAsync(AuthorizationPolicy authorizationPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAuthorizationPolicyOperationCallable()
- *           <li>updateAuthorizationPolicyCallable()
+ *           <li><p> updateAuthorizationPolicyOperationCallable()
+ *           <li><p> updateAuthorizationPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAuthorizationPolicy</td>
+ *      <td><p> DeleteAuthorizationPolicy</td>
  *      <td><p> Deletes a single AuthorizationPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAuthorizationPolicyAsync(DeleteAuthorizationPolicyRequest request)
+ *           <li><p> deleteAuthorizationPolicyAsync(DeleteAuthorizationPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAuthorizationPolicyAsync(AuthorizationPolicyName name)
- *           <li>deleteAuthorizationPolicyAsync(String name)
+ *           <li><p> deleteAuthorizationPolicyAsync(AuthorizationPolicyName name)
+ *           <li><p> deleteAuthorizationPolicyAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAuthorizationPolicyOperationCallable()
- *           <li>deleteAuthorizationPolicyCallable()
+ *           <li><p> deleteAuthorizationPolicyOperationCallable()
+ *           <li><p> deleteAuthorizationPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListServerTlsPolicies</td>
+ *      <td><p> ListServerTlsPolicies</td>
  *      <td><p> Lists ServerTlsPolicies in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServerTlsPolicies(ListServerTlsPoliciesRequest request)
+ *           <li><p> listServerTlsPolicies(ListServerTlsPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServerTlsPolicies(LocationName parent)
- *           <li>listServerTlsPolicies(String parent)
+ *           <li><p> listServerTlsPolicies(LocationName parent)
+ *           <li><p> listServerTlsPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServerTlsPoliciesPagedCallable()
- *           <li>listServerTlsPoliciesCallable()
+ *           <li><p> listServerTlsPoliciesPagedCallable()
+ *           <li><p> listServerTlsPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServerTlsPolicy</td>
+ *      <td><p> GetServerTlsPolicy</td>
  *      <td><p> Gets details of a single ServerTlsPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServerTlsPolicy(GetServerTlsPolicyRequest request)
+ *           <li><p> getServerTlsPolicy(GetServerTlsPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServerTlsPolicy(ServerTlsPolicyName name)
- *           <li>getServerTlsPolicy(String name)
+ *           <li><p> getServerTlsPolicy(ServerTlsPolicyName name)
+ *           <li><p> getServerTlsPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServerTlsPolicyCallable()
+ *           <li><p> getServerTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateServerTlsPolicy</td>
+ *      <td><p> CreateServerTlsPolicy</td>
  *      <td><p> Creates a new ServerTlsPolicy in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServerTlsPolicyAsync(CreateServerTlsPolicyRequest request)
+ *           <li><p> createServerTlsPolicyAsync(CreateServerTlsPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createServerTlsPolicyAsync(LocationName parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId)
- *           <li>createServerTlsPolicyAsync(String parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId)
+ *           <li><p> createServerTlsPolicyAsync(LocationName parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId)
+ *           <li><p> createServerTlsPolicyAsync(String parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServerTlsPolicyOperationCallable()
- *           <li>createServerTlsPolicyCallable()
+ *           <li><p> createServerTlsPolicyOperationCallable()
+ *           <li><p> createServerTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateServerTlsPolicy</td>
+ *      <td><p> UpdateServerTlsPolicy</td>
  *      <td><p> Updates the parameters of a single ServerTlsPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateServerTlsPolicyAsync(UpdateServerTlsPolicyRequest request)
+ *           <li><p> updateServerTlsPolicyAsync(UpdateServerTlsPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateServerTlsPolicyAsync(ServerTlsPolicy serverTlsPolicy, FieldMask updateMask)
+ *           <li><p> updateServerTlsPolicyAsync(ServerTlsPolicy serverTlsPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateServerTlsPolicyOperationCallable()
- *           <li>updateServerTlsPolicyCallable()
+ *           <li><p> updateServerTlsPolicyOperationCallable()
+ *           <li><p> updateServerTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteServerTlsPolicy</td>
+ *      <td><p> DeleteServerTlsPolicy</td>
  *      <td><p> Deletes a single ServerTlsPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteServerTlsPolicyAsync(DeleteServerTlsPolicyRequest request)
+ *           <li><p> deleteServerTlsPolicyAsync(DeleteServerTlsPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteServerTlsPolicyAsync(ServerTlsPolicyName name)
- *           <li>deleteServerTlsPolicyAsync(String name)
+ *           <li><p> deleteServerTlsPolicyAsync(ServerTlsPolicyName name)
+ *           <li><p> deleteServerTlsPolicyAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteServerTlsPolicyOperationCallable()
- *           <li>deleteServerTlsPolicyCallable()
+ *           <li><p> deleteServerTlsPolicyOperationCallable()
+ *           <li><p> deleteServerTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListClientTlsPolicies</td>
+ *      <td><p> ListClientTlsPolicies</td>
  *      <td><p> Lists ClientTlsPolicies in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClientTlsPolicies(ListClientTlsPoliciesRequest request)
+ *           <li><p> listClientTlsPolicies(ListClientTlsPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClientTlsPolicies(LocationName parent)
- *           <li>listClientTlsPolicies(String parent)
+ *           <li><p> listClientTlsPolicies(LocationName parent)
+ *           <li><p> listClientTlsPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClientTlsPoliciesPagedCallable()
- *           <li>listClientTlsPoliciesCallable()
+ *           <li><p> listClientTlsPoliciesPagedCallable()
+ *           <li><p> listClientTlsPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetClientTlsPolicy</td>
+ *      <td><p> GetClientTlsPolicy</td>
  *      <td><p> Gets details of a single ClientTlsPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getClientTlsPolicy(GetClientTlsPolicyRequest request)
+ *           <li><p> getClientTlsPolicy(GetClientTlsPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getClientTlsPolicy(ClientTlsPolicyName name)
- *           <li>getClientTlsPolicy(String name)
+ *           <li><p> getClientTlsPolicy(ClientTlsPolicyName name)
+ *           <li><p> getClientTlsPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClientTlsPolicyCallable()
+ *           <li><p> getClientTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateClientTlsPolicy</td>
+ *      <td><p> CreateClientTlsPolicy</td>
  *      <td><p> Creates a new ClientTlsPolicy in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClientTlsPolicyAsync(CreateClientTlsPolicyRequest request)
+ *           <li><p> createClientTlsPolicyAsync(CreateClientTlsPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createClientTlsPolicyAsync(LocationName parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId)
- *           <li>createClientTlsPolicyAsync(String parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId)
+ *           <li><p> createClientTlsPolicyAsync(LocationName parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId)
+ *           <li><p> createClientTlsPolicyAsync(String parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClientTlsPolicyOperationCallable()
- *           <li>createClientTlsPolicyCallable()
+ *           <li><p> createClientTlsPolicyOperationCallable()
+ *           <li><p> createClientTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateClientTlsPolicy</td>
+ *      <td><p> UpdateClientTlsPolicy</td>
  *      <td><p> Updates the parameters of a single ClientTlsPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateClientTlsPolicyAsync(UpdateClientTlsPolicyRequest request)
+ *           <li><p> updateClientTlsPolicyAsync(UpdateClientTlsPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateClientTlsPolicyAsync(ClientTlsPolicy clientTlsPolicy, FieldMask updateMask)
+ *           <li><p> updateClientTlsPolicyAsync(ClientTlsPolicy clientTlsPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClientTlsPolicyOperationCallable()
- *           <li>updateClientTlsPolicyCallable()
+ *           <li><p> updateClientTlsPolicyOperationCallable()
+ *           <li><p> updateClientTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteClientTlsPolicy</td>
+ *      <td><p> DeleteClientTlsPolicy</td>
  *      <td><p> Deletes a single ClientTlsPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteClientTlsPolicyAsync(DeleteClientTlsPolicyRequest request)
+ *           <li><p> deleteClientTlsPolicyAsync(DeleteClientTlsPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteClientTlsPolicyAsync(ClientTlsPolicyName name)
- *           <li>deleteClientTlsPolicyAsync(String name)
+ *           <li><p> deleteClientTlsPolicyAsync(ClientTlsPolicyName name)
+ *           <li><p> deleteClientTlsPolicyAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClientTlsPolicyOperationCallable()
- *           <li>deleteClientTlsPolicyCallable()
+ *           <li><p> deleteClientTlsPolicyOperationCallable()
+ *           <li><p> deleteClientTlsPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

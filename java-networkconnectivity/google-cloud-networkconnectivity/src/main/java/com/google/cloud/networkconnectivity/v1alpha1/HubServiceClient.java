@@ -64,206 +64,207 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListHubs</td>
+ *      <td><p> ListHubs</td>
  *      <td><p> Lists Hubs in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listHubs(ListHubsRequest request)
+ *           <li><p> listHubs(ListHubsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listHubs(LocationName parent)
- *           <li>listHubs(String parent)
+ *           <li><p> listHubs(LocationName parent)
+ *           <li><p> listHubs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listHubsPagedCallable()
- *           <li>listHubsCallable()
+ *           <li><p> listHubsPagedCallable()
+ *           <li><p> listHubsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetHub</td>
+ *      <td><p> GetHub</td>
  *      <td><p> Gets details of a single Hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getHub(GetHubRequest request)
+ *           <li><p> getHub(GetHubRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getHub(HubName name)
- *           <li>getHub(String name)
+ *           <li><p> getHub(HubName name)
+ *           <li><p> getHub(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getHubCallable()
+ *           <li><p> getHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateHub</td>
+ *      <td><p> CreateHub</td>
  *      <td><p> Creates a new Hub in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createHubAsync(CreateHubRequest request)
+ *           <li><p> createHubAsync(CreateHubRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createHubAsync(LocationName parent, Hub hub, String hubId)
- *           <li>createHubAsync(String parent, Hub hub, String hubId)
+ *           <li><p> createHubAsync(LocationName parent, Hub hub, String hubId)
+ *           <li><p> createHubAsync(String parent, Hub hub, String hubId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createHubOperationCallable()
- *           <li>createHubCallable()
+ *           <li><p> createHubOperationCallable()
+ *           <li><p> createHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateHub</td>
+ *      <td><p> UpdateHub</td>
  *      <td><p> Updates the parameters of a single Hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateHubAsync(UpdateHubRequest request)
+ *           <li><p> updateHubAsync(UpdateHubRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateHubAsync(Hub hub, FieldMask updateMask)
+ *           <li><p> updateHubAsync(Hub hub, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateHubOperationCallable()
- *           <li>updateHubCallable()
+ *           <li><p> updateHubOperationCallable()
+ *           <li><p> updateHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteHub</td>
+ *      <td><p> DeleteHub</td>
  *      <td><p> Deletes a single Hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteHubAsync(DeleteHubRequest request)
+ *           <li><p> deleteHubAsync(DeleteHubRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteHubAsync(HubName name)
- *           <li>deleteHubAsync(String name)
+ *           <li><p> deleteHubAsync(HubName name)
+ *           <li><p> deleteHubAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteHubOperationCallable()
- *           <li>deleteHubCallable()
+ *           <li><p> deleteHubOperationCallable()
+ *           <li><p> deleteHubCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSpokes</td>
+ *      <td><p> ListSpokes</td>
  *      <td><p> Lists Spokes in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSpokes(ListSpokesRequest request)
+ *           <li><p> listSpokes(ListSpokesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSpokes(LocationName parent)
- *           <li>listSpokes(String parent)
+ *           <li><p> listSpokes(LocationName parent)
+ *           <li><p> listSpokes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSpokesPagedCallable()
- *           <li>listSpokesCallable()
+ *           <li><p> listSpokesPagedCallable()
+ *           <li><p> listSpokesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSpoke</td>
+ *      <td><p> GetSpoke</td>
  *      <td><p> Gets details of a single Spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSpoke(GetSpokeRequest request)
+ *           <li><p> getSpoke(GetSpokeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSpoke(SpokeName name)
- *           <li>getSpoke(String name)
+ *           <li><p> getSpoke(SpokeName name)
+ *           <li><p> getSpoke(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSpokeCallable()
+ *           <li><p> getSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSpoke</td>
+ *      <td><p> CreateSpoke</td>
  *      <td><p> Creates a new Spoke in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSpokeAsync(CreateSpokeRequest request)
+ *           <li><p> createSpokeAsync(CreateSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createSpokeAsync(LocationName parent, Spoke spoke, String spokeId)
- *           <li>createSpokeAsync(String parent, Spoke spoke, String spokeId)
+ *           <li><p> createSpokeAsync(LocationName parent, Spoke spoke, String spokeId)
+ *           <li><p> createSpokeAsync(String parent, Spoke spoke, String spokeId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSpokeOperationCallable()
- *           <li>createSpokeCallable()
+ *           <li><p> createSpokeOperationCallable()
+ *           <li><p> createSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSpoke</td>
+ *      <td><p> UpdateSpoke</td>
  *      <td><p> Updates the parameters of a single Spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSpokeAsync(UpdateSpokeRequest request)
+ *           <li><p> updateSpokeAsync(UpdateSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateSpokeAsync(Spoke spoke, FieldMask updateMask)
+ *           <li><p> updateSpokeAsync(Spoke spoke, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSpokeOperationCallable()
- *           <li>updateSpokeCallable()
+ *           <li><p> updateSpokeOperationCallable()
+ *           <li><p> updateSpokeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSpoke</td>
+ *      <td><p> DeleteSpoke</td>
  *      <td><p> Deletes a single Spoke.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSpokeAsync(DeleteSpokeRequest request)
+ *           <li><p> deleteSpokeAsync(DeleteSpokeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteSpokeAsync(SpokeName name)
- *           <li>deleteSpokeAsync(String name)
+ *           <li><p> deleteSpokeAsync(SpokeName name)
+ *           <li><p> deleteSpokeAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSpokeOperationCallable()
- *           <li>deleteSpokeCallable()
+ *           <li><p> deleteSpokeOperationCallable()
+ *           <li><p> deleteSpokeCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

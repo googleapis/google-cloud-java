@@ -68,25 +68,26 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>QueryTimeSeries</td>
+ *      <td><p> QueryTimeSeries</td>
  *      <td><p> Queries time series using Monitoring Query Language. This method does not require a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryTimeSeries(QueryTimeSeriesRequest request)
+ *           <li><p> queryTimeSeries(QueryTimeSeriesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryTimeSeriesPagedCallable()
- *           <li>queryTimeSeriesCallable()
+ *           <li><p> queryTimeSeriesPagedCallable()
+ *           <li><p> queryTimeSeriesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -71,230 +71,231 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ExecutePatchJob</td>
+ *      <td><p> ExecutePatchJob</td>
  *      <td><p> Patch VM instances by creating and running a patch job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>executePatchJob(PatchJobs.ExecutePatchJobRequest request)
+ *           <li><p> executePatchJob(PatchJobs.ExecutePatchJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>executePatchJobCallable()
+ *           <li><p> executePatchJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPatchJob</td>
+ *      <td><p> GetPatchJob</td>
  *      <td><p> Get the patch job. This can be used to track the progress of an ongoing patch job or review the details of completed jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPatchJob(PatchJobs.GetPatchJobRequest request)
+ *           <li><p> getPatchJob(PatchJobs.GetPatchJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPatchJob(PatchJobName name)
- *           <li>getPatchJob(String name)
+ *           <li><p> getPatchJob(PatchJobName name)
+ *           <li><p> getPatchJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPatchJobCallable()
+ *           <li><p> getPatchJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelPatchJob</td>
+ *      <td><p> CancelPatchJob</td>
  *      <td><p> Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelPatchJob(PatchJobs.CancelPatchJobRequest request)
+ *           <li><p> cancelPatchJob(PatchJobs.CancelPatchJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelPatchJobCallable()
+ *           <li><p> cancelPatchJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPatchJobs</td>
+ *      <td><p> ListPatchJobs</td>
  *      <td><p> Get a list of patch jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPatchJobs(PatchJobs.ListPatchJobsRequest request)
+ *           <li><p> listPatchJobs(PatchJobs.ListPatchJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPatchJobs(ProjectName parent)
- *           <li>listPatchJobs(String parent)
+ *           <li><p> listPatchJobs(ProjectName parent)
+ *           <li><p> listPatchJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPatchJobsPagedCallable()
- *           <li>listPatchJobsCallable()
+ *           <li><p> listPatchJobsPagedCallable()
+ *           <li><p> listPatchJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPatchJobInstanceDetails</td>
+ *      <td><p> ListPatchJobInstanceDetails</td>
  *      <td><p> Get a list of instance details for a given patch job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPatchJobInstanceDetails(PatchJobs.ListPatchJobInstanceDetailsRequest request)
+ *           <li><p> listPatchJobInstanceDetails(PatchJobs.ListPatchJobInstanceDetailsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPatchJobInstanceDetails(PatchJobName parent)
- *           <li>listPatchJobInstanceDetails(String parent)
+ *           <li><p> listPatchJobInstanceDetails(PatchJobName parent)
+ *           <li><p> listPatchJobInstanceDetails(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPatchJobInstanceDetailsPagedCallable()
- *           <li>listPatchJobInstanceDetailsCallable()
+ *           <li><p> listPatchJobInstanceDetailsPagedCallable()
+ *           <li><p> listPatchJobInstanceDetailsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePatchDeployment</td>
+ *      <td><p> CreatePatchDeployment</td>
  *      <td><p> Create an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPatchDeployment(PatchDeployments.CreatePatchDeploymentRequest request)
+ *           <li><p> createPatchDeployment(PatchDeployments.CreatePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createPatchDeployment(ProjectName parent, PatchDeployments.PatchDeployment patchDeployment, String patchDeploymentId)
- *           <li>createPatchDeployment(String parent, PatchDeployments.PatchDeployment patchDeployment, String patchDeploymentId)
+ *           <li><p> createPatchDeployment(ProjectName parent, PatchDeployments.PatchDeployment patchDeployment, String patchDeploymentId)
+ *           <li><p> createPatchDeployment(String parent, PatchDeployments.PatchDeployment patchDeployment, String patchDeploymentId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPatchDeploymentCallable()
+ *           <li><p> createPatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPatchDeployment</td>
+ *      <td><p> GetPatchDeployment</td>
  *      <td><p> Get an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPatchDeployment(PatchDeployments.GetPatchDeploymentRequest request)
+ *           <li><p> getPatchDeployment(PatchDeployments.GetPatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPatchDeployment(PatchDeploymentName name)
- *           <li>getPatchDeployment(String name)
+ *           <li><p> getPatchDeployment(PatchDeploymentName name)
+ *           <li><p> getPatchDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPatchDeploymentCallable()
+ *           <li><p> getPatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPatchDeployments</td>
+ *      <td><p> ListPatchDeployments</td>
  *      <td><p> Get a page of OS Config patch deployments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPatchDeployments(PatchDeployments.ListPatchDeploymentsRequest request)
+ *           <li><p> listPatchDeployments(PatchDeployments.ListPatchDeploymentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPatchDeployments(ProjectName parent)
- *           <li>listPatchDeployments(String parent)
+ *           <li><p> listPatchDeployments(ProjectName parent)
+ *           <li><p> listPatchDeployments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPatchDeploymentsPagedCallable()
- *           <li>listPatchDeploymentsCallable()
+ *           <li><p> listPatchDeploymentsPagedCallable()
+ *           <li><p> listPatchDeploymentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePatchDeployment</td>
+ *      <td><p> DeletePatchDeployment</td>
  *      <td><p> Delete an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePatchDeployment(PatchDeployments.DeletePatchDeploymentRequest request)
+ *           <li><p> deletePatchDeployment(PatchDeployments.DeletePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deletePatchDeployment(PatchDeploymentName name)
- *           <li>deletePatchDeployment(String name)
+ *           <li><p> deletePatchDeployment(PatchDeploymentName name)
+ *           <li><p> deletePatchDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePatchDeploymentCallable()
+ *           <li><p> deletePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePatchDeployment</td>
+ *      <td><p> UpdatePatchDeployment</td>
  *      <td><p> Update an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePatchDeployment(PatchDeployments.UpdatePatchDeploymentRequest request)
+ *           <li><p> updatePatchDeployment(PatchDeployments.UpdatePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updatePatchDeployment(PatchDeployments.PatchDeployment patchDeployment, FieldMask updateMask)
+ *           <li><p> updatePatchDeployment(PatchDeployments.PatchDeployment patchDeployment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePatchDeploymentCallable()
+ *           <li><p> updatePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PausePatchDeployment</td>
+ *      <td><p> PausePatchDeployment</td>
  *      <td><p> Change state of patch deployment to "PAUSED". Patch deployment in paused state doesn't generate patch jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pausePatchDeployment(PatchDeployments.PausePatchDeploymentRequest request)
+ *           <li><p> pausePatchDeployment(PatchDeployments.PausePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pausePatchDeployment(PatchDeploymentName name)
- *           <li>pausePatchDeployment(String name)
+ *           <li><p> pausePatchDeployment(PatchDeploymentName name)
+ *           <li><p> pausePatchDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pausePatchDeploymentCallable()
+ *           <li><p> pausePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumePatchDeployment</td>
+ *      <td><p> ResumePatchDeployment</td>
  *      <td><p> Change state of patch deployment back to "ACTIVE". Patch deployment in active state continues to generate patch jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumePatchDeployment(PatchDeployments.ResumePatchDeploymentRequest request)
+ *           <li><p> resumePatchDeployment(PatchDeployments.ResumePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumePatchDeployment(PatchDeploymentName name)
- *           <li>resumePatchDeployment(String name)
+ *           <li><p> resumePatchDeployment(PatchDeploymentName name)
+ *           <li><p> resumePatchDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumePatchDeploymentCallable()
+ *           <li><p> resumePatchDeploymentCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

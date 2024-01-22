@@ -78,129 +78,130 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListGroups</td>
+ *      <td><p> ListGroups</td>
  *      <td><p> Lists the existing groups.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGroups(ListGroupsRequest request)
+ *           <li><p> listGroups(ListGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGroups(ResourceName name)
- *           <li>listGroups(OrganizationName name)
- *           <li>listGroups(ProjectName name)
- *           <li>listGroups(String name)
+ *           <li><p> listGroups(ResourceName name)
+ *           <li><p> listGroups(OrganizationName name)
+ *           <li><p> listGroups(ProjectName name)
+ *           <li><p> listGroups(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGroupsPagedCallable()
- *           <li>listGroupsCallable()
+ *           <li><p> listGroupsPagedCallable()
+ *           <li><p> listGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGroup</td>
+ *      <td><p> GetGroup</td>
  *      <td><p> Gets a single group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGroup(GetGroupRequest request)
+ *           <li><p> getGroup(GetGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGroup(GroupName name)
- *           <li>getGroup(String name)
+ *           <li><p> getGroup(GroupName name)
+ *           <li><p> getGroup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGroupCallable()
+ *           <li><p> getGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateGroup</td>
+ *      <td><p> CreateGroup</td>
  *      <td><p> Creates a new group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createGroup(CreateGroupRequest request)
+ *           <li><p> createGroup(CreateGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createGroup(ResourceName name, Group group)
- *           <li>createGroup(OrganizationName name, Group group)
- *           <li>createGroup(ProjectName name, Group group)
- *           <li>createGroup(String name, Group group)
+ *           <li><p> createGroup(ResourceName name, Group group)
+ *           <li><p> createGroup(OrganizationName name, Group group)
+ *           <li><p> createGroup(ProjectName name, Group group)
+ *           <li><p> createGroup(String name, Group group)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createGroupCallable()
+ *           <li><p> createGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGroup</td>
+ *      <td><p> UpdateGroup</td>
  *      <td><p> Updates an existing group. You can change any group attributes except `name`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGroup(UpdateGroupRequest request)
+ *           <li><p> updateGroup(UpdateGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGroup(Group group)
+ *           <li><p> updateGroup(Group group)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGroupCallable()
+ *           <li><p> updateGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteGroup</td>
+ *      <td><p> DeleteGroup</td>
  *      <td><p> Deletes an existing group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteGroup(DeleteGroupRequest request)
+ *           <li><p> deleteGroup(DeleteGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteGroup(GroupName name)
- *           <li>deleteGroup(String name)
+ *           <li><p> deleteGroup(GroupName name)
+ *           <li><p> deleteGroup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteGroupCallable()
+ *           <li><p> deleteGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListGroupMembers</td>
+ *      <td><p> ListGroupMembers</td>
  *      <td><p> Lists the monitored resources that are members of a group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGroupMembers(ListGroupMembersRequest request)
+ *           <li><p> listGroupMembers(ListGroupMembersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGroupMembers(GroupName name)
- *           <li>listGroupMembers(String name)
+ *           <li><p> listGroupMembers(GroupName name)
+ *           <li><p> listGroupMembers(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGroupMembersPagedCallable()
- *           <li>listGroupMembersCallable()
+ *           <li><p> listGroupMembersPagedCallable()
+ *           <li><p> listGroupMembersCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

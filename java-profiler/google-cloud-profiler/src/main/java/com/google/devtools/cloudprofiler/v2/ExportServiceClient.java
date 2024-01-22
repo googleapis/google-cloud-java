@@ -63,25 +63,26 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListProfiles</td>
+ *      <td><p> ListProfiles</td>
  *      <td><p> Lists profiles which have been collected so far and for which the caller has permission to view.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProfiles(ListProfilesRequest request)
+ *           <li><p> listProfiles(ListProfilesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listProfilesPagedCallable()
- *           <li>listProfilesCallable()
+ *           <li><p> listProfilesPagedCallable()
+ *           <li><p> listProfilesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -80,192 +80,193 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListMonitoredResourceDescriptors</td>
+ *      <td><p> ListMonitoredResourceDescriptors</td>
  *      <td><p> Lists monitored resource descriptors that match a filter. This method does not require a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMonitoredResourceDescriptors(ListMonitoredResourceDescriptorsRequest request)
+ *           <li><p> listMonitoredResourceDescriptors(ListMonitoredResourceDescriptorsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMonitoredResourceDescriptors(ResourceName name)
- *           <li>listMonitoredResourceDescriptors(OrganizationName name)
- *           <li>listMonitoredResourceDescriptors(ProjectName name)
- *           <li>listMonitoredResourceDescriptors(String name)
+ *           <li><p> listMonitoredResourceDescriptors(ResourceName name)
+ *           <li><p> listMonitoredResourceDescriptors(OrganizationName name)
+ *           <li><p> listMonitoredResourceDescriptors(ProjectName name)
+ *           <li><p> listMonitoredResourceDescriptors(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMonitoredResourceDescriptorsPagedCallable()
- *           <li>listMonitoredResourceDescriptorsCallable()
+ *           <li><p> listMonitoredResourceDescriptorsPagedCallable()
+ *           <li><p> listMonitoredResourceDescriptorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMonitoredResourceDescriptor</td>
+ *      <td><p> GetMonitoredResourceDescriptor</td>
  *      <td><p> Gets a single monitored resource descriptor. This method does not require a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMonitoredResourceDescriptor(GetMonitoredResourceDescriptorRequest request)
+ *           <li><p> getMonitoredResourceDescriptor(GetMonitoredResourceDescriptorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMonitoredResourceDescriptor(MonitoredResourceDescriptorName name)
- *           <li>getMonitoredResourceDescriptor(String name)
+ *           <li><p> getMonitoredResourceDescriptor(MonitoredResourceDescriptorName name)
+ *           <li><p> getMonitoredResourceDescriptor(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMonitoredResourceDescriptorCallable()
+ *           <li><p> getMonitoredResourceDescriptorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMetricDescriptors</td>
+ *      <td><p> ListMetricDescriptors</td>
  *      <td><p> Lists metric descriptors that match a filter. This method does not require a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMetricDescriptors(ListMetricDescriptorsRequest request)
+ *           <li><p> listMetricDescriptors(ListMetricDescriptorsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMetricDescriptors(ResourceName name)
- *           <li>listMetricDescriptors(OrganizationName name)
- *           <li>listMetricDescriptors(ProjectName name)
- *           <li>listMetricDescriptors(String name)
+ *           <li><p> listMetricDescriptors(ResourceName name)
+ *           <li><p> listMetricDescriptors(OrganizationName name)
+ *           <li><p> listMetricDescriptors(ProjectName name)
+ *           <li><p> listMetricDescriptors(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMetricDescriptorsPagedCallable()
- *           <li>listMetricDescriptorsCallable()
+ *           <li><p> listMetricDescriptorsPagedCallable()
+ *           <li><p> listMetricDescriptorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMetricDescriptor</td>
+ *      <td><p> GetMetricDescriptor</td>
  *      <td><p> Gets a single metric descriptor. This method does not require a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMetricDescriptor(GetMetricDescriptorRequest request)
+ *           <li><p> getMetricDescriptor(GetMetricDescriptorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMetricDescriptor(MetricDescriptorName name)
- *           <li>getMetricDescriptor(String name)
+ *           <li><p> getMetricDescriptor(MetricDescriptorName name)
+ *           <li><p> getMetricDescriptor(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMetricDescriptorCallable()
+ *           <li><p> getMetricDescriptorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateMetricDescriptor</td>
+ *      <td><p> CreateMetricDescriptor</td>
  *      <td><p> Creates a new metric descriptor. The creation is executed asynchronously and callers may check the returned operation to track its progress. User-created metric descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMetricDescriptor(CreateMetricDescriptorRequest request)
+ *           <li><p> createMetricDescriptor(CreateMetricDescriptorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createMetricDescriptor(ResourceName name, MetricDescriptor metricDescriptor)
- *           <li>createMetricDescriptor(OrganizationName name, MetricDescriptor metricDescriptor)
- *           <li>createMetricDescriptor(ProjectName name, MetricDescriptor metricDescriptor)
- *           <li>createMetricDescriptor(String name, MetricDescriptor metricDescriptor)
+ *           <li><p> createMetricDescriptor(ResourceName name, MetricDescriptor metricDescriptor)
+ *           <li><p> createMetricDescriptor(OrganizationName name, MetricDescriptor metricDescriptor)
+ *           <li><p> createMetricDescriptor(ProjectName name, MetricDescriptor metricDescriptor)
+ *           <li><p> createMetricDescriptor(String name, MetricDescriptor metricDescriptor)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMetricDescriptorCallable()
+ *           <li><p> createMetricDescriptorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteMetricDescriptor</td>
+ *      <td><p> DeleteMetricDescriptor</td>
  *      <td><p> Deletes a metric descriptor. Only user-created [custom metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteMetricDescriptor(DeleteMetricDescriptorRequest request)
+ *           <li><p> deleteMetricDescriptor(DeleteMetricDescriptorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteMetricDescriptor(MetricDescriptorName name)
- *           <li>deleteMetricDescriptor(String name)
+ *           <li><p> deleteMetricDescriptor(MetricDescriptorName name)
+ *           <li><p> deleteMetricDescriptor(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteMetricDescriptorCallable()
+ *           <li><p> deleteMetricDescriptorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTimeSeries</td>
+ *      <td><p> ListTimeSeries</td>
  *      <td><p> Lists time series that match a filter. This method does not require a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTimeSeries(ListTimeSeriesRequest request)
+ *           <li><p> listTimeSeries(ListTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTimeSeries(ResourceName name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
- *           <li>listTimeSeries(OrganizationName name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
- *           <li>listTimeSeries(ProjectName name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
- *           <li>listTimeSeries(String name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
+ *           <li><p> listTimeSeries(ResourceName name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
+ *           <li><p> listTimeSeries(OrganizationName name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
+ *           <li><p> listTimeSeries(ProjectName name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
+ *           <li><p> listTimeSeries(String name, String filter, TimeInterval interval, ListTimeSeriesRequest.TimeSeriesView view)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTimeSeriesPagedCallable()
- *           <li>listTimeSeriesCallable()
+ *           <li><p> listTimeSeriesPagedCallable()
+ *           <li><p> listTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTimeSeries</td>
+ *      <td><p> CreateTimeSeries</td>
  *      <td><p> Creates or adds data to one or more time series. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTimeSeries(CreateTimeSeriesRequest request)
+ *           <li><p> createTimeSeries(CreateTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTimeSeries(ProjectName name, List<TimeSeries> timeSeries)
- *           <li>createTimeSeries(String name, List<TimeSeries> timeSeries)
+ *           <li><p> createTimeSeries(ProjectName name, List&lt;TimeSeries&gt; timeSeries)
+ *           <li><p> createTimeSeries(String name, List&lt;TimeSeries&gt; timeSeries)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTimeSeriesCallable()
+ *           <li><p> createTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateServiceTimeSeries</td>
+ *      <td><p> CreateServiceTimeSeries</td>
  *      <td><p> Creates or adds data to one or more service time series. A service time series is a time series for a metric from a Google Cloud service. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response. This endpoint rejects writes to user-defined metrics. This method is only for use by Google Cloud services. Use [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries] instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServiceTimeSeries(CreateTimeSeriesRequest request)
+ *           <li><p> createServiceTimeSeries(CreateTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createServiceTimeSeries(ProjectName name, List<TimeSeries> timeSeries)
- *           <li>createServiceTimeSeries(String name, List<TimeSeries> timeSeries)
+ *           <li><p> createServiceTimeSeries(ProjectName name, List&lt;TimeSeries&gt; timeSeries)
+ *           <li><p> createServiceTimeSeries(String name, List&lt;TimeSeries&gt; timeSeries)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceTimeSeriesCallable()
+ *           <li><p> createServiceTimeSeriesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

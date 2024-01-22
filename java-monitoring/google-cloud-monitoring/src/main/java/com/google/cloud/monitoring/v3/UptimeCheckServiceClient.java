@@ -78,124 +78,125 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListUptimeCheckConfigs</td>
+ *      <td><p> ListUptimeCheckConfigs</td>
  *      <td><p> Lists the existing valid Uptime check configurations for the project (leaving out any invalid configurations).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listUptimeCheckConfigs(ListUptimeCheckConfigsRequest request)
+ *           <li><p> listUptimeCheckConfigs(ListUptimeCheckConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listUptimeCheckConfigs(ResourceName parent)
- *           <li>listUptimeCheckConfigs(OrganizationName parent)
- *           <li>listUptimeCheckConfigs(ProjectName parent)
- *           <li>listUptimeCheckConfigs(String parent)
+ *           <li><p> listUptimeCheckConfigs(ResourceName parent)
+ *           <li><p> listUptimeCheckConfigs(OrganizationName parent)
+ *           <li><p> listUptimeCheckConfigs(ProjectName parent)
+ *           <li><p> listUptimeCheckConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listUptimeCheckConfigsPagedCallable()
- *           <li>listUptimeCheckConfigsCallable()
+ *           <li><p> listUptimeCheckConfigsPagedCallable()
+ *           <li><p> listUptimeCheckConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetUptimeCheckConfig</td>
+ *      <td><p> GetUptimeCheckConfig</td>
  *      <td><p> Gets a single Uptime check configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getUptimeCheckConfig(GetUptimeCheckConfigRequest request)
+ *           <li><p> getUptimeCheckConfig(GetUptimeCheckConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getUptimeCheckConfig(UptimeCheckConfigName name)
- *           <li>getUptimeCheckConfig(String name)
+ *           <li><p> getUptimeCheckConfig(UptimeCheckConfigName name)
+ *           <li><p> getUptimeCheckConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getUptimeCheckConfigCallable()
+ *           <li><p> getUptimeCheckConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateUptimeCheckConfig</td>
+ *      <td><p> CreateUptimeCheckConfig</td>
  *      <td><p> Creates a new Uptime check configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createUptimeCheckConfig(CreateUptimeCheckConfigRequest request)
+ *           <li><p> createUptimeCheckConfig(CreateUptimeCheckConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createUptimeCheckConfig(ResourceName parent, UptimeCheckConfig uptimeCheckConfig)
- *           <li>createUptimeCheckConfig(OrganizationName parent, UptimeCheckConfig uptimeCheckConfig)
- *           <li>createUptimeCheckConfig(ProjectName parent, UptimeCheckConfig uptimeCheckConfig)
- *           <li>createUptimeCheckConfig(String parent, UptimeCheckConfig uptimeCheckConfig)
+ *           <li><p> createUptimeCheckConfig(ResourceName parent, UptimeCheckConfig uptimeCheckConfig)
+ *           <li><p> createUptimeCheckConfig(OrganizationName parent, UptimeCheckConfig uptimeCheckConfig)
+ *           <li><p> createUptimeCheckConfig(ProjectName parent, UptimeCheckConfig uptimeCheckConfig)
+ *           <li><p> createUptimeCheckConfig(String parent, UptimeCheckConfig uptimeCheckConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createUptimeCheckConfigCallable()
+ *           <li><p> createUptimeCheckConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateUptimeCheckConfig</td>
+ *      <td><p> UpdateUptimeCheckConfig</td>
  *      <td><p> Updates an Uptime check configuration. You can either replace the entire configuration with a new one or replace only certain fields in the current configuration by specifying the fields to be updated via `updateMask`. Returns the updated configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateUptimeCheckConfig(UpdateUptimeCheckConfigRequest request)
+ *           <li><p> updateUptimeCheckConfig(UpdateUptimeCheckConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateUptimeCheckConfig(UptimeCheckConfig uptimeCheckConfig)
+ *           <li><p> updateUptimeCheckConfig(UptimeCheckConfig uptimeCheckConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateUptimeCheckConfigCallable()
+ *           <li><p> updateUptimeCheckConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteUptimeCheckConfig</td>
+ *      <td><p> DeleteUptimeCheckConfig</td>
  *      <td><p> Deletes an Uptime check configuration. Note that this method will fail if the Uptime check configuration is referenced by an alert policy or other dependent configs that would be rendered invalid by the deletion.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteUptimeCheckConfig(DeleteUptimeCheckConfigRequest request)
+ *           <li><p> deleteUptimeCheckConfig(DeleteUptimeCheckConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteUptimeCheckConfig(UptimeCheckConfigName name)
- *           <li>deleteUptimeCheckConfig(String name)
+ *           <li><p> deleteUptimeCheckConfig(UptimeCheckConfigName name)
+ *           <li><p> deleteUptimeCheckConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteUptimeCheckConfigCallable()
+ *           <li><p> deleteUptimeCheckConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListUptimeCheckIps</td>
+ *      <td><p> ListUptimeCheckIps</td>
  *      <td><p> Returns the list of IP addresses that checkers run from</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listUptimeCheckIps(ListUptimeCheckIpsRequest request)
+ *           <li><p> listUptimeCheckIps(ListUptimeCheckIpsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listUptimeCheckIpsPagedCallable()
- *           <li>listUptimeCheckIpsCallable()
+ *           <li><p> listUptimeCheckIpsPagedCallable()
+ *           <li><p> listUptimeCheckIpsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

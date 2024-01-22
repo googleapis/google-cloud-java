@@ -75,112 +75,113 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAlertPolicies</td>
+ *      <td><p> ListAlertPolicies</td>
  *      <td><p> Lists the existing alerting policies for the workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAlertPolicies(ListAlertPoliciesRequest request)
+ *           <li><p> listAlertPolicies(ListAlertPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAlertPolicies(ResourceName name)
- *           <li>listAlertPolicies(OrganizationName name)
- *           <li>listAlertPolicies(ProjectName name)
- *           <li>listAlertPolicies(String name)
+ *           <li><p> listAlertPolicies(ResourceName name)
+ *           <li><p> listAlertPolicies(OrganizationName name)
+ *           <li><p> listAlertPolicies(ProjectName name)
+ *           <li><p> listAlertPolicies(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAlertPoliciesPagedCallable()
- *           <li>listAlertPoliciesCallable()
+ *           <li><p> listAlertPoliciesPagedCallable()
+ *           <li><p> listAlertPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAlertPolicy</td>
+ *      <td><p> GetAlertPolicy</td>
  *      <td><p> Gets a single alerting policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAlertPolicy(GetAlertPolicyRequest request)
+ *           <li><p> getAlertPolicy(GetAlertPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAlertPolicy(AlertPolicyName name)
- *           <li>getAlertPolicy(String name)
+ *           <li><p> getAlertPolicy(AlertPolicyName name)
+ *           <li><p> getAlertPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAlertPolicyCallable()
+ *           <li><p> getAlertPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAlertPolicy</td>
+ *      <td><p> CreateAlertPolicy</td>
  *      <td><p> Creates a new alerting policy.
  * <p>  Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAlertPolicy(CreateAlertPolicyRequest request)
+ *           <li><p> createAlertPolicy(CreateAlertPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAlertPolicy(ResourceName name, AlertPolicy alertPolicy)
- *           <li>createAlertPolicy(OrganizationName name, AlertPolicy alertPolicy)
- *           <li>createAlertPolicy(ProjectName name, AlertPolicy alertPolicy)
- *           <li>createAlertPolicy(String name, AlertPolicy alertPolicy)
+ *           <li><p> createAlertPolicy(ResourceName name, AlertPolicy alertPolicy)
+ *           <li><p> createAlertPolicy(OrganizationName name, AlertPolicy alertPolicy)
+ *           <li><p> createAlertPolicy(ProjectName name, AlertPolicy alertPolicy)
+ *           <li><p> createAlertPolicy(String name, AlertPolicy alertPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAlertPolicyCallable()
+ *           <li><p> createAlertPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAlertPolicy</td>
+ *      <td><p> DeleteAlertPolicy</td>
  *      <td><p> Deletes an alerting policy.
  * <p>  Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAlertPolicy(DeleteAlertPolicyRequest request)
+ *           <li><p> deleteAlertPolicy(DeleteAlertPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAlertPolicy(AlertPolicyName name)
- *           <li>deleteAlertPolicy(String name)
+ *           <li><p> deleteAlertPolicy(AlertPolicyName name)
+ *           <li><p> deleteAlertPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAlertPolicyCallable()
+ *           <li><p> deleteAlertPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAlertPolicy</td>
+ *      <td><p> UpdateAlertPolicy</td>
  *      <td><p> Updates an alerting policy. You can either replace the entire policy with a new one or replace only certain fields in the current alerting policy by specifying the fields to be updated via `updateMask`. Returns the updated alerting policy.
  * <p>  Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAlertPolicy(UpdateAlertPolicyRequest request)
+ *           <li><p> updateAlertPolicy(UpdateAlertPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAlertPolicy(FieldMask updateMask, AlertPolicy alertPolicy)
+ *           <li><p> updateAlertPolicy(FieldMask updateMask, AlertPolicy alertPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAlertPolicyCallable()
+ *           <li><p> updateAlertPolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

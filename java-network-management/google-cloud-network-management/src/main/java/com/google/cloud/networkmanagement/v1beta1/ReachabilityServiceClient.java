@@ -70,105 +70,106 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListConnectivityTests</td>
+ *      <td><p> ListConnectivityTests</td>
  *      <td><p> Lists all Connectivity Tests owned by a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConnectivityTests(ListConnectivityTestsRequest request)
+ *           <li><p> listConnectivityTests(ListConnectivityTestsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConnectivityTestsPagedCallable()
- *           <li>listConnectivityTestsCallable()
+ *           <li><p> listConnectivityTestsPagedCallable()
+ *           <li><p> listConnectivityTestsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConnectivityTest</td>
+ *      <td><p> GetConnectivityTest</td>
  *      <td><p> Gets the details of a specific Connectivity Test.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConnectivityTest(GetConnectivityTestRequest request)
+ *           <li><p> getConnectivityTest(GetConnectivityTestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConnectivityTestCallable()
+ *           <li><p> getConnectivityTestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConnectivityTest</td>
+ *      <td><p> CreateConnectivityTest</td>
  *      <td><p> Creates a new Connectivity Test. After you create a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
  * <p>  If the endpoint specifications in `ConnectivityTest` are invalid (for example, containing non-existent resources in the network, or you don't have read permissions to the network configurations of listed projects), then the reachability result returns a value of `UNKNOWN`.
  * <p>  If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of &lt;code&gt;AMBIGUOUS&lt;/code&gt;. For more information, see the Connectivity Test documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConnectivityTestAsync(CreateConnectivityTestRequest request)
+ *           <li><p> createConnectivityTestAsync(CreateConnectivityTestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConnectivityTestOperationCallable()
- *           <li>createConnectivityTestCallable()
+ *           <li><p> createConnectivityTestOperationCallable()
+ *           <li><p> createConnectivityTestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConnectivityTest</td>
+ *      <td><p> UpdateConnectivityTest</td>
  *      <td><p> Updates the configuration of an existing `ConnectivityTest`. After you update a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes. The Reachability state in the test resource is updated with the new result.
  * <p>  If the endpoint specifications in `ConnectivityTest` are invalid (for example, they contain non-existent resources in the network, or the user does not have read permissions to the network configurations of listed projects), then the reachability result returns a value of &lt;code&gt;UNKNOWN&lt;/code&gt;.
  * <p>  If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more details.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConnectivityTestAsync(UpdateConnectivityTestRequest request)
+ *           <li><p> updateConnectivityTestAsync(UpdateConnectivityTestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConnectivityTestOperationCallable()
- *           <li>updateConnectivityTestCallable()
+ *           <li><p> updateConnectivityTestOperationCallable()
+ *           <li><p> updateConnectivityTestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RerunConnectivityTest</td>
+ *      <td><p> RerunConnectivityTest</td>
  *      <td><p> Rerun an existing `ConnectivityTest`. After the user triggers the rerun, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
  * <p>  Even though the test configuration remains the same, the reachability result may change due to underlying network configuration changes.
  * <p>  If the endpoint specifications in `ConnectivityTest` become invalid (for example, specified resources are deleted in the network, or you lost read permissions to the network configurations of listed projects), then the reachability result returns a value of `UNKNOWN`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rerunConnectivityTestAsync(RerunConnectivityTestRequest request)
+ *           <li><p> rerunConnectivityTestAsync(RerunConnectivityTestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rerunConnectivityTestOperationCallable()
- *           <li>rerunConnectivityTestCallable()
+ *           <li><p> rerunConnectivityTestOperationCallable()
+ *           <li><p> rerunConnectivityTestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConnectivityTest</td>
+ *      <td><p> DeleteConnectivityTest</td>
  *      <td><p> Deletes a specific `ConnectivityTest`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConnectivityTestAsync(DeleteConnectivityTestRequest request)
+ *           <li><p> deleteConnectivityTestAsync(DeleteConnectivityTestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConnectivityTestOperationCallable()
- *           <li>deleteConnectivityTestCallable()
+ *           <li><p> deleteConnectivityTestOperationCallable()
+ *           <li><p> deleteConnectivityTestCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

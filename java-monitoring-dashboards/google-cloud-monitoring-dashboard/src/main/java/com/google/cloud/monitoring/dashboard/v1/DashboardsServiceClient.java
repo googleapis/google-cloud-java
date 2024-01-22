@@ -70,85 +70,86 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDashboard</td>
+ *      <td><p> CreateDashboard</td>
  *      <td><p> Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDashboard(CreateDashboardRequest request)
+ *           <li><p> createDashboard(CreateDashboardRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDashboardCallable()
+ *           <li><p> createDashboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDashboards</td>
+ *      <td><p> ListDashboards</td>
  *      <td><p> Lists the existing dashboards.
  * <p>  This method requires the `monitoring.dashboards.list` permission on the specified project. For more information, see [Cloud Identity and Access Management](https://cloud.google.com/iam).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDashboards(ListDashboardsRequest request)
+ *           <li><p> listDashboards(ListDashboardsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDashboardsPagedCallable()
- *           <li>listDashboardsCallable()
+ *           <li><p> listDashboardsPagedCallable()
+ *           <li><p> listDashboardsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDashboard</td>
+ *      <td><p> GetDashboard</td>
  *      <td><p> Fetches a specific dashboard.
  * <p>  This method requires the `monitoring.dashboards.get` permission on the specified dashboard. For more information, see [Cloud Identity and Access Management](https://cloud.google.com/iam).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDashboard(GetDashboardRequest request)
+ *           <li><p> getDashboard(GetDashboardRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDashboardCallable()
+ *           <li><p> getDashboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDashboard</td>
+ *      <td><p> DeleteDashboard</td>
  *      <td><p> Deletes an existing custom dashboard.
  * <p>  This method requires the `monitoring.dashboards.delete` permission on the specified dashboard. For more information, see [Cloud Identity and Access Management](https://cloud.google.com/iam).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDashboard(DeleteDashboardRequest request)
+ *           <li><p> deleteDashboard(DeleteDashboardRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDashboardCallable()
+ *           <li><p> deleteDashboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDashboard</td>
+ *      <td><p> UpdateDashboard</td>
  *      <td><p> Replaces an existing custom dashboard with a new definition.
  * <p>  This method requires the `monitoring.dashboards.update` permission on the specified dashboard. For more information, see [Cloud Identity and Access Management](https://cloud.google.com/iam).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDashboard(UpdateDashboardRequest request)
+ *           <li><p> updateDashboard(UpdateDashboardRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDashboardCallable()
+ *           <li><p> updateDashboardCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

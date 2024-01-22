@@ -83,211 +83,212 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListNotificationChannelDescriptors</td>
+ *      <td><p> ListNotificationChannelDescriptors</td>
  *      <td><p> Lists the descriptors for supported channel types. The use of descriptors makes it possible for new channel types to be dynamically added.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNotificationChannelDescriptors(ListNotificationChannelDescriptorsRequest request)
+ *           <li><p> listNotificationChannelDescriptors(ListNotificationChannelDescriptorsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNotificationChannelDescriptors(ResourceName name)
- *           <li>listNotificationChannelDescriptors(OrganizationName name)
- *           <li>listNotificationChannelDescriptors(ProjectName name)
- *           <li>listNotificationChannelDescriptors(String name)
+ *           <li><p> listNotificationChannelDescriptors(ResourceName name)
+ *           <li><p> listNotificationChannelDescriptors(OrganizationName name)
+ *           <li><p> listNotificationChannelDescriptors(ProjectName name)
+ *           <li><p> listNotificationChannelDescriptors(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNotificationChannelDescriptorsPagedCallable()
- *           <li>listNotificationChannelDescriptorsCallable()
+ *           <li><p> listNotificationChannelDescriptorsPagedCallable()
+ *           <li><p> listNotificationChannelDescriptorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNotificationChannelDescriptor</td>
+ *      <td><p> GetNotificationChannelDescriptor</td>
  *      <td><p> Gets a single channel descriptor. The descriptor indicates which fields are expected / permitted for a notification channel of the given type.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNotificationChannelDescriptor(GetNotificationChannelDescriptorRequest request)
+ *           <li><p> getNotificationChannelDescriptor(GetNotificationChannelDescriptorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNotificationChannelDescriptor(NotificationChannelDescriptorName name)
- *           <li>getNotificationChannelDescriptor(String name)
+ *           <li><p> getNotificationChannelDescriptor(NotificationChannelDescriptorName name)
+ *           <li><p> getNotificationChannelDescriptor(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNotificationChannelDescriptorCallable()
+ *           <li><p> getNotificationChannelDescriptorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNotificationChannels</td>
+ *      <td><p> ListNotificationChannels</td>
  *      <td><p> Lists the notification channels that have been created for the project. To list the types of notification channels that are supported, use the `ListNotificationChannelDescriptors` method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNotificationChannels(ListNotificationChannelsRequest request)
+ *           <li><p> listNotificationChannels(ListNotificationChannelsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNotificationChannels(ResourceName name)
- *           <li>listNotificationChannels(OrganizationName name)
- *           <li>listNotificationChannels(ProjectName name)
- *           <li>listNotificationChannels(String name)
+ *           <li><p> listNotificationChannels(ResourceName name)
+ *           <li><p> listNotificationChannels(OrganizationName name)
+ *           <li><p> listNotificationChannels(ProjectName name)
+ *           <li><p> listNotificationChannels(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNotificationChannelsPagedCallable()
- *           <li>listNotificationChannelsCallable()
+ *           <li><p> listNotificationChannelsPagedCallable()
+ *           <li><p> listNotificationChannelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNotificationChannel</td>
+ *      <td><p> GetNotificationChannel</td>
  *      <td><p> Gets a single notification channel. The channel includes the relevant configuration details with which the channel was created. However, the response may truncate or omit passwords, API keys, or other private key matter and thus the response may not be 100% identical to the information that was supplied in the call to the create method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNotificationChannel(GetNotificationChannelRequest request)
+ *           <li><p> getNotificationChannel(GetNotificationChannelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNotificationChannel(NotificationChannelName name)
- *           <li>getNotificationChannel(String name)
+ *           <li><p> getNotificationChannel(NotificationChannelName name)
+ *           <li><p> getNotificationChannel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNotificationChannelCallable()
+ *           <li><p> getNotificationChannelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNotificationChannel</td>
+ *      <td><p> CreateNotificationChannel</td>
  *      <td><p> Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or PagerDuty service.
  * <p>  Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNotificationChannel(CreateNotificationChannelRequest request)
+ *           <li><p> createNotificationChannel(CreateNotificationChannelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createNotificationChannel(ResourceName name, NotificationChannel notificationChannel)
- *           <li>createNotificationChannel(OrganizationName name, NotificationChannel notificationChannel)
- *           <li>createNotificationChannel(ProjectName name, NotificationChannel notificationChannel)
- *           <li>createNotificationChannel(String name, NotificationChannel notificationChannel)
+ *           <li><p> createNotificationChannel(ResourceName name, NotificationChannel notificationChannel)
+ *           <li><p> createNotificationChannel(OrganizationName name, NotificationChannel notificationChannel)
+ *           <li><p> createNotificationChannel(ProjectName name, NotificationChannel notificationChannel)
+ *           <li><p> createNotificationChannel(String name, NotificationChannel notificationChannel)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNotificationChannelCallable()
+ *           <li><p> createNotificationChannelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNotificationChannel</td>
+ *      <td><p> UpdateNotificationChannel</td>
  *      <td><p> Updates a notification channel. Fields not specified in the field mask remain unchanged.
  * <p>  Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNotificationChannel(UpdateNotificationChannelRequest request)
+ *           <li><p> updateNotificationChannel(UpdateNotificationChannelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateNotificationChannel(FieldMask updateMask, NotificationChannel notificationChannel)
+ *           <li><p> updateNotificationChannel(FieldMask updateMask, NotificationChannel notificationChannel)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNotificationChannelCallable()
+ *           <li><p> updateNotificationChannelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNotificationChannel</td>
+ *      <td><p> DeleteNotificationChannel</td>
  *      <td><p> Deletes a notification channel.
  * <p>  Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNotificationChannel(DeleteNotificationChannelRequest request)
+ *           <li><p> deleteNotificationChannel(DeleteNotificationChannelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteNotificationChannel(NotificationChannelName name, boolean force)
- *           <li>deleteNotificationChannel(String name, boolean force)
+ *           <li><p> deleteNotificationChannel(NotificationChannelName name, boolean force)
+ *           <li><p> deleteNotificationChannel(String name, boolean force)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNotificationChannelCallable()
+ *           <li><p> deleteNotificationChannelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SendNotificationChannelVerificationCode</td>
+ *      <td><p> SendNotificationChannelVerificationCode</td>
  *      <td><p> Causes a verification code to be delivered to the channel. The code can then be supplied in `VerifyNotificationChannel` to verify the channel.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>sendNotificationChannelVerificationCode(SendNotificationChannelVerificationCodeRequest request)
+ *           <li><p> sendNotificationChannelVerificationCode(SendNotificationChannelVerificationCodeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>sendNotificationChannelVerificationCode(NotificationChannelName name)
- *           <li>sendNotificationChannelVerificationCode(String name)
+ *           <li><p> sendNotificationChannelVerificationCode(NotificationChannelName name)
+ *           <li><p> sendNotificationChannelVerificationCode(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>sendNotificationChannelVerificationCodeCallable()
+ *           <li><p> sendNotificationChannelVerificationCodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNotificationChannelVerificationCode</td>
+ *      <td><p> GetNotificationChannelVerificationCode</td>
  *      <td><p> Requests a verification code for an already verified channel that can then be used in a call to VerifyNotificationChannel() on a different channel with an equivalent identity in the same or in a different project. This makes it possible to copy a channel between projects without requiring manual reverification of the channel. If the channel is not in the verified state, this method will fail (in other words, this may only be used if the SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been used to put the given channel into the verified state).
  * <p>  There is no guarantee that the verification codes returned by this method will be of a similar structure or form as the ones that are delivered to the channel via SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both the codes delivered via SendNotificationChannelVerificationCode() and returned from GetNotificationChannelVerificationCode(), it is typically the case that the verification codes delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return a much longer, websafe base 64 encoded string that has a longer expiration time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNotificationChannelVerificationCode(GetNotificationChannelVerificationCodeRequest request)
+ *           <li><p> getNotificationChannelVerificationCode(GetNotificationChannelVerificationCodeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNotificationChannelVerificationCode(NotificationChannelName name)
- *           <li>getNotificationChannelVerificationCode(String name)
+ *           <li><p> getNotificationChannelVerificationCode(NotificationChannelName name)
+ *           <li><p> getNotificationChannelVerificationCode(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNotificationChannelVerificationCodeCallable()
+ *           <li><p> getNotificationChannelVerificationCodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>VerifyNotificationChannel</td>
+ *      <td><p> VerifyNotificationChannel</td>
  *      <td><p> Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a result of calling `SendNotificationChannelVerificationCode`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>verifyNotificationChannel(VerifyNotificationChannelRequest request)
+ *           <li><p> verifyNotificationChannel(VerifyNotificationChannelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>verifyNotificationChannel(NotificationChannelName name, String code)
- *           <li>verifyNotificationChannel(String name, String code)
+ *           <li><p> verifyNotificationChannel(NotificationChannelName name, String code)
+ *           <li><p> verifyNotificationChannel(String name, String code)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>verifyNotificationChannelCallable()
+ *           <li><p> verifyNotificationChannelCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -55,24 +55,25 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>TroubleshootIamPolicy</td>
+ *      <td><p> TroubleshootIamPolicy</td>
  *      <td><p> Checks whether a principal has a specific permission for a specific resource, and explains why the principal does or doesn't have that permission.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>troubleshootIamPolicy(TroubleshootIamPolicyRequest request)
+ *           <li><p> troubleshootIamPolicy(TroubleshootIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>troubleshootIamPolicyCallable()
+ *           <li><p> troubleshootIamPolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

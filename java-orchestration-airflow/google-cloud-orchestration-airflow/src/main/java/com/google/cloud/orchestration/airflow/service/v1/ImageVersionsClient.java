@@ -57,29 +57,30 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListImageVersions</td>
+ *      <td><p> ListImageVersions</td>
  *      <td><p> List ImageVersions for provided location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listImageVersions(ListImageVersionsRequest request)
+ *           <li><p> listImageVersions(ListImageVersionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listImageVersions(String parent)
+ *           <li><p> listImageVersions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listImageVersionsPagedCallable()
- *           <li>listImageVersionsCallable()
+ *           <li><p> listImageVersionsPagedCallable()
+ *           <li><p> listImageVersionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

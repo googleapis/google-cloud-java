@@ -55,147 +55,148 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateSshPublicKey</td>
+ *      <td><p> CreateSshPublicKey</td>
  *      <td><p> Create an SSH public key</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSshPublicKey(CreateSshPublicKeyRequest request)
+ *           <li><p> createSshPublicKey(CreateSshPublicKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSshPublicKey(UserName parent, OsLoginProto.SshPublicKey sshPublicKey)
- *           <li>createSshPublicKey(String parent, OsLoginProto.SshPublicKey sshPublicKey)
+ *           <li><p> createSshPublicKey(UserName parent, OsLoginProto.SshPublicKey sshPublicKey)
+ *           <li><p> createSshPublicKey(String parent, OsLoginProto.SshPublicKey sshPublicKey)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSshPublicKeyCallable()
+ *           <li><p> createSshPublicKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePosixAccount</td>
+ *      <td><p> DeletePosixAccount</td>
  *      <td><p> Deletes a POSIX account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePosixAccount(DeletePosixAccountRequest request)
+ *           <li><p> deletePosixAccount(DeletePosixAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deletePosixAccount(ProjectName name)
- *           <li>deletePosixAccount(String name)
+ *           <li><p> deletePosixAccount(ProjectName name)
+ *           <li><p> deletePosixAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePosixAccountCallable()
+ *           <li><p> deletePosixAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSshPublicKey</td>
+ *      <td><p> DeleteSshPublicKey</td>
  *      <td><p> Deletes an SSH public key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSshPublicKey(DeleteSshPublicKeyRequest request)
+ *           <li><p> deleteSshPublicKey(DeleteSshPublicKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSshPublicKey(FingerprintName name)
- *           <li>deleteSshPublicKey(String name)
+ *           <li><p> deleteSshPublicKey(FingerprintName name)
+ *           <li><p> deleteSshPublicKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSshPublicKeyCallable()
+ *           <li><p> deleteSshPublicKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLoginProfile</td>
+ *      <td><p> GetLoginProfile</td>
  *      <td><p> Retrieves the profile information used for logging in to a virtual machine on Google Compute Engine.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLoginProfile(GetLoginProfileRequest request)
+ *           <li><p> getLoginProfile(GetLoginProfileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getLoginProfile(UserName name)
- *           <li>getLoginProfile(String name)
+ *           <li><p> getLoginProfile(UserName name)
+ *           <li><p> getLoginProfile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLoginProfileCallable()
+ *           <li><p> getLoginProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSshPublicKey</td>
+ *      <td><p> GetSshPublicKey</td>
  *      <td><p> Retrieves an SSH public key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSshPublicKey(GetSshPublicKeyRequest request)
+ *           <li><p> getSshPublicKey(GetSshPublicKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSshPublicKey(FingerprintName name)
- *           <li>getSshPublicKey(String name)
+ *           <li><p> getSshPublicKey(FingerprintName name)
+ *           <li><p> getSshPublicKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSshPublicKeyCallable()
+ *           <li><p> getSshPublicKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportSshPublicKey</td>
+ *      <td><p> ImportSshPublicKey</td>
  *      <td><p> Adds an SSH public key and returns the profile information. Default POSIX account information is set when no username and UID exist as part of the login profile.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importSshPublicKey(ImportSshPublicKeyRequest request)
+ *           <li><p> importSshPublicKey(ImportSshPublicKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>importSshPublicKey(UserName parent, OsLoginProto.SshPublicKey sshPublicKey)
- *           <li>importSshPublicKey(String parent, OsLoginProto.SshPublicKey sshPublicKey)
- *           <li>importSshPublicKey(UserName parent, OsLoginProto.SshPublicKey sshPublicKey, String projectId)
- *           <li>importSshPublicKey(String parent, OsLoginProto.SshPublicKey sshPublicKey, String projectId)
+ *           <li><p> importSshPublicKey(UserName parent, OsLoginProto.SshPublicKey sshPublicKey)
+ *           <li><p> importSshPublicKey(String parent, OsLoginProto.SshPublicKey sshPublicKey)
+ *           <li><p> importSshPublicKey(UserName parent, OsLoginProto.SshPublicKey sshPublicKey, String projectId)
+ *           <li><p> importSshPublicKey(String parent, OsLoginProto.SshPublicKey sshPublicKey, String projectId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importSshPublicKeyCallable()
+ *           <li><p> importSshPublicKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSshPublicKey</td>
+ *      <td><p> UpdateSshPublicKey</td>
  *      <td><p> Updates an SSH public key and returns the profile information. This method supports patch semantics.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSshPublicKey(UpdateSshPublicKeyRequest request)
+ *           <li><p> updateSshPublicKey(UpdateSshPublicKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSshPublicKey(FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey)
- *           <li>updateSshPublicKey(String name, OsLoginProto.SshPublicKey sshPublicKey)
- *           <li>updateSshPublicKey(FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey, FieldMask updateMask)
- *           <li>updateSshPublicKey(String name, OsLoginProto.SshPublicKey sshPublicKey, FieldMask updateMask)
+ *           <li><p> updateSshPublicKey(FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey)
+ *           <li><p> updateSshPublicKey(String name, OsLoginProto.SshPublicKey sshPublicKey)
+ *           <li><p> updateSshPublicKey(FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey, FieldMask updateMask)
+ *           <li><p> updateSshPublicKey(String name, OsLoginProto.SshPublicKey sshPublicKey, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSshPublicKeyCallable()
+ *           <li><p> updateSshPublicKeyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

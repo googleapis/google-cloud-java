@@ -72,308 +72,309 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ExecutePatchJob</td>
+ *      <td><p> ExecutePatchJob</td>
  *      <td><p> Patch VM instances by creating and running a patch job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>executePatchJob(PatchJobs.ExecutePatchJobRequest request)
+ *           <li><p> executePatchJob(PatchJobs.ExecutePatchJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>executePatchJobCallable()
+ *           <li><p> executePatchJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPatchJob</td>
+ *      <td><p> GetPatchJob</td>
  *      <td><p> Get the patch job. This can be used to track the progress of an ongoing patch job or review the details of completed jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPatchJob(PatchJobs.GetPatchJobRequest request)
+ *           <li><p> getPatchJob(PatchJobs.GetPatchJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPatchJobCallable()
+ *           <li><p> getPatchJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelPatchJob</td>
+ *      <td><p> CancelPatchJob</td>
  *      <td><p> Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelPatchJob(PatchJobs.CancelPatchJobRequest request)
+ *           <li><p> cancelPatchJob(PatchJobs.CancelPatchJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelPatchJobCallable()
+ *           <li><p> cancelPatchJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPatchJobs</td>
+ *      <td><p> ListPatchJobs</td>
  *      <td><p> Get a list of patch jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPatchJobs(PatchJobs.ListPatchJobsRequest request)
+ *           <li><p> listPatchJobs(PatchJobs.ListPatchJobsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPatchJobsPagedCallable()
- *           <li>listPatchJobsCallable()
+ *           <li><p> listPatchJobsPagedCallable()
+ *           <li><p> listPatchJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPatchJobInstanceDetails</td>
+ *      <td><p> ListPatchJobInstanceDetails</td>
  *      <td><p> Get a list of instance details for a given patch job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPatchJobInstanceDetails(PatchJobs.ListPatchJobInstanceDetailsRequest request)
+ *           <li><p> listPatchJobInstanceDetails(PatchJobs.ListPatchJobInstanceDetailsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPatchJobInstanceDetails(String parent)
+ *           <li><p> listPatchJobInstanceDetails(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPatchJobInstanceDetailsPagedCallable()
- *           <li>listPatchJobInstanceDetailsCallable()
+ *           <li><p> listPatchJobInstanceDetailsPagedCallable()
+ *           <li><p> listPatchJobInstanceDetailsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePatchDeployment</td>
+ *      <td><p> CreatePatchDeployment</td>
  *      <td><p> Create an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPatchDeployment(PatchDeployments.CreatePatchDeploymentRequest request)
+ *           <li><p> createPatchDeployment(PatchDeployments.CreatePatchDeploymentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPatchDeploymentCallable()
+ *           <li><p> createPatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPatchDeployment</td>
+ *      <td><p> GetPatchDeployment</td>
  *      <td><p> Get an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPatchDeployment(PatchDeployments.GetPatchDeploymentRequest request)
+ *           <li><p> getPatchDeployment(PatchDeployments.GetPatchDeploymentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPatchDeploymentCallable()
+ *           <li><p> getPatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPatchDeployments</td>
+ *      <td><p> ListPatchDeployments</td>
  *      <td><p> Get a page of OS Config patch deployments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPatchDeployments(PatchDeployments.ListPatchDeploymentsRequest request)
+ *           <li><p> listPatchDeployments(PatchDeployments.ListPatchDeploymentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPatchDeploymentsPagedCallable()
- *           <li>listPatchDeploymentsCallable()
+ *           <li><p> listPatchDeploymentsPagedCallable()
+ *           <li><p> listPatchDeploymentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePatchDeployment</td>
+ *      <td><p> DeletePatchDeployment</td>
  *      <td><p> Delete an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePatchDeployment(PatchDeployments.DeletePatchDeploymentRequest request)
+ *           <li><p> deletePatchDeployment(PatchDeployments.DeletePatchDeploymentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePatchDeploymentCallable()
+ *           <li><p> deletePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePatchDeployment</td>
+ *      <td><p> UpdatePatchDeployment</td>
  *      <td><p> Update an OS Config patch deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePatchDeployment(PatchDeployments.UpdatePatchDeploymentRequest request)
+ *           <li><p> updatePatchDeployment(PatchDeployments.UpdatePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updatePatchDeployment(PatchDeployments.PatchDeployment patchDeployment, FieldMask updateMask)
+ *           <li><p> updatePatchDeployment(PatchDeployments.PatchDeployment patchDeployment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePatchDeploymentCallable()
+ *           <li><p> updatePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PausePatchDeployment</td>
+ *      <td><p> PausePatchDeployment</td>
  *      <td><p> Change state of patch deployment to "PAUSED". Patch deployment in paused state doesn't generate patch jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pausePatchDeployment(PatchDeployments.PausePatchDeploymentRequest request)
+ *           <li><p> pausePatchDeployment(PatchDeployments.PausePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pausePatchDeployment(PatchDeploymentName name)
- *           <li>pausePatchDeployment(String name)
+ *           <li><p> pausePatchDeployment(PatchDeploymentName name)
+ *           <li><p> pausePatchDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pausePatchDeploymentCallable()
+ *           <li><p> pausePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumePatchDeployment</td>
+ *      <td><p> ResumePatchDeployment</td>
  *      <td><p> Change state of patch deployment back to "ACTIVE". Patch deployment in active state continues to generate patch jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumePatchDeployment(PatchDeployments.ResumePatchDeploymentRequest request)
+ *           <li><p> resumePatchDeployment(PatchDeployments.ResumePatchDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumePatchDeployment(PatchDeploymentName name)
- *           <li>resumePatchDeployment(String name)
+ *           <li><p> resumePatchDeployment(PatchDeploymentName name)
+ *           <li><p> resumePatchDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumePatchDeploymentCallable()
+ *           <li><p> resumePatchDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateGuestPolicy</td>
+ *      <td><p> CreateGuestPolicy</td>
  *      <td><p> Create an OS Config guest policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createGuestPolicy(GuestPolicies.CreateGuestPolicyRequest request)
+ *           <li><p> createGuestPolicy(GuestPolicies.CreateGuestPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createGuestPolicy(ProjectName parent, GuestPolicies.GuestPolicy guestPolicy)
- *           <li>createGuestPolicy(String parent, GuestPolicies.GuestPolicy guestPolicy)
+ *           <li><p> createGuestPolicy(ProjectName parent, GuestPolicies.GuestPolicy guestPolicy)
+ *           <li><p> createGuestPolicy(String parent, GuestPolicies.GuestPolicy guestPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createGuestPolicyCallable()
+ *           <li><p> createGuestPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGuestPolicy</td>
+ *      <td><p> GetGuestPolicy</td>
  *      <td><p> Get an OS Config guest policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGuestPolicy(GuestPolicies.GetGuestPolicyRequest request)
+ *           <li><p> getGuestPolicy(GuestPolicies.GetGuestPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGuestPolicy(GuestPolicyName name)
- *           <li>getGuestPolicy(String name)
+ *           <li><p> getGuestPolicy(GuestPolicyName name)
+ *           <li><p> getGuestPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGuestPolicyCallable()
+ *           <li><p> getGuestPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListGuestPolicies</td>
+ *      <td><p> ListGuestPolicies</td>
  *      <td><p> Get a page of OS Config guest policies.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGuestPolicies(GuestPolicies.ListGuestPoliciesRequest request)
+ *           <li><p> listGuestPolicies(GuestPolicies.ListGuestPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGuestPolicies(ProjectName parent)
- *           <li>listGuestPolicies(String parent)
+ *           <li><p> listGuestPolicies(ProjectName parent)
+ *           <li><p> listGuestPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGuestPoliciesPagedCallable()
- *           <li>listGuestPoliciesCallable()
+ *           <li><p> listGuestPoliciesPagedCallable()
+ *           <li><p> listGuestPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGuestPolicy</td>
+ *      <td><p> UpdateGuestPolicy</td>
  *      <td><p> Update an OS Config guest policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGuestPolicy(GuestPolicies.UpdateGuestPolicyRequest request)
+ *           <li><p> updateGuestPolicy(GuestPolicies.UpdateGuestPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGuestPolicy(GuestPolicies.GuestPolicy guestPolicy, FieldMask updateMask)
+ *           <li><p> updateGuestPolicy(GuestPolicies.GuestPolicy guestPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGuestPolicyCallable()
+ *           <li><p> updateGuestPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteGuestPolicy</td>
+ *      <td><p> DeleteGuestPolicy</td>
  *      <td><p> Delete an OS Config guest policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteGuestPolicy(GuestPolicies.DeleteGuestPolicyRequest request)
+ *           <li><p> deleteGuestPolicy(GuestPolicies.DeleteGuestPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteGuestPolicy(GuestPolicyName name)
- *           <li>deleteGuestPolicy(String name)
+ *           <li><p> deleteGuestPolicy(GuestPolicyName name)
+ *           <li><p> deleteGuestPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteGuestPolicyCallable()
+ *           <li><p> deleteGuestPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupEffectiveGuestPolicy</td>
+ *      <td><p> LookupEffectiveGuestPolicy</td>
  *      <td><p> Lookup the effective guest policy that applies to a VM instance. This lookup merges all policies that are assigned to the instance ancestry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupEffectiveGuestPolicy(GuestPolicies.LookupEffectiveGuestPolicyRequest request)
+ *           <li><p> lookupEffectiveGuestPolicy(GuestPolicies.LookupEffectiveGuestPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupEffectiveGuestPolicyCallable()
+ *           <li><p> lookupEffectiveGuestPolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
