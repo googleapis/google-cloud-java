@@ -125,7 +125,7 @@ jobs:
           git add --all
           commit_message="feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}"
           git commit -m "${commit_message}"
-          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
           git push -f monorepo "${branch_name}"
 
