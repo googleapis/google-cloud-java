@@ -71,1539 +71,1540 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListPrivateClouds</td>
+ *      <td><p> ListPrivateClouds</td>
  *      <td><p> Lists `PrivateCloud` resources in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPrivateClouds(ListPrivateCloudsRequest request)
+ *           <li><p> listPrivateClouds(ListPrivateCloudsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPrivateClouds(LocationName parent)
- *           <li>listPrivateClouds(String parent)
+ *           <li><p> listPrivateClouds(LocationName parent)
+ *           <li><p> listPrivateClouds(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPrivateCloudsPagedCallable()
- *           <li>listPrivateCloudsCallable()
+ *           <li><p> listPrivateCloudsPagedCallable()
+ *           <li><p> listPrivateCloudsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPrivateCloud</td>
+ *      <td><p> GetPrivateCloud</td>
  *      <td><p> Retrieves a `PrivateCloud` resource by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPrivateCloud(GetPrivateCloudRequest request)
+ *           <li><p> getPrivateCloud(GetPrivateCloudRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPrivateCloud(PrivateCloudName name)
- *           <li>getPrivateCloud(String name)
+ *           <li><p> getPrivateCloud(PrivateCloudName name)
+ *           <li><p> getPrivateCloud(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPrivateCloudCallable()
+ *           <li><p> getPrivateCloudCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePrivateCloud</td>
+ *      <td><p> CreatePrivateCloud</td>
  *      <td><p> Creates a new `PrivateCloud` resource in a given project and location. Private clouds of type `STANDARD` and `TIME_LIMITED` are zonal resources, `STRETCHED` private clouds are regional. Creating a private cloud also creates a [management cluster](https://cloud.google.com/vmware-engine/docs/concepts-vmware-components) for that private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPrivateCloudAsync(CreatePrivateCloudRequest request)
+ *           <li><p> createPrivateCloudAsync(CreatePrivateCloudRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createPrivateCloudAsync(LocationName parent, PrivateCloud privateCloud, String privateCloudId)
- *           <li>createPrivateCloudAsync(String parent, PrivateCloud privateCloud, String privateCloudId)
+ *           <li><p> createPrivateCloudAsync(LocationName parent, PrivateCloud privateCloud, String privateCloudId)
+ *           <li><p> createPrivateCloudAsync(String parent, PrivateCloud privateCloud, String privateCloudId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPrivateCloudOperationCallable()
- *           <li>createPrivateCloudCallable()
+ *           <li><p> createPrivateCloudOperationCallable()
+ *           <li><p> createPrivateCloudCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePrivateCloud</td>
+ *      <td><p> UpdatePrivateCloud</td>
  *      <td><p> Modifies a `PrivateCloud` resource. Only the following fields can be updated: `description`. Only fields specified in `updateMask` are applied.
  * <p>  During operation processing, the resource is temporarily in the `ACTIVE` state before the operation fully completes. For that period of time, you can't update the resource. Use the operation status to determine when the processing fully completes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePrivateCloudAsync(UpdatePrivateCloudRequest request)
+ *           <li><p> updatePrivateCloudAsync(UpdatePrivateCloudRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updatePrivateCloudAsync(PrivateCloud privateCloud, FieldMask updateMask)
+ *           <li><p> updatePrivateCloudAsync(PrivateCloud privateCloud, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePrivateCloudOperationCallable()
- *           <li>updatePrivateCloudCallable()
+ *           <li><p> updatePrivateCloudOperationCallable()
+ *           <li><p> updatePrivateCloudCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePrivateCloud</td>
+ *      <td><p> DeletePrivateCloud</td>
  *      <td><p> Schedules a `PrivateCloud` resource for deletion.
  * <p>  A `PrivateCloud` resource scheduled for deletion has `PrivateCloud.state` set to `DELETED` and `expireTime` set to the time when deletion is final and can no longer be reversed. The delete operation is marked as done as soon as the `PrivateCloud` is successfully scheduled for deletion (this also applies when `delayHours` is set to zero), and the operation is not kept in pending state until `PrivateCloud` is purged. `PrivateCloud` can be restored using `UndeletePrivateCloud` method before the `expireTime` elapses. When `expireTime` is reached, deletion is final and all private cloud resources are irreversibly removed and billing stops. During the final removal process, `PrivateCloud.state` is set to `PURGING`. `PrivateCloud` can be polled using standard `GET` method for the whole period of deletion and purging. It will not be returned only when it is completely purged.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePrivateCloudAsync(DeletePrivateCloudRequest request)
+ *           <li><p> deletePrivateCloudAsync(DeletePrivateCloudRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePrivateCloudAsync(PrivateCloudName name)
- *           <li>deletePrivateCloudAsync(String name)
+ *           <li><p> deletePrivateCloudAsync(PrivateCloudName name)
+ *           <li><p> deletePrivateCloudAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePrivateCloudOperationCallable()
- *           <li>deletePrivateCloudCallable()
+ *           <li><p> deletePrivateCloudOperationCallable()
+ *           <li><p> deletePrivateCloudCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeletePrivateCloud</td>
+ *      <td><p> UndeletePrivateCloud</td>
  *      <td><p> Restores a private cloud that was previously scheduled for deletion by `DeletePrivateCloud`. A `PrivateCloud` resource scheduled for deletion has `PrivateCloud.state` set to `DELETED` and `PrivateCloud.expireTime` set to the time when deletion can no longer be reversed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeletePrivateCloudAsync(UndeletePrivateCloudRequest request)
+ *           <li><p> undeletePrivateCloudAsync(UndeletePrivateCloudRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeletePrivateCloudAsync(PrivateCloudName name)
- *           <li>undeletePrivateCloudAsync(String name)
+ *           <li><p> undeletePrivateCloudAsync(PrivateCloudName name)
+ *           <li><p> undeletePrivateCloudAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeletePrivateCloudOperationCallable()
- *           <li>undeletePrivateCloudCallable()
+ *           <li><p> undeletePrivateCloudOperationCallable()
+ *           <li><p> undeletePrivateCloudCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListClusters</td>
+ *      <td><p> ListClusters</td>
  *      <td><p> Lists `Cluster` resources in a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClusters(ListClustersRequest request)
+ *           <li><p> listClusters(ListClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClusters(PrivateCloudName parent)
- *           <li>listClusters(String parent)
+ *           <li><p> listClusters(PrivateCloudName parent)
+ *           <li><p> listClusters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClustersPagedCallable()
- *           <li>listClustersCallable()
+ *           <li><p> listClustersPagedCallable()
+ *           <li><p> listClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCluster</td>
+ *      <td><p> GetCluster</td>
  *      <td><p> Retrieves a `Cluster` resource by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCluster(GetClusterRequest request)
+ *           <li><p> getCluster(GetClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCluster(ClusterName name)
- *           <li>getCluster(String name)
+ *           <li><p> getCluster(ClusterName name)
+ *           <li><p> getCluster(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClusterCallable()
+ *           <li><p> getClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCluster</td>
+ *      <td><p> CreateCluster</td>
  *      <td><p> Creates a new cluster in a given private cloud. Creating a new cluster provides additional nodes for use in the parent private cloud and requires sufficient [node quota](https://cloud.google.com/vmware-engine/quotas).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClusterAsync(CreateClusterRequest request)
+ *           <li><p> createClusterAsync(CreateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createClusterAsync(PrivateCloudName parent, Cluster cluster, String clusterId)
- *           <li>createClusterAsync(String parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(PrivateCloudName parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(String parent, Cluster cluster, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClusterOperationCallable()
- *           <li>createClusterCallable()
+ *           <li><p> createClusterOperationCallable()
+ *           <li><p> createClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCluster</td>
+ *      <td><p> UpdateCluster</td>
  *      <td><p> Modifies a `Cluster` resource. Only fields specified in `updateMask` are applied.
  * <p>  During operation processing, the resource is temporarily in the `ACTIVE` state before the operation fully completes. For that period of time, you can't update the resource. Use the operation status to determine when the processing fully completes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateClusterAsync(UpdateClusterRequest request)
+ *           <li><p> updateClusterAsync(UpdateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateClusterAsync(Cluster cluster, FieldMask updateMask)
+ *           <li><p> updateClusterAsync(Cluster cluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClusterOperationCallable()
- *           <li>updateClusterCallable()
+ *           <li><p> updateClusterOperationCallable()
+ *           <li><p> updateClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCluster</td>
+ *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a `Cluster` resource. To avoid unintended data loss, migrate or gracefully shut down any workloads running on the cluster before deletion. You cannot delete the management cluster of a private cloud using this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteClusterAsync(DeleteClusterRequest request)
+ *           <li><p> deleteClusterAsync(DeleteClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteClusterAsync(ClusterName name)
- *           <li>deleteClusterAsync(String name)
+ *           <li><p> deleteClusterAsync(ClusterName name)
+ *           <li><p> deleteClusterAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClusterOperationCallable()
- *           <li>deleteClusterCallable()
+ *           <li><p> deleteClusterOperationCallable()
+ *           <li><p> deleteClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNodes</td>
+ *      <td><p> ListNodes</td>
  *      <td><p> Lists nodes in a given cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNodes(ListNodesRequest request)
+ *           <li><p> listNodes(ListNodesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNodes(ClusterName parent)
- *           <li>listNodes(String parent)
+ *           <li><p> listNodes(ClusterName parent)
+ *           <li><p> listNodes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNodesPagedCallable()
- *           <li>listNodesCallable()
+ *           <li><p> listNodesPagedCallable()
+ *           <li><p> listNodesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNode</td>
+ *      <td><p> GetNode</td>
  *      <td><p> Gets details of a single node.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNode(GetNodeRequest request)
+ *           <li><p> getNode(GetNodeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNode(NodeName name)
- *           <li>getNode(String name)
+ *           <li><p> getNode(NodeName name)
+ *           <li><p> getNode(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNodeCallable()
+ *           <li><p> getNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListExternalAddresses</td>
+ *      <td><p> ListExternalAddresses</td>
  *      <td><p> Lists external IP addresses assigned to VMware workload VMs in a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listExternalAddresses(ListExternalAddressesRequest request)
+ *           <li><p> listExternalAddresses(ListExternalAddressesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listExternalAddresses(PrivateCloudName parent)
- *           <li>listExternalAddresses(String parent)
+ *           <li><p> listExternalAddresses(PrivateCloudName parent)
+ *           <li><p> listExternalAddresses(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listExternalAddressesPagedCallable()
- *           <li>listExternalAddressesCallable()
+ *           <li><p> listExternalAddressesPagedCallable()
+ *           <li><p> listExternalAddressesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchNetworkPolicyExternalAddresses</td>
+ *      <td><p> FetchNetworkPolicyExternalAddresses</td>
  *      <td><p> Lists external IP addresses assigned to VMware workload VMs within the scope of the given network policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchNetworkPolicyExternalAddresses(FetchNetworkPolicyExternalAddressesRequest request)
+ *           <li><p> fetchNetworkPolicyExternalAddresses(FetchNetworkPolicyExternalAddressesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchNetworkPolicyExternalAddresses(NetworkPolicyName networkPolicy)
- *           <li>fetchNetworkPolicyExternalAddresses(String networkPolicy)
+ *           <li><p> fetchNetworkPolicyExternalAddresses(NetworkPolicyName networkPolicy)
+ *           <li><p> fetchNetworkPolicyExternalAddresses(String networkPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchNetworkPolicyExternalAddressesPagedCallable()
- *           <li>fetchNetworkPolicyExternalAddressesCallable()
+ *           <li><p> fetchNetworkPolicyExternalAddressesPagedCallable()
+ *           <li><p> fetchNetworkPolicyExternalAddressesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetExternalAddress</td>
+ *      <td><p> GetExternalAddress</td>
  *      <td><p> Gets details of a single external IP address.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getExternalAddress(GetExternalAddressRequest request)
+ *           <li><p> getExternalAddress(GetExternalAddressRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getExternalAddress(ExternalAddressName name)
- *           <li>getExternalAddress(String name)
+ *           <li><p> getExternalAddress(ExternalAddressName name)
+ *           <li><p> getExternalAddress(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getExternalAddressCallable()
+ *           <li><p> getExternalAddressCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateExternalAddress</td>
+ *      <td><p> CreateExternalAddress</td>
  *      <td><p> Creates a new `ExternalAddress` resource in a given private cloud. The network policy that corresponds to the private cloud must have the external IP address network service enabled (`NetworkPolicy.external_ip`).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createExternalAddressAsync(CreateExternalAddressRequest request)
+ *           <li><p> createExternalAddressAsync(CreateExternalAddressRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createExternalAddressAsync(PrivateCloudName parent, ExternalAddress externalAddress, String externalAddressId)
- *           <li>createExternalAddressAsync(String parent, ExternalAddress externalAddress, String externalAddressId)
+ *           <li><p> createExternalAddressAsync(PrivateCloudName parent, ExternalAddress externalAddress, String externalAddressId)
+ *           <li><p> createExternalAddressAsync(String parent, ExternalAddress externalAddress, String externalAddressId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createExternalAddressOperationCallable()
- *           <li>createExternalAddressCallable()
+ *           <li><p> createExternalAddressOperationCallable()
+ *           <li><p> createExternalAddressCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateExternalAddress</td>
+ *      <td><p> UpdateExternalAddress</td>
  *      <td><p> Updates the parameters of a single external IP address. Only fields specified in `update_mask` are applied.
  * <p>  During operation processing, the resource is temporarily in the `ACTIVE` state before the operation fully completes. For that period of time, you can't update the resource. Use the operation status to determine when the processing fully completes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateExternalAddressAsync(UpdateExternalAddressRequest request)
+ *           <li><p> updateExternalAddressAsync(UpdateExternalAddressRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateExternalAddressAsync(ExternalAddress externalAddress, FieldMask updateMask)
+ *           <li><p> updateExternalAddressAsync(ExternalAddress externalAddress, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateExternalAddressOperationCallable()
- *           <li>updateExternalAddressCallable()
+ *           <li><p> updateExternalAddressOperationCallable()
+ *           <li><p> updateExternalAddressCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteExternalAddress</td>
+ *      <td><p> DeleteExternalAddress</td>
  *      <td><p> Deletes a single external IP address. When you delete an external IP address, connectivity between the external IP address and the corresponding internal IP address is lost.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteExternalAddressAsync(DeleteExternalAddressRequest request)
+ *           <li><p> deleteExternalAddressAsync(DeleteExternalAddressRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteExternalAddressAsync(ExternalAddressName name)
- *           <li>deleteExternalAddressAsync(String name)
+ *           <li><p> deleteExternalAddressAsync(ExternalAddressName name)
+ *           <li><p> deleteExternalAddressAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteExternalAddressOperationCallable()
- *           <li>deleteExternalAddressCallable()
+ *           <li><p> deleteExternalAddressOperationCallable()
+ *           <li><p> deleteExternalAddressCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSubnets</td>
+ *      <td><p> ListSubnets</td>
  *      <td><p> Lists subnets in a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSubnets(ListSubnetsRequest request)
+ *           <li><p> listSubnets(ListSubnetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSubnets(PrivateCloudName parent)
- *           <li>listSubnets(String parent)
+ *           <li><p> listSubnets(PrivateCloudName parent)
+ *           <li><p> listSubnets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSubnetsPagedCallable()
- *           <li>listSubnetsCallable()
+ *           <li><p> listSubnetsPagedCallable()
+ *           <li><p> listSubnetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSubnet</td>
+ *      <td><p> GetSubnet</td>
  *      <td><p> Gets details of a single subnet.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSubnet(GetSubnetRequest request)
+ *           <li><p> getSubnet(GetSubnetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSubnet(SubnetName name)
- *           <li>getSubnet(String name)
+ *           <li><p> getSubnet(SubnetName name)
+ *           <li><p> getSubnet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSubnetCallable()
+ *           <li><p> getSubnetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSubnet</td>
+ *      <td><p> UpdateSubnet</td>
  *      <td><p> Updates the parameters of a single subnet. Only fields specified in `update_mask` are applied.
  * <p>  &#42;Note&#42;: This API is synchronous and always returns a successful `google.longrunning.Operation` (LRO). The returned LRO will only have `done` and `response` fields.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSubnetAsync(UpdateSubnetRequest request)
+ *           <li><p> updateSubnetAsync(UpdateSubnetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateSubnetAsync(Subnet subnet, FieldMask updateMask)
+ *           <li><p> updateSubnetAsync(Subnet subnet, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSubnetOperationCallable()
- *           <li>updateSubnetCallable()
+ *           <li><p> updateSubnetOperationCallable()
+ *           <li><p> updateSubnetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListExternalAccessRules</td>
+ *      <td><p> ListExternalAccessRules</td>
  *      <td><p> Lists `ExternalAccessRule` resources in the specified network policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listExternalAccessRules(ListExternalAccessRulesRequest request)
+ *           <li><p> listExternalAccessRules(ListExternalAccessRulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listExternalAccessRules(NetworkPolicyName parent)
- *           <li>listExternalAccessRules(String parent)
+ *           <li><p> listExternalAccessRules(NetworkPolicyName parent)
+ *           <li><p> listExternalAccessRules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listExternalAccessRulesPagedCallable()
- *           <li>listExternalAccessRulesCallable()
+ *           <li><p> listExternalAccessRulesPagedCallable()
+ *           <li><p> listExternalAccessRulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetExternalAccessRule</td>
+ *      <td><p> GetExternalAccessRule</td>
  *      <td><p> Gets details of a single external access rule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getExternalAccessRule(GetExternalAccessRuleRequest request)
+ *           <li><p> getExternalAccessRule(GetExternalAccessRuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getExternalAccessRule(ExternalAccessRuleName name)
- *           <li>getExternalAccessRule(String name)
+ *           <li><p> getExternalAccessRule(ExternalAccessRuleName name)
+ *           <li><p> getExternalAccessRule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getExternalAccessRuleCallable()
+ *           <li><p> getExternalAccessRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateExternalAccessRule</td>
+ *      <td><p> CreateExternalAccessRule</td>
  *      <td><p> Creates a new external access rule in a given network policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createExternalAccessRuleAsync(CreateExternalAccessRuleRequest request)
+ *           <li><p> createExternalAccessRuleAsync(CreateExternalAccessRuleRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createExternalAccessRuleAsync(NetworkPolicyName parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId)
- *           <li>createExternalAccessRuleAsync(String parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId)
+ *           <li><p> createExternalAccessRuleAsync(NetworkPolicyName parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId)
+ *           <li><p> createExternalAccessRuleAsync(String parent, ExternalAccessRule externalAccessRule, String externalAccessRuleId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createExternalAccessRuleOperationCallable()
- *           <li>createExternalAccessRuleCallable()
+ *           <li><p> createExternalAccessRuleOperationCallable()
+ *           <li><p> createExternalAccessRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateExternalAccessRule</td>
+ *      <td><p> UpdateExternalAccessRule</td>
  *      <td><p> Updates the parameters of a single external access rule. Only fields specified in `update_mask` are applied.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateExternalAccessRuleAsync(UpdateExternalAccessRuleRequest request)
+ *           <li><p> updateExternalAccessRuleAsync(UpdateExternalAccessRuleRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateExternalAccessRuleAsync(ExternalAccessRule externalAccessRule, FieldMask updateMask)
+ *           <li><p> updateExternalAccessRuleAsync(ExternalAccessRule externalAccessRule, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateExternalAccessRuleOperationCallable()
- *           <li>updateExternalAccessRuleCallable()
+ *           <li><p> updateExternalAccessRuleOperationCallable()
+ *           <li><p> updateExternalAccessRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteExternalAccessRule</td>
+ *      <td><p> DeleteExternalAccessRule</td>
  *      <td><p> Deletes a single external access rule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteExternalAccessRuleAsync(DeleteExternalAccessRuleRequest request)
+ *           <li><p> deleteExternalAccessRuleAsync(DeleteExternalAccessRuleRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteExternalAccessRuleAsync(ExternalAccessRuleName name)
- *           <li>deleteExternalAccessRuleAsync(String name)
+ *           <li><p> deleteExternalAccessRuleAsync(ExternalAccessRuleName name)
+ *           <li><p> deleteExternalAccessRuleAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteExternalAccessRuleOperationCallable()
- *           <li>deleteExternalAccessRuleCallable()
+ *           <li><p> deleteExternalAccessRuleOperationCallable()
+ *           <li><p> deleteExternalAccessRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLoggingServers</td>
+ *      <td><p> ListLoggingServers</td>
  *      <td><p> Lists logging servers configured for a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLoggingServers(ListLoggingServersRequest request)
+ *           <li><p> listLoggingServers(ListLoggingServersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listLoggingServers(PrivateCloudName parent)
- *           <li>listLoggingServers(String parent)
+ *           <li><p> listLoggingServers(PrivateCloudName parent)
+ *           <li><p> listLoggingServers(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLoggingServersPagedCallable()
- *           <li>listLoggingServersCallable()
+ *           <li><p> listLoggingServersPagedCallable()
+ *           <li><p> listLoggingServersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLoggingServer</td>
+ *      <td><p> GetLoggingServer</td>
  *      <td><p> Gets details of a logging server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLoggingServer(GetLoggingServerRequest request)
+ *           <li><p> getLoggingServer(GetLoggingServerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getLoggingServer(LoggingServerName name)
- *           <li>getLoggingServer(String name)
+ *           <li><p> getLoggingServer(LoggingServerName name)
+ *           <li><p> getLoggingServer(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLoggingServerCallable()
+ *           <li><p> getLoggingServerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateLoggingServer</td>
+ *      <td><p> CreateLoggingServer</td>
  *      <td><p> Create a new logging server for a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createLoggingServerAsync(CreateLoggingServerRequest request)
+ *           <li><p> createLoggingServerAsync(CreateLoggingServerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createLoggingServerAsync(PrivateCloudName parent, LoggingServer loggingServer, String loggingServerId)
- *           <li>createLoggingServerAsync(String parent, LoggingServer loggingServer, String loggingServerId)
+ *           <li><p> createLoggingServerAsync(PrivateCloudName parent, LoggingServer loggingServer, String loggingServerId)
+ *           <li><p> createLoggingServerAsync(String parent, LoggingServer loggingServer, String loggingServerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createLoggingServerOperationCallable()
- *           <li>createLoggingServerCallable()
+ *           <li><p> createLoggingServerOperationCallable()
+ *           <li><p> createLoggingServerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateLoggingServer</td>
+ *      <td><p> UpdateLoggingServer</td>
  *      <td><p> Updates the parameters of a single logging server. Only fields specified in `update_mask` are applied.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateLoggingServerAsync(UpdateLoggingServerRequest request)
+ *           <li><p> updateLoggingServerAsync(UpdateLoggingServerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateLoggingServerAsync(LoggingServer loggingServer, FieldMask updateMask)
+ *           <li><p> updateLoggingServerAsync(LoggingServer loggingServer, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateLoggingServerOperationCallable()
- *           <li>updateLoggingServerCallable()
+ *           <li><p> updateLoggingServerOperationCallable()
+ *           <li><p> updateLoggingServerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteLoggingServer</td>
+ *      <td><p> DeleteLoggingServer</td>
  *      <td><p> Deletes a single logging server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteLoggingServerAsync(DeleteLoggingServerRequest request)
+ *           <li><p> deleteLoggingServerAsync(DeleteLoggingServerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteLoggingServerAsync(LoggingServerName name)
- *           <li>deleteLoggingServerAsync(String name)
+ *           <li><p> deleteLoggingServerAsync(LoggingServerName name)
+ *           <li><p> deleteLoggingServerAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteLoggingServerOperationCallable()
- *           <li>deleteLoggingServerCallable()
+ *           <li><p> deleteLoggingServerOperationCallable()
+ *           <li><p> deleteLoggingServerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNodeTypes</td>
+ *      <td><p> ListNodeTypes</td>
  *      <td><p> Lists node types</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNodeTypes(ListNodeTypesRequest request)
+ *           <li><p> listNodeTypes(ListNodeTypesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNodeTypes(LocationName parent)
- *           <li>listNodeTypes(String parent)
+ *           <li><p> listNodeTypes(LocationName parent)
+ *           <li><p> listNodeTypes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNodeTypesPagedCallable()
- *           <li>listNodeTypesCallable()
+ *           <li><p> listNodeTypesPagedCallable()
+ *           <li><p> listNodeTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNodeType</td>
+ *      <td><p> GetNodeType</td>
  *      <td><p> Gets details of a single `NodeType`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNodeType(GetNodeTypeRequest request)
+ *           <li><p> getNodeType(GetNodeTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNodeType(NodeTypeName name)
- *           <li>getNodeType(String name)
+ *           <li><p> getNodeType(NodeTypeName name)
+ *           <li><p> getNodeType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNodeTypeCallable()
+ *           <li><p> getNodeTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ShowNsxCredentials</td>
+ *      <td><p> ShowNsxCredentials</td>
  *      <td><p> Gets details of credentials for NSX appliance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>showNsxCredentials(ShowNsxCredentialsRequest request)
+ *           <li><p> showNsxCredentials(ShowNsxCredentialsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>showNsxCredentials(PrivateCloudName privateCloud)
- *           <li>showNsxCredentials(String privateCloud)
+ *           <li><p> showNsxCredentials(PrivateCloudName privateCloud)
+ *           <li><p> showNsxCredentials(String privateCloud)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>showNsxCredentialsCallable()
+ *           <li><p> showNsxCredentialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ShowVcenterCredentials</td>
+ *      <td><p> ShowVcenterCredentials</td>
  *      <td><p> Gets details of credentials for Vcenter appliance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>showVcenterCredentials(ShowVcenterCredentialsRequest request)
+ *           <li><p> showVcenterCredentials(ShowVcenterCredentialsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>showVcenterCredentials(PrivateCloudName privateCloud)
- *           <li>showVcenterCredentials(String privateCloud)
+ *           <li><p> showVcenterCredentials(PrivateCloudName privateCloud)
+ *           <li><p> showVcenterCredentials(String privateCloud)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>showVcenterCredentialsCallable()
+ *           <li><p> showVcenterCredentialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResetNsxCredentials</td>
+ *      <td><p> ResetNsxCredentials</td>
  *      <td><p> Resets credentials of the NSX appliance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resetNsxCredentialsAsync(ResetNsxCredentialsRequest request)
+ *           <li><p> resetNsxCredentialsAsync(ResetNsxCredentialsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>resetNsxCredentialsAsync(PrivateCloudName privateCloud)
- *           <li>resetNsxCredentialsAsync(String privateCloud)
+ *           <li><p> resetNsxCredentialsAsync(PrivateCloudName privateCloud)
+ *           <li><p> resetNsxCredentialsAsync(String privateCloud)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resetNsxCredentialsOperationCallable()
- *           <li>resetNsxCredentialsCallable()
+ *           <li><p> resetNsxCredentialsOperationCallable()
+ *           <li><p> resetNsxCredentialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResetVcenterCredentials</td>
+ *      <td><p> ResetVcenterCredentials</td>
  *      <td><p> Resets credentials of the Vcenter appliance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resetVcenterCredentialsAsync(ResetVcenterCredentialsRequest request)
+ *           <li><p> resetVcenterCredentialsAsync(ResetVcenterCredentialsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>resetVcenterCredentialsAsync(PrivateCloudName privateCloud)
- *           <li>resetVcenterCredentialsAsync(String privateCloud)
+ *           <li><p> resetVcenterCredentialsAsync(PrivateCloudName privateCloud)
+ *           <li><p> resetVcenterCredentialsAsync(String privateCloud)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resetVcenterCredentialsOperationCallable()
- *           <li>resetVcenterCredentialsCallable()
+ *           <li><p> resetVcenterCredentialsOperationCallable()
+ *           <li><p> resetVcenterCredentialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDnsForwarding</td>
+ *      <td><p> GetDnsForwarding</td>
  *      <td><p> Gets details of the `DnsForwarding` config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDnsForwarding(GetDnsForwardingRequest request)
+ *           <li><p> getDnsForwarding(GetDnsForwardingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDnsForwarding(DnsForwardingName name)
- *           <li>getDnsForwarding(String name)
+ *           <li><p> getDnsForwarding(DnsForwardingName name)
+ *           <li><p> getDnsForwarding(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDnsForwardingCallable()
+ *           <li><p> getDnsForwardingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDnsForwarding</td>
+ *      <td><p> UpdateDnsForwarding</td>
  *      <td><p> Updates the parameters of the `DnsForwarding` config, like associated domains. Only fields specified in `update_mask` are applied.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDnsForwardingAsync(UpdateDnsForwardingRequest request)
+ *           <li><p> updateDnsForwardingAsync(UpdateDnsForwardingRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDnsForwardingAsync(DnsForwarding dnsForwarding, FieldMask updateMask)
+ *           <li><p> updateDnsForwardingAsync(DnsForwarding dnsForwarding, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDnsForwardingOperationCallable()
- *           <li>updateDnsForwardingCallable()
+ *           <li><p> updateDnsForwardingOperationCallable()
+ *           <li><p> updateDnsForwardingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNetworkPeering</td>
+ *      <td><p> GetNetworkPeering</td>
  *      <td><p> Retrieves a `NetworkPeering` resource by its resource name. The resource contains details of the network peering, such as peered networks, import and export custom route configurations, and peering state. NetworkPeering is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNetworkPeering(GetNetworkPeeringRequest request)
+ *           <li><p> getNetworkPeering(GetNetworkPeeringRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNetworkPeering(NetworkPeeringName name)
- *           <li>getNetworkPeering(String name)
+ *           <li><p> getNetworkPeering(NetworkPeeringName name)
+ *           <li><p> getNetworkPeering(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNetworkPeeringCallable()
+ *           <li><p> getNetworkPeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNetworkPeerings</td>
+ *      <td><p> ListNetworkPeerings</td>
  *      <td><p> Lists `NetworkPeering` resources in a given project. NetworkPeering is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNetworkPeerings(ListNetworkPeeringsRequest request)
+ *           <li><p> listNetworkPeerings(ListNetworkPeeringsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNetworkPeerings(LocationName parent)
- *           <li>listNetworkPeerings(String parent)
+ *           <li><p> listNetworkPeerings(LocationName parent)
+ *           <li><p> listNetworkPeerings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNetworkPeeringsPagedCallable()
- *           <li>listNetworkPeeringsCallable()
+ *           <li><p> listNetworkPeeringsPagedCallable()
+ *           <li><p> listNetworkPeeringsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNetworkPeering</td>
+ *      <td><p> CreateNetworkPeering</td>
  *      <td><p> Creates a new network peering between the peer network and VMware Engine network provided in a `NetworkPeering` resource. NetworkPeering is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNetworkPeeringAsync(CreateNetworkPeeringRequest request)
+ *           <li><p> createNetworkPeeringAsync(CreateNetworkPeeringRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createNetworkPeeringAsync(LocationName parent, NetworkPeering networkPeering, String networkPeeringId)
- *           <li>createNetworkPeeringAsync(String parent, NetworkPeering networkPeering, String networkPeeringId)
+ *           <li><p> createNetworkPeeringAsync(LocationName parent, NetworkPeering networkPeering, String networkPeeringId)
+ *           <li><p> createNetworkPeeringAsync(String parent, NetworkPeering networkPeering, String networkPeeringId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNetworkPeeringOperationCallable()
- *           <li>createNetworkPeeringCallable()
+ *           <li><p> createNetworkPeeringOperationCallable()
+ *           <li><p> createNetworkPeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNetworkPeering</td>
+ *      <td><p> DeleteNetworkPeering</td>
  *      <td><p> Deletes a `NetworkPeering` resource. When a network peering is deleted for a VMware Engine network, the peer network becomes inaccessible to that VMware Engine network. NetworkPeering is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNetworkPeeringAsync(DeleteNetworkPeeringRequest request)
+ *           <li><p> deleteNetworkPeeringAsync(DeleteNetworkPeeringRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteNetworkPeeringAsync(NetworkPeeringName name)
- *           <li>deleteNetworkPeeringAsync(String name)
+ *           <li><p> deleteNetworkPeeringAsync(NetworkPeeringName name)
+ *           <li><p> deleteNetworkPeeringAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNetworkPeeringOperationCallable()
- *           <li>deleteNetworkPeeringCallable()
+ *           <li><p> deleteNetworkPeeringOperationCallable()
+ *           <li><p> deleteNetworkPeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNetworkPeering</td>
+ *      <td><p> UpdateNetworkPeering</td>
  *      <td><p> Modifies a `NetworkPeering` resource. Only the `description` field can be updated. Only fields specified in `updateMask` are applied. NetworkPeering is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNetworkPeeringAsync(UpdateNetworkPeeringRequest request)
+ *           <li><p> updateNetworkPeeringAsync(UpdateNetworkPeeringRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateNetworkPeeringAsync(NetworkPeering networkPeering, FieldMask updateMask)
+ *           <li><p> updateNetworkPeeringAsync(NetworkPeering networkPeering, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNetworkPeeringOperationCallable()
- *           <li>updateNetworkPeeringCallable()
+ *           <li><p> updateNetworkPeeringOperationCallable()
+ *           <li><p> updateNetworkPeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPeeringRoutes</td>
+ *      <td><p> ListPeeringRoutes</td>
  *      <td><p> Lists the network peering routes exchanged over a peering connection. NetworkPeering is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPeeringRoutes(ListPeeringRoutesRequest request)
+ *           <li><p> listPeeringRoutes(ListPeeringRoutesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPeeringRoutes(NetworkPeeringName parent)
- *           <li>listPeeringRoutes(String parent)
+ *           <li><p> listPeeringRoutes(NetworkPeeringName parent)
+ *           <li><p> listPeeringRoutes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPeeringRoutesPagedCallable()
- *           <li>listPeeringRoutesCallable()
+ *           <li><p> listPeeringRoutesPagedCallable()
+ *           <li><p> listPeeringRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateHcxActivationKey</td>
+ *      <td><p> CreateHcxActivationKey</td>
  *      <td><p> Creates a new HCX activation key in a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createHcxActivationKeyAsync(CreateHcxActivationKeyRequest request)
+ *           <li><p> createHcxActivationKeyAsync(CreateHcxActivationKeyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createHcxActivationKeyAsync(PrivateCloudName parent, HcxActivationKey hcxActivationKey, String hcxActivationKeyId)
- *           <li>createHcxActivationKeyAsync(String parent, HcxActivationKey hcxActivationKey, String hcxActivationKeyId)
+ *           <li><p> createHcxActivationKeyAsync(PrivateCloudName parent, HcxActivationKey hcxActivationKey, String hcxActivationKeyId)
+ *           <li><p> createHcxActivationKeyAsync(String parent, HcxActivationKey hcxActivationKey, String hcxActivationKeyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createHcxActivationKeyOperationCallable()
- *           <li>createHcxActivationKeyCallable()
+ *           <li><p> createHcxActivationKeyOperationCallable()
+ *           <li><p> createHcxActivationKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListHcxActivationKeys</td>
+ *      <td><p> ListHcxActivationKeys</td>
  *      <td><p> Lists `HcxActivationKey` resources in a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listHcxActivationKeys(ListHcxActivationKeysRequest request)
+ *           <li><p> listHcxActivationKeys(ListHcxActivationKeysRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listHcxActivationKeys(PrivateCloudName parent)
- *           <li>listHcxActivationKeys(String parent)
+ *           <li><p> listHcxActivationKeys(PrivateCloudName parent)
+ *           <li><p> listHcxActivationKeys(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listHcxActivationKeysPagedCallable()
- *           <li>listHcxActivationKeysCallable()
+ *           <li><p> listHcxActivationKeysPagedCallable()
+ *           <li><p> listHcxActivationKeysCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetHcxActivationKey</td>
+ *      <td><p> GetHcxActivationKey</td>
  *      <td><p> Retrieves a `HcxActivationKey` resource by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getHcxActivationKey(GetHcxActivationKeyRequest request)
+ *           <li><p> getHcxActivationKey(GetHcxActivationKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getHcxActivationKey(HcxActivationKeyName name)
- *           <li>getHcxActivationKey(String name)
+ *           <li><p> getHcxActivationKey(HcxActivationKeyName name)
+ *           <li><p> getHcxActivationKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getHcxActivationKeyCallable()
+ *           <li><p> getHcxActivationKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNetworkPolicy</td>
+ *      <td><p> GetNetworkPolicy</td>
  *      <td><p> Retrieves a `NetworkPolicy` resource by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNetworkPolicy(GetNetworkPolicyRequest request)
+ *           <li><p> getNetworkPolicy(GetNetworkPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNetworkPolicy(NetworkPolicyName name)
- *           <li>getNetworkPolicy(String name)
+ *           <li><p> getNetworkPolicy(NetworkPolicyName name)
+ *           <li><p> getNetworkPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNetworkPolicyCallable()
+ *           <li><p> getNetworkPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNetworkPolicies</td>
+ *      <td><p> ListNetworkPolicies</td>
  *      <td><p> Lists `NetworkPolicy` resources in a specified project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNetworkPolicies(ListNetworkPoliciesRequest request)
+ *           <li><p> listNetworkPolicies(ListNetworkPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNetworkPolicies(LocationName parent)
- *           <li>listNetworkPolicies(String parent)
+ *           <li><p> listNetworkPolicies(LocationName parent)
+ *           <li><p> listNetworkPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNetworkPoliciesPagedCallable()
- *           <li>listNetworkPoliciesCallable()
+ *           <li><p> listNetworkPoliciesPagedCallable()
+ *           <li><p> listNetworkPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNetworkPolicy</td>
+ *      <td><p> CreateNetworkPolicy</td>
  *      <td><p> Creates a new network policy in a given VMware Engine network of a project and location (region). A new network policy cannot be created if another network policy already exists in the same scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNetworkPolicyAsync(CreateNetworkPolicyRequest request)
+ *           <li><p> createNetworkPolicyAsync(CreateNetworkPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createNetworkPolicyAsync(LocationName parent, NetworkPolicy networkPolicy, String networkPolicyId)
- *           <li>createNetworkPolicyAsync(String parent, NetworkPolicy networkPolicy, String networkPolicyId)
+ *           <li><p> createNetworkPolicyAsync(LocationName parent, NetworkPolicy networkPolicy, String networkPolicyId)
+ *           <li><p> createNetworkPolicyAsync(String parent, NetworkPolicy networkPolicy, String networkPolicyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNetworkPolicyOperationCallable()
- *           <li>createNetworkPolicyCallable()
+ *           <li><p> createNetworkPolicyOperationCallable()
+ *           <li><p> createNetworkPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNetworkPolicy</td>
+ *      <td><p> UpdateNetworkPolicy</td>
  *      <td><p> Modifies a `NetworkPolicy` resource. Only the following fields can be updated: `internet_access`, `external_ip`, `edge_services_cidr`. Only fields specified in `updateMask` are applied. When updating a network policy, the external IP network service can only be disabled if there are no external IP addresses present in the scope of the policy. Also, a `NetworkService` cannot be updated when `NetworkService.state` is set to `RECONCILING`.
  * <p>  During operation processing, the resource is temporarily in the `ACTIVE` state before the operation fully completes. For that period of time, you can't update the resource. Use the operation status to determine when the processing fully completes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNetworkPolicyAsync(UpdateNetworkPolicyRequest request)
+ *           <li><p> updateNetworkPolicyAsync(UpdateNetworkPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateNetworkPolicyAsync(NetworkPolicy networkPolicy, FieldMask updateMask)
+ *           <li><p> updateNetworkPolicyAsync(NetworkPolicy networkPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNetworkPolicyOperationCallable()
- *           <li>updateNetworkPolicyCallable()
+ *           <li><p> updateNetworkPolicyOperationCallable()
+ *           <li><p> updateNetworkPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNetworkPolicy</td>
+ *      <td><p> DeleteNetworkPolicy</td>
  *      <td><p> Deletes a `NetworkPolicy` resource. A network policy cannot be deleted when `NetworkService.state` is set to `RECONCILING` for either its external IP or internet access service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNetworkPolicyAsync(DeleteNetworkPolicyRequest request)
+ *           <li><p> deleteNetworkPolicyAsync(DeleteNetworkPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteNetworkPolicyAsync(NetworkPolicyName name)
- *           <li>deleteNetworkPolicyAsync(String name)
+ *           <li><p> deleteNetworkPolicyAsync(NetworkPolicyName name)
+ *           <li><p> deleteNetworkPolicyAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNetworkPolicyOperationCallable()
- *           <li>deleteNetworkPolicyCallable()
+ *           <li><p> deleteNetworkPolicyOperationCallable()
+ *           <li><p> deleteNetworkPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListManagementDnsZoneBindings</td>
+ *      <td><p> ListManagementDnsZoneBindings</td>
  *      <td><p> Lists Consumer VPCs bound to Management DNS Zone of a given private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listManagementDnsZoneBindings(ListManagementDnsZoneBindingsRequest request)
+ *           <li><p> listManagementDnsZoneBindings(ListManagementDnsZoneBindingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listManagementDnsZoneBindings(PrivateCloudName parent)
- *           <li>listManagementDnsZoneBindings(String parent)
+ *           <li><p> listManagementDnsZoneBindings(PrivateCloudName parent)
+ *           <li><p> listManagementDnsZoneBindings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listManagementDnsZoneBindingsPagedCallable()
- *           <li>listManagementDnsZoneBindingsCallable()
+ *           <li><p> listManagementDnsZoneBindingsPagedCallable()
+ *           <li><p> listManagementDnsZoneBindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetManagementDnsZoneBinding</td>
+ *      <td><p> GetManagementDnsZoneBinding</td>
  *      <td><p> Retrieves a 'ManagementDnsZoneBinding' resource by its resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getManagementDnsZoneBinding(GetManagementDnsZoneBindingRequest request)
+ *           <li><p> getManagementDnsZoneBinding(GetManagementDnsZoneBindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getManagementDnsZoneBinding(ManagementDnsZoneBindingName name)
- *           <li>getManagementDnsZoneBinding(String name)
+ *           <li><p> getManagementDnsZoneBinding(ManagementDnsZoneBindingName name)
+ *           <li><p> getManagementDnsZoneBinding(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getManagementDnsZoneBindingCallable()
+ *           <li><p> getManagementDnsZoneBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateManagementDnsZoneBinding</td>
+ *      <td><p> CreateManagementDnsZoneBinding</td>
  *      <td><p> Creates a new `ManagementDnsZoneBinding` resource in a private cloud. This RPC creates the DNS binding and the resource that represents the DNS binding of the consumer VPC network to the management DNS zone. A management DNS zone is the Cloud DNS cross-project binding zone that VMware Engine creates for each private cloud. It contains FQDNs and corresponding IP addresses for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createManagementDnsZoneBindingAsync(CreateManagementDnsZoneBindingRequest request)
+ *           <li><p> createManagementDnsZoneBindingAsync(CreateManagementDnsZoneBindingRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createManagementDnsZoneBindingAsync(PrivateCloudName parent, ManagementDnsZoneBinding managementDnsZoneBinding, String managementDnsZoneBindingId)
- *           <li>createManagementDnsZoneBindingAsync(String parent, ManagementDnsZoneBinding managementDnsZoneBinding, String managementDnsZoneBindingId)
+ *           <li><p> createManagementDnsZoneBindingAsync(PrivateCloudName parent, ManagementDnsZoneBinding managementDnsZoneBinding, String managementDnsZoneBindingId)
+ *           <li><p> createManagementDnsZoneBindingAsync(String parent, ManagementDnsZoneBinding managementDnsZoneBinding, String managementDnsZoneBindingId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createManagementDnsZoneBindingOperationCallable()
- *           <li>createManagementDnsZoneBindingCallable()
+ *           <li><p> createManagementDnsZoneBindingOperationCallable()
+ *           <li><p> createManagementDnsZoneBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateManagementDnsZoneBinding</td>
+ *      <td><p> UpdateManagementDnsZoneBinding</td>
  *      <td><p> Updates a `ManagementDnsZoneBinding` resource. Only fields specified in `update_mask` are applied.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateManagementDnsZoneBindingAsync(UpdateManagementDnsZoneBindingRequest request)
+ *           <li><p> updateManagementDnsZoneBindingAsync(UpdateManagementDnsZoneBindingRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateManagementDnsZoneBindingAsync(ManagementDnsZoneBinding managementDnsZoneBinding, FieldMask updateMask)
+ *           <li><p> updateManagementDnsZoneBindingAsync(ManagementDnsZoneBinding managementDnsZoneBinding, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateManagementDnsZoneBindingOperationCallable()
- *           <li>updateManagementDnsZoneBindingCallable()
+ *           <li><p> updateManagementDnsZoneBindingOperationCallable()
+ *           <li><p> updateManagementDnsZoneBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteManagementDnsZoneBinding</td>
+ *      <td><p> DeleteManagementDnsZoneBinding</td>
  *      <td><p> Deletes a `ManagementDnsZoneBinding` resource. When a management DNS zone binding is deleted, the corresponding consumer VPC network is no longer bound to the management DNS zone.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteManagementDnsZoneBindingAsync(DeleteManagementDnsZoneBindingRequest request)
+ *           <li><p> deleteManagementDnsZoneBindingAsync(DeleteManagementDnsZoneBindingRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name)
- *           <li>deleteManagementDnsZoneBindingAsync(String name)
+ *           <li><p> deleteManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name)
+ *           <li><p> deleteManagementDnsZoneBindingAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteManagementDnsZoneBindingOperationCallable()
- *           <li>deleteManagementDnsZoneBindingCallable()
+ *           <li><p> deleteManagementDnsZoneBindingOperationCallable()
+ *           <li><p> deleteManagementDnsZoneBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RepairManagementDnsZoneBinding</td>
+ *      <td><p> RepairManagementDnsZoneBinding</td>
  *      <td><p> Retries to create a `ManagementDnsZoneBinding` resource that is in failed state.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>repairManagementDnsZoneBindingAsync(RepairManagementDnsZoneBindingRequest request)
+ *           <li><p> repairManagementDnsZoneBindingAsync(RepairManagementDnsZoneBindingRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>repairManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name)
- *           <li>repairManagementDnsZoneBindingAsync(String name)
+ *           <li><p> repairManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name)
+ *           <li><p> repairManagementDnsZoneBindingAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>repairManagementDnsZoneBindingOperationCallable()
- *           <li>repairManagementDnsZoneBindingCallable()
+ *           <li><p> repairManagementDnsZoneBindingOperationCallable()
+ *           <li><p> repairManagementDnsZoneBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateVmwareEngineNetwork</td>
+ *      <td><p> CreateVmwareEngineNetwork</td>
  *      <td><p> Creates a new VMware Engine network that can be used by a private cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createVmwareEngineNetworkAsync(CreateVmwareEngineNetworkRequest request)
+ *           <li><p> createVmwareEngineNetworkAsync(CreateVmwareEngineNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createVmwareEngineNetworkAsync(LocationName parent, VmwareEngineNetwork vmwareEngineNetwork, String vmwareEngineNetworkId)
- *           <li>createVmwareEngineNetworkAsync(String parent, VmwareEngineNetwork vmwareEngineNetwork, String vmwareEngineNetworkId)
+ *           <li><p> createVmwareEngineNetworkAsync(LocationName parent, VmwareEngineNetwork vmwareEngineNetwork, String vmwareEngineNetworkId)
+ *           <li><p> createVmwareEngineNetworkAsync(String parent, VmwareEngineNetwork vmwareEngineNetwork, String vmwareEngineNetworkId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createVmwareEngineNetworkOperationCallable()
- *           <li>createVmwareEngineNetworkCallable()
+ *           <li><p> createVmwareEngineNetworkOperationCallable()
+ *           <li><p> createVmwareEngineNetworkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateVmwareEngineNetwork</td>
+ *      <td><p> UpdateVmwareEngineNetwork</td>
  *      <td><p> Modifies a VMware Engine network resource. Only the following fields can be updated: `description`. Only fields specified in `updateMask` are applied.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateVmwareEngineNetworkAsync(UpdateVmwareEngineNetworkRequest request)
+ *           <li><p> updateVmwareEngineNetworkAsync(UpdateVmwareEngineNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateVmwareEngineNetworkAsync(VmwareEngineNetwork vmwareEngineNetwork, FieldMask updateMask)
+ *           <li><p> updateVmwareEngineNetworkAsync(VmwareEngineNetwork vmwareEngineNetwork, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateVmwareEngineNetworkOperationCallable()
- *           <li>updateVmwareEngineNetworkCallable()
+ *           <li><p> updateVmwareEngineNetworkOperationCallable()
+ *           <li><p> updateVmwareEngineNetworkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteVmwareEngineNetwork</td>
+ *      <td><p> DeleteVmwareEngineNetwork</td>
  *      <td><p> Deletes a `VmwareEngineNetwork` resource. You can only delete a VMware Engine network after all resources that refer to it are deleted. For example, a private cloud, a network peering, and a network policy can all refer to the same VMware Engine network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteVmwareEngineNetworkAsync(DeleteVmwareEngineNetworkRequest request)
+ *           <li><p> deleteVmwareEngineNetworkAsync(DeleteVmwareEngineNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteVmwareEngineNetworkAsync(VmwareEngineNetworkName name)
- *           <li>deleteVmwareEngineNetworkAsync(String name)
+ *           <li><p> deleteVmwareEngineNetworkAsync(VmwareEngineNetworkName name)
+ *           <li><p> deleteVmwareEngineNetworkAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteVmwareEngineNetworkOperationCallable()
- *           <li>deleteVmwareEngineNetworkCallable()
+ *           <li><p> deleteVmwareEngineNetworkOperationCallable()
+ *           <li><p> deleteVmwareEngineNetworkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetVmwareEngineNetwork</td>
+ *      <td><p> GetVmwareEngineNetwork</td>
  *      <td><p> Retrieves a `VmwareEngineNetwork` resource by its resource name. The resource contains details of the VMware Engine network, such as its VMware Engine network type, peered networks in a service project, and state (for example, `CREATING`, `ACTIVE`, `DELETING`).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getVmwareEngineNetwork(GetVmwareEngineNetworkRequest request)
+ *           <li><p> getVmwareEngineNetwork(GetVmwareEngineNetworkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getVmwareEngineNetwork(VmwareEngineNetworkName name)
- *           <li>getVmwareEngineNetwork(String name)
+ *           <li><p> getVmwareEngineNetwork(VmwareEngineNetworkName name)
+ *           <li><p> getVmwareEngineNetwork(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getVmwareEngineNetworkCallable()
+ *           <li><p> getVmwareEngineNetworkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListVmwareEngineNetworks</td>
+ *      <td><p> ListVmwareEngineNetworks</td>
  *      <td><p> Lists `VmwareEngineNetwork` resources in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listVmwareEngineNetworks(ListVmwareEngineNetworksRequest request)
+ *           <li><p> listVmwareEngineNetworks(ListVmwareEngineNetworksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listVmwareEngineNetworks(LocationName parent)
- *           <li>listVmwareEngineNetworks(String parent)
+ *           <li><p> listVmwareEngineNetworks(LocationName parent)
+ *           <li><p> listVmwareEngineNetworks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listVmwareEngineNetworksPagedCallable()
- *           <li>listVmwareEngineNetworksCallable()
+ *           <li><p> listVmwareEngineNetworksPagedCallable()
+ *           <li><p> listVmwareEngineNetworksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePrivateConnection</td>
+ *      <td><p> CreatePrivateConnection</td>
  *      <td><p> Creates a new private connection that can be used for accessing private Clouds.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPrivateConnectionAsync(CreatePrivateConnectionRequest request)
+ *           <li><p> createPrivateConnectionAsync(CreatePrivateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createPrivateConnectionAsync(LocationName parent, PrivateConnection privateConnection, String privateConnectionId)
- *           <li>createPrivateConnectionAsync(String parent, PrivateConnection privateConnection, String privateConnectionId)
+ *           <li><p> createPrivateConnectionAsync(LocationName parent, PrivateConnection privateConnection, String privateConnectionId)
+ *           <li><p> createPrivateConnectionAsync(String parent, PrivateConnection privateConnection, String privateConnectionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPrivateConnectionOperationCallable()
- *           <li>createPrivateConnectionCallable()
+ *           <li><p> createPrivateConnectionOperationCallable()
+ *           <li><p> createPrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPrivateConnection</td>
+ *      <td><p> GetPrivateConnection</td>
  *      <td><p> Retrieves a `PrivateConnection` resource by its resource name. The resource contains details of the private connection, such as connected network, routing mode and state.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPrivateConnection(GetPrivateConnectionRequest request)
+ *           <li><p> getPrivateConnection(GetPrivateConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPrivateConnection(PrivateConnectionName name)
- *           <li>getPrivateConnection(String name)
+ *           <li><p> getPrivateConnection(PrivateConnectionName name)
+ *           <li><p> getPrivateConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPrivateConnectionCallable()
+ *           <li><p> getPrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPrivateConnections</td>
+ *      <td><p> ListPrivateConnections</td>
  *      <td><p> Lists `PrivateConnection` resources in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPrivateConnections(ListPrivateConnectionsRequest request)
+ *           <li><p> listPrivateConnections(ListPrivateConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPrivateConnections(LocationName parent)
- *           <li>listPrivateConnections(String parent)
+ *           <li><p> listPrivateConnections(LocationName parent)
+ *           <li><p> listPrivateConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPrivateConnectionsPagedCallable()
- *           <li>listPrivateConnectionsCallable()
+ *           <li><p> listPrivateConnectionsPagedCallable()
+ *           <li><p> listPrivateConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePrivateConnection</td>
+ *      <td><p> UpdatePrivateConnection</td>
  *      <td><p> Modifies a `PrivateConnection` resource. Only `description` and `routing_mode` fields can be updated. Only fields specified in `updateMask` are applied.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePrivateConnectionAsync(UpdatePrivateConnectionRequest request)
+ *           <li><p> updatePrivateConnectionAsync(UpdatePrivateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updatePrivateConnectionAsync(PrivateConnection privateConnection, FieldMask updateMask)
+ *           <li><p> updatePrivateConnectionAsync(PrivateConnection privateConnection, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePrivateConnectionOperationCallable()
- *           <li>updatePrivateConnectionCallable()
+ *           <li><p> updatePrivateConnectionOperationCallable()
+ *           <li><p> updatePrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePrivateConnection</td>
+ *      <td><p> DeletePrivateConnection</td>
  *      <td><p> Deletes a `PrivateConnection` resource. When a private connection is deleted for a VMware Engine network, the connected network becomes inaccessible to that VMware Engine network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePrivateConnectionAsync(DeletePrivateConnectionRequest request)
+ *           <li><p> deletePrivateConnectionAsync(DeletePrivateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePrivateConnectionAsync(PrivateConnectionName name)
- *           <li>deletePrivateConnectionAsync(String name)
+ *           <li><p> deletePrivateConnectionAsync(PrivateConnectionName name)
+ *           <li><p> deletePrivateConnectionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePrivateConnectionOperationCallable()
- *           <li>deletePrivateConnectionCallable()
+ *           <li><p> deletePrivateConnectionOperationCallable()
+ *           <li><p> deletePrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPrivateConnectionPeeringRoutes</td>
+ *      <td><p> ListPrivateConnectionPeeringRoutes</td>
  *      <td><p> Lists the private connection routes exchanged over a peering connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPrivateConnectionPeeringRoutes(ListPrivateConnectionPeeringRoutesRequest request)
+ *           <li><p> listPrivateConnectionPeeringRoutes(ListPrivateConnectionPeeringRoutesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPrivateConnectionPeeringRoutes(PrivateConnectionName parent)
- *           <li>listPrivateConnectionPeeringRoutes(String parent)
+ *           <li><p> listPrivateConnectionPeeringRoutes(PrivateConnectionName parent)
+ *           <li><p> listPrivateConnectionPeeringRoutes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPrivateConnectionPeeringRoutesPagedCallable()
- *           <li>listPrivateConnectionPeeringRoutesCallable()
+ *           <li><p> listPrivateConnectionPeeringRoutesPagedCallable()
+ *           <li><p> listPrivateConnectionPeeringRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GrantDnsBindPermission</td>
+ *      <td><p> GrantDnsBindPermission</td>
  *      <td><p> Grants the bind permission to the customer provided principal(user / service account) to bind their DNS zone with the intranet VPC associated with the project. DnsBindPermission is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>grantDnsBindPermissionAsync(GrantDnsBindPermissionRequest request)
+ *           <li><p> grantDnsBindPermissionAsync(GrantDnsBindPermissionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>grantDnsBindPermissionAsync(DnsBindPermissionName name, Principal principal)
- *           <li>grantDnsBindPermissionAsync(String name, Principal principal)
+ *           <li><p> grantDnsBindPermissionAsync(DnsBindPermissionName name, Principal principal)
+ *           <li><p> grantDnsBindPermissionAsync(String name, Principal principal)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>grantDnsBindPermissionOperationCallable()
- *           <li>grantDnsBindPermissionCallable()
+ *           <li><p> grantDnsBindPermissionOperationCallable()
+ *           <li><p> grantDnsBindPermissionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDnsBindPermission</td>
+ *      <td><p> GetDnsBindPermission</td>
  *      <td><p> Gets all the principals having bind permission on the intranet VPC associated with the consumer project granted by the Grant API. DnsBindPermission is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDnsBindPermission(GetDnsBindPermissionRequest request)
+ *           <li><p> getDnsBindPermission(GetDnsBindPermissionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDnsBindPermission(DnsBindPermissionName name)
- *           <li>getDnsBindPermission(String name)
+ *           <li><p> getDnsBindPermission(DnsBindPermissionName name)
+ *           <li><p> getDnsBindPermission(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDnsBindPermissionCallable()
+ *           <li><p> getDnsBindPermissionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RevokeDnsBindPermission</td>
+ *      <td><p> RevokeDnsBindPermission</td>
  *      <td><p> Revokes the bind permission from the customer provided principal(user / service account) on the intranet VPC associated with the consumer project. DnsBindPermission is a global resource and location can only be global.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>revokeDnsBindPermissionAsync(RevokeDnsBindPermissionRequest request)
+ *           <li><p> revokeDnsBindPermissionAsync(RevokeDnsBindPermissionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>revokeDnsBindPermissionAsync(DnsBindPermissionName name, Principal principal)
- *           <li>revokeDnsBindPermissionAsync(String name, Principal principal)
+ *           <li><p> revokeDnsBindPermissionAsync(DnsBindPermissionName name, Principal principal)
+ *           <li><p> revokeDnsBindPermissionAsync(String name, Principal principal)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>revokeDnsBindPermissionOperationCallable()
- *           <li>revokeDnsBindPermissionCallable()
+ *           <li><p> revokeDnsBindPermissionOperationCallable()
+ *           <li><p> revokeDnsBindPermissionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

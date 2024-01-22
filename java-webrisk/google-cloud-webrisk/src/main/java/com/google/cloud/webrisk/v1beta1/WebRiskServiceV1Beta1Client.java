@@ -64,64 +64,65 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ComputeThreatListDiff</td>
+ *      <td><p> ComputeThreatListDiff</td>
  *      <td><p> Gets the most recent threat list diffs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>computeThreatListDiff(ComputeThreatListDiffRequest request)
+ *           <li><p> computeThreatListDiff(ComputeThreatListDiffRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>computeThreatListDiff(ThreatType threatType, ByteString versionToken, ComputeThreatListDiffRequest.Constraints constraints)
+ *           <li><p> computeThreatListDiff(ThreatType threatType, ByteString versionToken, ComputeThreatListDiffRequest.Constraints constraints)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>computeThreatListDiffCallable()
+ *           <li><p> computeThreatListDiffCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchUris</td>
+ *      <td><p> SearchUris</td>
  *      <td><p> This method is used to check whether a URI is on a given threatList.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchUris(SearchUrisRequest request)
+ *           <li><p> searchUris(SearchUrisRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchUris(String uri, List<ThreatType> threatTypes)
+ *           <li><p> searchUris(String uri, List&lt;ThreatType&gt; threatTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchUrisCallable()
+ *           <li><p> searchUrisCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchHashes</td>
+ *      <td><p> SearchHashes</td>
  *      <td><p> Gets the full hashes that match the requested hash prefix. This is used after a hash prefix is looked up in a threatList and there is a match. The client side threatList only holds partial hashes so the client must query this method to determine if there is a full hash match of a threat.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchHashes(SearchHashesRequest request)
+ *           <li><p> searchHashes(SearchHashesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchHashes(ByteString hashPrefix, List<ThreatType> threatTypes)
+ *           <li><p> searchHashes(ByteString hashPrefix, List&lt;ThreatType&gt; threatTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchHashesCallable()
+ *           <li><p> searchHashesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

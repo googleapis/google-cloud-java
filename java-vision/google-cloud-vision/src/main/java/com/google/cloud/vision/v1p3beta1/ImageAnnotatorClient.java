@@ -55,41 +55,42 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BatchAnnotateImages</td>
+ *      <td><p> BatchAnnotateImages</td>
  *      <td><p> Run image detection and annotation for a batch of images.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchAnnotateImages(List<AnnotateImageRequest> requests)
- *           <li>batchAnnotateImages(BatchAnnotateImagesRequest request)
+ *           <li><p> batchAnnotateImages(List&lt;AnnotateImageRequest&gt; requests)
+ *           <li><p> batchAnnotateImages(BatchAnnotateImagesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchAnnotateImagesCallable()
+ *           <li><p> batchAnnotateImagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AsyncBatchAnnotateFiles</td>
+ *      <td><p> AsyncBatchAnnotateFiles</td>
  *      <td><p> Run asynchronous image detection and annotation for a list of generic files, such as PDF files, which may contain multiple pages and multiple images per page. Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>asyncBatchAnnotateFilesAsync(List<AsyncAnnotateFileRequest> requests)
- *           <li>asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request)
+ *           <li><p> asyncBatchAnnotateFilesAsync(List&lt;AsyncAnnotateFileRequest&gt; requests)
+ *           <li><p> asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>asyncBatchAnnotateFilesOperationCallable()
- *           <li>asyncBatchAnnotateFilesCallable()
+ *           <li><p> asyncBatchAnnotateFilesOperationCallable()
+ *           <li><p> asyncBatchAnnotateFilesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

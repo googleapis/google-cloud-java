@@ -78,12 +78,14 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateProductSet</td>
+ *      <td><p> CreateProductSet</td>
  *      <td><p> Creates and returns a new ProductSet resource.
  * <p>  Possible errors:
  * <ul>
@@ -92,21 +94,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createProductSet(CreateProductSetRequest request)
+ *           <li><p> createProductSet(CreateProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createProductSet(LocationName parent, ProductSet productSet, String productSetId)
- *           <li>createProductSet(String parent, ProductSet productSet, String productSetId)
+ *           <li><p> createProductSet(LocationName parent, ProductSet productSet, String productSetId)
+ *           <li><p> createProductSet(String parent, ProductSet productSet, String productSetId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createProductSetCallable()
+ *           <li><p> createProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListProductSets</td>
+ *      <td><p> ListProductSets</td>
  *      <td><p> Lists ProductSets in an unspecified order.
  * <p>  Possible errors:
  * <ul>
@@ -115,22 +117,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProductSets(ListProductSetsRequest request)
+ *           <li><p> listProductSets(ListProductSetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listProductSets(LocationName parent)
- *           <li>listProductSets(String parent)
+ *           <li><p> listProductSets(LocationName parent)
+ *           <li><p> listProductSets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listProductSetsPagedCallable()
- *           <li>listProductSetsCallable()
+ *           <li><p> listProductSetsPagedCallable()
+ *           <li><p> listProductSetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetProductSet</td>
+ *      <td><p> GetProductSet</td>
  *      <td><p> Gets information associated with a ProductSet.
  * <p>  Possible errors:
  * <ul>
@@ -139,21 +141,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getProductSet(GetProductSetRequest request)
+ *           <li><p> getProductSet(GetProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getProductSet(ProductSetName name)
- *           <li>getProductSet(String name)
+ *           <li><p> getProductSet(ProductSetName name)
+ *           <li><p> getProductSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getProductSetCallable()
+ *           <li><p> getProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateProductSet</td>
+ *      <td><p> UpdateProductSet</td>
  *      <td><p> Makes changes to a ProductSet resource. Only display_name can be updated currently.
  * <p>  Possible errors:
  * <ul>
@@ -163,40 +165,40 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateProductSet(UpdateProductSetRequest request)
+ *           <li><p> updateProductSet(UpdateProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateProductSet(ProductSet productSet, FieldMask updateMask)
+ *           <li><p> updateProductSet(ProductSet productSet, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateProductSetCallable()
+ *           <li><p> updateProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteProductSet</td>
+ *      <td><p> DeleteProductSet</td>
  *      <td><p> Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not deleted.
  * <p>  The actual image files are not deleted from Google Cloud Storage.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteProductSet(DeleteProductSetRequest request)
+ *           <li><p> deleteProductSet(DeleteProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteProductSet(ProductSetName name)
- *           <li>deleteProductSet(String name)
+ *           <li><p> deleteProductSet(ProductSetName name)
+ *           <li><p> deleteProductSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteProductSetCallable()
+ *           <li><p> deleteProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateProduct</td>
+ *      <td><p> CreateProduct</td>
  *      <td><p> Creates and returns a new product resource.
  * <p>  Possible errors:
  * <ul>
@@ -207,21 +209,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createProduct(CreateProductRequest request)
+ *           <li><p> createProduct(CreateProductRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createProduct(LocationName parent, Product product, String productId)
- *           <li>createProduct(String parent, Product product, String productId)
+ *           <li><p> createProduct(LocationName parent, Product product, String productId)
+ *           <li><p> createProduct(String parent, Product product, String productId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createProductCallable()
+ *           <li><p> createProductCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListProducts</td>
+ *      <td><p> ListProducts</td>
  *      <td><p> Lists products in an unspecified order.
  * <p>  Possible errors:
  * <ul>
@@ -230,22 +232,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProducts(ListProductsRequest request)
+ *           <li><p> listProducts(ListProductsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listProducts(LocationName parent)
- *           <li>listProducts(String parent)
+ *           <li><p> listProducts(LocationName parent)
+ *           <li><p> listProducts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listProductsPagedCallable()
- *           <li>listProductsCallable()
+ *           <li><p> listProductsPagedCallable()
+ *           <li><p> listProductsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetProduct</td>
+ *      <td><p> GetProduct</td>
  *      <td><p> Gets information associated with a Product.
  * <p>  Possible errors:
  * <ul>
@@ -254,21 +256,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getProduct(GetProductRequest request)
+ *           <li><p> getProduct(GetProductRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getProduct(ProductName name)
- *           <li>getProduct(String name)
+ *           <li><p> getProduct(ProductName name)
+ *           <li><p> getProduct(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getProductCallable()
+ *           <li><p> getProductCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateProduct</td>
+ *      <td><p> UpdateProduct</td>
  *      <td><p> Makes changes to a Product resource. Only the `display_name`, `description`, and `labels` fields can be updated right now.
  * <p>  If labels are updated, the change will not be reflected in queries until the next index time.
  * <p>  Possible errors:
@@ -281,40 +283,40 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateProduct(UpdateProductRequest request)
+ *           <li><p> updateProduct(UpdateProductRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateProduct(Product product, FieldMask updateMask)
+ *           <li><p> updateProduct(Product product, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateProductCallable()
+ *           <li><p> updateProductCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteProduct</td>
+ *      <td><p> DeleteProduct</td>
  *      <td><p> Permanently deletes a product and its reference images.
  * <p>  Metadata of the product and all its images will be deleted right away, but search queries against ProductSets containing the product may still work until all related caches are refreshed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteProduct(DeleteProductRequest request)
+ *           <li><p> deleteProduct(DeleteProductRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteProduct(ProductName name)
- *           <li>deleteProduct(String name)
+ *           <li><p> deleteProduct(ProductName name)
+ *           <li><p> deleteProduct(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteProductCallable()
+ *           <li><p> deleteProductCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateReferenceImage</td>
+ *      <td><p> CreateReferenceImage</td>
  *      <td><p> Creates and returns a new ReferenceImage resource.
  * <p>  The `bounding_poly` field is optional. If `bounding_poly` is not specified, the system will try to detect regions of interest in the image that are compatible with the product_category on the parent product. If it is specified, detection is ALWAYS skipped. The system converts polygons into non-rotated rectangles.
  * <p>  Note that the pipeline will resize the image if the image resolution is too large to process (above 50MP).
@@ -328,42 +330,42 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createReferenceImage(CreateReferenceImageRequest request)
+ *           <li><p> createReferenceImage(CreateReferenceImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createReferenceImage(ProductName parent, ReferenceImage referenceImage, String referenceImageId)
- *           <li>createReferenceImage(String parent, ReferenceImage referenceImage, String referenceImageId)
+ *           <li><p> createReferenceImage(ProductName parent, ReferenceImage referenceImage, String referenceImageId)
+ *           <li><p> createReferenceImage(String parent, ReferenceImage referenceImage, String referenceImageId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createReferenceImageCallable()
+ *           <li><p> createReferenceImageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteReferenceImage</td>
+ *      <td><p> DeleteReferenceImage</td>
  *      <td><p> Permanently deletes a reference image.
  * <p>  The image metadata will be deleted right away, but search queries against ProductSets containing the image may still work until all related caches are refreshed.
  * <p>  The actual image files are not deleted from Google Cloud Storage.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteReferenceImage(DeleteReferenceImageRequest request)
+ *           <li><p> deleteReferenceImage(DeleteReferenceImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteReferenceImage(ReferenceImageName name)
- *           <li>deleteReferenceImage(String name)
+ *           <li><p> deleteReferenceImage(ReferenceImageName name)
+ *           <li><p> deleteReferenceImage(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteReferenceImageCallable()
+ *           <li><p> deleteReferenceImageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListReferenceImages</td>
+ *      <td><p> ListReferenceImages</td>
  *      <td><p> Lists reference images.
  * <p>  Possible errors:
  * <ul>
@@ -373,22 +375,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listReferenceImages(ListReferenceImagesRequest request)
+ *           <li><p> listReferenceImages(ListReferenceImagesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listReferenceImages(ProductName parent)
- *           <li>listReferenceImages(String parent)
+ *           <li><p> listReferenceImages(ProductName parent)
+ *           <li><p> listReferenceImages(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listReferenceImagesPagedCallable()
- *           <li>listReferenceImagesCallable()
+ *           <li><p> listReferenceImagesPagedCallable()
+ *           <li><p> listReferenceImagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetReferenceImage</td>
+ *      <td><p> GetReferenceImage</td>
  *      <td><p> Gets information associated with a ReferenceImage.
  * <p>  Possible errors:
  * <ul>
@@ -397,21 +399,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getReferenceImage(GetReferenceImageRequest request)
+ *           <li><p> getReferenceImage(GetReferenceImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getReferenceImage(ReferenceImageName name)
- *           <li>getReferenceImage(String name)
+ *           <li><p> getReferenceImage(ReferenceImageName name)
+ *           <li><p> getReferenceImage(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getReferenceImageCallable()
+ *           <li><p> getReferenceImageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AddProductToProductSet</td>
+ *      <td><p> AddProductToProductSet</td>
  *      <td><p> Adds a Product to the specified ProductSet. If the Product is already present, no change is made.
  * <p>  One Product can be added to at most 100 ProductSets.
  * <p>  Possible errors:
@@ -421,44 +423,44 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addProductToProductSet(AddProductToProductSetRequest request)
+ *           <li><p> addProductToProductSet(AddProductToProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>addProductToProductSet(ProductSetName name, ProductName product)
- *           <li>addProductToProductSet(ProductSetName name, String product)
- *           <li>addProductToProductSet(String name, ProductName product)
- *           <li>addProductToProductSet(String name, String product)
+ *           <li><p> addProductToProductSet(ProductSetName name, ProductName product)
+ *           <li><p> addProductToProductSet(ProductSetName name, String product)
+ *           <li><p> addProductToProductSet(String name, ProductName product)
+ *           <li><p> addProductToProductSet(String name, String product)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addProductToProductSetCallable()
+ *           <li><p> addProductToProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveProductFromProductSet</td>
+ *      <td><p> RemoveProductFromProductSet</td>
  *      <td><p> Removes a Product from the specified ProductSet.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeProductFromProductSet(RemoveProductFromProductSetRequest request)
+ *           <li><p> removeProductFromProductSet(RemoveProductFromProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>removeProductFromProductSet(ProductSetName name, ProductName product)
- *           <li>removeProductFromProductSet(ProductSetName name, String product)
- *           <li>removeProductFromProductSet(String name, ProductName product)
- *           <li>removeProductFromProductSet(String name, String product)
+ *           <li><p> removeProductFromProductSet(ProductSetName name, ProductName product)
+ *           <li><p> removeProductFromProductSet(ProductSetName name, String product)
+ *           <li><p> removeProductFromProductSet(String name, ProductName product)
+ *           <li><p> removeProductFromProductSet(String name, String product)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeProductFromProductSetCallable()
+ *           <li><p> removeProductFromProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListProductsInProductSet</td>
+ *      <td><p> ListProductsInProductSet</td>
  *      <td><p> Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist, the products field of the response will be empty.
  * <p>  Possible errors:
  * <ul>
@@ -467,44 +469,44 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProductsInProductSet(ListProductsInProductSetRequest request)
+ *           <li><p> listProductsInProductSet(ListProductsInProductSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listProductsInProductSet(ProductSetName name)
- *           <li>listProductsInProductSet(String name)
+ *           <li><p> listProductsInProductSet(ProductSetName name)
+ *           <li><p> listProductsInProductSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listProductsInProductSetPagedCallable()
- *           <li>listProductsInProductSetCallable()
+ *           <li><p> listProductsInProductSetPagedCallable()
+ *           <li><p> listProductsInProductSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportProductSets</td>
+ *      <td><p> ImportProductSets</td>
  *      <td><p> Asynchronous API that imports a list of reference images to specified product sets based on a list of image information.
  * <p>  The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the progress and results of the request. `Operation.metadata` contains `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`. (results)
  * <p>  The input source of this method is a csv file on Google Cloud Storage. For the format of the csv file please see [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importProductSetsAsync(ImportProductSetsRequest request)
+ *           <li><p> importProductSetsAsync(ImportProductSetsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig)
- *           <li>importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig)
+ *           <li><p> importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig)
+ *           <li><p> importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importProductSetsOperationCallable()
- *           <li>importProductSetsCallable()
+ *           <li><p> importProductSetsOperationCallable()
+ *           <li><p> importProductSetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PurgeProducts</td>
+ *      <td><p> PurgeProducts</td>
  *      <td><p> Asynchronous API to delete all Products in a ProductSet or all Products that are in no ProductSet.
  * <p>  If a Product is a member of the specified ProductSet in addition to other ProductSets, the Product will still be deleted.
  * <p>  It is recommended to not delete the specified ProductSet until after this operation has completed. It is also recommended to not add any of the Products involved in the batch delete to a new ProductSet while this operation is running because those Products may still end up deleted.
@@ -514,20 +516,19 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>purgeProductsAsync(PurgeProductsRequest request)
+ *           <li><p> purgeProductsAsync(PurgeProductsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>purgeProductsAsync(LocationName parent)
- *           <li>purgeProductsAsync(String parent)
+ *           <li><p> purgeProductsAsync(LocationName parent)
+ *           <li><p> purgeProductsAsync(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>purgeProductsOperationCallable()
- *           <li>purgeProductsCallable()
+ *           <li><p> purgeProductsOperationCallable()
+ *           <li><p> purgeProductsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

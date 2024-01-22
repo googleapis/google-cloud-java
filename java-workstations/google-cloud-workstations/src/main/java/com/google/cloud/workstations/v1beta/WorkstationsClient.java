@@ -67,447 +67,448 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetWorkstationCluster</td>
+ *      <td><p> GetWorkstationCluster</td>
  *      <td><p> Returns the requested workstation cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkstationCluster(GetWorkstationClusterRequest request)
+ *           <li><p> getWorkstationCluster(GetWorkstationClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkstationCluster(WorkstationClusterName name)
- *           <li>getWorkstationCluster(String name)
+ *           <li><p> getWorkstationCluster(WorkstationClusterName name)
+ *           <li><p> getWorkstationCluster(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkstationClusterCallable()
+ *           <li><p> getWorkstationClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkstationClusters</td>
+ *      <td><p> ListWorkstationClusters</td>
  *      <td><p> Returns all workstation clusters in the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkstationClusters(ListWorkstationClustersRequest request)
+ *           <li><p> listWorkstationClusters(ListWorkstationClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkstationClusters(LocationName parent)
- *           <li>listWorkstationClusters(String parent)
+ *           <li><p> listWorkstationClusters(LocationName parent)
+ *           <li><p> listWorkstationClusters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkstationClustersPagedCallable()
- *           <li>listWorkstationClustersCallable()
+ *           <li><p> listWorkstationClustersPagedCallable()
+ *           <li><p> listWorkstationClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkstationCluster</td>
+ *      <td><p> CreateWorkstationCluster</td>
  *      <td><p> Creates a new workstation cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkstationClusterAsync(CreateWorkstationClusterRequest request)
+ *           <li><p> createWorkstationClusterAsync(CreateWorkstationClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createWorkstationClusterAsync(LocationName parent, WorkstationCluster workstationCluster, String workstationClusterId)
- *           <li>createWorkstationClusterAsync(String parent, WorkstationCluster workstationCluster, String workstationClusterId)
+ *           <li><p> createWorkstationClusterAsync(LocationName parent, WorkstationCluster workstationCluster, String workstationClusterId)
+ *           <li><p> createWorkstationClusterAsync(String parent, WorkstationCluster workstationCluster, String workstationClusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkstationClusterOperationCallable()
- *           <li>createWorkstationClusterCallable()
+ *           <li><p> createWorkstationClusterOperationCallable()
+ *           <li><p> createWorkstationClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkstationCluster</td>
+ *      <td><p> UpdateWorkstationCluster</td>
  *      <td><p> Updates an existing workstation cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkstationClusterAsync(UpdateWorkstationClusterRequest request)
+ *           <li><p> updateWorkstationClusterAsync(UpdateWorkstationClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateWorkstationClusterAsync(WorkstationCluster workstationCluster, FieldMask updateMask)
+ *           <li><p> updateWorkstationClusterAsync(WorkstationCluster workstationCluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkstationClusterOperationCallable()
- *           <li>updateWorkstationClusterCallable()
+ *           <li><p> updateWorkstationClusterOperationCallable()
+ *           <li><p> updateWorkstationClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkstationCluster</td>
+ *      <td><p> DeleteWorkstationCluster</td>
  *      <td><p> Deletes the specified workstation cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkstationClusterAsync(DeleteWorkstationClusterRequest request)
+ *           <li><p> deleteWorkstationClusterAsync(DeleteWorkstationClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteWorkstationClusterAsync(WorkstationClusterName name)
- *           <li>deleteWorkstationClusterAsync(String name)
+ *           <li><p> deleteWorkstationClusterAsync(WorkstationClusterName name)
+ *           <li><p> deleteWorkstationClusterAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkstationClusterOperationCallable()
- *           <li>deleteWorkstationClusterCallable()
+ *           <li><p> deleteWorkstationClusterOperationCallable()
+ *           <li><p> deleteWorkstationClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkstationConfig</td>
+ *      <td><p> GetWorkstationConfig</td>
  *      <td><p> Returns the requested workstation configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkstationConfig(GetWorkstationConfigRequest request)
+ *           <li><p> getWorkstationConfig(GetWorkstationConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkstationConfig(WorkstationConfigName name)
- *           <li>getWorkstationConfig(String name)
+ *           <li><p> getWorkstationConfig(WorkstationConfigName name)
+ *           <li><p> getWorkstationConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkstationConfigCallable()
+ *           <li><p> getWorkstationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkstationConfigs</td>
+ *      <td><p> ListWorkstationConfigs</td>
  *      <td><p> Returns all workstation configurations in the specified cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkstationConfigs(ListWorkstationConfigsRequest request)
+ *           <li><p> listWorkstationConfigs(ListWorkstationConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkstationConfigs(WorkstationClusterName parent)
- *           <li>listWorkstationConfigs(String parent)
+ *           <li><p> listWorkstationConfigs(WorkstationClusterName parent)
+ *           <li><p> listWorkstationConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkstationConfigsPagedCallable()
- *           <li>listWorkstationConfigsCallable()
+ *           <li><p> listWorkstationConfigsPagedCallable()
+ *           <li><p> listWorkstationConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListUsableWorkstationConfigs</td>
+ *      <td><p> ListUsableWorkstationConfigs</td>
  *      <td><p> Returns all workstation configurations in the specified cluster on which the caller has the "workstations.workstation.create" permission.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listUsableWorkstationConfigs(ListUsableWorkstationConfigsRequest request)
+ *           <li><p> listUsableWorkstationConfigs(ListUsableWorkstationConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listUsableWorkstationConfigs(WorkstationClusterName parent)
- *           <li>listUsableWorkstationConfigs(String parent)
+ *           <li><p> listUsableWorkstationConfigs(WorkstationClusterName parent)
+ *           <li><p> listUsableWorkstationConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listUsableWorkstationConfigsPagedCallable()
- *           <li>listUsableWorkstationConfigsCallable()
+ *           <li><p> listUsableWorkstationConfigsPagedCallable()
+ *           <li><p> listUsableWorkstationConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkstationConfig</td>
+ *      <td><p> CreateWorkstationConfig</td>
  *      <td><p> Creates a new workstation configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkstationConfigAsync(CreateWorkstationConfigRequest request)
+ *           <li><p> createWorkstationConfigAsync(CreateWorkstationConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createWorkstationConfigAsync(WorkstationClusterName parent, WorkstationConfig workstationConfig, String workstationConfigId)
- *           <li>createWorkstationConfigAsync(String parent, WorkstationConfig workstationConfig, String workstationConfigId)
+ *           <li><p> createWorkstationConfigAsync(WorkstationClusterName parent, WorkstationConfig workstationConfig, String workstationConfigId)
+ *           <li><p> createWorkstationConfigAsync(String parent, WorkstationConfig workstationConfig, String workstationConfigId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkstationConfigOperationCallable()
- *           <li>createWorkstationConfigCallable()
+ *           <li><p> createWorkstationConfigOperationCallable()
+ *           <li><p> createWorkstationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkstationConfig</td>
+ *      <td><p> UpdateWorkstationConfig</td>
  *      <td><p> Updates an existing workstation configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkstationConfigAsync(UpdateWorkstationConfigRequest request)
+ *           <li><p> updateWorkstationConfigAsync(UpdateWorkstationConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateWorkstationConfigAsync(WorkstationConfig workstationConfig, FieldMask updateMask)
+ *           <li><p> updateWorkstationConfigAsync(WorkstationConfig workstationConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkstationConfigOperationCallable()
- *           <li>updateWorkstationConfigCallable()
+ *           <li><p> updateWorkstationConfigOperationCallable()
+ *           <li><p> updateWorkstationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkstationConfig</td>
+ *      <td><p> DeleteWorkstationConfig</td>
  *      <td><p> Deletes the specified workstation configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkstationConfigAsync(DeleteWorkstationConfigRequest request)
+ *           <li><p> deleteWorkstationConfigAsync(DeleteWorkstationConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteWorkstationConfigAsync(WorkstationConfigName name)
- *           <li>deleteWorkstationConfigAsync(String name)
+ *           <li><p> deleteWorkstationConfigAsync(WorkstationConfigName name)
+ *           <li><p> deleteWorkstationConfigAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkstationConfigOperationCallable()
- *           <li>deleteWorkstationConfigCallable()
+ *           <li><p> deleteWorkstationConfigOperationCallable()
+ *           <li><p> deleteWorkstationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkstation</td>
+ *      <td><p> GetWorkstation</td>
  *      <td><p> Returns the requested workstation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkstation(GetWorkstationRequest request)
+ *           <li><p> getWorkstation(GetWorkstationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkstation(WorkstationName name)
- *           <li>getWorkstation(String name)
+ *           <li><p> getWorkstation(WorkstationName name)
+ *           <li><p> getWorkstation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkstationCallable()
+ *           <li><p> getWorkstationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkstations</td>
+ *      <td><p> ListWorkstations</td>
  *      <td><p> Returns all Workstations using the specified workstation configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkstations(ListWorkstationsRequest request)
+ *           <li><p> listWorkstations(ListWorkstationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkstations(WorkstationConfigName parent)
- *           <li>listWorkstations(String parent)
+ *           <li><p> listWorkstations(WorkstationConfigName parent)
+ *           <li><p> listWorkstations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkstationsPagedCallable()
- *           <li>listWorkstationsCallable()
+ *           <li><p> listWorkstationsPagedCallable()
+ *           <li><p> listWorkstationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListUsableWorkstations</td>
+ *      <td><p> ListUsableWorkstations</td>
  *      <td><p> Returns all workstations using the specified workstation configuration on which the caller has the "workstations.workstations.use" permission.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listUsableWorkstations(ListUsableWorkstationsRequest request)
+ *           <li><p> listUsableWorkstations(ListUsableWorkstationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listUsableWorkstations(WorkstationConfigName parent)
- *           <li>listUsableWorkstations(String parent)
+ *           <li><p> listUsableWorkstations(WorkstationConfigName parent)
+ *           <li><p> listUsableWorkstations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listUsableWorkstationsPagedCallable()
- *           <li>listUsableWorkstationsCallable()
+ *           <li><p> listUsableWorkstationsPagedCallable()
+ *           <li><p> listUsableWorkstationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkstation</td>
+ *      <td><p> CreateWorkstation</td>
  *      <td><p> Creates a new workstation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkstationAsync(CreateWorkstationRequest request)
+ *           <li><p> createWorkstationAsync(CreateWorkstationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createWorkstationAsync(WorkstationConfigName parent, Workstation workstation, String workstationId)
- *           <li>createWorkstationAsync(String parent, Workstation workstation, String workstationId)
+ *           <li><p> createWorkstationAsync(WorkstationConfigName parent, Workstation workstation, String workstationId)
+ *           <li><p> createWorkstationAsync(String parent, Workstation workstation, String workstationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkstationOperationCallable()
- *           <li>createWorkstationCallable()
+ *           <li><p> createWorkstationOperationCallable()
+ *           <li><p> createWorkstationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkstation</td>
+ *      <td><p> UpdateWorkstation</td>
  *      <td><p> Updates an existing workstation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkstationAsync(UpdateWorkstationRequest request)
+ *           <li><p> updateWorkstationAsync(UpdateWorkstationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateWorkstationAsync(Workstation workstation, FieldMask updateMask)
+ *           <li><p> updateWorkstationAsync(Workstation workstation, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkstationOperationCallable()
- *           <li>updateWorkstationCallable()
+ *           <li><p> updateWorkstationOperationCallable()
+ *           <li><p> updateWorkstationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkstation</td>
+ *      <td><p> DeleteWorkstation</td>
  *      <td><p> Deletes the specified workstation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkstationAsync(DeleteWorkstationRequest request)
+ *           <li><p> deleteWorkstationAsync(DeleteWorkstationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteWorkstationAsync(WorkstationName name)
- *           <li>deleteWorkstationAsync(String name)
+ *           <li><p> deleteWorkstationAsync(WorkstationName name)
+ *           <li><p> deleteWorkstationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkstationOperationCallable()
- *           <li>deleteWorkstationCallable()
+ *           <li><p> deleteWorkstationOperationCallable()
+ *           <li><p> deleteWorkstationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartWorkstation</td>
+ *      <td><p> StartWorkstation</td>
  *      <td><p> Starts running a workstation so that users can connect to it.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startWorkstationAsync(StartWorkstationRequest request)
+ *           <li><p> startWorkstationAsync(StartWorkstationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>startWorkstationAsync(WorkstationName name)
- *           <li>startWorkstationAsync(String name)
+ *           <li><p> startWorkstationAsync(WorkstationName name)
+ *           <li><p> startWorkstationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startWorkstationOperationCallable()
- *           <li>startWorkstationCallable()
+ *           <li><p> startWorkstationOperationCallable()
+ *           <li><p> startWorkstationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopWorkstation</td>
+ *      <td><p> StopWorkstation</td>
  *      <td><p> Stops running a workstation, reducing costs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopWorkstationAsync(StopWorkstationRequest request)
+ *           <li><p> stopWorkstationAsync(StopWorkstationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>stopWorkstationAsync(WorkstationName name)
- *           <li>stopWorkstationAsync(String name)
+ *           <li><p> stopWorkstationAsync(WorkstationName name)
+ *           <li><p> stopWorkstationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopWorkstationOperationCallable()
- *           <li>stopWorkstationCallable()
+ *           <li><p> stopWorkstationOperationCallable()
+ *           <li><p> stopWorkstationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateAccessToken</td>
+ *      <td><p> GenerateAccessToken</td>
  *      <td><p> Returns a short-lived credential that can be used to send authenticated and authorized traffic to a workstation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAccessToken(GenerateAccessTokenRequest request)
+ *           <li><p> generateAccessToken(GenerateAccessTokenRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>generateAccessToken(WorkstationName workstation)
- *           <li>generateAccessToken(String workstation)
+ *           <li><p> generateAccessToken(WorkstationName workstation)
+ *           <li><p> generateAccessToken(String workstation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAccessTokenCallable()
+ *           <li><p> generateAccessTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

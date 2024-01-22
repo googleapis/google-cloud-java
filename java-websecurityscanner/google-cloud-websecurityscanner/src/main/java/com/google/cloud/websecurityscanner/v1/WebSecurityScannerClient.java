@@ -63,196 +63,197 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateScanConfig</td>
+ *      <td><p> CreateScanConfig</td>
  *      <td><p> Creates a new ScanConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createScanConfig(CreateScanConfigRequest request)
+ *           <li><p> createScanConfig(CreateScanConfigRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createScanConfigCallable()
+ *           <li><p> createScanConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteScanConfig</td>
+ *      <td><p> DeleteScanConfig</td>
  *      <td><p> Deletes an existing ScanConfig and its child resources.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteScanConfig(DeleteScanConfigRequest request)
+ *           <li><p> deleteScanConfig(DeleteScanConfigRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteScanConfigCallable()
+ *           <li><p> deleteScanConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetScanConfig</td>
+ *      <td><p> GetScanConfig</td>
  *      <td><p> Gets a ScanConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getScanConfig(GetScanConfigRequest request)
+ *           <li><p> getScanConfig(GetScanConfigRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getScanConfigCallable()
+ *           <li><p> getScanConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListScanConfigs</td>
+ *      <td><p> ListScanConfigs</td>
  *      <td><p> Lists ScanConfigs under a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listScanConfigs(ListScanConfigsRequest request)
+ *           <li><p> listScanConfigs(ListScanConfigsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listScanConfigsPagedCallable()
- *           <li>listScanConfigsCallable()
+ *           <li><p> listScanConfigsPagedCallable()
+ *           <li><p> listScanConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateScanConfig</td>
+ *      <td><p> UpdateScanConfig</td>
  *      <td><p> Updates a ScanConfig. This method support partial update of a ScanConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateScanConfig(UpdateScanConfigRequest request)
+ *           <li><p> updateScanConfig(UpdateScanConfigRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateScanConfigCallable()
+ *           <li><p> updateScanConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartScanRun</td>
+ *      <td><p> StartScanRun</td>
  *      <td><p> Start a ScanRun according to the given ScanConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startScanRun(StartScanRunRequest request)
+ *           <li><p> startScanRun(StartScanRunRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startScanRunCallable()
+ *           <li><p> startScanRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetScanRun</td>
+ *      <td><p> GetScanRun</td>
  *      <td><p> Gets a ScanRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getScanRun(GetScanRunRequest request)
+ *           <li><p> getScanRun(GetScanRunRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getScanRunCallable()
+ *           <li><p> getScanRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListScanRuns</td>
+ *      <td><p> ListScanRuns</td>
  *      <td><p> Lists ScanRuns under a given ScanConfig, in descending order of ScanRun stop time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listScanRuns(ListScanRunsRequest request)
+ *           <li><p> listScanRuns(ListScanRunsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listScanRunsPagedCallable()
- *           <li>listScanRunsCallable()
+ *           <li><p> listScanRunsPagedCallable()
+ *           <li><p> listScanRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopScanRun</td>
+ *      <td><p> StopScanRun</td>
  *      <td><p> Stops a ScanRun. The stopped ScanRun is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopScanRun(StopScanRunRequest request)
+ *           <li><p> stopScanRun(StopScanRunRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopScanRunCallable()
+ *           <li><p> stopScanRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCrawledUrls</td>
+ *      <td><p> ListCrawledUrls</td>
  *      <td><p> List CrawledUrls under a given ScanRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCrawledUrls(ListCrawledUrlsRequest request)
+ *           <li><p> listCrawledUrls(ListCrawledUrlsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCrawledUrlsPagedCallable()
- *           <li>listCrawledUrlsCallable()
+ *           <li><p> listCrawledUrlsPagedCallable()
+ *           <li><p> listCrawledUrlsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFinding</td>
+ *      <td><p> GetFinding</td>
  *      <td><p> Gets a Finding.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFinding(GetFindingRequest request)
+ *           <li><p> getFinding(GetFindingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFindingCallable()
+ *           <li><p> getFindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFindings</td>
+ *      <td><p> ListFindings</td>
  *      <td><p> List Findings under a given ScanRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFindings(ListFindingsRequest request)
+ *           <li><p> listFindings(ListFindingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFindingsPagedCallable()
- *           <li>listFindingsCallable()
+ *           <li><p> listFindingsPagedCallable()
+ *           <li><p> listFindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFindingTypeStats</td>
+ *      <td><p> ListFindingTypeStats</td>
  *      <td><p> List all FindingTypeStats under a given ScanRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFindingTypeStats(ListFindingTypeStatsRequest request)
+ *           <li><p> listFindingTypeStats(ListFindingTypeStatsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFindingTypeStatsCallable()
+ *           <li><p> listFindingTypeStatsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

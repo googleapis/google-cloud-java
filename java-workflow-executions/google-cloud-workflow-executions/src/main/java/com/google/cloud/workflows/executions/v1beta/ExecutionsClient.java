@@ -58,87 +58,88 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListExecutions</td>
+ *      <td><p> ListExecutions</td>
  *      <td><p> Returns a list of executions which belong to the workflow with the given name. The method returns executions of all workflow revisions. Returned executions are ordered by their start time (newest first).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listExecutions(ListExecutionsRequest request)
+ *           <li><p> listExecutions(ListExecutionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listExecutions(WorkflowName parent)
- *           <li>listExecutions(String parent)
+ *           <li><p> listExecutions(WorkflowName parent)
+ *           <li><p> listExecutions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listExecutionsPagedCallable()
- *           <li>listExecutionsCallable()
+ *           <li><p> listExecutionsPagedCallable()
+ *           <li><p> listExecutionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateExecution</td>
+ *      <td><p> CreateExecution</td>
  *      <td><p> Creates a new execution using the latest revision of the given workflow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createExecution(CreateExecutionRequest request)
+ *           <li><p> createExecution(CreateExecutionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createExecution(WorkflowName parent, Execution execution)
- *           <li>createExecution(String parent, Execution execution)
+ *           <li><p> createExecution(WorkflowName parent, Execution execution)
+ *           <li><p> createExecution(String parent, Execution execution)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createExecutionCallable()
+ *           <li><p> createExecutionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetExecution</td>
+ *      <td><p> GetExecution</td>
  *      <td><p> Returns an execution of the given name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getExecution(GetExecutionRequest request)
+ *           <li><p> getExecution(GetExecutionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getExecution(ExecutionName name)
- *           <li>getExecution(String name)
+ *           <li><p> getExecution(ExecutionName name)
+ *           <li><p> getExecution(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getExecutionCallable()
+ *           <li><p> getExecutionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelExecution</td>
+ *      <td><p> CancelExecution</td>
  *      <td><p> Cancels an execution of the given name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelExecution(CancelExecutionRequest request)
+ *           <li><p> cancelExecution(CancelExecutionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelExecution(ExecutionName name)
- *           <li>cancelExecution(String name)
+ *           <li><p> cancelExecution(ExecutionName name)
+ *           <li><p> cancelExecution(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelExecutionCallable()
+ *           <li><p> cancelExecutionCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

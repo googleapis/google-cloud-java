@@ -63,108 +63,109 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListWorkflows</td>
+ *      <td><p> ListWorkflows</td>
  *      <td><p> Lists Workflows in a given project and location. The default order is not specified.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkflows(ListWorkflowsRequest request)
+ *           <li><p> listWorkflows(ListWorkflowsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkflows(LocationName parent)
- *           <li>listWorkflows(String parent)
+ *           <li><p> listWorkflows(LocationName parent)
+ *           <li><p> listWorkflows(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkflowsPagedCallable()
- *           <li>listWorkflowsCallable()
+ *           <li><p> listWorkflowsPagedCallable()
+ *           <li><p> listWorkflowsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkflow</td>
+ *      <td><p> GetWorkflow</td>
  *      <td><p> Gets details of a single Workflow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkflow(GetWorkflowRequest request)
+ *           <li><p> getWorkflow(GetWorkflowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkflow(WorkflowName name)
- *           <li>getWorkflow(String name)
+ *           <li><p> getWorkflow(WorkflowName name)
+ *           <li><p> getWorkflow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkflowCallable()
+ *           <li><p> getWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkflow</td>
+ *      <td><p> CreateWorkflow</td>
  *      <td><p> Creates a new workflow. If a workflow with the specified name already exists in the specified project and location, the long running operation will return [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkflowAsync(CreateWorkflowRequest request)
+ *           <li><p> createWorkflowAsync(CreateWorkflowRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createWorkflowAsync(LocationName parent, Workflow workflow, String workflowId)
- *           <li>createWorkflowAsync(String parent, Workflow workflow, String workflowId)
+ *           <li><p> createWorkflowAsync(LocationName parent, Workflow workflow, String workflowId)
+ *           <li><p> createWorkflowAsync(String parent, Workflow workflow, String workflowId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkflowOperationCallable()
- *           <li>createWorkflowCallable()
+ *           <li><p> createWorkflowOperationCallable()
+ *           <li><p> createWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkflow</td>
+ *      <td><p> DeleteWorkflow</td>
  *      <td><p> Deletes a workflow with the specified name. This method also cancels and deletes all running executions of the workflow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkflowAsync(DeleteWorkflowRequest request)
+ *           <li><p> deleteWorkflowAsync(DeleteWorkflowRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteWorkflowAsync(WorkflowName name)
- *           <li>deleteWorkflowAsync(String name)
+ *           <li><p> deleteWorkflowAsync(WorkflowName name)
+ *           <li><p> deleteWorkflowAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkflowOperationCallable()
- *           <li>deleteWorkflowCallable()
+ *           <li><p> deleteWorkflowOperationCallable()
+ *           <li><p> deleteWorkflowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkflow</td>
+ *      <td><p> UpdateWorkflow</td>
  *      <td><p> Updates an existing workflow. Running this method has no impact on already running executions of the workflow. A new revision of the workflow may be created as a result of a successful update operation. In that case, such revision will be used in new workflow executions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkflowAsync(UpdateWorkflowRequest request)
+ *           <li><p> updateWorkflowAsync(UpdateWorkflowRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateWorkflowAsync(Workflow workflow, FieldMask updateMask)
+ *           <li><p> updateWorkflowAsync(Workflow workflow, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkflowOperationCallable()
- *           <li>updateWorkflowCallable()
+ *           <li><p> updateWorkflowOperationCallable()
+ *           <li><p> updateWorkflowCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

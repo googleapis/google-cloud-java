@@ -71,98 +71,99 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ComputeThreatListDiff</td>
+ *      <td><p> ComputeThreatListDiff</td>
  *      <td><p> Gets the most recent threat list diffs. These diffs should be applied to a local database of hashes to keep it up-to-date. If the local database is empty or excessively out-of-date, a complete snapshot of the database will be returned. This Method only updates a single ThreatList at a time. To update multiple ThreatList databases, this method needs to be called once for each list.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>computeThreatListDiff(ComputeThreatListDiffRequest request)
+ *           <li><p> computeThreatListDiff(ComputeThreatListDiffRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>computeThreatListDiff(ThreatType threatType, ByteString versionToken, ComputeThreatListDiffRequest.Constraints constraints)
+ *           <li><p> computeThreatListDiff(ThreatType threatType, ByteString versionToken, ComputeThreatListDiffRequest.Constraints constraints)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>computeThreatListDiffCallable()
+ *           <li><p> computeThreatListDiffCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchUris</td>
+ *      <td><p> SearchUris</td>
  *      <td><p> This method is used to check whether a URI is on a given threatList. Multiple threatLists may be searched in a single query. The response will list all requested threatLists the URI was found to match. If the URI is not found on any of the requested ThreatList an empty response will be returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchUris(SearchUrisRequest request)
+ *           <li><p> searchUris(SearchUrisRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchUris(String uri, List<ThreatType> threatTypes)
+ *           <li><p> searchUris(String uri, List&lt;ThreatType&gt; threatTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchUrisCallable()
+ *           <li><p> searchUrisCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchHashes</td>
+ *      <td><p> SearchHashes</td>
  *      <td><p> Gets the full hashes that match the requested hash prefix. This is used after a hash prefix is looked up in a threatList and there is a match. The client side threatList only holds partial hashes so the client must query this method to determine if there is a full hash match of a threat.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchHashes(SearchHashesRequest request)
+ *           <li><p> searchHashes(SearchHashesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchHashes(ByteString hashPrefix, List<ThreatType> threatTypes)
+ *           <li><p> searchHashes(ByteString hashPrefix, List&lt;ThreatType&gt; threatTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchHashesCallable()
+ *           <li><p> searchHashesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSubmission</td>
+ *      <td><p> CreateSubmission</td>
  *      <td><p> Creates a Submission of a URI suspected of containing phishing content to be reviewed. If the result verifies the existence of malicious phishing content, the site will be added to the [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that could get exposed to this threat in the future. Only allowlisted projects can use this method during Early Access. Please reach out to Sales or your customer engineer to obtain access.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSubmission(CreateSubmissionRequest request)
+ *           <li><p> createSubmission(CreateSubmissionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSubmission(ProjectName parent, Submission submission)
- *           <li>createSubmission(String parent, Submission submission)
+ *           <li><p> createSubmission(ProjectName parent, Submission submission)
+ *           <li><p> createSubmission(String parent, Submission submission)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSubmissionCallable()
+ *           <li><p> createSubmissionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SubmitUri</td>
+ *      <td><p> SubmitUri</td>
  *      <td><p> Submits a URI suspected of containing malicious content to be reviewed. Returns a google.longrunning.Operation which, once the review is complete, is updated with its result. You can use the [Pub/Sub API] (https://cloud.google.com/pubsub) to receive notifications for the returned Operation. If the result verifies the existence of malicious content, the site will be added to the [Google's Social Engineering lists] (https://support.google.com/webmasters/answer/6350487/) in order to protect users that could get exposed to this threat in the future. Only allowlisted projects can use this method during Early Access. Please reach out to Sales or your customer engineer to obtain access.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>submitUriAsync(SubmitUriRequest request)
+ *           <li><p> submitUriAsync(SubmitUriRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>submitUriOperationCallable()
- *           <li>submitUriCallable()
+ *           <li><p> submitUriOperationCallable()
+ *           <li><p> submitUriCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

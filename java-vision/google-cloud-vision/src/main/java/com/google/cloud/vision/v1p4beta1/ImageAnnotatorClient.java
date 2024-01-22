@@ -55,75 +55,76 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BatchAnnotateImages</td>
+ *      <td><p> BatchAnnotateImages</td>
  *      <td><p> Run image detection and annotation for a batch of images.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchAnnotateImages(List<AnnotateImageRequest> requests)
- *           <li>batchAnnotateImages(BatchAnnotateImagesRequest request)
+ *           <li><p> batchAnnotateImages(List&lt;AnnotateImageRequest&gt; requests)
+ *           <li><p> batchAnnotateImages(BatchAnnotateImagesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchAnnotateImagesCallable()
+ *           <li><p> batchAnnotateImagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchAnnotateFiles</td>
+ *      <td><p> BatchAnnotateFiles</td>
  *      <td><p> Service that performs image detection and annotation for a batch of files. Now only "application/pdf", "image/tiff" and "image/gif" are supported.
  * <p>  This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchAnnotateFiles(List<AnnotateFileRequest> requests)
- *           <li>batchAnnotateFiles(BatchAnnotateFilesRequest request)
+ *           <li><p> batchAnnotateFiles(List&lt;AnnotateFileRequest&gt; requests)
+ *           <li><p> batchAnnotateFiles(BatchAnnotateFilesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchAnnotateFilesCallable()
+ *           <li><p> batchAnnotateFilesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AsyncBatchAnnotateImages</td>
+ *      <td><p> AsyncBatchAnnotateImages</td>
  *      <td><p> Run asynchronous image detection and annotation for a list of images.
  * <p>  Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
  * <p>  This service will write image annotation outputs to json files in customer GCS bucket, each json file containing BatchAnnotateImagesResponse proto.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>asyncBatchAnnotateImagesAsync(List<AnnotateImageRequest> requests, OutputConfig outputConfig)
- *           <li>asyncBatchAnnotateImagesAsync(AsyncBatchAnnotateImagesRequest request)
+ *           <li><p> asyncBatchAnnotateImagesAsync(List&lt;AnnotateImageRequest&gt; requests, OutputConfig outputConfig)
+ *           <li><p> asyncBatchAnnotateImagesAsync(AsyncBatchAnnotateImagesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>asyncBatchAnnotateImagesOperationCallable()
- *           <li>asyncBatchAnnotateImagesCallable()
+ *           <li><p> asyncBatchAnnotateImagesOperationCallable()
+ *           <li><p> asyncBatchAnnotateImagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AsyncBatchAnnotateFiles</td>
+ *      <td><p> AsyncBatchAnnotateFiles</td>
  *      <td><p> Run asynchronous image detection and annotation for a list of generic files, such as PDF files, which may contain multiple pages and multiple images per page. Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>asyncBatchAnnotateFilesAsync(List<AsyncAnnotateFileRequest> requests)
- *           <li>asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request)
+ *           <li><p> asyncBatchAnnotateFilesAsync(List&lt;AsyncAnnotateFileRequest&gt; requests)
+ *           <li><p> asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>asyncBatchAnnotateFilesOperationCallable()
- *           <li>asyncBatchAnnotateFilesCallable()
+ *           <li><p> asyncBatchAnnotateFilesOperationCallable()
+ *           <li><p> asyncBatchAnnotateFilesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

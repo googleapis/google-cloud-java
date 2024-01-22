@@ -51,25 +51,26 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BatchAnnotateImages</td>
+ *      <td><p> BatchAnnotateImages</td>
  *      <td><p> Run image detection and annotation for a batch of images.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchAnnotateImages(List<AnnotateImageRequest> requests)
- *           <li>batchAnnotateImages(BatchAnnotateImagesRequest request)
+ *           <li><p> batchAnnotateImages(List&lt;AnnotateImageRequest&gt; requests)
+ *           <li><p> batchAnnotateImages(BatchAnnotateImagesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchAnnotateImagesCallable()
+ *           <li><p> batchAnnotateImagesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
