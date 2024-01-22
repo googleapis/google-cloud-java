@@ -155,6 +155,7 @@
     <module>java-security-private-ca</module>
     <module>java-service-control</module>
     <module>java-servicedirectory</module>
+    <module>java-servicehealth</module>
     <module>java-service-management</module>
     <module>java-service-usage</module>
     <module>java-shell</module>
