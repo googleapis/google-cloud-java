@@ -60,47 +60,49 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetAccount</td>
+ *      <td><p> GetAccount</td>
  *      <td><p> Lookup for a single Account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAccount(GetAccountRequest request)
+ *           <li><p> getAccount(GetAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAccount(AccountName name)
- *           <li>getAccount(String name)
+ *           <li><p> getAccount(AccountName name)
+ *           <li><p> getAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAccountCallable()
+ *           <li><p> getAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAccounts</td>
+ *      <td><p> ListAccounts</td>
  *      <td><p> Returns all accounts accessible by the caller.
  * <p>  Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAccounts(ListAccountsRequest request)
+ *           <li><p> listAccounts(ListAccountsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAccountsPagedCallable()
- *           <li>listAccountsCallable()
+ *           <li><p> listAccountsPagedCallable()
+ *           <li><p> listAccountsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAccount</td>
+ *      <td><p> DeleteAccount</td>
  *      <td><p> Marks target Account as soft-deleted (ie: "trashed") and returns it.
  * <p>  This API does not have a method to restore soft-deleted accounts. However, they can be restored using the Trash Can UI.
  * <p>  If the accounts are not restored before the expiration time, the account and all child resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772
@@ -108,121 +110,121 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAccount(DeleteAccountRequest request)
+ *           <li><p> deleteAccount(DeleteAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAccount(AccountName name)
- *           <li>deleteAccount(String name)
+ *           <li><p> deleteAccount(AccountName name)
+ *           <li><p> deleteAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAccountCallable()
+ *           <li><p> deleteAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAccount</td>
+ *      <td><p> UpdateAccount</td>
  *      <td><p> Updates an account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAccount(UpdateAccountRequest request)
+ *           <li><p> updateAccount(UpdateAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAccount(Account account, FieldMask updateMask)
+ *           <li><p> updateAccount(Account account, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAccountCallable()
+ *           <li><p> updateAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ProvisionAccountTicket</td>
+ *      <td><p> ProvisionAccountTicket</td>
  *      <td><p> Requests a ticket for creating an account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>provisionAccountTicket(ProvisionAccountTicketRequest request)
+ *           <li><p> provisionAccountTicket(ProvisionAccountTicketRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>provisionAccountTicketCallable()
+ *           <li><p> provisionAccountTicketCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAccountSummaries</td>
+ *      <td><p> ListAccountSummaries</td>
  *      <td><p> Returns summaries of all accounts accessible by the caller.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAccountSummaries(ListAccountSummariesRequest request)
+ *           <li><p> listAccountSummaries(ListAccountSummariesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAccountSummariesPagedCallable()
- *           <li>listAccountSummariesCallable()
+ *           <li><p> listAccountSummariesPagedCallable()
+ *           <li><p> listAccountSummariesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetProperty</td>
+ *      <td><p> GetProperty</td>
  *      <td><p> Lookup for a single "GA4" Property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getProperty(GetPropertyRequest request)
+ *           <li><p> getProperty(GetPropertyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getProperty(PropertyName name)
- *           <li>getProperty(String name)
+ *           <li><p> getProperty(PropertyName name)
+ *           <li><p> getProperty(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPropertyCallable()
+ *           <li><p> getPropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListProperties</td>
+ *      <td><p> ListProperties</td>
  *      <td><p> Returns child Properties under the specified parent Account.
  * <p>  Only "GA4" properties will be returned. Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProperties(ListPropertiesRequest request)
+ *           <li><p> listProperties(ListPropertiesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPropertiesPagedCallable()
- *           <li>listPropertiesCallable()
+ *           <li><p> listPropertiesPagedCallable()
+ *           <li><p> listPropertiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateProperty</td>
+ *      <td><p> CreateProperty</td>
  *      <td><p> Creates an "GA4" property with the specified location and attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createProperty(CreatePropertyRequest request)
+ *           <li><p> createProperty(CreatePropertyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createProperty(Property property)
+ *           <li><p> createProperty(Property property)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPropertyCallable()
+ *           <li><p> createPropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteProperty</td>
+ *      <td><p> DeleteProperty</td>
  *      <td><p> Marks target Property as soft-deleted (ie: "trashed") and returns it.
  * <p>  This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI.
  * <p>  If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772
@@ -230,2236 +232,2235 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteProperty(DeletePropertyRequest request)
+ *           <li><p> deleteProperty(DeletePropertyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteProperty(PropertyName name)
- *           <li>deleteProperty(String name)
+ *           <li><p> deleteProperty(PropertyName name)
+ *           <li><p> deleteProperty(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePropertyCallable()
+ *           <li><p> deletePropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateProperty</td>
+ *      <td><p> UpdateProperty</td>
  *      <td><p> Updates a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateProperty(UpdatePropertyRequest request)
+ *           <li><p> updateProperty(UpdatePropertyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateProperty(Property property, FieldMask updateMask)
+ *           <li><p> updateProperty(Property property, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePropertyCallable()
+ *           <li><p> updatePropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFirebaseLink</td>
+ *      <td><p> CreateFirebaseLink</td>
  *      <td><p> Creates a FirebaseLink.
  * <p>  Properties can have at most one FirebaseLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFirebaseLink(CreateFirebaseLinkRequest request)
+ *           <li><p> createFirebaseLink(CreateFirebaseLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createFirebaseLink(PropertyName parent, FirebaseLink firebaseLink)
- *           <li>createFirebaseLink(String parent, FirebaseLink firebaseLink)
+ *           <li><p> createFirebaseLink(PropertyName parent, FirebaseLink firebaseLink)
+ *           <li><p> createFirebaseLink(String parent, FirebaseLink firebaseLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFirebaseLinkCallable()
+ *           <li><p> createFirebaseLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFirebaseLink</td>
+ *      <td><p> DeleteFirebaseLink</td>
  *      <td><p> Deletes a FirebaseLink on a property</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFirebaseLink(DeleteFirebaseLinkRequest request)
+ *           <li><p> deleteFirebaseLink(DeleteFirebaseLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteFirebaseLink(FirebaseLinkName name)
- *           <li>deleteFirebaseLink(String name)
+ *           <li><p> deleteFirebaseLink(FirebaseLinkName name)
+ *           <li><p> deleteFirebaseLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFirebaseLinkCallable()
+ *           <li><p> deleteFirebaseLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFirebaseLinks</td>
+ *      <td><p> ListFirebaseLinks</td>
  *      <td><p> Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFirebaseLinks(ListFirebaseLinksRequest request)
+ *           <li><p> listFirebaseLinks(ListFirebaseLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFirebaseLinks(PropertyName parent)
- *           <li>listFirebaseLinks(String parent)
+ *           <li><p> listFirebaseLinks(PropertyName parent)
+ *           <li><p> listFirebaseLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFirebaseLinksPagedCallable()
- *           <li>listFirebaseLinksCallable()
+ *           <li><p> listFirebaseLinksPagedCallable()
+ *           <li><p> listFirebaseLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGlobalSiteTag</td>
+ *      <td><p> GetGlobalSiteTag</td>
  *      <td><p> Returns the Site Tag for the specified web stream. Site Tags are immutable singletons.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGlobalSiteTag(GetGlobalSiteTagRequest request)
+ *           <li><p> getGlobalSiteTag(GetGlobalSiteTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGlobalSiteTag(GlobalSiteTagName name)
- *           <li>getGlobalSiteTag(String name)
+ *           <li><p> getGlobalSiteTag(GlobalSiteTagName name)
+ *           <li><p> getGlobalSiteTag(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGlobalSiteTagCallable()
+ *           <li><p> getGlobalSiteTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateGoogleAdsLink</td>
+ *      <td><p> CreateGoogleAdsLink</td>
  *      <td><p> Creates a GoogleAdsLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createGoogleAdsLink(CreateGoogleAdsLinkRequest request)
+ *           <li><p> createGoogleAdsLink(CreateGoogleAdsLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createGoogleAdsLink(PropertyName parent, GoogleAdsLink googleAdsLink)
- *           <li>createGoogleAdsLink(String parent, GoogleAdsLink googleAdsLink)
+ *           <li><p> createGoogleAdsLink(PropertyName parent, GoogleAdsLink googleAdsLink)
+ *           <li><p> createGoogleAdsLink(String parent, GoogleAdsLink googleAdsLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createGoogleAdsLinkCallable()
+ *           <li><p> createGoogleAdsLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGoogleAdsLink</td>
+ *      <td><p> UpdateGoogleAdsLink</td>
  *      <td><p> Updates a GoogleAdsLink on a property</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGoogleAdsLink(UpdateGoogleAdsLinkRequest request)
+ *           <li><p> updateGoogleAdsLink(UpdateGoogleAdsLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGoogleAdsLink(GoogleAdsLink googleAdsLink, FieldMask updateMask)
+ *           <li><p> updateGoogleAdsLink(GoogleAdsLink googleAdsLink, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGoogleAdsLinkCallable()
+ *           <li><p> updateGoogleAdsLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteGoogleAdsLink</td>
+ *      <td><p> DeleteGoogleAdsLink</td>
  *      <td><p> Deletes a GoogleAdsLink on a property</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteGoogleAdsLink(DeleteGoogleAdsLinkRequest request)
+ *           <li><p> deleteGoogleAdsLink(DeleteGoogleAdsLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteGoogleAdsLink(GoogleAdsLinkName name)
- *           <li>deleteGoogleAdsLink(String name)
+ *           <li><p> deleteGoogleAdsLink(GoogleAdsLinkName name)
+ *           <li><p> deleteGoogleAdsLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteGoogleAdsLinkCallable()
+ *           <li><p> deleteGoogleAdsLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListGoogleAdsLinks</td>
+ *      <td><p> ListGoogleAdsLinks</td>
  *      <td><p> Lists GoogleAdsLinks on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGoogleAdsLinks(ListGoogleAdsLinksRequest request)
+ *           <li><p> listGoogleAdsLinks(ListGoogleAdsLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGoogleAdsLinks(PropertyName parent)
- *           <li>listGoogleAdsLinks(String parent)
+ *           <li><p> listGoogleAdsLinks(PropertyName parent)
+ *           <li><p> listGoogleAdsLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGoogleAdsLinksPagedCallable()
- *           <li>listGoogleAdsLinksCallable()
+ *           <li><p> listGoogleAdsLinksPagedCallable()
+ *           <li><p> listGoogleAdsLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataSharingSettings</td>
+ *      <td><p> GetDataSharingSettings</td>
  *      <td><p> Get data sharing settings on an account. Data sharing settings are singletons.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataSharingSettings(GetDataSharingSettingsRequest request)
+ *           <li><p> getDataSharingSettings(GetDataSharingSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataSharingSettings(DataSharingSettingsName name)
- *           <li>getDataSharingSettings(String name)
+ *           <li><p> getDataSharingSettings(DataSharingSettingsName name)
+ *           <li><p> getDataSharingSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataSharingSettingsCallable()
+ *           <li><p> getDataSharingSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMeasurementProtocolSecret</td>
+ *      <td><p> GetMeasurementProtocolSecret</td>
  *      <td><p> Lookup for a single "GA4" MeasurementProtocolSecret.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMeasurementProtocolSecret(GetMeasurementProtocolSecretRequest request)
+ *           <li><p> getMeasurementProtocolSecret(GetMeasurementProtocolSecretRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMeasurementProtocolSecret(MeasurementProtocolSecretName name)
- *           <li>getMeasurementProtocolSecret(String name)
+ *           <li><p> getMeasurementProtocolSecret(MeasurementProtocolSecretName name)
+ *           <li><p> getMeasurementProtocolSecret(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMeasurementProtocolSecretCallable()
+ *           <li><p> getMeasurementProtocolSecretCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMeasurementProtocolSecrets</td>
+ *      <td><p> ListMeasurementProtocolSecrets</td>
  *      <td><p> Returns child MeasurementProtocolSecrets under the specified parent Property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMeasurementProtocolSecrets(ListMeasurementProtocolSecretsRequest request)
+ *           <li><p> listMeasurementProtocolSecrets(ListMeasurementProtocolSecretsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMeasurementProtocolSecrets(DataStreamName parent)
- *           <li>listMeasurementProtocolSecrets(String parent)
+ *           <li><p> listMeasurementProtocolSecrets(DataStreamName parent)
+ *           <li><p> listMeasurementProtocolSecrets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMeasurementProtocolSecretsPagedCallable()
- *           <li>listMeasurementProtocolSecretsCallable()
+ *           <li><p> listMeasurementProtocolSecretsPagedCallable()
+ *           <li><p> listMeasurementProtocolSecretsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateMeasurementProtocolSecret</td>
+ *      <td><p> CreateMeasurementProtocolSecret</td>
  *      <td><p> Creates a measurement protocol secret.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMeasurementProtocolSecret(CreateMeasurementProtocolSecretRequest request)
+ *           <li><p> createMeasurementProtocolSecret(CreateMeasurementProtocolSecretRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createMeasurementProtocolSecret(DataStreamName parent, MeasurementProtocolSecret measurementProtocolSecret)
- *           <li>createMeasurementProtocolSecret(String parent, MeasurementProtocolSecret measurementProtocolSecret)
+ *           <li><p> createMeasurementProtocolSecret(DataStreamName parent, MeasurementProtocolSecret measurementProtocolSecret)
+ *           <li><p> createMeasurementProtocolSecret(String parent, MeasurementProtocolSecret measurementProtocolSecret)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMeasurementProtocolSecretCallable()
+ *           <li><p> createMeasurementProtocolSecretCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteMeasurementProtocolSecret</td>
+ *      <td><p> DeleteMeasurementProtocolSecret</td>
  *      <td><p> Deletes target MeasurementProtocolSecret.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteMeasurementProtocolSecret(DeleteMeasurementProtocolSecretRequest request)
+ *           <li><p> deleteMeasurementProtocolSecret(DeleteMeasurementProtocolSecretRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteMeasurementProtocolSecret(MeasurementProtocolSecretName name)
- *           <li>deleteMeasurementProtocolSecret(String name)
+ *           <li><p> deleteMeasurementProtocolSecret(MeasurementProtocolSecretName name)
+ *           <li><p> deleteMeasurementProtocolSecret(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteMeasurementProtocolSecretCallable()
+ *           <li><p> deleteMeasurementProtocolSecretCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateMeasurementProtocolSecret</td>
+ *      <td><p> UpdateMeasurementProtocolSecret</td>
  *      <td><p> Updates a measurement protocol secret.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateMeasurementProtocolSecret(UpdateMeasurementProtocolSecretRequest request)
+ *           <li><p> updateMeasurementProtocolSecret(UpdateMeasurementProtocolSecretRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateMeasurementProtocolSecret(MeasurementProtocolSecret measurementProtocolSecret, FieldMask updateMask)
+ *           <li><p> updateMeasurementProtocolSecret(MeasurementProtocolSecret measurementProtocolSecret, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateMeasurementProtocolSecretCallable()
+ *           <li><p> updateMeasurementProtocolSecretCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AcknowledgeUserDataCollection</td>
+ *      <td><p> AcknowledgeUserDataCollection</td>
  *      <td><p> Acknowledges the terms of user data collection for the specified property.
  * <p>  This acknowledgement must be completed (either in the Google Analytics UI or through this API) before MeasurementProtocolSecret resources may be created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>acknowledgeUserDataCollection(AcknowledgeUserDataCollectionRequest request)
+ *           <li><p> acknowledgeUserDataCollection(AcknowledgeUserDataCollectionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>acknowledgeUserDataCollectionCallable()
+ *           <li><p> acknowledgeUserDataCollectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSKAdNetworkConversionValueSchema</td>
+ *      <td><p> GetSKAdNetworkConversionValueSchema</td>
  *      <td><p> Looks up a single SKAdNetworkConversionValueSchema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSKAdNetworkConversionValueSchema(GetSKAdNetworkConversionValueSchemaRequest request)
+ *           <li><p> getSKAdNetworkConversionValueSchema(GetSKAdNetworkConversionValueSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchemaName name)
- *           <li>getSKAdNetworkConversionValueSchema(String name)
+ *           <li><p> getSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchemaName name)
+ *           <li><p> getSKAdNetworkConversionValueSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSKAdNetworkConversionValueSchemaCallable()
+ *           <li><p> getSKAdNetworkConversionValueSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSKAdNetworkConversionValueSchema</td>
+ *      <td><p> CreateSKAdNetworkConversionValueSchema</td>
  *      <td><p> Creates a SKAdNetworkConversionValueSchema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSKAdNetworkConversionValueSchema(CreateSKAdNetworkConversionValueSchemaRequest request)
+ *           <li><p> createSKAdNetworkConversionValueSchema(CreateSKAdNetworkConversionValueSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSKAdNetworkConversionValueSchema(DataStreamName parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema)
- *           <li>createSKAdNetworkConversionValueSchema(String parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema)
+ *           <li><p> createSKAdNetworkConversionValueSchema(DataStreamName parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema)
+ *           <li><p> createSKAdNetworkConversionValueSchema(String parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSKAdNetworkConversionValueSchemaCallable()
+ *           <li><p> createSKAdNetworkConversionValueSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSKAdNetworkConversionValueSchema</td>
+ *      <td><p> DeleteSKAdNetworkConversionValueSchema</td>
  *      <td><p> Deletes target SKAdNetworkConversionValueSchema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSKAdNetworkConversionValueSchema(DeleteSKAdNetworkConversionValueSchemaRequest request)
+ *           <li><p> deleteSKAdNetworkConversionValueSchema(DeleteSKAdNetworkConversionValueSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchemaName name)
- *           <li>deleteSKAdNetworkConversionValueSchema(String name)
+ *           <li><p> deleteSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchemaName name)
+ *           <li><p> deleteSKAdNetworkConversionValueSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSKAdNetworkConversionValueSchemaCallable()
+ *           <li><p> deleteSKAdNetworkConversionValueSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSKAdNetworkConversionValueSchema</td>
+ *      <td><p> UpdateSKAdNetworkConversionValueSchema</td>
  *      <td><p> Updates a SKAdNetworkConversionValueSchema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSKAdNetworkConversionValueSchema(UpdateSKAdNetworkConversionValueSchemaRequest request)
+ *           <li><p> updateSKAdNetworkConversionValueSchema(UpdateSKAdNetworkConversionValueSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema, FieldMask updateMask)
+ *           <li><p> updateSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSKAdNetworkConversionValueSchemaCallable()
+ *           <li><p> updateSKAdNetworkConversionValueSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSKAdNetworkConversionValueSchemas</td>
+ *      <td><p> ListSKAdNetworkConversionValueSchemas</td>
  *      <td><p> Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one SKAdNetworkConversionValueSchema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSKAdNetworkConversionValueSchemas(ListSKAdNetworkConversionValueSchemasRequest request)
+ *           <li><p> listSKAdNetworkConversionValueSchemas(ListSKAdNetworkConversionValueSchemasRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSKAdNetworkConversionValueSchemas(DataStreamName parent)
- *           <li>listSKAdNetworkConversionValueSchemas(String parent)
+ *           <li><p> listSKAdNetworkConversionValueSchemas(DataStreamName parent)
+ *           <li><p> listSKAdNetworkConversionValueSchemas(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSKAdNetworkConversionValueSchemasPagedCallable()
- *           <li>listSKAdNetworkConversionValueSchemasCallable()
+ *           <li><p> listSKAdNetworkConversionValueSchemasPagedCallable()
+ *           <li><p> listSKAdNetworkConversionValueSchemasCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchChangeHistoryEvents</td>
+ *      <td><p> SearchChangeHistoryEvents</td>
  *      <td><p> Searches through all changes to an account or its children given the specified set of filters.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchChangeHistoryEvents(SearchChangeHistoryEventsRequest request)
+ *           <li><p> searchChangeHistoryEvents(SearchChangeHistoryEventsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchChangeHistoryEventsPagedCallable()
- *           <li>searchChangeHistoryEventsCallable()
+ *           <li><p> searchChangeHistoryEventsPagedCallable()
+ *           <li><p> searchChangeHistoryEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGoogleSignalsSettings</td>
+ *      <td><p> GetGoogleSignalsSettings</td>
  *      <td><p> Lookup for Google Signals settings for a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGoogleSignalsSettings(GetGoogleSignalsSettingsRequest request)
+ *           <li><p> getGoogleSignalsSettings(GetGoogleSignalsSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGoogleSignalsSettings(GoogleSignalsSettingsName name)
- *           <li>getGoogleSignalsSettings(String name)
+ *           <li><p> getGoogleSignalsSettings(GoogleSignalsSettingsName name)
+ *           <li><p> getGoogleSignalsSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGoogleSignalsSettingsCallable()
+ *           <li><p> getGoogleSignalsSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGoogleSignalsSettings</td>
+ *      <td><p> UpdateGoogleSignalsSettings</td>
  *      <td><p> Updates Google Signals settings for a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGoogleSignalsSettings(UpdateGoogleSignalsSettingsRequest request)
+ *           <li><p> updateGoogleSignalsSettings(UpdateGoogleSignalsSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGoogleSignalsSettings(GoogleSignalsSettings googleSignalsSettings, FieldMask updateMask)
+ *           <li><p> updateGoogleSignalsSettings(GoogleSignalsSettings googleSignalsSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGoogleSignalsSettingsCallable()
+ *           <li><p> updateGoogleSignalsSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConversionEvent</td>
+ *      <td><p> CreateConversionEvent</td>
  *      <td><p> Creates a conversion event with the specified attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConversionEvent(CreateConversionEventRequest request)
+ *           <li><p> createConversionEvent(CreateConversionEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createConversionEvent(PropertyName parent, ConversionEvent conversionEvent)
- *           <li>createConversionEvent(String parent, ConversionEvent conversionEvent)
+ *           <li><p> createConversionEvent(PropertyName parent, ConversionEvent conversionEvent)
+ *           <li><p> createConversionEvent(String parent, ConversionEvent conversionEvent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConversionEventCallable()
+ *           <li><p> createConversionEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConversionEvent</td>
+ *      <td><p> UpdateConversionEvent</td>
  *      <td><p> Updates a conversion event with the specified attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConversionEvent(UpdateConversionEventRequest request)
+ *           <li><p> updateConversionEvent(UpdateConversionEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateConversionEvent(ConversionEvent conversionEvent, FieldMask updateMask)
+ *           <li><p> updateConversionEvent(ConversionEvent conversionEvent, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConversionEventCallable()
+ *           <li><p> updateConversionEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConversionEvent</td>
+ *      <td><p> GetConversionEvent</td>
  *      <td><p> Retrieve a single conversion event.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConversionEvent(GetConversionEventRequest request)
+ *           <li><p> getConversionEvent(GetConversionEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConversionEvent(ConversionEventName name)
- *           <li>getConversionEvent(String name)
+ *           <li><p> getConversionEvent(ConversionEventName name)
+ *           <li><p> getConversionEvent(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConversionEventCallable()
+ *           <li><p> getConversionEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConversionEvent</td>
+ *      <td><p> DeleteConversionEvent</td>
  *      <td><p> Deletes a conversion event in a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConversionEvent(DeleteConversionEventRequest request)
+ *           <li><p> deleteConversionEvent(DeleteConversionEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteConversionEvent(ConversionEventName name)
- *           <li>deleteConversionEvent(String name)
+ *           <li><p> deleteConversionEvent(ConversionEventName name)
+ *           <li><p> deleteConversionEvent(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConversionEventCallable()
+ *           <li><p> deleteConversionEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConversionEvents</td>
+ *      <td><p> ListConversionEvents</td>
  *      <td><p> Returns a list of conversion events in the specified parent property.
  * <p>  Returns an empty list if no conversion events are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConversionEvents(ListConversionEventsRequest request)
+ *           <li><p> listConversionEvents(ListConversionEventsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConversionEvents(PropertyName parent)
- *           <li>listConversionEvents(String parent)
+ *           <li><p> listConversionEvents(PropertyName parent)
+ *           <li><p> listConversionEvents(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConversionEventsPagedCallable()
- *           <li>listConversionEventsCallable()
+ *           <li><p> listConversionEventsPagedCallable()
+ *           <li><p> listConversionEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDisplayVideo360AdvertiserLink</td>
+ *      <td><p> GetDisplayVideo360AdvertiserLink</td>
  *      <td><p> Look up a single DisplayVideo360AdvertiserLink</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDisplayVideo360AdvertiserLink(GetDisplayVideo360AdvertiserLinkRequest request)
+ *           <li><p> getDisplayVideo360AdvertiserLink(GetDisplayVideo360AdvertiserLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name)
- *           <li>getDisplayVideo360AdvertiserLink(String name)
+ *           <li><p> getDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name)
+ *           <li><p> getDisplayVideo360AdvertiserLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDisplayVideo360AdvertiserLinkCallable()
+ *           <li><p> getDisplayVideo360AdvertiserLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDisplayVideo360AdvertiserLinks</td>
+ *      <td><p> ListDisplayVideo360AdvertiserLinks</td>
  *      <td><p> Lists all DisplayVideo360AdvertiserLinks on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDisplayVideo360AdvertiserLinks(ListDisplayVideo360AdvertiserLinksRequest request)
+ *           <li><p> listDisplayVideo360AdvertiserLinks(ListDisplayVideo360AdvertiserLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDisplayVideo360AdvertiserLinks(PropertyName parent)
- *           <li>listDisplayVideo360AdvertiserLinks(String parent)
+ *           <li><p> listDisplayVideo360AdvertiserLinks(PropertyName parent)
+ *           <li><p> listDisplayVideo360AdvertiserLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDisplayVideo360AdvertiserLinksPagedCallable()
- *           <li>listDisplayVideo360AdvertiserLinksCallable()
+ *           <li><p> listDisplayVideo360AdvertiserLinksPagedCallable()
+ *           <li><p> listDisplayVideo360AdvertiserLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDisplayVideo360AdvertiserLink</td>
+ *      <td><p> CreateDisplayVideo360AdvertiserLink</td>
  *      <td><p> Creates a DisplayVideo360AdvertiserLink. This can only be utilized by users who have proper authorization both on the Google Analytics property and on the Display &amp; Video 360 advertiser. Users who do not have access to the Display &amp; Video 360 advertiser should instead seek to create a DisplayVideo360LinkProposal.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDisplayVideo360AdvertiserLink(CreateDisplayVideo360AdvertiserLinkRequest request)
+ *           <li><p> createDisplayVideo360AdvertiserLink(CreateDisplayVideo360AdvertiserLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDisplayVideo360AdvertiserLink(PropertyName parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink)
- *           <li>createDisplayVideo360AdvertiserLink(String parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink)
+ *           <li><p> createDisplayVideo360AdvertiserLink(PropertyName parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink)
+ *           <li><p> createDisplayVideo360AdvertiserLink(String parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDisplayVideo360AdvertiserLinkCallable()
+ *           <li><p> createDisplayVideo360AdvertiserLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDisplayVideo360AdvertiserLink</td>
+ *      <td><p> DeleteDisplayVideo360AdvertiserLink</td>
  *      <td><p> Deletes a DisplayVideo360AdvertiserLink on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDisplayVideo360AdvertiserLink(DeleteDisplayVideo360AdvertiserLinkRequest request)
+ *           <li><p> deleteDisplayVideo360AdvertiserLink(DeleteDisplayVideo360AdvertiserLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name)
- *           <li>deleteDisplayVideo360AdvertiserLink(String name)
+ *           <li><p> deleteDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name)
+ *           <li><p> deleteDisplayVideo360AdvertiserLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDisplayVideo360AdvertiserLinkCallable()
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDisplayVideo360AdvertiserLink</td>
+ *      <td><p> UpdateDisplayVideo360AdvertiserLink</td>
  *      <td><p> Updates a DisplayVideo360AdvertiserLink on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDisplayVideo360AdvertiserLink(UpdateDisplayVideo360AdvertiserLinkRequest request)
+ *           <li><p> updateDisplayVideo360AdvertiserLink(UpdateDisplayVideo360AdvertiserLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink, FieldMask updateMask)
+ *           <li><p> updateDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDisplayVideo360AdvertiserLinkCallable()
+ *           <li><p> updateDisplayVideo360AdvertiserLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> GetDisplayVideo360AdvertiserLinkProposal</td>
  *      <td><p> Lookup for a single DisplayVideo360AdvertiserLinkProposal.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDisplayVideo360AdvertiserLinkProposal(GetDisplayVideo360AdvertiserLinkProposalRequest request)
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposal(GetDisplayVideo360AdvertiserLinkProposalRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDisplayVideo360AdvertiserLinkProposal(DisplayVideo360AdvertiserLinkProposalName name)
- *           <li>getDisplayVideo360AdvertiserLinkProposal(String name)
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposal(DisplayVideo360AdvertiserLinkProposalName name)
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposal(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDisplayVideo360AdvertiserLinkProposalCallable()
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposalCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDisplayVideo360AdvertiserLinkProposals</td>
+ *      <td><p> ListDisplayVideo360AdvertiserLinkProposals</td>
  *      <td><p> Lists DisplayVideo360AdvertiserLinkProposals on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDisplayVideo360AdvertiserLinkProposals(ListDisplayVideo360AdvertiserLinkProposalsRequest request)
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposals(ListDisplayVideo360AdvertiserLinkProposalsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDisplayVideo360AdvertiserLinkProposals(PropertyName parent)
- *           <li>listDisplayVideo360AdvertiserLinkProposals(String parent)
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposals(PropertyName parent)
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposals(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDisplayVideo360AdvertiserLinkProposalsPagedCallable()
- *           <li>listDisplayVideo360AdvertiserLinkProposalsCallable()
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposalsPagedCallable()
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposalsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> CreateDisplayVideo360AdvertiserLinkProposal</td>
  *      <td><p> Creates a DisplayVideo360AdvertiserLinkProposal.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDisplayVideo360AdvertiserLinkProposal(CreateDisplayVideo360AdvertiserLinkProposalRequest request)
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposal(CreateDisplayVideo360AdvertiserLinkProposalRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDisplayVideo360AdvertiserLinkProposal(PropertyName parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal)
- *           <li>createDisplayVideo360AdvertiserLinkProposal(String parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal)
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposal(PropertyName parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal)
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposal(String parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDisplayVideo360AdvertiserLinkProposalCallable()
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposalCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> DeleteDisplayVideo360AdvertiserLinkProposal</td>
  *      <td><p> Deletes a DisplayVideo360AdvertiserLinkProposal on a property. This can only be used on cancelled proposals.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDisplayVideo360AdvertiserLinkProposal(DeleteDisplayVideo360AdvertiserLinkProposalRequest request)
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposal(DeleteDisplayVideo360AdvertiserLinkProposalRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDisplayVideo360AdvertiserLinkProposal(DisplayVideo360AdvertiserLinkProposalName name)
- *           <li>deleteDisplayVideo360AdvertiserLinkProposal(String name)
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposal(DisplayVideo360AdvertiserLinkProposalName name)
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposal(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDisplayVideo360AdvertiserLinkProposalCallable()
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposalCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApproveDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> ApproveDisplayVideo360AdvertiserLinkProposal</td>
  *      <td><p> Approves a DisplayVideo360AdvertiserLinkProposal. The DisplayVideo360AdvertiserLinkProposal will be deleted and a new DisplayVideo360AdvertiserLink will be created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>approveDisplayVideo360AdvertiserLinkProposal(ApproveDisplayVideo360AdvertiserLinkProposalRequest request)
+ *           <li><p> approveDisplayVideo360AdvertiserLinkProposal(ApproveDisplayVideo360AdvertiserLinkProposalRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>approveDisplayVideo360AdvertiserLinkProposalCallable()
+ *           <li><p> approveDisplayVideo360AdvertiserLinkProposalCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> CancelDisplayVideo360AdvertiserLinkProposal</td>
  *      <td><p> Cancels a DisplayVideo360AdvertiserLinkProposal. Cancelling can mean either: - Declining a proposal initiated from Display &amp; Video 360 - Withdrawing a proposal initiated from Google Analytics After being cancelled, a proposal will eventually be deleted automatically.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelDisplayVideo360AdvertiserLinkProposal(CancelDisplayVideo360AdvertiserLinkProposalRequest request)
+ *           <li><p> cancelDisplayVideo360AdvertiserLinkProposal(CancelDisplayVideo360AdvertiserLinkProposalRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelDisplayVideo360AdvertiserLinkProposalCallable()
+ *           <li><p> cancelDisplayVideo360AdvertiserLinkProposalCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomDimension</td>
+ *      <td><p> CreateCustomDimension</td>
  *      <td><p> Creates a CustomDimension.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomDimension(CreateCustomDimensionRequest request)
+ *           <li><p> createCustomDimension(CreateCustomDimensionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCustomDimension(PropertyName parent, CustomDimension customDimension)
- *           <li>createCustomDimension(String parent, CustomDimension customDimension)
+ *           <li><p> createCustomDimension(PropertyName parent, CustomDimension customDimension)
+ *           <li><p> createCustomDimension(String parent, CustomDimension customDimension)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomDimensionCallable()
+ *           <li><p> createCustomDimensionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomDimension</td>
+ *      <td><p> UpdateCustomDimension</td>
  *      <td><p> Updates a CustomDimension on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomDimension(UpdateCustomDimensionRequest request)
+ *           <li><p> updateCustomDimension(UpdateCustomDimensionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCustomDimension(CustomDimension customDimension, FieldMask updateMask)
+ *           <li><p> updateCustomDimension(CustomDimension customDimension, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomDimensionCallable()
+ *           <li><p> updateCustomDimensionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCustomDimensions</td>
+ *      <td><p> ListCustomDimensions</td>
  *      <td><p> Lists CustomDimensions on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomDimensions(ListCustomDimensionsRequest request)
+ *           <li><p> listCustomDimensions(ListCustomDimensionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCustomDimensions(PropertyName parent)
- *           <li>listCustomDimensions(String parent)
+ *           <li><p> listCustomDimensions(PropertyName parent)
+ *           <li><p> listCustomDimensions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomDimensionsPagedCallable()
- *           <li>listCustomDimensionsCallable()
+ *           <li><p> listCustomDimensionsPagedCallable()
+ *           <li><p> listCustomDimensionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ArchiveCustomDimension</td>
+ *      <td><p> ArchiveCustomDimension</td>
  *      <td><p> Archives a CustomDimension on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>archiveCustomDimension(ArchiveCustomDimensionRequest request)
+ *           <li><p> archiveCustomDimension(ArchiveCustomDimensionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>archiveCustomDimension(CustomDimensionName name)
- *           <li>archiveCustomDimension(String name)
+ *           <li><p> archiveCustomDimension(CustomDimensionName name)
+ *           <li><p> archiveCustomDimension(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>archiveCustomDimensionCallable()
+ *           <li><p> archiveCustomDimensionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomDimension</td>
+ *      <td><p> GetCustomDimension</td>
  *      <td><p> Lookup for a single CustomDimension.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomDimension(GetCustomDimensionRequest request)
+ *           <li><p> getCustomDimension(GetCustomDimensionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomDimension(CustomDimensionName name)
- *           <li>getCustomDimension(String name)
+ *           <li><p> getCustomDimension(CustomDimensionName name)
+ *           <li><p> getCustomDimension(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomDimensionCallable()
+ *           <li><p> getCustomDimensionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomMetric</td>
+ *      <td><p> CreateCustomMetric</td>
  *      <td><p> Creates a CustomMetric.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomMetric(CreateCustomMetricRequest request)
+ *           <li><p> createCustomMetric(CreateCustomMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCustomMetric(PropertyName parent, CustomMetric customMetric)
- *           <li>createCustomMetric(String parent, CustomMetric customMetric)
+ *           <li><p> createCustomMetric(PropertyName parent, CustomMetric customMetric)
+ *           <li><p> createCustomMetric(String parent, CustomMetric customMetric)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomMetricCallable()
+ *           <li><p> createCustomMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomMetric</td>
+ *      <td><p> UpdateCustomMetric</td>
  *      <td><p> Updates a CustomMetric on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomMetric(UpdateCustomMetricRequest request)
+ *           <li><p> updateCustomMetric(UpdateCustomMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCustomMetric(CustomMetric customMetric, FieldMask updateMask)
+ *           <li><p> updateCustomMetric(CustomMetric customMetric, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomMetricCallable()
+ *           <li><p> updateCustomMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCustomMetrics</td>
+ *      <td><p> ListCustomMetrics</td>
  *      <td><p> Lists CustomMetrics on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomMetrics(ListCustomMetricsRequest request)
+ *           <li><p> listCustomMetrics(ListCustomMetricsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCustomMetrics(PropertyName parent)
- *           <li>listCustomMetrics(String parent)
+ *           <li><p> listCustomMetrics(PropertyName parent)
+ *           <li><p> listCustomMetrics(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomMetricsPagedCallable()
- *           <li>listCustomMetricsCallable()
+ *           <li><p> listCustomMetricsPagedCallable()
+ *           <li><p> listCustomMetricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ArchiveCustomMetric</td>
+ *      <td><p> ArchiveCustomMetric</td>
  *      <td><p> Archives a CustomMetric on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>archiveCustomMetric(ArchiveCustomMetricRequest request)
+ *           <li><p> archiveCustomMetric(ArchiveCustomMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>archiveCustomMetric(CustomMetricName name)
- *           <li>archiveCustomMetric(String name)
+ *           <li><p> archiveCustomMetric(CustomMetricName name)
+ *           <li><p> archiveCustomMetric(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>archiveCustomMetricCallable()
+ *           <li><p> archiveCustomMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomMetric</td>
+ *      <td><p> GetCustomMetric</td>
  *      <td><p> Lookup for a single CustomMetric.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomMetric(GetCustomMetricRequest request)
+ *           <li><p> getCustomMetric(GetCustomMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomMetric(CustomMetricName name)
- *           <li>getCustomMetric(String name)
+ *           <li><p> getCustomMetric(CustomMetricName name)
+ *           <li><p> getCustomMetric(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomMetricCallable()
+ *           <li><p> getCustomMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataRetentionSettings</td>
+ *      <td><p> GetDataRetentionSettings</td>
  *      <td><p> Returns the singleton data retention settings for this property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataRetentionSettings(GetDataRetentionSettingsRequest request)
+ *           <li><p> getDataRetentionSettings(GetDataRetentionSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataRetentionSettings(DataRetentionSettingsName name)
- *           <li>getDataRetentionSettings(String name)
+ *           <li><p> getDataRetentionSettings(DataRetentionSettingsName name)
+ *           <li><p> getDataRetentionSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataRetentionSettingsCallable()
+ *           <li><p> getDataRetentionSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDataRetentionSettings</td>
+ *      <td><p> UpdateDataRetentionSettings</td>
  *      <td><p> Updates the singleton data retention settings for this property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDataRetentionSettings(UpdateDataRetentionSettingsRequest request)
+ *           <li><p> updateDataRetentionSettings(UpdateDataRetentionSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDataRetentionSettings(DataRetentionSettings dataRetentionSettings, FieldMask updateMask)
+ *           <li><p> updateDataRetentionSettings(DataRetentionSettings dataRetentionSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDataRetentionSettingsCallable()
+ *           <li><p> updateDataRetentionSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDataStream</td>
+ *      <td><p> CreateDataStream</td>
  *      <td><p> Creates a DataStream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDataStream(CreateDataStreamRequest request)
+ *           <li><p> createDataStream(CreateDataStreamRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDataStream(PropertyName parent, DataStream dataStream)
- *           <li>createDataStream(String parent, DataStream dataStream)
+ *           <li><p> createDataStream(PropertyName parent, DataStream dataStream)
+ *           <li><p> createDataStream(String parent, DataStream dataStream)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDataStreamCallable()
+ *           <li><p> createDataStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDataStream</td>
+ *      <td><p> DeleteDataStream</td>
  *      <td><p> Deletes a DataStream on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDataStream(DeleteDataStreamRequest request)
+ *           <li><p> deleteDataStream(DeleteDataStreamRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDataStream(DataStreamName name)
- *           <li>deleteDataStream(String name)
+ *           <li><p> deleteDataStream(DataStreamName name)
+ *           <li><p> deleteDataStream(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDataStreamCallable()
+ *           <li><p> deleteDataStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDataStream</td>
+ *      <td><p> UpdateDataStream</td>
  *      <td><p> Updates a DataStream on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDataStream(UpdateDataStreamRequest request)
+ *           <li><p> updateDataStream(UpdateDataStreamRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDataStream(DataStream dataStream, FieldMask updateMask)
+ *           <li><p> updateDataStream(DataStream dataStream, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDataStreamCallable()
+ *           <li><p> updateDataStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataStreams</td>
+ *      <td><p> ListDataStreams</td>
  *      <td><p> Lists DataStreams on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataStreams(ListDataStreamsRequest request)
+ *           <li><p> listDataStreams(ListDataStreamsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataStreams(PropertyName parent)
- *           <li>listDataStreams(String parent)
+ *           <li><p> listDataStreams(PropertyName parent)
+ *           <li><p> listDataStreams(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataStreamsPagedCallable()
- *           <li>listDataStreamsCallable()
+ *           <li><p> listDataStreamsPagedCallable()
+ *           <li><p> listDataStreamsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataStream</td>
+ *      <td><p> GetDataStream</td>
  *      <td><p> Lookup for a single DataStream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataStream(GetDataStreamRequest request)
+ *           <li><p> getDataStream(GetDataStreamRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataStream(DataStreamName name)
- *           <li>getDataStream(String name)
+ *           <li><p> getDataStream(DataStreamName name)
+ *           <li><p> getDataStream(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataStreamCallable()
+ *           <li><p> getDataStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAudience</td>
+ *      <td><p> GetAudience</td>
  *      <td><p> Lookup for a single Audience. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAudience(GetAudienceRequest request)
+ *           <li><p> getAudience(GetAudienceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAudience(AudienceName name)
- *           <li>getAudience(String name)
+ *           <li><p> getAudience(AudienceName name)
+ *           <li><p> getAudience(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAudienceCallable()
+ *           <li><p> getAudienceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAudiences</td>
+ *      <td><p> ListAudiences</td>
  *      <td><p> Lists Audiences on a property. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAudiences(ListAudiencesRequest request)
+ *           <li><p> listAudiences(ListAudiencesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAudiences(PropertyName parent)
- *           <li>listAudiences(String parent)
+ *           <li><p> listAudiences(PropertyName parent)
+ *           <li><p> listAudiences(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAudiencesPagedCallable()
- *           <li>listAudiencesCallable()
+ *           <li><p> listAudiencesPagedCallable()
+ *           <li><p> listAudiencesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAudience</td>
+ *      <td><p> CreateAudience</td>
  *      <td><p> Creates an Audience.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAudience(CreateAudienceRequest request)
+ *           <li><p> createAudience(CreateAudienceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAudience(PropertyName parent, Audience audience)
- *           <li>createAudience(String parent, Audience audience)
+ *           <li><p> createAudience(PropertyName parent, Audience audience)
+ *           <li><p> createAudience(String parent, Audience audience)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAudienceCallable()
+ *           <li><p> createAudienceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAudience</td>
+ *      <td><p> UpdateAudience</td>
  *      <td><p> Updates an Audience on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAudience(UpdateAudienceRequest request)
+ *           <li><p> updateAudience(UpdateAudienceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAudience(Audience audience, FieldMask updateMask)
+ *           <li><p> updateAudience(Audience audience, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAudienceCallable()
+ *           <li><p> updateAudienceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ArchiveAudience</td>
+ *      <td><p> ArchiveAudience</td>
  *      <td><p> Archives an Audience on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>archiveAudience(ArchiveAudienceRequest request)
+ *           <li><p> archiveAudience(ArchiveAudienceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>archiveAudienceCallable()
+ *           <li><p> archiveAudienceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSearchAds360Link</td>
+ *      <td><p> GetSearchAds360Link</td>
  *      <td><p> Look up a single SearchAds360Link</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSearchAds360Link(GetSearchAds360LinkRequest request)
+ *           <li><p> getSearchAds360Link(GetSearchAds360LinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSearchAds360Link(SearchAds360LinkName name)
- *           <li>getSearchAds360Link(String name)
+ *           <li><p> getSearchAds360Link(SearchAds360LinkName name)
+ *           <li><p> getSearchAds360Link(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSearchAds360LinkCallable()
+ *           <li><p> getSearchAds360LinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSearchAds360Links</td>
+ *      <td><p> ListSearchAds360Links</td>
  *      <td><p> Lists all SearchAds360Links on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSearchAds360Links(ListSearchAds360LinksRequest request)
+ *           <li><p> listSearchAds360Links(ListSearchAds360LinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSearchAds360Links(PropertyName parent)
- *           <li>listSearchAds360Links(String parent)
+ *           <li><p> listSearchAds360Links(PropertyName parent)
+ *           <li><p> listSearchAds360Links(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSearchAds360LinksPagedCallable()
- *           <li>listSearchAds360LinksCallable()
+ *           <li><p> listSearchAds360LinksPagedCallable()
+ *           <li><p> listSearchAds360LinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSearchAds360Link</td>
+ *      <td><p> CreateSearchAds360Link</td>
  *      <td><p> Creates a SearchAds360Link.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSearchAds360Link(CreateSearchAds360LinkRequest request)
+ *           <li><p> createSearchAds360Link(CreateSearchAds360LinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSearchAds360Link(PropertyName parent, SearchAds360Link searchAds360Link)
- *           <li>createSearchAds360Link(String parent, SearchAds360Link searchAds360Link)
+ *           <li><p> createSearchAds360Link(PropertyName parent, SearchAds360Link searchAds360Link)
+ *           <li><p> createSearchAds360Link(String parent, SearchAds360Link searchAds360Link)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSearchAds360LinkCallable()
+ *           <li><p> createSearchAds360LinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSearchAds360Link</td>
+ *      <td><p> DeleteSearchAds360Link</td>
  *      <td><p> Deletes a SearchAds360Link on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSearchAds360Link(DeleteSearchAds360LinkRequest request)
+ *           <li><p> deleteSearchAds360Link(DeleteSearchAds360LinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSearchAds360Link(SearchAds360LinkName name)
- *           <li>deleteSearchAds360Link(String name)
+ *           <li><p> deleteSearchAds360Link(SearchAds360LinkName name)
+ *           <li><p> deleteSearchAds360Link(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSearchAds360LinkCallable()
+ *           <li><p> deleteSearchAds360LinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSearchAds360Link</td>
+ *      <td><p> UpdateSearchAds360Link</td>
  *      <td><p> Updates a SearchAds360Link on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSearchAds360Link(UpdateSearchAds360LinkRequest request)
+ *           <li><p> updateSearchAds360Link(UpdateSearchAds360LinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSearchAds360Link(SearchAds360Link searchAds360Link, FieldMask updateMask)
+ *           <li><p> updateSearchAds360Link(SearchAds360Link searchAds360Link, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSearchAds360LinkCallable()
+ *           <li><p> updateSearchAds360LinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAttributionSettings</td>
+ *      <td><p> GetAttributionSettings</td>
  *      <td><p> Lookup for a AttributionSettings singleton.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAttributionSettings(GetAttributionSettingsRequest request)
+ *           <li><p> getAttributionSettings(GetAttributionSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAttributionSettings(AttributionSettingsName name)
- *           <li>getAttributionSettings(String name)
+ *           <li><p> getAttributionSettings(AttributionSettingsName name)
+ *           <li><p> getAttributionSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAttributionSettingsCallable()
+ *           <li><p> getAttributionSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAttributionSettings</td>
+ *      <td><p> UpdateAttributionSettings</td>
  *      <td><p> Updates attribution settings on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAttributionSettings(UpdateAttributionSettingsRequest request)
+ *           <li><p> updateAttributionSettings(UpdateAttributionSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAttributionSettings(AttributionSettings attributionSettings, FieldMask updateMask)
+ *           <li><p> updateAttributionSettings(AttributionSettings attributionSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAttributionSettingsCallable()
+ *           <li><p> updateAttributionSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunAccessReport</td>
+ *      <td><p> RunAccessReport</td>
  *      <td><p> Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years.
  * <p>  Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators.
  * <p>  These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runAccessReport(RunAccessReportRequest request)
+ *           <li><p> runAccessReport(RunAccessReportRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runAccessReportCallable()
+ *           <li><p> runAccessReportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAccessBinding</td>
+ *      <td><p> CreateAccessBinding</td>
  *      <td><p> Creates an access binding on an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAccessBinding(CreateAccessBindingRequest request)
+ *           <li><p> createAccessBinding(CreateAccessBindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAccessBinding(AccountName parent, AccessBinding accessBinding)
- *           <li>createAccessBinding(PropertyName parent, AccessBinding accessBinding)
- *           <li>createAccessBinding(String parent, AccessBinding accessBinding)
+ *           <li><p> createAccessBinding(AccountName parent, AccessBinding accessBinding)
+ *           <li><p> createAccessBinding(PropertyName parent, AccessBinding accessBinding)
+ *           <li><p> createAccessBinding(String parent, AccessBinding accessBinding)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAccessBindingCallable()
+ *           <li><p> createAccessBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAccessBinding</td>
+ *      <td><p> GetAccessBinding</td>
  *      <td><p> Gets information about an access binding.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAccessBinding(GetAccessBindingRequest request)
+ *           <li><p> getAccessBinding(GetAccessBindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAccessBinding(AccessBindingName name)
- *           <li>getAccessBinding(String name)
+ *           <li><p> getAccessBinding(AccessBindingName name)
+ *           <li><p> getAccessBinding(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAccessBindingCallable()
+ *           <li><p> getAccessBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAccessBinding</td>
+ *      <td><p> UpdateAccessBinding</td>
  *      <td><p> Updates an access binding on an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAccessBinding(UpdateAccessBindingRequest request)
+ *           <li><p> updateAccessBinding(UpdateAccessBindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAccessBinding(AccessBinding accessBinding)
+ *           <li><p> updateAccessBinding(AccessBinding accessBinding)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAccessBindingCallable()
+ *           <li><p> updateAccessBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAccessBinding</td>
+ *      <td><p> DeleteAccessBinding</td>
  *      <td><p> Deletes an access binding on an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAccessBinding(DeleteAccessBindingRequest request)
+ *           <li><p> deleteAccessBinding(DeleteAccessBindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAccessBinding(AccessBindingName name)
- *           <li>deleteAccessBinding(String name)
+ *           <li><p> deleteAccessBinding(AccessBindingName name)
+ *           <li><p> deleteAccessBinding(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAccessBindingCallable()
+ *           <li><p> deleteAccessBindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAccessBindings</td>
+ *      <td><p> ListAccessBindings</td>
  *      <td><p> Lists all access bindings on an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAccessBindings(ListAccessBindingsRequest request)
+ *           <li><p> listAccessBindings(ListAccessBindingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAccessBindings(AccountName parent)
- *           <li>listAccessBindings(PropertyName parent)
- *           <li>listAccessBindings(String parent)
+ *           <li><p> listAccessBindings(AccountName parent)
+ *           <li><p> listAccessBindings(PropertyName parent)
+ *           <li><p> listAccessBindings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAccessBindingsPagedCallable()
- *           <li>listAccessBindingsCallable()
+ *           <li><p> listAccessBindingsPagedCallable()
+ *           <li><p> listAccessBindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateAccessBindings</td>
+ *      <td><p> BatchCreateAccessBindings</td>
  *      <td><p> Creates information about multiple access bindings to an account or property.
  * <p>  This method is transactional. If any AccessBinding cannot be created, none of the AccessBindings will be created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateAccessBindings(BatchCreateAccessBindingsRequest request)
+ *           <li><p> batchCreateAccessBindings(BatchCreateAccessBindingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateAccessBindingsCallable()
+ *           <li><p> batchCreateAccessBindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchGetAccessBindings</td>
+ *      <td><p> BatchGetAccessBindings</td>
  *      <td><p> Gets information about multiple access bindings to an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchGetAccessBindings(BatchGetAccessBindingsRequest request)
+ *           <li><p> batchGetAccessBindings(BatchGetAccessBindingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchGetAccessBindingsCallable()
+ *           <li><p> batchGetAccessBindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchUpdateAccessBindings</td>
+ *      <td><p> BatchUpdateAccessBindings</td>
  *      <td><p> Updates information about multiple access bindings to an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchUpdateAccessBindings(BatchUpdateAccessBindingsRequest request)
+ *           <li><p> batchUpdateAccessBindings(BatchUpdateAccessBindingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchUpdateAccessBindingsCallable()
+ *           <li><p> batchUpdateAccessBindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeleteAccessBindings</td>
+ *      <td><p> BatchDeleteAccessBindings</td>
  *      <td><p> Deletes information about multiple users' links to an account or property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeleteAccessBindings(BatchDeleteAccessBindingsRequest request)
+ *           <li><p> batchDeleteAccessBindings(BatchDeleteAccessBindingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeleteAccessBindingsCallable()
+ *           <li><p> batchDeleteAccessBindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetExpandedDataSet</td>
+ *      <td><p> GetExpandedDataSet</td>
  *      <td><p> Lookup for a single ExpandedDataSet.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getExpandedDataSet(GetExpandedDataSetRequest request)
+ *           <li><p> getExpandedDataSet(GetExpandedDataSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getExpandedDataSet(ExpandedDataSetName name)
- *           <li>getExpandedDataSet(String name)
+ *           <li><p> getExpandedDataSet(ExpandedDataSetName name)
+ *           <li><p> getExpandedDataSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getExpandedDataSetCallable()
+ *           <li><p> getExpandedDataSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListExpandedDataSets</td>
+ *      <td><p> ListExpandedDataSets</td>
  *      <td><p> Lists ExpandedDataSets on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listExpandedDataSets(ListExpandedDataSetsRequest request)
+ *           <li><p> listExpandedDataSets(ListExpandedDataSetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listExpandedDataSets(PropertyName parent)
- *           <li>listExpandedDataSets(String parent)
+ *           <li><p> listExpandedDataSets(PropertyName parent)
+ *           <li><p> listExpandedDataSets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listExpandedDataSetsPagedCallable()
- *           <li>listExpandedDataSetsCallable()
+ *           <li><p> listExpandedDataSetsPagedCallable()
+ *           <li><p> listExpandedDataSetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateExpandedDataSet</td>
+ *      <td><p> CreateExpandedDataSet</td>
  *      <td><p> Creates a ExpandedDataSet.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createExpandedDataSet(CreateExpandedDataSetRequest request)
+ *           <li><p> createExpandedDataSet(CreateExpandedDataSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createExpandedDataSet(PropertyName parent, ExpandedDataSet expandedDataSet)
- *           <li>createExpandedDataSet(String parent, ExpandedDataSet expandedDataSet)
+ *           <li><p> createExpandedDataSet(PropertyName parent, ExpandedDataSet expandedDataSet)
+ *           <li><p> createExpandedDataSet(String parent, ExpandedDataSet expandedDataSet)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createExpandedDataSetCallable()
+ *           <li><p> createExpandedDataSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateExpandedDataSet</td>
+ *      <td><p> UpdateExpandedDataSet</td>
  *      <td><p> Updates a ExpandedDataSet on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateExpandedDataSet(UpdateExpandedDataSetRequest request)
+ *           <li><p> updateExpandedDataSet(UpdateExpandedDataSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateExpandedDataSet(ExpandedDataSet expandedDataSet, FieldMask updateMask)
+ *           <li><p> updateExpandedDataSet(ExpandedDataSet expandedDataSet, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateExpandedDataSetCallable()
+ *           <li><p> updateExpandedDataSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteExpandedDataSet</td>
+ *      <td><p> DeleteExpandedDataSet</td>
  *      <td><p> Deletes a ExpandedDataSet on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteExpandedDataSet(DeleteExpandedDataSetRequest request)
+ *           <li><p> deleteExpandedDataSet(DeleteExpandedDataSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteExpandedDataSet(ExpandedDataSetName name)
- *           <li>deleteExpandedDataSet(String name)
+ *           <li><p> deleteExpandedDataSet(ExpandedDataSetName name)
+ *           <li><p> deleteExpandedDataSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteExpandedDataSetCallable()
+ *           <li><p> deleteExpandedDataSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetChannelGroup</td>
+ *      <td><p> GetChannelGroup</td>
  *      <td><p> Lookup for a single ChannelGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getChannelGroup(GetChannelGroupRequest request)
+ *           <li><p> getChannelGroup(GetChannelGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getChannelGroup(ChannelGroupName name)
- *           <li>getChannelGroup(String name)
+ *           <li><p> getChannelGroup(ChannelGroupName name)
+ *           <li><p> getChannelGroup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getChannelGroupCallable()
+ *           <li><p> getChannelGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListChannelGroups</td>
+ *      <td><p> ListChannelGroups</td>
  *      <td><p> Lists ChannelGroups on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listChannelGroups(ListChannelGroupsRequest request)
+ *           <li><p> listChannelGroups(ListChannelGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listChannelGroups(PropertyName parent)
- *           <li>listChannelGroups(String parent)
+ *           <li><p> listChannelGroups(PropertyName parent)
+ *           <li><p> listChannelGroups(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listChannelGroupsPagedCallable()
- *           <li>listChannelGroupsCallable()
+ *           <li><p> listChannelGroupsPagedCallable()
+ *           <li><p> listChannelGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateChannelGroup</td>
+ *      <td><p> CreateChannelGroup</td>
  *      <td><p> Creates a ChannelGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createChannelGroup(CreateChannelGroupRequest request)
+ *           <li><p> createChannelGroup(CreateChannelGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createChannelGroup(PropertyName parent, ChannelGroup channelGroup)
- *           <li>createChannelGroup(String parent, ChannelGroup channelGroup)
+ *           <li><p> createChannelGroup(PropertyName parent, ChannelGroup channelGroup)
+ *           <li><p> createChannelGroup(String parent, ChannelGroup channelGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createChannelGroupCallable()
+ *           <li><p> createChannelGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateChannelGroup</td>
+ *      <td><p> UpdateChannelGroup</td>
  *      <td><p> Updates a ChannelGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateChannelGroup(UpdateChannelGroupRequest request)
+ *           <li><p> updateChannelGroup(UpdateChannelGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateChannelGroup(ChannelGroup channelGroup, FieldMask updateMask)
+ *           <li><p> updateChannelGroup(ChannelGroup channelGroup, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateChannelGroupCallable()
+ *           <li><p> updateChannelGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteChannelGroup</td>
+ *      <td><p> DeleteChannelGroup</td>
  *      <td><p> Deletes a ChannelGroup on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteChannelGroup(DeleteChannelGroupRequest request)
+ *           <li><p> deleteChannelGroup(DeleteChannelGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteChannelGroup(ChannelGroupName name)
- *           <li>deleteChannelGroup(String name)
+ *           <li><p> deleteChannelGroup(ChannelGroupName name)
+ *           <li><p> deleteChannelGroup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteChannelGroupCallable()
+ *           <li><p> deleteChannelGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetAutomatedGa4ConfigurationOptOut</td>
+ *      <td><p> SetAutomatedGa4ConfigurationOptOut</td>
  *      <td><p> Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setAutomatedGa4ConfigurationOptOut(SetAutomatedGa4ConfigurationOptOutRequest request)
+ *           <li><p> setAutomatedGa4ConfigurationOptOut(SetAutomatedGa4ConfigurationOptOutRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setAutomatedGa4ConfigurationOptOutCallable()
+ *           <li><p> setAutomatedGa4ConfigurationOptOutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchAutomatedGa4ConfigurationOptOut</td>
+ *      <td><p> FetchAutomatedGa4ConfigurationOptOut</td>
  *      <td><p> Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchAutomatedGa4ConfigurationOptOut(FetchAutomatedGa4ConfigurationOptOutRequest request)
+ *           <li><p> fetchAutomatedGa4ConfigurationOptOut(FetchAutomatedGa4ConfigurationOptOutRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchAutomatedGa4ConfigurationOptOutCallable()
+ *           <li><p> fetchAutomatedGa4ConfigurationOptOutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBigQueryLink</td>
+ *      <td><p> GetBigQueryLink</td>
  *      <td><p> Lookup for a single BigQuery Link.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBigQueryLink(GetBigQueryLinkRequest request)
+ *           <li><p> getBigQueryLink(GetBigQueryLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBigQueryLink(BigQueryLinkName name)
- *           <li>getBigQueryLink(String name)
+ *           <li><p> getBigQueryLink(BigQueryLinkName name)
+ *           <li><p> getBigQueryLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBigQueryLinkCallable()
+ *           <li><p> getBigQueryLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBigQueryLinks</td>
+ *      <td><p> ListBigQueryLinks</td>
  *      <td><p> Lists BigQuery Links on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBigQueryLinks(ListBigQueryLinksRequest request)
+ *           <li><p> listBigQueryLinks(ListBigQueryLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listBigQueryLinks(PropertyName parent)
- *           <li>listBigQueryLinks(String parent)
+ *           <li><p> listBigQueryLinks(PropertyName parent)
+ *           <li><p> listBigQueryLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBigQueryLinksPagedCallable()
- *           <li>listBigQueryLinksCallable()
+ *           <li><p> listBigQueryLinksPagedCallable()
+ *           <li><p> listBigQueryLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEnhancedMeasurementSettings</td>
+ *      <td><p> GetEnhancedMeasurementSettings</td>
  *      <td><p> Returns the enhanced measurement settings for this data stream. Note that the stream must enable enhanced measurement for these settings to take effect.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEnhancedMeasurementSettings(GetEnhancedMeasurementSettingsRequest request)
+ *           <li><p> getEnhancedMeasurementSettings(GetEnhancedMeasurementSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEnhancedMeasurementSettings(EnhancedMeasurementSettingsName name)
- *           <li>getEnhancedMeasurementSettings(String name)
+ *           <li><p> getEnhancedMeasurementSettings(EnhancedMeasurementSettingsName name)
+ *           <li><p> getEnhancedMeasurementSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEnhancedMeasurementSettingsCallable()
+ *           <li><p> getEnhancedMeasurementSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEnhancedMeasurementSettings</td>
+ *      <td><p> UpdateEnhancedMeasurementSettings</td>
  *      <td><p> Updates the enhanced measurement settings for this data stream. Note that the stream must enable enhanced measurement for these settings to take effect.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEnhancedMeasurementSettings(UpdateEnhancedMeasurementSettingsRequest request)
+ *           <li><p> updateEnhancedMeasurementSettings(UpdateEnhancedMeasurementSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEnhancedMeasurementSettings(EnhancedMeasurementSettings enhancedMeasurementSettings, FieldMask updateMask)
+ *           <li><p> updateEnhancedMeasurementSettings(EnhancedMeasurementSettings enhancedMeasurementSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEnhancedMeasurementSettingsCallable()
+ *           <li><p> updateEnhancedMeasurementSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConnectedSiteTag</td>
+ *      <td><p> CreateConnectedSiteTag</td>
  *      <td><p> Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20 connected site tags per property. Note: This API cannot be used on GA4 properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConnectedSiteTag(CreateConnectedSiteTagRequest request)
+ *           <li><p> createConnectedSiteTag(CreateConnectedSiteTagRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConnectedSiteTagCallable()
+ *           <li><p> createConnectedSiteTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConnectedSiteTag</td>
+ *      <td><p> DeleteConnectedSiteTag</td>
  *      <td><p> Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on GA4 properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request)
+ *           <li><p> deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConnectedSiteTagCallable()
+ *           <li><p> deleteConnectedSiteTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConnectedSiteTags</td>
+ *      <td><p> ListConnectedSiteTags</td>
  *      <td><p> Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected site tags will be returned. Note: this has no effect on GA4 property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConnectedSiteTags(ListConnectedSiteTagsRequest request)
+ *           <li><p> listConnectedSiteTags(ListConnectedSiteTagsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConnectedSiteTagsCallable()
+ *           <li><p> listConnectedSiteTagsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchConnectedGa4Property</td>
+ *      <td><p> FetchConnectedGa4Property</td>
  *      <td><p> Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be used with GA4 properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchConnectedGa4Property(FetchConnectedGa4PropertyRequest request)
+ *           <li><p> fetchConnectedGa4Property(FetchConnectedGa4PropertyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchConnectedGa4PropertyCallable()
+ *           <li><p> fetchConnectedGa4PropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAdSenseLink</td>
+ *      <td><p> GetAdSenseLink</td>
  *      <td><p> Looks up a single AdSenseLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAdSenseLink(GetAdSenseLinkRequest request)
+ *           <li><p> getAdSenseLink(GetAdSenseLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAdSenseLink(AdSenseLinkName name)
- *           <li>getAdSenseLink(String name)
+ *           <li><p> getAdSenseLink(AdSenseLinkName name)
+ *           <li><p> getAdSenseLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAdSenseLinkCallable()
+ *           <li><p> getAdSenseLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAdSenseLink</td>
+ *      <td><p> CreateAdSenseLink</td>
  *      <td><p> Creates an AdSenseLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAdSenseLink(CreateAdSenseLinkRequest request)
+ *           <li><p> createAdSenseLink(CreateAdSenseLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAdSenseLink(PropertyName parent, AdSenseLink adsenseLink)
- *           <li>createAdSenseLink(String parent, AdSenseLink adsenseLink)
+ *           <li><p> createAdSenseLink(PropertyName parent, AdSenseLink adsenseLink)
+ *           <li><p> createAdSenseLink(String parent, AdSenseLink adsenseLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAdSenseLinkCallable()
+ *           <li><p> createAdSenseLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAdSenseLink</td>
+ *      <td><p> DeleteAdSenseLink</td>
  *      <td><p> Deletes an AdSenseLink.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAdSenseLink(DeleteAdSenseLinkRequest request)
+ *           <li><p> deleteAdSenseLink(DeleteAdSenseLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAdSenseLink(AdSenseLinkName name)
- *           <li>deleteAdSenseLink(String name)
+ *           <li><p> deleteAdSenseLink(AdSenseLinkName name)
+ *           <li><p> deleteAdSenseLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAdSenseLinkCallable()
+ *           <li><p> deleteAdSenseLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAdSenseLinks</td>
+ *      <td><p> ListAdSenseLinks</td>
  *      <td><p> Lists AdSenseLinks on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAdSenseLinks(ListAdSenseLinksRequest request)
+ *           <li><p> listAdSenseLinks(ListAdSenseLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAdSenseLinks(PropertyName parent)
- *           <li>listAdSenseLinks(String parent)
+ *           <li><p> listAdSenseLinks(PropertyName parent)
+ *           <li><p> listAdSenseLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAdSenseLinksPagedCallable()
- *           <li>listAdSenseLinksCallable()
+ *           <li><p> listAdSenseLinksPagedCallable()
+ *           <li><p> listAdSenseLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEventCreateRule</td>
+ *      <td><p> GetEventCreateRule</td>
  *      <td><p> Lookup for a single EventCreateRule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEventCreateRule(GetEventCreateRuleRequest request)
+ *           <li><p> getEventCreateRule(GetEventCreateRuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEventCreateRule(EventCreateRuleName name)
- *           <li>getEventCreateRule(String name)
+ *           <li><p> getEventCreateRule(EventCreateRuleName name)
+ *           <li><p> getEventCreateRule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEventCreateRuleCallable()
+ *           <li><p> getEventCreateRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEventCreateRules</td>
+ *      <td><p> ListEventCreateRules</td>
  *      <td><p> Lists EventCreateRules on a web data stream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEventCreateRules(ListEventCreateRulesRequest request)
+ *           <li><p> listEventCreateRules(ListEventCreateRulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEventCreateRules(DataStreamName parent)
- *           <li>listEventCreateRules(String parent)
+ *           <li><p> listEventCreateRules(DataStreamName parent)
+ *           <li><p> listEventCreateRules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEventCreateRulesPagedCallable()
- *           <li>listEventCreateRulesCallable()
+ *           <li><p> listEventCreateRulesPagedCallable()
+ *           <li><p> listEventCreateRulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEventCreateRule</td>
+ *      <td><p> CreateEventCreateRule</td>
  *      <td><p> Creates an EventCreateRule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEventCreateRule(CreateEventCreateRuleRequest request)
+ *           <li><p> createEventCreateRule(CreateEventCreateRuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEventCreateRule(DataStreamName parent, EventCreateRule eventCreateRule)
- *           <li>createEventCreateRule(String parent, EventCreateRule eventCreateRule)
+ *           <li><p> createEventCreateRule(DataStreamName parent, EventCreateRule eventCreateRule)
+ *           <li><p> createEventCreateRule(String parent, EventCreateRule eventCreateRule)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEventCreateRuleCallable()
+ *           <li><p> createEventCreateRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEventCreateRule</td>
+ *      <td><p> UpdateEventCreateRule</td>
  *      <td><p> Updates an EventCreateRule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEventCreateRule(UpdateEventCreateRuleRequest request)
+ *           <li><p> updateEventCreateRule(UpdateEventCreateRuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEventCreateRule(EventCreateRule eventCreateRule, FieldMask updateMask)
+ *           <li><p> updateEventCreateRule(EventCreateRule eventCreateRule, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEventCreateRuleCallable()
+ *           <li><p> updateEventCreateRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEventCreateRule</td>
+ *      <td><p> DeleteEventCreateRule</td>
  *      <td><p> Deletes an EventCreateRule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEventCreateRule(DeleteEventCreateRuleRequest request)
+ *           <li><p> deleteEventCreateRule(DeleteEventCreateRuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEventCreateRule(EventCreateRuleName name)
- *           <li>deleteEventCreateRule(String name)
+ *           <li><p> deleteEventCreateRule(EventCreateRuleName name)
+ *           <li><p> deleteEventCreateRule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEventCreateRuleCallable()
+ *           <li><p> deleteEventCreateRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDataRedactionSettings</td>
+ *      <td><p> UpdateDataRedactionSettings</td>
  *      <td><p> Updates a DataRedactionSettings on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDataRedactionSettings(UpdateDataRedactionSettingsRequest request)
+ *           <li><p> updateDataRedactionSettings(UpdateDataRedactionSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDataRedactionSettings(DataRedactionSettings dataRedactionSettings, FieldMask updateMask)
+ *           <li><p> updateDataRedactionSettings(DataRedactionSettings dataRedactionSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDataRedactionSettingsCallable()
+ *           <li><p> updateDataRedactionSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataRedactionSettings</td>
+ *      <td><p> GetDataRedactionSettings</td>
  *      <td><p> Lookup for a single DataRedactionSettings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataRedactionSettings(GetDataRedactionSettingsRequest request)
+ *           <li><p> getDataRedactionSettings(GetDataRedactionSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataRedactionSettings(DataRedactionSettingsName name)
- *           <li>getDataRedactionSettings(String name)
+ *           <li><p> getDataRedactionSettings(DataRedactionSettingsName name)
+ *           <li><p> getDataRedactionSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataRedactionSettingsCallable()
+ *           <li><p> getDataRedactionSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRollupProperty</td>
+ *      <td><p> CreateRollupProperty</td>
  *      <td><p> Create a roll-up property and all roll-up property source links.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRollupProperty(CreateRollupPropertyRequest request)
+ *           <li><p> createRollupProperty(CreateRollupPropertyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRollupPropertyCallable()
+ *           <li><p> createRollupPropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRollupPropertySourceLink</td>
+ *      <td><p> GetRollupPropertySourceLink</td>
  *      <td><p> Lookup for a single roll-up property source Link. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRollupPropertySourceLink(GetRollupPropertySourceLinkRequest request)
+ *           <li><p> getRollupPropertySourceLink(GetRollupPropertySourceLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRollupPropertySourceLink(RollupPropertySourceLinkName name)
- *           <li>getRollupPropertySourceLink(String name)
+ *           <li><p> getRollupPropertySourceLink(RollupPropertySourceLinkName name)
+ *           <li><p> getRollupPropertySourceLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRollupPropertySourceLinkCallable()
+ *           <li><p> getRollupPropertySourceLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRollupPropertySourceLinks</td>
+ *      <td><p> ListRollupPropertySourceLinks</td>
  *      <td><p> Lists roll-up property source Links on a property. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRollupPropertySourceLinks(ListRollupPropertySourceLinksRequest request)
+ *           <li><p> listRollupPropertySourceLinks(ListRollupPropertySourceLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRollupPropertySourceLinks(PropertyName parent)
- *           <li>listRollupPropertySourceLinks(String parent)
+ *           <li><p> listRollupPropertySourceLinks(PropertyName parent)
+ *           <li><p> listRollupPropertySourceLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRollupPropertySourceLinksPagedCallable()
- *           <li>listRollupPropertySourceLinksCallable()
+ *           <li><p> listRollupPropertySourceLinksPagedCallable()
+ *           <li><p> listRollupPropertySourceLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRollupPropertySourceLink</td>
+ *      <td><p> CreateRollupPropertySourceLink</td>
  *      <td><p> Creates a roll-up property source link. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRollupPropertySourceLink(CreateRollupPropertySourceLinkRequest request)
+ *           <li><p> createRollupPropertySourceLink(CreateRollupPropertySourceLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createRollupPropertySourceLink(PropertyName parent, RollupPropertySourceLink rollupPropertySourceLink)
- *           <li>createRollupPropertySourceLink(String parent, RollupPropertySourceLink rollupPropertySourceLink)
+ *           <li><p> createRollupPropertySourceLink(PropertyName parent, RollupPropertySourceLink rollupPropertySourceLink)
+ *           <li><p> createRollupPropertySourceLink(String parent, RollupPropertySourceLink rollupPropertySourceLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRollupPropertySourceLinkCallable()
+ *           <li><p> createRollupPropertySourceLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRollupPropertySourceLink</td>
+ *      <td><p> DeleteRollupPropertySourceLink</td>
  *      <td><p> Deletes a roll-up property source link. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRollupPropertySourceLink(DeleteRollupPropertySourceLinkRequest request)
+ *           <li><p> deleteRollupPropertySourceLink(DeleteRollupPropertySourceLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteRollupPropertySourceLink(RollupPropertySourceLinkName name)
- *           <li>deleteRollupPropertySourceLink(String name)
+ *           <li><p> deleteRollupPropertySourceLink(RollupPropertySourceLinkName name)
+ *           <li><p> deleteRollupPropertySourceLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRollupPropertySourceLinkCallable()
+ *           <li><p> deleteRollupPropertySourceLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSubproperty</td>
+ *      <td><p> CreateSubproperty</td>
  *      <td><p> Create a subproperty and a subproperty event filter that applies to the created subproperty.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSubproperty(CreateSubpropertyRequest request)
+ *           <li><p> createSubproperty(CreateSubpropertyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSubpropertyCallable()
+ *           <li><p> createSubpropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSubpropertyEventFilter</td>
+ *      <td><p> CreateSubpropertyEventFilter</td>
  *      <td><p> Creates a subproperty Event Filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSubpropertyEventFilter(CreateSubpropertyEventFilterRequest request)
+ *           <li><p> createSubpropertyEventFilter(CreateSubpropertyEventFilterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSubpropertyEventFilter(PropertyName parent, SubpropertyEventFilter subpropertyEventFilter)
- *           <li>createSubpropertyEventFilter(String parent, SubpropertyEventFilter subpropertyEventFilter)
+ *           <li><p> createSubpropertyEventFilter(PropertyName parent, SubpropertyEventFilter subpropertyEventFilter)
+ *           <li><p> createSubpropertyEventFilter(String parent, SubpropertyEventFilter subpropertyEventFilter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSubpropertyEventFilterCallable()
+ *           <li><p> createSubpropertyEventFilterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSubpropertyEventFilter</td>
+ *      <td><p> GetSubpropertyEventFilter</td>
  *      <td><p> Lookup for a single subproperty Event Filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSubpropertyEventFilter(GetSubpropertyEventFilterRequest request)
+ *           <li><p> getSubpropertyEventFilter(GetSubpropertyEventFilterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSubpropertyEventFilter(SubpropertyEventFilterName name)
- *           <li>getSubpropertyEventFilter(String name)
+ *           <li><p> getSubpropertyEventFilter(SubpropertyEventFilterName name)
+ *           <li><p> getSubpropertyEventFilter(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSubpropertyEventFilterCallable()
+ *           <li><p> getSubpropertyEventFilterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSubpropertyEventFilters</td>
+ *      <td><p> ListSubpropertyEventFilters</td>
  *      <td><p> List all subproperty Event Filters on a property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSubpropertyEventFilters(ListSubpropertyEventFiltersRequest request)
+ *           <li><p> listSubpropertyEventFilters(ListSubpropertyEventFiltersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSubpropertyEventFilters(PropertyName parent)
- *           <li>listSubpropertyEventFilters(String parent)
+ *           <li><p> listSubpropertyEventFilters(PropertyName parent)
+ *           <li><p> listSubpropertyEventFilters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSubpropertyEventFiltersPagedCallable()
- *           <li>listSubpropertyEventFiltersCallable()
+ *           <li><p> listSubpropertyEventFiltersPagedCallable()
+ *           <li><p> listSubpropertyEventFiltersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSubpropertyEventFilter</td>
+ *      <td><p> UpdateSubpropertyEventFilter</td>
  *      <td><p> Updates a subproperty Event Filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSubpropertyEventFilter(UpdateSubpropertyEventFilterRequest request)
+ *           <li><p> updateSubpropertyEventFilter(UpdateSubpropertyEventFilterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSubpropertyEventFilter(SubpropertyEventFilter subpropertyEventFilter, FieldMask updateMask)
+ *           <li><p> updateSubpropertyEventFilter(SubpropertyEventFilter subpropertyEventFilter, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSubpropertyEventFilterCallable()
+ *           <li><p> updateSubpropertyEventFilterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSubpropertyEventFilter</td>
+ *      <td><p> DeleteSubpropertyEventFilter</td>
  *      <td><p> Deletes a subproperty event filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request)
+ *           <li><p> deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSubpropertyEventFilter(SubpropertyEventFilterName name)
- *           <li>deleteSubpropertyEventFilter(String name)
+ *           <li><p> deleteSubpropertyEventFilter(SubpropertyEventFilterName name)
+ *           <li><p> deleteSubpropertyEventFilter(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSubpropertyEventFilterCallable()
+ *           <li><p> deleteSubpropertyEventFilterCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

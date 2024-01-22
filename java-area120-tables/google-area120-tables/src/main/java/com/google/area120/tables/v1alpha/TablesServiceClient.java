@@ -91,213 +91,214 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetTable</td>
+ *      <td><p> GetTable</td>
  *      <td><p> Gets a table. Returns NOT_FOUND if the table does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTable(GetTableRequest request)
+ *           <li><p> getTable(GetTableRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTable(TableName name)
- *           <li>getTable(String name)
+ *           <li><p> getTable(TableName name)
+ *           <li><p> getTable(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTableCallable()
+ *           <li><p> getTableCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTables</td>
+ *      <td><p> ListTables</td>
  *      <td><p> Lists tables for the user.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTables(ListTablesRequest request)
+ *           <li><p> listTables(ListTablesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTablesPagedCallable()
- *           <li>listTablesCallable()
+ *           <li><p> listTablesPagedCallable()
+ *           <li><p> listTablesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkspace</td>
+ *      <td><p> GetWorkspace</td>
  *      <td><p> Gets a workspace. Returns NOT_FOUND if the workspace does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkspace(GetWorkspaceRequest request)
+ *           <li><p> getWorkspace(GetWorkspaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkspace(WorkspaceName name)
- *           <li>getWorkspace(String name)
+ *           <li><p> getWorkspace(WorkspaceName name)
+ *           <li><p> getWorkspace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkspaceCallable()
+ *           <li><p> getWorkspaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkspaces</td>
+ *      <td><p> ListWorkspaces</td>
  *      <td><p> Lists workspaces for the user.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkspaces(ListWorkspacesRequest request)
+ *           <li><p> listWorkspaces(ListWorkspacesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkspacesPagedCallable()
- *           <li>listWorkspacesCallable()
+ *           <li><p> listWorkspacesPagedCallable()
+ *           <li><p> listWorkspacesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRow</td>
+ *      <td><p> GetRow</td>
  *      <td><p> Gets a row. Returns NOT_FOUND if the row does not exist in the table.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRow(GetRowRequest request)
+ *           <li><p> getRow(GetRowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRow(RowName name)
- *           <li>getRow(String name)
+ *           <li><p> getRow(RowName name)
+ *           <li><p> getRow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRowCallable()
+ *           <li><p> getRowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRows</td>
+ *      <td><p> ListRows</td>
  *      <td><p> Lists rows in a table. Returns NOT_FOUND if the table does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRows(ListRowsRequest request)
+ *           <li><p> listRows(ListRowsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRows(String parent)
+ *           <li><p> listRows(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRowsPagedCallable()
- *           <li>listRowsCallable()
+ *           <li><p> listRowsPagedCallable()
+ *           <li><p> listRowsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRow</td>
+ *      <td><p> CreateRow</td>
  *      <td><p> Creates a row.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRow(CreateRowRequest request)
+ *           <li><p> createRow(CreateRowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createRow(String parent, Row row)
+ *           <li><p> createRow(String parent, Row row)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRowCallable()
+ *           <li><p> createRowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateRows</td>
+ *      <td><p> BatchCreateRows</td>
  *      <td><p> Creates multiple rows.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateRows(BatchCreateRowsRequest request)
+ *           <li><p> batchCreateRows(BatchCreateRowsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateRowsCallable()
+ *           <li><p> batchCreateRowsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRow</td>
+ *      <td><p> UpdateRow</td>
  *      <td><p> Updates a row.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRow(UpdateRowRequest request)
+ *           <li><p> updateRow(UpdateRowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateRow(Row row, FieldMask updateMask)
+ *           <li><p> updateRow(Row row, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRowCallable()
+ *           <li><p> updateRowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchUpdateRows</td>
+ *      <td><p> BatchUpdateRows</td>
  *      <td><p> Updates multiple rows.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchUpdateRows(BatchUpdateRowsRequest request)
+ *           <li><p> batchUpdateRows(BatchUpdateRowsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchUpdateRowsCallable()
+ *           <li><p> batchUpdateRowsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRow</td>
+ *      <td><p> DeleteRow</td>
  *      <td><p> Deletes a row.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRow(DeleteRowRequest request)
+ *           <li><p> deleteRow(DeleteRowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteRow(RowName name)
- *           <li>deleteRow(String name)
+ *           <li><p> deleteRow(RowName name)
+ *           <li><p> deleteRow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRowCallable()
+ *           <li><p> deleteRowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeleteRows</td>
+ *      <td><p> BatchDeleteRows</td>
  *      <td><p> Deletes multiple rows.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeleteRows(BatchDeleteRowsRequest request)
+ *           <li><p> batchDeleteRows(BatchDeleteRowsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeleteRowsCallable()
+ *           <li><p> batchDeleteRowsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

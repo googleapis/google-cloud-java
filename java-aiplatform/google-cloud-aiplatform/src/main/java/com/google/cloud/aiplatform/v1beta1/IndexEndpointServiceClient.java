@@ -73,240 +73,241 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateIndexEndpoint</td>
+ *      <td><p> CreateIndexEndpoint</td>
  *      <td><p> Creates an IndexEndpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createIndexEndpointAsync(CreateIndexEndpointRequest request)
+ *           <li><p> createIndexEndpointAsync(CreateIndexEndpointRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createIndexEndpointAsync(LocationName parent, IndexEndpoint indexEndpoint)
- *           <li>createIndexEndpointAsync(String parent, IndexEndpoint indexEndpoint)
+ *           <li><p> createIndexEndpointAsync(LocationName parent, IndexEndpoint indexEndpoint)
+ *           <li><p> createIndexEndpointAsync(String parent, IndexEndpoint indexEndpoint)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createIndexEndpointOperationCallable()
- *           <li>createIndexEndpointCallable()
+ *           <li><p> createIndexEndpointOperationCallable()
+ *           <li><p> createIndexEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIndexEndpoint</td>
+ *      <td><p> GetIndexEndpoint</td>
  *      <td><p> Gets an IndexEndpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIndexEndpoint(GetIndexEndpointRequest request)
+ *           <li><p> getIndexEndpoint(GetIndexEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIndexEndpoint(IndexEndpointName name)
- *           <li>getIndexEndpoint(String name)
+ *           <li><p> getIndexEndpoint(IndexEndpointName name)
+ *           <li><p> getIndexEndpoint(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIndexEndpointCallable()
+ *           <li><p> getIndexEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListIndexEndpoints</td>
+ *      <td><p> ListIndexEndpoints</td>
  *      <td><p> Lists IndexEndpoints in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listIndexEndpoints(ListIndexEndpointsRequest request)
+ *           <li><p> listIndexEndpoints(ListIndexEndpointsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listIndexEndpoints(LocationName parent)
- *           <li>listIndexEndpoints(String parent)
+ *           <li><p> listIndexEndpoints(LocationName parent)
+ *           <li><p> listIndexEndpoints(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listIndexEndpointsPagedCallable()
- *           <li>listIndexEndpointsCallable()
+ *           <li><p> listIndexEndpointsPagedCallable()
+ *           <li><p> listIndexEndpointsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateIndexEndpoint</td>
+ *      <td><p> UpdateIndexEndpoint</td>
  *      <td><p> Updates an IndexEndpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateIndexEndpoint(UpdateIndexEndpointRequest request)
+ *           <li><p> updateIndexEndpoint(UpdateIndexEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateIndexEndpoint(IndexEndpoint indexEndpoint, FieldMask updateMask)
+ *           <li><p> updateIndexEndpoint(IndexEndpoint indexEndpoint, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateIndexEndpointCallable()
+ *           <li><p> updateIndexEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteIndexEndpoint</td>
+ *      <td><p> DeleteIndexEndpoint</td>
  *      <td><p> Deletes an IndexEndpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteIndexEndpointAsync(DeleteIndexEndpointRequest request)
+ *           <li><p> deleteIndexEndpointAsync(DeleteIndexEndpointRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteIndexEndpointAsync(IndexEndpointName name)
- *           <li>deleteIndexEndpointAsync(String name)
+ *           <li><p> deleteIndexEndpointAsync(IndexEndpointName name)
+ *           <li><p> deleteIndexEndpointAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteIndexEndpointOperationCallable()
- *           <li>deleteIndexEndpointCallable()
+ *           <li><p> deleteIndexEndpointOperationCallable()
+ *           <li><p> deleteIndexEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeployIndex</td>
+ *      <td><p> DeployIndex</td>
  *      <td><p> Deploys an Index into this IndexEndpoint, creating a DeployedIndex within it. Only non-empty Indexes can be deployed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deployIndexAsync(DeployIndexRequest request)
+ *           <li><p> deployIndexAsync(DeployIndexRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deployIndexAsync(IndexEndpointName indexEndpoint, DeployedIndex deployedIndex)
- *           <li>deployIndexAsync(String indexEndpoint, DeployedIndex deployedIndex)
+ *           <li><p> deployIndexAsync(IndexEndpointName indexEndpoint, DeployedIndex deployedIndex)
+ *           <li><p> deployIndexAsync(String indexEndpoint, DeployedIndex deployedIndex)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deployIndexOperationCallable()
- *           <li>deployIndexCallable()
+ *           <li><p> deployIndexOperationCallable()
+ *           <li><p> deployIndexCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeployIndex</td>
+ *      <td><p> UndeployIndex</td>
  *      <td><p> Undeploys an Index from an IndexEndpoint, removing a DeployedIndex from it, and freeing all resources it's using.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeployIndexAsync(UndeployIndexRequest request)
+ *           <li><p> undeployIndexAsync(UndeployIndexRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeployIndexAsync(IndexEndpointName indexEndpoint, String deployedIndexId)
- *           <li>undeployIndexAsync(String indexEndpoint, String deployedIndexId)
+ *           <li><p> undeployIndexAsync(IndexEndpointName indexEndpoint, String deployedIndexId)
+ *           <li><p> undeployIndexAsync(String indexEndpoint, String deployedIndexId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeployIndexOperationCallable()
- *           <li>undeployIndexCallable()
+ *           <li><p> undeployIndexOperationCallable()
+ *           <li><p> undeployIndexCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MutateDeployedIndex</td>
+ *      <td><p> MutateDeployedIndex</td>
  *      <td><p> Update an existing DeployedIndex under an IndexEndpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>mutateDeployedIndexAsync(MutateDeployedIndexRequest request)
+ *           <li><p> mutateDeployedIndexAsync(MutateDeployedIndexRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>mutateDeployedIndexAsync(IndexEndpointName indexEndpoint, DeployedIndex deployedIndex)
- *           <li>mutateDeployedIndexAsync(String indexEndpoint, DeployedIndex deployedIndex)
+ *           <li><p> mutateDeployedIndexAsync(IndexEndpointName indexEndpoint, DeployedIndex deployedIndex)
+ *           <li><p> mutateDeployedIndexAsync(String indexEndpoint, DeployedIndex deployedIndex)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>mutateDeployedIndexOperationCallable()
- *           <li>mutateDeployedIndexCallable()
+ *           <li><p> mutateDeployedIndexOperationCallable()
+ *           <li><p> mutateDeployedIndexCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

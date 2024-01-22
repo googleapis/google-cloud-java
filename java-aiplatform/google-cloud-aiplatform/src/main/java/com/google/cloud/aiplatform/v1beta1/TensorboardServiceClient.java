@@ -73,645 +73,646 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateTensorboard</td>
+ *      <td><p> CreateTensorboard</td>
  *      <td><p> Creates a Tensorboard.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTensorboardAsync(CreateTensorboardRequest request)
+ *           <li><p> createTensorboardAsync(CreateTensorboardRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createTensorboardAsync(TensorboardName parent, Tensorboard tensorboard)
- *           <li>createTensorboardAsync(String parent, Tensorboard tensorboard)
+ *           <li><p> createTensorboardAsync(TensorboardName parent, Tensorboard tensorboard)
+ *           <li><p> createTensorboardAsync(String parent, Tensorboard tensorboard)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTensorboardOperationCallable()
- *           <li>createTensorboardCallable()
+ *           <li><p> createTensorboardOperationCallable()
+ *           <li><p> createTensorboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTensorboard</td>
+ *      <td><p> GetTensorboard</td>
  *      <td><p> Gets a Tensorboard.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTensorboard(GetTensorboardRequest request)
+ *           <li><p> getTensorboard(GetTensorboardRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTensorboard(TensorboardName name)
- *           <li>getTensorboard(String name)
+ *           <li><p> getTensorboard(TensorboardName name)
+ *           <li><p> getTensorboard(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTensorboardCallable()
+ *           <li><p> getTensorboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTensorboard</td>
+ *      <td><p> UpdateTensorboard</td>
  *      <td><p> Updates a Tensorboard.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTensorboardAsync(UpdateTensorboardRequest request)
+ *           <li><p> updateTensorboardAsync(UpdateTensorboardRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateTensorboardAsync(Tensorboard tensorboard, FieldMask updateMask)
+ *           <li><p> updateTensorboardAsync(Tensorboard tensorboard, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTensorboardOperationCallable()
- *           <li>updateTensorboardCallable()
+ *           <li><p> updateTensorboardOperationCallable()
+ *           <li><p> updateTensorboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTensorboards</td>
+ *      <td><p> ListTensorboards</td>
  *      <td><p> Lists Tensorboards in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTensorboards(ListTensorboardsRequest request)
+ *           <li><p> listTensorboards(ListTensorboardsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTensorboards(LocationName parent)
- *           <li>listTensorboards(String parent)
+ *           <li><p> listTensorboards(LocationName parent)
+ *           <li><p> listTensorboards(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTensorboardsPagedCallable()
- *           <li>listTensorboardsCallable()
+ *           <li><p> listTensorboardsPagedCallable()
+ *           <li><p> listTensorboardsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTensorboard</td>
+ *      <td><p> DeleteTensorboard</td>
  *      <td><p> Deletes a Tensorboard.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTensorboardAsync(DeleteTensorboardRequest request)
+ *           <li><p> deleteTensorboardAsync(DeleteTensorboardRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTensorboardAsync(TensorboardName name)
- *           <li>deleteTensorboardAsync(String name)
+ *           <li><p> deleteTensorboardAsync(TensorboardName name)
+ *           <li><p> deleteTensorboardAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTensorboardOperationCallable()
- *           <li>deleteTensorboardCallable()
+ *           <li><p> deleteTensorboardOperationCallable()
+ *           <li><p> deleteTensorboardCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReadTensorboardUsage</td>
+ *      <td><p> ReadTensorboardUsage</td>
  *      <td><p> Returns a list of monthly active users for a given TensorBoard instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>readTensorboardUsage(ReadTensorboardUsageRequest request)
+ *           <li><p> readTensorboardUsage(ReadTensorboardUsageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>readTensorboardUsage(TensorboardName tensorboard)
- *           <li>readTensorboardUsage(String tensorboard)
+ *           <li><p> readTensorboardUsage(TensorboardName tensorboard)
+ *           <li><p> readTensorboardUsage(String tensorboard)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>readTensorboardUsageCallable()
+ *           <li><p> readTensorboardUsageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReadTensorboardSize</td>
+ *      <td><p> ReadTensorboardSize</td>
  *      <td><p> Returns the storage size for a given TensorBoard instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>readTensorboardSize(ReadTensorboardSizeRequest request)
+ *           <li><p> readTensorboardSize(ReadTensorboardSizeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>readTensorboardSize(TensorboardName tensorboard)
- *           <li>readTensorboardSize(String tensorboard)
+ *           <li><p> readTensorboardSize(TensorboardName tensorboard)
+ *           <li><p> readTensorboardSize(String tensorboard)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>readTensorboardSizeCallable()
+ *           <li><p> readTensorboardSizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTensorboardExperiment</td>
+ *      <td><p> CreateTensorboardExperiment</td>
  *      <td><p> Creates a TensorboardExperiment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTensorboardExperiment(CreateTensorboardExperimentRequest request)
+ *           <li><p> createTensorboardExperiment(CreateTensorboardExperimentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTensorboardExperiment(TensorboardExperimentName parent, TensorboardExperiment tensorboardExperiment, String tensorboardExperimentId)
- *           <li>createTensorboardExperiment(String parent, TensorboardExperiment tensorboardExperiment, String tensorboardExperimentId)
+ *           <li><p> createTensorboardExperiment(TensorboardExperimentName parent, TensorboardExperiment tensorboardExperiment, String tensorboardExperimentId)
+ *           <li><p> createTensorboardExperiment(String parent, TensorboardExperiment tensorboardExperiment, String tensorboardExperimentId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTensorboardExperimentCallable()
+ *           <li><p> createTensorboardExperimentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTensorboardExperiment</td>
+ *      <td><p> GetTensorboardExperiment</td>
  *      <td><p> Gets a TensorboardExperiment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTensorboardExperiment(GetTensorboardExperimentRequest request)
+ *           <li><p> getTensorboardExperiment(GetTensorboardExperimentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTensorboardExperiment(TensorboardExperimentName name)
- *           <li>getTensorboardExperiment(String name)
+ *           <li><p> getTensorboardExperiment(TensorboardExperimentName name)
+ *           <li><p> getTensorboardExperiment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTensorboardExperimentCallable()
+ *           <li><p> getTensorboardExperimentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTensorboardExperiment</td>
+ *      <td><p> UpdateTensorboardExperiment</td>
  *      <td><p> Updates a TensorboardExperiment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTensorboardExperiment(UpdateTensorboardExperimentRequest request)
+ *           <li><p> updateTensorboardExperiment(UpdateTensorboardExperimentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTensorboardExperiment(TensorboardExperiment tensorboardExperiment, FieldMask updateMask)
+ *           <li><p> updateTensorboardExperiment(TensorboardExperiment tensorboardExperiment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTensorboardExperimentCallable()
+ *           <li><p> updateTensorboardExperimentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTensorboardExperiments</td>
+ *      <td><p> ListTensorboardExperiments</td>
  *      <td><p> Lists TensorboardExperiments in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTensorboardExperiments(ListTensorboardExperimentsRequest request)
+ *           <li><p> listTensorboardExperiments(ListTensorboardExperimentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTensorboardExperiments(TensorboardName parent)
- *           <li>listTensorboardExperiments(String parent)
+ *           <li><p> listTensorboardExperiments(TensorboardName parent)
+ *           <li><p> listTensorboardExperiments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTensorboardExperimentsPagedCallable()
- *           <li>listTensorboardExperimentsCallable()
+ *           <li><p> listTensorboardExperimentsPagedCallable()
+ *           <li><p> listTensorboardExperimentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTensorboardExperiment</td>
+ *      <td><p> DeleteTensorboardExperiment</td>
  *      <td><p> Deletes a TensorboardExperiment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTensorboardExperimentAsync(DeleteTensorboardExperimentRequest request)
+ *           <li><p> deleteTensorboardExperimentAsync(DeleteTensorboardExperimentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTensorboardExperimentAsync(TensorboardExperimentName name)
- *           <li>deleteTensorboardExperimentAsync(String name)
+ *           <li><p> deleteTensorboardExperimentAsync(TensorboardExperimentName name)
+ *           <li><p> deleteTensorboardExperimentAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTensorboardExperimentOperationCallable()
- *           <li>deleteTensorboardExperimentCallable()
+ *           <li><p> deleteTensorboardExperimentOperationCallable()
+ *           <li><p> deleteTensorboardExperimentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTensorboardRun</td>
+ *      <td><p> CreateTensorboardRun</td>
  *      <td><p> Creates a TensorboardRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTensorboardRun(CreateTensorboardRunRequest request)
+ *           <li><p> createTensorboardRun(CreateTensorboardRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTensorboardRun(TensorboardRunName parent, TensorboardRun tensorboardRun, String tensorboardRunId)
- *           <li>createTensorboardRun(String parent, TensorboardRun tensorboardRun, String tensorboardRunId)
+ *           <li><p> createTensorboardRun(TensorboardRunName parent, TensorboardRun tensorboardRun, String tensorboardRunId)
+ *           <li><p> createTensorboardRun(String parent, TensorboardRun tensorboardRun, String tensorboardRunId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTensorboardRunCallable()
+ *           <li><p> createTensorboardRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateTensorboardRuns</td>
+ *      <td><p> BatchCreateTensorboardRuns</td>
  *      <td><p> Batch create TensorboardRuns.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateTensorboardRuns(TensorboardExperimentName parent, List<CreateTensorboardRunRequest> requests)
- *           <li>batchCreateTensorboardRuns(String parent, List<CreateTensorboardRunRequest> requests)
- *           <li>batchCreateTensorboardRuns(BatchCreateTensorboardRunsRequest request)
+ *           <li><p> batchCreateTensorboardRuns(TensorboardExperimentName parent, List&lt;CreateTensorboardRunRequest&gt; requests)
+ *           <li><p> batchCreateTensorboardRuns(String parent, List&lt;CreateTensorboardRunRequest&gt; requests)
+ *           <li><p> batchCreateTensorboardRuns(BatchCreateTensorboardRunsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateTensorboardRunsCallable()
+ *           <li><p> batchCreateTensorboardRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTensorboardRun</td>
+ *      <td><p> GetTensorboardRun</td>
  *      <td><p> Gets a TensorboardRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTensorboardRun(GetTensorboardRunRequest request)
+ *           <li><p> getTensorboardRun(GetTensorboardRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTensorboardRun(TensorboardRunName name)
- *           <li>getTensorboardRun(String name)
+ *           <li><p> getTensorboardRun(TensorboardRunName name)
+ *           <li><p> getTensorboardRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTensorboardRunCallable()
+ *           <li><p> getTensorboardRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTensorboardRun</td>
+ *      <td><p> UpdateTensorboardRun</td>
  *      <td><p> Updates a TensorboardRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTensorboardRun(UpdateTensorboardRunRequest request)
+ *           <li><p> updateTensorboardRun(UpdateTensorboardRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTensorboardRun(TensorboardRun tensorboardRun, FieldMask updateMask)
+ *           <li><p> updateTensorboardRun(TensorboardRun tensorboardRun, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTensorboardRunCallable()
+ *           <li><p> updateTensorboardRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTensorboardRuns</td>
+ *      <td><p> ListTensorboardRuns</td>
  *      <td><p> Lists TensorboardRuns in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTensorboardRuns(ListTensorboardRunsRequest request)
+ *           <li><p> listTensorboardRuns(ListTensorboardRunsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTensorboardRuns(TensorboardExperimentName parent)
- *           <li>listTensorboardRuns(String parent)
+ *           <li><p> listTensorboardRuns(TensorboardExperimentName parent)
+ *           <li><p> listTensorboardRuns(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTensorboardRunsPagedCallable()
- *           <li>listTensorboardRunsCallable()
+ *           <li><p> listTensorboardRunsPagedCallable()
+ *           <li><p> listTensorboardRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTensorboardRun</td>
+ *      <td><p> DeleteTensorboardRun</td>
  *      <td><p> Deletes a TensorboardRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTensorboardRunAsync(DeleteTensorboardRunRequest request)
+ *           <li><p> deleteTensorboardRunAsync(DeleteTensorboardRunRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTensorboardRunAsync(TensorboardRunName name)
- *           <li>deleteTensorboardRunAsync(String name)
+ *           <li><p> deleteTensorboardRunAsync(TensorboardRunName name)
+ *           <li><p> deleteTensorboardRunAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTensorboardRunOperationCallable()
- *           <li>deleteTensorboardRunCallable()
+ *           <li><p> deleteTensorboardRunOperationCallable()
+ *           <li><p> deleteTensorboardRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateTensorboardTimeSeries</td>
+ *      <td><p> BatchCreateTensorboardTimeSeries</td>
  *      <td><p> Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateTensorboardTimeSeries(TensorboardExperimentName parent, List<CreateTensorboardTimeSeriesRequest> requests)
- *           <li>batchCreateTensorboardTimeSeries(String parent, List<CreateTensorboardTimeSeriesRequest> requests)
- *           <li>batchCreateTensorboardTimeSeries(BatchCreateTensorboardTimeSeriesRequest request)
+ *           <li><p> batchCreateTensorboardTimeSeries(TensorboardExperimentName parent, List&lt;CreateTensorboardTimeSeriesRequest&gt; requests)
+ *           <li><p> batchCreateTensorboardTimeSeries(String parent, List&lt;CreateTensorboardTimeSeriesRequest&gt; requests)
+ *           <li><p> batchCreateTensorboardTimeSeries(BatchCreateTensorboardTimeSeriesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateTensorboardTimeSeriesCallable()
+ *           <li><p> batchCreateTensorboardTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTensorboardTimeSeries</td>
+ *      <td><p> CreateTensorboardTimeSeries</td>
  *      <td><p> Creates a TensorboardTimeSeries.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTensorboardTimeSeries(CreateTensorboardTimeSeriesRequest request)
+ *           <li><p> createTensorboardTimeSeries(CreateTensorboardTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTensorboardTimeSeries(TensorboardTimeSeriesName parent, TensorboardTimeSeries tensorboardTimeSeries)
- *           <li>createTensorboardTimeSeries(String parent, TensorboardTimeSeries tensorboardTimeSeries)
+ *           <li><p> createTensorboardTimeSeries(TensorboardTimeSeriesName parent, TensorboardTimeSeries tensorboardTimeSeries)
+ *           <li><p> createTensorboardTimeSeries(String parent, TensorboardTimeSeries tensorboardTimeSeries)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTensorboardTimeSeriesCallable()
+ *           <li><p> createTensorboardTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTensorboardTimeSeries</td>
+ *      <td><p> GetTensorboardTimeSeries</td>
  *      <td><p> Gets a TensorboardTimeSeries.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTensorboardTimeSeries(GetTensorboardTimeSeriesRequest request)
+ *           <li><p> getTensorboardTimeSeries(GetTensorboardTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTensorboardTimeSeries(TensorboardTimeSeriesName name)
- *           <li>getTensorboardTimeSeries(String name)
+ *           <li><p> getTensorboardTimeSeries(TensorboardTimeSeriesName name)
+ *           <li><p> getTensorboardTimeSeries(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTensorboardTimeSeriesCallable()
+ *           <li><p> getTensorboardTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTensorboardTimeSeries</td>
+ *      <td><p> UpdateTensorboardTimeSeries</td>
  *      <td><p> Updates a TensorboardTimeSeries.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTensorboardTimeSeries(UpdateTensorboardTimeSeriesRequest request)
+ *           <li><p> updateTensorboardTimeSeries(UpdateTensorboardTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTensorboardTimeSeries(TensorboardTimeSeries tensorboardTimeSeries, FieldMask updateMask)
+ *           <li><p> updateTensorboardTimeSeries(TensorboardTimeSeries tensorboardTimeSeries, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTensorboardTimeSeriesCallable()
+ *           <li><p> updateTensorboardTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTensorboardTimeSeries</td>
+ *      <td><p> ListTensorboardTimeSeries</td>
  *      <td><p> Lists TensorboardTimeSeries in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTensorboardTimeSeries(ListTensorboardTimeSeriesRequest request)
+ *           <li><p> listTensorboardTimeSeries(ListTensorboardTimeSeriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTensorboardTimeSeries(TensorboardRunName parent)
- *           <li>listTensorboardTimeSeries(String parent)
+ *           <li><p> listTensorboardTimeSeries(TensorboardRunName parent)
+ *           <li><p> listTensorboardTimeSeries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTensorboardTimeSeriesPagedCallable()
- *           <li>listTensorboardTimeSeriesCallable()
+ *           <li><p> listTensorboardTimeSeriesPagedCallable()
+ *           <li><p> listTensorboardTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTensorboardTimeSeries</td>
+ *      <td><p> DeleteTensorboardTimeSeries</td>
  *      <td><p> Deletes a TensorboardTimeSeries.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTensorboardTimeSeriesAsync(DeleteTensorboardTimeSeriesRequest request)
+ *           <li><p> deleteTensorboardTimeSeriesAsync(DeleteTensorboardTimeSeriesRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTensorboardTimeSeriesAsync(TensorboardTimeSeriesName name)
- *           <li>deleteTensorboardTimeSeriesAsync(String name)
+ *           <li><p> deleteTensorboardTimeSeriesAsync(TensorboardTimeSeriesName name)
+ *           <li><p> deleteTensorboardTimeSeriesAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTensorboardTimeSeriesOperationCallable()
- *           <li>deleteTensorboardTimeSeriesCallable()
+ *           <li><p> deleteTensorboardTimeSeriesOperationCallable()
+ *           <li><p> deleteTensorboardTimeSeriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchReadTensorboardTimeSeriesData</td>
+ *      <td><p> BatchReadTensorboardTimeSeriesData</td>
  *      <td><p> Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars, 100 for tensors and blob references. If the number of data points stored is less than the limit, all data is returned. Otherwise, the number limit of data points is randomly selected from this time series and returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchReadTensorboardTimeSeriesData(BatchReadTensorboardTimeSeriesDataRequest request)
+ *           <li><p> batchReadTensorboardTimeSeriesData(BatchReadTensorboardTimeSeriesDataRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>batchReadTensorboardTimeSeriesData(TensorboardName tensorboard)
- *           <li>batchReadTensorboardTimeSeriesData(String tensorboard)
+ *           <li><p> batchReadTensorboardTimeSeriesData(TensorboardName tensorboard)
+ *           <li><p> batchReadTensorboardTimeSeriesData(String tensorboard)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchReadTensorboardTimeSeriesDataCallable()
+ *           <li><p> batchReadTensorboardTimeSeriesDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReadTensorboardTimeSeriesData</td>
+ *      <td><p> ReadTensorboardTimeSeriesData</td>
  *      <td><p> Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this time series and returned. This value can be changed by changing max_data_points, which can't be greater than 10k.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>readTensorboardTimeSeriesData(ReadTensorboardTimeSeriesDataRequest request)
+ *           <li><p> readTensorboardTimeSeriesData(ReadTensorboardTimeSeriesDataRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>readTensorboardTimeSeriesData(TensorboardTimeSeriesName tensorboardTimeSeries)
- *           <li>readTensorboardTimeSeriesData(String tensorboardTimeSeries)
+ *           <li><p> readTensorboardTimeSeriesData(TensorboardTimeSeriesName tensorboardTimeSeries)
+ *           <li><p> readTensorboardTimeSeriesData(String tensorboardTimeSeries)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>readTensorboardTimeSeriesDataCallable()
+ *           <li><p> readTensorboardTimeSeriesDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReadTensorboardBlobData</td>
+ *      <td><p> ReadTensorboardBlobData</td>
  *      <td><p> Gets bytes of TensorboardBlobs. This is to allow reading blob data stored in consumer project's Cloud Storage bucket without users having to obtain Cloud Storage access permission.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>readTensorboardBlobDataCallable()
+ *           <li><p> readTensorboardBlobDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>WriteTensorboardExperimentData</td>
+ *      <td><p> WriteTensorboardExperimentData</td>
  *      <td><p> Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's. If any data fail to be ingested, an error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>writeTensorboardExperimentData(WriteTensorboardExperimentDataRequest request)
+ *           <li><p> writeTensorboardExperimentData(WriteTensorboardExperimentDataRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>writeTensorboardExperimentData(TensorboardExperimentName tensorboardExperiment, List<WriteTensorboardRunDataRequest> writeRunDataRequests)
- *           <li>writeTensorboardExperimentData(String tensorboardExperiment, List<WriteTensorboardRunDataRequest> writeRunDataRequests)
+ *           <li><p> writeTensorboardExperimentData(TensorboardExperimentName tensorboardExperiment, List&lt;WriteTensorboardRunDataRequest&gt; writeRunDataRequests)
+ *           <li><p> writeTensorboardExperimentData(String tensorboardExperiment, List&lt;WriteTensorboardRunDataRequest&gt; writeRunDataRequests)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>writeTensorboardExperimentDataCallable()
+ *           <li><p> writeTensorboardExperimentDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>WriteTensorboardRunData</td>
+ *      <td><p> WriteTensorboardRunData</td>
  *      <td><p> Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If any data fail to be ingested, an error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>writeTensorboardRunData(WriteTensorboardRunDataRequest request)
+ *           <li><p> writeTensorboardRunData(WriteTensorboardRunDataRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>writeTensorboardRunData(TensorboardRunName tensorboardRun, List<TimeSeriesData> timeSeriesData)
- *           <li>writeTensorboardRunData(String tensorboardRun, List<TimeSeriesData> timeSeriesData)
+ *           <li><p> writeTensorboardRunData(TensorboardRunName tensorboardRun, List&lt;TimeSeriesData&gt; timeSeriesData)
+ *           <li><p> writeTensorboardRunData(String tensorboardRun, List&lt;TimeSeriesData&gt; timeSeriesData)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>writeTensorboardRunDataCallable()
+ *           <li><p> writeTensorboardRunDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportTensorboardTimeSeriesData</td>
+ *      <td><p> ExportTensorboardTimeSeriesData</td>
  *      <td><p> Exports a TensorboardTimeSeries' data. Data is returned in paginated responses.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportTensorboardTimeSeriesData(ExportTensorboardTimeSeriesDataRequest request)
+ *           <li><p> exportTensorboardTimeSeriesData(ExportTensorboardTimeSeriesDataRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>exportTensorboardTimeSeriesData(TensorboardTimeSeriesName tensorboardTimeSeries)
- *           <li>exportTensorboardTimeSeriesData(String tensorboardTimeSeries)
+ *           <li><p> exportTensorboardTimeSeriesData(TensorboardTimeSeriesName tensorboardTimeSeries)
+ *           <li><p> exportTensorboardTimeSeriesData(String tensorboardTimeSeries)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportTensorboardTimeSeriesDataPagedCallable()
- *           <li>exportTensorboardTimeSeriesDataCallable()
+ *           <li><p> exportTensorboardTimeSeriesDataPagedCallable()
+ *           <li><p> exportTensorboardTimeSeriesDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

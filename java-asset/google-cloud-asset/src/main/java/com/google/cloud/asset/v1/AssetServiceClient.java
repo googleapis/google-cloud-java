@@ -70,234 +70,236 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ExportAssets</td>
+ *      <td><p> ExportAssets</td>
  *      <td><p> Exports assets with time and resource types to a given Cloud Storage location/BigQuery table. For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line represents a [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table destinations, the output table stores the fields in asset Protobuf as columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation] API, which allows you to keep track of the export. We recommend intervals of at least 2 seconds with exponential retry to poll the export operation result. For regular-size resource parent, the export operation usually finishes within 5 minutes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportAssetsAsync(ExportAssetsRequest request)
+ *           <li><p> exportAssetsAsync(ExportAssetsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportAssetsOperationCallable()
- *           <li>exportAssetsCallable()
+ *           <li><p> exportAssetsOperationCallable()
+ *           <li><p> exportAssetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAssets</td>
+ *      <td><p> ListAssets</td>
  *      <td><p> Lists assets with time and resource types and returns paged results in response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAssets(ListAssetsRequest request)
+ *           <li><p> listAssets(ListAssetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAssets(ResourceName parent)
- *           <li>listAssets(String parent)
+ *           <li><p> listAssets(ResourceName parent)
+ *           <li><p> listAssets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAssetsPagedCallable()
- *           <li>listAssetsCallable()
+ *           <li><p> listAssetsPagedCallable()
+ *           <li><p> listAssetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchGetAssetsHistory</td>
+ *      <td><p> BatchGetAssetsHistory</td>
  *      <td><p> Batch gets the update history of assets that overlap a time window. For IAM_POLICY content, this API outputs history when the asset and its attached IAM POLICY both exist. This can create gaps in the output history. Otherwise, this API outputs history with asset in both non-delete or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchGetAssetsHistory(BatchGetAssetsHistoryRequest request)
+ *           <li><p> batchGetAssetsHistory(BatchGetAssetsHistoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchGetAssetsHistoryCallable()
+ *           <li><p> batchGetAssetsHistoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFeed</td>
+ *      <td><p> CreateFeed</td>
  *      <td><p> Creates a feed in a parent project/folder/organization to listen to its asset updates.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFeed(CreateFeedRequest request)
+ *           <li><p> createFeed(CreateFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createFeed(String parent)
+ *           <li><p> createFeed(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFeedCallable()
+ *           <li><p> createFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeed</td>
+ *      <td><p> GetFeed</td>
  *      <td><p> Gets details about an asset feed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeed(GetFeedRequest request)
+ *           <li><p> getFeed(GetFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeed(FeedName name)
- *           <li>getFeed(String name)
+ *           <li><p> getFeed(FeedName name)
+ *           <li><p> getFeed(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeedCallable()
+ *           <li><p> getFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFeeds</td>
+ *      <td><p> ListFeeds</td>
  *      <td><p> Lists all asset feeds in a parent project/folder/organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeeds(ListFeedsRequest request)
+ *           <li><p> listFeeds(ListFeedsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeeds(String parent)
+ *           <li><p> listFeeds(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeedsCallable()
+ *           <li><p> listFeedsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFeed</td>
+ *      <td><p> UpdateFeed</td>
  *      <td><p> Updates an asset feed configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFeed(UpdateFeedRequest request)
+ *           <li><p> updateFeed(UpdateFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateFeed(Feed feed)
+ *           <li><p> updateFeed(Feed feed)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFeedCallable()
+ *           <li><p> updateFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFeed</td>
+ *      <td><p> DeleteFeed</td>
  *      <td><p> Deletes an asset feed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFeed(DeleteFeedRequest request)
+ *           <li><p> deleteFeed(DeleteFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteFeed(FeedName name)
- *           <li>deleteFeed(String name)
+ *           <li><p> deleteFeed(FeedName name)
+ *           <li><p> deleteFeed(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFeedCallable()
+ *           <li><p> deleteFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchAllResources</td>
+ *      <td><p> SearchAllResources</td>
  *      <td><p> Searches all Google Cloud resources within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission on the desired scope, otherwise the request will be rejected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchAllResources(SearchAllResourcesRequest request)
+ *           <li><p> searchAllResources(SearchAllResourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchAllResources(String scope, String query, List<String> assetTypes)
+ *           <li><p> searchAllResources(String scope, String query, List&lt;String&gt; assetTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchAllResourcesPagedCallable()
- *           <li>searchAllResourcesCallable()
+ *           <li><p> searchAllResourcesPagedCallable()
+ *           <li><p> searchAllResourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchAllIamPolicies</td>
+ *      <td><p> SearchAllIamPolicies</td>
  *      <td><p> Searches all IAM policies within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies` permission on the desired scope, otherwise the request will be rejected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchAllIamPolicies(SearchAllIamPoliciesRequest request)
+ *           <li><p> searchAllIamPolicies(SearchAllIamPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchAllIamPolicies(String scope, String query)
+ *           <li><p> searchAllIamPolicies(String scope, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchAllIamPoliciesPagedCallable()
- *           <li>searchAllIamPoliciesCallable()
+ *           <li><p> searchAllIamPoliciesPagedCallable()
+ *           <li><p> searchAllIamPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeIamPolicy</td>
+ *      <td><p> AnalyzeIamPolicy</td>
  *      <td><p> Analyzes IAM policies to answer which identities have what accesses on which resources.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeIamPolicy(AnalyzeIamPolicyRequest request)
+ *           <li><p> analyzeIamPolicy(AnalyzeIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeIamPolicyCallable()
+ *           <li><p> analyzeIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeIamPolicyLongrunning</td>
+ *      <td><p> AnalyzeIamPolicyLongrunning</td>
  *      <td><p> Analyzes IAM policies asynchronously to answer which identities have what accesses on which resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON format that represents a [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation status. We recommend intervals of at least 2 seconds with exponential backoff retry to poll the operation result. The metadata contains the metadata for the long-running operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request)
+ *           <li><p> analyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeIamPolicyLongrunningOperationCallable()
- *           <li>analyzeIamPolicyLongrunningCallable()
+ *           <li><p> analyzeIamPolicyLongrunningOperationCallable()
+ *           <li><p> analyzeIamPolicyLongrunningCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeMove</td>
+ *      <td><p> AnalyzeMove</td>
  *      <td><p> Analyze moving a resource to a specified destination without kicking off the actual move. The analysis is best effort depending on the user's permissions of viewing different hierarchical policies and configurations. The policies and configuration are subject to change before the actual resource migration takes place.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeMove(AnalyzeMoveRequest request)
+ *           <li><p> analyzeMove(AnalyzeMoveRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeMoveCallable()
+ *           <li><p> analyzeMoveCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryAssets</td>
+ *      <td><p> QueryAssets</td>
  *      <td><p> Issue a job that queries assets using a SQL statement compatible with [BigQuery SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
  * <p>  If the query execution finishes within timeout and there's no pagination, the full query results will be returned in the `QueryAssetsResponse`.
  * <p>  Otherwise, full query results can be obtained by issuing extra requests with the `job_reference` from the a previous `QueryAssets` call.
@@ -305,167 +307,167 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryAssets(QueryAssetsRequest request)
+ *           <li><p> queryAssets(QueryAssetsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryAssetsCallable()
+ *           <li><p> queryAssetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSavedQuery</td>
+ *      <td><p> CreateSavedQuery</td>
  *      <td><p> Creates a saved query in a parent project/folder/organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSavedQuery(CreateSavedQueryRequest request)
+ *           <li><p> createSavedQuery(CreateSavedQueryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSavedQuery(FolderName parent, SavedQuery savedQuery, String savedQueryId)
- *           <li>createSavedQuery(OrganizationName parent, SavedQuery savedQuery, String savedQueryId)
- *           <li>createSavedQuery(ProjectName parent, SavedQuery savedQuery, String savedQueryId)
- *           <li>createSavedQuery(String parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li><p> createSavedQuery(FolderName parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li><p> createSavedQuery(OrganizationName parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li><p> createSavedQuery(ProjectName parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li><p> createSavedQuery(String parent, SavedQuery savedQuery, String savedQueryId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSavedQueryCallable()
+ *           <li><p> createSavedQueryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSavedQuery</td>
+ *      <td><p> GetSavedQuery</td>
  *      <td><p> Gets details about a saved query.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSavedQuery(GetSavedQueryRequest request)
+ *           <li><p> getSavedQuery(GetSavedQueryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSavedQuery(SavedQueryName name)
- *           <li>getSavedQuery(String name)
+ *           <li><p> getSavedQuery(SavedQueryName name)
+ *           <li><p> getSavedQuery(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSavedQueryCallable()
+ *           <li><p> getSavedQueryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSavedQueries</td>
+ *      <td><p> ListSavedQueries</td>
  *      <td><p> Lists all saved queries in a parent project/folder/organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSavedQueries(ListSavedQueriesRequest request)
+ *           <li><p> listSavedQueries(ListSavedQueriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSavedQueries(FolderName parent)
- *           <li>listSavedQueries(OrganizationName parent)
- *           <li>listSavedQueries(ProjectName parent)
- *           <li>listSavedQueries(String parent)
+ *           <li><p> listSavedQueries(FolderName parent)
+ *           <li><p> listSavedQueries(OrganizationName parent)
+ *           <li><p> listSavedQueries(ProjectName parent)
+ *           <li><p> listSavedQueries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSavedQueriesPagedCallable()
- *           <li>listSavedQueriesCallable()
+ *           <li><p> listSavedQueriesPagedCallable()
+ *           <li><p> listSavedQueriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSavedQuery</td>
+ *      <td><p> UpdateSavedQuery</td>
  *      <td><p> Updates a saved query.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSavedQuery(UpdateSavedQueryRequest request)
+ *           <li><p> updateSavedQuery(UpdateSavedQueryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSavedQuery(SavedQuery savedQuery, FieldMask updateMask)
+ *           <li><p> updateSavedQuery(SavedQuery savedQuery, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSavedQueryCallable()
+ *           <li><p> updateSavedQueryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSavedQuery</td>
+ *      <td><p> DeleteSavedQuery</td>
  *      <td><p> Deletes a saved query.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSavedQuery(DeleteSavedQueryRequest request)
+ *           <li><p> deleteSavedQuery(DeleteSavedQueryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSavedQuery(SavedQueryName name)
- *           <li>deleteSavedQuery(String name)
+ *           <li><p> deleteSavedQuery(SavedQueryName name)
+ *           <li><p> deleteSavedQuery(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSavedQueryCallable()
+ *           <li><p> deleteSavedQueryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchGetEffectiveIamPolicies</td>
+ *      <td><p> BatchGetEffectiveIamPolicies</td>
  *      <td><p> Gets effective IAM policies for a batch of resources.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchGetEffectiveIamPolicies(BatchGetEffectiveIamPoliciesRequest request)
+ *           <li><p> batchGetEffectiveIamPolicies(BatchGetEffectiveIamPoliciesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchGetEffectiveIamPoliciesCallable()
+ *           <li><p> batchGetEffectiveIamPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeOrgPolicies</td>
+ *      <td><p> AnalyzeOrgPolicies</td>
  *      <td><p> Analyzes organization policies under a scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeOrgPolicies(AnalyzeOrgPoliciesRequest request)
+ *           <li><p> analyzeOrgPolicies(AnalyzeOrgPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeOrgPolicies(String scope, String constraint, String filter)
+ *           <li><p> analyzeOrgPolicies(String scope, String constraint, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeOrgPoliciesPagedCallable()
- *           <li>analyzeOrgPoliciesCallable()
+ *           <li><p> analyzeOrgPoliciesPagedCallable()
+ *           <li><p> analyzeOrgPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeOrgPolicyGovernedContainers</td>
+ *      <td><p> AnalyzeOrgPolicyGovernedContainers</td>
  *      <td><p> Analyzes organization policies governed containers (projects, folders or organization) under a scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeOrgPolicyGovernedContainers(AnalyzeOrgPolicyGovernedContainersRequest request)
+ *           <li><p> analyzeOrgPolicyGovernedContainers(AnalyzeOrgPolicyGovernedContainersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeOrgPolicyGovernedContainers(String scope, String constraint, String filter)
+ *           <li><p> analyzeOrgPolicyGovernedContainers(String scope, String constraint, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeOrgPolicyGovernedContainersPagedCallable()
- *           <li>analyzeOrgPolicyGovernedContainersCallable()
+ *           <li><p> analyzeOrgPolicyGovernedContainersPagedCallable()
+ *           <li><p> analyzeOrgPolicyGovernedContainersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeOrgPolicyGovernedAssets</td>
+ *      <td><p> AnalyzeOrgPolicyGovernedAssets</td>
  *      <td><p> Analyzes organization policies governed assets (Google Cloud resources or policies) under a scope. This RPC supports custom constraints and the following 10 canned constraints:
  * <ul>
  * <li>  storage.uniformBucketLevelAccess
@@ -483,19 +485,18 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeOrgPolicyGovernedAssets(AnalyzeOrgPolicyGovernedAssetsRequest request)
+ *           <li><p> analyzeOrgPolicyGovernedAssets(AnalyzeOrgPolicyGovernedAssetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeOrgPolicyGovernedAssets(String scope, String constraint, String filter)
+ *           <li><p> analyzeOrgPolicyGovernedAssets(String scope, String constraint, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeOrgPolicyGovernedAssetsPagedCallable()
- *           <li>analyzeOrgPolicyGovernedAssetsCallable()
+ *           <li><p> analyzeOrgPolicyGovernedAssetsPagedCallable()
+ *           <li><p> analyzeOrgPolicyGovernedAssetsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

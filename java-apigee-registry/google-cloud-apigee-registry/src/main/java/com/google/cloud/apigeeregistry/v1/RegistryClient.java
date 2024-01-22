@@ -67,728 +67,729 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListApis</td>
+ *      <td><p> ListApis</td>
  *      <td><p> Returns matching APIs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApis(ListApisRequest request)
+ *           <li><p> listApis(ListApisRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listApis(LocationName parent)
- *           <li>listApis(String parent)
+ *           <li><p> listApis(LocationName parent)
+ *           <li><p> listApis(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApisPagedCallable()
- *           <li>listApisCallable()
+ *           <li><p> listApisPagedCallable()
+ *           <li><p> listApisCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetApi</td>
+ *      <td><p> GetApi</td>
  *      <td><p> Returns a specified API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getApi(GetApiRequest request)
+ *           <li><p> getApi(GetApiRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getApi(ApiName name)
- *           <li>getApi(String name)
+ *           <li><p> getApi(ApiName name)
+ *           <li><p> getApi(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getApiCallable()
+ *           <li><p> getApiCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateApi</td>
+ *      <td><p> CreateApi</td>
  *      <td><p> Creates a specified API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createApi(CreateApiRequest request)
+ *           <li><p> createApi(CreateApiRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createApi(LocationName parent, Api api, String apiId)
- *           <li>createApi(String parent, Api api, String apiId)
+ *           <li><p> createApi(LocationName parent, Api api, String apiId)
+ *           <li><p> createApi(String parent, Api api, String apiId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createApiCallable()
+ *           <li><p> createApiCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateApi</td>
+ *      <td><p> UpdateApi</td>
  *      <td><p> Used to modify a specified API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateApi(UpdateApiRequest request)
+ *           <li><p> updateApi(UpdateApiRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateApi(Api api, FieldMask updateMask)
+ *           <li><p> updateApi(Api api, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateApiCallable()
+ *           <li><p> updateApiCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteApi</td>
+ *      <td><p> DeleteApi</td>
  *      <td><p> Removes a specified API and all of the resources that it owns.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteApi(DeleteApiRequest request)
+ *           <li><p> deleteApi(DeleteApiRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteApi(ApiName name)
- *           <li>deleteApi(String name)
+ *           <li><p> deleteApi(ApiName name)
+ *           <li><p> deleteApi(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteApiCallable()
+ *           <li><p> deleteApiCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListApiVersions</td>
+ *      <td><p> ListApiVersions</td>
  *      <td><p> Returns matching versions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApiVersions(ListApiVersionsRequest request)
+ *           <li><p> listApiVersions(ListApiVersionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listApiVersions(ApiName parent)
- *           <li>listApiVersions(String parent)
+ *           <li><p> listApiVersions(ApiName parent)
+ *           <li><p> listApiVersions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApiVersionsPagedCallable()
- *           <li>listApiVersionsCallable()
+ *           <li><p> listApiVersionsPagedCallable()
+ *           <li><p> listApiVersionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetApiVersion</td>
+ *      <td><p> GetApiVersion</td>
  *      <td><p> Returns a specified version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getApiVersion(GetApiVersionRequest request)
+ *           <li><p> getApiVersion(GetApiVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getApiVersion(ApiVersionName name)
- *           <li>getApiVersion(String name)
+ *           <li><p> getApiVersion(ApiVersionName name)
+ *           <li><p> getApiVersion(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getApiVersionCallable()
+ *           <li><p> getApiVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateApiVersion</td>
+ *      <td><p> CreateApiVersion</td>
  *      <td><p> Creates a specified version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createApiVersion(CreateApiVersionRequest request)
+ *           <li><p> createApiVersion(CreateApiVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createApiVersion(ApiName parent, ApiVersion apiVersion, String apiVersionId)
- *           <li>createApiVersion(String parent, ApiVersion apiVersion, String apiVersionId)
+ *           <li><p> createApiVersion(ApiName parent, ApiVersion apiVersion, String apiVersionId)
+ *           <li><p> createApiVersion(String parent, ApiVersion apiVersion, String apiVersionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createApiVersionCallable()
+ *           <li><p> createApiVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateApiVersion</td>
+ *      <td><p> UpdateApiVersion</td>
  *      <td><p> Used to modify a specified version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateApiVersion(UpdateApiVersionRequest request)
+ *           <li><p> updateApiVersion(UpdateApiVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateApiVersion(ApiVersion apiVersion, FieldMask updateMask)
+ *           <li><p> updateApiVersion(ApiVersion apiVersion, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateApiVersionCallable()
+ *           <li><p> updateApiVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteApiVersion</td>
+ *      <td><p> DeleteApiVersion</td>
  *      <td><p> Removes a specified version and all of the resources that it owns.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteApiVersion(DeleteApiVersionRequest request)
+ *           <li><p> deleteApiVersion(DeleteApiVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteApiVersion(ApiVersionName name)
- *           <li>deleteApiVersion(String name)
+ *           <li><p> deleteApiVersion(ApiVersionName name)
+ *           <li><p> deleteApiVersion(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteApiVersionCallable()
+ *           <li><p> deleteApiVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListApiSpecs</td>
+ *      <td><p> ListApiSpecs</td>
  *      <td><p> Returns matching specs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApiSpecs(ListApiSpecsRequest request)
+ *           <li><p> listApiSpecs(ListApiSpecsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listApiSpecs(ApiVersionName parent)
- *           <li>listApiSpecs(String parent)
+ *           <li><p> listApiSpecs(ApiVersionName parent)
+ *           <li><p> listApiSpecs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApiSpecsPagedCallable()
- *           <li>listApiSpecsCallable()
+ *           <li><p> listApiSpecsPagedCallable()
+ *           <li><p> listApiSpecsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetApiSpec</td>
+ *      <td><p> GetApiSpec</td>
  *      <td><p> Returns a specified spec.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getApiSpec(GetApiSpecRequest request)
+ *           <li><p> getApiSpec(GetApiSpecRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getApiSpec(ApiSpecName name)
- *           <li>getApiSpec(String name)
+ *           <li><p> getApiSpec(ApiSpecName name)
+ *           <li><p> getApiSpec(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getApiSpecCallable()
+ *           <li><p> getApiSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetApiSpecContents</td>
+ *      <td><p> GetApiSpecContents</td>
  *      <td><p> Returns the contents of a specified spec. If specs are stored with GZip compression, the default behavior is to return the spec uncompressed (the mime_type response field indicates the exact format returned).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getApiSpecContents(GetApiSpecContentsRequest request)
+ *           <li><p> getApiSpecContents(GetApiSpecContentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getApiSpecContents(ApiSpecName name)
- *           <li>getApiSpecContents(String name)
+ *           <li><p> getApiSpecContents(ApiSpecName name)
+ *           <li><p> getApiSpecContents(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getApiSpecContentsCallable()
+ *           <li><p> getApiSpecContentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateApiSpec</td>
+ *      <td><p> CreateApiSpec</td>
  *      <td><p> Creates a specified spec.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createApiSpec(CreateApiSpecRequest request)
+ *           <li><p> createApiSpec(CreateApiSpecRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createApiSpec(ApiVersionName parent, ApiSpec apiSpec, String apiSpecId)
- *           <li>createApiSpec(String parent, ApiSpec apiSpec, String apiSpecId)
+ *           <li><p> createApiSpec(ApiVersionName parent, ApiSpec apiSpec, String apiSpecId)
+ *           <li><p> createApiSpec(String parent, ApiSpec apiSpec, String apiSpecId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createApiSpecCallable()
+ *           <li><p> createApiSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateApiSpec</td>
+ *      <td><p> UpdateApiSpec</td>
  *      <td><p> Used to modify a specified spec.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateApiSpec(UpdateApiSpecRequest request)
+ *           <li><p> updateApiSpec(UpdateApiSpecRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateApiSpec(ApiSpec apiSpec, FieldMask updateMask)
+ *           <li><p> updateApiSpec(ApiSpec apiSpec, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateApiSpecCallable()
+ *           <li><p> updateApiSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteApiSpec</td>
+ *      <td><p> DeleteApiSpec</td>
  *      <td><p> Removes a specified spec, all revisions, and all child resources (e.g., artifacts).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteApiSpec(DeleteApiSpecRequest request)
+ *           <li><p> deleteApiSpec(DeleteApiSpecRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteApiSpec(ApiSpecName name)
- *           <li>deleteApiSpec(String name)
+ *           <li><p> deleteApiSpec(ApiSpecName name)
+ *           <li><p> deleteApiSpec(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteApiSpecCallable()
+ *           <li><p> deleteApiSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TagApiSpecRevision</td>
+ *      <td><p> TagApiSpecRevision</td>
  *      <td><p> Adds a tag to a specified revision of a spec.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>tagApiSpecRevision(TagApiSpecRevisionRequest request)
+ *           <li><p> tagApiSpecRevision(TagApiSpecRevisionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>tagApiSpecRevisionCallable()
+ *           <li><p> tagApiSpecRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListApiSpecRevisions</td>
+ *      <td><p> ListApiSpecRevisions</td>
  *      <td><p> Lists all revisions of a spec. Revisions are returned in descending order of revision creation time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApiSpecRevisions(ListApiSpecRevisionsRequest request)
+ *           <li><p> listApiSpecRevisions(ListApiSpecRevisionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApiSpecRevisionsPagedCallable()
- *           <li>listApiSpecRevisionsCallable()
+ *           <li><p> listApiSpecRevisionsPagedCallable()
+ *           <li><p> listApiSpecRevisionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RollbackApiSpec</td>
+ *      <td><p> RollbackApiSpec</td>
  *      <td><p> Sets the current revision to a specified prior revision. Note that this creates a new revision with a new revision ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rollbackApiSpec(RollbackApiSpecRequest request)
+ *           <li><p> rollbackApiSpec(RollbackApiSpecRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rollbackApiSpecCallable()
+ *           <li><p> rollbackApiSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteApiSpecRevision</td>
+ *      <td><p> DeleteApiSpecRevision</td>
  *      <td><p> Deletes a revision of a spec.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteApiSpecRevision(DeleteApiSpecRevisionRequest request)
+ *           <li><p> deleteApiSpecRevision(DeleteApiSpecRevisionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteApiSpecRevision(ApiSpecName name)
- *           <li>deleteApiSpecRevision(String name)
+ *           <li><p> deleteApiSpecRevision(ApiSpecName name)
+ *           <li><p> deleteApiSpecRevision(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteApiSpecRevisionCallable()
+ *           <li><p> deleteApiSpecRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListApiDeployments</td>
+ *      <td><p> ListApiDeployments</td>
  *      <td><p> Returns matching deployments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApiDeployments(ListApiDeploymentsRequest request)
+ *           <li><p> listApiDeployments(ListApiDeploymentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listApiDeployments(ApiName parent)
- *           <li>listApiDeployments(String parent)
+ *           <li><p> listApiDeployments(ApiName parent)
+ *           <li><p> listApiDeployments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApiDeploymentsPagedCallable()
- *           <li>listApiDeploymentsCallable()
+ *           <li><p> listApiDeploymentsPagedCallable()
+ *           <li><p> listApiDeploymentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetApiDeployment</td>
+ *      <td><p> GetApiDeployment</td>
  *      <td><p> Returns a specified deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getApiDeployment(GetApiDeploymentRequest request)
+ *           <li><p> getApiDeployment(GetApiDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getApiDeployment(ApiDeploymentName name)
- *           <li>getApiDeployment(String name)
+ *           <li><p> getApiDeployment(ApiDeploymentName name)
+ *           <li><p> getApiDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getApiDeploymentCallable()
+ *           <li><p> getApiDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateApiDeployment</td>
+ *      <td><p> CreateApiDeployment</td>
  *      <td><p> Creates a specified deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createApiDeployment(CreateApiDeploymentRequest request)
+ *           <li><p> createApiDeployment(CreateApiDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createApiDeployment(ApiName parent, ApiDeployment apiDeployment, String apiDeploymentId)
- *           <li>createApiDeployment(String parent, ApiDeployment apiDeployment, String apiDeploymentId)
+ *           <li><p> createApiDeployment(ApiName parent, ApiDeployment apiDeployment, String apiDeploymentId)
+ *           <li><p> createApiDeployment(String parent, ApiDeployment apiDeployment, String apiDeploymentId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createApiDeploymentCallable()
+ *           <li><p> createApiDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateApiDeployment</td>
+ *      <td><p> UpdateApiDeployment</td>
  *      <td><p> Used to modify a specified deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateApiDeployment(UpdateApiDeploymentRequest request)
+ *           <li><p> updateApiDeployment(UpdateApiDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateApiDeployment(ApiDeployment apiDeployment, FieldMask updateMask)
+ *           <li><p> updateApiDeployment(ApiDeployment apiDeployment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateApiDeploymentCallable()
+ *           <li><p> updateApiDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteApiDeployment</td>
+ *      <td><p> DeleteApiDeployment</td>
  *      <td><p> Removes a specified deployment, all revisions, and all child resources (e.g., artifacts).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteApiDeployment(DeleteApiDeploymentRequest request)
+ *           <li><p> deleteApiDeployment(DeleteApiDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteApiDeployment(ApiDeploymentName name)
- *           <li>deleteApiDeployment(String name)
+ *           <li><p> deleteApiDeployment(ApiDeploymentName name)
+ *           <li><p> deleteApiDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteApiDeploymentCallable()
+ *           <li><p> deleteApiDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TagApiDeploymentRevision</td>
+ *      <td><p> TagApiDeploymentRevision</td>
  *      <td><p> Adds a tag to a specified revision of a deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>tagApiDeploymentRevision(TagApiDeploymentRevisionRequest request)
+ *           <li><p> tagApiDeploymentRevision(TagApiDeploymentRevisionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>tagApiDeploymentRevisionCallable()
+ *           <li><p> tagApiDeploymentRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListApiDeploymentRevisions</td>
+ *      <td><p> ListApiDeploymentRevisions</td>
  *      <td><p> Lists all revisions of a deployment. Revisions are returned in descending order of revision creation time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApiDeploymentRevisions(ListApiDeploymentRevisionsRequest request)
+ *           <li><p> listApiDeploymentRevisions(ListApiDeploymentRevisionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApiDeploymentRevisionsPagedCallable()
- *           <li>listApiDeploymentRevisionsCallable()
+ *           <li><p> listApiDeploymentRevisionsPagedCallable()
+ *           <li><p> listApiDeploymentRevisionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RollbackApiDeployment</td>
+ *      <td><p> RollbackApiDeployment</td>
  *      <td><p> Sets the current revision to a specified prior revision. Note that this creates a new revision with a new revision ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rollbackApiDeployment(RollbackApiDeploymentRequest request)
+ *           <li><p> rollbackApiDeployment(RollbackApiDeploymentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rollbackApiDeploymentCallable()
+ *           <li><p> rollbackApiDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteApiDeploymentRevision</td>
+ *      <td><p> DeleteApiDeploymentRevision</td>
  *      <td><p> Deletes a revision of a deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteApiDeploymentRevision(DeleteApiDeploymentRevisionRequest request)
+ *           <li><p> deleteApiDeploymentRevision(DeleteApiDeploymentRevisionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteApiDeploymentRevision(ApiDeploymentName name)
- *           <li>deleteApiDeploymentRevision(String name)
+ *           <li><p> deleteApiDeploymentRevision(ApiDeploymentName name)
+ *           <li><p> deleteApiDeploymentRevision(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteApiDeploymentRevisionCallable()
+ *           <li><p> deleteApiDeploymentRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListArtifacts</td>
+ *      <td><p> ListArtifacts</td>
  *      <td><p> Returns matching artifacts.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listArtifacts(ListArtifactsRequest request)
+ *           <li><p> listArtifacts(ListArtifactsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listArtifacts(ApiDeploymentName parent)
- *           <li>listArtifacts(ApiName parent)
- *           <li>listArtifacts(ApiSpecName parent)
- *           <li>listArtifacts(ApiVersionName parent)
- *           <li>listArtifacts(LocationName parent)
- *           <li>listArtifacts(String parent)
+ *           <li><p> listArtifacts(ApiDeploymentName parent)
+ *           <li><p> listArtifacts(ApiName parent)
+ *           <li><p> listArtifacts(ApiSpecName parent)
+ *           <li><p> listArtifacts(ApiVersionName parent)
+ *           <li><p> listArtifacts(LocationName parent)
+ *           <li><p> listArtifacts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listArtifactsPagedCallable()
- *           <li>listArtifactsCallable()
+ *           <li><p> listArtifactsPagedCallable()
+ *           <li><p> listArtifactsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetArtifact</td>
+ *      <td><p> GetArtifact</td>
  *      <td><p> Returns a specified artifact.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getArtifact(GetArtifactRequest request)
+ *           <li><p> getArtifact(GetArtifactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getArtifact(ArtifactName name)
- *           <li>getArtifact(String name)
+ *           <li><p> getArtifact(ArtifactName name)
+ *           <li><p> getArtifact(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getArtifactCallable()
+ *           <li><p> getArtifactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetArtifactContents</td>
+ *      <td><p> GetArtifactContents</td>
  *      <td><p> Returns the contents of a specified artifact. If artifacts are stored with GZip compression, the default behavior is to return the artifact uncompressed (the mime_type response field indicates the exact format returned).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getArtifactContents(GetArtifactContentsRequest request)
+ *           <li><p> getArtifactContents(GetArtifactContentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getArtifactContents(ArtifactName name)
- *           <li>getArtifactContents(String name)
+ *           <li><p> getArtifactContents(ArtifactName name)
+ *           <li><p> getArtifactContents(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getArtifactContentsCallable()
+ *           <li><p> getArtifactContentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateArtifact</td>
+ *      <td><p> CreateArtifact</td>
  *      <td><p> Creates a specified artifact.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createArtifact(CreateArtifactRequest request)
+ *           <li><p> createArtifact(CreateArtifactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createArtifact(ApiDeploymentName parent, Artifact artifact, String artifactId)
- *           <li>createArtifact(ApiName parent, Artifact artifact, String artifactId)
- *           <li>createArtifact(ApiSpecName parent, Artifact artifact, String artifactId)
- *           <li>createArtifact(ApiVersionName parent, Artifact artifact, String artifactId)
- *           <li>createArtifact(LocationName parent, Artifact artifact, String artifactId)
- *           <li>createArtifact(String parent, Artifact artifact, String artifactId)
+ *           <li><p> createArtifact(ApiDeploymentName parent, Artifact artifact, String artifactId)
+ *           <li><p> createArtifact(ApiName parent, Artifact artifact, String artifactId)
+ *           <li><p> createArtifact(ApiSpecName parent, Artifact artifact, String artifactId)
+ *           <li><p> createArtifact(ApiVersionName parent, Artifact artifact, String artifactId)
+ *           <li><p> createArtifact(LocationName parent, Artifact artifact, String artifactId)
+ *           <li><p> createArtifact(String parent, Artifact artifact, String artifactId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createArtifactCallable()
+ *           <li><p> createArtifactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReplaceArtifact</td>
+ *      <td><p> ReplaceArtifact</td>
  *      <td><p> Used to replace a specified artifact.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>replaceArtifact(ReplaceArtifactRequest request)
+ *           <li><p> replaceArtifact(ReplaceArtifactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>replaceArtifact(Artifact artifact)
+ *           <li><p> replaceArtifact(Artifact artifact)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>replaceArtifactCallable()
+ *           <li><p> replaceArtifactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteArtifact</td>
+ *      <td><p> DeleteArtifact</td>
  *      <td><p> Removes a specified artifact.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteArtifact(DeleteArtifactRequest request)
+ *           <li><p> deleteArtifact(DeleteArtifactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteArtifact(ArtifactName name)
- *           <li>deleteArtifact(String name)
+ *           <li><p> deleteArtifact(ArtifactName name)
+ *           <li><p> deleteArtifact(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteArtifactCallable()
+ *           <li><p> deleteArtifactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

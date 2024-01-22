@@ -59,12 +59,14 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Predict</td>
+ *      <td><p> Predict</td>
  *      <td><p> Perform an online prediction. The prediction result will be directly returned in the response. Available for following ML problems, and their expected request payloads:
  * <ul>
  * <li>  Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes                          up to 30MB.
@@ -81,21 +83,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>predict(PredictRequest request)
+ *           <li><p> predict(PredictRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>predict(ModelName name, ExamplePayload payload, Map<String, String> params)
- *           <li>predict(String name, ExamplePayload payload, Map<String, String> params)
+ *           <li><p> predict(ModelName name, ExamplePayload payload, Map&lt;String, String&gt; params)
+ *           <li><p> predict(String name, ExamplePayload payload, Map&lt;String, String&gt; params)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>predictCallable()
+ *           <li><p> predictCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchPredict</td>
+ *      <td><p> BatchPredict</td>
  *      <td><p> Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't be immediately available in the response. Instead, a long running operation object is returned. User can poll the operation result via [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the [response][google.longrunning.Operation.response] field. Available for following ML problems:
  * <ul>
  * <li>  Image Classification
@@ -107,20 +109,19 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchPredictAsync(BatchPredictRequest request)
+ *           <li><p> batchPredictAsync(BatchPredictRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchPredictAsync(ModelName name, BatchPredictInputConfig inputConfig, BatchPredictOutputConfig outputConfig, Map<String, String> params)
- *           <li>batchPredictAsync(String name, BatchPredictInputConfig inputConfig, BatchPredictOutputConfig outputConfig, Map<String, String> params)
+ *           <li><p> batchPredictAsync(ModelName name, BatchPredictInputConfig inputConfig, BatchPredictOutputConfig outputConfig, Map&lt;String, String&gt; params)
+ *           <li><p> batchPredictAsync(String name, BatchPredictInputConfig inputConfig, BatchPredictOutputConfig outputConfig, Map&lt;String, String&gt; params)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchPredictOperationCallable()
- *           <li>batchPredictCallable()
+ *           <li><p> batchPredictOperationCallable()
+ *           <li><p> batchPredictCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

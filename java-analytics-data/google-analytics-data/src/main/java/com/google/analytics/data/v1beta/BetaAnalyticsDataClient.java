@@ -77,120 +77,122 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>RunReport</td>
+ *      <td><p> RunReport</td>
  *      <td><p> Returns a customized report of your Google Analytics event data. Reports contain statistics derived from data collected by the Google Analytics tracking code. The data returned from the API is as a table with columns for the requested dimensions and metrics. Metrics are individual measurements of user activity on your property, such as active users or event count. Dimensions break down metrics across some common criteria, such as country or event name.
  * <p>  For a guide to constructing requests &amp; understanding responses, see [Creating a Report](https://developers.google.com/analytics/devguides/reporting/data/v1/basics).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runReport(RunReportRequest request)
+ *           <li><p> runReport(RunReportRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runReportCallable()
+ *           <li><p> runReportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunPivotReport</td>
+ *      <td><p> RunPivotReport</td>
  *      <td><p> Returns a customized pivot report of your Google Analytics event data. Pivot reports are more advanced and expressive formats than regular reports. In a pivot report, dimensions are only visible if they are included in a pivot. Multiple pivots can be specified to further dissect your data.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runPivotReport(RunPivotReportRequest request)
+ *           <li><p> runPivotReport(RunPivotReportRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runPivotReportCallable()
+ *           <li><p> runPivotReportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchRunReports</td>
+ *      <td><p> BatchRunReports</td>
  *      <td><p> Returns multiple reports in a batch. All reports must be for the same GA4 Property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchRunReports(BatchRunReportsRequest request)
+ *           <li><p> batchRunReports(BatchRunReportsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchRunReportsCallable()
+ *           <li><p> batchRunReportsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchRunPivotReports</td>
+ *      <td><p> BatchRunPivotReports</td>
  *      <td><p> Returns multiple pivot reports in a batch. All reports must be for the same GA4 Property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchRunPivotReports(BatchRunPivotReportsRequest request)
+ *           <li><p> batchRunPivotReports(BatchRunPivotReportsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchRunPivotReportsCallable()
+ *           <li><p> batchRunPivotReportsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMetadata</td>
+ *      <td><p> GetMetadata</td>
  *      <td><p> Returns metadata for dimensions and metrics available in reporting methods. Used to explore the dimensions and metrics. In this method, a Google Analytics GA4 Property Identifier is specified in the request, and the metadata response includes Custom dimensions and metrics as well as Universal metadata.
  * <p>  For example if a custom metric with parameter name `levels_unlocked` is registered to a property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata are dimensions and metrics applicable to any property such as `country` and `totalUsers`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMetadata(GetMetadataRequest request)
+ *           <li><p> getMetadata(GetMetadataRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMetadata(MetadataName name)
- *           <li>getMetadata(String name)
+ *           <li><p> getMetadata(MetadataName name)
+ *           <li><p> getMetadata(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMetadataCallable()
+ *           <li><p> getMetadataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunRealtimeReport</td>
+ *      <td><p> RunRealtimeReport</td>
  *      <td><p> Returns a customized report of realtime event data for your property. Events appear in realtime reports seconds after they have been sent to the Google Analytics. Realtime reports show events and usage data for the periods of time ranging from the present moment to 30 minutes ago (up to 60 minutes for Google Analytics 360 properties).
  * <p>  For a guide to constructing realtime requests &amp; understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runRealtimeReport(RunRealtimeReportRequest request)
+ *           <li><p> runRealtimeReport(RunRealtimeReportRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runRealtimeReportCallable()
+ *           <li><p> runRealtimeReportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CheckCompatibility</td>
+ *      <td><p> CheckCompatibility</td>
  *      <td><p> This compatibility method lists dimensions and metrics that can be added to a report request and maintain compatibility. This method fails if the request's dimensions and metrics are incompatible.
  * <p>  In Google Analytics, reports fail if they request incompatible dimensions and/or metrics; in that case, you will need to remove dimensions and/or metrics from the incompatible report until the report is compatible.
  * <p>  The Realtime and Core reports have different compatibility rules. This method checks compatibility for Core reports.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>checkCompatibility(CheckCompatibilityRequest request)
+ *           <li><p> checkCompatibility(CheckCompatibilityRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkCompatibilityCallable()
+ *           <li><p> checkCompatibilityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAudienceExport</td>
+ *      <td><p> CreateAudienceExport</td>
  *      <td><p> Creates an audience export for later retrieval. This method quickly returns the audience export's resource name and initiates a long running asynchronous request to form an audience export. To export the users in an audience export, first create the audience export through this method and then send the audience resource name to the `QueryAudienceExport` method.
  * <p>  See [Creating an Audience Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Exports with examples.
  * <p>  An audience export is a snapshot of the users currently in the audience at the time of audience export creation. Creating audience exports for one audience on different days will return different results as users enter and exit the audience.
@@ -199,22 +201,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAudienceExportAsync(CreateAudienceExportRequest request)
+ *           <li><p> createAudienceExportAsync(CreateAudienceExportRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAudienceExportAsync(PropertyName parent, AudienceExport audienceExport)
- *           <li>createAudienceExportAsync(String parent, AudienceExport audienceExport)
+ *           <li><p> createAudienceExportAsync(PropertyName parent, AudienceExport audienceExport)
+ *           <li><p> createAudienceExportAsync(String parent, AudienceExport audienceExport)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAudienceExportOperationCallable()
- *           <li>createAudienceExportCallable()
+ *           <li><p> createAudienceExportOperationCallable()
+ *           <li><p> createAudienceExportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryAudienceExport</td>
+ *      <td><p> QueryAudienceExport</td>
  *      <td><p> Retrieves an audience export of users. After creating an audience, the users are not immediately available for exporting. First, a request to `CreateAudienceExport` is necessary to create an audience export of users, and then second, this method is used to retrieve the users in the audience export.
  * <p>  See [Creating an Audience Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Exports with examples.
  * <p>  Audiences in Google Analytics 4 allow you to segment your users in the ways that are important to your business. To learn more, see https://support.google.com/analytics/answer/9267572.
@@ -222,61 +224,60 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryAudienceExport(QueryAudienceExportRequest request)
+ *           <li><p> queryAudienceExport(QueryAudienceExportRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>queryAudienceExport(String name)
+ *           <li><p> queryAudienceExport(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryAudienceExportCallable()
+ *           <li><p> queryAudienceExportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAudienceExport</td>
+ *      <td><p> GetAudienceExport</td>
  *      <td><p> Gets configuration metadata about a specific audience export. This method can be used to understand an audience export after it has been created.
  * <p>  See [Creating an Audience Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Exports with examples.
  * <p>  Audience Export APIs have some methods at alpha and other methods at beta stability. The intention is to advance methods to beta stability after some feedback and adoption. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAudienceExport(GetAudienceExportRequest request)
+ *           <li><p> getAudienceExport(GetAudienceExportRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAudienceExport(AudienceExportName name)
- *           <li>getAudienceExport(String name)
+ *           <li><p> getAudienceExport(AudienceExportName name)
+ *           <li><p> getAudienceExport(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAudienceExportCallable()
+ *           <li><p> getAudienceExportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAudienceExports</td>
+ *      <td><p> ListAudienceExports</td>
  *      <td><p> Lists all audience exports for a property. This method can be used for you to find and reuse existing audience exports rather than creating unnecessary new audience exports. The same audience can have multiple audience exports that represent the export of users that were in an audience on different days.
  * <p>  See [Creating an Audience Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Exports with examples.
  * <p>  Audience Export APIs have some methods at alpha and other methods at beta stability. The intention is to advance methods to beta stability after some feedback and adoption. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAudienceExports(ListAudienceExportsRequest request)
+ *           <li><p> listAudienceExports(ListAudienceExportsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAudienceExports(PropertyName parent)
- *           <li>listAudienceExports(String parent)
+ *           <li><p> listAudienceExports(PropertyName parent)
+ *           <li><p> listAudienceExports(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAudienceExportsPagedCallable()
- *           <li>listAudienceExportsCallable()
+ *           <li><p> listAudienceExportsPagedCallable()
+ *           <li><p> listAudienceExportsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

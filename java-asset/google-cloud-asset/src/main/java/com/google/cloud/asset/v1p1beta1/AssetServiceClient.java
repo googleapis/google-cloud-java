@@ -61,48 +61,49 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SearchAllResources</td>
+ *      <td><p> SearchAllResources</td>
  *      <td><p> Searches all the resources within a given accessible Resource Manager scope (project/folder/organization). This RPC gives callers especially administrators the ability to search all the resources within a scope, even if they don't have `.get` permission of all the resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested scope, otherwise the request will be rejected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchAllResources(SearchAllResourcesRequest request)
+ *           <li><p> searchAllResources(SearchAllResourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchAllResources(String scope, String query, List<String> assetTypes)
+ *           <li><p> searchAllResources(String scope, String query, List&lt;String&gt; assetTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchAllResourcesPagedCallable()
- *           <li>searchAllResourcesCallable()
+ *           <li><p> searchAllResourcesPagedCallable()
+ *           <li><p> searchAllResourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchAllIamPolicies</td>
+ *      <td><p> SearchAllIamPolicies</td>
  *      <td><p> Searches all the IAM policies within a given accessible Resource Manager scope (project/folder/organization). This RPC gives callers especially administrators the ability to search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on the requested scope, otherwise the request will be rejected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchAllIamPolicies(SearchAllIamPoliciesRequest request)
+ *           <li><p> searchAllIamPolicies(SearchAllIamPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchAllIamPolicies(String scope, String query)
+ *           <li><p> searchAllIamPolicies(String scope, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchAllIamPoliciesPagedCallable()
- *           <li>searchAllIamPoliciesCallable()
+ *           <li><p> searchAllIamPoliciesPagedCallable()
+ *           <li><p> searchAllIamPoliciesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

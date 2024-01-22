@@ -65,56 +65,58 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListVersions</td>
+ *      <td><p> ListVersions</td>
  *      <td><p> Lists the versions of a service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listVersions(ListVersionsRequest request)
+ *           <li><p> listVersions(ListVersionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listVersionsPagedCallable()
- *           <li>listVersionsCallable()
+ *           <li><p> listVersionsPagedCallable()
+ *           <li><p> listVersionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetVersion</td>
+ *      <td><p> GetVersion</td>
  *      <td><p> Gets the specified Version resource. By default, only a `BASIC_VIEW` will be returned. Specify the `FULL_VIEW` parameter to get the full resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getVersion(GetVersionRequest request)
+ *           <li><p> getVersion(GetVersionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getVersionCallable()
+ *           <li><p> getVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateVersion</td>
+ *      <td><p> CreateVersion</td>
  *      <td><p> Deploys code and resource files to a new version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createVersionAsync(CreateVersionRequest request)
+ *           <li><p> createVersionAsync(CreateVersionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createVersionOperationCallable()
- *           <li>createVersionCallable()
+ *           <li><p> createVersionOperationCallable()
+ *           <li><p> createVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateVersion</td>
+ *      <td><p> UpdateVersion</td>
  *      <td><p> Updates the specified Version resource. You can specify the following fields depending on the App Engine environment and type of scaling that the version resource uses:
  * <p>  &#42;&#42;Standard environment&#42;&#42;
  * <ul>
@@ -152,30 +154,29 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateVersionAsync(UpdateVersionRequest request)
+ *           <li><p> updateVersionAsync(UpdateVersionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateVersionOperationCallable()
- *           <li>updateVersionCallable()
+ *           <li><p> updateVersionOperationCallable()
+ *           <li><p> updateVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteVersion</td>
+ *      <td><p> DeleteVersion</td>
  *      <td><p> Deletes an existing Version resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteVersionAsync(DeleteVersionRequest request)
+ *           <li><p> deleteVersionAsync(DeleteVersionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteVersionOperationCallable()
- *           <li>deleteVersionCallable()
+ *           <li><p> deleteVersionOperationCallable()
+ *           <li><p> deleteVersionCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

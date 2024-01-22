@@ -87,68 +87,70 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListApprovalRequests</td>
+ *      <td><p> ListApprovalRequests</td>
  *      <td><p> Lists approval requests associated with a project, folder, or organization. Approval requests can be filtered by state (pending, active, dismissed). The order is reverse chronological.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listApprovalRequests(ListApprovalRequestsMessage request)
+ *           <li><p> listApprovalRequests(ListApprovalRequestsMessage request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listApprovalRequests(FolderName parent)
- *           <li>listApprovalRequests(OrganizationName parent)
- *           <li>listApprovalRequests(ProjectName parent)
- *           <li>listApprovalRequests(String parent)
+ *           <li><p> listApprovalRequests(FolderName parent)
+ *           <li><p> listApprovalRequests(OrganizationName parent)
+ *           <li><p> listApprovalRequests(ProjectName parent)
+ *           <li><p> listApprovalRequests(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listApprovalRequestsPagedCallable()
- *           <li>listApprovalRequestsCallable()
+ *           <li><p> listApprovalRequestsPagedCallable()
+ *           <li><p> listApprovalRequestsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetApprovalRequest</td>
+ *      <td><p> GetApprovalRequest</td>
  *      <td><p> Gets an approval request. Returns NOT_FOUND if the request does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getApprovalRequest(GetApprovalRequestMessage request)
+ *           <li><p> getApprovalRequest(GetApprovalRequestMessage request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getApprovalRequest(ApprovalRequestName name)
- *           <li>getApprovalRequest(String name)
+ *           <li><p> getApprovalRequest(ApprovalRequestName name)
+ *           <li><p> getApprovalRequest(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getApprovalRequestCallable()
+ *           <li><p> getApprovalRequestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApproveApprovalRequest</td>
+ *      <td><p> ApproveApprovalRequest</td>
  *      <td><p> Approves a request and returns the updated ApprovalRequest.
  * <p>  Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>approveApprovalRequest(ApproveApprovalRequestMessage request)
+ *           <li><p> approveApprovalRequest(ApproveApprovalRequestMessage request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>approveApprovalRequestCallable()
+ *           <li><p> approveApprovalRequestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DismissApprovalRequest</td>
+ *      <td><p> DismissApprovalRequest</td>
  *      <td><p> Dismisses a request. Returns the updated ApprovalRequest.
  * <p>  NOTE: This does not deny access to the resource if another request has been made and approved. It is equivalent in effect to ignoring the request altogether.
  * <p>  Returns NOT_FOUND if the request does not exist.
@@ -156,104 +158,103 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>dismissApprovalRequest(DismissApprovalRequestMessage request)
+ *           <li><p> dismissApprovalRequest(DismissApprovalRequestMessage request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>dismissApprovalRequestCallable()
+ *           <li><p> dismissApprovalRequestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InvalidateApprovalRequest</td>
+ *      <td><p> InvalidateApprovalRequest</td>
  *      <td><p> Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest.
  * <p>  NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval.
  * <p>  Returns FAILED_PRECONDITION if the request exists but is not in an approved state.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>invalidateApprovalRequest(InvalidateApprovalRequestMessage request)
+ *           <li><p> invalidateApprovalRequest(InvalidateApprovalRequestMessage request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>invalidateApprovalRequestCallable()
+ *           <li><p> invalidateApprovalRequestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAccessApprovalSettings</td>
+ *      <td><p> GetAccessApprovalSettings</td>
  *      <td><p> Gets the settings associated with a project, folder, or organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAccessApprovalSettings(GetAccessApprovalSettingsMessage request)
+ *           <li><p> getAccessApprovalSettings(GetAccessApprovalSettingsMessage request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAccessApprovalSettings(AccessApprovalSettingsName name)
- *           <li>getAccessApprovalSettings(String name)
+ *           <li><p> getAccessApprovalSettings(AccessApprovalSettingsName name)
+ *           <li><p> getAccessApprovalSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAccessApprovalSettingsCallable()
+ *           <li><p> getAccessApprovalSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAccessApprovalSettings</td>
+ *      <td><p> UpdateAccessApprovalSettings</td>
  *      <td><p> Updates the settings associated with a project, folder, or organization. Settings to update are determined by the value of field_mask.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAccessApprovalSettings(UpdateAccessApprovalSettingsMessage request)
+ *           <li><p> updateAccessApprovalSettings(UpdateAccessApprovalSettingsMessage request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAccessApprovalSettings(AccessApprovalSettings settings, FieldMask updateMask)
+ *           <li><p> updateAccessApprovalSettings(AccessApprovalSettings settings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAccessApprovalSettingsCallable()
+ *           <li><p> updateAccessApprovalSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAccessApprovalSettings</td>
+ *      <td><p> DeleteAccessApprovalSettings</td>
  *      <td><p> Deletes the settings associated with a project, folder, or organization. This will have the effect of disabling Access Approval for the project, folder, or organization, but only if all ancestors also have Access Approval disabled. If Access Approval is enabled at a higher level of the hierarchy, then Access Approval will still be enabled at this level as the settings are inherited.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAccessApprovalSettings(DeleteAccessApprovalSettingsMessage request)
+ *           <li><p> deleteAccessApprovalSettings(DeleteAccessApprovalSettingsMessage request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAccessApprovalSettings(AccessApprovalSettingsName name)
- *           <li>deleteAccessApprovalSettings(String name)
+ *           <li><p> deleteAccessApprovalSettings(AccessApprovalSettingsName name)
+ *           <li><p> deleteAccessApprovalSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAccessApprovalSettingsCallable()
+ *           <li><p> deleteAccessApprovalSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAccessApprovalServiceAccount</td>
+ *      <td><p> GetAccessApprovalServiceAccount</td>
  *      <td><p> Retrieves the service account that is used by Access Approval to access KMS keys for signing approved approval requests.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAccessApprovalServiceAccount(GetAccessApprovalServiceAccountMessage request)
+ *           <li><p> getAccessApprovalServiceAccount(GetAccessApprovalServiceAccountMessage request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAccessApprovalServiceAccount(String name)
+ *           <li><p> getAccessApprovalServiceAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAccessApprovalServiceAccountCallable()
+ *           <li><p> getAccessApprovalServiceAccountCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

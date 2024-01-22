@@ -62,163 +62,164 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateKey</td>
+ *      <td><p> CreateKey</td>
  *      <td><p> Creates a new API key.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createKeyAsync(CreateKeyRequest request)
+ *           <li><p> createKeyAsync(CreateKeyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createKeyAsync(LocationName parent, Key key, String keyId)
- *           <li>createKeyAsync(String parent, Key key, String keyId)
+ *           <li><p> createKeyAsync(LocationName parent, Key key, String keyId)
+ *           <li><p> createKeyAsync(String parent, Key key, String keyId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createKeyOperationCallable()
- *           <li>createKeyCallable()
+ *           <li><p> createKeyOperationCallable()
+ *           <li><p> createKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListKeys</td>
+ *      <td><p> ListKeys</td>
  *      <td><p> Lists the API keys owned by a project. The key string of the API key isn't included in the response.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listKeys(ListKeysRequest request)
+ *           <li><p> listKeys(ListKeysRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listKeys(LocationName parent)
- *           <li>listKeys(String parent)
+ *           <li><p> listKeys(LocationName parent)
+ *           <li><p> listKeys(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listKeysPagedCallable()
- *           <li>listKeysCallable()
+ *           <li><p> listKeysPagedCallable()
+ *           <li><p> listKeysCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetKey</td>
+ *      <td><p> GetKey</td>
  *      <td><p> Gets the metadata for an API key. The key string of the API key isn't included in the response.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getKey(GetKeyRequest request)
+ *           <li><p> getKey(GetKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getKey(KeyName name)
- *           <li>getKey(String name)
+ *           <li><p> getKey(KeyName name)
+ *           <li><p> getKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getKeyCallable()
+ *           <li><p> getKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetKeyString</td>
+ *      <td><p> GetKeyString</td>
  *      <td><p> Get the key string for an API key.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getKeyString(GetKeyStringRequest request)
+ *           <li><p> getKeyString(GetKeyStringRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getKeyString(KeyName name)
- *           <li>getKeyString(String name)
+ *           <li><p> getKeyString(KeyName name)
+ *           <li><p> getKeyString(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getKeyStringCallable()
+ *           <li><p> getKeyStringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateKey</td>
+ *      <td><p> UpdateKey</td>
  *      <td><p> Patches the modifiable fields of an API key. The key string of the API key isn't included in the response.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateKeyAsync(UpdateKeyRequest request)
+ *           <li><p> updateKeyAsync(UpdateKeyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateKeyAsync(Key key, FieldMask updateMask)
+ *           <li><p> updateKeyAsync(Key key, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateKeyOperationCallable()
- *           <li>updateKeyCallable()
+ *           <li><p> updateKeyOperationCallable()
+ *           <li><p> updateKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteKey</td>
+ *      <td><p> DeleteKey</td>
  *      <td><p> Deletes an API key. Deleted key can be retrieved within 30 days of deletion. Afterward, key will be purged from the project.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteKeyAsync(DeleteKeyRequest request)
+ *           <li><p> deleteKeyAsync(DeleteKeyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteKeyAsync(KeyName name)
- *           <li>deleteKeyAsync(String name)
+ *           <li><p> deleteKeyAsync(KeyName name)
+ *           <li><p> deleteKeyAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteKeyOperationCallable()
- *           <li>deleteKeyCallable()
+ *           <li><p> deleteKeyOperationCallable()
+ *           <li><p> deleteKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteKey</td>
+ *      <td><p> UndeleteKey</td>
  *      <td><p> Undeletes an API key which was deleted within 30 days.
  * <p>  NOTE: Key is a global resource; hence the only supported value for location is `global`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteKeyAsync(UndeleteKeyRequest request)
+ *           <li><p> undeleteKeyAsync(UndeleteKeyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteKeyOperationCallable()
- *           <li>undeleteKeyCallable()
+ *           <li><p> undeleteKeyOperationCallable()
+ *           <li><p> undeleteKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupKey</td>
+ *      <td><p> LookupKey</td>
  *      <td><p> Find the parent project and resource name of the API key that matches the key string in the request. If the API key has been purged, resource name will not be set. The service account must have the `apikeys.keys.lookup` permission on the parent project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupKey(LookupKeyRequest request)
+ *           <li><p> lookupKey(LookupKeyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupKeyCallable()
+ *           <li><p> lookupKeyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

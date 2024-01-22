@@ -59,86 +59,87 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListNotifications</td>
+ *      <td><p> ListNotifications</td>
  *      <td><p> Lists notifications under a given parent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNotifications(ListNotificationsRequest request)
+ *           <li><p> listNotifications(ListNotificationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNotifications(LocationName parent)
- *           <li>listNotifications(String parent)
+ *           <li><p> listNotifications(LocationName parent)
+ *           <li><p> listNotifications(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNotificationsPagedCallable()
- *           <li>listNotificationsCallable()
+ *           <li><p> listNotificationsPagedCallable()
+ *           <li><p> listNotificationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNotification</td>
+ *      <td><p> GetNotification</td>
  *      <td><p> Gets a notification.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNotification(GetNotificationRequest request)
+ *           <li><p> getNotification(GetNotificationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNotification(NotificationName name)
- *           <li>getNotification(String name)
+ *           <li><p> getNotification(NotificationName name)
+ *           <li><p> getNotification(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNotificationCallable()
+ *           <li><p> getNotificationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSettings</td>
+ *      <td><p> GetSettings</td>
  *      <td><p> Get notification settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSettings(GetSettingsRequest request)
+ *           <li><p> getSettings(GetSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSettings(SettingsName name)
- *           <li>getSettings(String name)
+ *           <li><p> getSettings(SettingsName name)
+ *           <li><p> getSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSettingsCallable()
+ *           <li><p> getSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSettings</td>
+ *      <td><p> UpdateSettings</td>
  *      <td><p> Update notification settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSettings(UpdateSettingsRequest request)
+ *           <li><p> updateSettings(UpdateSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSettings(Settings settings)
+ *           <li><p> updateSettings(Settings settings)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSettingsCallable()
+ *           <li><p> updateSettingsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

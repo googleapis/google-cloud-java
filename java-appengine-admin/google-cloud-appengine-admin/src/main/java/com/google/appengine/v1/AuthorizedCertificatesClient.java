@@ -64,81 +64,82 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAuthorizedCertificates</td>
+ *      <td><p> ListAuthorizedCertificates</td>
  *      <td><p> Lists all SSL certificates the user is authorized to administer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAuthorizedCertificates(ListAuthorizedCertificatesRequest request)
+ *           <li><p> listAuthorizedCertificates(ListAuthorizedCertificatesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAuthorizedCertificatesPagedCallable()
- *           <li>listAuthorizedCertificatesCallable()
+ *           <li><p> listAuthorizedCertificatesPagedCallable()
+ *           <li><p> listAuthorizedCertificatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAuthorizedCertificate</td>
+ *      <td><p> GetAuthorizedCertificate</td>
  *      <td><p> Gets the specified SSL certificate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAuthorizedCertificate(GetAuthorizedCertificateRequest request)
+ *           <li><p> getAuthorizedCertificate(GetAuthorizedCertificateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAuthorizedCertificateCallable()
+ *           <li><p> getAuthorizedCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAuthorizedCertificate</td>
+ *      <td><p> CreateAuthorizedCertificate</td>
  *      <td><p> Uploads the specified SSL certificate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAuthorizedCertificate(CreateAuthorizedCertificateRequest request)
+ *           <li><p> createAuthorizedCertificate(CreateAuthorizedCertificateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAuthorizedCertificateCallable()
+ *           <li><p> createAuthorizedCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAuthorizedCertificate</td>
+ *      <td><p> UpdateAuthorizedCertificate</td>
  *      <td><p> Updates the specified SSL certificate. To renew a certificate and maintain its existing domain mappings, update `certificate_data` with a new certificate. The new certificate must be applicable to the same domains as the original certificate. The certificate `display_name` may also be updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAuthorizedCertificate(UpdateAuthorizedCertificateRequest request)
+ *           <li><p> updateAuthorizedCertificate(UpdateAuthorizedCertificateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAuthorizedCertificateCallable()
+ *           <li><p> updateAuthorizedCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAuthorizedCertificate</td>
+ *      <td><p> DeleteAuthorizedCertificate</td>
  *      <td><p> Deletes the specified SSL certificate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAuthorizedCertificate(DeleteAuthorizedCertificateRequest request)
+ *           <li><p> deleteAuthorizedCertificate(DeleteAuthorizedCertificateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAuthorizedCertificateCallable()
+ *           <li><p> deleteAuthorizedCertificateCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

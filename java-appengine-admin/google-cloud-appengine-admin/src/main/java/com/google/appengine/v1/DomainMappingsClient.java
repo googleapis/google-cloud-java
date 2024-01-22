@@ -62,84 +62,85 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListDomainMappings</td>
+ *      <td><p> ListDomainMappings</td>
  *      <td><p> Lists the domain mappings on an application.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDomainMappings(ListDomainMappingsRequest request)
+ *           <li><p> listDomainMappings(ListDomainMappingsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDomainMappingsPagedCallable()
- *           <li>listDomainMappingsCallable()
+ *           <li><p> listDomainMappingsPagedCallable()
+ *           <li><p> listDomainMappingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDomainMapping</td>
+ *      <td><p> GetDomainMapping</td>
  *      <td><p> Gets the specified domain mapping.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDomainMapping(GetDomainMappingRequest request)
+ *           <li><p> getDomainMapping(GetDomainMappingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDomainMappingCallable()
+ *           <li><p> getDomainMappingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDomainMapping</td>
+ *      <td><p> CreateDomainMapping</td>
  *      <td><p> Maps a domain to an application. A user must be authorized to administer a domain in order to map it to an application. For a list of available authorized domains, see [`AuthorizedDomains.ListAuthorizedDomains`]().</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDomainMappingAsync(CreateDomainMappingRequest request)
+ *           <li><p> createDomainMappingAsync(CreateDomainMappingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDomainMappingOperationCallable()
- *           <li>createDomainMappingCallable()
+ *           <li><p> createDomainMappingOperationCallable()
+ *           <li><p> createDomainMappingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDomainMapping</td>
+ *      <td><p> UpdateDomainMapping</td>
  *      <td><p> Updates the specified domain mapping. To map an SSL certificate to a domain mapping, update `certificate_id` to point to an `AuthorizedCertificate` resource. A user must be authorized to administer the associated domain in order to update a `DomainMapping` resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDomainMappingAsync(UpdateDomainMappingRequest request)
+ *           <li><p> updateDomainMappingAsync(UpdateDomainMappingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDomainMappingOperationCallable()
- *           <li>updateDomainMappingCallable()
+ *           <li><p> updateDomainMappingOperationCallable()
+ *           <li><p> updateDomainMappingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDomainMapping</td>
+ *      <td><p> DeleteDomainMapping</td>
  *      <td><p> Deletes the specified domain mapping. A user must be authorized to administer the associated domain in order to delete a `DomainMapping` resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDomainMappingAsync(DeleteDomainMappingRequest request)
+ *           <li><p> deleteDomainMappingAsync(DeleteDomainMappingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDomainMappingOperationCallable()
- *           <li>deleteDomainMappingCallable()
+ *           <li><p> deleteDomainMappingOperationCallable()
+ *           <li><p> deleteDomainMappingCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -73,347 +73,348 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateStudy</td>
+ *      <td><p> CreateStudy</td>
  *      <td><p> Creates a Study. A resource name will be generated after creation of the Study.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createStudy(CreateStudyRequest request)
+ *           <li><p> createStudy(CreateStudyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createStudy(LocationName parent, Study study)
- *           <li>createStudy(String parent, Study study)
+ *           <li><p> createStudy(LocationName parent, Study study)
+ *           <li><p> createStudy(String parent, Study study)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createStudyCallable()
+ *           <li><p> createStudyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetStudy</td>
+ *      <td><p> GetStudy</td>
  *      <td><p> Gets a Study by name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getStudy(GetStudyRequest request)
+ *           <li><p> getStudy(GetStudyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getStudy(StudyName name)
- *           <li>getStudy(String name)
+ *           <li><p> getStudy(StudyName name)
+ *           <li><p> getStudy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getStudyCallable()
+ *           <li><p> getStudyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListStudies</td>
+ *      <td><p> ListStudies</td>
  *      <td><p> Lists all the studies in a region for an associated project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listStudies(ListStudiesRequest request)
+ *           <li><p> listStudies(ListStudiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listStudies(LocationName parent)
- *           <li>listStudies(String parent)
+ *           <li><p> listStudies(LocationName parent)
+ *           <li><p> listStudies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listStudiesPagedCallable()
- *           <li>listStudiesCallable()
+ *           <li><p> listStudiesPagedCallable()
+ *           <li><p> listStudiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteStudy</td>
+ *      <td><p> DeleteStudy</td>
  *      <td><p> Deletes a Study.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteStudy(DeleteStudyRequest request)
+ *           <li><p> deleteStudy(DeleteStudyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteStudy(StudyName name)
- *           <li>deleteStudy(String name)
+ *           <li><p> deleteStudy(StudyName name)
+ *           <li><p> deleteStudy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteStudyCallable()
+ *           <li><p> deleteStudyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupStudy</td>
+ *      <td><p> LookupStudy</td>
  *      <td><p> Looks a study up using the user-defined display_name field instead of the fully qualified resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupStudy(LookupStudyRequest request)
+ *           <li><p> lookupStudy(LookupStudyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>lookupStudy(LocationName parent)
- *           <li>lookupStudy(String parent)
+ *           <li><p> lookupStudy(LocationName parent)
+ *           <li><p> lookupStudy(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupStudyCallable()
+ *           <li><p> lookupStudyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SuggestTrials</td>
+ *      <td><p> SuggestTrials</td>
  *      <td><p> Adds one or more Trials to a Study, with parameter values suggested by Vertex AI Vizier. Returns a long-running operation associated with the generation of Trial suggestions. When this long-running operation succeeds, it will contain a [SuggestTrialsResponse][google.cloud.aiplatform.v1.SuggestTrialsResponse].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>suggestTrialsAsync(SuggestTrialsRequest request)
+ *           <li><p> suggestTrialsAsync(SuggestTrialsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>suggestTrialsOperationCallable()
- *           <li>suggestTrialsCallable()
+ *           <li><p> suggestTrialsOperationCallable()
+ *           <li><p> suggestTrialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTrial</td>
+ *      <td><p> CreateTrial</td>
  *      <td><p> Adds a user provided Trial to a Study.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTrial(CreateTrialRequest request)
+ *           <li><p> createTrial(CreateTrialRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTrial(StudyName parent, Trial trial)
- *           <li>createTrial(String parent, Trial trial)
+ *           <li><p> createTrial(StudyName parent, Trial trial)
+ *           <li><p> createTrial(String parent, Trial trial)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTrialCallable()
+ *           <li><p> createTrialCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTrial</td>
+ *      <td><p> GetTrial</td>
  *      <td><p> Gets a Trial.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTrial(GetTrialRequest request)
+ *           <li><p> getTrial(GetTrialRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTrial(TrialName name)
- *           <li>getTrial(String name)
+ *           <li><p> getTrial(TrialName name)
+ *           <li><p> getTrial(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTrialCallable()
+ *           <li><p> getTrialCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTrials</td>
+ *      <td><p> ListTrials</td>
  *      <td><p> Lists the Trials associated with a Study.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTrials(ListTrialsRequest request)
+ *           <li><p> listTrials(ListTrialsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTrials(StudyName parent)
- *           <li>listTrials(String parent)
+ *           <li><p> listTrials(StudyName parent)
+ *           <li><p> listTrials(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTrialsPagedCallable()
- *           <li>listTrialsCallable()
+ *           <li><p> listTrialsPagedCallable()
+ *           <li><p> listTrialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AddTrialMeasurement</td>
+ *      <td><p> AddTrialMeasurement</td>
  *      <td><p> Adds a measurement of the objective metrics to a Trial. This measurement is assumed to have been taken before the Trial is complete.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addTrialMeasurement(AddTrialMeasurementRequest request)
+ *           <li><p> addTrialMeasurement(AddTrialMeasurementRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addTrialMeasurementCallable()
+ *           <li><p> addTrialMeasurementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CompleteTrial</td>
+ *      <td><p> CompleteTrial</td>
  *      <td><p> Marks a Trial as complete.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>completeTrial(CompleteTrialRequest request)
+ *           <li><p> completeTrial(CompleteTrialRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>completeTrialCallable()
+ *           <li><p> completeTrialCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTrial</td>
+ *      <td><p> DeleteTrial</td>
  *      <td><p> Deletes a Trial.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTrial(DeleteTrialRequest request)
+ *           <li><p> deleteTrial(DeleteTrialRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTrial(TrialName name)
- *           <li>deleteTrial(String name)
+ *           <li><p> deleteTrial(TrialName name)
+ *           <li><p> deleteTrial(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTrialCallable()
+ *           <li><p> deleteTrialCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CheckTrialEarlyStoppingState</td>
+ *      <td><p> CheckTrialEarlyStoppingState</td>
  *      <td><p> Checks  whether a Trial should stop or not. Returns a long-running operation. When the operation is successful, it will contain a [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>checkTrialEarlyStoppingStateAsync(CheckTrialEarlyStoppingStateRequest request)
+ *           <li><p> checkTrialEarlyStoppingStateAsync(CheckTrialEarlyStoppingStateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkTrialEarlyStoppingStateOperationCallable()
- *           <li>checkTrialEarlyStoppingStateCallable()
+ *           <li><p> checkTrialEarlyStoppingStateOperationCallable()
+ *           <li><p> checkTrialEarlyStoppingStateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopTrial</td>
+ *      <td><p> StopTrial</td>
  *      <td><p> Stops a Trial.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopTrial(StopTrialRequest request)
+ *           <li><p> stopTrial(StopTrialRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopTrialCallable()
+ *           <li><p> stopTrialCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListOptimalTrials</td>
+ *      <td><p> ListOptimalTrials</td>
  *      <td><p> Lists the pareto-optimal Trials for multi-objective Study or the optimal Trials for single-objective Study. The definition of pareto-optimal can be checked in wiki page. https://en.wikipedia.org/wiki/Pareto_efficiency</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listOptimalTrials(ListOptimalTrialsRequest request)
+ *           <li><p> listOptimalTrials(ListOptimalTrialsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listOptimalTrials(StudyName parent)
- *           <li>listOptimalTrials(String parent)
+ *           <li><p> listOptimalTrials(StudyName parent)
+ *           <li><p> listOptimalTrials(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listOptimalTrialsCallable()
+ *           <li><p> listOptimalTrialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

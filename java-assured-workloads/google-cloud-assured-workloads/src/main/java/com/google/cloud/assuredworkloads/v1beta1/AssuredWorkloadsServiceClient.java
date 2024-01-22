@@ -65,138 +65,139 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateWorkload</td>
+ *      <td><p> CreateWorkload</td>
  *      <td><p> Creates Assured Workload.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkloadAsync(CreateWorkloadRequest request)
+ *           <li><p> createWorkloadAsync(CreateWorkloadRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createWorkloadAsync(LocationName parent, Workload workload)
- *           <li>createWorkloadAsync(String parent, Workload workload)
+ *           <li><p> createWorkloadAsync(LocationName parent, Workload workload)
+ *           <li><p> createWorkloadAsync(String parent, Workload workload)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkloadOperationCallable()
- *           <li>createWorkloadCallable()
+ *           <li><p> createWorkloadOperationCallable()
+ *           <li><p> createWorkloadCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkload</td>
+ *      <td><p> UpdateWorkload</td>
  *      <td><p> Updates an existing workload. Currently allows updating of workload display_name and labels. For force updates don't set etag field in the Workload. Only one update operation per workload can be in progress.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkload(UpdateWorkloadRequest request)
+ *           <li><p> updateWorkload(UpdateWorkloadRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateWorkload(Workload workload, FieldMask updateMask)
+ *           <li><p> updateWorkload(Workload workload, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkloadCallable()
+ *           <li><p> updateWorkloadCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RestrictAllowedResources</td>
+ *      <td><p> RestrictAllowedResources</td>
  *      <td><p> Restrict the list of resources allowed in the Workload environment. The current list of allowed products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In addition to assuredworkloads.workload.update permission, the user should also have orgpolicy.policy.set permission on the folder resource to use this functionality.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>restrictAllowedResources(RestrictAllowedResourcesRequest request)
+ *           <li><p> restrictAllowedResources(RestrictAllowedResourcesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>restrictAllowedResourcesCallable()
+ *           <li><p> restrictAllowedResourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkload</td>
+ *      <td><p> DeleteWorkload</td>
  *      <td><p> Deletes the workload. Make sure that workload's direct children are already in a deleted state, otherwise the request will fail with a FAILED_PRECONDITION error. In addition to assuredworkloads.workload.delete permission, the user should also have orgpolicy.policy.set permission on the deleted folder to remove Assured Workloads OrgPolicies.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkload(DeleteWorkloadRequest request)
+ *           <li><p> deleteWorkload(DeleteWorkloadRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteWorkload(WorkloadName name)
- *           <li>deleteWorkload(String name)
+ *           <li><p> deleteWorkload(WorkloadName name)
+ *           <li><p> deleteWorkload(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkloadCallable()
+ *           <li><p> deleteWorkloadCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkload</td>
+ *      <td><p> GetWorkload</td>
  *      <td><p> Gets Assured Workload associated with a CRM Node</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkload(GetWorkloadRequest request)
+ *           <li><p> getWorkload(GetWorkloadRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkload(WorkloadName name)
- *           <li>getWorkload(String name)
+ *           <li><p> getWorkload(WorkloadName name)
+ *           <li><p> getWorkload(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkloadCallable()
+ *           <li><p> getWorkloadCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeWorkloadMove</td>
+ *      <td><p> AnalyzeWorkloadMove</td>
  *      <td><p> Analyze if the source Assured Workloads can be moved to the target Assured Workload</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeWorkloadMove(AnalyzeWorkloadMoveRequest request)
+ *           <li><p> analyzeWorkloadMove(AnalyzeWorkloadMoveRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeWorkloadMove(String project, String target)
+ *           <li><p> analyzeWorkloadMove(String project, String target)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeWorkloadMoveCallable()
+ *           <li><p> analyzeWorkloadMoveCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkloads</td>
+ *      <td><p> ListWorkloads</td>
  *      <td><p> Lists Assured Workloads under a CRM Node.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkloads(ListWorkloadsRequest request)
+ *           <li><p> listWorkloads(ListWorkloadsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkloads(LocationName parent)
- *           <li>listWorkloads(String parent)
+ *           <li><p> listWorkloads(LocationName parent)
+ *           <li><p> listWorkloads(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkloadsPagedCallable()
- *           <li>listWorkloadsCallable()
+ *           <li><p> listWorkloadsPagedCallable()
+ *           <li><p> listWorkloadsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

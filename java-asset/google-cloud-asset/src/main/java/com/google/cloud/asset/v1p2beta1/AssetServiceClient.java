@@ -49,102 +49,103 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateFeed</td>
+ *      <td><p> CreateFeed</td>
  *      <td><p> Creates a feed in a parent project/folder/organization to listen to its asset updates.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFeed(CreateFeedRequest request)
+ *           <li><p> createFeed(CreateFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createFeed(String parent)
+ *           <li><p> createFeed(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFeedCallable()
+ *           <li><p> createFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeed</td>
+ *      <td><p> GetFeed</td>
  *      <td><p> Gets details about an asset feed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeed(GetFeedRequest request)
+ *           <li><p> getFeed(GetFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeed(FeedName name)
- *           <li>getFeed(String name)
+ *           <li><p> getFeed(FeedName name)
+ *           <li><p> getFeed(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeedCallable()
+ *           <li><p> getFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFeeds</td>
+ *      <td><p> ListFeeds</td>
  *      <td><p> Lists all asset feeds in a parent project/folder/organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeeds(ListFeedsRequest request)
+ *           <li><p> listFeeds(ListFeedsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeeds(String parent)
+ *           <li><p> listFeeds(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeedsCallable()
+ *           <li><p> listFeedsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFeed</td>
+ *      <td><p> UpdateFeed</td>
  *      <td><p> Updates an asset feed configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFeed(UpdateFeedRequest request)
+ *           <li><p> updateFeed(UpdateFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateFeed(Feed feed)
+ *           <li><p> updateFeed(Feed feed)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFeedCallable()
+ *           <li><p> updateFeedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFeed</td>
+ *      <td><p> DeleteFeed</td>
  *      <td><p> Deletes an asset feed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFeed(DeleteFeedRequest request)
+ *           <li><p> deleteFeed(DeleteFeedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteFeed(FeedName name)
- *           <li>deleteFeed(String name)
+ *           <li><p> deleteFeed(FeedName name)
+ *           <li><p> deleteFeed(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFeedCallable()
+ *           <li><p> deleteFeedCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

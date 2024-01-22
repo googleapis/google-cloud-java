@@ -75,297 +75,298 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateTrainingPipeline</td>
+ *      <td><p> CreateTrainingPipeline</td>
  *      <td><p> Creates a TrainingPipeline. A created TrainingPipeline right away will be attempted to be run.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTrainingPipeline(CreateTrainingPipelineRequest request)
+ *           <li><p> createTrainingPipeline(CreateTrainingPipelineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTrainingPipeline(LocationName parent, TrainingPipeline trainingPipeline)
- *           <li>createTrainingPipeline(String parent, TrainingPipeline trainingPipeline)
+ *           <li><p> createTrainingPipeline(LocationName parent, TrainingPipeline trainingPipeline)
+ *           <li><p> createTrainingPipeline(String parent, TrainingPipeline trainingPipeline)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTrainingPipelineCallable()
+ *           <li><p> createTrainingPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTrainingPipeline</td>
+ *      <td><p> GetTrainingPipeline</td>
  *      <td><p> Gets a TrainingPipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTrainingPipeline(GetTrainingPipelineRequest request)
+ *           <li><p> getTrainingPipeline(GetTrainingPipelineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTrainingPipeline(TrainingPipelineName name)
- *           <li>getTrainingPipeline(String name)
+ *           <li><p> getTrainingPipeline(TrainingPipelineName name)
+ *           <li><p> getTrainingPipeline(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTrainingPipelineCallable()
+ *           <li><p> getTrainingPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTrainingPipelines</td>
+ *      <td><p> ListTrainingPipelines</td>
  *      <td><p> Lists TrainingPipelines in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTrainingPipelines(ListTrainingPipelinesRequest request)
+ *           <li><p> listTrainingPipelines(ListTrainingPipelinesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTrainingPipelines(LocationName parent)
- *           <li>listTrainingPipelines(String parent)
+ *           <li><p> listTrainingPipelines(LocationName parent)
+ *           <li><p> listTrainingPipelines(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTrainingPipelinesPagedCallable()
- *           <li>listTrainingPipelinesCallable()
+ *           <li><p> listTrainingPipelinesPagedCallable()
+ *           <li><p> listTrainingPipelinesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTrainingPipeline</td>
+ *      <td><p> DeleteTrainingPipeline</td>
  *      <td><p> Deletes a TrainingPipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTrainingPipelineAsync(DeleteTrainingPipelineRequest request)
+ *           <li><p> deleteTrainingPipelineAsync(DeleteTrainingPipelineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTrainingPipelineAsync(TrainingPipelineName name)
- *           <li>deleteTrainingPipelineAsync(String name)
+ *           <li><p> deleteTrainingPipelineAsync(TrainingPipelineName name)
+ *           <li><p> deleteTrainingPipelineAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTrainingPipelineOperationCallable()
- *           <li>deleteTrainingPipelineCallable()
+ *           <li><p> deleteTrainingPipelineOperationCallable()
+ *           <li><p> deleteTrainingPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelTrainingPipeline</td>
+ *      <td><p> CancelTrainingPipeline</td>
  *      <td><p> Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can use [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline] or other methods to check whether the cancellation succeeded or whether the pipeline completed despite cancellation. On successful cancellation, the TrainingPipeline is not deleted; instead it becomes a pipeline with a [TrainingPipeline.error][google.cloud.aiplatform.v1beta1.TrainingPipeline.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to `CANCELLED`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelTrainingPipeline(CancelTrainingPipelineRequest request)
+ *           <li><p> cancelTrainingPipeline(CancelTrainingPipelineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelTrainingPipeline(TrainingPipelineName name)
- *           <li>cancelTrainingPipeline(String name)
+ *           <li><p> cancelTrainingPipeline(TrainingPipelineName name)
+ *           <li><p> cancelTrainingPipeline(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelTrainingPipelineCallable()
+ *           <li><p> cancelTrainingPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePipelineJob</td>
+ *      <td><p> CreatePipelineJob</td>
  *      <td><p> Creates a PipelineJob. A PipelineJob will run immediately when created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPipelineJob(CreatePipelineJobRequest request)
+ *           <li><p> createPipelineJob(CreatePipelineJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createPipelineJob(LocationName parent, PipelineJob pipelineJob, String pipelineJobId)
- *           <li>createPipelineJob(String parent, PipelineJob pipelineJob, String pipelineJobId)
+ *           <li><p> createPipelineJob(LocationName parent, PipelineJob pipelineJob, String pipelineJobId)
+ *           <li><p> createPipelineJob(String parent, PipelineJob pipelineJob, String pipelineJobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPipelineJobCallable()
+ *           <li><p> createPipelineJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPipelineJob</td>
+ *      <td><p> GetPipelineJob</td>
  *      <td><p> Gets a PipelineJob.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPipelineJob(GetPipelineJobRequest request)
+ *           <li><p> getPipelineJob(GetPipelineJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPipelineJob(PipelineJobName name)
- *           <li>getPipelineJob(String name)
+ *           <li><p> getPipelineJob(PipelineJobName name)
+ *           <li><p> getPipelineJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPipelineJobCallable()
+ *           <li><p> getPipelineJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPipelineJobs</td>
+ *      <td><p> ListPipelineJobs</td>
  *      <td><p> Lists PipelineJobs in a Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPipelineJobs(ListPipelineJobsRequest request)
+ *           <li><p> listPipelineJobs(ListPipelineJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPipelineJobs(LocationName parent)
- *           <li>listPipelineJobs(String parent)
+ *           <li><p> listPipelineJobs(LocationName parent)
+ *           <li><p> listPipelineJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPipelineJobsPagedCallable()
- *           <li>listPipelineJobsCallable()
+ *           <li><p> listPipelineJobsPagedCallable()
+ *           <li><p> listPipelineJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePipelineJob</td>
+ *      <td><p> DeletePipelineJob</td>
  *      <td><p> Deletes a PipelineJob.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePipelineJobAsync(DeletePipelineJobRequest request)
+ *           <li><p> deletePipelineJobAsync(DeletePipelineJobRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePipelineJobAsync(PipelineJobName name)
- *           <li>deletePipelineJobAsync(String name)
+ *           <li><p> deletePipelineJobAsync(PipelineJobName name)
+ *           <li><p> deletePipelineJobAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePipelineJobOperationCallable()
- *           <li>deletePipelineJobCallable()
+ *           <li><p> deletePipelineJobOperationCallable()
+ *           <li><p> deletePipelineJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeletePipelineJobs</td>
+ *      <td><p> BatchDeletePipelineJobs</td>
  *      <td><p> Batch deletes PipelineJobs The Operation is atomic. If it fails, none of the PipelineJobs are deleted. If it succeeds, all of the PipelineJobs are deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeletePipelineJobsAsync(BatchDeletePipelineJobsRequest request)
+ *           <li><p> batchDeletePipelineJobsAsync(BatchDeletePipelineJobsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchDeletePipelineJobsAsync(LocationName parent, List<String> names)
- *           <li>batchDeletePipelineJobsAsync(String parent, List<String> names)
+ *           <li><p> batchDeletePipelineJobsAsync(LocationName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeletePipelineJobsAsync(String parent, List&lt;String&gt; names)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeletePipelineJobsOperationCallable()
- *           <li>batchDeletePipelineJobsCallable()
+ *           <li><p> batchDeletePipelineJobsOperationCallable()
+ *           <li><p> batchDeletePipelineJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelPipelineJob</td>
+ *      <td><p> CancelPipelineJob</td>
  *      <td><p> Cancels a PipelineJob. Starts asynchronous cancellation on the PipelineJob. The server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob] or other methods to check whether the cancellation succeeded or whether the pipeline completed despite cancellation. On successful cancellation, the PipelineJob is not deleted; instead it becomes a pipeline with a [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to `CANCELLED`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelPipelineJob(CancelPipelineJobRequest request)
+ *           <li><p> cancelPipelineJob(CancelPipelineJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelPipelineJob(PipelineJobName name)
- *           <li>cancelPipelineJob(String name)
+ *           <li><p> cancelPipelineJob(PipelineJobName name)
+ *           <li><p> cancelPipelineJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelPipelineJobCallable()
+ *           <li><p> cancelPipelineJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

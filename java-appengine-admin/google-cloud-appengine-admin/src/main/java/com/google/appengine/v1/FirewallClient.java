@@ -69,96 +69,97 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListIngressRules</td>
+ *      <td><p> ListIngressRules</td>
  *      <td><p> Lists the firewall rules of an application.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listIngressRules(ListIngressRulesRequest request)
+ *           <li><p> listIngressRules(ListIngressRulesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listIngressRulesPagedCallable()
- *           <li>listIngressRulesCallable()
+ *           <li><p> listIngressRulesPagedCallable()
+ *           <li><p> listIngressRulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchUpdateIngressRules</td>
+ *      <td><p> BatchUpdateIngressRules</td>
  *      <td><p> Replaces the entire firewall ruleset in one bulk operation. This overrides and replaces the rules of an existing firewall with the new rules.
  * <p>  If the final rule does not match traffic with the '&#42;' wildcard IP range, then an "allow all" rule is explicitly added to the end of the list.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchUpdateIngressRules(BatchUpdateIngressRulesRequest request)
+ *           <li><p> batchUpdateIngressRules(BatchUpdateIngressRulesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchUpdateIngressRulesCallable()
+ *           <li><p> batchUpdateIngressRulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateIngressRule</td>
+ *      <td><p> CreateIngressRule</td>
  *      <td><p> Creates a firewall rule for the application.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createIngressRule(CreateIngressRuleRequest request)
+ *           <li><p> createIngressRule(CreateIngressRuleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createIngressRuleCallable()
+ *           <li><p> createIngressRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIngressRule</td>
+ *      <td><p> GetIngressRule</td>
  *      <td><p> Gets the specified firewall rule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIngressRule(GetIngressRuleRequest request)
+ *           <li><p> getIngressRule(GetIngressRuleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIngressRuleCallable()
+ *           <li><p> getIngressRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateIngressRule</td>
+ *      <td><p> UpdateIngressRule</td>
  *      <td><p> Updates the specified firewall rule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateIngressRule(UpdateIngressRuleRequest request)
+ *           <li><p> updateIngressRule(UpdateIngressRuleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateIngressRuleCallable()
+ *           <li><p> updateIngressRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteIngressRule</td>
+ *      <td><p> DeleteIngressRule</td>
  *      <td><p> Deletes the specified firewall rule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteIngressRule(DeleteIngressRuleRequest request)
+ *           <li><p> deleteIngressRule(DeleteIngressRuleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteIngressRuleCallable()
+ *           <li><p> deleteIngressRuleCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

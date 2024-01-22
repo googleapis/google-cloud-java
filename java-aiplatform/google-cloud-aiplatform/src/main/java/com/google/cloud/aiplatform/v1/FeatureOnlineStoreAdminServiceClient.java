@@ -74,337 +74,338 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateFeatureOnlineStore</td>
+ *      <td><p> CreateFeatureOnlineStore</td>
  *      <td><p> Creates a new FeatureOnlineStore in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFeatureOnlineStoreAsync(CreateFeatureOnlineStoreRequest request)
+ *           <li><p> createFeatureOnlineStoreAsync(CreateFeatureOnlineStoreRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createFeatureOnlineStoreAsync(LocationName parent, FeatureOnlineStore featureOnlineStore, String featureOnlineStoreId)
- *           <li>createFeatureOnlineStoreAsync(String parent, FeatureOnlineStore featureOnlineStore, String featureOnlineStoreId)
+ *           <li><p> createFeatureOnlineStoreAsync(LocationName parent, FeatureOnlineStore featureOnlineStore, String featureOnlineStoreId)
+ *           <li><p> createFeatureOnlineStoreAsync(String parent, FeatureOnlineStore featureOnlineStore, String featureOnlineStoreId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFeatureOnlineStoreOperationCallable()
- *           <li>createFeatureOnlineStoreCallable()
+ *           <li><p> createFeatureOnlineStoreOperationCallable()
+ *           <li><p> createFeatureOnlineStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeatureOnlineStore</td>
+ *      <td><p> GetFeatureOnlineStore</td>
  *      <td><p> Gets details of a single FeatureOnlineStore.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeatureOnlineStore(GetFeatureOnlineStoreRequest request)
+ *           <li><p> getFeatureOnlineStore(GetFeatureOnlineStoreRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeatureOnlineStore(FeatureOnlineStoreName name)
- *           <li>getFeatureOnlineStore(String name)
+ *           <li><p> getFeatureOnlineStore(FeatureOnlineStoreName name)
+ *           <li><p> getFeatureOnlineStore(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeatureOnlineStoreCallable()
+ *           <li><p> getFeatureOnlineStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFeatureOnlineStores</td>
+ *      <td><p> ListFeatureOnlineStores</td>
  *      <td><p> Lists FeatureOnlineStores in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeatureOnlineStores(ListFeatureOnlineStoresRequest request)
+ *           <li><p> listFeatureOnlineStores(ListFeatureOnlineStoresRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeatureOnlineStores(LocationName parent)
- *           <li>listFeatureOnlineStores(String parent)
+ *           <li><p> listFeatureOnlineStores(LocationName parent)
+ *           <li><p> listFeatureOnlineStores(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeatureOnlineStoresPagedCallable()
- *           <li>listFeatureOnlineStoresCallable()
+ *           <li><p> listFeatureOnlineStoresPagedCallable()
+ *           <li><p> listFeatureOnlineStoresCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFeatureOnlineStore</td>
+ *      <td><p> UpdateFeatureOnlineStore</td>
  *      <td><p> Updates the parameters of a single FeatureOnlineStore.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFeatureOnlineStoreAsync(UpdateFeatureOnlineStoreRequest request)
+ *           <li><p> updateFeatureOnlineStoreAsync(UpdateFeatureOnlineStoreRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateFeatureOnlineStoreAsync(FeatureOnlineStore featureOnlineStore, FieldMask updateMask)
+ *           <li><p> updateFeatureOnlineStoreAsync(FeatureOnlineStore featureOnlineStore, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFeatureOnlineStoreOperationCallable()
- *           <li>updateFeatureOnlineStoreCallable()
+ *           <li><p> updateFeatureOnlineStoreOperationCallable()
+ *           <li><p> updateFeatureOnlineStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFeatureOnlineStore</td>
+ *      <td><p> DeleteFeatureOnlineStore</td>
  *      <td><p> Deletes a single FeatureOnlineStore. The FeatureOnlineStore must not contain any FeatureViews.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFeatureOnlineStoreAsync(DeleteFeatureOnlineStoreRequest request)
+ *           <li><p> deleteFeatureOnlineStoreAsync(DeleteFeatureOnlineStoreRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteFeatureOnlineStoreAsync(FeatureOnlineStoreName name, boolean force)
- *           <li>deleteFeatureOnlineStoreAsync(String name, boolean force)
+ *           <li><p> deleteFeatureOnlineStoreAsync(FeatureOnlineStoreName name, boolean force)
+ *           <li><p> deleteFeatureOnlineStoreAsync(String name, boolean force)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFeatureOnlineStoreOperationCallable()
- *           <li>deleteFeatureOnlineStoreCallable()
+ *           <li><p> deleteFeatureOnlineStoreOperationCallable()
+ *           <li><p> deleteFeatureOnlineStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFeatureView</td>
+ *      <td><p> CreateFeatureView</td>
  *      <td><p> Creates a new FeatureView in a given FeatureOnlineStore.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFeatureViewAsync(CreateFeatureViewRequest request)
+ *           <li><p> createFeatureViewAsync(CreateFeatureViewRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createFeatureViewAsync(FeatureOnlineStoreName parent, FeatureView featureView, String featureViewId)
- *           <li>createFeatureViewAsync(String parent, FeatureView featureView, String featureViewId)
+ *           <li><p> createFeatureViewAsync(FeatureOnlineStoreName parent, FeatureView featureView, String featureViewId)
+ *           <li><p> createFeatureViewAsync(String parent, FeatureView featureView, String featureViewId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFeatureViewOperationCallable()
- *           <li>createFeatureViewCallable()
+ *           <li><p> createFeatureViewOperationCallable()
+ *           <li><p> createFeatureViewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeatureView</td>
+ *      <td><p> GetFeatureView</td>
  *      <td><p> Gets details of a single FeatureView.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeatureView(GetFeatureViewRequest request)
+ *           <li><p> getFeatureView(GetFeatureViewRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeatureView(FeatureViewName name)
- *           <li>getFeatureView(String name)
+ *           <li><p> getFeatureView(FeatureViewName name)
+ *           <li><p> getFeatureView(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeatureViewCallable()
+ *           <li><p> getFeatureViewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFeatureViews</td>
+ *      <td><p> ListFeatureViews</td>
  *      <td><p> Lists FeatureViews in a given FeatureOnlineStore.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeatureViews(ListFeatureViewsRequest request)
+ *           <li><p> listFeatureViews(ListFeatureViewsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeatureViews(FeatureOnlineStoreName parent)
- *           <li>listFeatureViews(String parent)
+ *           <li><p> listFeatureViews(FeatureOnlineStoreName parent)
+ *           <li><p> listFeatureViews(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeatureViewsPagedCallable()
- *           <li>listFeatureViewsCallable()
+ *           <li><p> listFeatureViewsPagedCallable()
+ *           <li><p> listFeatureViewsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFeatureView</td>
+ *      <td><p> UpdateFeatureView</td>
  *      <td><p> Updates the parameters of a single FeatureView.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFeatureViewAsync(UpdateFeatureViewRequest request)
+ *           <li><p> updateFeatureViewAsync(UpdateFeatureViewRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateFeatureViewAsync(FeatureView featureView, FieldMask updateMask)
+ *           <li><p> updateFeatureViewAsync(FeatureView featureView, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFeatureViewOperationCallable()
- *           <li>updateFeatureViewCallable()
+ *           <li><p> updateFeatureViewOperationCallable()
+ *           <li><p> updateFeatureViewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFeatureView</td>
+ *      <td><p> DeleteFeatureView</td>
  *      <td><p> Deletes a single FeatureView.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFeatureViewAsync(DeleteFeatureViewRequest request)
+ *           <li><p> deleteFeatureViewAsync(DeleteFeatureViewRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteFeatureViewAsync(FeatureViewName name)
- *           <li>deleteFeatureViewAsync(String name)
+ *           <li><p> deleteFeatureViewAsync(FeatureViewName name)
+ *           <li><p> deleteFeatureViewAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFeatureViewOperationCallable()
- *           <li>deleteFeatureViewCallable()
+ *           <li><p> deleteFeatureViewOperationCallable()
+ *           <li><p> deleteFeatureViewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SyncFeatureView</td>
+ *      <td><p> SyncFeatureView</td>
  *      <td><p> Triggers on-demand sync for the FeatureView.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>syncFeatureView(SyncFeatureViewRequest request)
+ *           <li><p> syncFeatureView(SyncFeatureViewRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>syncFeatureView(FeatureViewName featureView)
- *           <li>syncFeatureView(String featureView)
+ *           <li><p> syncFeatureView(FeatureViewName featureView)
+ *           <li><p> syncFeatureView(String featureView)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>syncFeatureViewCallable()
+ *           <li><p> syncFeatureViewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeatureViewSync</td>
+ *      <td><p> GetFeatureViewSync</td>
  *      <td><p> Gets details of a single FeatureViewSync.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeatureViewSync(GetFeatureViewSyncRequest request)
+ *           <li><p> getFeatureViewSync(GetFeatureViewSyncRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeatureViewSync(FeatureViewSyncName name)
- *           <li>getFeatureViewSync(String name)
+ *           <li><p> getFeatureViewSync(FeatureViewSyncName name)
+ *           <li><p> getFeatureViewSync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeatureViewSyncCallable()
+ *           <li><p> getFeatureViewSyncCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFeatureViewSyncs</td>
+ *      <td><p> ListFeatureViewSyncs</td>
  *      <td><p> Lists FeatureViewSyncs in a given FeatureView.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeatureViewSyncs(ListFeatureViewSyncsRequest request)
+ *           <li><p> listFeatureViewSyncs(ListFeatureViewSyncsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeatureViewSyncs(FeatureViewName parent)
- *           <li>listFeatureViewSyncs(String parent)
+ *           <li><p> listFeatureViewSyncs(FeatureViewName parent)
+ *           <li><p> listFeatureViewSyncs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeatureViewSyncsPagedCallable()
- *           <li>listFeatureViewSyncsCallable()
+ *           <li><p> listFeatureViewSyncsPagedCallable()
+ *           <li><p> listFeatureViewSyncsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
