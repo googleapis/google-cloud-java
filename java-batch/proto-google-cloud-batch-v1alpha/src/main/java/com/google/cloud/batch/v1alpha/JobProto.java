@@ -285,7 +285,7 @@ public final class JobProto {
           + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n"
           + "\021ProvisioningModel\022\"\n\036PROVISIONING_MODEL"
           + "_UNSPECIFIED\020\000\022\014\n\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017"
-          + "\n\013PREEMPTIBLE\020\003\"\270\006\n\tTaskGroup\022\022\n\004name\030\001 "
+          + "\n\013PREEMPTIBLE\020\003\"\230\006\n\tTaskGroup\022\022\n\004name\030\001 "
           + "\001(\tB\004\342A\001\003\022=\n\ttask_spec\030\003 \001(\0132$.google.cl"
           + "oud.batch.v1alpha.TaskSpecB\004\342A\001\002\022\022\n\ntask"
           + "_count\030\004 \001(\003\022\023\n\013parallelism\030\005 \001(\003\022Q\n\021sch"
@@ -298,21 +298,20 @@ public final class JobProto {
           + "\003(\0132\'.google.cloud.batch.v1alpha.Environ"
           + "ment\022\033\n\023task_count_per_node\030\n \001(\003\022\032\n\022req"
           + "uire_hosts_file\030\013 \001(\010\022\026\n\016permissive_ssh\030"
-          + "\014 \001(\010\022\036\n\016enable_oslogin\030\r \001(\010B\006\030\001\342A\001\001\022\035\n"
-          + "\017run_as_non_root\030\016 \001(\010B\004\342A\001\001\032-\n\013LabelsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\\\n\020S"
-          + "chedulingPolicy\022!\n\035SCHEDULING_POLICY_UNS"
-          + "PECIFIED\020\000\022\027\n\023AS_SOON_AS_POSSIBLE\020\001\022\014\n\010I"
-          + "N_ORDER\020\002:o\352Al\n\036batch.googleapis.com/Tas"
-          + "kGroup\022Jprojects/{project}/locations/{lo"
-          + "cation}/jobs/{job}/taskGroups/{task_grou"
-          + "p}\"/\n\016ServiceAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006s"
-          + "copes\030\002 \003(\tB\302\001\n\036com.google.cloud.batch.v"
-          + "1alphaB\010JobProtoP\001Z4cloud.google.com/go/"
-          + "batch/apiv1alpha/batchpb;batchpb\242\002\003GCB\252\002"
-          + "\032Google.Cloud.Batch.V1Alpha\312\002\032Google\\Clo"
-          + "ud\\Batch\\V1alpha\352\002\035Google::Cloud::Batch:"
-          + ":V1alphab\006proto3"
+          + "\014 \001(\010\022\035\n\017run_as_non_root\030\016 \001(\010B\004\342A\001\001\032-\n\013"
+          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
+          + "\0028\001\"\\\n\020SchedulingPolicy\022!\n\035SCHEDULING_PO"
+          + "LICY_UNSPECIFIED\020\000\022\027\n\023AS_SOON_AS_POSSIBL"
+          + "E\020\001\022\014\n\010IN_ORDER\020\002:o\352Al\n\036batch.googleapis"
+          + ".com/TaskGroup\022Jprojects/{project}/locat"
+          + "ions/{location}/jobs/{job}/taskGroups/{t"
+          + "ask_group}\"/\n\016ServiceAccount\022\r\n\005email\030\001 "
+          + "\001(\t\022\016\n\006scopes\030\002 \003(\tB\302\001\n\036com.google.cloud"
+          + ".batch.v1alphaB\010JobProtoP\001Z4cloud.google"
+          + ".com/go/batch/apiv1alpha/batchpb;batchpb"
+          + "\242\002\003GCB\252\002\032Google.Cloud.Batch.V1Alpha\312\002\032Go"
+          + "ogle\\Cloud\\Batch\\V1alpha\352\002\035Google::Cloud"
+          + "::Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -595,7 +594,6 @@ public final class JobProto {
               "TaskCountPerNode",
               "RequireHostsFile",
               "PermissiveSsh",
-              "EnableOslogin",
               "RunAsNonRoot",
             });
     internal_static_google_cloud_batch_v1alpha_TaskGroup_LabelsEntry_descriptor =
