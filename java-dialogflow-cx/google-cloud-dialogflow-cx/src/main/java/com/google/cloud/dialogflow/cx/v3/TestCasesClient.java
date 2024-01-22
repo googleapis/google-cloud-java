@@ -67,255 +67,256 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListTestCases</td>
+ *      <td><p> ListTestCases</td>
  *      <td><p> Fetches a list of test cases for a given agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTestCases(ListTestCasesRequest request)
+ *           <li><p> listTestCases(ListTestCasesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTestCases(AgentName parent)
- *           <li>listTestCases(String parent)
+ *           <li><p> listTestCases(AgentName parent)
+ *           <li><p> listTestCases(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTestCasesPagedCallable()
- *           <li>listTestCasesCallable()
+ *           <li><p> listTestCasesPagedCallable()
+ *           <li><p> listTestCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeleteTestCases</td>
+ *      <td><p> BatchDeleteTestCases</td>
  *      <td><p> Batch deletes test cases.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeleteTestCases(BatchDeleteTestCasesRequest request)
+ *           <li><p> batchDeleteTestCases(BatchDeleteTestCasesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>batchDeleteTestCases(AgentName parent)
- *           <li>batchDeleteTestCases(String parent)
+ *           <li><p> batchDeleteTestCases(AgentName parent)
+ *           <li><p> batchDeleteTestCases(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeleteTestCasesCallable()
+ *           <li><p> batchDeleteTestCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTestCase</td>
+ *      <td><p> GetTestCase</td>
  *      <td><p> Gets a test case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTestCase(GetTestCaseRequest request)
+ *           <li><p> getTestCase(GetTestCaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTestCase(TestCaseName name)
- *           <li>getTestCase(String name)
+ *           <li><p> getTestCase(TestCaseName name)
+ *           <li><p> getTestCase(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTestCaseCallable()
+ *           <li><p> getTestCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTestCase</td>
+ *      <td><p> CreateTestCase</td>
  *      <td><p> Creates a test case for the given agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTestCase(CreateTestCaseRequest request)
+ *           <li><p> createTestCase(CreateTestCaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTestCase(AgentName parent, TestCase testCase)
- *           <li>createTestCase(String parent, TestCase testCase)
+ *           <li><p> createTestCase(AgentName parent, TestCase testCase)
+ *           <li><p> createTestCase(String parent, TestCase testCase)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTestCaseCallable()
+ *           <li><p> createTestCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTestCase</td>
+ *      <td><p> UpdateTestCase</td>
  *      <td><p> Updates the specified test case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTestCase(UpdateTestCaseRequest request)
+ *           <li><p> updateTestCase(UpdateTestCaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTestCase(TestCase testCase, FieldMask updateMask)
+ *           <li><p> updateTestCase(TestCase testCase, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTestCaseCallable()
+ *           <li><p> updateTestCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunTestCase</td>
+ *      <td><p> RunTestCase</td>
  *      <td><p> Kicks off a test case run.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3.RunTestCaseMetadata] - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3.RunTestCaseResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runTestCaseAsync(RunTestCaseRequest request)
+ *           <li><p> runTestCaseAsync(RunTestCaseRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runTestCaseOperationCallable()
- *           <li>runTestCaseCallable()
+ *           <li><p> runTestCaseOperationCallable()
+ *           <li><p> runTestCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchRunTestCases</td>
+ *      <td><p> BatchRunTestCases</td>
  *      <td><p> Kicks off a batch run of test cases.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata] - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchRunTestCasesAsync(BatchRunTestCasesRequest request)
+ *           <li><p> batchRunTestCasesAsync(BatchRunTestCasesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchRunTestCasesOperationCallable()
- *           <li>batchRunTestCasesCallable()
+ *           <li><p> batchRunTestCasesOperationCallable()
+ *           <li><p> batchRunTestCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CalculateCoverage</td>
+ *      <td><p> CalculateCoverage</td>
  *      <td><p> Calculates the test coverage for an agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>calculateCoverage(CalculateCoverageRequest request)
+ *           <li><p> calculateCoverage(CalculateCoverageRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>calculateCoverageCallable()
+ *           <li><p> calculateCoverageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportTestCases</td>
+ *      <td><p> ImportTestCases</td>
  *      <td><p> Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test cases and won't overwrite any existing ones. The provided ID in the imported test case is neglected.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata] - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importTestCasesAsync(ImportTestCasesRequest request)
+ *           <li><p> importTestCasesAsync(ImportTestCasesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importTestCasesOperationCallable()
- *           <li>importTestCasesCallable()
+ *           <li><p> importTestCasesOperationCallable()
+ *           <li><p> importTestCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportTestCases</td>
+ *      <td><p> ExportTestCases</td>
  *      <td><p> Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be applied to export a subset of test cases.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata] - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportTestCasesAsync(ExportTestCasesRequest request)
+ *           <li><p> exportTestCasesAsync(ExportTestCasesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportTestCasesOperationCallable()
- *           <li>exportTestCasesCallable()
+ *           <li><p> exportTestCasesOperationCallable()
+ *           <li><p> exportTestCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTestCaseResults</td>
+ *      <td><p> ListTestCaseResults</td>
  *      <td><p> Fetches the list of run results for the given test case. A maximum of 100 results are kept for each test case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTestCaseResults(ListTestCaseResultsRequest request)
+ *           <li><p> listTestCaseResults(ListTestCaseResultsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTestCaseResults(TestCaseName parent)
- *           <li>listTestCaseResults(String parent)
+ *           <li><p> listTestCaseResults(TestCaseName parent)
+ *           <li><p> listTestCaseResults(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTestCaseResultsPagedCallable()
- *           <li>listTestCaseResultsCallable()
+ *           <li><p> listTestCaseResultsPagedCallable()
+ *           <li><p> listTestCaseResultsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTestCaseResult</td>
+ *      <td><p> GetTestCaseResult</td>
  *      <td><p> Gets a test case result.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTestCaseResult(GetTestCaseResultRequest request)
+ *           <li><p> getTestCaseResult(GetTestCaseResultRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTestCaseResult(TestCaseResultName name)
- *           <li>getTestCaseResult(String name)
+ *           <li><p> getTestCaseResult(TestCaseResultName name)
+ *           <li><p> getTestCaseResult(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTestCaseResultCallable()
+ *           <li><p> getTestCaseResultCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

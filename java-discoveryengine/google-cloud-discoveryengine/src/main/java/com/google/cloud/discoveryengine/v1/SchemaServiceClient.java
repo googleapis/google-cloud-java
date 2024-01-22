@@ -63,104 +63,105 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetSchema</td>
+ *      <td><p> GetSchema</td>
  *      <td><p> Gets a [Schema][google.cloud.discoveryengine.v1.Schema].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSchema(GetSchemaRequest request)
+ *           <li><p> getSchema(GetSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSchema(SchemaName name)
- *           <li>getSchema(String name)
+ *           <li><p> getSchema(SchemaName name)
+ *           <li><p> getSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSchemaCallable()
+ *           <li><p> getSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSchemas</td>
+ *      <td><p> ListSchemas</td>
  *      <td><p> Gets a list of [Schema][google.cloud.discoveryengine.v1.Schema]s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSchemas(ListSchemasRequest request)
+ *           <li><p> listSchemas(ListSchemasRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSchemas(DataStoreName parent)
- *           <li>listSchemas(String parent)
+ *           <li><p> listSchemas(DataStoreName parent)
+ *           <li><p> listSchemas(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSchemasPagedCallable()
- *           <li>listSchemasCallable()
+ *           <li><p> listSchemasPagedCallable()
+ *           <li><p> listSchemasCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSchema</td>
+ *      <td><p> CreateSchema</td>
  *      <td><p> Creates a [Schema][google.cloud.discoveryengine.v1.Schema].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSchemaAsync(CreateSchemaRequest request)
+ *           <li><p> createSchemaAsync(CreateSchemaRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createSchemaAsync(DataStoreName parent, Schema schema, String schemaId)
- *           <li>createSchemaAsync(String parent, Schema schema, String schemaId)
+ *           <li><p> createSchemaAsync(DataStoreName parent, Schema schema, String schemaId)
+ *           <li><p> createSchemaAsync(String parent, Schema schema, String schemaId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSchemaOperationCallable()
- *           <li>createSchemaCallable()
+ *           <li><p> createSchemaOperationCallable()
+ *           <li><p> createSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSchema</td>
+ *      <td><p> UpdateSchema</td>
  *      <td><p> Updates a [Schema][google.cloud.discoveryengine.v1.Schema].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSchemaAsync(UpdateSchemaRequest request)
+ *           <li><p> updateSchemaAsync(UpdateSchemaRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSchemaOperationCallable()
- *           <li>updateSchemaCallable()
+ *           <li><p> updateSchemaOperationCallable()
+ *           <li><p> updateSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSchema</td>
+ *      <td><p> DeleteSchema</td>
  *      <td><p> Deletes a [Schema][google.cloud.discoveryengine.v1.Schema].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSchemaAsync(DeleteSchemaRequest request)
+ *           <li><p> deleteSchemaAsync(DeleteSchemaRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteSchemaAsync(SchemaName name)
- *           <li>deleteSchemaAsync(String name)
+ *           <li><p> deleteSchemaAsync(SchemaName name)
+ *           <li><p> deleteSchemaAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSchemaOperationCallable()
- *           <li>deleteSchemaCallable()
+ *           <li><p> deleteSchemaOperationCallable()
+ *           <li><p> deleteSchemaCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

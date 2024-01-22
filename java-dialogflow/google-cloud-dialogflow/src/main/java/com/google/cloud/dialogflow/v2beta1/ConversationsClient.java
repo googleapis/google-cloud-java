@@ -62,12 +62,14 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateConversation</td>
+ *      <td><p> CreateConversation</td>
  *      <td><p> Creates a new conversation. Conversations are auto-completed after 24 hours.
  * <p>  Conversation Lifecycle: There are two stages during a conversation: Automated Agent Stage and Assist Stage.
  * <p>  For Automated Agent Stage, there will be a dialogflow agent responding to user queries.
@@ -76,194 +78,193 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConversation(CreateConversationRequest request)
+ *           <li><p> createConversation(CreateConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createConversation(LocationName parent, Conversation conversation)
- *           <li>createConversation(ProjectName parent, Conversation conversation)
- *           <li>createConversation(String parent, Conversation conversation)
+ *           <li><p> createConversation(LocationName parent, Conversation conversation)
+ *           <li><p> createConversation(ProjectName parent, Conversation conversation)
+ *           <li><p> createConversation(String parent, Conversation conversation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConversationCallable()
+ *           <li><p> createConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConversations</td>
+ *      <td><p> ListConversations</td>
  *      <td><p> Returns the list of all conversations in the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConversations(ListConversationsRequest request)
+ *           <li><p> listConversations(ListConversationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConversations(LocationName parent)
- *           <li>listConversations(ProjectName parent)
- *           <li>listConversations(String parent)
+ *           <li><p> listConversations(LocationName parent)
+ *           <li><p> listConversations(ProjectName parent)
+ *           <li><p> listConversations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConversationsPagedCallable()
- *           <li>listConversationsCallable()
+ *           <li><p> listConversationsPagedCallable()
+ *           <li><p> listConversationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConversation</td>
+ *      <td><p> GetConversation</td>
  *      <td><p> Retrieves the specific conversation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConversation(GetConversationRequest request)
+ *           <li><p> getConversation(GetConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConversation(ConversationName name)
- *           <li>getConversation(String name)
+ *           <li><p> getConversation(ConversationName name)
+ *           <li><p> getConversation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConversationCallable()
+ *           <li><p> getConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CompleteConversation</td>
+ *      <td><p> CompleteConversation</td>
  *      <td><p> Completes the specified conversation. Finished conversations are purged from the database after 30 days.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>completeConversation(CompleteConversationRequest request)
+ *           <li><p> completeConversation(CompleteConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>completeConversation(ConversationName name)
- *           <li>completeConversation(String name)
+ *           <li><p> completeConversation(ConversationName name)
+ *           <li><p> completeConversation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>completeConversationCallable()
+ *           <li><p> completeConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateMessages</td>
+ *      <td><p> BatchCreateMessages</td>
  *      <td><p> Batch ingests messages to conversation. Customers can use this RPC to ingest historical messages to conversation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateMessages(BatchCreateMessagesRequest request)
+ *           <li><p> batchCreateMessages(BatchCreateMessagesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>batchCreateMessages(ConversationName parent)
- *           <li>batchCreateMessages(String parent)
+ *           <li><p> batchCreateMessages(ConversationName parent)
+ *           <li><p> batchCreateMessages(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateMessagesCallable()
+ *           <li><p> batchCreateMessagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMessages</td>
+ *      <td><p> ListMessages</td>
  *      <td><p> Lists messages that belong to a given conversation. `messages` are ordered by `create_time` in descending order. To fetch updates without duplication, send request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty page_token.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMessages(ListMessagesRequest request)
+ *           <li><p> listMessages(ListMessagesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMessages(ConversationName parent)
- *           <li>listMessages(String parent)
+ *           <li><p> listMessages(ConversationName parent)
+ *           <li><p> listMessages(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMessagesPagedCallable()
- *           <li>listMessagesCallable()
+ *           <li><p> listMessagesPagedCallable()
+ *           <li><p> listMessagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SuggestConversationSummary</td>
+ *      <td><p> SuggestConversationSummary</td>
  *      <td><p> Suggest summary for a conversation based on specific historical messages. The range of the messages to be used for summary can be specified in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>suggestConversationSummary(SuggestConversationSummaryRequest request)
+ *           <li><p> suggestConversationSummary(SuggestConversationSummaryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>suggestConversationSummary(ConversationName conversation)
- *           <li>suggestConversationSummary(String conversation)
+ *           <li><p> suggestConversationSummary(ConversationName conversation)
+ *           <li><p> suggestConversationSummary(String conversation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>suggestConversationSummaryCallable()
+ *           <li><p> suggestConversationSummaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateStatelessSummary</td>
+ *      <td><p> GenerateStatelessSummary</td>
  *      <td><p> Generates and returns a summary for a conversation that does not have a resource created for it.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateStatelessSummary(GenerateStatelessSummaryRequest request)
+ *           <li><p> generateStatelessSummary(GenerateStatelessSummaryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateStatelessSummaryCallable()
+ *           <li><p> generateStatelessSummaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchKnowledge</td>
+ *      <td><p> SearchKnowledge</td>
  *      <td><p> Get answers for the given query based on knowledge documents.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchKnowledge(SearchKnowledgeRequest request)
+ *           <li><p> searchKnowledge(SearchKnowledgeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchKnowledgeCallable()
+ *           <li><p> searchKnowledgeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

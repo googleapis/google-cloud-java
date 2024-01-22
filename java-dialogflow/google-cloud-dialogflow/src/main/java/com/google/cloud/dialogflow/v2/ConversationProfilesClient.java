@@ -71,111 +71,113 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListConversationProfiles</td>
+ *      <td><p> ListConversationProfiles</td>
  *      <td><p> Returns the list of all conversation profiles in the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConversationProfiles(ListConversationProfilesRequest request)
+ *           <li><p> listConversationProfiles(ListConversationProfilesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConversationProfiles(LocationName parent)
- *           <li>listConversationProfiles(ProjectName parent)
- *           <li>listConversationProfiles(String parent)
+ *           <li><p> listConversationProfiles(LocationName parent)
+ *           <li><p> listConversationProfiles(ProjectName parent)
+ *           <li><p> listConversationProfiles(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConversationProfilesPagedCallable()
- *           <li>listConversationProfilesCallable()
+ *           <li><p> listConversationProfilesPagedCallable()
+ *           <li><p> listConversationProfilesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConversationProfile</td>
+ *      <td><p> GetConversationProfile</td>
  *      <td><p> Retrieves the specified conversation profile.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConversationProfile(GetConversationProfileRequest request)
+ *           <li><p> getConversationProfile(GetConversationProfileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConversationProfile(ConversationProfileName name)
- *           <li>getConversationProfile(String name)
+ *           <li><p> getConversationProfile(ConversationProfileName name)
+ *           <li><p> getConversationProfile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConversationProfileCallable()
+ *           <li><p> getConversationProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConversationProfile</td>
+ *      <td><p> CreateConversationProfile</td>
  *      <td><p> Creates a conversation profile in the specified project.
  * <p>  [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated in the response. You can retrieve them via [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile] API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConversationProfile(CreateConversationProfileRequest request)
+ *           <li><p> createConversationProfile(CreateConversationProfileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createConversationProfile(LocationName parent, ConversationProfile conversationProfile)
- *           <li>createConversationProfile(ProjectName parent, ConversationProfile conversationProfile)
- *           <li>createConversationProfile(String parent, ConversationProfile conversationProfile)
+ *           <li><p> createConversationProfile(LocationName parent, ConversationProfile conversationProfile)
+ *           <li><p> createConversationProfile(ProjectName parent, ConversationProfile conversationProfile)
+ *           <li><p> createConversationProfile(String parent, ConversationProfile conversationProfile)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConversationProfileCallable()
+ *           <li><p> createConversationProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConversationProfile</td>
+ *      <td><p> UpdateConversationProfile</td>
  *      <td><p> Updates the specified conversation profile.
  * <p>  [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][] aren't populated in the response. You can retrieve them via [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile] API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConversationProfile(UpdateConversationProfileRequest request)
+ *           <li><p> updateConversationProfile(UpdateConversationProfileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateConversationProfile(ConversationProfile conversationProfile, FieldMask updateMask)
+ *           <li><p> updateConversationProfile(ConversationProfile conversationProfile, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConversationProfileCallable()
+ *           <li><p> updateConversationProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConversationProfile</td>
+ *      <td><p> DeleteConversationProfile</td>
  *      <td><p> Deletes the specified conversation profile.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConversationProfile(DeleteConversationProfileRequest request)
+ *           <li><p> deleteConversationProfile(DeleteConversationProfileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteConversationProfile(ConversationProfileName name)
- *           <li>deleteConversationProfile(String name)
+ *           <li><p> deleteConversationProfile(ConversationProfileName name)
+ *           <li><p> deleteConversationProfile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConversationProfileCallable()
+ *           <li><p> deleteConversationProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetSuggestionFeatureConfig</td>
+ *      <td><p> SetSuggestionFeatureConfig</td>
  *      <td><p> Adds or updates a suggestion feature in a conversation profile. If the conversation profile contains the type of suggestion feature for the participant role, it will update it. Otherwise it will insert the suggestion feature.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata] - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
@@ -183,71 +185,70 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setSuggestionFeatureConfigAsync(SetSuggestionFeatureConfigRequest request)
+ *           <li><p> setSuggestionFeatureConfigAsync(SetSuggestionFeatureConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setSuggestionFeatureConfigAsync(String conversationProfile)
- *           <li>setSuggestionFeatureConfigAsync(String conversationProfile, Participant.Role participantRole, HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig)
+ *           <li><p> setSuggestionFeatureConfigAsync(String conversationProfile)
+ *           <li><p> setSuggestionFeatureConfigAsync(String conversationProfile, Participant.Role participantRole, HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setSuggestionFeatureConfigOperationCallable()
- *           <li>setSuggestionFeatureConfigCallable()
+ *           <li><p> setSuggestionFeatureConfigOperationCallable()
+ *           <li><p> setSuggestionFeatureConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ClearSuggestionFeatureConfig</td>
+ *      <td><p> ClearSuggestionFeatureConfig</td>
  *      <td><p> Clears a suggestion feature from a conversation profile for the given participant role.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata] - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>clearSuggestionFeatureConfigAsync(ClearSuggestionFeatureConfigRequest request)
+ *           <li><p> clearSuggestionFeatureConfigAsync(ClearSuggestionFeatureConfigRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>clearSuggestionFeatureConfigAsync(String conversationProfile)
- *           <li>clearSuggestionFeatureConfigAsync(String conversationProfile, Participant.Role participantRole, SuggestionFeature.Type suggestionFeatureType)
+ *           <li><p> clearSuggestionFeatureConfigAsync(String conversationProfile)
+ *           <li><p> clearSuggestionFeatureConfigAsync(String conversationProfile, Participant.Role participantRole, SuggestionFeature.Type suggestionFeatureType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>clearSuggestionFeatureConfigOperationCallable()
- *           <li>clearSuggestionFeatureConfigCallable()
+ *           <li><p> clearSuggestionFeatureConfigOperationCallable()
+ *           <li><p> clearSuggestionFeatureConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

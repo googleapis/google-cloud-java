@@ -64,165 +64,166 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateEngine</td>
+ *      <td><p> CreateEngine</td>
  *      <td><p> Creates a [Engine][google.cloud.discoveryengine.v1alpha.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEngineAsync(CreateEngineRequest request)
+ *           <li><p> createEngineAsync(CreateEngineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createEngineAsync(CollectionName parent, Engine engine, String engineId)
- *           <li>createEngineAsync(String parent, Engine engine, String engineId)
+ *           <li><p> createEngineAsync(CollectionName parent, Engine engine, String engineId)
+ *           <li><p> createEngineAsync(String parent, Engine engine, String engineId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEngineOperationCallable()
- *           <li>createEngineCallable()
+ *           <li><p> createEngineOperationCallable()
+ *           <li><p> createEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEngine</td>
+ *      <td><p> DeleteEngine</td>
  *      <td><p> Deletes a [Engine][google.cloud.discoveryengine.v1alpha.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEngineAsync(DeleteEngineRequest request)
+ *           <li><p> deleteEngineAsync(DeleteEngineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteEngineAsync(EngineName name)
- *           <li>deleteEngineAsync(String name)
+ *           <li><p> deleteEngineAsync(EngineName name)
+ *           <li><p> deleteEngineAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEngineOperationCallable()
- *           <li>deleteEngineCallable()
+ *           <li><p> deleteEngineOperationCallable()
+ *           <li><p> deleteEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEngine</td>
+ *      <td><p> UpdateEngine</td>
  *      <td><p> Updates an [Engine][google.cloud.discoveryengine.v1alpha.Engine]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEngine(UpdateEngineRequest request)
+ *           <li><p> updateEngine(UpdateEngineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEngine(Engine engine, FieldMask updateMask)
+ *           <li><p> updateEngine(Engine engine, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEngineCallable()
+ *           <li><p> updateEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEngine</td>
+ *      <td><p> GetEngine</td>
  *      <td><p> Gets a [Engine][google.cloud.discoveryengine.v1alpha.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEngine(GetEngineRequest request)
+ *           <li><p> getEngine(GetEngineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEngine(EngineName name)
- *           <li>getEngine(String name)
+ *           <li><p> getEngine(EngineName name)
+ *           <li><p> getEngine(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEngineCallable()
+ *           <li><p> getEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEngines</td>
+ *      <td><p> ListEngines</td>
  *      <td><p> Lists all the [Engine][google.cloud.discoveryengine.v1alpha.Engine]s associated with the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEngines(ListEnginesRequest request)
+ *           <li><p> listEngines(ListEnginesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEngines(CollectionName parent)
- *           <li>listEngines(String parent)
+ *           <li><p> listEngines(CollectionName parent)
+ *           <li><p> listEngines(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEnginesPagedCallable()
- *           <li>listEnginesCallable()
+ *           <li><p> listEnginesPagedCallable()
+ *           <li><p> listEnginesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseEngine</td>
+ *      <td><p> PauseEngine</td>
  *      <td><p> Pauses the training of an existing engine. Only applicable if [solution_type][] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseEngine(PauseEngineRequest request)
+ *           <li><p> pauseEngine(PauseEngineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pauseEngine(EngineName name)
- *           <li>pauseEngine(String name)
+ *           <li><p> pauseEngine(EngineName name)
+ *           <li><p> pauseEngine(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseEngineCallable()
+ *           <li><p> pauseEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeEngine</td>
+ *      <td><p> ResumeEngine</td>
  *      <td><p> Resumes the training of an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeEngine(ResumeEngineRequest request)
+ *           <li><p> resumeEngine(ResumeEngineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumeEngine(EngineName name)
- *           <li>resumeEngine(String name)
+ *           <li><p> resumeEngine(EngineName name)
+ *           <li><p> resumeEngine(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeEngineCallable()
+ *           <li><p> resumeEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TuneEngine</td>
+ *      <td><p> TuneEngine</td>
  *      <td><p> Tunes an existing engine. Only applicable if [solution_type][] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>tuneEngineAsync(TuneEngineRequest request)
+ *           <li><p> tuneEngineAsync(TuneEngineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>tuneEngineAsync(EngineName name)
- *           <li>tuneEngineAsync(String name)
+ *           <li><p> tuneEngineAsync(EngineName name)
+ *           <li><p> tuneEngineAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>tuneEngineOperationCallable()
- *           <li>tuneEngineCallable()
+ *           <li><p> tuneEngineOperationCallable()
+ *           <li><p> tuneEngineCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -66,134 +66,135 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateSecuritySettings</td>
+ *      <td><p> CreateSecuritySettings</td>
  *      <td><p> Create security settings in the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSecuritySettings(CreateSecuritySettingsRequest request)
+ *           <li><p> createSecuritySettings(CreateSecuritySettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSecuritySettings(LocationName parent, SecuritySettings securitySettings)
- *           <li>createSecuritySettings(String parent, SecuritySettings securitySettings)
+ *           <li><p> createSecuritySettings(LocationName parent, SecuritySettings securitySettings)
+ *           <li><p> createSecuritySettings(String parent, SecuritySettings securitySettings)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSecuritySettingsCallable()
+ *           <li><p> createSecuritySettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSecuritySettings</td>
+ *      <td><p> GetSecuritySettings</td>
  *      <td><p> Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]. The returned settings may be stale by up to 1 minute.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSecuritySettings(GetSecuritySettingsRequest request)
+ *           <li><p> getSecuritySettings(GetSecuritySettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSecuritySettings(SecuritySettingsName name)
- *           <li>getSecuritySettings(String name)
+ *           <li><p> getSecuritySettings(SecuritySettingsName name)
+ *           <li><p> getSecuritySettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSecuritySettingsCallable()
+ *           <li><p> getSecuritySettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSecuritySettings</td>
+ *      <td><p> UpdateSecuritySettings</td>
  *      <td><p> Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSecuritySettings(UpdateSecuritySettingsRequest request)
+ *           <li><p> updateSecuritySettings(UpdateSecuritySettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSecuritySettings(SecuritySettings securitySettings, FieldMask updateMask)
+ *           <li><p> updateSecuritySettings(SecuritySettings securitySettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSecuritySettingsCallable()
+ *           <li><p> updateSecuritySettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSecuritySettings</td>
+ *      <td><p> ListSecuritySettings</td>
  *      <td><p> Returns the list of all security settings in the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSecuritySettings(ListSecuritySettingsRequest request)
+ *           <li><p> listSecuritySettings(ListSecuritySettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSecuritySettings(LocationName parent)
- *           <li>listSecuritySettings(String parent)
+ *           <li><p> listSecuritySettings(LocationName parent)
+ *           <li><p> listSecuritySettings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSecuritySettingsPagedCallable()
- *           <li>listSecuritySettingsCallable()
+ *           <li><p> listSecuritySettingsPagedCallable()
+ *           <li><p> listSecuritySettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSecuritySettings</td>
+ *      <td><p> DeleteSecuritySettings</td>
  *      <td><p> Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSecuritySettings(DeleteSecuritySettingsRequest request)
+ *           <li><p> deleteSecuritySettings(DeleteSecuritySettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSecuritySettings(SecuritySettingsName name)
- *           <li>deleteSecuritySettings(String name)
+ *           <li><p> deleteSecuritySettings(SecuritySettingsName name)
+ *           <li><p> deleteSecuritySettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSecuritySettingsCallable()
+ *           <li><p> deleteSecuritySettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

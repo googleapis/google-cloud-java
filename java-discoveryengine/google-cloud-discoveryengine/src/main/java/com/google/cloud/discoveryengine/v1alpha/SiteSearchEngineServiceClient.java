@@ -65,217 +65,218 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetSiteSearchEngine</td>
+ *      <td><p> GetSiteSearchEngine</td>
  *      <td><p> Gets the [SiteSearchEngine][google.cloud.discoveryengine.v1alpha.SiteSearchEngine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSiteSearchEngine(GetSiteSearchEngineRequest request)
+ *           <li><p> getSiteSearchEngine(GetSiteSearchEngineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSiteSearchEngine(SiteSearchEngineName name)
- *           <li>getSiteSearchEngine(String name)
+ *           <li><p> getSiteSearchEngine(SiteSearchEngineName name)
+ *           <li><p> getSiteSearchEngine(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSiteSearchEngineCallable()
+ *           <li><p> getSiteSearchEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTargetSite</td>
+ *      <td><p> CreateTargetSite</td>
  *      <td><p> Creates a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTargetSiteAsync(CreateTargetSiteRequest request)
+ *           <li><p> createTargetSiteAsync(CreateTargetSiteRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createTargetSiteAsync(SiteSearchEngineName parent, TargetSite targetSite)
- *           <li>createTargetSiteAsync(String parent, TargetSite targetSite)
+ *           <li><p> createTargetSiteAsync(SiteSearchEngineName parent, TargetSite targetSite)
+ *           <li><p> createTargetSiteAsync(String parent, TargetSite targetSite)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTargetSiteOperationCallable()
- *           <li>createTargetSiteCallable()
+ *           <li><p> createTargetSiteOperationCallable()
+ *           <li><p> createTargetSiteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateTargetSites</td>
+ *      <td><p> BatchCreateTargetSites</td>
  *      <td><p> Creates [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite] in a batch.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateTargetSitesAsync(BatchCreateTargetSitesRequest request)
+ *           <li><p> batchCreateTargetSitesAsync(BatchCreateTargetSitesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateTargetSitesOperationCallable()
- *           <li>batchCreateTargetSitesCallable()
+ *           <li><p> batchCreateTargetSitesOperationCallable()
+ *           <li><p> batchCreateTargetSitesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTargetSite</td>
+ *      <td><p> GetTargetSite</td>
  *      <td><p> Gets a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTargetSite(GetTargetSiteRequest request)
+ *           <li><p> getTargetSite(GetTargetSiteRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTargetSite(TargetSiteName name)
- *           <li>getTargetSite(String name)
+ *           <li><p> getTargetSite(TargetSiteName name)
+ *           <li><p> getTargetSite(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTargetSiteCallable()
+ *           <li><p> getTargetSiteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTargetSite</td>
+ *      <td><p> UpdateTargetSite</td>
  *      <td><p> Updates a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTargetSiteAsync(UpdateTargetSiteRequest request)
+ *           <li><p> updateTargetSiteAsync(UpdateTargetSiteRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateTargetSiteAsync(TargetSite targetSite)
+ *           <li><p> updateTargetSiteAsync(TargetSite targetSite)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTargetSiteOperationCallable()
- *           <li>updateTargetSiteCallable()
+ *           <li><p> updateTargetSiteOperationCallable()
+ *           <li><p> updateTargetSiteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTargetSite</td>
+ *      <td><p> DeleteTargetSite</td>
  *      <td><p> Deletes a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTargetSiteAsync(DeleteTargetSiteRequest request)
+ *           <li><p> deleteTargetSiteAsync(DeleteTargetSiteRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTargetSiteAsync(TargetSiteName name)
- *           <li>deleteTargetSiteAsync(String name)
+ *           <li><p> deleteTargetSiteAsync(TargetSiteName name)
+ *           <li><p> deleteTargetSiteAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTargetSiteOperationCallable()
- *           <li>deleteTargetSiteCallable()
+ *           <li><p> deleteTargetSiteOperationCallable()
+ *           <li><p> deleteTargetSiteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTargetSites</td>
+ *      <td><p> ListTargetSites</td>
  *      <td><p> Gets a list of [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite]s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTargetSites(ListTargetSitesRequest request)
+ *           <li><p> listTargetSites(ListTargetSitesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTargetSites(SiteSearchEngineName parent)
- *           <li>listTargetSites(String parent)
+ *           <li><p> listTargetSites(SiteSearchEngineName parent)
+ *           <li><p> listTargetSites(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTargetSitesPagedCallable()
- *           <li>listTargetSitesCallable()
+ *           <li><p> listTargetSitesPagedCallable()
+ *           <li><p> listTargetSitesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EnableAdvancedSiteSearch</td>
+ *      <td><p> EnableAdvancedSiteSearch</td>
  *      <td><p> Upgrade from basic site search to advanced site search.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>enableAdvancedSiteSearchAsync(EnableAdvancedSiteSearchRequest request)
+ *           <li><p> enableAdvancedSiteSearchAsync(EnableAdvancedSiteSearchRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>enableAdvancedSiteSearchOperationCallable()
- *           <li>enableAdvancedSiteSearchCallable()
+ *           <li><p> enableAdvancedSiteSearchOperationCallable()
+ *           <li><p> enableAdvancedSiteSearchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DisableAdvancedSiteSearch</td>
+ *      <td><p> DisableAdvancedSiteSearch</td>
  *      <td><p> Downgrade from advanced site search to basic site search.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>disableAdvancedSiteSearchAsync(DisableAdvancedSiteSearchRequest request)
+ *           <li><p> disableAdvancedSiteSearchAsync(DisableAdvancedSiteSearchRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>disableAdvancedSiteSearchOperationCallable()
- *           <li>disableAdvancedSiteSearchCallable()
+ *           <li><p> disableAdvancedSiteSearchOperationCallable()
+ *           <li><p> disableAdvancedSiteSearchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RecrawlUris</td>
+ *      <td><p> RecrawlUris</td>
  *      <td><p> Request on-demand recrawl for a list of URIs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>recrawlUrisAsync(RecrawlUrisRequest request)
+ *           <li><p> recrawlUrisAsync(RecrawlUrisRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>recrawlUrisOperationCallable()
- *           <li>recrawlUrisCallable()
+ *           <li><p> recrawlUrisOperationCallable()
+ *           <li><p> recrawlUrisCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchVerifyTargetSites</td>
+ *      <td><p> BatchVerifyTargetSites</td>
  *      <td><p> Verify target sites' ownership and validity. This API sends all the target sites under site search engine for verification.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchVerifyTargetSitesAsync(BatchVerifyTargetSitesRequest request)
+ *           <li><p> batchVerifyTargetSitesAsync(BatchVerifyTargetSitesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchVerifyTargetSitesOperationCallable()
- *           <li>batchVerifyTargetSitesCallable()
+ *           <li><p> batchVerifyTargetSitesOperationCallable()
+ *           <li><p> batchVerifyTargetSitesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchDomainVerificationStatus</td>
+ *      <td><p> FetchDomainVerificationStatus</td>
  *      <td><p> Returns list of target sites with its domain verification status. This method can only be called under data store with BASIC_SITE_SEARCH state at the moment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchDomainVerificationStatus(FetchDomainVerificationStatusRequest request)
+ *           <li><p> fetchDomainVerificationStatus(FetchDomainVerificationStatusRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchDomainVerificationStatusPagedCallable()
- *           <li>fetchDomainVerificationStatusCallable()
+ *           <li><p> fetchDomainVerificationStatusPagedCallable()
+ *           <li><p> fetchDomainVerificationStatusCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

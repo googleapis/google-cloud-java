@@ -66,117 +66,119 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListEntityTypes</td>
+ *      <td><p> ListEntityTypes</td>
  *      <td><p> Returns the list of all entity types in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntityTypes(ListEntityTypesRequest request)
+ *           <li><p> listEntityTypes(ListEntityTypesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEntityTypes(AgentName parent)
- *           <li>listEntityTypes(String parent)
- *           <li>listEntityTypes(AgentName parent, String languageCode)
- *           <li>listEntityTypes(String parent, String languageCode)
+ *           <li><p> listEntityTypes(AgentName parent)
+ *           <li><p> listEntityTypes(String parent)
+ *           <li><p> listEntityTypes(AgentName parent, String languageCode)
+ *           <li><p> listEntityTypes(String parent, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntityTypesPagedCallable()
- *           <li>listEntityTypesCallable()
+ *           <li><p> listEntityTypesPagedCallable()
+ *           <li><p> listEntityTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEntityType</td>
+ *      <td><p> GetEntityType</td>
  *      <td><p> Retrieves the specified entity type.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEntityType(GetEntityTypeRequest request)
+ *           <li><p> getEntityType(GetEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEntityType(EntityTypeName name)
- *           <li>getEntityType(String name)
- *           <li>getEntityType(EntityTypeName name, String languageCode)
- *           <li>getEntityType(String name, String languageCode)
+ *           <li><p> getEntityType(EntityTypeName name)
+ *           <li><p> getEntityType(String name)
+ *           <li><p> getEntityType(EntityTypeName name, String languageCode)
+ *           <li><p> getEntityType(String name, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEntityTypeCallable()
+ *           <li><p> getEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEntityType</td>
+ *      <td><p> CreateEntityType</td>
  *      <td><p> Creates an entity type in the specified agent.
  * <p>  Note: You should always train an agent prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/es/docs/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEntityType(CreateEntityTypeRequest request)
+ *           <li><p> createEntityType(CreateEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEntityType(AgentName parent, EntityType entityType)
- *           <li>createEntityType(String parent, EntityType entityType)
- *           <li>createEntityType(AgentName parent, EntityType entityType, String languageCode)
- *           <li>createEntityType(String parent, EntityType entityType, String languageCode)
+ *           <li><p> createEntityType(AgentName parent, EntityType entityType)
+ *           <li><p> createEntityType(String parent, EntityType entityType)
+ *           <li><p> createEntityType(AgentName parent, EntityType entityType, String languageCode)
+ *           <li><p> createEntityType(String parent, EntityType entityType, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEntityTypeCallable()
+ *           <li><p> createEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEntityType</td>
+ *      <td><p> UpdateEntityType</td>
  *      <td><p> Updates the specified entity type.
  * <p>  Note: You should always train an agent prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/es/docs/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEntityType(UpdateEntityTypeRequest request)
+ *           <li><p> updateEntityType(UpdateEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEntityType(EntityType entityType)
- *           <li>updateEntityType(EntityType entityType, String languageCode)
+ *           <li><p> updateEntityType(EntityType entityType)
+ *           <li><p> updateEntityType(EntityType entityType, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEntityTypeCallable()
+ *           <li><p> updateEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEntityType</td>
+ *      <td><p> DeleteEntityType</td>
  *      <td><p> Deletes the specified entity type.
  * <p>  Note: You should always train an agent prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/es/docs/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEntityType(DeleteEntityTypeRequest request)
+ *           <li><p> deleteEntityType(DeleteEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEntityType(EntityTypeName name)
- *           <li>deleteEntityType(String name)
+ *           <li><p> deleteEntityType(EntityTypeName name)
+ *           <li><p> deleteEntityType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEntityTypeCallable()
+ *           <li><p> deleteEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchUpdateEntityTypes</td>
+ *      <td><p> BatchUpdateEntityTypes</td>
  *      <td><p> Updates/Creates multiple entity types in the specified agent.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse]
@@ -184,17 +186,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchUpdateEntityTypesAsync(BatchUpdateEntityTypesRequest request)
+ *           <li><p> batchUpdateEntityTypesAsync(BatchUpdateEntityTypesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchUpdateEntityTypesOperationCallable()
- *           <li>batchUpdateEntityTypesCallable()
+ *           <li><p> batchUpdateEntityTypesOperationCallable()
+ *           <li><p> batchUpdateEntityTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeleteEntityTypes</td>
+ *      <td><p> BatchDeleteEntityTypes</td>
  *      <td><p> Deletes entity types in the specified agent.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -202,22 +204,22 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeleteEntityTypesAsync(BatchDeleteEntityTypesRequest request)
+ *           <li><p> batchDeleteEntityTypesAsync(BatchDeleteEntityTypesRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchDeleteEntityTypesAsync(AgentName parent, List<String> entityTypeNames)
- *           <li>batchDeleteEntityTypesAsync(String parent, List<String> entityTypeNames)
+ *           <li><p> batchDeleteEntityTypesAsync(AgentName parent, List&lt;String&gt; entityTypeNames)
+ *           <li><p> batchDeleteEntityTypesAsync(String parent, List&lt;String&gt; entityTypeNames)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeleteEntityTypesOperationCallable()
- *           <li>batchDeleteEntityTypesCallable()
+ *           <li><p> batchDeleteEntityTypesOperationCallable()
+ *           <li><p> batchDeleteEntityTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchCreateEntities</td>
+ *      <td><p> BatchCreateEntities</td>
  *      <td><p> Creates multiple new entities in the specified entity type.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -225,24 +227,24 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchCreateEntitiesAsync(BatchCreateEntitiesRequest request)
+ *           <li><p> batchCreateEntitiesAsync(BatchCreateEntitiesRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchCreateEntitiesAsync(EntityTypeName parent, List<EntityType.Entity> entities)
- *           <li>batchCreateEntitiesAsync(String parent, List<EntityType.Entity> entities)
- *           <li>batchCreateEntitiesAsync(EntityTypeName parent, List<EntityType.Entity> entities, String languageCode)
- *           <li>batchCreateEntitiesAsync(String parent, List<EntityType.Entity> entities, String languageCode)
+ *           <li><p> batchCreateEntitiesAsync(EntityTypeName parent, List&lt;EntityType.Entity&gt; entities)
+ *           <li><p> batchCreateEntitiesAsync(String parent, List&lt;EntityType.Entity&gt; entities)
+ *           <li><p> batchCreateEntitiesAsync(EntityTypeName parent, List&lt;EntityType.Entity&gt; entities, String languageCode)
+ *           <li><p> batchCreateEntitiesAsync(String parent, List&lt;EntityType.Entity&gt; entities, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchCreateEntitiesOperationCallable()
- *           <li>batchCreateEntitiesCallable()
+ *           <li><p> batchCreateEntitiesOperationCallable()
+ *           <li><p> batchCreateEntitiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchUpdateEntities</td>
+ *      <td><p> BatchUpdateEntities</td>
  *      <td><p> Updates or creates multiple entities in the specified entity type. This method does not affect entities in the entity type that aren't explicitly specified in the request.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -250,24 +252,24 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchUpdateEntitiesAsync(BatchUpdateEntitiesRequest request)
+ *           <li><p> batchUpdateEntitiesAsync(BatchUpdateEntitiesRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchUpdateEntitiesAsync(EntityTypeName parent, List<EntityType.Entity> entities)
- *           <li>batchUpdateEntitiesAsync(String parent, List<EntityType.Entity> entities)
- *           <li>batchUpdateEntitiesAsync(EntityTypeName parent, List<EntityType.Entity> entities, String languageCode)
- *           <li>batchUpdateEntitiesAsync(String parent, List<EntityType.Entity> entities, String languageCode)
+ *           <li><p> batchUpdateEntitiesAsync(EntityTypeName parent, List&lt;EntityType.Entity&gt; entities)
+ *           <li><p> batchUpdateEntitiesAsync(String parent, List&lt;EntityType.Entity&gt; entities)
+ *           <li><p> batchUpdateEntitiesAsync(EntityTypeName parent, List&lt;EntityType.Entity&gt; entities, String languageCode)
+ *           <li><p> batchUpdateEntitiesAsync(String parent, List&lt;EntityType.Entity&gt; entities, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchUpdateEntitiesOperationCallable()
- *           <li>batchUpdateEntitiesCallable()
+ *           <li><p> batchUpdateEntitiesOperationCallable()
+ *           <li><p> batchUpdateEntitiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeleteEntities</td>
+ *      <td><p> BatchDeleteEntities</td>
  *      <td><p> Deletes entities in the specified entity type.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -275,51 +277,50 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeleteEntitiesAsync(BatchDeleteEntitiesRequest request)
+ *           <li><p> batchDeleteEntitiesAsync(BatchDeleteEntitiesRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchDeleteEntitiesAsync(EntityTypeName parent, List<String> entityValues)
- *           <li>batchDeleteEntitiesAsync(String parent, List<String> entityValues)
- *           <li>batchDeleteEntitiesAsync(EntityTypeName parent, List<String> entityValues, String languageCode)
- *           <li>batchDeleteEntitiesAsync(String parent, List<String> entityValues, String languageCode)
+ *           <li><p> batchDeleteEntitiesAsync(EntityTypeName parent, List&lt;String&gt; entityValues)
+ *           <li><p> batchDeleteEntitiesAsync(String parent, List&lt;String&gt; entityValues)
+ *           <li><p> batchDeleteEntitiesAsync(EntityTypeName parent, List&lt;String&gt; entityValues, String languageCode)
+ *           <li><p> batchDeleteEntitiesAsync(String parent, List&lt;String&gt; entityValues, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeleteEntitiesOperationCallable()
- *           <li>batchDeleteEntitiesCallable()
+ *           <li><p> batchDeleteEntitiesOperationCallable()
+ *           <li><p> batchDeleteEntitiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

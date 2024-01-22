@@ -79,69 +79,70 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BatchProcessDocuments</td>
+ *      <td><p> BatchProcessDocuments</td>
  *      <td><p> LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchProcessDocumentsAsync(List<ProcessDocumentRequest> requests)
- *           <li>batchProcessDocumentsAsync(BatchProcessDocumentsRequest request)
+ *           <li><p> batchProcessDocumentsAsync(List&lt;ProcessDocumentRequest&gt; requests)
+ *           <li><p> batchProcessDocumentsAsync(BatchProcessDocumentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchProcessDocumentsOperationCallable()
- *           <li>batchProcessDocumentsCallable()
+ *           <li><p> batchProcessDocumentsOperationCallable()
+ *           <li><p> batchProcessDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ProcessDocument</td>
+ *      <td><p> ProcessDocument</td>
  *      <td><p> Processes a single document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>processDocument(ProcessDocumentRequest request)
+ *           <li><p> processDocument(ProcessDocumentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>processDocumentCallable()
+ *           <li><p> processDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

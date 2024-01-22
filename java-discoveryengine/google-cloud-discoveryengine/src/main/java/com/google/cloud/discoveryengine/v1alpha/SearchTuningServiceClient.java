@@ -62,25 +62,26 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>TrainCustomModel</td>
+ *      <td><p> TrainCustomModel</td>
  *      <td><p> Trains a custom model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>trainCustomModelAsync(TrainCustomModelRequest request)
+ *           <li><p> trainCustomModelAsync(TrainCustomModelRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>trainCustomModelOperationCallable()
- *           <li>trainCustomModelCallable()
+ *           <li><p> trainCustomModelOperationCallable()
+ *           <li><p> trainCustomModelCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

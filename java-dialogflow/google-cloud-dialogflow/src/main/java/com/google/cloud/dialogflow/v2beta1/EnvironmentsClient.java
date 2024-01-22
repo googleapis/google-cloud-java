@@ -66,131 +66,132 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListEnvironments</td>
+ *      <td><p> ListEnvironments</td>
  *      <td><p> Returns the list of all non-draft environments of the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEnvironments(ListEnvironmentsRequest request)
+ *           <li><p> listEnvironments(ListEnvironmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEnvironments(AgentName parent)
- *           <li>listEnvironments(String parent)
+ *           <li><p> listEnvironments(AgentName parent)
+ *           <li><p> listEnvironments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEnvironmentsPagedCallable()
- *           <li>listEnvironmentsCallable()
+ *           <li><p> listEnvironmentsPagedCallable()
+ *           <li><p> listEnvironmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEnvironment</td>
+ *      <td><p> GetEnvironment</td>
  *      <td><p> Retrieves the specified agent environment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEnvironment(GetEnvironmentRequest request)
+ *           <li><p> getEnvironment(GetEnvironmentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEnvironmentCallable()
+ *           <li><p> getEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEnvironment</td>
+ *      <td><p> CreateEnvironment</td>
  *      <td><p> Creates an agent environment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEnvironment(CreateEnvironmentRequest request)
+ *           <li><p> createEnvironment(CreateEnvironmentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEnvironmentCallable()
+ *           <li><p> createEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEnvironment</td>
+ *      <td><p> UpdateEnvironment</td>
  *      <td><p> Updates the specified agent environment.
  * <p>  This method allows you to deploy new agent versions into the environment. When an environment is pointed to a new agent version by setting `environment.agent_version`, the environment is temporarily set to the `LOADING` state. During that time, the environment keeps on serving the previous version of the agent. After the new agent version is done loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID in environment name to update version in "draft" environment. WARNING: this will negate all recent changes to draft and can't be undone. You may want to save the draft to a version before calling this function.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEnvironment(UpdateEnvironmentRequest request)
+ *           <li><p> updateEnvironment(UpdateEnvironmentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEnvironmentCallable()
+ *           <li><p> updateEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEnvironment</td>
+ *      <td><p> DeleteEnvironment</td>
  *      <td><p> Deletes the specified agent environment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEnvironment(DeleteEnvironmentRequest request)
+ *           <li><p> deleteEnvironment(DeleteEnvironmentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEnvironmentCallable()
+ *           <li><p> deleteEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEnvironmentHistory</td>
+ *      <td><p> GetEnvironmentHistory</td>
  *      <td><p> Gets the history of the specified environment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEnvironmentHistory(GetEnvironmentHistoryRequest request)
+ *           <li><p> getEnvironmentHistory(GetEnvironmentHistoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEnvironmentHistoryPagedCallable()
- *           <li>getEnvironmentHistoryCallable()
+ *           <li><p> getEnvironmentHistoryPagedCallable()
+ *           <li><p> getEnvironmentHistoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

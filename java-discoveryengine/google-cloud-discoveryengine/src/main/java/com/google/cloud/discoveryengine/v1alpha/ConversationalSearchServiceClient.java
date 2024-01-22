@@ -64,127 +64,128 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ConverseConversation</td>
+ *      <td><p> ConverseConversation</td>
  *      <td><p> Converses a conversation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>converseConversation(ConverseConversationRequest request)
+ *           <li><p> converseConversation(ConverseConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>converseConversation(ConversationName name, TextInput query)
- *           <li>converseConversation(String name, TextInput query)
+ *           <li><p> converseConversation(ConversationName name, TextInput query)
+ *           <li><p> converseConversation(String name, TextInput query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>converseConversationCallable()
+ *           <li><p> converseConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConversation</td>
+ *      <td><p> CreateConversation</td>
  *      <td><p> Creates a Conversation.
  * <p>  If the [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] to create already exists, an ALREADY_EXISTS error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConversation(CreateConversationRequest request)
+ *           <li><p> createConversation(CreateConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createConversation(DataStoreName parent, Conversation conversation)
- *           <li>createConversation(String parent, Conversation conversation)
+ *           <li><p> createConversation(DataStoreName parent, Conversation conversation)
+ *           <li><p> createConversation(String parent, Conversation conversation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConversationCallable()
+ *           <li><p> createConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConversation</td>
+ *      <td><p> DeleteConversation</td>
  *      <td><p> Deletes a Conversation.
  * <p>  If the [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] to delete does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConversation(DeleteConversationRequest request)
+ *           <li><p> deleteConversation(DeleteConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteConversation(ConversationName name)
- *           <li>deleteConversation(String name)
+ *           <li><p> deleteConversation(ConversationName name)
+ *           <li><p> deleteConversation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConversationCallable()
+ *           <li><p> deleteConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConversation</td>
+ *      <td><p> UpdateConversation</td>
  *      <td><p> Updates a Conversation.
  * <p>  [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] action type cannot be changed. If the [Conversation][google.cloud.discoveryengine.v1alpha.Conversation] to update does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConversation(UpdateConversationRequest request)
+ *           <li><p> updateConversation(UpdateConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateConversation(Conversation conversation, FieldMask updateMask)
+ *           <li><p> updateConversation(Conversation conversation, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConversationCallable()
+ *           <li><p> updateConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConversation</td>
+ *      <td><p> GetConversation</td>
  *      <td><p> Gets a Conversation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConversation(GetConversationRequest request)
+ *           <li><p> getConversation(GetConversationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConversation(ConversationName name)
- *           <li>getConversation(String name)
+ *           <li><p> getConversation(ConversationName name)
+ *           <li><p> getConversation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConversationCallable()
+ *           <li><p> getConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConversations</td>
+ *      <td><p> ListConversations</td>
  *      <td><p> Lists all Conversations by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConversations(ListConversationsRequest request)
+ *           <li><p> listConversations(ListConversationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConversations(DataStoreName parent)
- *           <li>listConversations(String parent)
+ *           <li><p> listConversations(DataStoreName parent)
+ *           <li><p> listConversations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConversationsPagedCallable()
- *           <li>listConversationsCallable()
+ *           <li><p> listConversationsPagedCallable()
+ *           <li><p> listConversationsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

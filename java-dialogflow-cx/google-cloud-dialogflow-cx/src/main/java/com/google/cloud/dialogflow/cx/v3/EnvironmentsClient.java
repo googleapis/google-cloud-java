@@ -69,214 +69,215 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListEnvironments</td>
+ *      <td><p> ListEnvironments</td>
  *      <td><p> Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEnvironments(ListEnvironmentsRequest request)
+ *           <li><p> listEnvironments(ListEnvironmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEnvironments(AgentName parent)
- *           <li>listEnvironments(String parent)
+ *           <li><p> listEnvironments(AgentName parent)
+ *           <li><p> listEnvironments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEnvironmentsPagedCallable()
- *           <li>listEnvironmentsCallable()
+ *           <li><p> listEnvironmentsPagedCallable()
+ *           <li><p> listEnvironmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEnvironment</td>
+ *      <td><p> GetEnvironment</td>
  *      <td><p> Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEnvironment(GetEnvironmentRequest request)
+ *           <li><p> getEnvironment(GetEnvironmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEnvironment(EnvironmentName name)
- *           <li>getEnvironment(String name)
+ *           <li><p> getEnvironment(EnvironmentName name)
+ *           <li><p> getEnvironment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEnvironmentCallable()
+ *           <li><p> getEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEnvironment</td>
+ *      <td><p> CreateEnvironment</td>
  *      <td><p> Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEnvironmentAsync(CreateEnvironmentRequest request)
+ *           <li><p> createEnvironmentAsync(CreateEnvironmentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createEnvironmentAsync(AgentName parent, Environment environment)
- *           <li>createEnvironmentAsync(String parent, Environment environment)
+ *           <li><p> createEnvironmentAsync(AgentName parent, Environment environment)
+ *           <li><p> createEnvironmentAsync(String parent, Environment environment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEnvironmentOperationCallable()
- *           <li>createEnvironmentCallable()
+ *           <li><p> createEnvironmentOperationCallable()
+ *           <li><p> createEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEnvironment</td>
+ *      <td><p> UpdateEnvironment</td>
  *      <td><p> Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEnvironmentAsync(UpdateEnvironmentRequest request)
+ *           <li><p> updateEnvironmentAsync(UpdateEnvironmentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateEnvironmentAsync(Environment environment, FieldMask updateMask)
+ *           <li><p> updateEnvironmentAsync(Environment environment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEnvironmentOperationCallable()
- *           <li>updateEnvironmentCallable()
+ *           <li><p> updateEnvironmentOperationCallable()
+ *           <li><p> updateEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEnvironment</td>
+ *      <td><p> DeleteEnvironment</td>
  *      <td><p> Deletes the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEnvironment(DeleteEnvironmentRequest request)
+ *           <li><p> deleteEnvironment(DeleteEnvironmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEnvironment(EnvironmentName name)
- *           <li>deleteEnvironment(String name)
+ *           <li><p> deleteEnvironment(EnvironmentName name)
+ *           <li><p> deleteEnvironment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEnvironmentCallable()
+ *           <li><p> deleteEnvironmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupEnvironmentHistory</td>
+ *      <td><p> LookupEnvironmentHistory</td>
  *      <td><p> Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupEnvironmentHistory(LookupEnvironmentHistoryRequest request)
+ *           <li><p> lookupEnvironmentHistory(LookupEnvironmentHistoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>lookupEnvironmentHistory(EnvironmentName name)
- *           <li>lookupEnvironmentHistory(String name)
+ *           <li><p> lookupEnvironmentHistory(EnvironmentName name)
+ *           <li><p> lookupEnvironmentHistory(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupEnvironmentHistoryPagedCallable()
- *           <li>lookupEnvironmentHistoryCallable()
+ *           <li><p> lookupEnvironmentHistoryPagedCallable()
+ *           <li><p> lookupEnvironmentHistoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunContinuousTest</td>
+ *      <td><p> RunContinuousTest</td>
  *      <td><p> Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata] - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runContinuousTestAsync(RunContinuousTestRequest request)
+ *           <li><p> runContinuousTestAsync(RunContinuousTestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runContinuousTestOperationCallable()
- *           <li>runContinuousTestCallable()
+ *           <li><p> runContinuousTestOperationCallable()
+ *           <li><p> runContinuousTestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListContinuousTestResults</td>
+ *      <td><p> ListContinuousTestResults</td>
  *      <td><p> Fetches a list of continuous test results for a given environment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listContinuousTestResults(ListContinuousTestResultsRequest request)
+ *           <li><p> listContinuousTestResults(ListContinuousTestResultsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listContinuousTestResults(EnvironmentName parent)
- *           <li>listContinuousTestResults(String parent)
+ *           <li><p> listContinuousTestResults(EnvironmentName parent)
+ *           <li><p> listContinuousTestResults(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listContinuousTestResultsPagedCallable()
- *           <li>listContinuousTestResultsCallable()
+ *           <li><p> listContinuousTestResultsPagedCallable()
+ *           <li><p> listContinuousTestResultsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeployFlow</td>
+ *      <td><p> DeployFlow</td>
  *      <td><p> Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata] - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deployFlowAsync(DeployFlowRequest request)
+ *           <li><p> deployFlowAsync(DeployFlowRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deployFlowOperationCallable()
- *           <li>deployFlowCallable()
+ *           <li><p> deployFlowOperationCallable()
+ *           <li><p> deployFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

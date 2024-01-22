@@ -58,69 +58,70 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListGroupStats</td>
+ *      <td><p> ListGroupStats</td>
  *      <td><p> Lists the specified groups.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGroupStats(ListGroupStatsRequest request)
+ *           <li><p> listGroupStats(ListGroupStatsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGroupStats(ProjectName projectName, QueryTimeRange timeRange)
- *           <li>listGroupStats(String projectName, QueryTimeRange timeRange)
+ *           <li><p> listGroupStats(ProjectName projectName, QueryTimeRange timeRange)
+ *           <li><p> listGroupStats(String projectName, QueryTimeRange timeRange)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGroupStatsPagedCallable()
- *           <li>listGroupStatsCallable()
+ *           <li><p> listGroupStatsPagedCallable()
+ *           <li><p> listGroupStatsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEvents</td>
+ *      <td><p> ListEvents</td>
  *      <td><p> Lists the specified events.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEvents(ListEventsRequest request)
+ *           <li><p> listEvents(ListEventsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEvents(ProjectName projectName, String groupId)
- *           <li>listEvents(String projectName, String groupId)
+ *           <li><p> listEvents(ProjectName projectName, String groupId)
+ *           <li><p> listEvents(String projectName, String groupId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEventsPagedCallable()
- *           <li>listEventsCallable()
+ *           <li><p> listEventsPagedCallable()
+ *           <li><p> listEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEvents</td>
+ *      <td><p> DeleteEvents</td>
  *      <td><p> Deletes all error events of a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEvents(DeleteEventsRequest request)
+ *           <li><p> deleteEvents(DeleteEventsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEvents(ProjectName projectName)
- *           <li>deleteEvents(String projectName)
+ *           <li><p> deleteEvents(ProjectName projectName)
+ *           <li><p> deleteEvents(String projectName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEventsCallable()
+ *           <li><p> deleteEventsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

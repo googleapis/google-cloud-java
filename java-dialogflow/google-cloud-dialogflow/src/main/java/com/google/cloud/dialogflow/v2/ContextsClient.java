@@ -62,154 +62,155 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListContexts</td>
+ *      <td><p> ListContexts</td>
  *      <td><p> Returns the list of all contexts in the specified session.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listContexts(ListContextsRequest request)
+ *           <li><p> listContexts(ListContextsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listContexts(SessionName parent)
- *           <li>listContexts(String parent)
+ *           <li><p> listContexts(SessionName parent)
+ *           <li><p> listContexts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listContextsPagedCallable()
- *           <li>listContextsCallable()
+ *           <li><p> listContextsPagedCallable()
+ *           <li><p> listContextsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetContext</td>
+ *      <td><p> GetContext</td>
  *      <td><p> Retrieves the specified context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getContext(GetContextRequest request)
+ *           <li><p> getContext(GetContextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getContext(ContextName name)
- *           <li>getContext(String name)
+ *           <li><p> getContext(ContextName name)
+ *           <li><p> getContext(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getContextCallable()
+ *           <li><p> getContextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateContext</td>
+ *      <td><p> CreateContext</td>
  *      <td><p> Creates a context.
  * <p>  If the specified context already exists, overrides the context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createContext(CreateContextRequest request)
+ *           <li><p> createContext(CreateContextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createContext(SessionName parent, Context context)
- *           <li>createContext(String parent, Context context)
+ *           <li><p> createContext(SessionName parent, Context context)
+ *           <li><p> createContext(String parent, Context context)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createContextCallable()
+ *           <li><p> createContextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateContext</td>
+ *      <td><p> UpdateContext</td>
  *      <td><p> Updates the specified context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateContext(UpdateContextRequest request)
+ *           <li><p> updateContext(UpdateContextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateContext(Context context, FieldMask updateMask)
+ *           <li><p> updateContext(Context context, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateContextCallable()
+ *           <li><p> updateContextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteContext</td>
+ *      <td><p> DeleteContext</td>
  *      <td><p> Deletes the specified context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteContext(DeleteContextRequest request)
+ *           <li><p> deleteContext(DeleteContextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteContext(ContextName name)
- *           <li>deleteContext(String name)
+ *           <li><p> deleteContext(ContextName name)
+ *           <li><p> deleteContext(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteContextCallable()
+ *           <li><p> deleteContextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAllContexts</td>
+ *      <td><p> DeleteAllContexts</td>
  *      <td><p> Deletes all active contexts in the specified session.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAllContexts(DeleteAllContextsRequest request)
+ *           <li><p> deleteAllContexts(DeleteAllContextsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAllContexts(SessionName parent)
- *           <li>deleteAllContexts(String parent)
+ *           <li><p> deleteAllContexts(SessionName parent)
+ *           <li><p> deleteAllContexts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAllContextsCallable()
+ *           <li><p> deleteAllContextsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

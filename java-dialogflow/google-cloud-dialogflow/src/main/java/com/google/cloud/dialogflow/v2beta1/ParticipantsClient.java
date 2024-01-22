@@ -65,242 +65,243 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateParticipant</td>
+ *      <td><p> CreateParticipant</td>
  *      <td><p> Creates a new participant in a conversation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createParticipant(CreateParticipantRequest request)
+ *           <li><p> createParticipant(CreateParticipantRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createParticipant(ConversationName parent, Participant participant)
- *           <li>createParticipant(String parent, Participant participant)
+ *           <li><p> createParticipant(ConversationName parent, Participant participant)
+ *           <li><p> createParticipant(String parent, Participant participant)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createParticipantCallable()
+ *           <li><p> createParticipantCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetParticipant</td>
+ *      <td><p> GetParticipant</td>
  *      <td><p> Retrieves a conversation participant.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getParticipant(GetParticipantRequest request)
+ *           <li><p> getParticipant(GetParticipantRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getParticipant(ParticipantName name)
- *           <li>getParticipant(String name)
+ *           <li><p> getParticipant(ParticipantName name)
+ *           <li><p> getParticipant(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getParticipantCallable()
+ *           <li><p> getParticipantCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListParticipants</td>
+ *      <td><p> ListParticipants</td>
  *      <td><p> Returns the list of all participants in the specified conversation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listParticipants(ListParticipantsRequest request)
+ *           <li><p> listParticipants(ListParticipantsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listParticipants(ConversationName parent)
- *           <li>listParticipants(String parent)
+ *           <li><p> listParticipants(ConversationName parent)
+ *           <li><p> listParticipants(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listParticipantsPagedCallable()
- *           <li>listParticipantsCallable()
+ *           <li><p> listParticipantsPagedCallable()
+ *           <li><p> listParticipantsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateParticipant</td>
+ *      <td><p> UpdateParticipant</td>
  *      <td><p> Updates the specified participant.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateParticipant(UpdateParticipantRequest request)
+ *           <li><p> updateParticipant(UpdateParticipantRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateParticipant(Participant participant, FieldMask updateMask)
+ *           <li><p> updateParticipant(Participant participant, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateParticipantCallable()
+ *           <li><p> updateParticipantCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeContent</td>
+ *      <td><p> AnalyzeContent</td>
  *      <td><p> Adds a text (chat, for example), or audio (phone recording, for example) message from a participant into the conversation.
  * <p>  Note: Always use agent versions for production traffic sent to virtual agents. See [Versions and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeContent(AnalyzeContentRequest request)
+ *           <li><p> analyzeContent(AnalyzeContentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeContent(ParticipantName participant, AudioInput audioInput)
- *           <li>analyzeContent(ParticipantName participant, EventInput eventInput)
- *           <li>analyzeContent(ParticipantName participant, TextInput textInput)
- *           <li>analyzeContent(String participant, AudioInput audioInput)
- *           <li>analyzeContent(String participant, EventInput eventInput)
- *           <li>analyzeContent(String participant, TextInput textInput)
+ *           <li><p> analyzeContent(ParticipantName participant, AudioInput audioInput)
+ *           <li><p> analyzeContent(ParticipantName participant, EventInput eventInput)
+ *           <li><p> analyzeContent(ParticipantName participant, TextInput textInput)
+ *           <li><p> analyzeContent(String participant, AudioInput audioInput)
+ *           <li><p> analyzeContent(String participant, EventInput eventInput)
+ *           <li><p> analyzeContent(String participant, TextInput textInput)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeContentCallable()
+ *           <li><p> analyzeContentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StreamingAnalyzeContent</td>
+ *      <td><p> StreamingAnalyzeContent</td>
  *      <td><p> Adds a text (e.g., chat) or audio (e.g., phone recording) message from a participant into the conversation. Note: This method is only available through the gRPC API (not REST).
  * <p>  The top-level message sent to the client by the server is `StreamingAnalyzeContentResponse`. Multiple response messages can be returned in order. The first one or more messages contain the `recognition_result` field. Each result represents a more complete transcript of what the user said. The next message contains the `reply_text` field, and potentially the `reply_audio` and/or the `automated_agent_reply` fields.
  * <p>  Note: Always use agent versions for production traffic sent to virtual agents. See [Versions and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>streamingAnalyzeContentCallable()
+ *           <li><p> streamingAnalyzeContentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SuggestArticles</td>
+ *      <td><p> SuggestArticles</td>
  *      <td><p> Gets suggested articles for a participant based on specific historical messages.
  * <p>  Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion based on the provided conversation context in the real time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>suggestArticles(SuggestArticlesRequest request)
+ *           <li><p> suggestArticles(SuggestArticlesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>suggestArticles(ParticipantName parent)
- *           <li>suggestArticles(String parent)
+ *           <li><p> suggestArticles(ParticipantName parent)
+ *           <li><p> suggestArticles(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>suggestArticlesCallable()
+ *           <li><p> suggestArticlesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SuggestFaqAnswers</td>
+ *      <td><p> SuggestFaqAnswers</td>
  *      <td><p> Gets suggested faq answers for a participant based on specific historical messages.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>suggestFaqAnswers(SuggestFaqAnswersRequest request)
+ *           <li><p> suggestFaqAnswers(SuggestFaqAnswersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>suggestFaqAnswers(ParticipantName parent)
- *           <li>suggestFaqAnswers(String parent)
+ *           <li><p> suggestFaqAnswers(ParticipantName parent)
+ *           <li><p> suggestFaqAnswers(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>suggestFaqAnswersCallable()
+ *           <li><p> suggestFaqAnswersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SuggestSmartReplies</td>
+ *      <td><p> SuggestSmartReplies</td>
  *      <td><p> Gets smart replies for a participant based on specific historical messages.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>suggestSmartReplies(SuggestSmartRepliesRequest request)
+ *           <li><p> suggestSmartReplies(SuggestSmartRepliesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>suggestSmartReplies(ParticipantName parent)
- *           <li>suggestSmartReplies(String parent)
+ *           <li><p> suggestSmartReplies(ParticipantName parent)
+ *           <li><p> suggestSmartReplies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>suggestSmartRepliesCallable()
+ *           <li><p> suggestSmartRepliesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSuggestions</td>
+ *      <td><p> ListSuggestions</td>
  *      <td><p> Deprecated: Use inline suggestion, event based suggestion or Suggestion&#42; API instead. See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more details. Removal Date: 2020-09-01.
  * <p>  Retrieves suggestions for live agents.
  * <p>  This method should be used by human agent client software to fetch auto generated suggestions in real-time, while the conversation with an end user is in progress. The functionality is implemented in terms of the [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design pattern. The client app should use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty page_token.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSuggestions(ListSuggestionsRequest request)
+ *           <li><p> listSuggestions(ListSuggestionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSuggestionsPagedCallable()
- *           <li>listSuggestionsCallable()
+ *           <li><p> listSuggestionsPagedCallable()
+ *           <li><p> listSuggestionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CompileSuggestion</td>
+ *      <td><p> CompileSuggestion</td>
  *      <td><p> Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
  * <p>  Gets suggestions for a participant based on specific historical messages.
  * <p>  Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion based on the provided conversation context in the real time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>compileSuggestion(CompileSuggestionRequest request)
+ *           <li><p> compileSuggestion(CompileSuggestionRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>compileSuggestionCallable()
+ *           <li><p> compileSuggestionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

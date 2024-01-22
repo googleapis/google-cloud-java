@@ -69,133 +69,135 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListDocuments</td>
+ *      <td><p> ListDocuments</td>
  *      <td><p> Returns the list of all documents of the knowledge base.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDocuments(ListDocumentsRequest request)
+ *           <li><p> listDocuments(ListDocumentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDocuments(KnowledgeBaseName parent)
- *           <li>listDocuments(String parent)
+ *           <li><p> listDocuments(KnowledgeBaseName parent)
+ *           <li><p> listDocuments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDocumentsPagedCallable()
- *           <li>listDocumentsCallable()
+ *           <li><p> listDocumentsPagedCallable()
+ *           <li><p> listDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDocument</td>
+ *      <td><p> GetDocument</td>
  *      <td><p> Retrieves the specified document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDocument(GetDocumentRequest request)
+ *           <li><p> getDocument(GetDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDocument(DocumentName name)
- *           <li>getDocument(String name)
+ *           <li><p> getDocument(DocumentName name)
+ *           <li><p> getDocument(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDocumentCallable()
+ *           <li><p> getDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDocument</td>
+ *      <td><p> CreateDocument</td>
  *      <td><p> Creates a new document.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] - `response`: [Document][google.cloud.dialogflow.v2.Document]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDocumentAsync(CreateDocumentRequest request)
+ *           <li><p> createDocumentAsync(CreateDocumentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createDocumentAsync(KnowledgeBaseName parent, Document document)
- *           <li>createDocumentAsync(String parent, Document document)
+ *           <li><p> createDocumentAsync(KnowledgeBaseName parent, Document document)
+ *           <li><p> createDocumentAsync(String parent, Document document)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDocumentOperationCallable()
- *           <li>createDocumentCallable()
+ *           <li><p> createDocumentOperationCallable()
+ *           <li><p> createDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportDocuments</td>
+ *      <td><p> ImportDocuments</td>
  *      <td><p> Creates documents by importing data from external sources. Dialogflow supports up to 350 documents in each request. If you try to import more, Dialogflow will return an error.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] - `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2.ImportDocumentsResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importDocumentsAsync(ImportDocumentsRequest request)
+ *           <li><p> importDocumentsAsync(ImportDocumentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importDocumentsOperationCallable()
- *           <li>importDocumentsCallable()
+ *           <li><p> importDocumentsOperationCallable()
+ *           <li><p> importDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDocument</td>
+ *      <td><p> DeleteDocument</td>
  *      <td><p> Deletes the specified document.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDocumentAsync(DeleteDocumentRequest request)
+ *           <li><p> deleteDocumentAsync(DeleteDocumentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDocumentAsync(DocumentName name)
- *           <li>deleteDocumentAsync(String name)
+ *           <li><p> deleteDocumentAsync(DocumentName name)
+ *           <li><p> deleteDocumentAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDocumentOperationCallable()
- *           <li>deleteDocumentCallable()
+ *           <li><p> deleteDocumentOperationCallable()
+ *           <li><p> deleteDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDocument</td>
+ *      <td><p> UpdateDocument</td>
  *      <td><p> Updates the specified document.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] - `response`: [Document][google.cloud.dialogflow.v2.Document]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDocumentAsync(UpdateDocumentRequest request)
+ *           <li><p> updateDocumentAsync(UpdateDocumentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDocumentAsync(Document document, FieldMask updateMask)
+ *           <li><p> updateDocumentAsync(Document document, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDocumentOperationCallable()
- *           <li>updateDocumentCallable()
+ *           <li><p> updateDocumentOperationCallable()
+ *           <li><p> updateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReloadDocument</td>
+ *      <td><p> ReloadDocument</td>
  *      <td><p> Reloads the specified document from its specified source, content_uri or content. The previously loaded content of the document will be deleted. Note: Even when the content of the document has not changed, there still may be side effects because of internal implementation changes.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] - `response`: [Document][google.cloud.dialogflow.v2.Document]
@@ -203,66 +205,65 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>reloadDocumentAsync(ReloadDocumentRequest request)
+ *           <li><p> reloadDocumentAsync(ReloadDocumentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>reloadDocumentAsync(DocumentName name, String contentUri)
- *           <li>reloadDocumentAsync(String name, String contentUri)
+ *           <li><p> reloadDocumentAsync(DocumentName name, String contentUri)
+ *           <li><p> reloadDocumentAsync(String name, String contentUri)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>reloadDocumentOperationCallable()
- *           <li>reloadDocumentCallable()
+ *           <li><p> reloadDocumentOperationCallable()
+ *           <li><p> reloadDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportDocument</td>
+ *      <td><p> ExportDocument</td>
  *      <td><p> Exports a smart messaging candidate document into the specified destination.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] - `response`: [Document][google.cloud.dialogflow.v2.Document]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportDocumentAsync(ExportDocumentRequest request)
+ *           <li><p> exportDocumentAsync(ExportDocumentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportDocumentOperationCallable()
- *           <li>exportDocumentCallable()
+ *           <li><p> exportDocumentOperationCallable()
+ *           <li><p> exportDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

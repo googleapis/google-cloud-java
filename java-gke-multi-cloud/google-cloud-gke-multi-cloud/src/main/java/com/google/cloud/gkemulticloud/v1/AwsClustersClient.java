@@ -63,306 +63,307 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateAwsCluster</td>
+ *      <td><p> CreateAwsCluster</td>
  *      <td><p> Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google Cloud Platform project and region.
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAwsClusterAsync(CreateAwsClusterRequest request)
+ *           <li><p> createAwsClusterAsync(CreateAwsClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAwsClusterAsync(LocationName parent, AwsCluster awsCluster, String awsClusterId)
- *           <li>createAwsClusterAsync(String parent, AwsCluster awsCluster, String awsClusterId)
+ *           <li><p> createAwsClusterAsync(LocationName parent, AwsCluster awsCluster, String awsClusterId)
+ *           <li><p> createAwsClusterAsync(String parent, AwsCluster awsCluster, String awsClusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAwsClusterOperationCallable()
- *           <li>createAwsClusterCallable()
+ *           <li><p> createAwsClusterOperationCallable()
+ *           <li><p> createAwsClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAwsCluster</td>
+ *      <td><p> UpdateAwsCluster</td>
  *      <td><p> Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAwsClusterAsync(UpdateAwsClusterRequest request)
+ *           <li><p> updateAwsClusterAsync(UpdateAwsClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAwsClusterAsync(AwsCluster awsCluster, FieldMask updateMask)
+ *           <li><p> updateAwsClusterAsync(AwsCluster awsCluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAwsClusterOperationCallable()
- *           <li>updateAwsClusterCallable()
+ *           <li><p> updateAwsClusterOperationCallable()
+ *           <li><p> updateAwsClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAwsCluster</td>
+ *      <td><p> GetAwsCluster</td>
  *      <td><p> Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAwsCluster(GetAwsClusterRequest request)
+ *           <li><p> getAwsCluster(GetAwsClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAwsCluster(AwsClusterName name)
- *           <li>getAwsCluster(String name)
+ *           <li><p> getAwsCluster(AwsClusterName name)
+ *           <li><p> getAwsCluster(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAwsClusterCallable()
+ *           <li><p> getAwsClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAwsClusters</td>
+ *      <td><p> ListAwsClusters</td>
  *      <td><p> Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources on a given Google Cloud project and region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAwsClusters(ListAwsClustersRequest request)
+ *           <li><p> listAwsClusters(ListAwsClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAwsClusters(LocationName parent)
- *           <li>listAwsClusters(String parent)
+ *           <li><p> listAwsClusters(LocationName parent)
+ *           <li><p> listAwsClusters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAwsClustersPagedCallable()
- *           <li>listAwsClustersCallable()
+ *           <li><p> listAwsClustersPagedCallable()
+ *           <li><p> listAwsClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAwsCluster</td>
+ *      <td><p> DeleteAwsCluster</td>
  *      <td><p> Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
  * <p>  Fails if the cluster has one or more associated [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAwsClusterAsync(DeleteAwsClusterRequest request)
+ *           <li><p> deleteAwsClusterAsync(DeleteAwsClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAwsClusterAsync(AwsClusterName name)
- *           <li>deleteAwsClusterAsync(String name)
+ *           <li><p> deleteAwsClusterAsync(AwsClusterName name)
+ *           <li><p> deleteAwsClusterAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAwsClusterOperationCallable()
- *           <li>deleteAwsClusterCallable()
+ *           <li><p> deleteAwsClusterOperationCallable()
+ *           <li><p> deleteAwsClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateAwsClusterAgentToken</td>
+ *      <td><p> GenerateAwsClusterAgentToken</td>
  *      <td><p> Generates an access token for a cluster agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAwsClusterAgentToken(GenerateAwsClusterAgentTokenRequest request)
+ *           <li><p> generateAwsClusterAgentToken(GenerateAwsClusterAgentTokenRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAwsClusterAgentTokenCallable()
+ *           <li><p> generateAwsClusterAgentTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateAwsAccessToken</td>
+ *      <td><p> GenerateAwsAccessToken</td>
  *      <td><p> Generates a short-lived access token to authenticate to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAwsAccessToken(GenerateAwsAccessTokenRequest request)
+ *           <li><p> generateAwsAccessToken(GenerateAwsAccessTokenRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAwsAccessTokenCallable()
+ *           <li><p> generateAwsAccessTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAwsNodePool</td>
+ *      <td><p> CreateAwsNodePool</td>
  *      <td><p> Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool], attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAwsNodePoolAsync(CreateAwsNodePoolRequest request)
+ *           <li><p> createAwsNodePoolAsync(CreateAwsNodePoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAwsNodePoolAsync(AwsClusterName parent, AwsNodePool awsNodePool, String awsNodePoolId)
- *           <li>createAwsNodePoolAsync(String parent, AwsNodePool awsNodePool, String awsNodePoolId)
+ *           <li><p> createAwsNodePoolAsync(AwsClusterName parent, AwsNodePool awsNodePool, String awsNodePoolId)
+ *           <li><p> createAwsNodePoolAsync(String parent, AwsNodePool awsNodePool, String awsNodePoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAwsNodePoolOperationCallable()
- *           <li>createAwsNodePoolCallable()
+ *           <li><p> createAwsNodePoolOperationCallable()
+ *           <li><p> createAwsNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAwsNodePool</td>
+ *      <td><p> UpdateAwsNodePool</td>
  *      <td><p> Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAwsNodePoolAsync(UpdateAwsNodePoolRequest request)
+ *           <li><p> updateAwsNodePoolAsync(UpdateAwsNodePoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAwsNodePoolAsync(AwsNodePool awsNodePool, FieldMask updateMask)
+ *           <li><p> updateAwsNodePoolAsync(AwsNodePool awsNodePool, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAwsNodePoolOperationCallable()
- *           <li>updateAwsNodePoolCallable()
+ *           <li><p> updateAwsNodePoolOperationCallable()
+ *           <li><p> updateAwsNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RollbackAwsNodePoolUpdate</td>
+ *      <td><p> RollbackAwsNodePoolUpdate</td>
  *      <td><p> Rolls back a previously aborted or failed [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if the last update request successfully finished. If an update request is in progress, you cannot rollback the update. You must first cancel or let it finish unsuccessfully before you can rollback.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rollbackAwsNodePoolUpdateAsync(RollbackAwsNodePoolUpdateRequest request)
+ *           <li><p> rollbackAwsNodePoolUpdateAsync(RollbackAwsNodePoolUpdateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>rollbackAwsNodePoolUpdateAsync(AwsNodePoolName name)
- *           <li>rollbackAwsNodePoolUpdateAsync(String name)
+ *           <li><p> rollbackAwsNodePoolUpdateAsync(AwsNodePoolName name)
+ *           <li><p> rollbackAwsNodePoolUpdateAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rollbackAwsNodePoolUpdateOperationCallable()
- *           <li>rollbackAwsNodePoolUpdateCallable()
+ *           <li><p> rollbackAwsNodePoolUpdateOperationCallable()
+ *           <li><p> rollbackAwsNodePoolUpdateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAwsNodePool</td>
+ *      <td><p> GetAwsNodePool</td>
  *      <td><p> Describes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAwsNodePool(GetAwsNodePoolRequest request)
+ *           <li><p> getAwsNodePool(GetAwsNodePoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAwsNodePool(AwsNodePoolName name)
- *           <li>getAwsNodePool(String name)
+ *           <li><p> getAwsNodePool(AwsNodePoolName name)
+ *           <li><p> getAwsNodePool(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAwsNodePoolCallable()
+ *           <li><p> getAwsNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAwsNodePools</td>
+ *      <td><p> ListAwsNodePools</td>
  *      <td><p> Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources on a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAwsNodePools(ListAwsNodePoolsRequest request)
+ *           <li><p> listAwsNodePools(ListAwsNodePoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAwsNodePools(AwsClusterName parent)
- *           <li>listAwsNodePools(String parent)
+ *           <li><p> listAwsNodePools(AwsClusterName parent)
+ *           <li><p> listAwsNodePools(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAwsNodePoolsPagedCallable()
- *           <li>listAwsNodePoolsCallable()
+ *           <li><p> listAwsNodePoolsPagedCallable()
+ *           <li><p> listAwsNodePoolsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAwsNodePool</td>
+ *      <td><p> DeleteAwsNodePool</td>
  *      <td><p> Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAwsNodePoolAsync(DeleteAwsNodePoolRequest request)
+ *           <li><p> deleteAwsNodePoolAsync(DeleteAwsNodePoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAwsNodePoolAsync(AwsNodePoolName name)
- *           <li>deleteAwsNodePoolAsync(String name)
+ *           <li><p> deleteAwsNodePoolAsync(AwsNodePoolName name)
+ *           <li><p> deleteAwsNodePoolAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAwsNodePoolOperationCallable()
- *           <li>deleteAwsNodePoolCallable()
+ *           <li><p> deleteAwsNodePoolOperationCallable()
+ *           <li><p> deleteAwsNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAwsOpenIdConfig</td>
+ *      <td><p> GetAwsOpenIdConfig</td>
  *      <td><p> Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0 specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAwsOpenIdConfig(GetAwsOpenIdConfigRequest request)
+ *           <li><p> getAwsOpenIdConfig(GetAwsOpenIdConfigRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAwsOpenIdConfigCallable()
+ *           <li><p> getAwsOpenIdConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAwsJsonWebKeys</td>
+ *      <td><p> GetAwsJsonWebKeys</td>
  *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAwsJsonWebKeys(GetAwsJsonWebKeysRequest request)
+ *           <li><p> getAwsJsonWebKeys(GetAwsJsonWebKeysRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAwsJsonWebKeysCallable()
+ *           <li><p> getAwsJsonWebKeysCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAwsServerConfig</td>
+ *      <td><p> GetAwsServerConfig</td>
  *      <td><p> Returns information, such as supported AWS regions and Kubernetes versions, on a given Google Cloud location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAwsServerConfig(GetAwsServerConfigRequest request)
+ *           <li><p> getAwsServerConfig(GetAwsServerConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAwsServerConfig(AwsServerConfigName name)
- *           <li>getAwsServerConfig(String name)
+ *           <li><p> getAwsServerConfig(AwsServerConfigName name)
+ *           <li><p> getAwsServerConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAwsServerConfigCallable()
+ *           <li><p> getAwsServerConfigCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

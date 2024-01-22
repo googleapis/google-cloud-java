@@ -63,92 +63,93 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetAnswerRecord</td>
+ *      <td><p> GetAnswerRecord</td>
  *      <td><p> Deprecated. Retrieves a specific answer record.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAnswerRecord(GetAnswerRecordRequest request)
+ *           <li><p> getAnswerRecord(GetAnswerRecordRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAnswerRecordCallable()
+ *           <li><p> getAnswerRecordCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAnswerRecords</td>
+ *      <td><p> ListAnswerRecords</td>
  *      <td><p> Returns the list of all answer records in the specified project in reverse chronological order.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAnswerRecords(ListAnswerRecordsRequest request)
+ *           <li><p> listAnswerRecords(ListAnswerRecordsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAnswerRecords(LocationName parent)
- *           <li>listAnswerRecords(ProjectName parent)
- *           <li>listAnswerRecords(String parent)
+ *           <li><p> listAnswerRecords(LocationName parent)
+ *           <li><p> listAnswerRecords(ProjectName parent)
+ *           <li><p> listAnswerRecords(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAnswerRecordsPagedCallable()
- *           <li>listAnswerRecordsCallable()
+ *           <li><p> listAnswerRecordsPagedCallable()
+ *           <li><p> listAnswerRecordsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAnswerRecord</td>
+ *      <td><p> UpdateAnswerRecord</td>
  *      <td><p> Updates the specified answer record.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAnswerRecord(UpdateAnswerRecordRequest request)
+ *           <li><p> updateAnswerRecord(UpdateAnswerRecordRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAnswerRecord(AnswerRecord answerRecord, FieldMask updateMask)
+ *           <li><p> updateAnswerRecord(AnswerRecord answerRecord, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAnswerRecordCallable()
+ *           <li><p> updateAnswerRecordCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

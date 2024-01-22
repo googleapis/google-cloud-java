@@ -65,184 +65,185 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateAttachedCluster</td>
+ *      <td><p> CreateAttachedCluster</td>
  *      <td><p> Creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource on a given Google Cloud Platform project and region.
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAttachedClusterAsync(CreateAttachedClusterRequest request)
+ *           <li><p> createAttachedClusterAsync(CreateAttachedClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAttachedClusterAsync(LocationName parent, AttachedCluster attachedCluster, String attachedClusterId)
- *           <li>createAttachedClusterAsync(String parent, AttachedCluster attachedCluster, String attachedClusterId)
+ *           <li><p> createAttachedClusterAsync(LocationName parent, AttachedCluster attachedCluster, String attachedClusterId)
+ *           <li><p> createAttachedClusterAsync(String parent, AttachedCluster attachedCluster, String attachedClusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAttachedClusterOperationCallable()
- *           <li>createAttachedClusterCallable()
+ *           <li><p> createAttachedClusterOperationCallable()
+ *           <li><p> createAttachedClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAttachedCluster</td>
+ *      <td><p> UpdateAttachedCluster</td>
  *      <td><p> Updates an [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAttachedClusterAsync(UpdateAttachedClusterRequest request)
+ *           <li><p> updateAttachedClusterAsync(UpdateAttachedClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAttachedClusterAsync(AttachedCluster attachedCluster, FieldMask updateMask)
+ *           <li><p> updateAttachedClusterAsync(AttachedCluster attachedCluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAttachedClusterOperationCallable()
- *           <li>updateAttachedClusterCallable()
+ *           <li><p> updateAttachedClusterOperationCallable()
+ *           <li><p> updateAttachedClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportAttachedCluster</td>
+ *      <td><p> ImportAttachedCluster</td>
  *      <td><p> Imports creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource by importing an existing Fleet Membership resource.
  * <p>  Attached Clusters created before the introduction of the Anthos Multi-Cloud API can be imported through this method.
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importAttachedClusterAsync(ImportAttachedClusterRequest request)
+ *           <li><p> importAttachedClusterAsync(ImportAttachedClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>importAttachedClusterAsync(LocationName parent, String fleetMembership)
- *           <li>importAttachedClusterAsync(String parent, String fleetMembership)
+ *           <li><p> importAttachedClusterAsync(LocationName parent, String fleetMembership)
+ *           <li><p> importAttachedClusterAsync(String parent, String fleetMembership)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importAttachedClusterOperationCallable()
- *           <li>importAttachedClusterCallable()
+ *           <li><p> importAttachedClusterOperationCallable()
+ *           <li><p> importAttachedClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAttachedCluster</td>
+ *      <td><p> GetAttachedCluster</td>
  *      <td><p> Describes a specific [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAttachedCluster(GetAttachedClusterRequest request)
+ *           <li><p> getAttachedCluster(GetAttachedClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAttachedCluster(AttachedClusterName name)
- *           <li>getAttachedCluster(String name)
+ *           <li><p> getAttachedCluster(AttachedClusterName name)
+ *           <li><p> getAttachedCluster(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAttachedClusterCallable()
+ *           <li><p> getAttachedClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAttachedClusters</td>
+ *      <td><p> ListAttachedClusters</td>
  *      <td><p> Lists all [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources on a given Google Cloud project and region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAttachedClusters(ListAttachedClustersRequest request)
+ *           <li><p> listAttachedClusters(ListAttachedClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAttachedClusters(LocationName parent)
- *           <li>listAttachedClusters(String parent)
+ *           <li><p> listAttachedClusters(LocationName parent)
+ *           <li><p> listAttachedClusters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAttachedClustersPagedCallable()
- *           <li>listAttachedClustersCallable()
+ *           <li><p> listAttachedClustersPagedCallable()
+ *           <li><p> listAttachedClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAttachedCluster</td>
+ *      <td><p> DeleteAttachedCluster</td>
  *      <td><p> Deletes a specific [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.
  * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAttachedClusterAsync(DeleteAttachedClusterRequest request)
+ *           <li><p> deleteAttachedClusterAsync(DeleteAttachedClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAttachedClusterAsync(AttachedClusterName name)
- *           <li>deleteAttachedClusterAsync(String name)
+ *           <li><p> deleteAttachedClusterAsync(AttachedClusterName name)
+ *           <li><p> deleteAttachedClusterAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAttachedClusterOperationCallable()
- *           <li>deleteAttachedClusterCallable()
+ *           <li><p> deleteAttachedClusterOperationCallable()
+ *           <li><p> deleteAttachedClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAttachedServerConfig</td>
+ *      <td><p> GetAttachedServerConfig</td>
  *      <td><p> Returns information, such as supported Kubernetes versions, on a given Google Cloud location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAttachedServerConfig(GetAttachedServerConfigRequest request)
+ *           <li><p> getAttachedServerConfig(GetAttachedServerConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAttachedServerConfig(AttachedServerConfigName name)
- *           <li>getAttachedServerConfig(String name)
+ *           <li><p> getAttachedServerConfig(AttachedServerConfigName name)
+ *           <li><p> getAttachedServerConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAttachedServerConfigCallable()
+ *           <li><p> getAttachedServerConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateAttachedClusterInstallManifest</td>
+ *      <td><p> GenerateAttachedClusterInstallManifest</td>
  *      <td><p> Generates the install manifest to be installed on the target cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAttachedClusterInstallManifest(GenerateAttachedClusterInstallManifestRequest request)
+ *           <li><p> generateAttachedClusterInstallManifest(GenerateAttachedClusterInstallManifestRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>generateAttachedClusterInstallManifest(LocationName parent, String attachedClusterId)
- *           <li>generateAttachedClusterInstallManifest(String parent, String attachedClusterId)
+ *           <li><p> generateAttachedClusterInstallManifest(LocationName parent, String attachedClusterId)
+ *           <li><p> generateAttachedClusterInstallManifest(String parent, String attachedClusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAttachedClusterInstallManifestCallable()
+ *           <li><p> generateAttachedClusterInstallManifestCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateAttachedClusterAgentToken</td>
+ *      <td><p> GenerateAttachedClusterAgentToken</td>
  *      <td><p> Generates an access token for a cluster agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAttachedClusterAgentToken(GenerateAttachedClusterAgentTokenRequest request)
+ *           <li><p> generateAttachedClusterAgentToken(GenerateAttachedClusterAgentTokenRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAttachedClusterAgentTokenCallable()
+ *           <li><p> generateAttachedClusterAgentTokenCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

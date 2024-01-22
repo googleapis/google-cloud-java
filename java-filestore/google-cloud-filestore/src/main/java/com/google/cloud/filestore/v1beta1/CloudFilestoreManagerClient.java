@@ -89,433 +89,434 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListInstances</td>
+ *      <td><p> ListInstances</td>
  *      <td><p> Lists all instances in a project for either a specified location or for all locations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listInstances(ListInstancesRequest request)
+ *           <li><p> listInstances(ListInstancesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listInstances(LocationName parent)
- *           <li>listInstances(String parent)
+ *           <li><p> listInstances(LocationName parent)
+ *           <li><p> listInstances(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listInstancesPagedCallable()
- *           <li>listInstancesCallable()
+ *           <li><p> listInstancesPagedCallable()
+ *           <li><p> listInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInstance</td>
+ *      <td><p> GetInstance</td>
  *      <td><p> Gets the details of a specific instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInstance(GetInstanceRequest request)
+ *           <li><p> getInstance(GetInstanceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getInstance(InstanceName name)
- *           <li>getInstance(String name)
+ *           <li><p> getInstance(InstanceName name)
+ *           <li><p> getInstance(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInstanceCallable()
+ *           <li><p> getInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateInstance</td>
+ *      <td><p> CreateInstance</td>
  *      <td><p> Creates an instance. When creating from a backup, the capacity of the new instance needs to be equal to or larger than the capacity of the backup (and also equal to or larger than the minimum capacity of the tier).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createInstanceAsync(CreateInstanceRequest request)
+ *           <li><p> createInstanceAsync(CreateInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createInstanceAsync(LocationName parent, Instance instance, String instanceId)
- *           <li>createInstanceAsync(String parent, Instance instance, String instanceId)
+ *           <li><p> createInstanceAsync(LocationName parent, Instance instance, String instanceId)
+ *           <li><p> createInstanceAsync(String parent, Instance instance, String instanceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createInstanceOperationCallable()
- *           <li>createInstanceCallable()
+ *           <li><p> createInstanceOperationCallable()
+ *           <li><p> createInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateInstance</td>
+ *      <td><p> UpdateInstance</td>
  *      <td><p> Updates the settings of a specific instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateInstanceAsync(UpdateInstanceRequest request)
+ *           <li><p> updateInstanceAsync(UpdateInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateInstanceAsync(Instance instance, FieldMask updateMask)
+ *           <li><p> updateInstanceAsync(Instance instance, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateInstanceOperationCallable()
- *           <li>updateInstanceCallable()
+ *           <li><p> updateInstanceOperationCallable()
+ *           <li><p> updateInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RestoreInstance</td>
+ *      <td><p> RestoreInstance</td>
  *      <td><p> Restores an existing instance's file share from a backup.
  * <p>  The capacity of the instance needs to be equal to or larger than the capacity of the backup (and also equal to or larger than the minimum capacity of the tier).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>restoreInstanceAsync(RestoreInstanceRequest request)
+ *           <li><p> restoreInstanceAsync(RestoreInstanceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>restoreInstanceOperationCallable()
- *           <li>restoreInstanceCallable()
+ *           <li><p> restoreInstanceOperationCallable()
+ *           <li><p> restoreInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RevertInstance</td>
+ *      <td><p> RevertInstance</td>
  *      <td><p> Revert an existing instance's file system to a specified snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>revertInstanceAsync(RevertInstanceRequest request)
+ *           <li><p> revertInstanceAsync(RevertInstanceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>revertInstanceOperationCallable()
- *           <li>revertInstanceCallable()
+ *           <li><p> revertInstanceOperationCallable()
+ *           <li><p> revertInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteInstance</td>
+ *      <td><p> DeleteInstance</td>
  *      <td><p> Deletes an instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteInstanceAsync(DeleteInstanceRequest request)
+ *           <li><p> deleteInstanceAsync(DeleteInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteInstanceAsync(InstanceName name)
- *           <li>deleteInstanceAsync(String name)
+ *           <li><p> deleteInstanceAsync(InstanceName name)
+ *           <li><p> deleteInstanceAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteInstanceOperationCallable()
- *           <li>deleteInstanceCallable()
+ *           <li><p> deleteInstanceOperationCallable()
+ *           <li><p> deleteInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSnapshots</td>
+ *      <td><p> ListSnapshots</td>
  *      <td><p> Lists all snapshots in a project for either a specified location or for all locations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSnapshots(ListSnapshotsRequest request)
+ *           <li><p> listSnapshots(ListSnapshotsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSnapshots(InstanceName parent)
- *           <li>listSnapshots(String parent)
+ *           <li><p> listSnapshots(InstanceName parent)
+ *           <li><p> listSnapshots(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSnapshotsPagedCallable()
- *           <li>listSnapshotsCallable()
+ *           <li><p> listSnapshotsPagedCallable()
+ *           <li><p> listSnapshotsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSnapshot</td>
+ *      <td><p> GetSnapshot</td>
  *      <td><p> Gets the details of a specific snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSnapshot(GetSnapshotRequest request)
+ *           <li><p> getSnapshot(GetSnapshotRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSnapshot(SnapshotName name)
- *           <li>getSnapshot(String name)
+ *           <li><p> getSnapshot(SnapshotName name)
+ *           <li><p> getSnapshot(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSnapshotCallable()
+ *           <li><p> getSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSnapshot</td>
+ *      <td><p> CreateSnapshot</td>
  *      <td><p> Creates a snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSnapshotAsync(CreateSnapshotRequest request)
+ *           <li><p> createSnapshotAsync(CreateSnapshotRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createSnapshotAsync(InstanceName parent, Snapshot snapshot, String snapshotId)
- *           <li>createSnapshotAsync(String parent, Snapshot snapshot, String snapshotId)
+ *           <li><p> createSnapshotAsync(InstanceName parent, Snapshot snapshot, String snapshotId)
+ *           <li><p> createSnapshotAsync(String parent, Snapshot snapshot, String snapshotId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSnapshotOperationCallable()
- *           <li>createSnapshotCallable()
+ *           <li><p> createSnapshotOperationCallable()
+ *           <li><p> createSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSnapshot</td>
+ *      <td><p> DeleteSnapshot</td>
  *      <td><p> Deletes a snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSnapshotAsync(DeleteSnapshotRequest request)
+ *           <li><p> deleteSnapshotAsync(DeleteSnapshotRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteSnapshotAsync(SnapshotName name)
- *           <li>deleteSnapshotAsync(String name)
+ *           <li><p> deleteSnapshotAsync(SnapshotName name)
+ *           <li><p> deleteSnapshotAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSnapshotOperationCallable()
- *           <li>deleteSnapshotCallable()
+ *           <li><p> deleteSnapshotOperationCallable()
+ *           <li><p> deleteSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSnapshot</td>
+ *      <td><p> UpdateSnapshot</td>
  *      <td><p> Updates the settings of a specific snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSnapshotAsync(UpdateSnapshotRequest request)
+ *           <li><p> updateSnapshotAsync(UpdateSnapshotRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateSnapshotAsync(Snapshot snapshot, FieldMask updateMask)
+ *           <li><p> updateSnapshotAsync(Snapshot snapshot, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSnapshotOperationCallable()
- *           <li>updateSnapshotCallable()
+ *           <li><p> updateSnapshotOperationCallable()
+ *           <li><p> updateSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBackups</td>
+ *      <td><p> ListBackups</td>
  *      <td><p> Lists all backups in a project for either a specified location or for all locations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBackups(ListBackupsRequest request)
+ *           <li><p> listBackups(ListBackupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listBackups(LocationName parent)
- *           <li>listBackups(String parent)
+ *           <li><p> listBackups(LocationName parent)
+ *           <li><p> listBackups(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBackupsPagedCallable()
- *           <li>listBackupsCallable()
+ *           <li><p> listBackupsPagedCallable()
+ *           <li><p> listBackupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBackup</td>
+ *      <td><p> GetBackup</td>
  *      <td><p> Gets the details of a specific backup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBackup(GetBackupRequest request)
+ *           <li><p> getBackup(GetBackupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBackup(BackupName name)
- *           <li>getBackup(String name)
+ *           <li><p> getBackup(BackupName name)
+ *           <li><p> getBackup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBackupCallable()
+ *           <li><p> getBackupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateBackup</td>
+ *      <td><p> CreateBackup</td>
  *      <td><p> Creates a backup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createBackupAsync(CreateBackupRequest request)
+ *           <li><p> createBackupAsync(CreateBackupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createBackupAsync(LocationName parent, Backup backup, String backupId)
- *           <li>createBackupAsync(String parent, Backup backup, String backupId)
+ *           <li><p> createBackupAsync(LocationName parent, Backup backup, String backupId)
+ *           <li><p> createBackupAsync(String parent, Backup backup, String backupId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createBackupOperationCallable()
- *           <li>createBackupCallable()
+ *           <li><p> createBackupOperationCallable()
+ *           <li><p> createBackupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteBackup</td>
+ *      <td><p> DeleteBackup</td>
  *      <td><p> Deletes a backup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteBackupAsync(DeleteBackupRequest request)
+ *           <li><p> deleteBackupAsync(DeleteBackupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteBackupAsync(BackupName name)
- *           <li>deleteBackupAsync(String name)
+ *           <li><p> deleteBackupAsync(BackupName name)
+ *           <li><p> deleteBackupAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteBackupOperationCallable()
- *           <li>deleteBackupCallable()
+ *           <li><p> deleteBackupOperationCallable()
+ *           <li><p> deleteBackupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateBackup</td>
+ *      <td><p> UpdateBackup</td>
  *      <td><p> Updates the settings of a specific backup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateBackupAsync(UpdateBackupRequest request)
+ *           <li><p> updateBackupAsync(UpdateBackupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateBackupAsync(Backup backup, FieldMask updateMask)
+ *           <li><p> updateBackupAsync(Backup backup, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateBackupOperationCallable()
- *           <li>updateBackupCallable()
+ *           <li><p> updateBackupOperationCallable()
+ *           <li><p> updateBackupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListShares</td>
+ *      <td><p> ListShares</td>
  *      <td><p> Lists all shares for a specified instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listShares(ListSharesRequest request)
+ *           <li><p> listShares(ListSharesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listShares(InstanceName parent)
- *           <li>listShares(String parent)
+ *           <li><p> listShares(InstanceName parent)
+ *           <li><p> listShares(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSharesPagedCallable()
- *           <li>listSharesCallable()
+ *           <li><p> listSharesPagedCallable()
+ *           <li><p> listSharesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetShare</td>
+ *      <td><p> GetShare</td>
  *      <td><p> Gets the details of a specific share.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getShare(GetShareRequest request)
+ *           <li><p> getShare(GetShareRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getShare(ShareName name)
- *           <li>getShare(String name)
+ *           <li><p> getShare(ShareName name)
+ *           <li><p> getShare(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getShareCallable()
+ *           <li><p> getShareCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateShare</td>
+ *      <td><p> CreateShare</td>
  *      <td><p> Creates a share.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createShareAsync(CreateShareRequest request)
+ *           <li><p> createShareAsync(CreateShareRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createShareAsync(InstanceName parent, Share share, String shareId)
- *           <li>createShareAsync(String parent, Share share, String shareId)
+ *           <li><p> createShareAsync(InstanceName parent, Share share, String shareId)
+ *           <li><p> createShareAsync(String parent, Share share, String shareId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createShareOperationCallable()
- *           <li>createShareCallable()
+ *           <li><p> createShareOperationCallable()
+ *           <li><p> createShareCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteShare</td>
+ *      <td><p> DeleteShare</td>
  *      <td><p> Deletes a share.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteShareAsync(DeleteShareRequest request)
+ *           <li><p> deleteShareAsync(DeleteShareRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteShareAsync(ShareName name)
- *           <li>deleteShareAsync(String name)
+ *           <li><p> deleteShareAsync(ShareName name)
+ *           <li><p> deleteShareAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteShareOperationCallable()
- *           <li>deleteShareCallable()
+ *           <li><p> deleteShareOperationCallable()
+ *           <li><p> deleteShareCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateShare</td>
+ *      <td><p> UpdateShare</td>
  *      <td><p> Updates the settings of a specific share.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateShareAsync(UpdateShareRequest request)
+ *           <li><p> updateShareAsync(UpdateShareRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateShareAsync(Share share, FieldMask updateMask)
+ *           <li><p> updateShareAsync(Share share, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateShareOperationCallable()
- *           <li>updateShareCallable()
+ *           <li><p> updateShareOperationCallable()
+ *           <li><p> updateShareCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -68,109 +68,111 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateFlow</td>
+ *      <td><p> CreateFlow</td>
  *      <td><p> Creates a flow in the specified agent.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFlow(CreateFlowRequest request)
+ *           <li><p> createFlow(CreateFlowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createFlow(AgentName parent, Flow flow)
- *           <li>createFlow(String parent, Flow flow)
+ *           <li><p> createFlow(AgentName parent, Flow flow)
+ *           <li><p> createFlow(String parent, Flow flow)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFlowCallable()
+ *           <li><p> createFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFlow</td>
+ *      <td><p> DeleteFlow</td>
  *      <td><p> Deletes a specified flow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFlow(DeleteFlowRequest request)
+ *           <li><p> deleteFlow(DeleteFlowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteFlow(FlowName name)
- *           <li>deleteFlow(String name)
+ *           <li><p> deleteFlow(FlowName name)
+ *           <li><p> deleteFlow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFlowCallable()
+ *           <li><p> deleteFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFlows</td>
+ *      <td><p> ListFlows</td>
  *      <td><p> Returns the list of all flows in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFlows(ListFlowsRequest request)
+ *           <li><p> listFlows(ListFlowsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFlows(AgentName parent)
- *           <li>listFlows(String parent)
+ *           <li><p> listFlows(AgentName parent)
+ *           <li><p> listFlows(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFlowsPagedCallable()
- *           <li>listFlowsCallable()
+ *           <li><p> listFlowsPagedCallable()
+ *           <li><p> listFlowsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFlow</td>
+ *      <td><p> GetFlow</td>
  *      <td><p> Retrieves the specified flow.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFlow(GetFlowRequest request)
+ *           <li><p> getFlow(GetFlowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFlow(FlowName name)
- *           <li>getFlow(String name)
+ *           <li><p> getFlow(FlowName name)
+ *           <li><p> getFlow(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFlowCallable()
+ *           <li><p> getFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFlow</td>
+ *      <td><p> UpdateFlow</td>
  *      <td><p> Updates the specified flow.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFlow(UpdateFlowRequest request)
+ *           <li><p> updateFlow(UpdateFlowRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateFlow(Flow flow, FieldMask updateMask)
+ *           <li><p> updateFlow(Flow flow, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFlowCallable()
+ *           <li><p> updateFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TrainFlow</td>
+ *      <td><p> TrainFlow</td>
  *      <td><p> Trains the specified flow. Note that only the flow in 'draft' environment is trained.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -178,55 +180,55 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>trainFlowAsync(TrainFlowRequest request)
+ *           <li><p> trainFlowAsync(TrainFlowRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>trainFlowAsync(FlowName name)
- *           <li>trainFlowAsync(String name)
+ *           <li><p> trainFlowAsync(FlowName name)
+ *           <li><p> trainFlowAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>trainFlowOperationCallable()
- *           <li>trainFlowCallable()
+ *           <li><p> trainFlowOperationCallable()
+ *           <li><p> trainFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ValidateFlow</td>
+ *      <td><p> ValidateFlow</td>
  *      <td><p> Validates the specified flow and creates or updates validation results. Please call this API after the training is completed to get the complete validation results.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateFlow(ValidateFlowRequest request)
+ *           <li><p> validateFlow(ValidateFlowRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateFlowCallable()
+ *           <li><p> validateFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFlowValidationResult</td>
+ *      <td><p> GetFlowValidationResult</td>
  *      <td><p> Gets the latest flow validation result. Flow validation is performed when ValidateFlow is called.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFlowValidationResult(GetFlowValidationResultRequest request)
+ *           <li><p> getFlowValidationResult(GetFlowValidationResultRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFlowValidationResult(FlowValidationResultName name)
- *           <li>getFlowValidationResult(String name)
+ *           <li><p> getFlowValidationResult(FlowValidationResultName name)
+ *           <li><p> getFlowValidationResult(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFlowValidationResultCallable()
+ *           <li><p> getFlowValidationResultCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportFlow</td>
+ *      <td><p> ImportFlow</td>
  *      <td><p> Imports the specified flow to the specified agent from a binary file.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3.ImportFlowResponse]
@@ -234,17 +236,17 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importFlowAsync(ImportFlowRequest request)
+ *           <li><p> importFlowAsync(ImportFlowRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importFlowOperationCallable()
- *           <li>importFlowCallable()
+ *           <li><p> importFlowOperationCallable()
+ *           <li><p> importFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportFlow</td>
+ *      <td><p> ExportFlow</td>
  *      <td><p> Exports the specified flow to a binary file.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3.ExportFlowResponse]
@@ -252,44 +254,43 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportFlowAsync(ExportFlowRequest request)
+ *           <li><p> exportFlowAsync(ExportFlowRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportFlowOperationCallable()
- *           <li>exportFlowCallable()
+ *           <li><p> exportFlowOperationCallable()
+ *           <li><p> exportFlowCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

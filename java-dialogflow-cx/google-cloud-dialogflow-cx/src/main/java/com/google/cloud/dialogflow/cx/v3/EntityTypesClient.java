@@ -63,137 +63,138 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetEntityType</td>
+ *      <td><p> GetEntityType</td>
  *      <td><p> Retrieves the specified entity type.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEntityType(GetEntityTypeRequest request)
+ *           <li><p> getEntityType(GetEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEntityType(EntityTypeName name)
- *           <li>getEntityType(String name)
+ *           <li><p> getEntityType(EntityTypeName name)
+ *           <li><p> getEntityType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEntityTypeCallable()
+ *           <li><p> getEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEntityType</td>
+ *      <td><p> CreateEntityType</td>
  *      <td><p> Creates an entity type in the specified agent.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEntityType(CreateEntityTypeRequest request)
+ *           <li><p> createEntityType(CreateEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEntityType(AgentName parent, EntityType entityType)
- *           <li>createEntityType(String parent, EntityType entityType)
+ *           <li><p> createEntityType(AgentName parent, EntityType entityType)
+ *           <li><p> createEntityType(String parent, EntityType entityType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEntityTypeCallable()
+ *           <li><p> createEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEntityType</td>
+ *      <td><p> UpdateEntityType</td>
  *      <td><p> Updates the specified entity type.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEntityType(UpdateEntityTypeRequest request)
+ *           <li><p> updateEntityType(UpdateEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEntityType(EntityType entityType, FieldMask updateMask)
+ *           <li><p> updateEntityType(EntityType entityType, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEntityTypeCallable()
+ *           <li><p> updateEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEntityType</td>
+ *      <td><p> DeleteEntityType</td>
  *      <td><p> Deletes the specified entity type.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEntityType(DeleteEntityTypeRequest request)
+ *           <li><p> deleteEntityType(DeleteEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEntityType(EntityTypeName name)
- *           <li>deleteEntityType(String name)
+ *           <li><p> deleteEntityType(EntityTypeName name)
+ *           <li><p> deleteEntityType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEntityTypeCallable()
+ *           <li><p> deleteEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEntityTypes</td>
+ *      <td><p> ListEntityTypes</td>
  *      <td><p> Returns the list of all entity types in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntityTypes(ListEntityTypesRequest request)
+ *           <li><p> listEntityTypes(ListEntityTypesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEntityTypes(AgentName parent)
- *           <li>listEntityTypes(String parent)
+ *           <li><p> listEntityTypes(AgentName parent)
+ *           <li><p> listEntityTypes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntityTypesPagedCallable()
- *           <li>listEntityTypesCallable()
+ *           <li><p> listEntityTypesPagedCallable()
+ *           <li><p> listEntityTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

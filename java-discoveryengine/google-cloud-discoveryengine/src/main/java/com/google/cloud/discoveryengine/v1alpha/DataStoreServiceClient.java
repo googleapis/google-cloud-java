@@ -65,108 +65,109 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDataStore</td>
+ *      <td><p> CreateDataStore</td>
  *      <td><p> Creates a [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
  * <p>  DataStore is for storing [Documents][google.cloud.discoveryengine.v1alpha.Document]. To serve these documents for Search, or Recommendation use case, an [Engine][google.cloud.discoveryengine.v1alpha.Engine] needs to be created separately.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDataStoreAsync(CreateDataStoreRequest request)
+ *           <li><p> createDataStoreAsync(CreateDataStoreRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createDataStoreAsync(CollectionName parent, DataStore dataStore, String dataStoreId)
- *           <li>createDataStoreAsync(String parent, DataStore dataStore, String dataStoreId)
+ *           <li><p> createDataStoreAsync(CollectionName parent, DataStore dataStore, String dataStoreId)
+ *           <li><p> createDataStoreAsync(String parent, DataStore dataStore, String dataStoreId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDataStoreOperationCallable()
- *           <li>createDataStoreCallable()
+ *           <li><p> createDataStoreOperationCallable()
+ *           <li><p> createDataStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataStore</td>
+ *      <td><p> GetDataStore</td>
  *      <td><p> Gets a [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataStore(GetDataStoreRequest request)
+ *           <li><p> getDataStore(GetDataStoreRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataStore(DataStoreName name)
- *           <li>getDataStore(String name)
+ *           <li><p> getDataStore(DataStoreName name)
+ *           <li><p> getDataStore(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataStoreCallable()
+ *           <li><p> getDataStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataStores</td>
+ *      <td><p> ListDataStores</td>
  *      <td><p> Lists all the [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]s associated with the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataStores(ListDataStoresRequest request)
+ *           <li><p> listDataStores(ListDataStoresRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataStores(CollectionName parent)
- *           <li>listDataStores(String parent)
+ *           <li><p> listDataStores(CollectionName parent)
+ *           <li><p> listDataStores(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataStoresPagedCallable()
- *           <li>listDataStoresCallable()
+ *           <li><p> listDataStoresPagedCallable()
+ *           <li><p> listDataStoresCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDataStore</td>
+ *      <td><p> DeleteDataStore</td>
  *      <td><p> Deletes a [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDataStoreAsync(DeleteDataStoreRequest request)
+ *           <li><p> deleteDataStoreAsync(DeleteDataStoreRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDataStoreAsync(DataStoreName name)
- *           <li>deleteDataStoreAsync(String name)
+ *           <li><p> deleteDataStoreAsync(DataStoreName name)
+ *           <li><p> deleteDataStoreAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDataStoreOperationCallable()
- *           <li>deleteDataStoreCallable()
+ *           <li><p> deleteDataStoreOperationCallable()
+ *           <li><p> deleteDataStoreCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDataStore</td>
+ *      <td><p> UpdateDataStore</td>
  *      <td><p> Updates a [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDataStore(UpdateDataStoreRequest request)
+ *           <li><p> updateDataStore(UpdateDataStoreRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDataStore(DataStore dataStore, FieldMask updateMask)
+ *           <li><p> updateDataStore(DataStore dataStore, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDataStoreCallable()
+ *           <li><p> updateDataStoreCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

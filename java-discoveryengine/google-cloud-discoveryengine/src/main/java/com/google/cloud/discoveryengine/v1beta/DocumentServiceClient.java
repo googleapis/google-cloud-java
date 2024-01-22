@@ -65,134 +65,135 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetDocument</td>
+ *      <td><p> GetDocument</td>
  *      <td><p> Gets a [Document][google.cloud.discoveryengine.v1beta.Document].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDocument(GetDocumentRequest request)
+ *           <li><p> getDocument(GetDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDocument(DocumentName name)
- *           <li>getDocument(String name)
+ *           <li><p> getDocument(DocumentName name)
+ *           <li><p> getDocument(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDocumentCallable()
+ *           <li><p> getDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDocuments</td>
+ *      <td><p> ListDocuments</td>
  *      <td><p> Gets a list of [Document][google.cloud.discoveryengine.v1beta.Document]s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDocuments(ListDocumentsRequest request)
+ *           <li><p> listDocuments(ListDocumentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDocuments(BranchName parent)
- *           <li>listDocuments(String parent)
+ *           <li><p> listDocuments(BranchName parent)
+ *           <li><p> listDocuments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDocumentsPagedCallable()
- *           <li>listDocumentsCallable()
+ *           <li><p> listDocumentsPagedCallable()
+ *           <li><p> listDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDocument</td>
+ *      <td><p> CreateDocument</td>
  *      <td><p> Creates a [Document][google.cloud.discoveryengine.v1beta.Document].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDocument(CreateDocumentRequest request)
+ *           <li><p> createDocument(CreateDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDocument(BranchName parent, Document document, String documentId)
- *           <li>createDocument(String parent, Document document, String documentId)
+ *           <li><p> createDocument(BranchName parent, Document document, String documentId)
+ *           <li><p> createDocument(String parent, Document document, String documentId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDocumentCallable()
+ *           <li><p> createDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDocument</td>
+ *      <td><p> UpdateDocument</td>
  *      <td><p> Updates a [Document][google.cloud.discoveryengine.v1beta.Document].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDocument(UpdateDocumentRequest request)
+ *           <li><p> updateDocument(UpdateDocumentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDocumentCallable()
+ *           <li><p> updateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDocument</td>
+ *      <td><p> DeleteDocument</td>
  *      <td><p> Deletes a [Document][google.cloud.discoveryengine.v1beta.Document].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDocument(DeleteDocumentRequest request)
+ *           <li><p> deleteDocument(DeleteDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDocument(DocumentName name)
- *           <li>deleteDocument(String name)
+ *           <li><p> deleteDocument(DocumentName name)
+ *           <li><p> deleteDocument(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDocumentCallable()
+ *           <li><p> deleteDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportDocuments</td>
+ *      <td><p> ImportDocuments</td>
  *      <td><p> Bulk import of multiple [Document][google.cloud.discoveryengine.v1beta.Document]s. Request processing may be synchronous. Non-existing items will be created.
  * <p>  Note: It is possible for a subset of the [Document][google.cloud.discoveryengine.v1beta.Document]s to be successfully updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importDocumentsAsync(ImportDocumentsRequest request)
+ *           <li><p> importDocumentsAsync(ImportDocumentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importDocumentsOperationCallable()
- *           <li>importDocumentsCallable()
+ *           <li><p> importDocumentsOperationCallable()
+ *           <li><p> importDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PurgeDocuments</td>
+ *      <td><p> PurgeDocuments</td>
  *      <td><p> Permanently deletes all selected [Document][google.cloud.discoveryengine.v1beta.Document]s in a branch.
  * <p>  This process is asynchronous. Depending on the number of [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted, this operation can take hours to complete. Before the delete operation completes, some [Document][google.cloud.discoveryengine.v1beta.Document]s might still be returned by [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument] or [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
  * <p>  To get a list of the [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted, set [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force] to false.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>purgeDocumentsAsync(PurgeDocumentsRequest request)
+ *           <li><p> purgeDocumentsAsync(PurgeDocumentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>purgeDocumentsOperationCallable()
- *           <li>purgeDocumentsCallable()
+ *           <li><p> purgeDocumentsOperationCallable()
+ *           <li><p> purgeDocumentsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

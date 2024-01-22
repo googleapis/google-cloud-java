@@ -64,142 +64,143 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListKnowledgeBases</td>
+ *      <td><p> ListKnowledgeBases</td>
  *      <td><p> Returns the list of all knowledge bases of the specified agent.
  * <p>  Note: The `projects.agent.knowledgeBases` resource is deprecated; only use `projects.knowledgeBases`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listKnowledgeBases(ListKnowledgeBasesRequest request)
+ *           <li><p> listKnowledgeBases(ListKnowledgeBasesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listKnowledgeBases(LocationName parent)
- *           <li>listKnowledgeBases(ProjectName parent)
- *           <li>listKnowledgeBases(String parent)
+ *           <li><p> listKnowledgeBases(LocationName parent)
+ *           <li><p> listKnowledgeBases(ProjectName parent)
+ *           <li><p> listKnowledgeBases(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listKnowledgeBasesPagedCallable()
- *           <li>listKnowledgeBasesCallable()
+ *           <li><p> listKnowledgeBasesPagedCallable()
+ *           <li><p> listKnowledgeBasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetKnowledgeBase</td>
+ *      <td><p> GetKnowledgeBase</td>
  *      <td><p> Retrieves the specified knowledge base.
  * <p>  Note: The `projects.agent.knowledgeBases` resource is deprecated; only use `projects.knowledgeBases`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getKnowledgeBase(GetKnowledgeBaseRequest request)
+ *           <li><p> getKnowledgeBase(GetKnowledgeBaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getKnowledgeBase(KnowledgeBaseName name)
- *           <li>getKnowledgeBase(String name)
+ *           <li><p> getKnowledgeBase(KnowledgeBaseName name)
+ *           <li><p> getKnowledgeBase(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getKnowledgeBaseCallable()
+ *           <li><p> getKnowledgeBaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateKnowledgeBase</td>
+ *      <td><p> CreateKnowledgeBase</td>
  *      <td><p> Creates a knowledge base.
  * <p>  Note: The `projects.agent.knowledgeBases` resource is deprecated; only use `projects.knowledgeBases`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createKnowledgeBase(CreateKnowledgeBaseRequest request)
+ *           <li><p> createKnowledgeBase(CreateKnowledgeBaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createKnowledgeBase(LocationName parent, KnowledgeBase knowledgeBase)
- *           <li>createKnowledgeBase(ProjectName parent, KnowledgeBase knowledgeBase)
- *           <li>createKnowledgeBase(String parent, KnowledgeBase knowledgeBase)
+ *           <li><p> createKnowledgeBase(LocationName parent, KnowledgeBase knowledgeBase)
+ *           <li><p> createKnowledgeBase(ProjectName parent, KnowledgeBase knowledgeBase)
+ *           <li><p> createKnowledgeBase(String parent, KnowledgeBase knowledgeBase)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createKnowledgeBaseCallable()
+ *           <li><p> createKnowledgeBaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteKnowledgeBase</td>
+ *      <td><p> DeleteKnowledgeBase</td>
  *      <td><p> Deletes the specified knowledge base.
  * <p>  Note: The `projects.agent.knowledgeBases` resource is deprecated; only use `projects.knowledgeBases`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteKnowledgeBase(DeleteKnowledgeBaseRequest request)
+ *           <li><p> deleteKnowledgeBase(DeleteKnowledgeBaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteKnowledgeBase(KnowledgeBaseName name)
- *           <li>deleteKnowledgeBase(String name)
+ *           <li><p> deleteKnowledgeBase(KnowledgeBaseName name)
+ *           <li><p> deleteKnowledgeBase(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteKnowledgeBaseCallable()
+ *           <li><p> deleteKnowledgeBaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateKnowledgeBase</td>
+ *      <td><p> UpdateKnowledgeBase</td>
  *      <td><p> Updates the specified knowledge base.
  * <p>  Note: The `projects.agent.knowledgeBases` resource is deprecated; only use `projects.knowledgeBases`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateKnowledgeBase(UpdateKnowledgeBaseRequest request)
+ *           <li><p> updateKnowledgeBase(UpdateKnowledgeBaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateKnowledgeBase(KnowledgeBase knowledgeBase)
- *           <li>updateKnowledgeBase(KnowledgeBase knowledgeBase, FieldMask updateMask)
+ *           <li><p> updateKnowledgeBase(KnowledgeBase knowledgeBase)
+ *           <li><p> updateKnowledgeBase(KnowledgeBase knowledgeBase, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateKnowledgeBaseCallable()
+ *           <li><p> updateKnowledgeBaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

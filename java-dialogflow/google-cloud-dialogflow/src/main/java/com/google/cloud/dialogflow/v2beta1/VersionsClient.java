@@ -62,136 +62,137 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListVersions</td>
+ *      <td><p> ListVersions</td>
  *      <td><p> Returns the list of all versions of the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listVersions(ListVersionsRequest request)
+ *           <li><p> listVersions(ListVersionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listVersions(AgentName parent)
- *           <li>listVersions(String parent)
+ *           <li><p> listVersions(AgentName parent)
+ *           <li><p> listVersions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listVersionsPagedCallable()
- *           <li>listVersionsCallable()
+ *           <li><p> listVersionsPagedCallable()
+ *           <li><p> listVersionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetVersion</td>
+ *      <td><p> GetVersion</td>
  *      <td><p> Retrieves the specified agent version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getVersion(GetVersionRequest request)
+ *           <li><p> getVersion(GetVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getVersion(VersionName name)
- *           <li>getVersion(String name)
+ *           <li><p> getVersion(VersionName name)
+ *           <li><p> getVersion(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getVersionCallable()
+ *           <li><p> getVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateVersion</td>
+ *      <td><p> CreateVersion</td>
  *      <td><p> Creates an agent version.
  * <p>  The new version points to the agent instance in the "default" environment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createVersion(CreateVersionRequest request)
+ *           <li><p> createVersion(CreateVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createVersion(AgentName parent, Version version)
- *           <li>createVersion(String parent, Version version)
+ *           <li><p> createVersion(AgentName parent, Version version)
+ *           <li><p> createVersion(String parent, Version version)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createVersionCallable()
+ *           <li><p> createVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateVersion</td>
+ *      <td><p> UpdateVersion</td>
  *      <td><p> Updates the specified agent version.
  * <p>  Note that this method does not allow you to update the state of the agent the given version points to. It allows you to update only mutable properties of the version resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateVersion(UpdateVersionRequest request)
+ *           <li><p> updateVersion(UpdateVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateVersion(Version version, FieldMask updateMask)
+ *           <li><p> updateVersion(Version version, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateVersionCallable()
+ *           <li><p> updateVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteVersion</td>
+ *      <td><p> DeleteVersion</td>
  *      <td><p> Delete the specified agent version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteVersion(DeleteVersionRequest request)
+ *           <li><p> deleteVersion(DeleteVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteVersion(VersionName name)
- *           <li>deleteVersion(String name)
+ *           <li><p> deleteVersion(VersionName name)
+ *           <li><p> deleteVersion(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteVersionCallable()
+ *           <li><p> deleteVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

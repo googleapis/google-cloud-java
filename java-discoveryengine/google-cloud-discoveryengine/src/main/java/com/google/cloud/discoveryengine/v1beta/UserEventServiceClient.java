@@ -61,55 +61,56 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>WriteUserEvent</td>
+ *      <td><p> WriteUserEvent</td>
  *      <td><p> Writes a single user event.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>writeUserEvent(WriteUserEventRequest request)
+ *           <li><p> writeUserEvent(WriteUserEventRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>writeUserEventCallable()
+ *           <li><p> writeUserEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CollectUserEvent</td>
+ *      <td><p> CollectUserEvent</td>
  *      <td><p> Writes a single user event from the browser. This uses a GET request to due to browser restriction of POST-ing to a third-party domain.
  * <p>  This method is used only by the Discovery Engine API JavaScript pixel and Google Tag Manager. Users should not call this method directly.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>collectUserEvent(CollectUserEventRequest request)
+ *           <li><p> collectUserEvent(CollectUserEventRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>collectUserEventCallable()
+ *           <li><p> collectUserEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportUserEvents</td>
+ *      <td><p> ImportUserEvents</td>
  *      <td><p> Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events.
  * <p>  Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importUserEventsAsync(ImportUserEventsRequest request)
+ *           <li><p> importUserEventsAsync(ImportUserEventsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importUserEventsOperationCallable()
- *           <li>importUserEventsCallable()
+ *           <li><p> importUserEventsOperationCallable()
+ *           <li><p> importUserEventsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

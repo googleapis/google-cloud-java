@@ -63,134 +63,135 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListGenerators</td>
+ *      <td><p> ListGenerators</td>
  *      <td><p> Returns the list of all generators in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listGenerators(ListGeneratorsRequest request)
+ *           <li><p> listGenerators(ListGeneratorsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listGenerators(AgentName parent)
- *           <li>listGenerators(String parent)
+ *           <li><p> listGenerators(AgentName parent)
+ *           <li><p> listGenerators(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listGeneratorsPagedCallable()
- *           <li>listGeneratorsCallable()
+ *           <li><p> listGeneratorsPagedCallable()
+ *           <li><p> listGeneratorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGenerator</td>
+ *      <td><p> GetGenerator</td>
  *      <td><p> Retrieves the specified generator.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGenerator(GetGeneratorRequest request)
+ *           <li><p> getGenerator(GetGeneratorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGenerator(GeneratorName name)
- *           <li>getGenerator(String name)
+ *           <li><p> getGenerator(GeneratorName name)
+ *           <li><p> getGenerator(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGeneratorCallable()
+ *           <li><p> getGeneratorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateGenerator</td>
+ *      <td><p> CreateGenerator</td>
  *      <td><p> Creates a generator in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createGenerator(CreateGeneratorRequest request)
+ *           <li><p> createGenerator(CreateGeneratorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createGenerator(AgentName parent, Generator generator)
- *           <li>createGenerator(String parent, Generator generator)
+ *           <li><p> createGenerator(AgentName parent, Generator generator)
+ *           <li><p> createGenerator(String parent, Generator generator)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createGeneratorCallable()
+ *           <li><p> createGeneratorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGenerator</td>
+ *      <td><p> UpdateGenerator</td>
  *      <td><p> Update the specified generator.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGenerator(UpdateGeneratorRequest request)
+ *           <li><p> updateGenerator(UpdateGeneratorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGenerator(Generator generator, FieldMask updateMask)
+ *           <li><p> updateGenerator(Generator generator, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGeneratorCallable()
+ *           <li><p> updateGeneratorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteGenerator</td>
+ *      <td><p> DeleteGenerator</td>
  *      <td><p> Deletes the specified generators.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteGenerator(DeleteGeneratorRequest request)
+ *           <li><p> deleteGenerator(DeleteGeneratorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteGenerator(GeneratorName name)
- *           <li>deleteGenerator(String name)
+ *           <li><p> deleteGenerator(GeneratorName name)
+ *           <li><p> deleteGenerator(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteGeneratorCallable()
+ *           <li><p> deleteGeneratorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

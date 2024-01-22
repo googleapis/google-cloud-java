@@ -73,38 +73,39 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>PublishChannelConnectionEvents</td>
+ *      <td><p> PublishChannelConnectionEvents</td>
  *      <td><p> Publish events to a ChannelConnection in a partner's project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>publishChannelConnectionEvents(PublishChannelConnectionEventsRequest request)
+ *           <li><p> publishChannelConnectionEvents(PublishChannelConnectionEventsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>publishChannelConnectionEventsCallable()
+ *           <li><p> publishChannelConnectionEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PublishEvents</td>
+ *      <td><p> PublishEvents</td>
  *      <td><p> Publish events to a subscriber's channel.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>publishEvents(PublishEventsRequest request)
+ *           <li><p> publishEvents(PublishEventsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>publishEventsCallable()
+ *           <li><p> publishEventsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

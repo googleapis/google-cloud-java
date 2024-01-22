@@ -66,141 +66,142 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListSessionEntityTypes</td>
+ *      <td><p> ListSessionEntityTypes</td>
  *      <td><p> Returns the list of all session entity types in the specified session.
  * <p>  This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSessionEntityTypes(ListSessionEntityTypesRequest request)
+ *           <li><p> listSessionEntityTypes(ListSessionEntityTypesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSessionEntityTypes(SessionName parent)
- *           <li>listSessionEntityTypes(String parent)
+ *           <li><p> listSessionEntityTypes(SessionName parent)
+ *           <li><p> listSessionEntityTypes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSessionEntityTypesPagedCallable()
- *           <li>listSessionEntityTypesCallable()
+ *           <li><p> listSessionEntityTypesPagedCallable()
+ *           <li><p> listSessionEntityTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSessionEntityType</td>
+ *      <td><p> GetSessionEntityType</td>
  *      <td><p> Retrieves the specified session entity type.
  * <p>  This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSessionEntityType(GetSessionEntityTypeRequest request)
+ *           <li><p> getSessionEntityType(GetSessionEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSessionEntityType(SessionEntityTypeName name)
- *           <li>getSessionEntityType(String name)
+ *           <li><p> getSessionEntityType(SessionEntityTypeName name)
+ *           <li><p> getSessionEntityType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSessionEntityTypeCallable()
+ *           <li><p> getSessionEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSessionEntityType</td>
+ *      <td><p> CreateSessionEntityType</td>
  *      <td><p> Creates a session entity type.
  * <p>  If the specified session entity type already exists, overrides the session entity type.
  * <p>  This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSessionEntityType(CreateSessionEntityTypeRequest request)
+ *           <li><p> createSessionEntityType(CreateSessionEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSessionEntityType(SessionName parent, SessionEntityType sessionEntityType)
- *           <li>createSessionEntityType(String parent, SessionEntityType sessionEntityType)
+ *           <li><p> createSessionEntityType(SessionName parent, SessionEntityType sessionEntityType)
+ *           <li><p> createSessionEntityType(String parent, SessionEntityType sessionEntityType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSessionEntityTypeCallable()
+ *           <li><p> createSessionEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSessionEntityType</td>
+ *      <td><p> UpdateSessionEntityType</td>
  *      <td><p> Updates the specified session entity type.
  * <p>  This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSessionEntityType(UpdateSessionEntityTypeRequest request)
+ *           <li><p> updateSessionEntityType(UpdateSessionEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSessionEntityType(SessionEntityType sessionEntityType)
- *           <li>updateSessionEntityType(SessionEntityType sessionEntityType, FieldMask updateMask)
+ *           <li><p> updateSessionEntityType(SessionEntityType sessionEntityType)
+ *           <li><p> updateSessionEntityType(SessionEntityType sessionEntityType, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSessionEntityTypeCallable()
+ *           <li><p> updateSessionEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSessionEntityType</td>
+ *      <td><p> DeleteSessionEntityType</td>
  *      <td><p> Deletes the specified session entity type.
  * <p>  This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSessionEntityType(DeleteSessionEntityTypeRequest request)
+ *           <li><p> deleteSessionEntityType(DeleteSessionEntityTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSessionEntityType(SessionEntityTypeName name)
- *           <li>deleteSessionEntityType(String name)
+ *           <li><p> deleteSessionEntityType(SessionEntityTypeName name)
+ *           <li><p> deleteSessionEntityType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSessionEntityTypeCallable()
+ *           <li><p> deleteSessionEntityTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

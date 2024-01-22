@@ -64,93 +64,95 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SearchDomains</td>
+ *      <td><p> SearchDomains</td>
  *      <td><p> Searches for available domain names similar to the provided query.
  * <p>  Availability results from this method are approximate; call `RetrieveRegisterParameters` on a domain before registering to confirm availability.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchDomains(SearchDomainsRequest request)
+ *           <li><p> searchDomains(SearchDomainsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchDomains(LocationName location, String query)
- *           <li>searchDomains(String location, String query)
+ *           <li><p> searchDomains(LocationName location, String query)
+ *           <li><p> searchDomains(String location, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchDomainsCallable()
+ *           <li><p> searchDomainsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RetrieveRegisterParameters</td>
+ *      <td><p> RetrieveRegisterParameters</td>
  *      <td><p> Gets parameters needed to register a new domain name, including price and up-to-date availability. Use the returned values to call `RegisterDomain`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>retrieveRegisterParameters(RetrieveRegisterParametersRequest request)
+ *           <li><p> retrieveRegisterParameters(RetrieveRegisterParametersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>retrieveRegisterParameters(LocationName location, String domainName)
- *           <li>retrieveRegisterParameters(String location, String domainName)
+ *           <li><p> retrieveRegisterParameters(LocationName location, String domainName)
+ *           <li><p> retrieveRegisterParameters(String location, String domainName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>retrieveRegisterParametersCallable()
+ *           <li><p> retrieveRegisterParametersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RegisterDomain</td>
+ *      <td><p> RegisterDomain</td>
  *      <td><p> Registers a new domain name and creates a corresponding `Registration` resource.
  * <p>  Call `RetrieveRegisterParameters` first to check availability of the domain name and determine parameters like price that are needed to build a call to this method.
  * <p>  A successful call creates a `Registration` resource in state `REGISTRATION_PENDING`, which resolves to `ACTIVE` within 1-2 minutes, indicating that the domain was successfully registered. If the resource ends up in state `REGISTRATION_FAILED`, it indicates that the domain was not registered successfully, and you can safely delete the resource and retry registration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>registerDomainAsync(RegisterDomainRequest request)
+ *           <li><p> registerDomainAsync(RegisterDomainRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>registerDomainAsync(LocationName parent, Registration registration, Money yearlyPrice)
- *           <li>registerDomainAsync(String parent, Registration registration, Money yearlyPrice)
+ *           <li><p> registerDomainAsync(LocationName parent, Registration registration, Money yearlyPrice)
+ *           <li><p> registerDomainAsync(String parent, Registration registration, Money yearlyPrice)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>registerDomainOperationCallable()
- *           <li>registerDomainCallable()
+ *           <li><p> registerDomainOperationCallable()
+ *           <li><p> registerDomainCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RetrieveTransferParameters</td>
+ *      <td><p> RetrieveTransferParameters</td>
  *      <td><p> Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For domains managed by Google Domains, transferring to Cloud Domains is not supported.
  * <p>  Use the returned values to call `TransferDomain`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>retrieveTransferParameters(RetrieveTransferParametersRequest request)
+ *           <li><p> retrieveTransferParameters(RetrieveTransferParametersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>retrieveTransferParameters(LocationName location, String domainName)
- *           <li>retrieveTransferParameters(String location, String domainName)
+ *           <li><p> retrieveTransferParameters(LocationName location, String domainName)
+ *           <li><p> retrieveTransferParameters(String location, String domainName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>retrieveTransferParametersCallable()
+ *           <li><p> retrieveTransferParametersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TransferDomain</td>
+ *      <td><p> TransferDomain</td>
  *      <td><p> Transfers a domain name from another registrar to Cloud Domains.  For domains managed by Google Domains, transferring to Cloud Domains is not supported.
  * <p>  Before calling this method, go to the domain's current registrar to unlock the domain for transfer and retrieve the domain's transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to this method.
  * <p>  A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take several days to complete the transfer process. The registrant can often speed up this process by approving the transfer through the current registrar, either by clicking a link in an email from the registrar or by visiting the registrar's website.
@@ -158,61 +160,61 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>transferDomainAsync(TransferDomainRequest request)
+ *           <li><p> transferDomainAsync(TransferDomainRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>transferDomainAsync(LocationName parent, Registration registration, Money yearlyPrice, AuthorizationCode authorizationCode)
- *           <li>transferDomainAsync(String parent, Registration registration, Money yearlyPrice, AuthorizationCode authorizationCode)
+ *           <li><p> transferDomainAsync(LocationName parent, Registration registration, Money yearlyPrice, AuthorizationCode authorizationCode)
+ *           <li><p> transferDomainAsync(String parent, Registration registration, Money yearlyPrice, AuthorizationCode authorizationCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>transferDomainOperationCallable()
- *           <li>transferDomainCallable()
+ *           <li><p> transferDomainOperationCallable()
+ *           <li><p> transferDomainCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRegistrations</td>
+ *      <td><p> ListRegistrations</td>
  *      <td><p> Lists the `Registration` resources in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRegistrations(ListRegistrationsRequest request)
+ *           <li><p> listRegistrations(ListRegistrationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRegistrations(LocationName parent)
- *           <li>listRegistrations(String parent)
+ *           <li><p> listRegistrations(LocationName parent)
+ *           <li><p> listRegistrations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRegistrationsPagedCallable()
- *           <li>listRegistrationsCallable()
+ *           <li><p> listRegistrationsPagedCallable()
+ *           <li><p> listRegistrationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRegistration</td>
+ *      <td><p> GetRegistration</td>
  *      <td><p> Gets the details of a `Registration` resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRegistration(GetRegistrationRequest request)
+ *           <li><p> getRegistration(GetRegistrationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRegistration(RegistrationName name)
- *           <li>getRegistration(String name)
+ *           <li><p> getRegistration(RegistrationName name)
+ *           <li><p> getRegistration(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRegistrationCallable()
+ *           <li><p> getRegistrationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRegistration</td>
+ *      <td><p> UpdateRegistration</td>
  *      <td><p> Updates select fields of a `Registration` resource, notably `labels`. To update other fields, use the appropriate custom update method:
  * <ul>
  * <li>  To update management settings, see `ConfigureManagementSettings`
@@ -222,102 +224,102 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRegistrationAsync(UpdateRegistrationRequest request)
+ *           <li><p> updateRegistrationAsync(UpdateRegistrationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateRegistrationAsync(Registration registration, FieldMask updateMask)
+ *           <li><p> updateRegistrationAsync(Registration registration, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRegistrationOperationCallable()
- *           <li>updateRegistrationCallable()
+ *           <li><p> updateRegistrationOperationCallable()
+ *           <li><p> updateRegistrationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ConfigureManagementSettings</td>
+ *      <td><p> ConfigureManagementSettings</td>
  *      <td><p> Updates a `Registration`'s management settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>configureManagementSettingsAsync(ConfigureManagementSettingsRequest request)
+ *           <li><p> configureManagementSettingsAsync(ConfigureManagementSettingsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>configureManagementSettingsAsync(RegistrationName registration, ManagementSettings managementSettings, FieldMask updateMask)
- *           <li>configureManagementSettingsAsync(String registration, ManagementSettings managementSettings, FieldMask updateMask)
+ *           <li><p> configureManagementSettingsAsync(RegistrationName registration, ManagementSettings managementSettings, FieldMask updateMask)
+ *           <li><p> configureManagementSettingsAsync(String registration, ManagementSettings managementSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>configureManagementSettingsOperationCallable()
- *           <li>configureManagementSettingsCallable()
+ *           <li><p> configureManagementSettingsOperationCallable()
+ *           <li><p> configureManagementSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ConfigureDnsSettings</td>
+ *      <td><p> ConfigureDnsSettings</td>
  *      <td><p> Updates a `Registration`'s DNS settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>configureDnsSettingsAsync(ConfigureDnsSettingsRequest request)
+ *           <li><p> configureDnsSettingsAsync(ConfigureDnsSettingsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>configureDnsSettingsAsync(RegistrationName registration, DnsSettings dnsSettings, FieldMask updateMask)
- *           <li>configureDnsSettingsAsync(String registration, DnsSettings dnsSettings, FieldMask updateMask)
+ *           <li><p> configureDnsSettingsAsync(RegistrationName registration, DnsSettings dnsSettings, FieldMask updateMask)
+ *           <li><p> configureDnsSettingsAsync(String registration, DnsSettings dnsSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>configureDnsSettingsOperationCallable()
- *           <li>configureDnsSettingsCallable()
+ *           <li><p> configureDnsSettingsOperationCallable()
+ *           <li><p> configureDnsSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ConfigureContactSettings</td>
+ *      <td><p> ConfigureContactSettings</td>
  *      <td><p> Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's registrant contact .</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>configureContactSettingsAsync(ConfigureContactSettingsRequest request)
+ *           <li><p> configureContactSettingsAsync(ConfigureContactSettingsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>configureContactSettingsAsync(RegistrationName registration, ContactSettings contactSettings, FieldMask updateMask)
- *           <li>configureContactSettingsAsync(String registration, ContactSettings contactSettings, FieldMask updateMask)
+ *           <li><p> configureContactSettingsAsync(RegistrationName registration, ContactSettings contactSettings, FieldMask updateMask)
+ *           <li><p> configureContactSettingsAsync(String registration, ContactSettings contactSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>configureContactSettingsOperationCallable()
- *           <li>configureContactSettingsCallable()
+ *           <li><p> configureContactSettingsOperationCallable()
+ *           <li><p> configureContactSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportRegistration</td>
+ *      <td><p> ExportRegistration</td>
  *      <td><p> Exports a `Registration` resource, such that it is no longer managed by Cloud Domains.
  * <p>  When an active domain is successfully exported, you can continue to use the domain in [Google Domains](https://domains.google/) until it expires. The calling user becomes the domain's sole owner in Google Domains, and permissions for the domain are subsequently managed there. The domain does not renew automatically unless the new owner sets up billing in Google Domains.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportRegistrationAsync(ExportRegistrationRequest request)
+ *           <li><p> exportRegistrationAsync(ExportRegistrationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>exportRegistrationAsync(RegistrationName name)
- *           <li>exportRegistrationAsync(String name)
+ *           <li><p> exportRegistrationAsync(RegistrationName name)
+ *           <li><p> exportRegistrationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportRegistrationOperationCallable()
- *           <li>exportRegistrationCallable()
+ *           <li><p> exportRegistrationOperationCallable()
+ *           <li><p> exportRegistrationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRegistration</td>
+ *      <td><p> DeleteRegistration</td>
  *      <td><p> Deletes a `Registration` resource.
  * <p>  This method works on any `Registration` resource using [Subscription or Commitment billing](/domains/pricing#billing-models), provided that the resource was created at least 1 day in the past.
  * <p>  For `Registration` resources using [Monthly billing](/domains/pricing#billing-models), this method works if:
@@ -330,60 +332,59 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRegistrationAsync(DeleteRegistrationRequest request)
+ *           <li><p> deleteRegistrationAsync(DeleteRegistrationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteRegistrationAsync(RegistrationName name)
- *           <li>deleteRegistrationAsync(String name)
+ *           <li><p> deleteRegistrationAsync(RegistrationName name)
+ *           <li><p> deleteRegistrationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRegistrationOperationCallable()
- *           <li>deleteRegistrationCallable()
+ *           <li><p> deleteRegistrationOperationCallable()
+ *           <li><p> deleteRegistrationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RetrieveAuthorizationCode</td>
+ *      <td><p> RetrieveAuthorizationCode</td>
  *      <td><p> Gets the authorization code of the `Registration` for the purpose of transferring the domain to another registrar.
  * <p>  You can call this method only after 60 days have elapsed since the initial domain registration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>retrieveAuthorizationCode(RetrieveAuthorizationCodeRequest request)
+ *           <li><p> retrieveAuthorizationCode(RetrieveAuthorizationCodeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>retrieveAuthorizationCode(RegistrationName registration)
- *           <li>retrieveAuthorizationCode(String registration)
+ *           <li><p> retrieveAuthorizationCode(RegistrationName registration)
+ *           <li><p> retrieveAuthorizationCode(String registration)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>retrieveAuthorizationCodeCallable()
+ *           <li><p> retrieveAuthorizationCodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResetAuthorizationCode</td>
+ *      <td><p> ResetAuthorizationCode</td>
  *      <td><p> Resets the authorization code of the `Registration` to a new random string.
  * <p>  You can call this method only after 60 days have elapsed since the initial domain registration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resetAuthorizationCode(ResetAuthorizationCodeRequest request)
+ *           <li><p> resetAuthorizationCode(ResetAuthorizationCodeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resetAuthorizationCode(RegistrationName registration)
- *           <li>resetAuthorizationCode(String registration)
+ *           <li><p> resetAuthorizationCode(RegistrationName registration)
+ *           <li><p> resetAuthorizationCode(String registration)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resetAuthorizationCodeCallable()
+ *           <li><p> resetAuthorizationCodeCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

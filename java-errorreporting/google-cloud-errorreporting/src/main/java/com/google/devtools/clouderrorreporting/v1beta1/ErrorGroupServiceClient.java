@@ -49,47 +49,48 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetGroup</td>
+ *      <td><p> GetGroup</td>
  *      <td><p> Get the specified group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGroup(GetGroupRequest request)
+ *           <li><p> getGroup(GetGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGroup(ErrorGroupName groupName)
- *           <li>getGroup(String groupName)
+ *           <li><p> getGroup(ErrorGroupName groupName)
+ *           <li><p> getGroup(String groupName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGroupCallable()
+ *           <li><p> getGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGroup</td>
+ *      <td><p> UpdateGroup</td>
  *      <td><p> Replace the data for the specified group. Fails if the group does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGroup(UpdateGroupRequest request)
+ *           <li><p> updateGroup(UpdateGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGroup(ErrorGroup group)
+ *           <li><p> updateGroup(ErrorGroup group)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGroupCallable()
+ *           <li><p> updateGroupCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

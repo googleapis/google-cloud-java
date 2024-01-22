@@ -60,138 +60,139 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateContact</td>
+ *      <td><p> CreateContact</td>
  *      <td><p> Adds a new contact for a resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createContact(CreateContactRequest request)
+ *           <li><p> createContact(CreateContactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createContact(FolderName parent, Contact contact)
- *           <li>createContact(OrganizationName parent, Contact contact)
- *           <li>createContact(ProjectName parent, Contact contact)
- *           <li>createContact(String parent, Contact contact)
+ *           <li><p> createContact(FolderName parent, Contact contact)
+ *           <li><p> createContact(OrganizationName parent, Contact contact)
+ *           <li><p> createContact(ProjectName parent, Contact contact)
+ *           <li><p> createContact(String parent, Contact contact)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createContactCallable()
+ *           <li><p> createContactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateContact</td>
+ *      <td><p> UpdateContact</td>
  *      <td><p> Updates a contact. Note: A contact's email address cannot be changed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateContact(UpdateContactRequest request)
+ *           <li><p> updateContact(UpdateContactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateContact(Contact contact, FieldMask updateMask)
+ *           <li><p> updateContact(Contact contact, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateContactCallable()
+ *           <li><p> updateContactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListContacts</td>
+ *      <td><p> ListContacts</td>
  *      <td><p> Lists the contacts that have been set on a resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listContacts(ListContactsRequest request)
+ *           <li><p> listContacts(ListContactsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listContacts(FolderName parent)
- *           <li>listContacts(OrganizationName parent)
- *           <li>listContacts(ProjectName parent)
- *           <li>listContacts(String parent)
+ *           <li><p> listContacts(FolderName parent)
+ *           <li><p> listContacts(OrganizationName parent)
+ *           <li><p> listContacts(ProjectName parent)
+ *           <li><p> listContacts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listContactsPagedCallable()
- *           <li>listContactsCallable()
+ *           <li><p> listContactsPagedCallable()
+ *           <li><p> listContactsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetContact</td>
+ *      <td><p> GetContact</td>
  *      <td><p> Gets a single contact.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getContact(GetContactRequest request)
+ *           <li><p> getContact(GetContactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getContact(ContactName name)
- *           <li>getContact(String name)
+ *           <li><p> getContact(ContactName name)
+ *           <li><p> getContact(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getContactCallable()
+ *           <li><p> getContactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteContact</td>
+ *      <td><p> DeleteContact</td>
  *      <td><p> Deletes a contact.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteContact(DeleteContactRequest request)
+ *           <li><p> deleteContact(DeleteContactRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteContact(ContactName name)
- *           <li>deleteContact(String name)
+ *           <li><p> deleteContact(ContactName name)
+ *           <li><p> deleteContact(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteContactCallable()
+ *           <li><p> deleteContactCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ComputeContacts</td>
+ *      <td><p> ComputeContacts</td>
  *      <td><p> Lists all contacts for the resource that are subscribed to the specified notification categories, including contacts inherited from any parent resources.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>computeContacts(ComputeContactsRequest request)
+ *           <li><p> computeContacts(ComputeContactsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>computeContactsPagedCallable()
- *           <li>computeContactsCallable()
+ *           <li><p> computeContactsPagedCallable()
+ *           <li><p> computeContactsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SendTestMessage</td>
+ *      <td><p> SendTestMessage</td>
  *      <td><p> Allows a contact admin to send a test message to contact to verify that it has been configured correctly.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>sendTestMessage(SendTestMessageRequest request)
+ *           <li><p> sendTestMessage(SendTestMessageRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>sendTestMessageCallable()
+ *           <li><p> sendTestMessageCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

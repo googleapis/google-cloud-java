@@ -73,861 +73,862 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListDeliveryPipelines</td>
+ *      <td><p> ListDeliveryPipelines</td>
  *      <td><p> Lists DeliveryPipelines in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDeliveryPipelines(ListDeliveryPipelinesRequest request)
+ *           <li><p> listDeliveryPipelines(ListDeliveryPipelinesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDeliveryPipelines(LocationName parent)
- *           <li>listDeliveryPipelines(String parent)
+ *           <li><p> listDeliveryPipelines(LocationName parent)
+ *           <li><p> listDeliveryPipelines(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDeliveryPipelinesPagedCallable()
- *           <li>listDeliveryPipelinesCallable()
+ *           <li><p> listDeliveryPipelinesPagedCallable()
+ *           <li><p> listDeliveryPipelinesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDeliveryPipeline</td>
+ *      <td><p> GetDeliveryPipeline</td>
  *      <td><p> Gets details of a single DeliveryPipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDeliveryPipeline(GetDeliveryPipelineRequest request)
+ *           <li><p> getDeliveryPipeline(GetDeliveryPipelineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDeliveryPipeline(DeliveryPipelineName name)
- *           <li>getDeliveryPipeline(String name)
+ *           <li><p> getDeliveryPipeline(DeliveryPipelineName name)
+ *           <li><p> getDeliveryPipeline(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDeliveryPipelineCallable()
+ *           <li><p> getDeliveryPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDeliveryPipeline</td>
+ *      <td><p> CreateDeliveryPipeline</td>
  *      <td><p> Creates a new DeliveryPipeline in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDeliveryPipelineAsync(CreateDeliveryPipelineRequest request)
+ *           <li><p> createDeliveryPipelineAsync(CreateDeliveryPipelineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createDeliveryPipelineAsync(LocationName parent, DeliveryPipeline deliveryPipeline, String deliveryPipelineId)
- *           <li>createDeliveryPipelineAsync(String parent, DeliveryPipeline deliveryPipeline, String deliveryPipelineId)
+ *           <li><p> createDeliveryPipelineAsync(LocationName parent, DeliveryPipeline deliveryPipeline, String deliveryPipelineId)
+ *           <li><p> createDeliveryPipelineAsync(String parent, DeliveryPipeline deliveryPipeline, String deliveryPipelineId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDeliveryPipelineOperationCallable()
- *           <li>createDeliveryPipelineCallable()
+ *           <li><p> createDeliveryPipelineOperationCallable()
+ *           <li><p> createDeliveryPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDeliveryPipeline</td>
+ *      <td><p> UpdateDeliveryPipeline</td>
  *      <td><p> Updates the parameters of a single DeliveryPipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDeliveryPipelineAsync(UpdateDeliveryPipelineRequest request)
+ *           <li><p> updateDeliveryPipelineAsync(UpdateDeliveryPipelineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDeliveryPipelineAsync(DeliveryPipeline deliveryPipeline, FieldMask updateMask)
+ *           <li><p> updateDeliveryPipelineAsync(DeliveryPipeline deliveryPipeline, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDeliveryPipelineOperationCallable()
- *           <li>updateDeliveryPipelineCallable()
+ *           <li><p> updateDeliveryPipelineOperationCallable()
+ *           <li><p> updateDeliveryPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDeliveryPipeline</td>
+ *      <td><p> DeleteDeliveryPipeline</td>
  *      <td><p> Deletes a single DeliveryPipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDeliveryPipelineAsync(DeleteDeliveryPipelineRequest request)
+ *           <li><p> deleteDeliveryPipelineAsync(DeleteDeliveryPipelineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDeliveryPipelineAsync(DeliveryPipelineName name)
- *           <li>deleteDeliveryPipelineAsync(String name)
+ *           <li><p> deleteDeliveryPipelineAsync(DeliveryPipelineName name)
+ *           <li><p> deleteDeliveryPipelineAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDeliveryPipelineOperationCallable()
- *           <li>deleteDeliveryPipelineCallable()
+ *           <li><p> deleteDeliveryPipelineOperationCallable()
+ *           <li><p> deleteDeliveryPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTargets</td>
+ *      <td><p> ListTargets</td>
  *      <td><p> Lists Targets in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTargets(ListTargetsRequest request)
+ *           <li><p> listTargets(ListTargetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTargets(LocationName parent)
- *           <li>listTargets(String parent)
+ *           <li><p> listTargets(LocationName parent)
+ *           <li><p> listTargets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTargetsPagedCallable()
- *           <li>listTargetsCallable()
+ *           <li><p> listTargetsPagedCallable()
+ *           <li><p> listTargetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RollbackTarget</td>
+ *      <td><p> RollbackTarget</td>
  *      <td><p> Creates a `Rollout` to roll back the specified target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rollbackTarget(RollbackTargetRequest request)
+ *           <li><p> rollbackTarget(RollbackTargetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>rollbackTarget(DeliveryPipelineName name, String targetId, String rolloutId)
- *           <li>rollbackTarget(String name, String targetId, String rolloutId)
+ *           <li><p> rollbackTarget(DeliveryPipelineName name, String targetId, String rolloutId)
+ *           <li><p> rollbackTarget(String name, String targetId, String rolloutId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rollbackTargetCallable()
+ *           <li><p> rollbackTargetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTarget</td>
+ *      <td><p> GetTarget</td>
  *      <td><p> Gets details of a single Target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTarget(GetTargetRequest request)
+ *           <li><p> getTarget(GetTargetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTarget(TargetName name)
- *           <li>getTarget(String name)
+ *           <li><p> getTarget(TargetName name)
+ *           <li><p> getTarget(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTargetCallable()
+ *           <li><p> getTargetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTarget</td>
+ *      <td><p> CreateTarget</td>
  *      <td><p> Creates a new Target in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTargetAsync(CreateTargetRequest request)
+ *           <li><p> createTargetAsync(CreateTargetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createTargetAsync(LocationName parent, Target target, String targetId)
- *           <li>createTargetAsync(String parent, Target target, String targetId)
+ *           <li><p> createTargetAsync(LocationName parent, Target target, String targetId)
+ *           <li><p> createTargetAsync(String parent, Target target, String targetId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTargetOperationCallable()
- *           <li>createTargetCallable()
+ *           <li><p> createTargetOperationCallable()
+ *           <li><p> createTargetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTarget</td>
+ *      <td><p> UpdateTarget</td>
  *      <td><p> Updates the parameters of a single Target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTargetAsync(UpdateTargetRequest request)
+ *           <li><p> updateTargetAsync(UpdateTargetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateTargetAsync(Target target, FieldMask updateMask)
+ *           <li><p> updateTargetAsync(Target target, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTargetOperationCallable()
- *           <li>updateTargetCallable()
+ *           <li><p> updateTargetOperationCallable()
+ *           <li><p> updateTargetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTarget</td>
+ *      <td><p> DeleteTarget</td>
  *      <td><p> Deletes a single Target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTargetAsync(DeleteTargetRequest request)
+ *           <li><p> deleteTargetAsync(DeleteTargetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTargetAsync(TargetName name)
- *           <li>deleteTargetAsync(String name)
+ *           <li><p> deleteTargetAsync(TargetName name)
+ *           <li><p> deleteTargetAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTargetOperationCallable()
- *           <li>deleteTargetCallable()
+ *           <li><p> deleteTargetOperationCallable()
+ *           <li><p> deleteTargetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCustomTargetTypes</td>
+ *      <td><p> ListCustomTargetTypes</td>
  *      <td><p> Lists CustomTargetTypes in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomTargetTypes(ListCustomTargetTypesRequest request)
+ *           <li><p> listCustomTargetTypes(ListCustomTargetTypesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCustomTargetTypes(LocationName parent)
- *           <li>listCustomTargetTypes(String parent)
+ *           <li><p> listCustomTargetTypes(LocationName parent)
+ *           <li><p> listCustomTargetTypes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomTargetTypesPagedCallable()
- *           <li>listCustomTargetTypesCallable()
+ *           <li><p> listCustomTargetTypesPagedCallable()
+ *           <li><p> listCustomTargetTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomTargetType</td>
+ *      <td><p> GetCustomTargetType</td>
  *      <td><p> Gets details of a single CustomTargetType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomTargetType(GetCustomTargetTypeRequest request)
+ *           <li><p> getCustomTargetType(GetCustomTargetTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomTargetType(CustomTargetTypeName name)
- *           <li>getCustomTargetType(String name)
+ *           <li><p> getCustomTargetType(CustomTargetTypeName name)
+ *           <li><p> getCustomTargetType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomTargetTypeCallable()
+ *           <li><p> getCustomTargetTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomTargetType</td>
+ *      <td><p> CreateCustomTargetType</td>
  *      <td><p> Creates a new CustomTargetType in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomTargetTypeAsync(CreateCustomTargetTypeRequest request)
+ *           <li><p> createCustomTargetTypeAsync(CreateCustomTargetTypeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCustomTargetTypeAsync(LocationName parent, CustomTargetType customTargetType, String customTargetTypeId)
- *           <li>createCustomTargetTypeAsync(String parent, CustomTargetType customTargetType, String customTargetTypeId)
+ *           <li><p> createCustomTargetTypeAsync(LocationName parent, CustomTargetType customTargetType, String customTargetTypeId)
+ *           <li><p> createCustomTargetTypeAsync(String parent, CustomTargetType customTargetType, String customTargetTypeId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomTargetTypeOperationCallable()
- *           <li>createCustomTargetTypeCallable()
+ *           <li><p> createCustomTargetTypeOperationCallable()
+ *           <li><p> createCustomTargetTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomTargetType</td>
+ *      <td><p> UpdateCustomTargetType</td>
  *      <td><p> Updates a single CustomTargetType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomTargetTypeAsync(UpdateCustomTargetTypeRequest request)
+ *           <li><p> updateCustomTargetTypeAsync(UpdateCustomTargetTypeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCustomTargetTypeAsync(CustomTargetType customTargetType, FieldMask updateMask)
+ *           <li><p> updateCustomTargetTypeAsync(CustomTargetType customTargetType, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomTargetTypeOperationCallable()
- *           <li>updateCustomTargetTypeCallable()
+ *           <li><p> updateCustomTargetTypeOperationCallable()
+ *           <li><p> updateCustomTargetTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCustomTargetType</td>
+ *      <td><p> DeleteCustomTargetType</td>
  *      <td><p> Deletes a single CustomTargetType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCustomTargetTypeAsync(DeleteCustomTargetTypeRequest request)
+ *           <li><p> deleteCustomTargetTypeAsync(DeleteCustomTargetTypeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCustomTargetTypeAsync(CustomTargetTypeName name)
- *           <li>deleteCustomTargetTypeAsync(String name)
+ *           <li><p> deleteCustomTargetTypeAsync(CustomTargetTypeName name)
+ *           <li><p> deleteCustomTargetTypeAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCustomTargetTypeOperationCallable()
- *           <li>deleteCustomTargetTypeCallable()
+ *           <li><p> deleteCustomTargetTypeOperationCallable()
+ *           <li><p> deleteCustomTargetTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListReleases</td>
+ *      <td><p> ListReleases</td>
  *      <td><p> Lists Releases in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listReleases(ListReleasesRequest request)
+ *           <li><p> listReleases(ListReleasesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listReleases(DeliveryPipelineName parent)
- *           <li>listReleases(String parent)
+ *           <li><p> listReleases(DeliveryPipelineName parent)
+ *           <li><p> listReleases(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listReleasesPagedCallable()
- *           <li>listReleasesCallable()
+ *           <li><p> listReleasesPagedCallable()
+ *           <li><p> listReleasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRelease</td>
+ *      <td><p> GetRelease</td>
  *      <td><p> Gets details of a single Release.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRelease(GetReleaseRequest request)
+ *           <li><p> getRelease(GetReleaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRelease(ReleaseName name)
- *           <li>getRelease(String name)
+ *           <li><p> getRelease(ReleaseName name)
+ *           <li><p> getRelease(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getReleaseCallable()
+ *           <li><p> getReleaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRelease</td>
+ *      <td><p> CreateRelease</td>
  *      <td><p> Creates a new Release in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createReleaseAsync(CreateReleaseRequest request)
+ *           <li><p> createReleaseAsync(CreateReleaseRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createReleaseAsync(DeliveryPipelineName parent, Release release, String releaseId)
- *           <li>createReleaseAsync(String parent, Release release, String releaseId)
+ *           <li><p> createReleaseAsync(DeliveryPipelineName parent, Release release, String releaseId)
+ *           <li><p> createReleaseAsync(String parent, Release release, String releaseId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createReleaseOperationCallable()
- *           <li>createReleaseCallable()
+ *           <li><p> createReleaseOperationCallable()
+ *           <li><p> createReleaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AbandonRelease</td>
+ *      <td><p> AbandonRelease</td>
  *      <td><p> Abandons a Release in the Delivery Pipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>abandonRelease(AbandonReleaseRequest request)
+ *           <li><p> abandonRelease(AbandonReleaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>abandonRelease(ReleaseName name)
- *           <li>abandonRelease(String name)
+ *           <li><p> abandonRelease(ReleaseName name)
+ *           <li><p> abandonRelease(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>abandonReleaseCallable()
+ *           <li><p> abandonReleaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApproveRollout</td>
+ *      <td><p> ApproveRollout</td>
  *      <td><p> Approves a Rollout.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>approveRollout(ApproveRolloutRequest request)
+ *           <li><p> approveRollout(ApproveRolloutRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>approveRollout(RolloutName name)
- *           <li>approveRollout(String name)
+ *           <li><p> approveRollout(RolloutName name)
+ *           <li><p> approveRollout(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>approveRolloutCallable()
+ *           <li><p> approveRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AdvanceRollout</td>
+ *      <td><p> AdvanceRollout</td>
  *      <td><p> Advances a Rollout in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>advanceRollout(AdvanceRolloutRequest request)
+ *           <li><p> advanceRollout(AdvanceRolloutRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>advanceRollout(RolloutName name, String phaseId)
- *           <li>advanceRollout(String name, String phaseId)
+ *           <li><p> advanceRollout(RolloutName name, String phaseId)
+ *           <li><p> advanceRollout(String name, String phaseId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>advanceRolloutCallable()
+ *           <li><p> advanceRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelRollout</td>
+ *      <td><p> CancelRollout</td>
  *      <td><p> Cancels a Rollout in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelRollout(CancelRolloutRequest request)
+ *           <li><p> cancelRollout(CancelRolloutRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelRollout(RolloutName name)
- *           <li>cancelRollout(String name)
+ *           <li><p> cancelRollout(RolloutName name)
+ *           <li><p> cancelRollout(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelRolloutCallable()
+ *           <li><p> cancelRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRollouts</td>
+ *      <td><p> ListRollouts</td>
  *      <td><p> Lists Rollouts in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRollouts(ListRolloutsRequest request)
+ *           <li><p> listRollouts(ListRolloutsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRollouts(ReleaseName parent)
- *           <li>listRollouts(String parent)
+ *           <li><p> listRollouts(ReleaseName parent)
+ *           <li><p> listRollouts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRolloutsPagedCallable()
- *           <li>listRolloutsCallable()
+ *           <li><p> listRolloutsPagedCallable()
+ *           <li><p> listRolloutsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRollout</td>
+ *      <td><p> GetRollout</td>
  *      <td><p> Gets details of a single Rollout.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRollout(GetRolloutRequest request)
+ *           <li><p> getRollout(GetRolloutRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRollout(RolloutName name)
- *           <li>getRollout(String name)
+ *           <li><p> getRollout(RolloutName name)
+ *           <li><p> getRollout(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRolloutCallable()
+ *           <li><p> getRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRollout</td>
+ *      <td><p> CreateRollout</td>
  *      <td><p> Creates a new Rollout in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRolloutAsync(CreateRolloutRequest request)
+ *           <li><p> createRolloutAsync(CreateRolloutRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createRolloutAsync(ReleaseName parent, Rollout rollout, String rolloutId)
- *           <li>createRolloutAsync(String parent, Rollout rollout, String rolloutId)
+ *           <li><p> createRolloutAsync(ReleaseName parent, Rollout rollout, String rolloutId)
+ *           <li><p> createRolloutAsync(String parent, Rollout rollout, String rolloutId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRolloutOperationCallable()
- *           <li>createRolloutCallable()
+ *           <li><p> createRolloutOperationCallable()
+ *           <li><p> createRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>IgnoreJob</td>
+ *      <td><p> IgnoreJob</td>
  *      <td><p> Ignores the specified Job in a Rollout.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>ignoreJob(IgnoreJobRequest request)
+ *           <li><p> ignoreJob(IgnoreJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>ignoreJob(RolloutName rollout, String phaseId, String jobId)
- *           <li>ignoreJob(String rollout, String phaseId, String jobId)
+ *           <li><p> ignoreJob(RolloutName rollout, String phaseId, String jobId)
+ *           <li><p> ignoreJob(String rollout, String phaseId, String jobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>ignoreJobCallable()
+ *           <li><p> ignoreJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RetryJob</td>
+ *      <td><p> RetryJob</td>
  *      <td><p> Retries the specified Job in a Rollout.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>retryJob(RetryJobRequest request)
+ *           <li><p> retryJob(RetryJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>retryJob(RolloutName rollout, String phaseId, String jobId)
- *           <li>retryJob(String rollout, String phaseId, String jobId)
+ *           <li><p> retryJob(RolloutName rollout, String phaseId, String jobId)
+ *           <li><p> retryJob(String rollout, String phaseId, String jobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>retryJobCallable()
+ *           <li><p> retryJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListJobRuns</td>
+ *      <td><p> ListJobRuns</td>
  *      <td><p> Lists JobRuns in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobRuns(ListJobRunsRequest request)
+ *           <li><p> listJobRuns(ListJobRunsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listJobRuns(RolloutName parent)
- *           <li>listJobRuns(String parent)
+ *           <li><p> listJobRuns(RolloutName parent)
+ *           <li><p> listJobRuns(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobRunsPagedCallable()
- *           <li>listJobRunsCallable()
+ *           <li><p> listJobRunsPagedCallable()
+ *           <li><p> listJobRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJobRun</td>
+ *      <td><p> GetJobRun</td>
  *      <td><p> Gets details of a single JobRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJobRun(GetJobRunRequest request)
+ *           <li><p> getJobRun(GetJobRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getJobRun(JobRunName name)
- *           <li>getJobRun(String name)
+ *           <li><p> getJobRun(JobRunName name)
+ *           <li><p> getJobRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobRunCallable()
+ *           <li><p> getJobRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TerminateJobRun</td>
+ *      <td><p> TerminateJobRun</td>
  *      <td><p> Terminates a Job Run in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>terminateJobRun(TerminateJobRunRequest request)
+ *           <li><p> terminateJobRun(TerminateJobRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>terminateJobRun(JobRunName name)
- *           <li>terminateJobRun(String name)
+ *           <li><p> terminateJobRun(JobRunName name)
+ *           <li><p> terminateJobRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>terminateJobRunCallable()
+ *           <li><p> terminateJobRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConfig</td>
+ *      <td><p> GetConfig</td>
  *      <td><p> Gets the configuration for a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConfig(GetConfigRequest request)
+ *           <li><p> getConfig(GetConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConfig(ConfigName name)
- *           <li>getConfig(String name)
+ *           <li><p> getConfig(ConfigName name)
+ *           <li><p> getConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConfigCallable()
+ *           <li><p> getConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAutomation</td>
+ *      <td><p> CreateAutomation</td>
  *      <td><p> Creates a new Automation in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAutomationAsync(CreateAutomationRequest request)
+ *           <li><p> createAutomationAsync(CreateAutomationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAutomationAsync(DeliveryPipelineName parent, Automation automation, String automationId)
- *           <li>createAutomationAsync(String parent, Automation automation, String automationId)
+ *           <li><p> createAutomationAsync(DeliveryPipelineName parent, Automation automation, String automationId)
+ *           <li><p> createAutomationAsync(String parent, Automation automation, String automationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAutomationOperationCallable()
- *           <li>createAutomationCallable()
+ *           <li><p> createAutomationOperationCallable()
+ *           <li><p> createAutomationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAutomation</td>
+ *      <td><p> UpdateAutomation</td>
  *      <td><p> Updates the parameters of a single Automation resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAutomationAsync(UpdateAutomationRequest request)
+ *           <li><p> updateAutomationAsync(UpdateAutomationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAutomationAsync(Automation automation, FieldMask updateMask)
+ *           <li><p> updateAutomationAsync(Automation automation, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAutomationOperationCallable()
- *           <li>updateAutomationCallable()
+ *           <li><p> updateAutomationOperationCallable()
+ *           <li><p> updateAutomationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAutomation</td>
+ *      <td><p> DeleteAutomation</td>
  *      <td><p> Deletes a single Automation resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAutomationAsync(DeleteAutomationRequest request)
+ *           <li><p> deleteAutomationAsync(DeleteAutomationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAutomationAsync(AutomationName name)
- *           <li>deleteAutomationAsync(String name)
+ *           <li><p> deleteAutomationAsync(AutomationName name)
+ *           <li><p> deleteAutomationAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAutomationOperationCallable()
- *           <li>deleteAutomationCallable()
+ *           <li><p> deleteAutomationOperationCallable()
+ *           <li><p> deleteAutomationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAutomation</td>
+ *      <td><p> GetAutomation</td>
  *      <td><p> Gets details of a single Automation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAutomation(GetAutomationRequest request)
+ *           <li><p> getAutomation(GetAutomationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAutomation(AutomationName name)
- *           <li>getAutomation(String name)
+ *           <li><p> getAutomation(AutomationName name)
+ *           <li><p> getAutomation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAutomationCallable()
+ *           <li><p> getAutomationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAutomations</td>
+ *      <td><p> ListAutomations</td>
  *      <td><p> Lists Automations in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAutomations(ListAutomationsRequest request)
+ *           <li><p> listAutomations(ListAutomationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAutomations(DeliveryPipelineName parent)
- *           <li>listAutomations(String parent)
+ *           <li><p> listAutomations(DeliveryPipelineName parent)
+ *           <li><p> listAutomations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAutomationsPagedCallable()
- *           <li>listAutomationsCallable()
+ *           <li><p> listAutomationsPagedCallable()
+ *           <li><p> listAutomationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAutomationRun</td>
+ *      <td><p> GetAutomationRun</td>
  *      <td><p> Gets details of a single AutomationRun.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAutomationRun(GetAutomationRunRequest request)
+ *           <li><p> getAutomationRun(GetAutomationRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAutomationRun(AutomationRunName name)
- *           <li>getAutomationRun(String name)
+ *           <li><p> getAutomationRun(AutomationRunName name)
+ *           <li><p> getAutomationRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAutomationRunCallable()
+ *           <li><p> getAutomationRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAutomationRuns</td>
+ *      <td><p> ListAutomationRuns</td>
  *      <td><p> Lists AutomationRuns in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAutomationRuns(ListAutomationRunsRequest request)
+ *           <li><p> listAutomationRuns(ListAutomationRunsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAutomationRuns(DeliveryPipelineName parent)
- *           <li>listAutomationRuns(String parent)
+ *           <li><p> listAutomationRuns(DeliveryPipelineName parent)
+ *           <li><p> listAutomationRuns(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAutomationRunsPagedCallable()
- *           <li>listAutomationRunsCallable()
+ *           <li><p> listAutomationRunsPagedCallable()
+ *           <li><p> listAutomationRunsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelAutomationRun</td>
+ *      <td><p> CancelAutomationRun</td>
  *      <td><p> Cancels an AutomationRun. The `state` of the `AutomationRun` after cancelling is `CANCELLED`. `CancelAutomationRun` can be called on AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun in a different state returns an `FAILED_PRECONDITION` error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelAutomationRun(CancelAutomationRunRequest request)
+ *           <li><p> cancelAutomationRun(CancelAutomationRunRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelAutomationRun(AutomationRunName name)
- *           <li>cancelAutomationRun(String name)
+ *           <li><p> cancelAutomationRun(AutomationRunName name)
+ *           <li><p> cancelAutomationRun(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelAutomationRunCallable()
+ *           <li><p> cancelAutomationRunCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -66,209 +66,210 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateConversationModel</td>
+ *      <td><p> CreateConversationModel</td>
  *      <td><p> Creates a model.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [CreateConversationModelOperationMetadata][google.cloud.dialogflow.v2.CreateConversationModelOperationMetadata] - `response`: [ConversationModel][google.cloud.dialogflow.v2.ConversationModel]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConversationModelAsync(CreateConversationModelRequest request)
+ *           <li><p> createConversationModelAsync(CreateConversationModelRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createConversationModelAsync(String parent, ConversationModel conversationModel)
+ *           <li><p> createConversationModelAsync(String parent, ConversationModel conversationModel)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConversationModelOperationCallable()
- *           <li>createConversationModelCallable()
+ *           <li><p> createConversationModelOperationCallable()
+ *           <li><p> createConversationModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConversationModel</td>
+ *      <td><p> GetConversationModel</td>
  *      <td><p> Gets conversation model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConversationModel(GetConversationModelRequest request)
+ *           <li><p> getConversationModel(GetConversationModelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConversationModel(String name)
+ *           <li><p> getConversationModel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConversationModelCallable()
+ *           <li><p> getConversationModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConversationModels</td>
+ *      <td><p> ListConversationModels</td>
  *      <td><p> Lists conversation models.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConversationModels(ListConversationModelsRequest request)
+ *           <li><p> listConversationModels(ListConversationModelsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConversationModels(String parent)
+ *           <li><p> listConversationModels(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConversationModelsPagedCallable()
- *           <li>listConversationModelsCallable()
+ *           <li><p> listConversationModelsPagedCallable()
+ *           <li><p> listConversationModelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConversationModel</td>
+ *      <td><p> DeleteConversationModel</td>
  *      <td><p> Deletes a model.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [DeleteConversationModelOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationModelOperationMetadata] - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConversationModelAsync(DeleteConversationModelRequest request)
+ *           <li><p> deleteConversationModelAsync(DeleteConversationModelRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteConversationModelAsync(String name)
+ *           <li><p> deleteConversationModelAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConversationModelOperationCallable()
- *           <li>deleteConversationModelCallable()
+ *           <li><p> deleteConversationModelOperationCallable()
+ *           <li><p> deleteConversationModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeployConversationModel</td>
+ *      <td><p> DeployConversationModel</td>
  *      <td><p> Deploys a model. If a model is already deployed, deploying it has no effect. A model can only serve prediction requests after it gets deployed. For article suggestion, custom model will not be used unless it is deployed.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [DeployConversationModelOperationMetadata][google.cloud.dialogflow.v2.DeployConversationModelOperationMetadata] - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deployConversationModelAsync(DeployConversationModelRequest request)
+ *           <li><p> deployConversationModelAsync(DeployConversationModelRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deployConversationModelOperationCallable()
- *           <li>deployConversationModelCallable()
+ *           <li><p> deployConversationModelOperationCallable()
+ *           <li><p> deployConversationModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeployConversationModel</td>
+ *      <td><p> UndeployConversationModel</td>
  *      <td><p> Undeploys a model. If the model is not deployed this method has no effect. If the model is currently being used:   - For article suggestion, article suggestion will fallback to the default     model if model is undeployed.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: [UndeployConversationModelOperationMetadata][google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata] - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeployConversationModelAsync(UndeployConversationModelRequest request)
+ *           <li><p> undeployConversationModelAsync(UndeployConversationModelRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeployConversationModelOperationCallable()
- *           <li>undeployConversationModelCallable()
+ *           <li><p> undeployConversationModelOperationCallable()
+ *           <li><p> undeployConversationModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConversationModelEvaluation</td>
+ *      <td><p> GetConversationModelEvaluation</td>
  *      <td><p> Gets an evaluation of conversation model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConversationModelEvaluation(GetConversationModelEvaluationRequest request)
+ *           <li><p> getConversationModelEvaluation(GetConversationModelEvaluationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConversationModelEvaluation(String name)
+ *           <li><p> getConversationModelEvaluation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConversationModelEvaluationCallable()
+ *           <li><p> getConversationModelEvaluationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConversationModelEvaluations</td>
+ *      <td><p> ListConversationModelEvaluations</td>
  *      <td><p> Lists evaluations of a conversation model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConversationModelEvaluations(ListConversationModelEvaluationsRequest request)
+ *           <li><p> listConversationModelEvaluations(ListConversationModelEvaluationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConversationModelEvaluations(String parent)
+ *           <li><p> listConversationModelEvaluations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConversationModelEvaluationsPagedCallable()
- *           <li>listConversationModelEvaluationsCallable()
+ *           <li><p> listConversationModelEvaluationsPagedCallable()
+ *           <li><p> listConversationModelEvaluationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConversationModelEvaluation</td>
+ *      <td><p> CreateConversationModelEvaluation</td>
  *      <td><p> Creates evaluation of a conversation model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConversationModelEvaluationAsync(CreateConversationModelEvaluationRequest request)
+ *           <li><p> createConversationModelEvaluationAsync(CreateConversationModelEvaluationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createConversationModelEvaluationAsync(ConversationModelName parent, ConversationModelEvaluation conversationModelEvaluation)
- *           <li>createConversationModelEvaluationAsync(String parent, ConversationModelEvaluation conversationModelEvaluation)
+ *           <li><p> createConversationModelEvaluationAsync(ConversationModelName parent, ConversationModelEvaluation conversationModelEvaluation)
+ *           <li><p> createConversationModelEvaluationAsync(String parent, ConversationModelEvaluation conversationModelEvaluation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConversationModelEvaluationOperationCallable()
- *           <li>createConversationModelEvaluationCallable()
+ *           <li><p> createConversationModelEvaluationOperationCallable()
+ *           <li><p> createConversationModelEvaluationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

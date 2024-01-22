@@ -66,173 +66,174 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>UpdateDataset</td>
+ *      <td><p> UpdateDataset</td>
  *      <td><p> Updates metadata associated with a dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDatasetAsync(UpdateDatasetRequest request)
+ *           <li><p> updateDatasetAsync(UpdateDatasetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDatasetAsync(Dataset dataset, FieldMask updateMask)
+ *           <li><p> updateDatasetAsync(Dataset dataset, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDatasetOperationCallable()
- *           <li>updateDatasetCallable()
+ *           <li><p> updateDatasetOperationCallable()
+ *           <li><p> updateDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportDocuments</td>
+ *      <td><p> ImportDocuments</td>
  *      <td><p> Import documents into a dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importDocumentsAsync(ImportDocumentsRequest request)
+ *           <li><p> importDocumentsAsync(ImportDocumentsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>importDocumentsAsync(DatasetName dataset)
- *           <li>importDocumentsAsync(String dataset)
+ *           <li><p> importDocumentsAsync(DatasetName dataset)
+ *           <li><p> importDocumentsAsync(String dataset)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importDocumentsOperationCallable()
- *           <li>importDocumentsCallable()
+ *           <li><p> importDocumentsOperationCallable()
+ *           <li><p> importDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDocument</td>
+ *      <td><p> GetDocument</td>
  *      <td><p> Returns relevant fields present in the requested document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDocument(GetDocumentRequest request)
+ *           <li><p> getDocument(GetDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDocument(DatasetName dataset)
- *           <li>getDocument(String dataset)
+ *           <li><p> getDocument(DatasetName dataset)
+ *           <li><p> getDocument(String dataset)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDocumentCallable()
+ *           <li><p> getDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDocuments</td>
+ *      <td><p> ListDocuments</td>
  *      <td><p> Returns a list of documents present in the dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDocuments(ListDocumentsRequest request)
+ *           <li><p> listDocuments(ListDocumentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDocuments(DatasetName dataset)
- *           <li>listDocuments(String dataset)
+ *           <li><p> listDocuments(DatasetName dataset)
+ *           <li><p> listDocuments(String dataset)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDocumentsPagedCallable()
- *           <li>listDocumentsCallable()
+ *           <li><p> listDocumentsPagedCallable()
+ *           <li><p> listDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchDeleteDocuments</td>
+ *      <td><p> BatchDeleteDocuments</td>
  *      <td><p> Deletes a set of documents.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchDeleteDocumentsAsync(BatchDeleteDocumentsRequest request)
+ *           <li><p> batchDeleteDocumentsAsync(BatchDeleteDocumentsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchDeleteDocumentsAsync(String dataset)
+ *           <li><p> batchDeleteDocumentsAsync(String dataset)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchDeleteDocumentsOperationCallable()
- *           <li>batchDeleteDocumentsCallable()
+ *           <li><p> batchDeleteDocumentsOperationCallable()
+ *           <li><p> batchDeleteDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDatasetSchema</td>
+ *      <td><p> GetDatasetSchema</td>
  *      <td><p> Gets the `DatasetSchema` of a `Dataset`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDatasetSchema(GetDatasetSchemaRequest request)
+ *           <li><p> getDatasetSchema(GetDatasetSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDatasetSchema(DatasetSchemaName name)
- *           <li>getDatasetSchema(String name)
+ *           <li><p> getDatasetSchema(DatasetSchemaName name)
+ *           <li><p> getDatasetSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDatasetSchemaCallable()
+ *           <li><p> getDatasetSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDatasetSchema</td>
+ *      <td><p> UpdateDatasetSchema</td>
  *      <td><p> Updates a `DatasetSchema`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDatasetSchema(UpdateDatasetSchemaRequest request)
+ *           <li><p> updateDatasetSchema(UpdateDatasetSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDatasetSchema(DatasetSchema datasetSchema, FieldMask updateMask)
+ *           <li><p> updateDatasetSchema(DatasetSchema datasetSchema, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDatasetSchemaCallable()
+ *           <li><p> updateDatasetSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

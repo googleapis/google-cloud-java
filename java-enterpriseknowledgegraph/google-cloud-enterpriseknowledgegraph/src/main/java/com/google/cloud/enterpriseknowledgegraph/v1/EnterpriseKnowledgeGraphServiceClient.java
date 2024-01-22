@@ -62,182 +62,183 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateEntityReconciliationJob</td>
+ *      <td><p> CreateEntityReconciliationJob</td>
  *      <td><p> Creates a EntityReconciliationJob. A EntityReconciliationJob once created will right away be attempted to start.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEntityReconciliationJob(CreateEntityReconciliationJobRequest request)
+ *           <li><p> createEntityReconciliationJob(CreateEntityReconciliationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEntityReconciliationJob(LocationName parent, EntityReconciliationJob entityReconciliationJob)
- *           <li>createEntityReconciliationJob(String parent, EntityReconciliationJob entityReconciliationJob)
+ *           <li><p> createEntityReconciliationJob(LocationName parent, EntityReconciliationJob entityReconciliationJob)
+ *           <li><p> createEntityReconciliationJob(String parent, EntityReconciliationJob entityReconciliationJob)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEntityReconciliationJobCallable()
+ *           <li><p> createEntityReconciliationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEntityReconciliationJob</td>
+ *      <td><p> GetEntityReconciliationJob</td>
  *      <td><p> Gets a EntityReconciliationJob.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEntityReconciliationJob(GetEntityReconciliationJobRequest request)
+ *           <li><p> getEntityReconciliationJob(GetEntityReconciliationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEntityReconciliationJob(EntityReconciliationJobName name)
- *           <li>getEntityReconciliationJob(String name)
+ *           <li><p> getEntityReconciliationJob(EntityReconciliationJobName name)
+ *           <li><p> getEntityReconciliationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEntityReconciliationJobCallable()
+ *           <li><p> getEntityReconciliationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEntityReconciliationJobs</td>
+ *      <td><p> ListEntityReconciliationJobs</td>
  *      <td><p> Lists Entity Reconciliation Jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntityReconciliationJobs(ListEntityReconciliationJobsRequest request)
+ *           <li><p> listEntityReconciliationJobs(ListEntityReconciliationJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEntityReconciliationJobs(LocationName parent)
- *           <li>listEntityReconciliationJobs(String parent)
+ *           <li><p> listEntityReconciliationJobs(LocationName parent)
+ *           <li><p> listEntityReconciliationJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntityReconciliationJobsPagedCallable()
- *           <li>listEntityReconciliationJobsCallable()
+ *           <li><p> listEntityReconciliationJobsPagedCallable()
+ *           <li><p> listEntityReconciliationJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelEntityReconciliationJob</td>
+ *      <td><p> CancelEntityReconciliationJob</td>
  *      <td><p> Cancels a EntityReconciliationJob. Success of cancellation is not guaranteed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelEntityReconciliationJob(CancelEntityReconciliationJobRequest request)
+ *           <li><p> cancelEntityReconciliationJob(CancelEntityReconciliationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelEntityReconciliationJob(EntityReconciliationJobName name)
- *           <li>cancelEntityReconciliationJob(String name)
+ *           <li><p> cancelEntityReconciliationJob(EntityReconciliationJobName name)
+ *           <li><p> cancelEntityReconciliationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelEntityReconciliationJobCallable()
+ *           <li><p> cancelEntityReconciliationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEntityReconciliationJob</td>
+ *      <td><p> DeleteEntityReconciliationJob</td>
  *      <td><p> Deletes a EntityReconciliationJob. It only deletes the job when the job state is in FAILED, SUCCEEDED, and CANCELLED.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEntityReconciliationJob(DeleteEntityReconciliationJobRequest request)
+ *           <li><p> deleteEntityReconciliationJob(DeleteEntityReconciliationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEntityReconciliationJob(EntityReconciliationJobName name)
- *           <li>deleteEntityReconciliationJob(String name)
+ *           <li><p> deleteEntityReconciliationJob(EntityReconciliationJobName name)
+ *           <li><p> deleteEntityReconciliationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEntityReconciliationJobCallable()
+ *           <li><p> deleteEntityReconciliationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Lookup</td>
+ *      <td><p> Lookup</td>
  *      <td><p> Finds the Cloud KG entities with CKG ID(s).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookup(LookupRequest request)
+ *           <li><p> lookup(LookupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>lookup(LocationName parent, List<String> ids)
- *           <li>lookup(String parent, List<String> ids)
+ *           <li><p> lookup(LocationName parent, List&lt;String&gt; ids)
+ *           <li><p> lookup(String parent, List&lt;String&gt; ids)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupCallable()
+ *           <li><p> lookupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Search</td>
+ *      <td><p> Search</td>
  *      <td><p> Searches the Cloud KG entities with entity name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>search(SearchRequest request)
+ *           <li><p> search(SearchRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>search(LocationName parent, String query)
- *           <li>search(String parent, String query)
+ *           <li><p> search(LocationName parent, String query)
+ *           <li><p> search(String parent, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchCallable()
+ *           <li><p> searchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupPublicKg</td>
+ *      <td><p> LookupPublicKg</td>
  *      <td><p> Finds the public KG entities with public KG ID(s).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupPublicKg(LookupPublicKgRequest request)
+ *           <li><p> lookupPublicKg(LookupPublicKgRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>lookupPublicKg(LocationName parent, List<String> ids)
- *           <li>lookupPublicKg(String parent, List<String> ids)
+ *           <li><p> lookupPublicKg(LocationName parent, List&lt;String&gt; ids)
+ *           <li><p> lookupPublicKg(String parent, List&lt;String&gt; ids)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupPublicKgCallable()
+ *           <li><p> lookupPublicKgCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchPublicKg</td>
+ *      <td><p> SearchPublicKg</td>
  *      <td><p> Searches the public KG entities with entity name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchPublicKg(SearchPublicKgRequest request)
+ *           <li><p> searchPublicKg(SearchPublicKgRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchPublicKg(LocationName parent, String query)
- *           <li>searchPublicKg(String parent, String query)
+ *           <li><p> searchPublicKg(LocationName parent, String query)
+ *           <li><p> searchPublicKg(String parent, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchPublicKgCallable()
+ *           <li><p> searchPublicKgCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

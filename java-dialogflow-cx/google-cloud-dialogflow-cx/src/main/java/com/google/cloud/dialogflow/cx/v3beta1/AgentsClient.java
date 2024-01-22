@@ -67,126 +67,128 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAgents</td>
+ *      <td><p> ListAgents</td>
  *      <td><p> Returns the list of all agents in the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAgents(ListAgentsRequest request)
+ *           <li><p> listAgents(ListAgentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAgents(LocationName parent)
- *           <li>listAgents(String parent)
+ *           <li><p> listAgents(LocationName parent)
+ *           <li><p> listAgents(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAgentsPagedCallable()
- *           <li>listAgentsCallable()
+ *           <li><p> listAgentsPagedCallable()
+ *           <li><p> listAgentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAgent</td>
+ *      <td><p> GetAgent</td>
  *      <td><p> Retrieves the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAgent(GetAgentRequest request)
+ *           <li><p> getAgent(GetAgentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAgent(AgentName name)
- *           <li>getAgent(String name)
+ *           <li><p> getAgent(AgentName name)
+ *           <li><p> getAgent(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAgentCallable()
+ *           <li><p> getAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAgent</td>
+ *      <td><p> CreateAgent</td>
  *      <td><p> Creates an agent in the specified location.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAgent(CreateAgentRequest request)
+ *           <li><p> createAgent(CreateAgentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAgent(LocationName parent, Agent agent)
- *           <li>createAgent(String parent, Agent agent)
+ *           <li><p> createAgent(LocationName parent, Agent agent)
+ *           <li><p> createAgent(String parent, Agent agent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAgentCallable()
+ *           <li><p> createAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAgent</td>
+ *      <td><p> UpdateAgent</td>
  *      <td><p> Updates the specified agent.
  * <p>  Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAgent(UpdateAgentRequest request)
+ *           <li><p> updateAgent(UpdateAgentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAgent(Agent agent, FieldMask updateMask)
+ *           <li><p> updateAgent(Agent agent, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAgentCallable()
+ *           <li><p> updateAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAgent</td>
+ *      <td><p> DeleteAgent</td>
  *      <td><p> Deletes the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAgent(DeleteAgentRequest request)
+ *           <li><p> deleteAgent(DeleteAgentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAgent(AgentName name)
- *           <li>deleteAgent(String name)
+ *           <li><p> deleteAgent(AgentName name)
+ *           <li><p> deleteAgent(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAgentCallable()
+ *           <li><p> deleteAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportAgent</td>
+ *      <td><p> ExportAgent</td>
  *      <td><p> Exports the specified agent to a binary file.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
  * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse]</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportAgentAsync(ExportAgentRequest request)
+ *           <li><p> exportAgentAsync(ExportAgentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportAgentOperationCallable()
- *           <li>exportAgentCallable()
+ *           <li><p> exportAgentOperationCallable()
+ *           <li><p> exportAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RestoreAgent</td>
+ *      <td><p> RestoreAgent</td>
  *      <td><p> Restores the specified agent from a binary file.
  * <p>  Replaces the current agent with a new one. Note that all existing resources in agent (e.g. intents, entity types, flows) will be removed.
  * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
@@ -195,114 +197,113 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>restoreAgentAsync(RestoreAgentRequest request)
+ *           <li><p> restoreAgentAsync(RestoreAgentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>restoreAgentOperationCallable()
- *           <li>restoreAgentCallable()
+ *           <li><p> restoreAgentOperationCallable()
+ *           <li><p> restoreAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ValidateAgent</td>
+ *      <td><p> ValidateAgent</td>
  *      <td><p> Validates the specified agent and creates or updates validation results. The agent in draft version is validated. Please call this API after the training is completed to get the complete validation results.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateAgent(ValidateAgentRequest request)
+ *           <li><p> validateAgent(ValidateAgentRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateAgentCallable()
+ *           <li><p> validateAgentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAgentValidationResult</td>
+ *      <td><p> GetAgentValidationResult</td>
  *      <td><p> Gets the latest agent validation result. Agent validation is performed when ValidateAgent is called.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAgentValidationResult(GetAgentValidationResultRequest request)
+ *           <li><p> getAgentValidationResult(GetAgentValidationResultRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAgentValidationResult(AgentValidationResultName name)
- *           <li>getAgentValidationResult(String name)
+ *           <li><p> getAgentValidationResult(AgentValidationResultName name)
+ *           <li><p> getAgentValidationResult(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAgentValidationResultCallable()
+ *           <li><p> getAgentValidationResultCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetGenerativeSettings</td>
+ *      <td><p> GetGenerativeSettings</td>
  *      <td><p> Gets the generative settings for the agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGenerativeSettings(GetGenerativeSettingsRequest request)
+ *           <li><p> getGenerativeSettings(GetGenerativeSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getGenerativeSettings(AgentGenerativeSettingsName name, String languageCode)
- *           <li>getGenerativeSettings(String name, String languageCode)
+ *           <li><p> getGenerativeSettings(AgentGenerativeSettingsName name, String languageCode)
+ *           <li><p> getGenerativeSettings(String name, String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGenerativeSettingsCallable()
+ *           <li><p> getGenerativeSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateGenerativeSettings</td>
+ *      <td><p> UpdateGenerativeSettings</td>
  *      <td><p> Updates the generative settings for the agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateGenerativeSettings(UpdateGenerativeSettingsRequest request)
+ *           <li><p> updateGenerativeSettings(UpdateGenerativeSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateGenerativeSettings(GenerativeSettings generativeSettings, FieldMask updateMask)
+ *           <li><p> updateGenerativeSettings(GenerativeSettings generativeSettings, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateGenerativeSettingsCallable()
+ *           <li><p> updateGenerativeSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

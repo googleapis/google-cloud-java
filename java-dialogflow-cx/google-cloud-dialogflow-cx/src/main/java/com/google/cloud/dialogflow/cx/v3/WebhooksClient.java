@@ -61,134 +61,135 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListWebhooks</td>
+ *      <td><p> ListWebhooks</td>
  *      <td><p> Returns the list of all webhooks in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWebhooks(ListWebhooksRequest request)
+ *           <li><p> listWebhooks(ListWebhooksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWebhooks(AgentName parent)
- *           <li>listWebhooks(String parent)
+ *           <li><p> listWebhooks(AgentName parent)
+ *           <li><p> listWebhooks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWebhooksPagedCallable()
- *           <li>listWebhooksCallable()
+ *           <li><p> listWebhooksPagedCallable()
+ *           <li><p> listWebhooksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWebhook</td>
+ *      <td><p> GetWebhook</td>
  *      <td><p> Retrieves the specified webhook.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWebhook(GetWebhookRequest request)
+ *           <li><p> getWebhook(GetWebhookRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWebhook(WebhookName name)
- *           <li>getWebhook(String name)
+ *           <li><p> getWebhook(WebhookName name)
+ *           <li><p> getWebhook(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWebhookCallable()
+ *           <li><p> getWebhookCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWebhook</td>
+ *      <td><p> CreateWebhook</td>
  *      <td><p> Creates a webhook in the specified agent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWebhook(CreateWebhookRequest request)
+ *           <li><p> createWebhook(CreateWebhookRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createWebhook(AgentName parent, Webhook webhook)
- *           <li>createWebhook(String parent, Webhook webhook)
+ *           <li><p> createWebhook(AgentName parent, Webhook webhook)
+ *           <li><p> createWebhook(String parent, Webhook webhook)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWebhookCallable()
+ *           <li><p> createWebhookCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWebhook</td>
+ *      <td><p> UpdateWebhook</td>
  *      <td><p> Updates the specified webhook.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWebhook(UpdateWebhookRequest request)
+ *           <li><p> updateWebhook(UpdateWebhookRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateWebhook(Webhook webhook, FieldMask updateMask)
+ *           <li><p> updateWebhook(Webhook webhook, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWebhookCallable()
+ *           <li><p> updateWebhookCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWebhook</td>
+ *      <td><p> DeleteWebhook</td>
  *      <td><p> Deletes the specified webhook.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWebhook(DeleteWebhookRequest request)
+ *           <li><p> deleteWebhook(DeleteWebhookRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteWebhook(WebhookName name)
- *           <li>deleteWebhook(String name)
+ *           <li><p> deleteWebhook(WebhookName name)
+ *           <li><p> deleteWebhook(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWebhookCallable()
+ *           <li><p> deleteWebhookCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

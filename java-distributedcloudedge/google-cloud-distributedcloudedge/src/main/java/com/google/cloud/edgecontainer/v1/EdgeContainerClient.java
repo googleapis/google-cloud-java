@@ -63,343 +63,344 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListClusters</td>
+ *      <td><p> ListClusters</td>
  *      <td><p> Lists Clusters in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClusters(ListClustersRequest request)
+ *           <li><p> listClusters(ListClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClusters(LocationName parent)
- *           <li>listClusters(String parent)
+ *           <li><p> listClusters(LocationName parent)
+ *           <li><p> listClusters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClustersPagedCallable()
- *           <li>listClustersCallable()
+ *           <li><p> listClustersPagedCallable()
+ *           <li><p> listClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCluster</td>
+ *      <td><p> GetCluster</td>
  *      <td><p> Gets details of a single Cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCluster(GetClusterRequest request)
+ *           <li><p> getCluster(GetClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCluster(ClusterName name)
- *           <li>getCluster(String name)
+ *           <li><p> getCluster(ClusterName name)
+ *           <li><p> getCluster(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClusterCallable()
+ *           <li><p> getClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCluster</td>
+ *      <td><p> CreateCluster</td>
  *      <td><p> Creates a new Cluster in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClusterAsync(CreateClusterRequest request)
+ *           <li><p> createClusterAsync(CreateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createClusterAsync(LocationName parent, Cluster cluster, String clusterId)
- *           <li>createClusterAsync(String parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(LocationName parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(String parent, Cluster cluster, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClusterOperationCallable()
- *           <li>createClusterCallable()
+ *           <li><p> createClusterOperationCallable()
+ *           <li><p> createClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCluster</td>
+ *      <td><p> UpdateCluster</td>
  *      <td><p> Updates the parameters of a single Cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateClusterAsync(UpdateClusterRequest request)
+ *           <li><p> updateClusterAsync(UpdateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateClusterAsync(Cluster cluster, FieldMask updateMask)
+ *           <li><p> updateClusterAsync(Cluster cluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClusterOperationCallable()
- *           <li>updateClusterCallable()
+ *           <li><p> updateClusterOperationCallable()
+ *           <li><p> updateClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCluster</td>
+ *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a single Cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteClusterAsync(DeleteClusterRequest request)
+ *           <li><p> deleteClusterAsync(DeleteClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteClusterAsync(ClusterName name)
- *           <li>deleteClusterAsync(String name)
+ *           <li><p> deleteClusterAsync(ClusterName name)
+ *           <li><p> deleteClusterAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClusterOperationCallable()
- *           <li>deleteClusterCallable()
+ *           <li><p> deleteClusterOperationCallable()
+ *           <li><p> deleteClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateAccessToken</td>
+ *      <td><p> GenerateAccessToken</td>
  *      <td><p> Generates an access token for a Cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAccessToken(GenerateAccessTokenRequest request)
+ *           <li><p> generateAccessToken(GenerateAccessTokenRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>generateAccessToken(ClusterName cluster)
- *           <li>generateAccessToken(String cluster)
+ *           <li><p> generateAccessToken(ClusterName cluster)
+ *           <li><p> generateAccessToken(String cluster)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAccessTokenCallable()
+ *           <li><p> generateAccessTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNodePools</td>
+ *      <td><p> ListNodePools</td>
  *      <td><p> Lists NodePools in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNodePools(ListNodePoolsRequest request)
+ *           <li><p> listNodePools(ListNodePoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNodePools(ClusterName parent)
- *           <li>listNodePools(String parent)
+ *           <li><p> listNodePools(ClusterName parent)
+ *           <li><p> listNodePools(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNodePoolsPagedCallable()
- *           <li>listNodePoolsCallable()
+ *           <li><p> listNodePoolsPagedCallable()
+ *           <li><p> listNodePoolsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNodePool</td>
+ *      <td><p> GetNodePool</td>
  *      <td><p> Gets details of a single NodePool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNodePool(GetNodePoolRequest request)
+ *           <li><p> getNodePool(GetNodePoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNodePool(NodePoolName name)
- *           <li>getNodePool(String name)
+ *           <li><p> getNodePool(NodePoolName name)
+ *           <li><p> getNodePool(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNodePoolCallable()
+ *           <li><p> getNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNodePool</td>
+ *      <td><p> CreateNodePool</td>
  *      <td><p> Creates a new NodePool in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNodePoolAsync(CreateNodePoolRequest request)
+ *           <li><p> createNodePoolAsync(CreateNodePoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createNodePoolAsync(ClusterName parent, NodePool nodePool, String nodePoolId)
- *           <li>createNodePoolAsync(String parent, NodePool nodePool, String nodePoolId)
+ *           <li><p> createNodePoolAsync(ClusterName parent, NodePool nodePool, String nodePoolId)
+ *           <li><p> createNodePoolAsync(String parent, NodePool nodePool, String nodePoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNodePoolOperationCallable()
- *           <li>createNodePoolCallable()
+ *           <li><p> createNodePoolOperationCallable()
+ *           <li><p> createNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNodePool</td>
+ *      <td><p> UpdateNodePool</td>
  *      <td><p> Updates the parameters of a single NodePool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNodePoolAsync(UpdateNodePoolRequest request)
+ *           <li><p> updateNodePoolAsync(UpdateNodePoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateNodePoolAsync(NodePool nodePool, FieldMask updateMask)
+ *           <li><p> updateNodePoolAsync(NodePool nodePool, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNodePoolOperationCallable()
- *           <li>updateNodePoolCallable()
+ *           <li><p> updateNodePoolOperationCallable()
+ *           <li><p> updateNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNodePool</td>
+ *      <td><p> DeleteNodePool</td>
  *      <td><p> Deletes a single NodePool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNodePoolAsync(DeleteNodePoolRequest request)
+ *           <li><p> deleteNodePoolAsync(DeleteNodePoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteNodePoolAsync(NodePoolName name)
- *           <li>deleteNodePoolAsync(String name)
+ *           <li><p> deleteNodePoolAsync(NodePoolName name)
+ *           <li><p> deleteNodePoolAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNodePoolOperationCallable()
- *           <li>deleteNodePoolCallable()
+ *           <li><p> deleteNodePoolOperationCallable()
+ *           <li><p> deleteNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListMachines</td>
+ *      <td><p> ListMachines</td>
  *      <td><p> Lists Machines in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMachines(ListMachinesRequest request)
+ *           <li><p> listMachines(ListMachinesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMachines(LocationName parent)
- *           <li>listMachines(String parent)
+ *           <li><p> listMachines(LocationName parent)
+ *           <li><p> listMachines(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMachinesPagedCallable()
- *           <li>listMachinesCallable()
+ *           <li><p> listMachinesPagedCallable()
+ *           <li><p> listMachinesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMachine</td>
+ *      <td><p> GetMachine</td>
  *      <td><p> Gets details of a single Machine.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMachine(GetMachineRequest request)
+ *           <li><p> getMachine(GetMachineRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMachine(MachineName name)
- *           <li>getMachine(String name)
+ *           <li><p> getMachine(MachineName name)
+ *           <li><p> getMachine(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMachineCallable()
+ *           <li><p> getMachineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListVpnConnections</td>
+ *      <td><p> ListVpnConnections</td>
  *      <td><p> Lists VPN connections in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listVpnConnections(ListVpnConnectionsRequest request)
+ *           <li><p> listVpnConnections(ListVpnConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listVpnConnections(LocationName parent)
- *           <li>listVpnConnections(String parent)
+ *           <li><p> listVpnConnections(LocationName parent)
+ *           <li><p> listVpnConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listVpnConnectionsPagedCallable()
- *           <li>listVpnConnectionsCallable()
+ *           <li><p> listVpnConnectionsPagedCallable()
+ *           <li><p> listVpnConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetVpnConnection</td>
+ *      <td><p> GetVpnConnection</td>
  *      <td><p> Gets details of a single VPN connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getVpnConnection(GetVpnConnectionRequest request)
+ *           <li><p> getVpnConnection(GetVpnConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getVpnConnection(VpnConnectionName name)
- *           <li>getVpnConnection(String name)
+ *           <li><p> getVpnConnection(VpnConnectionName name)
+ *           <li><p> getVpnConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getVpnConnectionCallable()
+ *           <li><p> getVpnConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateVpnConnection</td>
+ *      <td><p> CreateVpnConnection</td>
  *      <td><p> Creates a new VPN connection in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createVpnConnectionAsync(CreateVpnConnectionRequest request)
+ *           <li><p> createVpnConnectionAsync(CreateVpnConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createVpnConnectionAsync(LocationName parent, VpnConnection vpnConnection, String vpnConnectionId)
- *           <li>createVpnConnectionAsync(String parent, VpnConnection vpnConnection, String vpnConnectionId)
+ *           <li><p> createVpnConnectionAsync(LocationName parent, VpnConnection vpnConnection, String vpnConnectionId)
+ *           <li><p> createVpnConnectionAsync(String parent, VpnConnection vpnConnection, String vpnConnectionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createVpnConnectionOperationCallable()
- *           <li>createVpnConnectionCallable()
+ *           <li><p> createVpnConnectionOperationCallable()
+ *           <li><p> createVpnConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteVpnConnection</td>
+ *      <td><p> DeleteVpnConnection</td>
  *      <td><p> Deletes a single VPN connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteVpnConnectionAsync(DeleteVpnConnectionRequest request)
+ *           <li><p> deleteVpnConnectionAsync(DeleteVpnConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteVpnConnectionAsync(VpnConnectionName name)
- *           <li>deleteVpnConnectionAsync(String name)
+ *           <li><p> deleteVpnConnectionAsync(VpnConnectionName name)
+ *           <li><p> deleteVpnConnectionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteVpnConnectionOperationCallable()
- *           <li>deleteVpnConnectionCallable()
+ *           <li><p> deleteVpnConnectionOperationCallable()
+ *           <li><p> deleteVpnConnectionCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

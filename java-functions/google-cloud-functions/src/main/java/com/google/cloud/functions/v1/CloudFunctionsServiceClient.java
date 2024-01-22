@@ -71,124 +71,126 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListFunctions</td>
+ *      <td><p> ListFunctions</td>
  *      <td><p> Returns a list of functions that belong to the requested project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFunctions(ListFunctionsRequest request)
+ *           <li><p> listFunctions(ListFunctionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFunctionsPagedCallable()
- *           <li>listFunctionsCallable()
+ *           <li><p> listFunctionsPagedCallable()
+ *           <li><p> listFunctionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFunction</td>
+ *      <td><p> GetFunction</td>
  *      <td><p> Returns a function with the given name from the requested project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFunction(GetFunctionRequest request)
+ *           <li><p> getFunction(GetFunctionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFunction(CloudFunctionName name)
- *           <li>getFunction(String name)
+ *           <li><p> getFunction(CloudFunctionName name)
+ *           <li><p> getFunction(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFunctionCallable()
+ *           <li><p> getFunctionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFunction</td>
+ *      <td><p> CreateFunction</td>
  *      <td><p> Creates a new function. If a function with the given name already exists in the specified project, the long running operation returns an `ALREADY_EXISTS` error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFunctionAsync(CreateFunctionRequest request)
+ *           <li><p> createFunctionAsync(CreateFunctionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createFunctionAsync(LocationName location, CloudFunction function)
- *           <li>createFunctionAsync(String location, CloudFunction function)
+ *           <li><p> createFunctionAsync(LocationName location, CloudFunction function)
+ *           <li><p> createFunctionAsync(String location, CloudFunction function)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFunctionOperationCallable()
- *           <li>createFunctionCallable()
+ *           <li><p> createFunctionOperationCallable()
+ *           <li><p> createFunctionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFunction</td>
+ *      <td><p> UpdateFunction</td>
  *      <td><p> Updates existing function.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFunctionAsync(UpdateFunctionRequest request)
+ *           <li><p> updateFunctionAsync(UpdateFunctionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateFunctionAsync(CloudFunction function)
+ *           <li><p> updateFunctionAsync(CloudFunction function)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFunctionOperationCallable()
- *           <li>updateFunctionCallable()
+ *           <li><p> updateFunctionOperationCallable()
+ *           <li><p> updateFunctionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFunction</td>
+ *      <td><p> DeleteFunction</td>
  *      <td><p> Deletes a function with the given name from the specified project. If the given function is used by some trigger, the trigger is updated to remove this function.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFunctionAsync(DeleteFunctionRequest request)
+ *           <li><p> deleteFunctionAsync(DeleteFunctionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteFunctionAsync(CloudFunctionName name)
- *           <li>deleteFunctionAsync(String name)
+ *           <li><p> deleteFunctionAsync(CloudFunctionName name)
+ *           <li><p> deleteFunctionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFunctionOperationCallable()
- *           <li>deleteFunctionCallable()
+ *           <li><p> deleteFunctionOperationCallable()
+ *           <li><p> deleteFunctionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CallFunction</td>
+ *      <td><p> CallFunction</td>
  *      <td><p> Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very limited traffic is allowed. For more information on the actual limits, refer to [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>callFunction(CallFunctionRequest request)
+ *           <li><p> callFunction(CallFunctionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>callFunction(CloudFunctionName name, String data)
- *           <li>callFunction(String name, String data)
+ *           <li><p> callFunction(CloudFunctionName name, String data)
+ *           <li><p> callFunction(String name, String data)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>callFunctionCallable()
+ *           <li><p> callFunctionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateUploadUrl</td>
+ *      <td><p> GenerateUploadUrl</td>
  *      <td><p> Returns a signed URL for uploading a function source code. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls. Once the function source code upload is complete, the used signed URL should be provided in CreateFunction or UpdateFunction request as a reference to the function source code.
  * <p>  When uploading source code to the generated signed URL, please follow these restrictions:
  * <ul>
@@ -208,85 +210,84 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateUploadUrl(GenerateUploadUrlRequest request)
+ *           <li><p> generateUploadUrl(GenerateUploadUrlRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateUploadUrlCallable()
+ *           <li><p> generateUploadUrlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateDownloadUrl</td>
+ *      <td><p> GenerateDownloadUrl</td>
  *      <td><p> Returns a signed URL for downloading deployed function source code. The URL is only valid for a limited period and must be used within minutes after generation. For more information about the signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateDownloadUrl(GenerateDownloadUrlRequest request)
+ *           <li><p> generateDownloadUrl(GenerateDownloadUrlRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateDownloadUrlCallable()
+ *           <li><p> generateDownloadUrlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM access control policy on the specified function. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the IAM access control policy for a function. Returns an empty policy if the function exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Tests the specified permissions against the IAM access control policy for a function. If the function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

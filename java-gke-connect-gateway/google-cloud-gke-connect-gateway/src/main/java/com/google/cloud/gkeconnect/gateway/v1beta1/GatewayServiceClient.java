@@ -57,80 +57,81 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetResource</td>
+ *      <td><p> GetResource</td>
  *      <td><p> GetResource performs an HTTP GET request on the Kubernetes API Server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getResource(HttpBody request)
+ *           <li><p> getResource(HttpBody request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getResourceCallable()
+ *           <li><p> getResourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PostResource</td>
+ *      <td><p> PostResource</td>
  *      <td><p> PostResource performs an HTTP POST on the Kubernetes API Server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>postResource(HttpBody request)
+ *           <li><p> postResource(HttpBody request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>postResourceCallable()
+ *           <li><p> postResourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteResource</td>
+ *      <td><p> DeleteResource</td>
  *      <td><p> DeleteResource performs an HTTP DELETE on the Kubernetes API Server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteResource(HttpBody request)
+ *           <li><p> deleteResource(HttpBody request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteResourceCallable()
+ *           <li><p> deleteResourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PutResource</td>
+ *      <td><p> PutResource</td>
  *      <td><p> PutResource performs an HTTP PUT on the Kubernetes API Server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>putResource(HttpBody request)
+ *           <li><p> putResource(HttpBody request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>putResourceCallable()
+ *           <li><p> putResourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PatchResource</td>
+ *      <td><p> PatchResource</td>
  *      <td><p> PatchResource performs an HTTP PATCH on the Kubernetes API Server.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchResource(HttpBody request)
+ *           <li><p> patchResource(HttpBody request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchResourceCallable()
+ *           <li><p> patchResourceCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

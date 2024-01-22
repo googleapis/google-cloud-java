@@ -58,26 +58,27 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BatchProcessDocuments</td>
+ *      <td><p> BatchProcessDocuments</td>
  *      <td><p> LRO endpoint to batch process many documents.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchProcessDocumentsAsync(List<ProcessDocumentRequest> requests)
- *           <li>batchProcessDocumentsAsync(BatchProcessDocumentsRequest request)
+ *           <li><p> batchProcessDocumentsAsync(List&lt;ProcessDocumentRequest&gt; requests)
+ *           <li><p> batchProcessDocumentsAsync(BatchProcessDocumentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchProcessDocumentsOperationCallable()
- *           <li>batchProcessDocumentsCallable()
+ *           <li><p> batchProcessDocumentsOperationCallable()
+ *           <li><p> batchProcessDocumentsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
