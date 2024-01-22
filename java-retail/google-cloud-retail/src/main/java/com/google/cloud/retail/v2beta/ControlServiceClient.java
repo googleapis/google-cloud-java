@@ -60,108 +60,109 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateControl</td>
+ *      <td><p> CreateControl</td>
  *      <td><p> Creates a Control.
  * <p>  If the [Control][google.cloud.retail.v2beta.Control] to create already exists, an ALREADY_EXISTS error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createControl(CreateControlRequest request)
+ *           <li><p> createControl(CreateControlRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createControl(CatalogName parent, Control control, String controlId)
- *           <li>createControl(String parent, Control control, String controlId)
+ *           <li><p> createControl(CatalogName parent, Control control, String controlId)
+ *           <li><p> createControl(String parent, Control control, String controlId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createControlCallable()
+ *           <li><p> createControlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteControl</td>
+ *      <td><p> DeleteControl</td>
  *      <td><p> Deletes a Control.
  * <p>  If the [Control][google.cloud.retail.v2beta.Control] to delete does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteControl(DeleteControlRequest request)
+ *           <li><p> deleteControl(DeleteControlRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteControl(ControlName name)
- *           <li>deleteControl(String name)
+ *           <li><p> deleteControl(ControlName name)
+ *           <li><p> deleteControl(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteControlCallable()
+ *           <li><p> deleteControlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateControl</td>
+ *      <td><p> UpdateControl</td>
  *      <td><p> Updates a Control.
  * <p>  [Control][google.cloud.retail.v2beta.Control] cannot be set to a different oneof field, if so an INVALID_ARGUMENT is returned. If the [Control][google.cloud.retail.v2beta.Control] to update does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateControl(UpdateControlRequest request)
+ *           <li><p> updateControl(UpdateControlRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateControl(Control control, FieldMask updateMask)
+ *           <li><p> updateControl(Control control, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateControlCallable()
+ *           <li><p> updateControlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetControl</td>
+ *      <td><p> GetControl</td>
  *      <td><p> Gets a Control.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getControl(GetControlRequest request)
+ *           <li><p> getControl(GetControlRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getControl(ControlName name)
- *           <li>getControl(String name)
+ *           <li><p> getControl(ControlName name)
+ *           <li><p> getControl(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getControlCallable()
+ *           <li><p> getControlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListControls</td>
+ *      <td><p> ListControls</td>
  *      <td><p> Lists all Controls by their parent [Catalog][google.cloud.retail.v2beta.Catalog].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listControls(ListControlsRequest request)
+ *           <li><p> listControls(ListControlsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listControls(CatalogName parent)
- *           <li>listControls(String parent)
+ *           <li><p> listControls(CatalogName parent)
+ *           <li><p> listControls(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listControlsPagedCallable()
- *           <li>listControlsCallable()
+ *           <li><p> listControlsPagedCallable()
+ *           <li><p> listControlsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

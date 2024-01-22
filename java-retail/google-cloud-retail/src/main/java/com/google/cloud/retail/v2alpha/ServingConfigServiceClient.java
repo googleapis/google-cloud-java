@@ -63,146 +63,147 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateServingConfig</td>
+ *      <td><p> CreateServingConfig</td>
  *      <td><p> Creates a ServingConfig.
  * <p>  A maximum of 100 [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]s are allowed in a [Catalog][google.cloud.retail.v2alpha.Catalog], otherwise a FAILED_PRECONDITION error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServingConfig(CreateServingConfigRequest request)
+ *           <li><p> createServingConfig(CreateServingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createServingConfig(CatalogName parent, ServingConfig servingConfig, String servingConfigId)
- *           <li>createServingConfig(String parent, ServingConfig servingConfig, String servingConfigId)
+ *           <li><p> createServingConfig(CatalogName parent, ServingConfig servingConfig, String servingConfigId)
+ *           <li><p> createServingConfig(String parent, ServingConfig servingConfig, String servingConfigId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServingConfigCallable()
+ *           <li><p> createServingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteServingConfig</td>
+ *      <td><p> DeleteServingConfig</td>
  *      <td><p> Deletes a ServingConfig.
  * <p>  Returns a NotFound error if the ServingConfig does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteServingConfig(DeleteServingConfigRequest request)
+ *           <li><p> deleteServingConfig(DeleteServingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteServingConfig(ServingConfigName name)
- *           <li>deleteServingConfig(String name)
+ *           <li><p> deleteServingConfig(ServingConfigName name)
+ *           <li><p> deleteServingConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteServingConfigCallable()
+ *           <li><p> deleteServingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateServingConfig</td>
+ *      <td><p> UpdateServingConfig</td>
  *      <td><p> Updates a ServingConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateServingConfig(UpdateServingConfigRequest request)
+ *           <li><p> updateServingConfig(UpdateServingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateServingConfig(ServingConfig servingConfig, FieldMask updateMask)
+ *           <li><p> updateServingConfig(ServingConfig servingConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateServingConfigCallable()
+ *           <li><p> updateServingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServingConfig</td>
+ *      <td><p> GetServingConfig</td>
  *      <td><p> Gets a ServingConfig.
  * <p>  Returns a NotFound error if the ServingConfig does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServingConfig(GetServingConfigRequest request)
+ *           <li><p> getServingConfig(GetServingConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServingConfig(ServingConfigName name)
- *           <li>getServingConfig(String name)
+ *           <li><p> getServingConfig(ServingConfigName name)
+ *           <li><p> getServingConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServingConfigCallable()
+ *           <li><p> getServingConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListServingConfigs</td>
+ *      <td><p> ListServingConfigs</td>
  *      <td><p> Lists all ServingConfigs linked to this catalog.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServingConfigs(ListServingConfigsRequest request)
+ *           <li><p> listServingConfigs(ListServingConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServingConfigs(CatalogName parent)
- *           <li>listServingConfigs(String parent)
+ *           <li><p> listServingConfigs(CatalogName parent)
+ *           <li><p> listServingConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServingConfigsPagedCallable()
- *           <li>listServingConfigsCallable()
+ *           <li><p> listServingConfigsPagedCallable()
+ *           <li><p> listServingConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AddControl</td>
+ *      <td><p> AddControl</td>
  *      <td><p> Enables a Control on the specified ServingConfig. The control is added in the last position of the list of controls it belongs to (e.g. if it's a facet spec control it will be applied in the last position of servingConfig.facetSpecIds) Returns a ALREADY_EXISTS error if the control has already been applied. Returns a FAILED_PRECONDITION error if the addition could exceed maximum number of control allowed for that type of control.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addControl(AddControlRequest request)
+ *           <li><p> addControl(AddControlRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>addControl(ServingConfigName servingConfig)
- *           <li>addControl(String servingConfig)
+ *           <li><p> addControl(ServingConfigName servingConfig)
+ *           <li><p> addControl(String servingConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addControlCallable()
+ *           <li><p> addControlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveControl</td>
+ *      <td><p> RemoveControl</td>
  *      <td><p> Disables a Control on the specified ServingConfig. The control is removed from the ServingConfig. Returns a NOT_FOUND error if the Control is not enabled for the ServingConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeControl(RemoveControlRequest request)
+ *           <li><p> removeControl(RemoveControlRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>removeControl(ServingConfigName servingConfig)
- *           <li>removeControl(String servingConfig)
+ *           <li><p> removeControl(ServingConfigName servingConfig)
+ *           <li><p> removeControl(String servingConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeControlCallable()
+ *           <li><p> removeControlCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

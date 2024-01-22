@@ -74,163 +74,164 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateModel</td>
+ *      <td><p> CreateModel</td>
  *      <td><p> Creates a new model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createModelAsync(CreateModelRequest request)
+ *           <li><p> createModelAsync(CreateModelRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createModelAsync(CatalogName parent, Model model)
- *           <li>createModelAsync(String parent, Model model)
+ *           <li><p> createModelAsync(CatalogName parent, Model model)
+ *           <li><p> createModelAsync(String parent, Model model)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createModelOperationCallable()
- *           <li>createModelCallable()
+ *           <li><p> createModelOperationCallable()
+ *           <li><p> createModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetModel</td>
+ *      <td><p> GetModel</td>
  *      <td><p> Gets a model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getModel(GetModelRequest request)
+ *           <li><p> getModel(GetModelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getModel(ModelName name)
- *           <li>getModel(String name)
+ *           <li><p> getModel(ModelName name)
+ *           <li><p> getModel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getModelCallable()
+ *           <li><p> getModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseModel</td>
+ *      <td><p> PauseModel</td>
  *      <td><p> Pauses the training of an existing model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseModel(PauseModelRequest request)
+ *           <li><p> pauseModel(PauseModelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pauseModel(ModelName name)
- *           <li>pauseModel(String name)
+ *           <li><p> pauseModel(ModelName name)
+ *           <li><p> pauseModel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseModelCallable()
+ *           <li><p> pauseModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeModel</td>
+ *      <td><p> ResumeModel</td>
  *      <td><p> Resumes the training of an existing model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeModel(ResumeModelRequest request)
+ *           <li><p> resumeModel(ResumeModelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumeModel(String name)
+ *           <li><p> resumeModel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeModelCallable()
+ *           <li><p> resumeModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteModel</td>
+ *      <td><p> DeleteModel</td>
  *      <td><p> Deletes an existing model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteModel(DeleteModelRequest request)
+ *           <li><p> deleteModel(DeleteModelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteModel(ModelName name)
- *           <li>deleteModel(String name)
+ *           <li><p> deleteModel(ModelName name)
+ *           <li><p> deleteModel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteModelCallable()
+ *           <li><p> deleteModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListModels</td>
+ *      <td><p> ListModels</td>
  *      <td><p> Lists all the models linked to this event store.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listModels(ListModelsRequest request)
+ *           <li><p> listModels(ListModelsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listModels(CatalogName parent)
- *           <li>listModels(String parent)
+ *           <li><p> listModels(CatalogName parent)
+ *           <li><p> listModels(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listModelsPagedCallable()
- *           <li>listModelsCallable()
+ *           <li><p> listModelsPagedCallable()
+ *           <li><p> listModelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateModel</td>
+ *      <td><p> UpdateModel</td>
  *      <td><p> Update of model metadata. Only fields that currently can be updated are: `filtering_option` and `periodic_tuning_state`. If other values are provided, this API method ignores them.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateModel(UpdateModelRequest request)
+ *           <li><p> updateModel(UpdateModelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateModel(Model model, FieldMask updateMask)
+ *           <li><p> updateModel(Model model, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateModelCallable()
+ *           <li><p> updateModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TuneModel</td>
+ *      <td><p> TuneModel</td>
  *      <td><p> Tunes an existing model.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>tuneModelAsync(TuneModelRequest request)
+ *           <li><p> tuneModelAsync(TuneModelRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>tuneModelAsync(ModelName name)
- *           <li>tuneModelAsync(String name)
+ *           <li><p> tuneModelAsync(ModelName name)
+ *           <li><p> tuneModelAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>tuneModelOperationCallable()
- *           <li>tuneModelCallable()
+ *           <li><p> tuneModelOperationCallable()
+ *           <li><p> tuneModelCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -56,68 +56,69 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListMerchantCenterAccountLinks</td>
+ *      <td><p> ListMerchantCenterAccountLinks</td>
  *      <td><p> Lists all [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]s under the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMerchantCenterAccountLinks(ListMerchantCenterAccountLinksRequest request)
+ *           <li><p> listMerchantCenterAccountLinks(ListMerchantCenterAccountLinksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMerchantCenterAccountLinks(CatalogName parent)
- *           <li>listMerchantCenterAccountLinks(String parent)
+ *           <li><p> listMerchantCenterAccountLinks(CatalogName parent)
+ *           <li><p> listMerchantCenterAccountLinks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMerchantCenterAccountLinksCallable()
+ *           <li><p> listMerchantCenterAccountLinksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateMerchantCenterAccountLink</td>
+ *      <td><p> CreateMerchantCenterAccountLink</td>
  *      <td><p> Creates a [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMerchantCenterAccountLinkAsync(CreateMerchantCenterAccountLinkRequest request)
+ *           <li><p> createMerchantCenterAccountLinkAsync(CreateMerchantCenterAccountLinkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createMerchantCenterAccountLinkAsync(CatalogName parent, MerchantCenterAccountLink merchantCenterAccountLink)
- *           <li>createMerchantCenterAccountLinkAsync(String parent, MerchantCenterAccountLink merchantCenterAccountLink)
+ *           <li><p> createMerchantCenterAccountLinkAsync(CatalogName parent, MerchantCenterAccountLink merchantCenterAccountLink)
+ *           <li><p> createMerchantCenterAccountLinkAsync(String parent, MerchantCenterAccountLink merchantCenterAccountLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMerchantCenterAccountLinkOperationCallable()
- *           <li>createMerchantCenterAccountLinkCallable()
+ *           <li><p> createMerchantCenterAccountLinkOperationCallable()
+ *           <li><p> createMerchantCenterAccountLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteMerchantCenterAccountLink</td>
+ *      <td><p> DeleteMerchantCenterAccountLink</td>
  *      <td><p> Deletes a [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink]. If the [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink] to delete does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteMerchantCenterAccountLink(DeleteMerchantCenterAccountLinkRequest request)
+ *           <li><p> deleteMerchantCenterAccountLink(DeleteMerchantCenterAccountLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteMerchantCenterAccountLink(MerchantCenterAccountLinkName name)
- *           <li>deleteMerchantCenterAccountLink(String name)
+ *           <li><p> deleteMerchantCenterAccountLink(MerchantCenterAccountLinkName name)
+ *           <li><p> deleteMerchantCenterAccountLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteMerchantCenterAccountLinkCallable()
+ *           <li><p> deleteMerchantCenterAccountLinkCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

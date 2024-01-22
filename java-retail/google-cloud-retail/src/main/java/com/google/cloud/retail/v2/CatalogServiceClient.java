@@ -58,50 +58,52 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListCatalogs</td>
+ *      <td><p> ListCatalogs</td>
  *      <td><p> Lists all the [Catalog][google.cloud.retail.v2.Catalog]s associated with the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCatalogs(ListCatalogsRequest request)
+ *           <li><p> listCatalogs(ListCatalogsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCatalogs(LocationName parent)
- *           <li>listCatalogs(String parent)
+ *           <li><p> listCatalogs(LocationName parent)
+ *           <li><p> listCatalogs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCatalogsPagedCallable()
- *           <li>listCatalogsCallable()
+ *           <li><p> listCatalogsPagedCallable()
+ *           <li><p> listCatalogsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCatalog</td>
+ *      <td><p> UpdateCatalog</td>
  *      <td><p> Updates the [Catalog][google.cloud.retail.v2.Catalog]s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCatalog(UpdateCatalogRequest request)
+ *           <li><p> updateCatalog(UpdateCatalogRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCatalog(Catalog catalog, FieldMask updateMask)
+ *           <li><p> updateCatalog(Catalog catalog, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCatalogCallable()
+ *           <li><p> updateCatalogCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetDefaultBranch</td>
+ *      <td><p> SetDefaultBranch</td>
  *      <td><p> Set a specified branch id as default branch. API methods such as [SearchService.Search][google.cloud.retail.v2.SearchService.Search], [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct], [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts] will treat requests using "default_branch" to the actual branch id set as default.
  * <p>  For example, if `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1` is set as default, setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` is equivalent to setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1`.
  * <p>  Using multiple branches can be useful when developers would like to have a staging branch to test and verify for future usage. When it becomes ready, developers switch on the staging branch using this API while keeping using `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` as [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to route the traffic to this staging branch.
@@ -115,158 +117,157 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setDefaultBranch(SetDefaultBranchRequest request)
+ *           <li><p> setDefaultBranch(SetDefaultBranchRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setDefaultBranch(CatalogName catalog)
- *           <li>setDefaultBranch(String catalog)
+ *           <li><p> setDefaultBranch(CatalogName catalog)
+ *           <li><p> setDefaultBranch(String catalog)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setDefaultBranchCallable()
+ *           <li><p> setDefaultBranchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDefaultBranch</td>
+ *      <td><p> GetDefaultBranch</td>
  *      <td><p> Get which branch is currently default branch set by [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch] method under a specified parent catalog.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDefaultBranch(GetDefaultBranchRequest request)
+ *           <li><p> getDefaultBranch(GetDefaultBranchRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDefaultBranch(CatalogName catalog)
- *           <li>getDefaultBranch(String catalog)
+ *           <li><p> getDefaultBranch(CatalogName catalog)
+ *           <li><p> getDefaultBranch(String catalog)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDefaultBranchCallable()
+ *           <li><p> getDefaultBranchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCompletionConfig</td>
+ *      <td><p> GetCompletionConfig</td>
  *      <td><p> Gets a [CompletionConfig][google.cloud.retail.v2.CompletionConfig].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCompletionConfig(GetCompletionConfigRequest request)
+ *           <li><p> getCompletionConfig(GetCompletionConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCompletionConfig(CompletionConfigName name)
- *           <li>getCompletionConfig(String name)
+ *           <li><p> getCompletionConfig(CompletionConfigName name)
+ *           <li><p> getCompletionConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCompletionConfigCallable()
+ *           <li><p> getCompletionConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCompletionConfig</td>
+ *      <td><p> UpdateCompletionConfig</td>
  *      <td><p> Updates the [CompletionConfig][google.cloud.retail.v2.CompletionConfig]s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCompletionConfig(UpdateCompletionConfigRequest request)
+ *           <li><p> updateCompletionConfig(UpdateCompletionConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCompletionConfig(CompletionConfig completionConfig, FieldMask updateMask)
+ *           <li><p> updateCompletionConfig(CompletionConfig completionConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCompletionConfigCallable()
+ *           <li><p> updateCompletionConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAttributesConfig</td>
+ *      <td><p> GetAttributesConfig</td>
  *      <td><p> Gets an [AttributesConfig][google.cloud.retail.v2.AttributesConfig].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAttributesConfig(GetAttributesConfigRequest request)
+ *           <li><p> getAttributesConfig(GetAttributesConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAttributesConfig(AttributesConfigName name)
- *           <li>getAttributesConfig(String name)
+ *           <li><p> getAttributesConfig(AttributesConfigName name)
+ *           <li><p> getAttributesConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAttributesConfigCallable()
+ *           <li><p> getAttributesConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAttributesConfig</td>
+ *      <td><p> UpdateAttributesConfig</td>
  *      <td><p> Updates the [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
  * <p>  The catalog attributes in the request will be updated in the catalog, or inserted if they do not exist. Existing catalog attributes not included in the request will remain unchanged. Attributes that are assigned to products, but do not exist at the catalog level, are always included in the response. The product attribute is assigned default values for missing catalog attribute fields, e.g., searchable and dynamic facetable options.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAttributesConfig(UpdateAttributesConfigRequest request)
+ *           <li><p> updateAttributesConfig(UpdateAttributesConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAttributesConfig(AttributesConfig attributesConfig, FieldMask updateMask)
+ *           <li><p> updateAttributesConfig(AttributesConfig attributesConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAttributesConfigCallable()
+ *           <li><p> updateAttributesConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AddCatalogAttribute</td>
+ *      <td><p> AddCatalogAttribute</td>
  *      <td><p> Adds the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to the [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
  * <p>  If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to add already exists, an ALREADY_EXISTS error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addCatalogAttribute(AddCatalogAttributeRequest request)
+ *           <li><p> addCatalogAttribute(AddCatalogAttributeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addCatalogAttributeCallable()
+ *           <li><p> addCatalogAttributeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveCatalogAttribute</td>
+ *      <td><p> RemoveCatalogAttribute</td>
  *      <td><p> Removes the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] from the [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
  * <p>  If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to remove does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeCatalogAttribute(RemoveCatalogAttributeRequest request)
+ *           <li><p> removeCatalogAttribute(RemoveCatalogAttributeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeCatalogAttributeCallable()
+ *           <li><p> removeCatalogAttributeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReplaceCatalogAttribute</td>
+ *      <td><p> ReplaceCatalogAttribute</td>
  *      <td><p> Replaces the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] in the [AttributesConfig][google.cloud.retail.v2.AttributesConfig] by updating the catalog attribute with the same [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key].
  * <p>  If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to replace does not exist, a NOT_FOUND error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>replaceCatalogAttribute(ReplaceCatalogAttributeRequest request)
+ *           <li><p> replaceCatalogAttribute(ReplaceCatalogAttributeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>replaceCatalogAttributeCallable()
+ *           <li><p> replaceCatalogAttributeCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

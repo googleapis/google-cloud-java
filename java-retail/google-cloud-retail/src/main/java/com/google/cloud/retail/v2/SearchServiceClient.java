@@ -84,26 +84,27 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Search</td>
+ *      <td><p> Search</td>
  *      <td><p> Performs a search.
  * <p>  This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>search(SearchRequest request)
+ *           <li><p> search(SearchRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchPagedCallable()
- *           <li>searchCallable()
+ *           <li><p> searchPagedCallable()
+ *           <li><p> searchCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

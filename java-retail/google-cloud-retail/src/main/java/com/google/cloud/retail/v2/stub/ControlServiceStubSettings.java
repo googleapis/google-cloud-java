@@ -205,6 +205,15 @@ public class ControlServiceStubSettings extends StubSettings<ControlServiceStubS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -385,7 +394,6 @@ public class ControlServiceStubSettings extends StubSettings<ControlServiceStubS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -398,7 +406,6 @@ public class ControlServiceStubSettings extends StubSettings<ControlServiceStubS
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -474,6 +481,15 @@ public class ControlServiceStubSettings extends StubSettings<ControlServiceStubS
             ListControlsRequest, ListControlsResponse, ListControlsPagedResponse>
         listControlsSettings() {
       return listControlsSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override
