@@ -71,198 +71,199 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateCluster</td>
+ *      <td><p> CreateCluster</td>
  *      <td><p> Creates a cluster in a project. The returned [Operation.metadata][google.longrunning.Operation.metadata] will be [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClusterAsync(CreateClusterRequest request)
+ *           <li><p> createClusterAsync(CreateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createClusterAsync(String projectId, String region, Cluster cluster)
+ *           <li><p> createClusterAsync(String projectId, String region, Cluster cluster)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClusterOperationCallable()
- *           <li>createClusterCallable()
+ *           <li><p> createClusterOperationCallable()
+ *           <li><p> createClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCluster</td>
+ *      <td><p> UpdateCluster</td>
  *      <td><p> Updates a cluster in a project. The returned [Operation.metadata][google.longrunning.Operation.metadata] will be [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata). The cluster must be in a [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateClusterAsync(UpdateClusterRequest request)
+ *           <li><p> updateClusterAsync(UpdateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateClusterAsync(String projectId, String region, String clusterName, Cluster cluster, FieldMask updateMask)
+ *           <li><p> updateClusterAsync(String projectId, String region, String clusterName, Cluster cluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClusterOperationCallable()
- *           <li>updateClusterCallable()
+ *           <li><p> updateClusterOperationCallable()
+ *           <li><p> updateClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopCluster</td>
+ *      <td><p> StopCluster</td>
  *      <td><p> Stops a cluster in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopClusterAsync(StopClusterRequest request)
+ *           <li><p> stopClusterAsync(StopClusterRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopClusterOperationCallable()
- *           <li>stopClusterCallable()
+ *           <li><p> stopClusterOperationCallable()
+ *           <li><p> stopClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartCluster</td>
+ *      <td><p> StartCluster</td>
  *      <td><p> Starts a cluster in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startClusterAsync(StartClusterRequest request)
+ *           <li><p> startClusterAsync(StartClusterRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startClusterOperationCallable()
- *           <li>startClusterCallable()
+ *           <li><p> startClusterOperationCallable()
+ *           <li><p> startClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCluster</td>
+ *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a cluster in a project. The returned [Operation.metadata][google.longrunning.Operation.metadata] will be [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteClusterAsync(DeleteClusterRequest request)
+ *           <li><p> deleteClusterAsync(DeleteClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteClusterAsync(String projectId, String region, String clusterName)
+ *           <li><p> deleteClusterAsync(String projectId, String region, String clusterName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClusterOperationCallable()
- *           <li>deleteClusterCallable()
+ *           <li><p> deleteClusterOperationCallable()
+ *           <li><p> deleteClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCluster</td>
+ *      <td><p> GetCluster</td>
  *      <td><p> Gets the resource representation for a cluster in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCluster(GetClusterRequest request)
+ *           <li><p> getCluster(GetClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCluster(String projectId, String region, String clusterName)
+ *           <li><p> getCluster(String projectId, String region, String clusterName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClusterCallable()
+ *           <li><p> getClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListClusters</td>
+ *      <td><p> ListClusters</td>
  *      <td><p> Lists all regions/{region}/clusters in a project alphabetically.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClusters(ListClustersRequest request)
+ *           <li><p> listClusters(ListClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClusters(String projectId, String region)
- *           <li>listClusters(String projectId, String region, String filter)
+ *           <li><p> listClusters(String projectId, String region)
+ *           <li><p> listClusters(String projectId, String region, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClustersPagedCallable()
- *           <li>listClustersCallable()
+ *           <li><p> listClustersPagedCallable()
+ *           <li><p> listClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DiagnoseCluster</td>
+ *      <td><p> DiagnoseCluster</td>
  *      <td><p> Gets cluster diagnostic information. The returned [Operation.metadata][google.longrunning.Operation.metadata] will be [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata). After the operation completes, [Operation.response][google.longrunning.Operation.response] contains [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>diagnoseClusterAsync(DiagnoseClusterRequest request)
+ *           <li><p> diagnoseClusterAsync(DiagnoseClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>diagnoseClusterAsync(String projectId, String region, String clusterName)
+ *           <li><p> diagnoseClusterAsync(String projectId, String region, String clusterName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>diagnoseClusterOperationCallable()
- *           <li>diagnoseClusterCallable()
+ *           <li><p> diagnoseClusterOperationCallable()
+ *           <li><p> diagnoseClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

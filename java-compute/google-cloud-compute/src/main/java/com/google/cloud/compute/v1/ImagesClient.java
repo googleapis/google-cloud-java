@@ -59,214 +59,215 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified image.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteImageRequest request)
+ *           <li><p> deleteAsync(DeleteImageRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String image)
+ *           <li><p> deleteAsync(String project, String image)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Deprecate</td>
+ *      <td><p> Deprecate</td>
  *      <td><p> Sets the deprecation status of an image. If an empty request body is given, clears the deprecation status instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deprecateAsync(DeprecateImageRequest request)
+ *           <li><p> deprecateAsync(DeprecateImageRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deprecateAsync(String project, String image, DeprecationStatus deprecationStatusResource)
+ *           <li><p> deprecateAsync(String project, String image, DeprecationStatus deprecationStatusResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deprecateOperationCallable()
- *           <li>deprecateCallable()
+ *           <li><p> deprecateOperationCallable()
+ *           <li><p> deprecateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified image.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetImageRequest request)
+ *           <li><p> get(GetImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String image)
+ *           <li><p> get(String project, String image)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFromFamily</td>
+ *      <td><p> GetFromFamily</td>
  *      <td><p> Returns the latest image that is part of an image family and is not deprecated. For more information on image families, see Public image families documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFromFamily(GetFromFamilyImageRequest request)
+ *           <li><p> getFromFamily(GetFromFamilyImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFromFamily(String project, String family)
+ *           <li><p> getFromFamily(String project, String family)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFromFamilyCallable()
+ *           <li><p> getFromFamilyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. May be empty if no such policy or resource exists.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyImageRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(String project, String resource)
+ *           <li><p> getIamPolicy(String project, String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates an image in the specified project using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertImageRequest request)
+ *           <li><p> insertAsync(InsertImageRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, Image imageResource)
+ *           <li><p> insertAsync(String project, Image imageResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves the list of custom images available to the specified project. Custom images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListImagesRequest request)
+ *           <li><p> list(ListImagesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project)
+ *           <li><p> list(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Patches the specified image with the data included in the request. Only the following fields can be modified: family, description, deprecation status.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchImageRequest request)
+ *           <li><p> patchAsync(PatchImageRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String image, Image imageResource)
+ *           <li><p> patchAsync(String project, String image, Image imageResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyImageRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(String project, String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource)
+ *           <li><p> setIamPolicy(String project, String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetLabels</td>
+ *      <td><p> SetLabels</td>
  *      <td><p> Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setLabelsAsync(SetLabelsImageRequest request)
+ *           <li><p> setLabelsAsync(SetLabelsImageRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setLabelsAsync(String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource)
+ *           <li><p> setLabelsAsync(String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setLabelsOperationCallable()
- *           <li>setLabelsCallable()
+ *           <li><p> setLabelsOperationCallable()
+ *           <li><p> setLabelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsImageRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsImageRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(String project, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *           <li><p> testIamPermissions(String project, String resource, TestPermissionsRequest testPermissionsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

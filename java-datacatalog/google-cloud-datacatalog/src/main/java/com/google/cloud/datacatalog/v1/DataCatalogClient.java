@@ -71,12 +71,14 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SearchCatalog</td>
+ *      <td><p> SearchCatalog</td>
  *      <td><p> Searches Data Catalog for multiple resources like entries and tags that match a query.
  * <p>  This is a [Custom Method] (https://cloud.google.com/apis/design/custom_methods) that doesn't return all information on a resource, only its ID and high level fields. To get more information, you can subsequently call specific get methods.
  * <p>  Note: Data Catalog search queries don't guarantee full recall. Results that match your query might not be returned, even in subsequent result pages. Additionally, returned (and not returned) results can vary if you repeat search queries.
@@ -84,21 +86,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchCatalog(SearchCatalogRequest request)
+ *           <li><p> searchCatalog(SearchCatalogRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchCatalog(SearchCatalogRequest.Scope scope, String query)
+ *           <li><p> searchCatalog(SearchCatalogRequest.Scope scope, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchCatalogPagedCallable()
- *           <li>searchCatalogCallable()
+ *           <li><p> searchCatalogPagedCallable()
+ *           <li><p> searchCatalogCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEntryGroup</td>
+ *      <td><p> CreateEntryGroup</td>
  *      <td><p> Creates an entry group.
  * <p>  An entry group contains logically related entries together with [Cloud Identity and Access Management](/data-catalog/docs/concepts/iam) policies. These policies specify users who can create, edit, and view entries within entry groups.
  * <p>  Data Catalog automatically creates entry groups with names that start with the `{@literal @}` symbol for the following resources:
@@ -114,102 +116,102 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEntryGroup(CreateEntryGroupRequest request)
+ *           <li><p> createEntryGroup(CreateEntryGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEntryGroup(LocationName parent, String entryGroupId, EntryGroup entryGroup)
- *           <li>createEntryGroup(String parent, String entryGroupId, EntryGroup entryGroup)
+ *           <li><p> createEntryGroup(LocationName parent, String entryGroupId, EntryGroup entryGroup)
+ *           <li><p> createEntryGroup(String parent, String entryGroupId, EntryGroup entryGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEntryGroupCallable()
+ *           <li><p> createEntryGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEntryGroup</td>
+ *      <td><p> GetEntryGroup</td>
  *      <td><p> Gets an entry group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEntryGroup(GetEntryGroupRequest request)
+ *           <li><p> getEntryGroup(GetEntryGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEntryGroup(EntryGroupName name)
- *           <li>getEntryGroup(String name)
- *           <li>getEntryGroup(EntryGroupName name, FieldMask readMask)
- *           <li>getEntryGroup(String name, FieldMask readMask)
+ *           <li><p> getEntryGroup(EntryGroupName name)
+ *           <li><p> getEntryGroup(String name)
+ *           <li><p> getEntryGroup(EntryGroupName name, FieldMask readMask)
+ *           <li><p> getEntryGroup(String name, FieldMask readMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEntryGroupCallable()
+ *           <li><p> getEntryGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEntryGroup</td>
+ *      <td><p> UpdateEntryGroup</td>
  *      <td><p> Updates an entry group.
  * <p>  You must enable the Data Catalog API in the project identified by the `entry_group.name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEntryGroup(UpdateEntryGroupRequest request)
+ *           <li><p> updateEntryGroup(UpdateEntryGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEntryGroup(EntryGroup entryGroup)
- *           <li>updateEntryGroup(EntryGroup entryGroup, FieldMask updateMask)
+ *           <li><p> updateEntryGroup(EntryGroup entryGroup)
+ *           <li><p> updateEntryGroup(EntryGroup entryGroup, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEntryGroupCallable()
+ *           <li><p> updateEntryGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEntryGroup</td>
+ *      <td><p> DeleteEntryGroup</td>
  *      <td><p> Deletes an entry group.
  * <p>  You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEntryGroup(DeleteEntryGroupRequest request)
+ *           <li><p> deleteEntryGroup(DeleteEntryGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEntryGroup(EntryGroupName name)
- *           <li>deleteEntryGroup(String name)
+ *           <li><p> deleteEntryGroup(EntryGroupName name)
+ *           <li><p> deleteEntryGroup(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEntryGroupCallable()
+ *           <li><p> deleteEntryGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEntryGroups</td>
+ *      <td><p> ListEntryGroups</td>
  *      <td><p> Lists entry groups.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntryGroups(ListEntryGroupsRequest request)
+ *           <li><p> listEntryGroups(ListEntryGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEntryGroups(LocationName parent)
- *           <li>listEntryGroups(String parent)
+ *           <li><p> listEntryGroups(LocationName parent)
+ *           <li><p> listEntryGroups(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntryGroupsPagedCallable()
- *           <li>listEntryGroupsCallable()
+ *           <li><p> listEntryGroupsPagedCallable()
+ *           <li><p> listEntryGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEntry</td>
+ *      <td><p> CreateEntry</td>
  *      <td><p> Creates an entry.
  * <p>  You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM', or custom types. Data Catalog automatically creates entries with other types during metadata ingestion from integrated systems.
  * <p>  You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
@@ -217,330 +219,330 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEntry(CreateEntryRequest request)
+ *           <li><p> createEntry(CreateEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEntry(EntryGroupName parent, String entryId, Entry entry)
- *           <li>createEntry(String parent, String entryId, Entry entry)
+ *           <li><p> createEntry(EntryGroupName parent, String entryId, Entry entry)
+ *           <li><p> createEntry(String parent, String entryId, Entry entry)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEntryCallable()
+ *           <li><p> createEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEntry</td>
+ *      <td><p> UpdateEntry</td>
  *      <td><p> Updates an existing entry.
  * <p>  You must enable the Data Catalog API in the project identified by the `entry.name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEntry(UpdateEntryRequest request)
+ *           <li><p> updateEntry(UpdateEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEntry(Entry entry)
- *           <li>updateEntry(Entry entry, FieldMask updateMask)
+ *           <li><p> updateEntry(Entry entry)
+ *           <li><p> updateEntry(Entry entry, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEntryCallable()
+ *           <li><p> updateEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEntry</td>
+ *      <td><p> DeleteEntry</td>
  *      <td><p> Deletes an existing entry.
  * <p>  You can delete only the entries created by the [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry] method.
  * <p>  You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEntry(DeleteEntryRequest request)
+ *           <li><p> deleteEntry(DeleteEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEntry(EntryName name)
- *           <li>deleteEntry(String name)
+ *           <li><p> deleteEntry(EntryName name)
+ *           <li><p> deleteEntry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEntryCallable()
+ *           <li><p> deleteEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEntry</td>
+ *      <td><p> GetEntry</td>
  *      <td><p> Gets an entry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEntry(GetEntryRequest request)
+ *           <li><p> getEntry(GetEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEntry(EntryName name)
- *           <li>getEntry(String name)
+ *           <li><p> getEntry(EntryName name)
+ *           <li><p> getEntry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEntryCallable()
+ *           <li><p> getEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupEntry</td>
+ *      <td><p> LookupEntry</td>
  *      <td><p> Gets an entry by its target resource name.
  * <p>  The resource name comes from the source Google Cloud Platform service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupEntry(LookupEntryRequest request)
+ *           <li><p> lookupEntry(LookupEntryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupEntryCallable()
+ *           <li><p> lookupEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEntries</td>
+ *      <td><p> ListEntries</td>
  *      <td><p> Lists entries.
  * <p>  Note: Currently, this method can list only custom entries. To get a list of both custom and automatically created entries, use [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEntries(ListEntriesRequest request)
+ *           <li><p> listEntries(ListEntriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEntries(EntryGroupName parent)
- *           <li>listEntries(String parent)
+ *           <li><p> listEntries(EntryGroupName parent)
+ *           <li><p> listEntries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEntriesPagedCallable()
- *           <li>listEntriesCallable()
+ *           <li><p> listEntriesPagedCallable()
+ *           <li><p> listEntriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ModifyEntryOverview</td>
+ *      <td><p> ModifyEntryOverview</td>
  *      <td><p> Modifies entry overview, part of the business context of an [Entry][google.cloud.datacatalog.v1.Entry].
  * <p>  To call this method, you must have the `datacatalog.entries.updateOverview` IAM permission on the corresponding project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>modifyEntryOverview(ModifyEntryOverviewRequest request)
+ *           <li><p> modifyEntryOverview(ModifyEntryOverviewRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>modifyEntryOverviewCallable()
+ *           <li><p> modifyEntryOverviewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ModifyEntryContacts</td>
+ *      <td><p> ModifyEntryContacts</td>
  *      <td><p> Modifies contacts, part of the business context of an [Entry][google.cloud.datacatalog.v1.Entry].
  * <p>  To call this method, you must have the `datacatalog.entries.updateContacts` IAM permission on the corresponding project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>modifyEntryContacts(ModifyEntryContactsRequest request)
+ *           <li><p> modifyEntryContacts(ModifyEntryContactsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>modifyEntryContactsCallable()
+ *           <li><p> modifyEntryContactsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTagTemplate</td>
+ *      <td><p> CreateTagTemplate</td>
  *      <td><p> Creates a tag template.
  * <p>  You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTagTemplate(CreateTagTemplateRequest request)
+ *           <li><p> createTagTemplate(CreateTagTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTagTemplate(LocationName parent, String tagTemplateId, TagTemplate tagTemplate)
- *           <li>createTagTemplate(String parent, String tagTemplateId, TagTemplate tagTemplate)
+ *           <li><p> createTagTemplate(LocationName parent, String tagTemplateId, TagTemplate tagTemplate)
+ *           <li><p> createTagTemplate(String parent, String tagTemplateId, TagTemplate tagTemplate)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTagTemplateCallable()
+ *           <li><p> createTagTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTagTemplate</td>
+ *      <td><p> GetTagTemplate</td>
  *      <td><p> Gets a tag template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTagTemplate(GetTagTemplateRequest request)
+ *           <li><p> getTagTemplate(GetTagTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTagTemplate(TagTemplateName name)
- *           <li>getTagTemplate(String name)
+ *           <li><p> getTagTemplate(TagTemplateName name)
+ *           <li><p> getTagTemplate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTagTemplateCallable()
+ *           <li><p> getTagTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTagTemplate</td>
+ *      <td><p> UpdateTagTemplate</td>
  *      <td><p> Updates a tag template.
  * <p>  You can't update template fields with this method. These fields are separate resources with their own create, update, and delete methods.
  * <p>  You must enable the Data Catalog API in the project identified by the `tag_template.name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTagTemplate(UpdateTagTemplateRequest request)
+ *           <li><p> updateTagTemplate(UpdateTagTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTagTemplate(TagTemplate tagTemplate)
- *           <li>updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask)
+ *           <li><p> updateTagTemplate(TagTemplate tagTemplate)
+ *           <li><p> updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTagTemplateCallable()
+ *           <li><p> updateTagTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTagTemplate</td>
+ *      <td><p> DeleteTagTemplate</td>
  *      <td><p> Deletes a tag template and all tags that use it.
  * <p>  You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTagTemplate(DeleteTagTemplateRequest request)
+ *           <li><p> deleteTagTemplate(DeleteTagTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTagTemplate(TagTemplateName name, boolean force)
- *           <li>deleteTagTemplate(String name, boolean force)
+ *           <li><p> deleteTagTemplate(TagTemplateName name, boolean force)
+ *           <li><p> deleteTagTemplate(String name, boolean force)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTagTemplateCallable()
+ *           <li><p> deleteTagTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTagTemplateField</td>
+ *      <td><p> CreateTagTemplateField</td>
  *      <td><p> Creates a field in a tag template.
  * <p>  You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTagTemplateField(CreateTagTemplateFieldRequest request)
+ *           <li><p> createTagTemplateField(CreateTagTemplateFieldRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTagTemplateField(TagTemplateName parent, String tagTemplateFieldId, TagTemplateField tagTemplateField)
- *           <li>createTagTemplateField(String parent, String tagTemplateFieldId, TagTemplateField tagTemplateField)
+ *           <li><p> createTagTemplateField(TagTemplateName parent, String tagTemplateFieldId, TagTemplateField tagTemplateField)
+ *           <li><p> createTagTemplateField(String parent, String tagTemplateFieldId, TagTemplateField tagTemplateField)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTagTemplateFieldCallable()
+ *           <li><p> createTagTemplateFieldCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTagTemplateField</td>
+ *      <td><p> UpdateTagTemplateField</td>
  *      <td><p> Updates a field in a tag template.
  * <p>  You can't update the field type with this method.
  * <p>  You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTagTemplateField(UpdateTagTemplateFieldRequest request)
+ *           <li><p> updateTagTemplateField(UpdateTagTemplateFieldRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTagTemplateField(TagTemplateFieldName name, TagTemplateField tagTemplateField)
- *           <li>updateTagTemplateField(String name, TagTemplateField tagTemplateField)
- *           <li>updateTagTemplateField(TagTemplateFieldName name, TagTemplateField tagTemplateField, FieldMask updateMask)
- *           <li>updateTagTemplateField(String name, TagTemplateField tagTemplateField, FieldMask updateMask)
+ *           <li><p> updateTagTemplateField(TagTemplateFieldName name, TagTemplateField tagTemplateField)
+ *           <li><p> updateTagTemplateField(String name, TagTemplateField tagTemplateField)
+ *           <li><p> updateTagTemplateField(TagTemplateFieldName name, TagTemplateField tagTemplateField, FieldMask updateMask)
+ *           <li><p> updateTagTemplateField(String name, TagTemplateField tagTemplateField, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTagTemplateFieldCallable()
+ *           <li><p> updateTagTemplateFieldCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RenameTagTemplateField</td>
+ *      <td><p> RenameTagTemplateField</td>
  *      <td><p> Renames a field in a tag template.
  * <p>  You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>renameTagTemplateField(RenameTagTemplateFieldRequest request)
+ *           <li><p> renameTagTemplateField(RenameTagTemplateFieldRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>renameTagTemplateField(TagTemplateFieldName name, String newTagTemplateFieldId)
- *           <li>renameTagTemplateField(String name, String newTagTemplateFieldId)
+ *           <li><p> renameTagTemplateField(TagTemplateFieldName name, String newTagTemplateFieldId)
+ *           <li><p> renameTagTemplateField(String name, String newTagTemplateFieldId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>renameTagTemplateFieldCallable()
+ *           <li><p> renameTagTemplateFieldCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RenameTagTemplateFieldEnumValue</td>
+ *      <td><p> RenameTagTemplateFieldEnumValue</td>
  *      <td><p> Renames an enum value in a tag template.
  * <p>  Within a single enum field, enum values must be unique.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>renameTagTemplateFieldEnumValue(RenameTagTemplateFieldEnumValueRequest request)
+ *           <li><p> renameTagTemplateFieldEnumValue(RenameTagTemplateFieldEnumValueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>renameTagTemplateFieldEnumValue(TagTemplateFieldEnumValueName name, String newEnumValueDisplayName)
- *           <li>renameTagTemplateFieldEnumValue(String name, String newEnumValueDisplayName)
+ *           <li><p> renameTagTemplateFieldEnumValue(TagTemplateFieldEnumValueName name, String newEnumValueDisplayName)
+ *           <li><p> renameTagTemplateFieldEnumValue(String name, String newEnumValueDisplayName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>renameTagTemplateFieldEnumValueCallable()
+ *           <li><p> renameTagTemplateFieldEnumValueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTagTemplateField</td>
+ *      <td><p> DeleteTagTemplateField</td>
  *      <td><p> Deletes a field in a tag template and all uses of this field from the tags based on this template.
  * <p>  You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTagTemplateField(DeleteTagTemplateFieldRequest request)
+ *           <li><p> deleteTagTemplateField(DeleteTagTemplateFieldRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTagTemplateField(TagTemplateFieldName name, boolean force)
- *           <li>deleteTagTemplateField(String name, boolean force)
+ *           <li><p> deleteTagTemplateField(TagTemplateFieldName name, boolean force)
+ *           <li><p> deleteTagTemplateField(String name, boolean force)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTagTemplateFieldCallable()
+ *           <li><p> deleteTagTemplateFieldCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTag</td>
+ *      <td><p> CreateTag</td>
  *      <td><p> Creates a tag and assigns it to:
  * <ul>
  * <li>  An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is   `projects.locations.entryGroups.entries.tags.create`.
@@ -550,133 +552,133 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTag(CreateTagRequest request)
+ *           <li><p> createTag(CreateTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTag(EntryName parent, Tag tag)
- *           <li>createTag(String parent, Tag tag)
+ *           <li><p> createTag(EntryName parent, Tag tag)
+ *           <li><p> createTag(String parent, Tag tag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTagCallable()
+ *           <li><p> createTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTag</td>
+ *      <td><p> UpdateTag</td>
  *      <td><p> Updates an existing tag.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTag(UpdateTagRequest request)
+ *           <li><p> updateTag(UpdateTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTag(Tag tag)
- *           <li>updateTag(Tag tag, FieldMask updateMask)
+ *           <li><p> updateTag(Tag tag)
+ *           <li><p> updateTag(Tag tag, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTagCallable()
+ *           <li><p> updateTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTag</td>
+ *      <td><p> DeleteTag</td>
  *      <td><p> Deletes a tag.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTag(DeleteTagRequest request)
+ *           <li><p> deleteTag(DeleteTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTag(EntryName name)
- *           <li>deleteTag(String name)
+ *           <li><p> deleteTag(EntryName name)
+ *           <li><p> deleteTag(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTagCallable()
+ *           <li><p> deleteTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTags</td>
+ *      <td><p> ListTags</td>
  *      <td><p> Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry]. The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are lowercased.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTags(ListTagsRequest request)
+ *           <li><p> listTags(ListTagsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTags(EntryName parent)
- *           <li>listTags(String parent)
+ *           <li><p> listTags(EntryName parent)
+ *           <li><p> listTags(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTagsPagedCallable()
- *           <li>listTagsCallable()
+ *           <li><p> listTagsPagedCallable()
+ *           <li><p> listTagsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReconcileTags</td>
+ *      <td><p> ReconcileTags</td>
  *      <td><p> `ReconcileTags` creates or updates a list of tags on the entry. If the [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing] parameter is set, the operation deletes tags not included in the input tag list.
  * <p>  `ReconcileTags` returns a [long-running operation] [google.longrunning.Operation] resource that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation] to return [ReconcileTagsMetadata] [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and a [ReconcileTagsResponse] [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>reconcileTagsAsync(ReconcileTagsRequest request)
+ *           <li><p> reconcileTagsAsync(ReconcileTagsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>reconcileTagsOperationCallable()
- *           <li>reconcileTagsCallable()
+ *           <li><p> reconcileTagsOperationCallable()
+ *           <li><p> reconcileTagsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StarEntry</td>
+ *      <td><p> StarEntry</td>
  *      <td><p> Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by the current user. Starring information is private to each user.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>starEntry(StarEntryRequest request)
+ *           <li><p> starEntry(StarEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>starEntry(EntryName name)
- *           <li>starEntry(String name)
+ *           <li><p> starEntry(EntryName name)
+ *           <li><p> starEntry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>starEntryCallable()
+ *           <li><p> starEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UnstarEntry</td>
+ *      <td><p> UnstarEntry</td>
  *      <td><p> Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by the current user. Starring information is private to each user.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>unstarEntry(UnstarEntryRequest request)
+ *           <li><p> unstarEntry(UnstarEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>unstarEntry(EntryName name)
- *           <li>unstarEntry(String name)
+ *           <li><p> unstarEntry(EntryName name)
+ *           <li><p> unstarEntry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>unstarEntryCallable()
+ *           <li><p> unstarEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets an access control policy for a resource. Replaces any existing policy.
  * <p>  Supported resources are:
  * <p>  - Tag templates - Entry groups
@@ -686,21 +688,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource.
  * <p>  May return:
  * <ul>
@@ -715,21 +717,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource)
- *           <li>getIamPolicy(String resource)
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Gets your permissions on a resource.
  * <p>  Returns an empty set of permissions if the resource doesn't exist.
  * <p>  Supported resources are:
@@ -739,31 +741,30 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportEntries</td>
+ *      <td><p> ImportEntries</td>
  *      <td><p> Imports entries from a source, such as data previously dumped into a Cloud Storage bucket, into Data Catalog. Import of entries is a sync operation that reconciles the state of the third-party system with the Data Catalog.
  * <p>  `ImportEntries` accepts source data snapshots of a third-party system. Snapshot should be delivered as a .wire or base65-encoded .txt file containing a sequence of Protocol Buffer messages of [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
  * <p>  `ImportEntries` returns a [long-running operation] [google.longrunning.Operation] resource that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation] to return [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata] and an [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse] message.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importEntriesAsync(ImportEntriesRequest request)
+ *           <li><p> importEntriesAsync(ImportEntriesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importEntriesOperationCallable()
- *           <li>importEntriesCallable()
+ *           <li><p> importEntriesOperationCallable()
+ *           <li><p> importEntriesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -66,133 +66,134 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAvailableVersions</td>
+ *      <td><p> ListAvailableVersions</td>
  *      <td><p> Lists possible versions for Data Fusion instances in the specified project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAvailableVersions(ListAvailableVersionsRequest request)
+ *           <li><p> listAvailableVersions(ListAvailableVersionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAvailableVersions(LocationName parent)
- *           <li>listAvailableVersions(String parent)
+ *           <li><p> listAvailableVersions(LocationName parent)
+ *           <li><p> listAvailableVersions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAvailableVersionsPagedCallable()
- *           <li>listAvailableVersionsCallable()
+ *           <li><p> listAvailableVersionsPagedCallable()
+ *           <li><p> listAvailableVersionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListInstances</td>
+ *      <td><p> ListInstances</td>
  *      <td><p> Lists Data Fusion instances in the specified project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listInstances(ListInstancesRequest request)
+ *           <li><p> listInstances(ListInstancesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listInstancesPagedCallable()
- *           <li>listInstancesCallable()
+ *           <li><p> listInstancesPagedCallable()
+ *           <li><p> listInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInstance</td>
+ *      <td><p> GetInstance</td>
  *      <td><p> Gets details of a single Data Fusion instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInstance(GetInstanceRequest request)
+ *           <li><p> getInstance(GetInstanceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInstanceCallable()
+ *           <li><p> getInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateInstance</td>
+ *      <td><p> CreateInstance</td>
  *      <td><p> Creates a new Data Fusion instance in the specified project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createInstanceAsync(CreateInstanceRequest request)
+ *           <li><p> createInstanceAsync(CreateInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createInstanceAsync(LocationName parent, Instance instance, String instanceId)
- *           <li>createInstanceAsync(String parent, Instance instance, String instanceId)
+ *           <li><p> createInstanceAsync(LocationName parent, Instance instance, String instanceId)
+ *           <li><p> createInstanceAsync(String parent, Instance instance, String instanceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createInstanceOperationCallable()
- *           <li>createInstanceCallable()
+ *           <li><p> createInstanceOperationCallable()
+ *           <li><p> createInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteInstance</td>
+ *      <td><p> DeleteInstance</td>
  *      <td><p> Deletes a single Date Fusion instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteInstanceAsync(DeleteInstanceRequest request)
+ *           <li><p> deleteInstanceAsync(DeleteInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteInstanceAsync(InstanceName name)
- *           <li>deleteInstanceAsync(String name)
+ *           <li><p> deleteInstanceAsync(InstanceName name)
+ *           <li><p> deleteInstanceAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteInstanceOperationCallable()
- *           <li>deleteInstanceCallable()
+ *           <li><p> deleteInstanceOperationCallable()
+ *           <li><p> deleteInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateInstance</td>
+ *      <td><p> UpdateInstance</td>
  *      <td><p> Updates a single Data Fusion instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateInstanceAsync(UpdateInstanceRequest request)
+ *           <li><p> updateInstanceAsync(UpdateInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateInstanceAsync(Instance instance, FieldMask updateMask)
+ *           <li><p> updateInstanceAsync(Instance instance, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateInstanceOperationCallable()
- *           <li>updateInstanceCallable()
+ *           <li><p> updateInstanceOperationCallable()
+ *           <li><p> updateInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RestartInstance</td>
+ *      <td><p> RestartInstance</td>
  *      <td><p> Restart a single Data Fusion instance. At the end of an operation instance is fully restarted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>restartInstanceAsync(RestartInstanceRequest request)
+ *           <li><p> restartInstanceAsync(RestartInstanceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>restartInstanceOperationCallable()
- *           <li>restartInstanceCallable()
+ *           <li><p> restartInstanceOperationCallable()
+ *           <li><p> restartInstanceCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

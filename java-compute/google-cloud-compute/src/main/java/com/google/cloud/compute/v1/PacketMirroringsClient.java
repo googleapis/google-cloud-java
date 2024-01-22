@@ -62,141 +62,142 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AggregatedList</td>
+ *      <td><p> AggregatedList</td>
  *      <td><p> Retrieves an aggregated list of packetMirrorings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>aggregatedList(AggregatedListPacketMirroringsRequest request)
+ *           <li><p> aggregatedList(AggregatedListPacketMirroringsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>aggregatedList(String project)
+ *           <li><p> aggregatedList(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>aggregatedListPagedCallable()
- *           <li>aggregatedListCallable()
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified PacketMirroring resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeletePacketMirroringRequest request)
+ *           <li><p> deleteAsync(DeletePacketMirroringRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String region, String packetMirroring)
+ *           <li><p> deleteAsync(String project, String region, String packetMirroring)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified PacketMirroring resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetPacketMirroringRequest request)
+ *           <li><p> get(GetPacketMirroringRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String region, String packetMirroring)
+ *           <li><p> get(String project, String region, String packetMirroring)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a PacketMirroring resource in the specified project and region using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertPacketMirroringRequest request)
+ *           <li><p> insertAsync(InsertPacketMirroringRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String region, PacketMirroring packetMirroringResource)
+ *           <li><p> insertAsync(String project, String region, PacketMirroring packetMirroringResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves a list of PacketMirroring resources available to the specified project and region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListPacketMirroringsRequest request)
+ *           <li><p> list(ListPacketMirroringsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String region)
+ *           <li><p> list(String project, String region)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Patches the specified PacketMirroring resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchPacketMirroringRequest request)
+ *           <li><p> patchAsync(PatchPacketMirroringRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String region, String packetMirroring, PacketMirroring packetMirroringResource)
+ *           <li><p> patchAsync(String project, String region, String packetMirroring, PacketMirroring packetMirroringResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsPacketMirroringRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsPacketMirroringRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *           <li><p> testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

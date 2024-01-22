@@ -63,85 +63,86 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteRegionInstanceTemplateRequest request)
+ *           <li><p> deleteAsync(DeleteRegionInstanceTemplateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String region, String instanceTemplate)
+ *           <li><p> deleteAsync(String project, String region, String instanceTemplate)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified instance template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetRegionInstanceTemplateRequest request)
+ *           <li><p> get(GetRegionInstanceTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String region, String instanceTemplate)
+ *           <li><p> get(String project, String region, String instanceTemplate)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates an instance template in the specified project and region using the global instance template whose URL is included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertRegionInstanceTemplateRequest request)
+ *           <li><p> insertAsync(InsertRegionInstanceTemplateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String region, InstanceTemplate instanceTemplateResource)
+ *           <li><p> insertAsync(String project, String region, InstanceTemplate instanceTemplateResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves a list of instance templates that are contained within the specified project and region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListRegionInstanceTemplatesRequest request)
+ *           <li><p> list(ListRegionInstanceTemplatesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String region)
+ *           <li><p> list(String project, String region)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

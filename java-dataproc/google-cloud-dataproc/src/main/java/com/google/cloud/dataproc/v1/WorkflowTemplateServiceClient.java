@@ -71,52 +71,54 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateWorkflowTemplate</td>
+ *      <td><p> CreateWorkflowTemplate</td>
  *      <td><p> Creates new workflow template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkflowTemplate(CreateWorkflowTemplateRequest request)
+ *           <li><p> createWorkflowTemplate(CreateWorkflowTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createWorkflowTemplate(LocationName parent, WorkflowTemplate template)
- *           <li>createWorkflowTemplate(RegionName parent, WorkflowTemplate template)
- *           <li>createWorkflowTemplate(String parent, WorkflowTemplate template)
+ *           <li><p> createWorkflowTemplate(LocationName parent, WorkflowTemplate template)
+ *           <li><p> createWorkflowTemplate(RegionName parent, WorkflowTemplate template)
+ *           <li><p> createWorkflowTemplate(String parent, WorkflowTemplate template)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkflowTemplateCallable()
+ *           <li><p> createWorkflowTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkflowTemplate</td>
+ *      <td><p> GetWorkflowTemplate</td>
  *      <td><p> Retrieves the latest workflow template.
  * <p>  Can retrieve previously instantiated template by specifying optional version parameter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkflowTemplate(GetWorkflowTemplateRequest request)
+ *           <li><p> getWorkflowTemplate(GetWorkflowTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkflowTemplate(WorkflowTemplateName name)
- *           <li>getWorkflowTemplate(String name)
+ *           <li><p> getWorkflowTemplate(WorkflowTemplateName name)
+ *           <li><p> getWorkflowTemplate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkflowTemplateCallable()
+ *           <li><p> getWorkflowTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InstantiateWorkflowTemplate</td>
+ *      <td><p> InstantiateWorkflowTemplate</td>
  *      <td><p> Instantiates a template and begins execution.
  * <p>  The returned Operation can be used to track execution of workflow by polling [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when entire workflow is finished.
  * <p>  The running workflow can be aborted via [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.
@@ -125,24 +127,24 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>instantiateWorkflowTemplateAsync(InstantiateWorkflowTemplateRequest request)
+ *           <li><p> instantiateWorkflowTemplateAsync(InstantiateWorkflowTemplateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>instantiateWorkflowTemplateAsync(WorkflowTemplateName name)
- *           <li>instantiateWorkflowTemplateAsync(String name)
- *           <li>instantiateWorkflowTemplateAsync(WorkflowTemplateName name, Map<String, String> parameters)
- *           <li>instantiateWorkflowTemplateAsync(String name, Map<String, String> parameters)
+ *           <li><p> instantiateWorkflowTemplateAsync(WorkflowTemplateName name)
+ *           <li><p> instantiateWorkflowTemplateAsync(String name)
+ *           <li><p> instantiateWorkflowTemplateAsync(WorkflowTemplateName name, Map&lt;String, String&gt; parameters)
+ *           <li><p> instantiateWorkflowTemplateAsync(String name, Map&lt;String, String&gt; parameters)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>instantiateWorkflowTemplateOperationCallable()
- *           <li>instantiateWorkflowTemplateCallable()
+ *           <li><p> instantiateWorkflowTemplateOperationCallable()
+ *           <li><p> instantiateWorkflowTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InstantiateInlineWorkflowTemplate</td>
+ *      <td><p> InstantiateInlineWorkflowTemplate</td>
  *      <td><p> Instantiates a template and begins execution.
  * <p>  This method is equivalent to executing the sequence [CreateWorkflowTemplate][google.cloud.dataproc.v1.WorkflowTemplateService.CreateWorkflowTemplate], [InstantiateWorkflowTemplate][google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateWorkflowTemplate], [DeleteWorkflowTemplate][google.cloud.dataproc.v1.WorkflowTemplateService.DeleteWorkflowTemplate].
  * <p>  The returned Operation can be used to track execution of workflow by polling [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when entire workflow is finished.
@@ -152,123 +154,122 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>instantiateInlineWorkflowTemplateAsync(InstantiateInlineWorkflowTemplateRequest request)
+ *           <li><p> instantiateInlineWorkflowTemplateAsync(InstantiateInlineWorkflowTemplateRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>instantiateInlineWorkflowTemplateAsync(LocationName parent, WorkflowTemplate template)
- *           <li>instantiateInlineWorkflowTemplateAsync(RegionName parent, WorkflowTemplate template)
- *           <li>instantiateInlineWorkflowTemplateAsync(String parent, WorkflowTemplate template)
+ *           <li><p> instantiateInlineWorkflowTemplateAsync(LocationName parent, WorkflowTemplate template)
+ *           <li><p> instantiateInlineWorkflowTemplateAsync(RegionName parent, WorkflowTemplate template)
+ *           <li><p> instantiateInlineWorkflowTemplateAsync(String parent, WorkflowTemplate template)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>instantiateInlineWorkflowTemplateOperationCallable()
- *           <li>instantiateInlineWorkflowTemplateCallable()
+ *           <li><p> instantiateInlineWorkflowTemplateOperationCallable()
+ *           <li><p> instantiateInlineWorkflowTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateWorkflowTemplate</td>
+ *      <td><p> UpdateWorkflowTemplate</td>
  *      <td><p> Updates (replaces) workflow template. The updated template must contain version that matches the current server version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateWorkflowTemplate(UpdateWorkflowTemplateRequest request)
+ *           <li><p> updateWorkflowTemplate(UpdateWorkflowTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateWorkflowTemplate(WorkflowTemplate template)
+ *           <li><p> updateWorkflowTemplate(WorkflowTemplate template)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateWorkflowTemplateCallable()
+ *           <li><p> updateWorkflowTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkflowTemplates</td>
+ *      <td><p> ListWorkflowTemplates</td>
  *      <td><p> Lists workflows that match the specified filter in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkflowTemplates(ListWorkflowTemplatesRequest request)
+ *           <li><p> listWorkflowTemplates(ListWorkflowTemplatesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkflowTemplates(LocationName parent)
- *           <li>listWorkflowTemplates(RegionName parent)
- *           <li>listWorkflowTemplates(String parent)
+ *           <li><p> listWorkflowTemplates(LocationName parent)
+ *           <li><p> listWorkflowTemplates(RegionName parent)
+ *           <li><p> listWorkflowTemplates(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkflowTemplatesPagedCallable()
- *           <li>listWorkflowTemplatesCallable()
+ *           <li><p> listWorkflowTemplatesPagedCallable()
+ *           <li><p> listWorkflowTemplatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkflowTemplate</td>
+ *      <td><p> DeleteWorkflowTemplate</td>
  *      <td><p> Deletes a workflow template. It does not cancel in-progress workflows.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkflowTemplate(DeleteWorkflowTemplateRequest request)
+ *           <li><p> deleteWorkflowTemplate(DeleteWorkflowTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteWorkflowTemplate(WorkflowTemplateName name)
- *           <li>deleteWorkflowTemplate(String name)
+ *           <li><p> deleteWorkflowTemplate(WorkflowTemplateName name)
+ *           <li><p> deleteWorkflowTemplate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkflowTemplateCallable()
+ *           <li><p> deleteWorkflowTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

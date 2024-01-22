@@ -67,518 +67,519 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListConnectionProfiles</td>
+ *      <td><p> ListConnectionProfiles</td>
  *      <td><p> Use this method to list connection profiles created in a project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConnectionProfiles(ListConnectionProfilesRequest request)
+ *           <li><p> listConnectionProfiles(ListConnectionProfilesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listConnectionProfiles(LocationName parent)
- *           <li>listConnectionProfiles(String parent)
+ *           <li><p> listConnectionProfiles(LocationName parent)
+ *           <li><p> listConnectionProfiles(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConnectionProfilesPagedCallable()
- *           <li>listConnectionProfilesCallable()
+ *           <li><p> listConnectionProfilesPagedCallable()
+ *           <li><p> listConnectionProfilesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConnectionProfile</td>
+ *      <td><p> GetConnectionProfile</td>
  *      <td><p> Use this method to get details about a connection profile.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConnectionProfile(GetConnectionProfileRequest request)
+ *           <li><p> getConnectionProfile(GetConnectionProfileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConnectionProfile(ConnectionProfileName name)
- *           <li>getConnectionProfile(String name)
+ *           <li><p> getConnectionProfile(ConnectionProfileName name)
+ *           <li><p> getConnectionProfile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConnectionProfileCallable()
+ *           <li><p> getConnectionProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateConnectionProfile</td>
+ *      <td><p> CreateConnectionProfile</td>
  *      <td><p> Use this method to create a connection profile in a project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createConnectionProfileAsync(CreateConnectionProfileRequest request)
+ *           <li><p> createConnectionProfileAsync(CreateConnectionProfileRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createConnectionProfileAsync(LocationName parent, ConnectionProfile connectionProfile, String connectionProfileId)
- *           <li>createConnectionProfileAsync(String parent, ConnectionProfile connectionProfile, String connectionProfileId)
+ *           <li><p> createConnectionProfileAsync(LocationName parent, ConnectionProfile connectionProfile, String connectionProfileId)
+ *           <li><p> createConnectionProfileAsync(String parent, ConnectionProfile connectionProfile, String connectionProfileId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createConnectionProfileOperationCallable()
- *           <li>createConnectionProfileCallable()
+ *           <li><p> createConnectionProfileOperationCallable()
+ *           <li><p> createConnectionProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConnectionProfile</td>
+ *      <td><p> UpdateConnectionProfile</td>
  *      <td><p> Use this method to update the parameters of a connection profile.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConnectionProfileAsync(UpdateConnectionProfileRequest request)
+ *           <li><p> updateConnectionProfileAsync(UpdateConnectionProfileRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateConnectionProfileAsync(ConnectionProfile connectionProfile, FieldMask updateMask)
+ *           <li><p> updateConnectionProfileAsync(ConnectionProfile connectionProfile, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConnectionProfileOperationCallable()
- *           <li>updateConnectionProfileCallable()
+ *           <li><p> updateConnectionProfileOperationCallable()
+ *           <li><p> updateConnectionProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteConnectionProfile</td>
+ *      <td><p> DeleteConnectionProfile</td>
  *      <td><p> Use this method to delete a connection profile.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteConnectionProfileAsync(DeleteConnectionProfileRequest request)
+ *           <li><p> deleteConnectionProfileAsync(DeleteConnectionProfileRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteConnectionProfileAsync(ConnectionProfileName name)
- *           <li>deleteConnectionProfileAsync(String name)
+ *           <li><p> deleteConnectionProfileAsync(ConnectionProfileName name)
+ *           <li><p> deleteConnectionProfileAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteConnectionProfileOperationCallable()
- *           <li>deleteConnectionProfileCallable()
+ *           <li><p> deleteConnectionProfileOperationCallable()
+ *           <li><p> deleteConnectionProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DiscoverConnectionProfile</td>
+ *      <td><p> DiscoverConnectionProfile</td>
  *      <td><p> Use this method to discover a connection profile. The discover API call exposes the data objects and metadata belonging to the profile. Typically, a request returns children data objects of a parent data object that's optionally supplied in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>discoverConnectionProfile(DiscoverConnectionProfileRequest request)
+ *           <li><p> discoverConnectionProfile(DiscoverConnectionProfileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>discoverConnectionProfileCallable()
+ *           <li><p> discoverConnectionProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListStreams</td>
+ *      <td><p> ListStreams</td>
  *      <td><p> Use this method to list streams in a project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listStreams(ListStreamsRequest request)
+ *           <li><p> listStreams(ListStreamsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listStreams(LocationName parent)
- *           <li>listStreams(String parent)
+ *           <li><p> listStreams(LocationName parent)
+ *           <li><p> listStreams(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listStreamsPagedCallable()
- *           <li>listStreamsCallable()
+ *           <li><p> listStreamsPagedCallable()
+ *           <li><p> listStreamsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetStream</td>
+ *      <td><p> GetStream</td>
  *      <td><p> Use this method to get details about a stream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getStream(GetStreamRequest request)
+ *           <li><p> getStream(GetStreamRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getStream(StreamName name)
- *           <li>getStream(String name)
+ *           <li><p> getStream(StreamName name)
+ *           <li><p> getStream(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getStreamCallable()
+ *           <li><p> getStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateStream</td>
+ *      <td><p> CreateStream</td>
  *      <td><p> Use this method to create a stream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createStreamAsync(CreateStreamRequest request)
+ *           <li><p> createStreamAsync(CreateStreamRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createStreamAsync(LocationName parent, Stream stream, String streamId)
- *           <li>createStreamAsync(String parent, Stream stream, String streamId)
+ *           <li><p> createStreamAsync(LocationName parent, Stream stream, String streamId)
+ *           <li><p> createStreamAsync(String parent, Stream stream, String streamId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createStreamOperationCallable()
- *           <li>createStreamCallable()
+ *           <li><p> createStreamOperationCallable()
+ *           <li><p> createStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateStream</td>
+ *      <td><p> UpdateStream</td>
  *      <td><p> Use this method to update the configuration of a stream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateStreamAsync(UpdateStreamRequest request)
+ *           <li><p> updateStreamAsync(UpdateStreamRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateStreamAsync(Stream stream, FieldMask updateMask)
+ *           <li><p> updateStreamAsync(Stream stream, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateStreamOperationCallable()
- *           <li>updateStreamCallable()
+ *           <li><p> updateStreamOperationCallable()
+ *           <li><p> updateStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteStream</td>
+ *      <td><p> DeleteStream</td>
  *      <td><p> Use this method to delete a stream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteStreamAsync(DeleteStreamRequest request)
+ *           <li><p> deleteStreamAsync(DeleteStreamRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteStreamAsync(StreamName name)
- *           <li>deleteStreamAsync(String name)
+ *           <li><p> deleteStreamAsync(StreamName name)
+ *           <li><p> deleteStreamAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteStreamOperationCallable()
- *           <li>deleteStreamCallable()
+ *           <li><p> deleteStreamOperationCallable()
+ *           <li><p> deleteStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetStreamObject</td>
+ *      <td><p> GetStreamObject</td>
  *      <td><p> Use this method to get details about a stream object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getStreamObject(GetStreamObjectRequest request)
+ *           <li><p> getStreamObject(GetStreamObjectRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getStreamObject(StreamObjectName name)
- *           <li>getStreamObject(String name)
+ *           <li><p> getStreamObject(StreamObjectName name)
+ *           <li><p> getStreamObject(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getStreamObjectCallable()
+ *           <li><p> getStreamObjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LookupStreamObject</td>
+ *      <td><p> LookupStreamObject</td>
  *      <td><p> Use this method to look up a stream object by its source object identifier.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lookupStreamObject(LookupStreamObjectRequest request)
+ *           <li><p> lookupStreamObject(LookupStreamObjectRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lookupStreamObjectCallable()
+ *           <li><p> lookupStreamObjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListStreamObjects</td>
+ *      <td><p> ListStreamObjects</td>
  *      <td><p> Use this method to list the objects of a specific stream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listStreamObjects(ListStreamObjectsRequest request)
+ *           <li><p> listStreamObjects(ListStreamObjectsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listStreamObjects(StreamName parent)
- *           <li>listStreamObjects(String parent)
+ *           <li><p> listStreamObjects(StreamName parent)
+ *           <li><p> listStreamObjects(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listStreamObjectsPagedCallable()
- *           <li>listStreamObjectsCallable()
+ *           <li><p> listStreamObjectsPagedCallable()
+ *           <li><p> listStreamObjectsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartBackfillJob</td>
+ *      <td><p> StartBackfillJob</td>
  *      <td><p> Use this method to start a backfill job for the specified stream object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startBackfillJob(StartBackfillJobRequest request)
+ *           <li><p> startBackfillJob(StartBackfillJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>startBackfillJob(StreamObjectName object)
- *           <li>startBackfillJob(String object)
+ *           <li><p> startBackfillJob(StreamObjectName object)
+ *           <li><p> startBackfillJob(String object)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startBackfillJobCallable()
+ *           <li><p> startBackfillJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopBackfillJob</td>
+ *      <td><p> StopBackfillJob</td>
  *      <td><p> Use this method to stop a backfill job for the specified stream object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopBackfillJob(StopBackfillJobRequest request)
+ *           <li><p> stopBackfillJob(StopBackfillJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>stopBackfillJob(StreamObjectName object)
- *           <li>stopBackfillJob(String object)
+ *           <li><p> stopBackfillJob(StreamObjectName object)
+ *           <li><p> stopBackfillJob(String object)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopBackfillJobCallable()
+ *           <li><p> stopBackfillJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchStaticIps</td>
+ *      <td><p> FetchStaticIps</td>
  *      <td><p> The FetchStaticIps API call exposes the static IP addresses used by Datastream.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchStaticIps(FetchStaticIpsRequest request)
+ *           <li><p> fetchStaticIps(FetchStaticIpsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchStaticIps(LocationName name)
- *           <li>fetchStaticIps(String name)
+ *           <li><p> fetchStaticIps(LocationName name)
+ *           <li><p> fetchStaticIps(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchStaticIpsPagedCallable()
- *           <li>fetchStaticIpsCallable()
+ *           <li><p> fetchStaticIpsPagedCallable()
+ *           <li><p> fetchStaticIpsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePrivateConnection</td>
+ *      <td><p> CreatePrivateConnection</td>
  *      <td><p> Use this method to create a private connectivity configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPrivateConnectionAsync(CreatePrivateConnectionRequest request)
+ *           <li><p> createPrivateConnectionAsync(CreatePrivateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createPrivateConnectionAsync(LocationName parent, PrivateConnection privateConnection, String privateConnectionId)
- *           <li>createPrivateConnectionAsync(String parent, PrivateConnection privateConnection, String privateConnectionId)
+ *           <li><p> createPrivateConnectionAsync(LocationName parent, PrivateConnection privateConnection, String privateConnectionId)
+ *           <li><p> createPrivateConnectionAsync(String parent, PrivateConnection privateConnection, String privateConnectionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPrivateConnectionOperationCallable()
- *           <li>createPrivateConnectionCallable()
+ *           <li><p> createPrivateConnectionOperationCallable()
+ *           <li><p> createPrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPrivateConnection</td>
+ *      <td><p> GetPrivateConnection</td>
  *      <td><p> Use this method to get details about a private connectivity configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPrivateConnection(GetPrivateConnectionRequest request)
+ *           <li><p> getPrivateConnection(GetPrivateConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPrivateConnection(PrivateConnectionName name)
- *           <li>getPrivateConnection(String name)
+ *           <li><p> getPrivateConnection(PrivateConnectionName name)
+ *           <li><p> getPrivateConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPrivateConnectionCallable()
+ *           <li><p> getPrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPrivateConnections</td>
+ *      <td><p> ListPrivateConnections</td>
  *      <td><p> Use this method to list private connectivity configurations in a project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPrivateConnections(ListPrivateConnectionsRequest request)
+ *           <li><p> listPrivateConnections(ListPrivateConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPrivateConnections(LocationName parent)
- *           <li>listPrivateConnections(String parent)
+ *           <li><p> listPrivateConnections(LocationName parent)
+ *           <li><p> listPrivateConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPrivateConnectionsPagedCallable()
- *           <li>listPrivateConnectionsCallable()
+ *           <li><p> listPrivateConnectionsPagedCallable()
+ *           <li><p> listPrivateConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePrivateConnection</td>
+ *      <td><p> DeletePrivateConnection</td>
  *      <td><p> Use this method to delete a private connectivity configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePrivateConnectionAsync(DeletePrivateConnectionRequest request)
+ *           <li><p> deletePrivateConnectionAsync(DeletePrivateConnectionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePrivateConnectionAsync(PrivateConnectionName name)
- *           <li>deletePrivateConnectionAsync(String name)
+ *           <li><p> deletePrivateConnectionAsync(PrivateConnectionName name)
+ *           <li><p> deletePrivateConnectionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePrivateConnectionOperationCallable()
- *           <li>deletePrivateConnectionCallable()
+ *           <li><p> deletePrivateConnectionOperationCallable()
+ *           <li><p> deletePrivateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRoute</td>
+ *      <td><p> CreateRoute</td>
  *      <td><p> Use this method to create a route for a private connectivity configuration in a project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRouteAsync(CreateRouteRequest request)
+ *           <li><p> createRouteAsync(CreateRouteRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createRouteAsync(PrivateConnectionName parent, Route route, String routeId)
- *           <li>createRouteAsync(String parent, Route route, String routeId)
+ *           <li><p> createRouteAsync(PrivateConnectionName parent, Route route, String routeId)
+ *           <li><p> createRouteAsync(String parent, Route route, String routeId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRouteOperationCallable()
- *           <li>createRouteCallable()
+ *           <li><p> createRouteOperationCallable()
+ *           <li><p> createRouteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRoute</td>
+ *      <td><p> GetRoute</td>
  *      <td><p> Use this method to get details about a route.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRoute(GetRouteRequest request)
+ *           <li><p> getRoute(GetRouteRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRoute(RouteName name)
- *           <li>getRoute(String name)
+ *           <li><p> getRoute(RouteName name)
+ *           <li><p> getRoute(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRouteCallable()
+ *           <li><p> getRouteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRoutes</td>
+ *      <td><p> ListRoutes</td>
  *      <td><p> Use this method to list routes created for a private connectivity configuration in a project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRoutes(ListRoutesRequest request)
+ *           <li><p> listRoutes(ListRoutesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRoutes(PrivateConnectionName parent)
- *           <li>listRoutes(String parent)
+ *           <li><p> listRoutes(PrivateConnectionName parent)
+ *           <li><p> listRoutes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRoutesPagedCallable()
- *           <li>listRoutesCallable()
+ *           <li><p> listRoutesPagedCallable()
+ *           <li><p> listRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRoute</td>
+ *      <td><p> DeleteRoute</td>
  *      <td><p> Use this method to delete a route.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRouteAsync(DeleteRouteRequest request)
+ *           <li><p> deleteRouteAsync(DeleteRouteRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteRouteAsync(RouteName name)
- *           <li>deleteRouteAsync(String name)
+ *           <li><p> deleteRouteAsync(RouteName name)
+ *           <li><p> deleteRouteAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRouteOperationCallable()
- *           <li>deleteRouteCallable()
+ *           <li><p> deleteRouteOperationCallable()
+ *           <li><p> deleteRouteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

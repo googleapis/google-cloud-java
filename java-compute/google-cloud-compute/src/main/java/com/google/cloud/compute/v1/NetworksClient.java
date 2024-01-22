@@ -59,217 +59,218 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AddPeering</td>
+ *      <td><p> AddPeering</td>
  *      <td><p> Adds a peering to the specified network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addPeeringAsync(AddPeeringNetworkRequest request)
+ *           <li><p> addPeeringAsync(AddPeeringNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addPeeringAsync(String project, String network, NetworksAddPeeringRequest networksAddPeeringRequestResource)
+ *           <li><p> addPeeringAsync(String project, String network, NetworksAddPeeringRequest networksAddPeeringRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addPeeringOperationCallable()
- *           <li>addPeeringCallable()
+ *           <li><p> addPeeringOperationCallable()
+ *           <li><p> addPeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteNetworkRequest request)
+ *           <li><p> deleteAsync(DeleteNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String network)
+ *           <li><p> deleteAsync(String project, String network)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetNetworkRequest request)
+ *           <li><p> get(GetNetworkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String network)
+ *           <li><p> get(String project, String network)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEffectiveFirewalls</td>
+ *      <td><p> GetEffectiveFirewalls</td>
  *      <td><p> Returns the effective firewalls on a given network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEffectiveFirewalls(GetEffectiveFirewallsNetworkRequest request)
+ *           <li><p> getEffectiveFirewalls(GetEffectiveFirewallsNetworkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEffectiveFirewalls(String project, String network)
+ *           <li><p> getEffectiveFirewalls(String project, String network)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEffectiveFirewallsCallable()
+ *           <li><p> getEffectiveFirewallsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a network in the specified project using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertNetworkRequest request)
+ *           <li><p> insertAsync(InsertNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, Network networkResource)
+ *           <li><p> insertAsync(String project, Network networkResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves the list of networks available to the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListNetworksRequest request)
+ *           <li><p> list(ListNetworksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project)
+ *           <li><p> list(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPeeringRoutes</td>
+ *      <td><p> ListPeeringRoutes</td>
  *      <td><p> Lists the peering routes exchanged over peering connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPeeringRoutes(ListPeeringRoutesNetworksRequest request)
+ *           <li><p> listPeeringRoutes(ListPeeringRoutesNetworksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPeeringRoutes(String project, String network)
+ *           <li><p> listPeeringRoutes(String project, String network)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPeeringRoutesPagedCallable()
- *           <li>listPeeringRoutesCallable()
+ *           <li><p> listPeeringRoutesPagedCallable()
+ *           <li><p> listPeeringRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchNetworkRequest request)
+ *           <li><p> patchAsync(PatchNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String network, Network networkResource)
+ *           <li><p> patchAsync(String project, String network, Network networkResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemovePeering</td>
+ *      <td><p> RemovePeering</td>
  *      <td><p> Removes a peering from the specified network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removePeeringAsync(RemovePeeringNetworkRequest request)
+ *           <li><p> removePeeringAsync(RemovePeeringNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>removePeeringAsync(String project, String network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource)
+ *           <li><p> removePeeringAsync(String project, String network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removePeeringOperationCallable()
- *           <li>removePeeringCallable()
+ *           <li><p> removePeeringOperationCallable()
+ *           <li><p> removePeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SwitchToCustomMode</td>
+ *      <td><p> SwitchToCustomMode</td>
  *      <td><p> Switches the network mode from auto subnet mode to custom subnet mode.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>switchToCustomModeAsync(SwitchToCustomModeNetworkRequest request)
+ *           <li><p> switchToCustomModeAsync(SwitchToCustomModeNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>switchToCustomModeAsync(String project, String network)
+ *           <li><p> switchToCustomModeAsync(String project, String network)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>switchToCustomModeOperationCallable()
- *           <li>switchToCustomModeCallable()
+ *           <li><p> switchToCustomModeOperationCallable()
+ *           <li><p> switchToCustomModeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePeering</td>
+ *      <td><p> UpdatePeering</td>
  *      <td><p> Updates the specified network peering with the data included in the request. You can only modify the NetworkPeering.export_custom_routes field and the NetworkPeering.import_custom_routes field.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePeeringAsync(UpdatePeeringNetworkRequest request)
+ *           <li><p> updatePeeringAsync(UpdatePeeringNetworkRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updatePeeringAsync(String project, String network, NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource)
+ *           <li><p> updatePeeringAsync(String project, String network, NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePeeringOperationCallable()
- *           <li>updatePeeringCallable()
+ *           <li><p> updatePeeringOperationCallable()
+ *           <li><p> updatePeeringCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

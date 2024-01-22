@@ -61,218 +61,219 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AggregatedList</td>
+ *      <td><p> AggregatedList</td>
  *      <td><p> Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>aggregatedList(AggregatedListTargetHttpsProxiesRequest request)
+ *           <li><p> aggregatedList(AggregatedListTargetHttpsProxiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>aggregatedList(String project)
+ *           <li><p> aggregatedList(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>aggregatedListPagedCallable()
- *           <li>aggregatedListCallable()
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified TargetHttpsProxy resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteTargetHttpsProxyRequest request)
+ *           <li><p> deleteAsync(DeleteTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String targetHttpsProxy)
+ *           <li><p> deleteAsync(String project, String targetHttpsProxy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified TargetHttpsProxy resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetTargetHttpsProxyRequest request)
+ *           <li><p> get(GetTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String targetHttpsProxy)
+ *           <li><p> get(String project, String targetHttpsProxy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a TargetHttpsProxy resource in the specified project using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertTargetHttpsProxyRequest request)
+ *           <li><p> insertAsync(InsertTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, TargetHttpsProxy targetHttpsProxyResource)
+ *           <li><p> insertAsync(String project, TargetHttpsProxy targetHttpsProxyResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves the list of TargetHttpsProxy resources available to the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListTargetHttpsProxiesRequest request)
+ *           <li><p> list(ListTargetHttpsProxiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project)
+ *           <li><p> list(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Patches the specified TargetHttpsProxy resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchTargetHttpsProxyRequest request)
+ *           <li><p> patchAsync(PatchTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String targetHttpsProxy, TargetHttpsProxy targetHttpsProxyResource)
+ *           <li><p> patchAsync(String project, String targetHttpsProxy, TargetHttpsProxy targetHttpsProxyResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetCertificateMap</td>
+ *      <td><p> SetCertificateMap</td>
  *      <td><p> Changes the Certificate Map for TargetHttpsProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setCertificateMapAsync(SetCertificateMapTargetHttpsProxyRequest request)
+ *           <li><p> setCertificateMapAsync(SetCertificateMapTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setCertificateMapAsync(String project, String targetHttpsProxy, TargetHttpsProxiesSetCertificateMapRequest targetHttpsProxiesSetCertificateMapRequestResource)
+ *           <li><p> setCertificateMapAsync(String project, String targetHttpsProxy, TargetHttpsProxiesSetCertificateMapRequest targetHttpsProxiesSetCertificateMapRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setCertificateMapOperationCallable()
- *           <li>setCertificateMapCallable()
+ *           <li><p> setCertificateMapOperationCallable()
+ *           <li><p> setCertificateMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetQuicOverride</td>
+ *      <td><p> SetQuicOverride</td>
  *      <td><p> Sets the QUIC override policy for TargetHttpsProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setQuicOverrideAsync(SetQuicOverrideTargetHttpsProxyRequest request)
+ *           <li><p> setQuicOverrideAsync(SetQuicOverrideTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setQuicOverrideAsync(String project, String targetHttpsProxy, TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource)
+ *           <li><p> setQuicOverrideAsync(String project, String targetHttpsProxy, TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setQuicOverrideOperationCallable()
- *           <li>setQuicOverrideCallable()
+ *           <li><p> setQuicOverrideOperationCallable()
+ *           <li><p> setQuicOverrideCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetSslCertificates</td>
+ *      <td><p> SetSslCertificates</td>
  *      <td><p> Replaces SslCertificates for TargetHttpsProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setSslCertificatesAsync(SetSslCertificatesTargetHttpsProxyRequest request)
+ *           <li><p> setSslCertificatesAsync(SetSslCertificatesTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setSslCertificatesAsync(String project, String targetHttpsProxy, TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource)
+ *           <li><p> setSslCertificatesAsync(String project, String targetHttpsProxy, TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setSslCertificatesOperationCallable()
- *           <li>setSslCertificatesCallable()
+ *           <li><p> setSslCertificatesOperationCallable()
+ *           <li><p> setSslCertificatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetSslPolicy</td>
+ *      <td><p> SetSslPolicy</td>
  *      <td><p> Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the HTTPS proxy load balancer. They do not affect the connection between the load balancer and the backends.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setSslPolicyAsync(SetSslPolicyTargetHttpsProxyRequest request)
+ *           <li><p> setSslPolicyAsync(SetSslPolicyTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setSslPolicyAsync(String project, String targetHttpsProxy, SslPolicyReference sslPolicyReferenceResource)
+ *           <li><p> setSslPolicyAsync(String project, String targetHttpsProxy, SslPolicyReference sslPolicyReferenceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setSslPolicyOperationCallable()
- *           <li>setSslPolicyCallable()
+ *           <li><p> setSslPolicyOperationCallable()
+ *           <li><p> setSslPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetUrlMap</td>
+ *      <td><p> SetUrlMap</td>
  *      <td><p> Changes the URL map for TargetHttpsProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setUrlMapAsync(SetUrlMapTargetHttpsProxyRequest request)
+ *           <li><p> setUrlMapAsync(SetUrlMapTargetHttpsProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setUrlMapAsync(String project, String targetHttpsProxy, UrlMapReference urlMapReferenceResource)
+ *           <li><p> setUrlMapAsync(String project, String targetHttpsProxy, UrlMapReference urlMapReferenceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setUrlMapOperationCallable()
- *           <li>setUrlMapCallable()
+ *           <li><p> setUrlMapOperationCallable()
+ *           <li><p> setUrlMapCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

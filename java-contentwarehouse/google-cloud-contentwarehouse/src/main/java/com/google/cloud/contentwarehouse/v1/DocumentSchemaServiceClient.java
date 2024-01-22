@@ -60,106 +60,107 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDocumentSchema</td>
+ *      <td><p> CreateDocumentSchema</td>
  *      <td><p> Creates a document schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDocumentSchema(CreateDocumentSchemaRequest request)
+ *           <li><p> createDocumentSchema(CreateDocumentSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDocumentSchema(LocationName parent, DocumentSchema documentSchema)
- *           <li>createDocumentSchema(String parent, DocumentSchema documentSchema)
+ *           <li><p> createDocumentSchema(LocationName parent, DocumentSchema documentSchema)
+ *           <li><p> createDocumentSchema(String parent, DocumentSchema documentSchema)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDocumentSchemaCallable()
+ *           <li><p> createDocumentSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDocumentSchema</td>
+ *      <td><p> UpdateDocumentSchema</td>
  *      <td><p> Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the Document Schema is non-empty and does not equal the existing name. Supports only appending new properties, adding new ENUM possible values, and updating the [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled] flag for ENUM possible values. Updating existing properties will result into INVALID_ARGUMENT.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDocumentSchema(UpdateDocumentSchemaRequest request)
+ *           <li><p> updateDocumentSchema(UpdateDocumentSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDocumentSchema(DocumentSchemaName name, DocumentSchema documentSchema)
- *           <li>updateDocumentSchema(String name, DocumentSchema documentSchema)
+ *           <li><p> updateDocumentSchema(DocumentSchemaName name, DocumentSchema documentSchema)
+ *           <li><p> updateDocumentSchema(String name, DocumentSchema documentSchema)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDocumentSchemaCallable()
+ *           <li><p> updateDocumentSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDocumentSchema</td>
+ *      <td><p> GetDocumentSchema</td>
  *      <td><p> Gets a document schema. Returns NOT_FOUND if the document schema does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDocumentSchema(GetDocumentSchemaRequest request)
+ *           <li><p> getDocumentSchema(GetDocumentSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDocumentSchema(DocumentSchemaName name)
- *           <li>getDocumentSchema(String name)
+ *           <li><p> getDocumentSchema(DocumentSchemaName name)
+ *           <li><p> getDocumentSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDocumentSchemaCallable()
+ *           <li><p> getDocumentSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDocumentSchema</td>
+ *      <td><p> DeleteDocumentSchema</td>
  *      <td><p> Deletes a document schema. Returns NOT_FOUND if the document schema does not exist. Returns BAD_REQUEST if the document schema has documents depending on it.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDocumentSchema(DeleteDocumentSchemaRequest request)
+ *           <li><p> deleteDocumentSchema(DeleteDocumentSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDocumentSchema(DocumentSchemaName name)
- *           <li>deleteDocumentSchema(String name)
+ *           <li><p> deleteDocumentSchema(DocumentSchemaName name)
+ *           <li><p> deleteDocumentSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDocumentSchemaCallable()
+ *           <li><p> deleteDocumentSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDocumentSchemas</td>
+ *      <td><p> ListDocumentSchemas</td>
  *      <td><p> Lists document schemas.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDocumentSchemas(ListDocumentSchemasRequest request)
+ *           <li><p> listDocumentSchemas(ListDocumentSchemasRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDocumentSchemas(LocationName parent)
- *           <li>listDocumentSchemas(String parent)
+ *           <li><p> listDocumentSchemas(LocationName parent)
+ *           <li><p> listDocumentSchemas(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDocumentSchemasPagedCallable()
- *           <li>listDocumentSchemasCallable()
+ *           <li><p> listDocumentSchemasPagedCallable()
+ *           <li><p> listDocumentSchemasCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

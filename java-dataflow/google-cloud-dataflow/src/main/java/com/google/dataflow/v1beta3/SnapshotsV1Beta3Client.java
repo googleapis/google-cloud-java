@@ -54,52 +54,53 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetSnapshot</td>
+ *      <td><p> GetSnapshot</td>
  *      <td><p> Gets information about a snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSnapshot(GetSnapshotRequest request)
+ *           <li><p> getSnapshot(GetSnapshotRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSnapshotCallable()
+ *           <li><p> getSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSnapshot</td>
+ *      <td><p> DeleteSnapshot</td>
  *      <td><p> Deletes a snapshot.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSnapshot(DeleteSnapshotRequest request)
+ *           <li><p> deleteSnapshot(DeleteSnapshotRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSnapshotCallable()
+ *           <li><p> deleteSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSnapshots</td>
+ *      <td><p> ListSnapshots</td>
  *      <td><p> Lists snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSnapshots(ListSnapshotsRequest request)
+ *           <li><p> listSnapshots(ListSnapshotsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSnapshotsCallable()
+ *           <li><p> listSnapshotsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

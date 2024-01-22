@@ -68,673 +68,674 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListRepositories</td>
+ *      <td><p> ListRepositories</td>
  *      <td><p> Lists Repositories in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRepositories(ListRepositoriesRequest request)
+ *           <li><p> listRepositories(ListRepositoriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRepositories(LocationName parent)
- *           <li>listRepositories(String parent)
+ *           <li><p> listRepositories(LocationName parent)
+ *           <li><p> listRepositories(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRepositoriesPagedCallable()
- *           <li>listRepositoriesCallable()
+ *           <li><p> listRepositoriesPagedCallable()
+ *           <li><p> listRepositoriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRepository</td>
+ *      <td><p> GetRepository</td>
  *      <td><p> Fetches a single Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRepository(GetRepositoryRequest request)
+ *           <li><p> getRepository(GetRepositoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRepository(RepositoryName name)
- *           <li>getRepository(String name)
+ *           <li><p> getRepository(RepositoryName name)
+ *           <li><p> getRepository(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRepositoryCallable()
+ *           <li><p> getRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRepository</td>
+ *      <td><p> CreateRepository</td>
  *      <td><p> Creates a new Repository in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRepository(CreateRepositoryRequest request)
+ *           <li><p> createRepository(CreateRepositoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createRepository(LocationName parent, Repository repository, String repositoryId)
- *           <li>createRepository(String parent, Repository repository, String repositoryId)
+ *           <li><p> createRepository(LocationName parent, Repository repository, String repositoryId)
+ *           <li><p> createRepository(String parent, Repository repository, String repositoryId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRepositoryCallable()
+ *           <li><p> createRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRepository</td>
+ *      <td><p> UpdateRepository</td>
  *      <td><p> Updates a single Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRepository(UpdateRepositoryRequest request)
+ *           <li><p> updateRepository(UpdateRepositoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateRepository(Repository repository, FieldMask updateMask)
+ *           <li><p> updateRepository(Repository repository, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRepositoryCallable()
+ *           <li><p> updateRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRepository</td>
+ *      <td><p> DeleteRepository</td>
  *      <td><p> Deletes a single Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRepository(DeleteRepositoryRequest request)
+ *           <li><p> deleteRepository(DeleteRepositoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteRepository(RepositoryName name)
- *           <li>deleteRepository(String name)
+ *           <li><p> deleteRepository(RepositoryName name)
+ *           <li><p> deleteRepository(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRepositoryCallable()
+ *           <li><p> deleteRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchRemoteBranches</td>
+ *      <td><p> FetchRemoteBranches</td>
  *      <td><p> Fetches a Repository's remote branches.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchRemoteBranches(FetchRemoteBranchesRequest request)
+ *           <li><p> fetchRemoteBranches(FetchRemoteBranchesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchRemoteBranchesCallable()
+ *           <li><p> fetchRemoteBranchesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkspaces</td>
+ *      <td><p> ListWorkspaces</td>
  *      <td><p> Lists Workspaces in a given Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkspaces(ListWorkspacesRequest request)
+ *           <li><p> listWorkspaces(ListWorkspacesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkspaces(RepositoryName parent)
- *           <li>listWorkspaces(String parent)
+ *           <li><p> listWorkspaces(RepositoryName parent)
+ *           <li><p> listWorkspaces(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkspacesPagedCallable()
- *           <li>listWorkspacesCallable()
+ *           <li><p> listWorkspacesPagedCallable()
+ *           <li><p> listWorkspacesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkspace</td>
+ *      <td><p> GetWorkspace</td>
  *      <td><p> Fetches a single Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkspace(GetWorkspaceRequest request)
+ *           <li><p> getWorkspace(GetWorkspaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkspace(WorkspaceName name)
- *           <li>getWorkspace(String name)
+ *           <li><p> getWorkspace(WorkspaceName name)
+ *           <li><p> getWorkspace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkspaceCallable()
+ *           <li><p> getWorkspaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkspace</td>
+ *      <td><p> CreateWorkspace</td>
  *      <td><p> Creates a new Workspace in a given Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkspace(CreateWorkspaceRequest request)
+ *           <li><p> createWorkspace(CreateWorkspaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createWorkspace(RepositoryName parent, Workspace workspace, String workspaceId)
- *           <li>createWorkspace(String parent, Workspace workspace, String workspaceId)
+ *           <li><p> createWorkspace(RepositoryName parent, Workspace workspace, String workspaceId)
+ *           <li><p> createWorkspace(String parent, Workspace workspace, String workspaceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkspaceCallable()
+ *           <li><p> createWorkspaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkspace</td>
+ *      <td><p> DeleteWorkspace</td>
  *      <td><p> Deletes a single Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkspace(DeleteWorkspaceRequest request)
+ *           <li><p> deleteWorkspace(DeleteWorkspaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteWorkspace(WorkspaceName name)
- *           <li>deleteWorkspace(String name)
+ *           <li><p> deleteWorkspace(WorkspaceName name)
+ *           <li><p> deleteWorkspace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkspaceCallable()
+ *           <li><p> deleteWorkspaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InstallNpmPackages</td>
+ *      <td><p> InstallNpmPackages</td>
  *      <td><p> Installs dependency NPM packages (inside a Workspace).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>installNpmPackages(InstallNpmPackagesRequest request)
+ *           <li><p> installNpmPackages(InstallNpmPackagesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>installNpmPackagesCallable()
+ *           <li><p> installNpmPackagesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PullGitCommits</td>
+ *      <td><p> PullGitCommits</td>
  *      <td><p> Pulls Git commits from the Repository's remote into a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pullGitCommits(PullGitCommitsRequest request)
+ *           <li><p> pullGitCommits(PullGitCommitsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pullGitCommitsCallable()
+ *           <li><p> pullGitCommitsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PushGitCommits</td>
+ *      <td><p> PushGitCommits</td>
  *      <td><p> Pushes Git commits from a Workspace to the Repository's remote.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pushGitCommits(PushGitCommitsRequest request)
+ *           <li><p> pushGitCommits(PushGitCommitsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pushGitCommitsCallable()
+ *           <li><p> pushGitCommitsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchFileGitStatuses</td>
+ *      <td><p> FetchFileGitStatuses</td>
  *      <td><p> Fetches Git statuses for the files in a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchFileGitStatuses(FetchFileGitStatusesRequest request)
+ *           <li><p> fetchFileGitStatuses(FetchFileGitStatusesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchFileGitStatusesCallable()
+ *           <li><p> fetchFileGitStatusesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchGitAheadBehind</td>
+ *      <td><p> FetchGitAheadBehind</td>
  *      <td><p> Fetches Git ahead/behind against a remote branch.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchGitAheadBehind(FetchGitAheadBehindRequest request)
+ *           <li><p> fetchGitAheadBehind(FetchGitAheadBehindRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchGitAheadBehindCallable()
+ *           <li><p> fetchGitAheadBehindCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CommitWorkspaceChanges</td>
+ *      <td><p> CommitWorkspaceChanges</td>
  *      <td><p> Applies a Git commit for uncommitted files in a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>commitWorkspaceChanges(CommitWorkspaceChangesRequest request)
+ *           <li><p> commitWorkspaceChanges(CommitWorkspaceChangesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>commitWorkspaceChangesCallable()
+ *           <li><p> commitWorkspaceChangesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResetWorkspaceChanges</td>
+ *      <td><p> ResetWorkspaceChanges</td>
  *      <td><p> Performs a Git reset for uncommitted files in a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resetWorkspaceChanges(ResetWorkspaceChangesRequest request)
+ *           <li><p> resetWorkspaceChanges(ResetWorkspaceChangesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resetWorkspaceChangesCallable()
+ *           <li><p> resetWorkspaceChangesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchFileDiff</td>
+ *      <td><p> FetchFileDiff</td>
  *      <td><p> Fetches Git diff for an uncommitted file in a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchFileDiff(FetchFileDiffRequest request)
+ *           <li><p> fetchFileDiff(FetchFileDiffRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchFileDiffCallable()
+ *           <li><p> fetchFileDiffCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryDirectoryContents</td>
+ *      <td><p> QueryDirectoryContents</td>
  *      <td><p> Returns the contents of a given Workspace directory.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryDirectoryContents(QueryDirectoryContentsRequest request)
+ *           <li><p> queryDirectoryContents(QueryDirectoryContentsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryDirectoryContentsPagedCallable()
- *           <li>queryDirectoryContentsCallable()
+ *           <li><p> queryDirectoryContentsPagedCallable()
+ *           <li><p> queryDirectoryContentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MakeDirectory</td>
+ *      <td><p> MakeDirectory</td>
  *      <td><p> Creates a directory inside a Workspace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>makeDirectory(MakeDirectoryRequest request)
+ *           <li><p> makeDirectory(MakeDirectoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>makeDirectoryCallable()
+ *           <li><p> makeDirectoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveDirectory</td>
+ *      <td><p> RemoveDirectory</td>
  *      <td><p> Deletes a directory (inside a Workspace) and all of its contents.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeDirectory(RemoveDirectoryRequest request)
+ *           <li><p> removeDirectory(RemoveDirectoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeDirectoryCallable()
+ *           <li><p> removeDirectoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MoveDirectory</td>
+ *      <td><p> MoveDirectory</td>
  *      <td><p> Moves a directory (inside a Workspace), and all of its contents, to a new location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>moveDirectory(MoveDirectoryRequest request)
+ *           <li><p> moveDirectory(MoveDirectoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>moveDirectoryCallable()
+ *           <li><p> moveDirectoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReadFile</td>
+ *      <td><p> ReadFile</td>
  *      <td><p> Returns the contents of a file (inside a Workspace).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>readFile(ReadFileRequest request)
+ *           <li><p> readFile(ReadFileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>readFileCallable()
+ *           <li><p> readFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveFile</td>
+ *      <td><p> RemoveFile</td>
  *      <td><p> Deletes a file (inside a Workspace).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeFile(RemoveFileRequest request)
+ *           <li><p> removeFile(RemoveFileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeFileCallable()
+ *           <li><p> removeFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MoveFile</td>
+ *      <td><p> MoveFile</td>
  *      <td><p> Moves a file (inside a Workspace) to a new location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>moveFile(MoveFileRequest request)
+ *           <li><p> moveFile(MoveFileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>moveFileCallable()
+ *           <li><p> moveFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>WriteFile</td>
+ *      <td><p> WriteFile</td>
  *      <td><p> Writes to a file (inside a Workspace).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>writeFile(WriteFileRequest request)
+ *           <li><p> writeFile(WriteFileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>writeFileCallable()
+ *           <li><p> writeFileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCompilationResults</td>
+ *      <td><p> ListCompilationResults</td>
  *      <td><p> Lists CompilationResults in a given Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCompilationResults(ListCompilationResultsRequest request)
+ *           <li><p> listCompilationResults(ListCompilationResultsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCompilationResults(RepositoryName parent)
- *           <li>listCompilationResults(String parent)
+ *           <li><p> listCompilationResults(RepositoryName parent)
+ *           <li><p> listCompilationResults(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCompilationResultsPagedCallable()
- *           <li>listCompilationResultsCallable()
+ *           <li><p> listCompilationResultsPagedCallable()
+ *           <li><p> listCompilationResultsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCompilationResult</td>
+ *      <td><p> GetCompilationResult</td>
  *      <td><p> Fetches a single CompilationResult.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCompilationResult(GetCompilationResultRequest request)
+ *           <li><p> getCompilationResult(GetCompilationResultRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCompilationResult(CompilationResultName name)
- *           <li>getCompilationResult(String name)
+ *           <li><p> getCompilationResult(CompilationResultName name)
+ *           <li><p> getCompilationResult(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCompilationResultCallable()
+ *           <li><p> getCompilationResultCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCompilationResult</td>
+ *      <td><p> CreateCompilationResult</td>
  *      <td><p> Creates a new CompilationResult in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCompilationResult(CreateCompilationResultRequest request)
+ *           <li><p> createCompilationResult(CreateCompilationResultRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCompilationResult(RepositoryName parent, CompilationResult compilationResult)
- *           <li>createCompilationResult(String parent, CompilationResult compilationResult)
+ *           <li><p> createCompilationResult(RepositoryName parent, CompilationResult compilationResult)
+ *           <li><p> createCompilationResult(String parent, CompilationResult compilationResult)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCompilationResultCallable()
+ *           <li><p> createCompilationResultCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryCompilationResultActions</td>
+ *      <td><p> QueryCompilationResultActions</td>
  *      <td><p> Returns CompilationResultActions in a given CompilationResult.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryCompilationResultActions(QueryCompilationResultActionsRequest request)
+ *           <li><p> queryCompilationResultActions(QueryCompilationResultActionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryCompilationResultActionsPagedCallable()
- *           <li>queryCompilationResultActionsCallable()
+ *           <li><p> queryCompilationResultActionsPagedCallable()
+ *           <li><p> queryCompilationResultActionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListWorkflowInvocations</td>
+ *      <td><p> ListWorkflowInvocations</td>
  *      <td><p> Lists WorkflowInvocations in a given Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listWorkflowInvocations(ListWorkflowInvocationsRequest request)
+ *           <li><p> listWorkflowInvocations(ListWorkflowInvocationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listWorkflowInvocations(RepositoryName parent)
- *           <li>listWorkflowInvocations(String parent)
+ *           <li><p> listWorkflowInvocations(RepositoryName parent)
+ *           <li><p> listWorkflowInvocations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listWorkflowInvocationsPagedCallable()
- *           <li>listWorkflowInvocationsCallable()
+ *           <li><p> listWorkflowInvocationsPagedCallable()
+ *           <li><p> listWorkflowInvocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetWorkflowInvocation</td>
+ *      <td><p> GetWorkflowInvocation</td>
  *      <td><p> Fetches a single WorkflowInvocation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getWorkflowInvocation(GetWorkflowInvocationRequest request)
+ *           <li><p> getWorkflowInvocation(GetWorkflowInvocationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getWorkflowInvocation(WorkflowInvocationName name)
- *           <li>getWorkflowInvocation(String name)
+ *           <li><p> getWorkflowInvocation(WorkflowInvocationName name)
+ *           <li><p> getWorkflowInvocation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getWorkflowInvocationCallable()
+ *           <li><p> getWorkflowInvocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateWorkflowInvocation</td>
+ *      <td><p> CreateWorkflowInvocation</td>
  *      <td><p> Creates a new WorkflowInvocation in a given Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createWorkflowInvocation(CreateWorkflowInvocationRequest request)
+ *           <li><p> createWorkflowInvocation(CreateWorkflowInvocationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createWorkflowInvocation(RepositoryName parent, WorkflowInvocation workflowInvocation)
- *           <li>createWorkflowInvocation(String parent, WorkflowInvocation workflowInvocation)
+ *           <li><p> createWorkflowInvocation(RepositoryName parent, WorkflowInvocation workflowInvocation)
+ *           <li><p> createWorkflowInvocation(String parent, WorkflowInvocation workflowInvocation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createWorkflowInvocationCallable()
+ *           <li><p> createWorkflowInvocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteWorkflowInvocation</td>
+ *      <td><p> DeleteWorkflowInvocation</td>
  *      <td><p> Deletes a single WorkflowInvocation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteWorkflowInvocation(DeleteWorkflowInvocationRequest request)
+ *           <li><p> deleteWorkflowInvocation(DeleteWorkflowInvocationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteWorkflowInvocation(WorkflowInvocationName name)
- *           <li>deleteWorkflowInvocation(String name)
+ *           <li><p> deleteWorkflowInvocation(WorkflowInvocationName name)
+ *           <li><p> deleteWorkflowInvocation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteWorkflowInvocationCallable()
+ *           <li><p> deleteWorkflowInvocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelWorkflowInvocation</td>
+ *      <td><p> CancelWorkflowInvocation</td>
  *      <td><p> Requests cancellation of a running WorkflowInvocation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelWorkflowInvocation(CancelWorkflowInvocationRequest request)
+ *           <li><p> cancelWorkflowInvocation(CancelWorkflowInvocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelWorkflowInvocationCallable()
+ *           <li><p> cancelWorkflowInvocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryWorkflowInvocationActions</td>
+ *      <td><p> QueryWorkflowInvocationActions</td>
  *      <td><p> Returns WorkflowInvocationActions in a given WorkflowInvocation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryWorkflowInvocationActions(QueryWorkflowInvocationActionsRequest request)
+ *           <li><p> queryWorkflowInvocationActions(QueryWorkflowInvocationActionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryWorkflowInvocationActionsPagedCallable()
- *           <li>queryWorkflowInvocationActionsCallable()
+ *           <li><p> queryWorkflowInvocationActionsPagedCallable()
+ *           <li><p> queryWorkflowInvocationActionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

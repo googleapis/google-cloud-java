@@ -59,161 +59,162 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDocument</td>
+ *      <td><p> CreateDocument</td>
  *      <td><p> Creates a document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDocument(CreateDocumentRequest request)
+ *           <li><p> createDocument(CreateDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDocument(LocationName parent, Document document)
- *           <li>createDocument(String parent, Document document)
+ *           <li><p> createDocument(LocationName parent, Document document)
+ *           <li><p> createDocument(String parent, Document document)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDocumentCallable()
+ *           <li><p> createDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDocument</td>
+ *      <td><p> GetDocument</td>
  *      <td><p> Gets a document. Returns NOT_FOUND if the document does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDocument(GetDocumentRequest request)
+ *           <li><p> getDocument(GetDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDocument(DocumentName name)
- *           <li>getDocument(String name)
+ *           <li><p> getDocument(DocumentName name)
+ *           <li><p> getDocument(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDocumentCallable()
+ *           <li><p> getDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDocument</td>
+ *      <td><p> UpdateDocument</td>
  *      <td><p> Updates a document. Returns INVALID_ARGUMENT if the name of the document is non-empty and does not equal the existing name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDocument(UpdateDocumentRequest request)
+ *           <li><p> updateDocument(UpdateDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDocument(DocumentName name, Document document)
- *           <li>updateDocument(String name, Document document)
+ *           <li><p> updateDocument(DocumentName name, Document document)
+ *           <li><p> updateDocument(String name, Document document)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDocumentCallable()
+ *           <li><p> updateDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDocument</td>
+ *      <td><p> DeleteDocument</td>
  *      <td><p> Deletes a document. Returns NOT_FOUND if the document does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDocument(DeleteDocumentRequest request)
+ *           <li><p> deleteDocument(DeleteDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDocument(DocumentName name)
- *           <li>deleteDocument(String name)
+ *           <li><p> deleteDocument(DocumentName name)
+ *           <li><p> deleteDocument(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDocumentCallable()
+ *           <li><p> deleteDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchDocuments</td>
+ *      <td><p> SearchDocuments</td>
  *      <td><p> Searches for documents using provided [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest]. This call only returns documents that the caller has permission to search against.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchDocuments(SearchDocumentsRequest request)
+ *           <li><p> searchDocuments(SearchDocumentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchDocuments(LocationName parent)
- *           <li>searchDocuments(String parent)
+ *           <li><p> searchDocuments(LocationName parent)
+ *           <li><p> searchDocuments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchDocumentsPagedCallable()
- *           <li>searchDocumentsCallable()
+ *           <li><p> searchDocumentsPagedCallable()
+ *           <li><p> searchDocumentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LockDocument</td>
+ *      <td><p> LockDocument</td>
  *      <td><p> Lock the document so the document cannot be updated by other users.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lockDocument(LockDocumentRequest request)
+ *           <li><p> lockDocument(LockDocumentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>lockDocument(DocumentName name)
- *           <li>lockDocument(String name)
+ *           <li><p> lockDocument(DocumentName name)
+ *           <li><p> lockDocument(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lockDocumentCallable()
+ *           <li><p> lockDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchAcl</td>
+ *      <td><p> FetchAcl</td>
  *      <td><p> Gets the access control policy for a resource. Returns NOT_FOUND error if the resource does not exist. Returns an empty policy if the resource exists but does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchAcl(FetchAclRequest request)
+ *           <li><p> fetchAcl(FetchAclRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchAcl(String resource)
+ *           <li><p> fetchAcl(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchAclCallable()
+ *           <li><p> fetchAclCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetAcl</td>
+ *      <td><p> SetAcl</td>
  *      <td><p> Sets the access control policy for a resource. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setAcl(SetAclRequest request)
+ *           <li><p> setAcl(SetAclRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setAcl(String resource, Policy policy)
+ *           <li><p> setAcl(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setAclCallable()
+ *           <li><p> setAclCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

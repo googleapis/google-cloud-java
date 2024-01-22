@@ -71,100 +71,101 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SetBreakpoint</td>
+ *      <td><p> SetBreakpoint</td>
  *      <td><p> Sets the breakpoint to the debuggee.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setBreakpoint(SetBreakpointRequest request)
+ *           <li><p> setBreakpoint(SetBreakpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setBreakpoint(String debuggeeId, Breakpoint breakpoint, String clientVersion)
+ *           <li><p> setBreakpoint(String debuggeeId, Breakpoint breakpoint, String clientVersion)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setBreakpointCallable()
+ *           <li><p> setBreakpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBreakpoint</td>
+ *      <td><p> GetBreakpoint</td>
  *      <td><p> Gets breakpoint information.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBreakpoint(GetBreakpointRequest request)
+ *           <li><p> getBreakpoint(GetBreakpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBreakpoint(String debuggeeId, String breakpointId, String clientVersion)
+ *           <li><p> getBreakpoint(String debuggeeId, String breakpointId, String clientVersion)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBreakpointCallable()
+ *           <li><p> getBreakpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteBreakpoint</td>
+ *      <td><p> DeleteBreakpoint</td>
  *      <td><p> Deletes the breakpoint from the debuggee.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteBreakpoint(DeleteBreakpointRequest request)
+ *           <li><p> deleteBreakpoint(DeleteBreakpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteBreakpoint(String debuggeeId, String breakpointId, String clientVersion)
+ *           <li><p> deleteBreakpoint(String debuggeeId, String breakpointId, String clientVersion)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteBreakpointCallable()
+ *           <li><p> deleteBreakpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBreakpoints</td>
+ *      <td><p> ListBreakpoints</td>
  *      <td><p> Lists all breakpoints for the debuggee.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBreakpoints(ListBreakpointsRequest request)
+ *           <li><p> listBreakpoints(ListBreakpointsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listBreakpoints(String debuggeeId, String clientVersion)
+ *           <li><p> listBreakpoints(String debuggeeId, String clientVersion)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBreakpointsCallable()
+ *           <li><p> listBreakpointsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDebuggees</td>
+ *      <td><p> ListDebuggees</td>
  *      <td><p> Lists all the debuggees that the user has access to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDebuggees(ListDebuggeesRequest request)
+ *           <li><p> listDebuggees(ListDebuggeesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDebuggees(String project, String clientVersion)
+ *           <li><p> listDebuggees(String project, String clientVersion)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDebuggeesCallable()
+ *           <li><p> listDebuggeesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

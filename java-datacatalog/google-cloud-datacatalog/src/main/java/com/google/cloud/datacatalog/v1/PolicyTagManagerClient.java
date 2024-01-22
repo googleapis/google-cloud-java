@@ -67,127 +67,129 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateTaxonomy</td>
+ *      <td><p> CreateTaxonomy</td>
  *      <td><p> Creates a taxonomy in a specified project.
  * <p>  The taxonomy is initially empty, that is, it doesn't contain policy tags.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTaxonomy(CreateTaxonomyRequest request)
+ *           <li><p> createTaxonomy(CreateTaxonomyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTaxonomy(LocationName parent, Taxonomy taxonomy)
- *           <li>createTaxonomy(String parent, Taxonomy taxonomy)
+ *           <li><p> createTaxonomy(LocationName parent, Taxonomy taxonomy)
+ *           <li><p> createTaxonomy(String parent, Taxonomy taxonomy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTaxonomyCallable()
+ *           <li><p> createTaxonomyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTaxonomy</td>
+ *      <td><p> DeleteTaxonomy</td>
  *      <td><p> Deletes a taxonomy, including all policy tags in this taxonomy, their associated policies, and the policy tags references from BigQuery columns.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTaxonomy(DeleteTaxonomyRequest request)
+ *           <li><p> deleteTaxonomy(DeleteTaxonomyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTaxonomy(TaxonomyName name)
- *           <li>deleteTaxonomy(String name)
+ *           <li><p> deleteTaxonomy(TaxonomyName name)
+ *           <li><p> deleteTaxonomy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTaxonomyCallable()
+ *           <li><p> deleteTaxonomyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTaxonomy</td>
+ *      <td><p> UpdateTaxonomy</td>
  *      <td><p> Updates a taxonomy, including its display name, description, and activated policy types.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTaxonomy(UpdateTaxonomyRequest request)
+ *           <li><p> updateTaxonomy(UpdateTaxonomyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateTaxonomy(Taxonomy taxonomy)
+ *           <li><p> updateTaxonomy(Taxonomy taxonomy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTaxonomyCallable()
+ *           <li><p> updateTaxonomyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTaxonomies</td>
+ *      <td><p> ListTaxonomies</td>
  *      <td><p> Lists all taxonomies in a project in a particular location that you have a permission to view.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTaxonomies(ListTaxonomiesRequest request)
+ *           <li><p> listTaxonomies(ListTaxonomiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTaxonomies(LocationName parent)
- *           <li>listTaxonomies(String parent)
+ *           <li><p> listTaxonomies(LocationName parent)
+ *           <li><p> listTaxonomies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTaxonomiesPagedCallable()
- *           <li>listTaxonomiesCallable()
+ *           <li><p> listTaxonomiesPagedCallable()
+ *           <li><p> listTaxonomiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTaxonomy</td>
+ *      <td><p> GetTaxonomy</td>
  *      <td><p> Gets a taxonomy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTaxonomy(GetTaxonomyRequest request)
+ *           <li><p> getTaxonomy(GetTaxonomyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTaxonomy(TaxonomyName name)
- *           <li>getTaxonomy(String name)
+ *           <li><p> getTaxonomy(TaxonomyName name)
+ *           <li><p> getTaxonomy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTaxonomyCallable()
+ *           <li><p> getTaxonomyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePolicyTag</td>
+ *      <td><p> CreatePolicyTag</td>
  *      <td><p> Creates a policy tag in a taxonomy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPolicyTag(CreatePolicyTagRequest request)
+ *           <li><p> createPolicyTag(CreatePolicyTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createPolicyTag(TaxonomyName parent, PolicyTag policyTag)
- *           <li>createPolicyTag(String parent, PolicyTag policyTag)
+ *           <li><p> createPolicyTag(TaxonomyName parent, PolicyTag policyTag)
+ *           <li><p> createPolicyTag(String parent, PolicyTag policyTag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPolicyTagCallable()
+ *           <li><p> createPolicyTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePolicyTag</td>
+ *      <td><p> DeletePolicyTag</td>
  *      <td><p> Deletes a policy tag together with the following:
  * <ul>
  * <li>  All of its descendant policy tags, if any
@@ -197,118 +199,117 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePolicyTag(DeletePolicyTagRequest request)
+ *           <li><p> deletePolicyTag(DeletePolicyTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deletePolicyTag(PolicyTagName name)
- *           <li>deletePolicyTag(String name)
+ *           <li><p> deletePolicyTag(PolicyTagName name)
+ *           <li><p> deletePolicyTag(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePolicyTagCallable()
+ *           <li><p> deletePolicyTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePolicyTag</td>
+ *      <td><p> UpdatePolicyTag</td>
  *      <td><p> Updates a policy tag, including its display name, description, and parent policy tag.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePolicyTag(UpdatePolicyTagRequest request)
+ *           <li><p> updatePolicyTag(UpdatePolicyTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updatePolicyTag(PolicyTag policyTag)
+ *           <li><p> updatePolicyTag(PolicyTag policyTag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePolicyTagCallable()
+ *           <li><p> updatePolicyTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPolicyTags</td>
+ *      <td><p> ListPolicyTags</td>
  *      <td><p> Lists all policy tags in a taxonomy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPolicyTags(ListPolicyTagsRequest request)
+ *           <li><p> listPolicyTags(ListPolicyTagsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPolicyTags(TaxonomyName parent)
- *           <li>listPolicyTags(String parent)
+ *           <li><p> listPolicyTags(TaxonomyName parent)
+ *           <li><p> listPolicyTags(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPolicyTagsPagedCallable()
- *           <li>listPolicyTagsCallable()
+ *           <li><p> listPolicyTagsPagedCallable()
+ *           <li><p> listPolicyTagsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPolicyTag</td>
+ *      <td><p> GetPolicyTag</td>
  *      <td><p> Gets a policy tag.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPolicyTag(GetPolicyTagRequest request)
+ *           <li><p> getPolicyTag(GetPolicyTagRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPolicyTag(PolicyTagName name)
- *           <li>getPolicyTag(String name)
+ *           <li><p> getPolicyTag(PolicyTagName name)
+ *           <li><p> getPolicyTag(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPolicyTagCallable()
+ *           <li><p> getPolicyTagCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the IAM policy for a policy tag or a taxonomy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM policy for a policy tag or a taxonomy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns your permissions on a specified policy tag or taxonomy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

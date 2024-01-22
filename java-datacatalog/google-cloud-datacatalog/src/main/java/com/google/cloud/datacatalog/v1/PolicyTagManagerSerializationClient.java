@@ -56,12 +56,14 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ReplaceTaxonomy</td>
+ *      <td><p> ReplaceTaxonomy</td>
  *      <td><p> Replaces (updates) a taxonomy and all its policy tags.
  * <p>  The taxonomy and its entire hierarchy of policy tags must be represented literally by `SerializedTaxonomy` and the nested `SerializedPolicyTag` messages.
  * <p>  This operation automatically does the following:
@@ -69,45 +71,44 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>replaceTaxonomy(ReplaceTaxonomyRequest request)
+ *           <li><p> replaceTaxonomy(ReplaceTaxonomyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>replaceTaxonomyCallable()
+ *           <li><p> replaceTaxonomyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportTaxonomies</td>
+ *      <td><p> ImportTaxonomies</td>
  *      <td><p> Creates new taxonomies (including their policy tags) in a given project by importing from inlined or cross-regional sources.
  * <p>  For a cross-regional source, new taxonomies are created by copying from a source in another region.
  * <p>  For an inlined source, taxonomies and policy tags are created in bulk using nested protocol buffer structures.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importTaxonomies(ImportTaxonomiesRequest request)
+ *           <li><p> importTaxonomies(ImportTaxonomiesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importTaxonomiesCallable()
+ *           <li><p> importTaxonomiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportTaxonomies</td>
+ *      <td><p> ExportTaxonomies</td>
  *      <td><p> Exports taxonomies in the requested type and returns them, including their policy tags. The requested taxonomies must belong to the same project.
  * <p>  This method generates `SerializedTaxonomy` protocol buffers with nested policy tags that can be used as input for `ImportTaxonomies` calls.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportTaxonomies(ExportTaxonomiesRequest request)
+ *           <li><p> exportTaxonomies(ExportTaxonomiesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportTaxonomiesCallable()
+ *           <li><p> exportTaxonomiesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

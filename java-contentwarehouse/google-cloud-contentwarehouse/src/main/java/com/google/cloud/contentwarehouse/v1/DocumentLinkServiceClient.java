@@ -59,87 +59,88 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListLinkedTargets</td>
+ *      <td><p> ListLinkedTargets</td>
  *      <td><p> Return all target document-links from the document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLinkedTargets(ListLinkedTargetsRequest request)
+ *           <li><p> listLinkedTargets(ListLinkedTargetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listLinkedTargets(DocumentName parent)
- *           <li>listLinkedTargets(String parent)
+ *           <li><p> listLinkedTargets(DocumentName parent)
+ *           <li><p> listLinkedTargets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLinkedTargetsCallable()
+ *           <li><p> listLinkedTargetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLinkedSources</td>
+ *      <td><p> ListLinkedSources</td>
  *      <td><p> Return all source document-links from the document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLinkedSources(ListLinkedSourcesRequest request)
+ *           <li><p> listLinkedSources(ListLinkedSourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listLinkedSources(DocumentName parent)
- *           <li>listLinkedSources(String parent)
+ *           <li><p> listLinkedSources(DocumentName parent)
+ *           <li><p> listLinkedSources(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLinkedSourcesPagedCallable()
- *           <li>listLinkedSourcesCallable()
+ *           <li><p> listLinkedSourcesPagedCallable()
+ *           <li><p> listLinkedSourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDocumentLink</td>
+ *      <td><p> CreateDocumentLink</td>
  *      <td><p> Create a link between a source document and a target document.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDocumentLink(CreateDocumentLinkRequest request)
+ *           <li><p> createDocumentLink(CreateDocumentLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDocumentLink(DocumentName parent, DocumentLink documentLink)
- *           <li>createDocumentLink(String parent, DocumentLink documentLink)
+ *           <li><p> createDocumentLink(DocumentName parent, DocumentLink documentLink)
+ *           <li><p> createDocumentLink(String parent, DocumentLink documentLink)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDocumentLinkCallable()
+ *           <li><p> createDocumentLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDocumentLink</td>
+ *      <td><p> DeleteDocumentLink</td>
  *      <td><p> Remove the link between the source and target documents.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDocumentLink(DeleteDocumentLinkRequest request)
+ *           <li><p> deleteDocumentLink(DeleteDocumentLinkRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDocumentLink(DocumentLinkName name)
- *           <li>deleteDocumentLink(String name)
+ *           <li><p> deleteDocumentLink(DocumentLinkName name)
+ *           <li><p> deleteDocumentLink(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDocumentLinkCallable()
+ *           <li><p> deleteDocumentLinkCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

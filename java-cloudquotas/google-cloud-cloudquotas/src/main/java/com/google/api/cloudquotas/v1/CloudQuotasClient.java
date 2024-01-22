@@ -63,127 +63,128 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListQuotaInfos</td>
+ *      <td><p> ListQuotaInfos</td>
  *      <td><p> Lists QuotaInfos of all quotas for a given project, folder or organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listQuotaInfos(ListQuotaInfosRequest request)
+ *           <li><p> listQuotaInfos(ListQuotaInfosRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listQuotaInfos(ServiceName parent)
- *           <li>listQuotaInfos(String parent)
+ *           <li><p> listQuotaInfos(ServiceName parent)
+ *           <li><p> listQuotaInfos(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listQuotaInfosPagedCallable()
- *           <li>listQuotaInfosCallable()
+ *           <li><p> listQuotaInfosPagedCallable()
+ *           <li><p> listQuotaInfosCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetQuotaInfo</td>
+ *      <td><p> GetQuotaInfo</td>
  *      <td><p> Retrieve the QuotaInfo of a quota for a project, folder or organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getQuotaInfo(GetQuotaInfoRequest request)
+ *           <li><p> getQuotaInfo(GetQuotaInfoRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getQuotaInfo(QuotaInfoName name)
- *           <li>getQuotaInfo(String name)
+ *           <li><p> getQuotaInfo(QuotaInfoName name)
+ *           <li><p> getQuotaInfo(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getQuotaInfoCallable()
+ *           <li><p> getQuotaInfoCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListQuotaPreferences</td>
+ *      <td><p> ListQuotaPreferences</td>
  *      <td><p> Lists QuotaPreferences in a given project, folder or organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listQuotaPreferences(ListQuotaPreferencesRequest request)
+ *           <li><p> listQuotaPreferences(ListQuotaPreferencesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listQuotaPreferences(LocationName parent)
- *           <li>listQuotaPreferences(String parent)
+ *           <li><p> listQuotaPreferences(LocationName parent)
+ *           <li><p> listQuotaPreferences(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listQuotaPreferencesPagedCallable()
- *           <li>listQuotaPreferencesCallable()
+ *           <li><p> listQuotaPreferencesPagedCallable()
+ *           <li><p> listQuotaPreferencesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetQuotaPreference</td>
+ *      <td><p> GetQuotaPreference</td>
  *      <td><p> Gets details of a single QuotaPreference.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getQuotaPreference(GetQuotaPreferenceRequest request)
+ *           <li><p> getQuotaPreference(GetQuotaPreferenceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getQuotaPreference(QuotaPreferenceName name)
- *           <li>getQuotaPreference(String name)
+ *           <li><p> getQuotaPreference(QuotaPreferenceName name)
+ *           <li><p> getQuotaPreference(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getQuotaPreferenceCallable()
+ *           <li><p> getQuotaPreferenceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateQuotaPreference</td>
+ *      <td><p> CreateQuotaPreference</td>
  *      <td><p> Creates a new QuotaPreference that declares the desired value for a quota.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createQuotaPreference(CreateQuotaPreferenceRequest request)
+ *           <li><p> createQuotaPreference(CreateQuotaPreferenceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createQuotaPreference(LocationName parent, QuotaPreference quotaPreference)
- *           <li>createQuotaPreference(String parent, QuotaPreference quotaPreference)
- *           <li>createQuotaPreference(LocationName parent, QuotaPreference quotaPreference, String quotaPreferenceId)
- *           <li>createQuotaPreference(String parent, QuotaPreference quotaPreference, String quotaPreferenceId)
+ *           <li><p> createQuotaPreference(LocationName parent, QuotaPreference quotaPreference)
+ *           <li><p> createQuotaPreference(String parent, QuotaPreference quotaPreference)
+ *           <li><p> createQuotaPreference(LocationName parent, QuotaPreference quotaPreference, String quotaPreferenceId)
+ *           <li><p> createQuotaPreference(String parent, QuotaPreference quotaPreference, String quotaPreferenceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createQuotaPreferenceCallable()
+ *           <li><p> createQuotaPreferenceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateQuotaPreference</td>
+ *      <td><p> UpdateQuotaPreference</td>
  *      <td><p> Updates the parameters of a single QuotaPreference. It can updates the config in any states, not just the ones pending approval.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateQuotaPreference(UpdateQuotaPreferenceRequest request)
+ *           <li><p> updateQuotaPreference(UpdateQuotaPreferenceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateQuotaPreference(QuotaPreference quotaPreference, FieldMask updateMask)
+ *           <li><p> updateQuotaPreference(QuotaPreference quotaPreference, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateQuotaPreferenceCallable()
+ *           <li><p> updateQuotaPreferenceCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

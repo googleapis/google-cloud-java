@@ -55,40 +55,41 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ImportTaxonomies</td>
+ *      <td><p> ImportTaxonomies</td>
  *      <td><p> Imports all taxonomies and their policy tags to a project as new taxonomies.
  * <p>  This method provides a bulk taxonomy / policy tag creation using nested proto structure.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importTaxonomies(ImportTaxonomiesRequest request)
+ *           <li><p> importTaxonomies(ImportTaxonomiesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importTaxonomiesCallable()
+ *           <li><p> importTaxonomiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportTaxonomies</td>
+ *      <td><p> ExportTaxonomies</td>
  *      <td><p> Exports all taxonomies and their policy tags in a project.
  * <p>  This method generates SerializedTaxonomy protos with nested policy tags that can be used as an input for future ImportTaxonomies calls.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportTaxonomies(ExportTaxonomiesRequest request)
+ *           <li><p> exportTaxonomies(ExportTaxonomiesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportTaxonomiesCallable()
+ *           <li><p> exportTaxonomiesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

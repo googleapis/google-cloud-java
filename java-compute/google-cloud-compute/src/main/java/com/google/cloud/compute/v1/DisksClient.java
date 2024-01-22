@@ -61,348 +61,349 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AddResourcePolicies</td>
+ *      <td><p> AddResourcePolicies</td>
  *      <td><p> Adds existing resource policies to a disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addResourcePoliciesAsync(AddResourcePoliciesDiskRequest request)
+ *           <li><p> addResourcePoliciesAsync(AddResourcePoliciesDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addResourcePoliciesAsync(String project, String zone, String disk, DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource)
+ *           <li><p> addResourcePoliciesAsync(String project, String zone, String disk, DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addResourcePoliciesOperationCallable()
- *           <li>addResourcePoliciesCallable()
+ *           <li><p> addResourcePoliciesOperationCallable()
+ *           <li><p> addResourcePoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AggregatedList</td>
+ *      <td><p> AggregatedList</td>
  *      <td><p> Retrieves an aggregated list of persistent disks.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>aggregatedList(AggregatedListDisksRequest request)
+ *           <li><p> aggregatedList(AggregatedListDisksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>aggregatedList(String project)
+ *           <li><p> aggregatedList(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>aggregatedListPagedCallable()
- *           <li>aggregatedListCallable()
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BulkInsert</td>
+ *      <td><p> BulkInsert</td>
  *      <td><p> Bulk create a set of disks.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>bulkInsertAsync(BulkInsertDiskRequest request)
+ *           <li><p> bulkInsertAsync(BulkInsertDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>bulkInsertAsync(String project, String zone, BulkInsertDiskResource bulkInsertDiskResourceResource)
+ *           <li><p> bulkInsertAsync(String project, String zone, BulkInsertDiskResource bulkInsertDiskResourceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>bulkInsertOperationCallable()
- *           <li>bulkInsertCallable()
+ *           <li><p> bulkInsertOperationCallable()
+ *           <li><p> bulkInsertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSnapshot</td>
+ *      <td><p> CreateSnapshot</td>
  *      <td><p> Creates a snapshot of a specified persistent disk. For regular snapshot creation, consider using snapshots.insert instead, as that method supports more features, such as creating snapshots in a project different from the source disk project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSnapshotAsync(CreateSnapshotDiskRequest request)
+ *           <li><p> createSnapshotAsync(CreateSnapshotDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createSnapshotAsync(String project, String zone, String disk, Snapshot snapshotResource)
+ *           <li><p> createSnapshotAsync(String project, String zone, String disk, Snapshot snapshotResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSnapshotOperationCallable()
- *           <li>createSnapshotCallable()
+ *           <li><p> createSnapshotOperationCallable()
+ *           <li><p> createSnapshotCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteDiskRequest request)
+ *           <li><p> deleteAsync(DeleteDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String zone, String disk)
+ *           <li><p> deleteAsync(String project, String zone, String disk)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified persistent disk.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetDiskRequest request)
+ *           <li><p> get(GetDiskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String zone, String disk)
+ *           <li><p> get(String project, String zone, String disk)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. May be empty if no such policy or resource exists.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyDiskRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyDiskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(String project, String zone, String resource)
+ *           <li><p> getIamPolicy(String project, String zone, String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a persistent disk in the specified project using the data in the request. You can create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertDiskRequest request)
+ *           <li><p> insertAsync(InsertDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String zone, Disk diskResource)
+ *           <li><p> insertAsync(String project, String zone, Disk diskResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves a list of persistent disks contained within the specified zone.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListDisksRequest request)
+ *           <li><p> list(ListDisksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String zone)
+ *           <li><p> list(String project, String zone)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveResourcePolicies</td>
+ *      <td><p> RemoveResourcePolicies</td>
  *      <td><p> Removes resource policies from a disk.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeResourcePoliciesAsync(RemoveResourcePoliciesDiskRequest request)
+ *           <li><p> removeResourcePoliciesAsync(RemoveResourcePoliciesDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>removeResourcePoliciesAsync(String project, String zone, String disk, DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource)
+ *           <li><p> removeResourcePoliciesAsync(String project, String zone, String disk, DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeResourcePoliciesOperationCallable()
- *           <li>removeResourcePoliciesCallable()
+ *           <li><p> removeResourcePoliciesOperationCallable()
+ *           <li><p> removeResourcePoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Resize</td>
+ *      <td><p> Resize</td>
  *      <td><p> Resizes the specified persistent disk. You can only increase the size of the disk.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resizeAsync(ResizeDiskRequest request)
+ *           <li><p> resizeAsync(ResizeDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>resizeAsync(String project, String zone, String disk, DisksResizeRequest disksResizeRequestResource)
+ *           <li><p> resizeAsync(String project, String zone, String disk, DisksResizeRequest disksResizeRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resizeOperationCallable()
- *           <li>resizeCallable()
+ *           <li><p> resizeOperationCallable()
+ *           <li><p> resizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyDiskRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyDiskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(String project, String zone, String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource)
+ *           <li><p> setIamPolicy(String project, String zone, String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetLabels</td>
+ *      <td><p> SetLabels</td>
  *      <td><p> Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setLabelsAsync(SetLabelsDiskRequest request)
+ *           <li><p> setLabelsAsync(SetLabelsDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setLabelsAsync(String project, String zone, String resource, ZoneSetLabelsRequest zoneSetLabelsRequestResource)
+ *           <li><p> setLabelsAsync(String project, String zone, String resource, ZoneSetLabelsRequest zoneSetLabelsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setLabelsOperationCallable()
- *           <li>setLabelsCallable()
+ *           <li><p> setLabelsOperationCallable()
+ *           <li><p> setLabelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartAsyncReplication</td>
+ *      <td><p> StartAsyncReplication</td>
  *      <td><p> Starts asynchronous replication. Must be invoked on the primary disk.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startAsyncReplicationAsync(StartAsyncReplicationDiskRequest request)
+ *           <li><p> startAsyncReplicationAsync(StartAsyncReplicationDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>startAsyncReplicationAsync(String project, String zone, String disk, DisksStartAsyncReplicationRequest disksStartAsyncReplicationRequestResource)
+ *           <li><p> startAsyncReplicationAsync(String project, String zone, String disk, DisksStartAsyncReplicationRequest disksStartAsyncReplicationRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startAsyncReplicationOperationCallable()
- *           <li>startAsyncReplicationCallable()
+ *           <li><p> startAsyncReplicationOperationCallable()
+ *           <li><p> startAsyncReplicationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopAsyncReplication</td>
+ *      <td><p> StopAsyncReplication</td>
  *      <td><p> Stops asynchronous replication. Can be invoked either on the primary or on the secondary disk.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopAsyncReplicationAsync(StopAsyncReplicationDiskRequest request)
+ *           <li><p> stopAsyncReplicationAsync(StopAsyncReplicationDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>stopAsyncReplicationAsync(String project, String zone, String disk)
+ *           <li><p> stopAsyncReplicationAsync(String project, String zone, String disk)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopAsyncReplicationOperationCallable()
- *           <li>stopAsyncReplicationCallable()
+ *           <li><p> stopAsyncReplicationOperationCallable()
+ *           <li><p> stopAsyncReplicationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopGroupAsyncReplication</td>
+ *      <td><p> StopGroupAsyncReplication</td>
  *      <td><p> Stops asynchronous replication for a consistency group of disks. Can be invoked either in the primary or secondary scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopGroupAsyncReplicationAsync(StopGroupAsyncReplicationDiskRequest request)
+ *           <li><p> stopGroupAsyncReplicationAsync(StopGroupAsyncReplicationDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>stopGroupAsyncReplicationAsync(String project, String zone, DisksStopGroupAsyncReplicationResource disksStopGroupAsyncReplicationResourceResource)
+ *           <li><p> stopGroupAsyncReplicationAsync(String project, String zone, DisksStopGroupAsyncReplicationResource disksStopGroupAsyncReplicationResourceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopGroupAsyncReplicationOperationCallable()
- *           <li>stopGroupAsyncReplicationCallable()
+ *           <li><p> stopGroupAsyncReplicationOperationCallable()
+ *           <li><p> stopGroupAsyncReplicationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsDiskRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsDiskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(String project, String zone, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *           <li><p> testIamPermissions(String project, String zone, String resource, TestPermissionsRequest testPermissionsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Update</td>
+ *      <td><p> Update</td>
  *      <td><p> Updates the specified disk with the data included in the request. The update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: user_license.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAsync(UpdateDiskRequest request)
+ *           <li><p> updateAsync(UpdateDiskRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateAsync(String project, String zone, String disk, Disk diskResource)
+ *           <li><p> updateAsync(String project, String zone, String disk, Disk diskResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateOperationCallable()
- *           <li>updateCallable()
+ *           <li><p> updateOperationCallable()
+ *           <li><p> updateCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

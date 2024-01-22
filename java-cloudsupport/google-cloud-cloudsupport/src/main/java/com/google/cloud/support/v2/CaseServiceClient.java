@@ -56,148 +56,149 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetCase</td>
+ *      <td><p> GetCase</td>
  *      <td><p> Retrieve the specified case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCase(GetCaseRequest request)
+ *           <li><p> getCase(GetCaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCase(CaseName name)
- *           <li>getCase(String name)
+ *           <li><p> getCase(CaseName name)
+ *           <li><p> getCase(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCaseCallable()
+ *           <li><p> getCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCases</td>
+ *      <td><p> ListCases</td>
  *      <td><p> Retrieve all cases under the specified parent.
  * <p>  Note: Listing cases under an Organization returns only the cases directly parented by that organization. To retrieve all cases under an organization, including cases parented by projects under that organization, use `cases.search`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCases(ListCasesRequest request)
+ *           <li><p> listCases(ListCasesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCases(OrganizationName parent)
- *           <li>listCases(ProjectName parent)
- *           <li>listCases(String parent)
+ *           <li><p> listCases(OrganizationName parent)
+ *           <li><p> listCases(ProjectName parent)
+ *           <li><p> listCases(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCasesPagedCallable()
- *           <li>listCasesCallable()
+ *           <li><p> listCasesPagedCallable()
+ *           <li><p> listCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchCases</td>
+ *      <td><p> SearchCases</td>
  *      <td><p> Search cases using the specified query.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchCases(SearchCasesRequest request)
+ *           <li><p> searchCases(SearchCasesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchCasesPagedCallable()
- *           <li>searchCasesCallable()
+ *           <li><p> searchCasesPagedCallable()
+ *           <li><p> searchCasesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCase</td>
+ *      <td><p> CreateCase</td>
  *      <td><p> Create a new case and associate it with the given Google Cloud Resource. The case object must have the following fields set: `display_name`, `description`, `classification`, and `priority`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCase(CreateCaseRequest request)
+ *           <li><p> createCase(CreateCaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCase(OrganizationName parent, Case case_)
- *           <li>createCase(ProjectName parent, Case case_)
- *           <li>createCase(String parent, Case case_)
+ *           <li><p> createCase(OrganizationName parent, Case case_)
+ *           <li><p> createCase(ProjectName parent, Case case_)
+ *           <li><p> createCase(String parent, Case case_)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCaseCallable()
+ *           <li><p> createCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCase</td>
+ *      <td><p> UpdateCase</td>
  *      <td><p> Update the specified case. Only a subset of fields can be updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCase(UpdateCaseRequest request)
+ *           <li><p> updateCase(UpdateCaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCase(Case case_, FieldMask updateMask)
+ *           <li><p> updateCase(Case case_, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCaseCallable()
+ *           <li><p> updateCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EscalateCase</td>
+ *      <td><p> EscalateCase</td>
  *      <td><p> Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management process.
  * <p>  This operation is only available to certain Customer Care tiers. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which tiers are able to perform escalations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>escalateCase(EscalateCaseRequest request)
+ *           <li><p> escalateCase(EscalateCaseRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>escalateCaseCallable()
+ *           <li><p> escalateCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CloseCase</td>
+ *      <td><p> CloseCase</td>
  *      <td><p> Close the specified case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>closeCase(CloseCaseRequest request)
+ *           <li><p> closeCase(CloseCaseRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>closeCaseCallable()
+ *           <li><p> closeCaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchCaseClassifications</td>
+ *      <td><p> SearchCaseClassifications</td>
  *      <td><p> Retrieve valid classifications to be used when creating a support case. The classications are hierarchical, with each classification containing all levels of the hierarchy, separated by " &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchCaseClassifications(SearchCaseClassificationsRequest request)
+ *           <li><p> searchCaseClassifications(SearchCaseClassificationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchCaseClassificationsPagedCallable()
- *           <li>searchCaseClassificationsCallable()
+ *           <li><p> searchCaseClassificationsPagedCallable()
+ *           <li><p> searchCaseClassificationsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

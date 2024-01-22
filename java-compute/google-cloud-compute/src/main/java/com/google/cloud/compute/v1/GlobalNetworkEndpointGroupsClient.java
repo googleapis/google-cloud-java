@@ -62,142 +62,143 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AttachNetworkEndpoints</td>
+ *      <td><p> AttachNetworkEndpoints</td>
  *      <td><p> Attach a network endpoint to the specified network endpoint group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>attachNetworkEndpointsAsync(AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request)
+ *           <li><p> attachNetworkEndpointsAsync(AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>attachNetworkEndpointsAsync(String project, String networkEndpointGroup, GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource)
+ *           <li><p> attachNetworkEndpointsAsync(String project, String networkEndpointGroup, GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>attachNetworkEndpointsOperationCallable()
- *           <li>attachNetworkEndpointsCallable()
+ *           <li><p> attachNetworkEndpointsOperationCallable()
+ *           <li><p> attachNetworkEndpointsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified network endpoint group.Note that the NEG cannot be deleted if there are backend services referencing it.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteGlobalNetworkEndpointGroupRequest request)
+ *           <li><p> deleteAsync(DeleteGlobalNetworkEndpointGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String networkEndpointGroup)
+ *           <li><p> deleteAsync(String project, String networkEndpointGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DetachNetworkEndpoints</td>
+ *      <td><p> DetachNetworkEndpoints</td>
  *      <td><p> Detach the network endpoint from the specified network endpoint group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>detachNetworkEndpointsAsync(DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request)
+ *           <li><p> detachNetworkEndpointsAsync(DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>detachNetworkEndpointsAsync(String project, String networkEndpointGroup, GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource)
+ *           <li><p> detachNetworkEndpointsAsync(String project, String networkEndpointGroup, GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>detachNetworkEndpointsOperationCallable()
- *           <li>detachNetworkEndpointsCallable()
+ *           <li><p> detachNetworkEndpointsOperationCallable()
+ *           <li><p> detachNetworkEndpointsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified network endpoint group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetGlobalNetworkEndpointGroupRequest request)
+ *           <li><p> get(GetGlobalNetworkEndpointGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String networkEndpointGroup)
+ *           <li><p> get(String project, String networkEndpointGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a network endpoint group in the specified project using the parameters that are included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertGlobalNetworkEndpointGroupRequest request)
+ *           <li><p> insertAsync(InsertGlobalNetworkEndpointGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, NetworkEndpointGroup networkEndpointGroupResource)
+ *           <li><p> insertAsync(String project, NetworkEndpointGroup networkEndpointGroupResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves the list of network endpoint groups that are located in the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListGlobalNetworkEndpointGroupsRequest request)
+ *           <li><p> list(ListGlobalNetworkEndpointGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project)
+ *           <li><p> list(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNetworkEndpoints</td>
+ *      <td><p> ListNetworkEndpoints</td>
  *      <td><p> Lists the network endpoints in the specified network endpoint group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNetworkEndpoints(ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request)
+ *           <li><p> listNetworkEndpoints(ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNetworkEndpoints(String project, String networkEndpointGroup)
+ *           <li><p> listNetworkEndpoints(String project, String networkEndpointGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNetworkEndpointsPagedCallable()
- *           <li>listNetworkEndpointsCallable()
+ *           <li><p> listNetworkEndpointsPagedCallable()
+ *           <li><p> listNetworkEndpointsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -62,57 +62,58 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetJobMetrics</td>
+ *      <td><p> GetJobMetrics</td>
  *      <td><p> Request the job status.
  * <p>  To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJobMetrics(GetJobMetricsRequest request)
+ *           <li><p> getJobMetrics(GetJobMetricsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobMetricsCallable()
+ *           <li><p> getJobMetricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJobExecutionDetails</td>
+ *      <td><p> GetJobExecutionDetails</td>
  *      <td><p> Request detailed information about the execution status of the job.
  * <p>  EXPERIMENTAL.  This API is subject to change or removal without notice.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJobExecutionDetails(GetJobExecutionDetailsRequest request)
+ *           <li><p> getJobExecutionDetails(GetJobExecutionDetailsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobExecutionDetailsPagedCallable()
- *           <li>getJobExecutionDetailsCallable()
+ *           <li><p> getJobExecutionDetailsPagedCallable()
+ *           <li><p> getJobExecutionDetailsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetStageExecutionDetails</td>
+ *      <td><p> GetStageExecutionDetails</td>
  *      <td><p> Request detailed information about the execution status of a stage of the job.
  * <p>  EXPERIMENTAL.  This API is subject to change or removal without notice.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getStageExecutionDetails(GetStageExecutionDetailsRequest request)
+ *           <li><p> getStageExecutionDetails(GetStageExecutionDetailsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getStageExecutionDetailsPagedCallable()
- *           <li>getStageExecutionDetailsCallable()
+ *           <li><p> getStageExecutionDetailsPagedCallable()
+ *           <li><p> getStageExecutionDetailsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

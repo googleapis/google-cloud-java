@@ -56,52 +56,53 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateJobFromTemplate</td>
+ *      <td><p> CreateJobFromTemplate</td>
  *      <td><p> Creates a Cloud Dataflow job from a template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createJobFromTemplate(CreateJobFromTemplateRequest request)
+ *           <li><p> createJobFromTemplate(CreateJobFromTemplateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createJobFromTemplateCallable()
+ *           <li><p> createJobFromTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LaunchTemplate</td>
+ *      <td><p> LaunchTemplate</td>
  *      <td><p> Launch a template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>launchTemplate(LaunchTemplateRequest request)
+ *           <li><p> launchTemplate(LaunchTemplateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>launchTemplateCallable()
+ *           <li><p> launchTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTemplate</td>
+ *      <td><p> GetTemplate</td>
  *      <td><p> Get the template associated with a template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTemplate(GetTemplateRequest request)
+ *           <li><p> getTemplate(GetTemplateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTemplateCallable()
+ *           <li><p> getTemplateCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -68,179 +68,180 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SubmitJob</td>
+ *      <td><p> SubmitJob</td>
  *      <td><p> Submits a job to a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>submitJob(SubmitJobRequest request)
+ *           <li><p> submitJob(SubmitJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>submitJob(String projectId, String region, Job job)
+ *           <li><p> submitJob(String projectId, String region, Job job)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>submitJobCallable()
+ *           <li><p> submitJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SubmitJobAsOperation</td>
+ *      <td><p> SubmitJobAsOperation</td>
  *      <td><p> Submits job to a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>submitJobAsOperationAsync(SubmitJobRequest request)
+ *           <li><p> submitJobAsOperationAsync(SubmitJobRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>submitJobAsOperationAsync(String projectId, String region, Job job)
+ *           <li><p> submitJobAsOperationAsync(String projectId, String region, Job job)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>submitJobAsOperationOperationCallable()
- *           <li>submitJobAsOperationCallable()
+ *           <li><p> submitJobAsOperationOperationCallable()
+ *           <li><p> submitJobAsOperationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJob</td>
+ *      <td><p> GetJob</td>
  *      <td><p> Gets the resource representation for a job in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJob(GetJobRequest request)
+ *           <li><p> getJob(GetJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getJob(String projectId, String region, String jobId)
+ *           <li><p> getJob(String projectId, String region, String jobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobCallable()
+ *           <li><p> getJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListJobs</td>
+ *      <td><p> ListJobs</td>
  *      <td><p> Lists regions/{region}/jobs in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobs(ListJobsRequest request)
+ *           <li><p> listJobs(ListJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listJobs(String projectId, String region)
- *           <li>listJobs(String projectId, String region, String filter)
+ *           <li><p> listJobs(String projectId, String region)
+ *           <li><p> listJobs(String projectId, String region, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobsPagedCallable()
- *           <li>listJobsCallable()
+ *           <li><p> listJobsPagedCallable()
+ *           <li><p> listJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateJob</td>
+ *      <td><p> UpdateJob</td>
  *      <td><p> Updates a job in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateJob(UpdateJobRequest request)
+ *           <li><p> updateJob(UpdateJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateJobCallable()
+ *           <li><p> updateJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelJob</td>
+ *      <td><p> CancelJob</td>
  *      <td><p> Starts a job cancellation request. To access the job resource after cancellation, call [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1/projects.regions.jobs/list) or [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1/projects.regions.jobs/get).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelJob(CancelJobRequest request)
+ *           <li><p> cancelJob(CancelJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelJob(String projectId, String region, String jobId)
+ *           <li><p> cancelJob(String projectId, String region, String jobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelJobCallable()
+ *           <li><p> cancelJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteJob</td>
+ *      <td><p> DeleteJob</td>
  *      <td><p> Deletes the job from the project. If the job is active, the delete fails, and the response returns `FAILED_PRECONDITION`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteJob(DeleteJobRequest request)
+ *           <li><p> deleteJob(DeleteJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteJob(String projectId, String region, String jobId)
+ *           <li><p> deleteJob(String projectId, String region, String jobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteJobCallable()
+ *           <li><p> deleteJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

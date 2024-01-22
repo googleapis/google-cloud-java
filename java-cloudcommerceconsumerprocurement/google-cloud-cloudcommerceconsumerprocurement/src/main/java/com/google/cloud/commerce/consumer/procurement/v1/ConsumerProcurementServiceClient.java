@@ -68,64 +68,65 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>PlaceOrder</td>
+ *      <td><p> PlaceOrder</td>
  *      <td><p> Creates a new [Order][google.cloud.commerce.consumer.procurement.v1.Order].
  * <p>  This API only supports GCP spend-based committed use discounts specified by GCP documentation.
  * <p>  The returned long-running operation is in-progress until the backend completes the creation of the resource. Once completed, the order is in [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1.OrderState.ORDER_STATE_ACTIVE]. In case of failure, the order resource will be removed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>placeOrderAsync(PlaceOrderRequest request)
+ *           <li><p> placeOrderAsync(PlaceOrderRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>placeOrderOperationCallable()
- *           <li>placeOrderCallable()
+ *           <li><p> placeOrderOperationCallable()
+ *           <li><p> placeOrderCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetOrder</td>
+ *      <td><p> GetOrder</td>
  *      <td><p> Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getOrder(GetOrderRequest request)
+ *           <li><p> getOrder(GetOrderRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getOrder(String name)
+ *           <li><p> getOrder(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getOrderCallable()
+ *           <li><p> getOrderCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListOrders</td>
+ *      <td><p> ListOrders</td>
  *      <td><p> Lists [Order][google.cloud.commerce.consumer.procurement.v1.Order] resources that the user has access to, within the scope of the parent resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listOrders(ListOrdersRequest request)
+ *           <li><p> listOrders(ListOrdersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listOrders(String parent)
+ *           <li><p> listOrders(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listOrdersPagedCallable()
- *           <li>listOrdersCallable()
+ *           <li><p> listOrdersPagedCallable()
+ *           <li><p> listOrdersCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

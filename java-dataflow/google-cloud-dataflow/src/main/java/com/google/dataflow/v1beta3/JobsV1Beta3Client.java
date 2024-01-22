@@ -64,114 +64,115 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateJob</td>
+ *      <td><p> CreateJob</td>
  *      <td><p> Creates a Cloud Dataflow job.
  * <p>  To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createJob(CreateJobRequest request)
+ *           <li><p> createJob(CreateJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createJobCallable()
+ *           <li><p> createJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJob</td>
+ *      <td><p> GetJob</td>
  *      <td><p> Gets the state of the specified Cloud Dataflow job.
  * <p>  To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJob(GetJobRequest request)
+ *           <li><p> getJob(GetJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobCallable()
+ *           <li><p> getJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateJob</td>
+ *      <td><p> UpdateJob</td>
  *      <td><p> Updates the state of an existing Cloud Dataflow job.
  * <p>  To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateJob(UpdateJobRequest request)
+ *           <li><p> updateJob(UpdateJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateJobCallable()
+ *           <li><p> updateJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListJobs</td>
+ *      <td><p> ListJobs</td>
  *      <td><p> List the jobs of a project.
  * <p>  To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobs(ListJobsRequest request)
+ *           <li><p> listJobs(ListJobsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobsPagedCallable()
- *           <li>listJobsCallable()
+ *           <li><p> listJobsPagedCallable()
+ *           <li><p> listJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AggregatedListJobs</td>
+ *      <td><p> AggregatedListJobs</td>
  *      <td><p> List the jobs of a project across all regions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>aggregatedListJobs(ListJobsRequest request)
+ *           <li><p> aggregatedListJobs(ListJobsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>aggregatedListJobsPagedCallable()
- *           <li>aggregatedListJobsCallable()
+ *           <li><p> aggregatedListJobsPagedCallable()
+ *           <li><p> aggregatedListJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CheckActiveJobs</td>
+ *      <td><p> CheckActiveJobs</td>
  *      <td><p> Check for existence of active jobs in the given project across all regions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>checkActiveJobs(CheckActiveJobsRequest request)
+ *           <li><p> checkActiveJobs(CheckActiveJobsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkActiveJobsCallable()
+ *           <li><p> checkActiveJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SnapshotJob</td>
+ *      <td><p> SnapshotJob</td>
  *      <td><p> Snapshot the state of a streaming job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>snapshotJob(SnapshotJobRequest request)
+ *           <li><p> snapshotJob(SnapshotJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>snapshotJobCallable()
+ *           <li><p> snapshotJobCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

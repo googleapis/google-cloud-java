@@ -58,106 +58,107 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateSynonymSet</td>
+ *      <td><p> CreateSynonymSet</td>
  *      <td><p> Creates a SynonymSet for a single context. Throws an ALREADY_EXISTS exception if a synonymset already exists for the context.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSynonymSet(CreateSynonymSetRequest request)
+ *           <li><p> createSynonymSet(CreateSynonymSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSynonymSet(LocationName parent, SynonymSet synonymSet)
- *           <li>createSynonymSet(String parent, SynonymSet synonymSet)
+ *           <li><p> createSynonymSet(LocationName parent, SynonymSet synonymSet)
+ *           <li><p> createSynonymSet(String parent, SynonymSet synonymSet)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSynonymSetCallable()
+ *           <li><p> createSynonymSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSynonymSet</td>
+ *      <td><p> GetSynonymSet</td>
  *      <td><p> Gets a SynonymSet for a particular context. Throws a NOT_FOUND exception if the Synonymset does not exist</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSynonymSet(GetSynonymSetRequest request)
+ *           <li><p> getSynonymSet(GetSynonymSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSynonymSet(SynonymSetName name)
- *           <li>getSynonymSet(String name)
+ *           <li><p> getSynonymSet(SynonymSetName name)
+ *           <li><p> getSynonymSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSynonymSetCallable()
+ *           <li><p> getSynonymSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSynonymSet</td>
+ *      <td><p> UpdateSynonymSet</td>
  *      <td><p> Remove the existing SynonymSet for the context and replaces it with a new one. Throws a NOT_FOUND exception if the SynonymSet is not found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSynonymSet(UpdateSynonymSetRequest request)
+ *           <li><p> updateSynonymSet(UpdateSynonymSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSynonymSet(SynonymSetName name, SynonymSet synonymSet)
- *           <li>updateSynonymSet(String name, SynonymSet synonymSet)
+ *           <li><p> updateSynonymSet(SynonymSetName name, SynonymSet synonymSet)
+ *           <li><p> updateSynonymSet(String name, SynonymSet synonymSet)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSynonymSetCallable()
+ *           <li><p> updateSynonymSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSynonymSet</td>
+ *      <td><p> DeleteSynonymSet</td>
  *      <td><p> Deletes a SynonymSet for a given context. Throws a NOT_FOUND exception if the SynonymSet is not found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSynonymSet(DeleteSynonymSetRequest request)
+ *           <li><p> deleteSynonymSet(DeleteSynonymSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSynonymSet(SynonymSetName name)
- *           <li>deleteSynonymSet(String name)
+ *           <li><p> deleteSynonymSet(SynonymSetName name)
+ *           <li><p> deleteSynonymSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSynonymSetCallable()
+ *           <li><p> deleteSynonymSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSynonymSets</td>
+ *      <td><p> ListSynonymSets</td>
  *      <td><p> Returns all SynonymSets (for all contexts) for the specified location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSynonymSets(ListSynonymSetsRequest request)
+ *           <li><p> listSynonymSets(ListSynonymSetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSynonymSets(LocationName parent)
- *           <li>listSynonymSets(String parent)
+ *           <li><p> listSynonymSets(LocationName parent)
+ *           <li><p> listSynonymSets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSynonymSetsPagedCallable()
- *           <li>listSynonymSetsCallable()
+ *           <li><p> listSynonymSetsPagedCallable()
+ *           <li><p> listSynonymSetsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

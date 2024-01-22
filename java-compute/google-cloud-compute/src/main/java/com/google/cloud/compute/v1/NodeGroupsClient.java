@@ -61,272 +61,273 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AddNodes</td>
+ *      <td><p> AddNodes</td>
  *      <td><p> Adds specified number of nodes to the node group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addNodesAsync(AddNodesNodeGroupRequest request)
+ *           <li><p> addNodesAsync(AddNodesNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addNodesAsync(String project, String zone, String nodeGroup, NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource)
+ *           <li><p> addNodesAsync(String project, String zone, String nodeGroup, NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addNodesOperationCallable()
- *           <li>addNodesCallable()
+ *           <li><p> addNodesOperationCallable()
+ *           <li><p> addNodesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AggregatedList</td>
+ *      <td><p> AggregatedList</td>
  *      <td><p> Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details about each group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>aggregatedList(AggregatedListNodeGroupsRequest request)
+ *           <li><p> aggregatedList(AggregatedListNodeGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>aggregatedList(String project)
+ *           <li><p> aggregatedList(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>aggregatedListPagedCallable()
- *           <li>aggregatedListCallable()
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified NodeGroup resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteNodeGroupRequest request)
+ *           <li><p> deleteAsync(DeleteNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String zone, String nodeGroup)
+ *           <li><p> deleteAsync(String project, String zone, String nodeGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNodes</td>
+ *      <td><p> DeleteNodes</td>
  *      <td><p> Deletes specified nodes from the node group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNodesAsync(DeleteNodesNodeGroupRequest request)
+ *           <li><p> deleteNodesAsync(DeleteNodesNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteNodesAsync(String project, String zone, String nodeGroup, NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource)
+ *           <li><p> deleteNodesAsync(String project, String zone, String nodeGroup, NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNodesOperationCallable()
- *           <li>deleteNodesCallable()
+ *           <li><p> deleteNodesOperationCallable()
+ *           <li><p> deleteNodesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request. Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetNodeGroupRequest request)
+ *           <li><p> get(GetNodeGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String zone, String nodeGroup)
+ *           <li><p> get(String project, String zone, String nodeGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. May be empty if no such policy or resource exists.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyNodeGroupRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyNodeGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(String project, String zone, String resource)
+ *           <li><p> getIamPolicy(String project, String zone, String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a NodeGroup resource in the specified project using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertNodeGroupRequest request)
+ *           <li><p> insertAsync(InsertNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String zone, int initialNodeCount, NodeGroup nodeGroupResource)
+ *           <li><p> insertAsync(String project, String zone, int initialNodeCount, NodeGroup nodeGroupResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves a list of node groups available to the specified project. Note: use nodeGroups.listNodes for more details about each group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListNodeGroupsRequest request)
+ *           <li><p> list(ListNodeGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String zone)
+ *           <li><p> list(String project, String zone)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNodes</td>
+ *      <td><p> ListNodes</td>
  *      <td><p> Lists nodes in the node group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNodes(ListNodesNodeGroupsRequest request)
+ *           <li><p> listNodes(ListNodesNodeGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNodes(String project, String zone, String nodeGroup)
+ *           <li><p> listNodes(String project, String zone, String nodeGroup)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNodesPagedCallable()
- *           <li>listNodesCallable()
+ *           <li><p> listNodesPagedCallable()
+ *           <li><p> listNodesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Updates the specified node group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchNodeGroupRequest request)
+ *           <li><p> patchAsync(PatchNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String zone, String nodeGroup, NodeGroup nodeGroupResource)
+ *           <li><p> patchAsync(String project, String zone, String nodeGroup, NodeGroup nodeGroupResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyNodeGroupRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyNodeGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(String project, String zone, String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource)
+ *           <li><p> setIamPolicy(String project, String zone, String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetNodeTemplate</td>
+ *      <td><p> SetNodeTemplate</td>
  *      <td><p> Updates the node template of the node group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setNodeTemplateAsync(SetNodeTemplateNodeGroupRequest request)
+ *           <li><p> setNodeTemplateAsync(SetNodeTemplateNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setNodeTemplateAsync(String project, String zone, String nodeGroup, NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource)
+ *           <li><p> setNodeTemplateAsync(String project, String zone, String nodeGroup, NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setNodeTemplateOperationCallable()
- *           <li>setNodeTemplateCallable()
+ *           <li><p> setNodeTemplateOperationCallable()
+ *           <li><p> setNodeTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SimulateMaintenanceEvent</td>
+ *      <td><p> SimulateMaintenanceEvent</td>
  *      <td><p> Simulates maintenance event on specified nodes from the node group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>simulateMaintenanceEventAsync(SimulateMaintenanceEventNodeGroupRequest request)
+ *           <li><p> simulateMaintenanceEventAsync(SimulateMaintenanceEventNodeGroupRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>simulateMaintenanceEventAsync(String project, String zone, String nodeGroup, NodeGroupsSimulateMaintenanceEventRequest nodeGroupsSimulateMaintenanceEventRequestResource)
+ *           <li><p> simulateMaintenanceEventAsync(String project, String zone, String nodeGroup, NodeGroupsSimulateMaintenanceEventRequest nodeGroupsSimulateMaintenanceEventRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>simulateMaintenanceEventOperationCallable()
- *           <li>simulateMaintenanceEventCallable()
+ *           <li><p> simulateMaintenanceEventOperationCallable()
+ *           <li><p> simulateMaintenanceEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsNodeGroupRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsNodeGroupRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(String project, String zone, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *           <li><p> testIamPermissions(String project, String zone, String resource, TestPermissionsRequest testPermissionsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

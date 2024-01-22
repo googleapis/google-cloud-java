@@ -56,24 +56,25 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>LaunchFlexTemplate</td>
+ *      <td><p> LaunchFlexTemplate</td>
  *      <td><p> Launch a job with a FlexTemplate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>launchFlexTemplate(LaunchFlexTemplateRequest request)
+ *           <li><p> launchFlexTemplate(LaunchFlexTemplateRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>launchFlexTemplateCallable()
+ *           <li><p> launchFlexTemplateCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

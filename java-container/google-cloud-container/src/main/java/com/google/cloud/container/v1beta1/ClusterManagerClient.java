@@ -111,48 +111,50 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListClusters</td>
+ *      <td><p> ListClusters</td>
  *      <td><p> Lists all clusters owned by a project in either the specified zone or all zones.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClusters(ListClustersRequest request)
+ *           <li><p> listClusters(ListClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClusters(String projectId, String zone)
+ *           <li><p> listClusters(String projectId, String zone)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClustersCallable()
+ *           <li><p> listClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCluster</td>
+ *      <td><p> GetCluster</td>
  *      <td><p> Gets the details for a specific cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCluster(GetClusterRequest request)
+ *           <li><p> getCluster(GetClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCluster(String projectId, String zone, String clusterId)
+ *           <li><p> getCluster(String projectId, String zone, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClusterCallable()
+ *           <li><p> getClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCluster</td>
+ *      <td><p> CreateCluster</td>
  *      <td><p> Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.
  * <p>  By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
  * <p>  One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.
@@ -160,569 +162,568 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCluster(CreateClusterRequest request)
+ *           <li><p> createCluster(CreateClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCluster(String projectId, String zone, Cluster cluster)
+ *           <li><p> createCluster(String projectId, String zone, Cluster cluster)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClusterCallable()
+ *           <li><p> createClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCluster</td>
+ *      <td><p> UpdateCluster</td>
  *      <td><p> Updates the settings for a specific cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCluster(UpdateClusterRequest request)
+ *           <li><p> updateCluster(UpdateClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCluster(String projectId, String zone, String clusterId, ClusterUpdate update)
+ *           <li><p> updateCluster(String projectId, String zone, String clusterId, ClusterUpdate update)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClusterCallable()
+ *           <li><p> updateClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNodePool</td>
+ *      <td><p> UpdateNodePool</td>
  *      <td><p> Updates the version and/or image type of a specific node pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNodePool(UpdateNodePoolRequest request)
+ *           <li><p> updateNodePool(UpdateNodePoolRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNodePoolCallable()
+ *           <li><p> updateNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetNodePoolAutoscaling</td>
+ *      <td><p> SetNodePoolAutoscaling</td>
  *      <td><p> Sets the autoscaling settings of a specific node pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setNodePoolAutoscaling(SetNodePoolAutoscalingRequest request)
+ *           <li><p> setNodePoolAutoscaling(SetNodePoolAutoscalingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setNodePoolAutoscalingCallable()
+ *           <li><p> setNodePoolAutoscalingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetLoggingService</td>
+ *      <td><p> SetLoggingService</td>
  *      <td><p> Sets the logging service for a specific cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setLoggingService(SetLoggingServiceRequest request)
+ *           <li><p> setLoggingService(SetLoggingServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setLoggingService(String projectId, String zone, String clusterId, String loggingService)
+ *           <li><p> setLoggingService(String projectId, String zone, String clusterId, String loggingService)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setLoggingServiceCallable()
+ *           <li><p> setLoggingServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetMonitoringService</td>
+ *      <td><p> SetMonitoringService</td>
  *      <td><p> Sets the monitoring service for a specific cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setMonitoringService(SetMonitoringServiceRequest request)
+ *           <li><p> setMonitoringService(SetMonitoringServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setMonitoringService(String projectId, String zone, String clusterId, String monitoringService)
+ *           <li><p> setMonitoringService(String projectId, String zone, String clusterId, String monitoringService)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setMonitoringServiceCallable()
+ *           <li><p> setMonitoringServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetAddonsConfig</td>
+ *      <td><p> SetAddonsConfig</td>
  *      <td><p> Sets the addons for a specific cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setAddonsConfig(SetAddonsConfigRequest request)
+ *           <li><p> setAddonsConfig(SetAddonsConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setAddonsConfig(String projectId, String zone, String clusterId, AddonsConfig addonsConfig)
+ *           <li><p> setAddonsConfig(String projectId, String zone, String clusterId, AddonsConfig addonsConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setAddonsConfigCallable()
+ *           <li><p> setAddonsConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetLocations</td>
+ *      <td><p> SetLocations</td>
  *      <td><p> Sets the locations for a specific cluster. Deprecated. Use [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters/update) instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setLocations(SetLocationsRequest request)
+ *           <li><p> setLocations(SetLocationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setLocations(String projectId, String zone, String clusterId, List<String> locations)
+ *           <li><p> setLocations(String projectId, String zone, String clusterId, List&lt;String&gt; locations)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setLocationsCallable()
+ *           <li><p> setLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateMaster</td>
+ *      <td><p> UpdateMaster</td>
  *      <td><p> Updates the master for a specific cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateMaster(UpdateMasterRequest request)
+ *           <li><p> updateMaster(UpdateMasterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateMaster(String projectId, String zone, String clusterId, String masterVersion)
+ *           <li><p> updateMaster(String projectId, String zone, String clusterId, String masterVersion)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateMasterCallable()
+ *           <li><p> updateMasterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetMasterAuth</td>
+ *      <td><p> SetMasterAuth</td>
  *      <td><p> Sets master auth materials. Currently supports changing the admin password or a specific cluster, either via password generation or explicitly setting the password.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setMasterAuth(SetMasterAuthRequest request)
+ *           <li><p> setMasterAuth(SetMasterAuthRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setMasterAuthCallable()
+ *           <li><p> setMasterAuthCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCluster</td>
+ *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
  * <p>  Firewalls and routes that were configured during cluster creation are also deleted.
  * <p>  Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren't present when the cluster was initially created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCluster(DeleteClusterRequest request)
+ *           <li><p> deleteCluster(DeleteClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCluster(String projectId, String zone, String clusterId)
+ *           <li><p> deleteCluster(String projectId, String zone, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClusterCallable()
+ *           <li><p> deleteClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListOperations</td>
+ *      <td><p> ListOperations</td>
  *      <td><p> Lists all operations in a project in the specified zone or all zones.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listOperations(ListOperationsRequest request)
+ *           <li><p> listOperations(ListOperationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listOperations(String projectId, String zone)
+ *           <li><p> listOperations(String projectId, String zone)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listOperationsCallable()
+ *           <li><p> listOperationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetOperation</td>
+ *      <td><p> GetOperation</td>
  *      <td><p> Gets the specified operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getOperation(GetOperationRequest request)
+ *           <li><p> getOperation(GetOperationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getOperation(String projectId, String zone, String operationId)
+ *           <li><p> getOperation(String projectId, String zone, String operationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getOperationCallable()
+ *           <li><p> getOperationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelOperation</td>
+ *      <td><p> CancelOperation</td>
  *      <td><p> Cancels the specified operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelOperation(CancelOperationRequest request)
+ *           <li><p> cancelOperation(CancelOperationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelOperation(String projectId, String zone, String operationId)
+ *           <li><p> cancelOperation(String projectId, String zone, String operationId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelOperationCallable()
+ *           <li><p> cancelOperationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServerConfig</td>
+ *      <td><p> GetServerConfig</td>
  *      <td><p> Returns configuration info about the Google Kubernetes Engine service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServerConfig(GetServerConfigRequest request)
+ *           <li><p> getServerConfig(GetServerConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServerConfig(String projectId, String zone)
+ *           <li><p> getServerConfig(String projectId, String zone)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServerConfigCallable()
+ *           <li><p> getServerConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJSONWebKeys</td>
+ *      <td><p> GetJSONWebKeys</td>
  *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format. This API is not yet intended for general use, and is not available for all clusters.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJSONWebKeys(GetJSONWebKeysRequest request)
+ *           <li><p> getJSONWebKeys(GetJSONWebKeysRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJSONWebKeysCallable()
+ *           <li><p> getJSONWebKeysCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNodePools</td>
+ *      <td><p> ListNodePools</td>
  *      <td><p> Lists the node pools for a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNodePools(ListNodePoolsRequest request)
+ *           <li><p> listNodePools(ListNodePoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNodePools(String projectId, String zone, String clusterId)
+ *           <li><p> listNodePools(String projectId, String zone, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNodePoolsCallable()
+ *           <li><p> listNodePoolsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNodePool</td>
+ *      <td><p> GetNodePool</td>
  *      <td><p> Retrieves the requested node pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNodePool(GetNodePoolRequest request)
+ *           <li><p> getNodePool(GetNodePoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNodePool(String projectId, String zone, String clusterId, String nodePoolId)
+ *           <li><p> getNodePool(String projectId, String zone, String clusterId, String nodePoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNodePoolCallable()
+ *           <li><p> getNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNodePool</td>
+ *      <td><p> CreateNodePool</td>
  *      <td><p> Creates a node pool for a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNodePool(CreateNodePoolRequest request)
+ *           <li><p> createNodePool(CreateNodePoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createNodePool(String projectId, String zone, String clusterId, NodePool nodePool)
+ *           <li><p> createNodePool(String projectId, String zone, String clusterId, NodePool nodePool)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNodePoolCallable()
+ *           <li><p> createNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNodePool</td>
+ *      <td><p> DeleteNodePool</td>
  *      <td><p> Deletes a node pool from a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNodePool(DeleteNodePoolRequest request)
+ *           <li><p> deleteNodePool(DeleteNodePoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteNodePool(String projectId, String zone, String clusterId, String nodePoolId)
+ *           <li><p> deleteNodePool(String projectId, String zone, String clusterId, String nodePoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNodePoolCallable()
+ *           <li><p> deleteNodePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CompleteNodePoolUpgrade</td>
+ *      <td><p> CompleteNodePoolUpgrade</td>
  *      <td><p> CompleteNodePoolUpgrade will signal an on-going node pool upgrade to complete.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>completeNodePoolUpgrade(CompleteNodePoolUpgradeRequest request)
+ *           <li><p> completeNodePoolUpgrade(CompleteNodePoolUpgradeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>completeNodePoolUpgradeCallable()
+ *           <li><p> completeNodePoolUpgradeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RollbackNodePoolUpgrade</td>
+ *      <td><p> RollbackNodePoolUpgrade</td>
  *      <td><p> Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last upgrade successfully completed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rollbackNodePoolUpgrade(RollbackNodePoolUpgradeRequest request)
+ *           <li><p> rollbackNodePoolUpgrade(RollbackNodePoolUpgradeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>rollbackNodePoolUpgrade(String projectId, String zone, String clusterId, String nodePoolId)
+ *           <li><p> rollbackNodePoolUpgrade(String projectId, String zone, String clusterId, String nodePoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rollbackNodePoolUpgradeCallable()
+ *           <li><p> rollbackNodePoolUpgradeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetNodePoolManagement</td>
+ *      <td><p> SetNodePoolManagement</td>
  *      <td><p> Sets the NodeManagement options for a node pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setNodePoolManagement(SetNodePoolManagementRequest request)
+ *           <li><p> setNodePoolManagement(SetNodePoolManagementRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setNodePoolManagement(String projectId, String zone, String clusterId, String nodePoolId, NodeManagement management)
+ *           <li><p> setNodePoolManagement(String projectId, String zone, String clusterId, String nodePoolId, NodeManagement management)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setNodePoolManagementCallable()
+ *           <li><p> setNodePoolManagementCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetLabels</td>
+ *      <td><p> SetLabels</td>
  *      <td><p> Sets labels on a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setLabels(SetLabelsRequest request)
+ *           <li><p> setLabels(SetLabelsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setLabels(String projectId, String zone, String clusterId, Map<String, String> resourceLabels, String labelFingerprint)
+ *           <li><p> setLabels(String projectId, String zone, String clusterId, Map&lt;String, String&gt; resourceLabels, String labelFingerprint)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setLabelsCallable()
+ *           <li><p> setLabelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetLegacyAbac</td>
+ *      <td><p> SetLegacyAbac</td>
  *      <td><p> Enables or disables the ABAC authorization mechanism on a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setLegacyAbac(SetLegacyAbacRequest request)
+ *           <li><p> setLegacyAbac(SetLegacyAbacRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setLegacyAbac(String projectId, String zone, String clusterId, boolean enabled)
+ *           <li><p> setLegacyAbac(String projectId, String zone, String clusterId, boolean enabled)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setLegacyAbacCallable()
+ *           <li><p> setLegacyAbacCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartIPRotation</td>
+ *      <td><p> StartIPRotation</td>
  *      <td><p> Starts master IP rotation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startIPRotation(StartIPRotationRequest request)
+ *           <li><p> startIPRotation(StartIPRotationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>startIPRotation(String projectId, String zone, String clusterId)
+ *           <li><p> startIPRotation(String projectId, String zone, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startIPRotationCallable()
+ *           <li><p> startIPRotationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CompleteIPRotation</td>
+ *      <td><p> CompleteIPRotation</td>
  *      <td><p> Completes master IP rotation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>completeIPRotation(CompleteIPRotationRequest request)
+ *           <li><p> completeIPRotation(CompleteIPRotationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>completeIPRotation(String projectId, String zone, String clusterId)
+ *           <li><p> completeIPRotation(String projectId, String zone, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>completeIPRotationCallable()
+ *           <li><p> completeIPRotationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetNodePoolSize</td>
+ *      <td><p> SetNodePoolSize</td>
  *      <td><p> SetNodePoolSizeRequest sets the size of a node pool. The new size will be used for all replicas, including future replicas created by modifying [NodePool.locations][google.container.v1beta1.NodePool.locations].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setNodePoolSize(SetNodePoolSizeRequest request)
+ *           <li><p> setNodePoolSize(SetNodePoolSizeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setNodePoolSizeCallable()
+ *           <li><p> setNodePoolSizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetNetworkPolicy</td>
+ *      <td><p> SetNetworkPolicy</td>
  *      <td><p> Enables or disables Network Policy for a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setNetworkPolicy(SetNetworkPolicyRequest request)
+ *           <li><p> setNetworkPolicy(SetNetworkPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setNetworkPolicy(String projectId, String zone, String clusterId, NetworkPolicy networkPolicy)
+ *           <li><p> setNetworkPolicy(String projectId, String zone, String clusterId, NetworkPolicy networkPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setNetworkPolicyCallable()
+ *           <li><p> setNetworkPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetMaintenancePolicy</td>
+ *      <td><p> SetMaintenancePolicy</td>
  *      <td><p> Sets the maintenance policy for a cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setMaintenancePolicy(SetMaintenancePolicyRequest request)
+ *           <li><p> setMaintenancePolicy(SetMaintenancePolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setMaintenancePolicy(String projectId, String zone, String clusterId, MaintenancePolicy maintenancePolicy)
+ *           <li><p> setMaintenancePolicy(String projectId, String zone, String clusterId, MaintenancePolicy maintenancePolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setMaintenancePolicyCallable()
+ *           <li><p> setMaintenancePolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListUsableSubnetworks</td>
+ *      <td><p> ListUsableSubnetworks</td>
  *      <td><p> Lists subnetworks that can be used for creating clusters in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listUsableSubnetworks(ListUsableSubnetworksRequest request)
+ *           <li><p> listUsableSubnetworks(ListUsableSubnetworksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listUsableSubnetworks(String parent)
+ *           <li><p> listUsableSubnetworks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listUsableSubnetworksPagedCallable()
- *           <li>listUsableSubnetworksCallable()
+ *           <li><p> listUsableSubnetworksPagedCallable()
+ *           <li><p> listUsableSubnetworksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CheckAutopilotCompatibility</td>
+ *      <td><p> CheckAutopilotCompatibility</td>
  *      <td><p> Checks the cluster compatibility with Autopilot mode, and returns a list of compatibility issues.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>checkAutopilotCompatibility(CheckAutopilotCompatibilityRequest request)
+ *           <li><p> checkAutopilotCompatibility(CheckAutopilotCompatibilityRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkAutopilotCompatibilityCallable()
+ *           <li><p> checkAutopilotCompatibilityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Fetches locations that offer Google Kubernetes Engine.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listLocations(String parent)
+ *           <li><p> listLocations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

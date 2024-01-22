@@ -59,30 +59,31 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAttachments</td>
+ *      <td><p> ListAttachments</td>
  *      <td><p> Retrieve all attachments associated with a support case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAttachments(ListAttachmentsRequest request)
+ *           <li><p> listAttachments(ListAttachmentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAttachments(CaseName parent)
- *           <li>listAttachments(String parent)
+ *           <li><p> listAttachments(CaseName parent)
+ *           <li><p> listAttachments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAttachmentsPagedCallable()
- *           <li>listAttachmentsCallable()
+ *           <li><p> listAttachmentsPagedCallable()
+ *           <li><p> listAttachmentsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

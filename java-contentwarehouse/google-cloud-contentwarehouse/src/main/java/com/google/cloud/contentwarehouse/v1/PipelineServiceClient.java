@@ -53,30 +53,31 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>RunPipeline</td>
+ *      <td><p> RunPipeline</td>
  *      <td><p> Run a predefined pipeline.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runPipelineAsync(RunPipelineRequest request)
+ *           <li><p> runPipelineAsync(RunPipelineRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>runPipelineAsync(LocationName name)
- *           <li>runPipelineAsync(String name)
+ *           <li><p> runPipelineAsync(LocationName name)
+ *           <li><p> runPipelineAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runPipelineOperationCallable()
- *           <li>runPipelineCallable()
+ *           <li><p> runPipelineOperationCallable()
+ *           <li><p> runPipelineCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -64,668 +64,669 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDataset</td>
+ *      <td><p> CreateDataset</td>
  *      <td><p> Creates dataset. If success return a Dataset resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDataset(CreateDatasetRequest request)
+ *           <li><p> createDataset(CreateDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDataset(ProjectName parent, Dataset dataset)
- *           <li>createDataset(String parent, Dataset dataset)
+ *           <li><p> createDataset(ProjectName parent, Dataset dataset)
+ *           <li><p> createDataset(String parent, Dataset dataset)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDatasetCallable()
+ *           <li><p> createDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataset</td>
+ *      <td><p> GetDataset</td>
  *      <td><p> Gets dataset by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataset(GetDatasetRequest request)
+ *           <li><p> getDataset(GetDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataset(DatasetName name)
- *           <li>getDataset(String name)
+ *           <li><p> getDataset(DatasetName name)
+ *           <li><p> getDataset(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDatasetCallable()
+ *           <li><p> getDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDatasets</td>
+ *      <td><p> ListDatasets</td>
  *      <td><p> Lists datasets under a project. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDatasets(ListDatasetsRequest request)
+ *           <li><p> listDatasets(ListDatasetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDatasets(ProjectName parent, String filter)
- *           <li>listDatasets(String parent, String filter)
+ *           <li><p> listDatasets(ProjectName parent, String filter)
+ *           <li><p> listDatasets(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDatasetsPagedCallable()
- *           <li>listDatasetsCallable()
+ *           <li><p> listDatasetsPagedCallable()
+ *           <li><p> listDatasetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDataset</td>
+ *      <td><p> DeleteDataset</td>
  *      <td><p> Deletes a dataset by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDataset(DeleteDatasetRequest request)
+ *           <li><p> deleteDataset(DeleteDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDataset(DatasetName name)
- *           <li>deleteDataset(String name)
+ *           <li><p> deleteDataset(DatasetName name)
+ *           <li><p> deleteDataset(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDatasetCallable()
+ *           <li><p> deleteDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportData</td>
+ *      <td><p> ImportData</td>
  *      <td><p> Imports data into dataset based on source locations defined in request. It can be called multiple times for the same dataset. Each dataset can only have one long running operation running on it. For example, no labeling task (also long running operation) can be started while importing is still ongoing. Vice versa.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importDataAsync(ImportDataRequest request)
+ *           <li><p> importDataAsync(ImportDataRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>importDataAsync(DatasetName name, InputConfig inputConfig)
- *           <li>importDataAsync(String name, InputConfig inputConfig)
+ *           <li><p> importDataAsync(DatasetName name, InputConfig inputConfig)
+ *           <li><p> importDataAsync(String name, InputConfig inputConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importDataOperationCallable()
- *           <li>importDataCallable()
+ *           <li><p> importDataOperationCallable()
+ *           <li><p> importDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportData</td>
+ *      <td><p> ExportData</td>
  *      <td><p> Exports data and annotations from dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportDataAsync(ExportDataRequest request)
+ *           <li><p> exportDataAsync(ExportDataRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>exportDataAsync(DatasetName name, AnnotatedDatasetName annotatedDataset, String filter, OutputConfig outputConfig)
- *           <li>exportDataAsync(DatasetName name, String annotatedDataset, String filter, OutputConfig outputConfig)
- *           <li>exportDataAsync(String name, AnnotatedDatasetName annotatedDataset, String filter, OutputConfig outputConfig)
- *           <li>exportDataAsync(String name, String annotatedDataset, String filter, OutputConfig outputConfig)
+ *           <li><p> exportDataAsync(DatasetName name, AnnotatedDatasetName annotatedDataset, String filter, OutputConfig outputConfig)
+ *           <li><p> exportDataAsync(DatasetName name, String annotatedDataset, String filter, OutputConfig outputConfig)
+ *           <li><p> exportDataAsync(String name, AnnotatedDatasetName annotatedDataset, String filter, OutputConfig outputConfig)
+ *           <li><p> exportDataAsync(String name, String annotatedDataset, String filter, OutputConfig outputConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportDataOperationCallable()
- *           <li>exportDataCallable()
+ *           <li><p> exportDataOperationCallable()
+ *           <li><p> exportDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataItem</td>
+ *      <td><p> GetDataItem</td>
  *      <td><p> Gets a data item in a dataset by resource name. This API can be called after data are imported into dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataItem(GetDataItemRequest request)
+ *           <li><p> getDataItem(GetDataItemRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataItem(DataItemName name)
- *           <li>getDataItem(String name)
+ *           <li><p> getDataItem(DataItemName name)
+ *           <li><p> getDataItem(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataItemCallable()
+ *           <li><p> getDataItemCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataItems</td>
+ *      <td><p> ListDataItems</td>
  *      <td><p> Lists data items in a dataset. This API can be called after data are imported into dataset. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataItems(ListDataItemsRequest request)
+ *           <li><p> listDataItems(ListDataItemsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataItems(DatasetName parent, String filter)
- *           <li>listDataItems(String parent, String filter)
+ *           <li><p> listDataItems(DatasetName parent, String filter)
+ *           <li><p> listDataItems(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataItemsPagedCallable()
- *           <li>listDataItemsCallable()
+ *           <li><p> listDataItemsPagedCallable()
+ *           <li><p> listDataItemsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAnnotatedDataset</td>
+ *      <td><p> GetAnnotatedDataset</td>
  *      <td><p> Gets an annotated dataset by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAnnotatedDataset(GetAnnotatedDatasetRequest request)
+ *           <li><p> getAnnotatedDataset(GetAnnotatedDatasetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAnnotatedDataset(AnnotatedDatasetName name)
- *           <li>getAnnotatedDataset(String name)
+ *           <li><p> getAnnotatedDataset(AnnotatedDatasetName name)
+ *           <li><p> getAnnotatedDataset(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAnnotatedDatasetCallable()
+ *           <li><p> getAnnotatedDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAnnotatedDatasets</td>
+ *      <td><p> ListAnnotatedDatasets</td>
  *      <td><p> Lists annotated datasets for a dataset. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAnnotatedDatasets(ListAnnotatedDatasetsRequest request)
+ *           <li><p> listAnnotatedDatasets(ListAnnotatedDatasetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAnnotatedDatasets(DatasetName parent, String filter)
- *           <li>listAnnotatedDatasets(String parent, String filter)
+ *           <li><p> listAnnotatedDatasets(DatasetName parent, String filter)
+ *           <li><p> listAnnotatedDatasets(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAnnotatedDatasetsPagedCallable()
- *           <li>listAnnotatedDatasetsCallable()
+ *           <li><p> listAnnotatedDatasetsPagedCallable()
+ *           <li><p> listAnnotatedDatasetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAnnotatedDataset</td>
+ *      <td><p> DeleteAnnotatedDataset</td>
  *      <td><p> Deletes an annotated dataset by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAnnotatedDataset(DeleteAnnotatedDatasetRequest request)
+ *           <li><p> deleteAnnotatedDataset(DeleteAnnotatedDatasetRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAnnotatedDatasetCallable()
+ *           <li><p> deleteAnnotatedDatasetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LabelImage</td>
+ *      <td><p> LabelImage</td>
  *      <td><p> Starts a labeling task for image. The type of image labeling task is configured by feature in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>labelImageAsync(LabelImageRequest request)
+ *           <li><p> labelImageAsync(LabelImageRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>labelImageAsync(DatasetName parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature)
- *           <li>labelImageAsync(String parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature)
+ *           <li><p> labelImageAsync(DatasetName parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature)
+ *           <li><p> labelImageAsync(String parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>labelImageOperationCallable()
- *           <li>labelImageCallable()
+ *           <li><p> labelImageOperationCallable()
+ *           <li><p> labelImageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LabelVideo</td>
+ *      <td><p> LabelVideo</td>
  *      <td><p> Starts a labeling task for video. The type of video labeling task is configured by feature in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>labelVideoAsync(LabelVideoRequest request)
+ *           <li><p> labelVideoAsync(LabelVideoRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>labelVideoAsync(DatasetName parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature)
- *           <li>labelVideoAsync(String parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature)
+ *           <li><p> labelVideoAsync(DatasetName parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature)
+ *           <li><p> labelVideoAsync(String parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>labelVideoOperationCallable()
- *           <li>labelVideoCallable()
+ *           <li><p> labelVideoOperationCallable()
+ *           <li><p> labelVideoCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LabelText</td>
+ *      <td><p> LabelText</td>
  *      <td><p> Starts a labeling task for text. The type of text labeling task is configured by feature in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>labelTextAsync(LabelTextRequest request)
+ *           <li><p> labelTextAsync(LabelTextRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>labelTextAsync(DatasetName parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature)
- *           <li>labelTextAsync(String parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature)
+ *           <li><p> labelTextAsync(DatasetName parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature)
+ *           <li><p> labelTextAsync(String parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>labelTextOperationCallable()
- *           <li>labelTextCallable()
+ *           <li><p> labelTextOperationCallable()
+ *           <li><p> labelTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetExample</td>
+ *      <td><p> GetExample</td>
  *      <td><p> Gets an example by resource name, including both data and annotation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getExample(GetExampleRequest request)
+ *           <li><p> getExample(GetExampleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getExample(ExampleName name, String filter)
- *           <li>getExample(String name, String filter)
+ *           <li><p> getExample(ExampleName name, String filter)
+ *           <li><p> getExample(String name, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getExampleCallable()
+ *           <li><p> getExampleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListExamples</td>
+ *      <td><p> ListExamples</td>
  *      <td><p> Lists examples in an annotated dataset. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listExamples(ListExamplesRequest request)
+ *           <li><p> listExamples(ListExamplesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listExamples(AnnotatedDatasetName parent, String filter)
- *           <li>listExamples(String parent, String filter)
+ *           <li><p> listExamples(AnnotatedDatasetName parent, String filter)
+ *           <li><p> listExamples(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listExamplesPagedCallable()
- *           <li>listExamplesCallable()
+ *           <li><p> listExamplesPagedCallable()
+ *           <li><p> listExamplesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAnnotationSpecSet</td>
+ *      <td><p> CreateAnnotationSpecSet</td>
  *      <td><p> Creates an annotation spec set by providing a set of labels.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAnnotationSpecSet(CreateAnnotationSpecSetRequest request)
+ *           <li><p> createAnnotationSpecSet(CreateAnnotationSpecSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAnnotationSpecSet(ProjectName parent, AnnotationSpecSet annotationSpecSet)
- *           <li>createAnnotationSpecSet(String parent, AnnotationSpecSet annotationSpecSet)
+ *           <li><p> createAnnotationSpecSet(ProjectName parent, AnnotationSpecSet annotationSpecSet)
+ *           <li><p> createAnnotationSpecSet(String parent, AnnotationSpecSet annotationSpecSet)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAnnotationSpecSetCallable()
+ *           <li><p> createAnnotationSpecSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAnnotationSpecSet</td>
+ *      <td><p> GetAnnotationSpecSet</td>
  *      <td><p> Gets an annotation spec set by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAnnotationSpecSet(GetAnnotationSpecSetRequest request)
+ *           <li><p> getAnnotationSpecSet(GetAnnotationSpecSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAnnotationSpecSet(AnnotationSpecSetName name)
- *           <li>getAnnotationSpecSet(String name)
+ *           <li><p> getAnnotationSpecSet(AnnotationSpecSetName name)
+ *           <li><p> getAnnotationSpecSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAnnotationSpecSetCallable()
+ *           <li><p> getAnnotationSpecSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAnnotationSpecSets</td>
+ *      <td><p> ListAnnotationSpecSets</td>
  *      <td><p> Lists annotation spec sets for a project. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAnnotationSpecSets(ListAnnotationSpecSetsRequest request)
+ *           <li><p> listAnnotationSpecSets(ListAnnotationSpecSetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAnnotationSpecSets(ProjectName parent, String filter)
- *           <li>listAnnotationSpecSets(String parent, String filter)
+ *           <li><p> listAnnotationSpecSets(ProjectName parent, String filter)
+ *           <li><p> listAnnotationSpecSets(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAnnotationSpecSetsPagedCallable()
- *           <li>listAnnotationSpecSetsCallable()
+ *           <li><p> listAnnotationSpecSetsPagedCallable()
+ *           <li><p> listAnnotationSpecSetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAnnotationSpecSet</td>
+ *      <td><p> DeleteAnnotationSpecSet</td>
  *      <td><p> Deletes an annotation spec set by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAnnotationSpecSet(DeleteAnnotationSpecSetRequest request)
+ *           <li><p> deleteAnnotationSpecSet(DeleteAnnotationSpecSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAnnotationSpecSet(AnnotationSpecSetName name)
- *           <li>deleteAnnotationSpecSet(String name)
+ *           <li><p> deleteAnnotationSpecSet(AnnotationSpecSetName name)
+ *           <li><p> deleteAnnotationSpecSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAnnotationSpecSetCallable()
+ *           <li><p> deleteAnnotationSpecSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateInstruction</td>
+ *      <td><p> CreateInstruction</td>
  *      <td><p> Creates an instruction for how data should be labeled.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createInstructionAsync(CreateInstructionRequest request)
+ *           <li><p> createInstructionAsync(CreateInstructionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createInstructionAsync(ProjectName parent, Instruction instruction)
- *           <li>createInstructionAsync(String parent, Instruction instruction)
+ *           <li><p> createInstructionAsync(ProjectName parent, Instruction instruction)
+ *           <li><p> createInstructionAsync(String parent, Instruction instruction)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createInstructionOperationCallable()
- *           <li>createInstructionCallable()
+ *           <li><p> createInstructionOperationCallable()
+ *           <li><p> createInstructionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInstruction</td>
+ *      <td><p> GetInstruction</td>
  *      <td><p> Gets an instruction by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInstruction(GetInstructionRequest request)
+ *           <li><p> getInstruction(GetInstructionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getInstruction(InstructionName name)
- *           <li>getInstruction(String name)
+ *           <li><p> getInstruction(InstructionName name)
+ *           <li><p> getInstruction(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInstructionCallable()
+ *           <li><p> getInstructionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListInstructions</td>
+ *      <td><p> ListInstructions</td>
  *      <td><p> Lists instructions for a project. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listInstructions(ListInstructionsRequest request)
+ *           <li><p> listInstructions(ListInstructionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listInstructions(ProjectName parent, String filter)
- *           <li>listInstructions(String parent, String filter)
+ *           <li><p> listInstructions(ProjectName parent, String filter)
+ *           <li><p> listInstructions(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listInstructionsPagedCallable()
- *           <li>listInstructionsCallable()
+ *           <li><p> listInstructionsPagedCallable()
+ *           <li><p> listInstructionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteInstruction</td>
+ *      <td><p> DeleteInstruction</td>
  *      <td><p> Deletes an instruction object by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteInstruction(DeleteInstructionRequest request)
+ *           <li><p> deleteInstruction(DeleteInstructionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteInstruction(InstructionName name)
- *           <li>deleteInstruction(String name)
+ *           <li><p> deleteInstruction(InstructionName name)
+ *           <li><p> deleteInstruction(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteInstructionCallable()
+ *           <li><p> deleteInstructionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEvaluation</td>
+ *      <td><p> GetEvaluation</td>
  *      <td><p> Gets an evaluation by resource name (to search, use [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEvaluation(GetEvaluationRequest request)
+ *           <li><p> getEvaluation(GetEvaluationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEvaluation(EvaluationName name)
- *           <li>getEvaluation(String name)
+ *           <li><p> getEvaluation(EvaluationName name)
+ *           <li><p> getEvaluation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEvaluationCallable()
+ *           <li><p> getEvaluationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchEvaluations</td>
+ *      <td><p> SearchEvaluations</td>
  *      <td><p> Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchEvaluations(SearchEvaluationsRequest request)
+ *           <li><p> searchEvaluations(SearchEvaluationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchEvaluations(EvaluationName parent, String filter)
- *           <li>searchEvaluations(String parent, String filter)
+ *           <li><p> searchEvaluations(EvaluationName parent, String filter)
+ *           <li><p> searchEvaluations(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchEvaluationsPagedCallable()
- *           <li>searchEvaluationsCallable()
+ *           <li><p> searchEvaluationsPagedCallable()
+ *           <li><p> searchEvaluationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchExampleComparisons</td>
+ *      <td><p> SearchExampleComparisons</td>
  *      <td><p> Searches example comparisons from an evaluation. The return format is a list of example comparisons that show ground truth and prediction(s) for a single input. Search by providing an evaluation ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchExampleComparisons(SearchExampleComparisonsRequest request)
+ *           <li><p> searchExampleComparisons(SearchExampleComparisonsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchExampleComparisons(EvaluationName parent)
- *           <li>searchExampleComparisons(String parent)
+ *           <li><p> searchExampleComparisons(EvaluationName parent)
+ *           <li><p> searchExampleComparisons(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchExampleComparisonsPagedCallable()
- *           <li>searchExampleComparisonsCallable()
+ *           <li><p> searchExampleComparisonsPagedCallable()
+ *           <li><p> searchExampleComparisonsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEvaluationJob</td>
+ *      <td><p> CreateEvaluationJob</td>
  *      <td><p> Creates an evaluation job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEvaluationJob(CreateEvaluationJobRequest request)
+ *           <li><p> createEvaluationJob(CreateEvaluationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEvaluationJob(ProjectName parent, EvaluationJob job)
- *           <li>createEvaluationJob(String parent, EvaluationJob job)
+ *           <li><p> createEvaluationJob(ProjectName parent, EvaluationJob job)
+ *           <li><p> createEvaluationJob(String parent, EvaluationJob job)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEvaluationJobCallable()
+ *           <li><p> createEvaluationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEvaluationJob</td>
+ *      <td><p> UpdateEvaluationJob</td>
  *      <td><p> Updates an evaluation job. You can only update certain fields of the job's [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]: `humanAnnotationConfig.instruction`, `exampleCount`, and `exampleSamplePercentage`.
  * <p>  If you want to change any other aspect of the evaluation job, you must delete the job and create a new one.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEvaluationJob(UpdateEvaluationJobRequest request)
+ *           <li><p> updateEvaluationJob(UpdateEvaluationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEvaluationJob(EvaluationJob evaluationJob, FieldMask updateMask)
+ *           <li><p> updateEvaluationJob(EvaluationJob evaluationJob, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEvaluationJobCallable()
+ *           <li><p> updateEvaluationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEvaluationJob</td>
+ *      <td><p> GetEvaluationJob</td>
  *      <td><p> Gets an evaluation job by resource name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEvaluationJob(GetEvaluationJobRequest request)
+ *           <li><p> getEvaluationJob(GetEvaluationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEvaluationJob(EvaluationJobName name)
- *           <li>getEvaluationJob(String name)
+ *           <li><p> getEvaluationJob(EvaluationJobName name)
+ *           <li><p> getEvaluationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEvaluationJobCallable()
+ *           <li><p> getEvaluationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseEvaluationJob</td>
+ *      <td><p> PauseEvaluationJob</td>
  *      <td><p> Pauses an evaluation job. Pausing an evaluation job that is already in a `PAUSED` state is a no-op.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseEvaluationJob(PauseEvaluationJobRequest request)
+ *           <li><p> pauseEvaluationJob(PauseEvaluationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pauseEvaluationJob(EvaluationJobName name)
- *           <li>pauseEvaluationJob(String name)
+ *           <li><p> pauseEvaluationJob(EvaluationJobName name)
+ *           <li><p> pauseEvaluationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseEvaluationJobCallable()
+ *           <li><p> pauseEvaluationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeEvaluationJob</td>
+ *      <td><p> ResumeEvaluationJob</td>
  *      <td><p> Resumes a paused evaluation job. A deleted evaluation job can't be resumed. Resuming a running or scheduled evaluation job is a no-op.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeEvaluationJob(ResumeEvaluationJobRequest request)
+ *           <li><p> resumeEvaluationJob(ResumeEvaluationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumeEvaluationJob(EvaluationJobName name)
- *           <li>resumeEvaluationJob(String name)
+ *           <li><p> resumeEvaluationJob(EvaluationJobName name)
+ *           <li><p> resumeEvaluationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeEvaluationJobCallable()
+ *           <li><p> resumeEvaluationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEvaluationJob</td>
+ *      <td><p> DeleteEvaluationJob</td>
  *      <td><p> Stops and deletes an evaluation job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEvaluationJob(DeleteEvaluationJobRequest request)
+ *           <li><p> deleteEvaluationJob(DeleteEvaluationJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEvaluationJob(EvaluationJobName name)
- *           <li>deleteEvaluationJob(String name)
+ *           <li><p> deleteEvaluationJob(EvaluationJobName name)
+ *           <li><p> deleteEvaluationJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEvaluationJobCallable()
+ *           <li><p> deleteEvaluationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEvaluationJobs</td>
+ *      <td><p> ListEvaluationJobs</td>
  *      <td><p> Lists all evaluation jobs within a project with possible filters. Pagination is supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEvaluationJobs(ListEvaluationJobsRequest request)
+ *           <li><p> listEvaluationJobs(ListEvaluationJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEvaluationJobs(ProjectName parent, String filter)
- *           <li>listEvaluationJobs(String parent, String filter)
+ *           <li><p> listEvaluationJobs(ProjectName parent, String filter)
+ *           <li><p> listEvaluationJobs(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEvaluationJobsPagedCallable()
- *           <li>listEvaluationJobsCallable()
+ *           <li><p> listEvaluationJobsPagedCallable()
+ *           <li><p> listEvaluationJobsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

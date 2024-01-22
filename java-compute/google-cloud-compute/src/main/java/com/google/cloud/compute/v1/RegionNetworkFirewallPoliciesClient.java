@@ -63,326 +63,327 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AddAssociation</td>
+ *      <td><p> AddAssociation</td>
  *      <td><p> Inserts an association for the specified network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addAssociationAsync(AddAssociationRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> addAssociationAsync(AddAssociationRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addAssociationAsync(String project, String region, String firewallPolicy, FirewallPolicyAssociation firewallPolicyAssociationResource)
+ *           <li><p> addAssociationAsync(String project, String region, String firewallPolicy, FirewallPolicyAssociation firewallPolicyAssociationResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addAssociationOperationCallable()
- *           <li>addAssociationCallable()
+ *           <li><p> addAssociationOperationCallable()
+ *           <li><p> addAssociationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AddRule</td>
+ *      <td><p> AddRule</td>
  *      <td><p> Inserts a rule into a network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addRuleAsync(AddRuleRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> addRuleAsync(AddRuleRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addRuleAsync(String project, String region, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource)
+ *           <li><p> addRuleAsync(String project, String region, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addRuleOperationCallable()
- *           <li>addRuleCallable()
+ *           <li><p> addRuleOperationCallable()
+ *           <li><p> addRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CloneRules</td>
+ *      <td><p> CloneRules</td>
  *      <td><p> Copies rules to the specified network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cloneRulesAsync(CloneRulesRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> cloneRulesAsync(CloneRulesRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>cloneRulesAsync(String project, String region, String firewallPolicy)
+ *           <li><p> cloneRulesAsync(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cloneRulesOperationCallable()
- *           <li>cloneRulesCallable()
+ *           <li><p> cloneRulesOperationCallable()
+ *           <li><p> cloneRulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> deleteAsync(DeleteRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String region, String firewallPolicy)
+ *           <li><p> deleteAsync(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> get(GetRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String region, String firewallPolicy)
+ *           <li><p> get(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAssociation</td>
+ *      <td><p> GetAssociation</td>
  *      <td><p> Gets an association with the specified name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAssociation(GetAssociationRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> getAssociation(GetAssociationRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAssociation(String project, String region, String firewallPolicy)
+ *           <li><p> getAssociation(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAssociationCallable()
+ *           <li><p> getAssociationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEffectiveFirewalls</td>
+ *      <td><p> GetEffectiveFirewalls</td>
  *      <td><p> Returns the effective firewalls on a given network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEffectiveFirewalls(GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> getEffectiveFirewalls(GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEffectiveFirewalls(String project, String region, String network)
+ *           <li><p> getEffectiveFirewalls(String project, String region, String network)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEffectiveFirewallsCallable()
+ *           <li><p> getEffectiveFirewallsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. May be empty if no such policy or resource exists.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(String project, String region, String resource)
+ *           <li><p> getIamPolicy(String project, String region, String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRule</td>
+ *      <td><p> GetRule</td>
  *      <td><p> Gets a rule of the specified priority.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRule(GetRuleRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> getRule(GetRuleRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRule(String project, String region, String firewallPolicy)
+ *           <li><p> getRule(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRuleCallable()
+ *           <li><p> getRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a new network firewall policy in the specified project and region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> insertAsync(InsertRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String region, FirewallPolicy firewallPolicyResource)
+ *           <li><p> insertAsync(String project, String region, FirewallPolicy firewallPolicyResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Lists all the network firewall policies that have been configured for the specified project in the given region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListRegionNetworkFirewallPoliciesRequest request)
+ *           <li><p> list(ListRegionNetworkFirewallPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String region)
+ *           <li><p> list(String project, String region)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Patches the specified network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> patchAsync(PatchRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String region, String firewallPolicy, FirewallPolicy firewallPolicyResource)
+ *           <li><p> patchAsync(String project, String region, String firewallPolicy, FirewallPolicy firewallPolicyResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PatchRule</td>
+ *      <td><p> PatchRule</td>
  *      <td><p> Patches a rule of the specified priority.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchRuleAsync(PatchRuleRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> patchRuleAsync(PatchRuleRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchRuleAsync(String project, String region, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource)
+ *           <li><p> patchRuleAsync(String project, String region, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchRuleOperationCallable()
- *           <li>patchRuleCallable()
+ *           <li><p> patchRuleOperationCallable()
+ *           <li><p> patchRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveAssociation</td>
+ *      <td><p> RemoveAssociation</td>
  *      <td><p> Removes an association for the specified network firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeAssociationAsync(RemoveAssociationRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> removeAssociationAsync(RemoveAssociationRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>removeAssociationAsync(String project, String region, String firewallPolicy)
+ *           <li><p> removeAssociationAsync(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeAssociationOperationCallable()
- *           <li>removeAssociationCallable()
+ *           <li><p> removeAssociationOperationCallable()
+ *           <li><p> removeAssociationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveRule</td>
+ *      <td><p> RemoveRule</td>
  *      <td><p> Deletes a rule of the specified priority.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeRuleAsync(RemoveRuleRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> removeRuleAsync(RemoveRuleRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>removeRuleAsync(String project, String region, String firewallPolicy)
+ *           <li><p> removeRuleAsync(String project, String region, String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeRuleOperationCallable()
- *           <li>removeRuleCallable()
+ *           <li><p> removeRuleOperationCallable()
+ *           <li><p> removeRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(String project, String region, String resource, RegionSetPolicyRequest regionSetPolicyRequestResource)
+ *           <li><p> setIamPolicy(String project, String region, String resource, RegionSetPolicyRequest regionSetPolicyRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRegionNetworkFirewallPolicyRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRegionNetworkFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *           <li><p> testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

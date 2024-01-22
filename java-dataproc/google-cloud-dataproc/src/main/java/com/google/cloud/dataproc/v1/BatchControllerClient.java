@@ -67,132 +67,133 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateBatch</td>
+ *      <td><p> CreateBatch</td>
  *      <td><p> Creates a batch workload that executes asynchronously.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createBatchAsync(CreateBatchRequest request)
+ *           <li><p> createBatchAsync(CreateBatchRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createBatchAsync(LocationName parent, Batch batch, String batchId)
- *           <li>createBatchAsync(String parent, Batch batch, String batchId)
+ *           <li><p> createBatchAsync(LocationName parent, Batch batch, String batchId)
+ *           <li><p> createBatchAsync(String parent, Batch batch, String batchId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createBatchOperationCallable()
- *           <li>createBatchCallable()
+ *           <li><p> createBatchOperationCallable()
+ *           <li><p> createBatchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetBatch</td>
+ *      <td><p> GetBatch</td>
  *      <td><p> Gets the batch workload resource representation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getBatch(GetBatchRequest request)
+ *           <li><p> getBatch(GetBatchRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getBatch(BatchName name)
- *           <li>getBatch(String name)
+ *           <li><p> getBatch(BatchName name)
+ *           <li><p> getBatch(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getBatchCallable()
+ *           <li><p> getBatchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListBatches</td>
+ *      <td><p> ListBatches</td>
  *      <td><p> Lists batch workloads.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listBatches(ListBatchesRequest request)
+ *           <li><p> listBatches(ListBatchesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listBatches(LocationName parent)
- *           <li>listBatches(String parent)
+ *           <li><p> listBatches(LocationName parent)
+ *           <li><p> listBatches(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listBatchesPagedCallable()
- *           <li>listBatchesCallable()
+ *           <li><p> listBatchesPagedCallable()
+ *           <li><p> listBatchesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteBatch</td>
+ *      <td><p> DeleteBatch</td>
  *      <td><p> Deletes the batch workload resource. If the batch is not in terminal state, the delete fails and the response returns `FAILED_PRECONDITION`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteBatch(DeleteBatchRequest request)
+ *           <li><p> deleteBatch(DeleteBatchRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteBatch(BatchName name)
- *           <li>deleteBatch(String name)
+ *           <li><p> deleteBatch(BatchName name)
+ *           <li><p> deleteBatch(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteBatchCallable()
+ *           <li><p> deleteBatchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -60,180 +60,181 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified TargetSslProxy resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteTargetSslProxyRequest request)
+ *           <li><p> deleteAsync(DeleteTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String targetSslProxy)
+ *           <li><p> deleteAsync(String project, String targetSslProxy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified TargetSslProxy resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetTargetSslProxyRequest request)
+ *           <li><p> get(GetTargetSslProxyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String targetSslProxy)
+ *           <li><p> get(String project, String targetSslProxy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a TargetSslProxy resource in the specified project using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertTargetSslProxyRequest request)
+ *           <li><p> insertAsync(InsertTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, TargetSslProxy targetSslProxyResource)
+ *           <li><p> insertAsync(String project, TargetSslProxy targetSslProxyResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves the list of TargetSslProxy resources available to the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListTargetSslProxiesRequest request)
+ *           <li><p> list(ListTargetSslProxiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project)
+ *           <li><p> list(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetBackendService</td>
+ *      <td><p> SetBackendService</td>
  *      <td><p> Changes the BackendService for TargetSslProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setBackendServiceAsync(SetBackendServiceTargetSslProxyRequest request)
+ *           <li><p> setBackendServiceAsync(SetBackendServiceTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setBackendServiceAsync(String project, String targetSslProxy, TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource)
+ *           <li><p> setBackendServiceAsync(String project, String targetSslProxy, TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setBackendServiceOperationCallable()
- *           <li>setBackendServiceCallable()
+ *           <li><p> setBackendServiceOperationCallable()
+ *           <li><p> setBackendServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetCertificateMap</td>
+ *      <td><p> SetCertificateMap</td>
  *      <td><p> Changes the Certificate Map for TargetSslProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setCertificateMapAsync(SetCertificateMapTargetSslProxyRequest request)
+ *           <li><p> setCertificateMapAsync(SetCertificateMapTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setCertificateMapAsync(String project, String targetSslProxy, TargetSslProxiesSetCertificateMapRequest targetSslProxiesSetCertificateMapRequestResource)
+ *           <li><p> setCertificateMapAsync(String project, String targetSslProxy, TargetSslProxiesSetCertificateMapRequest targetSslProxiesSetCertificateMapRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setCertificateMapOperationCallable()
- *           <li>setCertificateMapCallable()
+ *           <li><p> setCertificateMapOperationCallable()
+ *           <li><p> setCertificateMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetProxyHeader</td>
+ *      <td><p> SetProxyHeader</td>
  *      <td><p> Changes the ProxyHeaderType for TargetSslProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setProxyHeaderAsync(SetProxyHeaderTargetSslProxyRequest request)
+ *           <li><p> setProxyHeaderAsync(SetProxyHeaderTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setProxyHeaderAsync(String project, String targetSslProxy, TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource)
+ *           <li><p> setProxyHeaderAsync(String project, String targetSslProxy, TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setProxyHeaderOperationCallable()
- *           <li>setProxyHeaderCallable()
+ *           <li><p> setProxyHeaderOperationCallable()
+ *           <li><p> setProxyHeaderCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetSslCertificates</td>
+ *      <td><p> SetSslCertificates</td>
  *      <td><p> Changes SslCertificates for TargetSslProxy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setSslCertificatesAsync(SetSslCertificatesTargetSslProxyRequest request)
+ *           <li><p> setSslCertificatesAsync(SetSslCertificatesTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setSslCertificatesAsync(String project, String targetSslProxy, TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource)
+ *           <li><p> setSslCertificatesAsync(String project, String targetSslProxy, TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setSslCertificatesOperationCallable()
- *           <li>setSslCertificatesCallable()
+ *           <li><p> setSslCertificatesOperationCallable()
+ *           <li><p> setSslCertificatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetSslPolicy</td>
+ *      <td><p> SetSslPolicy</td>
  *      <td><p> Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the SSL proxy load balancer. They do not affect the connection between the load balancer and the backends.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setSslPolicyAsync(SetSslPolicyTargetSslProxyRequest request)
+ *           <li><p> setSslPolicyAsync(SetSslPolicyTargetSslProxyRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setSslPolicyAsync(String project, String targetSslProxy, SslPolicyReference sslPolicyReferenceResource)
+ *           <li><p> setSslPolicyAsync(String project, String targetSslProxy, SslPolicyReference sslPolicyReferenceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setSslPolicyOperationCallable()
- *           <li>setSslPolicyCallable()
+ *           <li><p> setSslPolicyOperationCallable()
+ *           <li><p> setSslPolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

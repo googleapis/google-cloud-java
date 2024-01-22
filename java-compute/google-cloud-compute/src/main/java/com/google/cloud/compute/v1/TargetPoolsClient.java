@@ -61,236 +61,237 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AddHealthCheck</td>
+ *      <td><p> AddHealthCheck</td>
  *      <td><p> Adds health check URLs to a target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addHealthCheckAsync(AddHealthCheckTargetPoolRequest request)
+ *           <li><p> addHealthCheckAsync(AddHealthCheckTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addHealthCheckAsync(String project, String region, String targetPool, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource)
+ *           <li><p> addHealthCheckAsync(String project, String region, String targetPool, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addHealthCheckOperationCallable()
- *           <li>addHealthCheckCallable()
+ *           <li><p> addHealthCheckOperationCallable()
+ *           <li><p> addHealthCheckCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AddInstance</td>
+ *      <td><p> AddInstance</td>
  *      <td><p> Adds an instance to a target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>addInstanceAsync(AddInstanceTargetPoolRequest request)
+ *           <li><p> addInstanceAsync(AddInstanceTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>addInstanceAsync(String project, String region, String targetPool, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource)
+ *           <li><p> addInstanceAsync(String project, String region, String targetPool, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>addInstanceOperationCallable()
- *           <li>addInstanceCallable()
+ *           <li><p> addInstanceOperationCallable()
+ *           <li><p> addInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AggregatedList</td>
+ *      <td><p> AggregatedList</td>
  *      <td><p> Retrieves an aggregated list of target pools.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>aggregatedList(AggregatedListTargetPoolsRequest request)
+ *           <li><p> aggregatedList(AggregatedListTargetPoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>aggregatedList(String project)
+ *           <li><p> aggregatedList(String project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>aggregatedListPagedCallable()
- *           <li>aggregatedListCallable()
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteTargetPoolRequest request)
+ *           <li><p> deleteAsync(DeleteTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String region, String targetPool)
+ *           <li><p> deleteAsync(String project, String region, String targetPool)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns the specified target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetTargetPoolRequest request)
+ *           <li><p> get(GetTargetPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String region, String targetPool)
+ *           <li><p> get(String project, String region, String targetPool)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetHealth</td>
+ *      <td><p> GetHealth</td>
  *      <td><p> Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getHealth(GetHealthTargetPoolRequest request)
+ *           <li><p> getHealth(GetHealthTargetPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getHealth(String project, String region, String targetPool, InstanceReference instanceReferenceResource)
+ *           <li><p> getHealth(String project, String region, String targetPool, InstanceReference instanceReferenceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getHealthCallable()
+ *           <li><p> getHealthCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a target pool in the specified project and region using the data included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertTargetPoolRequest request)
+ *           <li><p> insertAsync(InsertTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String region, TargetPool targetPoolResource)
+ *           <li><p> insertAsync(String project, String region, TargetPool targetPoolResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves a list of target pools available to the specified project and region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListTargetPoolsRequest request)
+ *           <li><p> list(ListTargetPoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String region)
+ *           <li><p> list(String project, String region)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveHealthCheck</td>
+ *      <td><p> RemoveHealthCheck</td>
  *      <td><p> Removes health check URL from a target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeHealthCheckAsync(RemoveHealthCheckTargetPoolRequest request)
+ *           <li><p> removeHealthCheckAsync(RemoveHealthCheckTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>removeHealthCheckAsync(String project, String region, String targetPool, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource)
+ *           <li><p> removeHealthCheckAsync(String project, String region, String targetPool, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeHealthCheckOperationCallable()
- *           <li>removeHealthCheckCallable()
+ *           <li><p> removeHealthCheckOperationCallable()
+ *           <li><p> removeHealthCheckCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RemoveInstance</td>
+ *      <td><p> RemoveInstance</td>
  *      <td><p> Removes instance URL from a target pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>removeInstanceAsync(RemoveInstanceTargetPoolRequest request)
+ *           <li><p> removeInstanceAsync(RemoveInstanceTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>removeInstanceAsync(String project, String region, String targetPool, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource)
+ *           <li><p> removeInstanceAsync(String project, String region, String targetPool, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>removeInstanceOperationCallable()
- *           <li>removeInstanceCallable()
+ *           <li><p> removeInstanceOperationCallable()
+ *           <li><p> removeInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetBackup</td>
+ *      <td><p> SetBackup</td>
  *      <td><p> Changes a backup target pool's configurations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setBackupAsync(SetBackupTargetPoolRequest request)
+ *           <li><p> setBackupAsync(SetBackupTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setBackupAsync(String project, String region, String targetPool, TargetReference targetReferenceResource)
+ *           <li><p> setBackupAsync(String project, String region, String targetPool, TargetReference targetReferenceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setBackupOperationCallable()
- *           <li>setBackupCallable()
+ *           <li><p> setBackupOperationCallable()
+ *           <li><p> setBackupCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetSecurityPolicy</td>
+ *      <td><p> SetSecurityPolicy</td>
  *      <td><p> Sets the Google Cloud Armor security policy for the specified target pool. For more information, see Google Cloud Armor Overview</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setSecurityPolicyAsync(SetSecurityPolicyTargetPoolRequest request)
+ *           <li><p> setSecurityPolicyAsync(SetSecurityPolicyTargetPoolRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setSecurityPolicyAsync(String project, String region, String targetPool, SecurityPolicyReference securityPolicyReferenceResource)
+ *           <li><p> setSecurityPolicyAsync(String project, String region, String targetPool, SecurityPolicyReference securityPolicyReferenceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setSecurityPolicyOperationCallable()
- *           <li>setSecurityPolicyCallable()
+ *           <li><p> setSecurityPolicyOperationCallable()
+ *           <li><p> setSecurityPolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

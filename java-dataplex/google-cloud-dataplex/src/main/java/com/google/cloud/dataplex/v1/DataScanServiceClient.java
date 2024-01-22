@@ -69,195 +69,196 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDataScan</td>
+ *      <td><p> CreateDataScan</td>
  *      <td><p> Creates a DataScan resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDataScanAsync(CreateDataScanRequest request)
+ *           <li><p> createDataScanAsync(CreateDataScanRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createDataScanAsync(LocationName parent, DataScan dataScan, String dataScanId)
- *           <li>createDataScanAsync(String parent, DataScan dataScan, String dataScanId)
+ *           <li><p> createDataScanAsync(LocationName parent, DataScan dataScan, String dataScanId)
+ *           <li><p> createDataScanAsync(String parent, DataScan dataScan, String dataScanId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDataScanOperationCallable()
- *           <li>createDataScanCallable()
+ *           <li><p> createDataScanOperationCallable()
+ *           <li><p> createDataScanCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDataScan</td>
+ *      <td><p> UpdateDataScan</td>
  *      <td><p> Updates a DataScan resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDataScanAsync(UpdateDataScanRequest request)
+ *           <li><p> updateDataScanAsync(UpdateDataScanRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDataScanAsync(DataScan dataScan, FieldMask updateMask)
+ *           <li><p> updateDataScanAsync(DataScan dataScan, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDataScanOperationCallable()
- *           <li>updateDataScanCallable()
+ *           <li><p> updateDataScanOperationCallable()
+ *           <li><p> updateDataScanCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDataScan</td>
+ *      <td><p> DeleteDataScan</td>
  *      <td><p> Deletes a DataScan resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDataScanAsync(DeleteDataScanRequest request)
+ *           <li><p> deleteDataScanAsync(DeleteDataScanRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDataScanAsync(DataScanName name)
- *           <li>deleteDataScanAsync(String name)
+ *           <li><p> deleteDataScanAsync(DataScanName name)
+ *           <li><p> deleteDataScanAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDataScanOperationCallable()
- *           <li>deleteDataScanCallable()
+ *           <li><p> deleteDataScanOperationCallable()
+ *           <li><p> deleteDataScanCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataScan</td>
+ *      <td><p> GetDataScan</td>
  *      <td><p> Gets a DataScan resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataScan(GetDataScanRequest request)
+ *           <li><p> getDataScan(GetDataScanRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataScan(DataScanName name)
- *           <li>getDataScan(String name)
+ *           <li><p> getDataScan(DataScanName name)
+ *           <li><p> getDataScan(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataScanCallable()
+ *           <li><p> getDataScanCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataScans</td>
+ *      <td><p> ListDataScans</td>
  *      <td><p> Lists DataScans.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataScans(ListDataScansRequest request)
+ *           <li><p> listDataScans(ListDataScansRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataScans(LocationName parent)
- *           <li>listDataScans(String parent)
+ *           <li><p> listDataScans(LocationName parent)
+ *           <li><p> listDataScans(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataScansPagedCallable()
- *           <li>listDataScansCallable()
+ *           <li><p> listDataScansPagedCallable()
+ *           <li><p> listDataScansCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunDataScan</td>
+ *      <td><p> RunDataScan</td>
  *      <td><p> Runs an on-demand execution of a DataScan</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runDataScan(RunDataScanRequest request)
+ *           <li><p> runDataScan(RunDataScanRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>runDataScan(DataScanName name)
- *           <li>runDataScan(String name)
+ *           <li><p> runDataScan(DataScanName name)
+ *           <li><p> runDataScan(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runDataScanCallable()
+ *           <li><p> runDataScanCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDataScanJob</td>
+ *      <td><p> GetDataScanJob</td>
  *      <td><p> Gets a DataScanJob resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDataScanJob(GetDataScanJobRequest request)
+ *           <li><p> getDataScanJob(GetDataScanJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDataScanJob(DataScanJobName name)
- *           <li>getDataScanJob(String name)
+ *           <li><p> getDataScanJob(DataScanJobName name)
+ *           <li><p> getDataScanJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDataScanJobCallable()
+ *           <li><p> getDataScanJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDataScanJobs</td>
+ *      <td><p> ListDataScanJobs</td>
  *      <td><p> Lists DataScanJobs under the given DataScan.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDataScanJobs(ListDataScanJobsRequest request)
+ *           <li><p> listDataScanJobs(ListDataScanJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDataScanJobs(DataScanName parent)
- *           <li>listDataScanJobs(String parent)
+ *           <li><p> listDataScanJobs(DataScanName parent)
+ *           <li><p> listDataScanJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDataScanJobsPagedCallable()
- *           <li>listDataScanJobsCallable()
+ *           <li><p> listDataScanJobsPagedCallable()
+ *           <li><p> listDataScanJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

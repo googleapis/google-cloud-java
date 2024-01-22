@@ -57,106 +57,107 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateRuleSet</td>
+ *      <td><p> CreateRuleSet</td>
  *      <td><p> Creates a ruleset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRuleSet(CreateRuleSetRequest request)
+ *           <li><p> createRuleSet(CreateRuleSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createRuleSet(LocationName parent, RuleSet ruleSet)
- *           <li>createRuleSet(String parent, RuleSet ruleSet)
+ *           <li><p> createRuleSet(LocationName parent, RuleSet ruleSet)
+ *           <li><p> createRuleSet(String parent, RuleSet ruleSet)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRuleSetCallable()
+ *           <li><p> createRuleSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRuleSet</td>
+ *      <td><p> GetRuleSet</td>
  *      <td><p> Gets a ruleset. Returns NOT_FOUND if the ruleset does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRuleSet(GetRuleSetRequest request)
+ *           <li><p> getRuleSet(GetRuleSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRuleSet(RuleSetName name)
- *           <li>getRuleSet(String name)
+ *           <li><p> getRuleSet(RuleSetName name)
+ *           <li><p> getRuleSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRuleSetCallable()
+ *           <li><p> getRuleSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRuleSet</td>
+ *      <td><p> UpdateRuleSet</td>
  *      <td><p> Updates a ruleset. Returns INVALID_ARGUMENT if the name of the ruleset is non-empty and does not equal the existing name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRuleSet(UpdateRuleSetRequest request)
+ *           <li><p> updateRuleSet(UpdateRuleSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateRuleSet(RuleSetName name, RuleSet ruleSet)
- *           <li>updateRuleSet(String name, RuleSet ruleSet)
+ *           <li><p> updateRuleSet(RuleSetName name, RuleSet ruleSet)
+ *           <li><p> updateRuleSet(String name, RuleSet ruleSet)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRuleSetCallable()
+ *           <li><p> updateRuleSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRuleSet</td>
+ *      <td><p> DeleteRuleSet</td>
  *      <td><p> Deletes a ruleset. Returns NOT_FOUND if the document does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRuleSet(DeleteRuleSetRequest request)
+ *           <li><p> deleteRuleSet(DeleteRuleSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteRuleSet(RuleSetName name)
- *           <li>deleteRuleSet(String name)
+ *           <li><p> deleteRuleSet(RuleSetName name)
+ *           <li><p> deleteRuleSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRuleSetCallable()
+ *           <li><p> deleteRuleSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRuleSets</td>
+ *      <td><p> ListRuleSets</td>
  *      <td><p> Lists rulesets.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRuleSets(ListRuleSetsRequest request)
+ *           <li><p> listRuleSets(ListRuleSetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRuleSets(LocationName parent)
- *           <li>listRuleSets(String parent)
+ *           <li><p> listRuleSets(LocationName parent)
+ *           <li><p> listRuleSets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRuleSetsPagedCallable()
- *           <li>listRuleSetsCallable()
+ *           <li><p> listRuleSetsPagedCallable()
+ *           <li><p> listRuleSetsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

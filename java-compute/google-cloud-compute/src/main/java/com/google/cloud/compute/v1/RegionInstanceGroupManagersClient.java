@@ -63,370 +63,371 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AbandonInstances</td>
+ *      <td><p> AbandonInstances</td>
  *      <td><p> Flags the specified instances to be immediately removed from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000 instances with this method per request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>abandonInstancesAsync(AbandonInstancesRegionInstanceGroupManagerRequest request)
+ *           <li><p> abandonInstancesAsync(AbandonInstancesRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>abandonInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource)
+ *           <li><p> abandonInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>abandonInstancesOperationCallable()
- *           <li>abandonInstancesCallable()
+ *           <li><p> abandonInstancesOperationCallable()
+ *           <li><p> abandonInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ApplyUpdatesToInstances</td>
+ *      <td><p> ApplyUpdatesToInstances</td>
  *      <td><p> Apply updates to selected instances the managed instance group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>applyUpdatesToInstancesAsync(ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request)
+ *           <li><p> applyUpdatesToInstancesAsync(ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>applyUpdatesToInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource)
+ *           <li><p> applyUpdatesToInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>applyUpdatesToInstancesOperationCallable()
- *           <li>applyUpdatesToInstancesCallable()
+ *           <li><p> applyUpdatesToInstancesOperationCallable()
+ *           <li><p> applyUpdatesToInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateInstances</td>
+ *      <td><p> CreateInstances</td>
  *      <td><p> Creates instances with per-instance configurations in this regional managed instance group. Instances are created using the current instance template. The create instances operation is marked DONE if the createInstances request is successful. The underlying actions take additional time. You must separately verify the status of the creating or actions with the listmanagedinstances method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createInstancesAsync(CreateInstancesRegionInstanceGroupManagerRequest request)
+ *           <li><p> createInstancesAsync(CreateInstancesRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource)
+ *           <li><p> createInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createInstancesOperationCallable()
- *           <li>createInstancesCallable()
+ *           <li><p> createInstancesOperationCallable()
+ *           <li><p> createInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Delete</td>
+ *      <td><p> Delete</td>
  *      <td><p> Deletes the specified managed instance group and all of the instances in that group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAsync(DeleteRegionInstanceGroupManagerRequest request)
+ *           <li><p> deleteAsync(DeleteRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteAsync(String project, String region, String instanceGroupManager)
+ *           <li><p> deleteAsync(String project, String region, String instanceGroupManager)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteOperationCallable()
- *           <li>deleteCallable()
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteInstances</td>
+ *      <td><p> DeleteInstances</td>
  *      <td><p> Flags the specified instances in the managed instance group to be immediately deleted. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. The deleteInstances operation is marked DONE if the deleteInstances request is successful. The underlying actions take additional time. You must separately verify the status of the deleting action with the listmanagedinstances method. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000 instances with this method per request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteInstancesAsync(DeleteInstancesRegionInstanceGroupManagerRequest request)
+ *           <li><p> deleteInstancesAsync(DeleteInstancesRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource)
+ *           <li><p> deleteInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteInstancesOperationCallable()
- *           <li>deleteInstancesCallable()
+ *           <li><p> deleteInstancesOperationCallable()
+ *           <li><p> deleteInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePerInstanceConfigs</td>
+ *      <td><p> DeletePerInstanceConfigs</td>
  *      <td><p> Deletes selected per-instance configurations for the managed instance group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePerInstanceConfigsAsync(DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request)
+ *           <li><p> deletePerInstanceConfigsAsync(DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePerInstanceConfigsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource)
+ *           <li><p> deletePerInstanceConfigsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePerInstanceConfigsOperationCallable()
- *           <li>deletePerInstanceConfigsCallable()
+ *           <li><p> deletePerInstanceConfigsOperationCallable()
+ *           <li><p> deletePerInstanceConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Get</td>
+ *      <td><p> Get</td>
  *      <td><p> Returns all of the details about the specified managed instance group.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>get(GetRegionInstanceGroupManagerRequest request)
+ *           <li><p> get(GetRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>get(String project, String region, String instanceGroupManager)
+ *           <li><p> get(String project, String region, String instanceGroupManager)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCallable()
+ *           <li><p> getCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Insert</td>
+ *      <td><p> Insert</td>
  *      <td><p> Creates a managed instance group using the information that you specify in the request. After the group is created, instances in the group are created using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method. A regional managed instance group can contain up to 2000 instances.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertAsync(InsertRegionInstanceGroupManagerRequest request)
+ *           <li><p> insertAsync(InsertRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>insertAsync(String project, String region, InstanceGroupManager instanceGroupManagerResource)
+ *           <li><p> insertAsync(String project, String region, InstanceGroupManager instanceGroupManagerResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertOperationCallable()
- *           <li>insertCallable()
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>List</td>
+ *      <td><p> List</td>
  *      <td><p> Retrieves the list of managed instance groups that are contained within the specified region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>list(ListRegionInstanceGroupManagersRequest request)
+ *           <li><p> list(ListRegionInstanceGroupManagersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>list(String project, String region)
+ *           <li><p> list(String project, String region)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPagedCallable()
- *           <li>listCallable()
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListErrors</td>
+ *      <td><p> ListErrors</td>
  *      <td><p> Lists all errors thrown by actions on instances for a given regional managed instance group. The filter and orderBy query parameters are not supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listErrors(ListErrorsRegionInstanceGroupManagersRequest request)
+ *           <li><p> listErrors(ListErrorsRegionInstanceGroupManagersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listErrors(String project, String region, String instanceGroupManager)
+ *           <li><p> listErrors(String project, String region, String instanceGroupManager)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listErrorsPagedCallable()
- *           <li>listErrorsCallable()
+ *           <li><p> listErrorsPagedCallable()
+ *           <li><p> listErrorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListManagedInstances</td>
+ *      <td><p> ListManagedInstances</td>
  *      <td><p> Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances. The orderBy query parameter is not supported. The `pageToken` query parameter is supported only in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to `PAGINATED`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listManagedInstances(ListManagedInstancesRegionInstanceGroupManagersRequest request)
+ *           <li><p> listManagedInstances(ListManagedInstancesRegionInstanceGroupManagersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listManagedInstances(String project, String region, String instanceGroupManager)
+ *           <li><p> listManagedInstances(String project, String region, String instanceGroupManager)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listManagedInstancesPagedCallable()
- *           <li>listManagedInstancesCallable()
+ *           <li><p> listManagedInstancesPagedCallable()
+ *           <li><p> listManagedInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPerInstanceConfigs</td>
+ *      <td><p> ListPerInstanceConfigs</td>
  *      <td><p> Lists all of the per-instance configurations defined for the managed instance group. The orderBy query parameter is not supported.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPerInstanceConfigs(ListPerInstanceConfigsRegionInstanceGroupManagersRequest request)
+ *           <li><p> listPerInstanceConfigs(ListPerInstanceConfigsRegionInstanceGroupManagersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPerInstanceConfigs(String project, String region, String instanceGroupManager)
+ *           <li><p> listPerInstanceConfigs(String project, String region, String instanceGroupManager)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPerInstanceConfigsPagedCallable()
- *           <li>listPerInstanceConfigsCallable()
+ *           <li><p> listPerInstanceConfigsPagedCallable()
+ *           <li><p> listPerInstanceConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Patch</td>
+ *      <td><p> Patch</td>
  *      <td><p> Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with the listmanagedinstances method. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. If you update your group to specify a new template or instance configuration, it's possible that your intended specification for each VM in the group is different from the current state of that VM. To learn how to apply an updated configuration to the VMs in a MIG, see Updating instances in a MIG.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchAsync(PatchRegionInstanceGroupManagerRequest request)
+ *           <li><p> patchAsync(PatchRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchAsync(String project, String region, String instanceGroupManager, InstanceGroupManager instanceGroupManagerResource)
+ *           <li><p> patchAsync(String project, String region, String instanceGroupManager, InstanceGroupManager instanceGroupManagerResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchOperationCallable()
- *           <li>patchCallable()
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PatchPerInstanceConfigs</td>
+ *      <td><p> PatchPerInstanceConfigs</td>
  *      <td><p> Inserts or patches per-instance configurations for the managed instance group. perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchPerInstanceConfigsAsync(PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request)
+ *           <li><p> patchPerInstanceConfigsAsync(PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>patchPerInstanceConfigsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource)
+ *           <li><p> patchPerInstanceConfigsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchPerInstanceConfigsOperationCallable()
- *           <li>patchPerInstanceConfigsCallable()
+ *           <li><p> patchPerInstanceConfigsOperationCallable()
+ *           <li><p> patchPerInstanceConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RecreateInstances</td>
+ *      <td><p> RecreateInstances</td>
  *      <td><p> Flags the specified VM instances in the managed instance group to be immediately recreated. Each instance is recreated using the group's current configuration. This operation is marked as DONE when the flag is set even if the instances have not yet been recreated. You must separately verify the status of each instance by checking its currentAction field; for more information, see Checking the status of managed instances. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000 instances with this method per request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>recreateInstancesAsync(RecreateInstancesRegionInstanceGroupManagerRequest request)
+ *           <li><p> recreateInstancesAsync(RecreateInstancesRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>recreateInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource)
+ *           <li><p> recreateInstancesAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>recreateInstancesOperationCallable()
- *           <li>recreateInstancesCallable()
+ *           <li><p> recreateInstancesOperationCallable()
+ *           <li><p> recreateInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Resize</td>
+ *      <td><p> Resize</td>
  *      <td><p> Changes the intended size of the managed instance group. If you increase the size, the group creates new instances using the current instance template. If you decrease the size, the group deletes one or more instances. The resize operation is marked DONE if the resize request is successful. The underlying actions take additional time. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resizeAsync(ResizeRegionInstanceGroupManagerRequest request)
+ *           <li><p> resizeAsync(ResizeRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>resizeAsync(String project, String region, String instanceGroupManager, int size)
+ *           <li><p> resizeAsync(String project, String region, String instanceGroupManager, int size)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resizeOperationCallable()
- *           <li>resizeCallable()
+ *           <li><p> resizeOperationCallable()
+ *           <li><p> resizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetInstanceTemplate</td>
+ *      <td><p> SetInstanceTemplate</td>
  *      <td><p> Sets the instance template to use when creating new instances or recreating instances in this group. Existing instances are not affected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setInstanceTemplateAsync(SetInstanceTemplateRegionInstanceGroupManagerRequest request)
+ *           <li><p> setInstanceTemplateAsync(SetInstanceTemplateRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setInstanceTemplateAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource)
+ *           <li><p> setInstanceTemplateAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setInstanceTemplateOperationCallable()
- *           <li>setInstanceTemplateCallable()
+ *           <li><p> setInstanceTemplateOperationCallable()
+ *           <li><p> setInstanceTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetTargetPools</td>
+ *      <td><p> SetTargetPools</td>
  *      <td><p> Modifies the target pools to which all new instances in this group are assigned. Existing instances in the group are not affected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setTargetPoolsAsync(SetTargetPoolsRegionInstanceGroupManagerRequest request)
+ *           <li><p> setTargetPoolsAsync(SetTargetPoolsRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>setTargetPoolsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource)
+ *           <li><p> setTargetPoolsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setTargetPoolsOperationCallable()
- *           <li>setTargetPoolsCallable()
+ *           <li><p> setTargetPoolsOperationCallable()
+ *           <li><p> setTargetPoolsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePerInstanceConfigs</td>
+ *      <td><p> UpdatePerInstanceConfigs</td>
  *      <td><p> Inserts or updates per-instance configurations for the managed instance group. perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePerInstanceConfigsAsync(UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request)
+ *           <li><p> updatePerInstanceConfigsAsync(UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updatePerInstanceConfigsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource)
+ *           <li><p> updatePerInstanceConfigsAsync(String project, String region, String instanceGroupManager, RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePerInstanceConfigsOperationCallable()
- *           <li>updatePerInstanceConfigsCallable()
+ *           <li><p> updatePerInstanceConfigsOperationCallable()
+ *           <li><p> updatePerInstanceConfigsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

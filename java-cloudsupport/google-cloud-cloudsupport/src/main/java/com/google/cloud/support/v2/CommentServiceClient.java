@@ -56,49 +56,50 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListComments</td>
+ *      <td><p> ListComments</td>
  *      <td><p> Retrieve all Comments associated with the Case object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listComments(ListCommentsRequest request)
+ *           <li><p> listComments(ListCommentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listComments(CaseName parent)
- *           <li>listComments(String parent)
+ *           <li><p> listComments(CaseName parent)
+ *           <li><p> listComments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCommentsPagedCallable()
- *           <li>listCommentsCallable()
+ *           <li><p> listCommentsPagedCallable()
+ *           <li><p> listCommentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateComment</td>
+ *      <td><p> CreateComment</td>
  *      <td><p> Add a new comment to the specified Case. The comment object must have the following fields set: body.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createComment(CreateCommentRequest request)
+ *           <li><p> createComment(CreateCommentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createComment(CaseName parent, Comment comment)
- *           <li>createComment(String parent, Comment comment)
+ *           <li><p> createComment(CaseName parent, Comment comment)
+ *           <li><p> createComment(String parent, Comment comment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCommentCallable()
+ *           <li><p> createCommentCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

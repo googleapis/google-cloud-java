@@ -57,29 +57,30 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BulkInsert</td>
+ *      <td><p> BulkInsert</td>
  *      <td><p> Creates multiple instances in a given region. Count specifies the number of instances to create.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>bulkInsertAsync(BulkInsertRegionInstanceRequest request)
+ *           <li><p> bulkInsertAsync(BulkInsertRegionInstanceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>bulkInsertAsync(String project, String region, BulkInsertInstanceResource bulkInsertInstanceResourceResource)
+ *           <li><p> bulkInsertAsync(String project, String region, BulkInsertInstanceResource bulkInsertInstanceResourceResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>bulkInsertOperationCallable()
- *           <li>bulkInsertCallable()
+ *           <li><p> bulkInsertOperationCallable()
+ *           <li><p> bulkInsertCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
