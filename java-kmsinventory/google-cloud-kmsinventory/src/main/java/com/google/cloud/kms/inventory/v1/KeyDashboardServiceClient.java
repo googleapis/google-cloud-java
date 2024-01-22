@@ -59,30 +59,31 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListCryptoKeys</td>
+ *      <td><p> ListCryptoKeys</td>
  *      <td><p> Returns cryptographic keys managed by Cloud KMS in a given Cloud project. Note that this data is sourced from snapshots, meaning it may not completely reflect the actual state of key metadata at call time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCryptoKeys(ListCryptoKeysRequest request)
+ *           <li><p> listCryptoKeys(ListCryptoKeysRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCryptoKeys(ProjectName parent)
- *           <li>listCryptoKeys(String parent)
+ *           <li><p> listCryptoKeys(ProjectName parent)
+ *           <li><p> listCryptoKeys(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCryptoKeysPagedCallable()
- *           <li>listCryptoKeysCallable()
+ *           <li><p> listCryptoKeysPagedCallable()
+ *           <li><p> listCryptoKeysCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

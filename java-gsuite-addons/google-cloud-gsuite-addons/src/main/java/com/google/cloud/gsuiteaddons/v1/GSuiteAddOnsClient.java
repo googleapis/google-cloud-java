@@ -77,181 +77,182 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetAuthorization</td>
+ *      <td><p> GetAuthorization</td>
  *      <td><p> Gets the authorization information for deployments in a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAuthorization(GetAuthorizationRequest request)
+ *           <li><p> getAuthorization(GetAuthorizationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAuthorization(AuthorizationName name)
- *           <li>getAuthorization(String name)
+ *           <li><p> getAuthorization(AuthorizationName name)
+ *           <li><p> getAuthorization(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAuthorizationCallable()
+ *           <li><p> getAuthorizationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDeployment</td>
+ *      <td><p> CreateDeployment</td>
  *      <td><p> Creates a deployment with the specified name and configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDeployment(CreateDeploymentRequest request)
+ *           <li><p> createDeployment(CreateDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDeployment(ProjectName parent, Deployment deployment, String deploymentId)
- *           <li>createDeployment(String parent, Deployment deployment, String deploymentId)
+ *           <li><p> createDeployment(ProjectName parent, Deployment deployment, String deploymentId)
+ *           <li><p> createDeployment(String parent, Deployment deployment, String deploymentId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDeploymentCallable()
+ *           <li><p> createDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReplaceDeployment</td>
+ *      <td><p> ReplaceDeployment</td>
  *      <td><p> Creates or replaces a deployment with the specified name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>replaceDeployment(ReplaceDeploymentRequest request)
+ *           <li><p> replaceDeployment(ReplaceDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>replaceDeployment(Deployment deployment)
+ *           <li><p> replaceDeployment(Deployment deployment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>replaceDeploymentCallable()
+ *           <li><p> replaceDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDeployment</td>
+ *      <td><p> GetDeployment</td>
  *      <td><p> Gets the deployment with the specified name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDeployment(GetDeploymentRequest request)
+ *           <li><p> getDeployment(GetDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDeployment(DeploymentName name)
- *           <li>getDeployment(String name)
+ *           <li><p> getDeployment(DeploymentName name)
+ *           <li><p> getDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDeploymentCallable()
+ *           <li><p> getDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDeployments</td>
+ *      <td><p> ListDeployments</td>
  *      <td><p> Lists all deployments in a particular project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDeployments(ListDeploymentsRequest request)
+ *           <li><p> listDeployments(ListDeploymentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDeployments(ProjectName parent)
- *           <li>listDeployments(String parent)
+ *           <li><p> listDeployments(ProjectName parent)
+ *           <li><p> listDeployments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDeploymentsPagedCallable()
- *           <li>listDeploymentsCallable()
+ *           <li><p> listDeploymentsPagedCallable()
+ *           <li><p> listDeploymentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDeployment</td>
+ *      <td><p> DeleteDeployment</td>
  *      <td><p> Deletes the deployment with the given name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDeployment(DeleteDeploymentRequest request)
+ *           <li><p> deleteDeployment(DeleteDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDeployment(DeploymentName name)
- *           <li>deleteDeployment(String name)
+ *           <li><p> deleteDeployment(DeploymentName name)
+ *           <li><p> deleteDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDeploymentCallable()
+ *           <li><p> deleteDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InstallDeployment</td>
+ *      <td><p> InstallDeployment</td>
  *      <td><p> Installs a deployment in developer mode. See: https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>installDeployment(InstallDeploymentRequest request)
+ *           <li><p> installDeployment(InstallDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>installDeployment(DeploymentName name)
- *           <li>installDeployment(String name)
+ *           <li><p> installDeployment(DeploymentName name)
+ *           <li><p> installDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>installDeploymentCallable()
+ *           <li><p> installDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UninstallDeployment</td>
+ *      <td><p> UninstallDeployment</td>
  *      <td><p> Uninstalls a developer mode deployment. See: https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>uninstallDeployment(UninstallDeploymentRequest request)
+ *           <li><p> uninstallDeployment(UninstallDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>uninstallDeployment(DeploymentName name)
- *           <li>uninstallDeployment(String name)
+ *           <li><p> uninstallDeployment(DeploymentName name)
+ *           <li><p> uninstallDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>uninstallDeploymentCallable()
+ *           <li><p> uninstallDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInstallStatus</td>
+ *      <td><p> GetInstallStatus</td>
  *      <td><p> Fetches the install status of a developer mode deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInstallStatus(GetInstallStatusRequest request)
+ *           <li><p> getInstallStatus(GetInstallStatusRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getInstallStatus(InstallStatusName name)
- *           <li>getInstallStatus(String name)
+ *           <li><p> getInstallStatus(InstallStatusName name)
+ *           <li><p> getInstallStatus(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInstallStatusCallable()
+ *           <li><p> getInstallStatusCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

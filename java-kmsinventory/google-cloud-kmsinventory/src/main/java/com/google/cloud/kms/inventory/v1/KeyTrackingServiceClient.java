@@ -61,51 +61,52 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetProtectedResourcesSummary</td>
+ *      <td><p> GetProtectedResourcesSummary</td>
  *      <td><p> Returns aggregate information about the resources protected by the given Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within the same Cloud organization as the key will be returned. The project that holds the key must be part of an organization in order for this call to succeed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getProtectedResourcesSummary(GetProtectedResourcesSummaryRequest request)
+ *           <li><p> getProtectedResourcesSummary(GetProtectedResourcesSummaryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getProtectedResourcesSummary(ProtectedResourcesSummaryName name)
- *           <li>getProtectedResourcesSummary(String name)
+ *           <li><p> getProtectedResourcesSummary(ProtectedResourcesSummaryName name)
+ *           <li><p> getProtectedResourcesSummary(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getProtectedResourcesSummaryCallable()
+ *           <li><p> getProtectedResourcesSummaryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchProtectedResources</td>
+ *      <td><p> SearchProtectedResources</td>
  *      <td><p> Returns metadata about the resources protected by the given Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchProtectedResources(SearchProtectedResourcesRequest request)
+ *           <li><p> searchProtectedResources(SearchProtectedResourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchProtectedResources(OrganizationName scope, ResourceName cryptoKey)
- *           <li>searchProtectedResources(OrganizationName scope, String cryptoKey)
- *           <li>searchProtectedResources(String scope, ResourceName cryptoKey)
- *           <li>searchProtectedResources(String scope, String cryptoKey)
+ *           <li><p> searchProtectedResources(OrganizationName scope, ResourceName cryptoKey)
+ *           <li><p> searchProtectedResources(OrganizationName scope, String cryptoKey)
+ *           <li><p> searchProtectedResources(String scope, ResourceName cryptoKey)
+ *           <li><p> searchProtectedResources(String scope, String cryptoKey)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchProtectedResourcesPagedCallable()
- *           <li>searchProtectedResourcesCallable()
+ *           <li><p> searchProtectedResourcesPagedCallable()
+ *           <li><p> searchProtectedResourcesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

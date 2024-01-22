@@ -56,20 +56,21 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>StreamingTranslateSpeech</td>
+ *      <td><p> StreamingTranslateSpeech</td>
  *      <td><p> Performs bidirectional streaming speech translation: receive results while sending audio. This method is only available via the gRPC API (not REST).</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>streamingTranslateSpeechCallable()
+ *           <li><p> streamingTranslateSpeechCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -91,207 +91,208 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateMicrosoftAdDomain</td>
+ *      <td><p> CreateMicrosoftAdDomain</td>
  *      <td><p> Creates a Microsoft AD domain.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMicrosoftAdDomainAsync(CreateMicrosoftAdDomainRequest request)
+ *           <li><p> createMicrosoftAdDomainAsync(CreateMicrosoftAdDomainRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createMicrosoftAdDomainAsync(LocationName parent, String domainName, Domain domain)
- *           <li>createMicrosoftAdDomainAsync(String parent, String domainName, Domain domain)
+ *           <li><p> createMicrosoftAdDomainAsync(LocationName parent, String domainName, Domain domain)
+ *           <li><p> createMicrosoftAdDomainAsync(String parent, String domainName, Domain domain)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMicrosoftAdDomainOperationCallable()
- *           <li>createMicrosoftAdDomainCallable()
+ *           <li><p> createMicrosoftAdDomainOperationCallable()
+ *           <li><p> createMicrosoftAdDomainCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResetAdminPassword</td>
+ *      <td><p> ResetAdminPassword</td>
  *      <td><p> Resets a domain's administrator password.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resetAdminPassword(ResetAdminPasswordRequest request)
+ *           <li><p> resetAdminPassword(ResetAdminPasswordRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resetAdminPassword(DomainName name)
- *           <li>resetAdminPassword(String name)
+ *           <li><p> resetAdminPassword(DomainName name)
+ *           <li><p> resetAdminPassword(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resetAdminPasswordCallable()
+ *           <li><p> resetAdminPasswordCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDomains</td>
+ *      <td><p> ListDomains</td>
  *      <td><p> Lists domains in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDomains(ListDomainsRequest request)
+ *           <li><p> listDomains(ListDomainsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDomains(LocationName parent)
- *           <li>listDomains(String parent)
+ *           <li><p> listDomains(LocationName parent)
+ *           <li><p> listDomains(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDomainsPagedCallable()
- *           <li>listDomainsCallable()
+ *           <li><p> listDomainsPagedCallable()
+ *           <li><p> listDomainsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDomain</td>
+ *      <td><p> GetDomain</td>
  *      <td><p> Gets information about a domain.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDomain(GetDomainRequest request)
+ *           <li><p> getDomain(GetDomainRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDomain(DomainName name)
- *           <li>getDomain(String name)
+ *           <li><p> getDomain(DomainName name)
+ *           <li><p> getDomain(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDomainCallable()
+ *           <li><p> getDomainCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDomain</td>
+ *      <td><p> UpdateDomain</td>
  *      <td><p> Updates the metadata and configuration of a domain.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDomainAsync(UpdateDomainRequest request)
+ *           <li><p> updateDomainAsync(UpdateDomainRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDomainAsync(Domain domain, FieldMask updateMask)
+ *           <li><p> updateDomainAsync(Domain domain, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDomainOperationCallable()
- *           <li>updateDomainCallable()
+ *           <li><p> updateDomainOperationCallable()
+ *           <li><p> updateDomainCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDomain</td>
+ *      <td><p> DeleteDomain</td>
  *      <td><p> Deletes a domain.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDomainAsync(DeleteDomainRequest request)
+ *           <li><p> deleteDomainAsync(DeleteDomainRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDomainAsync(DomainName name)
- *           <li>deleteDomainAsync(String name)
+ *           <li><p> deleteDomainAsync(DomainName name)
+ *           <li><p> deleteDomainAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDomainOperationCallable()
- *           <li>deleteDomainCallable()
+ *           <li><p> deleteDomainOperationCallable()
+ *           <li><p> deleteDomainCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AttachTrust</td>
+ *      <td><p> AttachTrust</td>
  *      <td><p> Adds an AD trust to a domain.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>attachTrustAsync(AttachTrustRequest request)
+ *           <li><p> attachTrustAsync(AttachTrustRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>attachTrustAsync(DomainName name, Trust trust)
- *           <li>attachTrustAsync(String name, Trust trust)
+ *           <li><p> attachTrustAsync(DomainName name, Trust trust)
+ *           <li><p> attachTrustAsync(String name, Trust trust)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>attachTrustOperationCallable()
- *           <li>attachTrustCallable()
+ *           <li><p> attachTrustOperationCallable()
+ *           <li><p> attachTrustCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReconfigureTrust</td>
+ *      <td><p> ReconfigureTrust</td>
  *      <td><p> Updates the DNS conditional forwarder.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>reconfigureTrustAsync(ReconfigureTrustRequest request)
+ *           <li><p> reconfigureTrustAsync(ReconfigureTrustRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>reconfigureTrustAsync(DomainName name, String targetDomainName, List<String> targetDnsIpAddresses)
- *           <li>reconfigureTrustAsync(String name, String targetDomainName, List<String> targetDnsIpAddresses)
+ *           <li><p> reconfigureTrustAsync(DomainName name, String targetDomainName, List&lt;String&gt; targetDnsIpAddresses)
+ *           <li><p> reconfigureTrustAsync(String name, String targetDomainName, List&lt;String&gt; targetDnsIpAddresses)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>reconfigureTrustOperationCallable()
- *           <li>reconfigureTrustCallable()
+ *           <li><p> reconfigureTrustOperationCallable()
+ *           <li><p> reconfigureTrustCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DetachTrust</td>
+ *      <td><p> DetachTrust</td>
  *      <td><p> Removes an AD trust.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>detachTrustAsync(DetachTrustRequest request)
+ *           <li><p> detachTrustAsync(DetachTrustRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>detachTrustAsync(DomainName name, Trust trust)
- *           <li>detachTrustAsync(String name, Trust trust)
+ *           <li><p> detachTrustAsync(DomainName name, Trust trust)
+ *           <li><p> detachTrustAsync(String name, Trust trust)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>detachTrustOperationCallable()
- *           <li>detachTrustCallable()
+ *           <li><p> detachTrustOperationCallable()
+ *           <li><p> detachTrustCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ValidateTrust</td>
+ *      <td><p> ValidateTrust</td>
  *      <td><p> Validates a trust state, that the target domain is reachable, and that the target domain is able to accept incoming trust requests.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateTrustAsync(ValidateTrustRequest request)
+ *           <li><p> validateTrustAsync(ValidateTrustRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>validateTrustAsync(DomainName name, Trust trust)
- *           <li>validateTrustAsync(String name, Trust trust)
+ *           <li><p> validateTrustAsync(DomainName name, Trust trust)
+ *           <li><p> validateTrustAsync(String name, Trust trust)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateTrustOperationCallable()
- *           <li>validateTrustCallable()
+ *           <li><p> validateTrustOperationCallable()
+ *           <li><p> validateTrustCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

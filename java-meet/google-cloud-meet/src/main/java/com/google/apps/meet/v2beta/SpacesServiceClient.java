@@ -50,84 +50,85 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateSpace</td>
+ *      <td><p> CreateSpace</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Creates a space.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSpace(CreateSpaceRequest request)
+ *           <li><p> createSpace(CreateSpaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSpace(Space space)
+ *           <li><p> createSpace(Space space)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSpaceCallable()
+ *           <li><p> createSpaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSpace</td>
+ *      <td><p> GetSpace</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a space by `space_id` or `meeting_code`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSpace(GetSpaceRequest request)
+ *           <li><p> getSpace(GetSpaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSpace(SpaceName name)
- *           <li>getSpace(String name)
+ *           <li><p> getSpace(SpaceName name)
+ *           <li><p> getSpace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSpaceCallable()
+ *           <li><p> getSpaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSpace</td>
+ *      <td><p> UpdateSpace</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Updates a space.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSpace(UpdateSpaceRequest request)
+ *           <li><p> updateSpace(UpdateSpaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSpace(Space space, FieldMask updateMask)
+ *           <li><p> updateSpace(Space space, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSpaceCallable()
+ *           <li><p> updateSpaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EndActiveConference</td>
+ *      <td><p> EndActiveConference</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Ends an active conference (if there is one).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>endActiveConference(EndActiveConferenceRequest request)
+ *           <li><p> endActiveConference(EndActiveConferenceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>endActiveConference(SpaceName name)
- *           <li>endActiveConference(String name)
+ *           <li><p> endActiveConference(SpaceName name)
+ *           <li><p> endActiveConference(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>endActiveConferenceCallable()
+ *           <li><p> endActiveConferenceCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

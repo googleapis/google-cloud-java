@@ -61,89 +61,90 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListEndpoints</td>
+ *      <td><p> ListEndpoints</td>
  *      <td><p> Lists Endpoints in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEndpoints(ListEndpointsRequest request)
+ *           <li><p> listEndpoints(ListEndpointsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEndpoints(LocationName parent)
- *           <li>listEndpoints(String parent)
+ *           <li><p> listEndpoints(LocationName parent)
+ *           <li><p> listEndpoints(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEndpointsPagedCallable()
- *           <li>listEndpointsCallable()
+ *           <li><p> listEndpointsPagedCallable()
+ *           <li><p> listEndpointsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEndpoint</td>
+ *      <td><p> GetEndpoint</td>
  *      <td><p> Gets details of a single Endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEndpoint(GetEndpointRequest request)
+ *           <li><p> getEndpoint(GetEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEndpoint(EndpointName name)
- *           <li>getEndpoint(String name)
+ *           <li><p> getEndpoint(EndpointName name)
+ *           <li><p> getEndpoint(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEndpointCallable()
+ *           <li><p> getEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEndpoint</td>
+ *      <td><p> CreateEndpoint</td>
  *      <td><p> Creates a new Endpoint in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEndpointAsync(CreateEndpointRequest request)
+ *           <li><p> createEndpointAsync(CreateEndpointRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createEndpointAsync(LocationName parent, Endpoint endpoint, String endpointId)
- *           <li>createEndpointAsync(String parent, Endpoint endpoint, String endpointId)
+ *           <li><p> createEndpointAsync(LocationName parent, Endpoint endpoint, String endpointId)
+ *           <li><p> createEndpointAsync(String parent, Endpoint endpoint, String endpointId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEndpointOperationCallable()
- *           <li>createEndpointCallable()
+ *           <li><p> createEndpointOperationCallable()
+ *           <li><p> createEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEndpoint</td>
+ *      <td><p> DeleteEndpoint</td>
  *      <td><p> Deletes a single Endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEndpointAsync(DeleteEndpointRequest request)
+ *           <li><p> deleteEndpointAsync(DeleteEndpointRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteEndpointAsync(EndpointName name)
- *           <li>deleteEndpointAsync(String name)
+ *           <li><p> deleteEndpointAsync(EndpointName name)
+ *           <li><p> deleteEndpointAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEndpointOperationCallable()
- *           <li>deleteEndpointCallable()
+ *           <li><p> deleteEndpointOperationCallable()
+ *           <li><p> deleteEndpointCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

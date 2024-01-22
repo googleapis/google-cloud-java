@@ -60,76 +60,77 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>SearchNearby</td>
+ *      <td><p> SearchNearby</td>
  *      <td><p> Search for places near locations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchNearby(SearchNearbyRequest request)
+ *           <li><p> searchNearby(SearchNearbyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchNearbyCallable()
+ *           <li><p> searchNearbyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchText</td>
+ *      <td><p> SearchText</td>
  *      <td><p> Text query based place search.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchText(SearchTextRequest request)
+ *           <li><p> searchText(SearchTextRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchTextCallable()
+ *           <li><p> searchTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPhotoMedia</td>
+ *      <td><p> GetPhotoMedia</td>
  *      <td><p> Get a photo media with a photo reference string.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPhotoMedia(GetPhotoMediaRequest request)
+ *           <li><p> getPhotoMedia(GetPhotoMediaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPhotoMedia(PhotoMediaName name)
- *           <li>getPhotoMedia(String name)
+ *           <li><p> getPhotoMedia(PhotoMediaName name)
+ *           <li><p> getPhotoMedia(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPhotoMediaCallable()
+ *           <li><p> getPhotoMediaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPlace</td>
+ *      <td><p> GetPlace</td>
  *      <td><p> Get place details with a place id (in a name) string.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPlace(GetPlaceRequest request)
+ *           <li><p> getPlace(GetPlaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPlace(PlaceName name)
- *           <li>getPlace(String name)
+ *           <li><p> getPlace(PlaceName name)
+ *           <li><p> getPlace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPlaceCallable()
+ *           <li><p> getPlaceCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

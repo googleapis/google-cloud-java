@@ -58,241 +58,242 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetConferenceRecord</td>
+ *      <td><p> GetConferenceRecord</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a conference record by conference ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConferenceRecord(GetConferenceRecordRequest request)
+ *           <li><p> getConferenceRecord(GetConferenceRecordRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConferenceRecord(ConferenceRecordName name)
- *           <li>getConferenceRecord(String name)
+ *           <li><p> getConferenceRecord(ConferenceRecordName name)
+ *           <li><p> getConferenceRecord(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConferenceRecordCallable()
+ *           <li><p> getConferenceRecordCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListConferenceRecords</td>
+ *      <td><p> ListConferenceRecords</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the conference records by start time and in descending order.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listConferenceRecords(ListConferenceRecordsRequest request)
+ *           <li><p> listConferenceRecords(ListConferenceRecordsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listConferenceRecordsPagedCallable()
- *           <li>listConferenceRecordsCallable()
+ *           <li><p> listConferenceRecordsPagedCallable()
+ *           <li><p> listConferenceRecordsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetParticipant</td>
+ *      <td><p> GetParticipant</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant by participant ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getParticipant(GetParticipantRequest request)
+ *           <li><p> getParticipant(GetParticipantRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getParticipant(ParticipantName name)
- *           <li>getParticipant(String name)
+ *           <li><p> getParticipant(ParticipantName name)
+ *           <li><p> getParticipant(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getParticipantCallable()
+ *           <li><p> getParticipantCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListParticipants</td>
+ *      <td><p> ListParticipants</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in a conference record, by default ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listParticipants(ListParticipantsRequest request)
+ *           <li><p> listParticipants(ListParticipantsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listParticipants(ConferenceRecordName parent)
- *           <li>listParticipants(String parent)
+ *           <li><p> listParticipants(ConferenceRecordName parent)
+ *           <li><p> listParticipants(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listParticipantsPagedCallable()
- *           <li>listParticipantsCallable()
+ *           <li><p> listParticipantsPagedCallable()
+ *           <li><p> listParticipantsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetParticipantSession</td>
+ *      <td><p> GetParticipantSession</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant session by participant session ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getParticipantSession(GetParticipantSessionRequest request)
+ *           <li><p> getParticipantSession(GetParticipantSessionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getParticipantSession(ParticipantSessionName name)
- *           <li>getParticipantSession(String name)
+ *           <li><p> getParticipantSession(ParticipantSessionName name)
+ *           <li><p> getParticipantSession(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getParticipantSessionCallable()
+ *           <li><p> getParticipantSessionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListParticipantSessions</td>
+ *      <td><p> ListParticipantSessions</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant sessions of a participant in a conference record, by default ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted this API defaults to `'participantsessions/&#42;, next_page_token'`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listParticipantSessions(ListParticipantSessionsRequest request)
+ *           <li><p> listParticipantSessions(ListParticipantSessionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listParticipantSessions(ParticipantName parent)
- *           <li>listParticipantSessions(String parent)
+ *           <li><p> listParticipantSessions(ParticipantName parent)
+ *           <li><p> listParticipantSessions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listParticipantSessionsPagedCallable()
- *           <li>listParticipantSessionsCallable()
+ *           <li><p> listParticipantSessionsPagedCallable()
+ *           <li><p> listParticipantSessionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRecording</td>
+ *      <td><p> GetRecording</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a recording by recording ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRecording(GetRecordingRequest request)
+ *           <li><p> getRecording(GetRecordingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRecording(RecordingName name)
- *           <li>getRecording(String name)
+ *           <li><p> getRecording(RecordingName name)
+ *           <li><p> getRecording(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRecordingCallable()
+ *           <li><p> getRecordingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRecordings</td>
+ *      <td><p> ListRecordings</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording resources from the conference record.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRecordings(ListRecordingsRequest request)
+ *           <li><p> listRecordings(ListRecordingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRecordings(ConferenceRecordName parent)
- *           <li>listRecordings(String parent)
+ *           <li><p> listRecordings(ConferenceRecordName parent)
+ *           <li><p> listRecordings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRecordingsPagedCallable()
- *           <li>listRecordingsCallable()
+ *           <li><p> listRecordingsPagedCallable()
+ *           <li><p> listRecordingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTranscript</td>
+ *      <td><p> GetTranscript</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a transcript by transcript ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTranscript(GetTranscriptRequest request)
+ *           <li><p> getTranscript(GetTranscriptRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTranscript(TranscriptName name)
- *           <li>getTranscript(String name)
+ *           <li><p> getTranscript(TranscriptName name)
+ *           <li><p> getTranscript(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTranscriptCallable()
+ *           <li><p> getTranscriptCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTranscripts</td>
+ *      <td><p> ListTranscripts</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of transcripts from the conference record.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTranscripts(ListTranscriptsRequest request)
+ *           <li><p> listTranscripts(ListTranscriptsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTranscripts(ConferenceRecordName parent)
- *           <li>listTranscripts(String parent)
+ *           <li><p> listTranscripts(ConferenceRecordName parent)
+ *           <li><p> listTranscripts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTranscriptsPagedCallable()
- *           <li>listTranscriptsCallable()
+ *           <li><p> listTranscriptsPagedCallable()
+ *           <li><p> listTranscriptsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTranscriptEntry</td>
+ *      <td><p> GetTranscriptEntry</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a `TranscriptEntry` resource by entry ID.
  * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when the Google Docs transcript file is modified after generation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTranscriptEntry(GetTranscriptEntryRequest request)
+ *           <li><p> getTranscriptEntry(GetTranscriptEntryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTranscriptEntry(TranscriptEntryName name)
- *           <li>getTranscriptEntry(String name)
+ *           <li><p> getTranscriptEntry(TranscriptEntryName name)
+ *           <li><p> getTranscriptEntry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTranscriptEntryCallable()
+ *           <li><p> getTranscriptEntryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTranscriptEntries</td>
+ *      <td><p> ListTranscriptEntries</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured transcript entries per transcript. By default, ordered by start time and in ascending order.
  * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when the Google Docs transcript file is modified after generation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTranscriptEntries(ListTranscriptEntriesRequest request)
+ *           <li><p> listTranscriptEntries(ListTranscriptEntriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTranscriptEntries(TranscriptName parent)
- *           <li>listTranscriptEntries(String parent)
+ *           <li><p> listTranscriptEntries(TranscriptName parent)
+ *           <li><p> listTranscriptEntries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTranscriptEntriesPagedCallable()
- *           <li>listTranscriptEntriesCallable()
+ *           <li><p> listTranscriptEntriesPagedCallable()
+ *           <li><p> listTranscriptEntriesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

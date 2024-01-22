@@ -53,38 +53,39 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ValidateAddress</td>
+ *      <td><p> ValidateAddress</td>
  *      <td><p> Validates an address.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateAddress(ValidateAddressRequest request)
+ *           <li><p> validateAddress(ValidateAddressRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateAddressCallable()
+ *           <li><p> validateAddressCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ProvideValidationFeedback</td>
+ *      <td><p> ProvideValidationFeedback</td>
  *      <td><p> Feedback about the outcome of the sequence of validation attempts. This should be the last call made after a sequence of validation calls for the same address, and should be called once the transaction is concluded. This should only be sent once for the sequence of `ValidateAddress` requests needed to validate an address fully.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>provideValidationFeedback(ProvideValidationFeedbackRequest request)
+ *           <li><p> provideValidationFeedback(ProvideValidationFeedbackRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>provideValidationFeedbackCallable()
+ *           <li><p> provideValidationFeedbackCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

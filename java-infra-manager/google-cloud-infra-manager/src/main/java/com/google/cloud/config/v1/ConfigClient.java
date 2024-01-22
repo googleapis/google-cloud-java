@@ -72,477 +72,478 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListDeployments</td>
+ *      <td><p> ListDeployments</td>
  *      <td><p> Lists [Deployment][google.cloud.config.v1.Deployment]s in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDeployments(ListDeploymentsRequest request)
+ *           <li><p> listDeployments(ListDeploymentsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDeployments(LocationName parent)
- *           <li>listDeployments(String parent)
+ *           <li><p> listDeployments(LocationName parent)
+ *           <li><p> listDeployments(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDeploymentsPagedCallable()
- *           <li>listDeploymentsCallable()
+ *           <li><p> listDeploymentsPagedCallable()
+ *           <li><p> listDeploymentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDeployment</td>
+ *      <td><p> GetDeployment</td>
  *      <td><p> Gets details about a [Deployment][google.cloud.config.v1.Deployment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDeployment(GetDeploymentRequest request)
+ *           <li><p> getDeployment(GetDeploymentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDeployment(DeploymentName name)
- *           <li>getDeployment(String name)
+ *           <li><p> getDeployment(DeploymentName name)
+ *           <li><p> getDeployment(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDeploymentCallable()
+ *           <li><p> getDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDeployment</td>
+ *      <td><p> CreateDeployment</td>
  *      <td><p> Creates a [Deployment][google.cloud.config.v1.Deployment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDeploymentAsync(CreateDeploymentRequest request)
+ *           <li><p> createDeploymentAsync(CreateDeploymentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createDeploymentAsync(LocationName parent, Deployment deployment, String deploymentId)
- *           <li>createDeploymentAsync(String parent, Deployment deployment, String deploymentId)
+ *           <li><p> createDeploymentAsync(LocationName parent, Deployment deployment, String deploymentId)
+ *           <li><p> createDeploymentAsync(String parent, Deployment deployment, String deploymentId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDeploymentOperationCallable()
- *           <li>createDeploymentCallable()
+ *           <li><p> createDeploymentOperationCallable()
+ *           <li><p> createDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDeployment</td>
+ *      <td><p> UpdateDeployment</td>
  *      <td><p> Updates a [Deployment][google.cloud.config.v1.Deployment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDeploymentAsync(UpdateDeploymentRequest request)
+ *           <li><p> updateDeploymentAsync(UpdateDeploymentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateDeploymentAsync(Deployment deployment, FieldMask updateMask)
+ *           <li><p> updateDeploymentAsync(Deployment deployment, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDeploymentOperationCallable()
- *           <li>updateDeploymentCallable()
+ *           <li><p> updateDeploymentOperationCallable()
+ *           <li><p> updateDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDeployment</td>
+ *      <td><p> DeleteDeployment</td>
  *      <td><p> Deletes a [Deployment][google.cloud.config.v1.Deployment].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDeploymentAsync(DeleteDeploymentRequest request)
+ *           <li><p> deleteDeploymentAsync(DeleteDeploymentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteDeploymentAsync(DeploymentName name)
- *           <li>deleteDeploymentAsync(String name)
+ *           <li><p> deleteDeploymentAsync(DeploymentName name)
+ *           <li><p> deleteDeploymentAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDeploymentOperationCallable()
- *           <li>deleteDeploymentCallable()
+ *           <li><p> deleteDeploymentOperationCallable()
+ *           <li><p> deleteDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRevisions</td>
+ *      <td><p> ListRevisions</td>
  *      <td><p> Lists [Revision][google.cloud.config.v1.Revision]s of a deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRevisions(ListRevisionsRequest request)
+ *           <li><p> listRevisions(ListRevisionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRevisions(DeploymentName parent)
- *           <li>listRevisions(String parent)
+ *           <li><p> listRevisions(DeploymentName parent)
+ *           <li><p> listRevisions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRevisionsPagedCallable()
- *           <li>listRevisionsCallable()
+ *           <li><p> listRevisionsPagedCallable()
+ *           <li><p> listRevisionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRevision</td>
+ *      <td><p> GetRevision</td>
  *      <td><p> Gets details about a [Revision][google.cloud.config.v1.Revision].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRevision(GetRevisionRequest request)
+ *           <li><p> getRevision(GetRevisionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRevision(RevisionName name)
- *           <li>getRevision(String name)
+ *           <li><p> getRevision(RevisionName name)
+ *           <li><p> getRevision(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRevisionCallable()
+ *           <li><p> getRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetResource</td>
+ *      <td><p> GetResource</td>
  *      <td><p> Gets details about a [Resource][google.cloud.config.v1.Resource] deployed by Infra Manager.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getResource(GetResourceRequest request)
+ *           <li><p> getResource(GetResourceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getResource(ResourceName name)
- *           <li>getResource(String name)
+ *           <li><p> getResource(ResourceName name)
+ *           <li><p> getResource(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getResourceCallable()
+ *           <li><p> getResourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListResources</td>
+ *      <td><p> ListResources</td>
  *      <td><p> Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listResources(ListResourcesRequest request)
+ *           <li><p> listResources(ListResourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listResources(RevisionName parent)
- *           <li>listResources(String parent)
+ *           <li><p> listResources(RevisionName parent)
+ *           <li><p> listResources(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listResourcesPagedCallable()
- *           <li>listResourcesCallable()
+ *           <li><p> listResourcesPagedCallable()
+ *           <li><p> listResourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportDeploymentStatefile</td>
+ *      <td><p> ExportDeploymentStatefile</td>
  *      <td><p> Exports Terraform state file from a given deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportDeploymentStatefile(ExportDeploymentStatefileRequest request)
+ *           <li><p> exportDeploymentStatefile(ExportDeploymentStatefileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportDeploymentStatefileCallable()
+ *           <li><p> exportDeploymentStatefileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportRevisionStatefile</td>
+ *      <td><p> ExportRevisionStatefile</td>
  *      <td><p> Exports Terraform state file from a given revision.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportRevisionStatefile(ExportRevisionStatefileRequest request)
+ *           <li><p> exportRevisionStatefile(ExportRevisionStatefileRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportRevisionStatefileCallable()
+ *           <li><p> exportRevisionStatefileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportStatefile</td>
+ *      <td><p> ImportStatefile</td>
  *      <td><p> Imports Terraform state file in a given deployment. The state file does not take effect until the Deployment has been unlocked.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importStatefile(ImportStatefileRequest request)
+ *           <li><p> importStatefile(ImportStatefileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>importStatefile(DeploymentName parent, long lockId)
- *           <li>importStatefile(String parent, long lockId)
+ *           <li><p> importStatefile(DeploymentName parent, long lockId)
+ *           <li><p> importStatefile(String parent, long lockId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importStatefileCallable()
+ *           <li><p> importStatefileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteStatefile</td>
+ *      <td><p> DeleteStatefile</td>
  *      <td><p> Deletes Terraform state file in a given deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteStatefile(DeleteStatefileRequest request)
+ *           <li><p> deleteStatefile(DeleteStatefileRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteStatefile(DeploymentName name)
- *           <li>deleteStatefile(String name)
+ *           <li><p> deleteStatefile(DeploymentName name)
+ *           <li><p> deleteStatefile(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteStatefileCallable()
+ *           <li><p> deleteStatefileCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LockDeployment</td>
+ *      <td><p> LockDeployment</td>
  *      <td><p> Locks a deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lockDeploymentAsync(LockDeploymentRequest request)
+ *           <li><p> lockDeploymentAsync(LockDeploymentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>lockDeploymentAsync(DeploymentName name)
- *           <li>lockDeploymentAsync(String name)
+ *           <li><p> lockDeploymentAsync(DeploymentName name)
+ *           <li><p> lockDeploymentAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lockDeploymentOperationCallable()
- *           <li>lockDeploymentCallable()
+ *           <li><p> lockDeploymentOperationCallable()
+ *           <li><p> lockDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UnlockDeployment</td>
+ *      <td><p> UnlockDeployment</td>
  *      <td><p> Unlocks a locked deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>unlockDeploymentAsync(UnlockDeploymentRequest request)
+ *           <li><p> unlockDeploymentAsync(UnlockDeploymentRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>unlockDeploymentAsync(DeploymentName name, long lockId)
- *           <li>unlockDeploymentAsync(String name, long lockId)
+ *           <li><p> unlockDeploymentAsync(DeploymentName name, long lockId)
+ *           <li><p> unlockDeploymentAsync(String name, long lockId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>unlockDeploymentOperationCallable()
- *           <li>unlockDeploymentCallable()
+ *           <li><p> unlockDeploymentOperationCallable()
+ *           <li><p> unlockDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportLockInfo</td>
+ *      <td><p> ExportLockInfo</td>
  *      <td><p> Exports the lock info on a locked deployment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportLockInfo(ExportLockInfoRequest request)
+ *           <li><p> exportLockInfo(ExportLockInfoRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>exportLockInfo(DeploymentName name)
- *           <li>exportLockInfo(String name)
+ *           <li><p> exportLockInfo(DeploymentName name)
+ *           <li><p> exportLockInfo(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportLockInfoCallable()
+ *           <li><p> exportLockInfoCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePreview</td>
+ *      <td><p> CreatePreview</td>
  *      <td><p> Creates a [Preview][google.cloud.config.v1.Preview].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPreviewAsync(CreatePreviewRequest request)
+ *           <li><p> createPreviewAsync(CreatePreviewRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createPreviewAsync(LocationName parent, Preview preview)
- *           <li>createPreviewAsync(String parent, Preview preview)
+ *           <li><p> createPreviewAsync(LocationName parent, Preview preview)
+ *           <li><p> createPreviewAsync(String parent, Preview preview)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPreviewOperationCallable()
- *           <li>createPreviewCallable()
+ *           <li><p> createPreviewOperationCallable()
+ *           <li><p> createPreviewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPreview</td>
+ *      <td><p> GetPreview</td>
  *      <td><p> Gets details about a [Preview][google.cloud.config.v1.Preview].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPreview(GetPreviewRequest request)
+ *           <li><p> getPreview(GetPreviewRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPreview(PreviewName name)
- *           <li>getPreview(String name)
+ *           <li><p> getPreview(PreviewName name)
+ *           <li><p> getPreview(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPreviewCallable()
+ *           <li><p> getPreviewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPreviews</td>
+ *      <td><p> ListPreviews</td>
  *      <td><p> Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPreviews(ListPreviewsRequest request)
+ *           <li><p> listPreviews(ListPreviewsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPreviews(LocationName parent)
- *           <li>listPreviews(String parent)
+ *           <li><p> listPreviews(LocationName parent)
+ *           <li><p> listPreviews(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPreviewsPagedCallable()
- *           <li>listPreviewsCallable()
+ *           <li><p> listPreviewsPagedCallable()
+ *           <li><p> listPreviewsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePreview</td>
+ *      <td><p> DeletePreview</td>
  *      <td><p> Deletes a [Preview][google.cloud.config.v1.Preview].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePreviewAsync(DeletePreviewRequest request)
+ *           <li><p> deletePreviewAsync(DeletePreviewRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePreviewAsync(PreviewName name)
- *           <li>deletePreviewAsync(String name)
+ *           <li><p> deletePreviewAsync(PreviewName name)
+ *           <li><p> deletePreviewAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePreviewOperationCallable()
- *           <li>deletePreviewCallable()
+ *           <li><p> deletePreviewOperationCallable()
+ *           <li><p> deletePreviewCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ExportPreviewResult</td>
+ *      <td><p> ExportPreviewResult</td>
  *      <td><p> Export [Preview][google.cloud.config.v1.Preview] results.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>exportPreviewResult(ExportPreviewResultRequest request)
+ *           <li><p> exportPreviewResult(ExportPreviewResultRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>exportPreviewResultCallable()
+ *           <li><p> exportPreviewResultCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

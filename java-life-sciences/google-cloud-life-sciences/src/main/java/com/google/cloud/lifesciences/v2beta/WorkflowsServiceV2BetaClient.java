@@ -67,12 +67,14 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>RunPipeline</td>
+ *      <td><p> RunPipeline</td>
  *      <td><p> Runs a pipeline.  The returned Operation's [metadata] [google.longrunning.Operation.metadata] field will contain a [google.cloud.lifesciences.v2beta.Metadata][google.cloud.lifesciences.v2beta.Metadata] object describing the status of the pipeline execution. The [response][google.longrunning.Operation.response] field will contain a [google.cloud.lifesciences.v2beta.RunPipelineResponse][google.cloud.lifesciences.v2beta.RunPipelineResponse] object if the pipeline completes successfully.
  * <p>  &#42;&#42;Note:&#42;&#42; Before you can use this method, the &#42;Life Sciences Service Agent&#42; must have access to your project. This is done automatically when the Cloud Life Sciences API is first enabled, but if you delete this permission you must disable and re-enable the API to grant the Life Sciences Service Agent the required permissions. Authorization requires the following [Google IAM](https://cloud.google.com/iam/) permission:
  * <ul>
@@ -81,44 +83,43 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runPipelineAsync(RunPipelineRequest request)
+ *           <li><p> runPipelineAsync(RunPipelineRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runPipelineOperationCallable()
- *           <li>runPipelineCallable()
+ *           <li><p> runPipelineOperationCallable()
+ *           <li><p> runPipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -65,373 +65,374 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateDeviceRegistry</td>
+ *      <td><p> CreateDeviceRegistry</td>
  *      <td><p> Creates a device registry that contains devices.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDeviceRegistry(CreateDeviceRegistryRequest request)
+ *           <li><p> createDeviceRegistry(CreateDeviceRegistryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDeviceRegistry(LocationName parent, DeviceRegistry deviceRegistry)
- *           <li>createDeviceRegistry(String parent, DeviceRegistry deviceRegistry)
+ *           <li><p> createDeviceRegistry(LocationName parent, DeviceRegistry deviceRegistry)
+ *           <li><p> createDeviceRegistry(String parent, DeviceRegistry deviceRegistry)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDeviceRegistryCallable()
+ *           <li><p> createDeviceRegistryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDeviceRegistry</td>
+ *      <td><p> GetDeviceRegistry</td>
  *      <td><p> Gets a device registry configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDeviceRegistry(GetDeviceRegistryRequest request)
+ *           <li><p> getDeviceRegistry(GetDeviceRegistryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDeviceRegistry(RegistryName name)
- *           <li>getDeviceRegistry(String name)
+ *           <li><p> getDeviceRegistry(RegistryName name)
+ *           <li><p> getDeviceRegistry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDeviceRegistryCallable()
+ *           <li><p> getDeviceRegistryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDeviceRegistry</td>
+ *      <td><p> UpdateDeviceRegistry</td>
  *      <td><p> Updates a device registry configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDeviceRegistry(UpdateDeviceRegistryRequest request)
+ *           <li><p> updateDeviceRegistry(UpdateDeviceRegistryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDeviceRegistry(DeviceRegistry deviceRegistry, FieldMask updateMask)
+ *           <li><p> updateDeviceRegistry(DeviceRegistry deviceRegistry, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDeviceRegistryCallable()
+ *           <li><p> updateDeviceRegistryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDeviceRegistry</td>
+ *      <td><p> DeleteDeviceRegistry</td>
  *      <td><p> Deletes a device registry configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDeviceRegistry(DeleteDeviceRegistryRequest request)
+ *           <li><p> deleteDeviceRegistry(DeleteDeviceRegistryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDeviceRegistry(RegistryName name)
- *           <li>deleteDeviceRegistry(String name)
+ *           <li><p> deleteDeviceRegistry(RegistryName name)
+ *           <li><p> deleteDeviceRegistry(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDeviceRegistryCallable()
+ *           <li><p> deleteDeviceRegistryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDeviceRegistries</td>
+ *      <td><p> ListDeviceRegistries</td>
  *      <td><p> Lists device registries.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDeviceRegistries(ListDeviceRegistriesRequest request)
+ *           <li><p> listDeviceRegistries(ListDeviceRegistriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDeviceRegistries(LocationName parent)
- *           <li>listDeviceRegistries(String parent)
+ *           <li><p> listDeviceRegistries(LocationName parent)
+ *           <li><p> listDeviceRegistries(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDeviceRegistriesPagedCallable()
- *           <li>listDeviceRegistriesCallable()
+ *           <li><p> listDeviceRegistriesPagedCallable()
+ *           <li><p> listDeviceRegistriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateDevice</td>
+ *      <td><p> CreateDevice</td>
  *      <td><p> Creates a device in a device registry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createDevice(CreateDeviceRequest request)
+ *           <li><p> createDevice(CreateDeviceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createDevice(RegistryName parent, Device device)
- *           <li>createDevice(String parent, Device device)
+ *           <li><p> createDevice(RegistryName parent, Device device)
+ *           <li><p> createDevice(String parent, Device device)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createDeviceCallable()
+ *           <li><p> createDeviceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetDevice</td>
+ *      <td><p> GetDevice</td>
  *      <td><p> Gets details about a device.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getDevice(GetDeviceRequest request)
+ *           <li><p> getDevice(GetDeviceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getDevice(DeviceName name)
- *           <li>getDevice(String name)
+ *           <li><p> getDevice(DeviceName name)
+ *           <li><p> getDevice(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getDeviceCallable()
+ *           <li><p> getDeviceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateDevice</td>
+ *      <td><p> UpdateDevice</td>
  *      <td><p> Updates a device.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateDevice(UpdateDeviceRequest request)
+ *           <li><p> updateDevice(UpdateDeviceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateDevice(Device device, FieldMask updateMask)
+ *           <li><p> updateDevice(Device device, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateDeviceCallable()
+ *           <li><p> updateDeviceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteDevice</td>
+ *      <td><p> DeleteDevice</td>
  *      <td><p> Deletes a device.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteDevice(DeleteDeviceRequest request)
+ *           <li><p> deleteDevice(DeleteDeviceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteDevice(DeviceName name)
- *           <li>deleteDevice(String name)
+ *           <li><p> deleteDevice(DeviceName name)
+ *           <li><p> deleteDevice(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteDeviceCallable()
+ *           <li><p> deleteDeviceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDevices</td>
+ *      <td><p> ListDevices</td>
  *      <td><p> List devices in a device registry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDevices(ListDevicesRequest request)
+ *           <li><p> listDevices(ListDevicesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDevices(RegistryName parent)
- *           <li>listDevices(String parent)
+ *           <li><p> listDevices(RegistryName parent)
+ *           <li><p> listDevices(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDevicesPagedCallable()
- *           <li>listDevicesCallable()
+ *           <li><p> listDevicesPagedCallable()
+ *           <li><p> listDevicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ModifyCloudToDeviceConfig</td>
+ *      <td><p> ModifyCloudToDeviceConfig</td>
  *      <td><p> Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core servers. Returns the modified configuration version and its metadata.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>modifyCloudToDeviceConfig(ModifyCloudToDeviceConfigRequest request)
+ *           <li><p> modifyCloudToDeviceConfig(ModifyCloudToDeviceConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData)
- *           <li>modifyCloudToDeviceConfig(String name, ByteString binaryData)
+ *           <li><p> modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData)
+ *           <li><p> modifyCloudToDeviceConfig(String name, ByteString binaryData)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>modifyCloudToDeviceConfigCallable()
+ *           <li><p> modifyCloudToDeviceConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDeviceConfigVersions</td>
+ *      <td><p> ListDeviceConfigVersions</td>
  *      <td><p> Lists the last few versions of the device configuration in descending order (i.e.: newest first).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDeviceConfigVersions(ListDeviceConfigVersionsRequest request)
+ *           <li><p> listDeviceConfigVersions(ListDeviceConfigVersionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDeviceConfigVersions(DeviceName name)
- *           <li>listDeviceConfigVersions(String name)
+ *           <li><p> listDeviceConfigVersions(DeviceName name)
+ *           <li><p> listDeviceConfigVersions(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDeviceConfigVersionsCallable()
+ *           <li><p> listDeviceConfigVersionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDeviceStates</td>
+ *      <td><p> ListDeviceStates</td>
  *      <td><p> Lists the last few versions of the device state in descending order (i.e.: newest first).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDeviceStates(ListDeviceStatesRequest request)
+ *           <li><p> listDeviceStates(ListDeviceStatesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDeviceStates(DeviceName name)
- *           <li>listDeviceStates(String name)
+ *           <li><p> listDeviceStates(DeviceName name)
+ *           <li><p> listDeviceStates(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDeviceStatesCallable()
+ *           <li><p> listDeviceStatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource)
- *           <li>getIamPolicy(String resource)
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(ResourceName resource, List<String> permissions)
- *           <li>testIamPermissions(String resource, List<String> permissions)
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SendCommandToDevice</td>
+ *      <td><p> SendCommandToDevice</td>
  *      <td><p> Sends a command to the specified device. In order for a device to be able to receive commands, it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the group of MQTT topics specified by    /devices/{device-id}/commands/#. This subscription will receive commands    at the top-level topic /devices/{device-id}/commands as well as commands    for subfolders, like /devices/{device-id}/commands/subfolder.    Note that subscribing to specific subfolders is not supported. If the command could not be delivered to the device, this method will return an error; in particular, if the device is not subscribed, this method will return FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the device.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>sendCommandToDevice(SendCommandToDeviceRequest request)
+ *           <li><p> sendCommandToDevice(SendCommandToDeviceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>sendCommandToDevice(DeviceName name, ByteString binaryData)
- *           <li>sendCommandToDevice(String name, ByteString binaryData)
- *           <li>sendCommandToDevice(DeviceName name, ByteString binaryData, String subfolder)
- *           <li>sendCommandToDevice(String name, ByteString binaryData, String subfolder)
+ *           <li><p> sendCommandToDevice(DeviceName name, ByteString binaryData)
+ *           <li><p> sendCommandToDevice(String name, ByteString binaryData)
+ *           <li><p> sendCommandToDevice(DeviceName name, ByteString binaryData, String subfolder)
+ *           <li><p> sendCommandToDevice(String name, ByteString binaryData, String subfolder)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>sendCommandToDeviceCallable()
+ *           <li><p> sendCommandToDeviceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BindDeviceToGateway</td>
+ *      <td><p> BindDeviceToGateway</td>
  *      <td><p> Associates the device with the gateway.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>bindDeviceToGateway(BindDeviceToGatewayRequest request)
+ *           <li><p> bindDeviceToGateway(BindDeviceToGatewayRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>bindDeviceToGateway(RegistryName parent, String gatewayId, String deviceId)
- *           <li>bindDeviceToGateway(String parent, String gatewayId, String deviceId)
+ *           <li><p> bindDeviceToGateway(RegistryName parent, String gatewayId, String deviceId)
+ *           <li><p> bindDeviceToGateway(String parent, String gatewayId, String deviceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>bindDeviceToGatewayCallable()
+ *           <li><p> bindDeviceToGatewayCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UnbindDeviceFromGateway</td>
+ *      <td><p> UnbindDeviceFromGateway</td>
  *      <td><p> Deletes the association between the device and the gateway.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>unbindDeviceFromGateway(UnbindDeviceFromGatewayRequest request)
+ *           <li><p> unbindDeviceFromGateway(UnbindDeviceFromGatewayRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>unbindDeviceFromGateway(RegistryName parent, String gatewayId, String deviceId)
- *           <li>unbindDeviceFromGateway(String parent, String gatewayId, String deviceId)
+ *           <li><p> unbindDeviceFromGateway(RegistryName parent, String gatewayId, String deviceId)
+ *           <li><p> unbindDeviceFromGateway(String parent, String gatewayId, String deviceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>unbindDeviceFromGatewayCallable()
+ *           <li><p> unbindDeviceFromGatewayCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

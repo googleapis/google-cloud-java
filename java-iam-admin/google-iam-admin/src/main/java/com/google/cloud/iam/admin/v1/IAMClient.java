@@ -139,100 +139,102 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListServiceAccounts</td>
+ *      <td><p> ListServiceAccounts</td>
  *      <td><p> Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServiceAccounts(ListServiceAccountsRequest request)
+ *           <li><p> listServiceAccounts(ListServiceAccountsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServiceAccounts(ProjectName name)
- *           <li>listServiceAccounts(String name)
+ *           <li><p> listServiceAccounts(ProjectName name)
+ *           <li><p> listServiceAccounts(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServiceAccountsPagedCallable()
- *           <li>listServiceAccountsCallable()
+ *           <li><p> listServiceAccountsPagedCallable()
+ *           <li><p> listServiceAccountsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServiceAccount</td>
+ *      <td><p> GetServiceAccount</td>
  *      <td><p> Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServiceAccount(GetServiceAccountRequest request)
+ *           <li><p> getServiceAccount(GetServiceAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServiceAccount(ServiceAccountName name)
- *           <li>getServiceAccount(String name)
+ *           <li><p> getServiceAccount(ServiceAccountName name)
+ *           <li><p> getServiceAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServiceAccountCallable()
+ *           <li><p> getServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateServiceAccount</td>
+ *      <td><p> CreateServiceAccount</td>
  *      <td><p> Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServiceAccount(CreateServiceAccountRequest request)
+ *           <li><p> createServiceAccount(CreateServiceAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createServiceAccount(ProjectName name, String accountId, ServiceAccount serviceAccount)
- *           <li>createServiceAccount(String name, String accountId, ServiceAccount serviceAccount)
+ *           <li><p> createServiceAccount(ProjectName name, String accountId, ServiceAccount serviceAccount)
+ *           <li><p> createServiceAccount(String name, String accountId, ServiceAccount serviceAccount)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceAccountCallable()
+ *           <li><p> createServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateServiceAccount</td>
+ *      <td><p> UpdateServiceAccount</td>
  *      <td><p> &#42;&#42;Note:&#42;&#42; We are in the process of deprecating this method. Use [PatchServiceAccount][google.iam.admin.v1.IAM.PatchServiceAccount] instead.
  * <p>  Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
  * <p>  You can update only the `display_name` field.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateServiceAccount(ServiceAccount request)
+ *           <li><p> updateServiceAccount(ServiceAccount request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateServiceAccountCallable()
+ *           <li><p> updateServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PatchServiceAccount</td>
+ *      <td><p> PatchServiceAccount</td>
  *      <td><p> Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>patchServiceAccount(PatchServiceAccountRequest request)
+ *           <li><p> patchServiceAccount(PatchServiceAccountRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>patchServiceAccountCallable()
+ *           <li><p> patchServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteServiceAccount</td>
+ *      <td><p> DeleteServiceAccount</td>
  *      <td><p> Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
  * <p>  &#42;&#42;Warning:&#42;&#42; After you delete a service account, you might not be able to undelete it. If you know that you need to re-enable the service account in the future, use [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount] instead.
  * <p>  If you delete a service account, IAM permanently removes the service account 30 days later. Google Cloud cannot recover the service account after it is permanently removed, even if you file a support request.
@@ -240,53 +242,53 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteServiceAccount(DeleteServiceAccountRequest request)
+ *           <li><p> deleteServiceAccount(DeleteServiceAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteServiceAccount(ServiceAccountName name)
- *           <li>deleteServiceAccount(String name)
+ *           <li><p> deleteServiceAccount(ServiceAccountName name)
+ *           <li><p> deleteServiceAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteServiceAccountCallable()
+ *           <li><p> deleteServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteServiceAccount</td>
+ *      <td><p> UndeleteServiceAccount</td>
  *      <td><p> Restores a deleted [ServiceAccount][google.iam.admin.v1.ServiceAccount].
  * <p>  &#42;&#42;Important:&#42;&#42; It is not always possible to restore a deleted service account. Use this method only as a last resort.
  * <p>  After you delete a service account, IAM permanently removes the service account 30 days later. There is no way to restore a deleted service account that has been permanently removed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteServiceAccount(UndeleteServiceAccountRequest request)
+ *           <li><p> undeleteServiceAccount(UndeleteServiceAccountRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteServiceAccountCallable()
+ *           <li><p> undeleteServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EnableServiceAccount</td>
+ *      <td><p> EnableServiceAccount</td>
  *      <td><p> Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] that was disabled by [DisableServiceAccount][google.iam.admin.v1.IAM.DisableServiceAccount].
  * <p>  If the service account is already enabled, then this method has no effect.
  * <p>  If the service account was disabled by other means—for example, if Google disabled the service account because it was compromised—you cannot use this method to enable the service account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>enableServiceAccount(EnableServiceAccountRequest request)
+ *           <li><p> enableServiceAccount(EnableServiceAccountRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>enableServiceAccountCallable()
+ *           <li><p> enableServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DisableServiceAccount</td>
+ *      <td><p> DisableServiceAccount</td>
  *      <td><p> Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount] immediately.
  * <p>  If an application uses the service account to authenticate, that application can no longer call Google APIs or access Google Cloud resources. Existing access tokens for the service account are rejected, and requests for new access tokens will fail.
  * <p>  To re-enable the service account, use [EnableServiceAccount][google.iam.admin.v1.IAM.EnableServiceAccount]. After you re-enable the service account, its existing access tokens will be accepted, and you can request new access tokens.
@@ -294,205 +296,205 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>disableServiceAccount(DisableServiceAccountRequest request)
+ *           <li><p> disableServiceAccount(DisableServiceAccountRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>disableServiceAccountCallable()
+ *           <li><p> disableServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListServiceAccountKeys</td>
+ *      <td><p> ListServiceAccountKeys</td>
  *      <td><p> Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServiceAccountKeys(ListServiceAccountKeysRequest request)
+ *           <li><p> listServiceAccountKeys(ListServiceAccountKeysRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServiceAccountKeys(ServiceAccountName name, List<ListServiceAccountKeysRequest.KeyType> keyTypes)
- *           <li>listServiceAccountKeys(String name, List<ListServiceAccountKeysRequest.KeyType> keyTypes)
+ *           <li><p> listServiceAccountKeys(ServiceAccountName name, List&lt;ListServiceAccountKeysRequest.KeyType&gt; keyTypes)
+ *           <li><p> listServiceAccountKeys(String name, List&lt;ListServiceAccountKeysRequest.KeyType&gt; keyTypes)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServiceAccountKeysCallable()
+ *           <li><p> listServiceAccountKeysCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServiceAccountKey</td>
+ *      <td><p> GetServiceAccountKey</td>
  *      <td><p> Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServiceAccountKey(GetServiceAccountKeyRequest request)
+ *           <li><p> getServiceAccountKey(GetServiceAccountKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServiceAccountKey(KeyName name, ServiceAccountPublicKeyType publicKeyType)
- *           <li>getServiceAccountKey(String name, ServiceAccountPublicKeyType publicKeyType)
+ *           <li><p> getServiceAccountKey(KeyName name, ServiceAccountPublicKeyType publicKeyType)
+ *           <li><p> getServiceAccountKey(String name, ServiceAccountPublicKeyType publicKeyType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServiceAccountKeyCallable()
+ *           <li><p> getServiceAccountKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateServiceAccountKey</td>
+ *      <td><p> CreateServiceAccountKey</td>
  *      <td><p> Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServiceAccountKey(CreateServiceAccountKeyRequest request)
+ *           <li><p> createServiceAccountKey(CreateServiceAccountKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createServiceAccountKey(ServiceAccountName name, ServiceAccountPrivateKeyType privateKeyType, ServiceAccountKeyAlgorithm keyAlgorithm)
- *           <li>createServiceAccountKey(String name, ServiceAccountPrivateKeyType privateKeyType, ServiceAccountKeyAlgorithm keyAlgorithm)
+ *           <li><p> createServiceAccountKey(ServiceAccountName name, ServiceAccountPrivateKeyType privateKeyType, ServiceAccountKeyAlgorithm keyAlgorithm)
+ *           <li><p> createServiceAccountKey(String name, ServiceAccountPrivateKeyType privateKeyType, ServiceAccountKeyAlgorithm keyAlgorithm)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceAccountKeyCallable()
+ *           <li><p> createServiceAccountKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UploadServiceAccountKey</td>
+ *      <td><p> UploadServiceAccountKey</td>
  *      <td><p> Uploads the public key portion of a key pair that you manage, and associates the public key with a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
  * <p>  After you upload the public key, you can use the private key from the key pair as a service account key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>uploadServiceAccountKey(UploadServiceAccountKeyRequest request)
+ *           <li><p> uploadServiceAccountKey(UploadServiceAccountKeyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>uploadServiceAccountKeyCallable()
+ *           <li><p> uploadServiceAccountKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteServiceAccountKey</td>
+ *      <td><p> DeleteServiceAccountKey</td>
  *      <td><p> Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. Deleting a service account key does not revoke short-lived credentials that have been issued based on the service account key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteServiceAccountKey(DeleteServiceAccountKeyRequest request)
+ *           <li><p> deleteServiceAccountKey(DeleteServiceAccountKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteServiceAccountKey(KeyName name)
- *           <li>deleteServiceAccountKey(String name)
+ *           <li><p> deleteServiceAccountKey(KeyName name)
+ *           <li><p> deleteServiceAccountKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteServiceAccountKeyCallable()
+ *           <li><p> deleteServiceAccountKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DisableServiceAccountKey</td>
+ *      <td><p> DisableServiceAccountKey</td>
  *      <td><p> Disable a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey]. A disabled service account key can be re-enabled with [EnableServiceAccountKey][google.iam.admin.v1.IAM.EnableServiceAccountKey].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>disableServiceAccountKey(DisableServiceAccountKeyRequest request)
+ *           <li><p> disableServiceAccountKey(DisableServiceAccountKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>disableServiceAccountKey(KeyName name)
- *           <li>disableServiceAccountKey(String name)
+ *           <li><p> disableServiceAccountKey(KeyName name)
+ *           <li><p> disableServiceAccountKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>disableServiceAccountKeyCallable()
+ *           <li><p> disableServiceAccountKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EnableServiceAccountKey</td>
+ *      <td><p> EnableServiceAccountKey</td>
  *      <td><p> Enable a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>enableServiceAccountKey(EnableServiceAccountKeyRequest request)
+ *           <li><p> enableServiceAccountKey(EnableServiceAccountKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>enableServiceAccountKey(KeyName name)
- *           <li>enableServiceAccountKey(String name)
+ *           <li><p> enableServiceAccountKey(KeyName name)
+ *           <li><p> enableServiceAccountKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>enableServiceAccountKeyCallable()
+ *           <li><p> enableServiceAccountKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SignBlob</td>
+ *      <td><p> SignBlob</td>
  *      <td><p> &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob) method in the IAM Service Account Credentials API instead. If you currently use this method, see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for instructions.
  * <p>  Signs a blob using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>signBlob(SignBlobRequest request)
+ *           <li><p> signBlob(SignBlobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>signBlob(ServiceAccountName name, ByteString bytesToSign)
- *           <li>signBlob(String name, ByteString bytesToSign)
+ *           <li><p> signBlob(ServiceAccountName name, ByteString bytesToSign)
+ *           <li><p> signBlob(String name, ByteString bytesToSign)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>signBlobCallable()
+ *           <li><p> signBlobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SignJwt</td>
+ *      <td><p> SignJwt</td>
  *      <td><p> &#42;&#42;Note:&#42;&#42; This method is deprecated. Use the [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt) method in the IAM Service Account Credentials API instead. If you currently use this method, see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for instructions.
  * <p>  Signs a JSON Web Token (JWT) using the system-managed private key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>signJwt(SignJwtRequest request)
+ *           <li><p> signJwt(SignJwtRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>signJwt(ServiceAccountName name, String payload)
- *           <li>signJwt(String name, String payload)
+ *           <li><p> signJwt(ServiceAccountName name, String payload)
+ *           <li><p> signJwt(String name, String payload)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>signJwtCallable()
+ *           <li><p> signJwtCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM policy specifies which principals have access to the service account.
  * <p>  This method does not tell you whether the service account has been granted any roles on other resources. To check whether a service account has role grants on a resource, use the `getIamPolicy` method for that resource. For example, to view the role grants for a project, call the Resource Manager API's [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy) method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource)
- *           <li>getIamPolicy(String resource)
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM policy that is attached to a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
  * <p>  Use this method to grant or revoke access to the service account. For example, you could grant a principal the ability to impersonate the service account.
  * <p>  This method does not enable the service account to access other resources. To grant roles to a service account on a resource, follow these steps:
@@ -501,116 +503,116 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Tests whether the caller has the specified permissions on a [ServiceAccount][google.iam.admin.v1.ServiceAccount].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(ResourceName resource, List<String> permissions)
- *           <li>testIamPermissions(String resource, List<String> permissions)
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryGrantableRoles</td>
+ *      <td><p> QueryGrantableRoles</td>
  *      <td><p> Lists roles that can be granted on a Google Cloud resource. A role is grantable if the IAM policy for the resource can contain bindings to the role.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryGrantableRoles(QueryGrantableRolesRequest request)
+ *           <li><p> queryGrantableRoles(QueryGrantableRolesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>queryGrantableRoles(String fullResourceName)
+ *           <li><p> queryGrantableRoles(String fullResourceName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryGrantableRolesPagedCallable()
- *           <li>queryGrantableRolesCallable()
+ *           <li><p> queryGrantableRolesPagedCallable()
+ *           <li><p> queryGrantableRolesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRoles</td>
+ *      <td><p> ListRoles</td>
  *      <td><p> Lists every predefined [Role][google.iam.admin.v1.Role] that IAM supports, or every custom role that is defined for an organization or project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRoles(ListRolesRequest request)
+ *           <li><p> listRoles(ListRolesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRolesPagedCallable()
- *           <li>listRolesCallable()
+ *           <li><p> listRolesPagedCallable()
+ *           <li><p> listRolesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRole</td>
+ *      <td><p> GetRole</td>
  *      <td><p> Gets the definition of a [Role][google.iam.admin.v1.Role].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRole(GetRoleRequest request)
+ *           <li><p> getRole(GetRoleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRoleCallable()
+ *           <li><p> getRoleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateRole</td>
+ *      <td><p> CreateRole</td>
  *      <td><p> Creates a new custom [Role][google.iam.admin.v1.Role].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRole(CreateRoleRequest request)
+ *           <li><p> createRole(CreateRoleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRoleCallable()
+ *           <li><p> createRoleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRole</td>
+ *      <td><p> UpdateRole</td>
  *      <td><p> Updates the definition of a custom [Role][google.iam.admin.v1.Role].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRole(UpdateRoleRequest request)
+ *           <li><p> updateRole(UpdateRoleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRoleCallable()
+ *           <li><p> updateRoleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRole</td>
+ *      <td><p> DeleteRole</td>
  *      <td><p> Deletes a custom [Role][google.iam.admin.v1.Role].
  * <p>  When you delete a custom role, the following changes occur immediately:
  * <ul>
@@ -626,73 +628,72 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRole(DeleteRoleRequest request)
+ *           <li><p> deleteRole(DeleteRoleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRoleCallable()
+ *           <li><p> deleteRoleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteRole</td>
+ *      <td><p> UndeleteRole</td>
  *      <td><p> Undeletes a custom [Role][google.iam.admin.v1.Role].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteRole(UndeleteRoleRequest request)
+ *           <li><p> undeleteRole(UndeleteRoleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteRoleCallable()
+ *           <li><p> undeleteRoleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryTestablePermissions</td>
+ *      <td><p> QueryTestablePermissions</td>
  *      <td><p> Lists every permission that you can test on a resource. A permission is testable if you can check whether a principal has that permission on the resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryTestablePermissions(QueryTestablePermissionsRequest request)
+ *           <li><p> queryTestablePermissions(QueryTestablePermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryTestablePermissionsPagedCallable()
- *           <li>queryTestablePermissionsCallable()
+ *           <li><p> queryTestablePermissionsPagedCallable()
+ *           <li><p> queryTestablePermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>QueryAuditableServices</td>
+ *      <td><p> QueryAuditableServices</td>
  *      <td><p> Returns a list of services that allow you to opt into audit logs that are not generated by default.
  * <p>  To learn more about audit logs, see the [Logging documentation](https://cloud.google.com/logging/docs/audit).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>queryAuditableServices(QueryAuditableServicesRequest request)
+ *           <li><p> queryAuditableServices(QueryAuditableServicesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>queryAuditableServicesCallable()
+ *           <li><p> queryAuditableServicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LintPolicy</td>
+ *      <td><p> LintPolicy</td>
  *      <td><p> Lints, or validates, an IAM policy. Currently checks the [google.iam.v1.Binding.condition][google.iam.v1.Binding.condition] field, which contains a condition expression for a role binding.
  * <p>  Successful calls to this method always return an HTTP `200 OK` status code, even if the linter detects an issue in the IAM policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>lintPolicy(LintPolicyRequest request)
+ *           <li><p> lintPolicy(LintPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>lintPolicyCallable()
+ *           <li><p> lintPolicyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

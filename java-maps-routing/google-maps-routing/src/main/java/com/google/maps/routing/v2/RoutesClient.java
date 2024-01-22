@@ -69,12 +69,14 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ComputeRoutes</td>
+ *      <td><p> ComputeRoutes</td>
  *      <td><p> Returns the primary route along with optional alternate routes, given a set of terminal and intermediate waypoints.
  * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated list of field paths. See detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
  * <p>  For example, in this method:
@@ -91,16 +93,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>computeRoutes(ComputeRoutesRequest request)
+ *           <li><p> computeRoutes(ComputeRoutesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>computeRoutesCallable()
+ *           <li><p> computeRoutesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ComputeRouteMatrix</td>
+ *      <td><p> ComputeRouteMatrix</td>
  *      <td><p> Takes in a list of origins and destinations and returns a stream containing route information for each combination of origin and destination.
  * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using the URL parameter `$fields` or `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated list of field paths. See this detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
  * <p>  For example, in this method:
@@ -117,10 +119,9 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>computeRouteMatrixCallable()
+ *           <li><p> computeRouteMatrixCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

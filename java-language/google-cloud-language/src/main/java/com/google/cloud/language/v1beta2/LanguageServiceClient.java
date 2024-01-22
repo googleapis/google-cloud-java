@@ -50,141 +50,142 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AnalyzeSentiment</td>
+ *      <td><p> AnalyzeSentiment</td>
  *      <td><p> Analyzes the sentiment of the provided text.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeSentiment(AnalyzeSentimentRequest request)
+ *           <li><p> analyzeSentiment(AnalyzeSentimentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeSentiment(Document document)
- *           <li>analyzeSentiment(Document document, EncodingType encodingType)
+ *           <li><p> analyzeSentiment(Document document)
+ *           <li><p> analyzeSentiment(Document document, EncodingType encodingType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeSentimentCallable()
+ *           <li><p> analyzeSentimentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeEntities</td>
+ *      <td><p> AnalyzeEntities</td>
  *      <td><p> Finds named entities (currently proper names and common nouns) in the text along with entity types, salience, mentions for each entity, and other properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeEntities(AnalyzeEntitiesRequest request)
+ *           <li><p> analyzeEntities(AnalyzeEntitiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeEntities(Document document)
- *           <li>analyzeEntities(Document document, EncodingType encodingType)
+ *           <li><p> analyzeEntities(Document document)
+ *           <li><p> analyzeEntities(Document document, EncodingType encodingType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeEntitiesCallable()
+ *           <li><p> analyzeEntitiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeEntitySentiment</td>
+ *      <td><p> AnalyzeEntitySentiment</td>
  *      <td><p> Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes sentiment associated with each entity and its mentions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeEntitySentiment(AnalyzeEntitySentimentRequest request)
+ *           <li><p> analyzeEntitySentiment(AnalyzeEntitySentimentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeEntitySentiment(Document document)
- *           <li>analyzeEntitySentiment(Document document, EncodingType encodingType)
+ *           <li><p> analyzeEntitySentiment(Document document)
+ *           <li><p> analyzeEntitySentiment(Document document, EncodingType encodingType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeEntitySentimentCallable()
+ *           <li><p> analyzeEntitySentimentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnalyzeSyntax</td>
+ *      <td><p> AnalyzeSyntax</td>
  *      <td><p> Analyzes the syntax of the text and provides sentence boundaries and tokenization along with part of speech tags, dependency trees, and other properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>analyzeSyntax(AnalyzeSyntaxRequest request)
+ *           <li><p> analyzeSyntax(AnalyzeSyntaxRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>analyzeSyntax(Document document)
- *           <li>analyzeSyntax(Document document, EncodingType encodingType)
+ *           <li><p> analyzeSyntax(Document document)
+ *           <li><p> analyzeSyntax(Document document, EncodingType encodingType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>analyzeSyntaxCallable()
+ *           <li><p> analyzeSyntaxCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ClassifyText</td>
+ *      <td><p> ClassifyText</td>
  *      <td><p> Classifies a document into categories.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>classifyText(ClassifyTextRequest request)
+ *           <li><p> classifyText(ClassifyTextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>classifyText(Document document)
+ *           <li><p> classifyText(Document document)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>classifyTextCallable()
+ *           <li><p> classifyTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ModerateText</td>
+ *      <td><p> ModerateText</td>
  *      <td><p> Moderates a document for harmful and sensitive categories.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>moderateText(ModerateTextRequest request)
+ *           <li><p> moderateText(ModerateTextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>moderateText(Document document)
+ *           <li><p> moderateText(Document document)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>moderateTextCallable()
+ *           <li><p> moderateTextCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnnotateText</td>
+ *      <td><p> AnnotateText</td>
  *      <td><p> A convenience method that provides all syntax, sentiment, entity, and classification features in one call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>annotateText(AnnotateTextRequest request)
+ *           <li><p> annotateText(AnnotateTextRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>annotateText(Document document, AnnotateTextRequest.Features features)
- *           <li>annotateText(Document document, AnnotateTextRequest.Features features, EncodingType encodingType)
+ *           <li><p> annotateText(Document document, AnnotateTextRequest.Features features)
+ *           <li><p> annotateText(Document document, AnnotateTextRequest.Features features, EncodingType encodingType)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>annotateTextCallable()
+ *           <li><p> annotateTextCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

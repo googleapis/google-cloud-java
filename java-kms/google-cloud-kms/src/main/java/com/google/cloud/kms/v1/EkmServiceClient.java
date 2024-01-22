@@ -72,215 +72,216 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListEkmConnections</td>
+ *      <td><p> ListEkmConnections</td>
  *      <td><p> Lists [EkmConnections][google.cloud.kms.v1.EkmConnection].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEkmConnections(ListEkmConnectionsRequest request)
+ *           <li><p> listEkmConnections(ListEkmConnectionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEkmConnections(LocationName parent)
- *           <li>listEkmConnections(String parent)
+ *           <li><p> listEkmConnections(LocationName parent)
+ *           <li><p> listEkmConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEkmConnectionsPagedCallable()
- *           <li>listEkmConnectionsCallable()
+ *           <li><p> listEkmConnectionsPagedCallable()
+ *           <li><p> listEkmConnectionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEkmConnection</td>
+ *      <td><p> GetEkmConnection</td>
  *      <td><p> Returns metadata for a given [EkmConnection][google.cloud.kms.v1.EkmConnection].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEkmConnection(GetEkmConnectionRequest request)
+ *           <li><p> getEkmConnection(GetEkmConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEkmConnection(EkmConnectionName name)
- *           <li>getEkmConnection(String name)
+ *           <li><p> getEkmConnection(EkmConnectionName name)
+ *           <li><p> getEkmConnection(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEkmConnectionCallable()
+ *           <li><p> getEkmConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEkmConnection</td>
+ *      <td><p> CreateEkmConnection</td>
  *      <td><p> Creates a new [EkmConnection][google.cloud.kms.v1.EkmConnection] in a given Project and Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEkmConnection(CreateEkmConnectionRequest request)
+ *           <li><p> createEkmConnection(CreateEkmConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEkmConnection(LocationName parent, String ekmConnectionId, EkmConnection ekmConnection)
- *           <li>createEkmConnection(String parent, String ekmConnectionId, EkmConnection ekmConnection)
+ *           <li><p> createEkmConnection(LocationName parent, String ekmConnectionId, EkmConnection ekmConnection)
+ *           <li><p> createEkmConnection(String parent, String ekmConnectionId, EkmConnection ekmConnection)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEkmConnectionCallable()
+ *           <li><p> createEkmConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEkmConnection</td>
+ *      <td><p> UpdateEkmConnection</td>
  *      <td><p> Updates an [EkmConnection][google.cloud.kms.v1.EkmConnection]'s metadata.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEkmConnection(UpdateEkmConnectionRequest request)
+ *           <li><p> updateEkmConnection(UpdateEkmConnectionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEkmConnection(EkmConnection ekmConnection, FieldMask updateMask)
+ *           <li><p> updateEkmConnection(EkmConnection ekmConnection, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEkmConnectionCallable()
+ *           <li><p> updateEkmConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEkmConfig</td>
+ *      <td><p> GetEkmConfig</td>
  *      <td><p> Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEkmConfig(GetEkmConfigRequest request)
+ *           <li><p> getEkmConfig(GetEkmConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEkmConfig(EkmConfigName name)
- *           <li>getEkmConfig(String name)
+ *           <li><p> getEkmConfig(EkmConfigName name)
+ *           <li><p> getEkmConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEkmConfigCallable()
+ *           <li><p> getEkmConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEkmConfig</td>
+ *      <td><p> UpdateEkmConfig</td>
  *      <td><p> Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEkmConfig(UpdateEkmConfigRequest request)
+ *           <li><p> updateEkmConfig(UpdateEkmConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEkmConfig(EkmConfig ekmConfig, FieldMask updateMask)
+ *           <li><p> updateEkmConfig(EkmConfig ekmConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEkmConfigCallable()
+ *           <li><p> updateEkmConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>VerifyConnectivity</td>
+ *      <td><p> VerifyConnectivity</td>
  *      <td><p> Verifies that Cloud KMS can successfully connect to the external key manager specified by an [EkmConnection][google.cloud.kms.v1.EkmConnection]. If there is an error connecting to the EKM, this method returns a FAILED_PRECONDITION status containing structured information as described at https://cloud.google.com/kms/docs/reference/ekm_errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>verifyConnectivity(VerifyConnectivityRequest request)
+ *           <li><p> verifyConnectivity(VerifyConnectivityRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>verifyConnectivity(EkmConnectionName name)
- *           <li>verifyConnectivity(String name)
+ *           <li><p> verifyConnectivity(EkmConnectionName name)
+ *           <li><p> verifyConnectivity(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>verifyConnectivityCallable()
+ *           <li><p> verifyConnectivityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

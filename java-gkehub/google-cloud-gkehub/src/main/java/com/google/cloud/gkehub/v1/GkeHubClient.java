@@ -78,225 +78,226 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListMemberships</td>
+ *      <td><p> ListMemberships</td>
  *      <td><p> Lists Memberships in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listMemberships(ListMembershipsRequest request)
+ *           <li><p> listMemberships(ListMembershipsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listMemberships(LocationName parent)
- *           <li>listMemberships(String parent)
+ *           <li><p> listMemberships(LocationName parent)
+ *           <li><p> listMemberships(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listMembershipsPagedCallable()
- *           <li>listMembershipsCallable()
+ *           <li><p> listMembershipsPagedCallable()
+ *           <li><p> listMembershipsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFeatures</td>
+ *      <td><p> ListFeatures</td>
  *      <td><p> Lists Features in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeatures(ListFeaturesRequest request)
+ *           <li><p> listFeatures(ListFeaturesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeatures(LocationName parent)
- *           <li>listFeatures(String parent)
+ *           <li><p> listFeatures(LocationName parent)
+ *           <li><p> listFeatures(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeaturesPagedCallable()
- *           <li>listFeaturesCallable()
+ *           <li><p> listFeaturesPagedCallable()
+ *           <li><p> listFeaturesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMembership</td>
+ *      <td><p> GetMembership</td>
  *      <td><p> Gets the details of a Membership.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMembership(GetMembershipRequest request)
+ *           <li><p> getMembership(GetMembershipRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMembership(MembershipName name)
- *           <li>getMembership(String name)
+ *           <li><p> getMembership(MembershipName name)
+ *           <li><p> getMembership(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMembershipCallable()
+ *           <li><p> getMembershipCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeature</td>
+ *      <td><p> GetFeature</td>
  *      <td><p> Gets details of a single Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeature(GetFeatureRequest request)
+ *           <li><p> getFeature(GetFeatureRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeature(FeatureName name)
- *           <li>getFeature(String name)
+ *           <li><p> getFeature(FeatureName name)
+ *           <li><p> getFeature(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeatureCallable()
+ *           <li><p> getFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateMembership</td>
+ *      <td><p> CreateMembership</td>
  *      <td><p> Creates a new Membership.
  * <p>  &#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To register other clusters, follow the instructions at https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createMembershipAsync(CreateMembershipRequest request)
+ *           <li><p> createMembershipAsync(CreateMembershipRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createMembershipAsync(LocationName parent, Membership resource, String membershipId)
- *           <li>createMembershipAsync(String parent, Membership resource, String membershipId)
+ *           <li><p> createMembershipAsync(LocationName parent, Membership resource, String membershipId)
+ *           <li><p> createMembershipAsync(String parent, Membership resource, String membershipId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createMembershipOperationCallable()
- *           <li>createMembershipCallable()
+ *           <li><p> createMembershipOperationCallable()
+ *           <li><p> createMembershipCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFeature</td>
+ *      <td><p> CreateFeature</td>
  *      <td><p> Adds a new Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFeatureAsync(CreateFeatureRequest request)
+ *           <li><p> createFeatureAsync(CreateFeatureRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createFeatureAsync(LocationName parent, Feature resource, String featureId)
- *           <li>createFeatureAsync(String parent, Feature resource, String featureId)
+ *           <li><p> createFeatureAsync(LocationName parent, Feature resource, String featureId)
+ *           <li><p> createFeatureAsync(String parent, Feature resource, String featureId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFeatureOperationCallable()
- *           <li>createFeatureCallable()
+ *           <li><p> createFeatureOperationCallable()
+ *           <li><p> createFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteMembership</td>
+ *      <td><p> DeleteMembership</td>
  *      <td><p> Removes a Membership.
  * <p>  &#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To unregister other clusters, follow the instructions at https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteMembershipAsync(DeleteMembershipRequest request)
+ *           <li><p> deleteMembershipAsync(DeleteMembershipRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteMembershipAsync(MembershipName name)
- *           <li>deleteMembershipAsync(String name)
+ *           <li><p> deleteMembershipAsync(MembershipName name)
+ *           <li><p> deleteMembershipAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteMembershipOperationCallable()
- *           <li>deleteMembershipCallable()
+ *           <li><p> deleteMembershipOperationCallable()
+ *           <li><p> deleteMembershipCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFeature</td>
+ *      <td><p> DeleteFeature</td>
  *      <td><p> Removes a Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFeatureAsync(DeleteFeatureRequest request)
+ *           <li><p> deleteFeatureAsync(DeleteFeatureRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteFeatureAsync(FeatureName name)
- *           <li>deleteFeatureAsync(String name)
+ *           <li><p> deleteFeatureAsync(FeatureName name)
+ *           <li><p> deleteFeatureAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFeatureOperationCallable()
- *           <li>deleteFeatureCallable()
+ *           <li><p> deleteFeatureOperationCallable()
+ *           <li><p> deleteFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateMembership</td>
+ *      <td><p> UpdateMembership</td>
  *      <td><p> Updates an existing Membership.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateMembershipAsync(UpdateMembershipRequest request)
+ *           <li><p> updateMembershipAsync(UpdateMembershipRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateMembershipAsync(MembershipName name, Membership resource, FieldMask updateMask)
- *           <li>updateMembershipAsync(String name, Membership resource, FieldMask updateMask)
+ *           <li><p> updateMembershipAsync(MembershipName name, Membership resource, FieldMask updateMask)
+ *           <li><p> updateMembershipAsync(String name, Membership resource, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateMembershipOperationCallable()
- *           <li>updateMembershipCallable()
+ *           <li><p> updateMembershipOperationCallable()
+ *           <li><p> updateMembershipCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFeature</td>
+ *      <td><p> UpdateFeature</td>
  *      <td><p> Updates an existing Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFeatureAsync(UpdateFeatureRequest request)
+ *           <li><p> updateFeatureAsync(UpdateFeatureRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateFeatureAsync(FeatureName name, Feature resource, FieldMask updateMask)
- *           <li>updateFeatureAsync(String name, Feature resource, FieldMask updateMask)
+ *           <li><p> updateFeatureAsync(FeatureName name, Feature resource, FieldMask updateMask)
+ *           <li><p> updateFeatureAsync(String name, Feature resource, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFeatureOperationCallable()
- *           <li>updateFeatureCallable()
+ *           <li><p> updateFeatureOperationCallable()
+ *           <li><p> updateFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateConnectManifest</td>
+ *      <td><p> GenerateConnectManifest</td>
  *      <td><p> Generates the manifest for deployment of the GKE connect agent.
  * <p>  &#42;&#42;This method is used internally by Google-provided libraries.&#42;&#42; Most clients should not need to call this method directly.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateConnectManifest(GenerateConnectManifestRequest request)
+ *           <li><p> generateConnectManifest(GenerateConnectManifestRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateConnectManifestCallable()
+ *           <li><p> generateConnectManifestCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -61,86 +61,87 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GenerateAccessToken</td>
+ *      <td><p> GenerateAccessToken</td>
  *      <td><p> Generates an OAuth 2.0 access token for a service account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateAccessToken(GenerateAccessTokenRequest request)
+ *           <li><p> generateAccessToken(GenerateAccessTokenRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>generateAccessToken(ServiceAccountName name, List<String> delegates, List<String> scope, Duration lifetime)
- *           <li>generateAccessToken(String name, List<String> delegates, List<String> scope, Duration lifetime)
+ *           <li><p> generateAccessToken(ServiceAccountName name, List&lt;String&gt; delegates, List&lt;String&gt; scope, Duration lifetime)
+ *           <li><p> generateAccessToken(String name, List&lt;String&gt; delegates, List&lt;String&gt; scope, Duration lifetime)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateAccessTokenCallable()
+ *           <li><p> generateAccessTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateIdToken</td>
+ *      <td><p> GenerateIdToken</td>
  *      <td><p> Generates an OpenID Connect ID token for a service account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateIdToken(GenerateIdTokenRequest request)
+ *           <li><p> generateIdToken(GenerateIdTokenRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>generateIdToken(ServiceAccountName name, List<String> delegates, String audience, boolean includeEmail)
- *           <li>generateIdToken(String name, List<String> delegates, String audience, boolean includeEmail)
+ *           <li><p> generateIdToken(ServiceAccountName name, List&lt;String&gt; delegates, String audience, boolean includeEmail)
+ *           <li><p> generateIdToken(String name, List&lt;String&gt; delegates, String audience, boolean includeEmail)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateIdTokenCallable()
+ *           <li><p> generateIdTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SignBlob</td>
+ *      <td><p> SignBlob</td>
  *      <td><p> Signs a blob using a service account's system-managed private key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>signBlob(SignBlobRequest request)
+ *           <li><p> signBlob(SignBlobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>signBlob(ServiceAccountName name, List<String> delegates, ByteString payload)
- *           <li>signBlob(String name, List<String> delegates, ByteString payload)
+ *           <li><p> signBlob(ServiceAccountName name, List&lt;String&gt; delegates, ByteString payload)
+ *           <li><p> signBlob(String name, List&lt;String&gt; delegates, ByteString payload)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>signBlobCallable()
+ *           <li><p> signBlobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SignJwt</td>
+ *      <td><p> SignJwt</td>
  *      <td><p> Signs a JWT using a service account's system-managed private key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>signJwt(SignJwtRequest request)
+ *           <li><p> signJwt(SignJwtRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>signJwt(ServiceAccountName name, List<String> delegates, String payload)
- *           <li>signJwt(String name, List<String> delegates, String payload)
+ *           <li><p> signJwt(ServiceAccountName name, List&lt;String&gt; delegates, String payload)
+ *           <li><p> signJwt(String name, List&lt;String&gt; delegates, String payload)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>signJwtCallable()
+ *           <li><p> signJwtCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

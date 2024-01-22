@@ -76,104 +76,105 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListFeatures</td>
+ *      <td><p> ListFeatures</td>
  *      <td><p> Lists Features in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFeatures(ListFeaturesRequest request)
+ *           <li><p> listFeatures(ListFeaturesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFeatures(String parent)
+ *           <li><p> listFeatures(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFeaturesPagedCallable()
- *           <li>listFeaturesCallable()
+ *           <li><p> listFeaturesPagedCallable()
+ *           <li><p> listFeaturesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFeature</td>
+ *      <td><p> GetFeature</td>
  *      <td><p> Gets details of a single Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFeature(GetFeatureRequest request)
+ *           <li><p> getFeature(GetFeatureRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFeature(String name)
+ *           <li><p> getFeature(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFeatureCallable()
+ *           <li><p> getFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFeature</td>
+ *      <td><p> CreateFeature</td>
  *      <td><p> Adds a new Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFeatureAsync(CreateFeatureRequest request)
+ *           <li><p> createFeatureAsync(CreateFeatureRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createFeatureAsync(String parent, Feature resource, String featureId)
+ *           <li><p> createFeatureAsync(String parent, Feature resource, String featureId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFeatureOperationCallable()
- *           <li>createFeatureCallable()
+ *           <li><p> createFeatureOperationCallable()
+ *           <li><p> createFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFeature</td>
+ *      <td><p> DeleteFeature</td>
  *      <td><p> Removes a Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFeatureAsync(DeleteFeatureRequest request)
+ *           <li><p> deleteFeatureAsync(DeleteFeatureRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteFeatureAsync(String name)
+ *           <li><p> deleteFeatureAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFeatureOperationCallable()
- *           <li>deleteFeatureCallable()
+ *           <li><p> deleteFeatureOperationCallable()
+ *           <li><p> deleteFeatureCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFeature</td>
+ *      <td><p> UpdateFeature</td>
  *      <td><p> Updates an existing Feature.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFeatureAsync(UpdateFeatureRequest request)
+ *           <li><p> updateFeatureAsync(UpdateFeatureRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateFeatureAsync(String name, Feature resource, FieldMask updateMask)
+ *           <li><p> updateFeatureAsync(String name, Feature resource, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFeatureOperationCallable()
- *           <li>updateFeatureCallable()
+ *           <li><p> updateFeatureOperationCallable()
+ *           <li><p> updateFeatureCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
