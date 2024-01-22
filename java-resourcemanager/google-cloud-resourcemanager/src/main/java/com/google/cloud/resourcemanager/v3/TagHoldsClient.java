@@ -65,70 +65,71 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateTagHold</td>
+ *      <td><p> CreateTagHold</td>
  *      <td><p> Creates a TagHold. Returns ALREADY_EXISTS if a TagHold with the same resource and origin exists under the same TagValue.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTagHoldAsync(CreateTagHoldRequest request)
+ *           <li><p> createTagHoldAsync(CreateTagHoldRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createTagHoldAsync(TagValueName parent, TagHold tagHold)
- *           <li>createTagHoldAsync(String parent, TagHold tagHold)
+ *           <li><p> createTagHoldAsync(TagValueName parent, TagHold tagHold)
+ *           <li><p> createTagHoldAsync(String parent, TagHold tagHold)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTagHoldOperationCallable()
- *           <li>createTagHoldCallable()
+ *           <li><p> createTagHoldOperationCallable()
+ *           <li><p> createTagHoldCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTagHold</td>
+ *      <td><p> DeleteTagHold</td>
  *      <td><p> Deletes a TagHold.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTagHoldAsync(DeleteTagHoldRequest request)
+ *           <li><p> deleteTagHoldAsync(DeleteTagHoldRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteTagHoldAsync(TagHoldName name)
- *           <li>deleteTagHoldAsync(String name)
+ *           <li><p> deleteTagHoldAsync(TagHoldName name)
+ *           <li><p> deleteTagHoldAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTagHoldOperationCallable()
- *           <li>deleteTagHoldCallable()
+ *           <li><p> deleteTagHoldOperationCallable()
+ *           <li><p> deleteTagHoldCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTagHolds</td>
+ *      <td><p> ListTagHolds</td>
  *      <td><p> Lists TagHolds under a TagValue.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTagHolds(ListTagHoldsRequest request)
+ *           <li><p> listTagHolds(ListTagHoldsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTagHolds(TagValueName parent)
- *           <li>listTagHolds(String parent)
+ *           <li><p> listTagHolds(TagValueName parent)
+ *           <li><p> listTagHolds(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTagHoldsPagedCallable()
- *           <li>listTagHoldsCallable()
+ *           <li><p> listTagHoldsPagedCallable()
+ *           <li><p> listTagHoldsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

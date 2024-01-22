@@ -55,49 +55,50 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetTask</td>
+ *      <td><p> GetTask</td>
  *      <td><p> Gets information about a Task.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTask(GetTaskRequest request)
+ *           <li><p> getTask(GetTaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTask(TaskName name)
- *           <li>getTask(String name)
+ *           <li><p> getTask(TaskName name)
+ *           <li><p> getTask(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTaskCallable()
+ *           <li><p> getTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTasks</td>
+ *      <td><p> ListTasks</td>
  *      <td><p> Lists Tasks from an Execution of a Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTasks(ListTasksRequest request)
+ *           <li><p> listTasks(ListTasksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTasks(ExecutionName parent)
- *           <li>listTasks(String parent)
+ *           <li><p> listTasks(ExecutionName parent)
+ *           <li><p> listTasks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTasksPagedCallable()
- *           <li>listTasksCallable()
+ *           <li><p> listTasksPagedCallable()
+ *           <li><p> listTasksCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

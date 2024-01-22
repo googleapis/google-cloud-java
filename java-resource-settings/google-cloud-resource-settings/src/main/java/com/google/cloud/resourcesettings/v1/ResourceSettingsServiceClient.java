@@ -69,52 +69,54 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListSettings</td>
+ *      <td><p> ListSettings</td>
  *      <td><p> Lists all the settings that are available on the Cloud resource `parent`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSettings(ListSettingsRequest request)
+ *           <li><p> listSettings(ListSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSettings(ResourceName parent)
- *           <li>listSettings(String parent)
+ *           <li><p> listSettings(ResourceName parent)
+ *           <li><p> listSettings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSettingsPagedCallable()
- *           <li>listSettingsCallable()
+ *           <li><p> listSettingsPagedCallable()
+ *           <li><p> listSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSetting</td>
+ *      <td><p> GetSetting</td>
  *      <td><p> Gets a setting.
  * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the setting does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSetting(GetSettingRequest request)
+ *           <li><p> getSetting(GetSettingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSetting(SettingName name)
- *           <li>getSetting(String name)
+ *           <li><p> getSetting(SettingName name)
+ *           <li><p> getSetting(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSettingCallable()
+ *           <li><p> getSettingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSetting</td>
+ *      <td><p> UpdateSetting</td>
  *      <td><p> Updates a setting.
  * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the setting does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.FAILED_PRECONDITION` if the setting is flagged as read only. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag supplied in the request does not match the persisted etag of the setting value.
  * <p>  On success, the response will contain only `name`, `local_value` and `etag`.  The `metadata` and `effective_value` cannot be updated through this API.
@@ -122,14 +124,13 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSetting(UpdateSettingRequest request)
+ *           <li><p> updateSetting(UpdateSettingRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSettingCallable()
+ *           <li><p> updateSettingCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -55,29 +55,30 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateExternalAccountKey</td>
+ *      <td><p> CreateExternalAccountKey</td>
  *      <td><p> Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createExternalAccountKey(CreateExternalAccountKeyRequest request)
+ *           <li><p> createExternalAccountKey(CreateExternalAccountKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createExternalAccountKey(LocationName parent, ExternalAccountKey externalAccountKey)
- *           <li>createExternalAccountKey(String parent, ExternalAccountKey externalAccountKey)
+ *           <li><p> createExternalAccountKey(LocationName parent, ExternalAccountKey externalAccountKey)
+ *           <li><p> createExternalAccountKey(String parent, ExternalAccountKey externalAccountKey)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createExternalAccountKeyCallable()
+ *           <li><p> createExternalAccountKeyCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

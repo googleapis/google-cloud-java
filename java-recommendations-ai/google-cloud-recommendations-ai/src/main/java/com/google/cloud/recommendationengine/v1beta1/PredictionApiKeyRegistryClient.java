@@ -67,68 +67,69 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreatePredictionApiKeyRegistration</td>
+ *      <td><p> CreatePredictionApiKeyRegistration</td>
  *      <td><p> Register an API key for use with predict method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPredictionApiKeyRegistration(CreatePredictionApiKeyRegistrationRequest request)
+ *           <li><p> createPredictionApiKeyRegistration(CreatePredictionApiKeyRegistrationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createPredictionApiKeyRegistration(EventStoreName parent, PredictionApiKeyRegistration predictionApiKeyRegistration)
- *           <li>createPredictionApiKeyRegistration(String parent, PredictionApiKeyRegistration predictionApiKeyRegistration)
+ *           <li><p> createPredictionApiKeyRegistration(EventStoreName parent, PredictionApiKeyRegistration predictionApiKeyRegistration)
+ *           <li><p> createPredictionApiKeyRegistration(String parent, PredictionApiKeyRegistration predictionApiKeyRegistration)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPredictionApiKeyRegistrationCallable()
+ *           <li><p> createPredictionApiKeyRegistrationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPredictionApiKeyRegistrations</td>
+ *      <td><p> ListPredictionApiKeyRegistrations</td>
  *      <td><p> List the registered apiKeys for use with predict method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPredictionApiKeyRegistrations(ListPredictionApiKeyRegistrationsRequest request)
+ *           <li><p> listPredictionApiKeyRegistrations(ListPredictionApiKeyRegistrationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPredictionApiKeyRegistrations(EventStoreName parent)
- *           <li>listPredictionApiKeyRegistrations(String parent)
+ *           <li><p> listPredictionApiKeyRegistrations(EventStoreName parent)
+ *           <li><p> listPredictionApiKeyRegistrations(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPredictionApiKeyRegistrationsPagedCallable()
- *           <li>listPredictionApiKeyRegistrationsCallable()
+ *           <li><p> listPredictionApiKeyRegistrationsPagedCallable()
+ *           <li><p> listPredictionApiKeyRegistrationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePredictionApiKeyRegistration</td>
+ *      <td><p> DeletePredictionApiKeyRegistration</td>
  *      <td><p> Unregister an apiKey from using for predict method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePredictionApiKeyRegistration(DeletePredictionApiKeyRegistrationRequest request)
+ *           <li><p> deletePredictionApiKeyRegistration(DeletePredictionApiKeyRegistrationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name)
- *           <li>deletePredictionApiKeyRegistration(String name)
+ *           <li><p> deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name)
+ *           <li><p> deletePredictionApiKeyRegistration(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePredictionApiKeyRegistrationCallable()
+ *           <li><p> deletePredictionApiKeyRegistrationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

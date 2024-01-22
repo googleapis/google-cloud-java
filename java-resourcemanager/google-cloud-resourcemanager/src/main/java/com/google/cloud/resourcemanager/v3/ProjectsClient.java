@@ -67,112 +67,114 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetProject</td>
+ *      <td><p> GetProject</td>
  *      <td><p> Retrieves the project identified by the specified `name` (for example, `projects/415104041262`).
  * <p>  The caller must have `resourcemanager.projects.get` permission for this project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getProject(GetProjectRequest request)
+ *           <li><p> getProject(GetProjectRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getProject(ProjectName name)
- *           <li>getProject(String name)
+ *           <li><p> getProject(ProjectName name)
+ *           <li><p> getProject(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getProjectCallable()
+ *           <li><p> getProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListProjects</td>
+ *      <td><p> ListProjects</td>
  *      <td><p> Lists projects that are direct children of the specified folder or organization resource. `list()` provides a strongly consistent view of the projects underneath the specified parent resource. `list()` returns projects sorted based upon the (ascending) lexical ordering of their `display_name`. The caller must have `resourcemanager.projects.list` permission on the identified parent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listProjects(ListProjectsRequest request)
+ *           <li><p> listProjects(ListProjectsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listProjects(ResourceName parent)
- *           <li>listProjects(String parent)
+ *           <li><p> listProjects(ResourceName parent)
+ *           <li><p> listProjects(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listProjectsPagedCallable()
- *           <li>listProjectsCallable()
+ *           <li><p> listProjectsPagedCallable()
+ *           <li><p> listProjectsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchProjects</td>
+ *      <td><p> SearchProjects</td>
  *      <td><p> Search for projects that the caller has both `resourcemanager.projects.get` permission on, and also satisfy the specified query.
  * <p>  This method returns projects in an unspecified order.
  * <p>  This method is eventually consistent with project mutations; this means that a newly created project may not appear in the results or recent updates to an existing project may not be reflected in the results. To retrieve the latest state of a project, use the [GetProject][google.cloud.resourcemanager.v3.Projects.GetProject] method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchProjects(SearchProjectsRequest request)
+ *           <li><p> searchProjects(SearchProjectsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchProjects(String query)
+ *           <li><p> searchProjects(String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchProjectsPagedCallable()
- *           <li>searchProjectsCallable()
+ *           <li><p> searchProjectsPagedCallable()
+ *           <li><p> searchProjectsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateProject</td>
+ *      <td><p> CreateProject</td>
  *      <td><p> Request that a new project be created. The result is an `Operation` which can be used to track the creation process. This process usually takes a few seconds, but can sometimes take much longer. The tracking `Operation` is automatically deleted after a few hours, so there is no need to call `DeleteOperation`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createProjectAsync(CreateProjectRequest request)
+ *           <li><p> createProjectAsync(CreateProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createProjectAsync(Project project)
+ *           <li><p> createProjectAsync(Project project)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createProjectOperationCallable()
- *           <li>createProjectCallable()
+ *           <li><p> createProjectOperationCallable()
+ *           <li><p> createProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateProject</td>
+ *      <td><p> UpdateProject</td>
  *      <td><p> Updates the `display_name` and labels of the project identified by the specified `name` (for example, `projects/415104041262`). Deleting all labels requires an update mask for labels field.
  * <p>  The caller must have `resourcemanager.projects.update` permission for this project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateProjectAsync(UpdateProjectRequest request)
+ *           <li><p> updateProjectAsync(UpdateProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateProjectAsync(Project project, FieldMask updateMask)
+ *           <li><p> updateProjectAsync(Project project, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateProjectOperationCallable()
- *           <li>updateProjectCallable()
+ *           <li><p> updateProjectOperationCallable()
+ *           <li><p> updateProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MoveProject</td>
+ *      <td><p> MoveProject</td>
  *      <td><p> Move a project to another place in your resource hierarchy, under a new resource parent.
  * <p>  Returns an operation which can be used to track the process of the project move workflow. Upon success, the `Operation.response` field will be populated with the moved project.
  * <p>  The caller must have `resourcemanager.projects.move` permission on the project, on the project's current and proposed new parent.
@@ -180,24 +182,24 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>moveProjectAsync(MoveProjectRequest request)
+ *           <li><p> moveProjectAsync(MoveProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>moveProjectAsync(ProjectName name, ResourceName destinationParent)
- *           <li>moveProjectAsync(ProjectName name, String destinationParent)
- *           <li>moveProjectAsync(String name, ResourceName destinationParent)
- *           <li>moveProjectAsync(String name, String destinationParent)
+ *           <li><p> moveProjectAsync(ProjectName name, ResourceName destinationParent)
+ *           <li><p> moveProjectAsync(ProjectName name, String destinationParent)
+ *           <li><p> moveProjectAsync(String name, ResourceName destinationParent)
+ *           <li><p> moveProjectAsync(String name, String destinationParent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>moveProjectOperationCallable()
- *           <li>moveProjectCallable()
+ *           <li><p> moveProjectOperationCallable()
+ *           <li><p> moveProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteProject</td>
+ *      <td><p> DeleteProject</td>
  *      <td><p> Marks the project identified by the specified `name` (for example, `projects/415104041262`) for deletion.
  * <p>  This method will only affect the project if it has a lifecycle state of [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE].
  * <p>  This method changes the Project's lifecycle state from [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE] to [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED]. The deletion starts at an unspecified time, at which point the Project is no longer accessible.
@@ -208,62 +210,62 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteProjectAsync(DeleteProjectRequest request)
+ *           <li><p> deleteProjectAsync(DeleteProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteProjectAsync(ProjectName name)
- *           <li>deleteProjectAsync(String name)
+ *           <li><p> deleteProjectAsync(ProjectName name)
+ *           <li><p> deleteProjectAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteProjectOperationCallable()
- *           <li>deleteProjectCallable()
+ *           <li><p> deleteProjectOperationCallable()
+ *           <li><p> deleteProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteProject</td>
+ *      <td><p> UndeleteProject</td>
  *      <td><p> Restores the project identified by the specified `name` (for example, `projects/415104041262`). You can only use this method for a project that has a lifecycle state of [DELETE_REQUESTED] [Projects.State.DELETE_REQUESTED]. After deletion starts, the project cannot be restored.
  * <p>  The caller must have `resourcemanager.projects.undelete` permission for this project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteProjectAsync(UndeleteProjectRequest request)
+ *           <li><p> undeleteProjectAsync(UndeleteProjectRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeleteProjectAsync(ProjectName name)
- *           <li>undeleteProjectAsync(String name)
+ *           <li><p> undeleteProjectAsync(ProjectName name)
+ *           <li><p> undeleteProjectAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteProjectOperationCallable()
- *           <li>undeleteProjectCallable()
+ *           <li><p> undeleteProjectOperationCallable()
+ *           <li><p> undeleteProjectCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Returns the IAM access control policy for the specified project, in the format `projects/{ProjectIdOrNumber}` e.g. projects/123. Permission is denied if the policy or the resource do not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource)
- *           <li>getIamPolicy(String resource)
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM access control policy for the specified project, in the format `projects/{ProjectIdOrNumber}` e.g. projects/123.
  * <p>  CAUTION: This method will replace the existing policy, and cannot be used to append additional IAM settings.
  * <p>  Note: Removing service accounts from policies or changing their roles can render services completely inoperable. It is important to understand how the service account is being used before removing or updating its roles.
@@ -277,38 +279,37 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified project, in the format `projects/{ProjectIdOrNumber}` e.g. projects/123..</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(ResourceName resource, List<String> permissions)
- *           <li>testIamPermissions(String resource, List<String> permissions)
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

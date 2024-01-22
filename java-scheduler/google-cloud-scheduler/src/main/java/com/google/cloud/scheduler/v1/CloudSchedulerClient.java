@@ -62,196 +62,197 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListJobs</td>
+ *      <td><p> ListJobs</td>
  *      <td><p> Lists jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobs(ListJobsRequest request)
+ *           <li><p> listJobs(ListJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listJobs(LocationName parent)
- *           <li>listJobs(String parent)
+ *           <li><p> listJobs(LocationName parent)
+ *           <li><p> listJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobsPagedCallable()
- *           <li>listJobsCallable()
+ *           <li><p> listJobsPagedCallable()
+ *           <li><p> listJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJob</td>
+ *      <td><p> GetJob</td>
  *      <td><p> Gets a job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJob(GetJobRequest request)
+ *           <li><p> getJob(GetJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getJob(JobName name)
- *           <li>getJob(String name)
+ *           <li><p> getJob(JobName name)
+ *           <li><p> getJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobCallable()
+ *           <li><p> getJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateJob</td>
+ *      <td><p> CreateJob</td>
  *      <td><p> Creates a job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createJob(CreateJobRequest request)
+ *           <li><p> createJob(CreateJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createJob(LocationName parent, Job job)
- *           <li>createJob(String parent, Job job)
+ *           <li><p> createJob(LocationName parent, Job job)
+ *           <li><p> createJob(String parent, Job job)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createJobCallable()
+ *           <li><p> createJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateJob</td>
+ *      <td><p> UpdateJob</td>
  *      <td><p> Updates a job.
  * <p>  If successful, the updated [Job][google.cloud.scheduler.v1.Job] is returned. If the job does not exist, `NOT_FOUND` is returned.
  * <p>  If UpdateJob does not successfully return, it is possible for the job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1.Job.State.UPDATE_FAILED] state. A job in this state may not be executed. If this happens, retry the UpdateJob request until a successful response is received.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateJob(UpdateJobRequest request)
+ *           <li><p> updateJob(UpdateJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateJob(Job job, FieldMask updateMask)
+ *           <li><p> updateJob(Job job, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateJobCallable()
+ *           <li><p> updateJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteJob</td>
+ *      <td><p> DeleteJob</td>
  *      <td><p> Deletes a job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteJob(DeleteJobRequest request)
+ *           <li><p> deleteJob(DeleteJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteJob(JobName name)
- *           <li>deleteJob(String name)
+ *           <li><p> deleteJob(JobName name)
+ *           <li><p> deleteJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteJobCallable()
+ *           <li><p> deleteJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseJob</td>
+ *      <td><p> PauseJob</td>
  *      <td><p> Pauses a job.
  * <p>  If a job is paused then the system will stop executing the job until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1.CloudScheduler.ResumeJob]. The state of the job is stored in [state][google.cloud.scheduler.v1.Job.state]; if paused it will be set to [Job.State.PAUSED][google.cloud.scheduler.v1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1.Job.State.ENABLED] to be paused.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseJob(PauseJobRequest request)
+ *           <li><p> pauseJob(PauseJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pauseJob(JobName name)
- *           <li>pauseJob(String name)
+ *           <li><p> pauseJob(JobName name)
+ *           <li><p> pauseJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseJobCallable()
+ *           <li><p> pauseJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeJob</td>
+ *      <td><p> ResumeJob</td>
  *      <td><p> Resume a job.
  * <p>  This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1.Job.State.PAUSED]. The state of a job is stored in [Job.state][google.cloud.scheduler.v1.Job.state]; after calling this method it will be set to [Job.State.ENABLED][google.cloud.scheduler.v1.Job.State.ENABLED]. A job must be in [Job.State.PAUSED][google.cloud.scheduler.v1.Job.State.PAUSED] to be resumed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeJob(ResumeJobRequest request)
+ *           <li><p> resumeJob(ResumeJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumeJob(JobName name)
- *           <li>resumeJob(String name)
+ *           <li><p> resumeJob(JobName name)
+ *           <li><p> resumeJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeJobCallable()
+ *           <li><p> resumeJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunJob</td>
+ *      <td><p> RunJob</td>
  *      <td><p> Forces a job to run now.
  * <p>  When this method is called, Cloud Scheduler will dispatch the job, even if the job is already running.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runJob(RunJobRequest request)
+ *           <li><p> runJob(RunJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>runJob(JobName name)
- *           <li>runJob(String name)
+ *           <li><p> runJob(JobName name)
+ *           <li><p> runJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runJobCallable()
+ *           <li><p> runJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

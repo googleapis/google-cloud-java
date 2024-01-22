@@ -69,399 +69,400 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateCertificate</td>
+ *      <td><p> CreateCertificate</td>
  *      <td><p> Create a new [Certificate][google.cloud.security.privateca.v1beta1.Certificate] in a given Project, Location from a particular [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCertificate(CreateCertificateRequest request)
+ *           <li><p> createCertificate(CreateCertificateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCertificate(CertificateAuthorityName parent, Certificate certificate, String certificateId)
- *           <li>createCertificate(String parent, Certificate certificate, String certificateId)
+ *           <li><p> createCertificate(CertificateAuthorityName parent, Certificate certificate, String certificateId)
+ *           <li><p> createCertificate(String parent, Certificate certificate, String certificateId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCertificateCallable()
+ *           <li><p> createCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificate</td>
+ *      <td><p> GetCertificate</td>
  *      <td><p> Returns a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificate(GetCertificateRequest request)
+ *           <li><p> getCertificate(GetCertificateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificate(CertificateName name)
- *           <li>getCertificate(String name)
+ *           <li><p> getCertificate(CertificateName name)
+ *           <li><p> getCertificate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateCallable()
+ *           <li><p> getCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCertificates</td>
+ *      <td><p> ListCertificates</td>
  *      <td><p> Lists [Certificates][google.cloud.security.privateca.v1beta1.Certificate].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificates(ListCertificatesRequest request)
+ *           <li><p> listCertificates(ListCertificatesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificates(CertificateAuthorityName parent)
- *           <li>listCertificates(String parent)
+ *           <li><p> listCertificates(CertificateAuthorityName parent)
+ *           <li><p> listCertificates(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificatesPagedCallable()
- *           <li>listCertificatesCallable()
+ *           <li><p> listCertificatesPagedCallable()
+ *           <li><p> listCertificatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RevokeCertificate</td>
+ *      <td><p> RevokeCertificate</td>
  *      <td><p> Revoke a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>revokeCertificate(RevokeCertificateRequest request)
+ *           <li><p> revokeCertificate(RevokeCertificateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>revokeCertificate(CertificateName name)
- *           <li>revokeCertificate(String name)
+ *           <li><p> revokeCertificate(CertificateName name)
+ *           <li><p> revokeCertificate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>revokeCertificateCallable()
+ *           <li><p> revokeCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCertificate</td>
+ *      <td><p> UpdateCertificate</td>
  *      <td><p> Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the only field you can update is the [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCertificate(UpdateCertificateRequest request)
+ *           <li><p> updateCertificate(UpdateCertificateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCertificate(Certificate certificate, FieldMask updateMask)
+ *           <li><p> updateCertificate(Certificate certificate, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCertificateCallable()
+ *           <li><p> updateCertificateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ActivateCertificateAuthority</td>
+ *      <td><p> ActivateCertificateAuthority</td>
  *      <td><p> Activate a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] that is in state [PENDING_ACTIVATION][google.cloud.security.privateca.v1beta1.CertificateAuthority.State.PENDING_ACTIVATION] and is of type [SUBORDINATE][google.cloud.security.privateca.v1beta1.CertificateAuthority.Type.SUBORDINATE]. After the parent Certificate Authority signs a certificate signing request from [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.FetchCertificateAuthorityCsr], this method can complete the activation process.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>activateCertificateAuthorityAsync(ActivateCertificateAuthorityRequest request)
+ *           <li><p> activateCertificateAuthorityAsync(ActivateCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>activateCertificateAuthorityAsync(CertificateAuthorityName name)
- *           <li>activateCertificateAuthorityAsync(String name)
+ *           <li><p> activateCertificateAuthorityAsync(CertificateAuthorityName name)
+ *           <li><p> activateCertificateAuthorityAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>activateCertificateAuthorityOperationCallable()
- *           <li>activateCertificateAuthorityCallable()
+ *           <li><p> activateCertificateAuthorityOperationCallable()
+ *           <li><p> activateCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCertificateAuthority</td>
+ *      <td><p> CreateCertificateAuthority</td>
  *      <td><p> Create a new [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] in a given Project and Location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCertificateAuthorityAsync(CreateCertificateAuthorityRequest request)
+ *           <li><p> createCertificateAuthorityAsync(CreateCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCertificateAuthorityAsync(LocationName parent, CertificateAuthority certificateAuthority, String certificateAuthorityId)
- *           <li>createCertificateAuthorityAsync(String parent, CertificateAuthority certificateAuthority, String certificateAuthorityId)
+ *           <li><p> createCertificateAuthorityAsync(LocationName parent, CertificateAuthority certificateAuthority, String certificateAuthorityId)
+ *           <li><p> createCertificateAuthorityAsync(String parent, CertificateAuthority certificateAuthority, String certificateAuthorityId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCertificateAuthorityOperationCallable()
- *           <li>createCertificateAuthorityCallable()
+ *           <li><p> createCertificateAuthorityOperationCallable()
+ *           <li><p> createCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DisableCertificateAuthority</td>
+ *      <td><p> DisableCertificateAuthority</td>
  *      <td><p> Disable a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>disableCertificateAuthorityAsync(DisableCertificateAuthorityRequest request)
+ *           <li><p> disableCertificateAuthorityAsync(DisableCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>disableCertificateAuthorityAsync(CertificateAuthorityName name)
- *           <li>disableCertificateAuthorityAsync(String name)
+ *           <li><p> disableCertificateAuthorityAsync(CertificateAuthorityName name)
+ *           <li><p> disableCertificateAuthorityAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>disableCertificateAuthorityOperationCallable()
- *           <li>disableCertificateAuthorityCallable()
+ *           <li><p> disableCertificateAuthorityOperationCallable()
+ *           <li><p> disableCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>EnableCertificateAuthority</td>
+ *      <td><p> EnableCertificateAuthority</td>
  *      <td><p> Enable a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>enableCertificateAuthorityAsync(EnableCertificateAuthorityRequest request)
+ *           <li><p> enableCertificateAuthorityAsync(EnableCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>enableCertificateAuthorityAsync(CertificateAuthorityName name)
- *           <li>enableCertificateAuthorityAsync(String name)
+ *           <li><p> enableCertificateAuthorityAsync(CertificateAuthorityName name)
+ *           <li><p> enableCertificateAuthorityAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>enableCertificateAuthorityOperationCallable()
- *           <li>enableCertificateAuthorityCallable()
+ *           <li><p> enableCertificateAuthorityOperationCallable()
+ *           <li><p> enableCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>FetchCertificateAuthorityCsr</td>
+ *      <td><p> FetchCertificateAuthorityCsr</td>
  *      <td><p> Fetch a certificate signing request (CSR) from a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] that is in state [PENDING_ACTIVATION][google.cloud.security.privateca.v1beta1.CertificateAuthority.State.PENDING_ACTIVATION] and is of type [SUBORDINATE][google.cloud.security.privateca.v1beta1.CertificateAuthority.Type.SUBORDINATE]. The CSR must then be signed by the desired parent Certificate Authority, which could be another [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] resource, or could be an on-prem certificate authority. See also [ActivateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ActivateCertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>fetchCertificateAuthorityCsr(FetchCertificateAuthorityCsrRequest request)
+ *           <li><p> fetchCertificateAuthorityCsr(FetchCertificateAuthorityCsrRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>fetchCertificateAuthorityCsr(CertificateAuthorityName name)
- *           <li>fetchCertificateAuthorityCsr(String name)
+ *           <li><p> fetchCertificateAuthorityCsr(CertificateAuthorityName name)
+ *           <li><p> fetchCertificateAuthorityCsr(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>fetchCertificateAuthorityCsrCallable()
+ *           <li><p> fetchCertificateAuthorityCsrCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificateAuthority</td>
+ *      <td><p> GetCertificateAuthority</td>
  *      <td><p> Returns a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificateAuthority(GetCertificateAuthorityRequest request)
+ *           <li><p> getCertificateAuthority(GetCertificateAuthorityRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificateAuthority(CertificateAuthorityName name)
- *           <li>getCertificateAuthority(String name)
+ *           <li><p> getCertificateAuthority(CertificateAuthorityName name)
+ *           <li><p> getCertificateAuthority(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateAuthorityCallable()
+ *           <li><p> getCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCertificateAuthorities</td>
+ *      <td><p> ListCertificateAuthorities</td>
  *      <td><p> Lists [CertificateAuthorities][google.cloud.security.privateca.v1beta1.CertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificateAuthorities(ListCertificateAuthoritiesRequest request)
+ *           <li><p> listCertificateAuthorities(ListCertificateAuthoritiesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificateAuthorities(LocationName parent)
- *           <li>listCertificateAuthorities(String parent)
+ *           <li><p> listCertificateAuthorities(LocationName parent)
+ *           <li><p> listCertificateAuthorities(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificateAuthoritiesPagedCallable()
- *           <li>listCertificateAuthoritiesCallable()
+ *           <li><p> listCertificateAuthoritiesPagedCallable()
+ *           <li><p> listCertificateAuthoritiesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RestoreCertificateAuthority</td>
+ *      <td><p> RestoreCertificateAuthority</td>
  *      <td><p> Restore a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] that is scheduled for deletion.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>restoreCertificateAuthorityAsync(RestoreCertificateAuthorityRequest request)
+ *           <li><p> restoreCertificateAuthorityAsync(RestoreCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>restoreCertificateAuthorityAsync(CertificateAuthorityName name)
- *           <li>restoreCertificateAuthorityAsync(String name)
+ *           <li><p> restoreCertificateAuthorityAsync(CertificateAuthorityName name)
+ *           <li><p> restoreCertificateAuthorityAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>restoreCertificateAuthorityOperationCallable()
- *           <li>restoreCertificateAuthorityCallable()
+ *           <li><p> restoreCertificateAuthorityOperationCallable()
+ *           <li><p> restoreCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ScheduleDeleteCertificateAuthority</td>
+ *      <td><p> ScheduleDeleteCertificateAuthority</td>
  *      <td><p> Schedule a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] for deletion.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>scheduleDeleteCertificateAuthorityAsync(ScheduleDeleteCertificateAuthorityRequest request)
+ *           <li><p> scheduleDeleteCertificateAuthorityAsync(ScheduleDeleteCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>scheduleDeleteCertificateAuthorityAsync(CertificateAuthorityName name)
- *           <li>scheduleDeleteCertificateAuthorityAsync(String name)
+ *           <li><p> scheduleDeleteCertificateAuthorityAsync(CertificateAuthorityName name)
+ *           <li><p> scheduleDeleteCertificateAuthorityAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>scheduleDeleteCertificateAuthorityOperationCallable()
- *           <li>scheduleDeleteCertificateAuthorityCallable()
+ *           <li><p> scheduleDeleteCertificateAuthorityOperationCallable()
+ *           <li><p> scheduleDeleteCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCertificateAuthority</td>
+ *      <td><p> UpdateCertificateAuthority</td>
  *      <td><p> Update a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCertificateAuthorityAsync(UpdateCertificateAuthorityRequest request)
+ *           <li><p> updateCertificateAuthorityAsync(UpdateCertificateAuthorityRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCertificateAuthorityAsync(CertificateAuthority certificateAuthority, FieldMask updateMask)
+ *           <li><p> updateCertificateAuthorityAsync(CertificateAuthority certificateAuthority, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCertificateAuthorityOperationCallable()
- *           <li>updateCertificateAuthorityCallable()
+ *           <li><p> updateCertificateAuthorityOperationCallable()
+ *           <li><p> updateCertificateAuthorityCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCertificateRevocationList</td>
+ *      <td><p> GetCertificateRevocationList</td>
  *      <td><p> Returns a [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCertificateRevocationList(GetCertificateRevocationListRequest request)
+ *           <li><p> getCertificateRevocationList(GetCertificateRevocationListRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCertificateRevocationList(CertificateRevocationListName name)
- *           <li>getCertificateRevocationList(String name)
+ *           <li><p> getCertificateRevocationList(CertificateRevocationListName name)
+ *           <li><p> getCertificateRevocationList(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCertificateRevocationListCallable()
+ *           <li><p> getCertificateRevocationListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCertificateRevocationLists</td>
+ *      <td><p> ListCertificateRevocationLists</td>
  *      <td><p> Lists [CertificateRevocationLists][google.cloud.security.privateca.v1beta1.CertificateRevocationList].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCertificateRevocationLists(ListCertificateRevocationListsRequest request)
+ *           <li><p> listCertificateRevocationLists(ListCertificateRevocationListsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCertificateRevocationLists(CertificateAuthorityName parent)
- *           <li>listCertificateRevocationLists(String parent)
+ *           <li><p> listCertificateRevocationLists(CertificateAuthorityName parent)
+ *           <li><p> listCertificateRevocationLists(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCertificateRevocationListsPagedCallable()
- *           <li>listCertificateRevocationListsCallable()
+ *           <li><p> listCertificateRevocationListsPagedCallable()
+ *           <li><p> listCertificateRevocationListsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCertificateRevocationList</td>
+ *      <td><p> UpdateCertificateRevocationList</td>
  *      <td><p> Update a [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCertificateRevocationListAsync(UpdateCertificateRevocationListRequest request)
+ *           <li><p> updateCertificateRevocationListAsync(UpdateCertificateRevocationListRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCertificateRevocationListAsync(CertificateRevocationList certificateRevocationList, FieldMask updateMask)
+ *           <li><p> updateCertificateRevocationListAsync(CertificateRevocationList certificateRevocationList, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCertificateRevocationListOperationCallable()
- *           <li>updateCertificateRevocationListCallable()
+ *           <li><p> updateCertificateRevocationListOperationCallable()
+ *           <li><p> updateCertificateRevocationListCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetReusableConfig</td>
+ *      <td><p> GetReusableConfig</td>
  *      <td><p> Returns a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getReusableConfig(GetReusableConfigRequest request)
+ *           <li><p> getReusableConfig(GetReusableConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getReusableConfig(ReusableConfigName name)
- *           <li>getReusableConfig(String name)
+ *           <li><p> getReusableConfig(ReusableConfigName name)
+ *           <li><p> getReusableConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getReusableConfigCallable()
+ *           <li><p> getReusableConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListReusableConfigs</td>
+ *      <td><p> ListReusableConfigs</td>
  *      <td><p> Lists [ReusableConfigs][google.cloud.security.privateca.v1beta1.ReusableConfig].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listReusableConfigs(ListReusableConfigsRequest request)
+ *           <li><p> listReusableConfigs(ListReusableConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listReusableConfigs(LocationName parent)
- *           <li>listReusableConfigs(String parent)
+ *           <li><p> listReusableConfigs(LocationName parent)
+ *           <li><p> listReusableConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listReusableConfigsPagedCallable()
- *           <li>listReusableConfigsCallable()
+ *           <li><p> listReusableConfigsPagedCallable()
+ *           <li><p> listReusableConfigsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

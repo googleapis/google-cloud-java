@@ -60,69 +60,70 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetRevision</td>
+ *      <td><p> GetRevision</td>
  *      <td><p> Gets information about a Revision.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRevision(GetRevisionRequest request)
+ *           <li><p> getRevision(GetRevisionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRevision(RevisionName name)
- *           <li>getRevision(String name)
+ *           <li><p> getRevision(RevisionName name)
+ *           <li><p> getRevision(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRevisionCallable()
+ *           <li><p> getRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRevisions</td>
+ *      <td><p> ListRevisions</td>
  *      <td><p> Lists Revisions from a given Service, or from a given location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRevisions(ListRevisionsRequest request)
+ *           <li><p> listRevisions(ListRevisionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRevisions(ServiceName parent)
- *           <li>listRevisions(String parent)
+ *           <li><p> listRevisions(ServiceName parent)
+ *           <li><p> listRevisions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRevisionsPagedCallable()
- *           <li>listRevisionsCallable()
+ *           <li><p> listRevisionsPagedCallable()
+ *           <li><p> listRevisionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRevision</td>
+ *      <td><p> DeleteRevision</td>
  *      <td><p> Deletes a Revision.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRevisionAsync(DeleteRevisionRequest request)
+ *           <li><p> deleteRevisionAsync(DeleteRevisionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteRevisionAsync(RevisionName name)
- *           <li>deleteRevisionAsync(String name)
+ *           <li><p> deleteRevisionAsync(RevisionName name)
+ *           <li><p> deleteRevisionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRevisionOperationCallable()
- *           <li>deleteRevisionCallable()
+ *           <li><p> deleteRevisionOperationCallable()
+ *           <li><p> deleteRevisionCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -67,395 +67,396 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListEffectiveSecurityHealthAnalyticsCustomModules</td>
+ *      <td><p> ListEffectiveSecurityHealthAnalyticsCustomModules</td>
  *      <td><p> Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from CRM ancestors (no descendants).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModules(ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request)
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModules(ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModules(FolderLocationName parent)
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModules(LocationName parent)
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent)
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModules(String parent)
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModules(FolderLocationName parent)
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModules(LocationName parent)
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent)
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable()
- *           <li>listEffectiveSecurityHealthAnalyticsCustomModulesCallable()
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable()
+ *           <li><p> listEffectiveSecurityHealthAnalyticsCustomModulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEffectiveSecurityHealthAnalyticsCustomModule</td>
+ *      <td><p> GetEffectiveSecurityHealthAnalyticsCustomModule</td>
  *      <td><p> Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEffectiveSecurityHealthAnalyticsCustomModule(GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request)
+ *           <li><p> getEffectiveSecurityHealthAnalyticsCustomModule(GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEffectiveSecurityHealthAnalyticsCustomModule(EffectiveSecurityHealthAnalyticsCustomModuleName name)
- *           <li>getEffectiveSecurityHealthAnalyticsCustomModule(String name)
+ *           <li><p> getEffectiveSecurityHealthAnalyticsCustomModule(EffectiveSecurityHealthAnalyticsCustomModuleName name)
+ *           <li><p> getEffectiveSecurityHealthAnalyticsCustomModule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEffectiveSecurityHealthAnalyticsCustomModuleCallable()
+ *           <li><p> getEffectiveSecurityHealthAnalyticsCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSecurityHealthAnalyticsCustomModules</td>
+ *      <td><p> ListSecurityHealthAnalyticsCustomModules</td>
  *      <td><p> Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from CRM ancestors (no descendants).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSecurityHealthAnalyticsCustomModules(ListSecurityHealthAnalyticsCustomModulesRequest request)
+ *           <li><p> listSecurityHealthAnalyticsCustomModules(ListSecurityHealthAnalyticsCustomModulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSecurityHealthAnalyticsCustomModules(FolderLocationName parent)
- *           <li>listSecurityHealthAnalyticsCustomModules(LocationName parent)
- *           <li>listSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent)
- *           <li>listSecurityHealthAnalyticsCustomModules(String parent)
+ *           <li><p> listSecurityHealthAnalyticsCustomModules(FolderLocationName parent)
+ *           <li><p> listSecurityHealthAnalyticsCustomModules(LocationName parent)
+ *           <li><p> listSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent)
+ *           <li><p> listSecurityHealthAnalyticsCustomModules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSecurityHealthAnalyticsCustomModulesPagedCallable()
- *           <li>listSecurityHealthAnalyticsCustomModulesCallable()
+ *           <li><p> listSecurityHealthAnalyticsCustomModulesPagedCallable()
+ *           <li><p> listSecurityHealthAnalyticsCustomModulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDescendantSecurityHealthAnalyticsCustomModules</td>
+ *      <td><p> ListDescendantSecurityHealthAnalyticsCustomModules</td>
  *      <td><p> Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent and all of the parent’s CRM descendants.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDescendantSecurityHealthAnalyticsCustomModules(ListDescendantSecurityHealthAnalyticsCustomModulesRequest request)
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModules(ListDescendantSecurityHealthAnalyticsCustomModulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDescendantSecurityHealthAnalyticsCustomModules(FolderLocationName parent)
- *           <li>listDescendantSecurityHealthAnalyticsCustomModules(LocationName parent)
- *           <li>listDescendantSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent)
- *           <li>listDescendantSecurityHealthAnalyticsCustomModules(String parent)
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModules(FolderLocationName parent)
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModules(LocationName parent)
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent)
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable()
- *           <li>listDescendantSecurityHealthAnalyticsCustomModulesCallable()
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable()
+ *           <li><p> listDescendantSecurityHealthAnalyticsCustomModulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSecurityHealthAnalyticsCustomModule</td>
+ *      <td><p> GetSecurityHealthAnalyticsCustomModule</td>
  *      <td><p> Retrieves a SecurityHealthAnalyticsCustomModule.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSecurityHealthAnalyticsCustomModule(GetSecurityHealthAnalyticsCustomModuleRequest request)
+ *           <li><p> getSecurityHealthAnalyticsCustomModule(GetSecurityHealthAnalyticsCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSecurityHealthAnalyticsCustomModule(SecurityHealthAnalyticsCustomModuleName name)
- *           <li>getSecurityHealthAnalyticsCustomModule(String name)
+ *           <li><p> getSecurityHealthAnalyticsCustomModule(SecurityHealthAnalyticsCustomModuleName name)
+ *           <li><p> getSecurityHealthAnalyticsCustomModule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSecurityHealthAnalyticsCustomModuleCallable()
+ *           <li><p> getSecurityHealthAnalyticsCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSecurityHealthAnalyticsCustomModule</td>
+ *      <td><p> CreateSecurityHealthAnalyticsCustomModule</td>
  *      <td><p> Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent, and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the given parent. These modules are enabled by default.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSecurityHealthAnalyticsCustomModule(CreateSecurityHealthAnalyticsCustomModuleRequest request)
+ *           <li><p> createSecurityHealthAnalyticsCustomModule(CreateSecurityHealthAnalyticsCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSecurityHealthAnalyticsCustomModule(FolderLocationName parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
- *           <li>createSecurityHealthAnalyticsCustomModule(LocationName parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
- *           <li>createSecurityHealthAnalyticsCustomModule(OrganizationLocationName parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
- *           <li>createSecurityHealthAnalyticsCustomModule(String parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
+ *           <li><p> createSecurityHealthAnalyticsCustomModule(FolderLocationName parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
+ *           <li><p> createSecurityHealthAnalyticsCustomModule(LocationName parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
+ *           <li><p> createSecurityHealthAnalyticsCustomModule(OrganizationLocationName parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
+ *           <li><p> createSecurityHealthAnalyticsCustomModule(String parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSecurityHealthAnalyticsCustomModuleCallable()
+ *           <li><p> createSecurityHealthAnalyticsCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSecurityHealthAnalyticsCustomModule</td>
+ *      <td><p> UpdateSecurityHealthAnalyticsCustomModule</td>
  *      <td><p> Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update mask. Updating the enablement state is supported on both resident and inherited modules (though resident modules cannot have an enablement state of "inherited"). Updating the display name and custom config of a module is supported on resident modules only.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSecurityHealthAnalyticsCustomModule(UpdateSecurityHealthAnalyticsCustomModuleRequest request)
+ *           <li><p> updateSecurityHealthAnalyticsCustomModule(UpdateSecurityHealthAnalyticsCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSecurityHealthAnalyticsCustomModule(SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule, FieldMask updateMask)
+ *           <li><p> updateSecurityHealthAnalyticsCustomModule(SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSecurityHealthAnalyticsCustomModuleCallable()
+ *           <li><p> updateSecurityHealthAnalyticsCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSecurityHealthAnalyticsCustomModule</td>
+ *      <td><p> DeleteSecurityHealthAnalyticsCustomModule</td>
  *      <td><p> Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM hierarchy. This method is only supported for resident custom modules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSecurityHealthAnalyticsCustomModule(DeleteSecurityHealthAnalyticsCustomModuleRequest request)
+ *           <li><p> deleteSecurityHealthAnalyticsCustomModule(DeleteSecurityHealthAnalyticsCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSecurityHealthAnalyticsCustomModule(SecurityHealthAnalyticsCustomModuleName name)
- *           <li>deleteSecurityHealthAnalyticsCustomModule(String name)
+ *           <li><p> deleteSecurityHealthAnalyticsCustomModule(SecurityHealthAnalyticsCustomModuleName name)
+ *           <li><p> deleteSecurityHealthAnalyticsCustomModule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSecurityHealthAnalyticsCustomModuleCallable()
+ *           <li><p> deleteSecurityHealthAnalyticsCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SimulateSecurityHealthAnalyticsCustomModule</td>
+ *      <td><p> SimulateSecurityHealthAnalyticsCustomModule</td>
  *      <td><p> Simulates a given SecurityHealthAnalyticsCustomModule and Resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>simulateSecurityHealthAnalyticsCustomModule(SimulateSecurityHealthAnalyticsCustomModuleRequest request)
+ *           <li><p> simulateSecurityHealthAnalyticsCustomModule(SimulateSecurityHealthAnalyticsCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>simulateSecurityHealthAnalyticsCustomModule(String parent, CustomConfig customConfig, SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource)
+ *           <li><p> simulateSecurityHealthAnalyticsCustomModule(String parent, CustomConfig customConfig, SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>simulateSecurityHealthAnalyticsCustomModuleCallable()
+ *           <li><p> simulateSecurityHealthAnalyticsCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEffectiveEventThreatDetectionCustomModules</td>
+ *      <td><p> ListEffectiveEventThreatDetectionCustomModules</td>
  *      <td><p> Lists all effective Event Threat Detection custom modules for the given parent. This includes resident modules defined at the scope of the parent along with modules inherited from its ancestors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEffectiveEventThreatDetectionCustomModules(ListEffectiveEventThreatDetectionCustomModulesRequest request)
+ *           <li><p> listEffectiveEventThreatDetectionCustomModules(ListEffectiveEventThreatDetectionCustomModulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEffectiveEventThreatDetectionCustomModules(FolderLocationName parent)
- *           <li>listEffectiveEventThreatDetectionCustomModules(LocationName parent)
- *           <li>listEffectiveEventThreatDetectionCustomModules(OrganizationLocationName parent)
- *           <li>listEffectiveEventThreatDetectionCustomModules(String parent)
+ *           <li><p> listEffectiveEventThreatDetectionCustomModules(FolderLocationName parent)
+ *           <li><p> listEffectiveEventThreatDetectionCustomModules(LocationName parent)
+ *           <li><p> listEffectiveEventThreatDetectionCustomModules(OrganizationLocationName parent)
+ *           <li><p> listEffectiveEventThreatDetectionCustomModules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEffectiveEventThreatDetectionCustomModulesPagedCallable()
- *           <li>listEffectiveEventThreatDetectionCustomModulesCallable()
+ *           <li><p> listEffectiveEventThreatDetectionCustomModulesPagedCallable()
+ *           <li><p> listEffectiveEventThreatDetectionCustomModulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEffectiveEventThreatDetectionCustomModule</td>
+ *      <td><p> GetEffectiveEventThreatDetectionCustomModule</td>
  *      <td><p> Gets an effective ETD custom module. Retrieves the effective module at the given level. The difference between an EffectiveCustomModule and a CustomModule is that the fields for an EffectiveCustomModule are computed from ancestors if needed. For example, the enablement_state for a CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the enablement_state for an EffectiveCustomModule is always computed to ENABLED or DISABLED (the effective enablement_state).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEffectiveEventThreatDetectionCustomModule(GetEffectiveEventThreatDetectionCustomModuleRequest request)
+ *           <li><p> getEffectiveEventThreatDetectionCustomModule(GetEffectiveEventThreatDetectionCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEffectiveEventThreatDetectionCustomModule(EffectiveEventThreatDetectionCustomModuleName name)
- *           <li>getEffectiveEventThreatDetectionCustomModule(String name)
+ *           <li><p> getEffectiveEventThreatDetectionCustomModule(EffectiveEventThreatDetectionCustomModuleName name)
+ *           <li><p> getEffectiveEventThreatDetectionCustomModule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEffectiveEventThreatDetectionCustomModuleCallable()
+ *           <li><p> getEffectiveEventThreatDetectionCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEventThreatDetectionCustomModules</td>
+ *      <td><p> ListEventThreatDetectionCustomModules</td>
  *      <td><p> Lists all Event Threat Detection custom modules for the given Resource Manager parent. This includes resident modules defined at the scope of the parent along with modules inherited from ancestors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEventThreatDetectionCustomModules(ListEventThreatDetectionCustomModulesRequest request)
+ *           <li><p> listEventThreatDetectionCustomModules(ListEventThreatDetectionCustomModulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEventThreatDetectionCustomModules(FolderLocationName parent)
- *           <li>listEventThreatDetectionCustomModules(LocationName parent)
- *           <li>listEventThreatDetectionCustomModules(OrganizationLocationName parent)
- *           <li>listEventThreatDetectionCustomModules(String parent)
+ *           <li><p> listEventThreatDetectionCustomModules(FolderLocationName parent)
+ *           <li><p> listEventThreatDetectionCustomModules(LocationName parent)
+ *           <li><p> listEventThreatDetectionCustomModules(OrganizationLocationName parent)
+ *           <li><p> listEventThreatDetectionCustomModules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEventThreatDetectionCustomModulesPagedCallable()
- *           <li>listEventThreatDetectionCustomModulesCallable()
+ *           <li><p> listEventThreatDetectionCustomModulesPagedCallable()
+ *           <li><p> listEventThreatDetectionCustomModulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListDescendantEventThreatDetectionCustomModules</td>
+ *      <td><p> ListDescendantEventThreatDetectionCustomModules</td>
  *      <td><p> Lists all resident Event Threat Detection custom modules under the given Resource Manager parent and its descendants.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listDescendantEventThreatDetectionCustomModules(ListDescendantEventThreatDetectionCustomModulesRequest request)
+ *           <li><p> listDescendantEventThreatDetectionCustomModules(ListDescendantEventThreatDetectionCustomModulesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listDescendantEventThreatDetectionCustomModules(FolderLocationName parent)
- *           <li>listDescendantEventThreatDetectionCustomModules(LocationName parent)
- *           <li>listDescendantEventThreatDetectionCustomModules(OrganizationLocationName parent)
- *           <li>listDescendantEventThreatDetectionCustomModules(String parent)
+ *           <li><p> listDescendantEventThreatDetectionCustomModules(FolderLocationName parent)
+ *           <li><p> listDescendantEventThreatDetectionCustomModules(LocationName parent)
+ *           <li><p> listDescendantEventThreatDetectionCustomModules(OrganizationLocationName parent)
+ *           <li><p> listDescendantEventThreatDetectionCustomModules(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listDescendantEventThreatDetectionCustomModulesPagedCallable()
- *           <li>listDescendantEventThreatDetectionCustomModulesCallable()
+ *           <li><p> listDescendantEventThreatDetectionCustomModulesPagedCallable()
+ *           <li><p> listDescendantEventThreatDetectionCustomModulesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEventThreatDetectionCustomModule</td>
+ *      <td><p> GetEventThreatDetectionCustomModule</td>
  *      <td><p> Gets an Event Threat Detection custom module.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEventThreatDetectionCustomModule(GetEventThreatDetectionCustomModuleRequest request)
+ *           <li><p> getEventThreatDetectionCustomModule(GetEventThreatDetectionCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEventThreatDetectionCustomModule(EventThreatDetectionCustomModuleName name)
- *           <li>getEventThreatDetectionCustomModule(String name)
+ *           <li><p> getEventThreatDetectionCustomModule(EventThreatDetectionCustomModuleName name)
+ *           <li><p> getEventThreatDetectionCustomModule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEventThreatDetectionCustomModuleCallable()
+ *           <li><p> getEventThreatDetectionCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEventThreatDetectionCustomModule</td>
+ *      <td><p> CreateEventThreatDetectionCustomModule</td>
  *      <td><p> Creates a resident Event Threat Detection custom module at the scope of the given Resource Manager parent, and also creates inherited custom modules for all descendants of the given parent. These modules are enabled by default.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEventThreatDetectionCustomModule(CreateEventThreatDetectionCustomModuleRequest request)
+ *           <li><p> createEventThreatDetectionCustomModule(CreateEventThreatDetectionCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEventThreatDetectionCustomModule(FolderLocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
- *           <li>createEventThreatDetectionCustomModule(LocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
- *           <li>createEventThreatDetectionCustomModule(OrganizationLocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
- *           <li>createEventThreatDetectionCustomModule(String parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
+ *           <li><p> createEventThreatDetectionCustomModule(FolderLocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
+ *           <li><p> createEventThreatDetectionCustomModule(LocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
+ *           <li><p> createEventThreatDetectionCustomModule(OrganizationLocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
+ *           <li><p> createEventThreatDetectionCustomModule(String parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEventThreatDetectionCustomModuleCallable()
+ *           <li><p> createEventThreatDetectionCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEventThreatDetectionCustomModule</td>
+ *      <td><p> UpdateEventThreatDetectionCustomModule</td>
  *      <td><p> Updates the Event Threat Detection custom module with the given name based on the given update mask. Updating the enablement state is supported for both resident and inherited modules (though resident modules cannot have an enablement state of "inherited"). Updating the display name or configuration of a module is supported for resident modules only. The type of a module cannot be changed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEventThreatDetectionCustomModule(UpdateEventThreatDetectionCustomModuleRequest request)
+ *           <li><p> updateEventThreatDetectionCustomModule(UpdateEventThreatDetectionCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEventThreatDetectionCustomModule(EventThreatDetectionCustomModule eventThreatDetectionCustomModule, FieldMask updateMask)
+ *           <li><p> updateEventThreatDetectionCustomModule(EventThreatDetectionCustomModule eventThreatDetectionCustomModule, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEventThreatDetectionCustomModuleCallable()
+ *           <li><p> updateEventThreatDetectionCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEventThreatDetectionCustomModule</td>
+ *      <td><p> DeleteEventThreatDetectionCustomModule</td>
  *      <td><p> Deletes the specified Event Threat Detection custom module and all of its descendants in the Resource Manager hierarchy. This method is only supported for resident custom modules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEventThreatDetectionCustomModule(DeleteEventThreatDetectionCustomModuleRequest request)
+ *           <li><p> deleteEventThreatDetectionCustomModule(DeleteEventThreatDetectionCustomModuleRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEventThreatDetectionCustomModule(EventThreatDetectionCustomModuleName name)
- *           <li>deleteEventThreatDetectionCustomModule(String name)
+ *           <li><p> deleteEventThreatDetectionCustomModule(EventThreatDetectionCustomModuleName name)
+ *           <li><p> deleteEventThreatDetectionCustomModule(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEventThreatDetectionCustomModuleCallable()
+ *           <li><p> deleteEventThreatDetectionCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ValidateEventThreatDetectionCustomModule</td>
+ *      <td><p> ValidateEventThreatDetectionCustomModule</td>
  *      <td><p> Validates the given Event Threat Detection custom module.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateEventThreatDetectionCustomModule(ValidateEventThreatDetectionCustomModuleRequest request)
+ *           <li><p> validateEventThreatDetectionCustomModule(ValidateEventThreatDetectionCustomModuleRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateEventThreatDetectionCustomModuleCallable()
+ *           <li><p> validateEventThreatDetectionCustomModuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

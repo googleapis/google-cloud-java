@@ -60,89 +60,90 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetExecution</td>
+ *      <td><p> GetExecution</td>
  *      <td><p> Gets information about an Execution.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getExecution(GetExecutionRequest request)
+ *           <li><p> getExecution(GetExecutionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getExecution(ExecutionName name)
- *           <li>getExecution(String name)
+ *           <li><p> getExecution(ExecutionName name)
+ *           <li><p> getExecution(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getExecutionCallable()
+ *           <li><p> getExecutionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListExecutions</td>
+ *      <td><p> ListExecutions</td>
  *      <td><p> Lists Executions from a Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listExecutions(ListExecutionsRequest request)
+ *           <li><p> listExecutions(ListExecutionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listExecutions(JobName parent)
- *           <li>listExecutions(String parent)
+ *           <li><p> listExecutions(JobName parent)
+ *           <li><p> listExecutions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listExecutionsPagedCallable()
- *           <li>listExecutionsCallable()
+ *           <li><p> listExecutionsPagedCallable()
+ *           <li><p> listExecutionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteExecution</td>
+ *      <td><p> DeleteExecution</td>
  *      <td><p> Deletes an Execution.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteExecutionAsync(DeleteExecutionRequest request)
+ *           <li><p> deleteExecutionAsync(DeleteExecutionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteExecutionAsync(ExecutionName name)
- *           <li>deleteExecutionAsync(String name)
+ *           <li><p> deleteExecutionAsync(ExecutionName name)
+ *           <li><p> deleteExecutionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteExecutionOperationCallable()
- *           <li>deleteExecutionCallable()
+ *           <li><p> deleteExecutionOperationCallable()
+ *           <li><p> deleteExecutionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelExecution</td>
+ *      <td><p> CancelExecution</td>
  *      <td><p> Cancels an Execution.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelExecutionAsync(CancelExecutionRequest request)
+ *           <li><p> cancelExecutionAsync(CancelExecutionRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>cancelExecutionAsync(ExecutionName name)
- *           <li>cancelExecutionAsync(String name)
+ *           <li><p> cancelExecutionAsync(ExecutionName name)
+ *           <li><p> cancelExecutionAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelExecutionOperationCallable()
- *           <li>cancelExecutionCallable()
+ *           <li><p> cancelExecutionOperationCallable()
+ *           <li><p> cancelExecutionCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

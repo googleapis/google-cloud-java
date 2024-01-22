@@ -92,50 +92,52 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListServices</td>
+ *      <td><p> ListServices</td>
  *      <td><p> Lists managed services.
  * <p>  Returns all public services. For authenticated users, also returns all services the calling user has "servicemanagement.services.get" permission for.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServices(ListServicesRequest request)
+ *           <li><p> listServices(ListServicesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServices(String producerProjectId, String consumerId)
+ *           <li><p> listServices(String producerProjectId, String consumerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServicesPagedCallable()
- *           <li>listServicesCallable()
+ *           <li><p> listServicesPagedCallable()
+ *           <li><p> listServicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetService</td>
+ *      <td><p> GetService</td>
  *      <td><p> Gets a managed service. Authentication is required unless the service is public.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getService(GetServiceRequest request)
+ *           <li><p> getService(GetServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getService(String serviceName)
+ *           <li><p> getService(String serviceName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServiceCallable()
+ *           <li><p> getServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateService</td>
+ *      <td><p> CreateService</td>
  *      <td><p> Creates a new managed service.
  * <p>  A managed service is immutable, and is subject to mandatory 30-day data retention. You cannot move a service or recreate it within 30 days after deletion.
  * <p>  One producer project can own no more than 500 services. For security and reliability purposes, a production service should be hosted in a dedicated producer project.
@@ -143,175 +145,175 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServiceAsync(CreateServiceRequest request)
+ *           <li><p> createServiceAsync(CreateServiceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createServiceAsync(ManagedService service)
+ *           <li><p> createServiceAsync(ManagedService service)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceOperationCallable()
- *           <li>createServiceCallable()
+ *           <li><p> createServiceOperationCallable()
+ *           <li><p> createServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteService</td>
+ *      <td><p> DeleteService</td>
  *      <td><p> Deletes a managed service. This method will change the service to the `Soft-Delete` state for 30 days. Within this period, service producers may call [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService] to restore the service. After 30 days, the service will be permanently deleted.
  * <p>  Operation&lt;response: google.protobuf.Empty&gt;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteServiceAsync(DeleteServiceRequest request)
+ *           <li><p> deleteServiceAsync(DeleteServiceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteServiceAsync(String serviceName)
+ *           <li><p> deleteServiceAsync(String serviceName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteServiceOperationCallable()
- *           <li>deleteServiceCallable()
+ *           <li><p> deleteServiceOperationCallable()
+ *           <li><p> deleteServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteService</td>
+ *      <td><p> UndeleteService</td>
  *      <td><p> Revives a previously deleted managed service. The method restores the service using the configuration at the time the service was deleted. The target service must exist and must have been deleted within the last 30 days.
  * <p>  Operation&lt;response: UndeleteServiceResponse&gt;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteServiceAsync(UndeleteServiceRequest request)
+ *           <li><p> undeleteServiceAsync(UndeleteServiceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeleteServiceAsync(String serviceName)
+ *           <li><p> undeleteServiceAsync(String serviceName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteServiceOperationCallable()
- *           <li>undeleteServiceCallable()
+ *           <li><p> undeleteServiceOperationCallable()
+ *           <li><p> undeleteServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListServiceConfigs</td>
+ *      <td><p> ListServiceConfigs</td>
  *      <td><p> Lists the history of the service configuration for a managed service, from the newest to the oldest.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServiceConfigs(ListServiceConfigsRequest request)
+ *           <li><p> listServiceConfigs(ListServiceConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServiceConfigs(String serviceName)
+ *           <li><p> listServiceConfigs(String serviceName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServiceConfigsPagedCallable()
- *           <li>listServiceConfigsCallable()
+ *           <li><p> listServiceConfigsPagedCallable()
+ *           <li><p> listServiceConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServiceConfig</td>
+ *      <td><p> GetServiceConfig</td>
  *      <td><p> Gets a service configuration (version) for a managed service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServiceConfig(GetServiceConfigRequest request)
+ *           <li><p> getServiceConfig(GetServiceConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServiceConfig(String serviceName, String configId, GetServiceConfigRequest.ConfigView view)
+ *           <li><p> getServiceConfig(String serviceName, String configId, GetServiceConfigRequest.ConfigView view)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServiceConfigCallable()
+ *           <li><p> getServiceConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateServiceConfig</td>
+ *      <td><p> CreateServiceConfig</td>
  *      <td><p> Creates a new service configuration (version) for a managed service. This method only stores the service configuration. To roll out the service configuration to backend systems please call [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
  * <p>  Only the 100 most recent service configurations and ones referenced by existing rollouts are kept for each service. The rest will be deleted eventually.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServiceConfig(CreateServiceConfigRequest request)
+ *           <li><p> createServiceConfig(CreateServiceConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createServiceConfig(String serviceName, Service serviceConfig)
+ *           <li><p> createServiceConfig(String serviceName, Service serviceConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceConfigCallable()
+ *           <li><p> createServiceConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SubmitConfigSource</td>
+ *      <td><p> SubmitConfigSource</td>
  *      <td><p> Creates a new service configuration (version) for a managed service based on user-supplied configuration source files (for example: OpenAPI Specification). This method stores the source configurations as well as the generated service configuration. To rollout the service configuration to other services, please call [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
  * <p>  Only the 100 most recent configuration sources and ones referenced by existing service configurtions are kept for each service. The rest will be deleted eventually.
  * <p>  Operation&lt;response: SubmitConfigSourceResponse&gt;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>submitConfigSourceAsync(SubmitConfigSourceRequest request)
+ *           <li><p> submitConfigSourceAsync(SubmitConfigSourceRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>submitConfigSourceAsync(String serviceName, ConfigSource configSource, boolean validateOnly)
+ *           <li><p> submitConfigSourceAsync(String serviceName, ConfigSource configSource, boolean validateOnly)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>submitConfigSourceOperationCallable()
- *           <li>submitConfigSourceCallable()
+ *           <li><p> submitConfigSourceOperationCallable()
+ *           <li><p> submitConfigSourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListServiceRollouts</td>
+ *      <td><p> ListServiceRollouts</td>
  *      <td><p> Lists the history of the service configuration rollouts for a managed service, from the newest to the oldest.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServiceRollouts(ListServiceRolloutsRequest request)
+ *           <li><p> listServiceRollouts(ListServiceRolloutsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServiceRollouts(String serviceName, String filter)
+ *           <li><p> listServiceRollouts(String serviceName, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServiceRolloutsPagedCallable()
- *           <li>listServiceRolloutsCallable()
+ *           <li><p> listServiceRolloutsPagedCallable()
+ *           <li><p> listServiceRolloutsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetServiceRollout</td>
+ *      <td><p> GetServiceRollout</td>
  *      <td><p> Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getServiceRollout(GetServiceRolloutRequest request)
+ *           <li><p> getServiceRollout(GetServiceRolloutRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getServiceRollout(String serviceName, String rolloutId)
+ *           <li><p> getServiceRollout(String serviceName, String rolloutId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServiceRolloutCallable()
+ *           <li><p> getServiceRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateServiceRollout</td>
+ *      <td><p> CreateServiceRollout</td>
  *      <td><p> Creates a new service configuration rollout. Based on rollout, the Google Service Management will roll out the service configurations to different backend services. For example, the logging configuration will be pushed to Google Cloud Logging.
  * <p>  Please note that any previous pending and running Rollouts and associated Operations will be automatically cancelled so that the latest Rollout will not be blocked by previous Rollouts.
  * <p>  Only the 100 most recent (in any state) and the last 10 successful (if not already part of the set of 100 most recent) rollouts are kept for each service. The rest will be deleted eventually.
@@ -319,82 +321,81 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createServiceRolloutAsync(CreateServiceRolloutRequest request)
+ *           <li><p> createServiceRolloutAsync(CreateServiceRolloutRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createServiceRolloutAsync(String serviceName, Rollout rollout)
+ *           <li><p> createServiceRolloutAsync(String serviceName, Rollout rollout)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceRolloutOperationCallable()
- *           <li>createServiceRolloutCallable()
+ *           <li><p> createServiceRolloutOperationCallable()
+ *           <li><p> createServiceRolloutCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GenerateConfigReport</td>
+ *      <td><p> GenerateConfigReport</td>
  *      <td><p> Generates and returns a report (errors, warnings and changes from existing configurations) associated with GenerateConfigReportRequest.new_value
  * <p>  If GenerateConfigReportRequest.old_value is specified, GenerateConfigReportRequest will contain a single ChangeReport based on the comparison between GenerateConfigReportRequest.new_value and GenerateConfigReportRequest.old_value. If GenerateConfigReportRequest.old_value is not specified, this method will compare GenerateConfigReportRequest.new_value with the last pushed service configuration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>generateConfigReport(GenerateConfigReportRequest request)
+ *           <li><p> generateConfigReport(GenerateConfigReportRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>generateConfigReport(Any newConfig, Any oldConfig)
+ *           <li><p> generateConfigReport(Any newConfig, Any oldConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>generateConfigReportCallable()
+ *           <li><p> generateConfigReportCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

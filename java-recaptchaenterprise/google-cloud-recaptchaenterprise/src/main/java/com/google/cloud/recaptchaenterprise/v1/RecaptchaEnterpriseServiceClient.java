@@ -98,350 +98,351 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateAssessment</td>
+ *      <td><p> CreateAssessment</td>
  *      <td><p> Creates an Assessment of the likelihood an event is legitimate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAssessment(CreateAssessmentRequest request)
+ *           <li><p> createAssessment(CreateAssessmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAssessment(ProjectName parent, Assessment assessment)
- *           <li>createAssessment(String parent, Assessment assessment)
+ *           <li><p> createAssessment(ProjectName parent, Assessment assessment)
+ *           <li><p> createAssessment(String parent, Assessment assessment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAssessmentCallable()
+ *           <li><p> createAssessmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnnotateAssessment</td>
+ *      <td><p> AnnotateAssessment</td>
  *      <td><p> Annotates a previously created Assessment to provide additional information on whether the event turned out to be authentic or fraudulent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>annotateAssessment(AnnotateAssessmentRequest request)
+ *           <li><p> annotateAssessment(AnnotateAssessmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation)
- *           <li>annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation)
+ *           <li><p> annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation)
+ *           <li><p> annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>annotateAssessmentCallable()
+ *           <li><p> annotateAssessmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateKey</td>
+ *      <td><p> CreateKey</td>
  *      <td><p> Creates a new reCAPTCHA Enterprise key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createKey(CreateKeyRequest request)
+ *           <li><p> createKey(CreateKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createKey(ProjectName parent, Key key)
- *           <li>createKey(String parent, Key key)
+ *           <li><p> createKey(ProjectName parent, Key key)
+ *           <li><p> createKey(String parent, Key key)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createKeyCallable()
+ *           <li><p> createKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListKeys</td>
+ *      <td><p> ListKeys</td>
  *      <td><p> Returns the list of all keys that belong to a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listKeys(ListKeysRequest request)
+ *           <li><p> listKeys(ListKeysRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listKeys(ProjectName parent)
- *           <li>listKeys(String parent)
+ *           <li><p> listKeys(ProjectName parent)
+ *           <li><p> listKeys(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listKeysPagedCallable()
- *           <li>listKeysCallable()
+ *           <li><p> listKeysPagedCallable()
+ *           <li><p> listKeysCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RetrieveLegacySecretKey</td>
+ *      <td><p> RetrieveLegacySecretKey</td>
  *      <td><p> Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>retrieveLegacySecretKey(RetrieveLegacySecretKeyRequest request)
+ *           <li><p> retrieveLegacySecretKey(RetrieveLegacySecretKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>retrieveLegacySecretKey(KeyName key)
- *           <li>retrieveLegacySecretKey(String key)
+ *           <li><p> retrieveLegacySecretKey(KeyName key)
+ *           <li><p> retrieveLegacySecretKey(String key)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>retrieveLegacySecretKeyCallable()
+ *           <li><p> retrieveLegacySecretKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetKey</td>
+ *      <td><p> GetKey</td>
  *      <td><p> Returns the specified key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getKey(GetKeyRequest request)
+ *           <li><p> getKey(GetKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getKey(KeyName name)
- *           <li>getKey(String name)
+ *           <li><p> getKey(KeyName name)
+ *           <li><p> getKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getKeyCallable()
+ *           <li><p> getKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateKey</td>
+ *      <td><p> UpdateKey</td>
  *      <td><p> Updates the specified key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateKey(UpdateKeyRequest request)
+ *           <li><p> updateKey(UpdateKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateKey(Key key, FieldMask updateMask)
+ *           <li><p> updateKey(Key key, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateKeyCallable()
+ *           <li><p> updateKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteKey</td>
+ *      <td><p> DeleteKey</td>
  *      <td><p> Deletes the specified key.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteKey(DeleteKeyRequest request)
+ *           <li><p> deleteKey(DeleteKeyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteKey(KeyName name)
- *           <li>deleteKey(String name)
+ *           <li><p> deleteKey(KeyName name)
+ *           <li><p> deleteKey(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteKeyCallable()
+ *           <li><p> deleteKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MigrateKey</td>
+ *      <td><p> MigrateKey</td>
  *      <td><p> Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must be authenticated as one of the current owners of the reCAPTCHA Key, and your user must have the reCAPTCHA Enterprise Admin IAM role in the destination project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>migrateKey(MigrateKeyRequest request)
+ *           <li><p> migrateKey(MigrateKeyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>migrateKeyCallable()
+ *           <li><p> migrateKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetMetrics</td>
+ *      <td><p> GetMetrics</td>
  *      <td><p> Get some aggregated metrics for a Key. This data can be used to build dashboards.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getMetrics(GetMetricsRequest request)
+ *           <li><p> getMetrics(GetMetricsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getMetrics(MetricsName name)
- *           <li>getMetrics(String name)
+ *           <li><p> getMetrics(MetricsName name)
+ *           <li><p> getMetrics(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getMetricsCallable()
+ *           <li><p> getMetricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFirewallPolicy</td>
+ *      <td><p> CreateFirewallPolicy</td>
  *      <td><p> Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can be executed. A project may have a maximum of 1000 policies.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFirewallPolicy(CreateFirewallPolicyRequest request)
+ *           <li><p> createFirewallPolicy(CreateFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createFirewallPolicy(ProjectName parent, FirewallPolicy firewallPolicy)
- *           <li>createFirewallPolicy(String parent, FirewallPolicy firewallPolicy)
+ *           <li><p> createFirewallPolicy(ProjectName parent, FirewallPolicy firewallPolicy)
+ *           <li><p> createFirewallPolicy(String parent, FirewallPolicy firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFirewallPolicyCallable()
+ *           <li><p> createFirewallPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFirewallPolicies</td>
+ *      <td><p> ListFirewallPolicies</td>
  *      <td><p> Returns the list of all firewall policies that belong to a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFirewallPolicies(ListFirewallPoliciesRequest request)
+ *           <li><p> listFirewallPolicies(ListFirewallPoliciesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFirewallPolicies(ProjectName parent)
- *           <li>listFirewallPolicies(String parent)
+ *           <li><p> listFirewallPolicies(ProjectName parent)
+ *           <li><p> listFirewallPolicies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFirewallPoliciesPagedCallable()
- *           <li>listFirewallPoliciesCallable()
+ *           <li><p> listFirewallPoliciesPagedCallable()
+ *           <li><p> listFirewallPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetFirewallPolicy</td>
+ *      <td><p> GetFirewallPolicy</td>
  *      <td><p> Returns the specified firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getFirewallPolicy(GetFirewallPolicyRequest request)
+ *           <li><p> getFirewallPolicy(GetFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getFirewallPolicy(FirewallPolicyName name)
- *           <li>getFirewallPolicy(String name)
+ *           <li><p> getFirewallPolicy(FirewallPolicyName name)
+ *           <li><p> getFirewallPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getFirewallPolicyCallable()
+ *           <li><p> getFirewallPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFirewallPolicy</td>
+ *      <td><p> UpdateFirewallPolicy</td>
  *      <td><p> Updates the specified firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFirewallPolicy(UpdateFirewallPolicyRequest request)
+ *           <li><p> updateFirewallPolicy(UpdateFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateFirewallPolicy(FirewallPolicy firewallPolicy, FieldMask updateMask)
+ *           <li><p> updateFirewallPolicy(FirewallPolicy firewallPolicy, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFirewallPolicyCallable()
+ *           <li><p> updateFirewallPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteFirewallPolicy</td>
+ *      <td><p> DeleteFirewallPolicy</td>
  *      <td><p> Deletes the specified firewall policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteFirewallPolicy(DeleteFirewallPolicyRequest request)
+ *           <li><p> deleteFirewallPolicy(DeleteFirewallPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteFirewallPolicy(FirewallPolicyName name)
- *           <li>deleteFirewallPolicy(String name)
+ *           <li><p> deleteFirewallPolicy(FirewallPolicyName name)
+ *           <li><p> deleteFirewallPolicy(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteFirewallPolicyCallable()
+ *           <li><p> deleteFirewallPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRelatedAccountGroups</td>
+ *      <td><p> ListRelatedAccountGroups</td>
  *      <td><p> List groups of related accounts.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRelatedAccountGroups(ListRelatedAccountGroupsRequest request)
+ *           <li><p> listRelatedAccountGroups(ListRelatedAccountGroupsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRelatedAccountGroups(ProjectName parent)
- *           <li>listRelatedAccountGroups(String parent)
+ *           <li><p> listRelatedAccountGroups(ProjectName parent)
+ *           <li><p> listRelatedAccountGroups(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRelatedAccountGroupsPagedCallable()
- *           <li>listRelatedAccountGroupsCallable()
+ *           <li><p> listRelatedAccountGroupsPagedCallable()
+ *           <li><p> listRelatedAccountGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRelatedAccountGroupMemberships</td>
+ *      <td><p> ListRelatedAccountGroupMemberships</td>
  *      <td><p> Get memberships in a group of related accounts.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRelatedAccountGroupMemberships(ListRelatedAccountGroupMembershipsRequest request)
+ *           <li><p> listRelatedAccountGroupMemberships(ListRelatedAccountGroupMembershipsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRelatedAccountGroupMemberships(RelatedAccountGroupName parent)
- *           <li>listRelatedAccountGroupMemberships(String parent)
+ *           <li><p> listRelatedAccountGroupMemberships(RelatedAccountGroupName parent)
+ *           <li><p> listRelatedAccountGroupMemberships(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRelatedAccountGroupMembershipsPagedCallable()
- *           <li>listRelatedAccountGroupMembershipsCallable()
+ *           <li><p> listRelatedAccountGroupMembershipsPagedCallable()
+ *           <li><p> listRelatedAccountGroupMembershipsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SearchRelatedAccountGroupMemberships</td>
+ *      <td><p> SearchRelatedAccountGroupMemberships</td>
  *      <td><p> Search group memberships related to a given account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>searchRelatedAccountGroupMemberships(SearchRelatedAccountGroupMembershipsRequest request)
+ *           <li><p> searchRelatedAccountGroupMemberships(SearchRelatedAccountGroupMembershipsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>searchRelatedAccountGroupMemberships(RelatedAccountGroupName project, ByteString hashedAccountId)
- *           <li>searchRelatedAccountGroupMemberships(String project, ByteString hashedAccountId)
+ *           <li><p> searchRelatedAccountGroupMemberships(RelatedAccountGroupName project, ByteString hashedAccountId)
+ *           <li><p> searchRelatedAccountGroupMemberships(String project, ByteString hashedAccountId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>searchRelatedAccountGroupMembershipsPagedCallable()
- *           <li>searchRelatedAccountGroupMembershipsCallable()
+ *           <li><p> searchRelatedAccountGroupMembershipsPagedCallable()
+ *           <li><p> searchRelatedAccountGroupMembershipsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

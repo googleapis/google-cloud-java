@@ -65,171 +65,172 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateJob</td>
+ *      <td><p> CreateJob</td>
  *      <td><p> Creates a Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createJobAsync(CreateJobRequest request)
+ *           <li><p> createJobAsync(CreateJobRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createJobAsync(LocationName parent, Job job, String jobId)
- *           <li>createJobAsync(String parent, Job job, String jobId)
+ *           <li><p> createJobAsync(LocationName parent, Job job, String jobId)
+ *           <li><p> createJobAsync(String parent, Job job, String jobId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createJobOperationCallable()
- *           <li>createJobCallable()
+ *           <li><p> createJobOperationCallable()
+ *           <li><p> createJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJob</td>
+ *      <td><p> GetJob</td>
  *      <td><p> Gets information about a Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJob(GetJobRequest request)
+ *           <li><p> getJob(GetJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getJob(JobName name)
- *           <li>getJob(String name)
+ *           <li><p> getJob(JobName name)
+ *           <li><p> getJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobCallable()
+ *           <li><p> getJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListJobs</td>
+ *      <td><p> ListJobs</td>
  *      <td><p> Lists Jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobs(ListJobsRequest request)
+ *           <li><p> listJobs(ListJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listJobs(LocationName parent)
- *           <li>listJobs(String parent)
+ *           <li><p> listJobs(LocationName parent)
+ *           <li><p> listJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobsPagedCallable()
- *           <li>listJobsCallable()
+ *           <li><p> listJobsPagedCallable()
+ *           <li><p> listJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateJob</td>
+ *      <td><p> UpdateJob</td>
  *      <td><p> Updates a Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateJobAsync(UpdateJobRequest request)
+ *           <li><p> updateJobAsync(UpdateJobRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateJobAsync(Job job)
+ *           <li><p> updateJobAsync(Job job)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateJobOperationCallable()
- *           <li>updateJobCallable()
+ *           <li><p> updateJobOperationCallable()
+ *           <li><p> updateJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteJob</td>
+ *      <td><p> DeleteJob</td>
  *      <td><p> Deletes a Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteJobAsync(DeleteJobRequest request)
+ *           <li><p> deleteJobAsync(DeleteJobRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteJobAsync(JobName name)
- *           <li>deleteJobAsync(String name)
+ *           <li><p> deleteJobAsync(JobName name)
+ *           <li><p> deleteJobAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteJobOperationCallable()
- *           <li>deleteJobCallable()
+ *           <li><p> deleteJobOperationCallable()
+ *           <li><p> deleteJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunJob</td>
+ *      <td><p> RunJob</td>
  *      <td><p> Triggers creation of a new Execution of this Job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runJobAsync(RunJobRequest request)
+ *           <li><p> runJobAsync(RunJobRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>runJobAsync(JobName name)
- *           <li>runJobAsync(String name)
+ *           <li><p> runJobAsync(JobName name)
+ *           <li><p> runJobAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runJobOperationCallable()
- *           <li>runJobCallable()
+ *           <li><p> runJobOperationCallable()
+ *           <li><p> runJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM Access control policy for the specified Job. Overwrites any existing policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified Project.
  * <p>  There are no permissions required for making this API call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

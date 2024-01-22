@@ -63,275 +63,276 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListInsights</td>
+ *      <td><p> ListInsights</td>
  *      <td><p> Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM permission for the specified insight type.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listInsights(ListInsightsRequest request)
+ *           <li><p> listInsights(ListInsightsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listInsights(InsightTypeName parent)
- *           <li>listInsights(String parent)
+ *           <li><p> listInsights(InsightTypeName parent)
+ *           <li><p> listInsights(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listInsightsPagedCallable()
- *           <li>listInsightsCallable()
+ *           <li><p> listInsightsPagedCallable()
+ *           <li><p> listInsightsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInsight</td>
+ *      <td><p> GetInsight</td>
  *      <td><p> Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified insight type.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInsight(GetInsightRequest request)
+ *           <li><p> getInsight(GetInsightRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getInsight(InsightName name)
- *           <li>getInsight(String name)
+ *           <li><p> getInsight(InsightName name)
+ *           <li><p> getInsight(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInsightCallable()
+ *           <li><p> getInsightCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MarkInsightAccepted</td>
+ *      <td><p> MarkInsightAccepted</td>
  *      <td><p> Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender API that they have applied some action based on the insight. This stops the insight content from being updated.
  * <p>  MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the recommender.&#42;.update IAM permission for the specified insight.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>markInsightAccepted(MarkInsightAcceptedRequest request)
+ *           <li><p> markInsightAccepted(MarkInsightAcceptedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>markInsightAccepted(InsightName name, Map<String, String> stateMetadata, String etag)
- *           <li>markInsightAccepted(String name, Map<String, String> stateMetadata, String etag)
+ *           <li><p> markInsightAccepted(InsightName name, Map&lt;String, String&gt; stateMetadata, String etag)
+ *           <li><p> markInsightAccepted(String name, Map&lt;String, String&gt; stateMetadata, String etag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>markInsightAcceptedCallable()
+ *           <li><p> markInsightAcceptedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRecommendations</td>
+ *      <td><p> ListRecommendations</td>
  *      <td><p> Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM permission for the specified recommender.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRecommendations(ListRecommendationsRequest request)
+ *           <li><p> listRecommendations(ListRecommendationsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRecommendations(RecommenderName parent, String filter)
- *           <li>listRecommendations(String parent, String filter)
+ *           <li><p> listRecommendations(RecommenderName parent, String filter)
+ *           <li><p> listRecommendations(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRecommendationsPagedCallable()
- *           <li>listRecommendationsCallable()
+ *           <li><p> listRecommendationsPagedCallable()
+ *           <li><p> listRecommendationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRecommendation</td>
+ *      <td><p> GetRecommendation</td>
  *      <td><p> Gets the requested recommendation. Requires the recommender.&#42;.get IAM permission for the specified recommender.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRecommendation(GetRecommendationRequest request)
+ *           <li><p> getRecommendation(GetRecommendationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRecommendation(RecommendationName name)
- *           <li>getRecommendation(String name)
+ *           <li><p> getRecommendation(RecommendationName name)
+ *           <li><p> getRecommendation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRecommendationCallable()
+ *           <li><p> getRecommendationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MarkRecommendationClaimed</td>
+ *      <td><p> MarkRecommendationClaimed</td>
  *      <td><p> Marks the Recommendation State as Claimed. Users can use this method to indicate to the Recommender API that they are starting to apply the recommendation themselves. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state.
  * <p>  MarkRecommendationClaimed can be applied to recommendations in CLAIMED or ACTIVE state.
  * <p>  Requires the recommender.&#42;.update IAM permission for the specified recommender.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>markRecommendationClaimed(MarkRecommendationClaimedRequest request)
+ *           <li><p> markRecommendationClaimed(MarkRecommendationClaimedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>markRecommendationClaimed(RecommendationName name, Map<String, String> stateMetadata, String etag)
- *           <li>markRecommendationClaimed(String name, Map<String, String> stateMetadata, String etag)
+ *           <li><p> markRecommendationClaimed(RecommendationName name, Map&lt;String, String&gt; stateMetadata, String etag)
+ *           <li><p> markRecommendationClaimed(String name, Map&lt;String, String&gt; stateMetadata, String etag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>markRecommendationClaimedCallable()
+ *           <li><p> markRecommendationClaimedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MarkRecommendationSucceeded</td>
+ *      <td><p> MarkRecommendationSucceeded</td>
  *      <td><p> Marks the Recommendation State as Succeeded. Users can use this method to indicate to the Recommender API that they have applied the recommendation themselves, and the operation was successful. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state.
  * <p>  MarkRecommendationSucceeded can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or FAILED state.
  * <p>  Requires the recommender.&#42;.update IAM permission for the specified recommender.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>markRecommendationSucceeded(MarkRecommendationSucceededRequest request)
+ *           <li><p> markRecommendationSucceeded(MarkRecommendationSucceededRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>markRecommendationSucceeded(RecommendationName name, Map<String, String> stateMetadata, String etag)
- *           <li>markRecommendationSucceeded(String name, Map<String, String> stateMetadata, String etag)
+ *           <li><p> markRecommendationSucceeded(RecommendationName name, Map&lt;String, String&gt; stateMetadata, String etag)
+ *           <li><p> markRecommendationSucceeded(String name, Map&lt;String, String&gt; stateMetadata, String etag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>markRecommendationSucceededCallable()
+ *           <li><p> markRecommendationSucceededCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>MarkRecommendationFailed</td>
+ *      <td><p> MarkRecommendationFailed</td>
  *      <td><p> Marks the Recommendation State as Failed. Users can use this method to indicate to the Recommender API that they have applied the recommendation themselves, and the operation failed. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state.
  * <p>  MarkRecommendationFailed can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or FAILED state.
  * <p>  Requires the recommender.&#42;.update IAM permission for the specified recommender.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>markRecommendationFailed(MarkRecommendationFailedRequest request)
+ *           <li><p> markRecommendationFailed(MarkRecommendationFailedRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>markRecommendationFailed(RecommendationName name, Map<String, String> stateMetadata, String etag)
- *           <li>markRecommendationFailed(String name, Map<String, String> stateMetadata, String etag)
+ *           <li><p> markRecommendationFailed(RecommendationName name, Map&lt;String, String&gt; stateMetadata, String etag)
+ *           <li><p> markRecommendationFailed(String name, Map&lt;String, String&gt; stateMetadata, String etag)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>markRecommendationFailedCallable()
+ *           <li><p> markRecommendationFailedCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRecommenderConfig</td>
+ *      <td><p> GetRecommenderConfig</td>
  *      <td><p> Gets the requested Recommender Config. There is only one instance of the config for each Recommender.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRecommenderConfig(GetRecommenderConfigRequest request)
+ *           <li><p> getRecommenderConfig(GetRecommenderConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRecommenderConfig(RecommenderConfigName name)
- *           <li>getRecommenderConfig(String name)
+ *           <li><p> getRecommenderConfig(RecommenderConfigName name)
+ *           <li><p> getRecommenderConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRecommenderConfigCallable()
+ *           <li><p> getRecommenderConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRecommenderConfig</td>
+ *      <td><p> UpdateRecommenderConfig</td>
  *      <td><p> Updates a Recommender Config. This will create a new revision of the config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRecommenderConfig(UpdateRecommenderConfigRequest request)
+ *           <li><p> updateRecommenderConfig(UpdateRecommenderConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateRecommenderConfig(RecommenderConfig recommenderConfig, FieldMask updateMask)
+ *           <li><p> updateRecommenderConfig(RecommenderConfig recommenderConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRecommenderConfigCallable()
+ *           <li><p> updateRecommenderConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetInsightTypeConfig</td>
+ *      <td><p> GetInsightTypeConfig</td>
  *      <td><p> Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getInsightTypeConfig(GetInsightTypeConfigRequest request)
+ *           <li><p> getInsightTypeConfig(GetInsightTypeConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getInsightTypeConfig(InsightTypeConfigName name)
- *           <li>getInsightTypeConfig(String name)
+ *           <li><p> getInsightTypeConfig(InsightTypeConfigName name)
+ *           <li><p> getInsightTypeConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getInsightTypeConfigCallable()
+ *           <li><p> getInsightTypeConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateInsightTypeConfig</td>
+ *      <td><p> UpdateInsightTypeConfig</td>
  *      <td><p> Updates an InsightTypeConfig change. This will create a new revision of the config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateInsightTypeConfig(UpdateInsightTypeConfigRequest request)
+ *           <li><p> updateInsightTypeConfig(UpdateInsightTypeConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateInsightTypeConfig(InsightTypeConfig insightTypeConfig, FieldMask updateMask)
+ *           <li><p> updateInsightTypeConfig(InsightTypeConfig insightTypeConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateInsightTypeConfigCallable()
+ *           <li><p> updateInsightTypeConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRecommenders</td>
+ *      <td><p> ListRecommenders</td>
  *      <td><p> Lists all available Recommenders. No IAM permissions are required.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRecommenders(ListRecommendersRequest request)
+ *           <li><p> listRecommenders(ListRecommendersRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRecommendersPagedCallable()
- *           <li>listRecommendersCallable()
+ *           <li><p> listRecommendersPagedCallable()
+ *           <li><p> listRecommendersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListInsightTypes</td>
+ *      <td><p> ListInsightTypes</td>
  *      <td><p> Lists available InsightTypes. No IAM permissions are required.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listInsightTypes(ListInsightTypesRequest request)
+ *           <li><p> listInsightTypes(ListInsightTypesRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listInsightTypesPagedCallable()
- *           <li>listInsightTypesCallable()
+ *           <li><p> listInsightTypesPagedCallable()
+ *           <li><p> listInsightTypesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

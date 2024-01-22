@@ -70,459 +70,460 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateSource</td>
+ *      <td><p> CreateSource</td>
  *      <td><p> Creates a source.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSource(CreateSourceRequest request)
+ *           <li><p> createSource(CreateSourceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSource(OrganizationName parent, Source source)
- *           <li>createSource(String parent, Source source)
+ *           <li><p> createSource(OrganizationName parent, Source source)
+ *           <li><p> createSource(String parent, Source source)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSourceCallable()
+ *           <li><p> createSourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateFinding</td>
+ *      <td><p> CreateFinding</td>
  *      <td><p> Creates a finding. The corresponding source must exist for finding creation to succeed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createFinding(CreateFindingRequest request)
+ *           <li><p> createFinding(CreateFindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createFinding(SourceName parent, Finding finding, String findingId)
- *           <li>createFinding(SourceName parent, String findingId, Finding finding)
- *           <li>createFinding(String parent, Finding finding, String findingId)
- *           <li>createFinding(String parent, String findingId, Finding finding)
+ *           <li><p> createFinding(SourceName parent, Finding finding, String findingId)
+ *           <li><p> createFinding(SourceName parent, String findingId, Finding finding)
+ *           <li><p> createFinding(String parent, Finding finding, String findingId)
+ *           <li><p> createFinding(String parent, String findingId, Finding finding)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createFindingCallable()
+ *           <li><p> createFindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNotificationConfig</td>
+ *      <td><p> CreateNotificationConfig</td>
  *      <td><p> Creates a notification config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNotificationConfig(CreateNotificationConfigRequest request)
+ *           <li><p> createNotificationConfig(CreateNotificationConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createNotificationConfig(OrganizationName parent, NotificationConfig notificationConfig)
- *           <li>createNotificationConfig(String parent, NotificationConfig notificationConfig)
- *           <li>createNotificationConfig(OrganizationName parent, String configId, NotificationConfig notificationConfig)
- *           <li>createNotificationConfig(String parent, String configId, NotificationConfig notificationConfig)
+ *           <li><p> createNotificationConfig(OrganizationName parent, NotificationConfig notificationConfig)
+ *           <li><p> createNotificationConfig(String parent, NotificationConfig notificationConfig)
+ *           <li><p> createNotificationConfig(OrganizationName parent, String configId, NotificationConfig notificationConfig)
+ *           <li><p> createNotificationConfig(String parent, String configId, NotificationConfig notificationConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNotificationConfigCallable()
+ *           <li><p> createNotificationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNotificationConfig</td>
+ *      <td><p> DeleteNotificationConfig</td>
  *      <td><p> Deletes a notification config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNotificationConfig(DeleteNotificationConfigRequest request)
+ *           <li><p> deleteNotificationConfig(DeleteNotificationConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteNotificationConfig(NotificationConfigName name)
- *           <li>deleteNotificationConfig(String name)
+ *           <li><p> deleteNotificationConfig(NotificationConfigName name)
+ *           <li><p> deleteNotificationConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNotificationConfigCallable()
+ *           <li><p> deleteNotificationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy on the specified Source.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource)
- *           <li>getIamPolicy(String resource)
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNotificationConfig</td>
+ *      <td><p> GetNotificationConfig</td>
  *      <td><p> Gets a notification config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNotificationConfig(GetNotificationConfigRequest request)
+ *           <li><p> getNotificationConfig(GetNotificationConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNotificationConfig(NotificationConfigName name)
- *           <li>getNotificationConfig(String name)
+ *           <li><p> getNotificationConfig(NotificationConfigName name)
+ *           <li><p> getNotificationConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNotificationConfigCallable()
+ *           <li><p> getNotificationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetOrganizationSettings</td>
+ *      <td><p> GetOrganizationSettings</td>
  *      <td><p> Gets the settings for an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getOrganizationSettings(GetOrganizationSettingsRequest request)
+ *           <li><p> getOrganizationSettings(GetOrganizationSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getOrganizationSettings(OrganizationSettingsName name)
- *           <li>getOrganizationSettings(String name)
+ *           <li><p> getOrganizationSettings(OrganizationSettingsName name)
+ *           <li><p> getOrganizationSettings(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getOrganizationSettingsCallable()
+ *           <li><p> getOrganizationSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSource</td>
+ *      <td><p> GetSource</td>
  *      <td><p> Gets a source.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSource(GetSourceRequest request)
+ *           <li><p> getSource(GetSourceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSource(SourceName name)
- *           <li>getSource(String name)
+ *           <li><p> getSource(SourceName name)
+ *           <li><p> getSource(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSourceCallable()
+ *           <li><p> getSourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GroupAssets</td>
+ *      <td><p> GroupAssets</td>
  *      <td><p> Filters an organization's assets and  groups them by their specified properties.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>groupAssets(GroupAssetsRequest request)
+ *           <li><p> groupAssets(GroupAssetsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>groupAssetsPagedCallable()
- *           <li>groupAssetsCallable()
+ *           <li><p> groupAssetsPagedCallable()
+ *           <li><p> groupAssetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GroupFindings</td>
+ *      <td><p> GroupFindings</td>
  *      <td><p> Filters an organization or source's findings and  groups them by their specified properties.
  * <p>  To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>groupFindings(GroupFindingsRequest request)
+ *           <li><p> groupFindings(GroupFindingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>groupFindings(SourceName parent, String groupBy)
- *           <li>groupFindings(String parent, String groupBy)
+ *           <li><p> groupFindings(SourceName parent, String groupBy)
+ *           <li><p> groupFindings(String parent, String groupBy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>groupFindingsPagedCallable()
- *           <li>groupFindingsCallable()
+ *           <li><p> groupFindingsPagedCallable()
+ *           <li><p> groupFindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAssets</td>
+ *      <td><p> ListAssets</td>
  *      <td><p> Lists an organization's assets.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAssets(ListAssetsRequest request)
+ *           <li><p> listAssets(ListAssetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAssets(FolderName parent)
- *           <li>listAssets(OrganizationName parent)
- *           <li>listAssets(ProjectName parent)
- *           <li>listAssets(String parent)
+ *           <li><p> listAssets(FolderName parent)
+ *           <li><p> listAssets(OrganizationName parent)
+ *           <li><p> listAssets(ProjectName parent)
+ *           <li><p> listAssets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAssetsPagedCallable()
- *           <li>listAssetsCallable()
+ *           <li><p> listAssetsPagedCallable()
+ *           <li><p> listAssetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListFindings</td>
+ *      <td><p> ListFindings</td>
  *      <td><p> Lists an organization or source's findings.
  * <p>  To list across all sources provide a `-` as the source id. Example: /v1p1beta1/organizations/{organization_id}/sources/-/findings</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listFindings(ListFindingsRequest request)
+ *           <li><p> listFindings(ListFindingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listFindings(SourceName parent)
- *           <li>listFindings(String parent)
+ *           <li><p> listFindings(SourceName parent)
+ *           <li><p> listFindings(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listFindingsPagedCallable()
- *           <li>listFindingsCallable()
+ *           <li><p> listFindingsPagedCallable()
+ *           <li><p> listFindingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNotificationConfigs</td>
+ *      <td><p> ListNotificationConfigs</td>
  *      <td><p> Lists notification configs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNotificationConfigs(ListNotificationConfigsRequest request)
+ *           <li><p> listNotificationConfigs(ListNotificationConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNotificationConfigs(OrganizationName parent)
- *           <li>listNotificationConfigs(String parent)
+ *           <li><p> listNotificationConfigs(OrganizationName parent)
+ *           <li><p> listNotificationConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNotificationConfigsPagedCallable()
- *           <li>listNotificationConfigsCallable()
+ *           <li><p> listNotificationConfigsPagedCallable()
+ *           <li><p> listNotificationConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSources</td>
+ *      <td><p> ListSources</td>
  *      <td><p> Lists all sources belonging to an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSources(ListSourcesRequest request)
+ *           <li><p> listSources(ListSourcesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSources(FolderName parent)
- *           <li>listSources(OrganizationName parent)
- *           <li>listSources(ProjectName parent)
- *           <li>listSources(String parent)
+ *           <li><p> listSources(FolderName parent)
+ *           <li><p> listSources(OrganizationName parent)
+ *           <li><p> listSources(ProjectName parent)
+ *           <li><p> listSources(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSourcesPagedCallable()
- *           <li>listSourcesCallable()
+ *           <li><p> listSourcesPagedCallable()
+ *           <li><p> listSourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunAssetDiscovery</td>
+ *      <td><p> RunAssetDiscovery</td>
  *      <td><p> Runs asset discovery. The discovery is tracked with a long-running operation.
  * <p>  This API can only be called with limited frequency for an organization. If it is called too frequently the caller will receive a TOO_MANY_REQUESTS error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runAssetDiscoveryAsync(RunAssetDiscoveryRequest request)
+ *           <li><p> runAssetDiscoveryAsync(RunAssetDiscoveryRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>runAssetDiscoveryAsync(OrganizationName parent)
- *           <li>runAssetDiscoveryAsync(String parent)
+ *           <li><p> runAssetDiscoveryAsync(OrganizationName parent)
+ *           <li><p> runAssetDiscoveryAsync(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runAssetDiscoveryOperationCallable()
- *           <li>runAssetDiscoveryCallable()
+ *           <li><p> runAssetDiscoveryOperationCallable()
+ *           <li><p> runAssetDiscoveryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetFindingState</td>
+ *      <td><p> SetFindingState</td>
  *      <td><p> Updates the state of a finding.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setFindingState(SetFindingStateRequest request)
+ *           <li><p> setFindingState(SetFindingStateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setFindingState(FindingName name, Finding.State state, Timestamp startTime)
- *           <li>setFindingState(String name, Finding.State state, Timestamp startTime)
+ *           <li><p> setFindingState(FindingName name, Finding.State state, Timestamp startTime)
+ *           <li><p> setFindingState(String name, Finding.State state, Timestamp startTime)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setFindingStateCallable()
+ *           <li><p> setFindingStateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified Source.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns the permissions that a caller has on the specified source.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(ResourceName resource, List<String> permissions)
- *           <li>testIamPermissions(String resource, List<String> permissions)
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateFinding</td>
+ *      <td><p> UpdateFinding</td>
  *      <td><p> Creates or updates a finding. The corresponding source must exist for a finding creation to succeed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateFinding(UpdateFindingRequest request)
+ *           <li><p> updateFinding(UpdateFindingRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateFinding(Finding finding)
- *           <li>updateFinding(Finding finding, FieldMask updateMask)
+ *           <li><p> updateFinding(Finding finding)
+ *           <li><p> updateFinding(Finding finding, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateFindingCallable()
+ *           <li><p> updateFindingCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNotificationConfig</td>
+ *      <td><p> UpdateNotificationConfig</td>
  *      <td><p> Updates a notification config. The following update fields are allowed: description, pubsub_topic, streaming_config.filter</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNotificationConfig(UpdateNotificationConfigRequest request)
+ *           <li><p> updateNotificationConfig(UpdateNotificationConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateNotificationConfig(NotificationConfig notificationConfig)
- *           <li>updateNotificationConfig(NotificationConfig notificationConfig, FieldMask updateMask)
+ *           <li><p> updateNotificationConfig(NotificationConfig notificationConfig)
+ *           <li><p> updateNotificationConfig(NotificationConfig notificationConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNotificationConfigCallable()
+ *           <li><p> updateNotificationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateOrganizationSettings</td>
+ *      <td><p> UpdateOrganizationSettings</td>
  *      <td><p> Updates an organization's settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateOrganizationSettings(UpdateOrganizationSettingsRequest request)
+ *           <li><p> updateOrganizationSettings(UpdateOrganizationSettingsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateOrganizationSettings(OrganizationSettings organizationSettings)
+ *           <li><p> updateOrganizationSettings(OrganizationSettings organizationSettings)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateOrganizationSettingsCallable()
+ *           <li><p> updateOrganizationSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSource</td>
+ *      <td><p> UpdateSource</td>
  *      <td><p> Updates a source.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSource(UpdateSourceRequest request)
+ *           <li><p> updateSource(UpdateSourceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSource(Source source)
- *           <li>updateSource(Source source, FieldMask updateMask)
+ *           <li><p> updateSource(Source source)
+ *           <li><p> updateSource(Source source, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSourceCallable()
+ *           <li><p> updateSourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateSecurityMarks</td>
+ *      <td><p> UpdateSecurityMarks</td>
  *      <td><p> Updates security marks.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateSecurityMarks(UpdateSecurityMarksRequest request)
+ *           <li><p> updateSecurityMarks(UpdateSecurityMarksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateSecurityMarks(SecurityMarks securityMarks)
- *           <li>updateSecurityMarks(SecurityMarks securityMarks, FieldMask updateMask)
+ *           <li><p> updateSecurityMarks(SecurityMarks securityMarks)
+ *           <li><p> updateSecurityMarks(SecurityMarks securityMarks, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateSecurityMarksCallable()
+ *           <li><p> updateSecurityMarksCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

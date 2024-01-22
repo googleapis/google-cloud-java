@@ -58,48 +58,49 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateAssessment</td>
+ *      <td><p> CreateAssessment</td>
  *      <td><p> Creates an Assessment of the likelihood an event is legitimate.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAssessment(CreateAssessmentRequest request)
+ *           <li><p> createAssessment(CreateAssessmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAssessment(ProjectName parent, Assessment assessment)
- *           <li>createAssessment(String parent, Assessment assessment)
+ *           <li><p> createAssessment(ProjectName parent, Assessment assessment)
+ *           <li><p> createAssessment(String parent, Assessment assessment)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAssessmentCallable()
+ *           <li><p> createAssessmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AnnotateAssessment</td>
+ *      <td><p> AnnotateAssessment</td>
  *      <td><p> Annotates a previously created Assessment to provide additional information on whether the event turned out to be authentic or fradulent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>annotateAssessment(AnnotateAssessmentRequest request)
+ *           <li><p> annotateAssessment(AnnotateAssessmentRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation)
- *           <li>annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation)
+ *           <li><p> annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation)
+ *           <li><p> annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>annotateAssessmentCallable()
+ *           <li><p> annotateAssessmentCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -96,12 +96,14 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListClusters</td>
+ *      <td><p> ListClusters</td>
  *      <td><p> Lists all Redis clusters owned by a project in either the specified location (region) or all locations.
  * <p>  The location should have the following format:
  * <ul>
@@ -111,129 +113,128 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listClusters(ListClustersRequest request)
+ *           <li><p> listClusters(ListClustersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listClusters(LocationName parent)
- *           <li>listClusters(String parent)
+ *           <li><p> listClusters(LocationName parent)
+ *           <li><p> listClusters(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listClustersPagedCallable()
- *           <li>listClustersCallable()
+ *           <li><p> listClustersPagedCallable()
+ *           <li><p> listClustersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCluster</td>
+ *      <td><p> GetCluster</td>
  *      <td><p> Gets the details of a specific Redis cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCluster(GetClusterRequest request)
+ *           <li><p> getCluster(GetClusterRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCluster(ClusterName name)
- *           <li>getCluster(String name)
+ *           <li><p> getCluster(ClusterName name)
+ *           <li><p> getCluster(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getClusterCallable()
+ *           <li><p> getClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCluster</td>
+ *      <td><p> UpdateCluster</td>
  *      <td><p> Updates the metadata and configuration of a specific Redis cluster.
  * <p>  Completed longrunning.Operation will contain the new cluster object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateClusterAsync(UpdateClusterRequest request)
+ *           <li><p> updateClusterAsync(UpdateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateClusterAsync(Cluster cluster, FieldMask updateMask)
+ *           <li><p> updateClusterAsync(Cluster cluster, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateClusterOperationCallable()
- *           <li>updateClusterCallable()
+ *           <li><p> updateClusterOperationCallable()
+ *           <li><p> updateClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCluster</td>
+ *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a specific Redis cluster. Cluster stops serving and data is deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteClusterAsync(DeleteClusterRequest request)
+ *           <li><p> deleteClusterAsync(DeleteClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteClusterAsync(ClusterName name)
- *           <li>deleteClusterAsync(String name)
+ *           <li><p> deleteClusterAsync(ClusterName name)
+ *           <li><p> deleteClusterAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteClusterOperationCallable()
- *           <li>deleteClusterCallable()
+ *           <li><p> deleteClusterOperationCallable()
+ *           <li><p> deleteClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCluster</td>
+ *      <td><p> CreateCluster</td>
  *      <td><p> Creates a Redis cluster based on the specified properties. The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis cluster will be fully functional. The completed longrunning.Operation will contain the new cluster object in the response field.
  * <p>  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClusterAsync(CreateClusterRequest request)
+ *           <li><p> createClusterAsync(CreateClusterRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createClusterAsync(LocationName parent, Cluster cluster, String clusterId)
- *           <li>createClusterAsync(String parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(LocationName parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(String parent, Cluster cluster, String clusterId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClusterOperationCallable()
- *           <li>createClusterCallable()
+ *           <li><p> createClusterOperationCallable()
+ *           <li><p> createClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

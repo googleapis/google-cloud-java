@@ -63,124 +63,125 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateCatalogItem</td>
+ *      <td><p> CreateCatalogItem</td>
  *      <td><p> Creates a catalog item.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCatalogItem(CreateCatalogItemRequest request)
+ *           <li><p> createCatalogItem(CreateCatalogItemRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCatalogItem(CatalogName parent, CatalogItem catalogItem)
- *           <li>createCatalogItem(String parent, CatalogItem catalogItem)
+ *           <li><p> createCatalogItem(CatalogName parent, CatalogItem catalogItem)
+ *           <li><p> createCatalogItem(String parent, CatalogItem catalogItem)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCatalogItemCallable()
+ *           <li><p> createCatalogItemCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCatalogItem</td>
+ *      <td><p> GetCatalogItem</td>
  *      <td><p> Gets a specific catalog item.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCatalogItem(GetCatalogItemRequest request)
+ *           <li><p> getCatalogItem(GetCatalogItemRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCatalogItem(CatalogItemPathName name)
- *           <li>getCatalogItem(String name)
+ *           <li><p> getCatalogItem(CatalogItemPathName name)
+ *           <li><p> getCatalogItem(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCatalogItemCallable()
+ *           <li><p> getCatalogItemCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCatalogItems</td>
+ *      <td><p> ListCatalogItems</td>
  *      <td><p> Gets a list of catalog items.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCatalogItems(ListCatalogItemsRequest request)
+ *           <li><p> listCatalogItems(ListCatalogItemsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCatalogItems(CatalogName parent, String filter)
- *           <li>listCatalogItems(String parent, String filter)
+ *           <li><p> listCatalogItems(CatalogName parent, String filter)
+ *           <li><p> listCatalogItems(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCatalogItemsPagedCallable()
- *           <li>listCatalogItemsCallable()
+ *           <li><p> listCatalogItemsPagedCallable()
+ *           <li><p> listCatalogItemsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCatalogItem</td>
+ *      <td><p> UpdateCatalogItem</td>
  *      <td><p> Updates a catalog item. Partial updating is supported. Non-existing items will be created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCatalogItem(UpdateCatalogItemRequest request)
+ *           <li><p> updateCatalogItem(UpdateCatalogItemRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCatalogItem(CatalogItemPathName name, CatalogItem catalogItem, FieldMask updateMask)
- *           <li>updateCatalogItem(String name, CatalogItem catalogItem, FieldMask updateMask)
+ *           <li><p> updateCatalogItem(CatalogItemPathName name, CatalogItem catalogItem, FieldMask updateMask)
+ *           <li><p> updateCatalogItem(String name, CatalogItem catalogItem, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCatalogItemCallable()
+ *           <li><p> updateCatalogItemCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCatalogItem</td>
+ *      <td><p> DeleteCatalogItem</td>
  *      <td><p> Deletes a catalog item.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCatalogItem(DeleteCatalogItemRequest request)
+ *           <li><p> deleteCatalogItem(DeleteCatalogItemRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCatalogItem(CatalogItemPathName name)
- *           <li>deleteCatalogItem(String name)
+ *           <li><p> deleteCatalogItem(CatalogItemPathName name)
+ *           <li><p> deleteCatalogItem(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCatalogItemCallable()
+ *           <li><p> deleteCatalogItemCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportCatalogItems</td>
+ *      <td><p> ImportCatalogItems</td>
  *      <td><p> Bulk import of multiple catalog items. Request processing may be synchronous. No partial updating supported. Non-existing items will be created.
  * <p>  Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importCatalogItemsAsync(CatalogName parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
- *           <li>importCatalogItemsAsync(String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
- *           <li>importCatalogItemsAsync(ImportCatalogItemsRequest request)
+ *           <li><p> importCatalogItemsAsync(CatalogName parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
+ *           <li><p> importCatalogItemsAsync(String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
+ *           <li><p> importCatalogItemsAsync(ImportCatalogItemsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importCatalogItemsOperationCallable()
- *           <li>importCatalogItemsCallable()
+ *           <li><p> importCatalogItemsOperationCallable()
+ *           <li><p> importCatalogItemsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

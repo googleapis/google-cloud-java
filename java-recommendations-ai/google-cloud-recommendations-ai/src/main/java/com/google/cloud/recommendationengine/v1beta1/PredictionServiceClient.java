@@ -64,30 +64,31 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Predict</td>
+ *      <td><p> Predict</td>
  *      <td><p> Makes a recommendation prediction. If using API Key based authentication, the API Key must be registered using the [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry] service. [Learn more](/recommendations-ai/docs/setting-up#register-key).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>predict(PredictRequest request)
+ *           <li><p> predict(PredictRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>predict(PlacementName name, UserEvent userEvent)
- *           <li>predict(String name, UserEvent userEvent)
+ *           <li><p> predict(PlacementName name, UserEvent userEvent)
+ *           <li><p> predict(String name, UserEvent userEvent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>predictPagedCallable()
- *           <li>predictCallable()
+ *           <li><p> predictPagedCallable()
+ *           <li><p> predictCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -64,107 +64,108 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>WriteUserEvent</td>
+ *      <td><p> WriteUserEvent</td>
  *      <td><p> Writes a single user event.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>writeUserEvent(WriteUserEventRequest request)
+ *           <li><p> writeUserEvent(WriteUserEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>writeUserEvent(EventStoreName parent, UserEvent userEvent)
- *           <li>writeUserEvent(String parent, UserEvent userEvent)
+ *           <li><p> writeUserEvent(EventStoreName parent, UserEvent userEvent)
+ *           <li><p> writeUserEvent(String parent, UserEvent userEvent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>writeUserEventCallable()
+ *           <li><p> writeUserEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CollectUserEvent</td>
+ *      <td><p> CollectUserEvent</td>
  *      <td><p> Writes a single user event from the browser. This uses a GET request to due to browser restriction of POST-ing to a 3rd party domain.
  * <p>  This method is used only by the Recommendations AI JavaScript pixel. Users should not call this method directly.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>collectUserEvent(CollectUserEventRequest request)
+ *           <li><p> collectUserEvent(CollectUserEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>collectUserEvent(EventStoreName parent, String userEvent, String uri, long ets)
- *           <li>collectUserEvent(String parent, String userEvent, String uri, long ets)
+ *           <li><p> collectUserEvent(EventStoreName parent, String userEvent, String uri, long ets)
+ *           <li><p> collectUserEvent(String parent, String userEvent, String uri, long ets)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>collectUserEventCallable()
+ *           <li><p> collectUserEventCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListUserEvents</td>
+ *      <td><p> ListUserEvents</td>
  *      <td><p> Gets a list of user events within a time range, with potential filtering.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listUserEvents(ListUserEventsRequest request)
+ *           <li><p> listUserEvents(ListUserEventsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listUserEvents(EventStoreName parent, String filter)
- *           <li>listUserEvents(String parent, String filter)
+ *           <li><p> listUserEvents(EventStoreName parent, String filter)
+ *           <li><p> listUserEvents(String parent, String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listUserEventsPagedCallable()
- *           <li>listUserEventsCallable()
+ *           <li><p> listUserEventsPagedCallable()
+ *           <li><p> listUserEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PurgeUserEvents</td>
+ *      <td><p> PurgeUserEvents</td>
  *      <td><p> Deletes permanently all user events specified by the filter provided. Depending on the number of events specified by the filter, this operation could take hours or days to complete. To test a filter, use the list command first.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>purgeUserEventsAsync(PurgeUserEventsRequest request)
+ *           <li><p> purgeUserEventsAsync(PurgeUserEventsRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>purgeUserEventsAsync(EventStoreName parent, String filter, boolean force)
- *           <li>purgeUserEventsAsync(String parent, String filter, boolean force)
+ *           <li><p> purgeUserEventsAsync(EventStoreName parent, String filter, boolean force)
+ *           <li><p> purgeUserEventsAsync(String parent, String filter, boolean force)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>purgeUserEventsOperationCallable()
- *           <li>purgeUserEventsCallable()
+ *           <li><p> purgeUserEventsOperationCallable()
+ *           <li><p> purgeUserEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ImportUserEvents</td>
+ *      <td><p> ImportUserEvents</td>
  *      <td><p> Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events.
  * <p>  Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>importUserEventsAsync(EventStoreName parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
- *           <li>importUserEventsAsync(String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
- *           <li>importUserEventsAsync(ImportUserEventsRequest request)
+ *           <li><p> importUserEventsAsync(EventStoreName parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
+ *           <li><p> importUserEventsAsync(String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig)
+ *           <li><p> importUserEventsAsync(ImportUserEventsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>importUserEventsOperationCallable()
- *           <li>importUserEventsCallable()
+ *           <li><p> importUserEventsOperationCallable()
+ *           <li><p> importUserEventsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -67,236 +67,237 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateCollector</td>
+ *      <td><p> CreateCollector</td>
  *      <td><p> Create a Collector to manage the on-prem appliance which collects information about Customer assets.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCollectorAsync(CreateCollectorRequest request)
+ *           <li><p> createCollectorAsync(CreateCollectorRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCollectorAsync(LocationName parent, Collector collector, String collectorId)
- *           <li>createCollectorAsync(String parent, Collector collector, String collectorId)
+ *           <li><p> createCollectorAsync(LocationName parent, Collector collector, String collectorId)
+ *           <li><p> createCollectorAsync(String parent, Collector collector, String collectorId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCollectorOperationCallable()
- *           <li>createCollectorCallable()
+ *           <li><p> createCollectorOperationCallable()
+ *           <li><p> createCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAnnotation</td>
+ *      <td><p> CreateAnnotation</td>
  *      <td><p> Creates an Annotation</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAnnotationAsync(CreateAnnotationRequest request)
+ *           <li><p> createAnnotationAsync(CreateAnnotationRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createAnnotationAsync(LocationName parent, Annotation annotation)
- *           <li>createAnnotationAsync(String parent, Annotation annotation)
+ *           <li><p> createAnnotationAsync(LocationName parent, Annotation annotation)
+ *           <li><p> createAnnotationAsync(String parent, Annotation annotation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAnnotationOperationCallable()
- *           <li>createAnnotationCallable()
+ *           <li><p> createAnnotationOperationCallable()
+ *           <li><p> createAnnotationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAnnotation</td>
+ *      <td><p> GetAnnotation</td>
  *      <td><p> Gets details of a single Annotation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAnnotation(GetAnnotationRequest request)
+ *           <li><p> getAnnotation(GetAnnotationRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAnnotation(AnnotationName name)
- *           <li>getAnnotation(String name)
+ *           <li><p> getAnnotation(AnnotationName name)
+ *           <li><p> getAnnotation(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAnnotationCallable()
+ *           <li><p> getAnnotationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCollectors</td>
+ *      <td><p> ListCollectors</td>
  *      <td><p> Lists Collectors in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCollectors(ListCollectorsRequest request)
+ *           <li><p> listCollectors(ListCollectorsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCollectors(LocationName parent)
- *           <li>listCollectors(String parent)
+ *           <li><p> listCollectors(LocationName parent)
+ *           <li><p> listCollectors(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCollectorsPagedCallable()
- *           <li>listCollectorsCallable()
+ *           <li><p> listCollectorsPagedCallable()
+ *           <li><p> listCollectorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCollector</td>
+ *      <td><p> GetCollector</td>
  *      <td><p> Gets details of a single Collector.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCollector(GetCollectorRequest request)
+ *           <li><p> getCollector(GetCollectorRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCollector(CollectorName name)
- *           <li>getCollector(String name)
+ *           <li><p> getCollector(CollectorName name)
+ *           <li><p> getCollector(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCollectorCallable()
+ *           <li><p> getCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCollector</td>
+ *      <td><p> UpdateCollector</td>
  *      <td><p> Updates the parameters of a single Collector.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCollectorAsync(UpdateCollectorRequest request)
+ *           <li><p> updateCollectorAsync(UpdateCollectorRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCollectorAsync(Collector collector, FieldMask updateMask)
+ *           <li><p> updateCollectorAsync(Collector collector, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCollectorOperationCallable()
- *           <li>updateCollectorCallable()
+ *           <li><p> updateCollectorOperationCallable()
+ *           <li><p> updateCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCollector</td>
+ *      <td><p> DeleteCollector</td>
  *      <td><p> Deletes a single Collector - changes state of collector to "Deleting". Background jobs does final deletion thorugh producer api.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCollectorAsync(DeleteCollectorRequest request)
+ *           <li><p> deleteCollectorAsync(DeleteCollectorRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCollectorAsync(CollectorName name)
- *           <li>deleteCollectorAsync(String name)
+ *           <li><p> deleteCollectorAsync(CollectorName name)
+ *           <li><p> deleteCollectorAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCollectorOperationCallable()
- *           <li>deleteCollectorCallable()
+ *           <li><p> deleteCollectorOperationCallable()
+ *           <li><p> deleteCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeCollector</td>
+ *      <td><p> ResumeCollector</td>
  *      <td><p> Resumes the given collector.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeCollectorAsync(ResumeCollectorRequest request)
+ *           <li><p> resumeCollectorAsync(ResumeCollectorRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>resumeCollectorAsync(CollectorName name)
- *           <li>resumeCollectorAsync(String name)
+ *           <li><p> resumeCollectorAsync(CollectorName name)
+ *           <li><p> resumeCollectorAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeCollectorOperationCallable()
- *           <li>resumeCollectorCallable()
+ *           <li><p> resumeCollectorOperationCallable()
+ *           <li><p> resumeCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RegisterCollector</td>
+ *      <td><p> RegisterCollector</td>
  *      <td><p> Registers the given collector.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>registerCollectorAsync(RegisterCollectorRequest request)
+ *           <li><p> registerCollectorAsync(RegisterCollectorRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>registerCollectorAsync(CollectorName name)
- *           <li>registerCollectorAsync(String name)
+ *           <li><p> registerCollectorAsync(CollectorName name)
+ *           <li><p> registerCollectorAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>registerCollectorOperationCallable()
- *           <li>registerCollectorCallable()
+ *           <li><p> registerCollectorOperationCallable()
+ *           <li><p> registerCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseCollector</td>
+ *      <td><p> PauseCollector</td>
  *      <td><p> Pauses the given collector.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseCollectorAsync(PauseCollectorRequest request)
+ *           <li><p> pauseCollectorAsync(PauseCollectorRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>pauseCollectorAsync(CollectorName name)
- *           <li>pauseCollectorAsync(String name)
+ *           <li><p> pauseCollectorAsync(CollectorName name)
+ *           <li><p> pauseCollectorAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseCollectorOperationCallable()
- *           <li>pauseCollectorCallable()
+ *           <li><p> pauseCollectorOperationCallable()
+ *           <li><p> pauseCollectorCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -61,12 +61,14 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Check</td>
+ *      <td><p> Check</td>
  *      <td><p> Private Preview. This feature is only available for approved services.
  * <p>  This method provides admission control for services that are integrated with [Service Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an operation should be allowed based on the service configuration and relevant policies. It must be called before the operation is executed. For more information, see [Admission Control](https://cloud.google.com/service-infrastructure/docs/admission-control).
  * <p>  NOTE: The admission control has an expected policy propagation delay of 60s. The caller &#42;&#42;must&#42;&#42; not depend on the most recent policy changes.
@@ -75,16 +77,16 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>check(CheckRequest request)
+ *           <li><p> check(CheckRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>checkCallable()
+ *           <li><p> checkCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Report</td>
+ *      <td><p> Report</td>
  *      <td><p> Private Preview. This feature is only available for approved services.
  * <p>  This method provides telemetry reporting for services that are integrated with [Service Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of operations that have occurred on a service. It must be called after the operations have been executed. For more information, see [Telemetry Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
  * <p>  NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB per Report call. It is recommended to have no more than 100 operations per call.
@@ -92,14 +94,13 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>report(ReportRequest request)
+ *           <li><p> report(ReportRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>reportCallable()
+ *           <li><p> reportCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
