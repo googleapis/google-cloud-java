@@ -1874,4 +1874,47 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1.ResourceManagerTagsOrBuilder
       getDesiredNodePoolAutoConfigResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return Whether the desiredInTransitEncryptionConfig field is set.
+   */
+  boolean hasDesiredInTransitEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredInTransitEncryptionConfig.
+   */
+  int getDesiredInTransitEncryptionConfigValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The desiredInTransitEncryptionConfig.
+   */
+  com.google.container.v1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig();
 }

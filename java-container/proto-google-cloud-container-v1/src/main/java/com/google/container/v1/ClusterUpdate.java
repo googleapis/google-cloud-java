@@ -51,6 +51,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     desiredMasterVersion_ = "";
     etag_ = "";
     desiredStackType_ = 0;
+    desiredInTransitEncryptionConfig_ = 0;
   }
 
   @java.lang.Override
@@ -2739,6 +2740,63 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredNodePoolAutoConfigResourceManagerTags_;
   }
 
+  public static final int DESIRED_IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER = 137;
+  private int desiredInTransitEncryptionConfig_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return Whether the desiredInTransitEncryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredInTransitEncryptionConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredInTransitEncryptionConfig.
+   */
+  @java.lang.Override
+  public int getDesiredInTransitEncryptionConfigValue() {
+    return desiredInTransitEncryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The desiredInTransitEncryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig() {
+    com.google.container.v1.InTransitEncryptionConfig result =
+        com.google.container.v1.InTransitEncryptionConfig.forNumber(
+            desiredInTransitEncryptionConfig_);
+    return result == null ? com.google.container.v1.InTransitEncryptionConfig.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2905,6 +2963,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredNodePoolAutoConfigResourceManagerTags_ != null) {
       output.writeMessage(136, getDesiredNodePoolAutoConfigResourceManagerTags());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(137, desiredInTransitEncryptionConfig_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3139,6 +3200,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               136, getDesiredNodePoolAutoConfigResourceManagerTags());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              137, desiredInTransitEncryptionConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3360,6 +3426,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredNodePoolAutoConfigResourceManagerTags()
           .equals(other.getDesiredNodePoolAutoConfigResourceManagerTags())) return false;
     }
+    if (hasDesiredInTransitEncryptionConfig() != other.hasDesiredInTransitEncryptionConfig())
+      return false;
+    if (hasDesiredInTransitEncryptionConfig()) {
+      if (desiredInTransitEncryptionConfig_ != other.desiredInTransitEncryptionConfig_)
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3553,6 +3625,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredNodePoolAutoConfigResourceManagerTags()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolAutoConfigResourceManagerTags().hashCode();
+    }
+    if (hasDesiredInTransitEncryptionConfig()) {
+      hash = (37 * hash) + DESIRED_IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + desiredInTransitEncryptionConfig_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3893,6 +3969,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.dispose();
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_ = null;
       }
+      desiredInTransitEncryptionConfig_ = 0;
       return this;
     }
 
@@ -4197,6 +4274,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 ? desiredNodePoolAutoConfigResourceManagerTags_
                 : desiredNodePoolAutoConfigResourceManagerTagsBuilder_.build();
       }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4417,6 +4498,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredNodePoolAutoConfigResourceManagerTags()) {
         mergeDesiredNodePoolAutoConfigResourceManagerTags(
             other.getDesiredNodePoolAutoConfigResourceManagerTags());
+      }
+      if (other.hasDesiredInTransitEncryptionConfig()) {
+        setDesiredInTransitEncryptionConfig(other.getDesiredInTransitEncryptionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4791,6 +4875,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00020000;
                 break;
               } // case 1090
+            case 1096:
+              {
+                desiredInTransitEncryptionConfig_ = input.readEnum();
+                bitField1_ |= 0x00040000;
+                break;
+              } // case 1096
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13678,6 +13768,127 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigResourceManagerTags_ = null;
       }
       return desiredNodePoolAutoConfigResourceManagerTagsBuilder_;
+    }
+
+    private int desiredInTransitEncryptionConfig_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+     * </code>
+     *
+     * @return Whether the desiredInTransitEncryptionConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesiredInTransitEncryptionConfig() {
+      return ((bitField1_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for desiredInTransitEncryptionConfig.
+     */
+    @java.lang.Override
+    public int getDesiredInTransitEncryptionConfigValue() {
+      return desiredInTransitEncryptionConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for desiredInTransitEncryptionConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredInTransitEncryptionConfigValue(int value) {
+      desiredInTransitEncryptionConfig_ = value;
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+     * </code>
+     *
+     * @return The desiredInTransitEncryptionConfig.
+     */
+    @java.lang.Override
+    public com.google.container.v1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig() {
+      com.google.container.v1.InTransitEncryptionConfig result =
+          com.google.container.v1.InTransitEncryptionConfig.forNumber(
+              desiredInTransitEncryptionConfig_);
+      return result == null
+          ? com.google.container.v1.InTransitEncryptionConfig.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+     * </code>
+     *
+     * @param value The desiredInTransitEncryptionConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredInTransitEncryptionConfig(
+        com.google.container.v1.InTransitEncryptionConfig value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00040000;
+      desiredInTransitEncryptionConfig_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredInTransitEncryptionConfig() {
+      bitField1_ = (bitField1_ & ~0x00040000);
+      desiredInTransitEncryptionConfig_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

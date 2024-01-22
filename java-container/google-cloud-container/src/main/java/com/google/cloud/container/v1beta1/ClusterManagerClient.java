@@ -418,7 +418,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetJSONWebKeys</td>
- *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format. This API is not yet intended for general use, and is not available for all clusters.</td>
+ *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2596,8 +2596,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
-   * yet intended for general use, and is not available for all clusters.
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
    *
    * <p>Sample code:
    *
@@ -2623,8 +2622,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
-   * yet intended for general use, and is not available for all clusters.
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
    *
    * <p>Sample code:
    *

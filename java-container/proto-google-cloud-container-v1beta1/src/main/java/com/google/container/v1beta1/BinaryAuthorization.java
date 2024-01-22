@@ -1011,7 +1011,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1825
+   *     google/container/v1beta1/cluster_service.proto;l=1823
    * @return The enabled.
    */
   @java.lang.Override
@@ -1599,7 +1599,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1825
+     *     google/container/v1beta1/cluster_service.proto;l=1823
      * @return The enabled.
      */
     @java.lang.Override
@@ -1619,7 +1619,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1825
+     *     google/container/v1beta1/cluster_service.proto;l=1823
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -1643,7 +1643,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1825
+     *     google/container/v1beta1/cluster_service.proto;l=1823
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

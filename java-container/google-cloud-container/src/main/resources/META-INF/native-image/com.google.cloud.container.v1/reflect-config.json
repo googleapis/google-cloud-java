@@ -1647,6 +1647,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.container.v1.InTransitEncryptionConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.container.v1.IntraNodeVisibilityConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
