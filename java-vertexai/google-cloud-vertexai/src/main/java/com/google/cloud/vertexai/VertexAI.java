@@ -60,6 +60,30 @@ public class VertexAI implements AutoCloseable {
   private LlmUtilityServiceClient llmUtilityRestClient = null;
 
   /**
+   * Construct a VertexAI instance.
+   *
+   * @param projectId the default project to use when making API calls
+   * @param location the default location to use when making API calls
+   */
+  public VertexAI(String projectId, String location) {
+    this.projectId = projectId;
+    this.location = location;
+    this.apiEndpoint = String.format("%s-aiplatform.googleapis.com", this.location);
+  }
+
+  /**
+   * Construct a VertexAI instance with default transport layer.
+   *
+   * @param projectId the default project to use when making API calls
+   * @param location the default location to use when making API calls
+   * @param transport the default {@link Transport} layer to use to send API requests
+   */
+  public VertexAI(String projectId, String location, Transport transport) {
+    this(projectId, location);
+    this.transport = transport;
+  }
+
+  /**
    * Construct a VertexAI instance with custom credentials.
    *
    * @param projectId the default project to use when making API calls
@@ -67,9 +91,7 @@ public class VertexAI implements AutoCloseable {
    * @param credentials the custom credentials to use when making API calls
    */
   public VertexAI(String projectId, String location, Credentials credentials) {
-    this.projectId = projectId;
-    this.location = location;
-    this.apiEndpoint = String.format("%s-aiplatform.googleapis.com", this.location);
+    this(projectId, location);
     this.credentialsProvider = FixedCredentialsProvider.create(credentials);
   }
 
@@ -89,11 +111,13 @@ public class VertexAI implements AutoCloseable {
   /**
    * Construct a VertexAI instance with application default credentials.
    *
+   * @deprecated Use {@link #VertexAI(String, String, List<String>)} instead.
    * @param projectId the default project to use when making API calls
    * @param location the default location to use when making API calls
-   * @param scopes collection of scopes in the default credentials. Make sure you have specified
+   * @param scopes List of scopes in the default credentials. Make sure you have specified
    *     "https://www.googleapis.com/auth/cloud-platform" scope to access resources on Vertex AI.
    */
+  @Deprecated
   public VertexAI(String projectId, String location, String... scopes) throws IOException {
     CredentialsProvider credentialsProvider =
         scopes.length == 0
@@ -112,12 +136,50 @@ public class VertexAI implements AutoCloseable {
   /**
    * Construct a VertexAI instance with default transport layer and application default credentials.
    *
+   * @deprecated Use {@link #VertexAI(String, String, Transport, List<String>)} instead.
    * @param projectId the default project to use when making API calls
    * @param location the default location to use when making API calls
    * @param transport the default {@link Transport} layer to use to send API requests
-   * @param scopes collection of scopes in the default credentials
+   * @param scopes List of scopes in the default credentials
    */
+  @Deprecated
   public VertexAI(String projectId, String location, Transport transport, String... scopes)
+      throws IOException {
+    this(projectId, location, scopes);
+    this.transport = transport;
+  }
+
+  /**
+   * Construct a VertexAI instance with application default credentials.
+   *
+   * @param projectId the default project to use when making API calls
+   * @param location the default location to use when making API calls
+   * @param scopes List of scopes in the default credentials. Make sure you have specified
+   *     "https://www.googleapis.com/auth/cloud-platform" scope to access resources on Vertex AI.
+   */
+  public VertexAI(String projectId, String location, List<String> scopes) throws IOException {
+    this(projectId, location);
+
+    CredentialsProvider credentialsProvider =
+        scopes.size() == 0
+            ? null
+            : GoogleCredentialsProvider.newBuilder()
+                .setScopesToApply(scopes)
+                .setUseJwtAccessWithScope(true)
+                .build();
+    this.credentialsProvider = credentialsProvider;
+  }
+
+  /**
+   * Construct a VertexAI instance with default transport layer and application default credentials.
+   *
+   * @param projectId the default project to use when making API calls
+   * @param location the default location to use when making API calls
+   * @param transport the default {@link Transport} layer to use to send API requests
+   * @param scopes List of scopes in the default credentials. Make sure you have specified
+   *     "https://www.googleapis.com/auth/cloud-platform" scope to access resources on Vertex AI.
+   */
+  public VertexAI(String projectId, String location, Transport transport, List<String> scopes)
       throws IOException {
     this(projectId, location, scopes);
     this.transport = transport;
