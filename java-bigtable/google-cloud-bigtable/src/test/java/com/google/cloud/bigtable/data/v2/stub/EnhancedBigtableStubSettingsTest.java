@@ -815,6 +815,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.build().toBuilder().getEnableRoutingCookie()).isTrue();
   }
 
+  @Test
   public void enableRetryInfoDefaultValueTest() throws IOException {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
