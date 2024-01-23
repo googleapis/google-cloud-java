@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2024-01-23)
+
+### Features
+
+* add MACsec status for internal links ([#10270](https://github.com/googleapis/google-cloud-java/issues/10270)) ([667293a](https://github.com/googleapis/google-cloud-java/commit/667293aa2c7e3dbe7445c2ddf1812176be65f7a0))
+
+
+
 ## 0.1.0 (2024-01-10)
 
 ### Features

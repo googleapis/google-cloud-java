@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.35.0 (2024-01-23)
+
+### Features
+
+* Fix rpc tensorboard_service.proto definitions for BatchCreateTensorboardTimeSeries and BatchReadTensorboardTimeSeriesData ([#10221](https://github.com/googleapis/google-cloud-java/issues/10221))
+* Fix rpc tensorboard_service.proto definitions for BatchCreateTensorboardTimeSeries and BatchReadTensorboardTimeSeriesData ([#10221](https://github.com/googleapis/google-cloud-java/issues/10221)) ([90a9033](https://github.com/googleapis/google-cloud-java/commit/90a9033eba3cd4242cc75dddff11d60fec92b0a6))
+
+
+
 ## 3.34.0 (2024-01-10)
 
 * No change

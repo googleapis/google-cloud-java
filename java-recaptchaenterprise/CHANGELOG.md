@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.31.0 (2024-01-23)
+
+### Features
+
+* update comment for `AccountVerificationInfo.username` ([#10227](https://github.com/googleapis/google-cloud-java/issues/10227)) ([500be5a](https://github.com/googleapis/google-cloud-java/commit/500be5ad9341c5d88db44d9590e4550ae1ad2676))
+
+
+
 ## 3.30.0 (2024-01-10)
 
 ### Features

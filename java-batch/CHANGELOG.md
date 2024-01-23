@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.34.0 (2024-01-23)
+
+### Features
+
+* remove deprecated field enableOslogin ([#10257](https://github.com/googleapis/google-cloud-java/issues/10257))
+* remove deprecated field enableOslogin ([#10257](https://github.com/googleapis/google-cloud-java/issues/10257)) ([2da4e3e](https://github.com/googleapis/google-cloud-java/commit/2da4e3e19fba34f129e8d0972cfab6b3a6d4d2f7))
+* Polish the field descriptions for enableImageStreaming and CloudLoggingOptions ([#10275](https://github.com/googleapis/google-cloud-java/issues/10275)) ([a95b354](https://github.com/googleapis/google-cloud-java/commit/a95b354af5fa16bf7517876949fd6d1a72aa6b5d))
+
+
+
 ## 0.33.0 (2024-01-10)
 
 ### Features

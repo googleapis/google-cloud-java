@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.34.0 (2024-01-23)
+
+### Features
+
+* remove BufferTask method which cannot be called from client libraries ([#10232](https://github.com/googleapis/google-cloud-java/issues/10232))
+* remove BufferTask method which cannot be called from client libraries ([#10232](https://github.com/googleapis/google-cloud-java/issues/10232)) ([b5a90c4](https://github.com/googleapis/google-cloud-java/commit/b5a90c425c51c6b4fa21b3a8e56e2f8519952ec7))
+
+
+
 ## 2.33.0 (2024-01-10)
 
 * No change

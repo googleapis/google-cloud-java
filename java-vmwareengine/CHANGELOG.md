@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.28.0 (2024-01-23)
+
+### Features
+
+* Adding ManagementDnsZoneBinding, DnsBindPermission, DnsForwarding, ExternalAccessRule, ExternalAddress, LoggingServer, NetworkPeering, Node and stretched PC features ([#10240](https://github.com/googleapis/google-cloud-java/issues/10240)) ([4982e78](https://github.com/googleapis/google-cloud-java/commit/4982e78e416fec80baff99f0131815e2d4955acf))
+
+
+
 ## 0.27.0 (2024-01-10)
 
 * No change

@@ -5,6 +5,3173 @@
       "changes": [
         {
           "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-automl",
+      "id": "2d6544f2-611c-4201-a4ac-4400f54073f1",
+      "createTime": "2024-01-23T17:04:49.703Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-assured-workloads",
+      "id": "0473f1b7-ecac-4181-b989-5e418c550c78",
+      "createTime": "2024-01-23T17:04:49.692Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-asset",
+      "id": "fb270f4c-ba57-44db-97ce-9b947aed8555",
+      "createTime": "2024-01-23T17:04:49.679Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-artifact-registry",
+      "id": "87f3abd6-8500-4310-9085-44e95b6f7d87",
+      "createTime": "2024-01-23T17:04:49.664Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.area120:google-area120-tables",
+      "id": "1547e256-8ff0-44be-8435-70b09047ceac",
+      "createTime": "2024-01-23T17:04:49.651Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-appengine-admin",
+      "id": "e8ea8285-d459-494b-ba44-837141621c7b",
+      "createTime": "2024-01-23T17:04:49.641Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apikeys",
+      "id": "3827d2f8-d840-4948-987d-0b8a7882a5a9",
+      "createTime": "2024-01-23T17:04:49.631Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apigee-registry",
+      "id": "21fa7aed-d91d-4374-9d5d-c85428f1e528",
+      "createTime": "2024-01-23T17:04:49.623Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apigee-connect",
+      "id": "50306df0-f9ee-42de-b243-9a94157952e4",
+      "createTime": "2024-01-23T17:04:49.585Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-api-gateway",
+      "id": "9697679f-3f6f-4d69-bada-012a1ec3433f",
+      "createTime": "2024-01-23T17:04:49.576Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-analyticshub",
+      "id": "96b59684-6618-4e9d-a8a5-93764697c7bf",
+      "createTime": "2024-01-23T17:04:49.567Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-data",
+      "id": "3278c653-92b9-4541-9ea2-65ba756dee11",
+      "createTime": "2024-01-23T17:04:49.559Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "75bcfc8b-ee52-4861-81bc-75be80fe1356",
+      "createTime": "2024-01-23T17:04:49.551Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "50fac517-fecf-42a0-a273-d1e6360659a2",
+      "createTime": "2024-01-23T17:04:49.542Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "fix",
+          "sha": "90a9033eba3cd4242cc75dddff11d60fec92b0a6",
+          "message": "[aiplatform] Fix rpc tensorboard_service.proto definitions for BatchCreateTensorboardTimeSeries and BatchReadTensorboardTimeSeriesData",
+          "issues": [
+            "10221"
+          ],
+          "breakingChangeNote": "[aiplatform] Fix rpc tensorboard_service.proto definitions for BatchCreateTensorboardTimeSeries and BatchReadTensorboardTimeSeriesData ([#10221](https://github.com/googleapis/google-cloud-java/issues/10221))"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "aa99774d-8115-43ab-904c-8121dbddadee",
+      "createTime": "2024-01-23T17:04:49.534Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-advisorynotifications",
+      "id": "aa99240d-b810-4c04-9111-4f34d38ef069",
+      "createTime": "2024-01-23T17:04:49.523Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-identity-accesscontextmanager",
+      "id": "081853c8-ca98-434a-aa9b-cbfe077cc842",
+      "createTime": "2024-01-23T17:04:49.494Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-accessapproval",
+      "id": "45e9f880-febc-47a4-8047-a1413d6daf66",
+      "createTime": "2024-01-23T17:04:49.486Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "ad6992ca-4918-40ce-aa09-5bf2bac6b94c",
+      "createTime": "2024-01-23T17:04:49.478Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "42aa3767-a74e-4035-9055-a27999656fd7",
+      "createTime": "2024-01-23T17:04:49.469Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-certificate-manager",
+      "id": "7e8718b6-a78c-46e1-b801-68a0f205a3d5",
+      "createTime": "2024-01-23T17:04:49.457Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-binary-authorization",
+      "id": "8bbf793d-d442-43a2-be0d-44b2afb841bc",
+      "createTime": "2024-01-23T17:04:49.447Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billingbudgets",
+      "id": "3e236beb-dc66-4301-b21d-22bddad503f7",
+      "createTime": "2024-01-23T17:04:49.437Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "docs",
+          "sha": "d20d37071a4c2d345dd400444c616b06fe420a90",
+          "message": "[cloudbilling] update comments",
+          "issues": [
+            "10228"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "cf72fba9-ac1f-46dd-ab9b-987f77aa4b22",
+      "createTime": "2024-01-23T17:04:49.427Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryreservation",
+      "id": "11dddad3-d4de-4507-8f5e-ae52e2a189d0",
+      "createTime": "2024-01-23T17:04:49.374Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerymigration",
+      "id": "26878345-f27d-449d-80ed-590dadd82535",
+      "createTime": "2024-01-23T17:04:49.364Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatatransfer",
+      "id": "4d28d7a4-6774-43a7-92cc-af0632668be2",
+      "createTime": "2024-01-23T17:04:49.354Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatapolicy",
+      "id": "e7b5c90e-332c-4f4e-9804-34970fabe399",
+      "createTime": "2024-01-23T17:04:49.342Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryconnection",
+      "id": "0139ccf8-714f-4357-8f76-853fe22f0e51",
+      "createTime": "2024-01-23T17:04:49.324Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-data-exchange",
+      "id": "60c91586-a3c3-4843-88f2-1dc449b0cfce",
+      "createTime": "2024-01-23T17:04:49.233Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-biglake",
+      "id": "d0e1729a-38bc-4997-960d-66138896d28f",
+      "createTime": "2024-01-23T17:04:49.139Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-clientgateways",
+      "id": "57850005-de0b-45ab-9718-3824d226febc",
+      "createTime": "2024-01-23T17:04:49.040Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-clientconnectorservices",
+      "id": "484d9f17-decb-4da9-8ef0-3319e63f3d2f",
+      "createTime": "2024-01-23T17:04:48.945Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-appgateways",
+      "id": "fb89ce32-8c2f-4ed8-85c3-dd905cb7e656",
+      "createTime": "2024-01-23T17:04:48.927Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-appconnectors",
+      "id": "d2b156cf-71ce-4735-b95d-a337c2f0c214",
+      "createTime": "2024-01-23T17:04:48.909Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-appconnections",
+      "id": "92472f59-8da5-44f5-b48c-1f59e67ff7d1",
+      "createTime": "2024-01-23T17:04:48.899Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bare-metal-solution",
+      "id": "9de49393-24e8-4eda-831b-e10670c2bf14",
+      "createTime": "2024-01-23T17:04:48.884Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-debugger-client",
+      "id": "a29ed1ea-8182-45cf-89d2-aa5efe6703b3",
+      "createTime": "2024-01-23T17:04:48.869Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastream",
+      "id": "7be2f2c9-5e42-45a6-8990-7e0373457956",
+      "createTime": "2024-01-23T17:04:48.857Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "3476f631-021d-4dad-98c1-02b1a1b6de2d",
+      "createTime": "2024-01-23T17:04:48.848Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "ceeb883e-b38a-4cab-939e-f10c80117e9f",
+      "createTime": "2024-01-23T17:04:48.834Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "cb7f020b-0cbf-48fb-a4c4-854ea6757aa3",
+      "createTime": "2024-01-23T17:04:48.823Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalineage",
+      "id": "1c5e7679-7c9b-45c0-a4dd-4b8a8da85e30",
+      "createTime": "2024-01-23T17:04:48.786Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalabeling",
+      "id": "7f8f0fbc-58de-4362-988a-0e1cc8437ab3",
+      "createTime": "2024-01-23T17:04:48.778Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataform",
+      "id": "b45932a6-b113-48c8-83c2-78b1f3570b11",
+      "createTime": "2024-01-23T17:04:48.769Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataflow",
+      "id": "4efd0af8-9dcf-4af8-aa09-866769d301a1",
+      "createTime": "2024-01-23T17:04:48.759Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datacatalog",
+      "id": "d45638ab-65a2-4f2d-96e1-2a34b60204a7",
+      "createTime": "2024-01-23T17:04:48.751Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-data-fusion",
+      "id": "fab4da77-7325-4b8a-9aaa-17e12f04d5a9",
+      "createTime": "2024-01-23T17:04:48.743Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contentwarehouse",
+      "id": "1b2c55cd-71a4-4793-b115-df3c93f14171",
+      "createTime": "2024-01-23T17:04:48.734Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-containeranalysis",
+      "id": "3d71e52d-fa81-49c3-b97f-b7cebb324ec8",
+      "createTime": "2024-01-23T17:04:48.726Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "6036bb87-fa87-4e85-a003-6c1fdcae1837",
+      "createTime": "2024-01-23T17:04:48.698Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-confidentialcomputing",
+      "id": "8898171e-cca6-4152-8ad9-9bf583db791a",
+      "createTime": "2024-01-23T17:04:48.689Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "153fa769-8f93-44b6-9b69-68d3c40a2f6d",
+      "createTime": "2024-01-23T17:04:48.681Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudsupport",
+      "id": "a783116f-3144-480b-a915-dcd1d8c88e0b",
+      "createTime": "2024-01-23T17:04:48.671Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudquotas",
+      "id": "b47c3dc2-dd27-40cc-8a1c-194bff22801d",
+      "createTime": "2024-01-23T17:04:48.661Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudcommerceconsumerprocurement",
+      "id": "5587a532-399e-4e22-8d13-c829661311e4",
+      "createTime": "2024-01-23T17:04:48.652Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-multi-cloud",
+      "id": "3da8d1bd-94e9-463d-9b8c-a90615cd1d0d",
+      "createTime": "2024-01-23T17:04:48.640Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-connect-gateway",
+      "id": "157ea0a5-ee32-4d64-b189-6345f70e436f",
+      "createTime": "2024-01-23T17:04:48.631Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-backup",
+      "id": "81bbc11a-dd09-4c3c-96eb-d0d0b61c9b6c",
+      "createTime": "2024-01-23T17:04:48.603Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "8d35dc77-f094-4e1a-a44a-028a83cafd7e",
+      "createTime": "2024-01-23T17:04:48.595Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-filestore",
+      "id": "6b8f5bde-b03c-4d8b-a2b3-8253bfb52c44",
+      "createTime": "2024-01-23T17:04:48.586Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-eventarc",
+      "id": "73db729a-0b12-4997-b9c2-e788fdd84783",
+      "createTime": "2024-01-23T17:04:48.577Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-eventarc-publishing",
+      "id": "aa4c9729-bb0f-448d-9cf8-581ec4d4d5f4",
+      "createTime": "2024-01-23T17:04:48.568Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-essential-contacts",
+      "id": "c7ed7d83-195a-4355-a089-601471dd3468",
+      "createTime": "2024-01-23T17:04:48.558Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-errorreporting",
+      "id": "58d757bb-a8f0-4f7e-b642-12e350b70176",
+      "createTime": "2024-01-23T17:04:48.550Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-enterpriseknowledgegraph",
+      "id": "e49d51db-f27a-4b2f-b39e-01ad52c5a0e6",
+      "createTime": "2024-01-23T17:04:48.542Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-domains",
+      "id": "b39177a3-beba-4c65-acd7-838f54d4b531",
+      "createTime": "2024-01-23T17:04:48.530Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "41845354-a47b-4c0d-8e95-0c93cb6a4ee1",
+      "createTime": "2024-01-23T17:04:48.491Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dms",
+      "id": "51c6e8f4-a459-42e5-bff9-47311f0cbb85",
+      "createTime": "2024-01-23T17:04:48.484Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dlp",
+      "id": "3e5d0cac-7615-4377-bc1f-77e173b949ed",
+      "createTime": "2024-01-23T17:04:48.476Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-distributedcloudedge",
+      "id": "64aa9023-1cc1-4dba-8434-f882633d934d",
+      "createTime": "2024-01-23T17:04:48.468Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "71577433-e2c2-4c38-8f4d-8776b2d1cb23",
+      "createTime": "2024-01-23T17:04:48.459Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "cda2f855-6800-4cd4-9550-daf90c3d786c",
+      "createTime": "2024-01-23T17:04:48.451Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "08f4c152-f992-41c2-bc9b-5633a2e79081",
+      "createTime": "2024-01-23T17:04:48.444Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "54d1d2f9-0a1b-44e5-9c4c-2bc82da61742",
+      "createTime": "2024-01-23T17:04:48.435Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "feat",
+          "sha": "8cdfbe611f8e45cf0d921471744326d42462ce54",
+          "message": "[meet] new module for meet",
+          "issues": [
+            "10245"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-meet",
+      "id": "7edcb55d-2f4d-4eeb-a8f5-344e28b43e1b",
+      "createTime": "2024-01-23T17:04:48.427Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-mediatranslation",
+      "id": "c21387cc-e815-4283-9bc0-5427cf727246",
+      "createTime": "2024-01-23T17:04:48.374Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-routing",
+      "id": "696f4a83-c040-4787-8f1c-21d4b04aa085",
+      "createTime": "2024-01-23T17:04:48.366Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-places",
+      "id": "63bbcf1d-af0c-4fd0-8393-8e0facf6c12a",
+      "createTime": "2024-01-23T17:04:48.358Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "fix",
+          "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10248"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-mapsplatformdatasets",
+      "id": "b96b93ad-1fde-4fe0-9abd-c53b0286b1ac",
+      "createTime": "2024-01-23T17:04:48.346Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-addressvalidation",
+      "id": "1406e37d-6b88-4030-9560-9a3e93eacdf3",
+      "createTime": "2024-01-23T17:04:48.328Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-managed-identities",
+      "id": "b884725c-452c-4eae-ba0d-18c34659d68d",
+      "createTime": "2024-01-23T17:04:48.246Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-life-sciences",
+      "id": "385b72b9-5339-4ec9-8692-5373a775c23c",
+      "createTime": "2024-01-23T17:04:48.146Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-language",
+      "id": "2fa93c0c-8c5a-4ca2-a946-5d29ac09c3a7",
+      "createTime": "2024-01-23T17:04:48.123Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kmsinventory",
+      "id": "b729227f-c7aa-4c62-8776-c19ccb65892b",
+      "createTime": "2024-01-23T17:04:47.935Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "11549160-234b-4c59-89f0-528f89fdea63",
+      "createTime": "2024-01-23T17:04:47.887Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iot",
+      "id": "0da3fa26-897a-44ec-9e82-bc8d0971c641",
+      "createTime": "2024-01-23T17:04:47.877Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "feat",
+          "sha": "bd6f6bb577a0480e681b61a7e0872be42a78ad36",
+          "message": "[infra-manager] added Terraform Plan",
+          "issues": [
+            "10223"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-infra-manager",
+      "id": "d7021753-bd1f-443b-a3cf-df6e4a854728",
+      "createTime": "2024-01-23T17:04:47.868Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-ids",
+      "id": "61c901bc-8c48-41cd-90a0-1a426860ddef",
+      "createTime": "2024-01-23T17:04:47.860Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iamcredentials",
+      "id": "53cc5382-cdff-4c65-98d1-a4008c51dfd9",
+      "createTime": "2024-01-23T17:04:47.851Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-iam-policy",
+      "id": "fdd7698f-4b43-45ce-975b-3f821fb74f0c",
+      "createTime": "2024-01-23T17:04:47.842Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-iam-admin",
+      "id": "20e9f079-912c-4cda-a2fd-c08deacaeff4",
+      "createTime": "2024-01-23T17:04:47.833Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gsuite-addons",
+      "id": "368743dc-ecc7-459d-a5cc-271ff468932f",
+      "createTime": "2024-01-23T17:04:47.824Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "io.grafeas:grafeas",
+      "id": "95cc26b1-0fd5-4cc2-9431-095b49b353a1",
+      "createTime": "2024-01-23T17:04:47.793Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "161f5b5a46daa21fcbc5b38ba9f341e59c487b88",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10252"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gkehub",
+      "id": "7455ba4c-e504-467a-9ff8-6f7df52a3678",
+      "createTime": "2024-01-23T17:04:47.785Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-profiler",
+      "id": "c9268310-6637-44cb-b335-67837ef41295",
+      "createTime": "2024-01-23T17:04:47.776Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-private-catalog",
+      "id": "43877575-9f44-4fff-83a4-8d9e987994e1",
+      "createTime": "2024-01-23T17:04:47.766Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policysimulator",
+      "id": "650d489b-6699-4b70-959b-495c6729b773",
+      "createTime": "2024-01-23T17:04:47.757Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policy-troubleshooter",
+      "id": "bb7e8249-dedc-44af-8190-b2b256128075",
+      "createTime": "2024-01-23T17:04:47.748Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-phishingprotection",
+      "id": "8642cf9f-4de6-4f7a-9f2b-fdd68cd62179",
+      "createTime": "2024-01-23T17:04:47.739Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-os-login",
+      "id": "9124a98b-b242-462d-902c-10958f720359",
+      "createTime": "2024-01-23T17:04:47.728Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-os-config",
+      "id": "0c23cf99-0db4-4095-ad97-1b104344ebe1",
+      "createTime": "2024-01-23T17:04:47.701Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orgpolicy",
+      "id": "c5e4590c-ad28-48d7-9acd-2c8f96cc5bd0",
+      "createTime": "2024-01-23T17:04:47.692Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "f4c68b92-9181-4319-8a0b-14bad94e8286",
+      "createTime": "2024-01-23T17:04:47.679Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "7e389635-578d-447d-9825-96194b7197a2",
+      "createTime": "2024-01-23T17:04:47.671Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-notebooks",
+      "id": "b3958960-4aa6-49eb-8c17-c39ebd14058a",
+      "createTime": "2024-01-23T17:04:47.658Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkconnectivity",
+      "id": "988af948-76a2-49ae-b903-045eab7bdf98",
+      "createTime": "2024-01-23T17:04:47.649Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-security",
+      "id": "733d550d-0c9b-44e8-b902-f02f4efe6c86",
+      "createTime": "2024-01-23T17:04:47.639Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "89af679b-d128-4328-a618-267a6c32468f",
+      "createTime": "2024-01-23T17:04:47.630Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-netapp",
+      "id": "569d0816-40ba-41f5-90b6-e83557621378",
+      "createTime": "2024-01-23T17:04:47.594Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring",
+      "id": "80227d86-4d15-4c70-9fc4-537de51d511f",
+      "createTime": "2024-01-23T17:04:47.586Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring-metricsscope",
+      "id": "1834b994-48b1-4425-a19a-4e058dcac31b",
+      "createTime": "2024-01-23T17:04:47.578Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring-dashboard",
+      "id": "675b99d7-8085-4110-b831-380dfc0d9dd6",
+      "createTime": "2024-01-23T17:04:47.570Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-migrationcenter",
+      "id": "968b75d7-f3a7-4b4b-bae3-71de4dd9e67d",
+      "createTime": "2024-01-23T17:04:47.561Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "34ee60b37160771e74152446bab9eab42511ea7b",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10253"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-memcache",
+      "id": "a84aba2a-9666-42f3-9bed-c79f1d2ede7b",
+      "createTime": "2024-01-23T17:04:47.551Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "6aa2889b-fc71-4680-a14b-6be42b4778c8",
+      "createTime": "2024-01-23T17:04:47.543Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflows",
+      "id": "217a244b-4198-4972-a591-e71a0bd56a7c",
+      "createTime": "2024-01-23T17:04:47.535Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflow-executions",
+      "id": "1eea8d34-f9b0-4799-a651-84d8466a6ce6",
+      "createTime": "2024-01-23T17:04:47.526Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-websecurityscanner",
+      "id": "d5a0b227-2585-4353-aa69-6425e400269a",
+      "createTime": "2024-01-23T17:04:47.496Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-webrisk",
+      "id": "93de0f6c-bdce-43f4-9230-eba30dd91909",
+      "createTime": "2024-01-23T17:04:47.488Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vpcaccess",
+      "id": "ea2a2fa8-b5ce-4383-88ee-d52034e8a3c3",
+      "createTime": "2024-01-23T17:04:47.479Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "feat",
+          "sha": "4982e78e416fec80baff99f0131815e2d4955acf",
+          "message": "[vmwareengine] Adding ManagementDnsZoneBinding, DnsBindPermission, DnsForwarding, ExternalAccessRule, ExternalAddress, LoggingServer, NetworkPeering, Node and stretched PC features",
+          "issues": [
+            "10240"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "64d929ea-fb1a-4d98-8c09-1510f2e3df1d",
+      "createTime": "2024-01-23T17:04:47.464Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmmigration",
+      "id": "21e3ab08-750d-4b01-a08b-a102c93409ea",
+      "createTime": "2024-01-23T17:04:47.452Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b5d02ed7bee0aa1cda167898d17cce156fdb239",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10256"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vision",
+      "id": "cd2fba61-7292-4223-8009-931c7f8a3126",
+      "createTime": "2024-01-23T17:04:47.439Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "89d2b1510a1e9d306c2437aaa7e8907a59fccfe6",
+          "message": "[vertexai] Support Function calling",
+          "issues": [
+            "10242"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "da6eea8e4a0d23b1554bda106d82dc8ff6d458a5",
+          "message": "[vertexai] add apiEndpoint",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "da6eea8e4a0d23b1554bda106d82dc8ff6d458a5",
+          "message": "[vertexai] support \"publishers/google/models/\" prefix",
+          "issues": []
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vertexai",
+      "id": "11916166-cb39-4ba4-ba06-0028293ca41d",
+      "createTime": "2024-01-23T17:04:47.424Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9785f8cfd43db0a8968f086a1461242da9d16cb5",
+          "message": "[container] add fields desired_in_transit_encryption_config and in_transit_encryption_config",
+          "issues": [
+            "10260"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "00a7e23fa6182d204f6570c4f452950213c1e930",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10250"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "f0ee862b-92dd-4c35-9f6c-6bc8f2cb6c52",
+      "createTime": "2024-01-23T17:04:47.411Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "458516b462e0a4494f32815fe9d0e6f0b30353f1",
+          "message": "[retail] add analytics service",
+          "issues": [
+            "10261"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-retail",
+      "id": "458bfec2-1ca7-4f89-b7f2-e64157760a11",
+      "createTime": "2024-01-23T17:04:47.401Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-management",
+      "id": "2759be68-4d0f-4c7f-9421-c64a4c3c3d08",
+      "createTime": "2024-01-23T17:04:47.391Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-control",
+      "id": "a1a5b8f7-32db-4a4a-9dd5-5299ecd3d023",
+      "createTime": "2024-01-23T17:04:47.381Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "docs",
+          "sha": "c952200eb7500970cc2e219ccb49c300ab7abc0d",
+          "message": "[securitycentermanagement] update documentation for UpdateSecurityHealthAnalyticsCustomModule update_mask field",
+          "issues": [
+            "10222"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycentermanagement",
+      "id": "f2fe5b3f-141d-4925-ab37-7b28aecaaed0",
+      "createTime": "2024-01-23T17:04:47.374Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "2b06a0e7-4994-41cf-a14d-e41318b8144c",
+      "createTime": "2024-01-23T17:04:47.364Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter-settings",
+      "id": "a2d69209-0e4a-46c3-b33a-1010ab6d46c2",
+      "createTime": "2024-01-23T17:04:47.352Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-security-private-ca",
+      "id": "e5cf9d29-9135-492a-bd70-1b8d14e05958",
+      "createTime": "2024-01-23T17:04:47.340Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securesourcemanager",
+      "id": "b1f1b26b-e42f-426a-9942-9750f29da45d",
+      "createTime": "2024-01-23T17:04:47.325Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-secretmanager",
+      "id": "3fc6b772-b4f4-40c8-8b86-555d41de5f24",
+      "createTime": "2024-01-23T17:04:47.246Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-scheduler",
+      "id": "e72199c0-cb5e-4ac2-a44d-1634efe20722",
+      "createTime": "2024-01-23T17:04:47.239Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "c75425b9-cd97-4127-89dd-5f9233df2cc4",
+      "createTime": "2024-01-23T17:04:47.140Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "b1e7b2af-fe33-46a3-820f-8c8cdc78635b",
+      "createTime": "2024-01-23T17:04:47.045Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resource-settings",
+      "id": "935dd24d-cd2f-4a54-8cfa-83398dcf6f34",
+      "createTime": "2024-01-23T17:04:47.022Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-redis",
+      "id": "5969d8b9-5281-4d2e-aaa2-8b248487ffa5",
+      "createTime": "2024-01-23T17:04:46.922Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-redis-cluster",
+      "id": "34ed591b-4963-4a90-8f79-cebf526400ab",
+      "createTime": "2024-01-23T17:04:46.885Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recommender",
+      "id": "1f6bc58a-2c8f-4124-920c-5077bc2d0f39",
+      "createTime": "2024-01-23T17:04:46.874Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recommendations-ai",
+      "id": "0a0e1e89-459a-495f-868f-33eb9d1216d9",
+      "createTime": "2024-01-23T17:04:46.860Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "docs",
+          "sha": "500be5ad9341c5d88db44d9590e4550ae1ad2676",
+          "message": "[recaptchaenterprise] update comment for `AccountVerificationInfo.username`",
+          "issues": [
+            "10227"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recaptchaenterprise",
+      "id": "920e3a25-c886-468d-81fb-f711fd66e5b8",
+      "createTime": "2024-01-23T17:04:46.848Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-rapidmigrationassessment",
+      "id": "b5bc899b-4948-477e-9e68-311d264c3dc6",
+      "createTime": "2024-01-23T17:04:46.838Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "8a217c394c5043c929927b0fdbe0aedec08f6230",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10254"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-publicca",
+      "id": "7a3253f7-4313-4fb1-b1ad-a08f242ead28",
+      "createTime": "2024-01-23T17:04:46.829Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "5e565d815d431023052ec8c49247d730542b70a8",
+          "message": "[servicehealth] new module for servicehealth",
+          "issues": [
+            "10267"
+          ]
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-servicehealth",
+      "id": "4002e625-e097-4bf1-b32e-7db4ee20ce1a",
+      "createTime": "2024-01-23T17:04:46.800Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "667293aa2c7e3dbe7445c2ddf1812176be65f7a0",
+          "message": "[edgenetwork] add MACsec status for internal links",
+          "issues": [
+            "10270"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "448a461ff675e7404225a1728befbc381194f327",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10251"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-edgenetwork",
+      "id": "dcd82648-1d38-4d87-b3dd-4b4421d1bbb4",
+      "createTime": "2024-01-23T17:04:46.789Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-transcoder",
+      "id": "13f8e03b-90e0-4039-9a22-9d722ec27b42",
+      "createTime": "2024-01-23T17:04:46.779Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-stitcher",
+      "id": "acc0a0f8-850c-48bb-862a-9b06adeadf60",
+      "createTime": "2024-01-23T17:04:46.768Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-live-stream",
+      "id": "d32789d9-234a-4549-8574-6e5277ce5b40",
+      "createTime": "2024-01-23T17:04:46.760Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-intelligence",
+      "id": "73edaeb4-4081-483e-9673-0f3a67a953ad",
+      "createTime": "2024-01-23T17:04:46.751Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-translate",
+      "id": "7dcea435-18b3-43e4-950f-f64a49e7c76c",
+      "createTime": "2024-01-23T17:04:46.743Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-trace",
+      "id": "07e3f6dc-3015-4808-8b01-a814e11c343d",
+      "createTime": "2024-01-23T17:04:46.734Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "082c64b6-cd05-4862-830e-28e65845c671",
+      "createTime": "2024-01-23T17:04:46.725Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-texttospeech",
+      "id": "31ea25bc-6a51-4f0f-9f26-3f1c71a7a684",
+      "createTime": "2024-01-23T17:04:46.708Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-telcoautomation",
+      "id": "6db9a8bf-a964-4a7c-841a-6a6a923a2ceb",
+      "createTime": "2024-01-23T17:04:46.700Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        },
+        {
+          "type": "fix",
+          "sha": "b5a90c425c51c6b4fa21b3a8e56e2f8519952ec7",
+          "message": "[cloudtasks] remove BufferTask method which cannot be called from client libraries",
+          "issues": [
+            "10232"
+          ],
+          "breakingChangeNote": "[cloudtasks] remove BufferTask method which cannot be called from client libraries ([#10232](https://github.com/googleapis/google-cloud-java/issues/10232))"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tasks",
+      "id": "f7d18fd7-2b8d-4e3a-8963-11f096ebe815",
+      "createTime": "2024-01-23T17:04:46.693Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-talent",
+      "id": "3b48a968-e3b8-4801-ade1-dd7b8c08163e",
+      "createTime": "2024-01-23T17:04:46.684Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storageinsights",
+      "id": "351d9c49-d95a-4164-9641-85e7d12e164b",
+      "createTime": "2024-01-23T17:04:46.675Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage-transfer",
+      "id": "4ac56068-dc8e-4118-adcb-7a6519fd9219",
+      "createTime": "2024-01-23T17:04:46.665Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "2760ffc7-5e43-492c-ba0a-b4863651407f",
+      "createTime": "2024-01-23T17:04:46.653Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-reports",
+      "id": "dbfa7b98-4618-4315-8769-9a9ad2e27b93",
+      "createTime": "2024-01-23T17:04:46.643Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-inventories",
+      "id": "24a589e3-9913-45a8-9ec0-ac3c806dd2ac",
+      "createTime": "2024-01-23T17:04:46.631Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-shell",
+      "id": "5e72bf56-f848-4b80-90b9-b1a6bac7b304",
+      "createTime": "2024-01-23T17:04:46.618Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-servicedirectory",
+      "id": "5cddcad4-9099-4f66-92a1-3b50b546d469",
+      "createTime": "2024-01-23T17:04:46.611Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-usage",
+      "id": "a0e3712f-d472-47b9-a31d-5eb424b032cb",
+      "createTime": "2024-01-23T17:04:46.597Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "a95b354af5fa16bf7517876949fd6d1a72aa6b5d",
+          "message": "[batch] Polish the field descriptions for enableImageStreaming and CloudLoggingOptions",
+          "issues": [
+            "10275"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "2da4e3e19fba34f129e8d0972cfab6b3a6d4d2f7",
+          "message": "[batch] remove deprecated field enableOslogin",
+          "issues": [
+            "10257"
+          ],
+          "breakingChangeNote": "[batch] remove deprecated field enableOslogin ([#10257](https://github.com/googleapis/google-cloud-java/issues/10257))"
+        },
+        {
+          "type": "fix",
+          "sha": "6bb08883b22e3369b8179a551600c24af3939b5d",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10249"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "188a38c6-fc31-4d04-8e65-c4529af102ca",
+      "createTime": "2024-01-23T17:04:46.588Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "851a09c291780230a3c4b9a7eb8e3cbb6b674e77",
+          "message": "[css] remove redundant proto dependency from reports API assembly bazel rule",
+          "issues": [
+            "10276"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "67ef0ccf58138be423b52fd551675e462ce02356",
+          "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
+          "issues": [
+            "10255"
+          ],
+          "scope": "deps"
+        }
+      ],
+      "version": "1.28.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-css",
+      "id": "2ca820dd-2e05-431e-9c73-d07f91432fac",
+      "createTime": "2024-01-23T17:04:46.576Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
           "sha": "081f276ba6be9fe980d3ecdcf4ea2c3edbc24fe9",
           "message": "[vertexai] Use default scopes from Prediction Service to create application default credentials if scopes are empty.",
           "issues": [
@@ -20155,5 +23322,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2024-01-10T18:29:43.237Z"
+  "updateTime": "2024-01-23T17:04:49.703Z"
 }
