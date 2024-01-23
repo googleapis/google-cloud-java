@@ -105,7 +105,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     this.options = options;
     bigquery =
         new Bigquery.Builder(transport, new GsonFactory(), initializer)
-            .setRootUrl(options.getHost())
+            .setRootUrl(options.getResolvedApiaryHost("bigquery"))
             .setApplicationName(options.getApplicationName())
             .build();
   }
@@ -114,9 +114,16 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     return new BigQueryException(exception);
   }
 
+  private void validateRPC() throws BigQueryException, IOException {
+    if (!this.options.hasValidUniverseDomain()) {
+      throw new BigQueryException(BigQueryException.UNKNOWN_CODE, "Invalid universe domain");
+    }
+  }
+
   @Override
   public Dataset getDataset(String projectId, String datasetId, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .datasets()
           .get(projectId, datasetId)
@@ -135,6 +142,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Dataset>> listDatasets(String projectId, Map<Option, ?> options) {
     try {
+      validateRPC();
       DatasetList datasetsList =
           bigquery
               .datasets()
@@ -159,6 +167,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Dataset create(Dataset dataset, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .datasets()
           .insert(dataset.getDatasetReference().getProjectId(), dataset)
@@ -173,6 +182,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Table create(Table table, Map<Option, ?> options) {
     try {
+      validateRPC();
       // unset the type, as it is output only
       table.setType(null);
       TableReference reference = table.getTableReference();
@@ -190,6 +200,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Routine create(Routine routine, Map<Option, ?> options) {
     try {
+      validateRPC();
       RoutineReference reference = routine.getRoutineReference();
       return bigquery
           .routines()
@@ -205,6 +216,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Job create(Job job, Map<Option, ?> options) {
     try {
+      validateRPC();
       String projectId =
           job.getJobReference() != null
               ? job.getJobReference().getProjectId()
@@ -223,6 +235,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Job createJobForQuery(Job job) {
     try {
+      validateRPC();
       String projectId =
           job.getJobReference() != null
               ? job.getJobReference().getProjectId()
@@ -236,6 +249,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean deleteDataset(String projectId, String datasetId, Map<Option, ?> options) {
     try {
+      validateRPC();
       bigquery
           .datasets()
           .delete(projectId, datasetId)
@@ -255,6 +269,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Dataset patch(Dataset dataset, Map<Option, ?> options) {
     try {
+      validateRPC();
       DatasetReference reference = dataset.getDatasetReference();
       return bigquery
           .datasets()
@@ -270,6 +285,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Table patch(Table table, Map<Option, ?> options) {
     try {
+      validateRPC();
       // unset the type, as it is output only
       table.setType(null);
       TableReference reference = table.getTableReference();
@@ -289,6 +305,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Table getTable(
       String projectId, String datasetId, String tableId, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .tables()
           .get(projectId, datasetId, tableId)
@@ -316,6 +333,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Tuple<String, Iterable<Table>> listTables(
       String projectId, String datasetId, Map<Option, ?> options) {
     try {
+      validateRPC();
       TableList tableList =
           bigquery
               .tables()
@@ -351,6 +369,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean deleteTable(String projectId, String datasetId, String tableId) {
     try {
+      validateRPC();
       bigquery.tables().delete(projectId, datasetId, tableId).execute();
       return true;
     } catch (IOException ex) {
@@ -365,6 +384,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Model patch(Model model, Map<Option, ?> options) {
     try {
+      validateRPC();
       // unset the type, as it is output only
       ModelReference reference = model.getModelReference();
       return bigquery
@@ -382,6 +402,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Model getModel(
       String projectId, String datasetId, String modelId, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .models()
           .get(projectId, datasetId, modelId)
@@ -401,6 +422,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Tuple<String, Iterable<Model>> listModels(
       String projectId, String datasetId, Map<Option, ?> options) {
     try {
+      validateRPC();
       ListModelsResponse modelList =
           bigquery
               .models()
@@ -420,6 +442,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean deleteModel(String projectId, String datasetId, String modelId) {
     try {
+      validateRPC();
       bigquery.models().delete(projectId, datasetId, modelId).execute();
       return true;
     } catch (IOException ex) {
@@ -434,6 +457,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Routine update(Routine routine, Map<Option, ?> options) {
     try {
+      validateRPC();
       RoutineReference reference = routine.getRoutineReference();
       return bigquery
           .routines()
@@ -451,6 +475,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Routine getRoutine(
       String projectId, String datasetId, String routineId, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .routines()
           .get(projectId, datasetId, routineId)
@@ -470,6 +495,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Tuple<String, Iterable<Routine>> listRoutines(
       String projectId, String datasetId, Map<Option, ?> options) {
     try {
+      validateRPC();
       ListRoutinesResponse routineList =
           bigquery
               .routines()
@@ -491,6 +517,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean deleteRoutine(String projectId, String datasetId, String routineId) {
     try {
+      validateRPC();
       bigquery.routines().delete(projectId, datasetId, routineId).execute();
       return true;
     } catch (IOException ex) {
@@ -506,6 +533,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public TableDataInsertAllResponse insertAll(
       String projectId, String datasetId, String tableId, TableDataInsertAllRequest request) {
     try {
+      validateRPC();
       return bigquery
           .tabledata()
           .insertAll(projectId, datasetId, tableId, request)
@@ -520,6 +548,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public TableDataList listTableData(
       String projectId, String datasetId, String tableId, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .tabledata()
           .list(projectId, datasetId, tableId)
@@ -544,6 +573,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       Integer maxResultPerPage,
       String pageToken) {
     try {
+      validateRPC();
       return bigquery
           .tabledata()
           .list(projectId, datasetId, tableId)
@@ -559,6 +589,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Job getJob(String projectId, String jobId, String location, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .jobs()
           .get(projectId, jobId)
@@ -578,6 +609,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Job getQueryJob(String projectId, String jobId, String location) {
     try {
+      validateRPC();
       return bigquery
           .jobs()
           .get(projectId, jobId)
@@ -596,6 +628,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Job>> listJobs(String projectId, Map<Option, ?> options) {
     try {
+      validateRPC();
       Bigquery.Jobs.List request =
           bigquery
               .jobs()
@@ -650,6 +683,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean cancel(String projectId, String jobId, String location) {
     try {
+      validateRPC();
       bigquery
           .jobs()
           .cancel(projectId, jobId)
@@ -669,6 +703,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean deleteJob(String projectId, String jobName, String location) {
     try {
+      validateRPC();
       bigquery
           .jobs()
           .delete(projectId, jobName)
@@ -685,6 +720,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public GetQueryResultsResponse getQueryResults(
       String projectId, String jobId, String location, Map<Option, ?> options) {
     try {
+      validateRPC();
       return bigquery
           .jobs()
           .getQueryResults(projectId, jobId)
@@ -707,6 +743,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public GetQueryResultsResponse getQueryResultsWithRowLimit(
       String projectId, String jobId, String location, Integer maxResultPerPage, Long timeoutMs) {
     try {
+      validateRPC();
       return bigquery
           .jobs()
           .getQueryResults(projectId, jobId)
@@ -723,6 +760,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public QueryResponse queryRpc(String projectId, QueryRequest content) {
     try {
+      validateRPC();
       return bigquery.jobs().query(projectId, content).execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -732,7 +770,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public String open(Job loadJob) {
     try {
-      String builder = options.getHost();
+      String builder = options.getResolvedApiaryHost("bigquery");
       if (!builder.endsWith("/")) {
         builder += "/";
       }
@@ -807,6 +845,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Policy getIamPolicy(String resourceId, Map<Option, ?> options) {
     try {
+      validateRPC();
       GetIamPolicyRequest policyRequest = new GetIamPolicyRequest();
       if (null != Option.REQUESTED_POLICY_VERSION.getLong(options)) {
         policyRequest =
@@ -828,6 +867,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Policy setIamPolicy(String resourceId, Policy policy, Map<Option, ?> options) {
     try {
+      validateRPC();
       SetIamPolicyRequest policyRequest = new SetIamPolicyRequest().setPolicy(policy);
       return bigquery
           .tables()
@@ -843,6 +883,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public TestIamPermissionsResponse testIamPermissions(
       String resourceId, List<String> permissions, Map<Option, ?> options) {
     try {
+      validateRPC();
       TestIamPermissionsRequest permissionsRequest =
           new TestIamPermissionsRequest().setPermissions(permissions);
       return bigquery
