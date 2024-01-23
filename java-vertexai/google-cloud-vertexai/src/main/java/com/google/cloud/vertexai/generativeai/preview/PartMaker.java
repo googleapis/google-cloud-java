@@ -18,9 +18,14 @@ package com.google.cloud.vertexai.generativeai.preview;
 
 import com.google.cloud.vertexai.api.Blob;
 import com.google.cloud.vertexai.api.FileData;
+import com.google.cloud.vertexai.api.FunctionResponse;
 import com.google.cloud.vertexai.api.Part;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.NullValue;
+import com.google.protobuf.Struct;
+import com.google.protobuf.Value;
 import java.net.URI;
+import java.util.Map;
 
 /** Helper class to create {@link com.google.cloud.vertexai.api.Part} */
 public class PartMaker {
@@ -76,5 +81,56 @@ public class PartMaker {
               + " byte[], String, URI, ByteString");
     }
     return part;
+  }
+
+  /**
+   * Make a {@link com.google.cloud.vertexai.api.Part} from the output of {@link
+   * com.google.cloud.vertexai.api.FunctionCall}.
+   *
+   * @param name a string represents the name of the {@link
+   *     com.google.cloud.vertexai.api.FunctionDeclaration}
+   * @param response a structured JSON object containing any output from the function call
+   */
+  public static Part fromFunctionResponse(String name, Struct response) {
+    return Part.newBuilder()
+        .setFunctionResponse(FunctionResponse.newBuilder().setName(name).setResponse(response))
+        .build();
+  }
+
+  /**
+   * Make a {@link com.google.cloud.vertexai.api.Part} from the result output of {@link
+   * com.google.cloud.vertexai.api.FunctionCall}.
+   *
+   * @param name a string represents the name of the {@link
+   *     com.google.cloud.vertexai.api.FunctionDeclaration}
+   * @param response a map containing the output from the function call, supported output type:
+   *     String, Double, Boolean, null
+   */
+  public static Part fromFunctionResponse(String name, Map<String, Object> response) {
+    Struct.Builder structBuilder = Struct.newBuilder();
+    response.forEach(
+        (key, value) -> {
+          if (value instanceof String) {
+            String stringValue = (String) value;
+            structBuilder.putFields(key, Value.newBuilder().setStringValue(stringValue).build());
+          } else if (value instanceof Double) {
+            Double doubleValue = (Double) value;
+            structBuilder.putFields(key, Value.newBuilder().setNumberValue(doubleValue).build());
+          } else if (value instanceof Boolean) {
+            Boolean boolValue = (Boolean) value;
+            structBuilder.putFields(key, Value.newBuilder().setBoolValue(boolValue).build());
+          } else if (value == null) {
+            structBuilder.putFields(
+                key, Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build());
+          } else {
+            throw new IllegalArgumentException(
+                "The value in the map can only be one of the following format: "
+                    + "String, Double, Boolean, null.");
+          }
+        });
+
+    return Part.newBuilder()
+        .setFunctionResponse(FunctionResponse.newBuilder().setName(name).setResponse(structBuilder))
+        .build();
   }
 }
