@@ -4,11 +4,11 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-# The @googleapis/api-bigtable is the default owner for changes in this repo
-*                       @googleapis/yoshi-java @googleapis/api-bigtable
+# The @googleapis/api-bigtable @googleapis/api-bigtable-partners is the default owner for changes in this repo
+*                       @googleapis/yoshi-java @googleapis/api-bigtable @googleapis/api-bigtable-partners
 
 # for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
-**/*.java               @googleapis/api-bigtable
+**/*.java               @googleapis/api-bigtable @googleapis/api-bigtable-partners
 
 
 # The java-samples-reviewers team is the default owner for samples changes
