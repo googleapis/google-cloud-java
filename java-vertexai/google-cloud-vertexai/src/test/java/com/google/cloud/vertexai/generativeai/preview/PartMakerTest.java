@@ -17,11 +17,16 @@
 package com.google.cloud.vertexai.generativeai.preview;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.vertexai.api.Part;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Struct;
+import com.google.protobuf.Value;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -71,5 +76,57 @@ public final class PartMakerTest {
 
     assertThat(part.getFileData().getMimeType()).isEqualTo("image/png");
     assertThat(part.getFileData().getFileUri()).isEqualTo(fileUri.toString());
+  }
+
+  @Test
+  public void testFromFunctionResponseWithStruct() {
+    String functionName = "getCurrentWeather";
+    Struct functionResponse =
+        Struct.newBuilder()
+            .putFields("currentWeather", Value.newBuilder().setStringValue("Super nice!").build())
+            .putFields("currentTemperature", Value.newBuilder().setNumberValue(85.0).build())
+            .putFields("isRaining", Value.newBuilder().setBoolValue(false).build())
+            .build();
+
+    Part part = PartMaker.fromFunctionResponse(functionName, functionResponse);
+
+    assertThat(part.getFunctionResponse().getName()).isEqualTo("getCurrentWeather");
+    assertThat(part.getFunctionResponse().getResponse()).isEqualTo(functionResponse);
+  }
+
+  @Test
+  public void testFromFunctionResponseWithMap() {
+    String functionName = "getCurrentWeather";
+    Map<String, Object> functionResponse = new HashMap<>();
+    functionResponse.put("currentWeather", "Super nice!");
+    functionResponse.put("currentTemperature", 85.0);
+    functionResponse.put("isRaining", false);
+    functionResponse.put("other", null);
+
+    Part part = PartMaker.fromFunctionResponse(functionName, functionResponse);
+
+    assertThat(part.getFunctionResponse().getName()).isEqualTo("getCurrentWeather");
+
+    Map<String, Value> fieldsMap = part.getFunctionResponse().getResponse().getFieldsMap();
+    assertThat(fieldsMap.get("currentWeather").getStringValue()).isEqualTo("Super nice!");
+    assertThat(fieldsMap.get("currentTemperature").getNumberValue()).isEqualTo(85.0);
+    assertThat(fieldsMap.get("isRaining").getBoolValue()).isEqualTo(false);
+    assertThat(fieldsMap.get("other").hasNullValue()).isEqualTo(true);
+  }
+
+  @Test
+  public void testFromFunctionResponseWithInvalidMap() {
+    String functionName = "getCurrentWeather";
+    Map<String, Object> invalidResponse = new HashMap<>();
+    invalidResponse.put("currentWeather", new byte[] {1, 2, 3});
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> PartMaker.fromFunctionResponse(functionName, invalidResponse));
+    assertThat(thrown)
+        .hasMessageThat()
+        .isEqualTo(
+            "The value in the map can only be one of the following format: "
+                + "String, Double, Boolean, null.");
   }
 }
