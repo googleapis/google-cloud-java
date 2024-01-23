@@ -116,6 +116,36 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.edgenetwork.v1.SubnetStatus subnet_status = 1;</code>
      */
     com.google.cloud.edgenetwork.v1.SubnetStatusOrBuilder getSubnetStatusOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The MACsec status of internal links.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for macsecStatusInternalLinks.
+     */
+    int getMacsecStatusInternalLinksValue();
+    /**
+     *
+     *
+     * <pre>
+     * The MACsec status of internal links.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+     * </code>
+     *
+     * @return The macsecStatusInternalLinks.
+     */
+    com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+        getMacsecStatusInternalLinks();
   }
   /**
    *
@@ -139,6 +169,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
 
     private NetworkStatus() {
       subnetStatus_ = java.util.Collections.emptyList();
+      macsecStatusInternalLinks_ = 0;
     }
 
     @java.lang.Override
@@ -160,6 +191,166 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           .ensureFieldAccessorsInitialized(
               com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.class,
               com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes the status of MACsec sessions for the links of a zone.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus}
+     */
+    public enum MacsecStatus implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * MACsec status not specified, likely due to missing metrics.
+       * </pre>
+       *
+       * <code>MACSEC_STATUS_UNSPECIFIED = 0;</code>
+       */
+      MACSEC_STATUS_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * All relevant links have at least one MACsec session up.
+       * </pre>
+       *
+       * <code>SECURE = 1;</code>
+       */
+      SECURE(1),
+      /**
+       *
+       *
+       * <pre>
+       * At least one relevant link does not have any MACsec sessions up.
+       * </pre>
+       *
+       * <code>UNSECURE = 2;</code>
+       */
+      UNSECURE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * MACsec status not specified, likely due to missing metrics.
+       * </pre>
+       *
+       * <code>MACSEC_STATUS_UNSPECIFIED = 0;</code>
+       */
+      public static final int MACSEC_STATUS_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * All relevant links have at least one MACsec session up.
+       * </pre>
+       *
+       * <code>SECURE = 1;</code>
+       */
+      public static final int SECURE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * At least one relevant link does not have any MACsec sessions up.
+       * </pre>
+       *
+       * <code>UNSECURE = 2;</code>
+       */
+      public static final int UNSECURE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MacsecStatus valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static MacsecStatus forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MACSEC_STATUS_UNSPECIFIED;
+          case 1:
+            return SECURE;
+          case 2:
+            return UNSECURE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MacsecStatus> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<MacsecStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<MacsecStatus>() {
+            public MacsecStatus findValueByNumber(int number) {
+              return MacsecStatus.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final MacsecStatus[] VALUES = values();
+
+      public static MacsecStatus valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private MacsecStatus(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus)
     }
 
     public static final int SUBNET_STATUS_FIELD_NUMBER = 1;
@@ -234,6 +425,50 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       return subnetStatus_.get(index);
     }
 
+    public static final int MACSEC_STATUS_INTERNAL_LINKS_FIELD_NUMBER = 2;
+    private int macsecStatusInternalLinks_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The MACsec status of internal links.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for macsecStatusInternalLinks.
+     */
+    @java.lang.Override
+    public int getMacsecStatusInternalLinksValue() {
+      return macsecStatusInternalLinks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MACsec status of internal links.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+     * </code>
+     *
+     * @return The macsecStatusInternalLinks.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+        getMacsecStatusInternalLinks() {
+      com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus result =
+          com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+              .forNumber(macsecStatusInternalLinks_);
+      return result == null
+          ? com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+              .UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -251,6 +486,12 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       for (int i = 0; i < subnetStatus_.size(); i++) {
         output.writeMessage(1, subnetStatus_.get(i));
       }
+      if (macsecStatusInternalLinks_
+          != com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+              .MACSEC_STATUS_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, macsecStatusInternalLinks_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -262,6 +503,13 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       size = 0;
       for (int i = 0; i < subnetStatus_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, subnetStatus_.get(i));
+      }
+      if (macsecStatusInternalLinks_
+          != com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+              .MACSEC_STATUS_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(2, macsecStatusInternalLinks_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -280,6 +528,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           (com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus) obj;
 
       if (!getSubnetStatusList().equals(other.getSubnetStatusList())) return false;
+      if (macsecStatusInternalLinks_ != other.macsecStatusInternalLinks_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -295,6 +544,8 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         hash = (37 * hash) + SUBNET_STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getSubnetStatusList().hashCode();
       }
+      hash = (37 * hash) + MACSEC_STATUS_INTERNAL_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + macsecStatusInternalLinks_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -448,6 +699,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           subnetStatusBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        macsecStatusInternalLinks_ = 0;
         return this;
       }
 
@@ -502,6 +754,9 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       private void buildPartial0(
           com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.macsecStatusInternalLinks_ = macsecStatusInternalLinks_;
+        }
       }
 
       @java.lang.Override
@@ -583,6 +838,9 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
             }
           }
         }
+        if (other.macsecStatusInternalLinks_ != 0) {
+          setMacsecStatusInternalLinksValue(other.getMacsecStatusInternalLinksValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -622,6 +880,12 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
                   }
                   break;
                 } // case 10
+              case 16:
+                {
+                  macsecStatusInternalLinks_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -998,6 +1262,113 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           subnetStatus_ = null;
         }
         return subnetStatusBuilder_;
+      }
+
+      private int macsecStatusInternalLinks_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The MACsec status of internal links.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for macsecStatusInternalLinks.
+       */
+      @java.lang.Override
+      public int getMacsecStatusInternalLinksValue() {
+        return macsecStatusInternalLinks_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MACsec status of internal links.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for macsecStatusInternalLinks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMacsecStatusInternalLinksValue(int value) {
+        macsecStatusInternalLinks_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MACsec status of internal links.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+       * </code>
+       *
+       * @return The macsecStatusInternalLinks.
+       */
+      @java.lang.Override
+      public com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+          getMacsecStatusInternalLinks() {
+        com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus result =
+            com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+                .forNumber(macsecStatusInternalLinks_);
+        return result == null
+            ? com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MACsec status of internal links.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+       * </code>
+       *
+       * @param value The macsecStatusInternalLinks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMacsecStatusInternalLinks(
+          com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        macsecStatusInternalLinks_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MACsec status of internal links.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus macsec_status_internal_links = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMacsecStatusInternalLinks() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        macsecStatusInternalLinks_ = 0;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
