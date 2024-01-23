@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ public interface LogsPolicyOrBuilder
    *
    * <pre>
    * Optional. Additional settings for Cloud Logging. It will only take effect
-   * when the destination of LogsPolicy is set to CLOUD_LOGGING.
+   * when the destination of `LogsPolicy` is set to `CLOUD_LOGGING`.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public interface LogsPolicyOrBuilder
    *
    * <pre>
    * Optional. Additional settings for Cloud Logging. It will only take effect
-   * when the destination of LogsPolicy is set to CLOUD_LOGGING.
+   * when the destination of `LogsPolicy` is set to `CLOUD_LOGGING`.
    * </pre>
    *
    * <code>
@@ -112,7 +112,7 @@ public interface LogsPolicyOrBuilder
    *
    * <pre>
    * Optional. Additional settings for Cloud Logging. It will only take effect
-   * when the destination of LogsPolicy is set to CLOUD_LOGGING.
+   * when the destination of `LogsPolicy` is set to `CLOUD_LOGGING`.
    * </pre>
    *
    * <code>

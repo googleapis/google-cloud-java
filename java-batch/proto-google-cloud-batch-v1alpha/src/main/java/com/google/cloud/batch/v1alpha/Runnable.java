@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,13 +384,23 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to true, container will run with Image streaming.
-     * The container runtime will be changed to containerd
-     * instead of docker. Currently, only imageUri, commands, entrypoint
-     * and volumes are supported and any other fields will be ignored.
-     * Please refer
-     * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
-     * for the feature requirements and limitations.
+     * Optional. If set to true, this container runnable uses Image streaming.
+     *
+     * Use Image streaming to allow the runnable to initialize without
+     * waiting for the entire container image to download, which can
+     * significantly reduce startup time for large container images.
+     *
+     * When `enableImageStreaming` is set to true, the container
+     * runtime is [containerd](https://containerd.io/) instead of Docker.
+     * Additionally, this container runnable only supports the following
+     * `container` subfields: `imageUri`,
+     * `commands[]`, `entrypoint`, and
+     * `volumes[]`; any other `container` subfields are ignored.
+     *
+     * For more information about the requirements and limitations for using
+     * Image streaming with Batch, see the [`image-streaming`
+     * sample on
+     * GitHub](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming).
      * </pre>
      *
      * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -917,13 +927,23 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to true, container will run with Image streaming.
-     * The container runtime will be changed to containerd
-     * instead of docker. Currently, only imageUri, commands, entrypoint
-     * and volumes are supported and any other fields will be ignored.
-     * Please refer
-     * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
-     * for the feature requirements and limitations.
+     * Optional. If set to true, this container runnable uses Image streaming.
+     *
+     * Use Image streaming to allow the runnable to initialize without
+     * waiting for the entire container image to download, which can
+     * significantly reduce startup time for large container images.
+     *
+     * When `enableImageStreaming` is set to true, the container
+     * runtime is [containerd](https://containerd.io/) instead of Docker.
+     * Additionally, this container runnable only supports the following
+     * `container` subfields: `imageUri`,
+     * `commands[]`, `entrypoint`, and
+     * `volumes[]`; any other `container` subfields are ignored.
+     *
+     * For more information about the requirements and limitations for using
+     * Image streaming with Batch, see the [`image-streaming`
+     * sample on
+     * GitHub](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming).
      * </pre>
      *
      * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2575,13 +2595,23 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If set to true, container will run with Image streaming.
-       * The container runtime will be changed to containerd
-       * instead of docker. Currently, only imageUri, commands, entrypoint
-       * and volumes are supported and any other fields will be ignored.
-       * Please refer
-       * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
-       * for the feature requirements and limitations.
+       * Optional. If set to true, this container runnable uses Image streaming.
+       *
+       * Use Image streaming to allow the runnable to initialize without
+       * waiting for the entire container image to download, which can
+       * significantly reduce startup time for large container images.
+       *
+       * When `enableImageStreaming` is set to true, the container
+       * runtime is [containerd](https://containerd.io/) instead of Docker.
+       * Additionally, this container runnable only supports the following
+       * `container` subfields: `imageUri`,
+       * `commands[]`, `entrypoint`, and
+       * `volumes[]`; any other `container` subfields are ignored.
+       *
+       * For more information about the requirements and limitations for using
+       * Image streaming with Batch, see the [`image-streaming`
+       * sample on
+       * GitHub](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming).
        * </pre>
        *
        * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2596,13 +2626,23 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If set to true, container will run with Image streaming.
-       * The container runtime will be changed to containerd
-       * instead of docker. Currently, only imageUri, commands, entrypoint
-       * and volumes are supported and any other fields will be ignored.
-       * Please refer
-       * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
-       * for the feature requirements and limitations.
+       * Optional. If set to true, this container runnable uses Image streaming.
+       *
+       * Use Image streaming to allow the runnable to initialize without
+       * waiting for the entire container image to download, which can
+       * significantly reduce startup time for large container images.
+       *
+       * When `enableImageStreaming` is set to true, the container
+       * runtime is [containerd](https://containerd.io/) instead of Docker.
+       * Additionally, this container runnable only supports the following
+       * `container` subfields: `imageUri`,
+       * `commands[]`, `entrypoint`, and
+       * `volumes[]`; any other `container` subfields are ignored.
+       *
+       * For more information about the requirements and limitations for using
+       * Image streaming with Batch, see the [`image-streaming`
+       * sample on
+       * GitHub](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming).
        * </pre>
        *
        * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2621,13 +2661,23 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If set to true, container will run with Image streaming.
-       * The container runtime will be changed to containerd
-       * instead of docker. Currently, only imageUri, commands, entrypoint
-       * and volumes are supported and any other fields will be ignored.
-       * Please refer
-       * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
-       * for the feature requirements and limitations.
+       * Optional. If set to true, this container runnable uses Image streaming.
+       *
+       * Use Image streaming to allow the runnable to initialize without
+       * waiting for the entire container image to download, which can
+       * significantly reduce startup time for large container images.
+       *
+       * When `enableImageStreaming` is set to true, the container
+       * runtime is [containerd](https://containerd.io/) instead of Docker.
+       * Additionally, this container runnable only supports the following
+       * `container` subfields: `imageUri`,
+       * `commands[]`, `entrypoint`, and
+       * `volumes[]`; any other `container` subfields are ignored.
+       *
+       * For more information about the requirements and limitations for using
+       * Image streaming with Batch, see the [`image-streaming`
+       * sample on
+       * GitHub](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming).
        * </pre>
        *
        * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
