@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0 (2024-01-23)
+
+### Features
+
+* added Terraform Plan ([#10223](https://github.com/googleapis/google-cloud-java/issues/10223)) ([bd6f6bb](https://github.com/googleapis/google-cloud-java/commit/bd6f6bb577a0480e681b61a7e0872be42a78ad36))
+
+
+
 ## 0.10.0 (2024-01-10)
 
 * No change

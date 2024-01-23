@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2024-01-23)
+
+### Features
+
+* remove redundant proto dependency from reports API assembly bazel rule ([#10276](https://github.com/googleapis/google-cloud-java/issues/10276)) ([851a09c](https://github.com/googleapis/google-cloud-java/commit/851a09c291780230a3c4b9a7eb8e3cbb6b674e77))
+
+
+
 ## 0.1.0 (2024-01-10)
 
 ### Features

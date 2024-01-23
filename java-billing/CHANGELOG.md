@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.34.0 (2024-01-23)
+
+### Features
+
+* update comments ([#10228](https://github.com/googleapis/google-cloud-java/issues/10228)) ([d20d370](https://github.com/googleapis/google-cloud-java/commit/d20d37071a4c2d345dd400444c616b06fe420a90))
+
+
+
 ## 2.33.0 (2024-01-10)
 
 ### Features

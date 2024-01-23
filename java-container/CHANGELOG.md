@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.37.0 (2024-01-23)
+
+### Features
+
+* add fields desired_in_transit_encryption_config and in_transit_encryption_config ([#10260](https://github.com/googleapis/google-cloud-java/issues/10260)) ([9785f8c](https://github.com/googleapis/google-cloud-java/commit/9785f8cfd43db0a8968f086a1461242da9d16cb5))
+
+
+
 ## 2.36.0 (2024-01-10)
 
 ### Features
