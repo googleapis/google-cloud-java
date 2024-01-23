@@ -56,68 +56,69 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListChildAccounts</td>
+ *      <td><p> ListChildAccounts</td>
  *      <td><p> Lists all the accounts under the specified CSS account ID, and optionally filters by label ID and account name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listChildAccounts(ListChildAccountsRequest request)
+ *           <li><p> listChildAccounts(ListChildAccountsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listChildAccounts(AccountName parent)
- *           <li>listChildAccounts(String parent)
+ *           <li><p> listChildAccounts(AccountName parent)
+ *           <li><p> listChildAccounts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listChildAccountsPagedCallable()
- *           <li>listChildAccountsCallable()
+ *           <li><p> listChildAccountsPagedCallable()
+ *           <li><p> listChildAccountsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAccount</td>
+ *      <td><p> GetAccount</td>
  *      <td><p> Retrieves a single CSS/MC account by ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAccount(GetAccountRequest request)
+ *           <li><p> getAccount(GetAccountRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAccount(AccountName name)
- *           <li>getAccount(String name)
+ *           <li><p> getAccount(AccountName name)
+ *           <li><p> getAccount(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAccountCallable()
+ *           <li><p> getAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateLabels</td>
+ *      <td><p> UpdateLabels</td>
  *      <td><p> Updates labels assigned to CSS/MC accounts by a CSS domain.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateLabels(UpdateAccountLabelsRequest request)
+ *           <li><p> updateLabels(UpdateAccountLabelsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateLabels(AccountName name)
- *           <li>updateLabels(String name)
+ *           <li><p> updateLabels(AccountName name)
+ *           <li><p> updateLabels(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateLabelsCallable()
+ *           <li><p> updateLabelsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

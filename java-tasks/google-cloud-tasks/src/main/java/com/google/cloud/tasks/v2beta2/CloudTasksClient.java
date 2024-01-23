@@ -71,73 +71,75 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListQueues</td>
+ *      <td><p> ListQueues</td>
  *      <td><p> Lists queues.
  * <p>  Queues are returned in lexicographical order.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listQueues(ListQueuesRequest request)
+ *           <li><p> listQueues(ListQueuesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listQueues(LocationName parent)
- *           <li>listQueues(String parent)
+ *           <li><p> listQueues(LocationName parent)
+ *           <li><p> listQueues(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listQueuesPagedCallable()
- *           <li>listQueuesCallable()
+ *           <li><p> listQueuesPagedCallable()
+ *           <li><p> listQueuesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetQueue</td>
+ *      <td><p> GetQueue</td>
  *      <td><p> Gets a queue.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getQueue(GetQueueRequest request)
+ *           <li><p> getQueue(GetQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getQueue(QueueName name)
- *           <li>getQueue(String name)
+ *           <li><p> getQueue(QueueName name)
+ *           <li><p> getQueue(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getQueueCallable()
+ *           <li><p> getQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateQueue</td>
+ *      <td><p> CreateQueue</td>
  *      <td><p> Creates a queue.
  * <p>  Queues created with this method allow tasks to live for a maximum of 31 days. After a task is 31 days old, the task will be deleted regardless of whether it was dispatched or not.
  * <p>  WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createQueue(CreateQueueRequest request)
+ *           <li><p> createQueue(CreateQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createQueue(LocationName parent, Queue queue)
- *           <li>createQueue(String parent, Queue queue)
+ *           <li><p> createQueue(LocationName parent, Queue queue)
+ *           <li><p> createQueue(String parent, Queue queue)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createQueueCallable()
+ *           <li><p> createQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateQueue</td>
+ *      <td><p> UpdateQueue</td>
  *      <td><p> Updates a queue.
  * <p>  This method creates the queue if it does not exist and updates the queue if it does exist.
  * <p>  Queues created with this method allow tasks to live for a maximum of 31 days. After a task is 31 days old, the task will be deleted regardless of whether it was dispatched or not.
@@ -145,20 +147,20 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateQueue(UpdateQueueRequest request)
+ *           <li><p> updateQueue(UpdateQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateQueue(Queue queue, FieldMask updateMask)
+ *           <li><p> updateQueue(Queue queue, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateQueueCallable()
+ *           <li><p> updateQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteQueue</td>
+ *      <td><p> DeleteQueue</td>
  *      <td><p> Deletes a queue.
  * <p>  This command will delete the queue even if it has tasks in it.
  * <p>  Note: If you delete a queue, a queue with the same name can't be created for 7 days.
@@ -166,98 +168,98 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteQueue(DeleteQueueRequest request)
+ *           <li><p> deleteQueue(DeleteQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteQueue(QueueName name)
- *           <li>deleteQueue(String name)
+ *           <li><p> deleteQueue(QueueName name)
+ *           <li><p> deleteQueue(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteQueueCallable()
+ *           <li><p> deleteQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PurgeQueue</td>
+ *      <td><p> PurgeQueue</td>
  *      <td><p> Purges a queue by deleting all of its tasks.
  * <p>  All tasks created before this method is called are permanently deleted.
  * <p>  Purge operations can take up to one minute to take effect. Tasks might be dispatched before the purge takes effect. A purge is irreversible.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>purgeQueue(PurgeQueueRequest request)
+ *           <li><p> purgeQueue(PurgeQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>purgeQueue(QueueName name)
- *           <li>purgeQueue(String name)
+ *           <li><p> purgeQueue(QueueName name)
+ *           <li><p> purgeQueue(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>purgeQueueCallable()
+ *           <li><p> purgeQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseQueue</td>
+ *      <td><p> PauseQueue</td>
  *      <td><p> Pauses the queue.
  * <p>  If a queue is paused then the system will stop dispatching tasks until the queue is resumed via [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue]. Tasks can still be added when the queue is paused. A queue is paused if its [state][google.cloud.tasks.v2beta2.Queue.state] is [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseQueue(PauseQueueRequest request)
+ *           <li><p> pauseQueue(PauseQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>pauseQueue(QueueName name)
- *           <li>pauseQueue(String name)
+ *           <li><p> pauseQueue(QueueName name)
+ *           <li><p> pauseQueue(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseQueueCallable()
+ *           <li><p> pauseQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeQueue</td>
+ *      <td><p> ResumeQueue</td>
  *      <td><p> Resume a queue.
  * <p>  This method resumes a queue after it has been [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED] or [DISABLED][google.cloud.tasks.v2beta2.Queue.State.DISABLED]. The state of a queue is stored in the queue's [state][google.cloud.tasks.v2beta2.Queue.state]; after calling this method it will be set to [RUNNING][google.cloud.tasks.v2beta2.Queue.State.RUNNING].
  * <p>  WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeQueue(ResumeQueueRequest request)
+ *           <li><p> resumeQueue(ResumeQueueRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>resumeQueue(QueueName name)
- *           <li>resumeQueue(String name)
+ *           <li><p> resumeQueue(QueueName name)
+ *           <li><p> resumeQueue(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeQueueCallable()
+ *           <li><p> resumeQueueCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UploadQueueYaml</td>
+ *      <td><p> UploadQueueYaml</td>
  *      <td><p> Update queue list by uploading a queue.yaml file.
  * <p>  The queue.yaml file is supplied in the request body as a YAML encoded string. This method was added to support gcloud clients versions before 322.0.0. New clients should use CreateQueue instead of this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>uploadQueueYaml(UploadQueueYamlRequest request)
+ *           <li><p> uploadQueueYaml(UploadQueueYamlRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>uploadQueueYamlCallable()
+ *           <li><p> uploadQueueYamlCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Returns an empty policy if the resource exists and does not have a policy set.
  * <p>  Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission on the specified resource parent:
  * <ul>
@@ -266,21 +268,21 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getIamPolicy(ResourceName resource)
- *           <li>getIamPolicy(String resource)
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Replaces any existing policy.
  * <p>  Note: The Cloud Console does not check queue-level IAM permissions yet. Project-level permissions are required to use the Cloud Console.
  * <p>  Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission on the specified resource parent:
@@ -290,82 +292,82 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>setIamPolicy(ResourceName resource, Policy policy)
- *           <li>setIamPolicy(String resource, Policy policy)
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on a [Queue][google.cloud.tasks.v2beta2.Queue]. If the resource does not exist, this will return an empty set of permissions, not a [NOT_FOUND][google.rpc.Code.NOT_FOUND] error.
  * <p>  Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>testIamPermissions(ResourceName resource, List<String> permissions)
- *           <li>testIamPermissions(String resource, List<String> permissions)
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTasks</td>
+ *      <td><p> ListTasks</td>
  *      <td><p> Lists the tasks in a queue.
  * <p>  By default, only the [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC] view is retrieved due to performance considerations; [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset of information which is returned.
  * <p>  The tasks may be returned in any order. The ordering may change at any time.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTasks(ListTasksRequest request)
+ *           <li><p> listTasks(ListTasksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTasks(QueueName parent)
- *           <li>listTasks(String parent)
+ *           <li><p> listTasks(QueueName parent)
+ *           <li><p> listTasks(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTasksPagedCallable()
- *           <li>listTasksCallable()
+ *           <li><p> listTasksPagedCallable()
+ *           <li><p> listTasksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTask</td>
+ *      <td><p> GetTask</td>
  *      <td><p> Gets a task.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTask(GetTaskRequest request)
+ *           <li><p> getTask(GetTaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTask(TaskName name)
- *           <li>getTask(String name)
+ *           <li><p> getTask(TaskName name)
+ *           <li><p> getTask(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTaskCallable()
+ *           <li><p> getTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTask</td>
+ *      <td><p> CreateTask</td>
  *      <td><p> Creates a task and adds it to a queue.
  * <p>  Tasks cannot be updated after creation; there is no UpdateTask command.
  * <ul>
@@ -375,41 +377,41 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTask(CreateTaskRequest request)
+ *           <li><p> createTask(CreateTaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createTask(QueueName parent, Task task)
- *           <li>createTask(String parent, Task task)
+ *           <li><p> createTask(QueueName parent, Task task)
+ *           <li><p> createTask(String parent, Task task)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTaskCallable()
+ *           <li><p> createTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTask</td>
+ *      <td><p> DeleteTask</td>
  *      <td><p> Deletes a task.
  * <p>  A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has completed successfully or permanently failed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTask(DeleteTaskRequest request)
+ *           <li><p> deleteTask(DeleteTaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteTask(TaskName name)
- *           <li>deleteTask(String name)
+ *           <li><p> deleteTask(TaskName name)
+ *           <li><p> deleteTask(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTaskCallable()
+ *           <li><p> deleteTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LeaseTasks</td>
+ *      <td><p> LeaseTasks</td>
  *      <td><p> Leases tasks from a pull queue for [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
  * <p>  This method is invoked by the worker to obtain a lease. The worker must acknowledge the task via [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] after they have performed the work associated with the task.
  * <p>  The [payload][google.cloud.tasks.v2beta2.PullMessage.payload] is intended to store data that the worker needs to perform the work associated with the task. To return the payloads in the [response][google.cloud.tasks.v2beta2.LeaseTasksResponse], set [response_view][google.cloud.tasks.v2beta2.LeaseTasksRequest.response_view] to [FULL][google.cloud.tasks.v2beta2.Task.View.FULL].
@@ -417,82 +419,82 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>leaseTasks(LeaseTasksRequest request)
+ *           <li><p> leaseTasks(LeaseTasksRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>leaseTasks(QueueName parent, Duration leaseDuration)
- *           <li>leaseTasks(String parent, Duration leaseDuration)
+ *           <li><p> leaseTasks(QueueName parent, Duration leaseDuration)
+ *           <li><p> leaseTasks(String parent, Duration leaseDuration)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>leaseTasksCallable()
+ *           <li><p> leaseTasksCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>AcknowledgeTask</td>
+ *      <td><p> AcknowledgeTask</td>
  *      <td><p> Acknowledges a pull task.
  * <p>  The worker, that is, the entity that [leased][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] this task must call this method to indicate that the work associated with the task has finished.
  * <p>  The worker must acknowledge a task within the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration] or the lease will expire and the task will become available to be leased again. After the task is acknowledged, it will not be returned by a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks], [GetTask][google.cloud.tasks.v2beta2.CloudTasks.GetTask], or [ListTasks][google.cloud.tasks.v2beta2.CloudTasks.ListTasks].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>acknowledgeTask(AcknowledgeTaskRequest request)
+ *           <li><p> acknowledgeTask(AcknowledgeTaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>acknowledgeTask(TaskName name, Timestamp scheduleTime)
- *           <li>acknowledgeTask(String name, Timestamp scheduleTime)
+ *           <li><p> acknowledgeTask(TaskName name, Timestamp scheduleTime)
+ *           <li><p> acknowledgeTask(String name, Timestamp scheduleTime)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>acknowledgeTaskCallable()
+ *           <li><p> acknowledgeTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RenewLease</td>
+ *      <td><p> RenewLease</td>
  *      <td><p> Renew the current lease of a pull task.
  * <p>  The worker can use this method to extend the lease by a new duration, starting from now. The new task lease will be returned in the task's [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>renewLease(RenewLeaseRequest request)
+ *           <li><p> renewLease(RenewLeaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>renewLease(TaskName name, Timestamp scheduleTime, Duration leaseDuration)
- *           <li>renewLease(String name, Timestamp scheduleTime, Duration leaseDuration)
+ *           <li><p> renewLease(TaskName name, Timestamp scheduleTime, Duration leaseDuration)
+ *           <li><p> renewLease(String name, Timestamp scheduleTime, Duration leaseDuration)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>renewLeaseCallable()
+ *           <li><p> renewLeaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CancelLease</td>
+ *      <td><p> CancelLease</td>
  *      <td><p> Cancel a pull task's lease.
  * <p>  The worker can use this method to cancel a task's lease by setting its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] to now. This will make the task available to be leased to the next caller of [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>cancelLease(CancelLeaseRequest request)
+ *           <li><p> cancelLease(CancelLeaseRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>cancelLease(TaskName name, Timestamp scheduleTime)
- *           <li>cancelLease(String name, Timestamp scheduleTime)
+ *           <li><p> cancelLease(TaskName name, Timestamp scheduleTime)
+ *           <li><p> cancelLease(String name, Timestamp scheduleTime)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>cancelLeaseCallable()
+ *           <li><p> cancelLeaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunTask</td>
+ *      <td><p> RunTask</td>
  *      <td><p> Forces a task to run now.
  * <p>  When this method is called, Cloud Tasks will dispatch the task, even if the task is already running, the queue has reached its [RateLimits][google.cloud.tasks.v2beta2.RateLimits] or is [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED].
  * <p>  This command is meant to be used for manual debugging. For example, [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask] can be used to retry a failed task after a fix has been made or to manually force a task to be dispatched now.
@@ -503,48 +505,47 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runTask(RunTaskRequest request)
+ *           <li><p> runTask(RunTaskRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>runTask(TaskName name)
- *           <li>runTask(String name)
+ *           <li><p> runTask(TaskName name)
+ *           <li><p> runTask(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runTaskCallable()
+ *           <li><p> runTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

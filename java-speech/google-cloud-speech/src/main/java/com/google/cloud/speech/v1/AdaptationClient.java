@@ -59,200 +59,201 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreatePhraseSet</td>
+ *      <td><p> CreatePhraseSet</td>
  *      <td><p> Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPhraseSet(CreatePhraseSetRequest request)
+ *           <li><p> createPhraseSet(CreatePhraseSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createPhraseSet(LocationName parent, PhraseSet phraseSet, String phraseSetId)
- *           <li>createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId)
+ *           <li><p> createPhraseSet(LocationName parent, PhraseSet phraseSet, String phraseSetId)
+ *           <li><p> createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPhraseSetCallable()
+ *           <li><p> createPhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPhraseSet</td>
+ *      <td><p> GetPhraseSet</td>
  *      <td><p> Get a phrase set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPhraseSet(GetPhraseSetRequest request)
+ *           <li><p> getPhraseSet(GetPhraseSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPhraseSet(PhraseSetName name)
- *           <li>getPhraseSet(String name)
+ *           <li><p> getPhraseSet(PhraseSetName name)
+ *           <li><p> getPhraseSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPhraseSetCallable()
+ *           <li><p> getPhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPhraseSet</td>
+ *      <td><p> ListPhraseSet</td>
  *      <td><p> List phrase sets.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPhraseSet(ListPhraseSetRequest request)
+ *           <li><p> listPhraseSet(ListPhraseSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPhraseSet(LocationName parent)
- *           <li>listPhraseSet(String parent)
+ *           <li><p> listPhraseSet(LocationName parent)
+ *           <li><p> listPhraseSet(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPhraseSetPagedCallable()
- *           <li>listPhraseSetCallable()
+ *           <li><p> listPhraseSetPagedCallable()
+ *           <li><p> listPhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePhraseSet</td>
+ *      <td><p> UpdatePhraseSet</td>
  *      <td><p> Update a phrase set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePhraseSet(UpdatePhraseSetRequest request)
+ *           <li><p> updatePhraseSet(UpdatePhraseSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)
+ *           <li><p> updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePhraseSetCallable()
+ *           <li><p> updatePhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePhraseSet</td>
+ *      <td><p> DeletePhraseSet</td>
  *      <td><p> Delete a phrase set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePhraseSet(DeletePhraseSetRequest request)
+ *           <li><p> deletePhraseSet(DeletePhraseSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deletePhraseSet(PhraseSetName name)
- *           <li>deletePhraseSet(String name)
+ *           <li><p> deletePhraseSet(PhraseSetName name)
+ *           <li><p> deletePhraseSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePhraseSetCallable()
+ *           <li><p> deletePhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomClass</td>
+ *      <td><p> CreateCustomClass</td>
  *      <td><p> Create a custom class.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomClass(CreateCustomClassRequest request)
+ *           <li><p> createCustomClass(CreateCustomClassRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCustomClass(LocationName parent, CustomClass customClass, String customClassId)
- *           <li>createCustomClass(String parent, CustomClass customClass, String customClassId)
+ *           <li><p> createCustomClass(LocationName parent, CustomClass customClass, String customClassId)
+ *           <li><p> createCustomClass(String parent, CustomClass customClass, String customClassId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomClassCallable()
+ *           <li><p> createCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomClass</td>
+ *      <td><p> GetCustomClass</td>
  *      <td><p> Get a custom class.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomClass(GetCustomClassRequest request)
+ *           <li><p> getCustomClass(GetCustomClassRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomClass(CustomClassName name)
- *           <li>getCustomClass(String name)
+ *           <li><p> getCustomClass(CustomClassName name)
+ *           <li><p> getCustomClass(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomClassCallable()
+ *           <li><p> getCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCustomClasses</td>
+ *      <td><p> ListCustomClasses</td>
  *      <td><p> List custom classes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomClasses(ListCustomClassesRequest request)
+ *           <li><p> listCustomClasses(ListCustomClassesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCustomClasses(LocationName parent)
- *           <li>listCustomClasses(String parent)
+ *           <li><p> listCustomClasses(LocationName parent)
+ *           <li><p> listCustomClasses(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomClassesPagedCallable()
- *           <li>listCustomClassesCallable()
+ *           <li><p> listCustomClassesPagedCallable()
+ *           <li><p> listCustomClassesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomClass</td>
+ *      <td><p> UpdateCustomClass</td>
  *      <td><p> Update a custom class.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomClass(UpdateCustomClassRequest request)
+ *           <li><p> updateCustomClass(UpdateCustomClassRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCustomClass(CustomClass customClass, FieldMask updateMask)
+ *           <li><p> updateCustomClass(CustomClass customClass, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomClassCallable()
+ *           <li><p> updateCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCustomClass</td>
+ *      <td><p> DeleteCustomClass</td>
  *      <td><p> Delete a custom class.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCustomClass(DeleteCustomClassRequest request)
+ *           <li><p> deleteCustomClass(DeleteCustomClassRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCustomClass(CustomClassName name)
- *           <li>deleteCustomClass(String name)
+ *           <li><p> deleteCustomClass(CustomClassName name)
+ *           <li><p> deleteCustomClass(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCustomClassCallable()
+ *           <li><p> deleteCustomClassCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

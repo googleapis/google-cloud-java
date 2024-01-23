@@ -47,46 +47,47 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListVoices</td>
+ *      <td><p> ListVoices</td>
  *      <td><p> Returns a list of Voice supported for synthesis.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listVoices(ListVoicesRequest request)
+ *           <li><p> listVoices(ListVoicesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listVoices(String languageCode)
+ *           <li><p> listVoices(String languageCode)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listVoicesCallable()
+ *           <li><p> listVoicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SynthesizeSpeech</td>
+ *      <td><p> SynthesizeSpeech</td>
  *      <td><p> Synthesizes speech synchronously: receive results after all text input has been processed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>synthesizeSpeech(SynthesizeSpeechRequest request)
+ *           <li><p> synthesizeSpeech(SynthesizeSpeechRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>synthesizeSpeech(SynthesisInput input, VoiceSelectionParams voice, AudioConfig audioConfig)
+ *           <li><p> synthesizeSpeech(SynthesisInput input, VoiceSelectionParams voice, AudioConfig audioConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>synthesizeSpeechCallable()
+ *           <li><p> synthesizeSpeechCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

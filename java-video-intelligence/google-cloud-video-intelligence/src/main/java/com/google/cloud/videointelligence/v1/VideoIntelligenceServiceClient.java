@@ -57,29 +57,30 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>AnnotateVideo</td>
+ *      <td><p> AnnotateVideo</td>
  *      <td><p> Performs asynchronous video annotation. Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse` (results).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>annotateVideoAsync(AnnotateVideoRequest request)
+ *           <li><p> annotateVideoAsync(AnnotateVideoRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>annotateVideoAsync(String inputUri, List<Feature> features)
+ *           <li><p> annotateVideoAsync(String inputUri, List&lt;Feature&gt; features)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>annotateVideoOperationCallable()
- *           <li>annotateVideoCallable()
+ *           <li><p> annotateVideoOperationCallable()
+ *           <li><p> annotateVideoCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

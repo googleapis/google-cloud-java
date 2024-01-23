@@ -55,20 +55,21 @@ import javax.annotation.Generated;
  * automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>StreamingAnnotateVideo</td>
+ *      <td><p> StreamingAnnotateVideo</td>
  *      <td><p> Performs video annotation with bidirectional streaming: emitting results while sending video/audio bytes. This method is only available via the gRPC API (not REST).</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>streamingAnnotateVideoCallable()
+ *           <li><p> streamingAnnotateVideoCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

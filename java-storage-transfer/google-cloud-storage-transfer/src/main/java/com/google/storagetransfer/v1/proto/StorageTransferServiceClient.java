@@ -69,230 +69,231 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetGoogleServiceAccount</td>
+ *      <td><p> GetGoogleServiceAccount</td>
  *      <td><p> Returns the Google service account that is used by Storage Transfer Service to access buckets in the project where transfers run or in other projects. Each Google service account is associated with one Google Cloud project. Users should add this service account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is created and owned by Storage Transfer Service and can only be used by Storage Transfer Service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getGoogleServiceAccount(TransferProto.GetGoogleServiceAccountRequest request)
+ *           <li><p> getGoogleServiceAccount(TransferProto.GetGoogleServiceAccountRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getGoogleServiceAccountCallable()
+ *           <li><p> getGoogleServiceAccountCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateTransferJob</td>
+ *      <td><p> CreateTransferJob</td>
  *      <td><p> Creates a transfer job that runs periodically.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createTransferJob(TransferProto.CreateTransferJobRequest request)
+ *           <li><p> createTransferJob(TransferProto.CreateTransferJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createTransferJobCallable()
+ *           <li><p> createTransferJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateTransferJob</td>
+ *      <td><p> UpdateTransferJob</td>
  *      <td><p> Updates a transfer job. Updating a job's transfer spec does not affect transfer operations that are running already.
  * <p>  &#42;&#42;Note:&#42;&#42; The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified using this RPC (for example, to set a job's status to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED], [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateTransferJob(TransferProto.UpdateTransferJobRequest request)
+ *           <li><p> updateTransferJob(TransferProto.UpdateTransferJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateTransferJobCallable()
+ *           <li><p> updateTransferJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTransferJob</td>
+ *      <td><p> GetTransferJob</td>
  *      <td><p> Gets a transfer job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTransferJob(TransferProto.GetTransferJobRequest request)
+ *           <li><p> getTransferJob(TransferProto.GetTransferJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTransferJobCallable()
+ *           <li><p> getTransferJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTransferJobs</td>
+ *      <td><p> ListTransferJobs</td>
  *      <td><p> Lists transfer jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTransferJobs(TransferProto.ListTransferJobsRequest request)
+ *           <li><p> listTransferJobs(TransferProto.ListTransferJobsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTransferJobsPagedCallable()
- *           <li>listTransferJobsCallable()
+ *           <li><p> listTransferJobsPagedCallable()
+ *           <li><p> listTransferJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>PauseTransferOperation</td>
+ *      <td><p> PauseTransferOperation</td>
  *      <td><p> Pauses a transfer operation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>pauseTransferOperation(TransferProto.PauseTransferOperationRequest request)
+ *           <li><p> pauseTransferOperation(TransferProto.PauseTransferOperationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>pauseTransferOperationCallable()
+ *           <li><p> pauseTransferOperationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ResumeTransferOperation</td>
+ *      <td><p> ResumeTransferOperation</td>
  *      <td><p> Resumes a transfer operation that is paused.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>resumeTransferOperation(TransferProto.ResumeTransferOperationRequest request)
+ *           <li><p> resumeTransferOperation(TransferProto.ResumeTransferOperationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>resumeTransferOperationCallable()
+ *           <li><p> resumeTransferOperationCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RunTransferJob</td>
+ *      <td><p> RunTransferJob</td>
  *      <td><p> Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one active `TransferOperation`. If this method is called while a `TransferOperation` is active, an error is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>runTransferJobAsync(TransferProto.RunTransferJobRequest request)
+ *           <li><p> runTransferJobAsync(TransferProto.RunTransferJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>runTransferJobOperationCallable()
- *           <li>runTransferJobCallable()
+ *           <li><p> runTransferJobOperationCallable()
+ *           <li><p> runTransferJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteTransferJob</td>
+ *      <td><p> DeleteTransferJob</td>
  *      <td><p> Deletes a transfer job. Deleting a transfer job sets its status to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteTransferJob(TransferProto.DeleteTransferJobRequest request)
+ *           <li><p> deleteTransferJob(TransferProto.DeleteTransferJobRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteTransferJobCallable()
+ *           <li><p> deleteTransferJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAgentPool</td>
+ *      <td><p> CreateAgentPool</td>
  *      <td><p> Creates an agent pool resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAgentPool(TransferProto.CreateAgentPoolRequest request)
+ *           <li><p> createAgentPool(TransferProto.CreateAgentPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAgentPool(String projectId, TransferTypes.AgentPool agentPool, String agentPoolId)
+ *           <li><p> createAgentPool(String projectId, TransferTypes.AgentPool agentPool, String agentPoolId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAgentPoolCallable()
+ *           <li><p> createAgentPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAgentPool</td>
+ *      <td><p> UpdateAgentPool</td>
  *      <td><p> Updates an existing agent pool resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAgentPool(TransferProto.UpdateAgentPoolRequest request)
+ *           <li><p> updateAgentPool(TransferProto.UpdateAgentPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAgentPool(TransferTypes.AgentPool agentPool, FieldMask updateMask)
+ *           <li><p> updateAgentPool(TransferTypes.AgentPool agentPool, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAgentPoolCallable()
+ *           <li><p> updateAgentPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAgentPool</td>
+ *      <td><p> GetAgentPool</td>
  *      <td><p> Gets an agent pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAgentPool(TransferProto.GetAgentPoolRequest request)
+ *           <li><p> getAgentPool(TransferProto.GetAgentPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAgentPool(String name)
+ *           <li><p> getAgentPool(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAgentPoolCallable()
+ *           <li><p> getAgentPoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAgentPools</td>
+ *      <td><p> ListAgentPools</td>
  *      <td><p> Lists agent pools.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAgentPools(TransferProto.ListAgentPoolsRequest request)
+ *           <li><p> listAgentPools(TransferProto.ListAgentPoolsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAgentPools(String projectId)
+ *           <li><p> listAgentPools(String projectId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAgentPoolsPagedCallable()
- *           <li>listAgentPoolsCallable()
+ *           <li><p> listAgentPoolsPagedCallable()
+ *           <li><p> listAgentPoolsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAgentPool</td>
+ *      <td><p> DeleteAgentPool</td>
  *      <td><p> Deletes an agent pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAgentPool(TransferProto.DeleteAgentPoolRequest request)
+ *           <li><p> deleteAgentPool(TransferProto.DeleteAgentPoolRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAgentPool(String name)
+ *           <li><p> deleteAgentPool(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAgentPoolCallable()
+ *           <li><p> deleteAgentPoolCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -62,164 +62,165 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateJob</td>
+ *      <td><p> CreateJob</td>
  *      <td><p> Creates a job in the specified region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createJob(CreateJobRequest request)
+ *           <li><p> createJob(CreateJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createJob(LocationName parent, Job job)
- *           <li>createJob(String parent, Job job)
+ *           <li><p> createJob(LocationName parent, Job job)
+ *           <li><p> createJob(String parent, Job job)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createJobCallable()
+ *           <li><p> createJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListJobs</td>
+ *      <td><p> ListJobs</td>
  *      <td><p> Lists jobs in the specified region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobs(ListJobsRequest request)
+ *           <li><p> listJobs(ListJobsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listJobs(LocationName parent)
- *           <li>listJobs(String parent)
+ *           <li><p> listJobs(LocationName parent)
+ *           <li><p> listJobs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobsPagedCallable()
- *           <li>listJobsCallable()
+ *           <li><p> listJobsPagedCallable()
+ *           <li><p> listJobsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJob</td>
+ *      <td><p> GetJob</td>
  *      <td><p> Returns the job data.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJob(GetJobRequest request)
+ *           <li><p> getJob(GetJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getJob(JobName name)
- *           <li>getJob(String name)
+ *           <li><p> getJob(JobName name)
+ *           <li><p> getJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobCallable()
+ *           <li><p> getJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteJob</td>
+ *      <td><p> DeleteJob</td>
  *      <td><p> Deletes a job.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteJob(DeleteJobRequest request)
+ *           <li><p> deleteJob(DeleteJobRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteJob(JobName name)
- *           <li>deleteJob(String name)
+ *           <li><p> deleteJob(JobName name)
+ *           <li><p> deleteJob(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteJobCallable()
+ *           <li><p> deleteJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateJobTemplate</td>
+ *      <td><p> CreateJobTemplate</td>
  *      <td><p> Creates a job template in the specified region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createJobTemplate(CreateJobTemplateRequest request)
+ *           <li><p> createJobTemplate(CreateJobTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createJobTemplate(LocationName parent, JobTemplate jobTemplate, String jobTemplateId)
- *           <li>createJobTemplate(String parent, JobTemplate jobTemplate, String jobTemplateId)
+ *           <li><p> createJobTemplate(LocationName parent, JobTemplate jobTemplate, String jobTemplateId)
+ *           <li><p> createJobTemplate(String parent, JobTemplate jobTemplate, String jobTemplateId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createJobTemplateCallable()
+ *           <li><p> createJobTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListJobTemplates</td>
+ *      <td><p> ListJobTemplates</td>
  *      <td><p> Lists job templates in the specified region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listJobTemplates(ListJobTemplatesRequest request)
+ *           <li><p> listJobTemplates(ListJobTemplatesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listJobTemplates(LocationName parent)
- *           <li>listJobTemplates(String parent)
+ *           <li><p> listJobTemplates(LocationName parent)
+ *           <li><p> listJobTemplates(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listJobTemplatesPagedCallable()
- *           <li>listJobTemplatesCallable()
+ *           <li><p> listJobTemplatesPagedCallable()
+ *           <li><p> listJobTemplatesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetJobTemplate</td>
+ *      <td><p> GetJobTemplate</td>
  *      <td><p> Returns the job template data.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getJobTemplate(GetJobTemplateRequest request)
+ *           <li><p> getJobTemplate(GetJobTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getJobTemplate(JobTemplateName name)
- *           <li>getJobTemplate(String name)
+ *           <li><p> getJobTemplate(JobTemplateName name)
+ *           <li><p> getJobTemplate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getJobTemplateCallable()
+ *           <li><p> getJobTemplateCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteJobTemplate</td>
+ *      <td><p> DeleteJobTemplate</td>
  *      <td><p> Deletes a job template.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteJobTemplate(DeleteJobTemplateRequest request)
+ *           <li><p> deleteJobTemplate(DeleteJobTemplateRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteJobTemplate(JobTemplateName name)
- *           <li>deleteJobTemplate(String name)
+ *           <li><p> deleteJobTemplate(JobTemplateName name)
+ *           <li><p> deleteJobTemplate(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteJobTemplateCallable()
+ *           <li><p> deleteJobTemplateCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

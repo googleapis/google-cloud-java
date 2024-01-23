@@ -62,173 +62,174 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListReportConfigs</td>
+ *      <td><p> ListReportConfigs</td>
  *      <td><p> Lists ReportConfigs in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listReportConfigs(ListReportConfigsRequest request)
+ *           <li><p> listReportConfigs(ListReportConfigsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listReportConfigs(LocationName parent)
- *           <li>listReportConfigs(String parent)
+ *           <li><p> listReportConfigs(LocationName parent)
+ *           <li><p> listReportConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listReportConfigsPagedCallable()
- *           <li>listReportConfigsCallable()
+ *           <li><p> listReportConfigsPagedCallable()
+ *           <li><p> listReportConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetReportConfig</td>
+ *      <td><p> GetReportConfig</td>
  *      <td><p> Gets details of a single ReportConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getReportConfig(GetReportConfigRequest request)
+ *           <li><p> getReportConfig(GetReportConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getReportConfig(ReportConfigName name)
- *           <li>getReportConfig(String name)
+ *           <li><p> getReportConfig(ReportConfigName name)
+ *           <li><p> getReportConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getReportConfigCallable()
+ *           <li><p> getReportConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateReportConfig</td>
+ *      <td><p> CreateReportConfig</td>
  *      <td><p> Creates a new ReportConfig in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createReportConfig(CreateReportConfigRequest request)
+ *           <li><p> createReportConfig(CreateReportConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createReportConfig(LocationName parent, ReportConfig reportConfig)
- *           <li>createReportConfig(String parent, ReportConfig reportConfig)
+ *           <li><p> createReportConfig(LocationName parent, ReportConfig reportConfig)
+ *           <li><p> createReportConfig(String parent, ReportConfig reportConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createReportConfigCallable()
+ *           <li><p> createReportConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateReportConfig</td>
+ *      <td><p> UpdateReportConfig</td>
  *      <td><p> Updates the parameters of a single ReportConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateReportConfig(UpdateReportConfigRequest request)
+ *           <li><p> updateReportConfig(UpdateReportConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateReportConfig(ReportConfig reportConfig, FieldMask updateMask)
+ *           <li><p> updateReportConfig(ReportConfig reportConfig, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateReportConfigCallable()
+ *           <li><p> updateReportConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteReportConfig</td>
+ *      <td><p> DeleteReportConfig</td>
  *      <td><p> Deletes a single ReportConfig.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteReportConfig(DeleteReportConfigRequest request)
+ *           <li><p> deleteReportConfig(DeleteReportConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteReportConfig(ReportConfigName name)
- *           <li>deleteReportConfig(String name)
+ *           <li><p> deleteReportConfig(ReportConfigName name)
+ *           <li><p> deleteReportConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteReportConfigCallable()
+ *           <li><p> deleteReportConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListReportDetails</td>
+ *      <td><p> ListReportDetails</td>
  *      <td><p> Lists ReportDetails in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listReportDetails(ListReportDetailsRequest request)
+ *           <li><p> listReportDetails(ListReportDetailsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listReportDetails(ReportConfigName parent)
- *           <li>listReportDetails(String parent)
+ *           <li><p> listReportDetails(ReportConfigName parent)
+ *           <li><p> listReportDetails(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listReportDetailsPagedCallable()
- *           <li>listReportDetailsCallable()
+ *           <li><p> listReportDetailsPagedCallable()
+ *           <li><p> listReportDetailsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetReportDetail</td>
+ *      <td><p> GetReportDetail</td>
  *      <td><p> Gets details of a single ReportDetail.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getReportDetail(GetReportDetailRequest request)
+ *           <li><p> getReportDetail(GetReportDetailRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getReportDetail(ReportDetailName name)
- *           <li>getReportDetail(String name)
+ *           <li><p> getReportDetail(ReportDetailName name)
+ *           <li><p> getReportDetail(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getReportDetailCallable()
+ *           <li><p> getReportDetailCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

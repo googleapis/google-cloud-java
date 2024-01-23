@@ -54,24 +54,25 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CompleteQuery</td>
+ *      <td><p> CompleteQuery</td>
  *      <td><p> Completes the specified prefix with keyword suggestions. Intended for use by a job search auto-complete search box.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>completeQuery(CompleteQueryRequest request)
+ *           <li><p> completeQuery(CompleteQueryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>completeQueryCallable()
+ *           <li><p> completeQueryCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

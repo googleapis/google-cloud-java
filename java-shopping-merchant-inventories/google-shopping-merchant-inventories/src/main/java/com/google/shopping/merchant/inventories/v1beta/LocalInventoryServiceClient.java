@@ -63,65 +63,66 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListLocalInventories</td>
+ *      <td><p> ListLocalInventories</td>
  *      <td><p> Lists the `LocalInventory` resources for the given product in your merchant account. The response might contain fewer items than specified by `pageSize`. If `pageToken` was returned in previous request, it can be used to obtain additional results.
  * <p>  `LocalInventory` resources are listed per product for a given account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocalInventories(ListLocalInventoriesRequest request)
+ *           <li><p> listLocalInventories(ListLocalInventoriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listLocalInventories(String parent)
+ *           <li><p> listLocalInventories(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocalInventoriesPagedCallable()
- *           <li>listLocalInventoriesCallable()
+ *           <li><p> listLocalInventoriesPagedCallable()
+ *           <li><p> listLocalInventoriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InsertLocalInventory</td>
+ *      <td><p> InsertLocalInventory</td>
  *      <td><p> Inserts a `LocalInventory` resource to a product in your merchant account.
  * <p>  Replaces the full `LocalInventory` resource if an entry with the same [`storeCode`][google.shopping.merchant.inventories.v1beta.LocalInventory.store_code] already exists for the product.
  * <p>  It might take up to 30 minutes for the new or updated `LocalInventory` resource to appear in products.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertLocalInventory(InsertLocalInventoryRequest request)
+ *           <li><p> insertLocalInventory(InsertLocalInventoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertLocalInventoryCallable()
+ *           <li><p> insertLocalInventoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteLocalInventory</td>
+ *      <td><p> DeleteLocalInventory</td>
  *      <td><p> Deletes the specified `LocalInventory` from the given product in your merchant account. It might take a up to an hour for the `LocalInventory` to be deleted from the specific product. Once you have received a successful delete response, wait for that period before attempting a delete again.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteLocalInventory(DeleteLocalInventoryRequest request)
+ *           <li><p> deleteLocalInventory(DeleteLocalInventoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteLocalInventory(LocalInventoryName name)
- *           <li>deleteLocalInventory(String name)
+ *           <li><p> deleteLocalInventory(LocalInventoryName name)
+ *           <li><p> deleteLocalInventory(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteLocalInventoryCallable()
+ *           <li><p> deleteLocalInventoryCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -57,50 +57,51 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>GetCssProduct</td>
+ *      <td><p> GetCssProduct</td>
  *      <td><p> Retrieves the processed CSS Product from your CSS Center account. After inserting, updating, or deleting a product input, it may take several minutes before the updated final product can be retrieved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCssProduct(GetCssProductRequest request)
+ *           <li><p> getCssProduct(GetCssProductRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCssProduct(CssProductName name)
- *           <li>getCssProduct(String name)
+ *           <li><p> getCssProduct(CssProductName name)
+ *           <li><p> getCssProduct(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCssProductCallable()
+ *           <li><p> getCssProductCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCssProducts</td>
+ *      <td><p> ListCssProducts</td>
  *      <td><p> Lists the processed CSS Products in your CSS Center account. The response might contain fewer items than specified by pageSize. Rely on pageToken to determine if there are more items to be requested.
  * <p>  After inserting, updating, or deleting a CSS product input, it may take several minutes before the updated processed CSS product can be retrieved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCssProducts(ListCssProductsRequest request)
+ *           <li><p> listCssProducts(ListCssProductsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCssProducts(AccountName parent)
- *           <li>listCssProducts(String parent)
+ *           <li><p> listCssProducts(AccountName parent)
+ *           <li><p> listCssProducts(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCssProductsPagedCallable()
- *           <li>listCssProductsCallable()
+ *           <li><p> listCssProductsPagedCallable()
+ *           <li><p> listCssProductsCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

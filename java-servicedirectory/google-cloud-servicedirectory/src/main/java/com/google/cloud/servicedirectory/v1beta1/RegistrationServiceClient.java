@@ -82,366 +82,367 @@ import javax.annotation.Generated;
  * close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateNamespace</td>
+ *      <td><p> CreateNamespace</td>
  *      <td><p> Creates a namespace, and returns the new namespace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNamespace(CreateNamespaceRequest request)
+ *           <li><p> createNamespace(CreateNamespaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createNamespace(LocationName parent, Namespace namespace, String namespaceId)
- *           <li>createNamespace(String parent, Namespace namespace, String namespaceId)
+ *           <li><p> createNamespace(LocationName parent, Namespace namespace, String namespaceId)
+ *           <li><p> createNamespace(String parent, Namespace namespace, String namespaceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNamespaceCallable()
+ *           <li><p> createNamespaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListNamespaces</td>
+ *      <td><p> ListNamespaces</td>
  *      <td><p> Lists all namespaces.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNamespaces(ListNamespacesRequest request)
+ *           <li><p> listNamespaces(ListNamespacesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNamespaces(LocationName parent)
- *           <li>listNamespaces(String parent)
+ *           <li><p> listNamespaces(LocationName parent)
+ *           <li><p> listNamespaces(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNamespacesPagedCallable()
- *           <li>listNamespacesCallable()
+ *           <li><p> listNamespacesPagedCallable()
+ *           <li><p> listNamespacesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNamespace</td>
+ *      <td><p> GetNamespace</td>
  *      <td><p> Gets a namespace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNamespace(GetNamespaceRequest request)
+ *           <li><p> getNamespace(GetNamespaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNamespace(NamespaceName name)
- *           <li>getNamespace(String name)
+ *           <li><p> getNamespace(NamespaceName name)
+ *           <li><p> getNamespace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNamespaceCallable()
+ *           <li><p> getNamespaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateNamespace</td>
+ *      <td><p> UpdateNamespace</td>
  *      <td><p> Updates a namespace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateNamespace(UpdateNamespaceRequest request)
+ *           <li><p> updateNamespace(UpdateNamespaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateNamespace(Namespace namespace, FieldMask updateMask)
+ *           <li><p> updateNamespace(Namespace namespace, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateNamespaceCallable()
+ *           <li><p> updateNamespaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNamespace</td>
+ *      <td><p> DeleteNamespace</td>
  *      <td><p> Deletes a namespace. This also deletes all services and endpoints in the namespace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNamespace(DeleteNamespaceRequest request)
+ *           <li><p> deleteNamespace(DeleteNamespaceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteNamespace(NamespaceName name)
- *           <li>deleteNamespace(String name)
+ *           <li><p> deleteNamespace(NamespaceName name)
+ *           <li><p> deleteNamespace(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNamespaceCallable()
+ *           <li><p> deleteNamespaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateService</td>
+ *      <td><p> CreateService</td>
  *      <td><p> Creates a service, and returns the new service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createService(CreateServiceRequest request)
+ *           <li><p> createService(CreateServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createService(NamespaceName parent, Service service, String serviceId)
- *           <li>createService(String parent, Service service, String serviceId)
+ *           <li><p> createService(NamespaceName parent, Service service, String serviceId)
+ *           <li><p> createService(String parent, Service service, String serviceId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createServiceCallable()
+ *           <li><p> createServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListServices</td>
+ *      <td><p> ListServices</td>
  *      <td><p> Lists all services belonging to a namespace.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listServices(ListServicesRequest request)
+ *           <li><p> listServices(ListServicesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listServices(NamespaceName parent)
- *           <li>listServices(String parent)
+ *           <li><p> listServices(NamespaceName parent)
+ *           <li><p> listServices(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listServicesPagedCallable()
- *           <li>listServicesCallable()
+ *           <li><p> listServicesPagedCallable()
+ *           <li><p> listServicesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetService</td>
+ *      <td><p> GetService</td>
  *      <td><p> Gets a service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getService(GetServiceRequest request)
+ *           <li><p> getService(GetServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getService(ServiceName name)
- *           <li>getService(String name)
+ *           <li><p> getService(ServiceName name)
+ *           <li><p> getService(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getServiceCallable()
+ *           <li><p> getServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateService</td>
+ *      <td><p> UpdateService</td>
  *      <td><p> Updates a service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateService(UpdateServiceRequest request)
+ *           <li><p> updateService(UpdateServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateService(Service service, FieldMask updateMask)
+ *           <li><p> updateService(Service service, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateServiceCallable()
+ *           <li><p> updateServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteService</td>
+ *      <td><p> DeleteService</td>
  *      <td><p> Deletes a service. This also deletes all endpoints associated with the service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteService(DeleteServiceRequest request)
+ *           <li><p> deleteService(DeleteServiceRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteService(ServiceName name)
- *           <li>deleteService(String name)
+ *           <li><p> deleteService(ServiceName name)
+ *           <li><p> deleteService(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteServiceCallable()
+ *           <li><p> deleteServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateEndpoint</td>
+ *      <td><p> CreateEndpoint</td>
  *      <td><p> Creates an endpoint, and returns the new endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createEndpoint(CreateEndpointRequest request)
+ *           <li><p> createEndpoint(CreateEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createEndpoint(ServiceName parent, Endpoint endpoint, String endpointId)
- *           <li>createEndpoint(String parent, Endpoint endpoint, String endpointId)
+ *           <li><p> createEndpoint(ServiceName parent, Endpoint endpoint, String endpointId)
+ *           <li><p> createEndpoint(String parent, Endpoint endpoint, String endpointId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createEndpointCallable()
+ *           <li><p> createEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListEndpoints</td>
+ *      <td><p> ListEndpoints</td>
  *      <td><p> Lists all endpoints.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listEndpoints(ListEndpointsRequest request)
+ *           <li><p> listEndpoints(ListEndpointsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listEndpoints(ServiceName parent)
- *           <li>listEndpoints(String parent)
+ *           <li><p> listEndpoints(ServiceName parent)
+ *           <li><p> listEndpoints(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listEndpointsPagedCallable()
- *           <li>listEndpointsCallable()
+ *           <li><p> listEndpointsPagedCallable()
+ *           <li><p> listEndpointsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetEndpoint</td>
+ *      <td><p> GetEndpoint</td>
  *      <td><p> Gets an endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getEndpoint(GetEndpointRequest request)
+ *           <li><p> getEndpoint(GetEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getEndpoint(EndpointName name)
- *           <li>getEndpoint(String name)
+ *           <li><p> getEndpoint(EndpointName name)
+ *           <li><p> getEndpoint(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getEndpointCallable()
+ *           <li><p> getEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateEndpoint</td>
+ *      <td><p> UpdateEndpoint</td>
  *      <td><p> Updates an endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateEndpoint(UpdateEndpointRequest request)
+ *           <li><p> updateEndpoint(UpdateEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateEndpoint(Endpoint endpoint, FieldMask updateMask)
+ *           <li><p> updateEndpoint(Endpoint endpoint, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateEndpointCallable()
+ *           <li><p> updateEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteEndpoint</td>
+ *      <td><p> DeleteEndpoint</td>
  *      <td><p> Deletes an endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteEndpoint(DeleteEndpointRequest request)
+ *           <li><p> deleteEndpoint(DeleteEndpointRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteEndpoint(EndpointName name)
- *           <li>deleteEndpoint(String name)
+ *           <li><p> deleteEndpoint(EndpointName name)
+ *           <li><p> deleteEndpoint(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteEndpointCallable()
+ *           <li><p> deleteEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the IAM Policy for a resource</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the IAM Policy for a resource</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Tests IAM permissions for a resource (namespace, service  or service workload only).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

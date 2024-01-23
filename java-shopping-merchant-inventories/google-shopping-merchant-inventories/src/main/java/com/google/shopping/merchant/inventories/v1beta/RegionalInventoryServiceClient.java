@@ -64,65 +64,66 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListRegionalInventories</td>
+ *      <td><p> ListRegionalInventories</td>
  *      <td><p> Lists the `RegionalInventory` resources for the given product in your merchant account. The response might contain fewer items than specified by `pageSize`.  If `pageToken` was returned in previous request, it can be used to obtain additional results.
  * <p>  `RegionalInventory` resources are listed per product for a given account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRegionalInventories(ListRegionalInventoriesRequest request)
+ *           <li><p> listRegionalInventories(ListRegionalInventoriesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRegionalInventories(String parent)
+ *           <li><p> listRegionalInventories(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRegionalInventoriesPagedCallable()
- *           <li>listRegionalInventoriesCallable()
+ *           <li><p> listRegionalInventoriesPagedCallable()
+ *           <li><p> listRegionalInventoriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>InsertRegionalInventory</td>
+ *      <td><p> InsertRegionalInventory</td>
  *      <td><p> Inserts a `RegionalInventory` to a given product in your merchant account.
  * <p>  Replaces the full `RegionalInventory` resource if an entry with the same [`region`][google.shopping.merchant.inventories.v1beta.RegionalInventory.region] already exists for the product.
  * <p>  It might take up to 30 minutes for the new or updated `RegionalInventory` resource to appear in products.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertRegionalInventory(InsertRegionalInventoryRequest request)
+ *           <li><p> insertRegionalInventory(InsertRegionalInventoryRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertRegionalInventoryCallable()
+ *           <li><p> insertRegionalInventoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRegionalInventory</td>
+ *      <td><p> DeleteRegionalInventory</td>
  *      <td><p> Deletes the specified `RegionalInventory` resource from the given product in your merchant account.  It might take up to an hour for the `RegionalInventory` to be deleted from the specific product. Once you have received a successful delete response, wait for that period before attempting a delete again.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRegionalInventory(DeleteRegionalInventoryRequest request)
+ *           <li><p> deleteRegionalInventory(DeleteRegionalInventoryRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteRegionalInventory(RegionalInventoryName name)
- *           <li>deleteRegionalInventory(String name)
+ *           <li><p> deleteRegionalInventory(RegionalInventoryName name)
+ *           <li><p> deleteRegionalInventory(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRegionalInventoryCallable()
+ *           <li><p> deleteRegionalInventoryCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

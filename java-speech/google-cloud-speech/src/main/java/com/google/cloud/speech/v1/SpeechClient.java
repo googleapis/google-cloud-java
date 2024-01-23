@@ -54,57 +54,58 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>Recognize</td>
+ *      <td><p> Recognize</td>
  *      <td><p> Performs synchronous speech recognition: receive results after all audio has been sent and processed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>recognize(RecognizeRequest request)
+ *           <li><p> recognize(RecognizeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>recognize(RecognitionConfig config, RecognitionAudio audio)
+ *           <li><p> recognize(RecognitionConfig config, RecognitionAudio audio)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>recognizeCallable()
+ *           <li><p> recognizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>LongRunningRecognize</td>
+ *      <td><p> LongRunningRecognize</td>
  *      <td><p> Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>longRunningRecognizeAsync(LongRunningRecognizeRequest request)
+ *           <li><p> longRunningRecognizeAsync(LongRunningRecognizeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio)
+ *           <li><p> longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>longRunningRecognizeOperationCallable()
- *           <li>longRunningRecognizeCallable()
+ *           <li><p> longRunningRecognizeOperationCallable()
+ *           <li><p> longRunningRecognizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StreamingRecognize</td>
+ *      <td><p> StreamingRecognize</td>
  *      <td><p> Performs bidirectional streaming speech recognition: receive results while sending audio. This method is only available via the gRPC API (not REST).</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>streamingRecognizeCallable()
+ *           <li><p> streamingRecognizeCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

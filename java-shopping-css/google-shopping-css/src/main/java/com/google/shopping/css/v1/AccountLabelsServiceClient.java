@@ -59,86 +59,87 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListAccountLabels</td>
+ *      <td><p> ListAccountLabels</td>
  *      <td><p> Lists the labels assigned to an account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAccountLabels(ListAccountLabelsRequest request)
+ *           <li><p> listAccountLabels(ListAccountLabelsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAccountLabels(AccountName parent)
- *           <li>listAccountLabels(String parent)
+ *           <li><p> listAccountLabels(AccountName parent)
+ *           <li><p> listAccountLabels(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAccountLabelsPagedCallable()
- *           <li>listAccountLabelsCallable()
+ *           <li><p> listAccountLabelsPagedCallable()
+ *           <li><p> listAccountLabelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateAccountLabel</td>
+ *      <td><p> CreateAccountLabel</td>
  *      <td><p> Creates a new label, not assigned to any account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createAccountLabel(CreateAccountLabelRequest request)
+ *           <li><p> createAccountLabel(CreateAccountLabelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createAccountLabel(AccountName parent, AccountLabel accountLabel)
- *           <li>createAccountLabel(String parent, AccountLabel accountLabel)
+ *           <li><p> createAccountLabel(AccountName parent, AccountLabel accountLabel)
+ *           <li><p> createAccountLabel(String parent, AccountLabel accountLabel)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createAccountLabelCallable()
+ *           <li><p> createAccountLabelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateAccountLabel</td>
+ *      <td><p> UpdateAccountLabel</td>
  *      <td><p> Updates a label.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateAccountLabel(UpdateAccountLabelRequest request)
+ *           <li><p> updateAccountLabel(UpdateAccountLabelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateAccountLabel(AccountLabel accountLabel)
+ *           <li><p> updateAccountLabel(AccountLabel accountLabel)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateAccountLabelCallable()
+ *           <li><p> updateAccountLabelCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteAccountLabel</td>
+ *      <td><p> DeleteAccountLabel</td>
  *      <td><p> Deletes a label and removes it from all accounts to which it was assigned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteAccountLabel(DeleteAccountLabelRequest request)
+ *           <li><p> deleteAccountLabel(DeleteAccountLabelRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteAccountLabel(AccountLabelName name)
- *           <li>deleteAccountLabel(String name)
+ *           <li><p> deleteAccountLabel(AccountLabelName name)
+ *           <li><p> deleteAccountLabel(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteAccountLabelCallable()
+ *           <li><p> deleteAccountLabelCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

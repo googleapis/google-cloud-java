@@ -58,105 +58,106 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateCompany</td>
+ *      <td><p> CreateCompany</td>
  *      <td><p> Creates a new company entity.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCompany(CreateCompanyRequest request)
+ *           <li><p> createCompany(CreateCompanyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createCompany(TenantName parent, Company company)
- *           <li>createCompany(String parent, Company company)
+ *           <li><p> createCompany(TenantName parent, Company company)
+ *           <li><p> createCompany(String parent, Company company)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCompanyCallable()
+ *           <li><p> createCompanyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCompany</td>
+ *      <td><p> GetCompany</td>
  *      <td><p> Retrieves specified company.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCompany(GetCompanyRequest request)
+ *           <li><p> getCompany(GetCompanyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCompany(CompanyName name)
- *           <li>getCompany(String name)
+ *           <li><p> getCompany(CompanyName name)
+ *           <li><p> getCompany(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCompanyCallable()
+ *           <li><p> getCompanyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCompany</td>
+ *      <td><p> UpdateCompany</td>
  *      <td><p> Updates specified company.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCompany(UpdateCompanyRequest request)
+ *           <li><p> updateCompany(UpdateCompanyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateCompany(Company company, FieldMask updateMask)
+ *           <li><p> updateCompany(Company company, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCompanyCallable()
+ *           <li><p> updateCompanyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCompany</td>
+ *      <td><p> DeleteCompany</td>
  *      <td><p> Deletes specified company. Prerequisite: The company has no jobs associated with it.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCompany(DeleteCompanyRequest request)
+ *           <li><p> deleteCompany(DeleteCompanyRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCompany(CompanyName name)
- *           <li>deleteCompany(String name)
+ *           <li><p> deleteCompany(CompanyName name)
+ *           <li><p> deleteCompany(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCompanyCallable()
+ *           <li><p> deleteCompanyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCompanies</td>
+ *      <td><p> ListCompanies</td>
  *      <td><p> Lists all companies associated with the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCompanies(ListCompaniesRequest request)
+ *           <li><p> listCompanies(ListCompaniesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCompanies(TenantName parent)
- *           <li>listCompanies(String parent)
+ *           <li><p> listCompanies(TenantName parent)
+ *           <li><p> listCompanies(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCompaniesPagedCallable()
- *           <li>listCompaniesCallable()
+ *           <li><p> listCompaniesPagedCallable()
+ *           <li><p> listCompaniesCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

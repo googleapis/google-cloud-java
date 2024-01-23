@@ -48,29 +48,30 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateClientEvent</td>
+ *      <td><p> CreateClientEvent</td>
  *      <td><p> Report events issued when end user interacts with customer's application that uses Cloud Talent Solution. You may inspect the created events in [self service tools](https://console.cloud.google.com/talent-solution/overview). [Learn more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createClientEvent(CreateClientEventRequest request)
+ *           <li><p> createClientEvent(CreateClientEventRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createClientEvent(TenantName parent, ClientEvent clientEvent)
- *           <li>createClientEvent(String parent, ClientEvent clientEvent)
+ *           <li><p> createClientEvent(TenantName parent, ClientEvent clientEvent)
+ *           <li><p> createClientEvent(String parent, ClientEvent clientEvent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createClientEventCallable()
+ *           <li><p> createClientEventCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -67,481 +67,482 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>CreateRecognizer</td>
+ *      <td><p> CreateRecognizer</td>
  *      <td><p> Creates a [Recognizer][google.cloud.speech.v2.Recognizer].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createRecognizerAsync(CreateRecognizerRequest request)
+ *           <li><p> createRecognizerAsync(CreateRecognizerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createRecognizerAsync(LocationName parent, Recognizer recognizer, String recognizerId)
- *           <li>createRecognizerAsync(String parent, Recognizer recognizer, String recognizerId)
+ *           <li><p> createRecognizerAsync(LocationName parent, Recognizer recognizer, String recognizerId)
+ *           <li><p> createRecognizerAsync(String parent, Recognizer recognizer, String recognizerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createRecognizerOperationCallable()
- *           <li>createRecognizerCallable()
+ *           <li><p> createRecognizerOperationCallable()
+ *           <li><p> createRecognizerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListRecognizers</td>
+ *      <td><p> ListRecognizers</td>
  *      <td><p> Lists Recognizers.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listRecognizers(ListRecognizersRequest request)
+ *           <li><p> listRecognizers(ListRecognizersRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listRecognizers(LocationName parent)
- *           <li>listRecognizers(String parent)
+ *           <li><p> listRecognizers(LocationName parent)
+ *           <li><p> listRecognizers(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listRecognizersPagedCallable()
- *           <li>listRecognizersCallable()
+ *           <li><p> listRecognizersPagedCallable()
+ *           <li><p> listRecognizersCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetRecognizer</td>
+ *      <td><p> GetRecognizer</td>
  *      <td><p> Returns the requested [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getRecognizer(GetRecognizerRequest request)
+ *           <li><p> getRecognizer(GetRecognizerRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getRecognizer(RecognizerName name)
- *           <li>getRecognizer(String name)
+ *           <li><p> getRecognizer(RecognizerName name)
+ *           <li><p> getRecognizer(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getRecognizerCallable()
+ *           <li><p> getRecognizerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateRecognizer</td>
+ *      <td><p> UpdateRecognizer</td>
  *      <td><p> Updates the [Recognizer][google.cloud.speech.v2.Recognizer].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateRecognizerAsync(UpdateRecognizerRequest request)
+ *           <li><p> updateRecognizerAsync(UpdateRecognizerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateRecognizerAsync(Recognizer recognizer, FieldMask updateMask)
+ *           <li><p> updateRecognizerAsync(Recognizer recognizer, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateRecognizerOperationCallable()
- *           <li>updateRecognizerCallable()
+ *           <li><p> updateRecognizerOperationCallable()
+ *           <li><p> updateRecognizerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteRecognizer</td>
+ *      <td><p> DeleteRecognizer</td>
  *      <td><p> Deletes the [Recognizer][google.cloud.speech.v2.Recognizer].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteRecognizerAsync(DeleteRecognizerRequest request)
+ *           <li><p> deleteRecognizerAsync(DeleteRecognizerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteRecognizerAsync(RecognizerName name)
- *           <li>deleteRecognizerAsync(String name)
+ *           <li><p> deleteRecognizerAsync(RecognizerName name)
+ *           <li><p> deleteRecognizerAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteRecognizerOperationCallable()
- *           <li>deleteRecognizerCallable()
+ *           <li><p> deleteRecognizerOperationCallable()
+ *           <li><p> deleteRecognizerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteRecognizer</td>
+ *      <td><p> UndeleteRecognizer</td>
  *      <td><p> Undeletes the [Recognizer][google.cloud.speech.v2.Recognizer].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteRecognizerAsync(UndeleteRecognizerRequest request)
+ *           <li><p> undeleteRecognizerAsync(UndeleteRecognizerRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeleteRecognizerAsync(RecognizerName name)
- *           <li>undeleteRecognizerAsync(String name)
+ *           <li><p> undeleteRecognizerAsync(RecognizerName name)
+ *           <li><p> undeleteRecognizerAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteRecognizerOperationCallable()
- *           <li>undeleteRecognizerCallable()
+ *           <li><p> undeleteRecognizerOperationCallable()
+ *           <li><p> undeleteRecognizerCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>Recognize</td>
+ *      <td><p> Recognize</td>
  *      <td><p> Performs synchronous Speech recognition: receive results after all audio has been sent and processed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>recognize(RecognizeRequest request)
+ *           <li><p> recognize(RecognizeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>recognize(RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, ByteString content)
- *           <li>recognize(RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, String uri)
- *           <li>recognize(String recognizer, RecognitionConfig config, FieldMask configMask, ByteString content)
- *           <li>recognize(String recognizer, RecognitionConfig config, FieldMask configMask, String uri)
+ *           <li><p> recognize(RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, ByteString content)
+ *           <li><p> recognize(RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, String uri)
+ *           <li><p> recognize(String recognizer, RecognitionConfig config, FieldMask configMask, ByteString content)
+ *           <li><p> recognize(String recognizer, RecognitionConfig config, FieldMask configMask, String uri)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>recognizeCallable()
+ *           <li><p> recognizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StreamingRecognize</td>
+ *      <td><p> StreamingRecognize</td>
  *      <td><p> Performs bidirectional streaming speech recognition: receive results while sending audio. This method is only available via the gRPC API (not REST).</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>streamingRecognizeCallable()
+ *           <li><p> streamingRecognizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>BatchRecognize</td>
+ *      <td><p> BatchRecognize</td>
  *      <td><p> Performs batch asynchronous speech recognition: send a request with N audio files and receive a long running operation that can be polled to see when the transcriptions are finished.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchRecognizeAsync(BatchRecognizeRequest request)
+ *           <li><p> batchRecognizeAsync(BatchRecognizeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>batchRecognizeAsync(RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, List<BatchRecognizeFileMetadata> files)
- *           <li>batchRecognizeAsync(String recognizer, RecognitionConfig config, FieldMask configMask, List<BatchRecognizeFileMetadata> files)
+ *           <li><p> batchRecognizeAsync(RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, List&lt;BatchRecognizeFileMetadata&gt; files)
+ *           <li><p> batchRecognizeAsync(String recognizer, RecognitionConfig config, FieldMask configMask, List&lt;BatchRecognizeFileMetadata&gt; files)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchRecognizeOperationCallable()
- *           <li>batchRecognizeCallable()
+ *           <li><p> batchRecognizeOperationCallable()
+ *           <li><p> batchRecognizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetConfig</td>
+ *      <td><p> GetConfig</td>
  *      <td><p> Returns the requested [Config][google.cloud.speech.v2.Config].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getConfig(GetConfigRequest request)
+ *           <li><p> getConfig(GetConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getConfig(ConfigName name)
- *           <li>getConfig(String name)
+ *           <li><p> getConfig(ConfigName name)
+ *           <li><p> getConfig(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getConfigCallable()
+ *           <li><p> getConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateConfig</td>
+ *      <td><p> UpdateConfig</td>
  *      <td><p> Updates the [Config][google.cloud.speech.v2.Config].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateConfig(UpdateConfigRequest request)
+ *           <li><p> updateConfig(UpdateConfigRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateConfig(Config config, FieldMask updateMask)
+ *           <li><p> updateConfig(Config config, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateConfigCallable()
+ *           <li><p> updateConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateCustomClass</td>
+ *      <td><p> CreateCustomClass</td>
  *      <td><p> Creates a [CustomClass][google.cloud.speech.v2.CustomClass].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createCustomClassAsync(CreateCustomClassRequest request)
+ *           <li><p> createCustomClassAsync(CreateCustomClassRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createCustomClassAsync(LocationName parent, CustomClass customClass, String customClassId)
- *           <li>createCustomClassAsync(String parent, CustomClass customClass, String customClassId)
+ *           <li><p> createCustomClassAsync(LocationName parent, CustomClass customClass, String customClassId)
+ *           <li><p> createCustomClassAsync(String parent, CustomClass customClass, String customClassId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createCustomClassOperationCallable()
- *           <li>createCustomClassCallable()
+ *           <li><p> createCustomClassOperationCallable()
+ *           <li><p> createCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListCustomClasses</td>
+ *      <td><p> ListCustomClasses</td>
  *      <td><p> Lists CustomClasses.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listCustomClasses(ListCustomClassesRequest request)
+ *           <li><p> listCustomClasses(ListCustomClassesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listCustomClasses(LocationName parent)
- *           <li>listCustomClasses(String parent)
+ *           <li><p> listCustomClasses(LocationName parent)
+ *           <li><p> listCustomClasses(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listCustomClassesPagedCallable()
- *           <li>listCustomClassesCallable()
+ *           <li><p> listCustomClassesPagedCallable()
+ *           <li><p> listCustomClassesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetCustomClass</td>
+ *      <td><p> GetCustomClass</td>
  *      <td><p> Returns the requested [CustomClass][google.cloud.speech.v2.CustomClass].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getCustomClass(GetCustomClassRequest request)
+ *           <li><p> getCustomClass(GetCustomClassRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getCustomClass(CustomClassName name)
- *           <li>getCustomClass(String name)
+ *           <li><p> getCustomClass(CustomClassName name)
+ *           <li><p> getCustomClass(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getCustomClassCallable()
+ *           <li><p> getCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateCustomClass</td>
+ *      <td><p> UpdateCustomClass</td>
  *      <td><p> Updates the [CustomClass][google.cloud.speech.v2.CustomClass].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateCustomClassAsync(UpdateCustomClassRequest request)
+ *           <li><p> updateCustomClassAsync(UpdateCustomClassRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updateCustomClassAsync(CustomClass customClass, FieldMask updateMask)
+ *           <li><p> updateCustomClassAsync(CustomClass customClass, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateCustomClassOperationCallable()
- *           <li>updateCustomClassCallable()
+ *           <li><p> updateCustomClassOperationCallable()
+ *           <li><p> updateCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCustomClass</td>
+ *      <td><p> DeleteCustomClass</td>
  *      <td><p> Deletes the [CustomClass][google.cloud.speech.v2.CustomClass].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCustomClassAsync(DeleteCustomClassRequest request)
+ *           <li><p> deleteCustomClassAsync(DeleteCustomClassRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteCustomClassAsync(CustomClassName name)
- *           <li>deleteCustomClassAsync(String name)
+ *           <li><p> deleteCustomClassAsync(CustomClassName name)
+ *           <li><p> deleteCustomClassAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCustomClassOperationCallable()
- *           <li>deleteCustomClassCallable()
+ *           <li><p> deleteCustomClassOperationCallable()
+ *           <li><p> deleteCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeleteCustomClass</td>
+ *      <td><p> UndeleteCustomClass</td>
  *      <td><p> Undeletes the [CustomClass][google.cloud.speech.v2.CustomClass].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeleteCustomClassAsync(UndeleteCustomClassRequest request)
+ *           <li><p> undeleteCustomClassAsync(UndeleteCustomClassRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeleteCustomClassAsync(CustomClassName name)
- *           <li>undeleteCustomClassAsync(String name)
+ *           <li><p> undeleteCustomClassAsync(CustomClassName name)
+ *           <li><p> undeleteCustomClassAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeleteCustomClassOperationCallable()
- *           <li>undeleteCustomClassCallable()
+ *           <li><p> undeleteCustomClassOperationCallable()
+ *           <li><p> undeleteCustomClassCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreatePhraseSet</td>
+ *      <td><p> CreatePhraseSet</td>
  *      <td><p> Creates a [PhraseSet][google.cloud.speech.v2.PhraseSet].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createPhraseSetAsync(CreatePhraseSetRequest request)
+ *           <li><p> createPhraseSetAsync(CreatePhraseSetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createPhraseSetAsync(LocationName parent, PhraseSet phraseSet, String phraseSetId)
- *           <li>createPhraseSetAsync(String parent, PhraseSet phraseSet, String phraseSetId)
+ *           <li><p> createPhraseSetAsync(LocationName parent, PhraseSet phraseSet, String phraseSetId)
+ *           <li><p> createPhraseSetAsync(String parent, PhraseSet phraseSet, String phraseSetId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createPhraseSetOperationCallable()
- *           <li>createPhraseSetCallable()
+ *           <li><p> createPhraseSetOperationCallable()
+ *           <li><p> createPhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListPhraseSets</td>
+ *      <td><p> ListPhraseSets</td>
  *      <td><p> Lists PhraseSets.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listPhraseSets(ListPhraseSetsRequest request)
+ *           <li><p> listPhraseSets(ListPhraseSetsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listPhraseSets(LocationName parent)
- *           <li>listPhraseSets(String parent)
+ *           <li><p> listPhraseSets(LocationName parent)
+ *           <li><p> listPhraseSets(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listPhraseSetsPagedCallable()
- *           <li>listPhraseSetsCallable()
+ *           <li><p> listPhraseSetsPagedCallable()
+ *           <li><p> listPhraseSetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetPhraseSet</td>
+ *      <td><p> GetPhraseSet</td>
  *      <td><p> Returns the requested [PhraseSet][google.cloud.speech.v2.PhraseSet].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getPhraseSet(GetPhraseSetRequest request)
+ *           <li><p> getPhraseSet(GetPhraseSetRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getPhraseSet(PhraseSetName name)
- *           <li>getPhraseSet(String name)
+ *           <li><p> getPhraseSet(PhraseSetName name)
+ *           <li><p> getPhraseSet(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getPhraseSetCallable()
+ *           <li><p> getPhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdatePhraseSet</td>
+ *      <td><p> UpdatePhraseSet</td>
  *      <td><p> Updates the [PhraseSet][google.cloud.speech.v2.PhraseSet].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updatePhraseSetAsync(UpdatePhraseSetRequest request)
+ *           <li><p> updatePhraseSetAsync(UpdatePhraseSetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>updatePhraseSetAsync(PhraseSet phraseSet, FieldMask updateMask)
+ *           <li><p> updatePhraseSetAsync(PhraseSet phraseSet, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updatePhraseSetOperationCallable()
- *           <li>updatePhraseSetCallable()
+ *           <li><p> updatePhraseSetOperationCallable()
+ *           <li><p> updatePhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeletePhraseSet</td>
+ *      <td><p> DeletePhraseSet</td>
  *      <td><p> Deletes the [PhraseSet][google.cloud.speech.v2.PhraseSet].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deletePhraseSetAsync(DeletePhraseSetRequest request)
+ *           <li><p> deletePhraseSetAsync(DeletePhraseSetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deletePhraseSetAsync(PhraseSetName name)
- *           <li>deletePhraseSetAsync(String name)
+ *           <li><p> deletePhraseSetAsync(PhraseSetName name)
+ *           <li><p> deletePhraseSetAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deletePhraseSetOperationCallable()
- *           <li>deletePhraseSetCallable()
+ *           <li><p> deletePhraseSetOperationCallable()
+ *           <li><p> deletePhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UndeletePhraseSet</td>
+ *      <td><p> UndeletePhraseSet</td>
  *      <td><p> Undeletes the [PhraseSet][google.cloud.speech.v2.PhraseSet].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>undeletePhraseSetAsync(UndeletePhraseSetRequest request)
+ *           <li><p> undeletePhraseSetAsync(UndeletePhraseSetRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>undeletePhraseSetAsync(PhraseSetName name)
- *           <li>undeletePhraseSetAsync(String name)
+ *           <li><p> undeletePhraseSetAsync(PhraseSetName name)
+ *           <li><p> undeletePhraseSetAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>undeletePhraseSetOperationCallable()
- *           <li>undeletePhraseSetCallable()
+ *           <li><p> undeletePhraseSetOperationCallable()
+ *           <li><p> undeletePhraseSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

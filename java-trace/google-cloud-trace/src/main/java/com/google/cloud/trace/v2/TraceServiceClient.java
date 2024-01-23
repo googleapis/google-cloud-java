@@ -59,43 +59,44 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>BatchWriteSpans</td>
+ *      <td><p> BatchWriteSpans</td>
  *      <td><p> Batch writes new spans to new or existing traces. You cannot update existing spans.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>batchWriteSpans(BatchWriteSpansRequest request)
+ *           <li><p> batchWriteSpans(BatchWriteSpansRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>batchWriteSpans(ProjectName name, List<Span> spans)
- *           <li>batchWriteSpans(String name, List<Span> spans)
+ *           <li><p> batchWriteSpans(ProjectName name, List&lt;Span&gt; spans)
+ *           <li><p> batchWriteSpans(String name, List&lt;Span&gt; spans)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>batchWriteSpansCallable()
+ *           <li><p> batchWriteSpansCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateSpan</td>
+ *      <td><p> CreateSpan</td>
  *      <td><p> Creates a new span.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSpan(Span request)
+ *           <li><p> createSpan(Span request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSpanCallable()
+ *           <li><p> createSpanCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

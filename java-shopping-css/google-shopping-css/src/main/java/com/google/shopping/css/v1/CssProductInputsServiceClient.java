@@ -56,45 +56,46 @@ import javax.annotation.Generated;
  * calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>InsertCssProductInput</td>
+ *      <td><p> InsertCssProductInput</td>
  *      <td><p> Uploads a CssProductInput to your CSS Center account. If an input with the same contentLanguage, identity, feedLabel and feedId already exists, this method replaces that entry.
  * <p>  After inserting, updating, or deleting a CSS Product input, it may take several minutes before the processed CSS Product can be retrieved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>insertCssProductInput(InsertCssProductInputRequest request)
+ *           <li><p> insertCssProductInput(InsertCssProductInputRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>insertCssProductInputCallable()
+ *           <li><p> insertCssProductInputCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteCssProductInput</td>
+ *      <td><p> DeleteCssProductInput</td>
  *      <td><p> Deletes a CSS Product input from your CSS Center account.
  * <p>  After a delete it may take several minutes until the input is no longer available.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteCssProductInput(DeleteCssProductInputRequest request)
+ *           <li><p> deleteCssProductInput(DeleteCssProductInputRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteCssProductInput(CssProductInputName name)
- *           <li>deleteCssProductInput(String name)
+ *           <li><p> deleteCssProductInput(CssProductInputName name)
+ *           <li><p> deleteCssProductInput(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteCssProductInputCallable()
+ *           <li><p> deleteCssProductInputCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *

@@ -65,241 +65,242 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
  *    <tr>
- *      <td>ListNodes</td>
+ *      <td><p> ListNodes</td>
  *      <td><p> Lists nodes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listNodes(ListNodesRequest request)
+ *           <li><p> listNodes(ListNodesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listNodes(LocationName parent)
- *           <li>listNodes(String parent)
+ *           <li><p> listNodes(LocationName parent)
+ *           <li><p> listNodes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listNodesPagedCallable()
- *           <li>listNodesCallable()
+ *           <li><p> listNodesPagedCallable()
+ *           <li><p> listNodesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetNode</td>
+ *      <td><p> GetNode</td>
  *      <td><p> Gets the details of a node.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getNode(GetNodeRequest request)
+ *           <li><p> getNode(GetNodeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getNode(NodeName name)
- *           <li>getNode(String name)
+ *           <li><p> getNode(NodeName name)
+ *           <li><p> getNode(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getNodeCallable()
+ *           <li><p> getNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateNode</td>
+ *      <td><p> CreateNode</td>
  *      <td><p> Creates a node.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createNodeAsync(CreateNodeRequest request)
+ *           <li><p> createNodeAsync(CreateNodeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>createNodeAsync(LocationName parent, Node node, String nodeId)
- *           <li>createNodeAsync(String parent, Node node, String nodeId)
+ *           <li><p> createNodeAsync(LocationName parent, Node node, String nodeId)
+ *           <li><p> createNodeAsync(String parent, Node node, String nodeId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createNodeOperationCallable()
- *           <li>createNodeCallable()
+ *           <li><p> createNodeOperationCallable()
+ *           <li><p> createNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteNode</td>
+ *      <td><p> DeleteNode</td>
  *      <td><p> Deletes a node.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteNodeAsync(DeleteNodeRequest request)
+ *           <li><p> deleteNodeAsync(DeleteNodeRequest request)
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li>deleteNodeAsync(NodeName name)
- *           <li>deleteNodeAsync(String name)
+ *           <li><p> deleteNodeAsync(NodeName name)
+ *           <li><p> deleteNodeAsync(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteNodeOperationCallable()
- *           <li>deleteNodeCallable()
+ *           <li><p> deleteNodeOperationCallable()
+ *           <li><p> deleteNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ReimageNode</td>
+ *      <td><p> ReimageNode</td>
  *      <td><p> Reimages a node's OS.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>reimageNodeAsync(ReimageNodeRequest request)
+ *           <li><p> reimageNodeAsync(ReimageNodeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>reimageNodeOperationCallable()
- *           <li>reimageNodeCallable()
+ *           <li><p> reimageNodeOperationCallable()
+ *           <li><p> reimageNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StopNode</td>
+ *      <td><p> StopNode</td>
  *      <td><p> Stops a node, this operation is only available with single TPU nodes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>stopNodeAsync(StopNodeRequest request)
+ *           <li><p> stopNodeAsync(StopNodeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>stopNodeOperationCallable()
- *           <li>stopNodeCallable()
+ *           <li><p> stopNodeOperationCallable()
+ *           <li><p> stopNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>StartNode</td>
+ *      <td><p> StartNode</td>
  *      <td><p> Starts a node.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>startNodeAsync(StartNodeRequest request)
+ *           <li><p> startNodeAsync(StartNodeRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>startNodeOperationCallable()
- *           <li>startNodeCallable()
+ *           <li><p> startNodeOperationCallable()
+ *           <li><p> startNodeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListTensorFlowVersions</td>
+ *      <td><p> ListTensorFlowVersions</td>
  *      <td><p> List TensorFlow versions supported by this API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listTensorFlowVersions(ListTensorFlowVersionsRequest request)
+ *           <li><p> listTensorFlowVersions(ListTensorFlowVersionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listTensorFlowVersions(TensorFlowVersionName parent)
- *           <li>listTensorFlowVersions(String parent)
+ *           <li><p> listTensorFlowVersions(TensorFlowVersionName parent)
+ *           <li><p> listTensorFlowVersions(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listTensorFlowVersionsPagedCallable()
- *           <li>listTensorFlowVersionsCallable()
+ *           <li><p> listTensorFlowVersionsPagedCallable()
+ *           <li><p> listTensorFlowVersionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetTensorFlowVersion</td>
+ *      <td><p> GetTensorFlowVersion</td>
  *      <td><p> Gets TensorFlow Version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getTensorFlowVersion(GetTensorFlowVersionRequest request)
+ *           <li><p> getTensorFlowVersion(GetTensorFlowVersionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getTensorFlowVersion(TensorFlowVersionName name)
- *           <li>getTensorFlowVersion(String name)
+ *           <li><p> getTensorFlowVersion(TensorFlowVersionName name)
+ *           <li><p> getTensorFlowVersion(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getTensorFlowVersionCallable()
+ *           <li><p> getTensorFlowVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListAcceleratorTypes</td>
+ *      <td><p> ListAcceleratorTypes</td>
  *      <td><p> Lists accelerator types supported by this API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listAcceleratorTypes(ListAcceleratorTypesRequest request)
+ *           <li><p> listAcceleratorTypes(ListAcceleratorTypesRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listAcceleratorTypes(AcceleratorTypeName parent)
- *           <li>listAcceleratorTypes(String parent)
+ *           <li><p> listAcceleratorTypes(AcceleratorTypeName parent)
+ *           <li><p> listAcceleratorTypes(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listAcceleratorTypesPagedCallable()
- *           <li>listAcceleratorTypesCallable()
+ *           <li><p> listAcceleratorTypesPagedCallable()
+ *           <li><p> listAcceleratorTypesCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetAcceleratorType</td>
+ *      <td><p> GetAcceleratorType</td>
  *      <td><p> Gets AcceleratorType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getAcceleratorType(GetAcceleratorTypeRequest request)
+ *           <li><p> getAcceleratorType(GetAcceleratorTypeRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getAcceleratorType(AcceleratorTypeName name)
- *           <li>getAcceleratorType(String name)
+ *           <li><p> getAcceleratorType(AcceleratorTypeName name)
+ *           <li><p> getAcceleratorType(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getAcceleratorTypeCallable()
+ *           <li><p> getAcceleratorTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListLocations</td>
+ *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLocations(ListLocationsRequest request)
+ *           <li><p> listLocations(ListLocationsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLocationsPagedCallable()
- *           <li>listLocationsCallable()
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLocation</td>
+ *      <td><p> GetLocation</td>
  *      <td><p> Gets information about a location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLocation(GetLocationRequest request)
+ *           <li><p> getLocation(GetLocationRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLocationCallable()
+ *           <li><p> getLocationCallable()
  *      </ul>
  *       </td>
- *    </tr>
  *    </tr>
  *  </table>
  *
