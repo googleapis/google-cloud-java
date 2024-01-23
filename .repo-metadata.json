@@ -9,7 +9,7 @@
   "repo": "googleapis/java-datastore",
   "repo_short": "java-datastore",
   "distribution_name": "com.google.cloud:google-cloud-datastore",
-  "codeowner_team": "@googleapis/cloud-native-db-dpes @googleapis/api-datastore-sdk",
+  "codeowner_team": "@googleapis/cloud-native-db-dpes @googleapis/api-datastore-sdk @googleapis/api-firestore-partners",
   "api_id": "datastore.googleapis.com",
   "library_type": "GAPIC_COMBO",
   "api_description": "is a fully managed, schemaless database for\nstoring non-relational data. Cloud Datastore automatically scales with\nyour users and supports ACID transactions, high availability of reads and\nwrites, strong consistency for reads and ancestor queries, and eventual\nconsistency for all other queries.",
