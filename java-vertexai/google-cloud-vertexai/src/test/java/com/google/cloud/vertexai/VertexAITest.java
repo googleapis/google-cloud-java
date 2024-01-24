@@ -25,7 +25,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import java.io.IOException;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -61,7 +60,6 @@ public final class VertexAITest {
     assertThat(vertexAi.getApiEndpoint()).isEqualTo(TEST_DEFAULT_ENDPOINT);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testCustomEndpointInVertexAI() throws IOException {
     try (MockedStatic mockStatic = mockStatic(PredictionServiceClient.class)) {
@@ -82,7 +80,6 @@ public final class VertexAITest {
     }
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testSetApiEndpoint() throws IOException {
     try (MockedStatic mockStatic = mockStatic(PredictionServiceClient.class)) {
