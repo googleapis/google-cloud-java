@@ -44,7 +44,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -165,7 +164,6 @@ public final class GenerativeModelTest {
     assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testCountTokenswithText() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -181,7 +179,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testCountTokenswithContent() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -198,7 +195,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0)).isEqualTo(content);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testCountTokenswithContents() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -215,7 +211,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0)).isEqualTo(content);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithText() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -238,7 +233,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithContent() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -263,7 +257,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithContents() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -288,7 +281,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithGenerationConfig() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -312,7 +304,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithDefaultGenerationConfig() throws Exception {
     model = new GenerativeModel(MODEL_NAME, DEFAULT_GENERATION_CONFIG, vertexAi);
@@ -336,7 +327,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(DEFAULT_GENERATION_CONFIG);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithSafetySettings() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -360,7 +350,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithDefaultSafetySettings() throws Exception {
     model = new GenerativeModel(MODEL_NAME, defaultSafetySettings, vertexAi);
@@ -384,7 +373,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(DEFAULT_SAFETY_SETTING);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithText() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -408,7 +396,6 @@ public final class GenerativeModelTest {
         .isEqualTo("What is your name?");
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithContent() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -434,7 +421,6 @@ public final class GenerativeModelTest {
         .isEqualTo("What is your name?");
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithContents() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -460,7 +446,6 @@ public final class GenerativeModelTest {
         .isEqualTo("What is your name?");
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithGenerationConfig() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -483,7 +468,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithDefaultGenerationConfig() throws Exception {
     model = new GenerativeModel(MODEL_NAME, DEFAULT_GENERATION_CONFIG, vertexAi);
@@ -506,7 +490,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(DEFAULT_GENERATION_CONFIG);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithSafetySettings() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
@@ -529,7 +512,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
   }
 
-  @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentStreamwithDefaultSafetySettings() throws Exception {
     model = new GenerativeModel(MODEL_NAME, defaultSafetySettings, vertexAi);
