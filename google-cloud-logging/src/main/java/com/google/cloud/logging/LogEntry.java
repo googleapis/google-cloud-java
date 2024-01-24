@@ -760,7 +760,7 @@ public class LogEntry implements Serializable {
     return newBuilder(payload).setLogName(logName).setResource(resource).build();
   }
 
-  static LogEntry fromPb(com.google.logging.v2.LogEntry entryPb) {
+  public static LogEntry fromPb(com.google.logging.v2.LogEntry entryPb) {
     Builder builder = newBuilder(Payload.fromPb(entryPb));
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
@@ -805,7 +805,8 @@ public class LogEntry implements Serializable {
     return builder.build();
   }
 
-  static Function<LogEntry, com.google.logging.v2.LogEntry> toPbFunction(final String projectId) {
+  public static Function<LogEntry, com.google.logging.v2.LogEntry> toPbFunction(
+      final String projectId) {
     return (LogEntry entry) -> {
       return entry.toPb(projectId);
     };
