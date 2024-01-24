@@ -66,14 +66,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>gapic-libraries-bom</artifactId>
-        <version>1.27.0</version>
+        <version>1.28.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.21.0</version>
+        <version>3.22.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
