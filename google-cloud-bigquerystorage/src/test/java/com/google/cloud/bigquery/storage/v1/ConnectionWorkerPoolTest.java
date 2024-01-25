@@ -23,6 +23,7 @@ import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.common.util.concurrent.ListeningExecutorService;
@@ -58,6 +59,17 @@ public class ConnectionWorkerPoolTest {
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/_default";
   private static final String TEST_STREAM_2 = "projects/p1/datasets/d1/tables/t2/streams/_default";
+  private static final int MAX_RETRY_NUM_ATTEMPTS = 3;
+  private static final long INITIAL_RETRY_MILLIS = 500;
+  private static final double RETRY_MULTIPLIER = 1.3;
+  private static final int MAX_RETRY_DELAY_MINUTES = 5;
+  private static final RetrySettings retrySettings =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelay(Duration.ofMillis(INITIAL_RETRY_MILLIS))
+          .setRetryDelayMultiplier(RETRY_MULTIPLIER)
+          .setMaxAttempts(MAX_RETRY_NUM_ATTEMPTS)
+          .setMaxRetryDelay(org.threeten.bp.Duration.ofMinutes(MAX_RETRY_DELAY_MINUTES))
+          .build();
 
   @Before
   public void setUp() throws Exception {
@@ -398,6 +410,7 @@ public class ConnectionWorkerPoolTest {
               .setWriterSchema(createProtoSchema())
               .setTraceId(TEST_TRACE_ID)
               .setLocation("us")
+              .setRetrySettings(retrySettings)
               .build());
     }
 
@@ -483,6 +496,7 @@ public class ConnectionWorkerPoolTest {
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
         null,
-        clientSettings);
+        clientSettings,
+        retrySettings);
   }
 }

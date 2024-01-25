@@ -66,6 +66,9 @@ public class ConnectionWorkerPool {
    */
   private final java.time.Duration maxRetryDuration;
 
+  /*
+   * Retry settings for in-stream retries.
+   */
   private RetrySettings retrySettings;
 
   /*
@@ -208,7 +211,8 @@ public class ConnectionWorkerPool {
       FlowController.LimitExceededBehavior limitExceededBehavior,
       String traceId,
       @Nullable String comperssorName,
-      BigQueryWriteSettings clientSettings) {
+      BigQueryWriteSettings clientSettings,
+      RetrySettings retrySettings) {
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
     this.maxRetryDuration = maxRetryDuration;
@@ -217,8 +221,7 @@ public class ConnectionWorkerPool {
     this.compressorName = comperssorName;
     this.clientSettings = clientSettings;
     this.currentMaxConnectionCount = settings.minConnectionsPerRegion();
-    // In-stream retry is not enabled for multiplexing.
-    this.retrySettings = null;
+    this.retrySettings = retrySettings;
   }
 
   /**
