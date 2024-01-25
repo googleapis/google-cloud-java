@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.15.16](https://github.com/googleapis/java-logging/compare/v3.15.15...v3.15.16) (2024-01-25)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.32.0 ([#1511](https://github.com/googleapis/java-logging/issues/1511)) ([e2f574c](https://github.com/googleapis/java-logging/commit/e2f574caa0b8c2a2cdb3b186fbf2d599d6ef4c2b))
+* Enable v2.LogEntry Protobufs converter functions ([#1509](https://github.com/googleapis/java-logging/issues/1509)) ([9ef4d90](https://github.com/googleapis/java-logging/commit/9ef4d9048b1ecdc887ebc9cb4898a4bfe3f6c154))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.22.0 ([#1510](https://github.com/googleapis/java-logging/issues/1510)) ([b40e846](https://github.com/googleapis/java-logging/commit/b40e8465590dadec7c9ff26eb27e92c16b059489))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.23.0 ([#1518](https://github.com/googleapis/java-logging/issues/1518)) ([30ba9ed](https://github.com/googleapis/java-logging/commit/30ba9ed687f5469d36138a138f68cd998cf60b53))
+
 ## [3.15.15](https://github.com/googleapis/java-logging/compare/v3.15.14...v3.15.15) (2024-01-10)
 
 
