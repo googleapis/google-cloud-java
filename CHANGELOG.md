@@ -1,6 +1,20 @@
 # Changelog
 
 
+## [0.131.0-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.130.30-alpha...v0.131.0-alpha) (2024-01-25)
+
+
+### Features
+
+* Add graal native image profile for logback library ([#1246](https://github.com/googleapis/java-logging-logback/issues/1246)) ([ab58b88](https://github.com/googleapis/java-logging-logback/commit/ab58b887d041783335d2ab4f04b47651ae91ef77))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.15.16 ([#1257](https://github.com/googleapis/java-logging-logback/issues/1257)) ([28c23f6](https://github.com/googleapis/java-logging-logback/commit/28c23f67f827c42ad4790fd7f9122d227daa3a8d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.22.0 ([#1250](https://github.com/googleapis/java-logging-logback/issues/1250)) ([730c46c](https://github.com/googleapis/java-logging-logback/commit/730c46cbd6f59f9d370eb6a10b5dd00d58ca0506))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.23.0 ([#1256](https://github.com/googleapis/java-logging-logback/issues/1256)) ([df7800b](https://github.com/googleapis/java-logging-logback/commit/df7800bb5205ad4cecc0a44ccbde8141174063ad))
+
 ## [0.130.30-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.130.29-alpha...v0.130.30-alpha) (2024-01-11)
 
 
