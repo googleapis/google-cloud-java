@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.126.1](https://github.com/googleapis/java-pubsub/compare/v1.126.0...v1.126.1) (2024-01-25)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.36.0 ([#1840](https://github.com/googleapis/java-pubsub/issues/1840)) ([8c5117d](https://github.com/googleapis/java-pubsub/commit/8c5117d02511acd5469d863ea483f6e765e29292))
+* Update dependency com.google.cloud:google-cloud-core to v2.30.0 ([#1853](https://github.com/googleapis/java-pubsub/issues/1853)) ([db36def](https://github.com/googleapis/java-pubsub/commit/db36deff6a4187cb98ddd68259efd6034762060e))
+* Update dependency com.google.cloud:google-cloud-core to v2.31.0 ([#1872](https://github.com/googleapis/java-pubsub/issues/1872)) ([06db9a0](https://github.com/googleapis/java-pubsub/commit/06db9a05a80b2d7f38aefff2d5e0b33e3fa1a2c9))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.22.0 ([#1865](https://github.com/googleapis/java-pubsub/issues/1865)) ([f4c6f51](https://github.com/googleapis/java-pubsub/commit/f4c6f5112e8285264a497b3a141c31f77fea6ee2))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.23.0 ([#1873](https://github.com/googleapis/java-pubsub/issues/1873)) ([0d445f1](https://github.com/googleapis/java-pubsub/commit/0d445f173574433aed2770d9cc949672221b839e))
+* Update dependency com.google.cloud:google-cloud-storage to v2.32.0 ([#1857](https://github.com/googleapis/java-pubsub/issues/1857)) ([d673e55](https://github.com/googleapis/java-pubsub/commit/d673e55e69f60f5a6f6bae10e2f62d7fd0dfa89f))
+* Update dependency com.google.cloud:google-cloud-storage to v2.32.1 ([#1874](https://github.com/googleapis/java-pubsub/issues/1874)) ([adae8a4](https://github.com/googleapis/java-pubsub/commit/adae8a4aadb08532076fd02710d0e41336ec096c))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.25.2 ([#1858](https://github.com/googleapis/java-pubsub/issues/1858)) ([8fa6354](https://github.com/googleapis/java-pubsub/commit/8fa635427927e1859332896b8373abccd5881949))
+
 ## [1.126.0](https://github.com/googleapis/java-pubsub/compare/v1.125.13...v1.126.0) (2024-01-13)
 
 
