@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.0.0...v3.0.1) (2024-01-25)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.32.0 ([#2363](https://github.com/googleapis/java-bigquerystorage/issues/2363)) ([542b946](https://github.com/googleapis/java-bigquerystorage/commit/542b94606de6790f54ebeb546dc84f30faeb58b2))
+
+
+### Dependencies
+
+* Update arrow.version to v15 ([#2372](https://github.com/googleapis/java-bigquerystorage/issues/2372)) ([4b59eec](https://github.com/googleapis/java-bigquerystorage/commit/4b59eec20da86195ab5051e585bfe20d149af863))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.36.0 ([#2364](https://github.com/googleapis/java-bigquerystorage/issues/2364)) ([26f3429](https://github.com/googleapis/java-bigquerystorage/commit/26f342990fee9c12cb1ee3d016a6d2f434d7b85d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.22.0 ([#2370](https://github.com/googleapis/java-bigquerystorage/issues/2370)) ([adcc49e](https://github.com/googleapis/java-bigquerystorage/commit/adcc49e96a445c4dd2c68be7c82a1d750579d0d3))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.23.0 ([#2378](https://github.com/googleapis/java-bigquerystorage/issues/2378)) ([2d8245f](https://github.com/googleapis/java-bigquerystorage/commit/2d8245fbf1143308410ea2a86ca98b0289a04c29))
+* Update dependency com.google.truth:truth to v1.3.0 ([#2371](https://github.com/googleapis/java-bigquerystorage/issues/2371)) ([8b39e8a](https://github.com/googleapis/java-bigquerystorage/commit/8b39e8af6a88312b39e1283a52bcd52c119c5f30))
+
 ## [3.0.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.47.0...v3.0.0) (2024-01-11)
 
 
