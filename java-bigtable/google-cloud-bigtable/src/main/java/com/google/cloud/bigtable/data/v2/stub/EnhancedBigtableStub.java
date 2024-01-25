@@ -259,6 +259,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .put("project_id", projectId)
             .put("instance", instanceId)
             .put("app_profile", appProfileId)
+            .put("client_name", "bigtable-java/" + Version.VERSION)
             .build();
 
     return new CompositeTracerFactory(

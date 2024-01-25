@@ -123,7 +123,6 @@ public class StatsRecorderWrapper {
     TagContextBuilder tagContextBuilder =
         tagger
             .toBuilder(parentContext)
-            .putLocal(BuiltinMeasureConstants.CLIENT_NAME, TagValue.create("bigtable-java"))
             .putLocal(BuiltinMeasureConstants.METHOD, TagValue.create(spanName.toString()))
             .putLocal(BuiltinMeasureConstants.TABLE, TagValue.create(tableId))
             .putLocal(BuiltinMeasureConstants.ZONE, TagValue.create(zone))
