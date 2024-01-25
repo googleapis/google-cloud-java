@@ -53,19 +53,135 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the BigQueryWriteClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateWriteStream</td>
+ *      <td><p> Creates a write stream to the given table. Additionally, every table has a special stream named '_default' to which data can be written. This stream doesn't need to be created using CreateWriteStream. It is a stream that can be used simultaneously by any number of clients. Data written to this stream is considered committed as soon as an acknowledgement is received.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createWriteStream(CreateWriteStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createWriteStream(TableName parent, WriteStream writeStream)
+ *           <li><p> createWriteStream(String parent, WriteStream writeStream)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createWriteStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AppendRows</td>
+ *      <td><p> Appends data to the given stream.
+ * <p>  If `offset` is specified, the `offset` is checked against the end of stream. The server returns `OUT_OF_RANGE` in `AppendRowsResponse` if an attempt is made to append to an offset beyond the current end of the stream or `ALREADY_EXISTS` if user provides an `offset` that has already been written to. User can retry with adjusted offset within the same RPC connection. If `offset` is not specified, append happens at the end of the stream.
+ * <p>  The response contains an optional offset at which the append happened.  No offset information will be returned for appends to a default stream.
+ * <p>  Responses are received in the same order in which requests are sent. There will be one response for each successful inserted request.  Responses may optionally embed error information if the originating AppendRequest was not successfully processed.
+ * <p>  The specifics of when successfully appended data is made visible to the table are governed by the type of stream:
+ * <ul>
+ * <li>  For COMMITTED streams (which includes the default stream), data is visible immediately upon successful append.
+ * </ul>
+ * <ul>
+ * <li>  For BUFFERED streams, data is made visible via a subsequent `FlushRows` rpc which advances a cursor to a newer offset in the stream.
+ * </ul>
+ * <ul>
+ * <li>  For PENDING streams, data is not made visible until the stream itself is finalized (via the `FinalizeWriteStream` rpc), and the stream is explicitly committed via the `BatchCommitWriteStreams` rpc.
+ * </ul></td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> appendRowsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetWriteStream</td>
+ *      <td><p> Gets information about a write stream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getWriteStream(GetWriteStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getWriteStream(WriteStreamName name)
+ *           <li><p> getWriteStream(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getWriteStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FinalizeWriteStream</td>
+ *      <td><p> Finalize a write stream so that no new data can be appended to the stream. Finalize is not supported on the '_default' stream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> finalizeWriteStream(FinalizeWriteStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> finalizeWriteStream(WriteStreamName name)
+ *           <li><p> finalizeWriteStream(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> finalizeWriteStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCommitWriteStreams</td>
+ *      <td><p> Atomically commits a group of `PENDING` streams that belong to the same `parent` table.
+ * <p>  Streams must be finalized before commit and cannot be committed multiple times. Once a stream is committed, data in the stream becomes available for read operations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCommitWriteStreams(BatchCommitWriteStreamsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchCommitWriteStreams(TableName parent)
+ *           <li><p> batchCommitWriteStreams(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCommitWriteStreamsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FlushRows</td>
+ *      <td><p> Flushes rows to a BUFFERED stream.
+ * <p>  If users are appending rows to BUFFERED stream, flush operation is required in order for the rows to become available for reading. A Flush operation flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in the request.
+ * <p>  Flush is not supported on the _default stream, since it is not BUFFERED.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> flushRows(FlushRowsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> flushRows(WriteStreamName writeStream)
+ *           <li><p> flushRows(String writeStream)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> flushRowsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

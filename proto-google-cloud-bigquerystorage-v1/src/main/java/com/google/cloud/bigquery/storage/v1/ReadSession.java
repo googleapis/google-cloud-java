@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1211,6 +1211,53 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     double getSamplePercentage();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set response_compression_codec when creating a read session to
+     * enable application-level compression of ReadRows responses.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseCompressionCodec field is set.
+     */
+    boolean hasResponseCompressionCodec();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set response_compression_codec when creating a read session to
+     * enable application-level compression of ReadRows responses.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for responseCompressionCodec.
+     */
+    int getResponseCompressionCodecValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set response_compression_codec when creating a read session to
+     * enable application-level compression of ReadRows responses.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseCompressionCodec.
+     */
+    com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec
+        getResponseCompressionCodec();
+
     com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
             .OutputFormatSerializationOptionsCase
         getOutputFormatSerializationOptionsCase();
@@ -1237,6 +1284,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     private TableReadOptions() {
       selectedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       rowRestriction_ = "";
+      responseCompressionCodec_ = 0;
     }
 
     @java.lang.Override
@@ -1258,6 +1306,153 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.class,
               com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which compression codec to attempt on the entire serialized
+     * response payload (either Arrow record batch or Avro rows). This is
+     * not to be confused with the Apache Arrow native compression codecs
+     * specified in ArrowSerializationOptions. For performance reasons, when
+     * creating a read session requesting Arrow responses, setting both native
+     * Arrow compression and application-level response compression will not be
+     * allowed - choose, at most, one kind of compression.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec}
+     */
+    public enum ResponseCompressionCodec implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default is no compression.
+       * </pre>
+       *
+       * <code>RESPONSE_COMPRESSION_CODEC_UNSPECIFIED = 0;</code>
+       */
+      RESPONSE_COMPRESSION_CODEC_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Use raw LZ4 compression.
+       * </pre>
+       *
+       * <code>RESPONSE_COMPRESSION_CODEC_LZ4 = 2;</code>
+       */
+      RESPONSE_COMPRESSION_CODEC_LZ4(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default is no compression.
+       * </pre>
+       *
+       * <code>RESPONSE_COMPRESSION_CODEC_UNSPECIFIED = 0;</code>
+       */
+      public static final int RESPONSE_COMPRESSION_CODEC_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Use raw LZ4 compression.
+       * </pre>
+       *
+       * <code>RESPONSE_COMPRESSION_CODEC_LZ4 = 2;</code>
+       */
+      public static final int RESPONSE_COMPRESSION_CODEC_LZ4_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResponseCompressionCodec valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ResponseCompressionCodec forNumber(int value) {
+        switch (value) {
+          case 0:
+            return RESPONSE_COMPRESSION_CODEC_UNSPECIFIED;
+          case 2:
+            return RESPONSE_COMPRESSION_CODEC_LZ4;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ResponseCompressionCodec>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ResponseCompressionCodec>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ResponseCompressionCodec>() {
+                public ResponseCompressionCodec findValueByNumber(int number) {
+                  return ResponseCompressionCodec.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final ResponseCompressionCodec[] VALUES = values();
+
+      public static ResponseCompressionCodec valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ResponseCompressionCodec(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec)
     }
 
     private int bitField0_;
@@ -1792,6 +1987,72 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return samplePercentage_;
     }
 
+    public static final int RESPONSE_COMPRESSION_CODEC_FIELD_NUMBER = 6;
+    private int responseCompressionCodec_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set response_compression_codec when creating a read session to
+     * enable application-level compression of ReadRows responses.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseCompressionCodec field is set.
+     */
+    @java.lang.Override
+    public boolean hasResponseCompressionCodec() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set response_compression_codec when creating a read session to
+     * enable application-level compression of ReadRows responses.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for responseCompressionCodec.
+     */
+    @java.lang.Override
+    public int getResponseCompressionCodecValue() {
+      return responseCompressionCodec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set response_compression_codec when creating a read session to
+     * enable application-level compression of ReadRows responses.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseCompressionCodec.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
+            .ResponseCompressionCodec
+        getResponseCompressionCodec() {
+      com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec
+          result =
+              com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
+                  .ResponseCompressionCodec.forNumber(responseCompressionCodec_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
+              .ResponseCompressionCodec.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1826,6 +2087,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeDouble(5, samplePercentage_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeEnum(6, responseCompressionCodec_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1864,6 +2128,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, samplePercentage_);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, responseCompressionCodec_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1886,6 +2153,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (hasSamplePercentage()) {
         if (java.lang.Double.doubleToLongBits(getSamplePercentage())
             != java.lang.Double.doubleToLongBits(other.getSamplePercentage())) return false;
+      }
+      if (hasResponseCompressionCodec() != other.hasResponseCompressionCodec()) return false;
+      if (hasResponseCompressionCodec()) {
+        if (responseCompressionCodec_ != other.responseCompressionCodec_) return false;
       }
       if (!getOutputFormatSerializationOptionsCase()
           .equals(other.getOutputFormatSerializationOptionsCase())) return false;
@@ -1924,6 +2195,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             (53 * hash)
                 + com.google.protobuf.Internal.hashLong(
                     java.lang.Double.doubleToLongBits(getSamplePercentage()));
+      }
+      if (hasResponseCompressionCodec()) {
+        hash = (37 * hash) + RESPONSE_COMPRESSION_CODEC_FIELD_NUMBER;
+        hash = (53 * hash) + responseCompressionCodec_;
       }
       switch (outputFormatSerializationOptionsCase_) {
         case 3:
@@ -2090,6 +2365,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           avroSerializationOptionsBuilder_.clear();
         }
         samplePercentage_ = 0D;
+        responseCompressionCodec_ = 0;
         outputFormatSerializationOptionsCase_ = 0;
         outputFormatSerializationOptions_ = null;
         return this;
@@ -2143,6 +2419,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.samplePercentage_ = samplePercentage_;
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.responseCompressionCodec_ = responseCompressionCodec_;
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2230,6 +2510,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         if (other.hasSamplePercentage()) {
           setSamplePercentage(other.getSamplePercentage());
         }
+        if (other.hasResponseCompressionCodec()) {
+          setResponseCompressionCodec(other.getResponseCompressionCodec());
+        }
         switch (other.getOutputFormatSerializationOptionsCase()) {
           case ARROW_SERIALIZATION_OPTIONS:
             {
@@ -2305,6 +2588,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 41
+              case 48:
+                {
+                  responseCompressionCodec_ = input.readEnum();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3649,6 +3938,138 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public Builder clearSamplePercentage() {
         bitField0_ = (bitField0_ & ~0x00000010);
         samplePercentage_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int responseCompressionCodec_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set response_compression_codec when creating a read session to
+       * enable application-level compression of ReadRows responses.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the responseCompressionCodec field is set.
+       */
+      @java.lang.Override
+      public boolean hasResponseCompressionCodec() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set response_compression_codec when creating a read session to
+       * enable application-level compression of ReadRows responses.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for responseCompressionCodec.
+       */
+      @java.lang.Override
+      public int getResponseCompressionCodecValue() {
+        return responseCompressionCodec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set response_compression_codec when creating a read session to
+       * enable application-level compression of ReadRows responses.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for responseCompressionCodec to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseCompressionCodecValue(int value) {
+        responseCompressionCodec_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set response_compression_codec when creating a read session to
+       * enable application-level compression of ReadRows responses.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The responseCompressionCodec.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
+              .ResponseCompressionCodec
+          getResponseCompressionCodec() {
+        com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec
+            result =
+                com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
+                    .ResponseCompressionCodec.forNumber(responseCompressionCodec_);
+        return result == null
+            ? com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
+                .ResponseCompressionCodec.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set response_compression_codec when creating a read session to
+       * enable application-level compression of ReadRows responses.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The responseCompressionCodec to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseCompressionCodec(
+          com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        responseCompressionCodec_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set response_compression_codec when creating a read session to
+       * enable application-level compression of ReadRows responses.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions.ResponseCompressionCodec response_compression_codec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResponseCompressionCodec() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        responseCompressionCodec_ = 0;
         onChanged();
         return this;
       }

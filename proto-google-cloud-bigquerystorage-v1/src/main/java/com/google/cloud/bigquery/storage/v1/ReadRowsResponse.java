@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.ReadRowsResponse.Builder.class);
   }
 
+  private int bitField0_;
   private int rowsCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -497,6 +498,67 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
   }
 
+  public static final int UNCOMPRESSED_BYTE_SIZE_FIELD_NUMBER = 9;
+  private long uncompressedByteSize_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the row data in this ReadRowsResponse is compressed, then
+   * uncompressed byte size is the original size of the uncompressed row data.
+   * If it is set to a value greater than 0, then decompress into a buffer of
+   * size uncompressed_byte_size using the compression codec that was requested
+   * during session creation time and which is specified in
+   * TableReadOptions.response_compression_codec in ReadSession.
+   * This value is not set if no response_compression_codec was not requested
+   * and it is -1 if the requested compression would not have reduced the size
+   * of this ReadRowsResponse's row data. This attempts to match Apache Arrow's
+   * behavior described here https://github.com/apache/arrow/issues/15102 where
+   * the uncompressed length may be set to -1 to indicate that the data that
+   * follows is not compressed, which can be useful for cases where compression
+   * does not yield appreciable savings. When uncompressed_byte_size is not
+   * greater than 0, the client should skip decompression.
+   * </pre>
+   *
+   * <code>optional int64 uncompressed_byte_size = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the uncompressedByteSize field is set.
+   */
+  @java.lang.Override
+  public boolean hasUncompressedByteSize() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the row data in this ReadRowsResponse is compressed, then
+   * uncompressed byte size is the original size of the uncompressed row data.
+   * If it is set to a value greater than 0, then decompress into a buffer of
+   * size uncompressed_byte_size using the compression codec that was requested
+   * during session creation time and which is specified in
+   * TableReadOptions.response_compression_codec in ReadSession.
+   * This value is not set if no response_compression_codec was not requested
+   * and it is -1 if the requested compression would not have reduced the size
+   * of this ReadRowsResponse's row data. This attempts to match Apache Arrow's
+   * behavior described here https://github.com/apache/arrow/issues/15102 where
+   * the uncompressed length may be set to -1 to indicate that the data that
+   * follows is not compressed, which can be useful for cases where compression
+   * does not yield appreciable savings. When uncompressed_byte_size is not
+   * greater than 0, the client should skip decompression.
+   * </pre>
+   *
+   * <code>optional int64 uncompressed_byte_size = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The uncompressedByteSize.
+   */
+  @java.lang.Override
+  public long getUncompressedByteSize() {
+    return uncompressedByteSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -531,6 +593,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     if (schemaCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(9, uncompressedByteSize_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -570,6 +635,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, uncompressedByteSize_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -594,6 +662,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (hasThrottleState() != other.hasThrottleState()) return false;
     if (hasThrottleState()) {
       if (!getThrottleState().equals(other.getThrottleState())) return false;
+    }
+    if (hasUncompressedByteSize() != other.hasUncompressedByteSize()) return false;
+    if (hasUncompressedByteSize()) {
+      if (getUncompressedByteSize() != other.getUncompressedByteSize()) return false;
     }
     if (!getRowsCase().equals(other.getRowsCase())) return false;
     switch (rowsCase_) {
@@ -637,6 +709,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (hasThrottleState()) {
       hash = (37 * hash) + THROTTLE_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getThrottleState().hashCode();
+    }
+    if (hasUncompressedByteSize()) {
+      hash = (37 * hash) + UNCOMPRESSED_BYTE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUncompressedByteSize());
     }
     switch (rowsCase_) {
       case 3:
@@ -826,6 +902,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       if (arrowSchemaBuilder_ != null) {
         arrowSchemaBuilder_.clear();
       }
+      uncompressedByteSize_ = 0L;
       rowsCase_ = 0;
       rows_ = null;
       schemaCase_ = 0;
@@ -877,6 +954,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         result.throttleState_ =
             throttleStateBuilder_ == null ? throttleState_ : throttleStateBuilder_.build();
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.uncompressedByteSize_ = uncompressedByteSize_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.bigquery.storage.v1.ReadRowsResponse result) {
@@ -952,6 +1035,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasThrottleState()) {
         mergeThrottleState(other.getThrottleState());
+      }
+      if (other.hasUncompressedByteSize()) {
+        setUncompressedByteSize(other.getUncompressedByteSize());
       }
       switch (other.getRowsCase()) {
         case AVRO_ROWS:
@@ -1054,6 +1140,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
                 schemaCase_ = 8;
                 break;
               } // case 66
+            case 72:
+              {
+                uncompressedByteSize_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2407,6 +2499,130 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 8;
       onChanged();
       return arrowSchemaBuilder_;
+    }
+
+    private long uncompressedByteSize_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the row data in this ReadRowsResponse is compressed, then
+     * uncompressed byte size is the original size of the uncompressed row data.
+     * If it is set to a value greater than 0, then decompress into a buffer of
+     * size uncompressed_byte_size using the compression codec that was requested
+     * during session creation time and which is specified in
+     * TableReadOptions.response_compression_codec in ReadSession.
+     * This value is not set if no response_compression_codec was not requested
+     * and it is -1 if the requested compression would not have reduced the size
+     * of this ReadRowsResponse's row data. This attempts to match Apache Arrow's
+     * behavior described here https://github.com/apache/arrow/issues/15102 where
+     * the uncompressed length may be set to -1 to indicate that the data that
+     * follows is not compressed, which can be useful for cases where compression
+     * does not yield appreciable savings. When uncompressed_byte_size is not
+     * greater than 0, the client should skip decompression.
+     * </pre>
+     *
+     * <code>optional int64 uncompressed_byte_size = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the uncompressedByteSize field is set.
+     */
+    @java.lang.Override
+    public boolean hasUncompressedByteSize() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the row data in this ReadRowsResponse is compressed, then
+     * uncompressed byte size is the original size of the uncompressed row data.
+     * If it is set to a value greater than 0, then decompress into a buffer of
+     * size uncompressed_byte_size using the compression codec that was requested
+     * during session creation time and which is specified in
+     * TableReadOptions.response_compression_codec in ReadSession.
+     * This value is not set if no response_compression_codec was not requested
+     * and it is -1 if the requested compression would not have reduced the size
+     * of this ReadRowsResponse's row data. This attempts to match Apache Arrow's
+     * behavior described here https://github.com/apache/arrow/issues/15102 where
+     * the uncompressed length may be set to -1 to indicate that the data that
+     * follows is not compressed, which can be useful for cases where compression
+     * does not yield appreciable savings. When uncompressed_byte_size is not
+     * greater than 0, the client should skip decompression.
+     * </pre>
+     *
+     * <code>optional int64 uncompressed_byte_size = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The uncompressedByteSize.
+     */
+    @java.lang.Override
+    public long getUncompressedByteSize() {
+      return uncompressedByteSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the row data in this ReadRowsResponse is compressed, then
+     * uncompressed byte size is the original size of the uncompressed row data.
+     * If it is set to a value greater than 0, then decompress into a buffer of
+     * size uncompressed_byte_size using the compression codec that was requested
+     * during session creation time and which is specified in
+     * TableReadOptions.response_compression_codec in ReadSession.
+     * This value is not set if no response_compression_codec was not requested
+     * and it is -1 if the requested compression would not have reduced the size
+     * of this ReadRowsResponse's row data. This attempts to match Apache Arrow's
+     * behavior described here https://github.com/apache/arrow/issues/15102 where
+     * the uncompressed length may be set to -1 to indicate that the data that
+     * follows is not compressed, which can be useful for cases where compression
+     * does not yield appreciable savings. When uncompressed_byte_size is not
+     * greater than 0, the client should skip decompression.
+     * </pre>
+     *
+     * <code>optional int64 uncompressed_byte_size = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The uncompressedByteSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUncompressedByteSize(long value) {
+
+      uncompressedByteSize_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the row data in this ReadRowsResponse is compressed, then
+     * uncompressed byte size is the original size of the uncompressed row data.
+     * If it is set to a value greater than 0, then decompress into a buffer of
+     * size uncompressed_byte_size using the compression codec that was requested
+     * during session creation time and which is specified in
+     * TableReadOptions.response_compression_codec in ReadSession.
+     * This value is not set if no response_compression_codec was not requested
+     * and it is -1 if the requested compression would not have reduced the size
+     * of this ReadRowsResponse's row data. This attempts to match Apache Arrow's
+     * behavior described here https://github.com/apache/arrow/issues/15102 where
+     * the uncompressed length may be set to -1 to indicate that the data that
+     * follows is not compressed, which can be useful for cases where compression
+     * does not yield appreciable savings. When uncompressed_byte_size is not
+     * greater than 0, the client should skip decompression.
+     * </pre>
+     *
+     * <code>optional int64 uncompressed_byte_size = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUncompressedByteSize() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      uncompressedByteSize_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

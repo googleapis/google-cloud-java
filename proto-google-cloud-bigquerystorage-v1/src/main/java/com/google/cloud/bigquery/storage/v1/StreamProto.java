@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ public final class StreamProto {
           + "uery/storage/v1/arrow.proto\032+google/clou"
           + "d/bigquery/storage/v1/avro.proto\032,google"
           + "/cloud/bigquery/storage/v1/table.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\300\n\n\013Read"
+          + "google/protobuf/timestamp.proto\"\324\014\n\013Read"
           + "Session\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013expire_ti"
           + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A"
           + "\001\003\022G\n\013data_format\030\003 \001(\0162,.google.cloud.b"
@@ -85,47 +85,54 @@ public final class StreamProto {
           + "ated_row_count\030\016 \001(\003B\004\342A\001\003\022\026\n\010trace_id\030\r"
           + " \001(\tB\004\342A\001\001\032C\n\016TableModifiers\0221\n\rsnapshot"
           + "_time\030\001 \001(\0132\032.google.protobuf.Timestamp\032"
-          + "\371\002\n\020TableReadOptions\022\027\n\017selected_fields\030"
+          + "\215\005\n\020TableReadOptions\022\027\n\017selected_fields\030"
           + "\001 \003(\t\022\027\n\017row_restriction\030\002 \001(\t\022h\n\033arrow_"
           + "serialization_options\030\003 \001(\0132;.google.clo"
           + "ud.bigquery.storage.v1.ArrowSerializatio"
           + "nOptionsB\004\342A\001\001H\000\022f\n\032avro_serialization_o"
           + "ptions\030\004 \001(\0132:.google.cloud.bigquery.sto"
           + "rage.v1.AvroSerializationOptionsB\004\342A\001\001H\000"
-          + "\022$\n\021sample_percentage\030\005 \001(\001B\004\342A\001\001H\001\210\001\001B%"
-          + "\n#output_format_serialization_optionsB\024\n"
-          + "\022_sample_percentage:k\352Ah\n*bigquerystorag"
-          + "e.googleapis.com/ReadSession\022:projects/{"
-          + "project}/locations/{location}/sessions/{"
-          + "session}B\010\n\006schema\"\235\001\n\nReadStream\022\022\n\004nam"
-          + "e\030\001 \001(\tB\004\342A\001\003:{\352Ax\n)bigquerystorage.goog"
-          + "leapis.com/ReadStream\022Kprojects/{project"
-          + "}/locations/{location}/sessions/{session"
-          + "}/streams/{stream}\"\202\005\n\013WriteStream\022\022\n\004na"
-          + "me\030\001 \001(\tB\004\342A\001\003\022F\n\004type\030\002 \001(\01622.google.cl"
-          + "oud.bigquery.storage.v1.WriteStream.Type"
-          + "B\004\342A\001\005\0225\n\013create_time\030\003 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\004\342A\001\003\0225\n\013commit_time\030\004 \001"
-          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022I\n\014"
-          + "table_schema\030\005 \001(\0132-.google.cloud.bigque"
-          + "ry.storage.v1.TableSchemaB\004\342A\001\003\022Q\n\nwrite"
-          + "_mode\030\007 \001(\01627.google.cloud.bigquery.stor"
-          + "age.v1.WriteStream.WriteModeB\004\342A\001\005\022\026\n\010lo"
-          + "cation\030\010 \001(\tB\004\342A\001\005\"F\n\004Type\022\024\n\020TYPE_UNSPE"
-          + "CIFIED\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PENDING\020\002\022\014\n\010"
-          + "BUFFERED\020\003\"3\n\tWriteMode\022\032\n\026WRITE_MODE_UN"
-          + "SPECIFIED\020\000\022\n\n\006INSERT\020\001:v\352As\n*bigqueryst"
-          + "orage.googleapis.com/WriteStream\022Eprojec"
-          + "ts/{project}/datasets/{dataset}/tables/{"
-          + "table}/streams/{stream}*>\n\nDataFormat\022\033\n"
-          + "\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005"
-          + "ARROW\020\002*I\n\017WriteStreamView\022!\n\035WRITE_STRE"
-          + "AM_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL"
-          + "\020\002B\273\001\n$com.google.cloud.bigquery.storage"
-          + ".v1B\013StreamProtoP\001Z>cloud.google.com/go/"
-          + "bigquery/storage/apiv1/storagepb;storage"
-          + "pb\252\002 Google.Cloud.BigQuery.Storage.V1\312\002 "
-          + "Google\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
+          + "\022$\n\021sample_percentage\030\005 \001(\001B\004\342A\001\001H\001\210\001\001\022\206"
+          + "\001\n\032response_compression_codec\030\006 \001(\0162W.go"
+          + "ogle.cloud.bigquery.storage.v1.ReadSessi"
+          + "on.TableReadOptions.ResponseCompressionC"
+          + "odecB\004\342A\001\001H\002\210\001\001\"j\n\030ResponseCompressionCo"
+          + "dec\022*\n&RESPONSE_COMPRESSION_CODEC_UNSPEC"
+          + "IFIED\020\000\022\"\n\036RESPONSE_COMPRESSION_CODEC_LZ"
+          + "4\020\002B%\n#output_format_serialization_optio"
+          + "nsB\024\n\022_sample_percentageB\035\n\033_response_co"
+          + "mpression_codec:k\352Ah\n*bigquerystorage.go"
+          + "ogleapis.com/ReadSession\022:projects/{proj"
+          + "ect}/locations/{location}/sessions/{sess"
+          + "ion}B\010\n\006schema\"\235\001\n\nReadStream\022\022\n\004name\030\001 "
+          + "\001(\tB\004\342A\001\003:{\352Ax\n)bigquerystorage.googleap"
+          + "is.com/ReadStream\022Kprojects/{project}/lo"
+          + "cations/{location}/sessions/{session}/st"
+          + "reams/{stream}\"\202\005\n\013WriteStream\022\022\n\004name\030\001"
+          + " \001(\tB\004\342A\001\003\022F\n\004type\030\002 \001(\01622.google.cloud."
+          + "bigquery.storage.v1.WriteStream.TypeB\004\342A"
+          + "\001\005\0225\n\013create_time\030\003 \001(\0132\032.google.protobu"
+          + "f.TimestampB\004\342A\001\003\0225\n\013commit_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\004\342A\001\003\022I\n\014tabl"
+          + "e_schema\030\005 \001(\0132-.google.cloud.bigquery.s"
+          + "torage.v1.TableSchemaB\004\342A\001\003\022Q\n\nwrite_mod"
+          + "e\030\007 \001(\01627.google.cloud.bigquery.storage."
+          + "v1.WriteStream.WriteModeB\004\342A\001\005\022\026\n\010locati"
+          + "on\030\010 \001(\tB\004\342A\001\005\"F\n\004Type\022\024\n\020TYPE_UNSPECIFI"
+          + "ED\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PENDING\020\002\022\014\n\010BUFF"
+          + "ERED\020\003\"3\n\tWriteMode\022\032\n\026WRITE_MODE_UNSPEC"
+          + "IFIED\020\000\022\n\n\006INSERT\020\001:v\352As\n*bigquerystorag"
+          + "e.googleapis.com/WriteStream\022Eprojects/{"
+          + "project}/datasets/{dataset}/tables/{tabl"
+          + "e}/streams/{stream}*>\n\nDataFormat\022\033\n\027DAT"
+          + "A_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARRO"
+          + "W\020\002*I\n\017WriteStreamView\022!\n\035WRITE_STREAM_V"
+          + "IEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\273"
+          + "\001\n$com.google.cloud.bigquery.storage.v1B"
+          + "\013StreamProtoP\001Z>cloud.google.com/go/bigq"
+          + "uery/storage/apiv1/storagepb;storagepb\252\002"
+          + " Google.Cloud.BigQuery.Storage.V1\312\002 Goog"
+          + "le\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -182,8 +189,10 @@ public final class StreamProto {
               "ArrowSerializationOptions",
               "AvroSerializationOptions",
               "SamplePercentage",
+              "ResponseCompressionCodec",
               "OutputFormatSerializationOptions",
               "SamplePercentage",
+              "ResponseCompressionCodec",
             });
     internal_static_google_cloud_bigquery_storage_v1_ReadStream_descriptor =
         getDescriptor().getMessageTypes().get(1);

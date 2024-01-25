@@ -873,6 +873,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.bigquery.storage.v1.ReadSession$TableReadOptions$ResponseCompressionCodec",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.bigquery.storage.v1.ReadStream",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
