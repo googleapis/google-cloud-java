@@ -40,7 +40,7 @@ public final class Instrumentation {
   // See
   // https://github.com/googleapis/release-please/blob/main/docs/customizing.md#updating-arbitrary-files
   // {x-version-update-start:google-cloud-logging:current}
-  public static final String DEFAULT_INSTRUMENTATION_VERSION = "3.15.16";
+  public static final String DEFAULT_INSTRUMENTATION_VERSION = "3.15.17-SNAPSHOT";
   // {x-version-update-end}
   public static final String INSTRUMENTATION_LOG_NAME = "diagnostic-log";
   public static final int MAX_DIAGNOSTIC_VALUE_LENGTH = 14;
