@@ -65,105 +65,105 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
- *   <caption>Methods</caption>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
  *    </tr>
  *    <tr>
- *      <td>ListLogMetrics</td>
+ *      <td><p> ListLogMetrics</td>
  *      <td><p> Lists logs-based metrics.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listLogMetrics(ListLogMetricsRequest request)
+ *           <li><p> listLogMetrics(ListLogMetricsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listLogMetrics(ProjectName parent)
- *           <li>listLogMetrics(String parent)
+ *           <li><p> listLogMetrics(ProjectName parent)
+ *           <li><p> listLogMetrics(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listLogMetricsPagedCallable()
- *           <li>listLogMetricsCallable()
+ *           <li><p> listLogMetricsPagedCallable()
+ *           <li><p> listLogMetricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetLogMetric</td>
+ *      <td><p> GetLogMetric</td>
  *      <td><p> Gets a logs-based metric.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getLogMetric(GetLogMetricRequest request)
+ *           <li><p> getLogMetric(GetLogMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getLogMetric(LogMetricName metricName)
- *           <li>getLogMetric(String metricName)
+ *           <li><p> getLogMetric(LogMetricName metricName)
+ *           <li><p> getLogMetric(String metricName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getLogMetricCallable()
+ *           <li><p> getLogMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CreateLogMetric</td>
+ *      <td><p> CreateLogMetric</td>
  *      <td><p> Creates a logs-based metric.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createLogMetric(CreateLogMetricRequest request)
+ *           <li><p> createLogMetric(CreateLogMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createLogMetric(ProjectName parent, LogMetric metric)
- *           <li>createLogMetric(String parent, LogMetric metric)
+ *           <li><p> createLogMetric(ProjectName parent, LogMetric metric)
+ *           <li><p> createLogMetric(String parent, LogMetric metric)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createLogMetricCallable()
+ *           <li><p> createLogMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>UpdateLogMetric</td>
+ *      <td><p> UpdateLogMetric</td>
  *      <td><p> Creates or updates a logs-based metric.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>updateLogMetric(UpdateLogMetricRequest request)
+ *           <li><p> updateLogMetric(UpdateLogMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>updateLogMetric(LogMetricName metricName, LogMetric metric)
- *           <li>updateLogMetric(String metricName, LogMetric metric)
+ *           <li><p> updateLogMetric(LogMetricName metricName, LogMetric metric)
+ *           <li><p> updateLogMetric(String metricName, LogMetric metric)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>updateLogMetricCallable()
+ *           <li><p> updateLogMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteLogMetric</td>
+ *      <td><p> DeleteLogMetric</td>
  *      <td><p> Deletes a logs-based metric.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteLogMetric(DeleteLogMetricRequest request)
+ *           <li><p> deleteLogMetric(DeleteLogMetricRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteLogMetric(LogMetricName metricName)
- *           <li>deleteLogMetric(String metricName)
+ *           <li><p> deleteLogMetric(LogMetricName metricName)
+ *           <li><p> deleteLogMetric(String metricName)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteLogMetricCallable()
+ *           <li><p> deleteLogMetricCallable()
  *      </ul>
  *       </td>
  *    </tr>
