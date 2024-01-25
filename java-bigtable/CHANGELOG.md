@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.32.0](https://github.com/googleapis/java-bigtable/compare/v2.31.0...v2.32.0) (2024-01-25)
+
+
+### Features
+
+* Append version to the client name in client-side metrics. ([#2062](https://github.com/googleapis/java-bigtable/issues/2062)) ([9a0cdc8](https://github.com/googleapis/java-bigtable/commit/9a0cdc8cb8e2c52fde403eb316d28bf99c55a1e7))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.32.0 ([#2060](https://github.com/googleapis/java-bigtable/issues/2060)) ([c218ac3](https://github.com/googleapis/java-bigtable/commit/c218ac3571360c85171dac71b915ad6776d97589))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.23.0 ([#2076](https://github.com/googleapis/java-bigtable/issues/2076)) ([5d1079c](https://github.com/googleapis/java-bigtable/commit/5d1079c2d1ced39b656773ff17743cb4e08a6126))
+* Update dependency com.google.truth.extensions:truth-proto-extension to v1.3.0 ([#2058](https://github.com/googleapis/java-bigtable/issues/2058)) ([1622a9f](https://github.com/googleapis/java-bigtable/commit/1622a9f34d6818952eb283eba01992dc48a9df25))
+* Update shared dependencies ([#2056](https://github.com/googleapis/java-bigtable/issues/2056)) ([f73ba40](https://github.com/googleapis/java-bigtable/commit/f73ba4099b497a78f82a1ad61b91035380955c21))
+
 ## [2.31.0](https://github.com/googleapis/java-bigtable/compare/v2.30.0...v2.31.0) (2024-01-12)
 
 
