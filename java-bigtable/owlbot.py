@@ -111,4 +111,6 @@ java.common_templates(excludes=[
     # needed for extraFiles
     '.github/release-please.yml',
     'renovate.json',
+    '.kokoro/requirements.in',
+    '.kokoro/requirements.txt'
 ])
