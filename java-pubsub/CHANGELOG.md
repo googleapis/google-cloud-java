@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.126.2](https://github.com/googleapis/java-pubsub/compare/v1.126.1...v1.126.2) (2024-01-26)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.32.0 ([#1875](https://github.com/googleapis/java-pubsub/issues/1875)) ([0aac3e4](https://github.com/googleapis/java-pubsub/commit/0aac3e4c9c5671ce8f3b98056cc3710cd5ca9d07))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.37.0 ([#1878](https://github.com/googleapis/java-pubsub/issues/1878)) ([16dee8b](https://github.com/googleapis/java-pubsub/commit/16dee8bce115f59d8518ca1ae0e39dd87d81f802))
+
 ## [1.126.1](https://github.com/googleapis/java-pubsub/compare/v1.126.0...v1.126.1) (2024-01-25)
 
 
