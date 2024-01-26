@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time to seek to.
+   * Optional. The time to seek to.
    * Messages retained in the subscription that were published before this
    * time are marked as acknowledged, and messages retained in the
    * subscription that were published after this time are marked as
@@ -182,7 +182,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    * and already-expunged messages will not be restored.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp time = 2;</code>
+   * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the time field is set.
    */
@@ -194,7 +194,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time to seek to.
+   * Optional. The time to seek to.
    * Messages retained in the subscription that were published before this
    * time are marked as acknowledged, and messages retained in the
    * subscription that were published after this time are marked as
@@ -207,7 +207,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    * and already-expunged messages will not be restored.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp time = 2;</code>
+   * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The time.
    */
@@ -222,7 +222,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time to seek to.
+   * Optional. The time to seek to.
    * Messages retained in the subscription that were published before this
    * time are marked as acknowledged, and messages retained in the
    * subscription that were published after this time are marked as
@@ -235,7 +235,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    * and already-expunged messages will not be restored.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp time = 2;</code>
+   * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
@@ -250,12 +250,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The snapshot to seek to. The snapshot's topic must be the same as that of
-   * the provided subscription.
-   * Format is `projects/{project}/snapshots/{snap}`.
+   * Optional. The snapshot to seek to. The snapshot's topic must be the same
+   * as that of the provided subscription. Format is
+   * `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return Whether the snapshot field is set.
    */
@@ -266,12 +268,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The snapshot to seek to. The snapshot's topic must be the same as that of
-   * the provided subscription.
-   * Format is `projects/{project}/snapshots/{snap}`.
+   * Optional. The snapshot to seek to. The snapshot's topic must be the same
+   * as that of the provided subscription. Format is
+   * `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The snapshot.
    */
@@ -295,12 +299,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The snapshot to seek to. The snapshot's topic must be the same as that of
-   * the provided subscription.
-   * Format is `projects/{project}/snapshots/{snap}`.
+   * Optional. The snapshot to seek to. The snapshot's topic must be the same
+   * as that of the provided subscription. Format is
+   * `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for snapshot.
    */
@@ -880,7 +886,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -893,7 +899,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the time field is set.
      */
@@ -905,7 +911,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -918,7 +924,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The time.
      */
@@ -940,7 +946,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -953,7 +959,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTime(com.google.protobuf.Timestamp value) {
       if (timeBuilder_ == null) {
@@ -972,7 +978,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -985,7 +991,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timeBuilder_ == null) {
@@ -1001,7 +1007,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -1014,7 +1020,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeTime(com.google.protobuf.Timestamp value) {
       if (timeBuilder_ == null) {
@@ -1041,7 +1047,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -1054,7 +1060,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearTime() {
       if (timeBuilder_ == null) {
@@ -1076,7 +1082,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -1089,7 +1095,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
       return getTimeFieldBuilder().getBuilder();
@@ -1098,7 +1104,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -1111,7 +1117,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
@@ -1128,7 +1134,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time to seek to.
+     * Optional. The time to seek to.
      * Messages retained in the subscription that were published before this
      * time are marked as acknowledged, and messages retained in the
      * subscription that were published after this time are marked as
@@ -1141,7 +1147,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * and already-expunged messages will not be restored.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2;</code>
+     * <code>.google.protobuf.Timestamp time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1169,12 +1175,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot to seek to. The snapshot's topic must be the same as that of
-     * the provided subscription.
-     * Format is `projects/{project}/snapshots/{snap}`.
+     * Optional. The snapshot to seek to. The snapshot's topic must be the same
+     * as that of the provided subscription. Format is
+     * `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return Whether the snapshot field is set.
      */
@@ -1186,12 +1194,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot to seek to. The snapshot's topic must be the same as that of
-     * the provided subscription.
-     * Format is `projects/{project}/snapshots/{snap}`.
+     * Optional. The snapshot to seek to. The snapshot's topic must be the same
+     * as that of the provided subscription. Format is
+     * `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The snapshot.
      */
@@ -1216,12 +1226,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot to seek to. The snapshot's topic must be the same as that of
-     * the provided subscription.
-     * Format is `projects/{project}/snapshots/{snap}`.
+     * Optional. The snapshot to seek to. The snapshot's topic must be the same
+     * as that of the provided subscription. Format is
+     * `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for snapshot.
      */
@@ -1246,12 +1258,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot to seek to. The snapshot's topic must be the same as that of
-     * the provided subscription.
-     * Format is `projects/{project}/snapshots/{snap}`.
+     * Optional. The snapshot to seek to. The snapshot's topic must be the same
+     * as that of the provided subscription. Format is
+     * `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The snapshot to set.
      * @return This builder for chaining.
@@ -1269,12 +1283,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot to seek to. The snapshot's topic must be the same as that of
-     * the provided subscription.
-     * Format is `projects/{project}/snapshots/{snap}`.
+     * Optional. The snapshot to seek to. The snapshot's topic must be the same
+     * as that of the provided subscription. Format is
+     * `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1290,12 +1306,14 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot to seek to. The snapshot's topic must be the same as that of
-     * the provided subscription.
-     * Format is `projects/{project}/snapshots/{snap}`.
+     * Optional. The snapshot to seek to. The snapshot's topic must be the same
+     * as that of the provided subscription. Format is
+     * `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string snapshot = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for snapshot to set.
      * @return This builder for chaining.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,40 +27,48 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList();
   /**
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index);
   /**
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getReceivedMessagesCount();
   /**
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList();
@@ -68,10 +76,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index);
 
@@ -79,12 +89,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the acknowledgeConfirmation field is set.
@@ -94,12 +104,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The acknowledgeConfirmation.
@@ -109,12 +119,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder
@@ -124,12 +134,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the modifyAckDeadlineConfirmation field is set.
@@ -139,12 +149,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The modifyAckDeadlineConfirmation.
@@ -155,12 +165,12 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder
@@ -170,11 +180,11 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Properties associated with this subscription.
+   * Optional. Properties associated with this subscription.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the subscriptionProperties field is set.
@@ -184,11 +194,11 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Properties associated with this subscription.
+   * Optional. Properties associated with this subscription.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The subscriptionProperties.
@@ -198,11 +208,11 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Properties associated with this subscription.
+   * Optional. Properties associated with this subscription.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.pubsub.v1.StreamingPullResponse.SubscriptionPropertiesOrBuilder

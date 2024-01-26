@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,10 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The name of the snapshot.
+   * Optional. The name of the snapshot.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The name of the snapshot.
+   * Optional. The name of the snapshot.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -52,10 +52,13 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The name of the topic from which this snapshot is retaining messages.
+   * Optional. The name of the topic from which this snapshot is retaining
+   * messages.
    * </pre>
    *
-   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -64,10 +67,13 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The name of the topic from which this snapshot is retaining messages.
+   * Optional. The name of the topic from which this snapshot is retaining
+   * messages.
    * </pre>
    *
-   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -77,7 +83,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The snapshot is guaranteed to exist up until this time.
+   * Optional. The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
    * creation. Its exact lifetime is determined at creation by the existing
    * backlog in the source subscription. Specifically, the lifetime of the
@@ -89,7 +95,8 @@ public interface SnapshotOrBuilder
    * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the expireTime field is set.
    */
@@ -98,7 +105,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The snapshot is guaranteed to exist up until this time.
+   * Optional. The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
    * creation. Its exact lifetime is determined at creation by the existing
    * backlog in the source subscription. Specifically, the lifetime of the
@@ -110,7 +117,8 @@ public interface SnapshotOrBuilder
    * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The expireTime.
    */
@@ -119,7 +127,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * The snapshot is guaranteed to exist up until this time.
+   * Optional. The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
    * creation. Its exact lifetime is determined at creation by the existing
    * backlog in the source subscription. Specifically, the lifetime of the
@@ -131,7 +139,8 @@ public interface SnapshotOrBuilder
    * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 
@@ -139,22 +148,22 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -164,22 +173,22 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -190,11 +199,11 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,10 +132,10 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The encoding of messages validated against `schema`.
+   * Optional. The encoding of messages validated against `schema`.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+   * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enum numeric value on the wire for encoding.
    */
@@ -147,10 +147,10 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The encoding of messages validated against `schema`.
+   * Optional. The encoding of messages validated against `schema`.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+   * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The encoding.
    */
@@ -168,12 +168,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum (inclusive) revision allowed for validating messages. If empty
-   * or not present, allow any revision to be validated against last_revision or
-   * any revision created before.
+   * Optional. The minimum (inclusive) revision allowed for validating messages.
+   * If empty or not present, allow any revision to be validated against
+   * last_revision or any revision created before.
    * </pre>
    *
-   * <code>string first_revision_id = 3;</code>
+   * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The firstRevisionId.
    */
@@ -193,12 +193,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum (inclusive) revision allowed for validating messages. If empty
-   * or not present, allow any revision to be validated against last_revision or
-   * any revision created before.
+   * Optional. The minimum (inclusive) revision allowed for validating messages.
+   * If empty or not present, allow any revision to be validated against
+   * last_revision or any revision created before.
    * </pre>
    *
-   * <code>string first_revision_id = 3;</code>
+   * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for firstRevisionId.
    */
@@ -223,12 +223,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum (inclusive) revision allowed for validating messages. If empty
-   * or not present, allow any revision to be validated against first_revision
-   * or any revision created after.
+   * Optional. The maximum (inclusive) revision allowed for validating messages.
+   * If empty or not present, allow any revision to be validated against
+   * first_revision or any revision created after.
    * </pre>
    *
-   * <code>string last_revision_id = 4;</code>
+   * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The lastRevisionId.
    */
@@ -248,12 +248,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum (inclusive) revision allowed for validating messages. If empty
-   * or not present, allow any revision to be validated against first_revision
-   * or any revision created after.
+   * Optional. The maximum (inclusive) revision allowed for validating messages.
+   * If empty or not present, allow any revision to be validated against
+   * first_revision or any revision created after.
    * </pre>
    *
-   * <code>string last_revision_id = 4;</code>
+   * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for lastRevisionId.
    */
@@ -814,10 +814,11 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding of messages validated against `schema`.
+     * Optional. The encoding of messages validated against `schema`.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+     * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for encoding.
      */
@@ -829,10 +830,11 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding of messages validated against `schema`.
+     * Optional. The encoding of messages validated against `schema`.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+     * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for encoding to set.
      * @return This builder for chaining.
@@ -847,10 +849,11 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding of messages validated against `schema`.
+     * Optional. The encoding of messages validated against `schema`.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+     * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The encoding.
      */
@@ -863,10 +866,11 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding of messages validated against `schema`.
+     * Optional. The encoding of messages validated against `schema`.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+     * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The encoding to set.
      * @return This builder for chaining.
@@ -884,10 +888,11 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding of messages validated against `schema`.
+     * Optional. The encoding of messages validated against `schema`.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Encoding encoding = 2;</code>
+     * <code>.google.pubsub.v1.Encoding encoding = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -903,12 +908,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against last_revision or
-     * any revision created before.
+     * Optional. The minimum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * last_revision or any revision created before.
      * </pre>
      *
-     * <code>string first_revision_id = 3;</code>
+     * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The firstRevisionId.
      */
@@ -927,12 +932,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against last_revision or
-     * any revision created before.
+     * Optional. The minimum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * last_revision or any revision created before.
      * </pre>
      *
-     * <code>string first_revision_id = 3;</code>
+     * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for firstRevisionId.
      */
@@ -951,12 +956,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against last_revision or
-     * any revision created before.
+     * Optional. The minimum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * last_revision or any revision created before.
      * </pre>
      *
-     * <code>string first_revision_id = 3;</code>
+     * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The firstRevisionId to set.
      * @return This builder for chaining.
@@ -974,12 +979,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against last_revision or
-     * any revision created before.
+     * Optional. The minimum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * last_revision or any revision created before.
      * </pre>
      *
-     * <code>string first_revision_id = 3;</code>
+     * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -993,12 +998,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against last_revision or
-     * any revision created before.
+     * Optional. The minimum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * last_revision or any revision created before.
      * </pre>
      *
-     * <code>string first_revision_id = 3;</code>
+     * <code>string first_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for firstRevisionId to set.
      * @return This builder for chaining.
@@ -1019,12 +1024,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against first_revision
-     * or any revision created after.
+     * Optional. The maximum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * first_revision or any revision created after.
      * </pre>
      *
-     * <code>string last_revision_id = 4;</code>
+     * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The lastRevisionId.
      */
@@ -1043,12 +1048,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against first_revision
-     * or any revision created after.
+     * Optional. The maximum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * first_revision or any revision created after.
      * </pre>
      *
-     * <code>string last_revision_id = 4;</code>
+     * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for lastRevisionId.
      */
@@ -1067,12 +1072,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against first_revision
-     * or any revision created after.
+     * Optional. The maximum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * first_revision or any revision created after.
      * </pre>
      *
-     * <code>string last_revision_id = 4;</code>
+     * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The lastRevisionId to set.
      * @return This builder for chaining.
@@ -1090,12 +1095,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against first_revision
-     * or any revision created after.
+     * Optional. The maximum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * first_revision or any revision created after.
      * </pre>
      *
-     * <code>string last_revision_id = 4;</code>
+     * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1109,12 +1114,12 @@ public final class SchemaSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum (inclusive) revision allowed for validating messages. If empty
-     * or not present, allow any revision to be validated against first_revision
-     * or any revision created after.
+     * Optional. The maximum (inclusive) revision allowed for validating messages.
+     * If empty or not present, allow any revision to be validated against
+     * first_revision or any revision created after.
      * </pre>
      *
-     * <code>string last_revision_id = 4;</code>
+     * <code>string last_revision_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for lastRevisionId to set.
      * @return This builder for chaining.

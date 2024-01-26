@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,15 +71,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the allowedPersistenceRegions.
    */
@@ -90,15 +92,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of allowedPersistenceRegions.
    */
@@ -109,15 +113,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The allowedPersistenceRegions at the given index.
@@ -129,21 +135,45 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedPersistenceRegions at the given index.
    */
   public com.google.protobuf.ByteString getAllowedPersistenceRegionsBytes(int index) {
     return allowedPersistenceRegions_.getByteString(index);
+  }
+
+  public static final int ENFORCE_IN_TRANSIT_FIELD_NUMBER = 2;
+  private boolean enforceInTransit_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, `allowed_persistence_regions` is also used to enforce
+   * in-transit guarantees for messages. That is, Pub/Sub will fail
+   * Publish operations on this topic and subscribe operations
+   * on any subscription attached to this topic in any region that is
+   * not in `allowed_persistence_regions`.
+   * </pre>
+   *
+   * <code>bool enforce_in_transit = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enforceInTransit.
+   */
+  @java.lang.Override
+  public boolean getEnforceInTransit() {
+    return enforceInTransit_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -164,6 +194,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 1, allowedPersistenceRegions_.getRaw(i));
     }
+    if (enforceInTransit_ != false) {
+      output.writeBool(2, enforceInTransit_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -180,6 +213,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       }
       size += dataSize;
       size += 1 * getAllowedPersistenceRegionsList().size();
+    }
+    if (enforceInTransit_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enforceInTransit_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -199,6 +235,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
 
     if (!getAllowedPersistenceRegionsList().equals(other.getAllowedPersistenceRegionsList()))
       return false;
+    if (getEnforceInTransit() != other.getEnforceInTransit()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -214,6 +251,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + ALLOWED_PERSISTENCE_REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedPersistenceRegionsList().hashCode();
     }
+    hash = (37 * hash) + ENFORCE_IN_TRANSIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnforceInTransit());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -354,6 +393,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      enforceInTransit_ = false;
       return this;
     }
 
@@ -393,6 +433,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000001) != 0)) {
         allowedPersistenceRegions_.makeImmutable();
         result.allowedPersistenceRegions_ = allowedPersistenceRegions_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enforceInTransit_ = enforceInTransit_;
       }
     }
 
@@ -451,6 +494,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
         }
         onChanged();
       }
+      if (other.getEnforceInTransit() != false) {
+        setEnforceInTransit(other.getEnforceInTransit());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -484,6 +530,12 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
                 allowedPersistenceRegions_.add(s);
                 break;
               } // case 10
+            case 16:
+              {
+                enforceInTransit_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -517,15 +569,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the allowedPersistenceRegions.
      */
@@ -537,15 +591,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of allowedPersistenceRegions.
      */
@@ -556,15 +612,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The allowedPersistenceRegions at the given index.
@@ -576,15 +634,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowedPersistenceRegions at the given index.
@@ -596,15 +656,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The allowedPersistenceRegions to set.
@@ -624,15 +686,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The allowedPersistenceRegions to add.
      * @return This builder for chaining.
@@ -651,15 +715,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The allowedPersistenceRegions to add.
      * @return This builder for chaining.
@@ -675,15 +741,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -698,15 +766,17 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of IDs of Google Cloud regions where messages that are published
-     * to the topic may be persisted in storage. Messages published by publishers
-     * running in non-allowed Google Cloud regions (or running outside of Google
-     * Cloud altogether) are routed for storage in one of the allowed regions.
-     * An empty list means that no regions are allowed, and is not a valid
-     * configuration.
+     * Optional. A list of IDs of Google Cloud regions where messages that are
+     * published to the topic may be persisted in storage. Messages published by
+     * publishers running in non-allowed Google Cloud regions (or running outside
+     * of Google Cloud altogether) are routed for storage in one of the allowed
+     * regions. An empty list means that no regions are allowed, and is not a
+     * valid configuration.
      * </pre>
      *
-     * <code>repeated string allowed_persistence_regions = 1;</code>
+     * <code>
+     * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the allowedPersistenceRegions to add.
      * @return This builder for chaining.
@@ -719,6 +789,71 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       ensureAllowedPersistenceRegionsIsMutable();
       allowedPersistenceRegions_.add(value);
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean enforceInTransit_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, `allowed_persistence_regions` is also used to enforce
+     * in-transit guarantees for messages. That is, Pub/Sub will fail
+     * Publish operations on this topic and subscribe operations
+     * on any subscription attached to this topic in any region that is
+     * not in `allowed_persistence_regions`.
+     * </pre>
+     *
+     * <code>bool enforce_in_transit = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enforceInTransit.
+     */
+    @java.lang.Override
+    public boolean getEnforceInTransit() {
+      return enforceInTransit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, `allowed_persistence_regions` is also used to enforce
+     * in-transit guarantees for messages. That is, Pub/Sub will fail
+     * Publish operations on this topic and subscribe operations
+     * on any subscription attached to this topic in any region that is
+     * not in `allowed_persistence_regions`.
+     * </pre>
+     *
+     * <code>bool enforce_in_transit = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enforceInTransit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnforceInTransit(boolean value) {
+
+      enforceInTransit_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, `allowed_persistence_regions` is also used to enforce
+     * in-transit guarantees for messages. That is, Pub/Sub will fail
+     * Publish operations on this topic and subscribe operations
+     * on any subscription attached to this topic in any region that is
+     * not in `allowed_persistence_regions`.
+     * </pre>
+     *
+     * <code>bool enforce_in_transit = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnforceInTransit() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      enforceInTransit_ = false;
       onChanged();
       return this;
     }

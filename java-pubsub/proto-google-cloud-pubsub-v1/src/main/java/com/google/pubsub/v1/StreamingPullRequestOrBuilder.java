@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,14 +62,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs for acknowledging previously received messages
-   * (received on this stream or a different stream). If an ack ID has expired,
-   * the corresponding message may be redelivered later. Acknowledging a message
-   * more than once will not result in an error. If the acknowledgement ID is
-   * malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
+   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * messages (received on this stream or a different stream). If an ack ID has
+   * expired, the corresponding message may be redelivered later. Acknowledging
+   * a message more than once will not result in an error. If the
+   * acknowledgement ID is malformed, the stream will be aborted with status
+   * `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the ackIds.
    */
@@ -78,14 +79,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs for acknowledging previously received messages
-   * (received on this stream or a different stream). If an ack ID has expired,
-   * the corresponding message may be redelivered later. Acknowledging a message
-   * more than once will not result in an error. If the acknowledgement ID is
-   * malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
+   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * messages (received on this stream or a different stream). If an ack ID has
+   * expired, the corresponding message may be redelivered later. Acknowledging
+   * a message more than once will not result in an error. If the
+   * acknowledgement ID is malformed, the stream will be aborted with status
+   * `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of ackIds.
    */
@@ -94,14 +96,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs for acknowledging previously received messages
-   * (received on this stream or a different stream). If an ack ID has expired,
-   * the corresponding message may be redelivered later. Acknowledging a message
-   * more than once will not result in an error. If the acknowledgement ID is
-   * malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
+   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * messages (received on this stream or a different stream). If an ack ID has
+   * expired, the corresponding message may be redelivered later. Acknowledging
+   * a message more than once will not result in an error. If the
+   * acknowledgement ID is malformed, the stream will be aborted with status
+   * `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
@@ -111,14 +114,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs for acknowledging previously received messages
-   * (received on this stream or a different stream). If an ack ID has expired,
-   * the corresponding message may be redelivered later. Acknowledging a message
-   * more than once will not result in an error. If the acknowledgement ID is
-   * malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
+   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * messages (received on this stream or a different stream). If an ack ID has
+   * expired, the corresponding message may be redelivered later. Acknowledging
+   * a message more than once will not result in an error. If the
+   * acknowledgement ID is malformed, the stream will be aborted with status
+   * `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.
@@ -129,7 +133,7 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * The list of new ack deadlines for the IDs listed in
+   * Optional. The list of new ack deadlines for the IDs listed in
    * `modify_deadline_ack_ids`. The size of this list must be the same as the
    * size of `modify_deadline_ack_ids`. If it differs the stream will be aborted
    * with `INVALID_ARGUMENT`. Each element in this list is applied to the
@@ -142,7 +146,8 @@ public interface StreamingPullRequestOrBuilder
    * be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   * <code>repeated int32 modify_deadline_seconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the modifyDeadlineSeconds.
    */
@@ -151,7 +156,7 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * The list of new ack deadlines for the IDs listed in
+   * Optional. The list of new ack deadlines for the IDs listed in
    * `modify_deadline_ack_ids`. The size of this list must be the same as the
    * size of `modify_deadline_ack_ids`. If it differs the stream will be aborted
    * with `INVALID_ARGUMENT`. Each element in this list is applied to the
@@ -164,7 +169,8 @@ public interface StreamingPullRequestOrBuilder
    * be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   * <code>repeated int32 modify_deadline_seconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of modifyDeadlineSeconds.
    */
@@ -173,7 +179,7 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * The list of new ack deadlines for the IDs listed in
+   * Optional. The list of new ack deadlines for the IDs listed in
    * `modify_deadline_ack_ids`. The size of this list must be the same as the
    * size of `modify_deadline_ack_ids`. If it differs the stream will be aborted
    * with `INVALID_ARGUMENT`. Each element in this list is applied to the
@@ -186,7 +192,8 @@ public interface StreamingPullRequestOrBuilder
    * be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   * <code>repeated int32 modify_deadline_seconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The modifyDeadlineSeconds at the given index.
@@ -197,14 +204,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs whose deadline will be modified based on the
-   * corresponding element in `modify_deadline_seconds`. This field can be used
-   * to indicate that more time is needed to process a message by the
+   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * on the corresponding element in `modify_deadline_seconds`. This field can
+   * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
    * processing was interrupted.
    * </pre>
    *
-   * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   * <code>repeated string modify_deadline_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the modifyDeadlineAckIds.
    */
@@ -213,14 +221,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs whose deadline will be modified based on the
-   * corresponding element in `modify_deadline_seconds`. This field can be used
-   * to indicate that more time is needed to process a message by the
+   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * on the corresponding element in `modify_deadline_seconds`. This field can
+   * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
    * processing was interrupted.
    * </pre>
    *
-   * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   * <code>repeated string modify_deadline_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of modifyDeadlineAckIds.
    */
@@ -229,14 +238,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs whose deadline will be modified based on the
-   * corresponding element in `modify_deadline_seconds`. This field can be used
-   * to indicate that more time is needed to process a message by the
+   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * on the corresponding element in `modify_deadline_seconds`. This field can
+   * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
    * processing was interrupted.
    * </pre>
    *
-   * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   * <code>repeated string modify_deadline_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The modifyDeadlineAckIds at the given index.
@@ -246,14 +256,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * List of acknowledgement IDs whose deadline will be modified based on the
-   * corresponding element in `modify_deadline_seconds`. This field can be used
-   * to indicate that more time is needed to process a message by the
+   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * on the corresponding element in `modify_deadline_seconds`. This field can
+   * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
    * processing was interrupted.
    * </pre>
    *
-   * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   * <code>repeated string modify_deadline_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the modifyDeadlineAckIds at the given index.
@@ -280,15 +291,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier that is used to distinguish client instances from each
-   * other. Only needs to be provided on the initial request. When a stream
-   * disconnects and reconnects for the same stream, the client_id should be set
-   * to the same value so that state associated with the old stream can be
-   * transferred to the new stream. The same client_id should not be used for
+   * Optional. A unique identifier that is used to distinguish client instances
+   * from each other. Only needs to be provided on the initial request. When a
+   * stream disconnects and reconnects for the same stream, the client_id should
+   * be set to the same value so that state associated with the old stream can
+   * be transferred to the new stream. The same client_id should not be used for
    * different client instances.
    * </pre>
    *
-   * <code>string client_id = 6;</code>
+   * <code>string client_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The clientId.
    */
@@ -297,15 +308,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier that is used to distinguish client instances from each
-   * other. Only needs to be provided on the initial request. When a stream
-   * disconnects and reconnects for the same stream, the client_id should be set
-   * to the same value so that state associated with the old stream can be
-   * transferred to the new stream. The same client_id should not be used for
+   * Optional. A unique identifier that is used to distinguish client instances
+   * from each other. Only needs to be provided on the initial request. When a
+   * stream disconnects and reconnects for the same stream, the client_id should
+   * be set to the same value so that state associated with the old stream can
+   * be transferred to the new stream. The same client_id should not be used for
    * different client instances.
    * </pre>
    *
-   * <code>string client_id = 6;</code>
+   * <code>string client_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for clientId.
    */
@@ -315,8 +326,8 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * Flow control settings for the maximum number of outstanding messages. When
-   * there are `max_outstanding_messages` or more currently sent to the
+   * Optional. Flow control settings for the maximum number of outstanding
+   * messages. When there are `max_outstanding_messages` currently sent to the
    * streaming pull client that have not yet been acked or nacked, the server
    * stops sending more messages. The sending of messages resumes once the
    * number of outstanding messages is less than this value. If the value is
@@ -326,7 +337,7 @@ public interface StreamingPullRequestOrBuilder
    * `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>int64 max_outstanding_messages = 7;</code>
+   * <code>int64 max_outstanding_messages = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxOutstandingMessages.
    */
@@ -336,18 +347,18 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * Flow control settings for the maximum number of outstanding bytes. When
-   * there are `max_outstanding_bytes` or more worth of messages currently sent
-   * to the streaming pull client that have not yet been acked or nacked, the
-   * server will stop sending more messages. The sending of messages resumes
-   * once the number of outstanding bytes is less than this value. If the value
-   * is &lt;= 0, there is no limit to the number of outstanding bytes. This
-   * property can only be set on the initial StreamingPullRequest. If it is set
-   * on a subsequent request, the stream will be aborted with status
+   * Optional. Flow control settings for the maximum number of outstanding
+   * bytes. When there are `max_outstanding_bytes` or more worth of messages
+   * currently sent to the streaming pull client that have not yet been acked or
+   * nacked, the server will stop sending more messages. The sending of messages
+   * resumes once the number of outstanding bytes is less than this value. If
+   * the value is &lt;= 0, there is no limit to the number of outstanding bytes.
+   * This property can only be set on the initial StreamingPullRequest. If it is
+   * set on a subsequent request, the stream will be aborted with status
    * `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>int64 max_outstanding_bytes = 8;</code>
+   * <code>int64 max_outstanding_bytes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxOutstandingBytes.
    */

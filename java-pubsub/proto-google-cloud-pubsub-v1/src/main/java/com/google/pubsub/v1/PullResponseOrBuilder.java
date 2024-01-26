@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,56 +27,64 @@ public interface PullResponseOrBuilder
    *
    *
    * <pre>
-   * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog, or if no messages could be returned
+   * Optional. Received Pub/Sub messages. The list will be empty if there are no
+   * more messages available in the backlog, or if no messages could be returned
    * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList();
   /**
    *
    *
    * <pre>
-   * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog, or if no messages could be returned
+   * Optional. Received Pub/Sub messages. The list will be empty if there are no
+   * more messages available in the backlog, or if no messages could be returned
    * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index);
   /**
    *
    *
    * <pre>
-   * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog, or if no messages could be returned
+   * Optional. Received Pub/Sub messages. The list will be empty if there are no
+   * more messages available in the backlog, or if no messages could be returned
    * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getReceivedMessagesCount();
   /**
    *
    *
    * <pre>
-   * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog, or if no messages could be returned
+   * Optional. Received Pub/Sub messages. The list will be empty if there are no
+   * more messages available in the backlog, or if no messages could be returned
    * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList();
@@ -84,14 +92,16 @@ public interface PullResponseOrBuilder
    *
    *
    * <pre>
-   * Received Pub/Sub messages. The list will be empty if there are no more
-   * messages available in the backlog, or if no messages could be returned
+   * Optional. Received Pub/Sub messages. The list will be empty if there are no
+   * more messages available in the backlog, or if no messages could be returned
    * before the request timeout. For JSON, the response can be entirely
    * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
    * even if there are more messages available in the backlog.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index);
 }

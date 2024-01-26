@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,12 +71,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The server-assigned ID of each published message, in the same order as
-   * the messages in the request. IDs are guaranteed to be unique within
-   * the topic.
+   * Optional. The server-assigned ID of each published message, in the same
+   * order as the messages in the request. IDs are guaranteed to be unique
+   * within the topic.
    * </pre>
    *
-   * <code>repeated string message_ids = 1;</code>
+   * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the messageIds.
    */
@@ -87,12 +87,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The server-assigned ID of each published message, in the same order as
-   * the messages in the request. IDs are guaranteed to be unique within
-   * the topic.
+   * Optional. The server-assigned ID of each published message, in the same
+   * order as the messages in the request. IDs are guaranteed to be unique
+   * within the topic.
    * </pre>
    *
-   * <code>repeated string message_ids = 1;</code>
+   * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of messageIds.
    */
@@ -103,12 +103,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The server-assigned ID of each published message, in the same order as
-   * the messages in the request. IDs are guaranteed to be unique within
-   * the topic.
+   * Optional. The server-assigned ID of each published message, in the same
+   * order as the messages in the request. IDs are guaranteed to be unique
+   * within the topic.
    * </pre>
    *
-   * <code>repeated string message_ids = 1;</code>
+   * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The messageIds at the given index.
@@ -120,12 +120,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The server-assigned ID of each published message, in the same order as
-   * the messages in the request. IDs are guaranteed to be unique within
-   * the topic.
+   * Optional. The server-assigned ID of each published message, in the same
+   * order as the messages in the request. IDs are guaranteed to be unique
+   * within the topic.
    * </pre>
    *
-   * <code>repeated string message_ids = 1;</code>
+   * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the messageIds at the given index.
@@ -499,12 +499,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the messageIds.
      */
@@ -516,12 +516,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of messageIds.
      */
@@ -532,12 +532,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The messageIds at the given index.
@@ -549,12 +549,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the messageIds at the given index.
@@ -566,12 +566,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The messageIds to set.
@@ -591,12 +591,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The messageIds to add.
      * @return This builder for chaining.
@@ -615,12 +615,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The messageIds to add.
      * @return This builder for chaining.
@@ -636,12 +636,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -656,12 +656,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The server-assigned ID of each published message, in the same order as
-     * the messages in the request. IDs are guaranteed to be unique within
-     * the topic.
+     * Optional. The server-assigned ID of each published message, in the same
+     * order as the messages in the request. IDs are guaranteed to be unique
+     * within the topic.
      * </pre>
      *
-     * <code>repeated string message_ids = 1;</code>
+     * <code>repeated string message_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the messageIds to add.
      * @return This builder for chaining.

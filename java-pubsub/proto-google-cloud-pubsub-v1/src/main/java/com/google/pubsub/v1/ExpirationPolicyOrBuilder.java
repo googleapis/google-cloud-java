@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,15 +27,15 @@ public interface ExpirationPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the "time-to-live" duration for an associated resource. The
-   * resource expires if it is not active for a period of `ttl`. The definition
-   * of "activity" depends on the type of the associated resource. The minimum
-   * and maximum allowed values for `ttl` depend on the type of the associated
-   * resource, as well. If `ttl` is not set, the associated resource never
-   * expires.
+   * Optional. Specifies the "time-to-live" duration for an associated resource.
+   * The resource expires if it is not active for a period of `ttl`. The
+   * definition of "activity" depends on the type of the associated resource.
+   * The minimum and maximum allowed values for `ttl` depend on the type of the
+   * associated resource, as well. If `ttl` is not set, the associated resource
+   * never expires.
    * </pre>
    *
-   * <code>.google.protobuf.Duration ttl = 1;</code>
+   * <code>.google.protobuf.Duration ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the ttl field is set.
    */
@@ -44,15 +44,15 @@ public interface ExpirationPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the "time-to-live" duration for an associated resource. The
-   * resource expires if it is not active for a period of `ttl`. The definition
-   * of "activity" depends on the type of the associated resource. The minimum
-   * and maximum allowed values for `ttl` depend on the type of the associated
-   * resource, as well. If `ttl` is not set, the associated resource never
-   * expires.
+   * Optional. Specifies the "time-to-live" duration for an associated resource.
+   * The resource expires if it is not active for a period of `ttl`. The
+   * definition of "activity" depends on the type of the associated resource.
+   * The minimum and maximum allowed values for `ttl` depend on the type of the
+   * associated resource, as well. If `ttl` is not set, the associated resource
+   * never expires.
    * </pre>
    *
-   * <code>.google.protobuf.Duration ttl = 1;</code>
+   * <code>.google.protobuf.Duration ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ttl.
    */
@@ -61,15 +61,15 @@ public interface ExpirationPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the "time-to-live" duration for an associated resource. The
-   * resource expires if it is not active for a period of `ttl`. The definition
-   * of "activity" depends on the type of the associated resource. The minimum
-   * and maximum allowed values for `ttl` depend on the type of the associated
-   * resource, as well. If `ttl` is not set, the associated resource never
-   * expires.
+   * Optional. Specifies the "time-to-live" duration for an associated resource.
+   * The resource expires if it is not active for a period of `ttl`. The
+   * definition of "activity" depends on the type of the associated resource.
+   * The minimum and maximum allowed values for `ttl` depend on the type of the
+   * associated resource, as well. If `ttl` is not set, the associated resource
+   * never expires.
    * </pre>
    *
-   * <code>.google.protobuf.Duration ttl = 1;</code>
+   * <code>.google.protobuf.Duration ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
 }

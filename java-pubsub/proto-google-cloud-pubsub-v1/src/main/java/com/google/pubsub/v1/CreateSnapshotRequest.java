@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -240,11 +240,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -263,11 +263,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -277,11 +277,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -298,11 +298,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1063,11 +1063,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -1086,11 +1086,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1100,11 +1100,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1121,11 +1121,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1148,11 +1148,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1171,11 +1171,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1192,11 +1192,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See [Creating and managing
+     * Optional. See [Creating and managing
      * labels](https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,11 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * A URL locating the endpoint to which messages should be pushed.
+   * Optional. A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
-   * <code>string push_endpoint = 1;</code>
+   * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pushEndpoint.
    */
@@ -40,11 +40,11 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * A URL locating the endpoint to which messages should be pushed.
+   * Optional. A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
-   * <code>string push_endpoint = 1;</code>
+   * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pushEndpoint.
    */
@@ -54,8 +54,8 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -77,15 +77,16 @@ public interface PushConfigOrBuilder
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAttributesCount();
   /**
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -107,7 +108,8 @@ public interface PushConfigOrBuilder
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAttributes(java.lang.String key);
   /** Use {@link #getAttributesMap()} instead. */
@@ -117,8 +119,8 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -140,15 +142,16 @@ public interface PushConfigOrBuilder
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
   /**
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -170,7 +173,8 @@ public interface PushConfigOrBuilder
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAttributesOrDefault(
@@ -181,8 +185,8 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -204,7 +208,8 @@ public interface PushConfigOrBuilder
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAttributesOrThrow(java.lang.String key);
 
@@ -212,11 +217,14 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-   * `Authorization` header in the HTTP request for every pushed message.
+   * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+   * token as an `Authorization` header in the HTTP request for every pushed
+   * message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the oidcToken field is set.
    */
@@ -225,11 +233,14 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-   * `Authorization` header in the HTTP request for every pushed message.
+   * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+   * token as an `Authorization` header in the HTTP request for every pushed
+   * message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The oidcToken.
    */
@@ -238,11 +249,14 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-   * `Authorization` header in the HTTP request for every pushed message.
+   * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+   * token as an `Authorization` header in the HTTP request for every pushed
+   * message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder();
 
@@ -250,12 +264,14 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is in the form of the JSON
-   * representation of a PubsubMessage
+   * Optional. When set, the payload to the push endpoint is in the form of
+   * the JSON representation of a PubsubMessage
    * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pubsubWrapper field is set.
    */
@@ -264,12 +280,14 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is in the form of the JSON
-   * representation of a PubsubMessage
+   * Optional. When set, the payload to the push endpoint is in the form of
+   * the JSON representation of a PubsubMessage
    * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pubsubWrapper.
    */
@@ -278,12 +296,14 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is in the form of the JSON
-   * representation of a PubsubMessage
+   * Optional. When set, the payload to the push endpoint is in the form of
+   * the JSON representation of a PubsubMessage
    * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder getPubsubWrapperOrBuilder();
 
@@ -291,10 +311,12 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is not wrapped.
+   * Optional. When set, the payload to the push endpoint is not wrapped.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the noWrapper field is set.
    */
@@ -303,10 +325,12 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is not wrapped.
+   * Optional. When set, the payload to the push endpoint is not wrapped.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The noWrapper.
    */
@@ -315,10 +339,12 @@ public interface PushConfigOrBuilder
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is not wrapped.
+   * Optional. When set, the payload to the push endpoint is not wrapped.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder getNoWrapperOrBuilder();
 

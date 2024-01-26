@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,10 +70,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This ID can be used to acknowledge the received message.
+   * Optional. This ID can be used to acknowledge the received message.
    * </pre>
    *
-   * <code>string ack_id = 1;</code>
+   * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ackId.
    */
@@ -93,10 +93,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This ID can be used to acknowledge the received message.
+   * Optional. This ID can be used to acknowledge the received message.
    * </pre>
    *
-   * <code>string ack_id = 1;</code>
+   * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for ackId.
    */
@@ -119,10 +119,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The message.
+   * Optional. The message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the message field is set.
    */
@@ -134,10 +135,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The message.
+   * Optional. The message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The message.
    */
@@ -149,10 +151,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The message.
+   * Optional. The message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.PubsubMessageOrBuilder getMessageOrBuilder() {
@@ -165,8 +168,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The approximate number of times that Cloud Pub/Sub has attempted to deliver
-   * the associated message to a subscriber.
+   * Optional. The approximate number of times that Pub/Sub has attempted to
+   * deliver the associated message to a subscriber.
    *
    * More precisely, this is 1 + (number of NACKs) +
    * (number of ack_deadline exceeds) for this message.
@@ -183,7 +186,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    * If a DeadLetterPolicy is not set on the subscription, this will be 0.
    * </pre>
    *
-   * <code>int32 delivery_attempt = 3;</code>
+   * <code>int32 delivery_attempt = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deliveryAttempt.
    */
@@ -588,10 +591,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This ID can be used to acknowledge the received message.
+     * Optional. This ID can be used to acknowledge the received message.
      * </pre>
      *
-     * <code>string ack_id = 1;</code>
+     * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The ackId.
      */
@@ -610,10 +613,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This ID can be used to acknowledge the received message.
+     * Optional. This ID can be used to acknowledge the received message.
      * </pre>
      *
-     * <code>string ack_id = 1;</code>
+     * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for ackId.
      */
@@ -632,10 +635,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This ID can be used to acknowledge the received message.
+     * Optional. This ID can be used to acknowledge the received message.
      * </pre>
      *
-     * <code>string ack_id = 1;</code>
+     * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The ackId to set.
      * @return This builder for chaining.
@@ -653,10 +656,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This ID can be used to acknowledge the received message.
+     * Optional. This ID can be used to acknowledge the received message.
      * </pre>
      *
-     * <code>string ack_id = 1;</code>
+     * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -670,10 +673,10 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This ID can be used to acknowledge the received message.
+     * Optional. This ID can be used to acknowledge the received message.
      * </pre>
      *
-     * <code>string ack_id = 1;</code>
+     * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for ackId to set.
      * @return This builder for chaining.
@@ -699,10 +702,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the message field is set.
      */
@@ -713,10 +717,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The message.
      */
@@ -733,10 +738,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessage(com.google.pubsub.v1.PubsubMessage value) {
       if (messageBuilder_ == null) {
@@ -755,10 +761,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessage(com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
       if (messageBuilder_ == null) {
@@ -774,10 +781,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMessage(com.google.pubsub.v1.PubsubMessage value) {
       if (messageBuilder_ == null) {
@@ -799,10 +807,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMessage() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -818,10 +827,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder getMessageBuilder() {
       bitField0_ |= 0x00000002;
@@ -832,10 +842,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessageOrBuilder getMessageOrBuilder() {
       if (messageBuilder_ != null) {
@@ -850,10 +861,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message.
+     * Optional. The message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PubsubMessage,
@@ -877,8 +889,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The approximate number of times that Cloud Pub/Sub has attempted to deliver
-     * the associated message to a subscriber.
+     * Optional. The approximate number of times that Pub/Sub has attempted to
+     * deliver the associated message to a subscriber.
      *
      * More precisely, this is 1 + (number of NACKs) +
      * (number of ack_deadline exceeds) for this message.
@@ -895,7 +907,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * If a DeadLetterPolicy is not set on the subscription, this will be 0.
      * </pre>
      *
-     * <code>int32 delivery_attempt = 3;</code>
+     * <code>int32 delivery_attempt = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The deliveryAttempt.
      */
@@ -907,8 +919,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The approximate number of times that Cloud Pub/Sub has attempted to deliver
-     * the associated message to a subscriber.
+     * Optional. The approximate number of times that Pub/Sub has attempted to
+     * deliver the associated message to a subscriber.
      *
      * More precisely, this is 1 + (number of NACKs) +
      * (number of ack_deadline exceeds) for this message.
@@ -925,7 +937,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * If a DeadLetterPolicy is not set on the subscription, this will be 0.
      * </pre>
      *
-     * <code>int32 delivery_attempt = 3;</code>
+     * <code>int32 delivery_attempt = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The deliveryAttempt to set.
      * @return This builder for chaining.
@@ -941,8 +953,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The approximate number of times that Cloud Pub/Sub has attempted to deliver
-     * the associated message to a subscriber.
+     * Optional. The approximate number of times that Pub/Sub has attempted to
+     * deliver the associated message to a subscriber.
      *
      * More precisely, this is 1 + (number of NACKs) +
      * (number of ack_deadline exceeds) for this message.
@@ -959,7 +971,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      * If a DeadLetterPolicy is not set on the subscription, this will be 0.
      * </pre>
      *
-     * <code>int32 delivery_attempt = 3;</code>
+     * <code>int32 delivery_attempt = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

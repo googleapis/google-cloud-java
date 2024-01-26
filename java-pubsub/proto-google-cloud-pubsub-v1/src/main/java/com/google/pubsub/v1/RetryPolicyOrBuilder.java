@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,12 @@ public interface RetryPolicyOrBuilder
    *
    *
    * <pre>
-   * The minimum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+   * Optional. The minimum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+   * <code>.google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the minimumBackoff field is set.
    */
@@ -40,11 +41,12 @@ public interface RetryPolicyOrBuilder
    *
    *
    * <pre>
-   * The minimum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+   * Optional. The minimum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+   * <code>.google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The minimumBackoff.
    */
@@ -53,11 +55,12 @@ public interface RetryPolicyOrBuilder
    *
    *
    * <pre>
-   * The minimum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+   * Optional. The minimum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+   * <code>.google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getMinimumBackoffOrBuilder();
 
@@ -65,11 +68,13 @@ public interface RetryPolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+   * Optional. The maximum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 600
+   * seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+   * <code>.google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the maximumBackoff field is set.
    */
@@ -78,11 +83,13 @@ public interface RetryPolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+   * Optional. The maximum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 600
+   * seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+   * <code>.google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The maximumBackoff.
    */
@@ -91,11 +98,13 @@ public interface RetryPolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+   * Optional. The maximum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 600
+   * seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+   * <code>.google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getMaximumBackoffOrBuilder();
 }

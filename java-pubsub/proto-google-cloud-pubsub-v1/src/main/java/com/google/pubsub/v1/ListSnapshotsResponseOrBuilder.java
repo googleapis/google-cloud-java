@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,50 +27,60 @@ public interface ListSnapshotsResponseOrBuilder
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.pubsub.v1.Snapshot> getSnapshotsList();
   /**
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.Snapshot getSnapshots(int index);
   /**
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getSnapshotsCount();
   /**
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.SnapshotOrBuilder> getSnapshotsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.SnapshotOrBuilder getSnapshotsOrBuilder(int index);
 
@@ -78,11 +88,12 @@ public interface ListSnapshotsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more snapshot that match the
-   * request; this value should be passed in a new `ListSnapshotsRequest`.
+   * Optional. If not empty, indicates that there may be more snapshot that
+   * match the request; this value should be passed in a new
+   * `ListSnapshotsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -91,11 +102,12 @@ public interface ListSnapshotsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more snapshot that match the
-   * request; this value should be passed in a new `ListSnapshotsRequest`.
+   * Optional. If not empty, indicates that there may be more snapshot that
+   * match the request; this value should be passed in a new
+   * `ListSnapshotsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */

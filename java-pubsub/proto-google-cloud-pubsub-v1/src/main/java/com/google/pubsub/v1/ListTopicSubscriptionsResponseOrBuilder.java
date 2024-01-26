@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,13 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * The names of subscriptions attached to the topic specified in the request.
+   * Optional. The names of subscriptions attached to the topic specified in the
+   * request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return A list containing the subscriptions.
    */
@@ -39,10 +42,13 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * The names of subscriptions attached to the topic specified in the request.
+   * Optional. The names of subscriptions attached to the topic specified in the
+   * request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The count of subscriptions.
    */
@@ -51,10 +57,13 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * The names of subscriptions attached to the topic specified in the request.
+   * Optional. The names of subscriptions attached to the topic specified in the
+   * request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The subscriptions at the given index.
@@ -64,10 +73,13 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * The names of subscriptions attached to the topic specified in the request.
+   * Optional. The names of subscriptions attached to the topic specified in the
+   * request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subscriptions at the given index.
@@ -78,12 +90,12 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more subscriptions that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more subscriptions that
+   * match the request; this value should be passed in a new
    * `ListTopicSubscriptionsRequest` to get more subscriptions.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -92,12 +104,12 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more subscriptions that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more subscriptions that
+   * match the request; this value should be passed in a new
    * `ListTopicSubscriptionsRequest` to get more subscriptions.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */

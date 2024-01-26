@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The name of the topic to which dead letter messages should be published.
-   * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-   * account associated with the enclosing subscription's parent project (i.e.,
-   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-   * permission to Publish() to this topic.
+   * Optional. The name of the topic to which dead letter messages should be
+   * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+   * service account associated with the enclosing subscription's parent project
+   * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+   * have permission to Publish() to this topic.
    *
    * The operation will fail if the topic does not exist.
    * Users should ensure that there is a subscription attached to this topic
    * since messages published to a topic with no subscriptions are lost.
    * </pre>
    *
-   * <code>string dead_letter_topic = 1;</code>
+   * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deadLetterTopic.
    */
@@ -105,18 +105,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The name of the topic to which dead letter messages should be published.
-   * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-   * account associated with the enclosing subscription's parent project (i.e.,
-   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-   * permission to Publish() to this topic.
+   * Optional. The name of the topic to which dead letter messages should be
+   * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+   * service account associated with the enclosing subscription's parent project
+   * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+   * have permission to Publish() to this topic.
    *
    * The operation will fail if the topic does not exist.
    * Users should ensure that there is a subscription attached to this topic
    * since messages published to a topic with no subscriptions are lost.
    * </pre>
    *
-   * <code>string dead_letter_topic = 1;</code>
+   * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for deadLetterTopic.
    */
@@ -139,8 +139,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The maximum number of delivery attempts for any message. The value must be
-   * between 5 and 100.
+   * Optional. The maximum number of delivery attempts for any message. The
+   * value must be between 5 and 100.
    *
    * The number of delivery attempts is defined as 1 + (the sum of number of
    * NACKs and number of times the acknowledgement deadline has been exceeded
@@ -154,7 +154,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * If this parameter is 0, a default value of 5 is used.
    * </pre>
    *
-   * <code>int32 max_delivery_attempts = 2;</code>
+   * <code>int32 max_delivery_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxDeliveryAttempts.
    */
@@ -533,18 +533,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of the topic to which dead letter messages should be published.
-     * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-     * account associated with the enclosing subscription's parent project (i.e.,
-     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-     * permission to Publish() to this topic.
+     * Optional. The name of the topic to which dead letter messages should be
+     * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+     * service account associated with the enclosing subscription's parent project
+     * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+     * have permission to Publish() to this topic.
      *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1;</code>
+     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The deadLetterTopic.
      */
@@ -563,18 +563,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of the topic to which dead letter messages should be published.
-     * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-     * account associated with the enclosing subscription's parent project (i.e.,
-     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-     * permission to Publish() to this topic.
+     * Optional. The name of the topic to which dead letter messages should be
+     * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+     * service account associated with the enclosing subscription's parent project
+     * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+     * have permission to Publish() to this topic.
      *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1;</code>
+     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for deadLetterTopic.
      */
@@ -593,18 +593,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of the topic to which dead letter messages should be published.
-     * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-     * account associated with the enclosing subscription's parent project (i.e.,
-     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-     * permission to Publish() to this topic.
+     * Optional. The name of the topic to which dead letter messages should be
+     * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+     * service account associated with the enclosing subscription's parent project
+     * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+     * have permission to Publish() to this topic.
      *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1;</code>
+     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The deadLetterTopic to set.
      * @return This builder for chaining.
@@ -622,18 +622,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of the topic to which dead letter messages should be published.
-     * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-     * account associated with the enclosing subscription's parent project (i.e.,
-     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-     * permission to Publish() to this topic.
+     * Optional. The name of the topic to which dead letter messages should be
+     * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+     * service account associated with the enclosing subscription's parent project
+     * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+     * have permission to Publish() to this topic.
      *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1;</code>
+     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -647,18 +647,18 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of the topic to which dead letter messages should be published.
-     * Format is `projects/{project}/topics/{topic}`.The Cloud Pub/Sub service
-     * account associated with the enclosing subscription's parent project (i.e.,
-     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
-     * permission to Publish() to this topic.
+     * Optional. The name of the topic to which dead letter messages should be
+     * published. Format is `projects/{project}/topics/{topic}`.The Pub/Sub
+     * service account associated with the enclosing subscription's parent project
+     * (i.e., service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must
+     * have permission to Publish() to this topic.
      *
      * The operation will fail if the topic does not exist.
      * Users should ensure that there is a subscription attached to this topic
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1;</code>
+     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for deadLetterTopic to set.
      * @return This builder for chaining.
@@ -679,8 +679,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The maximum number of delivery attempts for any message. The value must be
-     * between 5 and 100.
+     * Optional. The maximum number of delivery attempts for any message. The
+     * value must be between 5 and 100.
      *
      * The number of delivery attempts is defined as 1 + (the sum of number of
      * NACKs and number of times the acknowledgement deadline has been exceeded
@@ -694,7 +694,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * If this parameter is 0, a default value of 5 is used.
      * </pre>
      *
-     * <code>int32 max_delivery_attempts = 2;</code>
+     * <code>int32 max_delivery_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxDeliveryAttempts.
      */
@@ -706,8 +706,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The maximum number of delivery attempts for any message. The value must be
-     * between 5 and 100.
+     * Optional. The maximum number of delivery attempts for any message. The
+     * value must be between 5 and 100.
      *
      * The number of delivery attempts is defined as 1 + (the sum of number of
      * NACKs and number of times the acknowledgement deadline has been exceeded
@@ -721,7 +721,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * If this parameter is 0, a default value of 5 is used.
      * </pre>
      *
-     * <code>int32 max_delivery_attempts = 2;</code>
+     * <code>int32 max_delivery_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The maxDeliveryAttempts to set.
      * @return This builder for chaining.
@@ -737,8 +737,8 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The maximum number of delivery attempts for any message. The value must be
-     * between 5 and 100.
+     * Optional. The maximum number of delivery attempts for any message. The
+     * value must be between 5 and 100.
      *
      * The number of delivery attempts is defined as 1 + (the sum of number of
      * NACKs and number of times the acknowledgement deadline has been exceeded
@@ -752,7 +752,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * If this parameter is 0, a default value of 5 is used.
      * </pre>
      *
-     * <code>int32 max_delivery_attempts = 2;</code>
+     * <code>int32 max_delivery_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

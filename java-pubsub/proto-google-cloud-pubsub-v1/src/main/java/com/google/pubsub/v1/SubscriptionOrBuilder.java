@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,11 +95,12 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If push delivery is used with this subscription, this field is
+   * Optional. If push delivery is used with this subscription, this field is
    * used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   * <code>.google.pubsub.v1.PushConfig push_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pushConfig field is set.
    */
@@ -108,11 +109,12 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If push delivery is used with this subscription, this field is
+   * Optional. If push delivery is used with this subscription, this field is
    * used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   * <code>.google.pubsub.v1.PushConfig push_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pushConfig.
    */
@@ -121,11 +123,12 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If push delivery is used with this subscription, this field is
+   * Optional. If push delivery is used with this subscription, this field is
    * used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   * <code>.google.pubsub.v1.PushConfig push_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder();
 
@@ -133,11 +136,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it.
+   * Optional. If delivery to BigQuery is used with this subscription, this
+   * field is used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   * <code>
+   * .google.pubsub.v1.BigQueryConfig bigquery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the bigqueryConfig field is set.
    */
@@ -146,11 +151,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it.
+   * Optional. If delivery to BigQuery is used with this subscription, this
+   * field is used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   * <code>
+   * .google.pubsub.v1.BigQueryConfig bigquery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bigqueryConfig.
    */
@@ -159,11 +166,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If delivery to BigQuery is used with this subscription, this field is
-   * used to configure it.
+   * Optional. If delivery to BigQuery is used with this subscription, this
+   * field is used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   * <code>
+   * .google.pubsub.v1.BigQueryConfig bigquery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.BigQueryConfigOrBuilder getBigqueryConfigOrBuilder();
 
@@ -171,11 +180,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If delivery to Google Cloud Storage is used with this subscription, this
-   * field is used to configure it.
+   * Optional. If delivery to Google Cloud Storage is used with this
+   * subscription, this field is used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the cloudStorageConfig field is set.
    */
@@ -184,11 +195,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If delivery to Google Cloud Storage is used with this subscription, this
-   * field is used to configure it.
+   * Optional. If delivery to Google Cloud Storage is used with this
+   * subscription, this field is used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The cloudStorageConfig.
    */
@@ -197,11 +210,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If delivery to Google Cloud Storage is used with this subscription, this
-   * field is used to configure it.
+   * Optional. If delivery to Google Cloud Storage is used with this
+   * subscription, this field is used to configure it.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig cloud_storage_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.CloudStorageConfigOrBuilder getCloudStorageConfigOrBuilder();
 
@@ -209,11 +224,11 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
-   * the subscriber to acknowledge receipt before resending the message. In the
-   * interval after the message is delivered and before it is acknowledged, it
-   * is considered to be _outstanding_. During that time period, the
-   * message will not be redelivered (on a best-effort basis).
+   * Optional. The approximate amount of time (on a best-effort basis) Pub/Sub
+   * waits for the subscriber to acknowledge receipt before resending the
+   * message. In the interval after the message is delivered and before it is
+   * acknowledged, it is considered to be _outstanding_. During that time
+   * period, the message will not be redelivered (on a best-effort basis).
    *
    * For pull subscriptions, this value is used as the initial value for the ack
    * deadline. To override this value for a given message, call
@@ -231,7 +246,7 @@ public interface SubscriptionOrBuilder
    * system will eventually redeliver the message.
    * </pre>
    *
-   * <code>int32 ack_deadline_seconds = 5;</code>
+   * <code>int32 ack_deadline_seconds = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ackDeadlineSeconds.
    */
@@ -241,7 +256,7 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * Indicates whether to retain acknowledged messages. If true, then
+   * Optional. Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
    * window. This must be true if you would like to [`Seek` to a timestamp]
@@ -249,7 +264,7 @@ public interface SubscriptionOrBuilder
    * the past to replay previously-acknowledged messages.
    * </pre>
    *
-   * <code>bool retain_acked_messages = 7;</code>
+   * <code>bool retain_acked_messages = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The retainAckedMessages.
    */
@@ -259,15 +274,16 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * How long to retain unacknowledged messages in the subscription's backlog,
-   * from the moment a message is published.
-   * If `retain_acked_messages` is true, then this also configures the retention
-   * of acknowledged messages, and thus configures how far back in time a `Seek`
-   * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
-   * minutes.
+   * Optional. How long to retain unacknowledged messages in the subscription's
+   * backlog, from the moment a message is published. If `retain_acked_messages`
+   * is true, then this also configures the retention of acknowledged messages,
+   * and thus configures how far back in time a `Seek` can be done. Defaults to
+   * 7 days. Cannot be more than 7 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageRetentionDuration field is set.
    */
@@ -276,15 +292,16 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * How long to retain unacknowledged messages in the subscription's backlog,
-   * from the moment a message is published.
-   * If `retain_acked_messages` is true, then this also configures the retention
-   * of acknowledged messages, and thus configures how far back in time a `Seek`
-   * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
-   * minutes.
+   * Optional. How long to retain unacknowledged messages in the subscription's
+   * backlog, from the moment a message is published. If `retain_acked_messages`
+   * is true, then this also configures the retention of acknowledged messages,
+   * and thus configures how far back in time a `Seek` can be done. Defaults to
+   * 7 days. Cannot be more than 7 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageRetentionDuration.
    */
@@ -293,15 +310,16 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * How long to retain unacknowledged messages in the subscription's backlog,
-   * from the moment a message is published.
-   * If `retain_acked_messages` is true, then this also configures the retention
-   * of acknowledged messages, and thus configures how far back in time a `Seek`
-   * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
-   * minutes.
+   * Optional. How long to retain unacknowledged messages in the subscription's
+   * backlog, from the moment a message is published. If `retain_acked_messages`
+   * is true, then this also configures the retention of acknowledged messages,
+   * and thus configures how far back in time a `Seek` can be done. Defaults to
+   * 7 days. Cannot be more than 7 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder();
 
@@ -309,22 +327,22 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -334,22 +352,22 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -360,11 +378,11 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing
+   * Optional. See [Creating and managing
    * labels](https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -372,13 +390,13 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If true, messages published with the same `ordering_key` in `PubsubMessage`
-   * will be delivered to the subscribers in the order in which they
-   * are received by the Pub/Sub system. Otherwise, they may be delivered in
-   * any order.
+   * Optional. If true, messages published with the same `ordering_key` in
+   * `PubsubMessage` will be delivered to the subscribers in the order in which
+   * they are received by the Pub/Sub system. Otherwise, they may be delivered
+   * in any order.
    * </pre>
    *
-   * <code>bool enable_message_ordering = 10;</code>
+   * <code>bool enable_message_ordering = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableMessageOrdering.
    */
@@ -388,16 +406,18 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies the conditions for this subscription's expiration.
-   * A subscription is considered active as long as any connected subscriber is
-   * successfully consuming messages from the subscription or is issuing
-   * operations on the subscription. If `expiration_policy` is not set, a
-   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * Optional. A policy that specifies the conditions for this subscription's
+   * expiration. A subscription is considered active as long as any connected
+   * subscriber is successfully consuming messages from the subscription or is
+   * issuing operations on the subscription. If `expiration_policy` is not set,
+   * a *default policy* with `ttl` of 31 days will be used. The minimum allowed
    * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
    * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
-   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   * <code>
+   * .google.pubsub.v1.ExpirationPolicy expiration_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the expirationPolicy field is set.
    */
@@ -406,16 +426,18 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies the conditions for this subscription's expiration.
-   * A subscription is considered active as long as any connected subscriber is
-   * successfully consuming messages from the subscription or is issuing
-   * operations on the subscription. If `expiration_policy` is not set, a
-   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * Optional. A policy that specifies the conditions for this subscription's
+   * expiration. A subscription is considered active as long as any connected
+   * subscriber is successfully consuming messages from the subscription or is
+   * issuing operations on the subscription. If `expiration_policy` is not set,
+   * a *default policy* with `ttl` of 31 days will be used. The minimum allowed
    * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
    * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
-   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   * <code>
+   * .google.pubsub.v1.ExpirationPolicy expiration_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The expirationPolicy.
    */
@@ -424,16 +446,18 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies the conditions for this subscription's expiration.
-   * A subscription is considered active as long as any connected subscriber is
-   * successfully consuming messages from the subscription or is issuing
-   * operations on the subscription. If `expiration_policy` is not set, a
-   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * Optional. A policy that specifies the conditions for this subscription's
+   * expiration. A subscription is considered active as long as any connected
+   * subscriber is successfully consuming messages from the subscription or is
+   * issuing operations on the subscription. If `expiration_policy` is not set,
+   * a *default policy* with `ttl` of 31 days will be used. The minimum allowed
    * value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set,
    * but `expiration_policy.ttl` is not set, the subscription never expires.
    * </pre>
    *
-   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   * <code>
+   * .google.pubsub.v1.ExpirationPolicy expiration_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder();
 
@@ -441,14 +465,14 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * An expression written in the Pub/Sub [filter
+   * Optional. An expression written in the Pub/Sub [filter
    * language](https://cloud.google.com/pubsub/docs/filtering). If non-empty,
    * then only `PubsubMessage`s whose `attributes` field matches the filter are
    * delivered on this subscription. If empty, then no messages are filtered
    * out.
    * </pre>
    *
-   * <code>string filter = 12;</code>
+   * <code>string filter = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -457,14 +481,14 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * An expression written in the Pub/Sub [filter
+   * Optional. An expression written in the Pub/Sub [filter
    * language](https://cloud.google.com/pubsub/docs/filtering). If non-empty,
    * then only `PubsubMessage`s whose `attributes` field matches the filter are
    * delivered on this subscription. If empty, then no messages are filtered
    * out.
    * </pre>
    *
-   * <code>string filter = 12;</code>
+   * <code>string filter = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -474,17 +498,19 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies the conditions for dead lettering messages in
-   * this subscription. If dead_letter_policy is not set, dead lettering
-   * is disabled.
+   * Optional. A policy that specifies the conditions for dead lettering
+   * messages in this subscription. If dead_letter_policy is not set, dead
+   * lettering is disabled.
    *
-   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * The Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Acknowledge() messages on this subscription.
    * </pre>
    *
-   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   * <code>
+   * .google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the deadLetterPolicy field is set.
    */
@@ -493,17 +519,19 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies the conditions for dead lettering messages in
-   * this subscription. If dead_letter_policy is not set, dead lettering
-   * is disabled.
+   * Optional. A policy that specifies the conditions for dead lettering
+   * messages in this subscription. If dead_letter_policy is not set, dead
+   * lettering is disabled.
    *
-   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * The Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Acknowledge() messages on this subscription.
    * </pre>
    *
-   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   * <code>
+   * .google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The deadLetterPolicy.
    */
@@ -512,17 +540,19 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies the conditions for dead lettering messages in
-   * this subscription. If dead_letter_policy is not set, dead lettering
-   * is disabled.
+   * Optional. A policy that specifies the conditions for dead lettering
+   * messages in this subscription. If dead_letter_policy is not set, dead
+   * lettering is disabled.
    *
-   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * The Pub/Sub service account associated with this subscriptions's
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Acknowledge() messages on this subscription.
    * </pre>
    *
-   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   * <code>
+   * .google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder();
 
@@ -530,8 +560,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies how Pub/Sub retries message delivery for this
-   * subscription.
+   * Optional. A policy that specifies how Pub/Sub retries message delivery for
+   * this subscription.
    *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
@@ -539,7 +569,9 @@ public interface SubscriptionOrBuilder
    * exceeded events for a given message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   * <code>
+   * .google.pubsub.v1.RetryPolicy retry_policy = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the retryPolicy field is set.
    */
@@ -548,8 +580,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies how Pub/Sub retries message delivery for this
-   * subscription.
+   * Optional. A policy that specifies how Pub/Sub retries message delivery for
+   * this subscription.
    *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
@@ -557,7 +589,9 @@ public interface SubscriptionOrBuilder
    * exceeded events for a given message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   * <code>
+   * .google.pubsub.v1.RetryPolicy retry_policy = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The retryPolicy.
    */
@@ -566,8 +600,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * A policy that specifies how Pub/Sub retries message delivery for this
-   * subscription.
+   * Optional. A policy that specifies how Pub/Sub retries message delivery for
+   * this subscription.
    *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
@@ -575,7 +609,9 @@ public interface SubscriptionOrBuilder
    * exceeded events for a given message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   * <code>
+   * .google.pubsub.v1.RetryPolicy retry_policy = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.RetryPolicyOrBuilder getRetryPolicyOrBuilder();
 
@@ -583,14 +619,14 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * Indicates whether the subscription is detached from its topic. Detached
-   * subscriptions don't receive messages from their topic and don't retain any
-   * backlog. `Pull` and `StreamingPull` requests will return
+   * Optional. Indicates whether the subscription is detached from its topic.
+   * Detached subscriptions don't receive messages from their topic and don't
+   * retain any backlog. `Pull` and `StreamingPull` requests will return
    * FAILED_PRECONDITION. If the subscription is a push subscription, pushes to
    * the endpoint will not be made.
    * </pre>
    *
-   * <code>bool detached = 15;</code>
+   * <code>bool detached = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The detached.
    */
@@ -600,8 +636,9 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * If true, Pub/Sub provides the following guarantees for the delivery of
-   * a message with a given value of `message_id` on this subscription:
+   * Optional. If true, Pub/Sub provides the following guarantees for the
+   * delivery of a message with a given value of `message_id` on this
+   * subscription:
    *
    * * The message sent to a subscriber is guaranteed not to be resent
    * before the message's acknowledgement deadline expires.
@@ -613,7 +650,7 @@ public interface SubscriptionOrBuilder
    * by Pub/Sub and have distinct `message_id` values.
    * </pre>
    *
-   * <code>bool enable_exactly_once_delivery = 16;</code>
+   * <code>bool enable_exactly_once_delivery = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableExactlyOnceDelivery.
    */

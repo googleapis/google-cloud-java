@@ -45,6 +45,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.pubsub.v1.DetachSubscriptionRequest;
 import com.google.pubsub.v1.DetachSubscriptionResponse;
+import com.google.pubsub.v1.IngestionDataSourceSettings;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsResponse;
@@ -115,6 +116,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -165,6 +167,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -215,6 +218,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -227,6 +231,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -265,6 +270,7 @@ public class TopicAdminClientHttpJsonTest {
               .setSchemaSettings(SchemaSettings.newBuilder().build())
               .setSatisfiesPzs(true)
               .setMessageRetentionDuration(Duration.newBuilder().build())
+              .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTopic(topic, updateMask);
@@ -373,6 +379,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -423,6 +430,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

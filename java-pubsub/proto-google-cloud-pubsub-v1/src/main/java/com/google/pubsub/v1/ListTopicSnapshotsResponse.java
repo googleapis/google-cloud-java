@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,10 +72,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The names of the snapshots that match the request.
+   * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1;</code>
+   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the snapshots.
    */
@@ -86,10 +86,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The names of the snapshots that match the request.
+   * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1;</code>
+   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of snapshots.
    */
@@ -100,10 +100,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The names of the snapshots that match the request.
+   * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1;</code>
+   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The snapshots at the given index.
@@ -115,10 +115,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The names of the snapshots that match the request.
+   * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1;</code>
+   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the snapshots at the given index.
@@ -135,12 +135,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more snapshots that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more snapshots that
+   * match the request; this value should be passed in a new
    * `ListTopicSnapshotsRequest` to get more snapshots.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -160,12 +160,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more snapshots that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more snapshots that
+   * match the request; this value should be passed in a new
    * `ListTopicSnapshotsRequest` to get more snapshots.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -575,10 +575,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the snapshots.
      */
@@ -590,10 +590,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of snapshots.
      */
@@ -604,10 +604,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The snapshots at the given index.
@@ -619,10 +619,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the snapshots at the given index.
@@ -634,10 +634,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The snapshots to set.
@@ -657,10 +657,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The snapshots to add.
      * @return This builder for chaining.
@@ -679,10 +679,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The snapshots to add.
      * @return This builder for chaining.
@@ -698,10 +698,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -716,10 +716,10 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The names of the snapshots that match the request.
+     * Optional. The names of the snapshots that match the request.
      * </pre>
      *
-     * <code>repeated string snapshots = 1;</code>
+     * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the snapshots to add.
      * @return This builder for chaining.
@@ -741,12 +741,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshots that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more snapshots that
+     * match the request; this value should be passed in a new
      * `ListTopicSnapshotsRequest` to get more snapshots.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The nextPageToken.
      */
@@ -765,12 +765,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshots that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more snapshots that
+     * match the request; this value should be passed in a new
      * `ListTopicSnapshotsRequest` to get more snapshots.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -789,12 +789,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshots that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more snapshots that
+     * match the request; this value should be passed in a new
      * `ListTopicSnapshotsRequest` to get more snapshots.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -812,12 +812,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshots that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more snapshots that
+     * match the request; this value should be passed in a new
      * `ListTopicSnapshotsRequest` to get more snapshots.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -831,12 +831,12 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshots that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more snapshots that
+     * match the request; this value should be passed in a new
      * `ListTopicSnapshotsRequest` to get more snapshots.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.

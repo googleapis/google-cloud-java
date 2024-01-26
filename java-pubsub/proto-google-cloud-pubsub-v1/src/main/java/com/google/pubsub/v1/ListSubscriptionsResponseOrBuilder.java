@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,40 +27,48 @@ public interface ListSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.pubsub.v1.Subscription> getSubscriptionsList();
   /**
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.Subscription getSubscriptions(int index);
   /**
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getSubscriptionsCount();
   /**
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.SubscriptionOrBuilder>
       getSubscriptionsOrBuilderList();
@@ -68,10 +76,12 @@ public interface ListSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionsOrBuilder(int index);
 
@@ -79,12 +89,12 @@ public interface ListSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more subscriptions that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more subscriptions that
+   * match the request; this value should be passed in a new
    * `ListSubscriptionsRequest` to get more subscriptions.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -93,12 +103,12 @@ public interface ListSubscriptionsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more subscriptions that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more subscriptions that
+   * match the request; this value should be passed in a new
    * `ListSubscriptionsRequest` to get more subscriptions.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */

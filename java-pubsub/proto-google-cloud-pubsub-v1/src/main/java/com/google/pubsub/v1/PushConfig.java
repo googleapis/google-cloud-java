@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,14 +80,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Service account
+     * Optional. [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * used for generating the OIDC token. For more information
      * on setting up authentication, see
      * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
-     * <code>string service_account_email = 1;</code>
+     * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The serviceAccountEmail.
      */
@@ -96,14 +96,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Service account
+     * Optional. [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * used for generating the OIDC token. For more information
      * on setting up authentication, see
      * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
-     * <code>string service_account_email = 1;</code>
+     * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for serviceAccountEmail.
      */
@@ -113,15 +113,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audience to be used when generating OIDC token. The audience claim
-     * identifies the recipients that the JWT is intended for. The audience
-     * value is a single case-sensitive string. Having multiple values (array)
-     * for the audience field is not supported. More info about the OIDC JWT
-     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-     * Note: if not specified, the Push endpoint URL will be used.
+     * Optional. Audience to be used when generating OIDC token. The audience
+     * claim identifies the recipients that the JWT is intended for. The
+     * audience value is a single case-sensitive string. Having multiple values
+     * (array) for the audience field is not supported. More info about the OIDC
+     * JWT token audience here:
+     * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+     * the Push endpoint URL will be used.
      * </pre>
      *
-     * <code>string audience = 2;</code>
+     * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The audience.
      */
@@ -130,15 +131,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audience to be used when generating OIDC token. The audience claim
-     * identifies the recipients that the JWT is intended for. The audience
-     * value is a single case-sensitive string. Having multiple values (array)
-     * for the audience field is not supported. More info about the OIDC JWT
-     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-     * Note: if not specified, the Push endpoint URL will be used.
+     * Optional. Audience to be used when generating OIDC token. The audience
+     * claim identifies the recipients that the JWT is intended for. The
+     * audience value is a single case-sensitive string. Having multiple values
+     * (array) for the audience field is not supported. More info about the OIDC
+     * JWT token audience here:
+     * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+     * the Push endpoint URL will be used.
      * </pre>
      *
-     * <code>string audience = 2;</code>
+     * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for audience.
      */
@@ -199,14 +201,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Service account
+     * Optional. [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * used for generating the OIDC token. For more information
      * on setting up authentication, see
      * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
-     * <code>string service_account_email = 1;</code>
+     * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The serviceAccountEmail.
      */
@@ -226,14 +228,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Service account
+     * Optional. [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * used for generating the OIDC token. For more information
      * on setting up authentication, see
      * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
      * </pre>
      *
-     * <code>string service_account_email = 1;</code>
+     * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for serviceAccountEmail.
      */
@@ -258,15 +260,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audience to be used when generating OIDC token. The audience claim
-     * identifies the recipients that the JWT is intended for. The audience
-     * value is a single case-sensitive string. Having multiple values (array)
-     * for the audience field is not supported. More info about the OIDC JWT
-     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-     * Note: if not specified, the Push endpoint URL will be used.
+     * Optional. Audience to be used when generating OIDC token. The audience
+     * claim identifies the recipients that the JWT is intended for. The
+     * audience value is a single case-sensitive string. Having multiple values
+     * (array) for the audience field is not supported. More info about the OIDC
+     * JWT token audience here:
+     * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+     * the Push endpoint URL will be used.
      * </pre>
      *
-     * <code>string audience = 2;</code>
+     * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The audience.
      */
@@ -286,15 +289,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audience to be used when generating OIDC token. The audience claim
-     * identifies the recipients that the JWT is intended for. The audience
-     * value is a single case-sensitive string. Having multiple values (array)
-     * for the audience field is not supported. More info about the OIDC JWT
-     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-     * Note: if not specified, the Push endpoint URL will be used.
+     * Optional. Audience to be used when generating OIDC token. The audience
+     * claim identifies the recipients that the JWT is intended for. The
+     * audience value is a single case-sensitive string. Having multiple values
+     * (array) for the audience field is not supported. More info about the OIDC
+     * JWT token audience here:
+     * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+     * the Push endpoint URL will be used.
      * </pre>
      *
-     * <code>string audience = 2;</code>
+     * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for audience.
      */
@@ -687,14 +691,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Service account
+       * Optional. [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * used for generating the OIDC token. For more information
        * on setting up authentication, see
        * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
-       * <code>string service_account_email = 1;</code>
+       * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The serviceAccountEmail.
        */
@@ -713,14 +717,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Service account
+       * Optional. [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * used for generating the OIDC token. For more information
        * on setting up authentication, see
        * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
-       * <code>string service_account_email = 1;</code>
+       * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for serviceAccountEmail.
        */
@@ -739,14 +743,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Service account
+       * Optional. [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * used for generating the OIDC token. For more information
        * on setting up authentication, see
        * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
-       * <code>string service_account_email = 1;</code>
+       * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The serviceAccountEmail to set.
        * @return This builder for chaining.
@@ -764,14 +768,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Service account
+       * Optional. [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * used for generating the OIDC token. For more information
        * on setting up authentication, see
        * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
-       * <code>string service_account_email = 1;</code>
+       * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -785,14 +789,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Service account
+       * Optional. [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * used for generating the OIDC token. For more information
        * on setting up authentication, see
        * [Push subscriptions](https://cloud.google.com/pubsub/docs/push).
        * </pre>
        *
-       * <code>string service_account_email = 1;</code>
+       * <code>string service_account_email = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for serviceAccountEmail to set.
        * @return This builder for chaining.
@@ -813,15 +817,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Audience to be used when generating OIDC token. The audience claim
-       * identifies the recipients that the JWT is intended for. The audience
-       * value is a single case-sensitive string. Having multiple values (array)
-       * for the audience field is not supported. More info about the OIDC JWT
-       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-       * Note: if not specified, the Push endpoint URL will be used.
+       * Optional. Audience to be used when generating OIDC token. The audience
+       * claim identifies the recipients that the JWT is intended for. The
+       * audience value is a single case-sensitive string. Having multiple values
+       * (array) for the audience field is not supported. More info about the OIDC
+       * JWT token audience here:
+       * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+       * the Push endpoint URL will be used.
        * </pre>
        *
-       * <code>string audience = 2;</code>
+       * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The audience.
        */
@@ -840,15 +845,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Audience to be used when generating OIDC token. The audience claim
-       * identifies the recipients that the JWT is intended for. The audience
-       * value is a single case-sensitive string. Having multiple values (array)
-       * for the audience field is not supported. More info about the OIDC JWT
-       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-       * Note: if not specified, the Push endpoint URL will be used.
+       * Optional. Audience to be used when generating OIDC token. The audience
+       * claim identifies the recipients that the JWT is intended for. The
+       * audience value is a single case-sensitive string. Having multiple values
+       * (array) for the audience field is not supported. More info about the OIDC
+       * JWT token audience here:
+       * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+       * the Push endpoint URL will be used.
        * </pre>
        *
-       * <code>string audience = 2;</code>
+       * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for audience.
        */
@@ -867,15 +873,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Audience to be used when generating OIDC token. The audience claim
-       * identifies the recipients that the JWT is intended for. The audience
-       * value is a single case-sensitive string. Having multiple values (array)
-       * for the audience field is not supported. More info about the OIDC JWT
-       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-       * Note: if not specified, the Push endpoint URL will be used.
+       * Optional. Audience to be used when generating OIDC token. The audience
+       * claim identifies the recipients that the JWT is intended for. The
+       * audience value is a single case-sensitive string. Having multiple values
+       * (array) for the audience field is not supported. More info about the OIDC
+       * JWT token audience here:
+       * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+       * the Push endpoint URL will be used.
        * </pre>
        *
-       * <code>string audience = 2;</code>
+       * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The audience to set.
        * @return This builder for chaining.
@@ -893,15 +900,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Audience to be used when generating OIDC token. The audience claim
-       * identifies the recipients that the JWT is intended for. The audience
-       * value is a single case-sensitive string. Having multiple values (array)
-       * for the audience field is not supported. More info about the OIDC JWT
-       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-       * Note: if not specified, the Push endpoint URL will be used.
+       * Optional. Audience to be used when generating OIDC token. The audience
+       * claim identifies the recipients that the JWT is intended for. The
+       * audience value is a single case-sensitive string. Having multiple values
+       * (array) for the audience field is not supported. More info about the OIDC
+       * JWT token audience here:
+       * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+       * the Push endpoint URL will be used.
        * </pre>
        *
-       * <code>string audience = 2;</code>
+       * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -915,15 +923,16 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Audience to be used when generating OIDC token. The audience claim
-       * identifies the recipients that the JWT is intended for. The audience
-       * value is a single case-sensitive string. Having multiple values (array)
-       * for the audience field is not supported. More info about the OIDC JWT
-       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
-       * Note: if not specified, the Push endpoint URL will be used.
+       * Optional. Audience to be used when generating OIDC token. The audience
+       * claim identifies the recipients that the JWT is intended for. The
+       * audience value is a single case-sensitive string. Having multiple values
+       * (array) for the audience field is not supported. More info about the OIDC
+       * JWT token audience here:
+       * https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified,
+       * the Push endpoint URL will be used.
        * </pre>
        *
-       * <code>string audience = 2;</code>
+       * <code>string audience = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for audience to set.
        * @return This builder for chaining.
@@ -1438,12 +1447,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, writes the Pub/Sub message metadata to
+     * Optional. When true, writes the Pub/Sub message metadata to
      * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
      * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
      * </pre>
      *
-     * <code>bool write_metadata = 1;</code>
+     * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The writeMetadata.
      */
@@ -1497,12 +1506,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, writes the Pub/Sub message metadata to
+     * Optional. When true, writes the Pub/Sub message metadata to
      * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
      * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
      * </pre>
      *
-     * <code>bool write_metadata = 1;</code>
+     * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The writeMetadata.
      */
@@ -1859,12 +1868,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * When true, writes the Pub/Sub message metadata to
+       * Optional. When true, writes the Pub/Sub message metadata to
        * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
        * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
        * </pre>
        *
-       * <code>bool write_metadata = 1;</code>
+       * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The writeMetadata.
        */
@@ -1876,12 +1885,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * When true, writes the Pub/Sub message metadata to
+       * Optional. When true, writes the Pub/Sub message metadata to
        * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
        * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
        * </pre>
        *
-       * <code>bool write_metadata = 1;</code>
+       * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The writeMetadata to set.
        * @return This builder for chaining.
@@ -1897,12 +1906,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * When true, writes the Pub/Sub message metadata to
+       * Optional. When true, writes the Pub/Sub message metadata to
        * `x-goog-pubsub-&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request. Writes the
        * Pub/Sub message attributes to `&lt;KEY&gt;:&lt;VAL&gt;` headers of the HTTP request.
        * </pre>
        *
-       * <code>bool write_metadata = 1;</code>
+       * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2080,11 +2089,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A URL locating the endpoint to which messages should be pushed.
+   * Optional. A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
-   * <code>string push_endpoint = 1;</code>
+   * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pushEndpoint.
    */
@@ -2104,11 +2113,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A URL locating the endpoint to which messages should be pushed.
+   * Optional. A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
-   * <code>string push_endpoint = 1;</code>
+   * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pushEndpoint.
    */
@@ -2155,8 +2164,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -2178,7 +2187,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAttributes(java.lang.String key) {
@@ -2197,8 +2207,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -2220,7 +2230,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
@@ -2230,8 +2241,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -2253,7 +2264,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAttributesOrDefault(
@@ -2270,8 +2282,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Endpoint configuration attributes that can be used to control different
-   * aspects of the message delivery.
+   * Optional. Endpoint configuration attributes that can be used to control
+   * different aspects of the message delivery.
    *
    * The only currently supported attribute is `x-goog-version`, which you can
    * use to change the format of the pushed message. This attribute
@@ -2293,7 +2305,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * `attributes { "x-goog-version": "v1" }`
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAttributesOrThrow(java.lang.String key) {
@@ -2312,11 +2325,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-   * `Authorization` header in the HTTP request for every pushed message.
+   * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+   * token as an `Authorization` header in the HTTP request for every pushed
+   * message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the oidcToken field is set.
    */
@@ -2328,11 +2344,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-   * `Authorization` header in the HTTP request for every pushed message.
+   * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+   * token as an `Authorization` header in the HTTP request for every pushed
+   * message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The oidcToken.
    */
@@ -2347,11 +2366,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-   * `Authorization` header in the HTTP request for every pushed message.
+   * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+   * token as an `Authorization` header in the HTTP request for every pushed
+   * message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder() {
@@ -2366,12 +2388,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is in the form of the JSON
-   * representation of a PubsubMessage
+   * Optional. When set, the payload to the push endpoint is in the form of
+   * the JSON representation of a PubsubMessage
    * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pubsubWrapper field is set.
    */
@@ -2383,12 +2407,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is in the form of the JSON
-   * representation of a PubsubMessage
+   * Optional. When set, the payload to the push endpoint is in the form of
+   * the JSON representation of a PubsubMessage
    * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pubsubWrapper.
    */
@@ -2403,12 +2429,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is in the form of the JSON
-   * representation of a PubsubMessage
+   * Optional. When set, the payload to the push endpoint is in the form of
+   * the JSON representation of a PubsubMessage
    * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder getPubsubWrapperOrBuilder() {
@@ -2423,10 +2451,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is not wrapped.
+   * Optional. When set, the payload to the push endpoint is not wrapped.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the noWrapper field is set.
    */
@@ -2438,10 +2468,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is not wrapped.
+   * Optional. When set, the payload to the push endpoint is not wrapped.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The noWrapper.
    */
@@ -2456,10 +2488,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When set, the payload to the push endpoint is not wrapped.
+   * Optional. When set, the payload to the push endpoint is not wrapped.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+   * <code>
+   * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder getNoWrapperOrBuilder() {
@@ -3033,11 +3067,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A URL locating the endpoint to which messages should be pushed.
+     * Optional. A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
-     * <code>string push_endpoint = 1;</code>
+     * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pushEndpoint.
      */
@@ -3056,11 +3090,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A URL locating the endpoint to which messages should be pushed.
+     * Optional. A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
-     * <code>string push_endpoint = 1;</code>
+     * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pushEndpoint.
      */
@@ -3079,11 +3113,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A URL locating the endpoint to which messages should be pushed.
+     * Optional. A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
-     * <code>string push_endpoint = 1;</code>
+     * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pushEndpoint to set.
      * @return This builder for chaining.
@@ -3101,11 +3135,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A URL locating the endpoint to which messages should be pushed.
+     * Optional. A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
-     * <code>string push_endpoint = 1;</code>
+     * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3119,11 +3153,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A URL locating the endpoint to which messages should be pushed.
+     * Optional. A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
-     * <code>string push_endpoint = 1;</code>
+     * <code>string push_endpoint = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pushEndpoint to set.
      * @return This builder for chaining.
@@ -3171,8 +3205,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3194,7 +3228,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
@@ -3213,8 +3248,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3236,7 +3271,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
@@ -3246,8 +3282,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3269,7 +3305,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAttributesOrDefault(
@@ -3286,8 +3323,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3309,7 +3346,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAttributesOrThrow(java.lang.String key) {
@@ -3332,8 +3370,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3355,7 +3393,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAttributes(java.lang.String key) {
       if (key == null) {
@@ -3374,8 +3413,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3397,7 +3436,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAttributes(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3414,8 +3454,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Endpoint configuration attributes that can be used to control different
-     * aspects of the message delivery.
+     * Optional. Endpoint configuration attributes that can be used to control
+     * different aspects of the message delivery.
      *
      * The only currently supported attribute is `x-goog-version`, which you can
      * use to change the format of the pushed message. This attribute
@@ -3437,7 +3477,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * `attributes { "x-goog-version": "v1" }`
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
@@ -3454,11 +3495,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the oidcToken field is set.
      */
@@ -3470,11 +3514,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The oidcToken.
      */
@@ -3496,11 +3543,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOidcToken(com.google.pubsub.v1.PushConfig.OidcToken value) {
       if (oidcTokenBuilder_ == null) {
@@ -3519,11 +3569,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOidcToken(com.google.pubsub.v1.PushConfig.OidcToken.Builder builderForValue) {
       if (oidcTokenBuilder_ == null) {
@@ -3539,11 +3592,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeOidcToken(com.google.pubsub.v1.PushConfig.OidcToken value) {
       if (oidcTokenBuilder_ == null) {
@@ -3573,11 +3629,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOidcToken() {
       if (oidcTokenBuilder_ == null) {
@@ -3599,11 +3658,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.PushConfig.OidcToken.Builder getOidcTokenBuilder() {
       return getOidcTokenFieldBuilder().getBuilder();
@@ -3612,11 +3674,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder() {
@@ -3633,11 +3698,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
-     * `Authorization` header in the HTTP request for every pushed message.
+     * Optional. If specified, Pub/Sub will generate and attach an OIDC JWT
+     * token as an `Authorization` header in the HTTP request for every pushed
+     * message.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.OidcToken oidc_token = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PushConfig.OidcToken,
@@ -3672,12 +3740,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the pubsubWrapper field is set.
      */
@@ -3689,12 +3759,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The pubsubWrapper.
      */
@@ -3716,12 +3788,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPubsubWrapper(com.google.pubsub.v1.PushConfig.PubsubWrapper value) {
       if (pubsubWrapperBuilder_ == null) {
@@ -3740,12 +3814,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPubsubWrapper(
         com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder builderForValue) {
@@ -3762,12 +3838,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergePubsubWrapper(com.google.pubsub.v1.PushConfig.PubsubWrapper value) {
       if (pubsubWrapperBuilder_ == null) {
@@ -3796,12 +3874,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearPubsubWrapper() {
       if (pubsubWrapperBuilder_ == null) {
@@ -3823,12 +3903,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.PushConfig.PubsubWrapper.Builder getPubsubWrapperBuilder() {
       return getPubsubWrapperFieldBuilder().getBuilder();
@@ -3837,12 +3919,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.pubsub.v1.PushConfig.PubsubWrapperOrBuilder getPubsubWrapperOrBuilder() {
@@ -3859,12 +3943,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is in the form of the JSON
-     * representation of a PubsubMessage
+     * Optional. When set, the payload to the push endpoint is in the form of
+     * the JSON representation of a PubsubMessage
      * (https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage).
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.PubsubWrapper pubsub_wrapper = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PushConfig.PubsubWrapper,
@@ -3899,10 +3985,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the noWrapper field is set.
      */
@@ -3914,10 +4002,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The noWrapper.
      */
@@ -3939,10 +4029,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNoWrapper(com.google.pubsub.v1.PushConfig.NoWrapper value) {
       if (noWrapperBuilder_ == null) {
@@ -3961,10 +4053,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNoWrapper(com.google.pubsub.v1.PushConfig.NoWrapper.Builder builderForValue) {
       if (noWrapperBuilder_ == null) {
@@ -3980,10 +4074,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeNoWrapper(com.google.pubsub.v1.PushConfig.NoWrapper value) {
       if (noWrapperBuilder_ == null) {
@@ -4012,10 +4108,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearNoWrapper() {
       if (noWrapperBuilder_ == null) {
@@ -4037,10 +4135,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.PushConfig.NoWrapper.Builder getNoWrapperBuilder() {
       return getNoWrapperFieldBuilder().getBuilder();
@@ -4049,10 +4149,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.pubsub.v1.PushConfig.NoWrapperOrBuilder getNoWrapperOrBuilder() {
@@ -4069,10 +4171,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When set, the payload to the push endpoint is not wrapped.
+     * Optional. When set, the payload to the push endpoint is not wrapped.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5;</code>
+     * <code>
+     * .google.pubsub.v1.PushConfig.NoWrapper no_wrapper = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PushConfig.NoWrapper,

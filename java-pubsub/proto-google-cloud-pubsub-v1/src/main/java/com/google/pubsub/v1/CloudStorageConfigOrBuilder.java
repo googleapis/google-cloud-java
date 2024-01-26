@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,11 +58,11 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * User-provided prefix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Optional. User-provided prefix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
    * </pre>
    *
-   * <code>string filename_prefix = 2;</code>
+   * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filenamePrefix.
    */
@@ -71,11 +71,11 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * User-provided prefix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Optional. User-provided prefix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
    * </pre>
    *
-   * <code>string filename_prefix = 2;</code>
+   * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filenamePrefix.
    */
@@ -85,12 +85,12 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * User-provided suffix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-   * not end in "/".
+   * Optional. User-provided suffix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Must not end in "/".
    * </pre>
    *
-   * <code>string filename_suffix = 3;</code>
+   * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filenameSuffix.
    */
@@ -99,12 +99,12 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * User-provided suffix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-   * not end in "/".
+   * Optional. User-provided suffix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Must not end in "/".
    * </pre>
    *
-   * <code>string filename_suffix = 3;</code>
+   * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filenameSuffix.
    */
@@ -114,10 +114,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in text format.
+   * Optional. If set, message data will be written to Cloud Storage in text
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the textConfig field is set.
    */
@@ -126,10 +129,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in text format.
+   * Optional. If set, message data will be written to Cloud Storage in text
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The textConfig.
    */
@@ -138,10 +144,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in text format.
+   * Optional. If set, message data will be written to Cloud Storage in text
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.CloudStorageConfig.TextConfigOrBuilder getTextConfigOrBuilder();
 
@@ -149,10 +158,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in Avro format.
+   * Optional. If set, message data will be written to Cloud Storage in Avro
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the avroConfig field is set.
    */
@@ -161,10 +173,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in Avro format.
+   * Optional. If set, message data will be written to Cloud Storage in Avro
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The avroConfig.
    */
@@ -173,10 +188,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in Avro format.
+   * Optional. If set, message data will be written to Cloud Storage in Avro
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.CloudStorageConfig.AvroConfigOrBuilder getAvroConfigOrBuilder();
 
@@ -184,12 +202,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * The maximum duration that can elapse before a new Cloud Storage file is
-   * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-   * the subscription's acknowledgement deadline.
+   * Optional. The maximum duration that can elapse before a new Cloud Storage
+   * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+   * exceed the subscription's acknowledgement deadline.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_duration = 6;</code>
+   * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the maxDuration field is set.
    */
@@ -198,12 +217,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * The maximum duration that can elapse before a new Cloud Storage file is
-   * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-   * the subscription's acknowledgement deadline.
+   * Optional. The maximum duration that can elapse before a new Cloud Storage
+   * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+   * exceed the subscription's acknowledgement deadline.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_duration = 6;</code>
+   * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The maxDuration.
    */
@@ -212,12 +232,13 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * The maximum duration that can elapse before a new Cloud Storage file is
-   * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-   * the subscription's acknowledgement deadline.
+   * Optional. The maximum duration that can elapse before a new Cloud Storage
+   * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+   * exceed the subscription's acknowledgement deadline.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_duration = 6;</code>
+   * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getMaxDurationOrBuilder();
 
@@ -225,12 +246,12 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
-   * The maximum bytes that can be written to a Cloud Storage file before a new
-   * file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded
-   * in cases where messages are larger than the limit.
+   * Optional. The maximum bytes that can be written to a Cloud Storage file
+   * before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may
+   * be exceeded in cases where messages are larger than the limit.
    * </pre>
    *
-   * <code>int64 max_bytes = 7;</code>
+   * <code>int64 max_bytes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxBytes.
    */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,50 +27,55 @@ public interface ListTopicsResponseOrBuilder
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.pubsub.v1.Topic> getTopicsList();
   /**
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.Topic getTopics(int index);
   /**
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getTopicsCount();
   /**
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.TopicOrBuilder> getTopicsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.TopicOrBuilder getTopicsOrBuilder(int index);
 
@@ -78,11 +83,11 @@ public interface ListTopicsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more topics that match the
-   * request; this value should be passed in a new `ListTopicsRequest`.
+   * Optional. If not empty, indicates that there may be more topics that match
+   * the request; this value should be passed in a new `ListTopicsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -91,11 +96,11 @@ public interface ListTopicsResponseOrBuilder
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more topics that match the
-   * request; this value should be passed in a new `ListTopicsRequest`.
+   * Optional. If not empty, indicates that there may be more topics that match
+   * the request; this value should be passed in a new `ListTopicsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */

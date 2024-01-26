@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,10 +71,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.pubsub.v1.Snapshot> getSnapshotsList() {
@@ -84,10 +86,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.SnapshotOrBuilder>
@@ -98,10 +102,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getSnapshotsCount() {
@@ -111,10 +117,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.Snapshot getSnapshots(int index) {
@@ -124,10 +132,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The resulting snapshots.
+   * Optional. The resulting snapshots.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.SnapshotOrBuilder getSnapshotsOrBuilder(int index) {
@@ -142,11 +152,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more snapshot that match the
-   * request; this value should be passed in a new `ListSnapshotsRequest`.
+   * Optional. If not empty, indicates that there may be more snapshot that
+   * match the request; this value should be passed in a new
+   * `ListSnapshotsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -166,11 +177,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more snapshot that match the
-   * request; this value should be passed in a new `ListSnapshotsRequest`.
+   * Optional. If not empty, indicates that there may be more snapshot that
+   * match the request; this value should be passed in a new
+   * `ListSnapshotsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -618,10 +630,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.Snapshot> getSnapshotsList() {
       if (snapshotsBuilder_ == null) {
@@ -634,10 +648,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getSnapshotsCount() {
       if (snapshotsBuilder_ == null) {
@@ -650,10 +666,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Snapshot getSnapshots(int index) {
       if (snapshotsBuilder_ == null) {
@@ -666,10 +684,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSnapshots(int index, com.google.pubsub.v1.Snapshot value) {
       if (snapshotsBuilder_ == null) {
@@ -688,10 +708,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSnapshots(int index, com.google.pubsub.v1.Snapshot.Builder builderForValue) {
       if (snapshotsBuilder_ == null) {
@@ -707,10 +729,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSnapshots(com.google.pubsub.v1.Snapshot value) {
       if (snapshotsBuilder_ == null) {
@@ -729,10 +753,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSnapshots(int index, com.google.pubsub.v1.Snapshot value) {
       if (snapshotsBuilder_ == null) {
@@ -751,10 +777,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSnapshots(com.google.pubsub.v1.Snapshot.Builder builderForValue) {
       if (snapshotsBuilder_ == null) {
@@ -770,10 +798,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSnapshots(int index, com.google.pubsub.v1.Snapshot.Builder builderForValue) {
       if (snapshotsBuilder_ == null) {
@@ -789,10 +819,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllSnapshots(
         java.lang.Iterable<? extends com.google.pubsub.v1.Snapshot> values) {
@@ -809,10 +841,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSnapshots() {
       if (snapshotsBuilder_ == null) {
@@ -828,10 +862,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeSnapshots(int index) {
       if (snapshotsBuilder_ == null) {
@@ -847,10 +883,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Snapshot.Builder getSnapshotsBuilder(int index) {
       return getSnapshotsFieldBuilder().getBuilder(index);
@@ -859,10 +897,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.SnapshotOrBuilder getSnapshotsOrBuilder(int index) {
       if (snapshotsBuilder_ == null) {
@@ -875,10 +915,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.pubsub.v1.SnapshotOrBuilder>
         getSnapshotsOrBuilderList() {
@@ -892,10 +934,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Snapshot.Builder addSnapshotsBuilder() {
       return getSnapshotsFieldBuilder()
@@ -905,10 +949,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Snapshot.Builder addSnapshotsBuilder(int index) {
       return getSnapshotsFieldBuilder()
@@ -918,10 +964,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The resulting snapshots.
+     * Optional. The resulting snapshots.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Snapshot snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.Snapshot.Builder> getSnapshotsBuilderList() {
       return getSnapshotsFieldBuilder().getBuilderList();
@@ -949,11 +997,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshot that match the
-     * request; this value should be passed in a new `ListSnapshotsRequest`.
+     * Optional. If not empty, indicates that there may be more snapshot that
+     * match the request; this value should be passed in a new
+     * `ListSnapshotsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The nextPageToken.
      */
@@ -972,11 +1021,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshot that match the
-     * request; this value should be passed in a new `ListSnapshotsRequest`.
+     * Optional. If not empty, indicates that there may be more snapshot that
+     * match the request; this value should be passed in a new
+     * `ListSnapshotsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -995,11 +1045,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshot that match the
-     * request; this value should be passed in a new `ListSnapshotsRequest`.
+     * Optional. If not empty, indicates that there may be more snapshot that
+     * match the request; this value should be passed in a new
+     * `ListSnapshotsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1017,11 +1068,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshot that match the
-     * request; this value should be passed in a new `ListSnapshotsRequest`.
+     * Optional. If not empty, indicates that there may be more snapshot that
+     * match the request; this value should be passed in a new
+     * `ListSnapshotsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1035,11 +1087,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more snapshot that match the
-     * request; this value should be passed in a new `ListSnapshotsRequest`.
+     * Optional. If not empty, indicates that there may be more snapshot that
+     * match the request; this value should be passed in a new
+     * `ListSnapshotsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,10 +58,10 @@ public interface ListTopicSnapshotsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of snapshot names to return.
+   * Optional. Maximum number of snapshot names to return.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -71,12 +71,12 @@ public interface ListTopicSnapshotsRequestOrBuilder
    *
    *
    * <pre>
-   * The value returned by the last `ListTopicSnapshotsResponse`; indicates
-   * that this is a continuation of a prior `ListTopicSnapshots` call, and
-   * that the system should return the next page of data.
+   * Optional. The value returned by the last `ListTopicSnapshotsResponse`;
+   * indicates that this is a continuation of a prior `ListTopicSnapshots` call,
+   * and that the system should return the next page of data.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -85,12 +85,12 @@ public interface ListTopicSnapshotsRequestOrBuilder
    *
    *
    * <pre>
-   * The value returned by the last `ListTopicSnapshotsResponse`; indicates
-   * that this is a continuation of a prior `ListTopicSnapshots` call, and
-   * that the system should return the next page of data.
+   * Optional. The value returned by the last `ListTopicSnapshotsResponse`;
+   * indicates that this is a continuation of a prior `ListTopicSnapshots` call,
+   * and that the system should return the next page of data.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,10 +71,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.pubsub.v1.Topic> getTopicsList() {
@@ -84,10 +85,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.TopicOrBuilder> getTopicsOrBuilderList() {
@@ -97,10 +99,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getTopicsCount() {
@@ -110,10 +113,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.Topic getTopics(int index) {
@@ -123,10 +127,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The resulting topics.
+   * Optional. The resulting topics.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+   * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.TopicOrBuilder getTopicsOrBuilder(int index) {
@@ -141,11 +146,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more topics that match the
-   * request; this value should be passed in a new `ListTopicsRequest`.
+   * Optional. If not empty, indicates that there may be more topics that match
+   * the request; this value should be passed in a new `ListTopicsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -165,11 +170,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more topics that match the
-   * request; this value should be passed in a new `ListTopicsRequest`.
+   * Optional. If not empty, indicates that there may be more topics that match
+   * the request; this value should be passed in a new `ListTopicsRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -615,10 +620,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.Topic> getTopicsList() {
       if (topicsBuilder_ == null) {
@@ -631,10 +637,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getTopicsCount() {
       if (topicsBuilder_ == null) {
@@ -647,10 +654,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Topic getTopics(int index) {
       if (topicsBuilder_ == null) {
@@ -663,10 +671,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTopics(int index, com.google.pubsub.v1.Topic value) {
       if (topicsBuilder_ == null) {
@@ -685,10 +694,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTopics(int index, com.google.pubsub.v1.Topic.Builder builderForValue) {
       if (topicsBuilder_ == null) {
@@ -704,10 +714,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTopics(com.google.pubsub.v1.Topic value) {
       if (topicsBuilder_ == null) {
@@ -726,10 +737,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTopics(int index, com.google.pubsub.v1.Topic value) {
       if (topicsBuilder_ == null) {
@@ -748,10 +760,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTopics(com.google.pubsub.v1.Topic.Builder builderForValue) {
       if (topicsBuilder_ == null) {
@@ -767,10 +780,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTopics(int index, com.google.pubsub.v1.Topic.Builder builderForValue) {
       if (topicsBuilder_ == null) {
@@ -786,10 +800,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllTopics(java.lang.Iterable<? extends com.google.pubsub.v1.Topic> values) {
       if (topicsBuilder_ == null) {
@@ -805,10 +820,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTopics() {
       if (topicsBuilder_ == null) {
@@ -824,10 +840,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeTopics(int index) {
       if (topicsBuilder_ == null) {
@@ -843,10 +860,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Topic.Builder getTopicsBuilder(int index) {
       return getTopicsFieldBuilder().getBuilder(index);
@@ -855,10 +873,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.TopicOrBuilder getTopicsOrBuilder(int index) {
       if (topicsBuilder_ == null) {
@@ -871,10 +890,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.pubsub.v1.TopicOrBuilder> getTopicsOrBuilderList() {
       if (topicsBuilder_ != null) {
@@ -887,10 +907,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Topic.Builder addTopicsBuilder() {
       return getTopicsFieldBuilder().addBuilder(com.google.pubsub.v1.Topic.getDefaultInstance());
@@ -899,10 +920,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Topic.Builder addTopicsBuilder(int index) {
       return getTopicsFieldBuilder()
@@ -912,10 +934,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The resulting topics.
+     * Optional. The resulting topics.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
+     * <code>repeated .google.pubsub.v1.Topic topics = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.Topic.Builder> getTopicsBuilderList() {
       return getTopicsFieldBuilder().getBuilderList();
@@ -943,11 +966,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more topics that match the
-     * request; this value should be passed in a new `ListTopicsRequest`.
+     * Optional. If not empty, indicates that there may be more topics that match
+     * the request; this value should be passed in a new `ListTopicsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The nextPageToken.
      */
@@ -966,11 +989,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more topics that match the
-     * request; this value should be passed in a new `ListTopicsRequest`.
+     * Optional. If not empty, indicates that there may be more topics that match
+     * the request; this value should be passed in a new `ListTopicsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -989,11 +1012,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more topics that match the
-     * request; this value should be passed in a new `ListTopicsRequest`.
+     * Optional. If not empty, indicates that there may be more topics that match
+     * the request; this value should be passed in a new `ListTopicsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1011,11 +1034,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more topics that match the
-     * request; this value should be passed in a new `ListTopicsRequest`.
+     * Optional. If not empty, indicates that there may be more topics that match
+     * the request; this value should be passed in a new `ListTopicsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1029,11 +1052,11 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more topics that match the
-     * request; this value should be passed in a new `ListTopicsRequest`.
+     * Optional. If not empty, indicates that there may be more topics that match
+     * the request; this value should be passed in a new `ListTopicsRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.

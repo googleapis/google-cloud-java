@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,15 +27,17 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the allowedPersistenceRegions.
    */
@@ -44,15 +46,17 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of allowedPersistenceRegions.
    */
@@ -61,15 +65,17 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The allowedPersistenceRegions at the given index.
@@ -79,18 +85,37 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * A list of IDs of Google Cloud regions where messages that are published
-   * to the topic may be persisted in storage. Messages published by publishers
-   * running in non-allowed Google Cloud regions (or running outside of Google
-   * Cloud altogether) are routed for storage in one of the allowed regions.
-   * An empty list means that no regions are allowed, and is not a valid
-   * configuration.
+   * Optional. A list of IDs of Google Cloud regions where messages that are
+   * published to the topic may be persisted in storage. Messages published by
+   * publishers running in non-allowed Google Cloud regions (or running outside
+   * of Google Cloud altogether) are routed for storage in one of the allowed
+   * regions. An empty list means that no regions are allowed, and is not a
+   * valid configuration.
    * </pre>
    *
-   * <code>repeated string allowed_persistence_regions = 1;</code>
+   * <code>
+   * repeated string allowed_persistence_regions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedPersistenceRegions at the given index.
    */
   com.google.protobuf.ByteString getAllowedPersistenceRegionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, `allowed_persistence_regions` is also used to enforce
+   * in-transit guarantees for messages. That is, Pub/Sub will fail
+   * Publish operations on this topic and subscribe operations
+   * on any subscription attached to this topic in any region that is
+   * not in `allowed_persistence_regions`.
+   * </pre>
+   *
+   * <code>bool enforce_in_transit = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enforceInTransit.
+   */
+  boolean getEnforceInTransit();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
   private Topic() {
     name_ = "";
     kmsKeyName_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -70,6 +71,167 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_pubsub_v1_Topic_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.pubsub.v1.Topic.class, com.google.pubsub.v1.Topic.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of the topic.
+   * </pre>
+   *
+   * Protobuf enum {@code google.pubsub.v1.Topic.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The topic does not have any persistent errors.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Ingestion from the data source has encountered a permanent error.
+     * See the more detailed error state in the corresponding ingestion
+     * source configuration.
+     * </pre>
+     *
+     * <code>INGESTION_RESOURCE_ERROR = 2;</code>
+     */
+    INGESTION_RESOURCE_ERROR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The topic does not have any persistent errors.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    public static final int ACTIVE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Ingestion from the data source has encountered a permanent error.
+     * See the more detailed error state in the corresponding ingestion
+     * source configuration.
+     * </pre>
+     *
+     * <code>INGESTION_RESOURCE_ERROR = 2;</code>
+     */
+    public static final int INGESTION_RESOURCE_ERROR_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return INGESTION_RESOURCE_ERROR;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.pubsub.v1.Topic.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.pubsub.v1.Topic.State)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -163,11 +325,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -186,11 +348,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -200,11 +362,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -221,11 +383,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -245,12 +407,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policy constraining the set of Google Cloud Platform regions where messages
-   * published to the topic may be stored. If not present, then no constraints
-   * are in effect.
+   * Optional. Policy constraining the set of Google Cloud Platform regions
+   * where messages published to the topic may be stored. If not present, then
+   * no constraints are in effect.
    * </pre>
    *
-   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   * <code>
+   * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageStoragePolicy field is set.
    */
@@ -262,12 +426,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policy constraining the set of Google Cloud Platform regions where messages
-   * published to the topic may be stored. If not present, then no constraints
-   * are in effect.
+   * Optional. Policy constraining the set of Google Cloud Platform regions
+   * where messages published to the topic may be stored. If not present, then
+   * no constraints are in effect.
    * </pre>
    *
-   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   * <code>
+   * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageStoragePolicy.
    */
@@ -281,12 +447,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policy constraining the set of Google Cloud Platform regions where messages
-   * published to the topic may be stored. If not present, then no constraints
-   * are in effect.
+   * Optional. Policy constraining the set of Google Cloud Platform regions
+   * where messages published to the topic may be stored. If not present, then
+   * no constraints are in effect.
    * </pre>
    *
-   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   * <code>
+   * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder() {
@@ -303,13 +471,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the Cloud KMS CryptoKey to be used to protect access
-   * to messages published on this topic.
+   * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+   * protect access to messages published on this topic.
    *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string kms_key_name = 5;</code>
+   * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The kmsKeyName.
    */
@@ -329,13 +497,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the Cloud KMS CryptoKey to be used to protect access
-   * to messages published on this topic.
+   * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+   * protect access to messages published on this topic.
    *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string kms_key_name = 5;</code>
+   * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -358,10 +526,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for validating messages published against a schema.
+   * Optional. Settings for validating messages published against a schema.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   * <code>
+   * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the schemaSettings field is set.
    */
@@ -373,10 +543,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for validating messages published against a schema.
+   * Optional. Settings for validating messages published against a schema.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   * <code>
+   * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The schemaSettings.
    */
@@ -390,10 +562,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for validating messages published against a schema.
+   * Optional. Settings for validating messages published against a schema.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   * <code>
+   * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.SchemaSettingsOrBuilder getSchemaSettingsOrBuilder() {
@@ -408,11 +582,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reserved for future use. This field is set only in responses from the
-   * server; it is ignored if it is set in any requests.
+   * Optional. Reserved for future use. This field is set only in responses from
+   * the server; it is ignored if it is set in any requests.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 7;</code>
+   * <code>bool satisfies_pzs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The satisfiesPzs.
    */
@@ -427,17 +601,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates the minimum duration to retain a message after it is published to
-   * the topic. If this field is set, messages published to the topic in the
-   * last `message_retention_duration` are always available to subscribers. For
-   * instance, it allows any attached subscription to [seek to a
+   * Optional. Indicates the minimum duration to retain a message after it is
+   * published to the topic. If this field is set, messages published to the
+   * topic in the last `message_retention_duration` are always available to
+   * subscribers. For instance, it allows any attached subscription to [seek to
+   * a
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
    * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageRetentionDuration field is set.
    */
@@ -449,17 +626,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates the minimum duration to retain a message after it is published to
-   * the topic. If this field is set, messages published to the topic in the
-   * last `message_retention_duration` are always available to subscribers. For
-   * instance, it allows any attached subscription to [seek to a
+   * Optional. Indicates the minimum duration to retain a message after it is
+   * published to the topic. If this field is set, messages published to the
+   * topic in the last `message_retention_duration` are always available to
+   * subscribers. For instance, it allows any attached subscription to [seek to
+   * a
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
    * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageRetentionDuration.
    */
@@ -473,23 +653,122 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates the minimum duration to retain a message after it is published to
-   * the topic. If this field is set, messages published to the topic in the
-   * last `message_retention_duration` are always available to subscribers. For
-   * instance, it allows any attached subscription to [seek to a
+   * Optional. Indicates the minimum duration to retain a message after it is
+   * published to the topic. If this field is set, messages published to the
+   * topic in the last `message_retention_duration` are always available to
+   * subscribers. For instance, it allows any attached subscription to [seek to
+   * a
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
    * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder() {
     return messageRetentionDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
         : messageRetentionDuration_;
+  }
+
+  public static final int STATE_FIELD_NUMBER = 9;
+  private int state_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating the state of the topic.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating the state of the topic.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.Topic.State getState() {
+    com.google.pubsub.v1.Topic.State result = com.google.pubsub.v1.Topic.State.forNumber(state_);
+    return result == null ? com.google.pubsub.v1.Topic.State.UNRECOGNIZED : result;
+  }
+
+  public static final int INGESTION_DATA_SOURCE_SETTINGS_FIELD_NUMBER = 10;
+  private com.google.pubsub.v1.IngestionDataSourceSettings ingestionDataSourceSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for managed ingestion from a data source into this
+   * topic.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ingestionDataSourceSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasIngestionDataSourceSettings() {
+    return ingestionDataSourceSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for managed ingestion from a data source into this
+   * topic.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ingestionDataSourceSettings.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings getIngestionDataSourceSettings() {
+    return ingestionDataSourceSettings_ == null
+        ? com.google.pubsub.v1.IngestionDataSourceSettings.getDefaultInstance()
+        : ingestionDataSourceSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for managed ingestion from a data source into this
+   * topic.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder
+      getIngestionDataSourceSettingsOrBuilder() {
+    return ingestionDataSourceSettings_ == null
+        ? com.google.pubsub.v1.IngestionDataSourceSettings.getDefaultInstance()
+        : ingestionDataSourceSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -525,6 +804,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
     if (messageRetentionDuration_ != null) {
       output.writeMessage(8, getMessageRetentionDuration());
+    }
+    if (state_ != com.google.pubsub.v1.Topic.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, state_);
+    }
+    if (ingestionDataSourceSettings_ != null) {
+      output.writeMessage(10, getIngestionDataSourceSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -566,6 +851,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getMessageRetentionDuration());
     }
+    if (state_ != com.google.pubsub.v1.Topic.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, state_);
+    }
+    if (ingestionDataSourceSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getIngestionDataSourceSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -596,6 +889,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     if (hasMessageRetentionDuration() != other.hasMessageRetentionDuration()) return false;
     if (hasMessageRetentionDuration()) {
       if (!getMessageRetentionDuration().equals(other.getMessageRetentionDuration())) return false;
+    }
+    if (state_ != other.state_) return false;
+    if (hasIngestionDataSourceSettings() != other.hasIngestionDataSourceSettings()) return false;
+    if (hasIngestionDataSourceSettings()) {
+      if (!getIngestionDataSourceSettings().equals(other.getIngestionDataSourceSettings()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -629,6 +928,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     if (hasMessageRetentionDuration()) {
       hash = (37 * hash) + MESSAGE_RETENTION_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getMessageRetentionDuration().hashCode();
+    }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    if (hasIngestionDataSourceSettings()) {
+      hash = (37 * hash) + INGESTION_DATA_SOURCE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getIngestionDataSourceSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -805,6 +1110,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         messageRetentionDurationBuilder_.dispose();
         messageRetentionDurationBuilder_ = null;
       }
+      state_ = 0;
+      ingestionDataSourceSettings_ = null;
+      if (ingestionDataSourceSettingsBuilder_ != null) {
+        ingestionDataSourceSettingsBuilder_.dispose();
+        ingestionDataSourceSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -867,6 +1178,15 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
             messageRetentionDurationBuilder_ == null
                 ? messageRetentionDuration_
                 : messageRetentionDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ingestionDataSourceSettings_ =
+            ingestionDataSourceSettingsBuilder_ == null
+                ? ingestionDataSourceSettings_
+                : ingestionDataSourceSettingsBuilder_.build();
       }
     }
 
@@ -938,6 +1258,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMessageRetentionDuration()) {
         mergeMessageRetentionDuration(other.getMessageRetentionDuration());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (other.hasIngestionDataSourceSettings()) {
+        mergeIngestionDataSourceSettings(other.getIngestionDataSourceSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1015,6 +1341,19 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 72:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(
+                    getIngestionDataSourceSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1194,11 +1533,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -1217,11 +1556,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1231,11 +1570,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1252,11 +1591,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1279,11 +1618,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1302,11 +1641,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1323,11 +1662,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -1345,12 +1684,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the messageStoragePolicy field is set.
      */
@@ -1361,12 +1702,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The messageStoragePolicy.
      */
@@ -1383,12 +1726,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessageStoragePolicy(com.google.pubsub.v1.MessageStoragePolicy value) {
       if (messageStoragePolicyBuilder_ == null) {
@@ -1407,12 +1752,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessageStoragePolicy(
         com.google.pubsub.v1.MessageStoragePolicy.Builder builderForValue) {
@@ -1429,12 +1776,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMessageStoragePolicy(com.google.pubsub.v1.MessageStoragePolicy value) {
       if (messageStoragePolicyBuilder_ == null) {
@@ -1457,12 +1806,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMessageStoragePolicy() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1478,12 +1829,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.MessageStoragePolicy.Builder getMessageStoragePolicyBuilder() {
       bitField0_ |= 0x00000004;
@@ -1494,12 +1847,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder() {
       if (messageStoragePolicyBuilder_ != null) {
@@ -1514,12 +1869,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy constraining the set of Google Cloud Platform regions where messages
-     * published to the topic may be stored. If not present, then no constraints
-     * are in effect.
+     * Optional. Policy constraining the set of Google Cloud Platform regions
+     * where messages published to the topic may be stored. If not present, then
+     * no constraints are in effect.
      * </pre>
      *
-     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     * <code>
+     * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.MessageStoragePolicy,
@@ -1543,13 +1900,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the Cloud KMS CryptoKey to be used to protect access
-     * to messages published on this topic.
+     * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+     * protect access to messages published on this topic.
      *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>string kms_key_name = 5;</code>
+     * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The kmsKeyName.
      */
@@ -1568,13 +1925,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the Cloud KMS CryptoKey to be used to protect access
-     * to messages published on this topic.
+     * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+     * protect access to messages published on this topic.
      *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>string kms_key_name = 5;</code>
+     * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for kmsKeyName.
      */
@@ -1593,13 +1950,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the Cloud KMS CryptoKey to be used to protect access
-     * to messages published on this topic.
+     * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+     * protect access to messages published on this topic.
      *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>string kms_key_name = 5;</code>
+     * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The kmsKeyName to set.
      * @return This builder for chaining.
@@ -1617,13 +1974,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the Cloud KMS CryptoKey to be used to protect access
-     * to messages published on this topic.
+     * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+     * protect access to messages published on this topic.
      *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>string kms_key_name = 5;</code>
+     * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1637,13 +1994,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the Cloud KMS CryptoKey to be used to protect access
-     * to messages published on this topic.
+     * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+     * protect access to messages published on this topic.
      *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>string kms_key_name = 5;</code>
+     * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for kmsKeyName to set.
      * @return This builder for chaining.
@@ -1669,10 +2026,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the schemaSettings field is set.
      */
@@ -1683,10 +2042,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The schemaSettings.
      */
@@ -1703,10 +2064,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSchemaSettings(com.google.pubsub.v1.SchemaSettings value) {
       if (schemaSettingsBuilder_ == null) {
@@ -1725,10 +2088,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSchemaSettings(com.google.pubsub.v1.SchemaSettings.Builder builderForValue) {
       if (schemaSettingsBuilder_ == null) {
@@ -1744,10 +2109,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSchemaSettings(com.google.pubsub.v1.SchemaSettings value) {
       if (schemaSettingsBuilder_ == null) {
@@ -1769,10 +2136,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSchemaSettings() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1788,10 +2157,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.SchemaSettings.Builder getSchemaSettingsBuilder() {
       bitField0_ |= 0x00000010;
@@ -1802,10 +2173,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.SchemaSettingsOrBuilder getSchemaSettingsOrBuilder() {
       if (schemaSettingsBuilder_ != null) {
@@ -1820,10 +2193,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for validating messages published against a schema.
+     * Optional. Settings for validating messages published against a schema.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     * <code>
+     * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.SchemaSettings,
@@ -1847,11 +2222,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use. This field is set only in responses from the
-     * server; it is ignored if it is set in any requests.
+     * Optional. Reserved for future use. This field is set only in responses from
+     * the server; it is ignored if it is set in any requests.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 7;</code>
+     * <code>bool satisfies_pzs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The satisfiesPzs.
      */
@@ -1863,11 +2238,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use. This field is set only in responses from the
-     * server; it is ignored if it is set in any requests.
+     * Optional. Reserved for future use. This field is set only in responses from
+     * the server; it is ignored if it is set in any requests.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 7;</code>
+     * <code>bool satisfies_pzs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The satisfiesPzs to set.
      * @return This builder for chaining.
@@ -1883,11 +2258,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use. This field is set only in responses from the
-     * server; it is ignored if it is set in any requests.
+     * Optional. Reserved for future use. This field is set only in responses from
+     * the server; it is ignored if it is set in any requests.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 7;</code>
+     * <code>bool satisfies_pzs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1908,17 +2283,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the messageRetentionDuration field is set.
      */
@@ -1929,17 +2307,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The messageRetentionDuration.
      */
@@ -1956,17 +2337,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessageRetentionDuration(com.google.protobuf.Duration value) {
       if (messageRetentionDurationBuilder_ == null) {
@@ -1985,17 +2369,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessageRetentionDuration(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -2012,17 +2399,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMessageRetentionDuration(com.google.protobuf.Duration value) {
       if (messageRetentionDurationBuilder_ == null) {
@@ -2044,17 +2434,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMessageRetentionDuration() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2070,17 +2463,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getMessageRetentionDurationBuilder() {
       bitField0_ |= 0x00000040;
@@ -2091,17 +2487,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder() {
       if (messageRetentionDurationBuilder_ != null) {
@@ -2116,17 +2515,20 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the minimum duration to retain a message after it is published to
-     * the topic. If this field is set, messages published to the topic in the
-     * last `message_retention_duration` are always available to subscribers. For
-     * instance, it allows any attached subscription to [seek to a
+     * Optional. Indicates the minimum duration to retain a message after it is
+     * published to the topic. If this field is set, messages published to the
+     * topic in the last `message_retention_duration` are always available to
+     * subscribers. For instance, it allows any attached subscription to [seek to
+     * a
      * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
      * that is up to `message_retention_duration` in the past. If this field is
      * not set, message retention is controlled by settings on individual
      * subscriptions. Cannot be more than 31 days or less than 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * <code>
+     * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -2143,6 +2545,316 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         messageRetentionDuration_ = null;
       }
       return messageRetentionDurationBuilder_;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating the state of the topic.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating the state of the topic.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating the state of the topic.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.Topic.State getState() {
+      com.google.pubsub.v1.Topic.State result = com.google.pubsub.v1.Topic.State.forNumber(state_);
+      return result == null ? com.google.pubsub.v1.Topic.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating the state of the topic.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.pubsub.v1.Topic.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating the state of the topic.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.pubsub.v1.IngestionDataSourceSettings ingestionDataSourceSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings,
+            com.google.pubsub.v1.IngestionDataSourceSettings.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder>
+        ingestionDataSourceSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ingestionDataSourceSettings field is set.
+     */
+    public boolean hasIngestionDataSourceSettings() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ingestionDataSourceSettings.
+     */
+    public com.google.pubsub.v1.IngestionDataSourceSettings getIngestionDataSourceSettings() {
+      if (ingestionDataSourceSettingsBuilder_ == null) {
+        return ingestionDataSourceSettings_ == null
+            ? com.google.pubsub.v1.IngestionDataSourceSettings.getDefaultInstance()
+            : ingestionDataSourceSettings_;
+      } else {
+        return ingestionDataSourceSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIngestionDataSourceSettings(
+        com.google.pubsub.v1.IngestionDataSourceSettings value) {
+      if (ingestionDataSourceSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ingestionDataSourceSettings_ = value;
+      } else {
+        ingestionDataSourceSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIngestionDataSourceSettings(
+        com.google.pubsub.v1.IngestionDataSourceSettings.Builder builderForValue) {
+      if (ingestionDataSourceSettingsBuilder_ == null) {
+        ingestionDataSourceSettings_ = builderForValue.build();
+      } else {
+        ingestionDataSourceSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIngestionDataSourceSettings(
+        com.google.pubsub.v1.IngestionDataSourceSettings value) {
+      if (ingestionDataSourceSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && ingestionDataSourceSettings_ != null
+            && ingestionDataSourceSettings_
+                != com.google.pubsub.v1.IngestionDataSourceSettings.getDefaultInstance()) {
+          getIngestionDataSourceSettingsBuilder().mergeFrom(value);
+        } else {
+          ingestionDataSourceSettings_ = value;
+        }
+      } else {
+        ingestionDataSourceSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIngestionDataSourceSettings() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ingestionDataSourceSettings_ = null;
+      if (ingestionDataSourceSettingsBuilder_ != null) {
+        ingestionDataSourceSettingsBuilder_.dispose();
+        ingestionDataSourceSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionDataSourceSettings.Builder
+        getIngestionDataSourceSettingsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getIngestionDataSourceSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder
+        getIngestionDataSourceSettingsOrBuilder() {
+      if (ingestionDataSourceSettingsBuilder_ != null) {
+        return ingestionDataSourceSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return ingestionDataSourceSettings_ == null
+            ? com.google.pubsub.v1.IngestionDataSourceSettings.getDefaultInstance()
+            : ingestionDataSourceSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for managed ingestion from a data source into this
+     * topic.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings,
+            com.google.pubsub.v1.IngestionDataSourceSettings.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder>
+        getIngestionDataSourceSettingsFieldBuilder() {
+      if (ingestionDataSourceSettingsBuilder_ == null) {
+        ingestionDataSourceSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionDataSourceSettings,
+                com.google.pubsub.v1.IngestionDataSourceSettings.Builder,
+                com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder>(
+                getIngestionDataSourceSettings(), getParentForChildren(), isClean());
+        ingestionDataSourceSettings_ = null;
+      }
+      return ingestionDataSourceSettingsBuilder_;
     }
 
     @java.lang.Override

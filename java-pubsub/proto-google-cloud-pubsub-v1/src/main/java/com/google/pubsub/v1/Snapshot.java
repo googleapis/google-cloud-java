@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,10 +84,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the snapshot.
+   * Optional. The name of the snapshot.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -107,10 +107,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the snapshot.
+   * Optional. The name of the snapshot.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -135,10 +135,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the topic from which this snapshot is retaining messages.
+   * Optional. The name of the topic from which this snapshot is retaining
+   * messages.
    * </pre>
    *
-   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -158,10 +161,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the topic from which this snapshot is retaining messages.
+   * Optional. The name of the topic from which this snapshot is retaining
+   * messages.
    * </pre>
    *
-   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -184,7 +190,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The snapshot is guaranteed to exist up until this time.
+   * Optional. The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
    * creation. Its exact lifetime is determined at creation by the existing
    * backlog in the source subscription. Specifically, the lifetime of the
@@ -196,7 +202,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the expireTime field is set.
    */
@@ -208,7 +215,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The snapshot is guaranteed to exist up until this time.
+   * Optional. The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
    * creation. Its exact lifetime is determined at creation by the existing
    * backlog in the source subscription. Specifically, the lifetime of the
@@ -220,7 +227,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The expireTime.
    */
@@ -232,7 +240,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The snapshot is guaranteed to exist up until this time.
+   * Optional. The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
    * creation. Its exact lifetime is determined at creation by the existing
    * backlog in the source subscription. Specifically, the lifetime of the
@@ -244,7 +252,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
@@ -281,11 +290,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -304,11 +313,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -318,11 +327,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -339,11 +348,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -812,10 +821,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the snapshot.
+     * Optional. The name of the snapshot.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -834,10 +843,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the snapshot.
+     * Optional. The name of the snapshot.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -856,10 +865,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the snapshot.
+     * Optional. The name of the snapshot.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -877,10 +886,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the snapshot.
+     * Optional. The name of the snapshot.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -894,10 +903,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the snapshot.
+     * Optional. The name of the snapshot.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -918,10 +927,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the topic from which this snapshot is retaining messages.
+     * Optional. The name of the topic from which this snapshot is retaining
+     * messages.
      * </pre>
      *
-     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The topic.
      */
@@ -940,10 +952,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the topic from which this snapshot is retaining messages.
+     * Optional. The name of the topic from which this snapshot is retaining
+     * messages.
      * </pre>
      *
-     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for topic.
      */
@@ -962,10 +977,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the topic from which this snapshot is retaining messages.
+     * Optional. The name of the topic from which this snapshot is retaining
+     * messages.
      * </pre>
      *
-     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The topic to set.
      * @return This builder for chaining.
@@ -983,10 +1001,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the topic from which this snapshot is retaining messages.
+     * Optional. The name of the topic from which this snapshot is retaining
+     * messages.
      * </pre>
      *
-     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1000,10 +1021,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the topic from which this snapshot is retaining messages.
+     * Optional. The name of the topic from which this snapshot is retaining
+     * messages.
      * </pre>
      *
-     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for topic to set.
      * @return This builder for chaining.
@@ -1029,7 +1053,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1041,7 +1065,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the expireTime field is set.
      */
@@ -1052,7 +1077,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1064,7 +1089,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The expireTime.
      */
@@ -1081,7 +1107,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1093,7 +1119,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
@@ -1112,7 +1139,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1124,7 +1151,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
@@ -1140,7 +1168,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1152,7 +1180,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
@@ -1174,7 +1203,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1186,7 +1215,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearExpireTime() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1202,7 +1232,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1214,7 +1244,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
       bitField0_ |= 0x00000004;
@@ -1225,7 +1256,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1237,7 +1268,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
       if (expireTimeBuilder_ != null) {
@@ -1252,7 +1284,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The snapshot is guaranteed to exist up until this time.
+     * Optional. The snapshot is guaranteed to exist up until this time.
      * A newly-created snapshot expires no later than 7 days from the time of its
      * creation. Its exact lifetime is determined at creation by the existing
      * backlog in the source subscription. Specifically, the lifetime of the
@@ -1264,7 +1296,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1312,11 +1345,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -1335,11 +1368,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1349,11 +1382,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1370,11 +1403,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1397,11 +1430,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1420,11 +1453,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1441,11 +1474,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/pubsub/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

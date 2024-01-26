@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,10 +71,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.pubsub.v1.Subscription> getSubscriptionsList() {
@@ -84,10 +86,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.SubscriptionOrBuilder>
@@ -98,10 +102,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getSubscriptionsCount() {
@@ -111,10 +117,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.Subscription getSubscriptions(int index) {
@@ -124,10 +132,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscriptions that match the request.
+   * Optional. The subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionsOrBuilder(int index) {
@@ -142,12 +152,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more subscriptions that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more subscriptions that
+   * match the request; this value should be passed in a new
    * `ListSubscriptionsRequest` to get more subscriptions.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -167,12 +177,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * If not empty, indicates that there may be more subscriptions that match
-   * the request; this value should be passed in a new
+   * Optional. If not empty, indicates that there may be more subscriptions that
+   * match the request; this value should be passed in a new
    * `ListSubscriptionsRequest` to get more subscriptions.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -621,10 +631,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.Subscription> getSubscriptionsList() {
       if (subscriptionsBuilder_ == null) {
@@ -637,10 +649,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getSubscriptionsCount() {
       if (subscriptionsBuilder_ == null) {
@@ -653,10 +667,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Subscription getSubscriptions(int index) {
       if (subscriptionsBuilder_ == null) {
@@ -669,10 +685,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSubscriptions(int index, com.google.pubsub.v1.Subscription value) {
       if (subscriptionsBuilder_ == null) {
@@ -691,10 +709,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSubscriptions(
         int index, com.google.pubsub.v1.Subscription.Builder builderForValue) {
@@ -711,10 +731,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubscriptions(com.google.pubsub.v1.Subscription value) {
       if (subscriptionsBuilder_ == null) {
@@ -733,10 +755,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubscriptions(int index, com.google.pubsub.v1.Subscription value) {
       if (subscriptionsBuilder_ == null) {
@@ -755,10 +779,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubscriptions(com.google.pubsub.v1.Subscription.Builder builderForValue) {
       if (subscriptionsBuilder_ == null) {
@@ -774,10 +800,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubscriptions(
         int index, com.google.pubsub.v1.Subscription.Builder builderForValue) {
@@ -794,10 +822,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllSubscriptions(
         java.lang.Iterable<? extends com.google.pubsub.v1.Subscription> values) {
@@ -814,10 +844,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSubscriptions() {
       if (subscriptionsBuilder_ == null) {
@@ -833,10 +865,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeSubscriptions(int index) {
       if (subscriptionsBuilder_ == null) {
@@ -852,10 +886,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Subscription.Builder getSubscriptionsBuilder(int index) {
       return getSubscriptionsFieldBuilder().getBuilder(index);
@@ -864,10 +900,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionsOrBuilder(int index) {
       if (subscriptionsBuilder_ == null) {
@@ -880,10 +918,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.pubsub.v1.SubscriptionOrBuilder>
         getSubscriptionsOrBuilderList() {
@@ -897,10 +937,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Subscription.Builder addSubscriptionsBuilder() {
       return getSubscriptionsFieldBuilder()
@@ -910,10 +952,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.Subscription.Builder addSubscriptionsBuilder(int index) {
       return getSubscriptionsFieldBuilder()
@@ -923,10 +967,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscriptions that match the request.
+     * Optional. The subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.Subscription subscriptions = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.Subscription.Builder> getSubscriptionsBuilderList() {
       return getSubscriptionsFieldBuilder().getBuilderList();
@@ -957,12 +1003,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more subscriptions that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more subscriptions that
+     * match the request; this value should be passed in a new
      * `ListSubscriptionsRequest` to get more subscriptions.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The nextPageToken.
      */
@@ -981,12 +1027,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more subscriptions that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more subscriptions that
+     * match the request; this value should be passed in a new
      * `ListSubscriptionsRequest` to get more subscriptions.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -1005,12 +1051,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more subscriptions that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more subscriptions that
+     * match the request; this value should be passed in a new
      * `ListSubscriptionsRequest` to get more subscriptions.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1028,12 +1074,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more subscriptions that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more subscriptions that
+     * match the request; this value should be passed in a new
      * `ListSubscriptionsRequest` to get more subscriptions.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1047,12 +1093,12 @@ public final class ListSubscriptionsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If not empty, indicates that there may be more subscriptions that match
-     * the request; this value should be passed in a new
+     * Optional. If not empty, indicates that there may be more subscriptions that
+     * match the request; this value should be passed in a new
      * `ListSubscriptionsRequest` to get more subscriptions.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.

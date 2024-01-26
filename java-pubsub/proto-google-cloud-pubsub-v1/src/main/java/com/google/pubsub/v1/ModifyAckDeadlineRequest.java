@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,7 +197,8 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
    * delivery to another subscriber client. This typically results in an
    * increase in the rate of message redeliveries (that is, duplicates).
    * The minimum deadline you can specify is 0 seconds.
-   * The maximum deadline you can specify is 600 seconds (10 minutes).
+   * The maximum deadline you can specify in a single request is 600 seconds
+   * (10 minutes).
    * </pre>
    *
    * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -917,7 +918,8 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
      * delivery to another subscriber client. This typically results in an
      * increase in the rate of message redeliveries (that is, duplicates).
      * The minimum deadline you can specify is 0 seconds.
-     * The maximum deadline you can specify is 600 seconds (10 minutes).
+     * The maximum deadline you can specify in a single request is 600 seconds
+     * (10 minutes).
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -939,7 +941,8 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
      * delivery to another subscriber client. This typically results in an
      * increase in the rate of message redeliveries (that is, duplicates).
      * The minimum deadline you can specify is 0 seconds.
-     * The maximum deadline you can specify is 600 seconds (10 minutes).
+     * The maximum deadline you can specify in a single request is 600 seconds
+     * (10 minutes).
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -965,7 +968,8 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
      * delivery to another subscriber client. This typically results in an
      * increase in the rate of message redeliveries (that is, duplicates).
      * The minimum deadline you can specify is 0 seconds.
-     * The maximum deadline you can specify is 600 seconds (10 minutes).
+     * The maximum deadline you can specify in a single request is 600 seconds
+     * (10 minutes).
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>

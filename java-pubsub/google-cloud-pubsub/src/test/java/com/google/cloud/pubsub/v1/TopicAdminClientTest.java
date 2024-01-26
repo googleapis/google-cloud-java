@@ -45,6 +45,7 @@ import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.DetachSubscriptionRequest;
 import com.google.pubsub.v1.DetachSubscriptionResponse;
 import com.google.pubsub.v1.GetTopicRequest;
+import com.google.pubsub.v1.IngestionDataSourceSettings;
 import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
@@ -129,6 +130,7 @@ public class TopicAdminClientTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -173,6 +175,7 @@ public class TopicAdminClientTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -217,6 +220,7 @@ public class TopicAdminClientTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -342,6 +346,7 @@ public class TopicAdminClientTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -386,6 +391,7 @@ public class TopicAdminClientTest {
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
+            .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .build();
     mockPublisher.addResponse(expectedResponse);
 

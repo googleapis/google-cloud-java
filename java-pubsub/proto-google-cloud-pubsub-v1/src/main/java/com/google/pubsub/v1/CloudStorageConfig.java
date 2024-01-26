@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,17 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      * <code>NOT_FOUND = 3;</code>
      */
     NOT_FOUND(3),
+    /**
+     *
+     *
+     * <pre>
+     * Cannot write to the destination because enforce_in_transit is set to true
+     * and the destination locations are not in the allowed regions.
+     * </pre>
+     *
+     * <code>IN_TRANSIT_LOCATION_RESTRICTION = 4;</code>
+     */
+    IN_TRANSIT_LOCATION_RESTRICTION(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,6 +171,17 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      * <code>NOT_FOUND = 3;</code>
      */
     public static final int NOT_FOUND_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Cannot write to the destination because enforce_in_transit is set to true
+     * and the destination locations are not in the allowed regions.
+     * </pre>
+     *
+     * <code>IN_TRANSIT_LOCATION_RESTRICTION = 4;</code>
+     */
+    public static final int IN_TRANSIT_LOCATION_RESTRICTION_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -193,6 +215,8 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
           return PERMISSION_DENIED;
         case 3:
           return NOT_FOUND;
+        case 4:
+          return IN_TRANSIT_LOCATION_RESTRICTION;
         default:
           return null;
       }
@@ -681,15 +705,15 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * When true, write the subscription name, message_id, publish_time,
-     * attributes, and ordering_key as additional fields in the output. The
-     * subscription name, message_id, and publish_time fields are put in their
-     * own fields while all other message properties other than data (for
-     * example, an ordering_key, if present) are added as entries in the
-     * attributes map.
+     * Optional. When true, write the subscription name, message_id,
+     * publish_time, attributes, and ordering_key as additional fields in the
+     * output. The subscription name, message_id, and publish_time fields are
+     * put in their own fields while all other message properties other than
+     * data (for example, an ordering_key, if present) are added as entries in
+     * the attributes map.
      * </pre>
      *
-     * <code>bool write_metadata = 1;</code>
+     * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The writeMetadata.
      */
@@ -744,15 +768,15 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * When true, write the subscription name, message_id, publish_time,
-     * attributes, and ordering_key as additional fields in the output. The
-     * subscription name, message_id, and publish_time fields are put in their
-     * own fields while all other message properties other than data (for
-     * example, an ordering_key, if present) are added as entries in the
-     * attributes map.
+     * Optional. When true, write the subscription name, message_id,
+     * publish_time, attributes, and ordering_key as additional fields in the
+     * output. The subscription name, message_id, and publish_time fields are
+     * put in their own fields while all other message properties other than
+     * data (for example, an ordering_key, if present) are added as entries in
+     * the attributes map.
      * </pre>
      *
-     * <code>bool write_metadata = 1;</code>
+     * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The writeMetadata.
      */
@@ -1111,15 +1135,15 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * When true, write the subscription name, message_id, publish_time,
-       * attributes, and ordering_key as additional fields in the output. The
-       * subscription name, message_id, and publish_time fields are put in their
-       * own fields while all other message properties other than data (for
-       * example, an ordering_key, if present) are added as entries in the
-       * attributes map.
+       * Optional. When true, write the subscription name, message_id,
+       * publish_time, attributes, and ordering_key as additional fields in the
+       * output. The subscription name, message_id, and publish_time fields are
+       * put in their own fields while all other message properties other than
+       * data (for example, an ordering_key, if present) are added as entries in
+       * the attributes map.
        * </pre>
        *
-       * <code>bool write_metadata = 1;</code>
+       * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The writeMetadata.
        */
@@ -1131,15 +1155,15 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * When true, write the subscription name, message_id, publish_time,
-       * attributes, and ordering_key as additional fields in the output. The
-       * subscription name, message_id, and publish_time fields are put in their
-       * own fields while all other message properties other than data (for
-       * example, an ordering_key, if present) are added as entries in the
-       * attributes map.
+       * Optional. When true, write the subscription name, message_id,
+       * publish_time, attributes, and ordering_key as additional fields in the
+       * output. The subscription name, message_id, and publish_time fields are
+       * put in their own fields while all other message properties other than
+       * data (for example, an ordering_key, if present) are added as entries in
+       * the attributes map.
        * </pre>
        *
-       * <code>bool write_metadata = 1;</code>
+       * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The writeMetadata to set.
        * @return This builder for chaining.
@@ -1155,15 +1179,15 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * When true, write the subscription name, message_id, publish_time,
-       * attributes, and ordering_key as additional fields in the output. The
-       * subscription name, message_id, and publish_time fields are put in their
-       * own fields while all other message properties other than data (for
-       * example, an ordering_key, if present) are added as entries in the
-       * attributes map.
+       * Optional. When true, write the subscription name, message_id,
+       * publish_time, attributes, and ordering_key as additional fields in the
+       * output. The subscription name, message_id, and publish_time fields are
+       * put in their own fields while all other message properties other than
+       * data (for example, an ordering_key, if present) are added as entries in
+       * the attributes map.
        * </pre>
        *
-       * <code>bool write_metadata = 1;</code>
+       * <code>bool write_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1352,11 +1376,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * User-provided prefix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Optional. User-provided prefix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
    * </pre>
    *
-   * <code>string filename_prefix = 2;</code>
+   * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filenamePrefix.
    */
@@ -1376,11 +1400,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * User-provided prefix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Optional. User-provided prefix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
    * </pre>
    *
-   * <code>string filename_prefix = 2;</code>
+   * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filenamePrefix.
    */
@@ -1405,12 +1429,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * User-provided suffix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-   * not end in "/".
+   * Optional. User-provided suffix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Must not end in "/".
    * </pre>
    *
-   * <code>string filename_suffix = 3;</code>
+   * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filenameSuffix.
    */
@@ -1430,12 +1454,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * User-provided suffix for Cloud Storage filename. See the [object naming
-   * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-   * not end in "/".
+   * Optional. User-provided suffix for Cloud Storage filename. See the [object
+   * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+   * Must not end in "/".
    * </pre>
    *
-   * <code>string filename_suffix = 3;</code>
+   * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filenameSuffix.
    */
@@ -1457,10 +1481,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in text format.
+   * Optional. If set, message data will be written to Cloud Storage in text
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the textConfig field is set.
    */
@@ -1472,10 +1499,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in text format.
+   * Optional. If set, message data will be written to Cloud Storage in text
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The textConfig.
    */
@@ -1490,10 +1520,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in text format.
+   * Optional. If set, message data will be written to Cloud Storage in text
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.CloudStorageConfig.TextConfigOrBuilder getTextConfigOrBuilder() {
@@ -1508,10 +1541,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in Avro format.
+   * Optional. If set, message data will be written to Cloud Storage in Avro
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the avroConfig field is set.
    */
@@ -1523,10 +1559,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in Avro format.
+   * Optional. If set, message data will be written to Cloud Storage in Avro
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The avroConfig.
    */
@@ -1541,10 +1580,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set, message data will be written to Cloud Storage in Avro format.
+   * Optional. If set, message data will be written to Cloud Storage in Avro
+   * format.
    * </pre>
    *
-   * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+   * <code>
+   * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.CloudStorageConfig.AvroConfigOrBuilder getAvroConfigOrBuilder() {
@@ -1560,12 +1602,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The maximum duration that can elapse before a new Cloud Storage file is
-   * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-   * the subscription's acknowledgement deadline.
+   * Optional. The maximum duration that can elapse before a new Cloud Storage
+   * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+   * exceed the subscription's acknowledgement deadline.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_duration = 6;</code>
+   * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the maxDuration field is set.
    */
@@ -1577,12 +1620,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The maximum duration that can elapse before a new Cloud Storage file is
-   * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-   * the subscription's acknowledgement deadline.
+   * Optional. The maximum duration that can elapse before a new Cloud Storage
+   * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+   * exceed the subscription's acknowledgement deadline.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_duration = 6;</code>
+   * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The maxDuration.
    */
@@ -1594,12 +1638,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The maximum duration that can elapse before a new Cloud Storage file is
-   * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-   * the subscription's acknowledgement deadline.
+   * Optional. The maximum duration that can elapse before a new Cloud Storage
+   * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+   * exceed the subscription's acknowledgement deadline.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_duration = 6;</code>
+   * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxDurationOrBuilder() {
@@ -1612,12 +1657,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The maximum bytes that can be written to a Cloud Storage file before a new
-   * file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded
-   * in cases where messages are larger than the limit.
+   * Optional. The maximum bytes that can be written to a Cloud Storage file
+   * before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may
+   * be exceeded in cases where messages are larger than the limit.
    * </pre>
    *
-   * <code>int64 max_bytes = 7;</code>
+   * <code>int64 max_bytes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxBytes.
    */
@@ -2358,11 +2403,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided prefix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Optional. User-provided prefix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
      * </pre>
      *
-     * <code>string filename_prefix = 2;</code>
+     * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filenamePrefix.
      */
@@ -2381,11 +2426,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided prefix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Optional. User-provided prefix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
      * </pre>
      *
-     * <code>string filename_prefix = 2;</code>
+     * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filenamePrefix.
      */
@@ -2404,11 +2449,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided prefix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Optional. User-provided prefix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
      * </pre>
      *
-     * <code>string filename_prefix = 2;</code>
+     * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filenamePrefix to set.
      * @return This builder for chaining.
@@ -2426,11 +2471,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided prefix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Optional. User-provided prefix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
      * </pre>
      *
-     * <code>string filename_prefix = 2;</code>
+     * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2444,11 +2489,11 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided prefix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Optional. User-provided prefix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
      * </pre>
      *
-     * <code>string filename_prefix = 2;</code>
+     * <code>string filename_prefix = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filenamePrefix to set.
      * @return This builder for chaining.
@@ -2469,12 +2514,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided suffix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-     * not end in "/".
+     * Optional. User-provided suffix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Must not end in "/".
      * </pre>
      *
-     * <code>string filename_suffix = 3;</code>
+     * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filenameSuffix.
      */
@@ -2493,12 +2538,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided suffix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-     * not end in "/".
+     * Optional. User-provided suffix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Must not end in "/".
      * </pre>
      *
-     * <code>string filename_suffix = 3;</code>
+     * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filenameSuffix.
      */
@@ -2517,12 +2562,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided suffix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-     * not end in "/".
+     * Optional. User-provided suffix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Must not end in "/".
      * </pre>
      *
-     * <code>string filename_suffix = 3;</code>
+     * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filenameSuffix to set.
      * @return This builder for chaining.
@@ -2540,12 +2585,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided suffix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-     * not end in "/".
+     * Optional. User-provided suffix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Must not end in "/".
      * </pre>
      *
-     * <code>string filename_suffix = 3;</code>
+     * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2559,12 +2604,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * User-provided suffix for Cloud Storage filename. See the [object naming
-     * requirements](https://cloud.google.com/storage/docs/objects#naming). Must
-     * not end in "/".
+     * Optional. User-provided suffix for Cloud Storage filename. See the [object
+     * naming requirements](https://cloud.google.com/storage/docs/objects#naming).
+     * Must not end in "/".
      * </pre>
      *
-     * <code>string filename_suffix = 3;</code>
+     * <code>string filename_suffix = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filenameSuffix to set.
      * @return This builder for chaining.
@@ -2589,10 +2634,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the textConfig field is set.
      */
@@ -2604,10 +2652,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The textConfig.
      */
@@ -2629,10 +2680,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTextConfig(com.google.pubsub.v1.CloudStorageConfig.TextConfig value) {
       if (textConfigBuilder_ == null) {
@@ -2651,10 +2705,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTextConfig(
         com.google.pubsub.v1.CloudStorageConfig.TextConfig.Builder builderForValue) {
@@ -2671,10 +2728,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeTextConfig(com.google.pubsub.v1.CloudStorageConfig.TextConfig value) {
       if (textConfigBuilder_ == null) {
@@ -2704,10 +2764,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTextConfig() {
       if (textConfigBuilder_ == null) {
@@ -2729,10 +2792,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.CloudStorageConfig.TextConfig.Builder getTextConfigBuilder() {
       return getTextConfigFieldBuilder().getBuilder();
@@ -2741,10 +2807,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.pubsub.v1.CloudStorageConfig.TextConfigOrBuilder getTextConfigOrBuilder() {
@@ -2761,10 +2830,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in text format.
+     * Optional. If set, message data will be written to Cloud Storage in text
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.TextConfig text_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.CloudStorageConfig.TextConfig,
@@ -2799,10 +2871,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the avroConfig field is set.
      */
@@ -2814,10 +2889,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The avroConfig.
      */
@@ -2839,10 +2917,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAvroConfig(com.google.pubsub.v1.CloudStorageConfig.AvroConfig value) {
       if (avroConfigBuilder_ == null) {
@@ -2861,10 +2942,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAvroConfig(
         com.google.pubsub.v1.CloudStorageConfig.AvroConfig.Builder builderForValue) {
@@ -2881,10 +2965,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAvroConfig(com.google.pubsub.v1.CloudStorageConfig.AvroConfig value) {
       if (avroConfigBuilder_ == null) {
@@ -2914,10 +3001,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAvroConfig() {
       if (avroConfigBuilder_ == null) {
@@ -2939,10 +3029,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.CloudStorageConfig.AvroConfig.Builder getAvroConfigBuilder() {
       return getAvroConfigFieldBuilder().getBuilder();
@@ -2951,10 +3044,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.pubsub.v1.CloudStorageConfig.AvroConfigOrBuilder getAvroConfigOrBuilder() {
@@ -2971,10 +3067,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set, message data will be written to Cloud Storage in Avro format.
+     * Optional. If set, message data will be written to Cloud Storage in Avro
+     * format.
      * </pre>
      *
-     * <code>.google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5;</code>
+     * <code>
+     * .google.pubsub.v1.CloudStorageConfig.AvroConfig avro_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.CloudStorageConfig.AvroConfig,
@@ -3010,12 +3109,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the maxDuration field is set.
      */
@@ -3026,12 +3126,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The maxDuration.
      */
@@ -3048,12 +3149,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMaxDuration(com.google.protobuf.Duration value) {
       if (maxDurationBuilder_ == null) {
@@ -3072,12 +3174,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMaxDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxDurationBuilder_ == null) {
@@ -3093,12 +3196,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMaxDuration(com.google.protobuf.Duration value) {
       if (maxDurationBuilder_ == null) {
@@ -3120,12 +3224,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMaxDuration() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -3141,12 +3246,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getMaxDurationBuilder() {
       bitField0_ |= 0x00000020;
@@ -3157,12 +3263,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getMaxDurationOrBuilder() {
       if (maxDurationBuilder_ != null) {
@@ -3177,12 +3284,13 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum duration that can elapse before a new Cloud Storage file is
-     * created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed
-     * the subscription's acknowledgement deadline.
+     * Optional. The maximum duration that can elapse before a new Cloud Storage
+     * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
+     * exceed the subscription's acknowledgement deadline.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_duration = 6;</code>
+     * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -3206,12 +3314,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum bytes that can be written to a Cloud Storage file before a new
-     * file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded
-     * in cases where messages are larger than the limit.
+     * Optional. The maximum bytes that can be written to a Cloud Storage file
+     * before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may
+     * be exceeded in cases where messages are larger than the limit.
      * </pre>
      *
-     * <code>int64 max_bytes = 7;</code>
+     * <code>int64 max_bytes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxBytes.
      */
@@ -3223,12 +3331,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum bytes that can be written to a Cloud Storage file before a new
-     * file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded
-     * in cases where messages are larger than the limit.
+     * Optional. The maximum bytes that can be written to a Cloud Storage file
+     * before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may
+     * be exceeded in cases where messages are larger than the limit.
      * </pre>
      *
-     * <code>int64 max_bytes = 7;</code>
+     * <code>int64 max_bytes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The maxBytes to set.
      * @return This builder for chaining.
@@ -3244,12 +3352,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The maximum bytes that can be written to a Cloud Storage file before a new
-     * file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded
-     * in cases where messages are larger than the limit.
+     * Optional. The maximum bytes that can be written to a Cloud Storage file
+     * before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may
+     * be exceeded in cases where messages are larger than the limit.
      * </pre>
      *
-     * <code>int64 max_bytes = 7;</code>
+     * <code>int64 max_bytes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

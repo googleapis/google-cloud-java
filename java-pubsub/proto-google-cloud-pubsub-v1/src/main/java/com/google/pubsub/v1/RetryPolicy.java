@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * A policy that specifies how Cloud Pub/Sub retries message delivery.
+ * A policy that specifies how Pub/Sub retries message delivery.
  *
  * Retry delay will be exponential based on provided minimum and maximum
  * backoffs. https://en.wikipedia.org/wiki/Exponential_backoff.
@@ -74,11 +74,12 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+   * Optional. The minimum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+   * <code>.google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the minimumBackoff field is set.
    */
@@ -90,11 +91,12 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+   * Optional. The minimum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+   * <code>.google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The minimumBackoff.
    */
@@ -108,11 +110,12 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+   * Optional. The minimum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+   * <code>.google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMinimumBackoffOrBuilder() {
@@ -127,11 +130,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+   * Optional. The maximum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 600
+   * seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+   * <code>.google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the maximumBackoff field is set.
    */
@@ -143,11 +148,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+   * Optional. The maximum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 600
+   * seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+   * <code>.google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The maximumBackoff.
    */
@@ -161,11 +168,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum delay between consecutive deliveries of a given message.
-   * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+   * Optional. The maximum delay between consecutive deliveries of a given
+   * message. Value should be between 0 and 600 seconds. Defaults to 600
+   * seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+   * <code>.google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaximumBackoffOrBuilder() {
@@ -354,7 +363,7 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A policy that specifies how Cloud Pub/Sub retries message delivery.
+   * A policy that specifies how Pub/Sub retries message delivery.
    *
    * Retry delay will be exponential based on provided minimum and maximum
    * backoffs. https://en.wikipedia.org/wiki/Exponential_backoff.
@@ -572,11 +581,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the minimumBackoff field is set.
      */
@@ -587,11 +598,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The minimumBackoff.
      */
@@ -608,11 +621,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMinimumBackoff(com.google.protobuf.Duration value) {
       if (minimumBackoffBuilder_ == null) {
@@ -631,11 +646,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMinimumBackoff(com.google.protobuf.Duration.Builder builderForValue) {
       if (minimumBackoffBuilder_ == null) {
@@ -651,11 +668,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMinimumBackoff(com.google.protobuf.Duration value) {
       if (minimumBackoffBuilder_ == null) {
@@ -677,11 +696,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMinimumBackoff() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -697,11 +718,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getMinimumBackoffBuilder() {
       bitField0_ |= 0x00000001;
@@ -712,11 +735,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getMinimumBackoffOrBuilder() {
       if (minimumBackoffBuilder_ != null) {
@@ -731,11 +756,13 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+     * Optional. The minimum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration minimum_backoff = 1;</code>
+     * <code>
+     * .google.protobuf.Duration minimum_backoff = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -764,11 +791,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the maximumBackoff field is set.
      */
@@ -779,11 +809,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The maximumBackoff.
      */
@@ -800,11 +833,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMaximumBackoff(com.google.protobuf.Duration value) {
       if (maximumBackoffBuilder_ == null) {
@@ -823,11 +859,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMaximumBackoff(com.google.protobuf.Duration.Builder builderForValue) {
       if (maximumBackoffBuilder_ == null) {
@@ -843,11 +882,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMaximumBackoff(com.google.protobuf.Duration value) {
       if (maximumBackoffBuilder_ == null) {
@@ -869,11 +911,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMaximumBackoff() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -889,11 +934,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getMaximumBackoffBuilder() {
       bitField0_ |= 0x00000002;
@@ -904,11 +952,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getMaximumBackoffOrBuilder() {
       if (maximumBackoffBuilder_ != null) {
@@ -923,11 +974,14 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum delay between consecutive deliveries of a given message.
-     * Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+     * Optional. The maximum delay between consecutive deliveries of a given
+     * message. Value should be between 0 and 600 seconds. Defaults to 600
+     * seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration maximum_backoff = 2;</code>
+     * <code>
+     * .google.protobuf.Duration maximum_backoff = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,

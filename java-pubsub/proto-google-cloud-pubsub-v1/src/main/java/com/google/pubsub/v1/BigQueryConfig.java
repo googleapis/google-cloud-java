@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,6 +128,17 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEMA_MISMATCH = 4;</code>
      */
     SCHEMA_MISMATCH(4),
+    /**
+     *
+     *
+     * <pre>
+     * Cannot write to the destination because enforce_in_transit is set to true
+     * and the destination locations are not in the allowed regions.
+     * </pre>
+     *
+     * <code>IN_TRANSIT_LOCATION_RESTRICTION = 5;</code>
+     */
+    IN_TRANSIT_LOCATION_RESTRICTION(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -186,6 +197,17 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEMA_MISMATCH = 4;</code>
      */
     public static final int SCHEMA_MISMATCH_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Cannot write to the destination because enforce_in_transit is set to true
+     * and the destination locations are not in the allowed regions.
+     * </pre>
+     *
+     * <code>IN_TRANSIT_LOCATION_RESTRICTION = 5;</code>
+     */
+    public static final int IN_TRANSIT_LOCATION_RESTRICTION_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -221,6 +243,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
           return NOT_FOUND;
         case 4:
           return SCHEMA_MISMATCH;
+        case 5:
+          return IN_TRANSIT_LOCATION_RESTRICTION;
         default:
           return null;
       }
@@ -282,11 +306,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the table to which to write data, of the form
+   * Optional. The name of the table to which to write data, of the form
    * {projectId}.{datasetId}.{tableId}
    * </pre>
    *
-   * <code>string table = 1;</code>
+   * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The table.
    */
@@ -306,11 +330,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the table to which to write data, of the form
+   * Optional. The name of the table to which to write data, of the form
    * {projectId}.{datasetId}.{tableId}
    * </pre>
    *
-   * <code>string table = 1;</code>
+   * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for table.
    */
@@ -353,14 +377,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When true, write the subscription name, message_id, publish_time,
+   * Optional. When true, write the subscription name, message_id, publish_time,
    * attributes, and ordering_key to additional columns in the table. The
    * subscription name, message_id, and publish_time fields are put in their own
    * columns while all other message properties (other than data) are written to
    * a JSON object in the attributes column.
    * </pre>
    *
-   * <code>bool write_metadata = 3;</code>
+   * <code>bool write_metadata = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The writeMetadata.
    */
@@ -375,14 +399,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When true and use_topic_schema is true, any fields that are a part of the
-   * topic schema that are not part of the BigQuery table schema are dropped
-   * when writing to BigQuery. Otherwise, the schemas must be kept in sync and
-   * any messages with extra fields are not written and remain in the
+   * Optional. When true and use_topic_schema is true, any fields that are a
+   * part of the topic schema that are not part of the BigQuery table schema are
+   * dropped when writing to BigQuery. Otherwise, the schemas must be kept in
+   * sync and any messages with extra fields are not written and remain in the
    * subscription's backlog.
    * </pre>
    *
-   * <code>bool drop_unknown_fields = 4;</code>
+   * <code>bool drop_unknown_fields = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dropUnknownFields.
    */
@@ -905,11 +929,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the table to which to write data, of the form
+     * Optional. The name of the table to which to write data, of the form
      * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
-     * <code>string table = 1;</code>
+     * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The table.
      */
@@ -928,11 +952,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the table to which to write data, of the form
+     * Optional. The name of the table to which to write data, of the form
      * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
-     * <code>string table = 1;</code>
+     * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for table.
      */
@@ -951,11 +975,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the table to which to write data, of the form
+     * Optional. The name of the table to which to write data, of the form
      * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
-     * <code>string table = 1;</code>
+     * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The table to set.
      * @return This builder for chaining.
@@ -973,11 +997,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the table to which to write data, of the form
+     * Optional. The name of the table to which to write data, of the form
      * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
-     * <code>string table = 1;</code>
+     * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -991,11 +1015,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the table to which to write data, of the form
+     * Optional. The name of the table to which to write data, of the form
      * {projectId}.{datasetId}.{tableId}
      * </pre>
      *
-     * <code>string table = 1;</code>
+     * <code>string table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for table to set.
      * @return This builder for chaining.
@@ -1075,14 +1099,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, write the subscription name, message_id, publish_time,
+     * Optional. When true, write the subscription name, message_id, publish_time,
      * attributes, and ordering_key to additional columns in the table. The
      * subscription name, message_id, and publish_time fields are put in their own
      * columns while all other message properties (other than data) are written to
      * a JSON object in the attributes column.
      * </pre>
      *
-     * <code>bool write_metadata = 3;</code>
+     * <code>bool write_metadata = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The writeMetadata.
      */
@@ -1094,14 +1118,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, write the subscription name, message_id, publish_time,
+     * Optional. When true, write the subscription name, message_id, publish_time,
      * attributes, and ordering_key to additional columns in the table. The
      * subscription name, message_id, and publish_time fields are put in their own
      * columns while all other message properties (other than data) are written to
      * a JSON object in the attributes column.
      * </pre>
      *
-     * <code>bool write_metadata = 3;</code>
+     * <code>bool write_metadata = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The writeMetadata to set.
      * @return This builder for chaining.
@@ -1117,14 +1141,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, write the subscription name, message_id, publish_time,
+     * Optional. When true, write the subscription name, message_id, publish_time,
      * attributes, and ordering_key to additional columns in the table. The
      * subscription name, message_id, and publish_time fields are put in their own
      * columns while all other message properties (other than data) are written to
      * a JSON object in the attributes column.
      * </pre>
      *
-     * <code>bool write_metadata = 3;</code>
+     * <code>bool write_metadata = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1140,14 +1164,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true and use_topic_schema is true, any fields that are a part of the
-     * topic schema that are not part of the BigQuery table schema are dropped
-     * when writing to BigQuery. Otherwise, the schemas must be kept in sync and
-     * any messages with extra fields are not written and remain in the
+     * Optional. When true and use_topic_schema is true, any fields that are a
+     * part of the topic schema that are not part of the BigQuery table schema are
+     * dropped when writing to BigQuery. Otherwise, the schemas must be kept in
+     * sync and any messages with extra fields are not written and remain in the
      * subscription's backlog.
      * </pre>
      *
-     * <code>bool drop_unknown_fields = 4;</code>
+     * <code>bool drop_unknown_fields = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The dropUnknownFields.
      */
@@ -1159,14 +1183,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true and use_topic_schema is true, any fields that are a part of the
-     * topic schema that are not part of the BigQuery table schema are dropped
-     * when writing to BigQuery. Otherwise, the schemas must be kept in sync and
-     * any messages with extra fields are not written and remain in the
+     * Optional. When true and use_topic_schema is true, any fields that are a
+     * part of the topic schema that are not part of the BigQuery table schema are
+     * dropped when writing to BigQuery. Otherwise, the schemas must be kept in
+     * sync and any messages with extra fields are not written and remain in the
      * subscription's backlog.
      * </pre>
      *
-     * <code>bool drop_unknown_fields = 4;</code>
+     * <code>bool drop_unknown_fields = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dropUnknownFields to set.
      * @return This builder for chaining.
@@ -1182,14 +1206,14 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true and use_topic_schema is true, any fields that are a part of the
-     * topic schema that are not part of the BigQuery table schema are dropped
-     * when writing to BigQuery. Otherwise, the schemas must be kept in sync and
-     * any messages with extra fields are not written and remain in the
+     * Optional. When true and use_topic_schema is true, any fields that are a
+     * part of the topic schema that are not part of the BigQuery table schema are
+     * dropped when writing to BigQuery. Otherwise, the schemas must be kept in
+     * sync and any messages with extra fields are not written and remain in the
      * subscription's backlog.
      * </pre>
      *
-     * <code>bool drop_unknown_fields = 4;</code>
+     * <code>bool drop_unknown_fields = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

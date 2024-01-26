@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,22 +62,22 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -87,22 +87,22 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -113,11 +113,11 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -125,12 +125,14 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Policy constraining the set of Google Cloud Platform regions where messages
-   * published to the topic may be stored. If not present, then no constraints
-   * are in effect.
+   * Optional. Policy constraining the set of Google Cloud Platform regions
+   * where messages published to the topic may be stored. If not present, then
+   * no constraints are in effect.
    * </pre>
    *
-   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   * <code>
+   * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageStoragePolicy field is set.
    */
@@ -139,12 +141,14 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Policy constraining the set of Google Cloud Platform regions where messages
-   * published to the topic may be stored. If not present, then no constraints
-   * are in effect.
+   * Optional. Policy constraining the set of Google Cloud Platform regions
+   * where messages published to the topic may be stored. If not present, then
+   * no constraints are in effect.
    * </pre>
    *
-   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   * <code>
+   * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageStoragePolicy.
    */
@@ -153,12 +157,14 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Policy constraining the set of Google Cloud Platform regions where messages
-   * published to the topic may be stored. If not present, then no constraints
-   * are in effect.
+   * Optional. Policy constraining the set of Google Cloud Platform regions
+   * where messages published to the topic may be stored. If not present, then
+   * no constraints are in effect.
    * </pre>
    *
-   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   * <code>
+   * .google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder();
 
@@ -166,13 +172,13 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * The resource name of the Cloud KMS CryptoKey to be used to protect access
-   * to messages published on this topic.
+   * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+   * protect access to messages published on this topic.
    *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string kms_key_name = 5;</code>
+   * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The kmsKeyName.
    */
@@ -181,13 +187,13 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * The resource name of the Cloud KMS CryptoKey to be used to protect access
-   * to messages published on this topic.
+   * Optional. The resource name of the Cloud KMS CryptoKey to be used to
+   * protect access to messages published on this topic.
    *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string kms_key_name = 5;</code>
+   * <code>string kms_key_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -197,10 +203,12 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Settings for validating messages published against a schema.
+   * Optional. Settings for validating messages published against a schema.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   * <code>
+   * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the schemaSettings field is set.
    */
@@ -209,10 +217,12 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Settings for validating messages published against a schema.
+   * Optional. Settings for validating messages published against a schema.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   * <code>
+   * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The schemaSettings.
    */
@@ -221,10 +231,12 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Settings for validating messages published against a schema.
+   * Optional. Settings for validating messages published against a schema.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   * <code>
+   * .google.pubsub.v1.SchemaSettings schema_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.SchemaSettingsOrBuilder getSchemaSettingsOrBuilder();
 
@@ -232,11 +244,11 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Reserved for future use. This field is set only in responses from the
-   * server; it is ignored if it is set in any requests.
+   * Optional. Reserved for future use. This field is set only in responses from
+   * the server; it is ignored if it is set in any requests.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 7;</code>
+   * <code>bool satisfies_pzs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The satisfiesPzs.
    */
@@ -246,17 +258,20 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Indicates the minimum duration to retain a message after it is published to
-   * the topic. If this field is set, messages published to the topic in the
-   * last `message_retention_duration` are always available to subscribers. For
-   * instance, it allows any attached subscription to [seek to a
+   * Optional. Indicates the minimum duration to retain a message after it is
+   * published to the topic. If this field is set, messages published to the
+   * topic in the last `message_retention_duration` are always available to
+   * subscribers. For instance, it allows any attached subscription to [seek to
+   * a
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
    * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageRetentionDuration field is set.
    */
@@ -265,17 +280,20 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Indicates the minimum duration to retain a message after it is published to
-   * the topic. If this field is set, messages published to the topic in the
-   * last `message_retention_duration` are always available to subscribers. For
-   * instance, it allows any attached subscription to [seek to a
+   * Optional. Indicates the minimum duration to retain a message after it is
+   * published to the topic. If this field is set, messages published to the
+   * topic in the last `message_retention_duration` are always available to
+   * subscribers. For instance, it allows any attached subscription to [seek to
+   * a
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
    * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageRetentionDuration.
    */
@@ -284,17 +302,92 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * Indicates the minimum duration to retain a message after it is published to
-   * the topic. If this field is set, messages published to the topic in the
-   * last `message_retention_duration` are always available to subscribers. For
-   * instance, it allows any attached subscription to [seek to a
+   * Optional. Indicates the minimum duration to retain a message after it is
+   * published to the topic. If this field is set, messages published to the
+   * topic in the last `message_retention_duration` are always available to
+   * subscribers. For instance, it allows any attached subscription to [seek to
+   * a
    * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
    * that is up to `message_retention_duration` in the past. If this field is
    * not set, message retention is controlled by settings on individual
    * subscriptions. Cannot be more than 31 days or less than 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * <code>
+   * .google.protobuf.Duration message_retention_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating the state of the topic.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating the state of the topic.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Topic.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.pubsub.v1.Topic.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for managed ingestion from a data source into this
+   * topic.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ingestionDataSourceSettings field is set.
+   */
+  boolean hasIngestionDataSourceSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for managed ingestion from a data source into this
+   * topic.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ingestionDataSourceSettings.
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings getIngestionDataSourceSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for managed ingestion from a data source into this
+   * topic.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings ingestion_data_source_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder
+      getIngestionDataSourceSettingsOrBuilder();
 }

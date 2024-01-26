@@ -80,240 +80,240 @@ import javax.annotation.Generated;
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <table>
- *   <caption>Methods</caption>
+ *    <caption>Methods</caption>
  *    <tr>
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
  *    </tr>
  *    <tr>
- *      <td>CreateSchema</td>
+ *      <td><p> CreateSchema</td>
  *      <td><p> Creates a schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>createSchema(CreateSchemaRequest request)
+ *           <li><p> createSchema(CreateSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>createSchema(ProjectName parent, Schema schema, String schemaId)
- *           <li>createSchema(String parent, Schema schema, String schemaId)
+ *           <li><p> createSchema(ProjectName parent, Schema schema, String schemaId)
+ *           <li><p> createSchema(String parent, Schema schema, String schemaId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>createSchemaCallable()
+ *           <li><p> createSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetSchema</td>
+ *      <td><p> GetSchema</td>
  *      <td><p> Gets a schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getSchema(GetSchemaRequest request)
+ *           <li><p> getSchema(GetSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>getSchema(SchemaName name)
- *           <li>getSchema(String name)
+ *           <li><p> getSchema(SchemaName name)
+ *           <li><p> getSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getSchemaCallable()
+ *           <li><p> getSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSchemas</td>
+ *      <td><p> ListSchemas</td>
  *      <td><p> Lists schemas in a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSchemas(ListSchemasRequest request)
+ *           <li><p> listSchemas(ListSchemasRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSchemas(ProjectName parent)
- *           <li>listSchemas(String parent)
+ *           <li><p> listSchemas(ProjectName parent)
+ *           <li><p> listSchemas(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSchemasPagedCallable()
- *           <li>listSchemasCallable()
+ *           <li><p> listSchemasPagedCallable()
+ *           <li><p> listSchemasCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ListSchemaRevisions</td>
+ *      <td><p> ListSchemaRevisions</td>
  *      <td><p> Lists all schema revisions for the named schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>listSchemaRevisions(ListSchemaRevisionsRequest request)
+ *           <li><p> listSchemaRevisions(ListSchemaRevisionsRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>listSchemaRevisions(SchemaName name)
- *           <li>listSchemaRevisions(String name)
+ *           <li><p> listSchemaRevisions(SchemaName name)
+ *           <li><p> listSchemaRevisions(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>listSchemaRevisionsPagedCallable()
- *           <li>listSchemaRevisionsCallable()
+ *           <li><p> listSchemaRevisionsPagedCallable()
+ *           <li><p> listSchemaRevisionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>CommitSchema</td>
+ *      <td><p> CommitSchema</td>
  *      <td><p> Commits a new schema revision to an existing schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>commitSchema(CommitSchemaRequest request)
+ *           <li><p> commitSchema(CommitSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>commitSchema(SchemaName name, Schema schema)
- *           <li>commitSchema(String name, Schema schema)
+ *           <li><p> commitSchema(SchemaName name, Schema schema)
+ *           <li><p> commitSchema(String name, Schema schema)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>commitSchemaCallable()
+ *           <li><p> commitSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>RollbackSchema</td>
+ *      <td><p> RollbackSchema</td>
  *      <td><p> Creates a new schema revision that is a copy of the provided revision_id.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>rollbackSchema(RollbackSchemaRequest request)
+ *           <li><p> rollbackSchema(RollbackSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>rollbackSchema(SchemaName name, String revisionId)
- *           <li>rollbackSchema(String name, String revisionId)
+ *           <li><p> rollbackSchema(SchemaName name, String revisionId)
+ *           <li><p> rollbackSchema(String name, String revisionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>rollbackSchemaCallable()
+ *           <li><p> rollbackSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSchemaRevision</td>
+ *      <td><p> DeleteSchemaRevision</td>
  *      <td><p> Deletes a specific schema revision.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSchemaRevision(DeleteSchemaRevisionRequest request)
+ *           <li><p> deleteSchemaRevision(DeleteSchemaRevisionRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSchemaRevision(SchemaName name, String revisionId)
- *           <li>deleteSchemaRevision(String name, String revisionId)
+ *           <li><p> deleteSchemaRevision(SchemaName name, String revisionId)
+ *           <li><p> deleteSchemaRevision(String name, String revisionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSchemaRevisionCallable()
+ *           <li><p> deleteSchemaRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>DeleteSchema</td>
+ *      <td><p> DeleteSchema</td>
  *      <td><p> Deletes a schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>deleteSchema(DeleteSchemaRequest request)
+ *           <li><p> deleteSchema(DeleteSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>deleteSchema(SchemaName name)
- *           <li>deleteSchema(String name)
+ *           <li><p> deleteSchema(SchemaName name)
+ *           <li><p> deleteSchema(String name)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>deleteSchemaCallable()
+ *           <li><p> deleteSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ValidateSchema</td>
+ *      <td><p> ValidateSchema</td>
  *      <td><p> Validates a schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateSchema(ValidateSchemaRequest request)
+ *           <li><p> validateSchema(ValidateSchemaRequest request)
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li>validateSchema(ProjectName parent, Schema schema)
- *           <li>validateSchema(String parent, Schema schema)
+ *           <li><p> validateSchema(ProjectName parent, Schema schema)
+ *           <li><p> validateSchema(String parent, Schema schema)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateSchemaCallable()
+ *           <li><p> validateSchemaCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>ValidateMessage</td>
+ *      <td><p> ValidateMessage</td>
  *      <td><p> Validates a message against a schema.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>validateMessage(ValidateMessageRequest request)
+ *           <li><p> validateMessage(ValidateMessageRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>validateMessageCallable()
+ *           <li><p> validateMessageCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>SetIamPolicy</td>
+ *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
  * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>setIamPolicyCallable()
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>GetIamPolicy</td>
+ *      <td><p> GetIamPolicy</td>
  *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>getIamPolicyCallable()
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td>TestIamPermissions</td>
+ *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
  * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li>testIamPermissionsCallable()
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -449,7 +449,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     will have a `name` made using the given `parent` and `schema_id`.
    * @param schemaId The ID to use for the schema, which will become the final component of the
    *     schema's resource name.
-   *     <p>See https://cloud.google.com/pubsub/docs/admin#resource_names for resource name
+   *     <p>See https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names for resource name
    *     constraints.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -490,7 +490,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     will have a `name` made using the given `parent` and `schema_id`.
    * @param schemaId The ID to use for the schema, which will become the final component of the
    *     schema's resource name.
-   *     <p>See https://cloud.google.com/pubsub/docs/admin#resource_names for resource name
+   *     <p>See https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names for resource name
    *     constraints.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

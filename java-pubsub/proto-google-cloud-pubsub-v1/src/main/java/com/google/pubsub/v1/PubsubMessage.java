@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,11 +88,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The message data field. If this field is empty, the message must contain
-   * at least one attribute.
+   * Optional. The message data field. If this field is empty, the message must
+   * contain at least one attribute.
    * </pre>
    *
-   * <code>bytes data = 1;</code>
+   * <code>bytes data = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The data.
    */
@@ -131,12 +131,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAttributes(java.lang.String key) {
@@ -155,12 +156,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
@@ -170,12 +172,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAttributesOrDefault(
@@ -192,12 +195,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAttributesOrThrow(java.lang.String key) {
@@ -328,17 +332,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If non-empty, identifies related messages for which publish order should be
-   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-   * messages published with the same non-empty `ordering_key` value will be
-   * delivered to subscribers in the order in which they are received by the
-   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-   * must specify the same `ordering_key` value.
-   * For more information, see [ordering
+   * Optional. If non-empty, identifies related messages for which publish order
+   * should be respected. If a `Subscription` has `enable_message_ordering` set
+   * to `true`, messages published with the same non-empty `ordering_key` value
+   * will be delivered to subscribers in the order in which they are received by
+   * the Pub/Sub system. All `PubsubMessage`s published in a given
+   * `PublishRequest` must specify the same `ordering_key` value. For more
+   * information, see [ordering
    * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
-   * <code>string ordering_key = 5;</code>
+   * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderingKey.
    */
@@ -358,17 +362,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If non-empty, identifies related messages for which publish order should be
-   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-   * messages published with the same non-empty `ordering_key` value will be
-   * delivered to subscribers in the order in which they are received by the
-   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-   * must specify the same `ordering_key` value.
-   * For more information, see [ordering
+   * Optional. If non-empty, identifies related messages for which publish order
+   * should be respected. If a `Subscription` has `enable_message_ordering` set
+   * to `true`, messages published with the same non-empty `ordering_key` value
+   * will be delivered to subscribers in the order in which they are received by
+   * the Pub/Sub system. All `PubsubMessage`s published in a given
+   * `PublishRequest` must specify the same `ordering_key` value. For more
+   * information, see [ordering
    * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
-   * <code>string ordering_key = 5;</code>
+   * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderingKey.
    */
@@ -869,11 +873,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message data field. If this field is empty, the message must contain
-     * at least one attribute.
+     * Optional. The message data field. If this field is empty, the message must
+     * contain at least one attribute.
      * </pre>
      *
-     * <code>bytes data = 1;</code>
+     * <code>bytes data = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The data.
      */
@@ -885,11 +889,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message data field. If this field is empty, the message must contain
-     * at least one attribute.
+     * Optional. The message data field. If this field is empty, the message must
+     * contain at least one attribute.
      * </pre>
      *
-     * <code>bytes data = 1;</code>
+     * <code>bytes data = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The data to set.
      * @return This builder for chaining.
@@ -907,11 +911,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message data field. If this field is empty, the message must contain
-     * at least one attribute.
+     * Optional. The message data field. If this field is empty, the message must
+     * contain at least one attribute.
      * </pre>
      *
-     * <code>bytes data = 1;</code>
+     * <code>bytes data = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -954,12 +958,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
@@ -978,12 +983,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
@@ -993,12 +999,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAttributesOrDefault(
@@ -1015,12 +1022,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAttributesOrThrow(java.lang.String key) {
@@ -1043,12 +1051,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAttributes(java.lang.String key) {
       if (key == null) {
@@ -1067,12 +1076,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAttributes(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1089,12 +1099,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data. This can be used to filter messages on the
+     * Optional. Attributes for this message. If this field is empty, the message
+     * must contain non-empty data. This can be used to filter messages on the
      * subscription.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; attributes = 2;</code>
+     * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
@@ -1429,17 +1440,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If non-empty, identifies related messages for which publish order should be
-     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-     * messages published with the same non-empty `ordering_key` value will be
-     * delivered to subscribers in the order in which they are received by the
-     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-     * must specify the same `ordering_key` value.
-     * For more information, see [ordering
+     * Optional. If non-empty, identifies related messages for which publish order
+     * should be respected. If a `Subscription` has `enable_message_ordering` set
+     * to `true`, messages published with the same non-empty `ordering_key` value
+     * will be delivered to subscribers in the order in which they are received by
+     * the Pub/Sub system. All `PubsubMessage`s published in a given
+     * `PublishRequest` must specify the same `ordering_key` value. For more
+     * information, see [ordering
      * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
-     * <code>string ordering_key = 5;</code>
+     * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderingKey.
      */
@@ -1458,17 +1469,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If non-empty, identifies related messages for which publish order should be
-     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-     * messages published with the same non-empty `ordering_key` value will be
-     * delivered to subscribers in the order in which they are received by the
-     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-     * must specify the same `ordering_key` value.
-     * For more information, see [ordering
+     * Optional. If non-empty, identifies related messages for which publish order
+     * should be respected. If a `Subscription` has `enable_message_ordering` set
+     * to `true`, messages published with the same non-empty `ordering_key` value
+     * will be delivered to subscribers in the order in which they are received by
+     * the Pub/Sub system. All `PubsubMessage`s published in a given
+     * `PublishRequest` must specify the same `ordering_key` value. For more
+     * information, see [ordering
      * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
-     * <code>string ordering_key = 5;</code>
+     * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderingKey.
      */
@@ -1487,17 +1498,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If non-empty, identifies related messages for which publish order should be
-     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-     * messages published with the same non-empty `ordering_key` value will be
-     * delivered to subscribers in the order in which they are received by the
-     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-     * must specify the same `ordering_key` value.
-     * For more information, see [ordering
+     * Optional. If non-empty, identifies related messages for which publish order
+     * should be respected. If a `Subscription` has `enable_message_ordering` set
+     * to `true`, messages published with the same non-empty `ordering_key` value
+     * will be delivered to subscribers in the order in which they are received by
+     * the Pub/Sub system. All `PubsubMessage`s published in a given
+     * `PublishRequest` must specify the same `ordering_key` value. For more
+     * information, see [ordering
      * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
-     * <code>string ordering_key = 5;</code>
+     * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderingKey to set.
      * @return This builder for chaining.
@@ -1515,17 +1526,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If non-empty, identifies related messages for which publish order should be
-     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-     * messages published with the same non-empty `ordering_key` value will be
-     * delivered to subscribers in the order in which they are received by the
-     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-     * must specify the same `ordering_key` value.
-     * For more information, see [ordering
+     * Optional. If non-empty, identifies related messages for which publish order
+     * should be respected. If a `Subscription` has `enable_message_ordering` set
+     * to `true`, messages published with the same non-empty `ordering_key` value
+     * will be delivered to subscribers in the order in which they are received by
+     * the Pub/Sub system. All `PubsubMessage`s published in a given
+     * `PublishRequest` must specify the same `ordering_key` value. For more
+     * information, see [ordering
      * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
-     * <code>string ordering_key = 5;</code>
+     * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1539,17 +1550,17 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If non-empty, identifies related messages for which publish order should be
-     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-     * messages published with the same non-empty `ordering_key` value will be
-     * delivered to subscribers in the order in which they are received by the
-     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-     * must specify the same `ordering_key` value.
-     * For more information, see [ordering
+     * Optional. If non-empty, identifies related messages for which publish order
+     * should be respected. If a `Subscription` has `enable_message_ordering` set
+     * to `true`, messages published with the same non-empty `ordering_key` value
+     * will be delivered to subscribers in the order in which they are received by
+     * the Pub/Sub system. All `PubsubMessage`s published in a given
+     * `PublishRequest` must specify the same `ordering_key` value. For more
+     * information, see [ordering
      * messages](https://cloud.google.com/pubsub/docs/ordering).
      * </pre>
      *
-     * <code>string ordering_key = 5;</code>
+     * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderingKey to set.
      * @return This builder for chaining.

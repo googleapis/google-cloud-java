@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,11 @@ public interface PubsubMessageOrBuilder
    *
    *
    * <pre>
-   * The message data field. If this field is empty, the message must contain
-   * at least one attribute.
+   * Optional. The message data field. If this field is empty, the message must
+   * contain at least one attribute.
    * </pre>
    *
-   * <code>bytes data = 1;</code>
+   * <code>bytes data = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The data.
    */
@@ -41,24 +41,26 @@ public interface PubsubMessageOrBuilder
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAttributesCount();
   /**
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAttributes(java.lang.String key);
   /** Use {@link #getAttributesMap()} instead. */
@@ -68,24 +70,26 @@ public interface PubsubMessageOrBuilder
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
   /**
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAttributesOrDefault(
@@ -96,12 +100,13 @@ public interface PubsubMessageOrBuilder
    *
    *
    * <pre>
-   * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data. This can be used to filter messages on the
+   * Optional. Attributes for this message. If this field is empty, the message
+   * must contain non-empty data. This can be used to filter messages on the
    * subscription.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>map&lt;string, string&gt; attributes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAttributesOrThrow(java.lang.String key);
 
@@ -181,17 +186,17 @@ public interface PubsubMessageOrBuilder
    *
    *
    * <pre>
-   * If non-empty, identifies related messages for which publish order should be
-   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-   * messages published with the same non-empty `ordering_key` value will be
-   * delivered to subscribers in the order in which they are received by the
-   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-   * must specify the same `ordering_key` value.
-   * For more information, see [ordering
+   * Optional. If non-empty, identifies related messages for which publish order
+   * should be respected. If a `Subscription` has `enable_message_ordering` set
+   * to `true`, messages published with the same non-empty `ordering_key` value
+   * will be delivered to subscribers in the order in which they are received by
+   * the Pub/Sub system. All `PubsubMessage`s published in a given
+   * `PublishRequest` must specify the same `ordering_key` value. For more
+   * information, see [ordering
    * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
-   * <code>string ordering_key = 5;</code>
+   * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderingKey.
    */
@@ -200,17 +205,17 @@ public interface PubsubMessageOrBuilder
    *
    *
    * <pre>
-   * If non-empty, identifies related messages for which publish order should be
-   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
-   * messages published with the same non-empty `ordering_key` value will be
-   * delivered to subscribers in the order in which they are received by the
-   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
-   * must specify the same `ordering_key` value.
-   * For more information, see [ordering
+   * Optional. If non-empty, identifies related messages for which publish order
+   * should be respected. If a `Subscription` has `enable_message_ordering` set
+   * to `true`, messages published with the same non-empty `ordering_key` value
+   * will be delivered to subscribers in the order in which they are received by
+   * the Pub/Sub system. All `PubsubMessage`s published in a given
+   * `PublishRequest` must specify the same `ordering_key` value. For more
+   * information, see [ordering
    * messages](https://cloud.google.com/pubsub/docs/ordering).
    * </pre>
    *
-   * <code>string ordering_key = 5;</code>
+   * <code>string ordering_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderingKey.
    */

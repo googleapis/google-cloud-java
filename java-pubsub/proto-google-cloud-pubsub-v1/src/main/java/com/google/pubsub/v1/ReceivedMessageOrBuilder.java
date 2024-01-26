@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,10 @@ public interface ReceivedMessageOrBuilder
    *
    *
    * <pre>
-   * This ID can be used to acknowledge the received message.
+   * Optional. This ID can be used to acknowledge the received message.
    * </pre>
    *
-   * <code>string ack_id = 1;</code>
+   * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ackId.
    */
@@ -39,10 +39,10 @@ public interface ReceivedMessageOrBuilder
    *
    *
    * <pre>
-   * This ID can be used to acknowledge the received message.
+   * Optional. This ID can be used to acknowledge the received message.
    * </pre>
    *
-   * <code>string ack_id = 1;</code>
+   * <code>string ack_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for ackId.
    */
@@ -52,10 +52,11 @@ public interface ReceivedMessageOrBuilder
    *
    *
    * <pre>
-   * The message.
+   * Optional. The message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the message field is set.
    */
@@ -64,10 +65,11 @@ public interface ReceivedMessageOrBuilder
    *
    *
    * <pre>
-   * The message.
+   * Optional. The message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The message.
    */
@@ -76,10 +78,11 @@ public interface ReceivedMessageOrBuilder
    *
    *
    * <pre>
-   * The message.
+   * Optional. The message.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * <code>.google.pubsub.v1.PubsubMessage message = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.pubsub.v1.PubsubMessageOrBuilder getMessageOrBuilder();
 
@@ -87,8 +90,8 @@ public interface ReceivedMessageOrBuilder
    *
    *
    * <pre>
-   * The approximate number of times that Cloud Pub/Sub has attempted to deliver
-   * the associated message to a subscriber.
+   * Optional. The approximate number of times that Pub/Sub has attempted to
+   * deliver the associated message to a subscriber.
    *
    * More precisely, this is 1 + (number of NACKs) +
    * (number of ack_deadline exceeds) for this message.
@@ -105,7 +108,7 @@ public interface ReceivedMessageOrBuilder
    * If a DeadLetterPolicy is not set on the subscription, this will be 0.
    * </pre>
    *
-   * <code>int32 delivery_attempt = 3;</code>
+   * <code>int32 delivery_attempt = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deliveryAttempt.
    */

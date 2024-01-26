@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,10 +72,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the ackIds.
      */
@@ -84,10 +84,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of ackIds.
      */
@@ -96,10 +96,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
@@ -109,10 +109,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
@@ -123,11 +123,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the invalidAckIds.
      */
@@ -136,11 +136,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of invalidAckIds.
      */
@@ -149,11 +149,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The invalidAckIds at the given index.
@@ -163,11 +163,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the invalidAckIds at the given index.
@@ -178,10 +178,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the unorderedAckIds.
      */
@@ -190,10 +190,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of unorderedAckIds.
      */
@@ -202,10 +202,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The unorderedAckIds at the given index.
@@ -215,10 +215,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the unorderedAckIds at the given index.
@@ -229,10 +229,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the temporaryFailedAckIds.
      */
@@ -241,10 +243,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of temporaryFailedAckIds.
      */
@@ -253,10 +257,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The temporaryFailedAckIds at the given index.
@@ -266,10 +272,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the temporaryFailedAckIds at the given index.
@@ -333,10 +341,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the ackIds.
      */
@@ -347,10 +355,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of ackIds.
      */
@@ -361,10 +369,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
@@ -376,10 +384,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
@@ -397,11 +405,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the invalidAckIds.
      */
@@ -412,11 +420,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of invalidAckIds.
      */
@@ -427,11 +435,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The invalidAckIds at the given index.
@@ -443,11 +451,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the invalidAckIds at the given index.
@@ -465,10 +473,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the unorderedAckIds.
      */
@@ -479,10 +487,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of unorderedAckIds.
      */
@@ -493,10 +501,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The unorderedAckIds at the given index.
@@ -508,10 +516,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgement IDs that were out of order.
      * </pre>
      *
-     * <code>repeated string unordered_ack_ids = 3;</code>
+     * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the unorderedAckIds at the given index.
@@ -529,10 +537,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the temporaryFailedAckIds.
      */
@@ -543,10 +553,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of temporaryFailedAckIds.
      */
@@ -557,10 +569,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The temporaryFailedAckIds at the given index.
@@ -572,10 +586,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 4;</code>
+     * <code>repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the temporaryFailedAckIds at the given index.
@@ -1083,10 +1099,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the ackIds.
        */
@@ -1098,10 +1114,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of ackIds.
        */
@@ -1112,10 +1128,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The ackIds at the given index.
@@ -1127,10 +1143,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the ackIds at the given index.
@@ -1142,10 +1158,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The ackIds to set.
@@ -1165,10 +1181,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The ackIds to add.
        * @return This builder for chaining.
@@ -1187,10 +1203,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The ackIds to add.
        * @return This builder for chaining.
@@ -1206,10 +1222,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1224,10 +1240,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the ackIds to add.
        * @return This builder for chaining.
@@ -1257,11 +1273,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the invalidAckIds.
        */
@@ -1273,11 +1289,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of invalidAckIds.
        */
@@ -1288,11 +1304,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The invalidAckIds at the given index.
@@ -1304,11 +1320,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the invalidAckIds at the given index.
@@ -1320,11 +1336,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The invalidAckIds to set.
@@ -1344,11 +1360,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The invalidAckIds to add.
        * @return This builder for chaining.
@@ -1367,11 +1383,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The invalidAckIds to add.
        * @return This builder for chaining.
@@ -1387,11 +1403,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1406,11 +1422,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the invalidAckIds to add.
        * @return This builder for chaining.
@@ -1440,10 +1456,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return A list containing the unorderedAckIds.
        */
@@ -1455,10 +1472,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The count of unorderedAckIds.
        */
@@ -1469,10 +1487,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the element to return.
        * @return The unorderedAckIds at the given index.
@@ -1484,10 +1503,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the unorderedAckIds at the given index.
@@ -1499,10 +1519,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index to set the value at.
        * @param value The unorderedAckIds to set.
@@ -1522,10 +1543,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The unorderedAckIds to add.
        * @return This builder for chaining.
@@ -1544,10 +1566,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param values The unorderedAckIds to add.
        * @return This builder for chaining.
@@ -1563,10 +1586,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1581,10 +1605,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgement IDs that were out of order.
        * </pre>
        *
-       * <code>repeated string unordered_ack_ids = 3;</code>
+       * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The bytes of the unorderedAckIds to add.
        * @return This builder for chaining.
@@ -1615,10 +1640,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return A list containing the temporaryFailedAckIds.
        */
@@ -1630,10 +1658,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The count of temporaryFailedAckIds.
        */
@@ -1644,10 +1675,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the element to return.
        * @return The temporaryFailedAckIds at the given index.
@@ -1659,10 +1693,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the temporaryFailedAckIds at the given index.
@@ -1674,10 +1711,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index to set the value at.
        * @param value The temporaryFailedAckIds to set.
@@ -1697,10 +1737,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The temporaryFailedAckIds to add.
        * @return This builder for chaining.
@@ -1719,10 +1762,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param values The temporaryFailedAckIds to add.
        * @return This builder for chaining.
@@ -1738,10 +1784,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1756,10 +1805,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 4;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The bytes of the temporaryFailedAckIds to add.
        * @return This builder for chaining.
@@ -1852,10 +1904,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the ackIds.
      */
@@ -1864,10 +1916,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of ackIds.
      */
@@ -1876,10 +1928,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
@@ -1889,10 +1941,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
@@ -1903,11 +1955,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the invalidAckIds.
      */
@@ -1916,11 +1968,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of invalidAckIds.
      */
@@ -1929,11 +1981,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The invalidAckIds at the given index.
@@ -1943,11 +1995,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the invalidAckIds at the given index.
@@ -1958,10 +2010,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the temporaryFailedAckIds.
      */
@@ -1970,10 +2024,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of temporaryFailedAckIds.
      */
@@ -1982,10 +2038,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The temporaryFailedAckIds at the given index.
@@ -1995,10 +2053,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the temporaryFailedAckIds at the given index.
@@ -2064,10 +2124,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the ackIds.
      */
@@ -2078,10 +2138,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of ackIds.
      */
@@ -2092,10 +2152,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
@@ -2107,10 +2167,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgement IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 1;</code>
+     * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
@@ -2128,11 +2188,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the invalidAckIds.
      */
@@ -2143,11 +2203,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of invalidAckIds.
      */
@@ -2158,11 +2218,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The invalidAckIds at the given index.
@@ -2174,11 +2234,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that were malformed or whose acknowledgement
-     * deadline has expired.
+     * Optional. List of acknowledgement IDs that were malformed or whose
+     * acknowledgement deadline has expired.
      * </pre>
      *
-     * <code>repeated string invalid_ack_ids = 2;</code>
+     * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the invalidAckIds at the given index.
@@ -2196,10 +2256,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the temporaryFailedAckIds.
      */
@@ -2210,10 +2272,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of temporaryFailedAckIds.
      */
@@ -2224,10 +2288,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The temporaryFailedAckIds at the given index.
@@ -2239,10 +2305,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of acknowledgement IDs that failed processing with temporary issues.
+     * Optional. List of acknowledgement IDs that failed processing with
+     * temporary issues.
      * </pre>
      *
-     * <code>repeated string temporary_failed_ack_ids = 3;</code>
+     * <code>repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the temporaryFailedAckIds at the given index.
@@ -2722,10 +2790,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the ackIds.
        */
@@ -2737,10 +2805,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of ackIds.
        */
@@ -2751,10 +2819,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The ackIds at the given index.
@@ -2766,10 +2834,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the ackIds at the given index.
@@ -2781,10 +2849,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The ackIds to set.
@@ -2804,10 +2872,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The ackIds to add.
        * @return This builder for chaining.
@@ -2826,10 +2894,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The ackIds to add.
        * @return This builder for chaining.
@@ -2845,10 +2913,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2863,10 +2931,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgement IDs.
        * </pre>
        *
-       * <code>repeated string ack_ids = 1;</code>
+       * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the ackIds to add.
        * @return This builder for chaining.
@@ -2896,11 +2964,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the invalidAckIds.
        */
@@ -2912,11 +2980,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of invalidAckIds.
        */
@@ -2927,11 +2995,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The invalidAckIds at the given index.
@@ -2943,11 +3011,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the invalidAckIds at the given index.
@@ -2959,11 +3027,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The invalidAckIds to set.
@@ -2983,11 +3051,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The invalidAckIds to add.
        * @return This builder for chaining.
@@ -3006,11 +3074,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The invalidAckIds to add.
        * @return This builder for chaining.
@@ -3026,11 +3094,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3045,11 +3113,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that were malformed or whose acknowledgement
-       * deadline has expired.
+       * Optional. List of acknowledgement IDs that were malformed or whose
+       * acknowledgement deadline has expired.
        * </pre>
        *
-       * <code>repeated string invalid_ack_ids = 2;</code>
+       * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the invalidAckIds to add.
        * @return This builder for chaining.
@@ -3080,10 +3148,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return A list containing the temporaryFailedAckIds.
        */
@@ -3095,10 +3166,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The count of temporaryFailedAckIds.
        */
@@ -3109,10 +3183,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the element to return.
        * @return The temporaryFailedAckIds at the given index.
@@ -3124,10 +3201,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the temporaryFailedAckIds at the given index.
@@ -3139,10 +3219,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index to set the value at.
        * @param value The temporaryFailedAckIds to set.
@@ -3162,10 +3245,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The temporaryFailedAckIds to add.
        * @return This builder for chaining.
@@ -3184,10 +3270,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param values The temporaryFailedAckIds to add.
        * @return This builder for chaining.
@@ -3203,10 +3292,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -3221,10 +3313,13 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * List of acknowledgement IDs that failed processing with temporary issues.
+       * Optional. List of acknowledgement IDs that failed processing with
+       * temporary issues.
        * </pre>
        *
-       * <code>repeated string temporary_failed_ack_ids = 3;</code>
+       * <code>
+       * repeated string temporary_failed_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The bytes of the temporaryFailedAckIds to add.
        * @return This builder for chaining.
@@ -3318,10 +3413,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True iff exactly once delivery is enabled for this subscription.
+     * Optional. True iff exactly once delivery is enabled for this
+     * subscription.
      * </pre>
      *
-     * <code>bool exactly_once_delivery_enabled = 1;</code>
+     * <code>bool exactly_once_delivery_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The exactlyOnceDeliveryEnabled.
      */
@@ -3331,10 +3428,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True iff message ordering is enabled for this subscription.
+     * Optional. True iff message ordering is enabled for this subscription.
      * </pre>
      *
-     * <code>bool message_ordering_enabled = 2;</code>
+     * <code>bool message_ordering_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The messageOrderingEnabled.
      */
@@ -3388,10 +3485,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True iff exactly once delivery is enabled for this subscription.
+     * Optional. True iff exactly once delivery is enabled for this
+     * subscription.
      * </pre>
      *
-     * <code>bool exactly_once_delivery_enabled = 1;</code>
+     * <code>bool exactly_once_delivery_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The exactlyOnceDeliveryEnabled.
      */
@@ -3406,10 +3505,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True iff message ordering is enabled for this subscription.
+     * Optional. True iff message ordering is enabled for this subscription.
      * </pre>
      *
-     * <code>bool message_ordering_enabled = 2;</code>
+     * <code>bool message_ordering_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The messageOrderingEnabled.
      */
@@ -3800,10 +3899,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * True iff exactly once delivery is enabled for this subscription.
+       * Optional. True iff exactly once delivery is enabled for this
+       * subscription.
        * </pre>
        *
-       * <code>bool exactly_once_delivery_enabled = 1;</code>
+       * <code>bool exactly_once_delivery_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The exactlyOnceDeliveryEnabled.
        */
@@ -3815,10 +3916,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * True iff exactly once delivery is enabled for this subscription.
+       * Optional. True iff exactly once delivery is enabled for this
+       * subscription.
        * </pre>
        *
-       * <code>bool exactly_once_delivery_enabled = 1;</code>
+       * <code>bool exactly_once_delivery_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The exactlyOnceDeliveryEnabled to set.
        * @return This builder for chaining.
@@ -3834,10 +3937,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * True iff exactly once delivery is enabled for this subscription.
+       * Optional. True iff exactly once delivery is enabled for this
+       * subscription.
        * </pre>
        *
-       * <code>bool exactly_once_delivery_enabled = 1;</code>
+       * <code>bool exactly_once_delivery_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -3853,10 +3958,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * True iff message ordering is enabled for this subscription.
+       * Optional. True iff message ordering is enabled for this subscription.
        * </pre>
        *
-       * <code>bool message_ordering_enabled = 2;</code>
+       * <code>bool message_ordering_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The messageOrderingEnabled.
        */
@@ -3868,10 +3973,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * True iff message ordering is enabled for this subscription.
+       * Optional. True iff message ordering is enabled for this subscription.
        * </pre>
        *
-       * <code>bool message_ordering_enabled = 2;</code>
+       * <code>bool message_ordering_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The messageOrderingEnabled to set.
        * @return This builder for chaining.
@@ -3887,10 +3992,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * True iff message ordering is enabled for this subscription.
+       * Optional. True iff message ordering is enabled for this subscription.
        * </pre>
        *
-       * <code>bool message_ordering_enabled = 2;</code>
+       * <code>bool message_ordering_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3976,10 +4081,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList() {
@@ -3989,10 +4096,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
@@ -4003,10 +4112,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getReceivedMessagesCount() {
@@ -4016,10 +4127,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index) {
@@ -4029,10 +4142,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+   * <code>
+   * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
@@ -4046,12 +4161,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the acknowledgeConfirmation field is set.
@@ -4064,12 +4179,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The acknowledgeConfirmation.
@@ -4085,12 +4200,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4108,12 +4223,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the modifyAckDeadlineConfirmation field is set.
@@ -4126,12 +4241,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The modifyAckDeadlineConfirmation.
@@ -4148,12 +4263,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * This field will only be set if `enable_exactly_once_delivery` is set to
-   * `true`.
+   * Optional. This field will only be set if `enable_exactly_once_delivery` is
+   * set to `true`.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4171,11 +4286,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Properties associated with this subscription.
+   * Optional. Properties associated with this subscription.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the subscriptionProperties field is set.
@@ -4188,11 +4303,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Properties associated with this subscription.
+   * Optional. Properties associated with this subscription.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The subscriptionProperties.
@@ -4208,11 +4323,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Properties associated with this subscription.
+   * Optional. Properties associated with this subscription.
    * </pre>
    *
    * <code>
-   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4744,10 +4859,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList() {
       if (receivedMessagesBuilder_ == null) {
@@ -4760,10 +4877,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getReceivedMessagesCount() {
       if (receivedMessagesBuilder_ == null) {
@@ -4776,10 +4895,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index) {
       if (receivedMessagesBuilder_ == null) {
@@ -4792,10 +4913,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReceivedMessages(int index, com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
@@ -4814,10 +4937,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReceivedMessages(
         int index, com.google.pubsub.v1.ReceivedMessage.Builder builderForValue) {
@@ -4834,10 +4959,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addReceivedMessages(com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
@@ -4856,10 +4983,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addReceivedMessages(int index, com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
@@ -4878,10 +5007,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addReceivedMessages(
         com.google.pubsub.v1.ReceivedMessage.Builder builderForValue) {
@@ -4898,10 +5029,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addReceivedMessages(
         int index, com.google.pubsub.v1.ReceivedMessage.Builder builderForValue) {
@@ -4918,10 +5051,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllReceivedMessages(
         java.lang.Iterable<? extends com.google.pubsub.v1.ReceivedMessage> values) {
@@ -4938,10 +5073,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearReceivedMessages() {
       if (receivedMessagesBuilder_ == null) {
@@ -4957,10 +5094,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeReceivedMessages(int index) {
       if (receivedMessagesBuilder_ == null) {
@@ -4976,10 +5115,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.ReceivedMessage.Builder getReceivedMessagesBuilder(int index) {
       return getReceivedMessagesFieldBuilder().getBuilder(index);
@@ -4988,10 +5129,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
       if (receivedMessagesBuilder_ == null) {
@@ -5004,10 +5147,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
         getReceivedMessagesOrBuilderList() {
@@ -5021,10 +5166,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder() {
       return getReceivedMessagesFieldBuilder()
@@ -5034,10 +5181,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder(int index) {
       return getReceivedMessagesFieldBuilder()
@@ -5047,10 +5196,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
+     * <code>
+     * repeated .google.pubsub.v1.ReceivedMessage received_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.ReceivedMessage.Builder>
         getReceivedMessagesBuilderList() {
@@ -5088,12 +5239,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the acknowledgeConfirmation field is set.
@@ -5105,12 +5256,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The acknowledgeConfirmation.
@@ -5130,12 +5281,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAcknowledgeConfirmation(
@@ -5156,12 +5307,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAcknowledgeConfirmation(
@@ -5180,12 +5331,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeAcknowledgeConfirmation(
@@ -5211,12 +5362,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAcknowledgeConfirmation() {
@@ -5233,12 +5384,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder
@@ -5251,12 +5402,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder
@@ -5274,12 +5425,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5310,12 +5461,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the modifyAckDeadlineConfirmation field is set.
@@ -5327,12 +5478,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The modifyAckDeadlineConfirmation.
@@ -5352,12 +5503,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setModifyAckDeadlineConfirmation(
@@ -5378,12 +5529,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setModifyAckDeadlineConfirmation(
@@ -5402,12 +5553,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeModifyAckDeadlineConfirmation(
@@ -5433,12 +5584,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearModifyAckDeadlineConfirmation() {
@@ -5455,12 +5606,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
@@ -5473,12 +5624,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder
@@ -5496,12 +5647,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * This field will only be set if `enable_exactly_once_delivery` is set to
-     * `true`.
+     * Optional. This field will only be set if `enable_exactly_once_delivery` is
+     * set to `true`.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5532,11 +5683,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the subscriptionProperties field is set.
@@ -5548,11 +5699,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The subscriptionProperties.
@@ -5571,11 +5722,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSubscriptionProperties(
@@ -5596,11 +5747,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSubscriptionProperties(
@@ -5618,11 +5769,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeSubscriptionProperties(
@@ -5648,11 +5799,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSubscriptionProperties() {
@@ -5669,11 +5820,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties.Builder
@@ -5686,11 +5837,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.pubsub.v1.StreamingPullResponse.SubscriptionPropertiesOrBuilder
@@ -5707,11 +5858,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Properties associated with this subscription.
+     * Optional. Properties associated with this subscription.
      * </pre>
      *
      * <code>
-     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+     * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
