@@ -23,4 +23,6 @@ java.common_templates(excludes=[
     'codecov.yaml',
     'renovate.json',
     '.kokoro/build.sh'
+    '.kokoro/requirements.in',
+    '.kokoro/requirements.txt'
 ])

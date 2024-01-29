@@ -62,7 +62,7 @@ javadoc)
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -ntp \
-      -Dtest=ITBigQueryTest,ITRemoteUDFTest \
+      -Penable-integration-tests \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
@@ -70,33 +70,14 @@ integration)
       verify
     RETURN_CODE=$?
     ;;
-nightly-it)
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-          -ntp \
-          -Dtest=ITNightlyBigQueryTest,ITRemoteUDFTest \
-          -DtrimStackTrace=false \
-          -Dclirr.skip=true \
-          -Denforcer.skip=true \
-          -fae \
-          verify
-    RETURN_CODE=$?
-    ;;
 graalvm)
-    # Run Integration Tests with Native Image. Skip running nightly tests in presubmits.
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITBigQueryTest,ITRemoteUDFTest -Pnative -Penable-integration-tests test
+    # Run Unit and Integration Tests with Native Image
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test
     RETURN_CODE=$?
     ;;
 graalvm17)
-    # Run Integration Tests with Native Image. Skip running nightly tests in presubmits.
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITBigQueryTest,ITRemoteUDFTest -Pnative -Penable-integration-tests test
-    RETURN_CODE=$?
-    ;;
-nightly-graalvm)
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITNightlyBigQueryTest,ITRemoteUDFTest -Pnative -Penable-integration-tests test
-    RETURN_CODE=$?
-    ;;
-nightly-graalvm17)
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITNightlyBigQueryTest,ITRemoteUDFTest -Pnative -Penable-integration-tests test
+    # Run Unit and Integration Tests with Native Image
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test
     RETURN_CODE=$?
     ;;
 samples)
