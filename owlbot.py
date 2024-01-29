@@ -36,5 +36,7 @@ java.common_templates(
         ".github/workflows/auto-release.yaml",
         ".github/workflows/ci.yaml",
         ".github/workflows/samples.yaml"
+        ".kokoro/requirements.in",
+        ".kokoro/requirements.txt"
     ]
 )
