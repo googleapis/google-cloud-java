@@ -123,27 +123,48 @@ public class VertexAI implements AutoCloseable {
     this.transport = transport;
   }
 
-  /** Returns the default {@link Transport} layer to use to send API requests. */
+  /**
+   * Returns the default {@link Transport} layer to use to send API requests.
+   *
+   * @return {@link Transport} layer used when sending API requests.
+   */
   public Transport getTransport() {
     return this.transport;
   }
 
-  /** Returns the default project to use when making API calls. */
+  /**
+   * Returns the default project to use when making API calls.
+   *
+   * @return Project ID in string format.
+   */
   public String getProjectId() {
     return this.projectId;
   }
 
-  /** Returns the default location to use when making API calls. */
+  /**
+   * Returns the default location to use when making API calls.
+   *
+   * @return Location in string format.
+   */
   public String getLocation() {
     return this.location;
   }
 
-  /** Returns the default endpoint to use when making API calls. */
+  /**
+   * Returns the default endpoint to use when making API calls.
+   *
+   * @return API endpoint in string format.
+   */
   public String getApiEndpoint() {
     return this.apiEndpoint;
   }
 
-  /** Returns the default credentials to use when making API calls. */
+  /**
+   * Returns the default credentials to use when making API calls.
+   *
+   * @return {@link Credentials} if the user has provided either scopes or credentials to the
+   *     VertexAI object.
+   */
   public Credentials getCredentials() throws IOException {
     return credentialsProvider.getCredentials();
   }
@@ -211,6 +232,9 @@ public class VertexAI implements AutoCloseable {
   /**
    * Returns the {@link PredictionServiceClient} with REST. The client will be instantiated when the
    * first prediction API call is made.
+   *
+   * @return {@link PredictionServiceClient} that send REST requests to the backing service through
+   *     method calls that map to the API methods.
    */
   public PredictionServiceClient getPredictionServiceRestClient() throws IOException {
     if (predictionServiceRestClient == null) {
@@ -240,8 +264,11 @@ public class VertexAI implements AutoCloseable {
   }
 
   /**
-   * Returns the {@link PredictionServiceClient} with GRPC. The client will be instantiated when the
+   * Returns the {@link LlmUtilityServiceClient} with GRPC. The client will be instantiated when the
    * first prediction API call is made.
+   *
+   * @return {@link LlmUtilityServiceClient} that makes gRPC calls to the backing service through
+   *     method calls that map to the API methods.
    */
   public LlmUtilityServiceClient getLlmUtilityClient() throws IOException {
     if (llmUtilityClient == null) {
@@ -270,8 +297,11 @@ public class VertexAI implements AutoCloseable {
   }
 
   /**
-   * Returns the {@link PredictionServiceClient} with GRPC. The client will be instantiated when the
+   * Returns the {@link LlmUtilityServiceClient} with REST. The client will be instantiated when the
    * first prediction API call is made.
+   *
+   * @return {@link LlmUtilityServiceClient} that makes REST requests to the backing service through
+   *     method calls that map to the API methods.
    */
   public LlmUtilityServiceClient getLlmUtilityRestClient() throws IOException {
     if (llmUtilityRestClient == null) {

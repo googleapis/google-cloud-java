@@ -18,6 +18,11 @@ package com.google.cloud.vertexai;
 
 /** Transport used for sending request. */
 public enum Transport {
+  /** When used, the clients will send REST requests to the backing service. */
   REST,
+  /**
+   * When used, the clients will send gRPC to the backing service. This is usually more efficient
+   * and is the default transport.
+   */
   GRPC
 }
