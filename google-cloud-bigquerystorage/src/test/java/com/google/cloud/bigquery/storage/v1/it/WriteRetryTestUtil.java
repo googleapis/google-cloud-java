@@ -109,13 +109,16 @@ public class WriteRetryTestUtil {
     }
   }
 
-  public static void runDefaultRetryTest(
+  private static void runDefaultRetryTestInternal(
       BigQuery bigquery,
       BigQueryWriteClient client,
       String dataset,
       String projectId,
       int requestCount,
-      int rowBatchSize)
+      int rowBatchSize,
+      TableName parent,
+      TableSchema tableSchema,
+      boolean enableConnectionPool)
       throws IOException, InterruptedException, DescriptorValidationException {
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -124,29 +127,12 @@ public class WriteRetryTestUtil {
             .setMaxAttempts(5)
             .setMaxRetryDelay(Duration.ofMinutes(1))
             .build();
-    String tableName = "JsonTableDefaultStream";
-    TableFieldSchema TEST_STRING =
-        TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.STRING)
-            .setMode(TableFieldSchema.Mode.NULLABLE)
-            .setName("test_str")
-            .build();
-    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_STRING).build();
-    TableInfo tableInfo =
-        TableInfo.newBuilder(
-                TableId.of(dataset, tableName),
-                StandardTableDefinition.of(
-                    Schema.of(Field.newBuilder("test_str", StandardSQLTypeName.STRING).build())))
-            .build();
-
-    bigquery.create(tableInfo);
-    TableName parent = TableName.of(projectId, dataset, tableName);
-
     ArrayList<ApiFuture<AppendRowsResponse>> allResponses = new ArrayList<>(requestCount);
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), tableSchema)
             .setIgnoreUnknownFields(true)
             .setRetrySettings(retrySettings)
+            .setEnableConnectionPool(enableConnectionPool)
             .build()) {
       for (int k = 0; k < requestCount; k++) {
         JSONObject row = new JSONObject();
@@ -169,5 +155,52 @@ public class WriteRetryTestUtil {
         }
       }
     }
+  }
+
+  public static void runDefaultRetryTest(
+      BigQuery bigquery,
+      BigQueryWriteClient client,
+      String dataset,
+      String projectId,
+      int requestCount,
+      int rowBatchSize)
+      throws IOException, InterruptedException, DescriptorValidationException {
+    String tableName = "JsonTableDefaultStream";
+    TableFieldSchema TEST_STRING =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_str")
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_STRING).build();
+    TableInfo tableInfo =
+        TableInfo.newBuilder(
+                TableId.of(dataset, tableName),
+                StandardTableDefinition.of(
+                    Schema.of(Field.newBuilder("test_str", StandardSQLTypeName.STRING).build())))
+            .build();
+
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(projectId, dataset, tableName);
+    runDefaultRetryTestInternal(
+        bigquery,
+        client,
+        dataset,
+        projectId,
+        requestCount,
+        rowBatchSize,
+        parent,
+        tableSchema,
+        false /*enableConnectionPool*/);
+    runDefaultRetryTestInternal(
+        bigquery,
+        client,
+        dataset,
+        projectId,
+        requestCount,
+        rowBatchSize,
+        parent,
+        tableSchema,
+        true /*enableConnectionPool*/);
   }
 }

@@ -32,6 +32,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
+import io.grpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,6 +43,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -371,6 +373,64 @@ public class ConnectionWorkerPoolTest {
     }
   }
 
+  private class DummySupplierWillFailNTimesThenSucceed
+      implements Supplier<FakeBigQueryWriteImpl.Response> {
+    private int failCount;
+    private final Status.Code errorCode;
+    private final String errorMessage;
+    private final int successOffset;
+
+    DummySupplierWillFailNTimesThenSucceed(
+        int failCount, Status.Code errorCode, String errorMessage, int successOffset) {
+      this.failCount = failCount;
+      this.errorCode = errorCode;
+      this.errorMessage = errorMessage;
+      this.successOffset = successOffset;
+    }
+
+    @Override
+    public FakeBigQueryWriteImpl.Response get() {
+      if (failCount <= 0) {
+        return new FakeBigQueryWriteImpl.Response(createAppendResponse(successOffset));
+      }
+      failCount--;
+      return new FakeBigQueryWriteImpl.Response(
+          createAppendResponseWithError(errorCode, errorMessage));
+    }
+  }
+
+  @Test
+  public void testAppendWithRetry() throws Exception {
+    ConnectionWorkerPool connectionWorkerPool =
+        createConnectionWorkerPool(
+            /*maxRequests=*/ 1500, /*maxBytes=*/ 100000, java.time.Duration.ofSeconds(5));
+
+    StreamWriter writeStream1 = getTestStreamWriter(TEST_STREAM_1);
+
+    // Simulate the maximum allowable failures, followed by success.
+    testBigQueryWrite.addResponse(
+        new DummySupplierWillFailNTimesThenSucceed(
+            MAX_RETRY_NUM_ATTEMPTS, Status.RESOURCE_EXHAUSTED.getCode(), "test quota error A", 0));
+    testBigQueryWrite.addResponse(
+        new DummySupplierWillFailNTimesThenSucceed(
+            MAX_RETRY_NUM_ATTEMPTS - 1,
+            Status.RESOURCE_EXHAUSTED.getCode(),
+            "test quota error B",
+            1));
+    testBigQueryWrite.addResponse(createAppendResponse(2));
+
+    List<Future<?>> futures = new ArrayList<>();
+    for (int i = 0; i < 3; i++) {
+      futures.add(
+          sendFooStringTestMessage(
+              writeStream1, connectionWorkerPool, new String[] {String.valueOf(i)}, i));
+    }
+    for (int i = 0; i < 3; i++) {
+      futures.get(i).get();
+    }
+    connectionWorkerPool.close(writeStream1);
+  }
+
   @Test
   public void testToTableName() {
     assertThat(ConnectionWorkerPool.toTableName("projects/p/datasets/d/tables/t/streams/s"))
@@ -441,6 +501,12 @@ public class ConnectionWorkerPoolTest {
     return AppendRowsResponse.newBuilder()
         .setAppendResult(
             AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(offset)).build())
+        .build();
+  }
+
+  private AppendRowsResponse createAppendResponseWithError(Status.Code code, String message) {
+    return AppendRowsResponse.newBuilder()
+        .setError(com.google.rpc.Status.newBuilder().setCode(code.value()).setMessage(message))
         .build();
   }
 
