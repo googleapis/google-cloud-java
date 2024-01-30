@@ -15,6 +15,7 @@ import sys
 import re
 from collections import defaultdict
 from pathlib import Path
+import json
 import xml.etree.ElementTree as ET
 
 
@@ -39,26 +40,43 @@ POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
 # Returns the list of target modules that has CHANGELOG.md
 def detect_modules(root_directory: Path):
     modules = []
-    for owlbot_yaml_path in root_directory.glob('*/.OwlBot.yaml'):
-
+    for repo_metadata_path in root_directory.glob('*/.repo-metadata.json'):
         # This CHANGELOG.md might not exist for newly created libraries
-        changelog = owlbot_yaml_path.parent / 'CHANGELOG.md'
+        changelog = repo_metadata_path.parent / 'CHANGELOG.md'
 
-        module_pom_xml = owlbot_yaml_path.parent / 'pom.xml'
+        module_path = repo_metadata_path.parent
+        module_pom_xml = module_path / 'pom.xml'
+        owlbot_yaml_path = module_path/ '.OwlBot.yaml'
         if not module_pom_xml.exists():
             continue
         tree = ET.parse(module_pom_xml)
         root = tree.getroot()
         version = root.find('mvn:version', POM_NAMESPACES).text
+        if owlbot_yaml_path.exists():
+            # If OwlBot configuration file exists (most cases), it's the better
+            # source to get the OwlBot-generated pull request title prefix than
+            # the repo-metadata.json
+            with open(owlbot_yaml_path, 'r') as file:
+                owlbot_yaml_content = file.read()
+                match = re.search(r'api-name: (.+)', owlbot_yaml_content)
+                if match:
+                    api_name = match.group(1)
+                    modules.append(LibraryModule(module_path, api_name,
+                                                 version,
+                                                 changelog))
+        else:
+            # vertexai (handwritten) does not have OwlBot yaml file
+            with open(repo_metadata_path, 'r') as file:
+                repo_metadata = json.load(file)
+                api_name = repo_metadata['api_shortname']
+                if api_name:
+                    modules.append(LibraryModule(repo_metadata_path.parent, api_name,
+                                                 version,
+                                                 changelog))
+                else:
+                    raise Exception(f'repo_metadata_path {repo_metadata_path} does'
+                                    f' not have api_shortname field')
 
-        with open(owlbot_yaml_path, 'r') as file:
-            owlbot_yaml_content = file.read()
-            match = re.search(r'api-name: (.+)', owlbot_yaml_content)
-            if match:
-                api_name = match.group(1)
-                modules.append(LibraryModule(owlbot_yaml_path, api_name,
-                                             version,
-                                             changelog))
     return modules
 
 
