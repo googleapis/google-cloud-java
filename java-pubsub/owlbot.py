@@ -1210,5 +1210,7 @@ java.common_templates(
         ".kokoro/build.sh",
         ".github/sync-repo-settings.yaml",
         ".github/blunderbuss.yml",
+        '.kokoro/requirements.in',
+        '.kokoro/requirements.txt'
     ]
 )
