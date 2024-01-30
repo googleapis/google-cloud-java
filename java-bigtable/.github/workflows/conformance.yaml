@@ -29,7 +29,7 @@ jobs:
         repository: googleapis/cloud-bigtable-clients-test
         ref: main
         path: cloud-bigtable-clients-test
-    - uses: actions/setup-java@v3
+    - uses: actions/setup-java@v4
       with:
         distribution: zulu
         java-version: 8
