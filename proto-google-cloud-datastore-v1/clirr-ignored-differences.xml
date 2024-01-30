@@ -16,4 +16,46 @@
     <className>com/google/datastore/v1/*OrBuilder</className>
     <method>boolean contains*(*)</method>
   </difference>
+
+<!-- These are interfaces not meant to be implemented by library users. See https://github.com/googleapis/java-datastore/pull/1304 for more details-->
+    <difference>
+        <className>com/google/datastore/v1/QueryMode</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/QueryPlan*</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/QueryProfileProto</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/ResultSetStats*</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <method>*Mode*</method>
+        <differenceType>7002</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <method>*Stats*</method>
+        <differenceType>7002</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <field>MODE_FIELD_NUMBER</field>
+        <differenceType>6011</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <field>STATS_FIELD_NUMBER</field>
+        <differenceType>6011</differenceType>
+    </difference>
 </differences>

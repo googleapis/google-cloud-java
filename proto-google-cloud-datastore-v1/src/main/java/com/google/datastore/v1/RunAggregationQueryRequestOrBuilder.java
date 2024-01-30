@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -227,37 +227,6 @@ public interface RunAggregationQueryRequestOrBuilder
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
    */
   com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The mode in which the query request is processed. This field is
-   * optional, and when not provided, it defaults to `NORMAL` mode where no
-   * additional statistics will be returned with the query results.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for mode.
-   */
-  int getModeValue();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The mode in which the query request is processed. This field is
-   * optional, and when not provided, it defaults to `NORMAL` mode where no
-   * additional statistics will be returned with the query results.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The mode.
-   */
-  com.google.datastore.v1.QueryMode getMode();
 
   com.google.datastore.v1.RunAggregationQueryRequest.QueryTypeCase getQueryTypeCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,61 +179,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     return transaction_;
   }
 
-  public static final int STATS_FIELD_NUMBER = 6;
-  private com.google.datastore.v1.ResultSetStats stats_;
-  /**
-   *
-   *
-   * <pre>
-   * Query plan and execution statistics. Note that the returned stats are
-   * subject to change as Firestore evolves.
-   *
-   * This is only present when the request specifies a mode other than `NORMAL`.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-   *
-   * @return Whether the stats field is set.
-   */
-  @java.lang.Override
-  public boolean hasStats() {
-    return stats_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Query plan and execution statistics. Note that the returned stats are
-   * subject to change as Firestore evolves.
-   *
-   * This is only present when the request specifies a mode other than `NORMAL`.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-   *
-   * @return The stats.
-   */
-  @java.lang.Override
-  public com.google.datastore.v1.ResultSetStats getStats() {
-    return stats_ == null ? com.google.datastore.v1.ResultSetStats.getDefaultInstance() : stats_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Query plan and execution statistics. Note that the returned stats are
-   * subject to change as Firestore evolves.
-   *
-   * This is only present when the request specifies a mode other than `NORMAL`.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-   */
-  @java.lang.Override
-  public com.google.datastore.v1.ResultSetStatsOrBuilder getStatsOrBuilder() {
-    return stats_ == null ? com.google.datastore.v1.ResultSetStats.getDefaultInstance() : stats_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -257,9 +202,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     if (!transaction_.isEmpty()) {
       output.writeBytes(5, transaction_);
     }
-    if (stats_ != null) {
-      output.writeMessage(6, getStats());
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -277,9 +219,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
     if (!transaction_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, transaction_);
-    }
-    if (stats_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getStats());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -305,10 +244,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       if (!getQuery().equals(other.getQuery())) return false;
     }
     if (!getTransaction().equals(other.getTransaction())) return false;
-    if (hasStats() != other.hasStats()) return false;
-    if (hasStats()) {
-      if (!getStats().equals(other.getStats())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -330,10 +265,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
     hash = (53 * hash) + getTransaction().hashCode();
-    if (hasStats()) {
-      hash = (37 * hash) + STATS_FIELD_NUMBER;
-      hash = (53 * hash) + getStats().hashCode();
-    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -485,11 +416,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         queryBuilder_ = null;
       }
       transaction_ = com.google.protobuf.ByteString.EMPTY;
-      stats_ = null;
-      if (statsBuilder_ != null) {
-        statsBuilder_.dispose();
-        statsBuilder_ = null;
-      }
       return this;
     }
 
@@ -534,9 +460,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.transaction_ = transaction_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.stats_ = statsBuilder_ == null ? stats_ : statsBuilder_.build();
       }
     }
 
@@ -594,9 +517,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       if (other.getTransaction() != com.google.protobuf.ByteString.EMPTY) {
         setTransaction(other.getTransaction());
       }
-      if (other.hasStats()) {
-        mergeStats(other.getStats());
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -641,12 +561,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
-            case 50:
-              {
-                input.readMessage(getStatsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1099,216 +1013,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       transaction_ = getDefaultInstance().getTransaction();
       onChanged();
       return this;
-    }
-
-    private com.google.datastore.v1.ResultSetStats stats_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.ResultSetStats,
-            com.google.datastore.v1.ResultSetStats.Builder,
-            com.google.datastore.v1.ResultSetStatsOrBuilder>
-        statsBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     *
-     * @return Whether the stats field is set.
-     */
-    public boolean hasStats() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     *
-     * @return The stats.
-     */
-    public com.google.datastore.v1.ResultSetStats getStats() {
-      if (statsBuilder_ == null) {
-        return stats_ == null
-            ? com.google.datastore.v1.ResultSetStats.getDefaultInstance()
-            : stats_;
-      } else {
-        return statsBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    public Builder setStats(com.google.datastore.v1.ResultSetStats value) {
-      if (statsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        stats_ = value;
-      } else {
-        statsBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    public Builder setStats(com.google.datastore.v1.ResultSetStats.Builder builderForValue) {
-      if (statsBuilder_ == null) {
-        stats_ = builderForValue.build();
-      } else {
-        statsBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    public Builder mergeStats(com.google.datastore.v1.ResultSetStats value) {
-      if (statsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
-            && stats_ != null
-            && stats_ != com.google.datastore.v1.ResultSetStats.getDefaultInstance()) {
-          getStatsBuilder().mergeFrom(value);
-        } else {
-          stats_ = value;
-        }
-      } else {
-        statsBuilder_.mergeFrom(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    public Builder clearStats() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      stats_ = null;
-      if (statsBuilder_ != null) {
-        statsBuilder_.dispose();
-        statsBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    public com.google.datastore.v1.ResultSetStats.Builder getStatsBuilder() {
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return getStatsFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    public com.google.datastore.v1.ResultSetStatsOrBuilder getStatsOrBuilder() {
-      if (statsBuilder_ != null) {
-        return statsBuilder_.getMessageOrBuilder();
-      } else {
-        return stats_ == null
-            ? com.google.datastore.v1.ResultSetStats.getDefaultInstance()
-            : stats_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Query plan and execution statistics. Note that the returned stats are
-     * subject to change as Firestore evolves.
-     *
-     * This is only present when the request specifies a mode other than `NORMAL`.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.ResultSetStats,
-            com.google.datastore.v1.ResultSetStats.Builder,
-            com.google.datastore.v1.ResultSetStatsOrBuilder>
-        getStatsFieldBuilder() {
-      if (statsBuilder_ == null) {
-        statsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.datastore.v1.ResultSetStats,
-                com.google.datastore.v1.ResultSetStats.Builder,
-                com.google.datastore.v1.ResultSetStatsOrBuilder>(
-                getStats(), getParentForChildren(), isClean());
-        stats_ = null;
-      }
-      return statsBuilder_;
     }
 
     @java.lang.Override

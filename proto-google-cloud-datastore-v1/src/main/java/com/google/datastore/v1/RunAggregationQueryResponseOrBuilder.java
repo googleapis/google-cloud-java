@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,48 +111,4 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
-
-  /**
-   *
-   *
-   * <pre>
-   * Query plan and execution statistics. Note that the returned stats are
-   * subject to change as Firestore evolves.
-   *
-   * This is only present when the request specifies a mode other than `NORMAL`.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-   *
-   * @return Whether the stats field is set.
-   */
-  boolean hasStats();
-  /**
-   *
-   *
-   * <pre>
-   * Query plan and execution statistics. Note that the returned stats are
-   * subject to change as Firestore evolves.
-   *
-   * This is only present when the request specifies a mode other than `NORMAL`.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-   *
-   * @return The stats.
-   */
-  com.google.datastore.v1.ResultSetStats getStats();
-  /**
-   *
-   *
-   * <pre>
-   * Query plan and execution statistics. Note that the returned stats are
-   * subject to change as Firestore evolves.
-   *
-   * This is only present when the request specifies a mode other than `NORMAL`.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
-   */
-  com.google.datastore.v1.ResultSetStatsOrBuilder getStatsOrBuilder();
 }

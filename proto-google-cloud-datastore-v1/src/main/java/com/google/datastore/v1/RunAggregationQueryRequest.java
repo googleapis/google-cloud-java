@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   private RunAggregationQueryRequest() {
     projectId_ = "";
     databaseId_ = "";
-    mode_ = 0;
   }
 
   @java.lang.Override
@@ -433,46 +432,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     return com.google.datastore.v1.GqlQuery.getDefaultInstance();
   }
 
-  public static final int MODE_FIELD_NUMBER = 10;
-  private int mode_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The mode in which the query request is processed. This field is
-   * optional, and when not provided, it defaults to `NORMAL` mode where no
-   * additional statistics will be returned with the query results.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for mode.
-   */
-  @java.lang.Override
-  public int getModeValue() {
-    return mode_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The mode in which the query request is processed. This field is
-   * optional, and when not provided, it defaults to `NORMAL` mode where no
-   * additional statistics will be returned with the query results.
-   * </pre>
-   *
-   * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The mode.
-   */
-  @java.lang.Override
-  public com.google.datastore.v1.QueryMode getMode() {
-    com.google.datastore.v1.QueryMode result = com.google.datastore.v1.QueryMode.forNumber(mode_);
-    return result == null ? com.google.datastore.v1.QueryMode.UNRECOGNIZED : result;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -505,9 +464,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, databaseId_);
     }
-    if (mode_ != com.google.datastore.v1.QueryMode.NORMAL.getNumber()) {
-      output.writeEnum(10, mode_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -539,9 +495,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, databaseId_);
     }
-    if (mode_ != com.google.datastore.v1.QueryMode.NORMAL.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, mode_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -568,7 +521,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     if (hasReadOptions()) {
       if (!getReadOptions().equals(other.getReadOptions())) return false;
     }
-    if (mode_ != other.mode_) return false;
     if (!getQueryTypeCase().equals(other.getQueryTypeCase())) return false;
     switch (queryTypeCase_) {
       case 3:
@@ -603,8 +555,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       hash = (37 * hash) + READ_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getReadOptions().hashCode();
     }
-    hash = (37 * hash) + MODE_FIELD_NUMBER;
-    hash = (53 * hash) + mode_;
     switch (queryTypeCase_) {
       case 3:
         hash = (37 * hash) + AGGREGATION_QUERY_FIELD_NUMBER;
@@ -775,7 +725,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       if (gqlQueryBuilder_ != null) {
         gqlQueryBuilder_.clear();
       }
-      mode_ = 0;
       queryTypeCase_ = 0;
       queryType_ = null;
       return this;
@@ -828,9 +777,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.readOptions_ =
             readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.mode_ = mode_;
       }
     }
 
@@ -906,9 +852,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       }
       if (other.hasReadOptions()) {
         mergeReadOptions(other.getReadOptions());
-      }
-      if (other.mode_ != 0) {
-        setModeValue(other.getModeValue());
       }
       switch (other.getQueryTypeCase()) {
         case AGGREGATION_QUERY:
@@ -989,12 +932,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000002;
                 break;
               } // case 74
-            case 80:
-              {
-                mode_ = input.readEnum();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2061,110 +1998,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 7;
       onChanged();
       return gqlQueryBuilder_;
-    }
-
-    private int mode_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The mode in which the query request is processed. This field is
-     * optional, and when not provided, it defaults to `NORMAL` mode where no
-     * additional statistics will be returned with the query results.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The enum numeric value on the wire for mode.
-     */
-    @java.lang.Override
-    public int getModeValue() {
-      return mode_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The mode in which the query request is processed. This field is
-     * optional, and when not provided, it defaults to `NORMAL` mode where no
-     * additional statistics will be returned with the query results.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for mode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModeValue(int value) {
-      mode_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The mode in which the query request is processed. This field is
-     * optional, and when not provided, it defaults to `NORMAL` mode where no
-     * additional statistics will be returned with the query results.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The mode.
-     */
-    @java.lang.Override
-    public com.google.datastore.v1.QueryMode getMode() {
-      com.google.datastore.v1.QueryMode result = com.google.datastore.v1.QueryMode.forNumber(mode_);
-      return result == null ? com.google.datastore.v1.QueryMode.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The mode in which the query request is processed. This field is
-     * optional, and when not provided, it defaults to `NORMAL` mode where no
-     * additional statistics will be returned with the query results.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The mode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMode(com.google.datastore.v1.QueryMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000040;
-      mode_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The mode in which the query request is processed. This field is
-     * optional, and when not provided, it defaults to `NORMAL` mode where no
-     * additional statistics will be returned with the query results.
-     * </pre>
-     *
-     * <code>.google.datastore.v1.QueryMode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      mode_ = 0;
-      onChanged();
-      return this;
     }
 
     @java.lang.Override
