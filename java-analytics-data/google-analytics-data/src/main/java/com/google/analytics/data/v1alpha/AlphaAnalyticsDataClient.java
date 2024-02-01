@@ -100,7 +100,7 @@ import javax.annotation.Generated;
  * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
  * <p>  An audience list is a snapshot of the users currently in the audience at the time of audience list creation. Creating audience lists for one audience on different days will return different results as users enter and exit the audience.
  * <p>  Audiences in Google Analytics 4 allow you to segment your users in the ways that are important to your business. To learn more, see https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each audience.
- * <p>  This method is introduced at alpha stability with the intention of gathering feedback on syntax and capabilities before entering beta. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
+ * <p>  This method is available at beta stability at [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create). To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -123,7 +123,7 @@ import javax.annotation.Generated;
  *      <td><p> Retrieves an audience list of users. After creating an audience, the users are not immediately available for listing. First, a request to `CreateAudienceList` is necessary to create an audience list of users, and then second, this method is used to retrieve the users in the audience list.
  * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
  * <p>  Audiences in Google Analytics 4 allow you to segment your users in the ways that are important to your business. To learn more, see https://support.google.com/analytics/answer/9267572.
- * <p>  This method is introduced at alpha stability with the intention of gathering feedback on syntax and capabilities before entering beta. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
+ * <p>  This method is available at beta stability at [audienceExports.query](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/query). To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -165,7 +165,7 @@ import javax.annotation.Generated;
  *      <td><p> GetAudienceList</td>
  *      <td><p> Gets configuration metadata about a specific audience list. This method can be used to understand an audience list after it has been created.
  * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
- * <p>  This method is introduced at alpha stability with the intention of gathering feedback on syntax and capabilities before entering beta. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
+ * <p>  This method is available at beta stability at [audienceExports.get](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/get). To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -186,7 +186,7 @@ import javax.annotation.Generated;
  *      <td><p> ListAudienceLists</td>
  *      <td><p> Lists all audience lists for a property. This method can be used for you to find and reuse existing audience lists rather than creating unnecessary new audience lists. The same audience can have multiple audience lists that represent the list of users that were in an audience on different days.
  * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
- * <p>  This method is introduced at alpha stability with the intention of gathering feedback on syntax and capabilities before entering beta. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
+ * <p>  This method is available at beta stability at [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list). To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -517,9 +517,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -572,9 +573,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -627,9 +629,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -677,9 +680,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -727,9 +731,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.create](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/create).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -771,9 +776,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.query](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/query).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -813,9 +819,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.query](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/query).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -858,9 +865,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.query](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/query).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1081,9 +1089,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.get](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/get).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1118,9 +1127,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.get](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/get).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1154,9 +1164,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.get](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/get).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1191,9 +1202,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.get](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/get).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1230,9 +1242,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1273,9 +1286,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1314,9 +1328,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1358,9 +1373,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -1402,9 +1418,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
    * for an introduction to Audience Lists with examples.
    *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   * <p>This method is available at beta stability at
+   * [audienceExports.list](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties.audienceExports/list).
+   * To give your feedback on this API, complete the [Google Analytics Audience Export API
+   * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
