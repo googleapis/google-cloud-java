@@ -73,7 +73,7 @@
     },
     {
       "packagePatterns": [
-        "^com.google.cloud:google-cloud-shared-dependencies",
+        "^com.google.cloud:sdk-platform-java-config",
         "^com.google.cloud:gapic-libraries-bom"
       ],
       "groupName": "shared dependencies"
