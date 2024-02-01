@@ -101,6 +101,8 @@
  *
  * <p>======================= FeatureOnlineStoreServiceClient =======================
  *
+ * <p>Service Description: A service for fetching feature values from the online store.
+ *
  * <p>Sample for FeatureOnlineStoreServiceClient:
  *
  * <pre>{@code

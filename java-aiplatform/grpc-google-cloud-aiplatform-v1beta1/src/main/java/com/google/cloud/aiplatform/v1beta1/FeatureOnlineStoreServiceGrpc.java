@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,13 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service for fetching feature values from the online store.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/feature_online_store_service.proto")
@@ -175,7 +181,13 @@ public final class FeatureOnlineStoreServiceGrpc {
     return FeatureOnlineStoreServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public interface AsyncService {
 
     /**
@@ -212,7 +224,13 @@ public final class FeatureOnlineStoreServiceGrpc {
     }
   }
 
-  /** Base class for the server implementation of the service FeatureOnlineStoreService. */
+  /**
+   * Base class for the server implementation of the service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public abstract static class FeatureOnlineStoreServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -222,7 +240,13 @@ public final class FeatureOnlineStoreServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do asynchronous rpc calls to service FeatureOnlineStoreService. */
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public static final class FeatureOnlineStoreServiceStub
       extends io.grpc.stub.AbstractAsyncStub<FeatureOnlineStoreServiceStub> {
     private FeatureOnlineStoreServiceStub(
@@ -274,7 +298,13 @@ public final class FeatureOnlineStoreServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do synchronous rpc calls to service FeatureOnlineStoreService. */
+  /**
+   * A stub to allow clients to do synchronous rpc calls to service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public static final class FeatureOnlineStoreServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<FeatureOnlineStoreServiceBlockingStub> {
     private FeatureOnlineStoreServiceBlockingStub(
@@ -320,6 +350,10 @@ public final class FeatureOnlineStoreServiceGrpc {
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service
    * FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
    */
   public static final class FeatureOnlineStoreServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<FeatureOnlineStoreServiceFutureStub> {
