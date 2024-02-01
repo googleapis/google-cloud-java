@@ -2263,6 +2263,101 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetCalculatedMetric</td>
+ *      <td><p> Lookup for a single CalculatedMetric.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCalculatedMetric(GetCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCalculatedMetric(CalculatedMetricName name)
+ *           <li><p> getCalculatedMetric(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCalculatedMetric</td>
+ *      <td><p> Creates a CalculatedMetric.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCalculatedMetric(CreateCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCalculatedMetric(PropertyName parent, CalculatedMetric calculatedMetric, String calculatedMetricId)
+ *           <li><p> createCalculatedMetric(String parent, CalculatedMetric calculatedMetric, String calculatedMetricId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListCalculatedMetrics</td>
+ *      <td><p> Lists CalculatedMetrics on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listCalculatedMetrics(ListCalculatedMetricsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listCalculatedMetrics(PropertyName parent)
+ *           <li><p> listCalculatedMetrics(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listCalculatedMetricsPagedCallable()
+ *           <li><p> listCalculatedMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCalculatedMetric</td>
+ *      <td><p> Updates a CalculatedMetric on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCalculatedMetric(UpdateCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCalculatedMetric(CalculatedMetric calculatedMetric, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCalculatedMetric</td>
+ *      <td><p> Deletes a CalculatedMetric on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCalculatedMetric(DeleteCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteCalculatedMetric(CalculatedMetricName name)
+ *           <li><p> deleteCalculatedMetric(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateRollupProperty</td>
  *      <td><p> Create a roll-up property and all roll-up property source links.</td>
  *      <td>
@@ -17104,6 +17199,671 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+   *   CalculatedMetric response = analyticsAdminServiceClient.getCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to get. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric getCalculatedMetric(CalculatedMetricName name) {
+    GetCalculatedMetricRequest request =
+        GetCalculatedMetricRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString();
+   *   CalculatedMetric response = analyticsAdminServiceClient.getCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to get. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric getCalculatedMetric(String name) {
+    GetCalculatedMetricRequest request =
+        GetCalculatedMetricRequest.newBuilder().setName(name).build();
+    return getCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCalculatedMetricRequest request =
+   *       GetCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   CalculatedMetric response = analyticsAdminServiceClient.getCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric getCalculatedMetric(GetCalculatedMetricRequest request) {
+    return getCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCalculatedMetricRequest request =
+   *       GetCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.getCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CalculatedMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricCallable() {
+    return stub.getCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+   *   String calculatedMetricId = "calculatedMetricId-277970231";
+   *   CalculatedMetric response =
+   *       analyticsAdminServiceClient.createCalculatedMetric(
+   *           parent, calculatedMetric, calculatedMetricId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param calculatedMetric Required. The CalculatedMetric to create.
+   * @param calculatedMetricId Required. The ID to use for the calculated metric which will become
+   *     the final component of the calculated metric's resource name.
+   *     <p>This value should be 1-80 characters and valid characters are /[a-zA-Z0-9_]/, no spaces
+   *     allowed. calculated_metric_id must be unique between all calculated metrics under a
+   *     property. The calculated_metric_id is used when referencing this calculated metric from
+   *     external APIs, for example, "calcMetric:{calculated_metric_id}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric createCalculatedMetric(
+      PropertyName parent, CalculatedMetric calculatedMetric, String calculatedMetricId) {
+    CreateCalculatedMetricRequest request =
+        CreateCalculatedMetricRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCalculatedMetric(calculatedMetric)
+            .setCalculatedMetricId(calculatedMetricId)
+            .build();
+    return createCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+   *   String calculatedMetricId = "calculatedMetricId-277970231";
+   *   CalculatedMetric response =
+   *       analyticsAdminServiceClient.createCalculatedMetric(
+   *           parent, calculatedMetric, calculatedMetricId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param calculatedMetric Required. The CalculatedMetric to create.
+   * @param calculatedMetricId Required. The ID to use for the calculated metric which will become
+   *     the final component of the calculated metric's resource name.
+   *     <p>This value should be 1-80 characters and valid characters are /[a-zA-Z0-9_]/, no spaces
+   *     allowed. calculated_metric_id must be unique between all calculated metrics under a
+   *     property. The calculated_metric_id is used when referencing this calculated metric from
+   *     external APIs, for example, "calcMetric:{calculated_metric_id}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric createCalculatedMetric(
+      String parent, CalculatedMetric calculatedMetric, String calculatedMetricId) {
+    CreateCalculatedMetricRequest request =
+        CreateCalculatedMetricRequest.newBuilder()
+            .setParent(parent)
+            .setCalculatedMetric(calculatedMetric)
+            .setCalculatedMetricId(calculatedMetricId)
+            .build();
+    return createCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCalculatedMetricRequest request =
+   *       CreateCalculatedMetricRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setCalculatedMetricId("calculatedMetricId-277970231")
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .build();
+   *   CalculatedMetric response = analyticsAdminServiceClient.createCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric createCalculatedMetric(CreateCalculatedMetricRequest request) {
+    return createCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCalculatedMetricRequest request =
+   *       CreateCalculatedMetricRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setCalculatedMetricId("calculatedMetricId-277970231")
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.createCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CalculatedMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    return stub.createCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (CalculatedMetric element :
+   *       analyticsAdminServiceClient.listCalculatedMetrics(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCalculatedMetricsPagedResponse listCalculatedMetrics(PropertyName parent) {
+    ListCalculatedMetricsRequest request =
+        ListCalculatedMetricsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCalculatedMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (CalculatedMetric element :
+   *       analyticsAdminServiceClient.listCalculatedMetrics(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCalculatedMetricsPagedResponse listCalculatedMetrics(String parent) {
+    ListCalculatedMetricsRequest request =
+        ListCalculatedMetricsRequest.newBuilder().setParent(parent).build();
+    return listCalculatedMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCalculatedMetricsRequest request =
+   *       ListCalculatedMetricsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CalculatedMetric element :
+   *       analyticsAdminServiceClient.listCalculatedMetrics(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCalculatedMetricsPagedResponse listCalculatedMetrics(
+      ListCalculatedMetricsRequest request) {
+    return listCalculatedMetricsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCalculatedMetricsRequest request =
+   *       ListCalculatedMetricsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.listCalculatedMetricsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CalculatedMetric element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    return stub.listCalculatedMetricsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCalculatedMetricsRequest request =
+   *       ListCalculatedMetricsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListCalculatedMetricsResponse response =
+   *         analyticsAdminServiceClient.listCalculatedMetricsCallable().call(request);
+   *     for (CalculatedMetric element : response.getCalculatedMetricsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    return stub.listCalculatedMetricsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CalculatedMetric response =
+   *       analyticsAdminServiceClient.updateCalculatedMetric(calculatedMetric, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param calculatedMetric Required. The CalculatedMetric to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric updateCalculatedMetric(
+      CalculatedMetric calculatedMetric, FieldMask updateMask) {
+    UpdateCalculatedMetricRequest request =
+        UpdateCalculatedMetricRequest.newBuilder()
+            .setCalculatedMetric(calculatedMetric)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCalculatedMetricRequest request =
+   *       UpdateCalculatedMetricRequest.newBuilder()
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CalculatedMetric response = analyticsAdminServiceClient.updateCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric updateCalculatedMetric(UpdateCalculatedMetricRequest request) {
+    return updateCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCalculatedMetricRequest request =
+   *       UpdateCalculatedMetricRequest.newBuilder()
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.updateCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CalculatedMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    return stub.updateCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+   *   analyticsAdminServiceClient.deleteCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to delete. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCalculatedMetric(CalculatedMetricName name) {
+    DeleteCalculatedMetricRequest request =
+        DeleteCalculatedMetricRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString();
+   *   analyticsAdminServiceClient.deleteCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to delete. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCalculatedMetric(String name) {
+    DeleteCalculatedMetricRequest request =
+        DeleteCalculatedMetricRequest.newBuilder().setName(name).build();
+    deleteCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteCalculatedMetricRequest request =
+   *       DeleteCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCalculatedMetric(DeleteCalculatedMetricRequest request) {
+    deleteCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteCalculatedMetricRequest request =
+   *       DeleteCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricCallable() {
+    return stub.deleteCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Create a roll-up property and all roll-up property source links.
    *
    * <p>Sample code:
@@ -20380,6 +21140,90 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListEventCreateRulesFixedSizeCollection createCollection(
         List<ListEventCreateRulesPage> pages, int collectionSize) {
       return new ListEventCreateRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCalculatedMetricsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          CalculatedMetric,
+          ListCalculatedMetricsPage,
+          ListCalculatedMetricsFixedSizeCollection> {
+
+    public static ApiFuture<ListCalculatedMetricsPagedResponse> createAsync(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ApiFuture<ListCalculatedMetricsResponse> futureResponse) {
+      ApiFuture<ListCalculatedMetricsPage> futurePage =
+          ListCalculatedMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCalculatedMetricsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCalculatedMetricsPagedResponse(ListCalculatedMetricsPage page) {
+      super(page, ListCalculatedMetricsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCalculatedMetricsPage
+      extends AbstractPage<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          CalculatedMetric,
+          ListCalculatedMetricsPage> {
+
+    private ListCalculatedMetricsPage(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ListCalculatedMetricsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCalculatedMetricsPage createEmptyPage() {
+      return new ListCalculatedMetricsPage(null, null);
+    }
+
+    @Override
+    protected ListCalculatedMetricsPage createPage(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ListCalculatedMetricsResponse response) {
+      return new ListCalculatedMetricsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCalculatedMetricsPage> createPageAsync(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ApiFuture<ListCalculatedMetricsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCalculatedMetricsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          CalculatedMetric,
+          ListCalculatedMetricsPage,
+          ListCalculatedMetricsFixedSizeCollection> {
+
+    private ListCalculatedMetricsFixedSizeCollection(
+        List<ListCalculatedMetricsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCalculatedMetricsFixedSizeCollection createEmptyCollection() {
+      return new ListCalculatedMetricsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCalculatedMetricsFixedSizeCollection createCollection(
+        List<ListCalculatedMetricsPage> pages, int collectionSize) {
+      return new ListCalculatedMetricsFixedSizeCollection(pages, collectionSize);
     }
   }
 

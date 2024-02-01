@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -902,6 +903,38 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       getDataRedactionSettingsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .getDataRedactionSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCalculatedMetric. */
+  public UnaryCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getCalculatedMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCalculatedMetric. */
+  public UnaryCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createCalculatedMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCalculatedMetrics. */
+  public PagedCallSettings<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listCalculatedMetricsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCalculatedMetric. */
+  public UnaryCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateCalculatedMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCalculatedMetric. */
+  public UnaryCallSettings<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteCalculatedMetricSettings();
   }
 
   /** Returns the object with the settings used for calls to createRollupProperty. */
@@ -1915,6 +1948,39 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetDataRedactionSettingsRequest, DataRedactionSettings>
         getDataRedactionSettingsSettings() {
       return getStubSettingsBuilder().getDataRedactionSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCalculatedMetric. */
+    public UnaryCallSettings.Builder<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricSettings() {
+      return getStubSettingsBuilder().getCalculatedMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCalculatedMetric. */
+    public UnaryCallSettings.Builder<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricSettings() {
+      return getStubSettingsBuilder().createCalculatedMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCalculatedMetrics. */
+    public PagedCallSettings.Builder<
+            ListCalculatedMetricsRequest,
+            ListCalculatedMetricsResponse,
+            ListCalculatedMetricsPagedResponse>
+        listCalculatedMetricsSettings() {
+      return getStubSettingsBuilder().listCalculatedMetricsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCalculatedMetric. */
+    public UnaryCallSettings.Builder<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricSettings() {
+      return getStubSettingsBuilder().updateCalculatedMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCalculatedMetric. */
+    public UnaryCallSettings.Builder<DeleteCalculatedMetricRequest, Empty>
+        deleteCalculatedMetricSettings() {
+      return getStubSettingsBuilder().deleteCalculatedMetricSettings();
     }
 
     /** Returns the builder for the settings used for calls to createRollupProperty. */

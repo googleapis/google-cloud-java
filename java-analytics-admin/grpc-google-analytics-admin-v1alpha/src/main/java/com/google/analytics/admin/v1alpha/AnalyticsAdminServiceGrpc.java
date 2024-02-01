@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -6146,6 +6146,266 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getGetCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CalculatedMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getGetCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getGetCalculatedMetricMethod;
+    if ((getGetCalculatedMetricMethod = AnalyticsAdminServiceGrpc.getGetCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetCalculatedMetricMethod = AnalyticsAdminServiceGrpc.getGetCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetCalculatedMetricMethod =
+              getGetCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+                          com.google.analytics.admin.v1alpha.CalculatedMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CalculatedMetric
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getGetCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getCreateCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CalculatedMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getCreateCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getCreateCalculatedMetricMethod;
+    if ((getCreateCalculatedMetricMethod =
+            AnalyticsAdminServiceGrpc.getCreateCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateCalculatedMetricMethod =
+                AnalyticsAdminServiceGrpc.getCreateCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateCalculatedMetricMethod =
+              getCreateCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+                          com.google.analytics.admin.v1alpha.CalculatedMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CalculatedMetric
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+      getListCalculatedMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCalculatedMetrics",
+      requestType = com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+      getListCalculatedMetricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+        getListCalculatedMetricsMethod;
+    if ((getListCalculatedMetricsMethod = AnalyticsAdminServiceGrpc.getListCalculatedMetricsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListCalculatedMetricsMethod =
+                AnalyticsAdminServiceGrpc.getListCalculatedMetricsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListCalculatedMetricsMethod =
+              getListCalculatedMetricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+                          com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListCalculatedMetrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListCalculatedMetrics"))
+                      .build();
+        }
+      }
+    }
+    return getListCalculatedMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getUpdateCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CalculatedMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getUpdateCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getUpdateCalculatedMetricMethod;
+    if ((getUpdateCalculatedMetricMethod =
+            AnalyticsAdminServiceGrpc.getUpdateCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateCalculatedMetricMethod =
+                AnalyticsAdminServiceGrpc.getUpdateCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateCalculatedMetricMethod =
+              getUpdateCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+                          com.google.analytics.admin.v1alpha.CalculatedMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CalculatedMetric
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+          com.google.protobuf.Empty>
+      getDeleteCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+          com.google.protobuf.Empty>
+      getDeleteCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+            com.google.protobuf.Empty>
+        getDeleteCalculatedMetricMethod;
+    if ((getDeleteCalculatedMetricMethod =
+            AnalyticsAdminServiceGrpc.getDeleteCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteCalculatedMetricMethod =
+                AnalyticsAdminServiceGrpc.getDeleteCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteCalculatedMetricMethod =
+              getDeleteCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest,
           com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
       getCreateRollupPropertyMethod;
@@ -8654,6 +8914,81 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    default void getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    default void createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    default void listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCalculatedMetricsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    default void updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    default void deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a roll-up property and all roll-up property source links.
      * </pre>
      */
@@ -10989,6 +11324,91 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public void getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public void createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public void listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCalculatedMetricsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public void updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public void deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a roll-up property and all roll-up property source links.
      * </pre>
      */
@@ -12903,6 +13323,71 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDataRedactionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCalculatedMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCalculatedMetricMethod(), getCallOptions(), request);
     }
 
     /**
@@ -14931,6 +15416,79 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getCalculatedMetric(com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        createCalculatedMetric(
+            com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+        listCalculatedMetrics(
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCalculatedMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        updateCalculatedMetric(
+            com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteCalculatedMetric(
+            com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a roll-up property and all roll-up property source links.
      * </pre>
      */
@@ -15222,17 +15780,22 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_DELETE_EVENT_CREATE_RULE = 117;
   private static final int METHODID_UPDATE_DATA_REDACTION_SETTINGS = 118;
   private static final int METHODID_GET_DATA_REDACTION_SETTINGS = 119;
-  private static final int METHODID_CREATE_ROLLUP_PROPERTY = 120;
-  private static final int METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK = 121;
-  private static final int METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS = 122;
-  private static final int METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK = 123;
-  private static final int METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK = 124;
-  private static final int METHODID_CREATE_SUBPROPERTY = 125;
-  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 126;
-  private static final int METHODID_GET_SUBPROPERTY_EVENT_FILTER = 127;
-  private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 128;
-  private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 129;
-  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 130;
+  private static final int METHODID_GET_CALCULATED_METRIC = 120;
+  private static final int METHODID_CREATE_CALCULATED_METRIC = 121;
+  private static final int METHODID_LIST_CALCULATED_METRICS = 122;
+  private static final int METHODID_UPDATE_CALCULATED_METRIC = 123;
+  private static final int METHODID_DELETE_CALCULATED_METRIC = 124;
+  private static final int METHODID_CREATE_ROLLUP_PROPERTY = 125;
+  private static final int METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK = 126;
+  private static final int METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS = 127;
+  private static final int METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK = 128;
+  private static final int METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK = 129;
+  private static final int METHODID_CREATE_SUBPROPERTY = 130;
+  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 131;
+  private static final int METHODID_GET_SUBPROPERTY_EVENT_FILTER = 132;
+  private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 133;
+  private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 134;
+  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 135;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -16030,6 +16593,36 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.DataRedactionSettings>)
                   responseObserver);
+          break;
+        case METHODID_GET_CALCULATED_METRIC:
+          serviceImpl.getCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CALCULATED_METRIC:
+          serviceImpl.createCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CALCULATED_METRICS:
+          serviceImpl.listCalculatedMetrics(
+              (com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CALCULATED_METRIC:
+          serviceImpl.updateCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CALCULATED_METRIC:
+          serviceImpl.deleteCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_ROLLUP_PROPERTY:
           serviceImpl.createRollupProperty(
@@ -16956,6 +17549,40 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.DataRedactionSettings>(
                     service, METHODID_GET_DATA_REDACTION_SETTINGS)))
         .addMethod(
+            getGetCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+                    com.google.analytics.admin.v1alpha.CalculatedMetric>(
+                    service, METHODID_GET_CALCULATED_METRIC)))
+        .addMethod(
+            getCreateCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+                    com.google.analytics.admin.v1alpha.CalculatedMetric>(
+                    service, METHODID_CREATE_CALCULATED_METRIC)))
+        .addMethod(
+            getListCalculatedMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+                    com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>(
+                    service, METHODID_LIST_CALCULATED_METRICS)))
+        .addMethod(
+            getUpdateCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+                    com.google.analytics.admin.v1alpha.CalculatedMetric>(
+                    service, METHODID_UPDATE_CALCULATED_METRIC)))
+        .addMethod(
+            getDeleteCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CALCULATED_METRIC)))
+        .addMethod(
             getCreateRollupPropertyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -17202,6 +17829,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteEventCreateRuleMethod())
                       .addMethod(getUpdateDataRedactionSettingsMethod())
                       .addMethod(getGetDataRedactionSettingsMethod())
+                      .addMethod(getGetCalculatedMetricMethod())
+                      .addMethod(getCreateCalculatedMetricMethod())
+                      .addMethod(getListCalculatedMetricsMethod())
+                      .addMethod(getUpdateCalculatedMetricMethod())
+                      .addMethod(getDeleteCalculatedMetricMethod())
                       .addMethod(getCreateRollupPropertyMethod())
                       .addMethod(getGetRollupPropertySourceLinkMethod())
                       .addMethod(getListRollupPropertySourceLinksMethod())

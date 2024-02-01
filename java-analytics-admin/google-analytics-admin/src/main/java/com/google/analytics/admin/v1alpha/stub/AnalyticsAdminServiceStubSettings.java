@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -62,6 +63,7 @@ import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
@@ -69,6 +71,7 @@ import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -101,6 +104,7 @@ import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -133,6 +137,7 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
@@ -169,6 +174,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -223,6 +230,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
@@ -603,6 +611,19 @@ public class AnalyticsAdminServiceStubSettings
       updateDataRedactionSettingsSettings;
   private final UnaryCallSettings<GetDataRedactionSettingsRequest, DataRedactionSettings>
       getDataRedactionSettingsSettings;
+  private final UnaryCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricSettings;
+  private final UnaryCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricSettings;
+  private final PagedCallSettings<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsSettings;
+  private final UnaryCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricSettings;
+  private final UnaryCallSettings<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricSettings;
   private final UnaryCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
       createRollupPropertySettings;
   private final UnaryCallSettings<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
@@ -1551,6 +1572,47 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+      LIST_CALCULATED_METRICS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCalculatedMetricsRequest injectToken(
+                ListCalculatedMetricsRequest payload, String token) {
+              return ListCalculatedMetricsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCalculatedMetricsRequest injectPageSize(
+                ListCalculatedMetricsRequest payload, int pageSize) {
+              return ListCalculatedMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCalculatedMetricsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCalculatedMetricsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CalculatedMetric> extractResources(
+                ListCalculatedMetricsResponse payload) {
+              return payload.getCalculatedMetricsList() == null
+                  ? ImmutableList.<CalculatedMetric>of()
+                  : payload.getCalculatedMetricsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListRollupPropertySourceLinksRequest,
           ListRollupPropertySourceLinksResponse,
           RollupPropertySourceLink>
@@ -2164,6 +2226,30 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_EVENT_CREATE_RULES_PAGE_STR_DESC, request, context);
               return ListEventCreateRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      LIST_CALCULATED_METRICS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCalculatedMetricsRequest,
+              ListCalculatedMetricsResponse,
+              ListCalculatedMetricsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCalculatedMetricsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse> callable,
+                ListCalculatedMetricsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCalculatedMetricsResponse> futureResponse) {
+              PageContext<
+                      ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CALCULATED_METRICS_PAGE_STR_DESC, request, context);
+              return ListCalculatedMetricsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -2992,6 +3078,38 @@ public class AnalyticsAdminServiceStubSettings
     return getDataRedactionSettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getCalculatedMetric. */
+  public UnaryCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricSettings() {
+    return getCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCalculatedMetric. */
+  public UnaryCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricSettings() {
+    return createCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCalculatedMetrics. */
+  public PagedCallSettings<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsSettings() {
+    return listCalculatedMetricsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCalculatedMetric. */
+  public UnaryCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricSettings() {
+    return updateCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCalculatedMetric. */
+  public UnaryCallSettings<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricSettings() {
+    return deleteCalculatedMetricSettings;
+  }
+
   /** Returns the object with the settings used for calls to createRollupProperty. */
   public UnaryCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
       createRollupPropertySettings() {
@@ -3334,6 +3452,11 @@ public class AnalyticsAdminServiceStubSettings
     updateDataRedactionSettingsSettings =
         settingsBuilder.updateDataRedactionSettingsSettings().build();
     getDataRedactionSettingsSettings = settingsBuilder.getDataRedactionSettingsSettings().build();
+    getCalculatedMetricSettings = settingsBuilder.getCalculatedMetricSettings().build();
+    createCalculatedMetricSettings = settingsBuilder.createCalculatedMetricSettings().build();
+    listCalculatedMetricsSettings = settingsBuilder.listCalculatedMetricsSettings().build();
+    updateCalculatedMetricSettings = settingsBuilder.updateCalculatedMetricSettings().build();
+    deleteCalculatedMetricSettings = settingsBuilder.deleteCalculatedMetricSettings().build();
     createRollupPropertySettings = settingsBuilder.createRollupPropertySettings().build();
     getRollupPropertySourceLinkSettings =
         settingsBuilder.getRollupPropertySourceLinkSettings().build();
@@ -3664,6 +3787,19 @@ public class AnalyticsAdminServiceStubSettings
         updateDataRedactionSettingsSettings;
     private final UnaryCallSettings.Builder<GetDataRedactionSettingsRequest, DataRedactionSettings>
         getDataRedactionSettingsSettings;
+    private final UnaryCallSettings.Builder<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricSettings;
+    private final UnaryCallSettings.Builder<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricSettings;
+    private final PagedCallSettings.Builder<
+            ListCalculatedMetricsRequest,
+            ListCalculatedMetricsResponse,
+            ListCalculatedMetricsPagedResponse>
+        listCalculatedMetricsSettings;
+    private final UnaryCallSettings.Builder<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricSettings;
+    private final UnaryCallSettings.Builder<DeleteCalculatedMetricRequest, Empty>
+        deleteCalculatedMetricSettings;
     private final UnaryCallSettings.Builder<
             CreateRollupPropertyRequest, CreateRollupPropertyResponse>
         createRollupPropertySettings;
@@ -3890,6 +4026,12 @@ public class AnalyticsAdminServiceStubSettings
       deleteEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDataRedactionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDataRedactionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCalculatedMetricsSettings =
+          PagedCallSettings.newBuilder(LIST_CALCULATED_METRICS_PAGE_STR_FACT);
+      updateCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRollupPropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getRollupPropertySourceLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRollupPropertySourceLinksSettings =
@@ -4026,6 +4168,11 @@ public class AnalyticsAdminServiceStubSettings
               deleteEventCreateRuleSettings,
               updateDataRedactionSettingsSettings,
               getDataRedactionSettingsSettings,
+              getCalculatedMetricSettings,
+              createCalculatedMetricSettings,
+              listCalculatedMetricsSettings,
+              updateCalculatedMetricSettings,
+              deleteCalculatedMetricSettings,
               createRollupPropertySettings,
               getRollupPropertySourceLinkSettings,
               listRollupPropertySourceLinksSettings,
@@ -4192,6 +4339,11 @@ public class AnalyticsAdminServiceStubSettings
       updateDataRedactionSettingsSettings =
           settings.updateDataRedactionSettingsSettings.toBuilder();
       getDataRedactionSettingsSettings = settings.getDataRedactionSettingsSettings.toBuilder();
+      getCalculatedMetricSettings = settings.getCalculatedMetricSettings.toBuilder();
+      createCalculatedMetricSettings = settings.createCalculatedMetricSettings.toBuilder();
+      listCalculatedMetricsSettings = settings.listCalculatedMetricsSettings.toBuilder();
+      updateCalculatedMetricSettings = settings.updateCalculatedMetricSettings.toBuilder();
+      deleteCalculatedMetricSettings = settings.deleteCalculatedMetricSettings.toBuilder();
       createRollupPropertySettings = settings.createRollupPropertySettings.toBuilder();
       getRollupPropertySourceLinkSettings =
           settings.getRollupPropertySourceLinkSettings.toBuilder();
@@ -4334,6 +4486,11 @@ public class AnalyticsAdminServiceStubSettings
               deleteEventCreateRuleSettings,
               updateDataRedactionSettingsSettings,
               getDataRedactionSettingsSettings,
+              getCalculatedMetricSettings,
+              createCalculatedMetricSettings,
+              listCalculatedMetricsSettings,
+              updateCalculatedMetricSettings,
+              deleteCalculatedMetricSettings,
               createRollupPropertySettings,
               getRollupPropertySourceLinkSettings,
               listRollupPropertySourceLinksSettings,
@@ -4969,6 +5126,31 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getDataRedactionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCalculatedMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCalculatedMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -5859,6 +6041,39 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<GetDataRedactionSettingsRequest, DataRedactionSettings>
         getDataRedactionSettingsSettings() {
       return getDataRedactionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCalculatedMetric. */
+    public UnaryCallSettings.Builder<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricSettings() {
+      return getCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCalculatedMetric. */
+    public UnaryCallSettings.Builder<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricSettings() {
+      return createCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCalculatedMetrics. */
+    public PagedCallSettings.Builder<
+            ListCalculatedMetricsRequest,
+            ListCalculatedMetricsResponse,
+            ListCalculatedMetricsPagedResponse>
+        listCalculatedMetricsSettings() {
+      return listCalculatedMetricsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCalculatedMetric. */
+    public UnaryCallSettings.Builder<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricSettings() {
+      return updateCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCalculatedMetric. */
+    public UnaryCallSettings.Builder<DeleteCalculatedMetricRequest, Empty>
+        deleteCalculatedMetricSettings() {
+      return deleteCalculatedMetricSettings;
     }
 
     /** Returns the builder for the settings used for calls to createRollupProperty. */

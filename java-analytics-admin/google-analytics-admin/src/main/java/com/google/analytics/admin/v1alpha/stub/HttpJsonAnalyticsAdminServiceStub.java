@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -61,12 +62,14 @@ import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -99,6 +102,7 @@ import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -131,6 +135,7 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
@@ -167,6 +172,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -221,6 +228,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
@@ -4935,6 +4943,197 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricMethodDescriptor =
+          ApiMethodDescriptor.<GetCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetCalculatedMetric")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCalculatedMetricRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/calculatedMetrics/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CalculatedMetric>newBuilder()
+                      .setDefaultInstance(CalculatedMetric.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricMethodDescriptor =
+          ApiMethodDescriptor.<CreateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCalculatedMetric")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCalculatedMetricRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/calculatedMetrics",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "calculatedMetricId", request.getCalculatedMetricId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("calculatedMetric", request.getCalculatedMetric(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CalculatedMetric>newBuilder()
+                      .setDefaultInstance(CalculatedMetric.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListCalculatedMetrics")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCalculatedMetricsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/calculatedMetrics",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCalculatedMetricsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCalculatedMetricsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCalculatedMetricsResponse>newBuilder()
+                      .setDefaultInstance(ListCalculatedMetricsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCalculatedMetric")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCalculatedMetricRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{calculatedMetric.name=properties/*/calculatedMetrics/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "calculatedMetric.name",
+                                request.getCalculatedMetric().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("calculatedMetric", request.getCalculatedMetric(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CalculatedMetric>newBuilder()
+                      .setDefaultInstance(CalculatedMetric.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCalculatedMetricRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteCalculatedMetric")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCalculatedMetricRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/calculatedMetrics/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCalculatedMetricRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           CreateRollupPropertyRequest, CreateRollupPropertyResponse>
       createRollupPropertyMethodDescriptor =
@@ -5636,6 +5835,17 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       updateDataRedactionSettingsCallable;
   private final UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
       getDataRedactionSettingsCallable;
+  private final UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricCallable;
+  private final UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable;
+  private final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable;
+  private final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable;
+  private final UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable;
+  private final UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable;
   private final UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
       createRollupPropertyCallable;
   private final UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
@@ -7180,6 +7390,69 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricTransportSettings =
+            HttpJsonCallSettings.<GetCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(getCalculatedMetricMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricTransportSettings =
+            HttpJsonCallSettings.<CreateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(createCalculatedMetricMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+        listCalculatedMetricsTransportSettings =
+            HttpJsonCallSettings
+                .<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>newBuilder()
+                .setMethodDescriptor(listCalculatedMetricsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricTransportSettings =
+            HttpJsonCallSettings.<UpdateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(updateCalculatedMetricMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "calculated_metric.name",
+                          String.valueOf(request.getCalculatedMetric().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteCalculatedMetricRequest, Empty>
+        deleteCalculatedMetricTransportSettings =
+            HttpJsonCallSettings.<DeleteCalculatedMetricRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteCalculatedMetricMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
         createRollupPropertyTransportSettings =
             HttpJsonCallSettings
@@ -7960,6 +8233,36 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             getDataRedactionSettingsTransportSettings,
             settings.getDataRedactionSettingsSettings(),
             clientContext);
+    this.getCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            getCalculatedMetricTransportSettings,
+            settings.getCalculatedMetricSettings(),
+            clientContext);
+    this.createCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            createCalculatedMetricTransportSettings,
+            settings.createCalculatedMetricSettings(),
+            clientContext);
+    this.listCalculatedMetricsCallable =
+        callableFactory.createUnaryCallable(
+            listCalculatedMetricsTransportSettings,
+            settings.listCalculatedMetricsSettings(),
+            clientContext);
+    this.listCalculatedMetricsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCalculatedMetricsTransportSettings,
+            settings.listCalculatedMetricsSettings(),
+            clientContext);
+    this.updateCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            updateCalculatedMetricTransportSettings,
+            settings.updateCalculatedMetricSettings(),
+            clientContext);
+    this.deleteCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            deleteCalculatedMetricTransportSettings,
+            settings.deleteCalculatedMetricSettings(),
+            clientContext);
     this.createRollupPropertyCallable =
         callableFactory.createUnaryCallable(
             createRollupPropertyTransportSettings,
@@ -8153,6 +8456,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(deleteEventCreateRuleMethodDescriptor);
     methodDescriptors.add(updateDataRedactionSettingsMethodDescriptor);
     methodDescriptors.add(getDataRedactionSettingsMethodDescriptor);
+    methodDescriptors.add(getCalculatedMetricMethodDescriptor);
+    methodDescriptors.add(createCalculatedMetricMethodDescriptor);
+    methodDescriptors.add(listCalculatedMetricsMethodDescriptor);
+    methodDescriptors.add(updateCalculatedMetricMethodDescriptor);
+    methodDescriptors.add(deleteCalculatedMetricMethodDescriptor);
     methodDescriptors.add(createRollupPropertyMethodDescriptor);
     methodDescriptors.add(getRollupPropertySourceLinkMethodDescriptor);
     methodDescriptors.add(listRollupPropertySourceLinksMethodDescriptor);
@@ -8985,6 +9293,40 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
       getDataRedactionSettingsCallable() {
     return getDataRedactionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric> getCalculatedMetricCallable() {
+    return getCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    return createCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    return listCalculatedMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    return listCalculatedMetricsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    return updateCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable() {
+    return deleteCalculatedMetricCallable;
   }
 
   @Override

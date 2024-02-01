@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -61,12 +62,14 @@ import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -99,6 +102,7 @@ import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -131,6 +135,7 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
@@ -167,6 +172,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -221,6 +228,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
@@ -1743,6 +1751,62 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DataRedactionSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<GetCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CalculatedMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<CreateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CalculatedMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsMethodDescriptor =
+          MethodDescriptor.<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListCalculatedMetrics")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCalculatedMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCalculatedMetricsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<UpdateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CalculatedMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<DeleteCalculatedMetricRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
       createRollupPropertyMethodDescriptor =
           MethodDescriptor.<CreateRollupPropertyRequest, CreateRollupPropertyResponse>newBuilder()
@@ -2152,6 +2216,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       updateDataRedactionSettingsCallable;
   private final UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
       getDataRedactionSettingsCallable;
+  private final UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricCallable;
+  private final UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable;
+  private final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable;
+  private final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable;
+  private final UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable;
+  private final UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable;
   private final UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
       createRollupPropertyCallable;
   private final UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
@@ -3547,6 +3622,63 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricTransportSettings =
+            GrpcCallSettings.<GetCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(getCalculatedMetricMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricTransportSettings =
+            GrpcCallSettings.<CreateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(createCalculatedMetricMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+        listCalculatedMetricsTransportSettings =
+            GrpcCallSettings
+                .<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>newBuilder()
+                .setMethodDescriptor(listCalculatedMetricsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricTransportSettings =
+            GrpcCallSettings.<UpdateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(updateCalculatedMetricMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "calculated_metric.name",
+                          String.valueOf(request.getCalculatedMetric().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricTransportSettings =
+        GrpcCallSettings.<DeleteCalculatedMetricRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCalculatedMetricMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
         createRollupPropertyTransportSettings =
             GrpcCallSettings.<CreateRollupPropertyRequest, CreateRollupPropertyResponse>newBuilder()
@@ -4312,6 +4444,36 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             getDataRedactionSettingsTransportSettings,
             settings.getDataRedactionSettingsSettings(),
+            clientContext);
+    this.getCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            getCalculatedMetricTransportSettings,
+            settings.getCalculatedMetricSettings(),
+            clientContext);
+    this.createCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            createCalculatedMetricTransportSettings,
+            settings.createCalculatedMetricSettings(),
+            clientContext);
+    this.listCalculatedMetricsCallable =
+        callableFactory.createUnaryCallable(
+            listCalculatedMetricsTransportSettings,
+            settings.listCalculatedMetricsSettings(),
+            clientContext);
+    this.listCalculatedMetricsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCalculatedMetricsTransportSettings,
+            settings.listCalculatedMetricsSettings(),
+            clientContext);
+    this.updateCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            updateCalculatedMetricTransportSettings,
+            settings.updateCalculatedMetricSettings(),
+            clientContext);
+    this.deleteCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            deleteCalculatedMetricTransportSettings,
+            settings.deleteCalculatedMetricSettings(),
             clientContext);
     this.createRollupPropertyCallable =
         callableFactory.createUnaryCallable(
@@ -5205,6 +5367,40 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
       getDataRedactionSettingsCallable() {
     return getDataRedactionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric> getCalculatedMetricCallable() {
+    return getCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    return createCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    return listCalculatedMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    return listCalculatedMetricsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    return updateCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable() {
+    return deleteCalculatedMetricCallable;
   }
 
   @Override

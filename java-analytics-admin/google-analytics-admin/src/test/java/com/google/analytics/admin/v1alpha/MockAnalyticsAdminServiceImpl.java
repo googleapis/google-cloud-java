@@ -2627,6 +2627,112 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getCalculatedMetric(
+      GetCalculatedMetricRequest request, StreamObserver<CalculatedMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CalculatedMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CalculatedMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CalculatedMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCalculatedMetric(
+      CreateCalculatedMetricRequest request, StreamObserver<CalculatedMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CalculatedMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CalculatedMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CalculatedMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCalculatedMetrics(
+      ListCalculatedMetricsRequest request,
+      StreamObserver<ListCalculatedMetricsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCalculatedMetricsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCalculatedMetricsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCalculatedMetrics, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCalculatedMetricsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCalculatedMetric(
+      UpdateCalculatedMetricRequest request, StreamObserver<CalculatedMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CalculatedMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CalculatedMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CalculatedMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCalculatedMetric(
+      DeleteCalculatedMetricRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createRollupProperty(
       CreateRollupPropertyRequest request,
       StreamObserver<CreateRollupPropertyResponse> responseObserver) {

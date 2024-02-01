@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -61,12 +62,14 @@ import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -99,6 +102,7 @@ import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -131,6 +135,7 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
@@ -167,6 +172,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -221,6 +228,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
@@ -966,6 +974,35 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
       getDataRedactionSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: getDataRedactionSettingsCallable()");
+  }
+
+  public UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric> getCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCalculatedMetricsPagedCallable()");
+  }
+
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCalculatedMetricsCallable()");
+  }
+
+  public UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCalculatedMetricCallable()");
   }
 
   public UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>

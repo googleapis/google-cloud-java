@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -10349,6 +10350,466 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     try {
       String name = "properties/propertie-6817/dataStreams/dataStream-6817/dataRedactionSettings";
       client.getDataRedactionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCalculatedMetricTest() throws Exception {
+    CalculatedMetric expectedResponse =
+        CalculatedMetric.newBuilder()
+            .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .setCalculatedMetricId("calculatedMetricId-277970231")
+            .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+            .setFormula("formula-677424794")
+            .setInvalidMetricReference(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+
+    CalculatedMetric actualResponse = client.getCalculatedMetric(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCalculatedMetricExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+      client.getCalculatedMetric(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCalculatedMetricTest2() throws Exception {
+    CalculatedMetric expectedResponse =
+        CalculatedMetric.newBuilder()
+            .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .setCalculatedMetricId("calculatedMetricId-277970231")
+            .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+            .setFormula("formula-677424794")
+            .setInvalidMetricReference(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-3802/calculatedMetrics/calculatedMetric-3802";
+
+    CalculatedMetric actualResponse = client.getCalculatedMetric(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCalculatedMetricExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-3802/calculatedMetrics/calculatedMetric-3802";
+      client.getCalculatedMetric(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCalculatedMetricTest() throws Exception {
+    CalculatedMetric expectedResponse =
+        CalculatedMetric.newBuilder()
+            .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .setCalculatedMetricId("calculatedMetricId-277970231")
+            .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+            .setFormula("formula-677424794")
+            .setInvalidMetricReference(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+    String calculatedMetricId = "calculatedMetricId-277970231";
+
+    CalculatedMetric actualResponse =
+        client.createCalculatedMetric(parent, calculatedMetric, calculatedMetricId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCalculatedMetricExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+      String calculatedMetricId = "calculatedMetricId-277970231";
+      client.createCalculatedMetric(parent, calculatedMetric, calculatedMetricId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCalculatedMetricTest2() throws Exception {
+    CalculatedMetric expectedResponse =
+        CalculatedMetric.newBuilder()
+            .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .setCalculatedMetricId("calculatedMetricId-277970231")
+            .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+            .setFormula("formula-677424794")
+            .setInvalidMetricReference(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+    String calculatedMetricId = "calculatedMetricId-277970231";
+
+    CalculatedMetric actualResponse =
+        client.createCalculatedMetric(parent, calculatedMetric, calculatedMetricId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCalculatedMetricExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+      String calculatedMetricId = "calculatedMetricId-277970231";
+      client.createCalculatedMetric(parent, calculatedMetric, calculatedMetricId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCalculatedMetricsTest() throws Exception {
+    CalculatedMetric responsesElement = CalculatedMetric.newBuilder().build();
+    ListCalculatedMetricsResponse expectedResponse =
+        ListCalculatedMetricsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCalculatedMetrics(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListCalculatedMetricsPagedResponse pagedListResponse = client.listCalculatedMetrics(parent);
+
+    List<CalculatedMetric> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCalculatedMetricsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCalculatedMetricsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listCalculatedMetrics(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCalculatedMetricsTest2() throws Exception {
+    CalculatedMetric responsesElement = CalculatedMetric.newBuilder().build();
+    ListCalculatedMetricsResponse expectedResponse =
+        ListCalculatedMetricsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCalculatedMetrics(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListCalculatedMetricsPagedResponse pagedListResponse = client.listCalculatedMetrics(parent);
+
+    List<CalculatedMetric> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCalculatedMetricsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCalculatedMetricsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listCalculatedMetrics(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCalculatedMetricTest() throws Exception {
+    CalculatedMetric expectedResponse =
+        CalculatedMetric.newBuilder()
+            .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .setCalculatedMetricId("calculatedMetricId-277970231")
+            .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+            .setFormula("formula-677424794")
+            .setInvalidMetricReference(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CalculatedMetric calculatedMetric =
+        CalculatedMetric.newBuilder()
+            .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .setCalculatedMetricId("calculatedMetricId-277970231")
+            .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+            .setFormula("formula-677424794")
+            .setInvalidMetricReference(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CalculatedMetric actualResponse = client.updateCalculatedMetric(calculatedMetric, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCalculatedMetricExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CalculatedMetric calculatedMetric =
+          CalculatedMetric.newBuilder()
+              .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+              .setDescription("description-1724546052")
+              .setDisplayName("displayName1714148973")
+              .setCalculatedMetricId("calculatedMetricId-277970231")
+              .addAllRestrictedMetricType(new ArrayList<CalculatedMetric.RestrictedMetricType>())
+              .setFormula("formula-677424794")
+              .setInvalidMetricReference(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCalculatedMetric(calculatedMetric, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCalculatedMetricTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+
+    client.deleteCalculatedMetric(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCalculatedMetricExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+      client.deleteCalculatedMetric(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCalculatedMetricTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-3802/calculatedMetrics/calculatedMetric-3802";
+
+    client.deleteCalculatedMetric(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCalculatedMetricExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-3802/calculatedMetrics/calculatedMetric-3802";
+      client.deleteCalculatedMetric(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
