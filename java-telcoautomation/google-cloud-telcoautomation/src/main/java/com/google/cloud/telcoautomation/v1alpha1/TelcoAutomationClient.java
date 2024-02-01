@@ -311,20 +311,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> DeleteBlueprintRevision</td>
- *      <td><p> Deletes the specified revision of the blueprint.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> deleteBlueprintRevision(DeleteBlueprintRevisionRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> deleteBlueprintRevisionCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> ListBlueprints</td>
  *      <td><p> List all blueprints.</td>
  *      <td>
@@ -576,25 +562,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> DeleteDeployment</td>
- *      <td><p> Deletes a deployment and all its revisions.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> deleteDeployment(DeleteDeploymentRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> deleteDeployment(DeploymentName name)
- *           <li><p> deleteDeployment(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> deleteDeploymentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> RemoveDeployment</td>
  *      <td><p> Removes the deployment by marking it as DELETING. Post which deployment and it's revisions gets deleted.</td>
  *      <td>
@@ -610,20 +577,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> removeDeploymentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> DeleteDeploymentRevision</td>
- *      <td><p> Deletes the specified revision of the deployment.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> deleteDeploymentRevision(DeleteDeploymentRevisionRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> deleteDeploymentRevisionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2688,69 +2641,6 @@ public class TelcoAutomationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified revision of the blueprint.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteBlueprintRevisionRequest request =
-   *       DeleteBlueprintRevisionRequest.newBuilder()
-   *           .setName(
-   *               BlueprintName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-   *                   .toString())
-   *           .build();
-   *   Blueprint response = telcoAutomationClient.deleteBlueprintRevision(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Blueprint deleteBlueprintRevision(DeleteBlueprintRevisionRequest request) {
-    return deleteBlueprintRevisionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified revision of the blueprint.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteBlueprintRevisionRequest request =
-   *       DeleteBlueprintRevisionRequest.newBuilder()
-   *           .setName(
-   *               BlueprintName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Blueprint> future =
-   *       telcoAutomationClient.deleteBlueprintRevisionCallable().futureCall(request);
-   *   // Do something.
-   *   Blueprint response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable() {
-    return stub.deleteBlueprintRevisionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * List all blueprints.
    *
    * <p>Sample code:
@@ -3487,9 +3377,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all blueprints. 2.
-   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of blueprint with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of blueprint with name &lt;name&gt;
+   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name={name}" : Lists all
+   *     revisions of blueprint with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of blueprint with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchBlueprintRevisionsPagedResponse searchBlueprintRevisions(
@@ -3529,9 +3419,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all blueprints. 2.
-   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of blueprint with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of blueprint with name &lt;name&gt;
+   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name={name}" : Lists all
+   *     revisions of blueprint with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of blueprint with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchBlueprintRevisionsPagedResponse searchBlueprintRevisions(
@@ -3683,9 +3573,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all deployments.
-   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of deployment with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of deployment with name &lt;name&gt;
+   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name={name}" : Lists
+   *     all revisions of deployment with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of deployment with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchDeploymentRevisionsPagedResponse searchDeploymentRevisions(
@@ -3725,9 +3615,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all deployments.
-   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of deployment with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of deployment with name &lt;name&gt;
+   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name={name}" : Lists
+   *     all revisions of deployment with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of deployment with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchDeploymentRevisionsPagedResponse searchDeploymentRevisions(
@@ -4634,124 +4524,6 @@ public class TelcoAutomationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeploymentName name =
-   *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]");
-   *   telcoAutomationClient.deleteDeployment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of deployment to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeployment(DeploymentName name) {
-    DeleteDeploymentRequest request =
-        DeleteDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteDeployment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   String name =
-   *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *           .toString();
-   *   telcoAutomationClient.deleteDeployment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of deployment to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeployment(String name) {
-    DeleteDeploymentRequest request = DeleteDeploymentRequest.newBuilder().setName(name).build();
-    deleteDeployment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRequest request =
-   *       DeleteDeploymentRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   telcoAutomationClient.deleteDeployment(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeployment(DeleteDeploymentRequest request) {
-    deleteDeploymentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRequest request =
-   *       DeleteDeploymentRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       telcoAutomationClient.deleteDeploymentCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable() {
-    return stub.deleteDeploymentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Removes the deployment by marking it as DELETING. Post which deployment and it's revisions gets
    * deleted.
    *
@@ -4870,69 +4642,6 @@ public class TelcoAutomationClient implements BackgroundResource {
    */
   public final UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable() {
     return stub.removeDeploymentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified revision of the deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRevisionRequest request =
-   *       DeleteDeploymentRevisionRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   Deployment response = telcoAutomationClient.deleteDeploymentRevision(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Deployment deleteDeploymentRevision(DeleteDeploymentRevisionRequest request) {
-    return deleteDeploymentRevisionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified revision of the deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRevisionRequest request =
-   *       DeleteDeploymentRevisionRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Deployment> future =
-   *       telcoAutomationClient.deleteDeploymentRevisionCallable().futureCall(request);
-   *   // Do something.
-   *   Deployment response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable() {
-    return stub.deleteDeploymentRevisionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5560,7 +5269,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the deployment.
+   * @param name Required. The name of the deployment without revisionID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeDeploymentStatusResponse computeDeploymentStatus(DeploymentName name) {
@@ -5592,7 +5301,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the deployment.
+   * @param name Required. The name of the deployment without revisionID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeDeploymentStatusResponse computeDeploymentStatus(String name) {

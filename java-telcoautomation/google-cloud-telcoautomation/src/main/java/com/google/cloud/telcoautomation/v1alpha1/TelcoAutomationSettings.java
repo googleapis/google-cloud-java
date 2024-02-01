@@ -189,12 +189,6 @@ public class TelcoAutomationSettings extends ClientSettings<TelcoAutomationSetti
     return ((TelcoAutomationStubSettings) getStubSettings()).deleteBlueprintSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteBlueprintRevision. */
-  public UnaryCallSettings<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionSettings() {
-    return ((TelcoAutomationStubSettings) getStubSettings()).deleteBlueprintRevisionSettings();
-  }
-
   /** Returns the object with the settings used for calls to listBlueprints. */
   public PagedCallSettings<
           ListBlueprintsRequest, ListBlueprintsResponse, ListBlueprintsPagedResponse>
@@ -280,20 +274,9 @@ public class TelcoAutomationSettings extends ClientSettings<TelcoAutomationSetti
     return ((TelcoAutomationStubSettings) getStubSettings()).getDeploymentSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteDeployment. */
-  public UnaryCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentSettings() {
-    return ((TelcoAutomationStubSettings) getStubSettings()).deleteDeploymentSettings();
-  }
-
   /** Returns the object with the settings used for calls to removeDeployment. */
   public UnaryCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentSettings() {
     return ((TelcoAutomationStubSettings) getStubSettings()).removeDeploymentSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteDeploymentRevision. */
-  public UnaryCallSettings<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionSettings() {
-    return ((TelcoAutomationStubSettings) getStubSettings()).deleteDeploymentRevisionSettings();
   }
 
   /** Returns the object with the settings used for calls to listDeployments. */
@@ -582,12 +565,6 @@ public class TelcoAutomationSettings extends ClientSettings<TelcoAutomationSetti
       return getStubSettingsBuilder().deleteBlueprintSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteBlueprintRevision. */
-    public UnaryCallSettings.Builder<DeleteBlueprintRevisionRequest, Blueprint>
-        deleteBlueprintRevisionSettings() {
-      return getStubSettingsBuilder().deleteBlueprintRevisionSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listBlueprints. */
     public PagedCallSettings.Builder<
             ListBlueprintsRequest, ListBlueprintsResponse, ListBlueprintsPagedResponse>
@@ -678,20 +655,9 @@ public class TelcoAutomationSettings extends ClientSettings<TelcoAutomationSetti
       return getStubSettingsBuilder().getDeploymentSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteDeployment. */
-    public UnaryCallSettings.Builder<DeleteDeploymentRequest, Empty> deleteDeploymentSettings() {
-      return getStubSettingsBuilder().deleteDeploymentSettings();
-    }
-
     /** Returns the builder for the settings used for calls to removeDeployment. */
     public UnaryCallSettings.Builder<RemoveDeploymentRequest, Empty> removeDeploymentSettings() {
       return getStubSettingsBuilder().removeDeploymentSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDeploymentRevision. */
-    public UnaryCallSettings.Builder<DeleteDeploymentRevisionRequest, Deployment>
-        deleteDeploymentRevisionSettings() {
-      return getStubSettingsBuilder().deleteDeploymentRevisionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listDeployments. */

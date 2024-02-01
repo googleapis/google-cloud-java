@@ -37,15 +37,6 @@
             "DeleteBlueprint": {
               "methods": ["deleteBlueprint", "deleteBlueprint", "deleteBlueprint", "deleteBlueprintCallable"]
             },
-            "DeleteBlueprintRevision": {
-              "methods": ["deleteBlueprintRevision", "deleteBlueprintRevisionCallable"]
-            },
-            "DeleteDeployment": {
-              "methods": ["deleteDeployment", "deleteDeployment", "deleteDeployment", "deleteDeploymentCallable"]
-            },
-            "DeleteDeploymentRevision": {
-              "methods": ["deleteDeploymentRevision", "deleteDeploymentRevisionCallable"]
-            },
             "DeleteEdgeSlm": {
               "methods": ["deleteEdgeSlmAsync", "deleteEdgeSlmAsync", "deleteEdgeSlmAsync", "deleteEdgeSlmOperationCallable", "deleteEdgeSlmCallable"]
             },

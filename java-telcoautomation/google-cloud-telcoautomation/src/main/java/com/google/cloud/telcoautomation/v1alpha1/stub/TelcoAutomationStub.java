@@ -47,9 +47,6 @@ import com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.Deployment;
@@ -205,11 +202,6 @@ public abstract class TelcoAutomationStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteBlueprintCallable()");
   }
 
-  public UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteBlueprintRevisionCallable()");
-  }
-
   public UnaryCallable<ListBlueprintsRequest, ListBlueprintsPagedResponse>
       listBlueprintsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listBlueprintsPagedCallable()");
@@ -295,17 +287,8 @@ public abstract class TelcoAutomationStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDeploymentCallable()");
   }
 
-  public UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDeploymentCallable()");
-  }
-
   public UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable() {
     throw new UnsupportedOperationException("Not implemented: removeDeploymentCallable()");
-  }
-
-  public UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDeploymentRevisionCallable()");
   }
 
   public UnaryCallable<ListDeploymentsRequest, ListDeploymentsPagedResponse>

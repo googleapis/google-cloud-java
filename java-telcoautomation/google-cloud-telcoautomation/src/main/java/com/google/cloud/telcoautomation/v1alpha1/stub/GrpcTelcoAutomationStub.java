@@ -52,9 +52,6 @@ import com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.Deployment;
@@ -250,17 +247,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionMethodDescriptor =
-          MethodDescriptor.<DeleteBlueprintRevisionRequest, Blueprint>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/DeleteBlueprintRevision")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteBlueprintRevisionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListBlueprintsRequest, ListBlueprintsResponse>
       listBlueprintsMethodDescriptor =
           MethodDescriptor.<ListBlueprintsRequest, ListBlueprintsResponse>newBuilder()
@@ -418,17 +404,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<DeleteDeploymentRequest, Empty>
-      deleteDeploymentMethodDescriptor =
-          MethodDescriptor.<DeleteDeploymentRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/DeleteDeployment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteDeploymentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<RemoveDeploymentRequest, Empty>
       removeDeploymentMethodDescriptor =
           MethodDescriptor.<RemoveDeploymentRequest, Empty>newBuilder()
@@ -438,17 +413,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionMethodDescriptor =
-          MethodDescriptor.<DeleteDeploymentRevisionRequest, Deployment>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/DeleteDeploymentRevision")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteDeploymentRevisionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -623,8 +587,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
   private final UnaryCallable<UpdateBlueprintRequest, Blueprint> updateBlueprintCallable;
   private final UnaryCallable<GetBlueprintRequest, Blueprint> getBlueprintCallable;
   private final UnaryCallable<DeleteBlueprintRequest, Empty> deleteBlueprintCallable;
-  private final UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable;
   private final UnaryCallable<ListBlueprintsRequest, ListBlueprintsResponse> listBlueprintsCallable;
   private final UnaryCallable<ListBlueprintsRequest, ListBlueprintsPagedResponse>
       listBlueprintsPagedCallable;
@@ -656,10 +618,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
   private final UnaryCallable<CreateDeploymentRequest, Deployment> createDeploymentCallable;
   private final UnaryCallable<UpdateDeploymentRequest, Deployment> updateDeploymentCallable;
   private final UnaryCallable<GetDeploymentRequest, Deployment> getDeploymentCallable;
-  private final UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable;
   private final UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable;
-  private final UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable;
   private final UnaryCallable<ListDeploymentsRequest, ListDeploymentsResponse>
       listDeploymentsCallable;
   private final UnaryCallable<ListDeploymentsRequest, ListDeploymentsPagedResponse>
@@ -858,17 +817,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<DeleteBlueprintRevisionRequest, Blueprint>
-        deleteBlueprintRevisionTransportSettings =
-            GrpcCallSettings.<DeleteBlueprintRevisionRequest, Blueprint>newBuilder()
-                .setMethodDescriptor(deleteBlueprintRevisionMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<ListBlueprintsRequest, ListBlueprintsResponse>
         listBlueprintsTransportSettings =
             GrpcCallSettings.<ListBlueprintsRequest, ListBlueprintsResponse>newBuilder()
@@ -1010,16 +958,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentTransportSettings =
-        GrpcCallSettings.<DeleteDeploymentRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteDeploymentMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
     GrpcCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentTransportSettings =
         GrpcCallSettings.<RemoveDeploymentRequest, Empty>newBuilder()
             .setMethodDescriptor(removeDeploymentMethodDescriptor)
@@ -1030,17 +968,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<DeleteDeploymentRevisionRequest, Deployment>
-        deleteDeploymentRevisionTransportSettings =
-            GrpcCallSettings.<DeleteDeploymentRevisionRequest, Deployment>newBuilder()
-                .setMethodDescriptor(deleteDeploymentRevisionMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
             GrpcCallSettings.<ListDeploymentsRequest, ListDeploymentsResponse>newBuilder()
@@ -1252,11 +1179,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
     this.deleteBlueprintCallable =
         callableFactory.createUnaryCallable(
             deleteBlueprintTransportSettings, settings.deleteBlueprintSettings(), clientContext);
-    this.deleteBlueprintRevisionCallable =
-        callableFactory.createUnaryCallable(
-            deleteBlueprintRevisionTransportSettings,
-            settings.deleteBlueprintRevisionSettings(),
-            clientContext);
     this.listBlueprintsCallable =
         callableFactory.createUnaryCallable(
             listBlueprintsTransportSettings, settings.listBlueprintsSettings(), clientContext);
@@ -1331,17 +1253,9 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
     this.getDeploymentCallable =
         callableFactory.createUnaryCallable(
             getDeploymentTransportSettings, settings.getDeploymentSettings(), clientContext);
-    this.deleteDeploymentCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeploymentTransportSettings, settings.deleteDeploymentSettings(), clientContext);
     this.removeDeploymentCallable =
         callableFactory.createUnaryCallable(
             removeDeploymentTransportSettings, settings.removeDeploymentSettings(), clientContext);
-    this.deleteDeploymentRevisionCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeploymentRevisionTransportSettings,
-            settings.deleteDeploymentRevisionSettings(),
-            clientContext);
     this.listDeploymentsCallable =
         callableFactory.createUnaryCallable(
             listDeploymentsTransportSettings, settings.listDeploymentsSettings(), clientContext);
@@ -1520,12 +1434,6 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
   }
 
   @Override
-  public UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable() {
-    return deleteBlueprintRevisionCallable;
-  }
-
-  @Override
   public UnaryCallable<ListBlueprintsRequest, ListBlueprintsResponse> listBlueprintsCallable() {
     return listBlueprintsCallable;
   }
@@ -1626,19 +1534,8 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
   }
 
   @Override
-  public UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable() {
-    return deleteDeploymentCallable;
-  }
-
-  @Override
   public UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable() {
     return removeDeploymentCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable() {
-    return deleteDeploymentRevisionCallable;
   }
 
   @Override

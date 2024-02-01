@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -621,57 +621,6 @@ public final class TelcoAutomationGrpc {
       }
     }
     return getDeleteBlueprintMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest,
-          com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-      getDeleteBlueprintRevisionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteBlueprintRevision",
-      requestType = com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest.class,
-      responseType = com.google.cloud.telcoautomation.v1alpha1.Blueprint.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest,
-          com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-      getDeleteBlueprintRevisionMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest,
-            com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-        getDeleteBlueprintRevisionMethod;
-    if ((getDeleteBlueprintRevisionMethod = TelcoAutomationGrpc.getDeleteBlueprintRevisionMethod)
-        == null) {
-      synchronized (TelcoAutomationGrpc.class) {
-        if ((getDeleteBlueprintRevisionMethod =
-                TelcoAutomationGrpc.getDeleteBlueprintRevisionMethod)
-            == null) {
-          TelcoAutomationGrpc.getDeleteBlueprintRevisionMethod =
-              getDeleteBlueprintRevisionMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest,
-                          com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteBlueprintRevision"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.telcoautomation.v1alpha1
-                                  .DeleteBlueprintRevisionRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.telcoautomation.v1alpha1.Blueprint
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new TelcoAutomationMethodDescriptorSupplier("DeleteBlueprintRevision"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteBlueprintRevisionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1312,52 +1261,6 @@ public final class TelcoAutomationGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest,
-          com.google.protobuf.Empty>
-      getDeleteDeploymentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteDeployment",
-      requestType = com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest,
-          com.google.protobuf.Empty>
-      getDeleteDeploymentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest,
-            com.google.protobuf.Empty>
-        getDeleteDeploymentMethod;
-    if ((getDeleteDeploymentMethod = TelcoAutomationGrpc.getDeleteDeploymentMethod) == null) {
-      synchronized (TelcoAutomationGrpc.class) {
-        if ((getDeleteDeploymentMethod = TelcoAutomationGrpc.getDeleteDeploymentMethod) == null) {
-          TelcoAutomationGrpc.getDeleteDeploymentMethod =
-              getDeleteDeploymentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDeployment"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new TelcoAutomationMethodDescriptorSupplier("DeleteDeployment"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteDeploymentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest,
           com.google.protobuf.Empty>
       getRemoveDeploymentMethod;
@@ -1401,57 +1304,6 @@ public final class TelcoAutomationGrpc {
       }
     }
     return getRemoveDeploymentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest,
-          com.google.cloud.telcoautomation.v1alpha1.Deployment>
-      getDeleteDeploymentRevisionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteDeploymentRevision",
-      requestType = com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest.class,
-      responseType = com.google.cloud.telcoautomation.v1alpha1.Deployment.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest,
-          com.google.cloud.telcoautomation.v1alpha1.Deployment>
-      getDeleteDeploymentRevisionMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest,
-            com.google.cloud.telcoautomation.v1alpha1.Deployment>
-        getDeleteDeploymentRevisionMethod;
-    if ((getDeleteDeploymentRevisionMethod = TelcoAutomationGrpc.getDeleteDeploymentRevisionMethod)
-        == null) {
-      synchronized (TelcoAutomationGrpc.class) {
-        if ((getDeleteDeploymentRevisionMethod =
-                TelcoAutomationGrpc.getDeleteDeploymentRevisionMethod)
-            == null) {
-          TelcoAutomationGrpc.getDeleteDeploymentRevisionMethod =
-              getDeleteDeploymentRevisionMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest,
-                          com.google.cloud.telcoautomation.v1alpha1.Deployment>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteDeploymentRevision"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.telcoautomation.v1alpha1
-                                  .DeleteDeploymentRevisionRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.telcoautomation.v1alpha1.Deployment
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new TelcoAutomationMethodDescriptorSupplier("DeleteDeploymentRevision"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteDeploymentRevisionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2190,21 +2042,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes the specified revision of the blueprint.
-     * </pre>
-     */
-    default void deleteBlueprintRevision(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteBlueprintRevisionMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * List all blueprints.
      * </pre>
      */
@@ -2409,20 +2246,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes a deployment and all its revisions.
-     * </pre>
-     */
-    default void deleteDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteDeploymentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Removes the deployment by marking it as DELETING. Post which deployment and
      * it's revisions gets deleted.
      * </pre>
@@ -2432,21 +2255,6 @@ public final class TelcoAutomationGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRemoveDeploymentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified revision of the deployment.
-     * </pre>
-     */
-    default void deleteDeploymentRevision(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Deployment>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteDeploymentRevisionMethod(), responseObserver);
     }
 
     /**
@@ -2852,23 +2660,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes the specified revision of the blueprint.
-     * </pre>
-     */
-    public void deleteBlueprintRevision(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteBlueprintRevisionMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * List all blueprints.
      * </pre>
      */
@@ -3099,22 +2890,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes a deployment and all its revisions.
-     * </pre>
-     */
-    public void deleteDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteDeploymentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Removes the deployment by marking it as DELETING. Post which deployment and
      * it's revisions gets deleted.
      * </pre>
@@ -3124,23 +2899,6 @@ public final class TelcoAutomationGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRemoveDeploymentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified revision of the deployment.
-     * </pre>
-     */
-    public void deleteDeploymentRevision(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Deployment>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteDeploymentRevisionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3508,19 +3266,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes the specified revision of the blueprint.
-     * </pre>
-     */
-    public com.google.cloud.telcoautomation.v1alpha1.Blueprint deleteBlueprintRevision(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteBlueprintRevisionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * List all blueprints.
      * </pre>
      */
@@ -3698,19 +3443,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes a deployment and all its revisions.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDeploymentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Removes the deployment by marking it as DELETING. Post which deployment and
      * it's revisions gets deleted.
      * </pre>
@@ -3719,19 +3451,6 @@ public final class TelcoAutomationGrpc {
         com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemoveDeploymentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified revision of the deployment.
-     * </pre>
-     */
-    public com.google.cloud.telcoautomation.v1alpha1.Deployment deleteDeploymentRevision(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDeploymentRevisionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -4066,21 +3785,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes the specified revision of the blueprint.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.telcoautomation.v1alpha1.Blueprint>
-        deleteBlueprintRevision(
-            com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteBlueprintRevisionMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * List all blueprints.
      * </pre>
      */
@@ -4276,20 +3980,6 @@ public final class TelcoAutomationGrpc {
      *
      *
      * <pre>
-     * Deletes a deployment and all its revisions.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteDeployment(
-            com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteDeploymentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Removes the deployment by marking it as DELETING. Post which deployment and
      * it's revisions gets deleted.
      * </pre>
@@ -4299,21 +3989,6 @@ public final class TelcoAutomationGrpc {
             com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRemoveDeploymentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified revision of the deployment.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.telcoautomation.v1alpha1.Deployment>
-        deleteDeploymentRevision(
-            com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteDeploymentRevisionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4480,33 +4155,30 @@ public final class TelcoAutomationGrpc {
   private static final int METHODID_UPDATE_BLUEPRINT = 9;
   private static final int METHODID_GET_BLUEPRINT = 10;
   private static final int METHODID_DELETE_BLUEPRINT = 11;
-  private static final int METHODID_DELETE_BLUEPRINT_REVISION = 12;
-  private static final int METHODID_LIST_BLUEPRINTS = 13;
-  private static final int METHODID_APPROVE_BLUEPRINT = 14;
-  private static final int METHODID_PROPOSE_BLUEPRINT = 15;
-  private static final int METHODID_REJECT_BLUEPRINT = 16;
-  private static final int METHODID_LIST_BLUEPRINT_REVISIONS = 17;
-  private static final int METHODID_SEARCH_BLUEPRINT_REVISIONS = 18;
-  private static final int METHODID_SEARCH_DEPLOYMENT_REVISIONS = 19;
-  private static final int METHODID_DISCARD_BLUEPRINT_CHANGES = 20;
-  private static final int METHODID_LIST_PUBLIC_BLUEPRINTS = 21;
-  private static final int METHODID_GET_PUBLIC_BLUEPRINT = 22;
-  private static final int METHODID_CREATE_DEPLOYMENT = 23;
-  private static final int METHODID_UPDATE_DEPLOYMENT = 24;
-  private static final int METHODID_GET_DEPLOYMENT = 25;
-  private static final int METHODID_DELETE_DEPLOYMENT = 26;
-  private static final int METHODID_REMOVE_DEPLOYMENT = 27;
-  private static final int METHODID_DELETE_DEPLOYMENT_REVISION = 28;
-  private static final int METHODID_LIST_DEPLOYMENTS = 29;
-  private static final int METHODID_LIST_DEPLOYMENT_REVISIONS = 30;
-  private static final int METHODID_DISCARD_DEPLOYMENT_CHANGES = 31;
-  private static final int METHODID_APPLY_DEPLOYMENT = 32;
-  private static final int METHODID_COMPUTE_DEPLOYMENT_STATUS = 33;
-  private static final int METHODID_ROLLBACK_DEPLOYMENT = 34;
-  private static final int METHODID_GET_HYDRATED_DEPLOYMENT = 35;
-  private static final int METHODID_LIST_HYDRATED_DEPLOYMENTS = 36;
-  private static final int METHODID_UPDATE_HYDRATED_DEPLOYMENT = 37;
-  private static final int METHODID_APPLY_HYDRATED_DEPLOYMENT = 38;
+  private static final int METHODID_LIST_BLUEPRINTS = 12;
+  private static final int METHODID_APPROVE_BLUEPRINT = 13;
+  private static final int METHODID_PROPOSE_BLUEPRINT = 14;
+  private static final int METHODID_REJECT_BLUEPRINT = 15;
+  private static final int METHODID_LIST_BLUEPRINT_REVISIONS = 16;
+  private static final int METHODID_SEARCH_BLUEPRINT_REVISIONS = 17;
+  private static final int METHODID_SEARCH_DEPLOYMENT_REVISIONS = 18;
+  private static final int METHODID_DISCARD_BLUEPRINT_CHANGES = 19;
+  private static final int METHODID_LIST_PUBLIC_BLUEPRINTS = 20;
+  private static final int METHODID_GET_PUBLIC_BLUEPRINT = 21;
+  private static final int METHODID_CREATE_DEPLOYMENT = 22;
+  private static final int METHODID_UPDATE_DEPLOYMENT = 23;
+  private static final int METHODID_GET_DEPLOYMENT = 24;
+  private static final int METHODID_REMOVE_DEPLOYMENT = 25;
+  private static final int METHODID_LIST_DEPLOYMENTS = 26;
+  private static final int METHODID_LIST_DEPLOYMENT_REVISIONS = 27;
+  private static final int METHODID_DISCARD_DEPLOYMENT_CHANGES = 28;
+  private static final int METHODID_APPLY_DEPLOYMENT = 29;
+  private static final int METHODID_COMPUTE_DEPLOYMENT_STATUS = 30;
+  private static final int METHODID_ROLLBACK_DEPLOYMENT = 31;
+  private static final int METHODID_GET_HYDRATED_DEPLOYMENT = 32;
+  private static final int METHODID_LIST_HYDRATED_DEPLOYMENTS = 33;
+  private static final int METHODID_UPDATE_HYDRATED_DEPLOYMENT = 34;
+  private static final int METHODID_APPLY_HYDRATED_DEPLOYMENT = 35;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4595,12 +4267,6 @@ public final class TelcoAutomationGrpc {
               (com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_DELETE_BLUEPRINT_REVISION:
-          serviceImpl.deleteBlueprintRevision(
-              (com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Blueprint>)
-                  responseObserver);
-          break;
         case METHODID_LIST_BLUEPRINTS:
           serviceImpl.listBlueprints(
               (com.google.cloud.telcoautomation.v1alpha1.ListBlueprintsRequest) request,
@@ -4686,21 +4352,10 @@ public final class TelcoAutomationGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Deployment>)
                   responseObserver);
           break;
-        case METHODID_DELETE_DEPLOYMENT:
-          serviceImpl.deleteDeployment(
-              (com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
         case METHODID_REMOVE_DEPLOYMENT:
           serviceImpl.removeDeployment(
               (com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_DELETE_DEPLOYMENT_REVISION:
-          serviceImpl.deleteDeploymentRevision(
-              (com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.telcoautomation.v1alpha1.Deployment>)
-                  responseObserver);
           break;
         case METHODID_LIST_DEPLOYMENTS:
           serviceImpl.listDeployments(
@@ -4870,13 +4525,6 @@ public final class TelcoAutomationGrpc {
                     com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_BLUEPRINT)))
         .addMethod(
-            getDeleteBlueprintRevisionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest,
-                    com.google.cloud.telcoautomation.v1alpha1.Blueprint>(
-                    service, METHODID_DELETE_BLUEPRINT_REVISION)))
-        .addMethod(
             getListBlueprintsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4968,24 +4616,11 @@ public final class TelcoAutomationGrpc {
                     com.google.cloud.telcoautomation.v1alpha1.Deployment>(
                     service, METHODID_GET_DEPLOYMENT)))
         .addMethod(
-            getDeleteDeploymentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest,
-                    com.google.protobuf.Empty>(service, METHODID_DELETE_DEPLOYMENT)))
-        .addMethod(
             getRemoveDeploymentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest,
                     com.google.protobuf.Empty>(service, METHODID_REMOVE_DEPLOYMENT)))
-        .addMethod(
-            getDeleteDeploymentRevisionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest,
-                    com.google.cloud.telcoautomation.v1alpha1.Deployment>(
-                    service, METHODID_DELETE_DEPLOYMENT_REVISION)))
         .addMethod(
             getListDeploymentsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5119,7 +4754,6 @@ public final class TelcoAutomationGrpc {
                       .addMethod(getUpdateBlueprintMethod())
                       .addMethod(getGetBlueprintMethod())
                       .addMethod(getDeleteBlueprintMethod())
-                      .addMethod(getDeleteBlueprintRevisionMethod())
                       .addMethod(getListBlueprintsMethod())
                       .addMethod(getApproveBlueprintMethod())
                       .addMethod(getProposeBlueprintMethod())
@@ -5133,9 +4767,7 @@ public final class TelcoAutomationGrpc {
                       .addMethod(getCreateDeploymentMethod())
                       .addMethod(getUpdateDeploymentMethod())
                       .addMethod(getGetDeploymentMethod())
-                      .addMethod(getDeleteDeploymentMethod())
                       .addMethod(getRemoveDeploymentMethod())
-                      .addMethod(getDeleteDeploymentRevisionMethod())
                       .addMethod(getListDeploymentsMethod())
                       .addMethod(getListDeploymentRevisionsMethod())
                       .addMethod(getDiscardDeploymentChangesMethod())

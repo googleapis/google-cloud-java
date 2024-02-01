@@ -959,6 +959,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1022,6 +1024,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1085,6 +1089,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1104,6 +1110,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1149,6 +1157,8 @@ public class TelcoAutomationClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setSourceProvider("sourceProvider1943963436")
+              .setDeploymentLevel(DeploymentLevel.forNumber(0))
+              .setRollbackSupport(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBlueprint(blueprint, updateMask);
@@ -1176,6 +1186,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1235,6 +1247,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1354,75 +1368,6 @@ public class TelcoAutomationClientHttpJsonTest {
       String name =
           "projects/project-9926/locations/location-9926/orchestrationClusters/orchestrationCluster-9926/blueprints/blueprint-9926";
       client.deleteBlueprint(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteBlueprintRevisionTest() throws Exception {
-    Blueprint expectedResponse =
-        Blueprint.newBuilder()
-            .setName(
-                BlueprintName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-                    .toString())
-            .setRevisionId("revisionId-1507445162")
-            .setSourceBlueprint("sourceBlueprint-1648799560")
-            .setRevisionCreateTime(Timestamp.newBuilder().build())
-            .setDisplayName("displayName1714148973")
-            .setRepository("repository1950800714")
-            .addAllFiles(new ArrayList<File>())
-            .putAllLabels(new HashMap<String, String>())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setSourceProvider("sourceProvider1943963436")
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    DeleteBlueprintRevisionRequest request =
-        DeleteBlueprintRevisionRequest.newBuilder()
-            .setName(
-                BlueprintName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-                    .toString())
-            .build();
-
-    Blueprint actualResponse = client.deleteBlueprintRevision(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteBlueprintRevisionExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DeleteBlueprintRevisionRequest request =
-          DeleteBlueprintRevisionRequest.newBuilder()
-              .setName(
-                  BlueprintName.of(
-                          "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-                      .toString())
-              .build();
-      client.deleteBlueprintRevision(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1551,6 +1496,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1610,6 +1557,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1669,6 +1618,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1728,6 +1679,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1787,6 +1740,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1846,6 +1801,8 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2407,7 +2364,9 @@ public class TelcoAutomationClientHttpJsonTest {
                 PublicBlueprintName.of("[PROJECT]", "[LOCATION]", "[PUBLIC_LUEPRINT]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
             .setSourceProvider("sourceProvider1943963436")
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2457,7 +2416,9 @@ public class TelcoAutomationClientHttpJsonTest {
                 PublicBlueprintName.of("[PROJECT]", "[LOCATION]", "[PUBLIC_LUEPRINT]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
             .setSourceProvider("sourceProvider1943963436")
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2517,6 +2478,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2580,6 +2544,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2643,6 +2610,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2662,6 +2632,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2707,6 +2680,9 @@ public class TelcoAutomationClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setSourceProvider("sourceProvider1943963436")
+              .setWorkloadCluster("workloadCluster925665923")
+              .setDeploymentLevel(DeploymentLevel.forNumber(0))
+              .setRollbackSupport(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeployment(deployment, updateMask);
@@ -2734,6 +2710,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2793,6 +2772,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2828,90 +2810,6 @@ public class TelcoAutomationClientHttpJsonTest {
       String name =
           "projects/project-3706/locations/location-3706/orchestrationClusters/orchestrationCluster-3706/deployments/deployment-3706";
       client.getDeployment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteDeploymentTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    DeploymentName name =
-        DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]");
-
-    client.deleteDeployment(name);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteDeploymentExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DeploymentName name =
-          DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]");
-      client.deleteDeployment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteDeploymentTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-3706/locations/location-3706/orchestrationClusters/orchestrationCluster-3706/deployments/deployment-3706";
-
-    client.deleteDeployment(name);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteDeploymentExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-3706/locations/location-3706/orchestrationClusters/orchestrationCluster-3706/deployments/deployment-3706";
-      client.deleteDeployment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2996,75 +2894,6 @@ public class TelcoAutomationClientHttpJsonTest {
       String name =
           "projects/project-3706/locations/location-3706/orchestrationClusters/orchestrationCluster-3706/deployments/deployment-3706";
       client.removeDeployment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteDeploymentRevisionTest() throws Exception {
-    Deployment expectedResponse =
-        Deployment.newBuilder()
-            .setName(
-                DeploymentName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-                    .toString())
-            .setRevisionId("revisionId-1507445162")
-            .setSourceBlueprintRevision("sourceBlueprintRevision-1125632845")
-            .setRevisionCreateTime(Timestamp.newBuilder().build())
-            .setDisplayName("displayName1714148973")
-            .setRepository("repository1950800714")
-            .addAllFiles(new ArrayList<File>())
-            .putAllLabels(new HashMap<String, String>())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setSourceProvider("sourceProvider1943963436")
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    DeleteDeploymentRevisionRequest request =
-        DeleteDeploymentRevisionRequest.newBuilder()
-            .setName(
-                DeploymentName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-                    .toString())
-            .build();
-
-    Deployment actualResponse = client.deleteDeploymentRevision(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteDeploymentRevisionExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DeleteDeploymentRevisionRequest request =
-          DeleteDeploymentRevisionRequest.newBuilder()
-              .setName(
-                  DeploymentName.of(
-                          "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-                      .toString())
-              .build();
-      client.deleteDeploymentRevision(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3385,6 +3214,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3444,6 +3276,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3490,7 +3325,7 @@ public class TelcoAutomationClientHttpJsonTest {
     ComputeDeploymentStatusResponse expectedResponse =
         ComputeDeploymentStatusResponse.newBuilder()
             .setName("name3373707")
-            .setStatus(Status.forNumber(0))
+            .setAggregatedStatus(Status.forNumber(0))
             .addAllResourceStatuses(new ArrayList<ResourceStatus>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3538,7 +3373,7 @@ public class TelcoAutomationClientHttpJsonTest {
     ComputeDeploymentStatusResponse expectedResponse =
         ComputeDeploymentStatusResponse.newBuilder()
             .setName("name3373707")
-            .setStatus(Status.forNumber(0))
+            .setAggregatedStatus(Status.forNumber(0))
             .addAllResourceStatuses(new ArrayList<ResourceStatus>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3599,6 +3434,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3660,6 +3498,9 @@ public class TelcoAutomationClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockService.addResponse(expectedResponse);
 
