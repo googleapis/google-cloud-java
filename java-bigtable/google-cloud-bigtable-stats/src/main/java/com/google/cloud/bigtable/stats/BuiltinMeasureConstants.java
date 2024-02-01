@@ -88,4 +88,10 @@ class BuiltinMeasureConstants {
           "bigtable.googleapis.com/internal/client/throttling_latencies",
           "The artificial latency introduced by the client to limit the number of outstanding requests. The publishing of the measurement will be delayed until the attempt trailers have been received.",
           MILLISECOND);
+
+  static final MeasureLong PER_CONNECTION_ERROR_COUNT =
+      MeasureLong.create(
+          "bigtable.googleapis.com/internal/client/per_connection_error_count",
+          "Distribution of counts of channels per 'error count per minute'.",
+          COUNT);
 }

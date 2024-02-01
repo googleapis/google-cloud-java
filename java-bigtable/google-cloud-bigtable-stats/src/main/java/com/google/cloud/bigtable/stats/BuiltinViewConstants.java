@@ -15,24 +15,7 @@
  */
 package com.google.cloud.bigtable.stats;
 
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.APPLICATION_LATENCIES;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.APP_PROFILE;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.ATTEMPT_LATENCIES;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.CLIENT_NAME;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.CLUSTER;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.CONNECTIVITY_ERROR_COUNT;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.FIRST_RESPONSE_LATENCIES;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.INSTANCE_ID;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.METHOD;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.OPERATION_LATENCIES;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.PROJECT_ID;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.RETRY_COUNT;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.SERVER_LATENCIES;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.STATUS;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.STREAMING;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.TABLE;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.THROTTLING_LATENCIES;
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.ZONE;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.*;
 import static io.opencensus.stats.Aggregation.Distribution;
 import static io.opencensus.stats.Aggregation.Sum;
 
@@ -58,6 +41,32 @@ class BuiltinViewConstants {
               ImmutableList.of(
                   1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 15.0, 20.0, 30.0, 40.0, 50.0,
                   100.0)));
+
+  private static final Aggregation PER_CONNECTION_ERROR_COUNT_AGGREGATION =
+      Distribution.create(
+          BucketBoundaries.create(
+              ImmutableList.of(
+                  1.0,
+                  2.0,
+                  4.0,
+                  8.0,
+                  16.0,
+                  32.0,
+                  64.0,
+                  125.0,
+                  250.0,
+                  500.0,
+                  1_000.0,
+                  2_000.0,
+                  4_000.0,
+                  8_000.0,
+                  16_000.0,
+                  32_000.0,
+                  64_000.0,
+                  128_000.0,
+                  250_000.0,
+                  500_000.0,
+                  1_000_000.0)));
 
   private static final Aggregation AGGREGATION_COUNT = Sum.create();
 
@@ -183,4 +192,12 @@ class BuiltinViewConstants {
           AGGREGATION_WITH_MILLIS_HISTOGRAM,
           ImmutableList.of(
               PROJECT_ID, INSTANCE_ID, APP_PROFILE, METHOD, CLIENT_NAME, CLUSTER, ZONE, TABLE));
+
+  static final View PER_CONNECTION_ERROR_COUNT_VIEW =
+      View.create(
+          View.Name.create("bigtable.googleapis.com/internal/client/per_connection_error_count"),
+          "Distribution of counts of channels per 'error count per minute'.",
+          PER_CONNECTION_ERROR_COUNT,
+          PER_CONNECTION_ERROR_COUNT_AGGREGATION,
+          ImmutableList.of(PROJECT_ID, INSTANCE_ID, APP_PROFILE, CLIENT_NAME));
 }
