@@ -39,6 +39,7 @@ public class SyncGetFunction {
       GetFunctionRequest request =
           GetFunctionRequest.newBuilder()
               .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+              .setVersionId(-670497310)
               .build();
       CloudFunction response = cloudFunctionsServiceClient.getFunction(request);
     }

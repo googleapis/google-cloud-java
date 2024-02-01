@@ -113,7 +113,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateFunction</td>
- *      <td><p> Creates a new function. If a function with the given name already exists in the specified project, the long running operation returns an `ALREADY_EXISTS` error.</td>
+ *      <td><p> Creates a new function. If a function with the given name already exists in the specified project, the long running operation will return `ALREADY_EXISTS` error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -152,7 +152,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteFunction</td>
- *      <td><p> Deletes a function with the given name from the specified project. If the given function is used by some trigger, the trigger is updated to remove this function.</td>
+ *      <td><p> Deletes a function with the given name from the specified project. If the given function is used by some trigger, the trigger will be updated to remove this function.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -198,12 +198,12 @@ import javax.annotation.Generated;
  * <li>  Source file size should not exceed 100MB limit.
  * <li>  No credentials should be attached - the signed URLs provide access to the   target bucket using internal service identity; if credentials were   attached, the identity from the credentials would be used, but that   identity does not have permissions to upload files to the URL.
  * </ul>
- * <p>  When making an HTTP PUT request, these two headers must be specified:
+ * <p>  When making a HTTP PUT request, these two headers need to be specified:
  * <ul>
  * <li>  `content-type: application/zip`
  * <li>  `x-goog-content-length-range: 0,104857600`
  * </ul>
- * <p>  And this header must NOT be specified:
+ * <p>  And this header SHOULD NOT be specified:
  * <ul>
  * <li>  `Authorization: Bearer YOUR_TOKEN`
  * </ul></td>
@@ -220,7 +220,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GenerateDownloadUrl</td>
- *      <td><p> Returns a signed URL for downloading deployed function source code. The URL is only valid for a limited period and must be used within minutes after generation. For more information about the signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls</td>
+ *      <td><p> Returns a signed URL for downloading deployed function source code. The URL is only valid for a limited period and should be used within minutes after generation. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -262,7 +262,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> TestIamPermissions</td>
- *      <td><p> Tests the specified permissions against the IAM access control policy for a function. If the function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.</td>
+ *      <td><p> Tests the specified permissions against the IAM access control policy for a function. If the function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -602,6 +602,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *   GetFunctionRequest request =
    *       GetFunctionRequest.newBuilder()
    *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setVersionId(-670497310)
    *           .build();
    *   CloudFunction response = cloudFunctionsServiceClient.getFunction(request);
    * }
@@ -631,6 +632,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *   GetFunctionRequest request =
    *       GetFunctionRequest.newBuilder()
    *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setVersionId(-670497310)
    *           .build();
    *   ApiFuture<CloudFunction> future =
    *       cloudFunctionsServiceClient.getFunctionCallable().futureCall(request);
@@ -646,7 +648,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -683,7 +685,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -717,7 +719,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -749,7 +751,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -781,7 +783,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -933,7 +935,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -963,7 +965,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -991,7 +993,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -1022,7 +1024,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -1053,7 +1055,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -1229,14 +1231,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making an HTTP PUT request, these two headers must be specified:
+   * <p>When making a HTTP PUT request, these two headers need to be specified:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    *   <li>`x-goog-content-length-range: 0,104857600`
    * </ul>
    *
-   * <p>And this header must NOT be specified:
+   * <p>And this header SHOULD NOT be specified:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1288,14 +1290,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making an HTTP PUT request, these two headers must be specified:
+   * <p>When making a HTTP PUT request, these two headers need to be specified:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    *   <li>`x-goog-content-length-range: 0,104857600`
    * </ul>
    *
-   * <p>And this header must NOT be specified:
+   * <p>And this header SHOULD NOT be specified:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1333,8 +1335,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
-   * limited period and must be used within minutes after generation. For more information about the
-   * signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   * limited period and should be used within minutes after generation. For more information about
+   * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
    *
@@ -1366,8 +1368,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
-   * limited period and must be used within minutes after generation. For more information about the
-   * signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   * limited period and should be used within minutes after generation. For more information about
+   * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
    *
@@ -1523,7 +1525,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
-   * function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.
+   * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
@@ -1554,7 +1556,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
-   * function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.
+   * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *

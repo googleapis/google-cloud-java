@@ -40,6 +40,7 @@ public class AsyncGetFunction {
       GetFunctionRequest request =
           GetFunctionRequest.newBuilder()
               .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+              .setVersionId(-670497310)
               .build();
       ApiFuture<CloudFunction> future =
           cloudFunctionsServiceClient.getFunctionCallable().futureCall(request);

@@ -143,6 +143,7 @@ public class HttpJsonCloudFunctionsServiceStub extends CloudFunctionsServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetFunctionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "versionId", request.getVersionId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
