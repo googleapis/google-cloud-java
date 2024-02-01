@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.18.3](https://github.com/googleapis/java-datastore/compare/v2.18.2...v2.18.3) (2024-02-01)
+
+
+### Bug Fixes
+
+* Remove QueryMode field from RunAggregationQueryRequest ([c1e7c62](https://github.com/googleapis/java-datastore/commit/c1e7c6201e0e35469df1492a4ce61bf6a095f8be))
+* Remove QueryMode field from RunQueryRequest ([c1e7c62](https://github.com/googleapis/java-datastore/commit/c1e7c6201e0e35469df1492a4ce61bf6a095f8be))
+* Remove ResultSetStats field from RunAggregationQueryResponse ([c1e7c62](https://github.com/googleapis/java-datastore/commit/c1e7c6201e0e35469df1492a4ce61bf6a095f8be))
+* Remove ResultSetStats field from RunQueryResponse ([c1e7c62](https://github.com/googleapis/java-datastore/commit/c1e7c6201e0e35469df1492a4ce61bf6a095f8be))
+* Remove types QueryMode, QueryPlan, ResultSetStats ([#1304](https://github.com/googleapis/java-datastore/issues/1304)) ([c1e7c62](https://github.com/googleapis/java-datastore/commit/c1e7c6201e0e35469df1492a4ce61bf6a095f8be))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.24.0 ([#1310](https://github.com/googleapis/java-datastore/issues/1310)) ([26e5f98](https://github.com/googleapis/java-datastore/commit/26e5f9873c4df1815406020a6c22e4a20638f959))
+* Update protobuf to 25.2 in WORKSPACE ([#1311](https://github.com/googleapis/java-datastore/issues/1311)) ([3f4ae83](https://github.com/googleapis/java-datastore/commit/3f4ae83b20f160eaccd9de17582d54d8222dd015))
+
 ## [2.18.2](https://github.com/googleapis/java-datastore/compare/v2.18.1...v2.18.2) (2024-01-25)
 
 
