@@ -12,7 +12,7 @@ jobs:
         java-version: 11
     - name: Install modules
       shell: bash
-      run: .kokoro/build.sh
+      run: mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
     - name: Unmanaged dependency check
       uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@unmanaged-dependencies-check-latest
       with:
