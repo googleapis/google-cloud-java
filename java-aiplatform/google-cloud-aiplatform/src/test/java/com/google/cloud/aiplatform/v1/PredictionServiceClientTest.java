@@ -297,6 +297,62 @@ public class PredictionServiceClientTest {
   }
 
   @Test
+  public void streamRawPredictTest() throws Exception {
+    HttpBody expectedResponse =
+        HttpBody.newBuilder()
+            .setContentType("contentType-389131437")
+            .setData(ByteString.EMPTY)
+            .addAllExtensions(new ArrayList<Any>())
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+    StreamRawPredictRequest request =
+        StreamRawPredictRequest.newBuilder()
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setHttpBody(HttpBody.newBuilder().build())
+            .build();
+
+    MockStreamObserver<HttpBody> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<StreamRawPredictRequest, HttpBody> callable =
+        client.streamRawPredictCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<HttpBody> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamRawPredictExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+    StreamRawPredictRequest request =
+        StreamRawPredictRequest.newBuilder()
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setHttpBody(HttpBody.newBuilder().build())
+            .build();
+
+    MockStreamObserver<HttpBody> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<StreamRawPredictRequest, HttpBody> callable =
+        client.streamRawPredictCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<HttpBody> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void directPredictTest() throws Exception {
     DirectPredictResponse expectedResponse =
         DirectPredictResponse.newBuilder()
@@ -402,6 +458,133 @@ public class PredictionServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamDirectPredictTest() throws Exception {
+    StreamDirectPredictResponse expectedResponse =
+        StreamDirectPredictResponse.newBuilder()
+            .addAllOutputs(new ArrayList<Tensor>())
+            .setParameters(Tensor.newBuilder().build())
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+    StreamDirectPredictRequest request =
+        StreamDirectPredictRequest.newBuilder()
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .addAllInputs(new ArrayList<Tensor>())
+            .setParameters(Tensor.newBuilder().build())
+            .build();
+
+    MockStreamObserver<StreamDirectPredictResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse> callable =
+        client.streamDirectPredictCallable();
+    ApiStreamObserver<StreamDirectPredictRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamDirectPredictResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamDirectPredictExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+    StreamDirectPredictRequest request =
+        StreamDirectPredictRequest.newBuilder()
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .addAllInputs(new ArrayList<Tensor>())
+            .setParameters(Tensor.newBuilder().build())
+            .build();
+
+    MockStreamObserver<StreamDirectPredictResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse> callable =
+        client.streamDirectPredictCallable();
+    ApiStreamObserver<StreamDirectPredictRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<StreamDirectPredictResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void streamDirectRawPredictTest() throws Exception {
+    StreamDirectRawPredictResponse expectedResponse =
+        StreamDirectRawPredictResponse.newBuilder().setOutput(ByteString.EMPTY).build();
+    mockPredictionService.addResponse(expectedResponse);
+    StreamDirectRawPredictRequest request =
+        StreamDirectRawPredictRequest.newBuilder()
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setMethodName("methodName-723163380")
+            .setInput(ByteString.EMPTY)
+            .build();
+
+    MockStreamObserver<StreamDirectRawPredictResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse> callable =
+        client.streamDirectRawPredictCallable();
+    ApiStreamObserver<StreamDirectRawPredictRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamDirectRawPredictResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamDirectRawPredictExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+    StreamDirectRawPredictRequest request =
+        StreamDirectRawPredictRequest.newBuilder()
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setMethodName("methodName-723163380")
+            .setInput(ByteString.EMPTY)
+            .build();
+
+    MockStreamObserver<StreamDirectRawPredictResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse> callable =
+        client.streamDirectRawPredictCallable();
+    ApiStreamObserver<StreamDirectRawPredictRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<StreamDirectRawPredictResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -683,6 +866,49 @@ public class PredictionServiceClientTest {
       Value parameters = Value.newBuilder().setBoolValue(true).build();
       String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateContentTest() throws Exception {
+    GenerateContentResponse expectedResponse =
+        GenerateContentResponse.newBuilder()
+            .addAllCandidates(new ArrayList<Candidate>())
+            .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
+            .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+
+    String model = "model104069929";
+    List<Content> contents = new ArrayList<>();
+
+    GenerateContentResponse actualResponse = client.generateContent(model, contents);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateContentRequest actualRequest = ((GenerateContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertEquals(contents, actualRequest.getContentsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+
+    try {
+      String model = "model104069929";
+      List<Content> contents = new ArrayList<>();
+      client.generateContent(model, contents);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
