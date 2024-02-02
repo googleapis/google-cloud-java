@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.0.1...v3.1.0) (2024-02-02)
+
+
+### Features
+
+* Enable instream retry for default streams when Multiplexing. ([#2376](https://github.com/googleapis/java-bigquerystorage/issues/2376)) ([9a18523](https://github.com/googleapis/java-bigquerystorage/commit/9a18523503dcfc0a787985075d7193efa472c32f))
+
+
+### Bug Fixes
+
+* Add a bit more message so customers are not going to be scared on retryable errors. ([#2386](https://github.com/googleapis/java-bigquerystorage/issues/2386)) ([90331a3](https://github.com/googleapis/java-bigquerystorage/commit/90331a32447d28df99d483482ee222746da32acb))
+* Split connection pool based on credential ([#2388](https://github.com/googleapis/java-bigquerystorage/issues/2388)) ([08bc846](https://github.com/googleapis/java-bigquerystorage/commit/08bc846813e0b70bd940878658f9c33903c1416d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.37.0 ([#2382](https://github.com/googleapis/java-bigquerystorage/issues/2382)) ([27e0bc7](https://github.com/googleapis/java-bigquerystorage/commit/27e0bc7c642de6c86e5c27834994bdd07f6e7279))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.24.0 ([#2390](https://github.com/googleapis/java-bigquerystorage/issues/2390)) ([3bb0149](https://github.com/googleapis/java-bigquerystorage/commit/3bb0149c9152905ee4c6c00fd3a55ba8502a9229))
+* Update dependency com.google.http-client:google-http-client to v1.44.1 ([#2384](https://github.com/googleapis/java-bigquerystorage/issues/2384)) ([6aecf34](https://github.com/googleapis/java-bigquerystorage/commit/6aecf34a001aea37ba0d0a2ebb0ed62619147d3d))
+
 ## [3.0.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.0.0...v3.0.1) (2024-01-25)
 
 
