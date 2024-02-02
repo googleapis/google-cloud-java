@@ -21,6 +21,7 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.auth.Credentials;
 import com.google.auto.value.AutoOneOf;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
@@ -46,6 +47,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nullable;
 
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
@@ -134,8 +136,11 @@ public class StreamWriter implements AutoCloseable {
   abstract static class ConnectionPoolKey {
     abstract String location();
 
-    public static ConnectionPoolKey create(String location) {
-      return new AutoValue_StreamWriter_ConnectionPoolKey(location);
+    abstract int credentialsHashcode();
+
+    public static ConnectionPoolKey create(String location, @Nullable Credentials credentials) {
+      return new AutoValue_StreamWriter_ConnectionPoolKey(
+          location, credentials != null ? credentials.hashCode() : 0);
     }
   }
 
@@ -273,6 +278,7 @@ public class StreamWriter implements AutoCloseable {
         }
       }
       this.location = location;
+      CredentialsProvider credentialsProvider = client.getSettings().getCredentialsProvider();
       // Assume the connection in the same pool share the same client and trace id.
       // The first StreamWriter for a new stub will create the pool for the other
       // streams in the same region, meaning the per StreamWriter settings are no
@@ -280,7 +286,9 @@ public class StreamWriter implements AutoCloseable {
       this.singleConnectionOrConnectionPool =
           SingleConnectionOrConnectionPool.ofConnectionPool(
               connectionPoolMap.computeIfAbsent(
-                  ConnectionPoolKey.create(location),
+                  ConnectionPoolKey.create(
+                      location,
+                      credentialsProvider != null ? credentialsProvider.getCredentials() : null),
                   (key) -> {
                     return new ConnectionWorkerPool(
                         builder.maxInflightRequest,
@@ -579,6 +587,11 @@ public class StreamWriter implements AutoCloseable {
       connectionWorkerPool = entry.getValue();
     }
     return connectionWorkerPool;
+  }
+
+  @VisibleForTesting
+  Map<ConnectionPoolKey, ConnectionWorkerPool> getTestOnlyConnectionPoolMap() {
+    return connectionPoolMap;
   }
 
   // A method to clear the static connectio pool to avoid making pool visible to other tests.

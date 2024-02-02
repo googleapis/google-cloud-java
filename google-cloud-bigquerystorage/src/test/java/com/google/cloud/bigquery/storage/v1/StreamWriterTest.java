@@ -26,6 +26,8 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -38,6 +40,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnknownException;
+import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
@@ -922,6 +925,109 @@ public class StreamWriterTest {
 
     writer1.close();
     writer2.close();
+  }
+
+  @Test
+  public void testFixedCredentialProvider_nullProvider() throws Exception {
+    // Use the shared connection mode.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    ProtoSchema schema1 = createProtoSchema("Schema1");
+    ProtoSchema schema2 = createProtoSchema("Schema2");
+    CredentialsProvider credentialsProvider1 = FixedCredentialsProvider.create(null);
+    CredentialsProvider credentialsProvider2 = FixedCredentialsProvider.create(null);
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(schema1)
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .setCredentialsProvider(credentialsProvider1)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2, client)
+            .setWriterSchema(schema2)
+            .setMaxInflightRequests(1)
+            .setEnableConnectionPool(true)
+            .setCredentialsProvider(credentialsProvider2)
+            .setLocation("US")
+            .build();
+    // Null credential provided belong to the same connection pool.
+    assertEquals(writer1.getTestOnlyConnectionPoolMap().size(), 1);
+  }
+
+  @Test
+  public void testFixedCredentialProvider_twoCredentialsSplitPool() throws Exception {
+    // Use the shared connection mode.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    ProtoSchema schema1 = createProtoSchema("Schema1");
+    ProtoSchema schema2 = createProtoSchema("Schema2");
+    UserCredentials userCredentials1 =
+        UserCredentials.newBuilder()
+            .setClientId("CLIENT_ID_1")
+            .setClientSecret("CLIENT_SECRET_1")
+            .setRefreshToken("REFRESH_TOKEN_1")
+            .build();
+    CredentialsProvider credentialsProvider1 = FixedCredentialsProvider.create(userCredentials1);
+    UserCredentials userCredentials2 =
+        UserCredentials.newBuilder()
+            .setClientId("CLIENT_ID_2")
+            .setClientSecret("CLIENT_SECRET_2")
+            .setRefreshToken("REFRESH_TOKEN_2")
+            .build();
+    CredentialsProvider credentialsProvider2 = FixedCredentialsProvider.create(userCredentials2);
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1)
+            .setWriterSchema(schema1)
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .setCredentialsProvider(credentialsProvider1)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2)
+            .setWriterSchema(schema2)
+            .setMaxInflightRequests(1)
+            .setEnableConnectionPool(true)
+            .setLocation("US")
+            .setCredentialsProvider(credentialsProvider2)
+            .build();
+    assertEquals(writer1.getTestOnlyConnectionPoolMap().size(), 2);
+  }
+
+  @Test
+  public void testFixedCredentialProvider_twoProviderSameCredentialSharePool() throws Exception {
+    // Use the shared connection mode.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    ProtoSchema schema1 = createProtoSchema("Schema1");
+    ProtoSchema schema2 = createProtoSchema("Schema2");
+    UserCredentials userCredentials =
+        UserCredentials.newBuilder()
+            .setClientId("CLIENT_ID_1")
+            .setClientSecret("CLIENT_SECRET_1")
+            .setRefreshToken("REFRESH_TOKEN_1")
+            .build();
+    CredentialsProvider credentialsProvider1 = FixedCredentialsProvider.create(userCredentials);
+    CredentialsProvider credentialsProvider2 = FixedCredentialsProvider.create(userCredentials);
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1)
+            .setWriterSchema(schema1)
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .setCredentialsProvider(credentialsProvider1)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2)
+            .setWriterSchema(schema2)
+            .setMaxInflightRequests(1)
+            .setEnableConnectionPool(true)
+            .setLocation("US")
+            .setCredentialsProvider(credentialsProvider2)
+            .build();
+    assertEquals(writer1.getTestOnlyConnectionPoolMap().size(), 1);
   }
 
   @Test
