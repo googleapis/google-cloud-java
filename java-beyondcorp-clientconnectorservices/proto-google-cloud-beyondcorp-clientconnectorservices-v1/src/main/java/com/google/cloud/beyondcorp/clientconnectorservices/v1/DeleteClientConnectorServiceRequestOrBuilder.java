@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.2
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface DeleteClientConnectorServiceRequestOrBuilder
