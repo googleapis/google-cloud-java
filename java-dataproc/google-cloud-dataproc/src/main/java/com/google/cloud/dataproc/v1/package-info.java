@@ -118,6 +118,46 @@
  * }
  * }</pre>
  *
+ * <p>======================= SessionTemplateControllerClient =======================
+ *
+ * <p>Service Description: The SessionTemplateController provides methods to manage session
+ * templates.
+ *
+ * <p>Sample for SessionTemplateControllerClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionTemplateControllerClient sessionTemplateControllerClient =
+ *     SessionTemplateControllerClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   SessionTemplate sessionTemplate = SessionTemplate.newBuilder().build();
+ *   SessionTemplate response =
+ *       sessionTemplateControllerClient.createSessionTemplate(parent, sessionTemplate);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SessionControllerClient =======================
+ *
+ * <p>Service Description: The `SessionController` provides methods to manage interactive sessions.
+ *
+ * <p>Sample for SessionControllerClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionControllerClient sessionControllerClient = SessionControllerClient.create()) {
+ *   SessionName name = SessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]");
+ *   Session response = sessionControllerClient.getSession(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= WorkflowTemplateServiceClient =======================
  *
  * <p>Service Description: The API interface for managing Workflow Templates in the Dataproc API.
