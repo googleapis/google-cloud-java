@@ -126,7 +126,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DirectPredict</td>
- *      <td><p> Perform an unary online prediction request for Vertex first-party products and frameworks.</td>
+ *      <td><p> Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +140,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DirectRawPredict</td>
- *      <td><p> Perform an online prediction request through gRPC.</td>
+ *      <td><p> Perform an unary online prediction request to a gRPC model server for custom containers.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -149,6 +149,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> directRawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamDirectPredict</td>
+ *      <td><p> Perform a streaming online prediction request to a gRPC model server for Vertex first-party products and frameworks.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamDirectPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamDirectRawPredict</td>
+ *      <td><p> Perform a streaming online prediction request to a gRPC model server for custom containers.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamDirectRawPredictCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -218,6 +238,24 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> countTokensCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateContent</td>
+ *      <td><p> Generate content with multimodal inputs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateContent(GenerateContentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateContent(String model, List&lt;Content&gt; contents)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateContentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -767,7 +805,8 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an unary online prediction request for Vertex first-party products and frameworks.
+   * Perform an unary online prediction request to a gRPC model server for Vertex first-party
+   * products and frameworks.
    *
    * <p>Sample code:
    *
@@ -800,7 +839,8 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an unary online prediction request for Vertex first-party products and frameworks.
+   * Perform an unary online prediction request to a gRPC model server for Vertex first-party
+   * products and frameworks.
    *
    * <p>Sample code:
    *
@@ -833,7 +873,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction request through gRPC.
+   * Perform an unary online prediction request to a gRPC model server for custom containers.
    *
    * <p>Sample code:
    *
@@ -866,7 +906,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction request through gRPC.
+   * Perform an unary online prediction request to a gRPC model server for custom containers.
    *
    * <p>Sample code:
    *
@@ -896,6 +936,79 @@ public class PredictionServiceClient implements BackgroundResource {
   public final UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable() {
     return stub.directRawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction request to a gRPC model server for Vertex first-party
+   * products and frameworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BidiStream<StreamDirectPredictRequest, StreamDirectPredictResponse> bidiStream =
+   *       predictionServiceClient.streamDirectPredictCallable().call();
+   *   StreamDirectPredictRequest request =
+   *       StreamDirectPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamDirectPredictResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    return stub.streamDirectPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction request to a gRPC model server for custom containers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BidiStream<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse> bidiStream =
+   *       predictionServiceClient.streamDirectRawPredictCallable().call();
+   *   StreamDirectRawPredictRequest request =
+   *       StreamDirectRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setMethodName("methodName-723163380")
+   *           .setInput(ByteString.EMPTY)
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamDirectRawPredictResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    return stub.streamDirectRawPredictCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1352,6 +1465,103 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
     return stub.countTokensCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String model = "model104069929";
+   *   List<Content> contents = new ArrayList<>();
+   *   GenerateContentResponse response = predictionServiceClient.generateContent(model, contents);
+   * }
+   * }</pre>
+   *
+   * @param model Required. The name of the publisher model requested to serve the prediction.
+   *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   * @param contents Required. The content of the current conversation with the model.
+   *     <p>For single-turn queries, this is a single instance. For multi-turn queries, this is a
+   *     repeated field that contains conversation history + latest request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateContentResponse generateContent(String model, List<Content> contents) {
+    GenerateContentRequest request =
+        GenerateContentRequest.newBuilder().setModel(model).addAllContents(contents).build();
+    return generateContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   GenerateContentRequest request =
+   *       GenerateContentRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
+   *           .build();
+   *   GenerateContentResponse response = predictionServiceClient.generateContent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateContentResponse generateContent(GenerateContentRequest request) {
+    return generateContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   GenerateContentRequest request =
+   *       GenerateContentRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GenerateContentResponse> future =
+   *       predictionServiceClient.generateContentCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateContentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateContentRequest, GenerateContentResponse>
+      generateContentCallable() {
+    return stub.generateContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -57,6 +57,22 @@ public final class PredictionServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DirectRawPredictResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictRequest_fieldAccessorTable;
@@ -163,152 +179,183 @@ public final class PredictionServiceProto {
           + "int\030\001 \001(\tB+\342A\001\002\372A$\n\"aiplatform.googleapi"
           + "s.com/Endpoint\022\023\n\013method_name\030\002 \001(\t\022\r\n\005i"
           + "nput\030\003 \001(\014\"*\n\030DirectRawPredictResponse\022\016"
-          + "\n\006output\030\001 \001(\014\"\316\001\n\027StreamingPredictReque"
-          + "st\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\"aiplatfor"
-          + "m.googleapis.com/Endpoint\0227\n\006inputs\030\002 \003("
-          + "\0132\'.google.cloud.aiplatform.v1beta1.Tens"
-          + "or\022;\n\nparameters\030\003 \001(\0132\'.google.cloud.ai"
-          + "platform.v1beta1.Tensor\"\221\001\n\030StreamingPre"
-          + "dictResponse\0228\n\007outputs\030\001 \003(\0132\'.google.c"
-          + "loud.aiplatform.v1beta1.Tensor\022;\n\nparame"
-          + "ters\030\002 \001(\0132\'.google.cloud.aiplatform.v1b"
-          + "eta1.Tensor\"\177\n\032StreamingRawPredictReques"
-          + "t\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\"aiplatform"
-          + ".googleapis.com/Endpoint\022\023\n\013method_name\030"
-          + "\002 \001(\t\022\r\n\005input\030\003 \001(\014\"-\n\033StreamingRawPred"
-          + "ictResponse\022\016\n\006output\030\001 \001(\014\"\266\004\n\016ExplainR"
-          + "equest\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\"aipla"
-          + "tform.googleapis.com/Endpoint\022/\n\tinstanc"
-          + "es\030\002 \003(\0132\026.google.protobuf.ValueB\004\342A\001\002\022*"
-          + "\n\nparameters\030\004 \001(\0132\026.google.protobuf.Val"
-          + "ue\022[\n\031explanation_spec_override\030\005 \001(\01328."
-          + "google.cloud.aiplatform.v1beta1.Explanat"
-          + "ionSpecOverride\022\212\001\n$concurrent_explanati"
-          + "on_spec_override\030\006 \003(\0132V.google.cloud.ai"
-          + "platform.v1beta1.ExplainRequest.Concurre"
-          + "ntExplanationSpecOverrideEntryB\004\342A\001\001\022\031\n\021"
-          + "deployed_model_id\030\003 \001(\t\032\202\001\n&ConcurrentEx"
-          + "planationSpecOverrideEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "G\n\005value\030\002 \001(\01328.google.cloud.aiplatform"
-          + ".v1beta1.ExplanationSpecOverride:\0028\001\"\361\003\n"
-          + "\017ExplainResponse\022B\n\014explanations\030\001 \003(\0132,"
-          + ".google.cloud.aiplatform.v1beta1.Explana"
-          + "tion\022m\n\027concurrent_explanations\030\004 \003(\0132L."
-          + "google.cloud.aiplatform.v1beta1.ExplainR"
-          + "esponse.ConcurrentExplanationsEntry\022\031\n\021d"
-          + "eployed_model_id\030\002 \001(\t\022+\n\013predictions\030\003 "
-          + "\003(\0132\026.google.protobuf.Value\032[\n\025Concurren"
-          + "tExplanation\022B\n\014explanations\030\001 \003(\0132,.goo"
-          + "gle.cloud.aiplatform.v1beta1.Explanation"
-          + "\032\205\001\n\033ConcurrentExplanationsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022U\n\005value\030\002 \001(\0132F.google.cloud.aipl"
-          + "atform.v1beta1.ExplainResponse.Concurren"
-          + "tExplanation:\0028\001\"\333\001\n\022CountTokensRequest\022"
-          + "=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\"aiplatform.g"
-          + "oogleapis.com/Endpoint\022\023\n\005model\030\003 \001(\tB\004\342"
-          + "A\001\002\022/\n\tinstances\030\002 \003(\0132\026.google.protobuf"
-          + ".ValueB\004\342A\001\002\022@\n\010contents\030\004 \003(\0132(.google."
-          + "cloud.aiplatform.v1beta1.ContentB\004\342A\001\002\"N"
-          + "\n\023CountTokensResponse\022\024\n\014total_tokens\030\001 "
-          + "\001(\005\022!\n\031total_billable_characters\030\002 \001(\005\"\316"
-          + "\002\n\026GenerateContentRequest\022\023\n\005model\030\005 \001(\t"
-          + "B\004\342A\001\002\022@\n\010contents\030\002 \003(\0132(.google.cloud."
-          + "aiplatform.v1beta1.ContentB\004\342A\001\002\022:\n\005tool"
-          + "s\030\006 \003(\0132%.google.cloud.aiplatform.v1beta"
-          + "1.ToolB\004\342A\001\001\022M\n\017safety_settings\030\003 \003(\0132.."
-          + "google.cloud.aiplatform.v1beta1.SafetySe"
-          + "ttingB\004\342A\001\001\022R\n\021generation_config\030\004 \001(\01321"
-          + ".google.cloud.aiplatform.v1beta1.Generat"
-          + "ionConfigB\004\342A\001\001\"\316\005\n\027GenerateContentRespo"
-          + "nse\022D\n\ncandidates\030\002 \003(\0132*.google.cloud.a"
-          + "iplatform.v1beta1.CandidateB\004\342A\001\003\022f\n\017pro"
-          + "mpt_feedback\030\003 \001(\0132G.google.cloud.aiplat"
-          + "form.v1beta1.GenerateContentResponse.Pro"
-          + "mptFeedbackB\004\342A\001\003\022^\n\016usage_metadata\030\004 \001("
-          + "\0132F.google.cloud.aiplatform.v1beta1.Gene"
-          + "rateContentResponse.UsageMetadata\032\274\002\n\016Pr"
-          + "omptFeedback\022q\n\014block_reason\030\001 \001(\0162U.goo"
-          + "gle.cloud.aiplatform.v1beta1.GenerateCon"
-          + "tentResponse.PromptFeedback.BlockedReaso"
-          + "nB\004\342A\001\003\022K\n\016safety_ratings\030\002 \003(\0132-.google"
-          + ".cloud.aiplatform.v1beta1.SafetyRatingB\004"
-          + "\342A\001\003\022\"\n\024block_reason_message\030\003 \001(\tB\004\342A\001\003"
-          + "\"F\n\rBlockedReason\022\036\n\032BLOCKED_REASON_UNSP"
-          + "ECIFIED\020\000\022\n\n\006SAFETY\020\001\022\t\n\005OTHER\020\002\032f\n\rUsag"
-          + "eMetadata\022\032\n\022prompt_token_count\030\001 \001(\005\022\036\n"
-          + "\026candidates_token_count\030\002 \001(\005\022\031\n\021total_t"
-          + "oken_count\030\003 \001(\0052\264\024\n\021PredictionService\022\250"
-          + "\002\n\007Predict\022/.google.cloud.aiplatform.v1b"
-          + "eta1.PredictRequest\0320.google.cloud.aipla"
-          + "tform.v1beta1.PredictResponse\"\271\001\332A\035endpo"
-          + "int,instances,parameters\202\323\344\223\002\222\001\">/v1beta"
-          + "1/{endpoint=projects/*/locations/*/endpo"
-          + "ints/*}:predict:\001*ZM\"H/v1beta1/{endpoint"
-          + "=projects/*/locations/*/publishers/*/mod"
-          + "els/*}:predict:\001*\022\215\002\n\nRawPredict\0222.googl"
-          + "e.cloud.aiplatform.v1beta1.RawPredictReq"
-          + "uest\032\024.google.api.HttpBody\"\264\001\332A\022endpoint"
-          + ",http_body\202\323\344\223\002\230\001\"A/v1beta1/{endpoint=pr"
-          + "ojects/*/locations/*/endpoints/*}:rawPre"
-          + "dict:\001*ZP\"K/v1beta1/{endpoint=projects/*"
-          + "/locations/*/publishers/*/models/*}:rawP"
-          + "redict:\001*\022\317\001\n\rDirectPredict\0225.google.clo"
-          + "ud.aiplatform.v1beta1.DirectPredictReque"
-          + "st\0326.google.cloud.aiplatform.v1beta1.Dir"
-          + "ectPredictResponse\"O\202\323\344\223\002I\"D/v1beta1/{en"
-          + "dpoint=projects/*/locations/*/endpoints/"
-          + "*}:directPredict:\001*\022\333\001\n\020DirectRawPredict"
-          + "\0228.google.cloud.aiplatform.v1beta1.Direc"
-          + "tRawPredictRequest\0329.google.cloud.aiplat"
-          + "form.v1beta1.DirectRawPredictResponse\"R\202"
-          + "\323\344\223\002L\"G/v1beta1/{endpoint=projects/*/loc"
-          + "ations/*/endpoints/*}:directRawPredict:\001"
-          + "*\022\215\001\n\020StreamingPredict\0228.google.cloud.ai"
-          + "platform.v1beta1.StreamingPredictRequest"
-          + "\0329.google.cloud.aiplatform.v1beta1.Strea"
-          + "mingPredictResponse\"\000(\0010\001\022\311\002\n\026ServerStre"
-          + "amingPredict\0228.google.cloud.aiplatform.v"
-          + "1beta1.StreamingPredictRequest\0329.google."
-          + "cloud.aiplatform.v1beta1.StreamingPredic"
-          + "tResponse\"\267\001\202\323\344\223\002\260\001\"M/v1beta1/{endpoint="
-          + "projects/*/locations/*/endpoints/*}:serv"
-          + "erStreamingPredict:\001*Z\\\"W/v1beta1/{endpo"
-          + "int=projects/*/locations/*/publishers/*/"
-          + "models/*}:serverStreamingPredict:\001*0\001\022\226\001"
-          + "\n\023StreamingRawPredict\022;.google.cloud.aip"
-          + "latform.v1beta1.StreamingRawPredictReque"
-          + "st\032<.google.cloud.aiplatform.v1beta1.Str"
-          + "eamingRawPredictResponse\"\000(\0010\001\022\351\001\n\007Expla"
-          + "in\022/.google.cloud.aiplatform.v1beta1.Exp"
-          + "lainRequest\0320.google.cloud.aiplatform.v1"
-          + "beta1.ExplainResponse\"{\332A/endpoint,insta"
-          + "nces,parameters,deployed_model_id\202\323\344\223\002C\""
-          + ">/v1beta1/{endpoint=projects/*/locations"
-          + "/*/endpoints/*}:explain:\001*\022\261\002\n\013CountToke"
-          + "ns\0223.google.cloud.aiplatform.v1beta1.Cou"
-          + "ntTokensRequest\0324.google.cloud.aiplatfor"
-          + "m.v1beta1.CountTokensResponse\"\266\001\332A\022endpo"
-          + "int,instances\202\323\344\223\002\232\001\"B/v1beta1/{endpoint"
-          + "=projects/*/locations/*/endpoints/*}:cou"
-          + "ntTokens:\001*ZQ\"L/v1beta1/{endpoint=projec"
-          + "ts/*/locations/*/publishers/*/models/*}:"
-          + "countTokens:\001*\022\317\002\n\025StreamGenerateContent"
-          + "\0227.google.cloud.aiplatform.v1beta1.Gener"
-          + "ateContentRequest\0328.google.cloud.aiplatf"
-          + "orm.v1beta1.GenerateContentResponse\"\300\001\332A"
-          + "\016model,contents\202\323\344\223\002\250\001\"I/v1beta1/{model="
-          + "projects/*/locations/*/endpoints/*}:stre"
-          + "amGenerateContent:\001*ZX\"S/v1beta1/{model="
+          + "\n\006output\030\001 \001(\014\"\335\001\n\032StreamDirectPredictRe"
+          + "quest\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\"aiplat"
+          + "form.googleapis.com/Endpoint\022=\n\006inputs\030\002"
+          + " \003(\0132\'.google.cloud.aiplatform.v1beta1.T"
+          + "ensorB\004\342A\001\001\022A\n\nparameters\030\003 \001(\0132\'.google"
+          + ".cloud.aiplatform.v1beta1.TensorB\004\342A\001\001\"\224"
+          + "\001\n\033StreamDirectPredictResponse\0228\n\007output"
+          + "s\030\001 \003(\0132\'.google.cloud.aiplatform.v1beta"
+          + "1.Tensor\022;\n\nparameters\030\002 \001(\0132\'.google.cl"
+          + "oud.aiplatform.v1beta1.Tensor\"\216\001\n\035Stream"
+          + "DirectRawPredictRequest\022=\n\010endpoint\030\001 \001("
+          + "\tB+\342A\001\002\372A$\n\"aiplatform.googleapis.com/En"
+          + "dpoint\022\031\n\013method_name\030\002 \001(\tB\004\342A\001\001\022\023\n\005inp"
+          + "ut\030\003 \001(\014B\004\342A\001\001\"0\n\036StreamDirectRawPredict"
+          + "Response\022\016\n\006output\030\001 \001(\014\"\316\001\n\027StreamingPr"
+          + "edictRequest\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"aiplatform.googleapis.com/Endpoint\0227\n\006i"
+          + "nputs\030\002 \003(\0132\'.google.cloud.aiplatform.v1"
+          + "beta1.Tensor\022;\n\nparameters\030\003 \001(\0132\'.googl"
+          + "e.cloud.aiplatform.v1beta1.Tensor\"\221\001\n\030St"
+          + "reamingPredictResponse\0228\n\007outputs\030\001 \003(\0132"
+          + "\'.google.cloud.aiplatform.v1beta1.Tensor"
+          + "\022;\n\nparameters\030\002 \001(\0132\'.google.cloud.aipl"
+          + "atform.v1beta1.Tensor\"\177\n\032StreamingRawPre"
+          + "dictRequest\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\""
+          + "aiplatform.googleapis.com/Endpoint\022\023\n\013me"
+          + "thod_name\030\002 \001(\t\022\r\n\005input\030\003 \001(\014\"-\n\033Stream"
+          + "ingRawPredictResponse\022\016\n\006output\030\001 \001(\014\"\266\004"
+          + "\n\016ExplainRequest\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002"
+          + "\372A$\n\"aiplatform.googleapis.com/Endpoint\022"
+          + "/\n\tinstances\030\002 \003(\0132\026.google.protobuf.Val"
+          + "ueB\004\342A\001\002\022*\n\nparameters\030\004 \001(\0132\026.google.pr"
+          + "otobuf.Value\022[\n\031explanation_spec_overrid"
+          + "e\030\005 \001(\01328.google.cloud.aiplatform.v1beta"
+          + "1.ExplanationSpecOverride\022\212\001\n$concurrent"
+          + "_explanation_spec_override\030\006 \003(\0132V.googl"
+          + "e.cloud.aiplatform.v1beta1.ExplainReques"
+          + "t.ConcurrentExplanationSpecOverrideEntry"
+          + "B\004\342A\001\001\022\031\n\021deployed_model_id\030\003 \001(\t\032\202\001\n&Co"
+          + "ncurrentExplanationSpecOverrideEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022G\n\005value\030\002 \001(\01328.google.cloud."
+          + "aiplatform.v1beta1.ExplanationSpecOverri"
+          + "de:\0028\001\"\361\003\n\017ExplainResponse\022B\n\014explanatio"
+          + "ns\030\001 \003(\0132,.google.cloud.aiplatform.v1bet"
+          + "a1.Explanation\022m\n\027concurrent_explanation"
+          + "s\030\004 \003(\0132L.google.cloud.aiplatform.v1beta"
+          + "1.ExplainResponse.ConcurrentExplanations"
+          + "Entry\022\031\n\021deployed_model_id\030\002 \001(\t\022+\n\013pred"
+          + "ictions\030\003 \003(\0132\026.google.protobuf.Value\032[\n"
+          + "\025ConcurrentExplanation\022B\n\014explanations\030\001"
+          + " \003(\0132,.google.cloud.aiplatform.v1beta1.E"
+          + "xplanation\032\205\001\n\033ConcurrentExplanationsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022U\n\005value\030\002 \001(\0132F.google."
+          + "cloud.aiplatform.v1beta1.ExplainResponse"
+          + ".ConcurrentExplanation:\0028\001\"\333\001\n\022CountToke"
+          + "nsRequest\022=\n\010endpoint\030\001 \001(\tB+\342A\001\002\372A$\n\"ai"
+          + "platform.googleapis.com/Endpoint\022\023\n\005mode"
+          + "l\030\003 \001(\tB\004\342A\001\002\022/\n\tinstances\030\002 \003(\0132\026.googl"
+          + "e.protobuf.ValueB\004\342A\001\002\022@\n\010contents\030\004 \003(\013"
+          + "2(.google.cloud.aiplatform.v1beta1.Conte"
+          + "ntB\004\342A\001\002\"N\n\023CountTokensResponse\022\024\n\014total"
+          + "_tokens\030\001 \001(\005\022!\n\031total_billable_characte"
+          + "rs\030\002 \001(\005\"\316\002\n\026GenerateContentRequest\022\023\n\005m"
+          + "odel\030\005 \001(\tB\004\342A\001\002\022@\n\010contents\030\002 \003(\0132(.goo"
+          + "gle.cloud.aiplatform.v1beta1.ContentB\004\342A"
+          + "\001\002\022:\n\005tools\030\006 \003(\0132%.google.cloud.aiplatf"
+          + "orm.v1beta1.ToolB\004\342A\001\001\022M\n\017safety_setting"
+          + "s\030\003 \003(\0132..google.cloud.aiplatform.v1beta"
+          + "1.SafetySettingB\004\342A\001\001\022R\n\021generation_conf"
+          + "ig\030\004 \001(\01321.google.cloud.aiplatform.v1bet"
+          + "a1.GenerationConfigB\004\342A\001\001\"\316\005\n\027GenerateCo"
+          + "ntentResponse\022D\n\ncandidates\030\002 \003(\0132*.goog"
+          + "le.cloud.aiplatform.v1beta1.CandidateB\004\342"
+          + "A\001\003\022f\n\017prompt_feedback\030\003 \001(\0132G.google.cl"
+          + "oud.aiplatform.v1beta1.GenerateContentRe"
+          + "sponse.PromptFeedbackB\004\342A\001\003\022^\n\016usage_met"
+          + "adata\030\004 \001(\0132F.google.cloud.aiplatform.v1"
+          + "beta1.GenerateContentResponse.UsageMetad"
+          + "ata\032\274\002\n\016PromptFeedback\022q\n\014block_reason\030\001"
+          + " \001(\0162U.google.cloud.aiplatform.v1beta1.G"
+          + "enerateContentResponse.PromptFeedback.Bl"
+          + "ockedReasonB\004\342A\001\003\022K\n\016safety_ratings\030\002 \003("
+          + "\0132-.google.cloud.aiplatform.v1beta1.Safe"
+          + "tyRatingB\004\342A\001\003\022\"\n\024block_reason_message\030\003"
+          + " \001(\tB\004\342A\001\003\"F\n\rBlockedReason\022\036\n\032BLOCKED_R"
+          + "EASON_UNSPECIFIED\020\000\022\n\n\006SAFETY\020\001\022\t\n\005OTHER"
+          + "\020\002\032f\n\rUsageMetadata\022\032\n\022prompt_token_coun"
+          + "t\030\001 \001(\005\022\036\n\026candidates_token_count\030\002 \001(\005\022"
+          + "\031\n\021total_token_count\030\003 \001(\0052\255\031\n\021Predictio"
+          + "nService\022\250\002\n\007Predict\022/.google.cloud.aipl"
+          + "atform.v1beta1.PredictRequest\0320.google.c"
+          + "loud.aiplatform.v1beta1.PredictResponse\""
+          + "\271\001\332A\035endpoint,instances,parameters\202\323\344\223\002\222"
+          + "\001\">/v1beta1/{endpoint=projects/*/locatio"
+          + "ns/*/endpoints/*}:predict:\001*ZM\"H/v1beta1"
+          + "/{endpoint=projects/*/locations/*/publis"
+          + "hers/*/models/*}:predict:\001*\022\215\002\n\nRawPredi"
+          + "ct\0222.google.cloud.aiplatform.v1beta1.Raw"
+          + "PredictRequest\032\024.google.api.HttpBody\"\264\001\332"
+          + "A\022endpoint,http_body\202\323\344\223\002\230\001\"A/v1beta1/{e"
+          + "ndpoint=projects/*/locations/*/endpoints"
+          + "/*}:rawPredict:\001*ZP\"K/v1beta1/{endpoint="
           + "projects/*/locations/*/publishers/*/mode"
-          + "ls/*}:streamGenerateContent:\001*0\001\032M\312A\031aip"
-          + "latform.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\355\001\n#com."
-          + "google.cloud.aiplatform.v1beta1B\026Predict"
-          + "ionServiceProtoP\001ZCcloud.google.com/go/a"
-          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
-          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
-          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
-          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "ls/*}:rawPredict:\001*\022\317\001\n\rDirectPredict\0225."
+          + "google.cloud.aiplatform.v1beta1.DirectPr"
+          + "edictRequest\0326.google.cloud.aiplatform.v"
+          + "1beta1.DirectPredictResponse\"O\202\323\344\223\002I\"D/v"
+          + "1beta1/{endpoint=projects/*/locations/*/"
+          + "endpoints/*}:directPredict:\001*\022\333\001\n\020Direct"
+          + "RawPredict\0228.google.cloud.aiplatform.v1b"
+          + "eta1.DirectRawPredictRequest\0329.google.cl"
+          + "oud.aiplatform.v1beta1.DirectRawPredictR"
+          + "esponse\"R\202\323\344\223\002L\"G/v1beta1/{endpoint=proj"
+          + "ects/*/locations/*/endpoints/*}:directRa"
+          + "wPredict:\001*\022\226\001\n\023StreamDirectPredict\022;.go"
+          + "ogle.cloud.aiplatform.v1beta1.StreamDire"
+          + "ctPredictRequest\032<.google.cloud.aiplatfo"
+          + "rm.v1beta1.StreamDirectPredictResponse\"\000"
+          + "(\0010\001\022\237\001\n\026StreamDirectRawPredict\022>.google"
+          + ".cloud.aiplatform.v1beta1.StreamDirectRa"
+          + "wPredictRequest\032?.google.cloud.aiplatfor"
+          + "m.v1beta1.StreamDirectRawPredictResponse"
+          + "\"\000(\0010\001\022\215\001\n\020StreamingPredict\0228.google.clo"
+          + "ud.aiplatform.v1beta1.StreamingPredictRe"
+          + "quest\0329.google.cloud.aiplatform.v1beta1."
+          + "StreamingPredictResponse\"\000(\0010\001\022\311\002\n\026Serve"
+          + "rStreamingPredict\0228.google.cloud.aiplatf"
+          + "orm.v1beta1.StreamingPredictRequest\0329.go"
+          + "ogle.cloud.aiplatform.v1beta1.StreamingP"
+          + "redictResponse\"\267\001\202\323\344\223\002\260\001\"M/v1beta1/{endp"
+          + "oint=projects/*/locations/*/endpoints/*}"
+          + ":serverStreamingPredict:\001*Z\\\"W/v1beta1/{"
+          + "endpoint=projects/*/locations/*/publishe"
+          + "rs/*/models/*}:serverStreamingPredict:\001*"
+          + "0\001\022\226\001\n\023StreamingRawPredict\022;.google.clou"
+          + "d.aiplatform.v1beta1.StreamingRawPredict"
+          + "Request\032<.google.cloud.aiplatform.v1beta"
+          + "1.StreamingRawPredictResponse\"\000(\0010\001\022\351\001\n\007"
+          + "Explain\022/.google.cloud.aiplatform.v1beta"
+          + "1.ExplainRequest\0320.google.cloud.aiplatfo"
+          + "rm.v1beta1.ExplainResponse\"{\332A/endpoint,"
+          + "instances,parameters,deployed_model_id\202\323"
+          + "\344\223\002C\">/v1beta1/{endpoint=projects/*/loca"
+          + "tions/*/endpoints/*}:explain:\001*\022\261\002\n\013Coun"
+          + "tTokens\0223.google.cloud.aiplatform.v1beta"
+          + "1.CountTokensRequest\0324.google.cloud.aipl"
+          + "atform.v1beta1.CountTokensResponse\"\266\001\332A\022"
+          + "endpoint,instances\202\323\344\223\002\232\001\"B/v1beta1/{end"
+          + "point=projects/*/locations/*/endpoints/*"
+          + "}:countTokens:\001*ZQ\"L/v1beta1/{endpoint=p"
+          + "rojects/*/locations/*/publishers/*/model"
+          + "s/*}:countTokens:\001*\022\273\002\n\017GenerateContent\022"
+          + "7.google.cloud.aiplatform.v1beta1.Genera"
+          + "teContentRequest\0328.google.cloud.aiplatfo"
+          + "rm.v1beta1.GenerateContentResponse\"\264\001\332A\016"
+          + "model,contents\202\323\344\223\002\234\001\"C/v1beta1/{model=p"
+          + "rojects/*/locations/*/endpoints/*}:gener"
+          + "ateContent:\001*ZR\"M/v1beta1/{model=project"
+          + "s/*/locations/*/publishers/*/models/*}:g"
+          + "enerateContent:\001*\022\317\002\n\025StreamGenerateCont"
+          + "ent\0227.google.cloud.aiplatform.v1beta1.Ge"
+          + "nerateContentRequest\0328.google.cloud.aipl"
+          + "atform.v1beta1.GenerateContentResponse\"\300"
+          + "\001\332A\016model,contents\202\323\344\223\002\250\001\"I/v1beta1/{mod"
+          + "el=projects/*/locations/*/endpoints/*}:s"
+          + "treamGenerateContent:\001*ZX\"S/v1beta1/{mod"
+          + "el=projects/*/locations/*/publishers/*/m"
+          + "odels/*}:streamGenerateContent:\001*0\001\032M\312A\031"
+          + "aiplatform.googleapis.com\322A.https://www."
+          + "googleapis.com/auth/cloud-platformB\355\001\n#c"
+          + "om.google.cloud.aiplatform.v1beta1B\026Pred"
+          + "ictionServiceProtoP\001ZCcloud.google.com/g"
+          + "o/aiplatform/apiv1beta1/aiplatformpb;aip"
+          + "latformpb\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -386,8 +433,40 @@ public final class PredictionServiceProto {
             new java.lang.String[] {
               "Output",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictRequest_descriptor,
+            new java.lang.String[] {
+              "Endpoint", "Inputs", "Parameters",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StreamDirectPredictResponse_descriptor,
+            new java.lang.String[] {
+              "Outputs", "Parameters",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictRequest_descriptor,
+            new java.lang.String[] {
+              "Endpoint", "MethodName", "Input",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StreamDirectRawPredictResponse_descriptor,
+            new java.lang.String[] {
+              "Output",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictRequest_descriptor,
@@ -395,7 +474,7 @@ public final class PredictionServiceProto {
               "Endpoint", "Inputs", "Parameters",
             });
     internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StreamingPredictResponse_descriptor,
@@ -403,7 +482,7 @@ public final class PredictionServiceProto {
               "Outputs", "Parameters",
             });
     internal_static_google_cloud_aiplatform_v1beta1_StreamingRawPredictRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1beta1_StreamingRawPredictRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StreamingRawPredictRequest_descriptor,
@@ -411,7 +490,7 @@ public final class PredictionServiceProto {
               "Endpoint", "MethodName", "Input",
             });
     internal_static_google_cloud_aiplatform_v1beta1_StreamingRawPredictResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1beta1_StreamingRawPredictResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StreamingRawPredictResponse_descriptor,
@@ -419,7 +498,7 @@ public final class PredictionServiceProto {
               "Output",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExplainRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1beta1_ExplainRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExplainRequest_descriptor,
@@ -442,7 +521,7 @@ public final class PredictionServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_descriptor,
@@ -470,7 +549,7 @@ public final class PredictionServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CountTokensRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_aiplatform_v1beta1_CountTokensRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CountTokensRequest_descriptor,
@@ -478,7 +557,7 @@ public final class PredictionServiceProto {
               "Endpoint", "Model", "Instances", "Contents",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CountTokensResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_aiplatform_v1beta1_CountTokensResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CountTokensResponse_descriptor,
@@ -486,7 +565,7 @@ public final class PredictionServiceProto {
               "TotalTokens", "TotalBillableCharacters",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GenerateContentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_aiplatform_v1beta1_GenerateContentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GenerateContentRequest_descriptor,
@@ -494,7 +573,7 @@ public final class PredictionServiceProto {
               "Model", "Contents", "Tools", "SafetySettings", "GenerationConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GenerateContentResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_aiplatform_v1beta1_GenerateContentResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GenerateContentResponse_descriptor,

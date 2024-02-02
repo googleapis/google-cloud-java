@@ -37,6 +37,10 @@ import com.google.cloud.aiplatform.v1beta1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
@@ -79,6 +83,16 @@ public abstract class PredictionServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: directRawPredictCallable()");
   }
 
+  public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectRawPredictCallable()");
+  }
+
   public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       streamingPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingPredictCallable()");
@@ -100,6 +114,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
     throw new UnsupportedOperationException("Not implemented: countTokensCallable()");
+  }
+
+  public UnaryCallable<GenerateContentRequest, GenerateContentResponse> generateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateContentCallable()");
   }
 
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
