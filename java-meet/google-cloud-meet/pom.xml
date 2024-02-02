@@ -43,6 +43,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-meet-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-meet-v2beta</artifactId>
     </dependency>
     <dependency>
@@ -64,6 +68,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-meet-v2</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
