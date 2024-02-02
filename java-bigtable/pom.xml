@@ -189,7 +189,7 @@
             <dependency>
                 <groupId>com.google.truth.extensions</groupId>
                 <artifactId>truth-proto-extension</artifactId>
-                <version>1.3.0</version>
+                <version>1.4.0</version>
                 <scope>test</scope>
                 <exclusions>
                     <!-- exclude protobuf-java as it is managed in the shared deps bom-->
