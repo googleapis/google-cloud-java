@@ -47,6 +47,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     state_ = 0;
     kmsKeyName_ = "";
     kmsKeyVersionName_ = "";
+    modelType_ = 0;
   }
 
   @java.lang.Override
@@ -357,6 +358,163 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1.ProcessorVersion.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The possible model types of the processor version.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.documentai.v1.ProcessorVersion.ModelType}
+   */
+  public enum ModelType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The processor version has unspecified model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
+     */
+    MODEL_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The processor version has generative model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_GENERATIVE = 1;</code>
+     */
+    MODEL_TYPE_GENERATIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The processor version has custom model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_CUSTOM = 2;</code>
+     */
+    MODEL_TYPE_CUSTOM(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The processor version has unspecified model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The processor version has generative model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_GENERATIVE = 1;</code>
+     */
+    public static final int MODEL_TYPE_GENERATIVE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The processor version has custom model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_CUSTOM = 2;</code>
+     */
+    public static final int MODEL_TYPE_CUSTOM_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ModelType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ModelType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODEL_TYPE_UNSPECIFIED;
+        case 1:
+          return MODEL_TYPE_GENERATIVE;
+        case 2:
+          return MODEL_TYPE_CUSTOM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ModelType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ModelType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ModelType>() {
+          public ModelType findValueByNumber(int number) {
+            return ModelType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.ProcessorVersion.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ModelType[] VALUES = values();
+
+    public static ModelType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ModelType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1.ProcessorVersion.ModelType)
   }
 
   public interface DeprecationInfoOrBuilder
@@ -1803,6 +1961,47 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         : deprecationInfo_;
   }
 
+  public static final int MODEL_TYPE_FIELD_NUMBER = 15;
+  private int modelType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model type of this processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for modelType.
+   */
+  @java.lang.Override
+  public int getModelTypeValue() {
+    return modelType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model type of this processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelType.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.ProcessorVersion.ModelType getModelType() {
+    com.google.cloud.documentai.v1.ProcessorVersion.ModelType result =
+        com.google.cloud.documentai.v1.ProcessorVersion.ModelType.forNumber(modelType_);
+    return result == null
+        ? com.google.cloud.documentai.v1.ProcessorVersion.ModelType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1848,6 +2047,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(13, getDeprecationInfo());
     }
+    if (modelType_
+        != com.google.cloud.documentai.v1.ProcessorVersion.ModelType.MODEL_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(15, modelType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1888,6 +2092,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDeprecationInfo());
     }
+    if (modelType_
+        != com.google.cloud.documentai.v1.ProcessorVersion.ModelType.MODEL_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, modelType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1926,6 +2135,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (hasDeprecationInfo()) {
       if (!getDeprecationInfo().equals(other.getDeprecationInfo())) return false;
     }
+    if (modelType_ != other.modelType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1965,6 +2175,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DEPRECATION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDeprecationInfo().hashCode();
     }
+    hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + modelType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2145,6 +2357,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         deprecationInfoBuilder_.dispose();
         deprecationInfoBuilder_ = null;
       }
+      modelType_ = 0;
       return this;
     }
 
@@ -2218,6 +2431,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         result.deprecationInfo_ =
             deprecationInfoBuilder_ == null ? deprecationInfo_ : deprecationInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.modelType_ = modelType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2306,6 +2522,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (other.hasDeprecationInfo()) {
         mergeDeprecationInfo(other.getDeprecationInfo());
       }
+      if (other.modelType_ != 0) {
+        setModelTypeValue(other.getModelTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2393,6 +2612,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 106
+            case 120:
+              {
+                modelType_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3750,6 +3975,108 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         deprecationInfo_ = null;
       }
       return deprecationInfoBuilder_;
+    }
+
+    private int modelType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model type of this processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for modelType.
+     */
+    @java.lang.Override
+    public int getModelTypeValue() {
+      return modelType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model type of this processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for modelType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeValue(int value) {
+      modelType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model type of this processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.ProcessorVersion.ModelType getModelType() {
+      com.google.cloud.documentai.v1.ProcessorVersion.ModelType result =
+          com.google.cloud.documentai.v1.ProcessorVersion.ModelType.forNumber(modelType_);
+      return result == null
+          ? com.google.cloud.documentai.v1.ProcessorVersion.ModelType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model type of this processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The modelType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelType(com.google.cloud.documentai.v1.ProcessorVersion.ModelType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      modelType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model type of this processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      modelType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

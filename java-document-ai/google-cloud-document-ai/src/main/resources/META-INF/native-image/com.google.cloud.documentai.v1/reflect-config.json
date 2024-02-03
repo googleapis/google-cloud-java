@@ -2394,6 +2394,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.documentai.v1.ProcessorVersion$ModelType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.documentai.v1.ProcessorVersion$State",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

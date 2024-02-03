@@ -309,4 +309,33 @@ public interface ProcessorVersionOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfoOrBuilder
       getDeprecationInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model type of this processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for modelType.
+   */
+  int getModelTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model type of this processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.ModelType model_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelType.
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersion.ModelType getModelType();
 }
