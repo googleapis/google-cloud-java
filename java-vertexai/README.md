@@ -89,6 +89,7 @@ to add `google-cloud-vertexai` as a dependency in your code.
 ### Vertex AI SDK
 Vertex AI provides [Generative AI Studio](generative-ai-studio) that supports text generation from multi-modality input via a set of most advanced models from Google. This brings out a wide range of applications.
 
+#### Basic Text Generation
 Vertex AI SDK allows you to access the service programmatically. The following code snippet is the most basic usage of SDK
 
 ```java
@@ -115,6 +116,7 @@ public class Main {
 }
 ```
 
+#### Text Generation with Streaming
 To get a streamed output, you can use the `generateContentStream` method
 
 ```java
@@ -142,6 +144,7 @@ public class Main {
 }
 ```
 
+#### Text Generation from Multi-modal Input
 To generate text based on data of multiple modalities, one needs to make a `Content`, which is made easier by `ContentMaker`:
 
 ```java
@@ -176,6 +179,7 @@ public class Main {
 }
 ```
 
+#### Role Change for Multi-turn Conversation
 For a multi-turn conversation, one needs to make a `Content` list to represent the whole conversation between two roles: "user" and "model".
 
 ```java
@@ -222,6 +226,7 @@ public class Main {
 }
 ```
 
+#### Using ChatSession for Multi-turn Conversation
 Yeah, we know, that isn't the most intuitive and easy way to chat with a model. Therefore we provide a `Chat` class:
 
 ```java
@@ -267,13 +272,96 @@ public class Main {
 }
 ```
 
+#### Using ChatSession for Function-calling
+In a chat, we can also do function calling.
+
+```java
+package <your package name>;
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.generativeai.preview.ChatSession;
+import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.preview.ResponseHandler;
+import com.google.cloud.vertexai.generativeai.preview.ResponseStream;
+import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import java.io.IOException;
+
+public class Main {
+  private static final String PROJECT_ID = "<your project>";
+  private static final String LOCATION = "<location>";
+  private static final String MODEL_NAME = "gemini-pro";
+  private static final String TEXT = "What's the weather in Vancouver?";
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
+      // Declare a function to be used in a request.
+      // More convinient method to simplify this declaration will be coming :)
+      Tool tool =
+          Tool.newBuilder()
+              .addFunctionDeclarations(
+                  FunctionDeclaration.newBuilder()
+                      .setName("getCurrentWeather")
+                      .setDescription("Get the current weather in a given location")
+                      .setParameters(
+                          Schema.newBuilder()
+                              .setType(Type.OBJECT)
+                              .putProperties(
+                                  "location",
+                                  Schema.newBuilder()
+                                      .setType(Type.STRING)
+                                      .setDescription("location")
+                                      .build())
+                              .addRequired("location")))
+              .build();
+
+      // Start a chat session from a model, with the use of the declared
+      // function.
+      GenerativeModel model =
+          GenerativeModel.newBuilder()
+              .setModelName(MODEL_NAME)
+              .setVertexAi(vertexAi)
+              .setTools(Arrays.asList(tool))
+              .build();
+      ChatSession chat = model.startChat();
+
+      System.out.println(String.format("Ask the question: %s", TEXT));
+      GenerateContentResponse response = chat.sendMessage(TEXT);
+
+      // The model will most likely return a function call to the declared
+      // function `getCurrentWeather` with "Vancouver" as the value for the
+      // argument `location`.
+      System.out.println("\nPrint response: ");
+      System.out.println(ResponseHandler.getContent(response));
+      System.out.println("\n");
+
+      // Provide an answer to the model so that it knows what the result of a
+      // "function call" is.
+      Content content =
+          ContentMaker.fromMultiModalData(
+              PartMaker.fromFunctionResponse(
+                  "getCurrentWeather", Collections.singletonMap("currentWeather", "snowing")));
+      System.out.println("Provide the function response: ");
+      System.out.println(content);
+      System.out.println("\n");
+      response = chat.sendMessage(content);
+
+      // See what the model replies now
+      System.out.println("\nPrint response: ");
+      System.out.println(ResponseHandler.getText(response));
+      System.out.println("\n");
+    }
+  }
+}
+```
+
 See the [Vertex AI SDK docs][javadocs] to learn more about how to use this Vertex AI SDK in more advanced ways.
 
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
-## Transport
+## Other Configurations
+### Transport
 
 Vertex AI uses gRPC and rest for the transport layer. By default, we use gRPC transport. To use rest, passing a `Transport.REST` to the `VertexAI` constructor as the example below:
 
