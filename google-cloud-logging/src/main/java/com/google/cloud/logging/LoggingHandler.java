@@ -229,7 +229,7 @@ public class LoggingHandler extends Handler {
    * Creates a handler that publishes messages to Cloud Logging. Auto-population of the logs
    * metadata can be opted-out in {@code options} argument or in the configuration file. At least
    * one flag {@link LoggingOptions} or {@link LoggingConfig} has to be explicitly set to {@code
-   * false} in order to opt-out the metadata auto-population.
+   * false} in order to opt out the metadata auto-population.
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Cloud Logging service
