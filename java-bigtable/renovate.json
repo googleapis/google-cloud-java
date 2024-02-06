@@ -99,6 +99,14 @@
       "matchStrings": ["value: \"gcr.io/cloud-devrel-public-resources/graalvm.*:(?<currentValue>.*?)\""],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": [
+        "^.github/workflows/unmanaged_dependency_check.yaml$"
+      ],
+      "matchStrings": ["uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.*?)"],
+      "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
+      "datasourceTemplate": "maven"
     }
   ],
   "semanticCommits": true,
