@@ -15,6 +15,19 @@
     <justification>getQueryResultsWithRowLimit is just used by ConnectionImpl at the moment so it should be fine to update the signature instead of writing an overloaded method</justification>
   </difference>
   <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/TableResult*</className>
+    <method>*TableResult(*)</method>
+    <justification>It should be fine to update TableResult constructors since it is used to return results to the user and users should not directly construct TableResult objects</justification>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/bigquery/TableResult*</className>
+    <method>*TableResult(*)</method>
+    <to>*TableResult(*)</to>
+    <justification>It should be fine to update TableResult constructors since it is used to return results to the user and users should not directly construct TableResult objects</justification>
+  </difference>
+  <difference>
     <differenceType>7013</differenceType>
     <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
     <method>*ReferenceFileSchemaUri(*)</method>

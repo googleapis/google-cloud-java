@@ -1156,7 +1156,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options) {
     Tuple<? extends Page<FieldValueList>, Long> data =
         listTableData(tableId, schema, getOptions(), optionMap(options));
-    return new TableResult(schema, data.y(), data.x());
+    return new TableResult(schema, data.y(), data.x(), null);
   }
 
   private static Tuple<? extends Page<FieldValueList>, Long> listTableData(
@@ -1410,7 +1410,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               // cache first page of result
               transformTableData(results.getRows(), schema)),
           // Return the JobID of the successful job
-          jobId);
+          jobId,
+          results.getQueryId());
     }
     // only 1 page of result
     return new TableResult(
@@ -1421,7 +1422,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             null,
             transformTableData(results.getRows(), schema)),
         // Return the JobID of the successful job
-        results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null);
+        results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null,
+        results.getQueryId());
   }
 
   @Override

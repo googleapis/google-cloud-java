@@ -27,6 +27,6 @@ public class EmptyTableResult extends TableResult {
   /** An empty {@code TableResult} to avoid making API requests to unlistable tables. */
   @InternalApi("Exposed for testing")
   public EmptyTableResult(@Nullable Schema schema) {
-    super(schema, 0, new PageImpl<FieldValueList>(null, "", null));
+    super(schema, 0, new PageImpl<FieldValueList>(null, "", null), null);
   }
 }

@@ -206,7 +206,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final FieldValue FIELD_VALUE =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "value");
   private static final TableResult TABLE_RESULT =
-      new TableResult(Schema.of(), 0L, new PageImpl(null, "", ImmutableList.of()));
+      new TableResult(Schema.of(), 0L, new PageImpl(null, "", ImmutableList.of()), null);
   private static final BigQuery BIGQUERY =
       BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
   private static final Dataset DATASET =

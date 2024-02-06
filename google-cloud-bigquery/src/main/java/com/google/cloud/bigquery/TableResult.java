@@ -37,6 +37,8 @@ public class TableResult implements Page<FieldValueList>, Serializable {
   private final Page<FieldValueList> pageNoSchema;
   @Nullable private JobId jobId = null;
 
+  @Nullable private final String queryId;
+
   // package-private so job id is not set outside the package.
   void setJobId(@Nullable JobId jobId) {
     this.jobId = jobId;
@@ -46,24 +48,35 @@ public class TableResult implements Page<FieldValueList>, Serializable {
     return jobId;
   }
 
+  public String getQueryId() {
+    return queryId;
+  }
+
   /**
    * If {@code schema} is non-null, {@code TableResult} adds the schema to {@code FieldValueList}s
    * when iterating through them. {@code pageNoSchema} must not be null.
    */
   @InternalApi("Exposed for testing")
-  public TableResult(Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+  public TableResult(
+      Schema schema, long totalRows, Page<FieldValueList> pageNoSchema, String queryId) {
     this.schema = schema;
     this.totalRows = totalRows;
     this.pageNoSchema = checkNotNull(pageNoSchema);
+    this.queryId = queryId;
   }
 
   @InternalApi("Exposed for testing")
   public TableResult(
-      Schema schema, long totalRows, Page<FieldValueList> pageNoSchema, JobId jobId) {
+      Schema schema,
+      long totalRows,
+      Page<FieldValueList> pageNoSchema,
+      JobId jobId,
+      String queryId) {
     this.schema = schema;
     this.totalRows = totalRows;
     this.pageNoSchema = checkNotNull(pageNoSchema);
     this.jobId = jobId;
+    this.queryId = queryId;
   }
 
   /** Returns the schema of the results. Null if the schema is not supplied. */
@@ -92,7 +105,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
   @Override
   public TableResult getNextPage() {
     if (pageNoSchema.hasNextPage()) {
-      return new TableResult(schema, totalRows, pageNoSchema.getNextPage());
+      return new TableResult(schema, totalRows, pageNoSchema.getNextPage(), queryId);
     }
     return null;
   }

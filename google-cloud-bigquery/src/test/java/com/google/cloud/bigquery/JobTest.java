@@ -309,7 +309,7 @@ public class JobTest {
     Job completedJob =
         expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
     Page<FieldValueList> singlePage = Pages.empty();
-    TableResult result = new TableResult(Schema.of(), 1, singlePage);
+    TableResult result = new TableResult(Schema.of(), 1, singlePage, null);
     QueryResponse completedQuery =
         QueryResponse.newBuilder()
             .setCompleted(true)

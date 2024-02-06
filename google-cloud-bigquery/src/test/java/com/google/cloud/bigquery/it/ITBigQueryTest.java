@@ -6312,21 +6312,29 @@ public class ITBigQueryTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQuery bigQuery = bigqueryHelper.getOptions().getService();
 
-    // simulate setting the QUERY_PREVIEW_ENABLED environment variable
+    // Simulate setting the QUERY_PREVIEW_ENABLED environment variable.
     bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
-    assertNull(executeSimpleQuery(bigQuery).getJobId());
+    TableResult tableResult = executeSimpleQuery(bigQuery);
+    assertNotNull(tableResult.getQueryId());
+    assertNull(tableResult.getJobId());
 
-    // the flag should be case-insensitive
+    // The flag should be case-insensitive.
     bigQuery.getOptions().setQueryPreviewEnabled("tRuE");
-    assertNull(executeSimpleQuery(bigQuery).getJobId());
+    tableResult = executeSimpleQuery(bigQuery);
+    assertNotNull(tableResult.getQueryId());
+    assertNull(tableResult.getJobId());
 
-    // any other values won't enable optional job creation mode
+    // Any other values won't enable optional job creation mode.
     bigQuery.getOptions().setQueryPreviewEnabled("test_value");
-    assertNotNull(executeSimpleQuery(bigQuery).getJobId());
+    tableResult = executeSimpleQuery(bigQuery);
+    assertNotNull(tableResult.getQueryId());
+    assertNotNull(tableResult.getJobId());
 
-    // reset the flag
+    // Reset the flag.
     bigQuery.getOptions().setQueryPreviewEnabled(null);
-    assertNotNull(executeSimpleQuery(bigQuery).getJobId());
+    tableResult = executeSimpleQuery(bigQuery);
+    assertNotNull(tableResult.getQueryId());
+    assertNotNull(tableResult.getJobId());
   }
 
   private TableResult executeSimpleQuery(BigQuery bigQuery) throws InterruptedException {
@@ -6334,6 +6342,41 @@ public class ITBigQueryTest {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
     TableResult result = bigQuery.query(config);
     return result;
+  }
+
+  @Test
+  public void testTableResultJobIdAndQueryId() throws InterruptedException {
+    // For stateless queries, jobId and queryId are populated based on the following criteria:
+    // 1. For stateless queries, then queryId is populated.
+    // 2. For queries that fails the requirements to be stateless, then jobId is populated and
+    // queryId is not.
+    // 3. For explicitly created jobs, then jobId is populated and queryId is not populated.
+
+    // Test scenario 1.
+    // Create local BigQuery for test scenario 1 to not contaminate global test parameters.
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+    // Simulate setting the QUERY_PREVIEW_ENABLED environment variable.
+    bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
+    String query = "SELECT 1 as one";
+    QueryJobConfiguration configStateless = QueryJobConfiguration.newBuilder(query).build();
+    TableResult result = bigQuery.query(configStateless);
+    assertNull(result.getJobId());
+    assertNotNull(result.getQueryId());
+
+    // Test scenario 2 by failing stateless check by setting job timeout.
+    QueryJobConfiguration configQueryWithJob =
+        QueryJobConfiguration.newBuilder(query).setJobTimeoutMs(1L).build();
+    result = bigQuery.query(configQueryWithJob);
+    assertNotNull(result.getJobId());
+    assertNull(result.getQueryId());
+
+    // Test scenario 3.
+    QueryJobConfiguration configWithJob = QueryJobConfiguration.newBuilder(query).build();
+    Job job = bigQuery.create(JobInfo.of(JobId.of(), configWithJob));
+    result = job.getQueryResults();
+    assertNotNull(result.getJobId());
+    assertNull(result.getQueryId());
   }
 
   @Test
