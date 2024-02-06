@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.it;
 import static com.google.cloud.bigquery.JobStatus.State.DONE;
 import static com.google.common.truth.Truth.assertThat;
 import static java.lang.System.currentTimeMillis;
+import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -6445,8 +6446,12 @@ public class ITBigQueryTest {
       bigQuery.listDatasets("bigquery-public-data");
       fail("RPCs to invalid universe domain should fail");
     } catch (BigQueryException e) {
+      assertEquals(e.getCode(), HTTP_UNAUTHORIZED);
       assertNotNull(e.getMessage());
-      assertThat((e.getMessage().contains("Invalid universe domain"))).isTrue();
+      assertThat(
+              (e.getMessage()
+                  .contains("does not match the universe domain found in the credentials")))
+          .isTrue();
     }
   }
 
@@ -6466,8 +6471,12 @@ public class ITBigQueryTest {
       bigQuery.listDatasets("bigquery-public-data");
       fail("RPCs to invalid universe domain should fail");
     } catch (BigQueryException e) {
+      assertEquals(e.getCode(), HTTP_UNAUTHORIZED);
       assertNotNull(e.getMessage());
-      assertThat((e.getMessage().contains("Invalid universe domain"))).isTrue();
+      assertThat(
+              (e.getMessage()
+                  .contains("does not match the universe domain found in the credentials")))
+          .isTrue();
     }
   }
 

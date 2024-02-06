@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.spi.v2;
 import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_OK;
+import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
@@ -116,7 +117,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
 
   private void validateRPC() throws BigQueryException, IOException {
     if (!this.options.hasValidUniverseDomain()) {
-      throw new BigQueryException(BigQueryException.UNKNOWN_CODE, "Invalid universe domain");
+      String errorMessage =
+          String.format(
+              "The configured universe domain %s does not match the universe domain found in the credentials %s. If you haven't configured the universe domain explicitly, `googleapis.com` is the default.",
+              this.options.getUniverseDomain(), this.options.getCredentials().getUniverseDomain());
+      throw new BigQueryException(HTTP_UNAUTHORIZED, errorMessage);
     }
   }
 
