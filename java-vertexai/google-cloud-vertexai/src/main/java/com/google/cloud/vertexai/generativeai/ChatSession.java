@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.cloud.vertexai.generativeai.preview;
+package com.google.cloud.vertexai.generativeai;
 
-import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.aggregateStreamIntoResponse;
-import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.getContent;
-import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.getFinishReason;
+import static com.google.cloud.vertexai.generativeai.ResponseHandler.aggregateStreamIntoResponse;
+import static com.google.cloud.vertexai.generativeai.ResponseHandler.getContent;
+import static com.google.cloud.vertexai.generativeai.ResponseHandler.getFinishReason;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
@@ -37,6 +38,7 @@ public class ChatSession {
   private ResponseStream<GenerateContentResponse> currentResponseStream = null;
   private GenerateContentResponse currentResponse = null;
 
+  @BetaApi
   public ChatSession(GenerativeModel model) {
     if (model == null) {
       throw new IllegalArgumentException("model should not be null");
@@ -51,6 +53,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(String text) throws IOException {
     return sendMessageStream(text, null, null);
   }
@@ -63,6 +66,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, GenerationConfig generationConfig) throws IOException {
     return sendMessageStream(text, generationConfig, null);
@@ -76,6 +80,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, List<SafetySetting> safetySettings) throws IOException {
     return sendMessageStream(text, null, safetySettings);
@@ -90,6 +95,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -111,6 +117,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
       throws IOException, IllegalArgumentException {
     return sendMessageStream(content, null, null);
@@ -124,6 +131,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig)
       throws IOException, IllegalArgumentException {
@@ -138,6 +146,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, List<SafetySetting> safetySettings)
       throws IOException, IllegalArgumentException {
@@ -153,6 +162,7 @@ public class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -172,6 +182,7 @@ public class ChatSession {
    * @param text the message to be sent.
    * @return a response.
    */
+  @BetaApi
   public GenerateContentResponse sendMessage(String text) throws IOException {
     return sendMessage(text, null, null);
   }
@@ -183,6 +194,7 @@ public class ChatSession {
    * @param generationConfig the generation config.
    * @return a response.
    */
+  @BetaApi
   public GenerateContentResponse sendMessage(String text, GenerationConfig generationConfig)
       throws IOException {
     return sendMessage(text, generationConfig, null);
@@ -195,6 +207,7 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return a response.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public GenerateContentResponse sendMessage(String text, List<SafetySetting> safetySettings)
       throws IOException {
     return sendMessage(text, null, safetySettings);
@@ -208,6 +221,7 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return a response.
    */
+  @BetaApi("Both sendMessage and safetySettings are preview features.")
   public GenerateContentResponse sendMessage(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -227,6 +241,7 @@ public class ChatSession {
    * @param content the content to be sent.
    * @return a response.
    */
+  @BetaApi
   public GenerateContentResponse sendMessage(Content content) throws IOException {
     return sendMessage(content, null, null);
   }
@@ -238,6 +253,7 @@ public class ChatSession {
    * @param generationConfig the generation config.
    * @return a response.
    */
+  @BetaApi
   public GenerateContentResponse sendMessage(Content content, GenerationConfig generationConfig)
       throws IOException {
     return sendMessage(content, generationConfig, null);
@@ -250,6 +266,7 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return a response.
    */
+  @BetaApi("Both sendMessage and safetySettings are preview features.")
   public GenerateContentResponse sendMessage(Content content, List<SafetySetting> safetySettings)
       throws IOException {
     return sendMessage(content, null, safetySettings);
@@ -263,6 +280,7 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return a response.
    */
+  @BetaApi("Both sendMessage and safetySettings are preview features.")
   public GenerateContentResponse sendMessage(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -326,6 +344,7 @@ public class ChatSession {
    *
    * @return an unmodifiable history of the conversation.
    */
+  @BetaApi
   public List<Content> getHistory() {
     try {
       checkLastResponseAndEditHistory();
@@ -343,6 +362,7 @@ public class ChatSession {
   }
 
   /** Set the history to a list of Content */
+  @BetaApi
   public void setHistory(List<Content> history) {
     this.history = history;
   }

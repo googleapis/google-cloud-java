@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.vertexai.generativeai.preview;
+package com.google.cloud.vertexai.generativeai;
 
 import com.google.cloud.vertexai.api.Blob;
 import com.google.cloud.vertexai.api.FileData;

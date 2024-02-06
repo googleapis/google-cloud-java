@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.cloud.vertexai.generativeai.preview;
+package com.google.cloud.vertexai.generativeai;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.vertexai.Transport;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
@@ -122,6 +123,7 @@ public class GenerativeModel {
      * Set {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
      * interact with the generative model.
      */
+    @BetaApi
     public Builder setGenerationConfig(GenerationConfig generationConfig) {
       this.generationConfig = generationConfig;
       return this;
@@ -131,6 +133,7 @@ public class GenerativeModel {
      * Set a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
      * default to interact with the generative model.
      */
+    @BetaApi
     public Builder setSafetySettings(List<SafetySetting> safetySettings) {
       this.safetySettings = new ArrayList<>();
       for (SafetySetting safetySetting : safetySettings) {
@@ -145,6 +148,7 @@ public class GenerativeModel {
      * Set a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
      * interact with the generative model.
      */
+    @BetaApi
     public Builder setTools(List<Tool> tools) {
       this.tools = new ArrayList<>();
       for (Tool tool : tools) {
@@ -203,6 +207,7 @@ public class GenerativeModel {
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
+  @BetaApi
   public GenerativeModel(String modelName, GenerationConfig generationConfig, VertexAI vertexAi) {
     this(modelName, generationConfig, null, vertexAi, null);
   }
@@ -219,6 +224,7 @@ public class GenerativeModel {
    * @param transport the {@link Transport} layer for API calls in the generative model. It
    *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
    */
+  @BetaApi
   public GenerativeModel(
       String modelName, GenerationConfig generationConfig, VertexAI vertexAi, Transport transport) {
     this(modelName, generationConfig, null, vertexAi, transport);
@@ -234,6 +240,7 @@ public class GenerativeModel {
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
+  @BetaApi("safetySettings is a preview feature.")
   public GenerativeModel(String modelName, List<SafetySetting> safetySettings, VertexAI vertexAi) {
     this(modelName, null, safetySettings, vertexAi, null);
   }
@@ -250,6 +257,7 @@ public class GenerativeModel {
    * @param transport the {@link Transport} layer for API calls in the generative model. It
    *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
    */
+  @BetaApi("safetySettings is a preview feature.")
   public GenerativeModel(
       String modelName,
       List<SafetySetting> safetySettings,
@@ -270,6 +278,7 @@ public class GenerativeModel {
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
+  @BetaApi("safetySettings is a preview feature.")
   public GenerativeModel(
       String modelName,
       GenerationConfig generationConfig,
@@ -292,6 +301,7 @@ public class GenerativeModel {
    * @param transport the {@link Transport} layer for API calls in the generative model. It
    *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
    */
+  @BetaApi
   public GenerativeModel(
       String modelName,
       GenerationConfig generationConfig,
@@ -329,6 +339,7 @@ public class GenerativeModel {
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public CountTokensResponse countTokens(String text) throws IOException {
     Content content = ContentMaker.fromString(text);
     CountTokensRequest.Builder requestBuilder =
@@ -344,6 +355,7 @@ public class GenerativeModel {
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public CountTokensResponse countTokens(Content content) throws IOException {
     return countTokens(Arrays.asList(content));
   }
@@ -356,6 +368,7 @@ public class GenerativeModel {
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public CountTokensResponse countTokens(List<Content> contents) throws IOException {
     CountTokensRequest.Builder requestBuilder =
         CountTokensRequest.newBuilder().addAllContents(contents);
@@ -371,6 +384,7 @@ public class GenerativeModel {
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   private CountTokensResponse countTokensFromBuilder(CountTokensRequest.Builder requestBuilder)
       throws IOException {
     CountTokensRequest request =
@@ -390,6 +404,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public GenerateContentResponse generateContent(String text) throws IOException {
     return generateContent(text, null, null);
   }
@@ -404,6 +419,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public GenerateContentResponse generateContent(String text, GenerationConfig generationConfig)
       throws IOException {
     return generateContent(text, generationConfig, null);
@@ -419,6 +435,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("Both generateContent and safetySettings are preview features.")
   public GenerateContentResponse generateContent(String text, List<SafetySetting> safetySettings)
       throws IOException {
     return generateContent(text, null, safetySettings);
@@ -436,6 +453,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("Both generateContent and safetySettings are preview features.")
   public GenerateContentResponse generateContent(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -454,6 +472,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
     return generateContent(contents, null, null);
   }
@@ -469,6 +488,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(
       List<Content> contents, GenerationConfig generationConfig) throws IOException {
     return generateContent(contents, generationConfig, null);
@@ -485,6 +505,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("Both generateContent and safetySettings are preview features")
   public GenerateContentResponse generateContent(
       List<Content> contents, List<SafetySetting> safetySettings) throws IOException {
     return generateContent(contents, null, safetySettings);
@@ -504,6 +525,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("Both generateContent and safetySettings are preview features")
   public GenerateContentResponse generateContent(
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -533,6 +555,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(Content content) throws IOException {
     return generateContent(content, null, null);
   }
@@ -547,6 +570,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(Content content, GenerationConfig generationConfig)
       throws IOException {
     return generateContent(content, generationConfig, null);
@@ -562,6 +586,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(
       Content content, List<SafetySetting> safetySettings) throws IOException {
     return generateContent(content, null, safetySettings);
@@ -580,6 +605,7 @@ public class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("Both generateContent and safetySettings are preview features.")
   public GenerateContentResponse generateContent(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -610,6 +636,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> generateContentStream(
       String text, GenerationConfig generationConfig) throws IOException {
     return generateContentStream(text, generationConfig, null);
@@ -625,6 +652,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> generateContentStream(
       String text, List<SafetySetting> safetySettings) throws IOException {
     return generateContentStream(text, null, safetySettings);
@@ -643,6 +671,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> generateContentStream(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -677,6 +706,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> generateContentStream(
       Content content, GenerationConfig generationConfig) throws IOException {
     return generateContentStream(content, generationConfig, null);
@@ -693,6 +723,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> generateContentStream(
       Content content, List<SafetySetting> safetySettings) throws IOException {
     return generateContentStream(content, null, safetySettings);
@@ -711,6 +742,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> generateContentStream(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -743,6 +775,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, GenerationConfig generationConfig) throws IOException {
     return generateContentStream(contents, generationConfig, null);
@@ -760,6 +793,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, List<SafetySetting> safetySettings) throws IOException {
     return generateContentStream(contents, null, safetySettings);
@@ -779,6 +813,7 @@ public class GenerativeModel {
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
+  @BetaApi("safetySettings is a preview feature.")
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -839,6 +874,7 @@ public class GenerativeModel {
    * Sets the value for {@link #getGenerationConfig}, which will be used by default for generating
    * response.
    */
+  @BetaApi
   public void setGenerationConfig(GenerationConfig generationConfig) {
     this.generationConfig = generationConfig;
   }
@@ -847,6 +883,7 @@ public class GenerativeModel {
    * Sets the value for {@link #getSafetySettings}, which will be used by default for generating
    * response.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public void setSafetySettings(List<SafetySetting> safetySettings) {
     this.safetySettings = new ArrayList<>();
     for (SafetySetting safetySetting : safetySettings) {
@@ -857,6 +894,7 @@ public class GenerativeModel {
   /**
    * Sets the value for {@link #getTools}, which will be used by default for generating response.
    */
+  @BetaApi("tools is a preview feature.")
   public void setTools(List<Tool> tools) {
     this.tools = new ArrayList<>();
     for (Tool tool : tools) {
@@ -885,6 +923,7 @@ public class GenerativeModel {
   /**
    * Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this generative model.
    */
+  @BetaApi
   public GenerationConfig getGenerationConfig() {
     return this.generationConfig;
   }
@@ -893,6 +932,7 @@ public class GenerativeModel {
    * Returns a list of {@link com.google.cloud.vertexai.api.SafetySettings} of this generative
    * model.
    */
+  @BetaApi("safetySettings is a preview feature.")
   public List<SafetySetting> getSafetySettings() {
     if (this.safetySettings != null) {
       return Collections.unmodifiableList(this.safetySettings);
@@ -902,6 +942,7 @@ public class GenerativeModel {
   }
 
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this generative model. */
+  @BetaApi("tools is a preview feature.")
   public List<Tool> getTools() {
     if (this.tools != null) {
       return Collections.unmodifiableList(this.tools);

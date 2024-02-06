@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.vertexai.generativeai.preview;
+package com.google.cloud.vertexai.generativeai;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;

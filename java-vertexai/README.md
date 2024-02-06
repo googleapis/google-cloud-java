@@ -96,7 +96,7 @@ Vertex AI SDK allows you to access the service programmatically. The following c
 package <your package name>
 
 import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import java.io.IOException;
 
@@ -123,8 +123,8 @@ To get a streamed output, you can use the `generateContentStream` method
 package <your package name>
 
 import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.preview.ResponseStream;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ResponseStream;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import java.io.IOException;
 
@@ -151,10 +151,10 @@ To generate text based on data of multiple modalities, one needs to make a `Cont
 package <your package name>;
 
 import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.preview.ResponseStream;
-import com.google.cloud.vertexai.generativeai.preview.ContentMaker;
-import com.google.cloud.vertexai.generativeai.preview.PartMaker;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ResponseStream;
+import com.google.cloud.vertexai.generativeai.ContentMaker;
+import com.google.cloud.vertexai.generativeai.PartMaker;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import java.util.Arrays;
 
@@ -188,9 +188,9 @@ package <your package name>;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.generativeai.preview.ContentMaker;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.preview.ResponseHandler;
+import com.google.cloud.vertexai.generativeai.ContentMaker;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ResponseHandler;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -233,9 +233,9 @@ Yeah, we know, that isn't the most intuitive and easy way to chat with a model. 
 package <your package name>;
 
 import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.preview.ChatSession;
-import com.google.cloud.vertexai.generativeai.preview.ResponseStream;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ChatSession;
+import com.google.cloud.vertexai.generativeai.ResponseStream;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import java.io.IOException;
@@ -278,10 +278,10 @@ In a chat, we can also do function calling.
 ```java
 package <your package name>;
 import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.preview.ChatSession;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.preview.ResponseHandler;
-import com.google.cloud.vertexai.generativeai.preview.ResponseStream;
+import com.google.cloud.vertexai.generativeai.ChatSession;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ResponseHandler;
+import com.google.cloud.vertexai.generativeai.ResponseStream;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import java.io.IOException;
@@ -369,8 +369,8 @@ Vertex AI uses gRPC and rest for the transport layer. By default, we use gRPC tr
 package <your package name>
 
 import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.preview.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.preview.Transport;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.Transport;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import java.io.IOException;
 
