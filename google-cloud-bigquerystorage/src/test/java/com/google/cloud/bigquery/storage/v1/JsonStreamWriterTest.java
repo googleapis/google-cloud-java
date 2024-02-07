@@ -237,7 +237,7 @@ public class JsonStreamWriterTest {
               .getSerializedRows(0),
           expectedProto.toByteString());
       assertEquals(
-          testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriter_test:empty");
+          "java-jsonwriter test:empty", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
     }
   }
 
@@ -257,7 +257,7 @@ public class JsonStreamWriterTest {
     jsonArr.put(flexible);
 
     try (JsonStreamWriter writer =
-        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).setTraceId("test:empty").build()) {
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
 
       testBigQueryWrite.addResponse(
           AppendRowsResponse.newBuilder()
@@ -284,8 +284,7 @@ public class JsonStreamWriterTest {
               .getRows()
               .getSerializedRows(0),
           expectedProto.toByteString());
-      assertEquals(
-          testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriter_test:empty");
+      assertEquals("java-jsonwriter", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
     }
   }
 
@@ -507,7 +506,7 @@ public class JsonStreamWriterTest {
               .getProtoRows()
               .getRows()
               .getSerializedRowsCount());
-      assertEquals(testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriter:null");
+      assertEquals("java-jsonwriter", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
       for (int i = 0; i < 4; i++) {
         assertEquals(
             testBigQueryWrite

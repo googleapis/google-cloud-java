@@ -94,7 +94,6 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         builder.executorProvider,
         builder.endpoint,
         builder.flowControlSettings,
-        builder.traceIdBase,
         builder.traceId,
         builder.compressorName,
         builder.retrySettings);
@@ -102,6 +101,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     streamWriterBuilder.setLocation(builder.location);
     streamWriterBuilder.setDefaultMissingValueInterpretation(
         builder.defaultMissingValueInterpretation);
+    streamWriterBuilder.setClientId(builder.clientId);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
     this.tableSchema = builder.tableSchema;
@@ -282,7 +282,6 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       @Nullable ExecutorProvider executorProvider,
       @Nullable String endpoint,
       @Nullable FlowControlSettings flowControlSettings,
-      @Nullable String traceIdBase,
       @Nullable String traceId,
       @Nullable String compressorName,
       @Nullable RetrySettings retrySettings) {
@@ -298,18 +297,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     if (endpoint != null) {
       streamWriterBuilder.setEndpoint(endpoint);
     }
-    if (traceIdBase != null) {
-      if (traceId != null) {
-        streamWriterBuilder.setTraceId(traceIdBase + "_" + traceId);
-      } else {
-        streamWriterBuilder.setTraceId(traceIdBase + ":null");
-      }
-    } else {
-      if (traceId != null) {
-        streamWriterBuilder.setTraceId("SchemaAwareStreamWriter_" + traceId);
-      } else {
-        streamWriterBuilder.setTraceId("SchemaAwareStreamWriter:null");
-      }
+    if (traceId != null) {
+      streamWriterBuilder.setTraceId(traceId);
     }
     if (flowControlSettings != null) {
       if (flowControlSettings.getMaxOutstandingRequestBytes() != null) {
@@ -445,6 +434,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
 
     private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
         MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+    private String clientId;
 
     private static final String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -581,14 +571,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       return this;
     }
 
-    /**
-     * Setter for a traceIdBase to help identify traffic origin.
-     *
-     * @param traceIdBase
-     * @return Builder
-     */
-    public Builder<T> setTraceIdBase(String traceIdBase) {
-      this.traceIdBase = Preconditions.checkNotNull(traceIdBase, "TraceIdBase is null.");
+    Builder<T> setClientId(String clientId) {
+      this.clientId = Preconditions.checkNotNull(clientId, "ClientId is null.");
       return this;
     }
 

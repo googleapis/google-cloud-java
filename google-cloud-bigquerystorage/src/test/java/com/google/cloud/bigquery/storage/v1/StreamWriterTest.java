@@ -286,13 +286,13 @@ public class StreamWriterTest {
       if (i == 0) {
         // First request received by server should have schema and stream name.
         assertTrue(serverRequest.getProtoRows().hasWriterSchema());
-        assertEquals(serverRequest.getWriteStream(), TEST_STREAM_1);
-        assertEquals(serverRequest.getTraceId(), TEST_TRACE_ID);
+        assertEquals(TEST_STREAM_1, serverRequest.getWriteStream());
+        assertEquals("java-streamwriter " + TEST_TRACE_ID, serverRequest.getTraceId());
       } else {
         // Following request should not have schema and stream name.
         assertFalse(serverRequest.getProtoRows().hasWriterSchema());
-        assertEquals(serverRequest.getWriteStream(), "");
-        assertEquals(serverRequest.getTraceId(), "");
+        assertEquals("", serverRequest.getWriteStream());
+        assertEquals("", serverRequest.getTraceId());
       }
     }
   }

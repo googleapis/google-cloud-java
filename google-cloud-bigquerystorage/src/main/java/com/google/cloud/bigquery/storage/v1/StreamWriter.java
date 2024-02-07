@@ -229,7 +229,7 @@ public class StreamWriter implements AutoCloseable {
                   builder.maxInflightBytes,
                   builder.maxRetryDuration,
                   builder.limitExceededBehavior,
-                  builder.traceId,
+                  builder.getFullTraceId(),
                   builder.compressorName,
                   clientSettings,
                   builder.retrySettings));
@@ -295,7 +295,7 @@ public class StreamWriter implements AutoCloseable {
                         builder.maxInflightBytes,
                         builder.maxRetryDuration,
                         builder.limitExceededBehavior,
-                        builder.traceId,
+                        builder.getFullTraceId(),
                         builder.compressorName,
                         client.getSettings(),
                         builder.retrySettings);
@@ -376,12 +376,12 @@ public class StreamWriter implements AutoCloseable {
   private void validateFetchedConnectonPool(StreamWriter.Builder builder) {
     String storedTraceId =
         this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId();
-    if (!Objects.equals(storedTraceId, builder.traceId)) {
+    if (!Objects.equals(storedTraceId, builder.getFullTraceId())) {
       throw new IllegalArgumentException(
           String.format(
               "Trace id used for the same connection pool for the same location must be the same, "
                   + "however stored trace id is %s, and expected trace id is %s.",
-              storedTraceId, builder.traceId));
+              storedTraceId, builder.getFullTraceId()));
     }
     FlowController.LimitExceededBehavior storedLimitExceededBehavior =
         singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior();
@@ -629,6 +629,8 @@ public class StreamWriter implements AutoCloseable {
 
     private String traceId = null;
 
+    private String clientId = "java-streamwriter";
+
     private TableSchema updatedTableSchema = null;
 
     private String location = null;
@@ -730,6 +732,15 @@ public class StreamWriter implements AutoCloseable {
       return this;
     }
 
+    /**
+     * Sets the client id of the writer, for example, JsonStreamWriter has the client id of
+     * "java-jsonwriter".
+     */
+    Builder setClientId(String clientId) {
+      this.clientId = clientId;
+      return this;
+    }
+
     /** Location of the table this stream writer is targeting. */
     public Builder setLocation(String location) {
       this.location = location;
@@ -810,6 +821,14 @@ public class StreamWriter implements AutoCloseable {
     /** Builds the {@code StreamWriterV2}. */
     public StreamWriter build() throws IOException {
       return new StreamWriter(this);
+    }
+
+    String getFullTraceId() {
+      if (traceId == null) {
+        return clientId;
+      } else {
+        return clientId + " " + traceId;
+      }
     }
   }
 }
