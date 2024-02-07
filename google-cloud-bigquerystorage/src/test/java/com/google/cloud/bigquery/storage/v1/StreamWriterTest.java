@@ -1235,6 +1235,8 @@ public class StreamWriterTest {
               () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
       if (i == 0) {
         assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+        assertThat(ex.getCause())
+            .isInstanceOf(Exceptions.MaximumRequestCallbackWaitTimeExceededException.class);
       } else {
         assertThat(ex.getCause())
             .hasMessageThat()

@@ -22,6 +22,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
+import java.time.Duration;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -413,6 +414,39 @@ public final class Exceptions {
 
     public String getFieldName() {
       return jsonFieldName;
+    }
+  }
+
+  /**
+   * The connection was shut down because a callback was not received within the maximum wait time.
+   */
+  public static class MaximumRequestCallbackWaitTimeExceededException extends RuntimeException {
+    private final Duration callbackWaitTime;
+    private final String writerId;
+    private final Duration callbackWaitTimeLimit;
+
+    public MaximumRequestCallbackWaitTimeExceededException(
+        Duration callbackWaitTime, String writerId, Duration callbackWaitTimeLimit) {
+      super(
+          String.format(
+              "Request has waited in inflight queue for %sms for writer %s, "
+                  + "which is over maximum wait time %s",
+              callbackWaitTime, writerId, callbackWaitTimeLimit.toString()));
+      this.callbackWaitTime = callbackWaitTime;
+      this.writerId = writerId;
+      this.callbackWaitTimeLimit = callbackWaitTimeLimit;
+    }
+
+    public Duration getCallbackWaitTime() {
+      return callbackWaitTime;
+    }
+
+    public String getWriterId() {
+      return writerId;
+    }
+
+    public Duration getCallbackWaitTimeLimit() {
+      return callbackWaitTimeLimit;
     }
   }
 

@@ -844,11 +844,8 @@ class ConnectionWorker implements AutoCloseable {
   private void throwIfWaitCallbackTooLong(Instant timeToCheck) {
     Duration milliSinceLastCallback = Duration.between(timeToCheck, Instant.now());
     if (milliSinceLastCallback.compareTo(MAXIMUM_REQUEST_CALLBACK_WAIT_TIME) > 0) {
-      throw new RuntimeException(
-          String.format(
-              "Request has waited in inflight queue for %sms for writer %s, "
-                  + "which is over maximum wait time %s",
-              milliSinceLastCallback, writerId, MAXIMUM_REQUEST_CALLBACK_WAIT_TIME.toString()));
+      throw new Exceptions.MaximumRequestCallbackWaitTimeExceededException(
+          milliSinceLastCallback, writerId, MAXIMUM_REQUEST_CALLBACK_WAIT_TIME);
     }
   }
 
