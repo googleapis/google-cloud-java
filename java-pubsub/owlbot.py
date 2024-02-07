@@ -1211,6 +1211,8 @@ java.common_templates(
         ".github/sync-repo-settings.yaml",
         ".github/blunderbuss.yml",
         '.kokoro/requirements.in',
-        '.kokoro/requirements.txt'
+        '.kokoro/requirements.txt',
+        '.kokoro/presubmit/graalvm-native.cfg',
+        '.kokoro/presubmit/graalvm-native-17.cfg'
     ]
 )
