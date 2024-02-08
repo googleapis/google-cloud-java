@@ -57,6 +57,7 @@ public class AsyncConverseConversation {
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
+              .setFilter("filter-1274492040")
               .build();
       ApiFuture<ConverseConversationResponse> future =
           conversationalSearchServiceClient.converseConversationCallable().futureCall(request);

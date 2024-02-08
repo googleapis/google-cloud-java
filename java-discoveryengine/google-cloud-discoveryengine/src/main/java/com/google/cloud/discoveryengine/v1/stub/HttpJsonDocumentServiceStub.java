@@ -424,6 +424,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataConnector/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -489,6 +494,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataConnector}/operations")
+                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(

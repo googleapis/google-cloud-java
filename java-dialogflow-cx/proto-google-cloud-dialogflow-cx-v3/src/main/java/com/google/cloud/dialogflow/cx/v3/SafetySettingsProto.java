@@ -47,16 +47,16 @@ public final class SafetySettingsProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/dialogflow/cx/v3/safety_s"
           + "ettings.proto\022\035google.cloud.dialogflow.c"
-          + "x.v3\032\037google/api/field_behavior.proto\"\231\001"
+          + "x.v3\032\037google/api/field_behavior.proto\"\227\001"
           + "\n\016SafetySettings\022L\n\016banned_phrases\030\001 \003(\013"
           + "24.google.cloud.dialogflow.cx.v3.SafetyS"
-          + "ettings.Phrase\0329\n\006Phrase\022\022\n\004text\030\001 \001(\tB\004"
-          + "\342A\001\002\022\033\n\rlanguage_code\030\002 \001(\tB\004\342A\001\002B\271\001\n!co"
-          + "m.google.cloud.dialogflow.cx.v3B\023SafetyS"
-          + "ettingsProtoP\001Z1cloud.google.com/go/dial"
-          + "ogflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Goog"
-          + "le.Cloud.Dialogflow.Cx.V3\352\002!Google::Clou"
-          + "d::Dialogflow::CX::V3b\006proto3"
+          + "ettings.Phrase\0327\n\006Phrase\022\021\n\004text\030\001 \001(\tB\003"
+          + "\340A\002\022\032\n\rlanguage_code\030\002 \001(\tB\003\340A\002B\271\001\n!com."
+          + "google.cloud.dialogflow.cx.v3B\023SafetySet"
+          + "tingsProtoP\001Z1cloud.google.com/go/dialog"
+          + "flow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google"
+          + ".Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud:"
+          + ":Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

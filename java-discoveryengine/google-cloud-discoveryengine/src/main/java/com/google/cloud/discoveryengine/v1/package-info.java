@@ -70,6 +70,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataStoreServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [DataStore][google.cloud.discoveryengine.v1.DataStore] configuration.
+ *
+ * <p>Sample for DataStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+ *   DataStoreName name =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   DataStore response = dataStoreServiceClient.getDataStore(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= DocumentServiceClient =======================
  *
  * <p>Service Description: Service for ingesting
@@ -88,6 +108,26 @@
  *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
  *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
  *   Document response = documentServiceClient.getDocument(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= EngineServiceClient =======================
+ *
+ * <p>Service Description: Service for managing [Engine][google.cloud.discoveryengine.v1.Engine]
+ * configuration.
+ *
+ * <p>Sample for EngineServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+ *   Engine engine = Engine.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Engine response = engineServiceClient.updateEngine(engine, updateMask);
  * }
  * }</pre>
  *
@@ -140,6 +180,7 @@
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
  *           .setFilter("filter-1274492040")
+ *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
  *           .setUserInfo(UserInfo.newBuilder().build())
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
@@ -155,6 +196,27 @@
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
  *   }
+ * }
+ * }</pre>
+ *
+ * <p>======================= SiteSearchEngineServiceClient =======================
+ *
+ * <p>Service Description: Service for managing site search related resources.
+ *
+ * <p>Sample for SiteSearchEngineServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+ *     SiteSearchEngineServiceClient.create()) {
+ *   SiteSearchEngineName name =
+ *       SiteSearchEngineName.ofProjectLocationDataStoreName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   SiteSearchEngine response = siteSearchEngineServiceClient.getSiteSearchEngine(name);
  * }
  * }</pre>
  *

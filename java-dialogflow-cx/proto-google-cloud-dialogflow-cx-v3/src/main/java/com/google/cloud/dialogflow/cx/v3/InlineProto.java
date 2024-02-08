@@ -47,14 +47,14 @@ public final class InlineProto {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/dialogflow/cx/v3/inline.p"
           + "roto\022\035google.cloud.dialogflow.cx.v3\032\037goo"
-          + "gle/api/field_behavior.proto\"*\n\021InlineDe"
-          + "stination\022\025\n\007content\030\001 \001(\014B\004\342A\001\003\"\037\n\014Inli"
-          + "neSource\022\017\n\007content\030\001 \001(\014B\261\001\n!com.google"
-          + ".cloud.dialogflow.cx.v3B\013InlineProtoP\001Z1"
-          + "cloud.google.com/go/dialogflow/cx/apiv3/"
-          + "cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogf"
-          + "low.Cx.V3\352\002!Google::Cloud::Dialogflow::C"
-          + "X::V3b\006proto3"
+          + "gle/api/field_behavior.proto\")\n\021InlineDe"
+          + "stination\022\024\n\007content\030\001 \001(\014B\003\340A\003\"\037\n\014Inlin"
+          + "eSource\022\017\n\007content\030\001 \001(\014B\261\001\n!com.google."
+          + "cloud.dialogflow.cx.v3B\013InlineProtoP\001Z1c"
+          + "loud.google.com/go/dialogflow/cx/apiv3/c"
+          + "xpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogfl"
+          + "ow.Cx.V3\352\002!Google::Cloud::Dialogflow::CX"
+          + "::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

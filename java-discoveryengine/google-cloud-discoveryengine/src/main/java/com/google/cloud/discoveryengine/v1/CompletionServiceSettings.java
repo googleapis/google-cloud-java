@@ -25,9 +25,11 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1.stub.CompletionServiceStubSettings;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -76,6 +78,40 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
   /** Returns the object with the settings used for calls to completeQuery. */
   public UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse> completeQuerySettings() {
     return ((CompletionServiceStubSettings) getStubSettings()).completeQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to importSuggestionDenyListEntries. */
+  public UnaryCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
+      importSuggestionDenyListEntriesSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .importSuggestionDenyListEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importSuggestionDenyListEntries. */
+  public OperationCallSettings<
+          ImportSuggestionDenyListEntriesRequest,
+          ImportSuggestionDenyListEntriesResponse,
+          ImportSuggestionDenyListEntriesMetadata>
+      importSuggestionDenyListEntriesOperationSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .importSuggestionDenyListEntriesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeSuggestionDenyListEntries. */
+  public UnaryCallSettings<PurgeSuggestionDenyListEntriesRequest, Operation>
+      purgeSuggestionDenyListEntriesSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .purgeSuggestionDenyListEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeSuggestionDenyListEntries. */
+  public OperationCallSettings<
+          PurgeSuggestionDenyListEntriesRequest,
+          PurgeSuggestionDenyListEntriesResponse,
+          PurgeSuggestionDenyListEntriesMetadata>
+      purgeSuggestionDenyListEntriesOperationSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .purgeSuggestionDenyListEntriesOperationSettings();
   }
 
   public static final CompletionServiceSettings create(CompletionServiceStubSettings stub)
@@ -197,6 +233,36 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
     public UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings() {
       return getStubSettingsBuilder().completeQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */
+    public UnaryCallSettings.Builder<ImportSuggestionDenyListEntriesRequest, Operation>
+        importSuggestionDenyListEntriesSettings() {
+      return getStubSettingsBuilder().importSuggestionDenyListEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */
+    public OperationCallSettings.Builder<
+            ImportSuggestionDenyListEntriesRequest,
+            ImportSuggestionDenyListEntriesResponse,
+            ImportSuggestionDenyListEntriesMetadata>
+        importSuggestionDenyListEntriesOperationSettings() {
+      return getStubSettingsBuilder().importSuggestionDenyListEntriesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeSuggestionDenyListEntries. */
+    public UnaryCallSettings.Builder<PurgeSuggestionDenyListEntriesRequest, Operation>
+        purgeSuggestionDenyListEntriesSettings() {
+      return getStubSettingsBuilder().purgeSuggestionDenyListEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeSuggestionDenyListEntries. */
+    public OperationCallSettings.Builder<
+            PurgeSuggestionDenyListEntriesRequest,
+            PurgeSuggestionDenyListEntriesResponse,
+            PurgeSuggestionDenyListEntriesMetadata>
+        purgeSuggestionDenyListEntriesOperationSettings() {
+      return getStubSettingsBuilder().purgeSuggestionDenyListEntriesOperationSettings();
     }
 
     @Override

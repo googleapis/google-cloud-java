@@ -366,4 +366,59 @@ public interface ConverseConversationRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpecOrBuilder
       getSummarySpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the documents being filtered. Filter
+   * expression is case-sensitive. This will be used to filter search results
+   * which may affect the summary response.
+   *
+   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+   * key property defined in the Vertex AI Search backend -- this mapping is
+   * defined by the customer in their schema. For example a media customer might
+   * have a field 'name' in their schema. In this case the filter would look
+   * like this: filter --&gt; name:'ANY("king kong")'
+   *
+   * For more information about filtering including syntax and filter
+   * operators, see
+   * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
+   * </pre>
+   *
+   * <code>string filter = 9;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the documents being filtered. Filter
+   * expression is case-sensitive. This will be used to filter search results
+   * which may affect the summary response.
+   *
+   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+   * key property defined in the Vertex AI Search backend -- this mapping is
+   * defined by the customer in their schema. For example a media customer might
+   * have a field 'name' in their schema. In this case the filter would look
+   * like this: filter --&gt; name:'ANY("king kong")'
+   *
+   * For more information about filtering including syntax and filter
+   * operators, see
+   * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
+   * </pre>
+   *
+   * <code>string filter = 9;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

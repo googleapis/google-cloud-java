@@ -57,6 +57,7 @@ public class AsyncSearchPaged {
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
               .setFilter("filter-1274492040")
+              .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())

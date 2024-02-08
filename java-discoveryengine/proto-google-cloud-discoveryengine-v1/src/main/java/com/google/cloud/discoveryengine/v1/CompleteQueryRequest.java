@@ -188,8 +188,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Selects data model of query suggestions for serving. Currently supported
-   * values:
+   * Specifies the autocomplete data model. This overrides any model specified
+   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+   * supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -203,8 +204,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * Default values:
    *
    * * `document` is the default model for regular dataStores.
-   * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][] dataStores.
+   * * `search-history` is the default model for site search dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -227,8 +227,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Selects data model of query suggestions for serving. Currently supported
-   * values:
+   * Specifies the autocomplete data model. This overrides any model specified
+   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+   * supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -242,8 +243,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * Default values:
    *
    * * `document` is the default model for regular dataStores.
-   * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][] dataStores.
+   * * `search-history` is the default model for site search dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -1042,8 +1042,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1057,8 +1058,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Default values:
      *
      * * `document` is the default model for regular dataStores.
-     * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][] dataStores.
+     * * `search-history` is the default model for site search dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1080,8 +1080,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1095,8 +1096,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Default values:
      *
      * * `document` is the default model for regular dataStores.
-     * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][] dataStores.
+     * * `search-history` is the default model for site search dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1118,8 +1118,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1133,8 +1134,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Default values:
      *
      * * `document` is the default model for regular dataStores.
-     * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][] dataStores.
+     * * `search-history` is the default model for site search dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1155,8 +1155,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1170,8 +1171,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Default values:
      *
      * * `document` is the default model for regular dataStores.
-     * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][] dataStores.
+     * * `search-history` is the default model for site search dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1188,8 +1188,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1203,8 +1204,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Default values:
      *
      * * `document` is the default model for regular dataStores.
-     * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][] dataStores.
+     * * `search-history` is the default model for site search dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>

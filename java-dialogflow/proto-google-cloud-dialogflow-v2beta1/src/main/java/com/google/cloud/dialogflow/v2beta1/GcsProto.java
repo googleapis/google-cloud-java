@@ -51,14 +51,14 @@ public final class GcsProto {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/dialogflow/v2beta1/gcs.pr"
           + "oto\022\037google.cloud.dialogflow.v2beta1\032\037go"
-          + "ogle/api/field_behavior.proto\" \n\nGcsSour"
-          + "ces\022\022\n\004uris\030\002 \003(\tB\004\342A\001\002\"\030\n\tGcsSource\022\013\n\003"
-          + "uri\030\001 \001(\t\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\t"
-          + "B\240\001\n#com.google.cloud.dialogflow.v2beta1"
-          + "B\010GcsProtoP\001ZCcloud.google.com/go/dialog"
-          + "flow/apiv2beta1/dialogflowpb;dialogflowp"
-          + "b\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Be"
-          + "ta1b\006proto3"
+          + "ogle/api/field_behavior.proto\"\037\n\nGcsSour"
+          + "ces\022\021\n\004uris\030\002 \003(\tB\003\340A\002\"\030\n\tGcsSource\022\013\n\003u"
+          + "ri\030\001 \001(\t\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\tB"
+          + "\240\001\n#com.google.cloud.dialogflow.v2beta1B"
+          + "\010GcsProtoP\001ZCcloud.google.com/go/dialogf"
+          + "low/apiv2beta1/dialogflowpb;dialogflowpb"
+          + "\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

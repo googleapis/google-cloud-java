@@ -254,6 +254,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataConnector/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -319,6 +324,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/dataConnector}/operations")
+                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
