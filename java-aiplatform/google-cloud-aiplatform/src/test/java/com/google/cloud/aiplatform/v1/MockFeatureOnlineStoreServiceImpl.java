@@ -79,4 +79,26 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void searchNearestEntities(
+      SearchNearestEntitiesRequest request,
+      StreamObserver<SearchNearestEntitiesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchNearestEntitiesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchNearestEntitiesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchNearestEntities, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchNearestEntitiesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

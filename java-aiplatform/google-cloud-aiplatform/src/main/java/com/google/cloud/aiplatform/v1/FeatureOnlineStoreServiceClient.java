@@ -95,6 +95,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SearchNearestEntities</td>
+ *      <td><p> Search the nearest entities under a FeatureView. Search only works for indexable feature view; if a feature view isn't indexable, returns Invalid argument response.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchNearestEntities(SearchNearestEntitiesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchNearestEntitiesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -405,6 +419,79 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
   public final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable() {
     return stub.fetchFeatureValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search the nearest entities under a FeatureView. Search only works for indexable feature view;
+   * if a feature view isn't indexable, returns Invalid argument response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   SearchNearestEntitiesRequest request =
+   *       SearchNearestEntitiesRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .setQuery(NearestNeighborQuery.newBuilder().build())
+   *           .setReturnFullEntity(true)
+   *           .build();
+   *   SearchNearestEntitiesResponse response =
+   *       featureOnlineStoreServiceClient.searchNearestEntities(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchNearestEntitiesResponse searchNearestEntities(
+      SearchNearestEntitiesRequest request) {
+    return searchNearestEntitiesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search the nearest entities under a FeatureView. Search only works for indexable feature view;
+   * if a feature view isn't indexable, returns Invalid argument response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   SearchNearestEntitiesRequest request =
+   *       SearchNearestEntitiesRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .setQuery(NearestNeighborQuery.newBuilder().build())
+   *           .setReturnFullEntity(true)
+   *           .build();
+   *   ApiFuture<SearchNearestEntitiesResponse> future =
+   *       featureOnlineStoreServiceClient.searchNearestEntitiesCallable().futureCall(request);
+   *   // Do something.
+   *   SearchNearestEntitiesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesCallable() {
+    return stub.searchNearestEntitiesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

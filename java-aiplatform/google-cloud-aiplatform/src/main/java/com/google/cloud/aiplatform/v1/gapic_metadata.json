@@ -250,6 +250,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "SearchNearestEntities": {
+              "methods": ["searchNearestEntities", "searchNearestEntitiesCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

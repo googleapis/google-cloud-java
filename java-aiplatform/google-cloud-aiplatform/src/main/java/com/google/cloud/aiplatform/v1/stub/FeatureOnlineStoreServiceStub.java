@@ -22,6 +22,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
+import com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -45,6 +47,11 @@ public abstract class FeatureOnlineStoreServiceStub implements BackgroundResourc
   public UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchFeatureValuesCallable()");
+  }
+
+  public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchNearestEntitiesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

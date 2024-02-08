@@ -91,6 +91,13 @@ public class FeatureOnlineStoreServiceSettings
     return ((FeatureOnlineStoreServiceStubSettings) getStubSettings()).fetchFeatureValuesSettings();
   }
 
+  /** Returns the object with the settings used for calls to searchNearestEntities. */
+  public UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesSettings() {
+    return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
+        .searchNearestEntitiesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -220,6 +227,12 @@ public class FeatureOnlineStoreServiceSettings
     public UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings() {
       return getStubSettingsBuilder().fetchFeatureValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchNearestEntities. */
+    public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+        searchNearestEntitiesSettings() {
+      return getStubSettingsBuilder().searchNearestEntitiesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
