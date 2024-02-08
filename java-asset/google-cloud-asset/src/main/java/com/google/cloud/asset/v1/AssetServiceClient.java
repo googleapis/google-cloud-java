@@ -481,7 +481,7 @@ import javax.annotation.Generated;
  * <li>  compute.requireOsLogin
  * <li>  compute.disableNestedVirtualization
  * </ul>
- * <p>  This RPC only returns either resources of types supported by [searchable asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.</td>
+ * <p>  This RPC only returns either resources of types [supported by search APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types) or IAM policies.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1589,8 +1589,8 @@ public class AssetServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
-   *     will search all the [searchable asset
-   *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   *     will search all the asset types [supported by search
+   *     APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *     <p>Regular expressions are also supported. For example:
    *     <ul>
    *       <li>"compute.googleapis.com.&#42;" snapshots resources whose asset type starts with
@@ -3518,8 +3518,8 @@ public class AssetServiceClient implements BackgroundResource {
    *   <li>compute.disableNestedVirtualization
    * </ul>
    *
-   * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
+   * <p>This RPC only returns either resources of types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types) or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3608,8 +3608,8 @@ public class AssetServiceClient implements BackgroundResource {
    *   <li>compute.disableNestedVirtualization
    * </ul>
    *
-   * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
+   * <p>This RPC only returns either resources of types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types) or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3661,8 +3661,8 @@ public class AssetServiceClient implements BackgroundResource {
    *   <li>compute.disableNestedVirtualization
    * </ul>
    *
-   * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
+   * <p>This RPC only returns either resources of types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types) or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3715,8 +3715,8 @@ public class AssetServiceClient implements BackgroundResource {
    *   <li>compute.disableNestedVirtualization
    * </ul>
    *
-   * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
+   * <p>This RPC only returns either resources of types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types) or IAM policies.
    *
    * <p>Sample code:
    *

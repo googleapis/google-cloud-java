@@ -153,8 +153,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
    * <pre>
    * Required. The names refer to the [full_resource_names]
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * of the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    * A maximum of 20 resources' effective policies can be retrieved in a batch.
    * </pre>
    *
@@ -173,8 +173,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
    * <pre>
    * Required. The names refer to the [full_resource_names]
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * of the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    * A maximum of 20 resources' effective policies can be retrieved in a batch.
    * </pre>
    *
@@ -193,8 +193,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
    * <pre>
    * Required. The names refer to the [full_resource_names]
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * of the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    * A maximum of 20 resources' effective policies can be retrieved in a batch.
    * </pre>
    *
@@ -214,8 +214,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
    * <pre>
    * Required. The names refer to the [full_resource_names]
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * of the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    * A maximum of 20 resources' effective policies can be retrieved in a batch.
    * </pre>
    *
@@ -796,8 +796,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -817,8 +817,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -837,8 +837,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -858,8 +858,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -879,8 +879,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -908,8 +908,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -936,8 +936,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -961,8 +961,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *
@@ -985,8 +985,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * <pre>
      * Required. The names refer to the [full_resource_names]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of [searchable asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+     * of the asset types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
      * A maximum of 20 resources' effective policies can be retrieved in a batch.
      * </pre>
      *

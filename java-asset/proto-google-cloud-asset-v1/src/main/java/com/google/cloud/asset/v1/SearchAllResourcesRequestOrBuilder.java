@@ -259,8 +259,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    * <pre>
    * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * it will search all the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *
    * Regular expressions are also supported. For example:
    *
@@ -284,8 +284,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    * <pre>
    * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * it will search all the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *
    * Regular expressions are also supported. For example:
    *
@@ -309,8 +309,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    * <pre>
    * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * it will search all the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *
    * Regular expressions are also supported. For example:
    *
@@ -335,8 +335,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    * <pre>
    * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
+   * it will search all the asset types [supported by search
+   * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *
    * Regular expressions are also supported. For example:
    *
