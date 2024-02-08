@@ -18,11 +18,11 @@ package com.google.cloud.bigtable.admin.v2.it;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
-import static io.grpc.Status.Code.NOT_FOUND;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.batching.Batcher;
-import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.DeadlineExceededException;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.Policy;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -44,13 +44,13 @@ import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.ByteString;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -104,6 +104,20 @@ public class BigtableBackupIT {
     }
   }
 
+  private static void deleteBackupIgnoreErrors(
+      BigtableTableAdminClient tableAdmin, String clusterId, String backupId) {
+    try {
+      tableAdmin.deleteBackup(clusterId, backupId);
+    } catch (DeadlineExceededException ex) {
+      LOGGER.log(Level.WARNING, "Error deleting backup", ex);
+      // Don't rethrow
+    }
+  }
+
+  private void deleteBackupIgnoreErrors(String clusterId, String backupId) {
+    deleteBackupIgnoreErrors(tableAdmin, clusterId, backupId);
+  }
+
   @Test
   public void createAndGetBackupTest() {
     String backupId = prefixGenerator.newPrefix();
@@ -146,7 +160,7 @@ public class BigtableBackupIT {
           .isAnyOf(Backup.State.CREATING, Backup.State.READY);
 
     } finally {
-      tableAdmin.deleteBackup(targetCluster, backupId);
+      deleteBackupIgnoreErrors(targetCluster, backupId);
     }
   }
 
@@ -166,8 +180,8 @@ public class BigtableBackupIT {
           .that(response)
           .containsAtLeast(backupId1, backupId2);
     } finally {
-      tableAdmin.deleteBackup(targetCluster, backupId1);
-      tableAdmin.deleteBackup(targetCluster, backupId2);
+      deleteBackupIgnoreErrors(targetCluster, backupId1);
+      deleteBackupIgnoreErrors(targetCluster, backupId2);
     }
   }
 
@@ -183,33 +197,18 @@ public class BigtableBackupIT {
       Backup backup = tableAdmin.updateBackup(req);
       assertWithMessage("Incorrect expire time").that(backup.getExpireTime()).isEqualTo(expireTime);
     } finally {
-      tableAdmin.deleteBackup(targetCluster, backupId);
+      deleteBackupIgnoreErrors(targetCluster, backupId);
     }
   }
 
   @Test
-  public void deleteBackupTest() throws InterruptedException {
+  public void deleteBackupTest() {
     String backupId = prefixGenerator.newPrefix();
 
     tableAdmin.createBackup(createBackupRequest(backupId));
     tableAdmin.deleteBackup(targetCluster, backupId);
 
-    try {
-      for (int i = 0; i < BACKOFF_DURATION.length; i++) {
-        tableAdmin.getBackup(targetCluster, backupId);
-
-        LOGGER.info("Wait for " + BACKOFF_DURATION[i] + " seconds for deleting backup " + backupId);
-        Thread.sleep(BACKOFF_DURATION[i] * 1000);
-      }
-      fail("backup was not deleted.");
-    } catch (ApiException ex) {
-      assertWithMessage("Incorrect exception type")
-          .that(ex.getCause())
-          .isInstanceOf(StatusRuntimeException.class);
-      assertWithMessage("Incorrect error message")
-          .that(((StatusRuntimeException) ex.getCause()).getStatus().getCode())
-          .isEqualTo(NOT_FOUND);
-    }
+    assertThrows(NotFoundException.class, () -> tableAdmin.getBackup(targetCluster, backupId));
   }
 
   @Test
@@ -240,7 +239,7 @@ public class BigtableBackupIT {
             .isEqualTo(restoredTableId);
       }
     } finally {
-      tableAdmin.deleteBackup(targetCluster, backupId);
+      deleteBackupIgnoreErrors(targetCluster, backupId);
       tableAdmin.deleteTable(restoredTableId);
     }
   }
@@ -298,7 +297,7 @@ public class BigtableBackupIT {
         destTableAdmin.awaitOptimizeRestoredTable(result.getOptimizeRestoredTableOperationToken());
         destTableAdmin.getTable(restoredTableId);
       } finally {
-        tableAdmin.deleteBackup(targetCluster, backupId);
+        deleteBackupIgnoreErrors(targetCluster, backupId);
         instanceAdmin.deleteInstance(targetInstance);
       }
     }
@@ -340,8 +339,8 @@ public class BigtableBackupIT {
           .isAnyOf(Backup.State.CREATING, Backup.State.READY);
 
     } finally {
-      tableAdmin.deleteBackup(targetCluster, copiedBackupId);
-      tableAdmin.deleteBackup(targetCluster, backupId);
+      deleteBackupIgnoreErrors(targetCluster, copiedBackupId);
+      deleteBackupIgnoreErrors(targetCluster, backupId);
     }
   }
 
@@ -395,8 +394,8 @@ public class BigtableBackupIT {
             .isAnyOf(Backup.State.CREATING, Backup.State.READY);
 
       } finally {
-        destTableAdmin.deleteBackup(destCluster, copiedBackupId);
-        tableAdmin.deleteBackup(targetCluster, backupId);
+        deleteBackupIgnoreErrors(destTableAdmin, destCluster, copiedBackupId);
+        deleteBackupIgnoreErrors(targetCluster, backupId);
         instanceAdmin.deleteInstance(destInstance);
       }
     }
@@ -430,7 +429,7 @@ public class BigtableBackupIT {
               "bigtable.backups.restore");
       assertThat(permissions).hasSize(4);
     } finally {
-      tableAdmin.deleteBackup(targetCluster, backupId);
+      deleteBackupIgnoreErrors(targetCluster, backupId);
     }
   }
 
