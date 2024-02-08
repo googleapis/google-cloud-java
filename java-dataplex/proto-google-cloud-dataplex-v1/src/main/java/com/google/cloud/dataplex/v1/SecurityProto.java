@@ -47,13 +47,13 @@ public final class SecurityProto {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/dataplex/v1/security.prot"
           + "o\022\030google.cloud.dataplex.v1\032\037google/api/"
-          + "field_behavior.proto\"X\n\022ResourceAccessSp"
-          + "ec\022\025\n\007readers\030\001 \003(\tB\004\342A\001\001\022\025\n\007writers\030\002 \003"
-          + "(\tB\004\342A\001\001\022\024\n\006owners\030\003 \003(\tB\004\342A\001\001\"\'\n\016DataAc"
-          + "cessSpec\022\025\n\007readers\030\001 \003(\tB\004\342A\001\001Bi\n\034com.g"
-          + "oogle.cloud.dataplex.v1B\rSecurityProtoP\001"
-          + "Z8cloud.google.com/go/dataplex/apiv1/dat"
-          + "aplexpb;dataplexpbb\006proto3"
+          + "field_behavior.proto\"U\n\022ResourceAccessSp"
+          + "ec\022\024\n\007readers\030\001 \003(\tB\003\340A\001\022\024\n\007writers\030\002 \003("
+          + "\tB\003\340A\001\022\023\n\006owners\030\003 \003(\tB\003\340A\001\"&\n\016DataAcces"
+          + "sSpec\022\024\n\007readers\030\001 \003(\tB\003\340A\001Bi\n\034com.googl"
+          + "e.cloud.dataplex.v1B\rSecurityProtoP\001Z8cl"
+          + "oud.google.com/go/dataplex/apiv1/dataple"
+          + "xpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
