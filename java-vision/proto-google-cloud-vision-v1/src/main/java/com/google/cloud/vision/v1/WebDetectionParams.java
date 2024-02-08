@@ -67,14 +67,17 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Whether to include results derived from the geo information in the image.
+   * This field has no effect on results.
    * </pre>
    *
-   * <code>bool include_geo_results = 2;</code>
+   * <code>bool include_geo_results = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.WebDetectionParams.include_geo_results is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=653
    * @return The includeGeoResults.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getIncludeGeoResults() {
     return includeGeoResults_;
   }
@@ -423,14 +426,17 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Whether to include results derived from the geo information in the image.
+     * This field has no effect on results.
      * </pre>
      *
-     * <code>bool include_geo_results = 2;</code>
+     * <code>bool include_geo_results = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.WebDetectionParams.include_geo_results is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=653
      * @return The includeGeoResults.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getIncludeGeoResults() {
       return includeGeoResults_;
     }
@@ -438,14 +444,17 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Whether to include results derived from the geo information in the image.
+     * This field has no effect on results.
      * </pre>
      *
-     * <code>bool include_geo_results = 2;</code>
+     * <code>bool include_geo_results = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.WebDetectionParams.include_geo_results is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=653
      * @param value The includeGeoResults to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setIncludeGeoResults(boolean value) {
 
       includeGeoResults_ = value;
@@ -457,13 +466,16 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Whether to include results derived from the geo information in the image.
+     * This field has no effect on results.
      * </pre>
      *
-     * <code>bool include_geo_results = 2;</code>
+     * <code>bool include_geo_results = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.WebDetectionParams.include_geo_results is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=653
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearIncludeGeoResults() {
       bitField0_ = (bitField0_ & ~0x00000001);
       includeGeoResults_ = false;

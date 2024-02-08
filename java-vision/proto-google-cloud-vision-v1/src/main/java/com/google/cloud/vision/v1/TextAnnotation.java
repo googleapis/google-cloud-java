@@ -28,8 +28,9 @@ package com.google.cloud.vision.v1;
  *     TextAnnotation -&gt; Page -&gt; Block -&gt; Paragraph -&gt; Word -&gt; Symbol
  * Each structural component, starting from Page, may further have their own
  * properties. Properties describe detected languages, breaks etc.. Please refer
- * to the [TextAnnotation.TextProperty][google.cloud.vision.v1.TextAnnotation.TextProperty] message definition below for more
- * detail.
+ * to the
+ * [TextAnnotation.TextProperty][google.cloud.vision.v1.TextAnnotation.TextProperty]
+ * message definition below for more detail.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.TextAnnotation}
@@ -3482,8 +3483,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *     TextAnnotation -&gt; Page -&gt; Block -&gt; Paragraph -&gt; Word -&gt; Symbol
    * Each structural component, starting from Page, may further have their own
    * properties. Properties describe detected languages, breaks etc.. Please refer
-   * to the [TextAnnotation.TextProperty][google.cloud.vision.v1.TextAnnotation.TextProperty] message definition below for more
-   * detail.
+   * to the
+   * [TextAnnotation.TextProperty][google.cloud.vision.v1.TextAnnotation.TextProperty]
+   * message definition below for more detail.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.TextAnnotation}

@@ -89,7 +89,8 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch request is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -102,7 +103,8 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch request is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -115,7 +117,8 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch request is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>

@@ -24,6 +24,7 @@ import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.OperationMetadata;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncAsyncBatchAnnotateFilesLRO {
 
@@ -42,6 +43,7 @@ public class AsyncAsyncBatchAnnotateFilesLRO {
           AsyncBatchAnnotateFilesRequest.newBuilder()
               .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
               .setParent("parent-995424086")
+              .putAllLabels(new HashMap<String, String>())
               .build();
       OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata> future =
           imageAnnotatorClient.asyncBatchAnnotateFilesOperationCallable().futureCall(request);

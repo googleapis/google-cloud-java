@@ -73,7 +73,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the product in which to create the reference image.
+   * Required. Resource name of the product in which to create the reference
+   * image.
    *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -101,7 +102,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the product in which to create the reference image.
+   * Required. Resource name of the product in which to create the reference
+   * image.
    *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -658,7 +660,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference
+     * image.
      *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -685,7 +688,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference
+     * image.
      *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -712,7 +716,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference
+     * image.
      *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -738,7 +743,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference
+     * image.
      *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -760,7 +766,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference
+     * image.
      *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.

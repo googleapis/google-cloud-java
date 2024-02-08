@@ -301,6 +301,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateImagesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
    * }
@@ -330,6 +331,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateImagesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<BatchAnnotateImagesResponse> future =
    *       imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
@@ -398,6 +400,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   BatchAnnotateFilesResponse response = imageAnnotatorClient.batchAnnotateFiles(request);
    * }
@@ -432,6 +435,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<BatchAnnotateFilesResponse> future =
    *       imageAnnotatorClient.batchAnnotateFilesCallable().futureCall(request);
@@ -512,6 +516,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   AsyncBatchAnnotateImagesResponse response =
    *       imageAnnotatorClient.asyncBatchAnnotateImagesAsync(request).get();
@@ -551,6 +556,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata> future =
    *       imageAnnotatorClient.asyncBatchAnnotateImagesOperationCallable().futureCall(request);
@@ -590,6 +596,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       imageAnnotatorClient.asyncBatchAnnotateImagesCallable().futureCall(request);
@@ -657,6 +664,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   AsyncBatchAnnotateFilesResponse response =
    *       imageAnnotatorClient.asyncBatchAnnotateFilesAsync(request).get();
@@ -692,6 +700,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata> future =
    *       imageAnnotatorClient.asyncBatchAnnotateFilesOperationCallable().futureCall(request);
@@ -727,6 +736,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       imageAnnotatorClient.asyncBatchAnnotateFilesCallable().futureCall(request);

@@ -23,6 +23,7 @@ import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncBatchAnnotateImages {
 
@@ -41,6 +42,7 @@ public class AsyncBatchAnnotateImages {
           BatchAnnotateImagesRequest.newBuilder()
               .addAllRequests(new ArrayList<AnnotateImageRequest>())
               .setParent("parent-995424086")
+              .putAllLabels(new HashMap<String, String>())
               .build();
       ApiFuture<BatchAnnotateImagesResponse> future =
           imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);

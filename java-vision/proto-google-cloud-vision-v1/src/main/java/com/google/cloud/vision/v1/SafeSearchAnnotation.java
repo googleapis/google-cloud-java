@@ -188,7 +188,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Likelihood that this image contains violent content.
+   * Likelihood that this image contains violent content. Violent content may
+   * include death, serious harm, or injury to individuals or groups of
+   * individuals.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
@@ -203,7 +205,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Likelihood that this image contains violent content.
+   * Likelihood that this image contains violent content. Violent content may
+   * include death, serious harm, or injury to individuals or groups of
+   * individuals.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
@@ -983,7 +987,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Likelihood that this image contains violent content.
+     * Likelihood that this image contains violent content. Violent content may
+     * include death, serious harm, or injury to individuals or groups of
+     * individuals.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
@@ -998,7 +1004,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Likelihood that this image contains violent content.
+     * Likelihood that this image contains violent content. Violent content may
+     * include death, serious harm, or injury to individuals or groups of
+     * individuals.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
@@ -1016,7 +1024,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Likelihood that this image contains violent content.
+     * Likelihood that this image contains violent content. Violent content may
+     * include death, serious harm, or injury to individuals or groups of
+     * individuals.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
@@ -1033,7 +1043,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Likelihood that this image contains violent content.
+     * Likelihood that this image contains violent content. Violent content may
+     * include death, serious harm, or injury to individuals or groups of
+     * individuals.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
@@ -1054,7 +1066,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Likelihood that this image contains violent content.
+     * Likelihood that this image contains violent content. Violent content may
+     * include death, serious harm, or injury to individuals or groups of
+     * individuals.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>

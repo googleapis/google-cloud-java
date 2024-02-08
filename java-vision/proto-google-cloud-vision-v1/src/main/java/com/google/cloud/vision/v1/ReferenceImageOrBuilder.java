@@ -92,8 +92,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Optional. Bounding polygons around the areas of interest in the reference image.
-   * If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference
+   * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    *
    * The provided shape is converted into a non-rotated rectangle. Once
@@ -111,8 +111,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Optional. Bounding polygons around the areas of interest in the reference image.
-   * If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference
+   * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    *
    * The provided shape is converted into a non-rotated rectangle. Once
@@ -130,8 +130,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Optional. Bounding polygons around the areas of interest in the reference image.
-   * If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference
+   * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    *
    * The provided shape is converted into a non-rotated rectangle. Once
@@ -149,8 +149,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Optional. Bounding polygons around the areas of interest in the reference image.
-   * If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference
+   * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    *
    * The provided shape is converted into a non-rotated rectangle. Once
@@ -169,8 +169,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Optional. Bounding polygons around the areas of interest in the reference image.
-   * If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference
+   * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    *
    * The provided shape is converted into a non-rotated rectangle. Once

@@ -28,12 +28,15 @@ public interface WebDetectionParamsOrBuilder
    *
    *
    * <pre>
-   * Whether to include results derived from the geo information in the image.
+   * This field has no effect on results.
    * </pre>
    *
-   * <code>bool include_geo_results = 2;</code>
+   * <code>bool include_geo_results = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.WebDetectionParams.include_geo_results is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=653
    * @return The includeGeoResults.
    */
+  @java.lang.Deprecated
   boolean getIncludeGeoResults();
 }
