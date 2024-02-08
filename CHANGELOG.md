@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.15.17](https://github.com/googleapis/java-logging/compare/v3.15.16...v3.15.17) (2024-02-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.24.0 ([#1526](https://github.com/googleapis/java-logging/issues/1526)) ([235f1aa](https://github.com/googleapis/java-logging/commit/235f1aa380d4f34f65d4cc957b3d26fa6a35e226))
+
+
+### Documentation
+
+* Fix typo in code comments ([#1520](https://github.com/googleapis/java-logging/issues/1520)) ([0440fc6](https://github.com/googleapis/java-logging/commit/0440fc6dfa3c5cd19f0d7d941af242872da1bbd3))
+
 ## [3.15.16](https://github.com/googleapis/java-logging/compare/v3.15.15...v3.15.16) (2024-01-25)
 
 
