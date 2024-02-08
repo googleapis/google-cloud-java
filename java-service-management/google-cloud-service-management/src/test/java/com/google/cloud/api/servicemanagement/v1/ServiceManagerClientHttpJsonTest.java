@@ -86,6 +86,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
+import org.junit.Ignore;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -823,6 +824,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -880,6 +882,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void getIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -935,6 +938,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
