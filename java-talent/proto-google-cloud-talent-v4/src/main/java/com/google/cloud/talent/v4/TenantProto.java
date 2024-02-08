@@ -44,12 +44,12 @@ public final class TenantProto {
       "\n#google/cloud/talent/v4/tenant.proto\022\026g"
           + "oogle.cloud.talent.v4\032\037google/api/field_"
           + "behavior.proto\032\031google/api/resource.prot"
-          + "o\"w\n\006Tenant\022\014\n\004name\030\001 \001(\t\022\031\n\013external_id"
-          + "\030\002 \001(\tB\004\342A\001\002:D\352AA\n\032jobs.googleapis.com/T"
-          + "enant\022#projects/{project}/tenants/{tenan"
-          + "t}Be\n\032com.google.cloud.talent.v4B\013Tenant"
-          + "ProtoP\001Z2cloud.google.com/go/talent/apiv"
-          + "4/talentpb;talentpb\242\002\003CTSb\006proto3"
+          + "o\"v\n\006Tenant\022\014\n\004name\030\001 \001(\t\022\030\n\013external_id"
+          + "\030\002 \001(\tB\003\340A\002:D\352AA\n\032jobs.googleapis.com/Te"
+          + "nant\022#projects/{project}/tenants/{tenant"
+          + "}Be\n\032com.google.cloud.talent.v4B\013TenantP"
+          + "rotoP\001Z2cloud.google.com/go/talent/apiv4"
+          + "/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

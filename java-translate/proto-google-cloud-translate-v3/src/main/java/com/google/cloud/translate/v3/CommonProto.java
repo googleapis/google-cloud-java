@@ -51,17 +51,17 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/translate/v3/common.proto"
           + "\022\033google.cloud.translation.v3\032\037google/ap"
-          + "i/field_behavior.proto\")\n\016GcsInputSource"
-          + "\022\027\n\tinput_uri\030\001 \001(\tB\004\342A\001\002\"]\n\017FileInputSo"
-          + "urce\022\027\n\tmime_type\030\001 \001(\tB\004\342A\001\002\022\025\n\007content"
-          + "\030\002 \001(\014B\004\342A\001\002\022\032\n\014display_name\030\003 \001(\tB\004\342A\001\002"
-          + "\"7\n\024GcsOutputDestination\022\037\n\021output_uri_p"
-          + "refix\030\001 \001(\tB\004\342A\001\002B\305\001\n\035com.google.cloud.t"
-          + "ranslate.v3B\013CommonProtoP\001Z;cloud.google"
-          + ".com/go/translate/apiv3/translatepb;tran"
-          + "slatepb\370\001\001\252\002\031Google.Cloud.Translate.V3\312\002"
-          + "\031Google\\Cloud\\Translate\\V3\352\002\034Google::Clo"
-          + "ud::Translate::V3b\006proto3"
+          + "i/field_behavior.proto\"(\n\016GcsInputSource"
+          + "\022\026\n\tinput_uri\030\001 \001(\tB\003\340A\002\"Z\n\017FileInputSou"
+          + "rce\022\026\n\tmime_type\030\001 \001(\tB\003\340A\002\022\024\n\007content\030\002"
+          + " \001(\014B\003\340A\002\022\031\n\014display_name\030\003 \001(\tB\003\340A\002\"6\n\024"
+          + "GcsOutputDestination\022\036\n\021output_uri_prefi"
+          + "x\030\001 \001(\tB\003\340A\002B\305\001\n\035com.google.cloud.transl"
+          + "ate.v3B\013CommonProtoP\001Z;cloud.google.com/"
+          + "go/translate/apiv3/translatepb;translate"
+          + "pb\370\001\001\252\002\031Google.Cloud.Translate.V3\312\002\031Goog"
+          + "le\\Cloud\\Translate\\V3\352\002\034Google::Cloud::T"
+          + "ranslate::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
