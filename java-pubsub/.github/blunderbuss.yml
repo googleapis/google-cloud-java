@@ -1,9 +1,9 @@
 # Configuration for the Blunderbuss GitHub app. For more info see
 # https://github.com/googleapis/repo-automation-bots/tree/main/packages/blunderbuss
 assign_issues:
-  - maitrimangal
+  - michaelpri10
 assign_prs:
-  - maitrimangal
+  - michaelpri10
 assign_prs_by:
 - labels:
   - samples
