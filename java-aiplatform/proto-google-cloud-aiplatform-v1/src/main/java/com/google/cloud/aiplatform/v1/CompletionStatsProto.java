@@ -43,17 +43,17 @@ public final class CompletionStatsProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/completion_"
           + "stats.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\037google/api/field_behavior.proto\"\234\001\n\017Com"
-          + "pletionStats\022\036\n\020successful_count\030\001 \001(\003B\004"
-          + "\342A\001\003\022\032\n\014failed_count\030\002 \001(\003B\004\342A\001\003\022\036\n\020inco"
-          + "mplete_count\030\003 \001(\003B\004\342A\001\003\022-\n\037successful_f"
-          + "orecast_point_count\030\005 \001(\003B\004\342A\001\003B\322\001\n\036com."
-          + "google.cloud.aiplatform.v1B\024CompletionSt"
-          + "atsProtoP\001Z>cloud.google.com/go/aiplatfo"
-          + "rm/apiv1/aiplatformpb;aiplatformpb\252\002\032Goo"
-          + "gle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\A"
-          + "IPlatform\\V1\352\002\035Google::Cloud::AIPlatform"
-          + "::V1b\006proto3"
+          + "\037google/api/field_behavior.proto\"\230\001\n\017Com"
+          + "pletionStats\022\035\n\020successful_count\030\001 \001(\003B\003"
+          + "\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003\022\035\n\020incomp"
+          + "lete_count\030\003 \001(\003B\003\340A\003\022,\n\037successful_fore"
+          + "cast_point_count\030\005 \001(\003B\003\340A\003B\322\001\n\036com.goog"
+          + "le.cloud.aiplatform.v1B\024CompletionStatsP"
+          + "rotoP\001Z>cloud.google.com/go/aiplatform/a"
+          + "piv1/aiplatformpb;aiplatformpb\252\002\032Google."
+          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
+          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

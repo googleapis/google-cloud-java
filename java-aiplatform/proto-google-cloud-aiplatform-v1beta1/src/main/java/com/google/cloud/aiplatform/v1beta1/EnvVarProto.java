@@ -43,15 +43,14 @@ public final class EnvVarProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/aiplatform/v1beta1/env_va"
           + "r.proto\022\037google.cloud.aiplatform.v1beta1"
-          + "\032\037google/api/field_behavior.proto\"1\n\006Env"
-          + "Var\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\023\n\005value\030\002 \001(\tB\004"
-          + "\342A\001\002B\342\001\n#com.google.cloud.aiplatform.v1b"
-          + "eta1B\013EnvVarProtoP\001ZCcloud.google.com/go"
-          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
-          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
-          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
-          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
-          + "3"
+          + "\032\037google/api/field_behavior.proto\"/\n\006Env"
+          + "Var\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340"
+          + "A\002B\342\001\n#com.google.cloud.aiplatform.v1bet"
+          + "a1B\013EnvVarProtoP\001ZCcloud.google.com/go/a"
+          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
+          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

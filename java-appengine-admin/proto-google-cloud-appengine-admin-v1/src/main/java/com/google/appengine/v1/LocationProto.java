@@ -43,15 +43,15 @@ public final class LocationProto {
     java.lang.String[] descriptorData = {
       "\n\"google/appengine/v1/location.proto\022\023go"
           + "ogle.appengine.v1\032\037google/api/field_beha"
-          + "vior.proto\"\206\001\n\020LocationMetadata\022&\n\036stand"
+          + "vior.proto\"\205\001\n\020LocationMetadata\022&\n\036stand"
           + "ard_environment_available\030\002 \001(\010\022&\n\036flexi"
-          + "ble_environment_available\030\004 \001(\010\022\"\n\024searc"
-          + "h_api_available\030\006 \001(\010B\004\342A\001\003B\276\001\n\027com.goog"
-          + "le.appengine.v1B\rLocationProtoP\001Z;cloud."
-          + "google.com/go/appengine/apiv1/appenginep"
-          + "b;appenginepb\252\002\031Google.Cloud.AppEngine.V"
-          + "1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::"
-          + "Cloud::AppEngine::V1b\006proto3"
+          + "ble_environment_available\030\004 \001(\010\022!\n\024searc"
+          + "h_api_available\030\006 \001(\010B\003\340A\003B\276\001\n\027com.googl"
+          + "e.appengine.v1B\rLocationProtoP\001Z;cloud.g"
+          + "oogle.com/go/appengine/apiv1/appenginepb"
+          + ";appenginepb\252\002\031Google.Cloud.AppEngine.V1"
+          + "\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::C"
+          + "loud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

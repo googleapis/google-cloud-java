@@ -44,14 +44,14 @@ public final class EncryptionSpecProto {
       "\n5google/cloud/aiplatform/v1beta1/encryp"
           + "tion_spec.proto\022\037google.cloud.aiplatform"
           + ".v1beta1\032\037google/api/field_behavior.prot"
-          + "o\",\n\016EncryptionSpec\022\032\n\014kms_key_name\030\001 \001("
-          + "\tB\004\342A\001\002B\352\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\023EncryptionSpecProtoP\001ZCcloud.go"
-          + "ogle.com/go/aiplatform/apiv1beta1/aiplat"
-          + "formpb;aiplatformpb\252\002\037Google.Cloud.AIPla"
-          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
-          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
-          + "eta1b\006proto3"
+          + "o\"+\n\016EncryptionSpec\022\031\n\014kms_key_name\030\001 \001("
+          + "\tB\003\340A\002B\352\001\n#com.google.cloud.aiplatform.v"
+          + "1beta1B\023EncryptionSpecProtoP\001ZCcloud.goo"
+          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
