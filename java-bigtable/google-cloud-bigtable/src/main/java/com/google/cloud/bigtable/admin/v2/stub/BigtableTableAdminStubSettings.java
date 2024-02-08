@@ -730,9 +730,9 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -764,20 +764,20 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(3600000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(3600000L))
               .setTotalTimeout(Duration.ofMillis(3600000L))
               .build();
       definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -957,8 +957,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
       builder
           .deleteTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .undeleteTableSettings()
@@ -1002,8 +1002,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
       builder
           .deleteSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .createBackupSettings()
@@ -1022,8 +1022,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
       builder
           .deleteBackupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .listBackupsSettings()
