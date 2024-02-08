@@ -105,7 +105,7 @@ public class GenerativeModel {
      * https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
      */
     public Builder setModelName(String modelName) {
-      this.modelName = validateModelName(modelName);
+      this.modelName = reconcileModelName(modelName);
       return this;
     }
 
@@ -298,7 +298,7 @@ public class GenerativeModel {
       List<SafetySetting> safetySettings,
       VertexAI vertexAi,
       Transport transport) {
-    modelName = validateModelName(modelName);
+    modelName = reconcileModelName(modelName);
     this.modelName = modelName;
     this.resourceName =
         String.format(
@@ -914,19 +914,13 @@ public class GenerativeModel {
     return new ChatSession(this);
   }
 
-  /** Checks if the model name is valid and returns the model name. */
-  private static String validateModelName(String modelName) {
+  /** Keep the model name only, if users specify the resource name, and returns the model name. */
+  private static String reconcileModelName(String modelName) {
     for (String prefix : Constants.MODEL_NAME_PREFIXES) {
       if (modelName.startsWith(prefix)) {
         modelName = modelName.substring(prefix.length());
         break;
       }
-    }
-    if (!Constants.GENERATIVE_MODEL_NAMES.contains(modelName)) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid model name: %s. Please choose from: %s",
-              modelName, Constants.GENERATIVE_MODEL_NAMES));
     }
     return modelName;
   }

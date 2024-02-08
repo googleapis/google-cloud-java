@@ -20,12 +20,6 @@ import com.google.common.collect.ImmutableSet;
 
 /** A class that holds all constants for vertexai/generativeai. */
 public final class Constants {
-  // Constants for GenerativeModel class
-  // Models supported in Gemini API are listed at
-  // https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
-  public static final ImmutableSet<String> GENERATIVE_MODEL_NAMES =
-      ImmutableSet.of("gemini-pro", "gemini-pro-vision", "gemini-ultra", "gemini-ultra-vision");
-
   public static final ImmutableSet<String> MODEL_NAME_PREFIXES =
       ImmutableSet.of("publishers/google/models/", "models/");
 
