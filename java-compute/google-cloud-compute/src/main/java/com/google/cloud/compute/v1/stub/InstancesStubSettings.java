@@ -72,6 +72,7 @@ import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
@@ -212,6 +213,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final PagedCallSettings<
           ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
       listReferrersSettings;
+  private final UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings;
+  private final OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings;
   private final UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings;
   private final OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
@@ -642,6 +647,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
       listReferrersSettings() {
     return listReferrersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings() {
+    return performMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return performMaintenanceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to removeResourcePolicies. */
@@ -1081,6 +1098,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listReferrersSettings = settingsBuilder.listReferrersSettings().build();
+    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
+    performMaintenanceOperationSettings =
+        settingsBuilder.performMaintenanceOperationSettings().build();
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
     removeResourcePoliciesOperationSettings =
         settingsBuilder.removeResourcePoliciesOperationSettings().build();
@@ -1213,6 +1233,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final PagedCallSettings.Builder<
             ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
         listReferrersSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings;
     private final UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings;
     private final OperationCallSettings.Builder<
@@ -1407,6 +1432,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listReferrersSettings = PagedCallSettings.newBuilder(LIST_REFERRERS_PAGE_STR_FACT);
+      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1483,6 +1510,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               insertSettings,
               listSettings,
               listReferrersSettings,
+              performMaintenanceSettings,
               removeResourcePoliciesSettings,
               resetSettings,
               resumeSettings,
@@ -1547,6 +1575,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listReferrersSettings = settings.listReferrersSettings.toBuilder();
+      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
+      performMaintenanceOperationSettings =
+          settings.performMaintenanceOperationSettings.toBuilder();
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
       removeResourcePoliciesOperationSettings =
           settings.removeResourcePoliciesOperationSettings.toBuilder();
@@ -1635,6 +1666,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               insertSettings,
               listSettings,
               listReferrersSettings,
+              performMaintenanceSettings,
               removeResourcePoliciesSettings,
               resetSettings,
               resumeSettings,
@@ -1768,6 +1800,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .listReferrersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .performMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .removeResourcePoliciesSettings()
@@ -2089,6 +2126,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .performMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2931,6 +2993,20 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
         listReferrersSettings() {
       return listReferrersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings() {
+      return performMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return performMaintenanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */

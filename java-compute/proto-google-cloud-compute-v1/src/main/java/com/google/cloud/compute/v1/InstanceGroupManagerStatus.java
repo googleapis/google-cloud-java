@@ -63,6 +63,67 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   }
 
   private int bitField0_;
+  public static final int ALL_INSTANCES_CONFIG_FIELD_NUMBER = 112596737;
+  private com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+      allInstancesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Status of all-instances configuration on the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return Whether the allInstancesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllInstancesConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Status of all-instances configuration on the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return The allInstancesConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+      getAllInstancesConfig() {
+    return allInstancesConfig_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+            .getDefaultInstance()
+        : allInstancesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Status of all-instances configuration on the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder
+      getAllInstancesConfigOrBuilder() {
+    return allInstancesConfig_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+            .getDefaultInstance()
+        : allInstancesConfig_;
+  }
+
   public static final int AUTOSCALER_FIELD_NUMBER = 517258967;
 
   @SuppressWarnings("serial")
@@ -80,7 +141,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasAutoscaler() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -144,7 +205,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasIsStable() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -179,7 +240,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasStateful() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -236,7 +297,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasVersionTarget() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -290,16 +351,19 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(108410864, isStable_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(244462412, getStateful());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(112596737, getAllInstancesConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(244462412, getStateful());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(289386200, getVersionTarget());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 517258967, autoscaler_);
     }
     getUnknownFields().writeTo(output);
@@ -311,17 +375,22 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(108410864, isStable_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(244462412, getStateful());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              112596737, getAllInstancesConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(244462412, getStateful());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(289386200, getVersionTarget());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517258967, autoscaler_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -340,6 +409,10 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     com.google.cloud.compute.v1.InstanceGroupManagerStatus other =
         (com.google.cloud.compute.v1.InstanceGroupManagerStatus) obj;
 
+    if (hasAllInstancesConfig() != other.hasAllInstancesConfig()) return false;
+    if (hasAllInstancesConfig()) {
+      if (!getAllInstancesConfig().equals(other.getAllInstancesConfig())) return false;
+    }
     if (hasAutoscaler() != other.hasAutoscaler()) return false;
     if (hasAutoscaler()) {
       if (!getAutoscaler().equals(other.getAutoscaler())) return false;
@@ -367,6 +440,10 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAllInstancesConfig()) {
+      hash = (37 * hash) + ALL_INSTANCES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAllInstancesConfig().hashCode();
+    }
     if (hasAutoscaler()) {
       hash = (37 * hash) + AUTOSCALER_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscaler().hashCode();
@@ -523,6 +600,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAllInstancesConfigFieldBuilder();
         getStatefulFieldBuilder();
         getVersionTargetFieldBuilder();
       }
@@ -532,6 +610,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      allInstancesConfig_ = null;
+      if (allInstancesConfigBuilder_ != null) {
+        allInstancesConfigBuilder_.dispose();
+        allInstancesConfigBuilder_ = null;
+      }
       autoscaler_ = "";
       isStable_ = false;
       stateful_ = null;
@@ -582,21 +665,28 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.autoscaler_ = autoscaler_;
+        result.allInstancesConfig_ =
+            allInstancesConfigBuilder_ == null
+                ? allInstancesConfig_
+                : allInstancesConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.isStable_ = isStable_;
+        result.autoscaler_ = autoscaler_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
+        result.isStable_ = isStable_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.versionTarget_ =
             versionTargetBuilder_ == null ? versionTarget_ : versionTargetBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -647,9 +737,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceGroupManagerStatus other) {
       if (other == com.google.cloud.compute.v1.InstanceGroupManagerStatus.getDefaultInstance())
         return this;
+      if (other.hasAllInstancesConfig()) {
+        mergeAllInstancesConfig(other.getAllInstancesConfig());
+      }
       if (other.hasAutoscaler()) {
         autoscaler_ = other.autoscaler_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasIsStable()) {
@@ -690,25 +783,32 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             case 867286912:
               {
                 isStable_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 867286912
+            case 900773898:
+              {
+                input.readMessage(
+                    getAllInstancesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 900773898
             case 1955699298:
               {
                 input.readMessage(getStatefulFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1955699298
             case -1979877694:
               {
                 input.readMessage(getVersionTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1979877694
             case -156895558:
               {
                 autoscaler_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -156895558
             default:
@@ -730,6 +830,221 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+        allInstancesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder>
+        allInstancesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     *
+     * @return Whether the allInstancesConfig field is set.
+     */
+    public boolean hasAllInstancesConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     *
+     * @return The allInstancesConfig.
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+        getAllInstancesConfig() {
+      if (allInstancesConfigBuilder_ == null) {
+        return allInstancesConfig_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+                .getDefaultInstance()
+            : allInstancesConfig_;
+      } else {
+        return allInstancesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder setAllInstancesConfig(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig value) {
+      if (allInstancesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        allInstancesConfig_ = value;
+      } else {
+        allInstancesConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder setAllInstancesConfig(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig.Builder
+            builderForValue) {
+      if (allInstancesConfigBuilder_ == null) {
+        allInstancesConfig_ = builderForValue.build();
+      } else {
+        allInstancesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder mergeAllInstancesConfig(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig value) {
+      if (allInstancesConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && allInstancesConfig_ != null
+            && allInstancesConfig_
+                != com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+                    .getDefaultInstance()) {
+          getAllInstancesConfigBuilder().mergeFrom(value);
+        } else {
+          allInstancesConfig_ = value;
+        }
+      } else {
+        allInstancesConfigBuilder_.mergeFrom(value);
+      }
+      if (allInstancesConfig_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder clearAllInstancesConfig() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      allInstancesConfig_ = null;
+      if (allInstancesConfigBuilder_ != null) {
+        allInstancesConfigBuilder_.dispose();
+        allInstancesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig.Builder
+        getAllInstancesConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAllInstancesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder
+        getAllInstancesConfigOrBuilder() {
+      if (allInstancesConfigBuilder_ != null) {
+        return allInstancesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return allInstancesConfig_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig
+                .getDefaultInstance()
+            : allInstancesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of all-instances configuration on the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder>
+        getAllInstancesConfigFieldBuilder() {
+      if (allInstancesConfigBuilder_ == null) {
+        allInstancesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig,
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig.Builder,
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder>(
+                getAllInstancesConfig(), getParentForChildren(), isClean());
+        allInstancesConfig_ = null;
+      }
+      return allInstancesConfigBuilder_;
+    }
+
     private java.lang.Object autoscaler_ = "";
     /**
      *
@@ -743,7 +1058,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the autoscaler field is set.
      */
     public boolean hasAutoscaler() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -806,7 +1121,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       autoscaler_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,7 +1138,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public Builder clearAutoscaler() {
       autoscaler_ = getDefaultInstance().getAutoscaler();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -845,7 +1160,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       autoscaler_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -864,7 +1179,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public boolean hasIsStable() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -896,7 +1211,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder setIsStable(boolean value) {
 
       isStable_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -912,7 +1227,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIsStable() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       isStable_ = false;
       onChanged();
       return this;
@@ -938,7 +1253,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the stateful field is set.
      */
     public boolean hasStateful() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -983,7 +1298,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1005,7 +1320,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1023,7 +1338,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeStateful(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful value) {
       if (statefulBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && stateful_ != null
             && stateful_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful
@@ -1036,7 +1351,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         statefulBuilder_.mergeFrom(value);
       }
       if (stateful_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1053,7 +1368,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearStateful() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       stateful_ = null;
       if (statefulBuilder_ != null) {
         statefulBuilder_.dispose();
@@ -1075,7 +1390,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder
         getStatefulBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStatefulFieldBuilder().getBuilder();
     }
@@ -1148,7 +1463,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the versionTarget field is set.
      */
     public boolean hasVersionTarget() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1194,7 +1509,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1217,7 +1532,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1235,7 +1550,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeVersionTarget(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget value) {
       if (versionTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && versionTarget_ != null
             && versionTarget_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget
@@ -1248,7 +1563,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         versionTargetBuilder_.mergeFrom(value);
       }
       if (versionTarget_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1265,7 +1580,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearVersionTarget() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       versionTarget_ = null;
       if (versionTargetBuilder_ != null) {
         versionTargetBuilder_.dispose();
@@ -1287,7 +1602,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
         getVersionTargetBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getVersionTargetFieldBuilder().getBuilder();
     }

@@ -48,6 +48,7 @@ import com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
@@ -226,6 +227,16 @@ public abstract class InstancesStub implements BackgroundResource {
   public UnaryCallable<ListReferrersInstancesRequest, InstanceListReferrers>
       listReferrersCallable() {
     throw new UnsupportedOperationException("Not implemented: listReferrersCallable()");
+  }
+
+  public OperationCallable<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceInstanceRequest, Operation> performMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
   }
 
   public OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>

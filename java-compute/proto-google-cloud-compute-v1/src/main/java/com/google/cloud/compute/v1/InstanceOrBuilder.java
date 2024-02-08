@@ -1246,6 +1246,31 @@ public interface InstanceOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
    * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.

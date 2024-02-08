@@ -132,6 +132,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     COMMITTED_NVIDIA_A100_80GB_GPUS(464326565),
     /** <code>COMMITTED_NVIDIA_A100_GPUS = 375799445;</code> */
     COMMITTED_NVIDIA_A100_GPUS(375799445),
+    /** <code>COMMITTED_NVIDIA_H100_GPUS = 71649180;</code> */
+    COMMITTED_NVIDIA_H100_GPUS(71649180),
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
     COMMITTED_NVIDIA_K80_GPUS(3857188),
     /** <code>COMMITTED_NVIDIA_L4_GPUS = 19163645;</code> */
@@ -148,6 +150,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     COMMITTED_T2A_CPUS(296378986),
     /** <code>COMMITTED_T2D_CPUS = 382266439;</code> */
     COMMITTED_T2D_CPUS(382266439),
+    /** <code>COMMITTED_Z3_CPUS = 263844686;</code> */
+    COMMITTED_Z3_CPUS(263844686),
     /**
      *
      *
@@ -290,6 +294,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_NVIDIA_A100_80GB_GPUS(151942410),
     /** <code>PREEMPTIBLE_NVIDIA_A100_GPUS = 68832784;</code> */
     PREEMPTIBLE_NVIDIA_A100_GPUS(68832784),
+    /** <code>PREEMPTIBLE_NVIDIA_H100_GPUS = 301553431;</code> */
+    PREEMPTIBLE_NVIDIA_H100_GPUS(301553431),
     /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
     PREEMPTIBLE_NVIDIA_K80_GPUS(374960201),
     /** <code>PREEMPTIBLE_NVIDIA_L4_GPUS = 100408376;</code> */
@@ -308,6 +314,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_NVIDIA_T4_VWS_GPUS(44497965),
     /** <code>PREEMPTIBLE_NVIDIA_V100_GPUS = 230123813;</code> */
     PREEMPTIBLE_NVIDIA_V100_GPUS(230123813),
+    /** <code>PREEMPTIBLE_TPU_LITE_DEVICE_V5 = 174262523;</code> */
+    PREEMPTIBLE_TPU_LITE_DEVICE_V5(174262523),
+    /** <code>PREEMPTIBLE_TPU_LITE_PODSLICE_V5 = 112281796;</code> */
+    PREEMPTIBLE_TPU_LITE_PODSLICE_V5(112281796),
+    /** <code>PREEMPTIBLE_TPU_PODSLICE_V4 = 425541132;</code> */
+    PREEMPTIBLE_TPU_PODSLICE_V4(425541132),
     /** <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code> */
     PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK(231164291),
     /** <code>PSC_INTERNAL_LB_FORWARDING_RULES = 169005435;</code> */
@@ -390,6 +402,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     TARGET_TCP_PROXIES(182243136),
     /** <code>TARGET_VPN_GATEWAYS = 75029928;</code> */
     TARGET_VPN_GATEWAYS(75029928),
+    /** <code>TPU_LITE_DEVICE_V5 = 449577597;</code> */
+    TPU_LITE_DEVICE_V5(449577597),
+    /** <code>TPU_LITE_PODSLICE_V5 = 12708294;</code> */
+    TPU_LITE_PODSLICE_V5(12708294),
+    /** <code>TPU_PODSLICE_V4 = 214467530;</code> */
+    TPU_PODSLICE_V4(214467530),
     /** <code>URL_MAPS = 378660743;</code> */
     URL_MAPS(378660743),
     /** <code>VPN_GATEWAYS = 35620282;</code> */
@@ -459,6 +477,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMITTED_NVIDIA_A100_80GB_GPUS_VALUE = 464326565;
     /** <code>COMMITTED_NVIDIA_A100_GPUS = 375799445;</code> */
     public static final int COMMITTED_NVIDIA_A100_GPUS_VALUE = 375799445;
+    /** <code>COMMITTED_NVIDIA_H100_GPUS = 71649180;</code> */
+    public static final int COMMITTED_NVIDIA_H100_GPUS_VALUE = 71649180;
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
     public static final int COMMITTED_NVIDIA_K80_GPUS_VALUE = 3857188;
     /** <code>COMMITTED_NVIDIA_L4_GPUS = 19163645;</code> */
@@ -475,6 +495,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMITTED_T2A_CPUS_VALUE = 296378986;
     /** <code>COMMITTED_T2D_CPUS = 382266439;</code> */
     public static final int COMMITTED_T2D_CPUS_VALUE = 382266439;
+    /** <code>COMMITTED_Z3_CPUS = 263844686;</code> */
+    public static final int COMMITTED_Z3_CPUS_VALUE = 263844686;
     /**
      *
      *
@@ -617,6 +639,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int PREEMPTIBLE_NVIDIA_A100_80GB_GPUS_VALUE = 151942410;
     /** <code>PREEMPTIBLE_NVIDIA_A100_GPUS = 68832784;</code> */
     public static final int PREEMPTIBLE_NVIDIA_A100_GPUS_VALUE = 68832784;
+    /** <code>PREEMPTIBLE_NVIDIA_H100_GPUS = 301553431;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_H100_GPUS_VALUE = 301553431;
     /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
     public static final int PREEMPTIBLE_NVIDIA_K80_GPUS_VALUE = 374960201;
     /** <code>PREEMPTIBLE_NVIDIA_L4_GPUS = 100408376;</code> */
@@ -635,6 +659,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int PREEMPTIBLE_NVIDIA_T4_VWS_GPUS_VALUE = 44497965;
     /** <code>PREEMPTIBLE_NVIDIA_V100_GPUS = 230123813;</code> */
     public static final int PREEMPTIBLE_NVIDIA_V100_GPUS_VALUE = 230123813;
+    /** <code>PREEMPTIBLE_TPU_LITE_DEVICE_V5 = 174262523;</code> */
+    public static final int PREEMPTIBLE_TPU_LITE_DEVICE_V5_VALUE = 174262523;
+    /** <code>PREEMPTIBLE_TPU_LITE_PODSLICE_V5 = 112281796;</code> */
+    public static final int PREEMPTIBLE_TPU_LITE_PODSLICE_V5_VALUE = 112281796;
+    /** <code>PREEMPTIBLE_TPU_PODSLICE_V4 = 425541132;</code> */
+    public static final int PREEMPTIBLE_TPU_PODSLICE_V4_VALUE = 425541132;
     /** <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code> */
     public static final int PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK_VALUE =
         231164291;
@@ -718,6 +748,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int TARGET_TCP_PROXIES_VALUE = 182243136;
     /** <code>TARGET_VPN_GATEWAYS = 75029928;</code> */
     public static final int TARGET_VPN_GATEWAYS_VALUE = 75029928;
+    /** <code>TPU_LITE_DEVICE_V5 = 449577597;</code> */
+    public static final int TPU_LITE_DEVICE_V5_VALUE = 449577597;
+    /** <code>TPU_LITE_PODSLICE_V5 = 12708294;</code> */
+    public static final int TPU_LITE_PODSLICE_V5_VALUE = 12708294;
+    /** <code>TPU_PODSLICE_V4 = 214467530;</code> */
+    public static final int TPU_PODSLICE_V4_VALUE = 214467530;
     /** <code>URL_MAPS = 378660743;</code> */
     public static final int URL_MAPS_VALUE = 378660743;
     /** <code>VPN_GATEWAYS = 35620282;</code> */
@@ -801,6 +837,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_NVIDIA_A100_80GB_GPUS;
         case 375799445:
           return COMMITTED_NVIDIA_A100_GPUS;
+        case 71649180:
+          return COMMITTED_NVIDIA_H100_GPUS;
         case 3857188:
           return COMMITTED_NVIDIA_K80_GPUS;
         case 19163645:
@@ -817,6 +855,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_T2A_CPUS;
         case 382266439:
           return COMMITTED_T2D_CPUS;
+        case 263844686:
+          return COMMITTED_Z3_CPUS;
         case 2075595:
           return CPUS;
         case 470911149:
@@ -951,6 +991,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_NVIDIA_A100_80GB_GPUS;
         case 68832784:
           return PREEMPTIBLE_NVIDIA_A100_GPUS;
+        case 301553431:
+          return PREEMPTIBLE_NVIDIA_H100_GPUS;
         case 374960201:
           return PREEMPTIBLE_NVIDIA_K80_GPUS;
         case 100408376:
@@ -969,6 +1011,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_NVIDIA_T4_VWS_GPUS;
         case 230123813:
           return PREEMPTIBLE_NVIDIA_V100_GPUS;
+        case 174262523:
+          return PREEMPTIBLE_TPU_LITE_DEVICE_V5;
+        case 112281796:
+          return PREEMPTIBLE_TPU_LITE_PODSLICE_V5;
+        case 425541132:
+          return PREEMPTIBLE_TPU_PODSLICE_V4;
         case 231164291:
           return PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK;
         case 169005435:
@@ -1043,6 +1091,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return TARGET_TCP_PROXIES;
         case 75029928:
           return TARGET_VPN_GATEWAYS;
+        case 449577597:
+          return TPU_LITE_DEVICE_V5;
+        case 12708294:
+          return TPU_LITE_PODSLICE_V5;
+        case 214467530:
+          return TPU_PODSLICE_V4;
         case 378660743:
           return URL_MAPS;
         case 35620282:

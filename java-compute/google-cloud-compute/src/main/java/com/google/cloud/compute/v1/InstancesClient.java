@@ -403,6 +403,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PerformMaintenance</td>
+ *      <td><p> Perform a manual maintenance on the instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(PerformMaintenanceInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(String project, String zone, String instance)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceOperationCallable()
+ *           <li><p> performMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> RemoveResourcePolicies</td>
  *      <td><p> Removes resource policies from an instance.</td>
  *      <td>
@@ -3357,6 +3376,140 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform a manual maintenance on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   Operation response = instancesClient.performMaintenanceAsync(project, zone, instance).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      String project, String zone, String instance) {
+    PerformMaintenanceInstanceRequest request =
+        PerformMaintenanceInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .build();
+    return performMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a manual maintenance on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   PerformMaintenanceInstanceRequest request =
+   *       PerformMaintenanceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.performMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      PerformMaintenanceInstanceRequest request) {
+    return performMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a manual maintenance on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   PerformMaintenanceInstanceRequest request =
+   *       PerformMaintenanceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.performMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return stub.performMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a manual maintenance on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   PerformMaintenanceInstanceRequest request =
+   *       PerformMaintenanceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.performMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceCallable() {
+    return stub.performMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Removes resource policies from an instance.
    *
    * <p>Sample code:
@@ -5970,6 +6123,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
+   *           .setWithExtendedNotifications(true)
    *           .setZone("zone3744684")
    *           .build();
    *   Operation response = instancesClient.simulateMaintenanceEventAsync(request).get();
@@ -6005,6 +6159,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
+   *           .setWithExtendedNotifications(true)
    *           .setZone("zone3744684")
    *           .build();
    *   OperationFuture<Operation, Operation> future =
@@ -6038,6 +6193,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
+   *           .setWithExtendedNotifications(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<Operation> future =

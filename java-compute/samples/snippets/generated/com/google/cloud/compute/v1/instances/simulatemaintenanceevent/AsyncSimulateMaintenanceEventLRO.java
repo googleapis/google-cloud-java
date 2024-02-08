@@ -40,6 +40,7 @@ public class AsyncSimulateMaintenanceEventLRO {
               .setInstance("instance555127957")
               .setProject("project-309310695")
               .setRequestId("requestId693933066")
+              .setWithExtendedNotifications(true)
               .setZone("zone3744684")
               .build();
       OperationFuture<Operation, Operation> future =

@@ -28,6 +28,48 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Reservation for aggregated resources, providing shape flexibility.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationAggregateReservation aggregate_reservation = 291567948;
+   * </code>
+   *
+   * @return Whether the aggregateReservation field is set.
+   */
+  boolean hasAggregateReservation();
+  /**
+   *
+   *
+   * <pre>
+   * Reservation for aggregated resources, providing shape flexibility.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationAggregateReservation aggregate_reservation = 291567948;
+   * </code>
+   *
+   * @return The aggregateReservation.
+   */
+  com.google.cloud.compute.v1.AllocationAggregateReservation getAggregateReservation();
+  /**
+   *
+   *
+   * <pre>
+   * Reservation for aggregated resources, providing shape flexibility.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationAggregateReservation aggregate_reservation = 291567948;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AllocationAggregateReservationOrBuilder
+      getAggregateReservationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *

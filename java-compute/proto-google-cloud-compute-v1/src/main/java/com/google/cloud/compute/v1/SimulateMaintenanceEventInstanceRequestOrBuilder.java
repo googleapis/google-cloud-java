@@ -119,6 +119,31 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    *
    *
    * <pre>
+   * Determines whether the customers receive notifications before migration. Only applicable to SF vms.
+   * </pre>
+   *
+   * <code>optional bool with_extended_notifications = 405957627;</code>
+   *
+   * @return Whether the withExtendedNotifications field is set.
+   */
+  boolean hasWithExtendedNotifications();
+  /**
+   *
+   *
+   * <pre>
+   * Determines whether the customers receive notifications before migration. Only applicable to SF vms.
+   * </pre>
+   *
+   * <code>optional bool with_extended_notifications = 405957627;</code>
+   *
+   * @return The withExtendedNotifications.
+   */
+  boolean getWithExtendedNotifications();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the zone for this request.
    * </pre>
    *

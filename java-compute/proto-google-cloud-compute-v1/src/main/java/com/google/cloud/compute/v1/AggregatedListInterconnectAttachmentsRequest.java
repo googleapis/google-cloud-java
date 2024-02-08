@@ -420,6 +420,12 @@ public final class AggregatedListInterconnectAttachmentsRequest
   public static final int SERVICE_PROJECT_NUMBER_FIELD_NUMBER = 316757497;
   private long serviceProjectNumber_ = 0L;
   /**
+   *
+   *
+   * <pre>
+   * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+   * </pre>
+   *
    * <code>optional int64 service_project_number = 316757497;</code>
    *
    * @return Whether the serviceProjectNumber field is set.
@@ -429,6 +435,12 @@ public final class AggregatedListInterconnectAttachmentsRequest
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+   * </pre>
+   *
    * <code>optional int64 service_project_number = 316757497;</code>
    *
    * @return The serviceProjectNumber.
@@ -1671,6 +1683,12 @@ public final class AggregatedListInterconnectAttachmentsRequest
 
     private long serviceProjectNumber_;
     /**
+     *
+     *
+     * <pre>
+     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * </pre>
+     *
      * <code>optional int64 service_project_number = 316757497;</code>
      *
      * @return Whether the serviceProjectNumber field is set.
@@ -1680,6 +1698,12 @@ public final class AggregatedListInterconnectAttachmentsRequest
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * </pre>
+     *
      * <code>optional int64 service_project_number = 316757497;</code>
      *
      * @return The serviceProjectNumber.
@@ -1689,6 +1713,12 @@ public final class AggregatedListInterconnectAttachmentsRequest
       return serviceProjectNumber_;
     }
     /**
+     *
+     *
+     * <pre>
+     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * </pre>
+     *
      * <code>optional int64 service_project_number = 316757497;</code>
      *
      * @param value The serviceProjectNumber to set.
@@ -1702,6 +1732,12 @@ public final class AggregatedListInterconnectAttachmentsRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * </pre>
+     *
      * <code>optional int64 service_project_number = 316757497;</code>
      *
      * @return This builder for chaining.

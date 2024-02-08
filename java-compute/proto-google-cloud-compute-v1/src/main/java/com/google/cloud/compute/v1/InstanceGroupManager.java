@@ -239,6 +239,64 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
   }
 
   private int bitField0_;
+  public static final int ALL_INSTANCES_CONFIG_FIELD_NUMBER = 112596737;
+  private com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig allInstancesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies configuration that overrides the instance template configuration for the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return Whether the allInstancesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllInstancesConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies configuration that overrides the instance template configuration for the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return The allInstancesConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig
+      getAllInstancesConfig() {
+    return allInstancesConfig_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.getDefaultInstance()
+        : allInstancesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies configuration that overrides the instance template configuration for the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfigOrBuilder
+      getAllInstancesConfigOrBuilder() {
+    return allInstancesConfig_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.getDefaultInstance()
+        : allInstancesConfig_;
+  }
+
   public static final int AUTO_HEALING_POLICIES_FIELD_NUMBER = 456799109;
 
   @SuppressWarnings("serial")
@@ -342,7 +400,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasBaseInstanceName() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -408,7 +466,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -474,7 +532,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasCurrentActions() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -531,7 +589,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -596,7 +654,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasDistributionPolicy() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -650,7 +708,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -714,7 +772,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -749,7 +807,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasInstanceGroup() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -816,7 +874,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasInstanceLifecyclePolicy() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -876,7 +934,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasInstanceTemplate() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -942,7 +1000,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1009,7 +1067,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasListManagedInstancesResults() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1077,7 +1135,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1214,7 +1272,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1280,7 +1338,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1344,7 +1402,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasStatefulPolicy() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1394,7 +1452,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1508,7 +1566,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasTargetSize() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -1543,7 +1601,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasUpdatePolicy() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -1677,7 +1735,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -1740,77 +1798,80 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(47538565, getStatefulPolicy());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeInt32(62880239, targetSize_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 81095253, instanceGroup_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(112596737, getAllInstancesConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     for (int i = 0; i < versions_.size(); i++) {
       output.writeMessage(162430619, versions_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(164045879, getCurrentActions());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(175809896, getUpdatePolicy());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 296047156, listManagedInstancesResults_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
     }
     for (int i = 0; i < targetPools_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 336072617, targetPools_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 389106439, baseInstanceName_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     for (int i = 0; i < namedPorts_.size(); i++) {
       output.writeMessage(427598732, namedPorts_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(447961617, getInstanceLifecyclePolicy());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < autoHealingPolicies_.size(); i++) {
       output.writeMessage(456799109, autoHealingPolicies_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(534558541, getDistributionPolicy());
     }
     getUnknownFields().writeTo(output);
@@ -1822,58 +1883,63 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(47538565, getStatefulPolicy());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(62880239, targetSize_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(81095253, instanceGroup_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              112596737, getAllInstancesConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     for (int i = 0; i < versions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(162430619, versions_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(164045879, getCurrentActions());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(175809896, getUpdatePolicy());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               296047156, listManagedInstancesResults_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
     }
@@ -1885,23 +1951,23 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 5 * getTargetPoolsList().size();
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(389106439, baseInstanceName_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     for (int i = 0; i < namedPorts_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(427598732, namedPorts_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               447961617, getInstanceLifecyclePolicy());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     for (int i = 0; i < autoHealingPolicies_.size(); i++) {
@@ -1909,7 +1975,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               456799109, autoHealingPolicies_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               534558541, getDistributionPolicy());
@@ -1930,6 +1996,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     com.google.cloud.compute.v1.InstanceGroupManager other =
         (com.google.cloud.compute.v1.InstanceGroupManager) obj;
 
+    if (hasAllInstancesConfig() != other.hasAllInstancesConfig()) return false;
+    if (hasAllInstancesConfig()) {
+      if (!getAllInstancesConfig().equals(other.getAllInstancesConfig())) return false;
+    }
     if (!getAutoHealingPoliciesList().equals(other.getAutoHealingPoliciesList())) return false;
     if (hasBaseInstanceName() != other.hasBaseInstanceName()) return false;
     if (hasBaseInstanceName()) {
@@ -2026,6 +2096,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAllInstancesConfig()) {
+      hash = (37 * hash) + ALL_INSTANCES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAllInstancesConfig().hashCode();
+    }
     if (getAutoHealingPoliciesCount() > 0) {
       hash = (37 * hash) + AUTO_HEALING_POLICIES_FIELD_NUMBER;
       hash = (53 * hash) + getAutoHealingPoliciesList().hashCode();
@@ -2262,6 +2336,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAllInstancesConfigFieldBuilder();
         getAutoHealingPoliciesFieldBuilder();
         getCurrentActionsFieldBuilder();
         getDistributionPolicyFieldBuilder();
@@ -2278,13 +2353,18 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      allInstancesConfig_ = null;
+      if (allInstancesConfigBuilder_ != null) {
+        allInstancesConfigBuilder_.dispose();
+        allInstancesConfigBuilder_ = null;
+      }
       if (autoHealingPoliciesBuilder_ == null) {
         autoHealingPolicies_ = java.util.Collections.emptyList();
       } else {
         autoHealingPolicies_ = null;
         autoHealingPoliciesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       baseInstanceName_ = "";
       creationTimestamp_ = "";
       currentActions_ = null;
@@ -2316,7 +2396,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         namedPorts_ = null;
         namedPortsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       region_ = "";
       selfLink_ = "";
       statefulPolicy_ = null;
@@ -2342,7 +2422,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         versions_ = null;
         versionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       zone_ = "";
       return this;
     }
@@ -2382,27 +2462,27 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.InstanceGroupManager result) {
       if (autoHealingPoliciesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           autoHealingPolicies_ = java.util.Collections.unmodifiableList(autoHealingPolicies_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.autoHealingPolicies_ = autoHealingPolicies_;
       } else {
         result.autoHealingPolicies_ = autoHealingPoliciesBuilder_.build();
       }
       if (namedPortsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.namedPorts_ = namedPorts_;
       } else {
         result.namedPorts_ = namedPortsBuilder_.build();
       }
       if (versionsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)) {
+        if (((bitField0_ & 0x00800000) != 0)) {
           versions_ = java.util.Collections.unmodifiableList(versions_);
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x00800000);
         }
         result.versions_ = versions_;
       } else {
@@ -2413,98 +2493,105 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     private void buildPartial0(com.google.cloud.compute.v1.InstanceGroupManager result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.baseInstanceName_ = baseInstanceName_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allInstancesConfig_ =
+            allInstancesConfigBuilder_ == null
+                ? allInstancesConfig_
+                : allInstancesConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.creationTimestamp_ = creationTimestamp_;
+        result.baseInstanceName_ = baseInstanceName_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.currentActions_ =
-            currentActionsBuilder_ == null ? currentActions_ : currentActionsBuilder_.build();
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.description_ = description_;
+        result.currentActions_ =
+            currentActionsBuilder_ == null ? currentActions_ : currentActionsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.distributionPolicy_ =
             distributionPolicyBuilder_ == null
                 ? distributionPolicy_
                 : distributionPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.id_ = id_;
+        result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.instanceGroup_ = instanceGroup_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.instanceGroup_ = instanceGroup_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.instanceLifecyclePolicy_ =
             instanceLifecyclePolicyBuilder_ == null
                 ? instanceLifecyclePolicy_
                 : instanceLifecyclePolicyBuilder_.build();
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.instanceTemplate_ = instanceTemplate_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.kind_ = kind_;
+        result.instanceTemplate_ = instanceTemplate_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.listManagedInstancesResults_ = listManagedInstancesResults_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.name_ = name_;
+        result.listManagedInstancesResults_ = listManagedInstancesResults_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.region_ = region_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.statefulPolicy_ =
-            statefulPolicyBuilder_ == null ? statefulPolicy_ : statefulPolicyBuilder_.build();
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        result.statefulPolicy_ =
+            statefulPolicyBuilder_ == null ? statefulPolicy_ : statefulPolicyBuilder_.build();
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         targetPools_.makeImmutable();
         result.targetPools_ = targetPools_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.targetSize_ = targetSize_;
-        to_bitField0_ |= 0x00020000;
-      }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.updatePolicy_ =
-            updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
+        result.targetSize_ = targetSize_;
         to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.zone_ = zone_;
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.updatePolicy_ =
+            updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
         to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2555,11 +2642,14 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceGroupManager other) {
       if (other == com.google.cloud.compute.v1.InstanceGroupManager.getDefaultInstance())
         return this;
+      if (other.hasAllInstancesConfig()) {
+        mergeAllInstancesConfig(other.getAllInstancesConfig());
+      }
       if (autoHealingPoliciesBuilder_ == null) {
         if (!other.autoHealingPolicies_.isEmpty()) {
           if (autoHealingPolicies_.isEmpty()) {
             autoHealingPolicies_ = other.autoHealingPolicies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAutoHealingPoliciesIsMutable();
             autoHealingPolicies_.addAll(other.autoHealingPolicies_);
@@ -2572,7 +2662,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             autoHealingPoliciesBuilder_.dispose();
             autoHealingPoliciesBuilder_ = null;
             autoHealingPolicies_ = other.autoHealingPolicies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             autoHealingPoliciesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAutoHealingPoliciesFieldBuilder()
@@ -2584,12 +2674,12 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasBaseInstanceName()) {
         baseInstanceName_ = other.baseInstanceName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCurrentActions()) {
@@ -2597,7 +2687,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasDistributionPolicy()) {
@@ -2605,7 +2695,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasId()) {
@@ -2613,7 +2703,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasInstanceGroup()) {
         instanceGroup_ = other.instanceGroup_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasInstanceLifecyclePolicy()) {
@@ -2621,29 +2711,29 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasInstanceTemplate()) {
         instanceTemplate_ = other.instanceTemplate_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasListManagedInstancesResults()) {
         listManagedInstancesResults_ = other.listManagedInstancesResults_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (namedPortsBuilder_ == null) {
         if (!other.namedPorts_.isEmpty()) {
           if (namedPorts_.isEmpty()) {
             namedPorts_ = other.namedPorts_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureNamedPortsIsMutable();
             namedPorts_.addAll(other.namedPorts_);
@@ -2656,7 +2746,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             namedPortsBuilder_.dispose();
             namedPortsBuilder_ = null;
             namedPorts_ = other.namedPorts_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             namedPortsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNamedPortsFieldBuilder()
@@ -2668,12 +2758,12 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasStatefulPolicy()) {
@@ -2685,7 +2775,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       if (!other.targetPools_.isEmpty()) {
         if (targetPools_.isEmpty()) {
           targetPools_ = other.targetPools_;
-          bitField0_ |= 0x00080000;
+          bitField0_ |= 0x00100000;
         } else {
           ensureTargetPoolsIsMutable();
           targetPools_.addAll(other.targetPools_);
@@ -2702,7 +2792,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         if (!other.versions_.isEmpty()) {
           if (versions_.isEmpty()) {
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x00800000);
           } else {
             ensureVersionsIsMutable();
             versions_.addAll(other.versions_);
@@ -2715,7 +2805,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             versionsBuilder_.dispose();
             versionsBuilder_ = null;
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x00800000);
             versionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionsFieldBuilder()
@@ -2727,7 +2817,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2759,55 +2849,62 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 26989658
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 29957474
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 244202930
             case 380308522:
               {
                 input.readMessage(getStatefulPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 380308522
             case 503041912:
               {
                 targetSize_ = input.readInt32();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 503041912
             case 648762026:
               {
                 instanceGroup_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 648762026
+            case 900773898:
+              {
+                input.readMessage(
+                    getAllInstancesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 900773898
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1111570338
             case 1299444954:
@@ -2827,37 +2924,37 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             case 1312367034:
               {
                 input.readMessage(getCurrentActionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1312367034
             case 1406479170:
               {
                 input.readMessage(getUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 1406479170
             case 1450082194:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 1450082194
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1877428002
             case -1926590046:
               {
                 listManagedInstancesResults_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -1926590046
             case -1820981470:
               {
                 instanceTemplate_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -1820981470
             case -1606386358:
@@ -2870,13 +2967,13 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             case -1182115782:
               {
                 baseInstanceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1182115782
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -911466526
             case -874177438:
@@ -2896,13 +2993,13 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getInstanceLifecyclePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -711274358
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -645248918
             case -640574422:
@@ -2923,7 +3020,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getDistributionPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -18498966
             default:
@@ -2945,16 +3042,230 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig allInstancesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig,
+            com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfigOrBuilder>
+        allInstancesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     *
+     * @return Whether the allInstancesConfig field is set.
+     */
+    public boolean hasAllInstancesConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     *
+     * @return The allInstancesConfig.
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig
+        getAllInstancesConfig() {
+      if (allInstancesConfigBuilder_ == null) {
+        return allInstancesConfig_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig
+                .getDefaultInstance()
+            : allInstancesConfig_;
+      } else {
+        return allInstancesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder setAllInstancesConfig(
+        com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig value) {
+      if (allInstancesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        allInstancesConfig_ = value;
+      } else {
+        allInstancesConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder setAllInstancesConfig(
+        com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.Builder
+            builderForValue) {
+      if (allInstancesConfigBuilder_ == null) {
+        allInstancesConfig_ = builderForValue.build();
+      } else {
+        allInstancesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder mergeAllInstancesConfig(
+        com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig value) {
+      if (allInstancesConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && allInstancesConfig_ != null
+            && allInstancesConfig_
+                != com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig
+                    .getDefaultInstance()) {
+          getAllInstancesConfigBuilder().mergeFrom(value);
+        } else {
+          allInstancesConfig_ = value;
+        }
+      } else {
+        allInstancesConfigBuilder_.mergeFrom(value);
+      }
+      if (allInstancesConfig_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public Builder clearAllInstancesConfig() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      allInstancesConfig_ = null;
+      if (allInstancesConfigBuilder_ != null) {
+        allInstancesConfigBuilder_.dispose();
+        allInstancesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.Builder
+        getAllInstancesConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAllInstancesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfigOrBuilder
+        getAllInstancesConfigOrBuilder() {
+      if (allInstancesConfigBuilder_ != null) {
+        return allInstancesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return allInstancesConfig_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig
+                .getDefaultInstance()
+            : allInstancesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies configuration that overrides the instance template configuration for the group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig,
+            com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfigOrBuilder>
+        getAllInstancesConfigFieldBuilder() {
+      if (allInstancesConfigBuilder_ == null) {
+        allInstancesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig,
+                com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig.Builder,
+                com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfigOrBuilder>(
+                getAllInstancesConfig(), getParentForChildren(), isClean());
+        allInstancesConfig_ = null;
+      }
+      return allInstancesConfigBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy>
         autoHealingPolicies_ = java.util.Collections.emptyList();
 
     private void ensureAutoHealingPoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         autoHealingPolicies_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy>(
                 autoHealingPolicies_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3201,7 +3512,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder clearAutoHealingPolicies() {
       if (autoHealingPoliciesBuilder_ == null) {
         autoHealingPolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         autoHealingPoliciesBuilder_.clear();
@@ -3348,7 +3659,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
                 com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.Builder,
                 com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicyOrBuilder>(
                 autoHealingPolicies_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         autoHealingPolicies_ = null;
@@ -3369,7 +3680,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the baseInstanceName field is set.
      */
     public boolean hasBaseInstanceName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3432,7 +3743,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       baseInstanceName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3449,7 +3760,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearBaseInstanceName() {
       baseInstanceName_ = getDefaultInstance().getBaseInstanceName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3471,7 +3782,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       baseInstanceName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3489,7 +3800,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3552,7 +3863,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3569,7 +3880,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3591,7 +3902,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3616,7 +3927,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the currentActions field is set.
      */
     public boolean hasCurrentActions() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3661,7 +3972,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         currentActionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3683,7 +3994,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         currentActionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3701,7 +4012,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder mergeCurrentActions(
         com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary value) {
       if (currentActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && currentActions_ != null
             && currentActions_
                 != com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary
@@ -3714,7 +4025,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         currentActionsBuilder_.mergeFrom(value);
       }
       if (currentActions_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -3731,7 +4042,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCurrentActions() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       currentActions_ = null;
       if (currentActionsBuilder_ != null) {
         currentActionsBuilder_.dispose();
@@ -3753,7 +4064,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary.Builder
         getCurrentActionsBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCurrentActionsFieldBuilder().getBuilder();
     }
@@ -3819,7 +4130,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3882,7 +4193,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3899,7 +4210,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3921,7 +4232,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3945,7 +4256,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the distributionPolicy field is set.
      */
     public boolean hasDistributionPolicy() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3987,7 +4298,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         distributionPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4008,7 +4319,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         distributionPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4024,7 +4335,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDistributionPolicy(com.google.cloud.compute.v1.DistributionPolicy value) {
       if (distributionPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && distributionPolicy_ != null
             && distributionPolicy_
                 != com.google.cloud.compute.v1.DistributionPolicy.getDefaultInstance()) {
@@ -4036,7 +4347,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         distributionPolicyBuilder_.mergeFrom(value);
       }
       if (distributionPolicy_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -4052,7 +4363,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearDistributionPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       distributionPolicy_ = null;
       if (distributionPolicyBuilder_ != null) {
         distributionPolicyBuilder_.dispose();
@@ -4072,7 +4383,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.compute.v1.DistributionPolicy.Builder getDistributionPolicyBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDistributionPolicyFieldBuilder().getBuilder();
     }
@@ -4136,7 +4447,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4199,7 +4510,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4216,7 +4527,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4238,7 +4549,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4257,7 +4568,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4289,7 +4600,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4305,7 +4616,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = 0L;
       onChanged();
       return this;
@@ -4324,7 +4635,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the instanceGroup field is set.
      */
     public boolean hasInstanceGroup() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4387,7 +4698,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       instanceGroup_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4404,7 +4715,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearInstanceGroup() {
       instanceGroup_ = getDefaultInstance().getInstanceGroup();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4426,7 +4737,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       instanceGroup_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4452,7 +4763,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the instanceLifecyclePolicy field is set.
      */
     public boolean hasInstanceLifecyclePolicy() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4499,7 +4810,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         instanceLifecyclePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4522,7 +4833,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         instanceLifecyclePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4540,7 +4851,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder mergeInstanceLifecyclePolicy(
         com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy value) {
       if (instanceLifecyclePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && instanceLifecyclePolicy_ != null
             && instanceLifecyclePolicy_
                 != com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy
@@ -4553,7 +4864,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         instanceLifecyclePolicyBuilder_.mergeFrom(value);
       }
       if (instanceLifecyclePolicy_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4570,7 +4881,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearInstanceLifecyclePolicy() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       instanceLifecyclePolicy_ = null;
       if (instanceLifecyclePolicyBuilder_ != null) {
         instanceLifecyclePolicyBuilder_.dispose();
@@ -4592,7 +4903,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.Builder
         getInstanceLifecyclePolicyBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getInstanceLifecyclePolicyFieldBuilder().getBuilder();
     }
@@ -4659,7 +4970,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the instanceTemplate field is set.
      */
     public boolean hasInstanceTemplate() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4722,7 +5033,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       instanceTemplate_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4739,7 +5050,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearInstanceTemplate() {
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4761,7 +5072,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       instanceTemplate_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4779,7 +5090,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4842,7 +5153,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4859,7 +5170,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4881,7 +5192,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4900,7 +5211,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the listManagedInstancesResults field is set.
      */
     public boolean hasListManagedInstancesResults() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4966,7 +5277,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       listManagedInstancesResults_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4984,7 +5295,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearListManagedInstancesResults() {
       listManagedInstancesResults_ = getDefaultInstance().getListManagedInstancesResults();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5007,7 +5318,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       listManagedInstancesResults_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5025,7 +5336,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5088,7 +5399,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5105,7 +5416,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5127,7 +5438,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5136,9 +5447,9 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureNamedPortsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>(namedPorts_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -5353,7 +5664,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder clearNamedPorts() {
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         namedPortsBuilder_.clear();
@@ -5475,7 +5786,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
                 com.google.cloud.compute.v1.NamedPort,
                 com.google.cloud.compute.v1.NamedPort.Builder,
                 com.google.cloud.compute.v1.NamedPortOrBuilder>(
-                namedPorts_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                namedPorts_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         namedPorts_ = null;
       }
       return namedPortsBuilder_;
@@ -5494,7 +5805,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5557,7 +5868,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5574,7 +5885,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5596,7 +5907,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5614,7 +5925,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -5677,7 +5988,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5694,7 +6005,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5716,7 +6027,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5739,7 +6050,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the statefulPolicy field is set.
      */
     public boolean hasStatefulPolicy() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5779,7 +6090,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         statefulPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5799,7 +6110,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         statefulPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5814,7 +6125,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeStatefulPolicy(com.google.cloud.compute.v1.StatefulPolicy value) {
       if (statefulPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && statefulPolicy_ != null
             && statefulPolicy_ != com.google.cloud.compute.v1.StatefulPolicy.getDefaultInstance()) {
           getStatefulPolicyBuilder().mergeFrom(value);
@@ -5825,7 +6136,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         statefulPolicyBuilder_.mergeFrom(value);
       }
       if (statefulPolicy_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -5840,7 +6151,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public Builder clearStatefulPolicy() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       statefulPolicy_ = null;
       if (statefulPolicyBuilder_ != null) {
         statefulPolicyBuilder_.dispose();
@@ -5859,7 +6170,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public com.google.cloud.compute.v1.StatefulPolicy.Builder getStatefulPolicyBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getStatefulPolicyFieldBuilder().getBuilder();
     }
@@ -5925,7 +6236,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5965,7 +6276,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5985,7 +6296,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6000,7 +6311,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeStatus(com.google.cloud.compute.v1.InstanceGroupManagerStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatus.getDefaultInstance()) {
@@ -6012,7 +6323,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -6027,7 +6338,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -6046,7 +6357,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatus.Builder getStatusBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -6101,7 +6412,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       if (!targetPools_.isModifiable()) {
         targetPools_ = new com.google.protobuf.LazyStringArrayList(targetPools_);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
     }
     /**
      *
@@ -6181,7 +6492,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       ensureTargetPoolsIsMutable();
       targetPools_.set(index, value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6203,7 +6514,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       ensureTargetPoolsIsMutable();
       targetPools_.add(value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6222,7 +6533,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder addAllTargetPools(java.lang.Iterable<java.lang.String> values) {
       ensureTargetPoolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetPools_);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6239,7 +6550,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTargetPools() {
       targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       ;
       onChanged();
       return this;
@@ -6263,7 +6574,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTargetPoolsIsMutable();
       targetPools_.add(value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6282,7 +6593,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasTargetSize() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -6314,7 +6625,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder setTargetSize(int value) {
 
       targetSize_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6330,7 +6641,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTargetSize() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       targetSize_ = 0;
       onChanged();
       return this;
@@ -6356,7 +6667,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the updatePolicy field is set.
      */
     public boolean hasUpdatePolicy() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -6401,7 +6712,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         updatePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6423,7 +6734,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         updatePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6441,7 +6752,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder mergeUpdatePolicy(
         com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy value) {
       if (updatePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && updatePolicy_ != null
             && updatePolicy_
                 != com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy
@@ -6454,7 +6765,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         updatePolicyBuilder_.mergeFrom(value);
       }
       if (updatePolicy_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -6471,7 +6782,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdatePolicy() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       updatePolicy_ = null;
       if (updatePolicyBuilder_ != null) {
         updatePolicyBuilder_.dispose();
@@ -6493,7 +6804,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.Builder
         getUpdatePolicyBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getUpdatePolicyFieldBuilder().getBuilder();
     }
@@ -6550,11 +6861,11 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureVersionsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!((bitField0_ & 0x00800000) != 0)) {
         versions_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.InstanceGroupManagerVersion>(
                 versions_);
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
       }
     }
 
@@ -6787,7 +7098,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder clearVersions() {
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
       } else {
         versionsBuilder_.clear();
@@ -6921,7 +7232,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
                 com.google.cloud.compute.v1.InstanceGroupManagerVersion,
                 com.google.cloud.compute.v1.InstanceGroupManagerVersion.Builder,
                 com.google.cloud.compute.v1.InstanceGroupManagerVersionOrBuilder>(
-                versions_, ((bitField0_ & 0x00400000) != 0), getParentForChildren(), isClean());
+                versions_, ((bitField0_ & 0x00800000) != 0), getParentForChildren(), isClean());
         versions_ = null;
       }
       return versionsBuilder_;
@@ -6940,7 +7251,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -7003,7 +7314,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7020,7 +7331,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7042,7 +7353,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }

@@ -28,6 +28,48 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
+   * Specifies configuration that overrides the instance template configuration for the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return Whether the allInstancesConfig field is set.
+   */
+  boolean hasAllInstancesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies configuration that overrides the instance template configuration for the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return The allInstancesConfig.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig getAllInstancesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies configuration that overrides the instance template configuration for the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfigOrBuilder
+      getAllInstancesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The autohealing policy for this managed instance group. You can specify only one value.
    * </pre>
    *

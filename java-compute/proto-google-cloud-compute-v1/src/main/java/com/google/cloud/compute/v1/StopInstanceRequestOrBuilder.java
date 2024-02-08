@@ -28,7 +28,7 @@ public interface StopInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * If true, discard the contents of any attached localSSD partitions. Default value is false.
+   * This property is required if the instance has any attached Local SSD disks. If false, Local SSD data will be preserved when the instance is suspended. If true, the contents of any attached Local SSD disks will be discarded.
    * </pre>
    *
    * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -40,7 +40,7 @@ public interface StopInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * If true, discard the contents of any attached localSSD partitions. Default value is false.
+   * This property is required if the instance has any attached Local SSD disks. If false, Local SSD data will be preserved when the instance is suspended. If true, the contents of any attached Local SSD disks will be discarded.
    * </pre>
    *
    * <code>optional bool discard_local_ssd = 319517903;</code>

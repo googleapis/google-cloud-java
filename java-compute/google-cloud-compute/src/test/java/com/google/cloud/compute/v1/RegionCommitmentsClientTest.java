@@ -142,6 +142,7 @@ public class RegionCommitmentsClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEndTimestamp("endTimestamp-356088197")
+            .addAllExistingReservations(new ArrayList<String>())
             .setId(3355)
             .setKind("kind3292052")
             .setLicenseResource(LicenseResourceCommitment.newBuilder().build())

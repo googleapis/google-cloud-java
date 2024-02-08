@@ -280,7 +280,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListManagedInstances</td>
- *      <td><p> Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action. The orderBy query parameter is not supported. The `pageToken` query parameter is supported only in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to `PAGINATED`.</td>
+ *      <td><p> Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action. The orderBy query parameter is not supported. The `pageToken` query parameter is supported only if the group's `listManagedInstancesResults` field is set to `PAGINATED`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2339,9 +2339,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * currentAction, which indicates the action that the managed instance group is performing on the
    * instance. For example, if the group is still creating an instance, the currentAction is
    * CREATING. If a previous action failed, the list displays the errors for that failed action. The
-   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only in
-   * the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
-   * `PAGINATED`.
+   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only if
+   * the group's `listManagedInstancesResults` field is set to `PAGINATED`.
    *
    * <p>Sample code:
    *
@@ -2387,9 +2386,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * currentAction, which indicates the action that the managed instance group is performing on the
    * instance. For example, if the group is still creating an instance, the currentAction is
    * CREATING. If a previous action failed, the list displays the errors for that failed action. The
-   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only in
-   * the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
-   * `PAGINATED`.
+   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only if
+   * the group's `listManagedInstancesResults` field is set to `PAGINATED`.
    *
    * <p>Sample code:
    *
@@ -2433,9 +2431,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * currentAction, which indicates the action that the managed instance group is performing on the
    * instance. For example, if the group is still creating an instance, the currentAction is
    * CREATING. If a previous action failed, the list displays the errors for that failed action. The
-   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only in
-   * the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
-   * `PAGINATED`.
+   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only if
+   * the group's `listManagedInstancesResults` field is set to `PAGINATED`.
    *
    * <p>Sample code:
    *
@@ -2479,9 +2476,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * currentAction, which indicates the action that the managed instance group is performing on the
    * instance. For example, if the group is still creating an instance, the currentAction is
    * CREATING. If a previous action failed, the list displays the errors for that failed action. The
-   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only in
-   * the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
-   * `PAGINATED`.
+   * orderBy query parameter is not supported. The `pageToken` query parameter is supported only if
+   * the group's `listManagedInstancesResults` field is set to `PAGINATED`.
    *
    * <p>Sample code:
    *

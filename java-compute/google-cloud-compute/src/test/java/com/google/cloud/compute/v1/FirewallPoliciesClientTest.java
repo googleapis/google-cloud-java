@@ -535,9 +535,11 @@ public class FirewallPoliciesClientTest {
             .setPriority(-1165461084)
             .setRuleName("ruleName763275175")
             .setRuleTupleCount(388342037)
+            .setSecurityProfileGroup("securityProfileGroup-943388234")
             .addAllTargetResources(new ArrayList<String>())
             .addAllTargetSecureTags(new ArrayList<FirewallPolicyRuleSecureTag>())
             .addAllTargetServiceAccounts(new ArrayList<String>())
+            .setTlsInspect(true)
             .build();
     mockService.addResponse(expectedResponse);
 

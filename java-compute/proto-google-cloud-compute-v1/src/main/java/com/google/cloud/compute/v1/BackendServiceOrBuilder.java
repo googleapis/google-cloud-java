@@ -28,7 +28,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to Application Load Balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -40,7 +40,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to Application Load Balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -216,7 +216,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for Network Load Balancing and Internal TCP/UDP Load Balancing.
+   * Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for external passthrough Network Load Balancers and internal passthrough Network Load Balancers.
    * </pre>
    *
    * <code>
@@ -230,7 +230,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for Network Load Balancing and Internal TCP/UDP Load Balancing.
+   * Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for external passthrough Network Load Balancers and internal passthrough Network Load Balancers.
    * </pre>
    *
    * <code>
@@ -244,7 +244,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for Network Load Balancing and Internal TCP/UDP Load Balancing.
+   * Connection Tracking configuration for this BackendService. Connection tracking policy settings are only available for external passthrough Network Load Balancers and internal passthrough Network Load Balancers.
    * </pre>
    *
    * <code>
@@ -513,7 +513,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
+   * If true, enables Cloud CDN for the backend service of a global external Application Load Balancer.
    * </pre>
    *
    * <code>optional bool enable_c_d_n = 250733499;</code>
@@ -525,7 +525,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
+   * If true, enables Cloud CDN for the backend service of a global external Application Load Balancer.
    * </pre>
    *
    * <code>optional bool enable_c_d_n = 250733499;</code>
@@ -538,7 +538,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
    * </pre>
    *
    * <code>
@@ -552,7 +552,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
    * </pre>
    *
    * <code>
@@ -566,7 +566,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
    * </pre>
    *
    * <code>
@@ -667,7 +667,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * The configurations for Identity-Aware Proxy on this resource. Not available for internal passthrough Network Load Balancers and external passthrough Network Load Balancers.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
@@ -679,7 +679,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * The configurations for Identity-Aware Proxy on this resource. Not available for internal passthrough Network Load Balancers and external passthrough Network Load Balancers.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
@@ -691,7 +691,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * The configurations for Identity-Aware Proxy on this resource. Not available for internal passthrough Network Load Balancers and external passthrough Network Load Balancers.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
@@ -1148,7 +1148,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For internal passthrough Network Load Balancers and external passthrough Network Load Balancers, omit port.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -1160,7 +1160,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For internal passthrough Network Load Balancers and external passthrough Network Load Balancers, omit port.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -1173,7 +1173,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For internal passthrough Network Load Balancers and external passthrough Network Load Balancers, omit port_name.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -1185,7 +1185,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For internal passthrough Network Load Balancers and external passthrough Network Load Balancers, omit port_name.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -1197,7 +1197,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For internal passthrough Network Load Balancers and external passthrough Network Load Balancers, omit port_name.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>

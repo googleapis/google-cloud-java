@@ -219,7 +219,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetSslPolicy</td>
- *      <td><p> Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the SSL proxy load balancer. They do not affect the connection between the load balancer and the backends.</td>
+ *      <td><p> Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the load balancer. They do not affect the connection between the load balancer and the backends.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1401,8 +1401,8 @@ public class TargetSslProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
-   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * SSL features. This affects connections between clients and the load balancer. They do not
+   * affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1443,8 +1443,8 @@ public class TargetSslProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
-   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * SSL features. This affects connections between clients and the load balancer. They do not
+   * affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1479,8 +1479,8 @@ public class TargetSslProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
-   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * SSL features. This affects connections between clients and the load balancer. They do not
+   * affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1513,8 +1513,8 @@ public class TargetSslProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
-   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * SSL features. This affects connections between clients and the load balancer. They do not
+   * affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *

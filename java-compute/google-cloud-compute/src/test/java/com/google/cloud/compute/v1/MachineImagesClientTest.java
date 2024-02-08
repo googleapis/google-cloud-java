@@ -162,6 +162,7 @@ public class MachineImagesClientTest {
             .setKind("kind3292052")
             .setMachineImageEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setName("name3373707")
+            .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .addAllSavedDisks(new ArrayList<SavedDisk>())
             .setSelfLink("selfLink1191800166")

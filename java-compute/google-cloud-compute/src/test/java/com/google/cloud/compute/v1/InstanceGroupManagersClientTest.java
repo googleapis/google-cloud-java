@@ -675,6 +675,7 @@ public class InstanceGroupManagersClientTest {
   public void getTest() throws Exception {
     InstanceGroupManager expectedResponse =
         InstanceGroupManager.newBuilder()
+            .setAllInstancesConfig(InstanceGroupManagerAllInstancesConfig.newBuilder().build())
             .addAllAutoHealingPolicies(new ArrayList<InstanceGroupManagerAutoHealingPolicy>())
             .setBaseInstanceName("baseInstanceName-736241103")
             .setCreationTimestamp("creationTimestamp-370203401")

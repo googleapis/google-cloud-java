@@ -39,6 +39,7 @@ public class SyncSimulateMaintenanceEvent {
               .setInstance("instance555127957")
               .setProject("project-309310695")
               .setRequestId("requestId693933066")
+              .setWithExtendedNotifications(true)
               .setZone("zone3744684")
               .build();
       Operation response = instancesClient.simulateMaintenanceEventAsync(request).get();

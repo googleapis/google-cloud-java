@@ -28,7 +28,7 @@ public interface SetEdgeSecurityPolicyBackendBucketRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
+   * Name of the BackendBucket resource to which the security policy should be set. The name should conform to RFC1035.
    * </pre>
    *
    * <code>string backend_bucket = 91714037 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +40,7 @@ public interface SetEdgeSecurityPolicyBackendBucketRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
+   * Name of the BackendBucket resource to which the security policy should be set. The name should conform to RFC1035.
    * </pre>
    *
    * <code>string backend_bucket = 91714037 [(.google.api.field_behavior) = REQUIRED];</code>

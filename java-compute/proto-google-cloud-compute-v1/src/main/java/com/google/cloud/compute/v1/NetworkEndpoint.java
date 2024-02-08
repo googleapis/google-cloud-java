@@ -255,7 +255,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -270,7 +270,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -293,7 +293,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -321,7 +321,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -336,7 +336,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -359,7 +359,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -385,7 +385,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
+   * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -400,7 +400,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
+   * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -1198,7 +1198,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1212,7 +1212,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1234,7 +1234,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1256,7 +1256,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1277,7 +1277,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1294,7 +1294,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1318,7 +1318,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1332,7 +1332,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1354,7 +1354,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1376,7 +1376,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1397,7 +1397,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1414,7 +1414,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1438,7 +1438,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1453,7 +1453,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1468,7 +1468,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1487,7 +1487,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>

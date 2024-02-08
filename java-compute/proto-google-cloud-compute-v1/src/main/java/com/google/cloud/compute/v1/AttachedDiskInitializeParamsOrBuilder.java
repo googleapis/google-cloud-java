@@ -204,6 +204,31 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
+   * Whether this disk is using confidential compute mode.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return Whether the enableConfidentialCompute field is set.
+   */
+  boolean hasEnableConfidentialCompute();
+  /**
+   *
+   *
+   * <pre>
+   * Whether this disk is using confidential compute mode.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return The enableConfidentialCompute.
+   */
+  boolean getEnableConfidentialCompute();
+
+  /**
+   *
+   *
+   * <pre>
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *

@@ -28,6 +28,48 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
+   * [Output only] Status of all-instances configuration on the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return Whether the allInstancesConfig field is set.
+   */
+  boolean hasAllInstancesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Status of all-instances configuration on the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   *
+   * @return The allInstancesConfig.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig getAllInstancesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Status of all-instances configuration on the group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig all_instances_config = 112596737;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfigOrBuilder
+      getAllInstancesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *

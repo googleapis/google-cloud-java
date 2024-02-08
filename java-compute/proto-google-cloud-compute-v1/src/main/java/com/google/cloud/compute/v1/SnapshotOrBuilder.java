@@ -279,6 +279,31 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * Whether this snapshot is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return Whether the enableConfidentialCompute field is set.
+   */
+  boolean hasEnableConfidentialCompute();
+  /**
+   *
+   *
+   * <pre>
+   * Whether this snapshot is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return The enableConfidentialCompute.
+   */
+  boolean getEnableConfidentialCompute();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
@@ -646,6 +671,31 @@ public interface SnapshotOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   /**
    *

@@ -102,7 +102,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    *
    *
    * <pre>
-   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
+   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
    * </pre>
    *
    * <code>optional string service_directory_region = 74030416;</code>
@@ -114,7 +114,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    *
    *
    * <pre>
-   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
+   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
    * </pre>
    *
    * <code>optional string service_directory_region = 74030416;</code>
@@ -126,7 +126,7 @@ public interface ForwardingRuleServiceDirectoryRegistrationOrBuilder
    *
    *
    * <pre>
-   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
+   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
    * </pre>
    *
    * <code>optional string service_directory_region = 74030416;</code>

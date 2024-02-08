@@ -54,6 +54,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     privateIpv6GoogleAccess_ = "";
     purpose_ = "";
     region_ = "";
+    reservedInternalRange_ = "";
     role_ = "";
     secondaryIpRanges_ = java.util.Collections.emptyList();
     selfLink_ = "";
@@ -431,7 +432,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.Purpose}
@@ -461,7 +462,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subnet reserved for Internal HTTP(S) Load Balancing.
+     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy purpose, please use REGIONAL_MANAGED_PROXY instead.
      * </pre>
      *
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
@@ -544,7 +545,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subnet reserved for Internal HTTP(S) Load Balancing.
+     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy purpose, please use REGIONAL_MANAGED_PROXY instead.
      * </pre>
      *
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
@@ -698,7 +699,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.Role}
@@ -2193,7 +2194,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -2209,7 +2210,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -2233,7 +2234,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -2320,6 +2321,72 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESERVED_INTERNAL_RANGE_FIELD_NUMBER = 286248754;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservedInternalRange_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return Whether the reservedInternalRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservedInternalRange() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return The reservedInternalRange.
+   */
+  @java.lang.Override
+  public java.lang.String getReservedInternalRange() {
+    java.lang.Object ref = reservedInternalRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reservedInternalRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return The bytes for reservedInternalRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReservedInternalRangeBytes() {
+    java.lang.Object ref = reservedInternalRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      reservedInternalRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROLE_FIELD_NUMBER = 3506294;
 
   @SuppressWarnings("serial")
@@ -2328,7 +2395,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -2338,13 +2405,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRole() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -2368,7 +2435,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -2489,7 +2556,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -2556,7 +2623,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -2625,7 +2692,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -2699,7 +2766,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -2712,7 +2779,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
@@ -2736,6 +2803,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 273141258, ipv6CidrRange_);
     }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 286248754, reservedInternalRange_);
+    }
     if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 316407070, purpose_);
     }
@@ -2748,10 +2818,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -2781,7 +2851,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -2796,7 +2866,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
@@ -2823,6 +2893,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(273141258, ipv6CidrRange_);
     }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              286248754, reservedInternalRange_);
+    }
     if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316407070, purpose_);
     }
@@ -2836,10 +2911,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -2942,6 +3017,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
       if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasReservedInternalRange() != other.hasReservedInternalRange()) return false;
+    if (hasReservedInternalRange()) {
+      if (!getReservedInternalRange().equals(other.getReservedInternalRange())) return false;
     }
     if (hasRole() != other.hasRole()) return false;
     if (hasRole()) {
@@ -3046,6 +3125,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
       hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasReservedInternalRange()) {
+      hash = (37 * hash) + RESERVED_INTERNAL_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getReservedInternalRange().hashCode();
     }
     if (hasRole()) {
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
@@ -3239,6 +3322,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       privateIpv6GoogleAccess_ = "";
       purpose_ = "";
       region_ = "";
+      reservedInternalRange_ = "";
       role_ = "";
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
@@ -3246,7 +3330,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         secondaryIpRanges_ = null;
         secondaryIpRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       selfLink_ = "";
       stackType_ = "";
       state_ = "";
@@ -3287,9 +3371,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Subnetwork result) {
       if (secondaryIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.secondaryIpRanges_ = secondaryIpRanges_;
       } else {
@@ -3377,20 +3461,24 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.role_ = role_;
+        result.reservedInternalRange_ = reservedInternalRange_;
         to_bitField0_ |= 0x00080000;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.role_ = role_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.stackType_ = stackType_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.state_ = state_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.state_ = state_;
+        to_bitField0_ |= 0x00800000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3527,16 +3615,21 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00040000;
         onChanged();
       }
+      if (other.hasReservedInternalRange()) {
+        reservedInternalRange_ = other.reservedInternalRange_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
       if (other.hasRole()) {
         role_ = other.role_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (secondaryIpRangesBuilder_ == null) {
         if (!other.secondaryIpRanges_.isEmpty()) {
           if (secondaryIpRanges_.isEmpty()) {
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensureSecondaryIpRangesIsMutable();
             secondaryIpRanges_.addAll(other.secondaryIpRanges_);
@@ -3549,7 +3642,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             secondaryIpRangesBuilder_.dispose();
             secondaryIpRangesBuilder_ = null;
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             secondaryIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecondaryIpRangesFieldBuilder()
@@ -3561,17 +3654,17 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3621,7 +3714,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case 28050354:
               {
                 role_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 28050354
             case 244202930:
@@ -3645,7 +3738,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 878060682
             case 1093271322:
@@ -3698,6 +3791,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case -2109837230
+            case -2004977262:
+              {
+                reservedInternalRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case -2004977262
             case -1763710734:
               {
                 purpose_ = input.readStringRequireUtf8();
@@ -3725,13 +3824,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case -887696246
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -645248918
             case -616028214:
@@ -5738,7 +5837,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
      * Check the Purpose enum for the list of possible values.
      * </pre>
      *
@@ -5753,7 +5852,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
      * Check the Purpose enum for the list of possible values.
      * </pre>
      *
@@ -5776,7 +5875,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
      * Check the Purpose enum for the list of possible values.
      * </pre>
      *
@@ -5799,7 +5898,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
      * Check the Purpose enum for the list of possible values.
      * </pre>
      *
@@ -5821,7 +5920,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
      * Check the Purpose enum for the list of possible values.
      * </pre>
      *
@@ -5839,7 +5938,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of the resource. This field can be either PRIVATE, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or INTERNAL_HTTPS_LOAD_BALANCER. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. A subnet with purpose set to REGIONAL_MANAGED_PROXY is a user-created subnetwork that is reserved for regional Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a proxy-only subnet that can be used only by regional internal HTTP(S) load balancers. Note that REGIONAL_MANAGED_PROXY is the preferred setting for all regional Envoy load balancers. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
      * Check the Purpose enum for the list of possible values.
      * </pre>
      *
@@ -5979,12 +6078,132 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object reservedInternalRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return Whether the reservedInternalRange field is set.
+     */
+    public boolean hasReservedInternalRange() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return The reservedInternalRange.
+     */
+    public java.lang.String getReservedInternalRange() {
+      java.lang.Object ref = reservedInternalRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservedInternalRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return The bytes for reservedInternalRange.
+     */
+    public com.google.protobuf.ByteString getReservedInternalRangeBytes() {
+      java.lang.Object ref = reservedInternalRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservedInternalRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @param value The reservedInternalRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedInternalRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      reservedInternalRange_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservedInternalRange() {
+      reservedInternalRange_ = getDefaultInstance().getReservedInternalRange();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @param value The bytes for reservedInternalRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedInternalRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      reservedInternalRange_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object role_ = "";
     /**
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -5993,13 +6212,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -6022,7 +6241,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -6045,7 +6264,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -6059,7 +6278,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       role_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6067,7 +6286,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -6077,7 +6296,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRole() {
       role_ = getDefaultInstance().getRole();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6085,7 +6304,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -6100,7 +6319,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       role_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6109,11 +6328,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         secondaryIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureSecondaryIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         secondaryIpRanges_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SubnetworkSecondaryRange>(
                 secondaryIpRanges_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -6355,7 +6574,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecondaryIpRanges() {
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         secondaryIpRangesBuilder_.clear();
@@ -6497,7 +6716,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SubnetworkSecondaryRange.Builder,
                 com.google.cloud.compute.v1.SubnetworkSecondaryRangeOrBuilder>(
                 secondaryIpRanges_,
-                ((bitField0_ & 0x00100000) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryIpRanges_ = null;
@@ -6518,7 +6737,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -6581,7 +6800,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6598,7 +6817,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -6620,7 +6839,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6639,7 +6858,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -6705,7 +6924,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6723,7 +6942,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -6746,7 +6965,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6765,7 +6984,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -6831,7 +7050,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -6849,7 +7068,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -6872,7 +7091,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }

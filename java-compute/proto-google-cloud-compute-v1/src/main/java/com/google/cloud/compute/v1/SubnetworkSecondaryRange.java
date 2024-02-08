@@ -41,6 +41,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
   private SubnetworkSecondaryRange() {
     ipCidrRange_ = "";
     rangeName_ = "";
+    reservedInternalRange_ = "";
   }
 
   @java.lang.Override
@@ -197,6 +198,72 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     }
   }
 
+  public static final int RESERVED_INTERNAL_RANGE_FIELD_NUMBER = 286248754;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservedInternalRange_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return Whether the reservedInternalRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservedInternalRange() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return The reservedInternalRange.
+   */
+  @java.lang.Override
+  public java.lang.String getReservedInternalRange() {
+    java.lang.Object ref = reservedInternalRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reservedInternalRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return The bytes for reservedInternalRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReservedInternalRangeBytes() {
+    java.lang.Object ref = reservedInternalRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      reservedInternalRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -214,6 +281,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 286248754, reservedInternalRange_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 332216397, rangeName_);
     }
@@ -228,6 +298,11 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              286248754, reservedInternalRange_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332216397, rangeName_);
@@ -256,6 +331,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (hasRangeName()) {
       if (!getRangeName().equals(other.getRangeName())) return false;
     }
+    if (hasReservedInternalRange() != other.hasReservedInternalRange()) return false;
+    if (hasReservedInternalRange()) {
+      if (!getReservedInternalRange().equals(other.getReservedInternalRange())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -274,6 +353,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (hasRangeName()) {
       hash = (37 * hash) + RANGE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getRangeName().hashCode();
+    }
+    if (hasReservedInternalRange()) {
+      hash = (37 * hash) + RESERVED_INTERNAL_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getReservedInternalRange().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -416,6 +499,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       bitField0_ = 0;
       ipCidrRange_ = "";
       rangeName_ = "";
+      reservedInternalRange_ = "";
       return this;
     }
 
@@ -460,6 +544,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.rangeName_ = rangeName_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reservedInternalRange_ = reservedInternalRange_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -520,6 +608,11 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasReservedInternalRange()) {
+        reservedInternalRange_ = other.reservedInternalRange_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -552,6 +645,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 784938578
+            case -2004977262:
+              {
+                reservedInternalRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -2004977262
             case -1637236118:
               {
                 rangeName_ = input.readStringRequireUtf8();
@@ -813,6 +912,126 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       rangeName_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object reservedInternalRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return Whether the reservedInternalRange field is set.
+     */
+    public boolean hasReservedInternalRange() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return The reservedInternalRange.
+     */
+    public java.lang.String getReservedInternalRange() {
+      java.lang.Object ref = reservedInternalRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservedInternalRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return The bytes for reservedInternalRange.
+     */
+    public com.google.protobuf.ByteString getReservedInternalRangeBytes() {
+      java.lang.Object ref = reservedInternalRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservedInternalRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @param value The reservedInternalRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedInternalRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      reservedInternalRange_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservedInternalRange() {
+      reservedInternalRange_ = getDefaultInstance().getReservedInternalRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the reserved internal range.
+     * </pre>
+     *
+     * <code>optional string reserved_internal_range = 286248754;</code>
+     *
+     * @param value The bytes for reservedInternalRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedInternalRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      reservedInternalRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

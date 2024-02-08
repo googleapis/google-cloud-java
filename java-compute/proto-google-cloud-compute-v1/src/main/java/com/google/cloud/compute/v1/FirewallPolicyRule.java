@@ -44,6 +44,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     direction_ = "";
     kind_ = "";
     ruleName_ = "";
+    securityProfileGroup_ = "";
     targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
     targetSecureTags_ = java.util.Collections.emptyList();
     targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -711,6 +712,72 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     return ruleTupleCount_;
   }
 
+  public static final int SECURITY_PROFILE_GROUP_FIELD_NUMBER = 207411626;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securityProfileGroup_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+   * </pre>
+   *
+   * <code>optional string security_profile_group = 207411626;</code>
+   *
+   * @return Whether the securityProfileGroup field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityProfileGroup() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+   * </pre>
+   *
+   * <code>optional string security_profile_group = 207411626;</code>
+   *
+   * @return The securityProfileGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getSecurityProfileGroup() {
+    java.lang.Object ref = securityProfileGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      securityProfileGroup_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+   * </pre>
+   *
+   * <code>optional string security_profile_group = 207411626;</code>
+   *
+   * @return The bytes for securityProfileGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecurityProfileGroupBytes() {
+    java.lang.Object ref = securityProfileGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      securityProfileGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TARGET_RESOURCES_FIELD_NUMBER = 528230647;
 
   @SuppressWarnings("serial")
@@ -922,6 +989,39 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     return targetServiceAccounts_.getByteString(index);
   }
 
+  public static final int TLS_INSPECT_FIELD_NUMBER = 43425488;
+  private boolean tlsInspect_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action = 'apply_security_profile_group' and cannot be set for other actions.
+   * </pre>
+   *
+   * <code>optional bool tls_inspect = 43425488;</code>
+   *
+   * @return Whether the tlsInspect field is set.
+   */
+  @java.lang.Override
+  public boolean hasTlsInspect() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action = 'apply_security_profile_group' and cannot be set for other actions.
+   * </pre>
+   *
+   * <code>optional bool tls_inspect = 43425488;</code>
+   *
+   * @return The tlsInspect.
+   */
+  @java.lang.Override
+  public boolean getTlsInspect() {
+    return tlsInspect_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -939,6 +1039,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeBool(43425488, tlsInspect_);
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 55286254, ruleName_);
     }
@@ -950,6 +1053,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 207411626, securityProfileGroup_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(270940796, disabled_);
@@ -989,6 +1095,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43425488, tlsInspect_);
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55286254, ruleName_);
     }
@@ -1000,6 +1109,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              207411626, securityProfileGroup_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(270940796, disabled_);
@@ -1093,9 +1207,17 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasRuleTupleCount()) {
       if (getRuleTupleCount() != other.getRuleTupleCount()) return false;
     }
+    if (hasSecurityProfileGroup() != other.hasSecurityProfileGroup()) return false;
+    if (hasSecurityProfileGroup()) {
+      if (!getSecurityProfileGroup().equals(other.getSecurityProfileGroup())) return false;
+    }
     if (!getTargetResourcesList().equals(other.getTargetResourcesList())) return false;
     if (!getTargetSecureTagsList().equals(other.getTargetSecureTagsList())) return false;
     if (!getTargetServiceAccountsList().equals(other.getTargetServiceAccountsList())) return false;
+    if (hasTlsInspect() != other.hasTlsInspect()) return false;
+    if (hasTlsInspect()) {
+      if (getTlsInspect() != other.getTlsInspect()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1147,6 +1269,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + RULE_TUPLE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getRuleTupleCount();
     }
+    if (hasSecurityProfileGroup()) {
+      hash = (37 * hash) + SECURITY_PROFILE_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityProfileGroup().hashCode();
+    }
     if (getTargetResourcesCount() > 0) {
       hash = (37 * hash) + TARGET_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getTargetResourcesList().hashCode();
@@ -1158,6 +1284,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (getTargetServiceAccountsCount() > 0) {
       hash = (37 * hash) + TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetServiceAccountsList().hashCode();
+    }
+    if (hasTlsInspect()) {
+      hash = (37 * hash) + TLS_INSPECT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTlsInspect());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1322,6 +1452,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       priority_ = 0;
       ruleName_ = "";
       ruleTupleCount_ = 0;
+      securityProfileGroup_ = "";
       targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (targetSecureTagsBuilder_ == null) {
         targetSecureTags_ = java.util.Collections.emptyList();
@@ -1329,8 +1460,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         targetSecureTags_ = null;
         targetSecureTagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tlsInspect_ = false;
       return this;
     }
 
@@ -1368,9 +1500,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.FirewallPolicyRule result) {
       if (targetSecureTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           targetSecureTags_ = java.util.Collections.unmodifiableList(targetSecureTags_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.targetSecureTags_ = targetSecureTags_;
       } else {
@@ -1422,12 +1554,20 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.securityProfileGroup_ = securityProfileGroup_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         targetResources_.makeImmutable();
         result.targetResources_ = targetResources_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         targetServiceAccounts_.makeImmutable();
         result.targetServiceAccounts_ = targetServiceAccounts_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.tlsInspect_ = tlsInspect_;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1517,10 +1657,15 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (other.hasRuleTupleCount()) {
         setRuleTupleCount(other.getRuleTupleCount());
       }
+      if (other.hasSecurityProfileGroup()) {
+        securityProfileGroup_ = other.securityProfileGroup_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       if (!other.targetResources_.isEmpty()) {
         if (targetResources_.isEmpty()) {
           targetResources_ = other.targetResources_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
         } else {
           ensureTargetResourcesIsMutable();
           targetResources_.addAll(other.targetResources_);
@@ -1531,7 +1676,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         if (!other.targetSecureTags_.isEmpty()) {
           if (targetSecureTags_.isEmpty()) {
             targetSecureTags_ = other.targetSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureTargetSecureTagsIsMutable();
             targetSecureTags_.addAll(other.targetSecureTags_);
@@ -1544,7 +1689,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
             targetSecureTagsBuilder_.dispose();
             targetSecureTagsBuilder_ = null;
             targetSecureTags_ = other.targetSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             targetSecureTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTargetSecureTagsFieldBuilder()
@@ -1557,12 +1702,15 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (!other.targetServiceAccounts_.isEmpty()) {
         if (targetServiceAccounts_.isEmpty()) {
           targetServiceAccounts_ = other.targetServiceAccounts_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureTargetServiceAccountsIsMutable();
           targetServiceAccounts_.addAll(other.targetServiceAccounts_);
         }
         onChanged();
+      }
+      if (other.hasTlsInspect()) {
+        setTlsInspect(other.getTlsInspect());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1596,6 +1744,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000020;
                 break;
               } // case 26336418
+            case 347403904:
+              {
+                tlsInspect_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 347403904
             case 442290034:
               {
                 ruleName_ = input.readStringRequireUtf8();
@@ -1620,6 +1774,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1501295026
+            case 1659293010:
+              {
+                securityProfileGroup_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 1659293010
             case -2127440928:
               {
                 disabled_ = input.readBool();
@@ -2762,6 +2922,126 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object securityProfileGroup_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+     * </pre>
+     *
+     * <code>optional string security_profile_group = 207411626;</code>
+     *
+     * @return Whether the securityProfileGroup field is set.
+     */
+    public boolean hasSecurityProfileGroup() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+     * </pre>
+     *
+     * <code>optional string security_profile_group = 207411626;</code>
+     *
+     * @return The securityProfileGroup.
+     */
+    public java.lang.String getSecurityProfileGroup() {
+      java.lang.Object ref = securityProfileGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        securityProfileGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+     * </pre>
+     *
+     * <code>optional string security_profile_group = 207411626;</code>
+     *
+     * @return The bytes for securityProfileGroup.
+     */
+    public com.google.protobuf.ByteString getSecurityProfileGroupBytes() {
+      java.lang.Object ref = securityProfileGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        securityProfileGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+     * </pre>
+     *
+     * <code>optional string security_profile_group = 207411626;</code>
+     *
+     * @param value The securityProfileGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityProfileGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      securityProfileGroup_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+     * </pre>
+     *
+     * <code>optional string security_profile_group = 207411626;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecurityProfileGroup() {
+      securityProfileGroup_ = getDefaultInstance().getSecurityProfileGroup();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+     * </pre>
+     *
+     * <code>optional string security_profile_group = 207411626;</code>
+     *
+     * @param value The bytes for securityProfileGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityProfileGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      securityProfileGroup_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList targetResources_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -2769,7 +3049,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (!targetResources_.isModifiable()) {
         targetResources_ = new com.google.protobuf.LazyStringArrayList(targetResources_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -2849,7 +3129,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetResourcesIsMutable();
       targetResources_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2871,7 +3151,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetResourcesIsMutable();
       targetResources_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2890,7 +3170,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder addAllTargetResources(java.lang.Iterable<java.lang.String> values) {
       ensureTargetResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetResources_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2907,7 +3187,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearTargetResources() {
       targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -2931,7 +3211,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureTargetResourcesIsMutable();
       targetResources_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2940,11 +3220,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         targetSecureTags_ = java.util.Collections.emptyList();
 
     private void ensureTargetSecureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         targetSecureTags_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>(
                 targetSecureTags_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -3189,7 +3469,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder clearTargetSecureTags() {
       if (targetSecureTagsBuilder_ == null) {
         targetSecureTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         targetSecureTagsBuilder_.clear();
@@ -3332,7 +3612,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>(
                 targetSecureTags_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         targetSecureTags_ = null;
@@ -3348,7 +3628,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         targetServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(targetServiceAccounts_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -3428,7 +3708,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3450,7 +3730,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3469,7 +3749,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder addAllTargetServiceAccounts(java.lang.Iterable<java.lang.String> values) {
       ensureTargetServiceAccountsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetServiceAccounts_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3486,7 +3766,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearTargetServiceAccounts() {
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -3510,7 +3790,75 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private boolean tlsInspect_;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action = 'apply_security_profile_group' and cannot be set for other actions.
+     * </pre>
+     *
+     * <code>optional bool tls_inspect = 43425488;</code>
+     *
+     * @return Whether the tlsInspect field is set.
+     */
+    @java.lang.Override
+    public boolean hasTlsInspect() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action = 'apply_security_profile_group' and cannot be set for other actions.
+     * </pre>
+     *
+     * <code>optional bool tls_inspect = 43425488;</code>
+     *
+     * @return The tlsInspect.
+     */
+    @java.lang.Override
+    public boolean getTlsInspect() {
+      return tlsInspect_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action = 'apply_security_profile_group' and cannot be set for other actions.
+     * </pre>
+     *
+     * <code>optional bool tls_inspect = 43425488;</code>
+     *
+     * @param value The tlsInspect to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTlsInspect(boolean value) {
+
+      tlsInspect_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action = 'apply_security_profile_group' and cannot be set for other actions.
+     * </pre>
+     *
+     * <code>optional bool tls_inspect = 43425488;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTlsInspect() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      tlsInspect_ = false;
       onChanged();
       return this;
     }

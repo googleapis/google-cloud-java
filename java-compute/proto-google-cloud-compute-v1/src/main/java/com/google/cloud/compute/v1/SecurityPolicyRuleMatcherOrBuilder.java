@@ -101,6 +101,48 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
+   * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions expr_options = 486220372;
+   * </code>
+   *
+   * @return Whether the exprOptions field is set.
+   */
+  boolean hasExprOptions();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions expr_options = 486220372;
+   * </code>
+   *
+   * @return The exprOptions.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions getExprOptions();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions expr_options = 486220372;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptionsOrBuilder
+      getExprOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
    * Check the VersionedExpr enum for the list of possible values.
    * </pre>

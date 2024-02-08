@@ -850,6 +850,9 @@
             "ListReferrers": {
               "methods": ["listReferrers", "listReferrers", "listReferrersPagedCallable", "listReferrersCallable"]
             },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            },
             "RemoveResourcePolicies": {
               "methods": ["removeResourcePoliciesAsync", "removeResourcePoliciesAsync", "removeResourcePoliciesOperationCallable", "removeResourcePoliciesCallable"]
             },
@@ -2223,6 +2226,18 @@
             },
             "Validate": {
               "methods": ["validate", "validate", "validateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionZones": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionZonesClient",
+          "rpcs": {
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
             }
           }
         }

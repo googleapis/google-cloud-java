@@ -204,6 +204,57 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
+   * Specifies the already existing reservations to attach to the Commitment. This field is optional, and it can be a full or partial URL. For example, the following are valid URLs to an reservation: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /reservations/reservation - projects/project/zones/zone/reservations/reservation
+   * </pre>
+   *
+   * <code>repeated string existing_reservations = 493028443;</code>
+   *
+   * @return A list containing the existingReservations.
+   */
+  java.util.List<java.lang.String> getExistingReservationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the already existing reservations to attach to the Commitment. This field is optional, and it can be a full or partial URL. For example, the following are valid URLs to an reservation: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /reservations/reservation - projects/project/zones/zone/reservations/reservation
+   * </pre>
+   *
+   * <code>repeated string existing_reservations = 493028443;</code>
+   *
+   * @return The count of existingReservations.
+   */
+  int getExistingReservationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the already existing reservations to attach to the Commitment. This field is optional, and it can be a full or partial URL. For example, the following are valid URLs to an reservation: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /reservations/reservation - projects/project/zones/zone/reservations/reservation
+   * </pre>
+   *
+   * <code>repeated string existing_reservations = 493028443;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The existingReservations at the given index.
+   */
+  java.lang.String getExistingReservations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the already existing reservations to attach to the Commitment. This field is optional, and it can be a full or partial URL. For example, the following are valid URLs to an reservation: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /reservations/reservation - projects/project/zones/zone/reservations/reservation
+   * </pre>
+   *
+   * <code>repeated string existing_reservations = 493028443;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the existingReservations at the given index.
+   */
+  com.google.protobuf.ByteString getExistingReservationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
@@ -469,7 +520,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of create-on-create reseravtions for this commitment.
+   * List of create-on-create reservations for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -479,7 +530,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of create-on-create reseravtions for this commitment.
+   * List of create-on-create reservations for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -489,7 +540,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of create-on-create reseravtions for this commitment.
+   * List of create-on-create reservations for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -499,7 +550,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of create-on-create reseravtions for this commitment.
+   * List of create-on-create reservations for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -510,7 +561,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of create-on-create reseravtions for this commitment.
+   * List of create-on-create reservations for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>

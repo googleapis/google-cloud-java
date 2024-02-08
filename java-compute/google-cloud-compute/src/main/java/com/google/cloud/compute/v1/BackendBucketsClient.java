@@ -1394,7 +1394,7 @@ public class BackendBucketsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param backendBucket Name of the BackendService resource to which the security policy should be
+   * @param backendBucket Name of the BackendBucket resource to which the security policy should be
    *     set. The name should conform to RFC1035.
    * @param securityPolicyReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -225,6 +225,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).listReferrersSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).performMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).performMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removeResourcePolicies. */
   public UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings() {
@@ -793,6 +805,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
             ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
         listReferrersSettings() {
       return getStubSettingsBuilder().listReferrersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings() {
+      return getStubSettingsBuilder().performMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */

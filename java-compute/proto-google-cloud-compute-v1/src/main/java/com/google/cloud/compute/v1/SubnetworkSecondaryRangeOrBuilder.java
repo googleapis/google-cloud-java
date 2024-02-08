@@ -97,4 +97,41 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * @return The bytes for rangeName.
    */
   com.google.protobuf.ByteString getRangeNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return Whether the reservedInternalRange field is set.
+   */
+  boolean hasReservedInternalRange();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return The reservedInternalRange.
+   */
+  java.lang.String getReservedInternalRange();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the reserved internal range.
+   * </pre>
+   *
+   * <code>optional string reserved_internal_range = 286248754;</code>
+   *
+   * @return The bytes for reservedInternalRange.
+   */
+  com.google.protobuf.ByteString getReservedInternalRangeBytes();
 }

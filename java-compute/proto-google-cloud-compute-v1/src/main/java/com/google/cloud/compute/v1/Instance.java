@@ -2725,6 +2725,39 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : resourceStatus_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 480964257;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
   private boolean satisfiesPzs_ = false;
   /**
@@ -2740,7 +2773,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
   /**
    *
@@ -2773,7 +2806,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasScheduling() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
   /**
    *
@@ -2825,7 +2858,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
   /**
    *
@@ -2957,7 +2990,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShieldedInstanceConfig() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
   /**
    * <code>
@@ -2997,7 +3030,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShieldedInstanceIntegrityPolicy() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
   /**
    * <code>
@@ -3043,7 +3076,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceMachineImage() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
   /**
    *
@@ -3109,7 +3142,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceMachineImageEncryptionKey() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
   /**
    *
@@ -3164,7 +3197,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartRestricted() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
   /**
    *
@@ -3200,7 +3233,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField1_ & 0x00000008) != 0);
+    return ((bitField1_ & 0x00000010) != 0);
   }
   /**
    *
@@ -3268,7 +3301,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatusMessage() {
-    return ((bitField1_ & 0x00000010) != 0);
+    return ((bitField1_ & 0x00000020) != 0);
   }
   /**
    *
@@ -3332,7 +3365,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTags() {
-    return ((bitField1_ & 0x00000020) != 0);
+    return ((bitField1_ & 0x00000040) != 0);
   }
   /**
    *
@@ -3380,7 +3413,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField1_ & 0x00000040) != 0);
+    return ((bitField1_ & 0x00000080) != 0);
   }
   /**
    *
@@ -3452,16 +3485,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField1_ & 0x00000020) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       output.writeMessage(3552281, getTags());
     }
-    if (((bitField1_ & 0x00000040) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       output.writeMessage(12862901, getShieldedInstanceConfig());
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21769791, sourceMachineImage_);
     }
     for (int i = 0; i < resourcePolicies_.size(); i++) {
@@ -3490,22 +3523,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < disks_.size(); i++) {
       output.writeMessage(95594102, disks_.get(i));
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       output.writeBool(123693144, startRestricted_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(157850683, getReservationAffinity());
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       output.writeMessage(163696919, getShieldedInstanceIntegrityPolicy());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       output.writeMessage(192839075, getSourceMachineImageEncryptionKey());
     }
     if (((bitField0_ & 0x00040000) != 0)) {
@@ -3533,14 +3566,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < serviceAccounts_.size(); i++) {
       output.writeMessage(277537328, serviceAccounts_.get(i));
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 356275337, lastSuspendedTimestamp_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeMessage(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00400000) != 0)) {
@@ -3561,7 +3594,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 443830736, lastStartTimestamp_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3574,6 +3607,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(467731324, canIpForward_);
     }
     if (((bitField0_ & 0x08000000) != 0)) {
+      output.writeBool(480964257, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x10000000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -3599,18 +3635,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField1_ & 0x00000020) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3552281, getTags());
     }
-    if (((bitField1_ & 0x00000040) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12862901, getShieldedInstanceConfig());
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(21769791, sourceMachineImage_);
     }
@@ -3650,7 +3686,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < disks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(123693144, startRestricted_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
@@ -3658,7 +3694,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               157850683, getReservationAffinity());
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               163696919, getShieldedInstanceIntegrityPolicy());
@@ -3667,10 +3703,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               192839075, getSourceMachineImageEncryptionKey());
@@ -3705,7 +3741,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               277537328, serviceAccounts_.get(i));
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
@@ -3713,7 +3749,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               356275337, lastSuspendedTimestamp_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00400000) != 0)) {
@@ -3740,7 +3776,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(443830736, lastStartTimestamp_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3755,6 +3791,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(467731324, canIpForward_);
     }
     if (((bitField0_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964257, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -3900,6 +3939,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceStatus() != other.hasResourceStatus()) return false;
     if (hasResourceStatus()) {
       if (!getResourceStatus().equals(other.getResourceStatus())) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
     if (hasSatisfiesPzs()) {
@@ -4092,6 +4135,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceStatus()) {
       hash = (37 * hash) + RESOURCE_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceStatus().hashCode();
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     if (hasSatisfiesPzs()) {
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
@@ -4418,6 +4465,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         resourceStatusBuilder_.dispose();
         resourceStatusBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       satisfiesPzs_ = false;
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
@@ -4431,7 +4479,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         serviceAccounts_ = null;
         serviceAccountsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       shieldedInstanceConfig_ = null;
       if (shieldedInstanceConfigBuilder_ != null) {
         shieldedInstanceConfigBuilder_.dispose();
@@ -4523,9 +4571,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
       if (serviceAccountsBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0)) {
+        if (((bitField1_ & 0x00000010) != 0)) {
           serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
-          bitField1_ = (bitField1_ & ~0x00000008);
+          bitField1_ = (bitField1_ & ~0x00000010);
         }
         result.serviceAccounts_ = serviceAccounts_;
       } else {
@@ -4676,62 +4724,66 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
         to_bitField0_ |= 0x20000000;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x40000000;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.shieldedInstanceConfig_ =
             shieldedInstanceConfigBuilder_ == null
                 ? shieldedInstanceConfig_
                 : shieldedInstanceConfigBuilder_.build();
-        to_bitField0_ |= 0x40000000;
-      }
-      if (((from_bitField1_ & 0x00000020) != 0)) {
-        result.shieldedInstanceIntegrityPolicy_ =
-            shieldedInstanceIntegrityPolicyBuilder_ == null
-                ? shieldedInstanceIntegrityPolicy_
-                : shieldedInstanceIntegrityPolicyBuilder_.build();
         to_bitField0_ |= 0x80000000;
       }
       int to_bitField1_ = 0;
       if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.sourceMachineImage_ = sourceMachineImage_;
+        result.shieldedInstanceIntegrityPolicy_ =
+            shieldedInstanceIntegrityPolicyBuilder_ == null
+                ? shieldedInstanceIntegrityPolicy_
+                : shieldedInstanceIntegrityPolicyBuilder_.build();
         to_bitField1_ |= 0x00000001;
       }
       if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.sourceMachineImage_ = sourceMachineImage_;
+        to_bitField1_ |= 0x00000002;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
         result.sourceMachineImageEncryptionKey_ =
             sourceMachineImageEncryptionKeyBuilder_ == null
                 ? sourceMachineImageEncryptionKey_
                 : sourceMachineImageEncryptionKeyBuilder_.build();
-        to_bitField1_ |= 0x00000002;
-      }
-      if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.startRestricted_ = startRestricted_;
         to_bitField1_ |= 0x00000004;
       }
       if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.status_ = status_;
+        result.startRestricted_ = startRestricted_;
         to_bitField1_ |= 0x00000008;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
-        result.statusMessage_ = statusMessage_;
+        result.status_ = status_;
         to_bitField1_ |= 0x00000010;
       }
       if (((from_bitField1_ & 0x00000800) != 0)) {
-        result.tags_ = tagsBuilder_ == null ? tags_ : tagsBuilder_.build();
+        result.statusMessage_ = statusMessage_;
         to_bitField1_ |= 0x00000020;
       }
       if (((from_bitField1_ & 0x00001000) != 0)) {
-        result.zone_ = zone_;
+        result.tags_ = tagsBuilder_ == null ? tags_ : tagsBuilder_.build();
         to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField1_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4986,6 +5038,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasResourceStatus()) {
         mergeResourceStatus(other.getResourceStatus());
       }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       if (other.hasSatisfiesPzs()) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
@@ -4994,14 +5049,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (serviceAccountsBuilder_ == null) {
         if (!other.serviceAccounts_.isEmpty()) {
           if (serviceAccounts_.isEmpty()) {
             serviceAccounts_ = other.serviceAccounts_;
-            bitField1_ = (bitField1_ & ~0x00000008);
+            bitField1_ = (bitField1_ & ~0x00000010);
           } else {
             ensureServiceAccountsIsMutable();
             serviceAccounts_.addAll(other.serviceAccounts_);
@@ -5014,7 +5069,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             serviceAccountsBuilder_.dispose();
             serviceAccountsBuilder_ = null;
             serviceAccounts_ = other.serviceAccounts_;
-            bitField1_ = (bitField1_ & ~0x00000008);
+            bitField1_ = (bitField1_ & ~0x00000010);
             serviceAccountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceAccountsFieldBuilder()
@@ -5032,7 +5087,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceMachineImage()) {
         sourceMachineImage_ = other.sourceMachineImage_;
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       if (other.hasSourceMachineImageEncryptionKey()) {
@@ -5043,12 +5098,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       if (other.hasStatusMessage()) {
         statusMessage_ = other.statusMessage_;
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       if (other.hasTags()) {
@@ -5056,7 +5111,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5106,26 +5161,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 28418250:
               {
                 input.readMessage(getTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 28418250
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 29957474
             case 102903210:
               {
                 input.readMessage(
                     getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 102903210
             case 174158330:
               {
                 sourceMachineImage_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 174158330
             case 177763082:
@@ -5195,7 +5250,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 989545152:
               {
                 startRestricted_ = input.readBool();
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 989545152
             case 1262805466:
@@ -5210,7 +5265,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getShieldedInstanceIntegrityPolicyFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 1309575354
             case 1424998602:
@@ -5222,7 +5277,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 1450082194
             case 1542712602:
@@ -5230,7 +5285,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getSourceMachineImageEncryptionKeyFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 1542712602
             case 1821688210:
@@ -5291,7 +5346,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case -1915542062:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00000800;
                 break;
               } // case -1915542062
             case -1444764598:
@@ -5303,7 +5358,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case -1201460062:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000004;
                 break;
               } // case -1201460062
             case -1108320494:
@@ -5347,7 +5402,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000008;
                 break;
               } // case -645248918
             case -630849712:
@@ -5375,10 +5430,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case -553116704
+            case -447253240:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case -447253240
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case -447253160
             case -369865814:
@@ -10545,6 +10606,74 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return resourceStatusBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
@@ -10559,7 +10688,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -10591,7 +10720,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -10607,7 +10736,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -10631,7 +10760,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
@@ -10671,7 +10800,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -10690,7 +10819,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -10705,7 +10834,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)
+        if (((bitField1_ & 0x00000004) != 0)
             && scheduling_ != null
             && scheduling_ != com.google.cloud.compute.v1.Scheduling.getDefaultInstance()) {
           getSchedulingBuilder().mergeFrom(value);
@@ -10716,7 +10845,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_.mergeFrom(value);
       }
       if (scheduling_ != null) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -10731,7 +10860,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder clearScheduling() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -10750,7 +10879,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingBuilder() {
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -10811,7 +10940,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -10874,7 +11003,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10891,7 +11020,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -10913,7 +11042,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10922,10 +11051,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureServiceAccountsIsMutable() {
-      if (!((bitField1_ & 0x00000008) != 0)) {
+      if (!((bitField1_ & 0x00000010) != 0)) {
         serviceAccounts_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>(serviceAccounts_);
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000010;
       }
     }
 
@@ -11141,7 +11270,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServiceAccounts() {
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000008);
+        bitField1_ = (bitField1_ & ~0x00000010);
         onChanged();
       } else {
         serviceAccountsBuilder_.clear();
@@ -11265,7 +11394,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.ServiceAccount.Builder,
                 com.google.cloud.compute.v1.ServiceAccountOrBuilder>(
                 serviceAccounts_,
-                ((bitField1_ & 0x00000008) != 0),
+                ((bitField1_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         serviceAccounts_ = null;
@@ -11287,7 +11416,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
     /**
      * <code>
@@ -11320,7 +11449,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11336,7 +11465,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11348,7 +11477,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShieldedInstanceConfig(
         com.google.cloud.compute.v1.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000010) != 0)
+        if (((bitField1_ & 0x00000020) != 0)
             && shieldedInstanceConfig_ != null
             && shieldedInstanceConfig_
                 != com.google.cloud.compute.v1.ShieldedInstanceConfig.getDefaultInstance()) {
@@ -11360,7 +11489,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
       if (shieldedInstanceConfig_ != null) {
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -11371,7 +11500,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearShieldedInstanceConfig() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       shieldedInstanceConfig_ = null;
       if (shieldedInstanceConfigBuilder_ != null) {
         shieldedInstanceConfigBuilder_.dispose();
@@ -11387,7 +11516,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
@@ -11443,7 +11572,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shieldedInstanceIntegrityPolicy field is set.
      */
     public boolean hasShieldedInstanceIntegrityPolicy() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      * <code>
@@ -11477,7 +11606,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceIntegrityPolicyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11493,7 +11622,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceIntegrityPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11505,7 +11634,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShieldedInstanceIntegrityPolicy(
         com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy value) {
       if (shieldedInstanceIntegrityPolicyBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)
+        if (((bitField1_ & 0x00000040) != 0)
             && shieldedInstanceIntegrityPolicy_ != null
             && shieldedInstanceIntegrityPolicy_
                 != com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy
@@ -11518,7 +11647,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceIntegrityPolicyBuilder_.mergeFrom(value);
       }
       if (shieldedInstanceIntegrityPolicy_ != null) {
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -11529,7 +11658,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearShieldedInstanceIntegrityPolicy() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000040);
       shieldedInstanceIntegrityPolicy_ = null;
       if (shieldedInstanceIntegrityPolicyBuilder_ != null) {
         shieldedInstanceIntegrityPolicyBuilder_.dispose();
@@ -11545,7 +11674,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.Builder
         getShieldedInstanceIntegrityPolicyBuilder() {
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return getShieldedInstanceIntegrityPolicyFieldBuilder().getBuilder();
     }
@@ -11599,7 +11728,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceMachineImage field is set.
      */
     public boolean hasSourceMachineImage() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
@@ -11662,7 +11791,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceMachineImage_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11679,7 +11808,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceMachineImage() {
       sourceMachineImage_ = getDefaultInstance().getSourceMachineImage();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -11701,7 +11830,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceMachineImage_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11726,7 +11855,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceMachineImageEncryptionKey field is set.
      */
     public boolean hasSourceMachineImageEncryptionKey() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
     /**
      *
@@ -11771,7 +11900,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceMachineImageEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -11793,7 +11922,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceMachineImageEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -11811,7 +11940,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceMachineImageEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceMachineImageEncryptionKeyBuilder_ == null) {
-        if (((bitField1_ & 0x00000080) != 0)
+        if (((bitField1_ & 0x00000100) != 0)
             && sourceMachineImageEncryptionKey_ != null
             && sourceMachineImageEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -11823,7 +11952,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         sourceMachineImageEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceMachineImageEncryptionKey_ != null) {
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -11840,7 +11969,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceMachineImageEncryptionKey() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000100);
       sourceMachineImageEncryptionKey_ = null;
       if (sourceMachineImageEncryptionKeyBuilder_ != null) {
         sourceMachineImageEncryptionKeyBuilder_.dispose();
@@ -11862,7 +11991,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceMachineImageEncryptionKeyBuilder() {
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return getSourceMachineImageEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -11929,7 +12058,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStartRestricted() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
     /**
      *
@@ -11961,7 +12090,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartRestricted(boolean value) {
 
       startRestricted_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -11977,7 +12106,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartRestricted() {
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       startRestricted_ = false;
       onChanged();
       return this;
@@ -11997,7 +12126,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
     /**
      *
@@ -12063,7 +12192,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12081,7 +12210,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -12104,7 +12233,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12122,7 +12251,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the statusMessage field is set.
      */
     public boolean hasStatusMessage() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
     /**
      *
@@ -12185,7 +12314,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       statusMessage_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -12202,7 +12331,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatusMessage() {
       statusMessage_ = getDefaultInstance().getStatusMessage();
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -12224,7 +12353,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       statusMessage_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -12247,7 +12376,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tags field is set.
      */
     public boolean hasTags() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
     /**
      *
@@ -12285,7 +12414,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         tagsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -12304,7 +12433,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         tagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -12319,7 +12448,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTags(com.google.cloud.compute.v1.Tags value) {
       if (tagsBuilder_ == null) {
-        if (((bitField1_ & 0x00000800) != 0)
+        if (((bitField1_ & 0x00001000) != 0)
             && tags_ != null
             && tags_ != com.google.cloud.compute.v1.Tags.getDefaultInstance()) {
           getTagsBuilder().mergeFrom(value);
@@ -12330,7 +12459,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         tagsBuilder_.mergeFrom(value);
       }
       if (tags_ != null) {
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -12345,7 +12474,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public Builder clearTags() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00001000);
       tags_ = null;
       if (tagsBuilder_ != null) {
         tagsBuilder_.dispose();
@@ -12364,7 +12493,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public com.google.cloud.compute.v1.Tags.Builder getTagsBuilder() {
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return getTagsFieldBuilder().getBuilder();
     }
@@ -12423,7 +12552,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField1_ & 0x00001000) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
     /**
      *
@@ -12486,7 +12615,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -12503,7 +12632,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -12525,7 +12654,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }

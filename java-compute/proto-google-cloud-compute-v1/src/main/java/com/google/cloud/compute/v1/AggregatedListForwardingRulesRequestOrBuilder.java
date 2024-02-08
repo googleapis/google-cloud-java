@@ -236,12 +236,24 @@ public interface AggregatedListForwardingRulesRequestOrBuilder
   boolean getReturnPartialSuccess();
 
   /**
+   *
+   *
+   * <pre>
+   * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+   * </pre>
+   *
    * <code>optional int64 service_project_number = 316757497;</code>
    *
    * @return Whether the serviceProjectNumber field is set.
    */
   boolean hasServiceProjectNumber();
   /**
+   *
+   *
+   * <pre>
+   * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+   * </pre>
+   *
    * <code>optional int64 service_project_number = 316757497;</code>
    *
    * @return The serviceProjectNumber.

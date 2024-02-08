@@ -227,6 +227,31 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
+   * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return Whether the enableConfidentialCompute field is set.
+   */
+  boolean hasEnableConfidentialCompute();
+  /**
+   *
+   *
+   * <pre>
+   * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return The enableConfidentialCompute.
+   */
+  boolean getEnableConfidentialCompute();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
@@ -667,6 +692,31 @@ public interface ImageOrBuilder
    * <code>optional .google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    */
   com.google.cloud.compute.v1.RawDiskOrBuilder getRawDiskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   /**
    *

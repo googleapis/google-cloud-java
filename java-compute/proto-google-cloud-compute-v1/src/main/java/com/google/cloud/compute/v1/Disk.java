@@ -942,6 +942,39 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         : diskEncryptionKey_;
   }
 
+  public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 102135228;
+  private boolean enableConfidentialCompute_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether this disk is using confidential compute mode.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return Whether the enableConfidentialCompute field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableConfidentialCompute() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether this disk is using confidential compute mode.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return The enableConfidentialCompute.
+   */
+  @java.lang.Override
+  public boolean getEnableConfidentialCompute() {
+    return enableConfidentialCompute_;
+  }
+
   public static final int GUEST_OS_FEATURES_FIELD_NUMBER = 79294545;
 
   @SuppressWarnings("serial")
@@ -1029,7 +1062,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1064,7 +1097,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1130,7 +1163,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLabelFingerprint() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1298,7 +1331,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLastAttachTimestamp() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1364,7 +1397,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLastDetachTimestamp() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1545,7 +1578,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocationHint() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1611,7 +1644,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1677,7 +1710,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOptions() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1741,7 +1774,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasParams() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1787,7 +1820,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPhysicalBlockSizeBytes() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1820,7 +1853,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProvisionedIops() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1853,7 +1886,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProvisionedThroughput() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1888,7 +1921,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2080,7 +2113,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceStatus() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -2115,6 +2148,39 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         : resourceStatus_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 480964257;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
   private boolean satisfiesPzs_ = false;
   /**
@@ -2130,7 +2196,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -2165,7 +2231,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -2229,7 +2295,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSizeGb() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -2264,7 +2330,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceConsistencyGroupPolicy() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -2330,7 +2396,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceConsistencyGroupPolicyId() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    *
@@ -2396,7 +2462,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceDisk() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    *
@@ -2462,7 +2528,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceDiskId() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
   /**
    *
@@ -2528,7 +2594,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceImage() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
   /**
    *
@@ -2594,7 +2660,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceImageEncryptionKey() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
   /**
    *
@@ -2651,7 +2717,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceImageId() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
   /**
    *
@@ -2717,7 +2783,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshot() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
   /**
    *
@@ -2783,7 +2849,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotEncryptionKey() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
   /**
    *
@@ -2840,7 +2906,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotId() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
   /**
    *
@@ -2906,7 +2972,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceStorageObject() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
   /**
    *
@@ -2973,7 +3039,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
   /**
    *
@@ -3041,7 +3107,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000010) != 0);
   }
   /**
    *
@@ -3171,7 +3237,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField1_ & 0x00000008) != 0);
+    return ((bitField1_ & 0x00000020) != 0);
   }
   /**
    *
@@ -3235,22 +3301,22 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 19616093, sourceConsistencyGroupPolicy_);
     }
@@ -3261,7 +3327,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 42159653, lastAttachTimestamp_);
     }
     if (getLicenseCodesList().size() > 0) {
@@ -3274,52 +3340,55 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < replicaZones_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 48438272, replicaZones_.getRaw(i));
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50443319, sourceImage_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 55328291, sourceImageId_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 56471027, lastDetachTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(78313862, getParams());
     }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       output.writeMessage(79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98962258, sourceSnapshotId_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(102135228, enableConfidentialCompute_);
     }
     for (int i = 0; i < users_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 111578632, users_.getRaw(i));
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(180517533, getAsyncPrimaryDisk());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeInt64(186769108, provisionedIops_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 233052711, sourceStorageObject_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(249429315, getResourceStatus());
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 267568957, sourceConsistencyGroupPolicyId_);
     }
@@ -3329,7 +3398,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 302803283, architecture_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -3340,39 +3409,42 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < licenses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 361137822, options_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeMessage(381503659, getSourceImageEncryptionKey());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeInt64(420007943, physicalBlockSizeBytes_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 454190809, sourceDiskId_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
-      output.writeBool(480964267, satisfiesPzs_);
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeBool(480964257, satisfiesPzi_);
     }
     if (((bitField0_ & 0x00200000) != 0)) {
+      output.writeBool(480964267, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeInt64(494929369, sizeGb_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeInt64(526524181, provisionedThroughput_);
     }
     getUnknownFields().writeTo(output);
@@ -3384,22 +3456,22 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               19616093, sourceConsistencyGroupPolicy_);
@@ -3416,7 +3488,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(42159653, lastAttachTimestamp_);
     }
@@ -3441,17 +3513,17 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getReplicaZonesList().size();
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50443319, sourceImage_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55328291, sourceImageId_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(56471027, lastDetachTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
     }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
@@ -3459,8 +3531,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98962258, sourceSnapshotId_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              102135228, enableConfidentialCompute_);
     }
     {
       int dataSize = 0;
@@ -3470,13 +3547,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getUsersList().size();
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
@@ -3485,21 +3562,21 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               180517533, getAsyncPrimaryDisk());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(186769108, provisionedIops_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(233052711, sourceStorageObject_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(249429315, getResourceStatus());
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               267568957, sourceConsistencyGroupPolicyId_);
@@ -3512,7 +3589,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(302803283, architecture_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               303679322, getSourceSnapshotEncryptionKey());
@@ -3539,18 +3616,18 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getLicensesList().size();
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(361137822, options_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               381503659, getSourceImageEncryptionKey());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               420007943, physicalBlockSizeBytes_);
@@ -3558,19 +3635,22 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(454190809, sourceDiskId_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964257, satisfiesPzi_);
     }
     if (((bitField0_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(494929369, sizeGb_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -3583,7 +3663,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(526524181, provisionedThroughput_);
     }
@@ -3623,6 +3703,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasDiskEncryptionKey() != other.hasDiskEncryptionKey()) return false;
     if (hasDiskEncryptionKey()) {
       if (!getDiskEncryptionKey().equals(other.getDiskEncryptionKey())) return false;
+    }
+    if (hasEnableConfidentialCompute() != other.hasEnableConfidentialCompute()) return false;
+    if (hasEnableConfidentialCompute()) {
+      if (getEnableConfidentialCompute() != other.getEnableConfidentialCompute()) return false;
     }
     if (!getGuestOsFeaturesList().equals(other.getGuestOsFeaturesList())) return false;
     if (hasId() != other.hasId()) return false;
@@ -3685,6 +3769,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceStatus() != other.hasResourceStatus()) return false;
     if (hasResourceStatus()) {
       if (!getResourceStatus().equals(other.getResourceStatus())) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
     if (hasSatisfiesPzs()) {
@@ -3794,6 +3882,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DISK_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getDiskEncryptionKey().hashCode();
     }
+    if (hasEnableConfidentialCompute()) {
+      hash = (37 * hash) + ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialCompute());
+    }
     if (getGuestOsFeaturesCount() > 0) {
       hash = (37 * hash) + GUEST_OS_FEATURES_FIELD_NUMBER;
       hash = (53 * hash) + getGuestOsFeaturesList().hashCode();
@@ -3873,6 +3965,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceStatus()) {
       hash = (37 * hash) + RESOURCE_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceStatus().hashCode();
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     if (hasSatisfiesPzs()) {
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
@@ -4140,13 +4236,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         diskEncryptionKeyBuilder_.dispose();
         diskEncryptionKeyBuilder_ = null;
       }
+      enableConfidentialCompute_ = false;
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
       } else {
         guestOsFeatures_ = null;
         guestOsFeaturesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
       kind_ = "";
       labelFingerprint_ = "";
@@ -4174,6 +4271,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         resourceStatusBuilder_.dispose();
         resourceStatusBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       satisfiesPzs_ = false;
       selfLink_ = "";
       sizeGb_ = 0L;
@@ -4239,9 +4337,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Disk result) {
       if (guestOsFeaturesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.guestOsFeatures_ = guestOsFeatures_;
       } else {
@@ -4281,105 +4379,105 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
                 : diskEncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.id_ = id_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.enableConfidentialCompute_ = enableConfidentialCompute_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.kind_ = kind_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.labelFingerprint_ = labelFingerprint_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.labelFingerprint_ = labelFingerprint_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.lastAttachTimestamp_ = lastAttachTimestamp_;
-        to_bitField0_ |= 0x00000100;
-      }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.lastDetachTimestamp_ = lastDetachTimestamp_;
+        result.lastAttachTimestamp_ = lastAttachTimestamp_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.lastDetachTimestamp_ = lastDetachTimestamp_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         licenseCodes_.makeImmutable();
         result.licenseCodes_ = licenseCodes_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         licenses_.makeImmutable();
         result.licenses_ = licenses_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.locationHint_ = locationHint_;
-        to_bitField0_ |= 0x00000400;
-      }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.name_ = name_;
+        result.locationHint_ = locationHint_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.options_ = options_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
+        result.options_ = options_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.physicalBlockSizeBytes_ = physicalBlockSizeBytes_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.provisionedIops_ = provisionedIops_;
+        result.physicalBlockSizeBytes_ = physicalBlockSizeBytes_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.provisionedThroughput_ = provisionedThroughput_;
+        result.provisionedIops_ = provisionedIops_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.region_ = region_;
+        result.provisionedThroughput_ = provisionedThroughput_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.region_ = region_;
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         replicaZones_.makeImmutable();
         result.replicaZones_ = replicaZones_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         resourcePolicies_.makeImmutable();
         result.resourcePolicies_ = resourcePolicies_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.resourceStatus_ =
             resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
-        to_bitField0_ |= 0x00040000;
-      }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.sizeGb_ = sizeGb_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.sourceConsistencyGroupPolicy_ = sourceConsistencyGroupPolicy_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.sourceConsistencyGroupPolicyId_ = sourceConsistencyGroupPolicyId_;
+        result.sizeGb_ = sizeGb_;
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.sourceDisk_ = sourceDisk_;
+        result.sourceConsistencyGroupPolicy_ = sourceConsistencyGroupPolicy_;
         to_bitField0_ |= 0x01000000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4389,59 +4487,67 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.sourceDiskId_ = sourceDiskId_;
+        result.sourceConsistencyGroupPolicyId_ = sourceConsistencyGroupPolicyId_;
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.sourceImage_ = sourceImage_;
+        result.sourceDisk_ = sourceDisk_;
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.sourceDiskId_ = sourceDiskId_;
+        to_bitField0_ |= 0x08000000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.sourceImage_ = sourceImage_;
+        to_bitField0_ |= 0x10000000;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.sourceImageEncryptionKey_ =
             sourceImageEncryptionKeyBuilder_ == null
                 ? sourceImageEncryptionKey_
                 : sourceImageEncryptionKeyBuilder_.build();
-        to_bitField0_ |= 0x08000000;
-      }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
-        result.sourceImageId_ = sourceImageId_;
-        to_bitField0_ |= 0x10000000;
-      }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
-        result.sourceSnapshot_ = sourceSnapshot_;
         to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00000020) != 0)) {
-        result.sourceSnapshotEncryptionKey_ =
-            sourceSnapshotEncryptionKeyBuilder_ == null
-                ? sourceSnapshotEncryptionKey_
-                : sourceSnapshotEncryptionKeyBuilder_.build();
+        result.sourceImageId_ = sourceImageId_;
         to_bitField0_ |= 0x40000000;
       }
       if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.sourceSnapshotId_ = sourceSnapshotId_;
+        result.sourceSnapshot_ = sourceSnapshot_;
         to_bitField0_ |= 0x80000000;
       }
       int to_bitField1_ = 0;
       if (((from_bitField1_ & 0x00000080) != 0)) {
-        result.sourceStorageObject_ = sourceStorageObject_;
+        result.sourceSnapshotEncryptionKey_ =
+            sourceSnapshotEncryptionKeyBuilder_ == null
+                ? sourceSnapshotEncryptionKey_
+                : sourceSnapshotEncryptionKeyBuilder_.build();
         to_bitField1_ |= 0x00000001;
       }
       if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.status_ = status_;
+        result.sourceSnapshotId_ = sourceSnapshotId_;
         to_bitField1_ |= 0x00000002;
       }
       if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.type_ = type_;
+        result.sourceStorageObject_ = sourceStorageObject_;
         to_bitField1_ |= 0x00000004;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
+        result.status_ = status_;
+        to_bitField1_ |= 0x00000008;
+      }
+      if (((from_bitField1_ & 0x00000800) != 0)) {
+        result.type_ = type_;
+        to_bitField1_ |= 0x00000010;
+      }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         users_.makeImmutable();
         result.users_ = users_;
       }
-      if (((from_bitField1_ & 0x00000800) != 0)) {
+      if (((from_bitField1_ & 0x00002000) != 0)) {
         result.zone_ = zone_;
-        to_bitField1_ |= 0x00000008;
+        to_bitField1_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4515,11 +4621,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDiskEncryptionKey()) {
         mergeDiskEncryptionKey(other.getDiskEncryptionKey());
       }
+      if (other.hasEnableConfidentialCompute()) {
+        setEnableConfidentialCompute(other.getEnableConfidentialCompute());
+      }
       if (guestOsFeaturesBuilder_ == null) {
         if (!other.guestOsFeatures_.isEmpty()) {
           if (guestOsFeatures_.isEmpty()) {
             guestOsFeatures_ = other.guestOsFeatures_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureGuestOsFeaturesIsMutable();
             guestOsFeatures_.addAll(other.guestOsFeatures_);
@@ -4532,7 +4641,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             guestOsFeaturesBuilder_.dispose();
             guestOsFeaturesBuilder_ = null;
             guestOsFeatures_ = other.guestOsFeatures_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             guestOsFeaturesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGuestOsFeaturesFieldBuilder()
@@ -4547,31 +4656,31 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasLabelFingerprint()) {
         labelFingerprint_ = other.labelFingerprint_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       if (other.hasLastAttachTimestamp()) {
         lastAttachTimestamp_ = other.lastAttachTimestamp_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasLastDetachTimestamp()) {
         lastDetachTimestamp_ = other.lastDetachTimestamp_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.licenseCodes_.isEmpty()) {
         if (licenseCodes_.isEmpty()) {
           licenseCodes_ = other.licenseCodes_;
           licenseCodes_.makeImmutable();
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensureLicenseCodesIsMutable();
           licenseCodes_.addAll(other.licenseCodes_);
@@ -4581,7 +4690,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00008000;
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -4590,17 +4699,17 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLocationHint()) {
         locationHint_ = other.locationHint_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasOptions()) {
         options_ = other.options_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasParams()) {
@@ -4617,13 +4726,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (!other.replicaZones_.isEmpty()) {
         if (replicaZones_.isEmpty()) {
           replicaZones_ = other.replicaZones_;
-          bitField0_ |= 0x00800000;
+          bitField0_ |= 0x01000000;
         } else {
           ensureReplicaZonesIsMutable();
           replicaZones_.addAll(other.replicaZones_);
@@ -4633,7 +4742,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ |= 0x01000000;
+          bitField0_ |= 0x02000000;
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -4643,12 +4752,15 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (other.hasResourceStatus()) {
         mergeResourceStatus(other.getResourceStatus());
       }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       if (other.hasSatisfiesPzs()) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       if (other.hasSizeGb()) {
@@ -4656,27 +4768,27 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceConsistencyGroupPolicy()) {
         sourceConsistencyGroupPolicy_ = other.sourceConsistencyGroupPolicy_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasSourceConsistencyGroupPolicyId()) {
         sourceConsistencyGroupPolicyId_ = other.sourceConsistencyGroupPolicyId_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSourceDisk()) {
         sourceDisk_ = other.sourceDisk_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSourceDiskId()) {
         sourceDiskId_ = other.sourceDiskId_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSourceImage()) {
         sourceImage_ = other.sourceImage_;
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSourceImageEncryptionKey()) {
@@ -4684,12 +4796,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceImageId()) {
         sourceImageId_ = other.sourceImageId_;
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000020;
         onChanged();
       }
       if (other.hasSourceSnapshot()) {
         sourceSnapshot_ = other.sourceSnapshot_;
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSourceSnapshotEncryptionKey()) {
@@ -4697,28 +4809,28 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceSnapshotId()) {
         sourceSnapshotId_ = other.sourceSnapshotId_;
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSourceStorageObject()) {
         sourceStorageObject_ = other.sourceStorageObject_;
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000200;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField1_ |= 0x00000400;
+          bitField1_ |= 0x00001000;
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -4727,7 +4839,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4759,37 +4871,37 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 26989658
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 28604882
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 29957474
             case 156928746:
               {
                 sourceConsistencyGroupPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 156928746
             case 177763082:
@@ -4808,7 +4920,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 337277226:
               {
                 lastAttachTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 337277226
             case 363861312:
@@ -4839,25 +4951,25 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 403546554:
               {
                 sourceImage_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 403546554
             case 442626330:
               {
                 sourceImageId_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 442626330
             case 451768218:
               {
                 lastDetachTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 451768218
             case 626510898:
               {
                 input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 626510898
             case 634356362:
@@ -4876,9 +4988,15 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 791698066:
               {
                 sourceSnapshotId_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 791698066
+            case 817081824:
+              {
+                enableConfidentialCompute_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 817081824
             case 892629058:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -4889,19 +5007,19 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 1008495426:
               {
                 sourceSnapshot_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 1008495426
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 1111570338
             case 1424998602:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1424998602
             case 1444140266:
@@ -4914,31 +5032,31 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 1450082194
             case 1494152864:
               {
                 provisionedIops_ = input.readInt64();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 1494152864
             case 1864421690:
               {
                 sourceStorageObject_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 1864421690
             case 1995434522:
               {
                 input.readMessage(getResourceStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 1995434522
             case 2140551658:
               {
                 sourceConsistencyGroupPolicyId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 2140551658
             case -2121681878:
@@ -4958,7 +5076,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000080;
                 break;
               } // case -1865532718
             case -1711562430:
@@ -4985,26 +5103,26 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case -1490811254:
               {
                 locationHint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1490811254
             case -1405864718:
               {
                 options_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -1405864718
             case -1242938022:
               {
                 input.readMessage(
                     getSourceImageEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000010;
                 break;
               } // case -1242938022
             case -934903752:
               {
                 physicalBlockSizeBytes_ = input.readInt64();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -934903752
             case -911466526:
@@ -5016,31 +5134,37 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case -680936950:
               {
                 sourceDisk_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case -680936950
             case -661440822:
               {
                 sourceDiskId_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000004;
                 break;
               } // case -661440822
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case -645248918
+            case -447253240:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case -447253240
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case -447253160
             case -335532344:
               {
                 sizeGb_ = input.readInt64();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case -335532344
             case -293404678:
@@ -5052,13 +5176,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -293404678
             case -82773848:
               {
                 provisionedThroughput_ = input.readInt64();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -82773848
             default:
@@ -6107,14 +6231,82 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return diskEncryptionKeyBuilder_;
     }
 
+    private boolean enableConfidentialCompute_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether this disk is using confidential compute mode.
+     * </pre>
+     *
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
+     *
+     * @return Whether the enableConfidentialCompute field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableConfidentialCompute() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this disk is using confidential compute mode.
+     * </pre>
+     *
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
+     *
+     * @return The enableConfidentialCompute.
+     */
+    @java.lang.Override
+    public boolean getEnableConfidentialCompute() {
+      return enableConfidentialCompute_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this disk is using confidential compute mode.
+     * </pre>
+     *
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
+     *
+     * @param value The enableConfidentialCompute to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableConfidentialCompute(boolean value) {
+
+      enableConfidentialCompute_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this disk is using confidential compute mode.
+     * </pre>
+     *
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableConfidentialCompute() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      enableConfidentialCompute_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.GuestOsFeature> guestOsFeatures_ =
         java.util.Collections.emptyList();
 
     private void ensureGuestOsFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         guestOsFeatures_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.GuestOsFeature>(guestOsFeatures_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -6330,7 +6522,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder clearGuestOsFeatures() {
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         guestOsFeaturesBuilder_.clear();
@@ -6454,7 +6646,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.GuestOsFeature.Builder,
                 com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>(
                 guestOsFeatures_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         guestOsFeatures_ = null;
@@ -6476,7 +6668,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -6508,7 +6700,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6524,7 +6716,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = 0L;
       onChanged();
       return this;
@@ -6543,7 +6735,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -6606,7 +6798,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6623,7 +6815,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -6645,7 +6837,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6663,7 +6855,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the labelFingerprint field is set.
      */
     public boolean hasLabelFingerprint() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -6726,7 +6918,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       labelFingerprint_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6743,7 +6935,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLabelFingerprint() {
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -6765,7 +6957,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       labelFingerprint_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6787,7 +6979,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return labels_;
     }
@@ -6872,7 +7064,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6895,7 +7087,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6915,7 +7107,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -6929,7 +7121,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -6946,7 +7138,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastAttachTimestamp field is set.
      */
     public boolean hasLastAttachTimestamp() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -7009,7 +7201,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       lastAttachTimestamp_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7026,7 +7218,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLastAttachTimestamp() {
       lastAttachTimestamp_ = getDefaultInstance().getLastAttachTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -7048,7 +7240,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       lastAttachTimestamp_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7066,7 +7258,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastDetachTimestamp field is set.
      */
     public boolean hasLastDetachTimestamp() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -7129,7 +7321,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       lastDetachTimestamp_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7146,7 +7338,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLastDetachTimestamp() {
       lastDetachTimestamp_ = getDefaultInstance().getLastDetachTimestamp();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -7168,7 +7360,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       lastDetachTimestamp_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7179,7 +7371,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!licenseCodes_.isModifiable()) {
         licenseCodes_ = makeMutableCopy(licenseCodes_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
     /**
      *
@@ -7242,7 +7434,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
       ensureLicenseCodesIsMutable();
       licenseCodes_.setLong(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -7262,7 +7454,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
       ensureLicenseCodesIsMutable();
       licenseCodes_.addLong(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -7281,7 +7473,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLicenseCodes(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureLicenseCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenseCodes_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -7298,7 +7490,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLicenseCodes() {
       licenseCodes_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -7310,7 +7502,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!licenses_.isModifiable()) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
     }
     /**
      *
@@ -7390,7 +7582,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.set(index, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7412,7 +7604,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7431,7 +7623,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7448,7 +7640,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLicenses() {
       licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       ;
       onChanged();
       return this;
@@ -7472,7 +7664,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLicensesIsMutable();
       licenses_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7490,7 +7682,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the locationHint field is set.
      */
     public boolean hasLocationHint() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -7553,7 +7745,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       locationHint_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7570,7 +7762,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocationHint() {
       locationHint_ = getDefaultInstance().getLocationHint();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -7592,7 +7784,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       locationHint_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7610,7 +7802,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -7673,7 +7865,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7690,7 +7882,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -7712,7 +7904,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7730,7 +7922,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the options field is set.
      */
     public boolean hasOptions() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -7793,7 +7985,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       options_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7810,7 +8002,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOptions() {
       options_ = getDefaultInstance().getOptions();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -7832,7 +8024,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       options_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7855,7 +8047,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the params field is set.
      */
     public boolean hasParams() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -7895,7 +8087,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         paramsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7914,7 +8106,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         paramsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7929,7 +8121,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeParams(com.google.cloud.compute.v1.DiskParams value) {
       if (paramsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && params_ != null
             && params_ != com.google.cloud.compute.v1.DiskParams.getDefaultInstance()) {
           getParamsBuilder().mergeFrom(value);
@@ -7940,7 +8132,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         paramsBuilder_.mergeFrom(value);
       }
       if (params_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -7955,7 +8147,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
      */
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       params_ = null;
       if (paramsBuilder_ != null) {
         paramsBuilder_.dispose();
@@ -7974,7 +8166,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
      */
     public com.google.cloud.compute.v1.DiskParams.Builder getParamsBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
@@ -8036,7 +8228,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPhysicalBlockSizeBytes() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -8068,7 +8260,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setPhysicalBlockSizeBytes(long value) {
 
       physicalBlockSizeBytes_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8084,7 +8276,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPhysicalBlockSizeBytes() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       physicalBlockSizeBytes_ = 0L;
       onChanged();
       return this;
@@ -8104,7 +8296,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProvisionedIops() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -8136,7 +8328,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setProvisionedIops(long value) {
 
       provisionedIops_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -8152,7 +8344,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvisionedIops() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       provisionedIops_ = 0L;
       onChanged();
       return this;
@@ -8172,7 +8364,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProvisionedThroughput() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -8204,7 +8396,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setProvisionedThroughput(long value) {
 
       provisionedThroughput_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8220,7 +8412,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvisionedThroughput() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       provisionedThroughput_ = 0L;
       onChanged();
       return this;
@@ -8239,7 +8431,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -8302,7 +8494,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -8319,7 +8511,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -8341,7 +8533,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -8353,7 +8545,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!replicaZones_.isModifiable()) {
         replicaZones_ = new com.google.protobuf.LazyStringArrayList(replicaZones_);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
     }
     /**
      *
@@ -8433,7 +8625,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReplicaZonesIsMutable();
       replicaZones_.set(index, value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8455,7 +8647,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReplicaZonesIsMutable();
       replicaZones_.add(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8474,7 +8666,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReplicaZones(java.lang.Iterable<java.lang.String> values) {
       ensureReplicaZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicaZones_);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8491,7 +8683,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReplicaZones() {
       replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       ;
       onChanged();
       return this;
@@ -8515,7 +8707,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReplicaZonesIsMutable();
       replicaZones_.add(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8527,7 +8719,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!resourcePolicies_.isModifiable()) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
     }
     /**
      *
@@ -8607,7 +8799,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.set(index, value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8629,7 +8821,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8648,7 +8840,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllResourcePolicies(java.lang.Iterable<java.lang.String> values) {
       ensureResourcePoliciesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourcePolicies_);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8665,7 +8857,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearResourcePolicies() {
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       ;
       onChanged();
       return this;
@@ -8689,7 +8881,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8713,7 +8905,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceStatus field is set.
      */
     public boolean hasResourceStatus() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -8755,7 +8947,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8776,7 +8968,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8792,7 +8984,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResourceStatus(com.google.cloud.compute.v1.DiskResourceStatus value) {
       if (resourceStatusBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && resourceStatus_ != null
             && resourceStatus_
                 != com.google.cloud.compute.v1.DiskResourceStatus.getDefaultInstance()) {
@@ -8804,7 +8996,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         resourceStatusBuilder_.mergeFrom(value);
       }
       if (resourceStatus_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -8820,7 +9012,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResourceStatus() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
         resourceStatusBuilder_.dispose();
@@ -8840,7 +9032,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.DiskResourceStatus.Builder getResourceStatusBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getResourceStatusFieldBuilder().getBuilder();
     }
@@ -8890,6 +9082,74 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return resourceStatusBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 480964257;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
@@ -8904,7 +9164,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -8936,7 +9196,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8952,7 +9212,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8971,7 +9231,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -9034,7 +9294,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9051,7 +9311,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -9073,7 +9333,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9092,7 +9352,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSizeGb() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -9124,7 +9384,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeGb(long value) {
 
       sizeGb_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -9140,7 +9400,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       sizeGb_ = 0L;
       onChanged();
       return this;
@@ -9159,7 +9419,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceConsistencyGroupPolicy field is set.
      */
     public boolean hasSourceConsistencyGroupPolicy() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      *
@@ -9222,7 +9482,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceConsistencyGroupPolicy_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -9239,7 +9499,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceConsistencyGroupPolicy() {
       sourceConsistencyGroupPolicy_ = getDefaultInstance().getSourceConsistencyGroupPolicy();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -9261,7 +9521,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceConsistencyGroupPolicy_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -9279,7 +9539,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceConsistencyGroupPolicyId field is set.
      */
     public boolean hasSourceConsistencyGroupPolicyId() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
@@ -9342,7 +9602,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceConsistencyGroupPolicyId_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9359,7 +9619,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceConsistencyGroupPolicyId() {
       sourceConsistencyGroupPolicyId_ = getDefaultInstance().getSourceConsistencyGroupPolicyId();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -9381,7 +9641,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceConsistencyGroupPolicyId_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9399,7 +9659,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDisk field is set.
      */
     public boolean hasSourceDisk() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -9462,7 +9722,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceDisk_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9479,7 +9739,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceDisk() {
       sourceDisk_ = getDefaultInstance().getSourceDisk();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -9501,7 +9761,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceDisk_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9519,7 +9779,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDiskId field is set.
      */
     public boolean hasSourceDiskId() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
@@ -9582,7 +9842,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceDiskId_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9599,7 +9859,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceDiskId() {
       sourceDiskId_ = getDefaultInstance().getSourceDiskId();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -9621,7 +9881,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceDiskId_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9639,7 +9899,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceImage field is set.
      */
     public boolean hasSourceImage() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -9702,7 +9962,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceImage_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9719,7 +9979,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceImage() {
       sourceImage_ = getDefaultInstance().getSourceImage();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -9741,7 +10001,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceImage_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9766,7 +10026,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceImageEncryptionKey field is set.
      */
     public boolean hasSourceImageEncryptionKey() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
     /**
      *
@@ -9811,7 +10071,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9833,7 +10093,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9851,7 +10111,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceImageEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceImageEncryptionKeyBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && sourceImageEncryptionKey_ != null
             && sourceImageEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -9863,7 +10123,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         sourceImageEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceImageEncryptionKey_ != null) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -9880,7 +10140,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000010);
       sourceImageEncryptionKey_ = null;
       if (sourceImageEncryptionKeyBuilder_ != null) {
         sourceImageEncryptionKeyBuilder_.dispose();
@@ -9902,7 +10162,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceImageEncryptionKeyBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return getSourceImageEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -9968,7 +10228,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceImageId field is set.
      */
     public boolean hasSourceImageId() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
     /**
      *
@@ -10031,7 +10291,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceImageId_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10048,7 +10308,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceImageId() {
       sourceImageId_ = getDefaultInstance().getSourceImageId();
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -10070,7 +10330,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceImageId_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10088,7 +10348,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshot field is set.
      */
     public boolean hasSourceSnapshot() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      *
@@ -10151,7 +10411,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshot_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -10168,7 +10428,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshot() {
       sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -10190,7 +10450,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshot_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -10215,7 +10475,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotEncryptionKey field is set.
      */
     public boolean hasSourceSnapshotEncryptionKey() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
@@ -10260,7 +10520,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10282,7 +10542,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10300,7 +10560,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceSnapshotEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)
+        if (((bitField1_ & 0x00000080) != 0)
             && sourceSnapshotEncryptionKey_ != null
             && sourceSnapshotEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -10312,7 +10572,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         sourceSnapshotEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceSnapshotEncryptionKey_ != null) {
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -10329,7 +10589,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000080);
       sourceSnapshotEncryptionKey_ = null;
       if (sourceSnapshotEncryptionKeyBuilder_ != null) {
         sourceSnapshotEncryptionKeyBuilder_.dispose();
@@ -10351,7 +10611,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceSnapshotEncryptionKeyBuilder() {
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000080;
       onChanged();
       return getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -10417,7 +10677,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotId field is set.
      */
     public boolean hasSourceSnapshotId() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
     /**
      *
@@ -10480,7 +10740,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshotId_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10497,7 +10757,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshotId() {
       sourceSnapshotId_ = getDefaultInstance().getSourceSnapshotId();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -10519,7 +10779,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshotId_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10537,7 +10797,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceStorageObject field is set.
      */
     public boolean hasSourceStorageObject() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
     /**
      *
@@ -10600,7 +10860,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceStorageObject_ = value;
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10617,7 +10877,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceStorageObject() {
       sourceStorageObject_ = getDefaultInstance().getSourceStorageObject();
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -10639,7 +10899,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceStorageObject_ = value;
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10658,7 +10918,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
     /**
      *
@@ -10724,7 +10984,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10742,7 +11002,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -10765,7 +11025,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10783,7 +11043,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
     /**
      *
@@ -10846,7 +11106,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10863,7 +11123,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -10885,7 +11145,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10897,7 +11157,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!users_.isModifiable()) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
     }
     /**
      *
@@ -10977,7 +11237,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.set(index, value);
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -10999,7 +11259,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.add(value);
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -11018,7 +11278,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUsers(java.lang.Iterable<java.lang.String> values) {
       ensureUsersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, users_);
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -11035,7 +11295,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUsers() {
       users_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -11059,7 +11319,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUsersIsMutable();
       users_.add(value);
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -11077,7 +11337,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
     /**
      *
@@ -11140,7 +11400,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -11157,7 +11417,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -11179,7 +11439,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }

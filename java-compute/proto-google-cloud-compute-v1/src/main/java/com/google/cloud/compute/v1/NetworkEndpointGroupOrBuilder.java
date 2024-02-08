@@ -86,7 +86,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -99,7 +99,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -112,7 +112,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -124,7 +124,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>
@@ -138,7 +138,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>
@@ -152,7 +152,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>
@@ -166,7 +166,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -179,7 +179,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -192,7 +192,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -241,7 +241,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The default port used if the port number is not specified in the network endpoint.
+   * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
    * </pre>
    *
    * <code>optional int32 default_port = 423377855;</code>
@@ -253,7 +253,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The default port used if the port number is not specified in the network endpoint.
+   * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
    * </pre>
    *
    * <code>optional int32 default_port = 423377855;</code>
@@ -402,7 +402,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
+   * The URL of the network to which all network endpoints in the NEG belong. Uses default project network if unspecified.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -414,7 +414,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
+   * The URL of the network to which all network endpoints in the NEG belong. Uses default project network if unspecified.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -426,7 +426,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
+   * The URL of the network to which all network endpoints in the NEG belong. Uses default project network if unspecified.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -496,7 +496,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -508,7 +508,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -520,7 +520,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>

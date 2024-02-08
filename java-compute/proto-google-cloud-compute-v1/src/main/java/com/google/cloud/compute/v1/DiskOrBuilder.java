@@ -289,6 +289,31 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * Whether this disk is using confidential compute mode.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return Whether the enableConfidentialCompute field is set.
+   */
+  boolean hasEnableConfidentialCompute();
+  /**
+   *
+   *
+   * <pre>
+   * Whether this disk is using confidential compute mode.
+   * </pre>
+   *
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return The enableConfidentialCompute.
+   */
+  boolean getEnableConfidentialCompute();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
@@ -1051,6 +1076,31 @@ public interface DiskOrBuilder
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
    */
   com.google.cloud.compute.v1.DiskResourceStatusOrBuilder getResourceStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   /**
    *
