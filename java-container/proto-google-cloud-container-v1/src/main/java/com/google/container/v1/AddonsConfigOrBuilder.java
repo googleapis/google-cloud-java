@@ -462,4 +462,45 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
    */
   com.google.container.v1.GcsFuseCsiDriverConfigOrBuilder getGcsFuseCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the StatefulHA add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the statefulHaConfig field is set.
+   */
+  boolean hasStatefulHaConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the StatefulHA add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The statefulHaConfig.
+   */
+  com.google.container.v1.StatefulHAConfig getStatefulHaConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the StatefulHA add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.StatefulHAConfigOrBuilder getStatefulHaConfigOrBuilder();
 }

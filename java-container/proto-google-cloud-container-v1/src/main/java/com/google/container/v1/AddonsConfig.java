@@ -672,6 +672,62 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : gcsFuseCsiDriverConfig_;
   }
 
+  public static final int STATEFUL_HA_CONFIG_FIELD_NUMBER = 18;
+  private com.google.container.v1.StatefulHAConfig statefulHaConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the StatefulHA add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the statefulHaConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatefulHaConfig() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the StatefulHA add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The statefulHaConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.StatefulHAConfig getStatefulHaConfig() {
+    return statefulHaConfig_ == null
+        ? com.google.container.v1.StatefulHAConfig.getDefaultInstance()
+        : statefulHaConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the StatefulHA add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.StatefulHAConfigOrBuilder getStatefulHaConfigOrBuilder() {
+    return statefulHaConfig_ == null
+        ? com.google.container.v1.StatefulHAConfig.getDefaultInstance()
+        : statefulHaConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -718,6 +774,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(17, getGcsFuseCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(18, getStatefulHaConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -769,6 +828,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(17, getGcsFuseCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getStatefulHaConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -832,6 +894,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGcsFuseCsiDriverConfig()) {
       if (!getGcsFuseCsiDriverConfig().equals(other.getGcsFuseCsiDriverConfig())) return false;
     }
+    if (hasStatefulHaConfig() != other.hasStatefulHaConfig()) return false;
+    if (hasStatefulHaConfig()) {
+      if (!getStatefulHaConfig().equals(other.getStatefulHaConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -886,6 +952,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGcsFuseCsiDriverConfig()) {
       hash = (37 * hash) + GCS_FUSE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGcsFuseCsiDriverConfig().hashCode();
+    }
+    if (hasStatefulHaConfig()) {
+      hash = (37 * hash) + STATEFUL_HA_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStatefulHaConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1038,6 +1108,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getGcpFilestoreCsiDriverConfigFieldBuilder();
         getGkeBackupAgentConfigFieldBuilder();
         getGcsFuseCsiDriverConfigFieldBuilder();
+        getStatefulHaConfigFieldBuilder();
       }
     }
 
@@ -1099,6 +1170,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (gcsFuseCsiDriverConfigBuilder_ != null) {
         gcsFuseCsiDriverConfigBuilder_.dispose();
         gcsFuseCsiDriverConfigBuilder_ = null;
+      }
+      statefulHaConfig_ = null;
+      if (statefulHaConfigBuilder_ != null) {
+        statefulHaConfigBuilder_.dispose();
+        statefulHaConfigBuilder_ = null;
       }
       return this;
     }
@@ -1209,6 +1285,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 : gcsFuseCsiDriverConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.statefulHaConfig_ =
+            statefulHaConfigBuilder_ == null ? statefulHaConfig_ : statefulHaConfigBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1289,6 +1370,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGcsFuseCsiDriverConfig()) {
         mergeGcsFuseCsiDriverConfig(other.getGcsFuseCsiDriverConfig());
+      }
+      if (other.hasStatefulHaConfig()) {
+        mergeStatefulHaConfig(other.getStatefulHaConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1392,6 +1476,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getStatefulHaConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3630,6 +3721,210 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         gcsFuseCsiDriverConfig_ = null;
       }
       return gcsFuseCsiDriverConfigBuilder_;
+    }
+
+    private com.google.container.v1.StatefulHAConfig statefulHaConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.StatefulHAConfig,
+            com.google.container.v1.StatefulHAConfig.Builder,
+            com.google.container.v1.StatefulHAConfigOrBuilder>
+        statefulHaConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the statefulHaConfig field is set.
+     */
+    public boolean hasStatefulHaConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The statefulHaConfig.
+     */
+    public com.google.container.v1.StatefulHAConfig getStatefulHaConfig() {
+      if (statefulHaConfigBuilder_ == null) {
+        return statefulHaConfig_ == null
+            ? com.google.container.v1.StatefulHAConfig.getDefaultInstance()
+            : statefulHaConfig_;
+      } else {
+        return statefulHaConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStatefulHaConfig(com.google.container.v1.StatefulHAConfig value) {
+      if (statefulHaConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        statefulHaConfig_ = value;
+      } else {
+        statefulHaConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStatefulHaConfig(
+        com.google.container.v1.StatefulHAConfig.Builder builderForValue) {
+      if (statefulHaConfigBuilder_ == null) {
+        statefulHaConfig_ = builderForValue.build();
+      } else {
+        statefulHaConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStatefulHaConfig(com.google.container.v1.StatefulHAConfig value) {
+      if (statefulHaConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && statefulHaConfig_ != null
+            && statefulHaConfig_ != com.google.container.v1.StatefulHAConfig.getDefaultInstance()) {
+          getStatefulHaConfigBuilder().mergeFrom(value);
+        } else {
+          statefulHaConfig_ = value;
+        }
+      } else {
+        statefulHaConfigBuilder_.mergeFrom(value);
+      }
+      if (statefulHaConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStatefulHaConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      statefulHaConfig_ = null;
+      if (statefulHaConfigBuilder_ != null) {
+        statefulHaConfigBuilder_.dispose();
+        statefulHaConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.StatefulHAConfig.Builder getStatefulHaConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getStatefulHaConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.StatefulHAConfigOrBuilder getStatefulHaConfigOrBuilder() {
+      if (statefulHaConfigBuilder_ != null) {
+        return statefulHaConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return statefulHaConfig_ == null
+            ? com.google.container.v1.StatefulHAConfig.getDefaultInstance()
+            : statefulHaConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the StatefulHA add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.StatefulHAConfig stateful_ha_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.StatefulHAConfig,
+            com.google.container.v1.StatefulHAConfig.Builder,
+            com.google.container.v1.StatefulHAConfigOrBuilder>
+        getStatefulHaConfigFieldBuilder() {
+      if (statefulHaConfigBuilder_ == null) {
+        statefulHaConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.StatefulHAConfig,
+                com.google.container.v1.StatefulHAConfig.Builder,
+                com.google.container.v1.StatefulHAConfigOrBuilder>(
+                getStatefulHaConfig(), getParentForChildren(), isClean());
+        statefulHaConfig_ = null;
+      }
+      return statefulHaConfigBuilder_;
     }
 
     @java.lang.Override

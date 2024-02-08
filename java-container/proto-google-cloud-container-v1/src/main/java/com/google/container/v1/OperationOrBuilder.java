@@ -61,7 +61,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2448
+   *     google/container/v1/cluster_service.proto;l=2458
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -78,7 +78,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2448
+   *     google/container/v1/cluster_service.proto;l=2458
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -172,7 +172,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2461
+   *     google/container/v1/cluster_service.proto;l=2471
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -190,7 +190,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2461
+   *     google/container/v1/cluster_service.proto;l=2471
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
