@@ -54,14 +54,14 @@ public final class SlidesAddOnManifestProto {
           + "ipt.type.HomepageExtensionPoint\022[\n\035on_fi"
           + "le_scope_granted_trigger\030\002 \001(\01324.google."
           + "apps.script.type.slides.SlidesExtensionP"
-          + "oint\"2\n\024SlidesExtensionPoint\022\032\n\014run_func"
-          + "tion\030\001 \001(\tB\004\342A\001\002B\346\001\n\"com.google.apps.scr"
-          + "ipt.type.slidesB\030SlidesAddOnManifestProt"
-          + "oP\001Z=google.golang.org/genproto/googleap"
-          + "is/apps/script/type/slides\252\002\036Google.Apps"
-          + ".Script.Type.Slides\312\002\036Google\\Apps\\Script"
-          + "\\Type\\Slides\352\002\"Google::Apps::Script::Typ"
-          + "e::Slidesb\006proto3"
+          + "oint\"1\n\024SlidesExtensionPoint\022\031\n\014run_func"
+          + "tion\030\001 \001(\tB\003\340A\002B\346\001\n\"com.google.apps.scri"
+          + "pt.type.slidesB\030SlidesAddOnManifestProto"
+          + "P\001Z=google.golang.org/genproto/googleapi"
+          + "s/apps/script/type/slides\252\002\036Google.Apps."
+          + "Script.Type.Slides\312\002\036Google\\Apps\\Script\\"
+          + "Type\\Slides\352\002\"Google::Apps::Script::Type"
+          + "::Slidesb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
