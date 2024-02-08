@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.vertexai.generativeai.preview;
+package com.google.cloud.vertexai.generativeai;
 
 import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.Builder;
