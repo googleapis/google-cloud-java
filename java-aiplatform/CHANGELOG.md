@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.36.0 (2024-02-09)
+
+### Features
+
+* Add generateContent Unary API for aiplatform_v1 ([#10319](https://github.com/googleapis/google-cloud-java/issues/10319)) ([08700f2](https://github.com/googleapis/google-cloud-java/commit/08700f26d7db4c880e96786786936f42051f1bca))
+* add SearchNearestEntities rpc to FeatureOnlineStoreService in aiplatform v1 ([#10347](https://github.com/googleapis/google-cloud-java/issues/10347)) ([e9c48d9](https://github.com/googleapis/google-cloud-java/commit/e9c48d9b25f4c39c9f22ace1c00acb24ff6a288d))
+
+
+
 ## 3.35.0 (2024-01-23)
 
 ### Features

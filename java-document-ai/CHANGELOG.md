@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.39.0 (2024-02-09)
+
+### Features
+
+* expose model_type in v1 processor, so that user can see the model_type after get or list processor version ([#10322](https://github.com/googleapis/google-cloud-java/issues/10322)) ([2dd5b35](https://github.com/googleapis/google-cloud-java/commit/2dd5b3512a1f9dde2e54d711a4984d5c6bdedf3d))
+
+
+
 ## 2.38.0 (2024-01-23)
 
 * No change

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.38.0 (2024-02-09)
+
+### Features
+
+* added configuration for the StatefulHA addon to the AddonsConfig ([#10345](https://github.com/googleapis/google-cloud-java/issues/10345)) ([4db5bc4](https://github.com/googleapis/google-cloud-java/commit/4db5bc4163f39af6e937db347f079d35b36c7803))
+* new AddonsConfig field stateful_ha_config ([#10318](https://github.com/googleapis/google-cloud-java/issues/10318)) ([9a312a7](https://github.com/googleapis/google-cloud-java/commit/9a312a7b4350c40fa45966c13c0bdd8fbae47e89))
+
+
+
 ## 2.37.0 (2024-01-23)
 
 ### Features

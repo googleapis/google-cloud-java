@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.46.0 (2024-02-09)
+
+### Features
+
+* A new field `opt_out_conformer_model_migration` is added to message `.google.cloud.dialogflow.cx.v3.InputAudioConfig` ([#10354](https://github.com/googleapis/google-cloud-java/issues/10354)) ([8e0fb1b](https://github.com/googleapis/google-cloud-java/commit/8e0fb1bc0d6c5c5d8c16c5a74c1c59bf3c026bec))
+
+
+
 ## 0.45.0 (2024-01-23)
 
 * No change
