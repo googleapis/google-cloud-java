@@ -4,6 +4,224 @@
     {
       "changes": [
         {
+          "type": "feat",
+          "sha": "5457a70b6a201402c269b08d2d0a4b7fddd6e4de",
+          "message": "[meet] added v2 libraries for the Meet API GA release",
+          "issues": [
+            "10317"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-meet",
+      "id": "2ea033a1-5f8d-4e22-b054-306dcd48c078",
+      "createTime": "2024-02-09T02:24:59.099Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2dd5b3512a1f9dde2e54d711a4984d5c6bdedf3d",
+          "message": "[documentai] expose model_type in v1 processor, so that user can see the model_type after get or list processor version",
+          "issues": [
+            "10322"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "f922c99a-b558-49fd-9446-f9d267091eec",
+      "createTime": "2024-02-09T02:24:59.087Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "29b2a3674bf8f387ecc30d94fdcdc7843cde8e15",
+          "message": "[vertexai] Remove 'preview' namespace and start using @BetaApi",
+          "issues": [
+            "10330"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "12f9a3ce9521cb9ce92db71f21356eaf4519db07",
+          "message": "[vertexai] deprecate varargs scopes in VertexAI",
+          "issues": [
+            "10328"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "ed92f0d295070a598f70b6c19f10b3ffcc04e65c",
+          "message": "[vertexai] Add README section about function-calling",
+          "issues": [
+            "10320"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "2729b0b0f82b8bf069707cc3ecac52a6f497c8f5",
+          "message": "[vertexai] Update javadoc of VertexAI and Transport.",
+          "issues": [
+            "10296"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "20c8252dcc4b093f6d699753ad39f0cdbef1d8ed",
+          "message": "[vertexai] add fromFunctionResponse in PartMaker",
+          "issues": [
+            "10272"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vertexai",
+      "id": "90d2a81a-a40a-4d05-a183-ce4b55cef43c",
+      "createTime": "2024-02-09T02:24:59.074Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8dceb3e18b1a3eb0eeeb4d4840ddf3cc0a3a01b9",
+          "message": "[retail] add analytics service",
+          "issues": [
+            "10352"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-retail",
+      "id": "01c736e4-1cee-4470-9841-85432b825be8",
+      "createTime": "2024-02-09T02:24:59.064Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "4db5bc4163f39af6e937db347f079d35b36c7803",
+          "message": "[container] added configuration for the StatefulHA addon to the AddonsConfig",
+          "issues": [
+            "10345"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "9a312a7b4350c40fa45966c13c0bdd8fbae47e89",
+          "message": "[container] new AddonsConfig field stateful_ha_config",
+          "issues": [
+            "10318"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "78e9cd1d-2eab-4828-98d2-b8660db34a82",
+      "createTime": "2024-02-09T02:24:59.053Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "cf52714303fd73bbb8060492427e41cf57d42933",
+          "message": "[compute] Update Compute Engine API to revision 20240130 (#881)",
+          "issues": [
+            "10349"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "28a6b33a-de6a-4698-b819-79f6486371d8",
+      "createTime": "2024-02-09T02:24:59.041Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e9c48d9b25f4c39c9f22ace1c00acb24ff6a288d",
+          "message": "[aiplatform] add SearchNearestEntities rpc to FeatureOnlineStoreService in aiplatform v1",
+          "issues": [
+            "10347"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "08700f26d7db4c880e96786786936f42051f1bca",
+          "message": "[aiplatform] Add generateContent Unary API for aiplatform_v1",
+          "issues": [
+            "10319"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "368ee308-0588-424a-be51-ff59d37b7f0c",
+      "createTime": "2024-02-09T02:24:59.022Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8e0fb1bc0d6c5c5d8c16c5a74c1c59bf3c026bec",
+          "message": "[dialogflow-cx] A new field `opt_out_conformer_model_migration` is added to message `.google.cloud.dialogflow.cx.v3.InputAudioConfig`",
+          "issues": [
+            "10354"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "9b8c5e0d-66b5-41f7-91f4-5aed0f4e890b",
+      "createTime": "2024-02-09T02:24:59.009Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3bf2de6efe3f6e54c7460474d5b7b703d2d5fe02",
+          "message": "[discoveryengine] add data store, engine and site search engine services",
+          "issues": [
+            "10350"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "8e7f3110-1e64-4d5d-909e-2863ac29aee1",
+      "createTime": "2024-02-09T02:24:58.997Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bc9cebd014644e7e76ef147f522b5034b6fd64cc",
+          "message": "[monitoring-dashboards] Add support for pie charts, incident lists, dropdown groups, error reporting panels, section headers, and styling options on text widgets",
+          "issues": [
+            "10355"
+          ]
+        }
+      ],
+      "version": "1.29.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring-dashboard",
+      "id": "bdabe6c6-2e58-4e08-b737-d34a8ecaab57",
+      "createTime": "2024-02-09T02:24:58.980Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "daff511953c275d21c7e7b492d1de7b5a5b52221",
           "message": "[Many APIs] Update the Java code generator (gapic-generator-java) to 2.32.0",
@@ -23322,5 +23540,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2024-01-23T17:04:49.703Z"
+  "updateTime": "2024-02-09T02:24:59.099Z"
 }
