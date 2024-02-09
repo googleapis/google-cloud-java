@@ -15,8 +15,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-meet",
-      "id": "2ea033a1-5f8d-4e22-b054-306dcd48c078",
-      "createTime": "2024-02-09T02:24:59.099Z"
+      "id": "b3bf37c5-2857-42ab-9605-58c2e679bad3",
+      "createTime": "2024-02-09T14:11:22.213Z"
     },
     {
       "changes": [
@@ -32,8 +32,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-document-ai",
-      "id": "f922c99a-b558-49fd-9446-f9d267091eec",
-      "createTime": "2024-02-09T02:24:59.087Z"
+      "id": "8592ae04-f6c1-47fa-a533-b810735bff50",
+      "createTime": "2024-02-09T14:11:22.201Z"
     },
     {
       "changes": [
@@ -81,8 +81,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-vertexai",
-      "id": "90d2a81a-a40a-4d05-a183-ce4b55cef43c",
-      "createTime": "2024-02-09T02:24:59.074Z"
+      "id": "4f43ebd6-385e-4160-8786-87b1d43b7a43",
+      "createTime": "2024-02-09T14:11:22.185Z"
     },
     {
       "changes": [
@@ -98,8 +98,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-retail",
-      "id": "01c736e4-1cee-4470-9841-85432b825be8",
-      "createTime": "2024-02-09T02:24:59.064Z"
+      "id": "faf50e53-eba4-4d44-8ca2-644ca33fe5d5",
+      "createTime": "2024-02-09T14:11:22.169Z"
     },
     {
       "changes": [
@@ -123,8 +123,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-container",
-      "id": "78e9cd1d-2eab-4828-98d2-b8660db34a82",
-      "createTime": "2024-02-09T02:24:59.053Z"
+      "id": "e01595b4-aeb4-4564-90a3-375f033c9a62",
+      "createTime": "2024-02-09T14:11:22.156Z"
     },
     {
       "changes": [
@@ -140,8 +140,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-compute",
-      "id": "28a6b33a-de6a-4698-b819-79f6486371d8",
-      "createTime": "2024-02-09T02:24:59.041Z"
+      "id": "4461686c-b6d4-4cc2-bb47-0b53052072fb",
+      "createTime": "2024-02-09T14:11:22.145Z"
     },
     {
       "changes": [
@@ -165,8 +165,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-aiplatform",
-      "id": "368ee308-0588-424a-be51-ff59d37b7f0c",
-      "createTime": "2024-02-09T02:24:59.022Z"
+      "id": "6e609be5-1fa6-4b60-8586-37fafceabb58",
+      "createTime": "2024-02-09T14:11:22.134Z"
     },
     {
       "changes": [
@@ -182,8 +182,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
-      "id": "9b8c5e0d-66b5-41f7-91f4-5aed0f4e890b",
-      "createTime": "2024-02-09T02:24:59.009Z"
+      "id": "90583629-bc98-46ef-a54c-1ba6b1bad468",
+      "createTime": "2024-02-09T14:11:22.125Z"
     },
     {
       "changes": [
@@ -199,8 +199,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-discoveryengine",
-      "id": "8e7f3110-1e64-4d5d-909e-2863ac29aee1",
-      "createTime": "2024-02-09T02:24:58.997Z"
+      "id": "998829b7-ae47-4156-82cf-64f5d0bb70bc",
+      "createTime": "2024-02-09T14:11:22.114Z"
     },
     {
       "changes": [
@@ -216,8 +216,8 @@
       "version": "1.29.0",
       "language": "JAVA",
       "artifactName": "com.google.cloud:google-cloud-monitoring-dashboard",
-      "id": "bdabe6c6-2e58-4e08-b737-d34a8ecaab57",
-      "createTime": "2024-02-09T02:24:58.980Z"
+      "id": "83ac91f7-5731-424a-a6c2-072f49ff0f84",
+      "createTime": "2024-02-09T14:11:22.101Z"
     },
     {
       "changes": [
@@ -23540,5 +23540,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2024-02-09T02:24:59.099Z"
+  "updateTime": "2024-02-09T14:11:22.213Z"
 }
