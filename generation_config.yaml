@@ -1,0 +1,90 @@
+gapic_generator_version: 2.34.0
+protobuf_version: 25.2
+googleapis_commitish: 1a45bf7393b52407188c82e63101db7dc9c72026
+owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
+synthtool_commitish: 6612ab8f3afcd5e292aecd647f0fa68812c9f5b5
+template_excludes:
+  - ".github/*"
+  - ".kokoro/*"
+  - "samples/*"
+  - "CODE_OF_CONDUCT.md"
+  - "CONTRIBUTING.md"
+  - "LICENSE"
+  - "SECURITY.md"
+  - "java.header"
+  - "license-checks.xml"
+  - "renovate.json"
+  - ".gitignore"
+libraries:
+  - api_shortname: "accessapproval"
+    name_pretty: "Access Approval"
+    product_documentation: "https://cloud.google.com/access-approval/docs/"
+    api_description: "enables controlling access to your organization's data by Google personnel."
+    release_level: "stable"
+    GAPICs:
+      - proto_path: google/cloud/accessapproval/v1
+
+  - api_shortname: "accesscontextmanager"
+    name_pretty: "Identity Access Context Manager"
+    product_documentation: "n/a"
+    api_description: "n/a"
+    release_level: "stable"
+    client_documentation: "https://cloud.google.com/java/docs/reference/google-identity-accesscontextmanager/latest/overview"
+    distribution_name: "com.google.cloud:google-identity-accesscontextmanager"
+    GAPICs:
+      - proto_path: google/identity/accesscontextmanager/v1
+
+  - api_shortname: "advisorynotifications"
+    name_pretty: "Advisory Notifications API"
+    product_documentation: "https://cloud.google.com/advisory-notifications/"
+    api_description: "An API for accessing Advisory Notifications in Google Cloud."
+    GAPICs:
+      - proto_path: google/cloud/advisorynotifications/v1
+
+  - api_shortname: "aiplatform"
+    name_pretty: "Vertex AI"
+    product_documentation: "https://cloud.google.com/vertex-ai/docs"
+    api_description: "is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle."
+    client_documentation: "https://cloud.google.com/java/docs/reference/google-cloud-aiplatform/latest/overview"
+    release_level: "stable"
+    rest_documentation: "https://cloud.google.com/vertex-ai/docs/reference/rest"
+    rpc_documentation: "https://cloud.google.com/vertex-ai/docs/reference/rpc"
+    GAPICs:
+      - proto_path: google/cloud/aiplatform/v1
+      - proto_path: google/cloud/aiplatform/v1beta1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
