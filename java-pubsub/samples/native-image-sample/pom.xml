@@ -107,7 +107,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependency>
           <groupId>org.junit.vintage</groupId>
           <artifactId>junit-vintage-engine</artifactId>
-          <version>5.10.1</version>
+          <version>5.10.2</version>
           <scope>test</scope>
         </dependency>
         <dependency>
