@@ -56,6 +56,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   private Page() {
     name_ = "";
     displayName_ = "";
+    description_ = "";
     transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
     transitionRoutes_ = java.util.Collections.emptyList();
     eventHandlers_ = java.util.Collections.emptyList();
@@ -193,6 +194,57 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The description of the page. The maximum length is 500 characters.
+   * </pre>
+   *
+   * <code>string description = 19;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description of the page. The maximum length is 500 characters.
+   * </pre>
+   *
+   * <code>string description = 19;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -855,6 +907,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(18, getKnowledgeConnectorSettings());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, description_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -898,6 +953,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getKnowledgeConnectorSettings());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, description_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -916,6 +974,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (hasEntryFulfillment() != other.hasEntryFulfillment()) return false;
     if (hasEntryFulfillment()) {
       if (!getEntryFulfillment().equals(other.getEntryFulfillment())) return false;
@@ -951,6 +1010,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     if (hasEntryFulfillment()) {
       hash = (37 * hash) + ENTRY_FULFILLMENT_FIELD_NUMBER;
       hash = (53 * hash) + getEntryFulfillment().hashCode();
@@ -1149,6 +1210,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       displayName_ = "";
+      description_ = "";
       entryFulfillment_ = null;
       if (entryFulfillmentBuilder_ != null) {
         entryFulfillmentBuilder_.dispose();
@@ -1166,14 +1228,14 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         transitionRoutes_ = null;
         transitionRoutesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (eventHandlersBuilder_ == null) {
         eventHandlers_ = java.util.Collections.emptyList();
       } else {
         eventHandlers_ = null;
         eventHandlersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -1221,18 +1283,18 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3beta1.Page result) {
       if (transitionRoutesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           transitionRoutes_ = java.util.Collections.unmodifiableList(transitionRoutes_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.transitionRoutes_ = transitionRoutes_;
       } else {
         result.transitionRoutes_ = transitionRoutesBuilder_.build();
       }
       if (eventHandlersBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           eventHandlers_ = java.util.Collections.unmodifiableList(eventHandlers_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.eventHandlers_ = eventHandlers_;
       } else {
@@ -1248,26 +1310,29 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.entryFulfillment_ =
             entryFulfillmentBuilder_ == null ? entryFulfillment_ : entryFulfillmentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.form_ = formBuilder_ == null ? form_ : formBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         transitionRouteGroups_.makeImmutable();
         result.transitionRouteGroups_ = transitionRouteGroups_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.knowledgeConnectorSettings_ =
             knowledgeConnectorSettingsBuilder_ == null
                 ? knowledgeConnectorSettings_
@@ -1332,6 +1397,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasEntryFulfillment()) {
         mergeEntryFulfillment(other.getEntryFulfillment());
       }
@@ -1341,7 +1411,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       if (!other.transitionRouteGroups_.isEmpty()) {
         if (transitionRouteGroups_.isEmpty()) {
           transitionRouteGroups_ = other.transitionRouteGroups_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         } else {
           ensureTransitionRouteGroupsIsMutable();
           transitionRouteGroups_.addAll(other.transitionRouteGroups_);
@@ -1352,7 +1422,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         if (!other.transitionRoutes_.isEmpty()) {
           if (transitionRoutes_.isEmpty()) {
             transitionRoutes_ = other.transitionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureTransitionRoutesIsMutable();
             transitionRoutes_.addAll(other.transitionRoutes_);
@@ -1365,7 +1435,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             transitionRoutesBuilder_.dispose();
             transitionRoutesBuilder_ = null;
             transitionRoutes_ = other.transitionRoutes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             transitionRoutesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTransitionRoutesFieldBuilder()
@@ -1379,7 +1449,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         if (!other.eventHandlers_.isEmpty()) {
           if (eventHandlers_.isEmpty()) {
             eventHandlers_ = other.eventHandlers_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureEventHandlersIsMutable();
             eventHandlers_.addAll(other.eventHandlers_);
@@ -1392,7 +1462,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             eventHandlersBuilder_.dispose();
             eventHandlersBuilder_ = null;
             eventHandlers_ = other.eventHandlers_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             eventHandlersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventHandlersFieldBuilder()
@@ -1449,14 +1519,14 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getFormFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 58:
               {
                 input.readMessage(
                     getEntryFulfillmentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 74:
@@ -1498,16 +1568,22 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 106
             case 146:
               {
                 input.readMessage(
                     getKnowledgeConnectorSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 146
+            case 154:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1774,6 +1850,112 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The description of the page. The maximum length is 500 characters.
+     * </pre>
+     *
+     * <code>string description = 19;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the page. The maximum length is 500 characters.
+     * </pre>
+     *
+     * <code>string description = 19;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the page. The maximum length is 500 characters.
+     * </pre>
+     *
+     * <code>string description = 19;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the page. The maximum length is 500 characters.
+     * </pre>
+     *
+     * <code>string description = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the page. The maximum length is 500 characters.
+     * </pre>
+     *
+     * <code>string description = 19;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.Fulfillment entryFulfillment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.Fulfillment,
@@ -1792,7 +1974,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the entryFulfillment field is set.
      */
     public boolean hasEntryFulfillment() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1832,7 +2014,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         entryFulfillmentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1852,7 +2034,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         entryFulfillmentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1867,7 +2049,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEntryFulfillment(com.google.cloud.dialogflow.cx.v3beta1.Fulfillment value) {
       if (entryFulfillmentBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && entryFulfillment_ != null
             && entryFulfillment_
                 != com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()) {
@@ -1879,7 +2061,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         entryFulfillmentBuilder_.mergeFrom(value);
       }
       if (entryFulfillment_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1894,7 +2076,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Fulfillment entry_fulfillment = 7;</code>
      */
     public Builder clearEntryFulfillment() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       entryFulfillment_ = null;
       if (entryFulfillmentBuilder_ != null) {
         entryFulfillmentBuilder_.dispose();
@@ -1913,7 +2095,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Fulfillment entry_fulfillment = 7;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder getEntryFulfillmentBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEntryFulfillmentFieldBuilder().getBuilder();
     }
@@ -1981,7 +2163,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the form field is set.
      */
     public boolean hasForm() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2023,7 +2205,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         formBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2043,7 +2225,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         formBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2059,7 +2241,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeForm(com.google.cloud.dialogflow.cx.v3beta1.Form value) {
       if (formBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && form_ != null
             && form_ != com.google.cloud.dialogflow.cx.v3beta1.Form.getDefaultInstance()) {
           getFormBuilder().mergeFrom(value);
@@ -2070,7 +2252,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         formBuilder_.mergeFrom(value);
       }
       if (form_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2086,7 +2268,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Form form = 4;</code>
      */
     public Builder clearForm() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       form_ = null;
       if (formBuilder_ != null) {
         formBuilder_.dispose();
@@ -2106,7 +2288,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Form form = 4;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Form.Builder getFormBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFormFieldBuilder().getBuilder();
     }
@@ -2164,7 +2346,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         transitionRouteGroups_ =
             new com.google.protobuf.LazyStringArrayList(transitionRouteGroups_);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2344,7 +2526,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTransitionRouteGroupsIsMutable();
       transitionRouteGroups_.set(index, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2386,7 +2568,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTransitionRouteGroupsIsMutable();
       transitionRouteGroups_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2425,7 +2607,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTransitionRouteGroups(java.lang.Iterable<java.lang.String> values) {
       ensureTransitionRouteGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, transitionRouteGroups_);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2462,7 +2644,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTransitionRouteGroups() {
       transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       ;
       onChanged();
       return this;
@@ -2506,7 +2688,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTransitionRouteGroupsIsMutable();
       transitionRouteGroups_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2515,11 +2697,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         transitionRoutes_ = java.util.Collections.emptyList();
 
     private void ensureTransitionRoutesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         transitionRoutes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute>(
                 transitionRoutes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2982,7 +3164,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTransitionRoutes() {
       if (transitionRoutesBuilder_ == null) {
         transitionRoutes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         transitionRoutesBuilder_.clear();
@@ -3264,7 +3446,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute.Builder,
                 com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteOrBuilder>(
                 transitionRoutes_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         transitionRoutes_ = null;
@@ -3276,11 +3458,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEventHandlersIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         eventHandlers_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.EventHandler>(
                 eventHandlers_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3510,7 +3692,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEventHandlers() {
       if (eventHandlersBuilder_ == null) {
         eventHandlers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         eventHandlersBuilder_.clear();
@@ -3644,7 +3826,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3beta1.EventHandler.Builder,
                 com.google.cloud.dialogflow.cx.v3beta1.EventHandlerOrBuilder>(
                 eventHandlers_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         eventHandlers_ = null;
@@ -3671,7 +3853,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the advancedSettings field is set.
      */
     public boolean hasAdvancedSettings() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3714,7 +3896,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3735,7 +3917,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3752,7 +3934,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAdvancedSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
       if (advancedSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && advancedSettings_ != null
             && advancedSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()) {
@@ -3764,7 +3946,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.mergeFrom(value);
       }
       if (advancedSettings_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3780,7 +3962,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 13;</code>
      */
     public Builder clearAdvancedSettings() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -3801,7 +3983,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder
         getAdvancedSettingsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getAdvancedSettingsFieldBuilder().getBuilder();
     }
@@ -3873,7 +4055,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the knowledgeConnectorSettings field is set.
      */
     public boolean hasKnowledgeConnectorSettings() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3919,7 +4101,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         knowledgeConnectorSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3941,7 +4123,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         knowledgeConnectorSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3959,7 +4141,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeKnowledgeConnectorSettings(
         com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings value) {
       if (knowledgeConnectorSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && knowledgeConnectorSettings_ != null
             && knowledgeConnectorSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings
@@ -3972,7 +4154,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         knowledgeConnectorSettingsBuilder_.mergeFrom(value);
       }
       if (knowledgeConnectorSettings_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3989,7 +4171,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearKnowledgeConnectorSettings() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       knowledgeConnectorSettings_ = null;
       if (knowledgeConnectorSettingsBuilder_ != null) {
         knowledgeConnectorSettingsBuilder_.dispose();
@@ -4011,7 +4193,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings.Builder
         getKnowledgeConnectorSettingsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getKnowledgeConnectorSettingsFieldBuilder().getBuilder();
     }

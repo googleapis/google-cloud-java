@@ -578,6 +578,88 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
+   * Optional. Start the session with the specified
+   * [playbook][google.cloud.dialogflow.cx.v3beta1.Playbook]. You can only
+   * specify the playbook at the beginning of the session. Otherwise, an error
+   * will be thrown.
+   *
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The currentPlaybook.
+   */
+  java.lang.String getCurrentPlaybook();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Start the session with the specified
+   * [playbook][google.cloud.dialogflow.cx.v3beta1.Playbook]. You can only
+   * specify the playbook at the beginning of the session. Otherwise, an error
+   * will be thrown.
+   *
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for currentPlaybook.
+   */
+  com.google.protobuf.ByteString getCurrentPlaybookBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  boolean hasLlmModelSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The llmModelSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The channel which this query is for.
    *
    * If specified, only the
@@ -627,7 +709,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow session remains active and its data is stored for
    * 30 minutes after the last request is sent for the session.
    * This value should be no longer than 1 day.
@@ -643,7 +725,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow session remains active and its data is stored for
    * 30 minutes after the last request is sent for the session.
    * This value should be no longer than 1 day.
@@ -659,7 +741,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow session remains active and its data is stored for
    * 30 minutes after the last request is sent for the session.
    * This value should be no longer than 1 day.

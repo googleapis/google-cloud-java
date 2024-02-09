@@ -34,6 +34,8 @@ package com.google.cloud.dialogflow.cx.v3;
  * 4. An event to be triggered.
  *
  * 5. DTMF digits to invoke an intent and fill in parameter value.
+ *
+ * 6. The results of a tool executed by the client.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.QueryInput}
@@ -701,6 +703,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * 4. An event to be triggered.
    *
    * 5. DTMF digits to invoke an intent and fill in parameter value.
+   *
+   * 6. The results of a tool executed by the client.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.QueryInput}

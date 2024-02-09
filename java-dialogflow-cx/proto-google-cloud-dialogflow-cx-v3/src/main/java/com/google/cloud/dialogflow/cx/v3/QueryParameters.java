@@ -873,7 +873,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow session remains active and its data is stored for
    * 30 minutes after the last request is sent for the session.
    * This value should be no longer than 1 day.
@@ -892,7 +892,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow session remains active and its data is stored for
    * 30 minutes after the last request is sent for the session.
    * This value should be no longer than 1 day.
@@ -911,7 +911,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow session remains active and its data is stored for
    * 30 minutes after the last request is sent for the session.
    * This value should be no longer than 1 day.
@@ -4158,7 +4158,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4176,7 +4176,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4200,7 +4200,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4226,7 +4226,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4249,7 +4249,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4280,7 +4280,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4303,7 +4303,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4321,7 +4321,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.
@@ -4343,7 +4343,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Sets Dialogflow session life time.
+     * Optional. Configure lifetime of the Dialogflow session.
      * By default, a Dialogflow session remains active and its data is stored for
      * 30 minutes after the last request is sent for the session.
      * This value should be no longer than 1 day.

@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -155,6 +156,70 @@ public class SessionsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void serverStreamingDetectIntentTest() throws Exception {
+    DetectIntentResponse expectedResponse =
+        DetectIntentResponse.newBuilder()
+            .setResponseId("responseId-633138884")
+            .setQueryResult(QueryResult.newBuilder().build())
+            .setOutputAudio(ByteString.EMPTY)
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setAllowCancellation(true)
+            .build();
+    mockSessions.addResponse(expectedResponse);
+    DetectIntentRequest request =
+        DetectIntentRequest.newBuilder()
+            .setSession(
+                SessionName.ofProjectLocationAgentSessionName(
+                        "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+                    .toString())
+            .setQueryParams(QueryParameters.newBuilder().build())
+            .setQueryInput(QueryInput.newBuilder().build())
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .build();
+
+    MockStreamObserver<DetectIntentResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse> callable =
+        client.serverStreamingDetectIntentCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<DetectIntentResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void serverStreamingDetectIntentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessions.addException(exception);
+    DetectIntentRequest request =
+        DetectIntentRequest.newBuilder()
+            .setSession(
+                SessionName.ofProjectLocationAgentSessionName(
+                        "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+                    .toString())
+            .setQueryParams(QueryParameters.newBuilder().build())
+            .setQueryInput(QueryInput.newBuilder().build())
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .build();
+
+    MockStreamObserver<DetectIntentResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse> callable =
+        client.serverStreamingDetectIntentCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<DetectIntentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

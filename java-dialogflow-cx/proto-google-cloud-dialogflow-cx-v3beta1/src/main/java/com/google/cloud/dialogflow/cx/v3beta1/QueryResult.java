@@ -41,6 +41,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
   private QueryResult() {
     languageCode_ = "";
     responseMessages_ = java.util.Collections.emptyList();
+    webhookIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    webhookDisplayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    webhookLatencies_ = java.util.Collections.emptyList();
+    webhookTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     webhookStatuses_ = java.util.Collections.emptyList();
     webhookPayloads_ = java.util.Collections.emptyList();
   }
@@ -716,6 +720,269 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     return responseMessages_.get(index);
   }
 
+  public static final int WEBHOOK_IDS_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList webhookIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook ids in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_ids = 25;</code>
+   *
+   * @return A list containing the webhookIds.
+   */
+  public com.google.protobuf.ProtocolStringList getWebhookIdsList() {
+    return webhookIds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook ids in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_ids = 25;</code>
+   *
+   * @return The count of webhookIds.
+   */
+  public int getWebhookIdsCount() {
+    return webhookIds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook ids in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_ids = 25;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The webhookIds at the given index.
+   */
+  public java.lang.String getWebhookIds(int index) {
+    return webhookIds_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook ids in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_ids = 25;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the webhookIds at the given index.
+   */
+  public com.google.protobuf.ByteString getWebhookIdsBytes(int index) {
+    return webhookIds_.getByteString(index);
+  }
+
+  public static final int WEBHOOK_DISPLAY_NAMES_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList webhookDisplayNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook display names in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_display_names = 26;</code>
+   *
+   * @return A list containing the webhookDisplayNames.
+   */
+  public com.google.protobuf.ProtocolStringList getWebhookDisplayNamesList() {
+    return webhookDisplayNames_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook display names in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_display_names = 26;</code>
+   *
+   * @return The count of webhookDisplayNames.
+   */
+  public int getWebhookDisplayNamesCount() {
+    return webhookDisplayNames_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook display names in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_display_names = 26;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The webhookDisplayNames at the given index.
+   */
+  public java.lang.String getWebhookDisplayNames(int index) {
+    return webhookDisplayNames_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook display names in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_display_names = 26;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the webhookDisplayNames at the given index.
+   */
+  public com.google.protobuf.ByteString getWebhookDisplayNamesBytes(int index) {
+    return webhookDisplayNames_.getByteString(index);
+  }
+
+  public static final int WEBHOOK_LATENCIES_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.protobuf.Duration> webhookLatencies_;
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook latencies in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.protobuf.Duration> getWebhookLatenciesList() {
+    return webhookLatencies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook latencies in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.protobuf.DurationOrBuilder>
+      getWebhookLatenciesOrBuilderList() {
+    return webhookLatencies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook latencies in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+   */
+  @java.lang.Override
+  public int getWebhookLatenciesCount() {
+    return webhookLatencies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook latencies in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getWebhookLatencies(int index) {
+    return webhookLatencies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook latencies in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getWebhookLatenciesOrBuilder(int index) {
+    return webhookLatencies_.get(index);
+  }
+
+  public static final int WEBHOOK_TAGS_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList webhookTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook tags in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_tags = 29;</code>
+   *
+   * @return A list containing the webhookTags.
+   */
+  public com.google.protobuf.ProtocolStringList getWebhookTagsList() {
+    return webhookTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook tags in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_tags = 29;</code>
+   *
+   * @return The count of webhookTags.
+   */
+  public int getWebhookTagsCount() {
+    return webhookTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook tags in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_tags = 29;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The webhookTags at the given index.
+   */
+  public java.lang.String getWebhookTags(int index) {
+    return webhookTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of webhook tags in the order of call sequence.
+   * </pre>
+   *
+   * <code>repeated string webhook_tags = 29;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the webhookTags at the given index.
+   */
+  public com.google.protobuf.ByteString getWebhookTagsBytes(int index) {
+    return webhookTags_.getByteString(index);
+  }
+
   public static final int WEBHOOK_STATUSES_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
@@ -929,6 +1196,62 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         : currentPage_;
   }
 
+  public static final int CURRENT_FLOW_FIELD_NUMBER = 31;
+  private com.google.cloud.dialogflow.cx.v3beta1.Flow currentFlow_;
+  /**
+   *
+   *
+   * <pre>
+   * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+   *
+   * @return Whether the currentFlow field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrentFlow() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+   *
+   * @return The currentFlow.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Flow getCurrentFlow() {
+    return currentFlow_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Flow.getDefaultInstance()
+        : currentFlow_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+   * fields are filled in this message, including but not limited to `name` and
+   * `display_name`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.FlowOrBuilder getCurrentFlowOrBuilder() {
+    return currentFlow_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Flow.getDefaultInstance()
+        : currentFlow_;
+  }
+
   public static final int INTENT_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.cx.v3beta1.Intent intent_;
   /**
@@ -946,13 +1269,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=921
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
    * @return Whether the intent field is set.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean hasIntent() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -969,7 +1292,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=921
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
    * @return The intent.
    */
   @java.lang.Override
@@ -1021,7 +1344,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=932
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -1045,7 +1368,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMatch() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1111,7 +1434,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDiagnosticInfo() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1178,6 +1501,57 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         : diagnosticInfo_;
   }
 
+  public static final int GENERATIVE_INFO_FIELD_NUMBER = 33;
+  private com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generativeInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * The information of a query if handled by generative agent resources.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+   *
+   * @return Whether the generativeInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenerativeInfo() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The information of a query if handled by generative agent resources.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+   *
+   * @return The generativeInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo getGenerativeInfo() {
+    return generativeInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.getDefaultInstance()
+        : generativeInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The information of a query if handled by generative agent resources.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfoOrBuilder
+      getGenerativeInfoOrBuilder() {
+    return generativeInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.getDefaultInstance()
+        : generativeInfo_;
+  }
+
   public static final int SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER = 17;
   private com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentimentAnalysisResult_;
   /**
@@ -1198,7 +1572,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSentimentAnalysisResult() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1264,7 +1638,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAdvancedSettings() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1359,13 +1733,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getCurrentPage());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(8, getIntent());
     }
     if (java.lang.Float.floatToRawIntBits(intentDetectionConfidence_) != 0) {
       output.writeFloat(9, intentDetectionConfidence_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(10, getDiagnosticInfo());
     }
     if (queryCase_ == 11) {
@@ -1380,20 +1754,39 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 14) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, query_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(15, getMatch());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(17, getSentimentAnalysisResult());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(21, getAdvancedSettings());
     }
     if (queryCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_);
     }
+    for (int i = 0; i < webhookIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, webhookIds_.getRaw(i));
+    }
+    for (int i = 0; i < webhookDisplayNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 26, webhookDisplayNames_.getRaw(i));
+    }
+    for (int i = 0; i < webhookLatencies_.size(); i++) {
+      output.writeMessage(27, webhookLatencies_.get(i));
+    }
+    for (int i = 0; i < webhookTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, webhookTags_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(31, getCurrentFlow());
+    }
     if (allowAnswerFeedback_ != false) {
       output.writeBool(32, allowAnswerFeedback_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(33, getGenerativeInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1422,13 +1815,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCurrentPage());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getIntent());
     }
     if (java.lang.Float.floatToRawIntBits(intentDetectionConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, intentDetectionConfidence_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDiagnosticInfo());
     }
     if (queryCase_ == 11) {
@@ -1443,15 +1836,15 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 14) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, query_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getMatch());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getSentimentAnalysisResult());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getAdvancedSettings());
     }
     if (queryCase_ == 23) {
@@ -1459,8 +1852,42 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < webhookIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(webhookIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getWebhookIdsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < webhookDisplayNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(webhookDisplayNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getWebhookDisplayNamesList().size();
+    }
+    for (int i = 0; i < webhookLatencies_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, webhookLatencies_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < webhookTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(webhookTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getWebhookTagsList().size();
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getCurrentFlow());
+    }
     if (allowAnswerFeedback_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, allowAnswerFeedback_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getGenerativeInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1484,11 +1911,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (!getParameters().equals(other.getParameters())) return false;
     }
     if (!getResponseMessagesList().equals(other.getResponseMessagesList())) return false;
+    if (!getWebhookIdsList().equals(other.getWebhookIdsList())) return false;
+    if (!getWebhookDisplayNamesList().equals(other.getWebhookDisplayNamesList())) return false;
+    if (!getWebhookLatenciesList().equals(other.getWebhookLatenciesList())) return false;
+    if (!getWebhookTagsList().equals(other.getWebhookTagsList())) return false;
     if (!getWebhookStatusesList().equals(other.getWebhookStatusesList())) return false;
     if (!getWebhookPayloadsList().equals(other.getWebhookPayloadsList())) return false;
     if (hasCurrentPage() != other.hasCurrentPage()) return false;
     if (hasCurrentPage()) {
       if (!getCurrentPage().equals(other.getCurrentPage())) return false;
+    }
+    if (hasCurrentFlow() != other.hasCurrentFlow()) return false;
+    if (hasCurrentFlow()) {
+      if (!getCurrentFlow().equals(other.getCurrentFlow())) return false;
     }
     if (hasIntent() != other.hasIntent()) return false;
     if (hasIntent()) {
@@ -1503,6 +1938,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasDiagnosticInfo() != other.hasDiagnosticInfo()) return false;
     if (hasDiagnosticInfo()) {
       if (!getDiagnosticInfo().equals(other.getDiagnosticInfo())) return false;
+    }
+    if (hasGenerativeInfo() != other.hasGenerativeInfo()) return false;
+    if (hasGenerativeInfo()) {
+      if (!getGenerativeInfo().equals(other.getGenerativeInfo())) return false;
     }
     if (hasSentimentAnalysisResult() != other.hasSentimentAnalysisResult()) return false;
     if (hasSentimentAnalysisResult()) {
@@ -1554,6 +1993,22 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESPONSE_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getResponseMessagesList().hashCode();
     }
+    if (getWebhookIdsCount() > 0) {
+      hash = (37 * hash) + WEBHOOK_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getWebhookIdsList().hashCode();
+    }
+    if (getWebhookDisplayNamesCount() > 0) {
+      hash = (37 * hash) + WEBHOOK_DISPLAY_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getWebhookDisplayNamesList().hashCode();
+    }
+    if (getWebhookLatenciesCount() > 0) {
+      hash = (37 * hash) + WEBHOOK_LATENCIES_FIELD_NUMBER;
+      hash = (53 * hash) + getWebhookLatenciesList().hashCode();
+    }
+    if (getWebhookTagsCount() > 0) {
+      hash = (37 * hash) + WEBHOOK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWebhookTagsList().hashCode();
+    }
     if (getWebhookStatusesCount() > 0) {
       hash = (37 * hash) + WEBHOOK_STATUSES_FIELD_NUMBER;
       hash = (53 * hash) + getWebhookStatusesList().hashCode();
@@ -1565,6 +2020,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasCurrentPage()) {
       hash = (37 * hash) + CURRENT_PAGE_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentPage().hashCode();
+    }
+    if (hasCurrentFlow()) {
+      hash = (37 * hash) + CURRENT_FLOW_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentFlow().hashCode();
     }
     if (hasIntent()) {
       hash = (37 * hash) + INTENT_FIELD_NUMBER;
@@ -1579,6 +2038,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasDiagnosticInfo()) {
       hash = (37 * hash) + DIAGNOSTIC_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosticInfo().hashCode();
+    }
+    if (hasGenerativeInfo()) {
+      hash = (37 * hash) + GENERATIVE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getGenerativeInfo().hashCode();
     }
     if (hasSentimentAnalysisResult()) {
       hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
@@ -1756,12 +2219,15 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getParametersFieldBuilder();
         getResponseMessagesFieldBuilder();
+        getWebhookLatenciesFieldBuilder();
         getWebhookStatusesFieldBuilder();
         getWebhookPayloadsFieldBuilder();
         getCurrentPageFieldBuilder();
+        getCurrentFlowFieldBuilder();
         getIntentFieldBuilder();
         getMatchFieldBuilder();
         getDiagnosticInfoFieldBuilder();
+        getGenerativeInfoFieldBuilder();
         getSentimentAnalysisResultFieldBuilder();
         getAdvancedSettingsFieldBuilder();
       }
@@ -1787,24 +2253,39 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         responseMessagesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      webhookIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      webhookDisplayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (webhookLatenciesBuilder_ == null) {
+        webhookLatencies_ = java.util.Collections.emptyList();
+      } else {
+        webhookLatencies_ = null;
+        webhookLatenciesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
+      webhookTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (webhookStatusesBuilder_ == null) {
         webhookStatuses_ = java.util.Collections.emptyList();
       } else {
         webhookStatuses_ = null;
         webhookStatusesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (webhookPayloadsBuilder_ == null) {
         webhookPayloads_ = java.util.Collections.emptyList();
       } else {
         webhookPayloads_ = null;
         webhookPayloadsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00002000);
       currentPage_ = null;
       if (currentPageBuilder_ != null) {
         currentPageBuilder_.dispose();
         currentPageBuilder_ = null;
+      }
+      currentFlow_ = null;
+      if (currentFlowBuilder_ != null) {
+        currentFlowBuilder_.dispose();
+        currentFlowBuilder_ = null;
       }
       intent_ = null;
       if (intentBuilder_ != null) {
@@ -1821,6 +2302,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (diagnosticInfoBuilder_ != null) {
         diagnosticInfoBuilder_.dispose();
         diagnosticInfoBuilder_ = null;
+      }
+      generativeInfo_ = null;
+      if (generativeInfoBuilder_ != null) {
+        generativeInfoBuilder_.dispose();
+        generativeInfoBuilder_ = null;
       }
       sentimentAnalysisResult_ = null;
       if (sentimentAnalysisResultBuilder_ != null) {
@@ -1882,19 +2368,28 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.responseMessages_ = responseMessagesBuilder_.build();
       }
+      if (webhookLatenciesBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          webhookLatencies_ = java.util.Collections.unmodifiableList(webhookLatencies_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.webhookLatencies_ = webhookLatencies_;
+      } else {
+        result.webhookLatencies_ = webhookLatenciesBuilder_.build();
+      }
       if (webhookStatusesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           webhookStatuses_ = java.util.Collections.unmodifiableList(webhookStatuses_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.webhookStatuses_ = webhookStatuses_;
       } else {
         result.webhookStatuses_ = webhookStatusesBuilder_.build();
       }
       if (webhookPayloadsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           webhookPayloads_ = java.util.Collections.unmodifiableList(webhookPayloads_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.webhookPayloads_ = webhookPayloads_;
       } else {
@@ -1912,40 +2407,62 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        webhookIds_.makeImmutable();
+        result.webhookIds_ = webhookIds_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        webhookDisplayNames_.makeImmutable();
+        result.webhookDisplayNames_ = webhookDisplayNames_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        webhookTags_.makeImmutable();
+        result.webhookTags_ = webhookTags_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.currentPage_ =
             currentPageBuilder_ == null ? currentPage_ : currentPageBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.intent_ = intentBuilder_ == null ? intent_ : intentBuilder_.build();
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.currentFlow_ =
+            currentFlowBuilder_ == null ? currentFlow_ : currentFlowBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.intentDetectionConfidence_ = intentDetectionConfidence_;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.match_ = matchBuilder_ == null ? match_ : matchBuilder_.build();
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.intent_ = intentBuilder_ == null ? intent_ : intentBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.diagnosticInfo_ =
-            diagnosticInfoBuilder_ == null ? diagnosticInfo_ : diagnosticInfoBuilder_.build();
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.intentDetectionConfidence_ = intentDetectionConfidence_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.match_ = matchBuilder_ == null ? match_ : matchBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.diagnosticInfo_ =
+            diagnosticInfoBuilder_ == null ? diagnosticInfo_ : diagnosticInfoBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.generativeInfo_ =
+            generativeInfoBuilder_ == null ? generativeInfo_ : generativeInfoBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.sentimentAnalysisResult_ =
             sentimentAnalysisResultBuilder_ == null
                 ? sentimentAnalysisResult_
                 : sentimentAnalysisResultBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.allowAnswerFeedback_ = allowAnswerFeedback_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2040,11 +2557,68 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.webhookIds_.isEmpty()) {
+        if (webhookIds_.isEmpty()) {
+          webhookIds_ = other.webhookIds_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureWebhookIdsIsMutable();
+          webhookIds_.addAll(other.webhookIds_);
+        }
+        onChanged();
+      }
+      if (!other.webhookDisplayNames_.isEmpty()) {
+        if (webhookDisplayNames_.isEmpty()) {
+          webhookDisplayNames_ = other.webhookDisplayNames_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureWebhookDisplayNamesIsMutable();
+          webhookDisplayNames_.addAll(other.webhookDisplayNames_);
+        }
+        onChanged();
+      }
+      if (webhookLatenciesBuilder_ == null) {
+        if (!other.webhookLatencies_.isEmpty()) {
+          if (webhookLatencies_.isEmpty()) {
+            webhookLatencies_ = other.webhookLatencies_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureWebhookLatenciesIsMutable();
+            webhookLatencies_.addAll(other.webhookLatencies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.webhookLatencies_.isEmpty()) {
+          if (webhookLatenciesBuilder_.isEmpty()) {
+            webhookLatenciesBuilder_.dispose();
+            webhookLatenciesBuilder_ = null;
+            webhookLatencies_ = other.webhookLatencies_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            webhookLatenciesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getWebhookLatenciesFieldBuilder()
+                    : null;
+          } else {
+            webhookLatenciesBuilder_.addAllMessages(other.webhookLatencies_);
+          }
+        }
+      }
+      if (!other.webhookTags_.isEmpty()) {
+        if (webhookTags_.isEmpty()) {
+          webhookTags_ = other.webhookTags_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureWebhookTagsIsMutable();
+          webhookTags_.addAll(other.webhookTags_);
+        }
+        onChanged();
+      }
       if (webhookStatusesBuilder_ == null) {
         if (!other.webhookStatuses_.isEmpty()) {
           if (webhookStatuses_.isEmpty()) {
             webhookStatuses_ = other.webhookStatuses_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureWebhookStatusesIsMutable();
             webhookStatuses_.addAll(other.webhookStatuses_);
@@ -2057,7 +2631,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             webhookStatusesBuilder_.dispose();
             webhookStatusesBuilder_ = null;
             webhookStatuses_ = other.webhookStatuses_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00001000);
             webhookStatusesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWebhookStatusesFieldBuilder()
@@ -2071,7 +2645,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         if (!other.webhookPayloads_.isEmpty()) {
           if (webhookPayloads_.isEmpty()) {
             webhookPayloads_ = other.webhookPayloads_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureWebhookPayloadsIsMutable();
             webhookPayloads_.addAll(other.webhookPayloads_);
@@ -2084,7 +2658,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             webhookPayloadsBuilder_.dispose();
             webhookPayloadsBuilder_ = null;
             webhookPayloads_ = other.webhookPayloads_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00002000);
             webhookPayloadsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWebhookPayloadsFieldBuilder()
@@ -2097,6 +2671,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCurrentPage()) {
         mergeCurrentPage(other.getCurrentPage());
       }
+      if (other.hasCurrentFlow()) {
+        mergeCurrentFlow(other.getCurrentFlow());
+      }
       if (other.hasIntent()) {
         mergeIntent(other.getIntent());
       }
@@ -2108,6 +2685,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDiagnosticInfo()) {
         mergeDiagnosticInfo(other.getDiagnosticInfo());
+      }
+      if (other.hasGenerativeInfo()) {
+        mergeGenerativeInfo(other.getGenerativeInfo());
       }
       if (other.hasSentimentAnalysisResult()) {
         mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
@@ -2231,25 +2811,25 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getCurrentPageFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getIntentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 66
             case 77:
               {
                 intentDetectionConfidence_ = input.readFloat();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 77
             case 82:
               {
                 input.readMessage(getDiagnosticInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 82
             case 90:
@@ -2288,21 +2868,21 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 input.readMessage(getMatchFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 122
             case 138:
               {
                 input.readMessage(
                     getSentimentAnalysisResultFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 138
             case 170:
               {
                 input.readMessage(
                     getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 170
             case 186:
@@ -2311,12 +2891,57 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 queryCase_ = 23;
                 break;
               } // case 186
+            case 202:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureWebhookIdsIsMutable();
+                webhookIds_.add(s);
+                break;
+              } // case 202
+            case 210:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureWebhookDisplayNamesIsMutable();
+                webhookDisplayNames_.add(s);
+                break;
+              } // case 210
+            case 218:
+              {
+                com.google.protobuf.Duration m =
+                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+                if (webhookLatenciesBuilder_ == null) {
+                  ensureWebhookLatenciesIsMutable();
+                  webhookLatencies_.add(m);
+                } else {
+                  webhookLatenciesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 218
+            case 234:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureWebhookTagsIsMutable();
+                webhookTags_.add(s);
+                break;
+              } // case 234
+            case 250:
+              {
+                input.readMessage(getCurrentFlowFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 250
             case 256:
               {
                 allowAnswerFeedback_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 256
+            case 266:
+              {
+                input.readMessage(getGenerativeInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 266
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4002,13 +4627,887 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       return responseMessagesBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList webhookIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureWebhookIdsIsMutable() {
+      if (!webhookIds_.isModifiable()) {
+        webhookIds_ = new com.google.protobuf.LazyStringArrayList(webhookIds_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @return A list containing the webhookIds.
+     */
+    public com.google.protobuf.ProtocolStringList getWebhookIdsList() {
+      webhookIds_.makeImmutable();
+      return webhookIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @return The count of webhookIds.
+     */
+    public int getWebhookIdsCount() {
+      return webhookIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The webhookIds at the given index.
+     */
+    public java.lang.String getWebhookIds(int index) {
+      return webhookIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the webhookIds at the given index.
+     */
+    public com.google.protobuf.ByteString getWebhookIdsBytes(int index) {
+      return webhookIds_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The webhookIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWebhookIdsIsMutable();
+      webhookIds_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @param value The webhookIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWebhookIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWebhookIdsIsMutable();
+      webhookIds_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @param values The webhookIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWebhookIds(java.lang.Iterable<java.lang.String> values) {
+      ensureWebhookIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, webhookIds_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebhookIds() {
+      webhookIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook ids in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_ids = 25;</code>
+     *
+     * @param value The bytes of the webhookIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWebhookIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureWebhookIdsIsMutable();
+      webhookIds_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList webhookDisplayNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureWebhookDisplayNamesIsMutable() {
+      if (!webhookDisplayNames_.isModifiable()) {
+        webhookDisplayNames_ = new com.google.protobuf.LazyStringArrayList(webhookDisplayNames_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @return A list containing the webhookDisplayNames.
+     */
+    public com.google.protobuf.ProtocolStringList getWebhookDisplayNamesList() {
+      webhookDisplayNames_.makeImmutable();
+      return webhookDisplayNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @return The count of webhookDisplayNames.
+     */
+    public int getWebhookDisplayNamesCount() {
+      return webhookDisplayNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The webhookDisplayNames at the given index.
+     */
+    public java.lang.String getWebhookDisplayNames(int index) {
+      return webhookDisplayNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the webhookDisplayNames at the given index.
+     */
+    public com.google.protobuf.ByteString getWebhookDisplayNamesBytes(int index) {
+      return webhookDisplayNames_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The webhookDisplayNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookDisplayNames(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWebhookDisplayNamesIsMutable();
+      webhookDisplayNames_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @param value The webhookDisplayNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWebhookDisplayNames(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWebhookDisplayNamesIsMutable();
+      webhookDisplayNames_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @param values The webhookDisplayNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWebhookDisplayNames(java.lang.Iterable<java.lang.String> values) {
+      ensureWebhookDisplayNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, webhookDisplayNames_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebhookDisplayNames() {
+      webhookDisplayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook display names in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_display_names = 26;</code>
+     *
+     * @param value The bytes of the webhookDisplayNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWebhookDisplayNamesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureWebhookDisplayNamesIsMutable();
+      webhookDisplayNames_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.protobuf.Duration> webhookLatencies_ =
+        java.util.Collections.emptyList();
+
+    private void ensureWebhookLatenciesIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        webhookLatencies_ =
+            new java.util.ArrayList<com.google.protobuf.Duration>(webhookLatencies_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        webhookLatenciesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public java.util.List<com.google.protobuf.Duration> getWebhookLatenciesList() {
+      if (webhookLatenciesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(webhookLatencies_);
+      } else {
+        return webhookLatenciesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public int getWebhookLatenciesCount() {
+      if (webhookLatenciesBuilder_ == null) {
+        return webhookLatencies_.size();
+      } else {
+        return webhookLatenciesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public com.google.protobuf.Duration getWebhookLatencies(int index) {
+      if (webhookLatenciesBuilder_ == null) {
+        return webhookLatencies_.get(index);
+      } else {
+        return webhookLatenciesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder setWebhookLatencies(int index, com.google.protobuf.Duration value) {
+      if (webhookLatenciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.set(index, value);
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder setWebhookLatencies(
+        int index, com.google.protobuf.Duration.Builder builderForValue) {
+      if (webhookLatenciesBuilder_ == null) {
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder addWebhookLatencies(com.google.protobuf.Duration value) {
+      if (webhookLatenciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.add(value);
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder addWebhookLatencies(int index, com.google.protobuf.Duration value) {
+      if (webhookLatenciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.add(index, value);
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder addWebhookLatencies(com.google.protobuf.Duration.Builder builderForValue) {
+      if (webhookLatenciesBuilder_ == null) {
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder addWebhookLatencies(
+        int index, com.google.protobuf.Duration.Builder builderForValue) {
+      if (webhookLatenciesBuilder_ == null) {
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder addAllWebhookLatencies(
+        java.lang.Iterable<? extends com.google.protobuf.Duration> values) {
+      if (webhookLatenciesBuilder_ == null) {
+        ensureWebhookLatenciesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, webhookLatencies_);
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder clearWebhookLatencies() {
+      if (webhookLatenciesBuilder_ == null) {
+        webhookLatencies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public Builder removeWebhookLatencies(int index) {
+      if (webhookLatenciesBuilder_ == null) {
+        ensureWebhookLatenciesIsMutable();
+        webhookLatencies_.remove(index);
+        onChanged();
+      } else {
+        webhookLatenciesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public com.google.protobuf.Duration.Builder getWebhookLatenciesBuilder(int index) {
+      return getWebhookLatenciesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getWebhookLatenciesOrBuilder(int index) {
+      if (webhookLatenciesBuilder_ == null) {
+        return webhookLatencies_.get(index);
+      } else {
+        return webhookLatenciesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public java.util.List<? extends com.google.protobuf.DurationOrBuilder>
+        getWebhookLatenciesOrBuilderList() {
+      if (webhookLatenciesBuilder_ != null) {
+        return webhookLatenciesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(webhookLatencies_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public com.google.protobuf.Duration.Builder addWebhookLatenciesBuilder() {
+      return getWebhookLatenciesFieldBuilder()
+          .addBuilder(com.google.protobuf.Duration.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public com.google.protobuf.Duration.Builder addWebhookLatenciesBuilder(int index) {
+      return getWebhookLatenciesFieldBuilder()
+          .addBuilder(index, com.google.protobuf.Duration.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook latencies in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
+     */
+    public java.util.List<com.google.protobuf.Duration.Builder> getWebhookLatenciesBuilderList() {
+      return getWebhookLatenciesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getWebhookLatenciesFieldBuilder() {
+      if (webhookLatenciesBuilder_ == null) {
+        webhookLatenciesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                webhookLatencies_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        webhookLatencies_ = null;
+      }
+      return webhookLatenciesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList webhookTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureWebhookTagsIsMutable() {
+      if (!webhookTags_.isModifiable()) {
+        webhookTags_ = new com.google.protobuf.LazyStringArrayList(webhookTags_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @return A list containing the webhookTags.
+     */
+    public com.google.protobuf.ProtocolStringList getWebhookTagsList() {
+      webhookTags_.makeImmutable();
+      return webhookTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @return The count of webhookTags.
+     */
+    public int getWebhookTagsCount() {
+      return webhookTags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The webhookTags at the given index.
+     */
+    public java.lang.String getWebhookTags(int index) {
+      return webhookTags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the webhookTags at the given index.
+     */
+    public com.google.protobuf.ByteString getWebhookTagsBytes(int index) {
+      return webhookTags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The webhookTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWebhookTagsIsMutable();
+      webhookTags_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @param value The webhookTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWebhookTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWebhookTagsIsMutable();
+      webhookTags_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @param values The webhookTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWebhookTags(java.lang.Iterable<java.lang.String> values) {
+      ensureWebhookTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, webhookTags_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebhookTags() {
+      webhookTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhook tags in the order of call sequence.
+     * </pre>
+     *
+     * <code>repeated string webhook_tags = 29;</code>
+     *
+     * @param value The bytes of the webhookTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWebhookTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureWebhookTagsIsMutable();
+      webhookTags_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.rpc.Status> webhookStatuses_ =
         java.util.Collections.emptyList();
 
     private void ensureWebhookStatusesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         webhookStatuses_ = new java.util.ArrayList<com.google.rpc.Status>(webhookStatuses_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4219,7 +5718,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWebhookStatuses() {
       if (webhookStatusesBuilder_ == null) {
         webhookStatuses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         webhookStatusesBuilder_.clear();
@@ -4339,7 +5838,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 webhookStatuses_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         webhookStatuses_ = null;
@@ -4351,9 +5850,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWebhookPayloadsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         webhookPayloads_ = new java.util.ArrayList<com.google.protobuf.Struct>(webhookPayloads_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4601,7 +6100,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWebhookPayloads() {
       if (webhookPayloadsBuilder_ == null) {
         webhookPayloads_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         webhookPayloadsBuilder_.clear();
@@ -4744,7 +6243,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Struct.Builder,
                 com.google.protobuf.StructOrBuilder>(
                 webhookPayloads_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         webhookPayloads_ = null;
@@ -4772,7 +6271,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the currentPage field is set.
      */
     public boolean hasCurrentPage() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4816,7 +6315,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentPageBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4838,7 +6337,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentPageBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4855,7 +6354,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCurrentPage(com.google.cloud.dialogflow.cx.v3beta1.Page value) {
       if (currentPageBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && currentPage_ != null
             && currentPage_ != com.google.cloud.dialogflow.cx.v3beta1.Page.getDefaultInstance()) {
           getCurrentPageBuilder().mergeFrom(value);
@@ -4866,7 +6365,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         currentPageBuilder_.mergeFrom(value);
       }
       if (currentPage_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4883,7 +6382,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
      */
     public Builder clearCurrentPage() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00004000);
       currentPage_ = null;
       if (currentPageBuilder_ != null) {
         currentPageBuilder_.dispose();
@@ -4904,7 +6403,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Page.Builder getCurrentPageBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getCurrentPageFieldBuilder().getBuilder();
     }
@@ -4956,6 +6455,210 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       return currentPageBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3beta1.Flow currentFlow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Flow,
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.FlowOrBuilder>
+        currentFlowBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     *
+     * @return Whether the currentFlow field is set.
+     */
+    public boolean hasCurrentFlow() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     *
+     * @return The currentFlow.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Flow getCurrentFlow() {
+      if (currentFlowBuilder_ == null) {
+        return currentFlow_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Flow.getDefaultInstance()
+            : currentFlow_;
+      } else {
+        return currentFlowBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    public Builder setCurrentFlow(com.google.cloud.dialogflow.cx.v3beta1.Flow value) {
+      if (currentFlowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        currentFlow_ = value;
+      } else {
+        currentFlowBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    public Builder setCurrentFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.Builder builderForValue) {
+      if (currentFlowBuilder_ == null) {
+        currentFlow_ = builderForValue.build();
+      } else {
+        currentFlowBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    public Builder mergeCurrentFlow(com.google.cloud.dialogflow.cx.v3beta1.Flow value) {
+      if (currentFlowBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && currentFlow_ != null
+            && currentFlow_ != com.google.cloud.dialogflow.cx.v3beta1.Flow.getDefaultInstance()) {
+          getCurrentFlowBuilder().mergeFrom(value);
+        } else {
+          currentFlow_ = value;
+        }
+      } else {
+        currentFlowBuilder_.mergeFrom(value);
+      }
+      if (currentFlow_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    public Builder clearCurrentFlow() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      currentFlow_ = null;
+      if (currentFlowBuilder_ != null) {
+        currentFlowBuilder_.dispose();
+        currentFlowBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Flow.Builder getCurrentFlowBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getCurrentFlowFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.FlowOrBuilder getCurrentFlowOrBuilder() {
+      if (currentFlowBuilder_ != null) {
+        return currentFlowBuilder_.getMessageOrBuilder();
+      } else {
+        return currentFlow_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Flow.getDefaultInstance()
+            : currentFlow_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Some, not all
+     * fields are filled in this message, including but not limited to `name` and
+     * `display_name`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Flow current_flow = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Flow,
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.FlowOrBuilder>
+        getCurrentFlowFieldBuilder() {
+      if (currentFlowBuilder_ == null) {
+        currentFlowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Flow,
+                com.google.cloud.dialogflow.cx.v3beta1.Flow.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.FlowOrBuilder>(
+                getCurrentFlow(), getParentForChildren(), isClean());
+        currentFlow_ = null;
+      }
+      return currentFlowBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.Intent intent_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.Intent,
@@ -4977,12 +6680,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=921
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
     public boolean hasIntent() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4999,7 +6702,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=921
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -5036,7 +6739,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         intentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5062,7 +6765,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         intentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5083,7 +6786,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder mergeIntent(com.google.cloud.dialogflow.cx.v3beta1.Intent value) {
       if (intentBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && intent_ != null
             && intent_ != com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance()) {
           getIntentBuilder().mergeFrom(value);
@@ -5094,7 +6797,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         intentBuilder_.mergeFrom(value);
       }
       if (intent_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5115,7 +6818,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearIntent() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00010000);
       intent_ = null;
       if (intentBuilder_ != null) {
         intentBuilder_.dispose();
@@ -5140,7 +6843,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder getIntentBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getIntentFieldBuilder().getBuilder();
     }
@@ -5218,7 +6921,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=932
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -5244,7 +6947,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=932
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -5252,7 +6955,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setIntentDetectionConfidence(float value) {
 
       intentDetectionConfidence_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5274,12 +6977,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=932
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearIntentDetectionConfidence() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       intentDetectionConfidence_ = 0F;
       onChanged();
       return this;
@@ -5303,7 +7006,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the match field is set.
      */
     public boolean hasMatch() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5343,7 +7046,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         matchBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5362,7 +7065,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         matchBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5377,7 +7080,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMatch(com.google.cloud.dialogflow.cx.v3beta1.Match value) {
       if (matchBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && match_ != null
             && match_ != com.google.cloud.dialogflow.cx.v3beta1.Match.getDefaultInstance()) {
           getMatchBuilder().mergeFrom(value);
@@ -5388,7 +7091,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         matchBuilder_.mergeFrom(value);
       }
       if (match_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -5403,7 +7106,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Match match = 15;</code>
      */
     public Builder clearMatch() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       match_ = null;
       if (matchBuilder_ != null) {
         matchBuilder_.dispose();
@@ -5422,7 +7125,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Match match = 15;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Match.Builder getMatchBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getMatchFieldBuilder().getBuilder();
     }
@@ -5504,7 +7207,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the diagnosticInfo field is set.
      */
     public boolean hasDiagnosticInfo() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5576,7 +7279,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         diagnosticInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5611,7 +7314,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         diagnosticInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5642,7 +7345,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDiagnosticInfo(com.google.protobuf.Struct value) {
       if (diagnosticInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && diagnosticInfo_ != null
             && diagnosticInfo_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getDiagnosticInfoBuilder().mergeFrom(value);
@@ -5653,7 +7356,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         diagnosticInfoBuilder_.mergeFrom(value);
       }
       if (diagnosticInfo_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -5684,7 +7387,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct diagnostic_info = 10;</code>
      */
     public Builder clearDiagnosticInfo() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       diagnosticInfo_ = null;
       if (diagnosticInfoBuilder_ != null) {
         diagnosticInfoBuilder_.dispose();
@@ -5719,7 +7422,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct diagnostic_info = 10;</code>
      */
     public com.google.protobuf.Struct.Builder getDiagnosticInfoBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getDiagnosticInfoFieldBuilder().getBuilder();
     }
@@ -5799,6 +7502,196 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       return diagnosticInfoBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generativeInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo,
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfoOrBuilder>
+        generativeInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     *
+     * @return Whether the generativeInfo field is set.
+     */
+    public boolean hasGenerativeInfo() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     *
+     * @return The generativeInfo.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo getGenerativeInfo() {
+      if (generativeInfoBuilder_ == null) {
+        return generativeInfo_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.getDefaultInstance()
+            : generativeInfo_;
+      } else {
+        return generativeInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    public Builder setGenerativeInfo(com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo value) {
+      if (generativeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        generativeInfo_ = value;
+      } else {
+        generativeInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    public Builder setGenerativeInfo(
+        com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.Builder builderForValue) {
+      if (generativeInfoBuilder_ == null) {
+        generativeInfo_ = builderForValue.build();
+      } else {
+        generativeInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    public Builder mergeGenerativeInfo(
+        com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo value) {
+      if (generativeInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && generativeInfo_ != null
+            && generativeInfo_
+                != com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.getDefaultInstance()) {
+          getGenerativeInfoBuilder().mergeFrom(value);
+        } else {
+          generativeInfo_ = value;
+        }
+      } else {
+        generativeInfoBuilder_.mergeFrom(value);
+      }
+      if (generativeInfo_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    public Builder clearGenerativeInfo() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      generativeInfo_ = null;
+      if (generativeInfoBuilder_ != null) {
+        generativeInfoBuilder_.dispose();
+        generativeInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.Builder
+        getGenerativeInfoBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getGenerativeInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfoOrBuilder
+        getGenerativeInfoOrBuilder() {
+      if (generativeInfoBuilder_ != null) {
+        return generativeInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return generativeInfo_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.getDefaultInstance()
+            : generativeInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information of a query if handled by generative agent resources.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo generative_info = 33;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo,
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfoOrBuilder>
+        getGenerativeInfoFieldBuilder() {
+      if (generativeInfoBuilder_ == null) {
+        generativeInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo,
+                com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfoOrBuilder>(
+                getGenerativeInfo(), getParentForChildren(), isClean());
+        generativeInfo_ = null;
+      }
+      return generativeInfoBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentimentAnalysisResult_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult,
@@ -5822,7 +7715,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sentimentAnalysisResult field is set.
      */
     public boolean hasSentimentAnalysisResult() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -5874,7 +7767,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         sentimentAnalysisResultBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5899,7 +7792,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         sentimentAnalysisResultBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5920,7 +7813,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSentimentAnalysisResult(
         com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult value) {
       if (sentimentAnalysisResultBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && sentimentAnalysisResult_ != null
             && sentimentAnalysisResult_
                 != com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
@@ -5933,7 +7826,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         sentimentAnalysisResultBuilder_.mergeFrom(value);
       }
       if (sentimentAnalysisResult_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -5953,7 +7846,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSentimentAnalysisResult() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       sentimentAnalysisResult_ = null;
       if (sentimentAnalysisResultBuilder_ != null) {
         sentimentAnalysisResultBuilder_.dispose();
@@ -5978,7 +7871,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder
         getSentimentAnalysisResultBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getSentimentAnalysisResultFieldBuilder().getBuilder();
     }
@@ -6059,7 +7952,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the advancedSettings field is set.
      */
     public boolean hasAdvancedSettings() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -6108,7 +8001,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6132,7 +8025,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6152,7 +8045,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAdvancedSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
       if (advancedSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && advancedSettings_ != null
             && advancedSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()) {
@@ -6164,7 +8057,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.mergeFrom(value);
       }
       if (advancedSettings_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -6183,7 +8076,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
      */
     public Builder clearAdvancedSettings() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -6207,7 +8100,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder
         getAdvancedSettingsBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getAdvancedSettingsFieldBuilder().getBuilder();
     }
@@ -6297,7 +8190,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowAnswerFeedback(boolean value) {
 
       allowAnswerFeedback_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6314,7 +8207,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowAnswerFeedback() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       allowAnswerFeedback_ = false;
       onChanged();
       return this;

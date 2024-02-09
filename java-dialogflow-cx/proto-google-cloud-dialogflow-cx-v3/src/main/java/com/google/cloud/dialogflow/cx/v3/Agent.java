@@ -4345,7 +4345,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>
@@ -4373,7 +4374,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>
@@ -4467,7 +4469,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=323
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=324
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -6784,7 +6786,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
      * <code>
@@ -6811,7 +6814,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
      * <code>
@@ -6838,7 +6842,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
      * <code>
@@ -6864,7 +6869,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
      * <code>
@@ -6886,7 +6892,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
+     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
      * <code>
@@ -7042,7 +7049,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=323
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=324
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -7063,7 +7070,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=323
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=324
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -7088,7 +7095,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=323
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=324
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

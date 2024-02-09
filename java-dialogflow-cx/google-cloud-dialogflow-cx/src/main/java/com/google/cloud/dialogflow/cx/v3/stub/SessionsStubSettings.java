@@ -38,6 +38,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -113,6 +114,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
           .build();
 
   private final UnaryCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentSettings;
+  private final ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings;
   private final StreamingCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentSettings;
   private final UnaryCallSettings<MatchIntentRequest, MatchIntentResponse> matchIntentSettings;
@@ -181,6 +184,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
   /** Returns the object with the settings used for calls to detectIntent. */
   public UnaryCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentSettings() {
     return detectIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to serverStreamingDetectIntent. */
+  public ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings() {
+    return serverStreamingDetectIntentSettings;
   }
 
   /** Returns the object with the settings used for calls to streamingDetectIntent. */
@@ -336,6 +345,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     super(settingsBuilder);
 
     detectIntentSettings = settingsBuilder.detectIntentSettings().build();
+    serverStreamingDetectIntentSettings =
+        settingsBuilder.serverStreamingDetectIntentSettings().build();
     streamingDetectIntentSettings = settingsBuilder.streamingDetectIntentSettings().build();
     matchIntentSettings = settingsBuilder.matchIntentSettings().build();
     fulfillIntentSettings = settingsBuilder.fulfillIntentSettings().build();
@@ -349,6 +360,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
         detectIntentSettings;
+    private final ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings;
     private final StreamingCallSettings.Builder<
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
         streamingDetectIntentSettings;
@@ -425,6 +438,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       super(clientContext);
 
       detectIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      serverStreamingDetectIntentSettings = ServerStreamingCallSettings.newBuilder();
       streamingDetectIntentSettings = StreamingCallSettings.newBuilder();
       matchIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fulfillIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -447,6 +461,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       super(settings);
 
       detectIntentSettings = settings.detectIntentSettings.toBuilder();
+      serverStreamingDetectIntentSettings =
+          settings.serverStreamingDetectIntentSettings.toBuilder();
       streamingDetectIntentSettings = settings.streamingDetectIntentSettings.toBuilder();
       matchIntentSettings = settings.matchIntentSettings.toBuilder();
       fulfillIntentSettings = settings.fulfillIntentSettings.toBuilder();
@@ -495,6 +511,11 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
+          .serverStreamingDetectIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
           .matchIntentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -541,6 +562,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     public UnaryCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
         detectIntentSettings() {
       return detectIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to serverStreamingDetectIntent. */
+    public ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings() {
+      return serverStreamingDetectIntentSettings;
     }
 
     /** Returns the builder for the settings used for calls to streamingDetectIntent. */

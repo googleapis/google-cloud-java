@@ -196,4 +196,39 @@ public interface GenerativeSettingsOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  boolean hasLlmModelSettings();
+  /**
+   *
+   *
+   * <pre>
+   * LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+   *
+   * @return The llmModelSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings();
+  /**
+   *
+   *
+   * <pre>
+   * LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
 }

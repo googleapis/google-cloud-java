@@ -67,33 +67,34 @@ public final class ChangelogProto {
           + "dialogflow.cx.v3beta1.Changelog\022\027\n\017next_"
           + "page_token\030\002 \001(\t\"P\n\023GetChangelogRequest\022"
           + "9\n\004name\030\001 \001(\tB+\340A\002\372A%\n#dialogflow.google"
-          + "apis.com/Changelog\"\235\002\n\tChangelog\022\014\n\004name"
+          + "apis.com/Changelog\"\264\002\n\tChangelog\022\014\n\004name"
           + "\030\001 \001(\t\022\022\n\nuser_email\030\002 \001(\t\022\024\n\014display_na"
           + "me\030\007 \001(\t\022\016\n\006action\030\013 \001(\t\022\014\n\004type\030\010 \001(\t\022\020"
           + "\n\010resource\030\003 \001(\t\022/\n\013create_time\030\004 \001(\0132\032."
-          + "google.protobuf.Timestamp:w\352At\n#dialogfl"
-          + "ow.googleapis.com/Changelog\022Mprojects/{p"
-          + "roject}/locations/{location}/agents/{age"
-          + "nt}/changelogs/{changelog}2\245\004\n\nChangelog"
-          + "s\022\326\001\n\016ListChangelogs\0229.google.cloud.dial"
-          + "ogflow.cx.v3beta1.ListChangelogsRequest\032"
-          + ":.google.cloud.dialogflow.cx.v3beta1.Lis"
-          + "tChangelogsResponse\"M\332A\006parent\202\323\344\223\002>\022</v"
-          + "3beta1/{parent=projects/*/locations/*/ag"
-          + "ents/*}/changelogs\022\303\001\n\014GetChangelog\0227.go"
-          + "ogle.cloud.dialogflow.cx.v3beta1.GetChan"
-          + "gelogRequest\032-.google.cloud.dialogflow.c"
-          + "x.v3beta1.Changelog\"K\332A\004name\202\323\344\223\002>\022</v3b"
-          + "eta1/{name=projects/*/locations/*/agents"
-          + "/*/changelogs/*}\032x\312A\031dialogflow.googleap"
-          + "is.com\322AYhttps://www.googleapis.com/auth"
-          + "/cloud-platform,https://www.googleapis.c"
-          + "om/auth/dialogflowB\310\001\n&com.google.cloud."
-          + "dialogflow.cx.v3beta1B\016ChangelogProtoP\001Z"
-          + "6cloud.google.com/go/dialogflow/cx/apiv3"
-          + "beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.D"
-          + "ialogflow.Cx.V3Beta1\352\002&Google::Cloud::Di"
-          + "alogflow::CX::V3beta1b\006proto3"
+          + "google.protobuf.Timestamp\022\025\n\rlanguage_co"
+          + "de\030\016 \001(\t:w\352At\n#dialogflow.googleapis.com"
+          + "/Changelog\022Mprojects/{project}/locations"
+          + "/{location}/agents/{agent}/changelogs/{c"
+          + "hangelog}2\245\004\n\nChangelogs\022\326\001\n\016ListChangel"
+          + "ogs\0229.google.cloud.dialogflow.cx.v3beta1"
+          + ".ListChangelogsRequest\032:.google.cloud.di"
+          + "alogflow.cx.v3beta1.ListChangelogsRespon"
+          + "se\"M\332A\006parent\202\323\344\223\002>\022</v3beta1/{parent=pr"
+          + "ojects/*/locations/*/agents/*}/changelog"
+          + "s\022\303\001\n\014GetChangelog\0227.google.cloud.dialog"
+          + "flow.cx.v3beta1.GetChangelogRequest\032-.go"
+          + "ogle.cloud.dialogflow.cx.v3beta1.Changel"
+          + "og\"K\332A\004name\202\323\344\223\002>\022</v3beta1/{name=projec"
+          + "ts/*/locations/*/agents/*/changelogs/*}\032"
+          + "x\312A\031dialogflow.googleapis.com\322AYhttps://"
+          + "www.googleapis.com/auth/cloud-platform,h"
+          + "ttps://www.googleapis.com/auth/dialogflo"
+          + "wB\310\001\n&com.google.cloud.dialogflow.cx.v3b"
+          + "eta1B\016ChangelogProtoP\001Z6cloud.google.com"
+          + "/go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001"
+          + "\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
+          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -135,7 +136,14 @@ public final class ChangelogProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Changelog_descriptor,
             new java.lang.String[] {
-              "Name", "UserEmail", "DisplayName", "Action", "Type", "Resource", "CreateTime",
+              "Name",
+              "UserEmail",
+              "DisplayName",
+              "Action",
+              "Type",
+              "Resource",
+              "CreateTime",
+              "LanguageCode",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

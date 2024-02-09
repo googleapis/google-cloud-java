@@ -194,6 +194,7 @@ public class ChangelogsClientHttpJsonTest {
             .setType("type3575610")
             .setResource("resource-341064690")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -245,6 +246,7 @@ public class ChangelogsClientHttpJsonTest {
             .setType("type3575610")
             .setResource("resource-341064690")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockService.addResponse(expectedResponse);
 

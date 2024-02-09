@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.SessionsStub;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.SessionsStubSettings;
@@ -90,6 +91,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> detectIntentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ServerStreamingDetectIntent</td>
+ *      <td><p> Processes a natural language query and returns structured, actionable data as a result through server-side streaming. Server-side streaming allows Dialogflow to send [partial responses](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#partial-response) earlier in a single request.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> serverStreamingDetectIntentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -354,6 +365,45 @@ public class SessionsClient implements BackgroundResource {
    */
   public final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return stub.detectIntentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Processes a natural language query and returns structured, actionable data as a result through
+   * server-side streaming. Server-side streaming allows Dialogflow to send [partial
+   * responses](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#partial-response)
+   * earlier in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   DetectIntentRequest request =
+   *       DetectIntentRequest.newBuilder()
+   *           .setSession(
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+   *                   .toString())
+   *           .setQueryParams(QueryParameters.newBuilder().build())
+   *           .setQueryInput(QueryInput.newBuilder().build())
+   *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .build();
+   *   ServerStream<DetectIntentResponse> stream =
+   *       sessionsClient.serverStreamingDetectIntentCallable().call(request);
+   *   for (DetectIntentResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable() {
+    return stub.serverStreamingDetectIntentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

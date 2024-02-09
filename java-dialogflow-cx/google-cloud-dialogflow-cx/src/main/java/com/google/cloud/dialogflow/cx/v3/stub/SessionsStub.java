@@ -20,6 +20,7 @@ import static com.google.cloud.dialogflow.cx.v3.SessionsClient.ListLocationsPage
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
@@ -48,6 +49,12 @@ public abstract class SessionsStub implements BackgroundResource {
 
   public UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: detectIntentCallable()");
+  }
+
+  public ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: serverStreamingDetectIntentCallable()");
   }
 
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>

@@ -150,6 +150,17 @@ public class SessionsClientHttpJsonTest {
   }
 
   @Test
+  public void serverStreamingDetectIntentTest() throws Exception {}
+
+  @Test
+  public void serverStreamingDetectIntentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
+
+  @Test
   public void streamingDetectIntentUnsupportedMethodTest() throws Exception {
     // The streamingDetectIntent() method is not supported in REST transport.
     // This empty test is generated for technical reasons.

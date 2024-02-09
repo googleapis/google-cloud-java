@@ -268,6 +268,98 @@ public final class EntityTypesGrpc {
     return getListEntityTypesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest,
+          com.google.longrunning.Operation>
+      getExportEntityTypesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportEntityTypes",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest,
+          com.google.longrunning.Operation>
+      getExportEntityTypesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest,
+            com.google.longrunning.Operation>
+        getExportEntityTypesMethod;
+    if ((getExportEntityTypesMethod = EntityTypesGrpc.getExportEntityTypesMethod) == null) {
+      synchronized (EntityTypesGrpc.class) {
+        if ((getExportEntityTypesMethod = EntityTypesGrpc.getExportEntityTypesMethod) == null) {
+          EntityTypesGrpc.getExportEntityTypesMethod =
+              getExportEntityTypesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportEntityTypes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EntityTypesMethodDescriptorSupplier("ExportEntityTypes"))
+                      .build();
+        }
+      }
+    }
+    return getExportEntityTypesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest,
+          com.google.longrunning.Operation>
+      getImportEntityTypesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportEntityTypes",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest,
+          com.google.longrunning.Operation>
+      getImportEntityTypesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest,
+            com.google.longrunning.Operation>
+        getImportEntityTypesMethod;
+    if ((getImportEntityTypesMethod = EntityTypesGrpc.getImportEntityTypesMethod) == null) {
+      synchronized (EntityTypesGrpc.class) {
+        if ((getImportEntityTypesMethod = EntityTypesGrpc.getImportEntityTypesMethod) == null) {
+          EntityTypesGrpc.getImportEntityTypesMethod =
+              getImportEntityTypesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportEntityTypes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EntityTypesMethodDescriptorSupplier("ImportEntityTypes"))
+                      .build();
+        }
+      }
+    }
+    return getImportEntityTypesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EntityTypesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EntityTypesStub> factory =
@@ -397,6 +489,34 @@ public final class EntityTypesGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListEntityTypesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected entity types.
+     * </pre>
+     */
+    default void exportEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportEntityTypesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified entitytypes into the agent.
+     * </pre>
+     */
+    default void importEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportEntityTypesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -524,6 +644,38 @@ public final class EntityTypesGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected entity types.
+     * </pre>
+     */
+    public void exportEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportEntityTypesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified entitytypes into the agent.
+     * </pre>
+     */
+    public void importEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportEntityTypesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -615,6 +767,32 @@ public final class EntityTypesGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected entity types.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified entitytypes into the agent.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportEntityTypesMethod(), getCallOptions(), request);
     }
   }
 
@@ -712,6 +890,32 @@ public final class EntityTypesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntityTypesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected entity types.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportEntityTypes(com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportEntityTypesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified entitytypes into the agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importEntityTypes(com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportEntityTypesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ENTITY_TYPE = 0;
@@ -719,6 +923,8 @@ public final class EntityTypesGrpc {
   private static final int METHODID_UPDATE_ENTITY_TYPE = 2;
   private static final int METHODID_DELETE_ENTITY_TYPE = 3;
   private static final int METHODID_LIST_ENTITY_TYPES = 4;
+  private static final int METHODID_EXPORT_ENTITY_TYPES = 5;
+  private static final int METHODID_IMPORT_ENTITY_TYPES = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -766,6 +972,16 @@ public final class EntityTypesGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>)
                   responseObserver);
+          break;
+        case METHODID_EXPORT_ENTITY_TYPES:
+          serviceImpl.exportEntityTypes(
+              (com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_ENTITY_TYPES:
+          serviceImpl.importEntityTypes(
+              (com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -819,6 +1035,18 @@ public final class EntityTypesGrpc {
                     com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
                     com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>(
                     service, METHODID_LIST_ENTITY_TYPES)))
+        .addMethod(
+            getExportEntityTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_ENTITY_TYPES)))
+        .addMethod(
+            getImportEntityTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_ENTITY_TYPES)))
         .build();
   }
 
@@ -875,6 +1103,8 @@ public final class EntityTypesGrpc {
                       .addMethod(getUpdateEntityTypeMethod())
                       .addMethod(getDeleteEntityTypeMethod())
                       .addMethod(getListEntityTypesMethod())
+                      .addMethod(getExportEntityTypesMethod())
+                      .addMethod(getImportEntityTypesMethod())
                       .build();
         }
       }

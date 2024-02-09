@@ -189,6 +189,7 @@ public class ChangelogsClientTest {
             .setType("type3575610")
             .setResource("resource-341064690")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockChangelogs.addResponse(expectedResponse);
 
@@ -234,6 +235,7 @@ public class ChangelogsClientTest {
             .setType("type3575610")
             .setResource("resource-341064690")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockChangelogs.addResponse(expectedResponse);
 

@@ -203,6 +203,41 @@ public interface QueryInputOrBuilder
    *
    *
    * <pre>
+   * The results of a tool executed by the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCallResult tool_call_result = 11;</code>
+   *
+   * @return Whether the toolCallResult field is set.
+   */
+  boolean hasToolCallResult();
+  /**
+   *
+   *
+   * <pre>
+   * The results of a tool executed by the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCallResult tool_call_result = 11;</code>
+   *
+   * @return The toolCallResult.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult getToolCallResult();
+  /**
+   *
+   *
+   * <pre>
+   * The results of a tool executed by the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCallResult tool_call_result = 11;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ToolCallResultOrBuilder getToolCallResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The language of the input. See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in

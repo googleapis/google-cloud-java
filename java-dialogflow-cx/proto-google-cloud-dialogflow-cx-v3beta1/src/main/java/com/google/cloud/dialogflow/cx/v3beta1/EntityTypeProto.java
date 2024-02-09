@@ -41,6 +41,34 @@ public final class EntityTypeProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_EntityType_ExcludedPhrase_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_ConflictingResources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_ConflictingResources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesRequest_fieldAccessorTable;
@@ -78,86 +106,137 @@ public final class EntityTypeProto {
           + "cx.v3beta1\032\034google/api/annotations.proto"
           + "\032\027google/api/client.proto\032\037google/api/fi"
           + "eld_behavior.proto\032\031google/api/resource."
-          + "proto\032\033google/protobuf/empty.proto\032 goog"
-          + "le/protobuf/field_mask.proto\"\256\006\n\nEntityT"
-          + "ype\022\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB"
-          + "\003\340A\002\022F\n\004kind\030\003 \001(\01623.google.cloud.dialog"
-          + "flow.cx.v3beta1.EntityType.KindB\003\340A\002\022]\n\023"
-          + "auto_expansion_mode\030\004 \001(\0162@.google.cloud"
-          + ".dialogflow.cx.v3beta1.EntityType.AutoEx"
-          + "pansionMode\022G\n\010entities\030\005 \003(\01325.google.c"
-          + "loud.dialogflow.cx.v3beta1.EntityType.En"
-          + "tity\022W\n\020excluded_phrases\030\006 \003(\0132=.google."
-          + "cloud.dialogflow.cx.v3beta1.EntityType.E"
-          + "xcludedPhrase\022\037\n\027enable_fuzzy_extraction"
-          + "\030\007 \001(\010\022\016\n\006redact\030\t \001(\010\0323\n\006Entity\022\022\n\005valu"
-          + "e\030\001 \001(\tB\003\340A\002\022\025\n\010synonyms\030\002 \003(\tB\003\340A\002\032$\n\016E"
-          + "xcludedPhrase\022\022\n\005value\030\001 \001(\tB\003\340A\002\"J\n\004Kin"
-          + "d\022\024\n\020KIND_UNSPECIFIED\020\000\022\014\n\010KIND_MAP\020\001\022\r\n"
-          + "\tKIND_LIST\020\002\022\017\n\013KIND_REGEXP\020\003\"Y\n\021AutoExp"
-          + "ansionMode\022#\n\037AUTO_EXPANSION_MODE_UNSPEC"
-          + "IFIED\020\000\022\037\n\033AUTO_EXPANSION_MODE_DEFAULT\020\001"
-          + ":{\352Ax\n$dialogflow.googleapis.com/EntityT"
-          + "ype\022Pprojects/{project}/locations/{locat"
-          + "ion}/agents/{agent}/entityTypes/{entity_"
-          + "type}\"\224\001\n\026ListEntityTypesRequest\022<\n\006pare"
-          + "nt\030\001 \001(\tB,\340A\002\372A&\022$dialogflow.googleapis."
-          + "com/EntityType\022\025\n\rlanguage_code\030\002 \001(\t\022\021\n"
-          + "\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"x\n\027"
-          + "ListEntityTypesResponse\022D\n\014entity_types\030"
-          + "\001 \003(\0132..google.cloud.dialogflow.cx.v3bet"
-          + "a1.EntityType\022\027\n\017next_page_token\030\002 \001(\t\"i"
-          + "\n\024GetEntityTypeRequest\022:\n\004name\030\001 \001(\tB,\340A"
-          + "\002\372A&\n$dialogflow.googleapis.com/EntityTy"
-          + "pe\022\025\n\rlanguage_code\030\002 \001(\t\"\270\001\n\027CreateEnti"
-          + "tyTypeRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$d"
-          + "ialogflow.googleapis.com/EntityType\022H\n\013e"
-          + "ntity_type\030\002 \001(\0132..google.cloud.dialogfl"
-          + "ow.cx.v3beta1.EntityTypeB\003\340A\002\022\025\n\rlanguag"
-          + "e_code\030\003 \001(\t\"\253\001\n\027UpdateEntityTypeRequest"
-          + "\022H\n\013entity_type\030\001 \001(\0132..google.cloud.dia"
+          + "proto\032/google/cloud/dialogflow/cx/v3beta"
+          + "1/inline.proto\032#google/longrunning/opera"
+          + "tions.proto\032\033google/protobuf/empty.proto"
+          + "\032 google/protobuf/field_mask.proto\"\256\006\n\nE"
+          + "ntityType\022\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030"
+          + "\002 \001(\tB\003\340A\002\022F\n\004kind\030\003 \001(\01623.google.cloud."
+          + "dialogflow.cx.v3beta1.EntityType.KindB\003\340"
+          + "A\002\022]\n\023auto_expansion_mode\030\004 \001(\0162@.google"
+          + ".cloud.dialogflow.cx.v3beta1.EntityType."
+          + "AutoExpansionMode\022G\n\010entities\030\005 \003(\01325.go"
+          + "ogle.cloud.dialogflow.cx.v3beta1.EntityT"
+          + "ype.Entity\022W\n\020excluded_phrases\030\006 \003(\0132=.g"
+          + "oogle.cloud.dialogflow.cx.v3beta1.Entity"
+          + "Type.ExcludedPhrase\022\037\n\027enable_fuzzy_extr"
+          + "action\030\007 \001(\010\022\016\n\006redact\030\t \001(\010\0323\n\006Entity\022\022"
+          + "\n\005value\030\001 \001(\tB\003\340A\002\022\025\n\010synonyms\030\002 \003(\tB\003\340A"
+          + "\002\032$\n\016ExcludedPhrase\022\022\n\005value\030\001 \001(\tB\003\340A\002\""
+          + "J\n\004Kind\022\024\n\020KIND_UNSPECIFIED\020\000\022\014\n\010KIND_MA"
+          + "P\020\001\022\r\n\tKIND_LIST\020\002\022\017\n\013KIND_REGEXP\020\003\"Y\n\021A"
+          + "utoExpansionMode\022#\n\037AUTO_EXPANSION_MODE_"
+          + "UNSPECIFIED\020\000\022\037\n\033AUTO_EXPANSION_MODE_DEF"
+          + "AULT\020\001:{\352Ax\n$dialogflow.googleapis.com/E"
+          + "ntityType\022Pprojects/{project}/locations/"
+          + "{location}/agents/{agent}/entityTypes/{e"
+          + "ntity_type}\"\225\003\n\030ExportEntityTypesRequest"
+          + "\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$dialogflow.goo"
+          + "gleapis.com/EntityType\022\031\n\014entity_types\030\002"
+          + " \003(\tB\003\340A\002\022\037\n\020entity_types_uri\030\003 \001(\tB\003\340A\001"
+          + "H\000\022*\n\033entity_types_content_inline\030\004 \001(\010B"
+          + "\003\340A\001H\000\022a\n\013data_format\030\005 \001(\0162G.google.clo"
+          + "ud.dialogflow.cx.v3beta1.ExportEntityTyp"
+          + "esRequest.DataFormatB\003\340A\001\022\032\n\rlanguage_co"
+          + "de\030\006 \001(\tB\003\340A\001\"E\n\nDataFormat\022\033\n\027DATA_FORM"
+          + "AT_UNSPECIFIED\020\000\022\010\n\004BLOB\020\001\022\020\n\014JSON_PACKA"
+          + "GE\020\005B\r\n\013destination\"\247\001\n\031ExportEntityType"
+          + "sResponse\022\032\n\020entity_types_uri\030\001 \001(\tH\000\022U\n"
+          + "\024entity_types_content\030\002 \001(\01325.google.clo"
+          + "ud.dialogflow.cx.v3beta1.InlineDestinati"
+          + "onH\000B\027\n\025exported_entity_types\"\033\n\031ExportE"
+          + "ntityTypesMetadata\"\365\003\n\030ImportEntityTypes"
+          + "Request\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$dialogf"
+          + "low.googleapis.com/EntityType\022\032\n\020entity_"
+          + "types_uri\030\002 \001(\tH\000\022P\n\024entity_types_conten"
+          + "t\030\003 \001(\01320.google.cloud.dialogflow.cx.v3b"
+          + "eta1.InlineSourceH\000\022c\n\014merge_option\030\004 \001("
+          + "\0162H.google.cloud.dialogflow.cx.v3beta1.I"
+          + "mportEntityTypesRequest.MergeOptionB\003\340A\002"
+          + "\022H\n\022target_entity_type\030\005 \001(\tB,\340A\001\372A&\n$di"
+          + "alogflow.googleapis.com/EntityType\"n\n\013Me"
+          + "rgeOption\022\034\n\030MERGE_OPTION_UNSPECIFIED\020\000\022"
+          + "\013\n\007REPLACE\020\001\022\t\n\005MERGE\020\002\022\n\n\006RENAME\020\003\022\023\n\017R"
+          + "EPORT_CONFLICT\020\004\022\010\n\004KEEP\020\005B\016\n\014entity_typ"
+          + "es\"\250\002\n\031ImportEntityTypesResponse\022?\n\014enti"
+          + "ty_types\030\001 \003(\tB)\372A&\n$dialogflow.googleap"
+          + "is.com/EntityType\022q\n\025conflicting_resourc"
+          + "es\030\002 \001(\0132R.google.cloud.dialogflow.cx.v3"
+          + "beta1.ImportEntityTypesResponse.Conflict"
+          + "ingResources\032W\n\024ConflictingResources\022!\n\031"
+          + "entity_type_display_names\030\001 \003(\t\022\034\n\024entit"
+          + "y_display_names\030\002 \003(\t\"\033\n\031ImportEntityTyp"
+          + "esMetadata\"\224\001\n\026ListEntityTypesRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\022$dialogflow.google"
+          + "apis.com/EntityType\022\025\n\rlanguage_code\030\002 \001"
+          + "(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001("
+          + "\t\"x\n\027ListEntityTypesResponse\022D\n\014entity_t"
+          + "ypes\030\001 \003(\0132..google.cloud.dialogflow.cx."
+          + "v3beta1.EntityType\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"i\n\024GetEntityTypeRequest\022:\n\004name\030\001 \001("
+          + "\tB,\340A\002\372A&\n$dialogflow.googleapis.com/Ent"
+          + "ityType\022\025\n\rlanguage_code\030\002 \001(\t\"\270\001\n\027Creat"
+          + "eEntityTypeRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372"
+          + "A&\022$dialogflow.googleapis.com/EntityType"
+          + "\022H\n\013entity_type\030\002 \001(\0132..google.cloud.dia"
           + "logflow.cx.v3beta1.EntityTypeB\003\340A\002\022\025\n\rla"
-          + "nguage_code\030\002 \001(\t\022/\n\013update_mask\030\003 \001(\0132\032"
-          + ".google.protobuf.FieldMask\"d\n\027DeleteEnti"
-          + "tyTypeRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$dia"
-          + "logflow.googleapis.com/EntityType\022\r\n\005for"
-          + "ce\030\002 \001(\0102\315\t\n\013EntityTypes\022\307\001\n\rGetEntityTy"
-          + "pe\0228.google.cloud.dialogflow.cx.v3beta1."
-          + "GetEntityTypeRequest\032..google.cloud.dial"
-          + "ogflow.cx.v3beta1.EntityType\"L\332A\004name\202\323\344"
-          + "\223\002?\022=/v3beta1/{name=projects/*/locations"
-          + "/*/agents/*/entityTypes/*}\022\350\001\n\020CreateEnt"
+          + "nguage_code\030\003 \001(\t\"\253\001\n\027UpdateEntityTypeRe"
+          + "quest\022H\n\013entity_type\030\001 \001(\0132..google.clou"
+          + "d.dialogflow.cx.v3beta1.EntityTypeB\003\340A\002\022"
+          + "\025\n\rlanguage_code\030\002 \001(\t\022/\n\013update_mask\030\003 "
+          + "\001(\0132\032.google.protobuf.FieldMask\"d\n\027Delet"
+          + "eEntityTypeRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&"
+          + "\n$dialogflow.googleapis.com/EntityType\022\r"
+          + "\n\005force\030\002 \001(\0102\311\r\n\013EntityTypes\022\307\001\n\rGetEnt"
+          + "ityType\0228.google.cloud.dialogflow.cx.v3b"
+          + "eta1.GetEntityTypeRequest\032..google.cloud"
+          + ".dialogflow.cx.v3beta1.EntityType\"L\332A\004na"
+          + "me\202\323\344\223\002?\022=/v3beta1/{name=projects/*/loca"
+          + "tions/*/agents/*/entityTypes/*}\022\350\001\n\020Crea"
+          + "teEntityType\022;.google.cloud.dialogflow.c"
+          + "x.v3beta1.CreateEntityTypeRequest\032..goog"
+          + "le.cloud.dialogflow.cx.v3beta1.EntityTyp"
+          + "e\"g\332A\022parent,entity_type\202\323\344\223\002L\"=/v3beta1"
+          + "/{parent=projects/*/locations/*/agents/*"
+          + "}/entityTypes:\013entity_type\022\371\001\n\020UpdateEnt"
           + "ityType\022;.google.cloud.dialogflow.cx.v3b"
-          + "eta1.CreateEntityTypeRequest\032..google.cl"
-          + "oud.dialogflow.cx.v3beta1.EntityType\"g\332A"
-          + "\022parent,entity_type\202\323\344\223\002L\"=/v3beta1/{par"
-          + "ent=projects/*/locations/*/agents/*}/ent"
-          + "ityTypes:\013entity_type\022\371\001\n\020UpdateEntityTy"
-          + "pe\022;.google.cloud.dialogflow.cx.v3beta1."
-          + "UpdateEntityTypeRequest\032..google.cloud.d"
-          + "ialogflow.cx.v3beta1.EntityType\"x\332A\027enti"
-          + "ty_type,update_mask\202\323\344\223\002X2I/v3beta1/{ent"
-          + "ity_type.name=projects/*/locations/*/age"
-          + "nts/*/entityTypes/*}:\013entity_type\022\265\001\n\020De"
-          + "leteEntityType\022;.google.cloud.dialogflow"
-          + ".cx.v3beta1.DeleteEntityTypeRequest\032\026.go"
-          + "ogle.protobuf.Empty\"L\332A\004name\202\323\344\223\002?*=/v3b"
-          + "eta1/{name=projects/*/locations/*/agents"
-          + "/*/entityTypes/*}\022\332\001\n\017ListEntityTypes\022:."
-          + "google.cloud.dialogflow.cx.v3beta1.ListE"
-          + "ntityTypesRequest\032;.google.cloud.dialogf"
-          + "low.cx.v3beta1.ListEntityTypesResponse\"N"
-          + "\332A\006parent\202\323\344\223\002?\022=/v3beta1/{parent=projec"
-          + "ts/*/locations/*/agents/*}/entityTypes\032x"
-          + "\312A\031dialogflow.googleapis.com\322AYhttps://w"
-          + "ww.googleapis.com/auth/cloud-platform,ht"
-          + "tps://www.googleapis.com/auth/dialogflow"
-          + "B\311\001\n&com.google.cloud.dialogflow.cx.v3be"
-          + "ta1B\017EntityTypeProtoP\001Z6cloud.google.com"
-          + "/go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001"
-          + "\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
-          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
-          + "eta1b\006proto3"
+          + "eta1.UpdateEntityTypeRequest\032..google.cl"
+          + "oud.dialogflow.cx.v3beta1.EntityType\"x\332A"
+          + "\027entity_type,update_mask\202\323\344\223\002X2I/v3beta1"
+          + "/{entity_type.name=projects/*/locations/"
+          + "*/agents/*/entityTypes/*}:\013entity_type\022\265"
+          + "\001\n\020DeleteEntityType\022;.google.cloud.dialo"
+          + "gflow.cx.v3beta1.DeleteEntityTypeRequest"
+          + "\032\026.google.protobuf.Empty\"L\332A\004name\202\323\344\223\002?*"
+          + "=/v3beta1/{name=projects/*/locations/*/a"
+          + "gents/*/entityTypes/*}\022\332\001\n\017ListEntityTyp"
+          + "es\022:.google.cloud.dialogflow.cx.v3beta1."
+          + "ListEntityTypesRequest\032;.google.cloud.di"
+          + "alogflow.cx.v3beta1.ListEntityTypesRespo"
+          + "nse\"N\332A\006parent\202\323\344\223\002?\022=/v3beta1/{parent=p"
+          + "rojects/*/locations/*/agents/*}/entityTy"
+          + "pes\022\373\001\n\021ExportEntityTypes\022<.google.cloud"
+          + ".dialogflow.cx.v3beta1.ExportEntityTypes"
+          + "Request\032\035.google.longrunning.Operation\"\210"
+          + "\001\312A6\n\031ExportEntityTypesResponse\022\031ExportE"
+          + "ntityTypesMetadata\202\323\344\223\002I\"D/v3beta1/{pare"
+          + "nt=projects/*/locations/*/agents/*}/enti"
+          + "tyTypes:export:\001*\022\373\001\n\021ImportEntityTypes\022"
+          + "<.google.cloud.dialogflow.cx.v3beta1.Imp"
+          + "ortEntityTypesRequest\032\035.google.longrunni"
+          + "ng.Operation\"\210\001\312A6\n\031ImportEntityTypesRes"
+          + "ponse\022\031ImportEntityTypesMetadata\202\323\344\223\002I\"D"
+          + "/v3beta1/{parent=projects/*/locations/*/"
+          + "agents/*}/entityTypes:import:\001*\032x\312A\031dial"
+          + "ogflow.googleapis.com\322AYhttps://www.goog"
+          + "leapis.com/auth/cloud-platform,https://w"
+          + "ww.googleapis.com/auth/dialogflowB\311\001\n&co"
+          + "m.google.cloud.dialogflow.cx.v3beta1B\017En"
+          + "tityTypeProtoP\001Z6cloud.google.com/go/dia"
+          + "logflow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252"
+          + "\002\"Google.Cloud.Dialogflow.Cx.V3Beta1\352\002&G"
+          + "oogle::Cloud::Dialogflow::CX::V3beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -167,6 +246,8 @@ public final class EntityTypeProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3beta1.InlineProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
@@ -205,8 +286,73 @@ public final class EntityTypeProto {
             new java.lang.String[] {
               "Value",
             });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesRequest_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+              "EntityTypes",
+              "EntityTypesUri",
+              "EntityTypesContentInline",
+              "DataFormat",
+              "LanguageCode",
+              "Destination",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesResponse_descriptor,
+            new java.lang.String[] {
+              "EntityTypesUri", "EntityTypesContent", "ExportedEntityTypes",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ExportEntityTypesMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+              "EntityTypesUri",
+              "EntityTypesContent",
+              "MergeOption",
+              "TargetEntityType",
+              "EntityTypes",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_descriptor,
+            new java.lang.String[] {
+              "EntityTypes", "ConflictingResources",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_ConflictingResources_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_ConflictingResources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesResponse_ConflictingResources_descriptor,
+            new java.lang.String[] {
+              "EntityTypeDisplayNames", "EntityDisplayNames",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ImportEntityTypesMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesRequest_descriptor,
@@ -214,7 +360,7 @@ public final class EntityTypeProto {
               "Parent", "LanguageCode", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListEntityTypesResponse_descriptor,
@@ -222,7 +368,7 @@ public final class EntityTypeProto {
               "EntityTypes", "NextPageToken",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_GetEntityTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dialogflow_cx_v3beta1_GetEntityTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_GetEntityTypeRequest_descriptor,
@@ -230,7 +376,7 @@ public final class EntityTypeProto {
               "Name", "LanguageCode",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreateEntityTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreateEntityTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_CreateEntityTypeRequest_descriptor,
@@ -238,7 +384,7 @@ public final class EntityTypeProto {
               "Parent", "EntityType", "LanguageCode",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateEntityTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateEntityTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateEntityTypeRequest_descriptor,
@@ -246,7 +392,7 @@ public final class EntityTypeProto {
               "EntityType", "LanguageCode", "UpdateMask",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteEntityTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteEntityTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteEntityTypeRequest_descriptor,
@@ -262,12 +408,15 @@ public final class EntityTypeProto {
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3beta1.InlineProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

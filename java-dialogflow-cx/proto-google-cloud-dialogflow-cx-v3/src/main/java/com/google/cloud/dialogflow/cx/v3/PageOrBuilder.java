@@ -90,6 +90,31 @@ public interface PageOrBuilder
    *
    *
    * <pre>
+   * The description of the page. The maximum length is 500 characters.
+   * </pre>
+   *
+   * <code>string description = 19;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * The description of the page. The maximum length is 500 characters.
+   * </pre>
+   *
+   * <code>string description = 19;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The fulfillment to call when the session is entering the page.
    * </pre>
    *

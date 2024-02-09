@@ -2626,6 +2626,20 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
      * @return The bytes for agentScope.
      */
     com.google.protobuf.ByteString getAgentScopeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to disable fallback to Data Store search results (in case the LLM
+     * couldn't pick a proper answer). Per default the feature is enabled.
+     * </pre>
+     *
+     * <code>bool disable_data_store_fallback = 8;</code>
+     *
+     * @return The disableDataStoreFallback.
+     */
+    boolean getDisableDataStoreFallback();
   }
   /**
    *
@@ -2945,6 +2959,25 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
     }
 
+    public static final int DISABLE_DATA_STORE_FALLBACK_FIELD_NUMBER = 8;
+    private boolean disableDataStoreFallback_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to disable fallback to Data Store search results (in case the LLM
+     * couldn't pick a proper answer). Per default the feature is enabled.
+     * </pre>
+     *
+     * <code>bool disable_data_store_fallback = 8;</code>
+     *
+     * @return The disableDataStoreFallback.
+     */
+    @java.lang.Override
+    public boolean getDisableDataStoreFallback() {
+      return disableDataStoreFallback_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2974,6 +3007,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentScope_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, agentScope_);
       }
+      if (disableDataStoreFallback_ != false) {
+        output.writeBool(8, disableDataStoreFallback_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2997,6 +3033,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentScope_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, agentScope_);
+      }
+      if (disableDataStoreFallback_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, disableDataStoreFallback_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3022,6 +3061,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       if (!getAgentIdentity().equals(other.getAgentIdentity())) return false;
       if (!getBusinessDescription().equals(other.getBusinessDescription())) return false;
       if (!getAgentScope().equals(other.getAgentScope())) return false;
+      if (getDisableDataStoreFallback() != other.getDisableDataStoreFallback()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3043,6 +3083,8 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + getBusinessDescription().hashCode();
       hash = (37 * hash) + AGENT_SCOPE_FIELD_NUMBER;
       hash = (53 * hash) + getAgentScope().hashCode();
+      hash = (37 * hash) + DISABLE_DATA_STORE_FALLBACK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableDataStoreFallback());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3217,6 +3259,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         agentIdentity_ = "";
         businessDescription_ = "";
         agentScope_ = "";
+        disableDataStoreFallback_ = false;
         return this;
       }
 
@@ -3276,6 +3319,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.agentScope_ = agentScope_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.disableDataStoreFallback_ = disableDataStoreFallback_;
         }
       }
 
@@ -3359,6 +3405,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000010;
           onChanged();
         }
+        if (other.getDisableDataStoreFallback() != false) {
+          setDisableDataStoreFallback(other.getDisableDataStoreFallback());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3415,6 +3464,12 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 64:
+                {
+                  disableDataStoreFallback_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3984,6 +4039,62 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private boolean disableDataStoreFallback_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable fallback to Data Store search results (in case the LLM
+       * couldn't pick a proper answer). Per default the feature is enabled.
+       * </pre>
+       *
+       * <code>bool disable_data_store_fallback = 8;</code>
+       *
+       * @return The disableDataStoreFallback.
+       */
+      @java.lang.Override
+      public boolean getDisableDataStoreFallback() {
+        return disableDataStoreFallback_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable fallback to Data Store search results (in case the LLM
+       * couldn't pick a proper answer). Per default the feature is enabled.
+       * </pre>
+       *
+       * <code>bool disable_data_store_fallback = 8;</code>
+       *
+       * @param value The disableDataStoreFallback to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableDataStoreFallback(boolean value) {
+
+        disableDataStoreFallback_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable fallback to Data Store search results (in case the LLM
+       * couldn't pick a proper answer). Per default the feature is enabled.
+       * </pre>
+       *
+       * <code>bool disable_data_store_fallback = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableDataStoreFallback() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        disableDataStoreFallback_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4334,6 +4445,57 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int LLM_MODEL_SETTINGS_FIELD_NUMBER = 8;
+  private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llmModelSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasLlmModelSettings() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+   *
+   * @return The llmModelSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings() {
+    return llmModelSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()
+        : llmModelSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder
+      getLlmModelSettingsOrBuilder() {
+    return llmModelSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()
+        : llmModelSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4363,6 +4525,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getKnowledgeConnectorSettings());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getLlmModelSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4390,6 +4555,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, getKnowledgeConnectorSettings());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLlmModelSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4422,6 +4590,10 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         return false;
     }
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (hasLlmModelSettings() != other.hasLlmModelSettings()) return false;
+    if (hasLlmModelSettings()) {
+      if (!getLlmModelSettings().equals(other.getLlmModelSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4449,6 +4621,10 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    if (hasLlmModelSettings()) {
+      hash = (37 * hash) + LLM_MODEL_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getLlmModelSettings().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4593,6 +4769,7 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         getFallbackSettingsFieldBuilder();
         getGenerativeSafetySettingsFieldBuilder();
         getKnowledgeConnectorSettingsFieldBuilder();
+        getLlmModelSettingsFieldBuilder();
       }
     }
 
@@ -4617,6 +4794,11 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         knowledgeConnectorSettingsBuilder_ = null;
       }
       languageCode_ = "";
+      llmModelSettings_ = null;
+      if (llmModelSettingsBuilder_ != null) {
+        llmModelSettingsBuilder_.dispose();
+        llmModelSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -4678,6 +4860,11 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.llmModelSettings_ =
+            llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4747,6 +4934,9 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasLlmModelSettings()) {
+        mergeLlmModelSettings(other.getLlmModelSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4806,6 +4996,13 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getLlmModelSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5682,6 +5879,197 @@ public final class GenerativeSettings extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llmModelSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder>
+        llmModelSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     *
+     * @return Whether the llmModelSettings field is set.
+     */
+    public boolean hasLlmModelSettings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     *
+     * @return The llmModelSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings() {
+      if (llmModelSettingsBuilder_ == null) {
+        return llmModelSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()
+            : llmModelSettings_;
+      } else {
+        return llmModelSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    public Builder setLlmModelSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings value) {
+      if (llmModelSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        llmModelSettings_ = value;
+      } else {
+        llmModelSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    public Builder setLlmModelSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder builderForValue) {
+      if (llmModelSettingsBuilder_ == null) {
+        llmModelSettings_ = builderForValue.build();
+      } else {
+        llmModelSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    public Builder mergeLlmModelSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings value) {
+      if (llmModelSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && llmModelSettings_ != null
+            && llmModelSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()) {
+          getLlmModelSettingsBuilder().mergeFrom(value);
+        } else {
+          llmModelSettings_ = value;
+        }
+      } else {
+        llmModelSettingsBuilder_.mergeFrom(value);
+      }
+      if (llmModelSettings_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    public Builder clearLlmModelSettings() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      llmModelSettings_ = null;
+      if (llmModelSettingsBuilder_ != null) {
+        llmModelSettingsBuilder_.dispose();
+        llmModelSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder
+        getLlmModelSettingsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getLlmModelSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder
+        getLlmModelSettingsOrBuilder() {
+      if (llmModelSettingsBuilder_ != null) {
+        return llmModelSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return llmModelSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()
+            : llmModelSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder>
+        getLlmModelSettingsFieldBuilder() {
+      if (llmModelSettingsBuilder_ == null) {
+        llmModelSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder>(
+                getLlmModelSettings(), getParentForChildren(), isClean());
+        llmModelSettings_ = null;
+      }
+      return llmModelSettingsBuilder_;
     }
 
     @java.lang.Override

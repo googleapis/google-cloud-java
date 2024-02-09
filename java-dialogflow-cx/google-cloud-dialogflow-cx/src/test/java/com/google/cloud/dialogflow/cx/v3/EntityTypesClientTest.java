@@ -26,11 +26,13 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
@@ -42,6 +44,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -475,6 +478,128 @@ public class EntityTypesClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportEntityTypesTest() throws Exception {
+    ExportEntityTypesResponse expectedResponse = ExportEntityTypesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEntityTypesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEntityTypes.addResponse(resultOperation);
+
+    ExportEntityTypesRequest request =
+        ExportEntityTypesRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .addAllEntityTypes(new ArrayList<String>())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+
+    ExportEntityTypesResponse actualResponse = client.exportEntityTypesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEntityTypesRequest actualRequest = ((ExportEntityTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getEntityTypesList(), actualRequest.getEntityTypesList());
+    Assert.assertEquals(request.getEntityTypesUri(), actualRequest.getEntityTypesUri());
+    Assert.assertEquals(
+        request.getEntityTypesContentInline(), actualRequest.getEntityTypesContentInline());
+    Assert.assertEquals(request.getDataFormat(), actualRequest.getDataFormat());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEntityTypesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      ExportEntityTypesRequest request =
+          ExportEntityTypesRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .addAllEntityTypes(new ArrayList<String>())
+              .setLanguageCode("languageCode-2092349083")
+              .build();
+      client.exportEntityTypesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importEntityTypesTest() throws Exception {
+    ImportEntityTypesResponse expectedResponse =
+        ImportEntityTypesResponse.newBuilder()
+            .addAllEntityTypes(new ArrayList<String>())
+            .setConflictingResources(
+                ImportEntityTypesResponse.ConflictingResources.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importEntityTypesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEntityTypes.addResponse(resultOperation);
+
+    ImportEntityTypesRequest request =
+        ImportEntityTypesRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setTargetEntityType(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .build();
+
+    ImportEntityTypesResponse actualResponse = client.importEntityTypesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportEntityTypesRequest actualRequest = ((ImportEntityTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getEntityTypesUri(), actualRequest.getEntityTypesUri());
+    Assert.assertEquals(request.getEntityTypesContent(), actualRequest.getEntityTypesContent());
+    Assert.assertEquals(request.getMergeOption(), actualRequest.getMergeOption());
+    Assert.assertEquals(request.getTargetEntityType(), actualRequest.getTargetEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importEntityTypesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      ImportEntityTypesRequest request =
+          ImportEntityTypesRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setTargetEntityType(
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+                      .toString())
+              .build();
+      client.importEntityTypesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
@@ -85,6 +86,46 @@ public class HttpJsonSessionsStub extends SessionsStub {
                           })
                       .setAdditionalPaths(
                           "/v3/{session=projects/*/locations/*/agents/*/environments/*/sessions/*}:detectIntent")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DetectIntentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearSession().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DetectIntentResponse>newBuilder()
+                      .setDefaultInstance(DetectIntentResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentMethodDescriptor =
+          ApiMethodDescriptor.<DetectIntentRequest, DetectIntentResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3.Sessions/ServerStreamingDetectIntent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DetectIntentRequest>newBuilder()
+                      .setPath(
+                          "/v3/{session=projects/*/locations/*/agents/*/sessions/*}:serverStreamingDetectIntent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DetectIntentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "session", request.getSession());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v3/{session=projects/*/locations/*/agents/*/environments/*/sessions/*}:serverStreamingDetectIntent")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -292,6 +333,8 @@ public class HttpJsonSessionsStub extends SessionsStub {
               .build();
 
   private final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable;
+  private final ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable;
   private final UnaryCallable<MatchIntentRequest, MatchIntentResponse> matchIntentCallable;
   private final UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable;
   private final UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback>
@@ -353,6 +396,18 @@ public class HttpJsonSessionsStub extends SessionsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentTransportSettings =
+            HttpJsonCallSettings.<DetectIntentRequest, DetectIntentResponse>newBuilder()
+                .setMethodDescriptor(serverStreamingDetectIntentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("session", String.valueOf(request.getSession()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<MatchIntentRequest, MatchIntentResponse> matchIntentTransportSettings =
         HttpJsonCallSettings.<MatchIntentRequest, MatchIntentResponse>newBuilder()
             .setMethodDescriptor(matchIntentMethodDescriptor)
@@ -417,6 +472,11 @@ public class HttpJsonSessionsStub extends SessionsStub {
     this.detectIntentCallable =
         callableFactory.createUnaryCallable(
             detectIntentTransportSettings, settings.detectIntentSettings(), clientContext);
+    this.serverStreamingDetectIntentCallable =
+        callableFactory.createServerStreamingCallable(
+            serverStreamingDetectIntentTransportSettings,
+            settings.serverStreamingDetectIntentSettings(),
+            clientContext);
     this.matchIntentCallable =
         callableFactory.createUnaryCallable(
             matchIntentTransportSettings, settings.matchIntentSettings(), clientContext);
@@ -446,6 +506,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(detectIntentMethodDescriptor);
+    methodDescriptors.add(serverStreamingDetectIntentMethodDescriptor);
     methodDescriptors.add(matchIntentMethodDescriptor);
     methodDescriptors.add(fulfillIntentMethodDescriptor);
     methodDescriptors.add(submitAnswerFeedbackMethodDescriptor);
@@ -457,6 +518,12 @@ public class HttpJsonSessionsStub extends SessionsStub {
   @Override
   public UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return detectIntentCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable() {
+    return serverStreamingDetectIntentCallable;
   }
 
   @Override

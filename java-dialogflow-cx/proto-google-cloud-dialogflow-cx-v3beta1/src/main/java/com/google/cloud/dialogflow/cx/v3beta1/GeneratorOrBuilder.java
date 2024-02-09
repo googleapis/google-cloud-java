@@ -194,4 +194,39 @@ public interface GeneratorOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Generator.PlaceholderOrBuilder getPlaceholdersOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 9;</code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  boolean hasLlmModelSettings();
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 9;</code>
+   *
+   * @return The llmModelSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings();
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 9;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
 }

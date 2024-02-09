@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -36,6 +37,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -105,6 +107,30 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
           ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
       listEntityTypesSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).listEntityTypesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEntityTypes. */
+  public UnaryCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).exportEntityTypesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEntityTypes. */
+  public OperationCallSettings<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).exportEntityTypesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importEntityTypes. */
+  public UnaryCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).importEntityTypesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importEntityTypes. */
+  public OperationCallSettings<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).importEntityTypesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -259,6 +285,32 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
             ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
         listEntityTypesSettings() {
       return getStubSettingsBuilder().listEntityTypesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEntityTypes. */
+    public UnaryCallSettings.Builder<ExportEntityTypesRequest, Operation>
+        exportEntityTypesSettings() {
+      return getStubSettingsBuilder().exportEntityTypesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEntityTypes. */
+    public OperationCallSettings.Builder<
+            ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+        exportEntityTypesOperationSettings() {
+      return getStubSettingsBuilder().exportEntityTypesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importEntityTypes. */
+    public UnaryCallSettings.Builder<ImportEntityTypesRequest, Operation>
+        importEntityTypesSettings() {
+      return getStubSettingsBuilder().importEntityTypesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importEntityTypes. */
+    public OperationCallSettings.Builder<
+            ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+        importEntityTypesOperationSettings() {
+      return getStubSettingsBuilder().importEntityTypesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

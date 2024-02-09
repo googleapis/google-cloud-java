@@ -53,10 +53,6 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <pre>
    * Use the best available variant of the [Speech
    * model][InputAudioConfig.model] that the caller is eligible for.
-   *
-   * Please see the [Dialogflow
-   * docs](https://cloud.google.com/dialogflow/docs/data-logging) for
-   * how to make your project eligible for enhanced models.
    * </pre>
    *
    * <code>USE_BEST_AVAILABLE = 1;</code>
@@ -88,11 +84,6 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    *   The [Cloud Speech
    *   documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
    *   describes which models have enhanced variants.
-   *
-   * * If the API caller isn't eligible for enhanced models, Dialogflow returns
-   *   an error.  Please see the [Dialogflow
-   *   docs](https://cloud.google.com/dialogflow/docs/data-logging)
-   *   for how to make your project eligible.
    * </pre>
    *
    * <code>USE_ENHANCED = 3;</code>
@@ -118,10 +109,6 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <pre>
    * Use the best available variant of the [Speech
    * model][InputAudioConfig.model] that the caller is eligible for.
-   *
-   * Please see the [Dialogflow
-   * docs](https://cloud.google.com/dialogflow/docs/data-logging) for
-   * how to make your project eligible for enhanced models.
    * </pre>
    *
    * <code>USE_BEST_AVAILABLE = 1;</code>
@@ -153,11 +140,6 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    *   The [Cloud Speech
    *   documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
    *   describes which models have enhanced variants.
-   *
-   * * If the API caller isn't eligible for enhanced models, Dialogflow returns
-   *   an error.  Please see the [Dialogflow
-   *   docs](https://cloud.google.com/dialogflow/docs/data-logging)
-   *   for how to make your project eligible.
    * </pre>
    *
    * <code>USE_ENHANCED = 3;</code>

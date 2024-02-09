@@ -28,13 +28,17 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -47,7 +51,13 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3.EntityType;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesMetadata;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesMetadata;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest;
 import com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest;
@@ -59,6 +69,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -118,6 +129,14 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   private final PagedCallSettings<
           ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
       listEntityTypesSettings;
+  private final UnaryCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesSettings;
+  private final OperationCallSettings<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationSettings;
+  private final UnaryCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesSettings;
+  private final OperationCallSettings<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -259,6 +278,30 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     return listEntityTypesSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportEntityTypes. */
+  public UnaryCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesSettings() {
+    return exportEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportEntityTypes. */
+  public OperationCallSettings<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationSettings() {
+    return exportEntityTypesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importEntityTypes. */
+  public UnaryCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesSettings() {
+    return importEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importEntityTypes. */
+  public OperationCallSettings<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationSettings() {
+    return importEntityTypesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -396,6 +439,12 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     updateEntityTypeSettings = settingsBuilder.updateEntityTypeSettings().build();
     deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
     listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
+    exportEntityTypesSettings = settingsBuilder.exportEntityTypesSettings().build();
+    exportEntityTypesOperationSettings =
+        settingsBuilder.exportEntityTypesOperationSettings().build();
+    importEntityTypesSettings = settingsBuilder.importEntityTypesSettings().build();
+    importEntityTypesOperationSettings =
+        settingsBuilder.importEntityTypesOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -413,6 +462,16 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     private final PagedCallSettings.Builder<
             ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
         listEntityTypesSettings;
+    private final UnaryCallSettings.Builder<ExportEntityTypesRequest, Operation>
+        exportEntityTypesSettings;
+    private final OperationCallSettings.Builder<
+            ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+        exportEntityTypesOperationSettings;
+    private final UnaryCallSettings.Builder<ImportEntityTypesRequest, Operation>
+        importEntityTypesSettings;
+    private final OperationCallSettings.Builder<
+            ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+        importEntityTypesOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -460,6 +519,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       updateEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
+      exportEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportEntityTypesOperationSettings = OperationCallSettings.newBuilder();
+      importEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importEntityTypesOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -470,6 +533,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               updateEntityTypeSettings,
               deleteEntityTypeSettings,
               listEntityTypesSettings,
+              exportEntityTypesSettings,
+              importEntityTypesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -483,6 +548,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       updateEntityTypeSettings = settings.updateEntityTypeSettings.toBuilder();
       deleteEntityTypeSettings = settings.deleteEntityTypeSettings.toBuilder();
       listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
+      exportEntityTypesSettings = settings.exportEntityTypesSettings.toBuilder();
+      exportEntityTypesOperationSettings = settings.exportEntityTypesOperationSettings.toBuilder();
+      importEntityTypesSettings = settings.importEntityTypesSettings.toBuilder();
+      importEntityTypesOperationSettings = settings.importEntityTypesOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -493,6 +562,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               updateEntityTypeSettings,
               deleteEntityTypeSettings,
               listEntityTypesSettings,
+              exportEntityTypesSettings,
+              importEntityTypesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -548,6 +619,16 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .exportEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -556,6 +637,58 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportEntityTypesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportEntityTypesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportEntityTypesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportEntityTypesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -602,6 +735,36 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
         listEntityTypesSettings() {
       return listEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEntityTypes. */
+    public UnaryCallSettings.Builder<ExportEntityTypesRequest, Operation>
+        exportEntityTypesSettings() {
+      return exportEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEntityTypes. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+        exportEntityTypesOperationSettings() {
+      return exportEntityTypesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importEntityTypes. */
+    public UnaryCallSettings.Builder<ImportEntityTypesRequest, Operation>
+        importEntityTypesSettings() {
+      return importEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importEntityTypes. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+        importEntityTypesOperationSettings() {
+      return importEntityTypesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

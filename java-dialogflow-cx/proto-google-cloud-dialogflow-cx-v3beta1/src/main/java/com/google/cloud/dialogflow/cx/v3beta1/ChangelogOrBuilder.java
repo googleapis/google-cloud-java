@@ -212,4 +212,29 @@ public interface ChangelogOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The affected language code of the change.
+   * </pre>
+   *
+   * <code>string language_code = 14;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The affected language code of the change.
+   * </pre>
+   *
+   * <code>string language_code = 14;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }
