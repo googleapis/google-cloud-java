@@ -87,11 +87,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Full resource name of the format:
+   * Required. Full resource name of a
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
    *
-   * Before you can request recommendations from your model, you must create at
-   * least one serving config  for it.
+   * One default serving config is created along with your recommendation engine
+   * creation. The engine ID will be used as the ID of the default serving
+   * config. For example, for Engine
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+   * for your
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+   * requests.
    * </pre>
    *
    * <code>
@@ -116,11 +124,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Full resource name of the format:
+   * Required. Full resource name of a
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
    *
-   * Before you can request recommendations from your model, you must create at
-   * least one serving config  for it.
+   * One default serving config is created along with your recommendation engine
+   * creation. The engine ID will be used as the ID of the default serving
+   * config. For example, for Engine
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+   * for your
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+   * requests.
    * </pre>
    *
    * <code>
@@ -282,6 +298,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
    *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
    *
+   * If `attributeFilteringSyntax` is set to true under the `params` field, then
+   * attribute-based expressions are expected instead of the above described
+   * tag-based syntax. Examples:
+   *
+   *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+   *  * (available: true) AND
+   *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+   *
    * If your filter blocks all results, the API will return generic
    * (unfiltered) popular Documents. If you only want results strictly matching
    * the filters, set `strictFiltering` to True in
@@ -322,6 +346,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
    *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
+   *
+   * If `attributeFilteringSyntax` is set to true under the `params` field, then
+   * attribute-based expressions are expected instead of the above described
+   * tag-based syntax. Examples:
+   *
+   *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+   *  * (available: true) AND
+   *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
    *
    * If your filter blocks all results, the API will return generic
    * (unfiltered) popular Documents. If you only want results strictly matching
@@ -429,6 +461,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *     *  `auto-diversity`
    *    This gives request-level control and adjusts recommendation results
    *    based on Document category.
+   * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+   *    the `filter` field is interpreted according to the new,
+   *    attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -474,6 +509,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *     *  `auto-diversity`
    *    This gives request-level control and adjusts recommendation results
    *    based on Document category.
+   * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+   *    the `filter` field is interpreted according to the new,
+   *    attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -510,6 +548,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *     *  `auto-diversity`
    *    This gives request-level control and adjusts recommendation results
    *    based on Document category.
+   * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+   *    the `filter` field is interpreted according to the new,
+   *    attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -553,6 +594,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *     *  `auto-diversity`
    *    This gives request-level control and adjusts recommendation results
    *    based on Document category.
+   * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+   *    the `filter` field is interpreted according to the new,
+   *    attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -1291,11 +1335,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1319,11 +1371,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1347,11 +1407,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1374,11 +1442,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1397,11 +1473,19 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1839,6 +1923,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
      *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
      *
+     * If `attributeFilteringSyntax` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *
+     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (available: true) AND
+     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *
      * If your filter blocks all results, the API will return generic
      * (unfiltered) popular Documents. If you only want results strictly matching
      * the filters, set `strictFiltering` to True in
@@ -1878,6 +1970,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
      *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
+     *
+     * If `attributeFilteringSyntax` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *
+     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (available: true) AND
+     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API will return generic
      * (unfiltered) popular Documents. If you only want results strictly matching
@@ -1919,6 +2019,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
      *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
      *
+     * If `attributeFilteringSyntax` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *
+     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (available: true) AND
+     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *
      * If your filter blocks all results, the API will return generic
      * (unfiltered) popular Documents. If you only want results strictly matching
      * the filters, set `strictFiltering` to True in
@@ -1958,6 +2066,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
      *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
      *
+     * If `attributeFilteringSyntax` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *
+     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (available: true) AND
+     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *
      * If your filter blocks all results, the API will return generic
      * (unfiltered) popular Documents. If you only want results strictly matching
      * the filters, set `strictFiltering` to True in
@@ -1992,6 +2108,14 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *  * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))`
      *  * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))`
+     *
+     * If `attributeFilteringSyntax` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *
+     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (available: true) AND
+     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API will return generic
      * (unfiltered) popular Documents. If you only want results strictly matching
@@ -2166,6 +2290,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2211,6 +2338,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2247,6 +2377,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2291,6 +2424,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2341,6 +2477,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2386,6 +2525,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2429,6 +2571,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>
@@ -2471,6 +2616,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *     *  `auto-diversity`
      *    This gives request-level control and adjusts recommendation results
      *    based on Document category.
+     * * `attributeFilteringSyntax`: Boolean. False by default. If set to true,
+     *    the `filter` field is interpreted according to the new,
+     *    attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 6;</code>

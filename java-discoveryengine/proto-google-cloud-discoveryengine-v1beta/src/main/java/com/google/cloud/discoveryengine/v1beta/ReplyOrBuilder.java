@@ -35,7 +35,7 @@ public interface ReplyOrBuilder
    * <code>string reply = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
-   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
+   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=98
    * @return The reply.
    */
   @java.lang.Deprecated
@@ -51,7 +51,7 @@ public interface ReplyOrBuilder
    * <code>string reply = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
-   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
+   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=98
    * @return The bytes for reply.
    */
   @java.lang.Deprecated

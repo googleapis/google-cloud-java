@@ -409,6 +409,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ConverseConversationResponse response =
    *       conversationalSearchServiceClient.converseConversation(request);
@@ -452,6 +453,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<ConverseConversationResponse> future =
    *       conversationalSearchServiceClient.converseConversationCallable().futureCall(request);
@@ -787,7 +789,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     [Conversation][google.cloud.discoveryengine.v1beta.Conversation] to update. The following
    *     are NOT supported:
    *     <ul>
-   *       <li>[conversation.name][]
+   *       <li>[Conversation.name][google.cloud.discoveryengine.v1beta.Conversation.name]
    *     </ul>
    *     <p>If not set or empty, all supported fields are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

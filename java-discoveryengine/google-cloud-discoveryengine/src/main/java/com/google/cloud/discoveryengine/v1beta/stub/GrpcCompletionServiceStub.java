@@ -22,10 +22,18 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesMetadata;
+import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest;
+import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -54,7 +62,44 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   ProtoUtils.marshaller(CompleteQueryResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportSuggestionDenyListEntriesRequest, Operation>
+      importSuggestionDenyListEntriesMethodDescriptor =
+          MethodDescriptor.<ImportSuggestionDenyListEntriesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.CompletionService/ImportSuggestionDenyListEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ImportSuggestionDenyListEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeSuggestionDenyListEntriesRequest, Operation>
+      purgeSuggestionDenyListEntriesMethodDescriptor =
+          MethodDescriptor.<PurgeSuggestionDenyListEntriesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.CompletionService/PurgeSuggestionDenyListEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeSuggestionDenyListEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
+  private final UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
+      importSuggestionDenyListEntriesCallable;
+  private final OperationCallable<
+          ImportSuggestionDenyListEntriesRequest,
+          ImportSuggestionDenyListEntriesResponse,
+          ImportSuggestionDenyListEntriesMetadata>
+      importSuggestionDenyListEntriesOperationCallable;
+  private final UnaryCallable<PurgeSuggestionDenyListEntriesRequest, Operation>
+      purgeSuggestionDenyListEntriesCallable;
+  private final OperationCallable<
+          PurgeSuggestionDenyListEntriesRequest,
+          PurgeSuggestionDenyListEntriesResponse,
+          PurgeSuggestionDenyListEntriesMetadata>
+      purgeSuggestionDenyListEntriesOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -110,10 +155,54 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
+        importSuggestionDenyListEntriesTransportSettings =
+            GrpcCallSettings.<ImportSuggestionDenyListEntriesRequest, Operation>newBuilder()
+                .setMethodDescriptor(importSuggestionDenyListEntriesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<PurgeSuggestionDenyListEntriesRequest, Operation>
+        purgeSuggestionDenyListEntriesTransportSettings =
+            GrpcCallSettings.<PurgeSuggestionDenyListEntriesRequest, Operation>newBuilder()
+                .setMethodDescriptor(purgeSuggestionDenyListEntriesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.completeQueryCallable =
         callableFactory.createUnaryCallable(
             completeQueryTransportSettings, settings.completeQuerySettings(), clientContext);
+    this.importSuggestionDenyListEntriesCallable =
+        callableFactory.createUnaryCallable(
+            importSuggestionDenyListEntriesTransportSettings,
+            settings.importSuggestionDenyListEntriesSettings(),
+            clientContext);
+    this.importSuggestionDenyListEntriesOperationCallable =
+        callableFactory.createOperationCallable(
+            importSuggestionDenyListEntriesTransportSettings,
+            settings.importSuggestionDenyListEntriesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeSuggestionDenyListEntriesCallable =
+        callableFactory.createUnaryCallable(
+            purgeSuggestionDenyListEntriesTransportSettings,
+            settings.purgeSuggestionDenyListEntriesSettings(),
+            clientContext);
+    this.purgeSuggestionDenyListEntriesOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeSuggestionDenyListEntriesTransportSettings,
+            settings.purgeSuggestionDenyListEntriesOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -126,6 +215,36 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
   @Override
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return completeQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
+      importSuggestionDenyListEntriesCallable() {
+    return importSuggestionDenyListEntriesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportSuggestionDenyListEntriesRequest,
+          ImportSuggestionDenyListEntriesResponse,
+          ImportSuggestionDenyListEntriesMetadata>
+      importSuggestionDenyListEntriesOperationCallable() {
+    return importSuggestionDenyListEntriesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeSuggestionDenyListEntriesRequest, Operation>
+      purgeSuggestionDenyListEntriesCallable() {
+    return purgeSuggestionDenyListEntriesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          PurgeSuggestionDenyListEntriesRequest,
+          PurgeSuggestionDenyListEntriesResponse,
+          PurgeSuggestionDenyListEntriesMetadata>
+      purgeSuggestionDenyListEntriesOperationCallable() {
+    return purgeSuggestionDenyListEntriesOperationCallable;
   }
 
   @Override

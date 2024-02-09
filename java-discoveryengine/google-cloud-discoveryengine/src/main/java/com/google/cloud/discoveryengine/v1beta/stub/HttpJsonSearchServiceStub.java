@@ -71,7 +71,8 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                         return fields;
                       })
                   .setAdditionalPaths(
-                      "/v1beta/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:search")
+                      "/v1beta/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:search",
+                      "/v1beta/{servingConfig=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}:search")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();

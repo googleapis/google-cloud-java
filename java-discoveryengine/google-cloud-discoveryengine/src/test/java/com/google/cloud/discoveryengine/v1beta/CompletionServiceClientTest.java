@@ -23,13 +23,18 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -137,6 +142,131 @@ public class CompletionServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void importSuggestionDenyListEntriesTest() throws Exception {
+    ImportSuggestionDenyListEntriesResponse expectedResponse =
+        ImportSuggestionDenyListEntriesResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setImportedEntriesCount(-325324123)
+            .setFailedEntriesCount(-1467071458)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importSuggestionDenyListEntriesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCompletionService.addResponse(resultOperation);
+
+    ImportSuggestionDenyListEntriesRequest request =
+        ImportSuggestionDenyListEntriesRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .build();
+
+    ImportSuggestionDenyListEntriesResponse actualResponse =
+        client.importSuggestionDenyListEntriesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompletionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportSuggestionDenyListEntriesRequest actualRequest =
+        ((ImportSuggestionDenyListEntriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getInlineSource(), actualRequest.getInlineSource());
+    Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importSuggestionDenyListEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompletionService.addException(exception);
+
+    try {
+      ImportSuggestionDenyListEntriesRequest request =
+          ImportSuggestionDenyListEntriesRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .build();
+      client.importSuggestionDenyListEntriesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeSuggestionDenyListEntriesTest() throws Exception {
+    PurgeSuggestionDenyListEntriesResponse expectedResponse =
+        PurgeSuggestionDenyListEntriesResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllErrorSamples(new ArrayList<Status>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeSuggestionDenyListEntriesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCompletionService.addResponse(resultOperation);
+
+    PurgeSuggestionDenyListEntriesRequest request =
+        PurgeSuggestionDenyListEntriesRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .build();
+
+    PurgeSuggestionDenyListEntriesResponse actualResponse =
+        client.purgeSuggestionDenyListEntriesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompletionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeSuggestionDenyListEntriesRequest actualRequest =
+        ((PurgeSuggestionDenyListEntriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeSuggestionDenyListEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompletionService.addException(exception);
+
+    try {
+      PurgeSuggestionDenyListEntriesRequest request =
+          PurgeSuggestionDenyListEntriesRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .build();
+      client.purgeSuggestionDenyListEntriesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

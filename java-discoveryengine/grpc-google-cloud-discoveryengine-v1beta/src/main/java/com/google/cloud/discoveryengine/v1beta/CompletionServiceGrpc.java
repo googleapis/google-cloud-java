@@ -83,6 +83,114 @@ public final class CompletionServiceGrpc {
     return getCompleteQueryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest,
+          com.google.longrunning.Operation>
+      getImportSuggestionDenyListEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportSuggestionDenyListEntries",
+      requestType =
+          com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest,
+          com.google.longrunning.Operation>
+      getImportSuggestionDenyListEntriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest,
+            com.google.longrunning.Operation>
+        getImportSuggestionDenyListEntriesMethod;
+    if ((getImportSuggestionDenyListEntriesMethod =
+            CompletionServiceGrpc.getImportSuggestionDenyListEntriesMethod)
+        == null) {
+      synchronized (CompletionServiceGrpc.class) {
+        if ((getImportSuggestionDenyListEntriesMethod =
+                CompletionServiceGrpc.getImportSuggestionDenyListEntriesMethod)
+            == null) {
+          CompletionServiceGrpc.getImportSuggestionDenyListEntriesMethod =
+              getImportSuggestionDenyListEntriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta
+                              .ImportSuggestionDenyListEntriesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ImportSuggestionDenyListEntries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta
+                                  .ImportSuggestionDenyListEntriesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CompletionServiceMethodDescriptorSupplier(
+                              "ImportSuggestionDenyListEntries"))
+                      .build();
+        }
+      }
+    }
+    return getImportSuggestionDenyListEntriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest,
+          com.google.longrunning.Operation>
+      getPurgeSuggestionDenyListEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeSuggestionDenyListEntries",
+      requestType =
+          com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest,
+          com.google.longrunning.Operation>
+      getPurgeSuggestionDenyListEntriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest,
+            com.google.longrunning.Operation>
+        getPurgeSuggestionDenyListEntriesMethod;
+    if ((getPurgeSuggestionDenyListEntriesMethod =
+            CompletionServiceGrpc.getPurgeSuggestionDenyListEntriesMethod)
+        == null) {
+      synchronized (CompletionServiceGrpc.class) {
+        if ((getPurgeSuggestionDenyListEntriesMethod =
+                CompletionServiceGrpc.getPurgeSuggestionDenyListEntriesMethod)
+            == null) {
+          CompletionServiceGrpc.getPurgeSuggestionDenyListEntriesMethod =
+              getPurgeSuggestionDenyListEntriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta
+                              .PurgeSuggestionDenyListEntriesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "PurgeSuggestionDenyListEntries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta
+                                  .PurgeSuggestionDenyListEntriesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CompletionServiceMethodDescriptorSupplier(
+                              "PurgeSuggestionDenyListEntries"))
+                      .build();
+        }
+      }
+    }
+    return getPurgeSuggestionDenyListEntriesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CompletionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CompletionServiceStub> factory =
@@ -147,6 +255,38 @@ public final class CompletionServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCompleteQueryMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    default void importSuggestionDenyListEntries(
+        com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportSuggestionDenyListEntriesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    default void purgeSuggestionDenyListEntries(
+        com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPurgeSuggestionDenyListEntriesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -200,6 +340,42 @@ public final class CompletionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    public void importSuggestionDenyListEntries(
+        com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportSuggestionDenyListEntriesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    public void purgeSuggestionDenyListEntries(
+        com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeSuggestionDenyListEntriesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -233,6 +409,36 @@ public final class CompletionServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importSuggestionDenyListEntries(
+        com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportSuggestionDenyListEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeSuggestionDenyListEntries(
+        com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeSuggestionDenyListEntriesMethod(), getCallOptions(), request);
     }
   }
 
@@ -268,9 +474,46 @@ public final class CompletionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCompleteQueryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importSuggestionDenyListEntries(
+            com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportSuggestionDenyListEntriesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all
+     * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
+     * for a DataStore.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        purgeSuggestionDenyListEntries(
+            com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeSuggestionDenyListEntriesMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_COMPLETE_QUERY = 0;
+  private static final int METHODID_IMPORT_SUGGESTION_DENY_LIST_ENTRIES = 1;
+  private static final int METHODID_PURGE_SUGGESTION_DENY_LIST_ENTRIES = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -295,6 +538,18 @@ public final class CompletionServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse>)
                   responseObserver);
+          break;
+        case METHODID_IMPORT_SUGGESTION_DENY_LIST_ENTRIES:
+          serviceImpl.importSuggestionDenyListEntries(
+              (com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PURGE_SUGGESTION_DENY_LIST_ENTRIES:
+          serviceImpl.purgeSuggestionDenyListEntries(
+              (com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -321,6 +576,20 @@ public final class CompletionServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest,
                     com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse>(
                     service, METHODID_COMPLETE_QUERY)))
+        .addMethod(
+            getImportSuggestionDenyListEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_IMPORT_SUGGESTION_DENY_LIST_ENTRIES)))
+        .addMethod(
+            getPurgeSuggestionDenyListEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_PURGE_SUGGESTION_DENY_LIST_ENTRIES)))
         .build();
   }
 
@@ -373,6 +642,8 @@ public final class CompletionServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CompletionServiceFileDescriptorSupplier())
                       .addMethod(getCompleteQueryMethod())
+                      .addMethod(getImportSuggestionDenyListEntriesMethod())
+                      .addMethod(getPurgeSuggestionDenyListEntriesMethod())
                       .build();
         }
       }

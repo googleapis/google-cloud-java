@@ -82,7 +82,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}:converse")
+                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}:converse",
+                          "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}:converse")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -122,7 +123,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations")
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations",
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/engines/*}/conversations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -162,7 +164,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}")
+                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}",
+                          "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -200,7 +203,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{conversation.name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}")
+                          "/v1beta/{conversation.name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}",
+                          "/v1beta/{conversation.name=projects/*/locations/*/collections/*/engines/*/conversations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -241,7 +245,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}")
+                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}",
+                          "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -278,7 +283,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations")
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations",
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/engines/*}/conversations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
