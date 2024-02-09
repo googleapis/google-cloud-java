@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.37.0 (2024-02-09)
+
+### Features
+
+* add analytics service ([#10352](https://github.com/googleapis/google-cloud-java/issues/10352)) ([8dceb3e](https://github.com/googleapis/google-cloud-java/commit/8dceb3e18b1a3eb0eeeb4d4840ddf3cc0a3a01b9))
+
+
+
 ## 2.36.0 (2024-01-23)
 
 ### Features

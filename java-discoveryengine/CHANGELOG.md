@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.31.0 (2024-02-09)
+
+### Features
+
+* add data store, engine and site search engine services ([#10350](https://github.com/googleapis/google-cloud-java/issues/10350)) ([3bf2de6](https://github.com/googleapis/google-cloud-java/commit/3bf2de6efe3f6e54c7460474d5b7b703d2d5fe02))
+
+
+
 ## 0.30.0 (2024-01-23)
 
 * No change

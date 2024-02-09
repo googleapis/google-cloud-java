@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.29.0](https://github.com/googleapis/google-cloud-java/compare/v1.28.0...v1.29.0) (2024-02-09)
+
+
+### Features
+
+* [aiplatform] Add generateContent Unary API for aiplatform_v1 ([#10319](https://github.com/googleapis/google-cloud-java/issues/10319)) ([08700f2](https://github.com/googleapis/google-cloud-java/commit/08700f26d7db4c880e96786786936f42051f1bca))
+* [aiplatform] add SearchNearestEntities rpc to FeatureOnlineStoreService in aiplatform v1 ([#10347](https://github.com/googleapis/google-cloud-java/issues/10347)) ([e9c48d9](https://github.com/googleapis/google-cloud-java/commit/e9c48d9b25f4c39c9f22ace1c00acb24ff6a288d))
+* [compute] Update Compute Engine API to revision 20240130 ([#881](https://github.com/googleapis/google-cloud-java/issues/881)) ([#10349](https://github.com/googleapis/google-cloud-java/issues/10349)) ([cf52714](https://github.com/googleapis/google-cloud-java/commit/cf52714303fd73bbb8060492427e41cf57d42933))
+* [container] added configuration for the StatefulHA addon to the AddonsConfig ([#10345](https://github.com/googleapis/google-cloud-java/issues/10345)) ([4db5bc4](https://github.com/googleapis/google-cloud-java/commit/4db5bc4163f39af6e937db347f079d35b36c7803))
+* [container] new AddonsConfig field stateful_ha_config ([#10318](https://github.com/googleapis/google-cloud-java/issues/10318)) ([9a312a7](https://github.com/googleapis/google-cloud-java/commit/9a312a7b4350c40fa45966c13c0bdd8fbae47e89))
+* [dialogflow-cx] A new field `opt_out_conformer_model_migration` is added to message `.google.cloud.dialogflow.cx.v3.InputAudioConfig` ([#10354](https://github.com/googleapis/google-cloud-java/issues/10354)) ([8e0fb1b](https://github.com/googleapis/google-cloud-java/commit/8e0fb1bc0d6c5c5d8c16c5a74c1c59bf3c026bec))
+* [discoveryengine] add data store, engine and site search engine services ([#10350](https://github.com/googleapis/google-cloud-java/issues/10350)) ([3bf2de6](https://github.com/googleapis/google-cloud-java/commit/3bf2de6efe3f6e54c7460474d5b7b703d2d5fe02))
+* [documentai] expose model_type in v1 processor, so that user can see the model_type after get or list processor version ([#10322](https://github.com/googleapis/google-cloud-java/issues/10322)) ([2dd5b35](https://github.com/googleapis/google-cloud-java/commit/2dd5b3512a1f9dde2e54d711a4984d5c6bdedf3d))
+* [meet] added v2 libraries for the Meet API GA release ([#10317](https://github.com/googleapis/google-cloud-java/issues/10317)) ([5457a70](https://github.com/googleapis/google-cloud-java/commit/5457a70b6a201402c269b08d2d0a4b7fddd6e4de))
+* [monitoring-dashboards] Add support for pie charts, incident lists, dropdown groups, error reporting panels, section headers, and styling options on text widgets ([#10355](https://github.com/googleapis/google-cloud-java/issues/10355)) ([bc9cebd](https://github.com/googleapis/google-cloud-java/commit/bc9cebd014644e7e76ef147f522b5034b6fd64cc))
+* [retail] add analytics service ([#10352](https://github.com/googleapis/google-cloud-java/issues/10352)) ([8dceb3e](https://github.com/googleapis/google-cloud-java/commit/8dceb3e18b1a3eb0eeeb4d4840ddf3cc0a3a01b9))
+* [vertexai] add fromFunctionResponse in PartMaker ([#10272](https://github.com/googleapis/google-cloud-java/issues/10272)) ([20c8252](https://github.com/googleapis/google-cloud-java/commit/20c8252dcc4b093f6d699753ad39f0cdbef1d8ed))
+* [vertexai] Remove 'preview' namespace and start using @BetaApi ([#10330](https://github.com/googleapis/google-cloud-java/issues/10330)) ([29b2a36](https://github.com/googleapis/google-cloud-java/commit/29b2a3674bf8f387ecc30d94fdcdc7843cde8e15))
+
+
+### Bug Fixes
+
+* [vertexai] deprecate varargs scopes in VertexAI ([#10328](https://github.com/googleapis/google-cloud-java/issues/10328)) ([12f9a3c](https://github.com/googleapis/google-cloud-java/commit/12f9a3ce9521cb9ce92db71f21356eaf4519db07))
+* **deps:** update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20240128-2.0.0 ([#10302](https://github.com/googleapis/google-cloud-java/issues/10302)) ([f3f5c5f](https://github.com/googleapis/google-cloud-java/commit/f3f5c5fa26d4f56ef32fdc319d17ef3692029e1f))
+* **deps:** update dependency com.google.apis:google-api-services-dns to v1-rev20240118-2.0.0 ([#10283](https://github.com/googleapis/google-cloud-java/issues/10283)) ([6a2f071](https://github.com/googleapis/google-cloud-java/commit/6a2f071df7095a4e14a28b754f2713a7076ff21c))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240202-2.0.0 ([#10323](https://github.com/googleapis/google-cloud-java/issues/10323)) ([f1bca3c](https://github.com/googleapis/google-cloud-java/commit/f1bca3c0d0f2021247b95a0897d51b1b1a3229a0))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.126.1 ([#10292](https://github.com/googleapis/google-cloud-java/issues/10292)) ([afec9c6](https://github.com/googleapis/google-cloud-java/commit/afec9c657ecff46170b05ccdd3fe629261b01928))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.126.2 ([#10293](https://github.com/googleapis/google-cloud-java/issues/10293)) ([7c337f0](https://github.com/googleapis/google-cloud-java/commit/7c337f0fa9d654e0bb7c84c0a22c9fdff75c77f9))
+
+
+### Documentation
+
+* [vertexai] Add README section about function-calling ([#10320](https://github.com/googleapis/google-cloud-java/issues/10320)) ([ed92f0d](https://github.com/googleapis/google-cloud-java/commit/ed92f0d295070a598f70b6c19f10b3ffcc04e65c))
+* [vertexai] Update javadoc of VertexAI and Transport. ([#10296](https://github.com/googleapis/google-cloud-java/issues/10296)) ([2729b0b](https://github.com/googleapis/google-cloud-java/commit/2729b0b0f82b8bf069707cc3ecac52a6f497c8f5))
+
 ## [1.28.0](https://github.com/googleapis/google-cloud-java/compare/v1.27.0...v1.28.0) (2024-01-23)
 
 
