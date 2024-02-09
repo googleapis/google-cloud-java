@@ -73,4 +73,39 @@ public interface TextOrBuilder
    * @return The format.
    */
   com.google.monitoring.dashboard.v1.Text.Format getFormat();
+
+  /**
+   *
+   *
+   * <pre>
+   * How the text is styled
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Text.TextStyle style = 3;</code>
+   *
+   * @return Whether the style field is set.
+   */
+  boolean hasStyle();
+  /**
+   *
+   *
+   * <pre>
+   * How the text is styled
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Text.TextStyle style = 3;</code>
+   *
+   * @return The style.
+   */
+  com.google.monitoring.dashboard.v1.Text.TextStyle getStyle();
+  /**
+   *
+   *
+   * <pre>
+   * How the text is styled
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Text.TextStyle style = 3;</code>
+   */
+  com.google.monitoring.dashboard.v1.Text.TextStyleOrBuilder getStyleOrBuilder();
 }

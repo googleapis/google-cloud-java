@@ -189,7 +189,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the X axis.
+   * The properties applied to the x-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -201,7 +201,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the X axis.
+   * The properties applied to the x-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -213,7 +213,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the X axis.
+   * The properties applied to the x-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -224,7 +224,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the Y axis.
+   * The properties applied to the y-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -236,7 +236,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the Y axis.
+   * The properties applied to the y-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -248,7 +248,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the Y axis.
+   * The properties applied to the y-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -259,7 +259,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the Y2 axis.
+   * The properties applied to the y2-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -271,7 +271,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the Y2 axis.
+   * The properties applied to the y2-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -283,7 +283,7 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The properties applied to the Y2 axis.
+   * The properties applied to the y2-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>

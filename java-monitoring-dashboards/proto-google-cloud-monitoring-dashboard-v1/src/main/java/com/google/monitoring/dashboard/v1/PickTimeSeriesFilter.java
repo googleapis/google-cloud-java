@@ -458,6 +458,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction)
   }
 
+  private int bitField0_;
   public static final int RANKING_METHOD_FIELD_NUMBER = 1;
   private int rankingMethod_ = 0;
   /**
@@ -554,6 +555,52 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
         : result;
   }
 
+  public static final int INTERVAL_FIELD_NUMBER = 4;
+  private com.google.type.Interval interval_;
+  /**
+   *
+   *
+   * <pre>
+   * Select the top N streams/time series within this time interval
+   * </pre>
+   *
+   * <code>.google.type.Interval interval = 4;</code>
+   *
+   * @return Whether the interval field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterval() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Select the top N streams/time series within this time interval
+   * </pre>
+   *
+   * <code>.google.type.Interval interval = 4;</code>
+   *
+   * @return The interval.
+   */
+  @java.lang.Override
+  public com.google.type.Interval getInterval() {
+    return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Select the top N streams/time series within this time interval
+   * </pre>
+   *
+   * <code>.google.type.Interval interval = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.type.IntervalOrBuilder getIntervalOrBuilder() {
+    return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -581,6 +628,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       output.writeEnum(3, direction_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getInterval());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -603,6 +653,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, direction_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getInterval());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -622,6 +675,10 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     if (rankingMethod_ != other.rankingMethod_) return false;
     if (getNumTimeSeries() != other.getNumTimeSeries()) return false;
     if (direction_ != other.direction_) return false;
+    if (hasInterval() != other.hasInterval()) return false;
+    if (hasInterval()) {
+      if (!getInterval().equals(other.getInterval())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -639,6 +696,10 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getNumTimeSeries();
     hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
     hash = (53 * hash) + direction_;
+    if (hasInterval()) {
+      hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getInterval().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -775,10 +836,19 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getIntervalFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -788,6 +858,11 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       rankingMethod_ = 0;
       numTimeSeries_ = 0;
       direction_ = 0;
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
+        intervalBuilder_ = null;
+      }
       return this;
     }
 
@@ -833,6 +908,12 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.direction_ = direction_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -890,6 +971,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       if (other.direction_ != 0) {
         setDirectionValue(other.getDirectionValue());
       }
+      if (other.hasInterval()) {
+        mergeInterval(other.getInterval());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -934,6 +1018,12 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                input.readMessage(getIntervalFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1200,6 +1290,187 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       direction_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.type.Interval interval_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Interval,
+            com.google.type.Interval.Builder,
+            com.google.type.IntervalOrBuilder>
+        intervalBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     *
+     * @return Whether the interval field is set.
+     */
+    public boolean hasInterval() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     *
+     * @return The interval.
+     */
+    public com.google.type.Interval getInterval() {
+      if (intervalBuilder_ == null) {
+        return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
+      } else {
+        return intervalBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    public Builder setInterval(com.google.type.Interval value) {
+      if (intervalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        interval_ = value;
+      } else {
+        intervalBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    public Builder setInterval(com.google.type.Interval.Builder builderForValue) {
+      if (intervalBuilder_ == null) {
+        interval_ = builderForValue.build();
+      } else {
+        intervalBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    public Builder mergeInterval(com.google.type.Interval value) {
+      if (intervalBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && interval_ != null
+            && interval_ != com.google.type.Interval.getDefaultInstance()) {
+          getIntervalBuilder().mergeFrom(value);
+        } else {
+          interval_ = value;
+        }
+      } else {
+        intervalBuilder_.mergeFrom(value);
+      }
+      if (interval_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    public Builder clearInterval() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
+        intervalBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    public com.google.type.Interval.Builder getIntervalBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getIntervalFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    public com.google.type.IntervalOrBuilder getIntervalOrBuilder() {
+      if (intervalBuilder_ != null) {
+        return intervalBuilder_.getMessageOrBuilder();
+      } else {
+        return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select the top N streams/time series within this time interval
+     * </pre>
+     *
+     * <code>.google.type.Interval interval = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Interval,
+            com.google.type.Interval.Builder,
+            com.google.type.IntervalOrBuilder>
+        getIntervalFieldBuilder() {
+      if (intervalBuilder_ == null) {
+        intervalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Interval,
+                com.google.type.Interval.Builder,
+                com.google.type.IntervalOrBuilder>(
+                getInterval(), getParentForChildren(), isClean());
+        interval_ = null;
+      }
+      return intervalBuilder_;
     }
 
     @java.lang.Override

@@ -332,5 +332,210 @@ public interface WidgetOrBuilder
    */
   com.google.monitoring.dashboard.v1.LogsPanelOrBuilder getLogsPanelOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows list of incidents.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.IncidentList incident_list = 12;</code>
+   *
+   * @return Whether the incidentList field is set.
+   */
+  boolean hasIncidentList();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows list of incidents.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.IncidentList incident_list = 12;</code>
+   *
+   * @return The incidentList.
+   */
+  com.google.monitoring.dashboard.v1.IncidentList getIncidentList();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows list of incidents.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.IncidentList incident_list = 12;</code>
+   */
+  com.google.monitoring.dashboard.v1.IncidentListOrBuilder getIncidentListOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays timeseries data as a pie chart.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.PieChart pie_chart = 14;</code>
+   *
+   * @return Whether the pieChart field is set.
+   */
+  boolean hasPieChart();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays timeseries data as a pie chart.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.PieChart pie_chart = 14;</code>
+   *
+   * @return The pieChart.
+   */
+  com.google.monitoring.dashboard.v1.PieChart getPieChart();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays timeseries data as a pie chart.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.PieChart pie_chart = 14;</code>
+   */
+  com.google.monitoring.dashboard.v1.PieChartOrBuilder getPieChartOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays a list of error groups.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.ErrorReportingPanel error_reporting_panel = 19;</code>
+   *
+   * @return Whether the errorReportingPanel field is set.
+   */
+  boolean hasErrorReportingPanel();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays a list of error groups.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.ErrorReportingPanel error_reporting_panel = 19;</code>
+   *
+   * @return The errorReportingPanel.
+   */
+  com.google.monitoring.dashboard.v1.ErrorReportingPanel getErrorReportingPanel();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays a list of error groups.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.ErrorReportingPanel error_reporting_panel = 19;</code>
+   */
+  com.google.monitoring.dashboard.v1.ErrorReportingPanelOrBuilder getErrorReportingPanelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A widget that defines a section header for easier navigation of the
+   * dashboard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.SectionHeader section_header = 21;</code>
+   *
+   * @return Whether the sectionHeader field is set.
+   */
+  boolean hasSectionHeader();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that defines a section header for easier navigation of the
+   * dashboard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.SectionHeader section_header = 21;</code>
+   *
+   * @return The sectionHeader.
+   */
+  com.google.monitoring.dashboard.v1.SectionHeader getSectionHeader();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that defines a section header for easier navigation of the
+   * dashboard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.SectionHeader section_header = 21;</code>
+   */
+  com.google.monitoring.dashboard.v1.SectionHeaderOrBuilder getSectionHeaderOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets by using a dropdown menu.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.SingleViewGroup single_view_group = 22;</code>
+   *
+   * @return Whether the singleViewGroup field is set.
+   */
+  boolean hasSingleViewGroup();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets by using a dropdown menu.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.SingleViewGroup single_view_group = 22;</code>
+   *
+   * @return The singleViewGroup.
+   */
+  com.google.monitoring.dashboard.v1.SingleViewGroup getSingleViewGroup();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets by using a dropdown menu.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.SingleViewGroup single_view_group = 22;</code>
+   */
+  com.google.monitoring.dashboard.v1.SingleViewGroupOrBuilder getSingleViewGroupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The widget id. Ids may be made up of alphanumerics, dashes and
+   * underscores. Widget ids are optional.
+   * </pre>
+   *
+   * <code>string id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The widget id. Ids may be made up of alphanumerics, dashes and
+   * underscores. Widget ids are optional.
+   * </pre>
+   *
+   * <code>string id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString getIdBytes();
+
   com.google.monitoring.dashboard.v1.Widget.ContentCase getContentCase();
 }

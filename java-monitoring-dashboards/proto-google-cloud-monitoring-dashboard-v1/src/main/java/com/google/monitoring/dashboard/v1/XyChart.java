@@ -331,7 +331,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The data is plotted as a set of filled areas (one area per series),
        * with the areas stacked vertically (the base of each area is the top of
-       * its predecessor, and the base of the first area is the X axis). Since
+       * its predecessor, and the base of the first area is the x-axis). Since
        * the areas do not overlap, each is filled with a different opaque color.
        * </pre>
        *
@@ -344,7 +344,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The data is plotted as a set of rectangular boxes (one box per series),
        * with the boxes stacked vertically (the base of each box is the top of
-       * its predecessor, and the base of the first box is the X axis). Since
+       * its predecessor, and the base of the first box is the x-axis). Since
        * the boxes do not overlap, each is filled with a different opaque color.
        * </pre>
        *
@@ -393,7 +393,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The data is plotted as a set of filled areas (one area per series),
        * with the areas stacked vertically (the base of each area is the top of
-       * its predecessor, and the base of the first area is the X axis). Since
+       * its predecessor, and the base of the first area is the x-axis). Since
        * the areas do not overlap, each is filled with a different opaque color.
        * </pre>
        *
@@ -406,7 +406,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The data is plotted as a set of rectangular boxes (one box per series),
        * with the boxes stacked vertically (the base of each box is the top of
-       * its predecessor, and the base of the first box is the X axis). Since
+       * its predecessor, and the base of the first box is the x-axis). Since
        * the boxes do not overlap, each is filled with a different opaque color.
        * </pre>
        *
@@ -3451,7 +3451,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the X axis.
+   * The properties applied to the x-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -3466,7 +3466,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the X axis.
+   * The properties applied to the x-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -3483,7 +3483,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the X axis.
+   * The properties applied to the x-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -3501,7 +3501,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the Y axis.
+   * The properties applied to the y-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -3516,7 +3516,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the Y axis.
+   * The properties applied to the y-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -3533,7 +3533,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the Y axis.
+   * The properties applied to the y-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -3551,7 +3551,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the Y2 axis.
+   * The properties applied to the y2-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -3566,7 +3566,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the Y2 axis.
+   * The properties applied to the y2-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -3583,7 +3583,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The properties applied to the Y2 axis.
+   * The properties applied to the y2-axis.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5258,7 +5258,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5272,7 +5272,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5292,7 +5292,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5314,7 +5314,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5334,7 +5334,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5361,7 +5361,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5380,7 +5380,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5394,7 +5394,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5412,7 +5412,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the X axis.
+     * The properties applied to the x-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
@@ -5444,7 +5444,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5458,7 +5458,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5478,7 +5478,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5500,7 +5500,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5520,7 +5520,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5547,7 +5547,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5566,7 +5566,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5580,7 +5580,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5598,7 +5598,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y axis.
+     * The properties applied to the y-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
@@ -5630,7 +5630,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5644,7 +5644,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5664,7 +5664,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5686,7 +5686,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5706,7 +5706,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5733,7 +5733,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5752,7 +5752,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5766,7 +5766,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
@@ -5784,7 +5784,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The properties applied to the Y2 axis.
+     * The properties applied to the y2-axis.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>

@@ -33,13 +33,9 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
- *   CreateDashboardRequest request =
- *       CreateDashboardRequest.newBuilder()
- *           .setParent("parent-995424086")
- *           .setDashboard(Dashboard.newBuilder().build())
- *           .setValidateOnly(true)
- *           .build();
- *   Dashboard response = dashboardsServiceClient.createDashboard(request);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Dashboard dashboard = Dashboard.newBuilder().build();
+ *   Dashboard response = dashboardsServiceClient.createDashboard(parent, dashboard);
  * }
  * }</pre>
  */

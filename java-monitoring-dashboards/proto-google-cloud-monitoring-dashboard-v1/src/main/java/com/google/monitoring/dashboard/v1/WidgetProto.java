@@ -46,33 +46,50 @@ public final class WidgetProto {
           + "oogle/api/field_behavior.proto\032/google/m"
           + "onitoring/dashboard/v1/alertchart.proto\032"
           + "6google/monitoring/dashboard/v1/collapsi"
-          + "ble_group.proto\032/google/monitoring/dashb"
-          + "oard/v1/logs_panel.proto\032.google/monitor"
-          + "ing/dashboard/v1/scorecard.proto\032*google"
-          + "/monitoring/dashboard/v1/table.proto\032)go"
-          + "ogle/monitoring/dashboard/v1/text.proto\032"
-          + ",google/monitoring/dashboard/v1/xychart."
-          + "proto\032\033google/protobuf/empty.proto\"\244\004\n\006W"
-          + "idget\022\022\n\005title\030\001 \001(\tB\003\340A\001\022;\n\010xy_chart\030\002 "
-          + "\001(\0132\'.google.monitoring.dashboard.v1.XyC"
-          + "hartH\000\022>\n\tscorecard\030\003 \001(\0132).google.monit"
-          + "oring.dashboard.v1.ScorecardH\000\0224\n\004text\030\004"
-          + " \001(\0132$.google.monitoring.dashboard.v1.Te"
-          + "xtH\000\022\'\n\005blank\030\005 \001(\0132\026.google.protobuf.Em"
-          + "ptyH\000\022A\n\013alert_chart\030\007 \001(\0132*.google.moni"
-          + "toring.dashboard.v1.AlertChartH\000\022L\n\021time"
-          + "_series_table\030\010 \001(\0132/.google.monitoring."
-          + "dashboard.v1.TimeSeriesTableH\000\022M\n\021collap"
-          + "sible_group\030\t \001(\01320.google.monitoring.da"
-          + "shboard.v1.CollapsibleGroupH\000\022?\n\nlogs_pa"
-          + "nel\030\n \001(\0132).google.monitoring.dashboard."
-          + "v1.LogsPanelH\000B\t\n\007contentB\364\001\n\"com.google"
-          + ".monitoring.dashboard.v1B\013WidgetProtoP\001Z"
-          + "Fcloud.google.com/go/monitoring/dashboar"
-          + "d/apiv1/dashboardpb;dashboardpb\252\002$Google"
-          + ".Cloud.Monitoring.Dashboard.V1\312\002$Google\\"
-          + "Cloud\\Monitoring\\Dashboard\\V1\352\002(Google::"
-          + "Cloud::Monitoring::Dashboard::V1b\006proto3"
+          + "ble_group.proto\032:google/monitoring/dashb"
+          + "oard/v1/error_reporting_panel.proto\0322goo"
+          + "gle/monitoring/dashboard/v1/incident_lis"
+          + "t.proto\032/google/monitoring/dashboard/v1/"
+          + "logs_panel.proto\032-google/monitoring/dash"
+          + "board/v1/piechart.proto\032.google/monitori"
+          + "ng/dashboard/v1/scorecard.proto\0323google/"
+          + "monitoring/dashboard/v1/section_header.p"
+          + "roto\0326google/monitoring/dashboard/v1/sin"
+          + "gle_view_group.proto\032*google/monitoring/"
+          + "dashboard/v1/table.proto\032)google/monitor"
+          + "ing/dashboard/v1/text.proto\032,google/moni"
+          + "toring/dashboard/v1/xychart.proto\032\033googl"
+          + "e/protobuf/empty.proto\"\250\007\n\006Widget\022\022\n\005tit"
+          + "le\030\001 \001(\tB\003\340A\001\022;\n\010xy_chart\030\002 \001(\0132\'.google"
+          + ".monitoring.dashboard.v1.XyChartH\000\022>\n\tsc"
+          + "orecard\030\003 \001(\0132).google.monitoring.dashbo"
+          + "ard.v1.ScorecardH\000\0224\n\004text\030\004 \001(\0132$.googl"
+          + "e.monitoring.dashboard.v1.TextH\000\022\'\n\005blan"
+          + "k\030\005 \001(\0132\026.google.protobuf.EmptyH\000\022A\n\013ale"
+          + "rt_chart\030\007 \001(\0132*.google.monitoring.dashb"
+          + "oard.v1.AlertChartH\000\022L\n\021time_series_tabl"
+          + "e\030\010 \001(\0132/.google.monitoring.dashboard.v1"
+          + ".TimeSeriesTableH\000\022M\n\021collapsible_group\030"
+          + "\t \001(\01320.google.monitoring.dashboard.v1.C"
+          + "ollapsibleGroupH\000\022?\n\nlogs_panel\030\n \001(\0132)."
+          + "google.monitoring.dashboard.v1.LogsPanel"
+          + "H\000\022E\n\rincident_list\030\014 \001(\0132,.google.monit"
+          + "oring.dashboard.v1.IncidentListH\000\022=\n\tpie"
+          + "_chart\030\016 \001(\0132(.google.monitoring.dashboa"
+          + "rd.v1.PieChartH\000\022T\n\025error_reporting_pane"
+          + "l\030\023 \001(\01323.google.monitoring.dashboard.v1"
+          + ".ErrorReportingPanelH\000\022G\n\016section_header"
+          + "\030\025 \001(\0132-.google.monitoring.dashboard.v1."
+          + "SectionHeaderH\000\022L\n\021single_view_group\030\026 \001"
+          + "(\0132/.google.monitoring.dashboard.v1.Sing"
+          + "leViewGroupH\000\022\017\n\002id\030\021 \001(\tB\003\340A\001B\t\n\007conten"
+          + "tB\364\001\n\"com.google.monitoring.dashboard.v1"
+          + "B\013WidgetProtoP\001ZFcloud.google.com/go/mon"
+          + "itoring/dashboard/apiv1/dashboardpb;dash"
+          + "boardpb\252\002$Google.Cloud.Monitoring.Dashbo"
+          + "ard.V1\312\002$Google\\Cloud\\Monitoring\\Dashboa"
+          + "rd\\V1\352\002(Google::Cloud::Monitoring::Dashb"
+          + "oard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,8 +98,13 @@ public final class WidgetProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.AlertChartProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.CollapsibleGroupProto.getDescriptor(),
+              com.google.monitoring.dashboard.v1.ErrorReportingPanelProto.getDescriptor(),
+              com.google.monitoring.dashboard.v1.IncidentListProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.LogsPanelProto.getDescriptor(),
+              com.google.monitoring.dashboard.v1.PieChartProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.ScorecardProto.getDescriptor(),
+              com.google.monitoring.dashboard.v1.SectionHeaderProto.getDescriptor(),
+              com.google.monitoring.dashboard.v1.SingleViewGroupProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.TableProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.TextProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.XyChartProto.getDescriptor(),
@@ -103,6 +125,12 @@ public final class WidgetProto {
               "TimeSeriesTable",
               "CollapsibleGroup",
               "LogsPanel",
+              "IncidentList",
+              "PieChart",
+              "ErrorReportingPanel",
+              "SectionHeader",
+              "SingleViewGroup",
+              "Id",
               "Content",
             });
     com.google.protobuf.ExtensionRegistry registry =
@@ -113,8 +141,13 @@ public final class WidgetProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.monitoring.dashboard.v1.AlertChartProto.getDescriptor();
     com.google.monitoring.dashboard.v1.CollapsibleGroupProto.getDescriptor();
+    com.google.monitoring.dashboard.v1.ErrorReportingPanelProto.getDescriptor();
+    com.google.monitoring.dashboard.v1.IncidentListProto.getDescriptor();
     com.google.monitoring.dashboard.v1.LogsPanelProto.getDescriptor();
+    com.google.monitoring.dashboard.v1.PieChartProto.getDescriptor();
     com.google.monitoring.dashboard.v1.ScorecardProto.getDescriptor();
+    com.google.monitoring.dashboard.v1.SectionHeaderProto.getDescriptor();
+    com.google.monitoring.dashboard.v1.SingleViewGroupProto.getDescriptor();
     com.google.monitoring.dashboard.v1.TableProto.getDescriptor();
     com.google.monitoring.dashboard.v1.TextProto.getDescriptor();
     com.google.monitoring.dashboard.v1.XyChartProto.getDescriptor();

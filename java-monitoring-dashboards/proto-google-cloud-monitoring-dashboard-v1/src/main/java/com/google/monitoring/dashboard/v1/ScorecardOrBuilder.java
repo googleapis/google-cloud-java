@@ -142,6 +142,44 @@ public interface ScorecardOrBuilder
    *
    *
    * <pre>
+   * Will cause the `Scorecard` to show only the value, with no indicator to
+   * its value relative to its thresholds.
+   * </pre>
+   *
+   * <code>.google.protobuf.Empty blank_view = 7;</code>
+   *
+   * @return Whether the blankView field is set.
+   */
+  boolean hasBlankView();
+  /**
+   *
+   *
+   * <pre>
+   * Will cause the `Scorecard` to show only the value, with no indicator to
+   * its value relative to its thresholds.
+   * </pre>
+   *
+   * <code>.google.protobuf.Empty blank_view = 7;</code>
+   *
+   * @return The blankView.
+   */
+  com.google.protobuf.Empty getBlankView();
+  /**
+   *
+   *
+   * <pre>
+   * Will cause the `Scorecard` to show only the value, with no indicator to
+   * its value relative to its thresholds.
+   * </pre>
+   *
+   * <code>.google.protobuf.Empty blank_view = 7;</code>
+   */
+  com.google.protobuf.EmptyOrBuilder getBlankViewOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The thresholds used to determine the state of the scorecard given the
    * time series' current value. For an actual value x, the scorecard is in a
    * danger state if x is less than or equal to a danger threshold that triggers

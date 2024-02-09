@@ -90,4 +90,39 @@ public interface PickTimeSeriesFilterOrBuilder
    * @return The direction.
    */
   com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction getDirection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Select the top N streams/time series within this time interval
+   * </pre>
+   *
+   * <code>.google.type.Interval interval = 4;</code>
+   *
+   * @return Whether the interval field is set.
+   */
+  boolean hasInterval();
+  /**
+   *
+   *
+   * <pre>
+   * Select the top N streams/time series within this time interval
+   * </pre>
+   *
+   * <code>.google.type.Interval interval = 4;</code>
+   *
+   * @return The interval.
+   */
+  com.google.type.Interval getInterval();
+  /**
+   *
+   *
+   * <pre>
+   * Select the top N streams/time series within this time interval
+   * </pre>
+   *
+   * <code>.google.type.Interval interval = 4;</code>
+   */
+  com.google.type.IntervalOrBuilder getIntervalOrBuilder();
 }

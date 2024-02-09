@@ -51,7 +51,7 @@ public final class DashboardsProto {
           + "e/api/resource.proto\0325google/monitoring/"
           + "dashboard/v1/dashboard_filter.proto\032,goo"
           + "gle/monitoring/dashboard/v1/layouts.prot"
-          + "o\"\372\004\n\tDashboard\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014di"
+          + "o\"\372\004\n\tDashboard\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\031\n\014di"
           + "splay_name\030\002 \001(\tB\003\340A\002\022\014\n\004etag\030\004 \001(\t\022A\n\013g"
           + "rid_layout\030\005 \001(\0132*.google.monitoring.das"
           + "hboard.v1.GridLayoutH\000\022E\n\rmosaic_layout\030"

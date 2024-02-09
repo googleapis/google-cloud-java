@@ -180,7 +180,7 @@ public interface TimeSeriesFilterRatioOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilterRatio.statistical_time_series_filter
-   *     is deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=120
+   *     is deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=129
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
   @java.lang.Deprecated
@@ -198,7 +198,7 @@ public interface TimeSeriesFilterRatioOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilterRatio.statistical_time_series_filter
-   *     is deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=120
+   *     is deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=129
    * @return The statisticalTimeSeriesFilter.
    */
   @java.lang.Deprecated

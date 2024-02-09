@@ -205,5 +205,24 @@ public interface TimeSeriesQueryOrBuilder
    */
   com.google.protobuf.ByteString getUnitOverrideBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, Cloud Monitoring will treat the full query duration as
+   * the alignment period so that there will be only 1 output value.
+   *
+   * *Note: This could override the configured alignment period except for
+   * the cases where a series of data points are expected, like
+   *   - XyChart
+   *   - Scorecard's spark chart
+   * </pre>
+   *
+   * <code>bool output_full_duration = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputFullDuration.
+   */
+  boolean getOutputFullDuration();
+
   com.google.monitoring.dashboard.v1.TimeSeriesQuery.SourceCase getSourceCase();
 }

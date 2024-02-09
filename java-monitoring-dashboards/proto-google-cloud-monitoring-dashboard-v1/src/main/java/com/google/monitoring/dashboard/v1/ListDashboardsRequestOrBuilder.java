@@ -75,12 +75,13 @@ public interface ListDashboardsRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return additional results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return additional results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -89,12 +90,13 @@ public interface ListDashboardsRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return additional results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return additional results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

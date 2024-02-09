@@ -53,27 +53,29 @@ public final class ScorecardProto {
           + "rd.proto\022\036google.monitoring.dashboard.v1"
           + "\032\037google/api/field_behavior.proto\032,googl"
           + "e/monitoring/dashboard/v1/metrics.proto\032"
-          + "\036google/protobuf/duration.proto\"\233\004\n\tScor"
-          + "ecard\022O\n\021time_series_query\030\001 \001(\0132/.googl"
-          + "e.monitoring.dashboard.v1.TimeSeriesQuer"
-          + "yB\003\340A\002\022I\n\ngauge_view\030\004 \001(\01323.google.moni"
-          + "toring.dashboard.v1.Scorecard.GaugeViewH"
-          + "\000\022T\n\020spark_chart_view\030\005 \001(\01328.google.mon"
-          + "itoring.dashboard.v1.Scorecard.SparkChar"
-          + "tViewH\000\022=\n\nthresholds\030\006 \003(\0132).google.mon"
-          + "itoring.dashboard.v1.Threshold\0325\n\tGaugeV"
-          + "iew\022\023\n\013lower_bound\030\001 \001(\001\022\023\n\013upper_bound\030"
-          + "\002 \001(\001\032\230\001\n\016SparkChartView\022M\n\020spark_chart_"
-          + "type\030\001 \001(\0162..google.monitoring.dashboard"
-          + ".v1.SparkChartTypeB\003\340A\002\0227\n\024min_alignment"
-          + "_period\030\002 \001(\0132\031.google.protobuf.Duration"
-          + "B\013\n\tdata_viewB\367\001\n\"com.google.monitoring."
-          + "dashboard.v1B\016ScorecardProtoP\001ZFcloud.go"
-          + "ogle.com/go/monitoring/dashboard/apiv1/d"
-          + "ashboardpb;dashboardpb\252\002$Google.Cloud.Mo"
-          + "nitoring.Dashboard.V1\312\002$Google\\Cloud\\Mon"
-          + "itoring\\Dashboard\\V1\352\002(Google::Cloud::Mo"
-          + "nitoring::Dashboard::V1b\006proto3"
+          + "\036google/protobuf/duration.proto\032\033google/"
+          + "protobuf/empty.proto\"\311\004\n\tScorecard\022O\n\021ti"
+          + "me_series_query\030\001 \001(\0132/.google.monitorin"
+          + "g.dashboard.v1.TimeSeriesQueryB\003\340A\002\022I\n\ng"
+          + "auge_view\030\004 \001(\01323.google.monitoring.dash"
+          + "board.v1.Scorecard.GaugeViewH\000\022T\n\020spark_"
+          + "chart_view\030\005 \001(\01328.google.monitoring.das"
+          + "hboard.v1.Scorecard.SparkChartViewH\000\022,\n\n"
+          + "blank_view\030\007 \001(\0132\026.google.protobuf.Empty"
+          + "H\000\022=\n\nthresholds\030\006 \003(\0132).google.monitori"
+          + "ng.dashboard.v1.Threshold\0325\n\tGaugeView\022\023"
+          + "\n\013lower_bound\030\001 \001(\001\022\023\n\013upper_bound\030\002 \001(\001"
+          + "\032\230\001\n\016SparkChartView\022M\n\020spark_chart_type\030"
+          + "\001 \001(\0162..google.monitoring.dashboard.v1.S"
+          + "parkChartTypeB\003\340A\002\0227\n\024min_alignment_peri"
+          + "od\030\002 \001(\0132\031.google.protobuf.DurationB\013\n\td"
+          + "ata_viewB\367\001\n\"com.google.monitoring.dashb"
+          + "oard.v1B\016ScorecardProtoP\001ZFcloud.google."
+          + "com/go/monitoring/dashboard/apiv1/dashbo"
+          + "ardpb;dashboardpb\252\002$Google.Cloud.Monitor"
+          + "ing.Dashboard.V1\312\002$Google\\Cloud\\Monitori"
+          + "ng\\Dashboard\\V1\352\002(Google::Cloud::Monitor"
+          + "ing::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -82,6 +84,7 @@ public final class ScorecardProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.MetricsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
             });
     internal_static_google_monitoring_dashboard_v1_Scorecard_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -89,7 +92,12 @@ public final class ScorecardProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_dashboard_v1_Scorecard_descriptor,
             new java.lang.String[] {
-              "TimeSeriesQuery", "GaugeView", "SparkChartView", "Thresholds", "DataView",
+              "TimeSeriesQuery",
+              "GaugeView",
+              "SparkChartView",
+              "BlankView",
+              "Thresholds",
+              "DataView",
             });
     internal_static_google_monitoring_dashboard_v1_Scorecard_GaugeView_descriptor =
         internal_static_google_monitoring_dashboard_v1_Scorecard_descriptor.getNestedTypes().get(0);
@@ -115,6 +123,7 @@ public final class ScorecardProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.monitoring.dashboard.v1.MetricsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

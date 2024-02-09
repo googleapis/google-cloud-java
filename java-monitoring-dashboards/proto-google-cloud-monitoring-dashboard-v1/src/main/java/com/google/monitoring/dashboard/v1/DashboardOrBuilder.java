@@ -28,10 +28,10 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the dashboard.
+   * Identifier. The resource name of the dashboard.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -40,10 +40,10 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the dashboard.
+   * Identifier. The resource name of the dashboard.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

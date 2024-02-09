@@ -1767,6 +1767,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GAUGE_VIEW(4),
     SPARK_CHART_VIEW(5),
+    BLANK_VIEW(7),
     DATAVIEW_NOT_SET(0);
     private final int value;
 
@@ -1789,6 +1790,8 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           return GAUGE_VIEW;
         case 5:
           return SPARK_CHART_VIEW;
+        case 7:
+          return BLANK_VIEW;
         case 0:
           return DATAVIEW_NOT_SET;
         default:
@@ -1965,6 +1968,60 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       return (com.google.monitoring.dashboard.v1.Scorecard.SparkChartView) dataView_;
     }
     return com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.getDefaultInstance();
+  }
+
+  public static final int BLANK_VIEW_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Will cause the `Scorecard` to show only the value, with no indicator to
+   * its value relative to its thresholds.
+   * </pre>
+   *
+   * <code>.google.protobuf.Empty blank_view = 7;</code>
+   *
+   * @return Whether the blankView field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlankView() {
+    return dataViewCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Will cause the `Scorecard` to show only the value, with no indicator to
+   * its value relative to its thresholds.
+   * </pre>
+   *
+   * <code>.google.protobuf.Empty blank_view = 7;</code>
+   *
+   * @return The blankView.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Empty getBlankView() {
+    if (dataViewCase_ == 7) {
+      return (com.google.protobuf.Empty) dataView_;
+    }
+    return com.google.protobuf.Empty.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Will cause the `Scorecard` to show only the value, with no indicator to
+   * its value relative to its thresholds.
+   * </pre>
+   *
+   * <code>.google.protobuf.Empty blank_view = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.EmptyOrBuilder getBlankViewOrBuilder() {
+    if (dataViewCase_ == 7) {
+      return (com.google.protobuf.Empty) dataView_;
+    }
+    return com.google.protobuf.Empty.getDefaultInstance();
   }
 
   public static final int THRESHOLDS_FIELD_NUMBER = 6;
@@ -2250,6 +2307,9 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < thresholds_.size(); i++) {
       output.writeMessage(6, thresholds_.get(i));
     }
+    if (dataViewCase_ == 7) {
+      output.writeMessage(7, (com.google.protobuf.Empty) dataView_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2274,6 +2334,11 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < thresholds_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, thresholds_.get(i));
+    }
+    if (dataViewCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.protobuf.Empty) dataView_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2303,6 +2368,9 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getSparkChartView().equals(other.getSparkChartView())) return false;
+        break;
+      case 7:
+        if (!getBlankView().equals(other.getBlankView())) return false;
         break;
       case 0:
       default:
@@ -2334,6 +2402,10 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + SPARK_CHART_VIEW_FIELD_NUMBER;
         hash = (53 * hash) + getSparkChartView().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + BLANK_VIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getBlankView().hashCode();
         break;
       case 0:
       default:
@@ -2499,13 +2571,16 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       if (sparkChartViewBuilder_ != null) {
         sparkChartViewBuilder_.clear();
       }
+      if (blankViewBuilder_ != null) {
+        blankViewBuilder_.clear();
+      }
       if (thresholdsBuilder_ == null) {
         thresholds_ = java.util.Collections.emptyList();
       } else {
         thresholds_ = null;
         thresholdsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       dataViewCase_ = 0;
       dataView_ = null;
       return this;
@@ -2546,9 +2621,9 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.monitoring.dashboard.v1.Scorecard result) {
       if (thresholdsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           thresholds_ = java.util.Collections.unmodifiableList(thresholds_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.thresholds_ = thresholds_;
       } else {
@@ -2575,6 +2650,9 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       if (dataViewCase_ == 5 && sparkChartViewBuilder_ != null) {
         result.dataView_ = sparkChartViewBuilder_.build();
+      }
+      if (dataViewCase_ == 7 && blankViewBuilder_ != null) {
+        result.dataView_ = blankViewBuilder_.build();
       }
     }
 
@@ -2630,7 +2708,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         if (!other.thresholds_.isEmpty()) {
           if (thresholds_.isEmpty()) {
             thresholds_ = other.thresholds_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureThresholdsIsMutable();
             thresholds_.addAll(other.thresholds_);
@@ -2643,7 +2721,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             thresholdsBuilder_.dispose();
             thresholdsBuilder_ = null;
             thresholds_ = other.thresholds_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             thresholdsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getThresholdsFieldBuilder()
@@ -2662,6 +2740,11 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         case SPARK_CHART_VIEW:
           {
             mergeSparkChartView(other.getSparkChartView());
+            break;
+          }
+        case BLANK_VIEW:
+          {
+            mergeBlankView(other.getBlankView());
             break;
           }
         case DATAVIEW_NOT_SET:
@@ -2726,6 +2809,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getBlankViewFieldBuilder().getBuilder(), extensionRegistry);
+                dataViewCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3400,14 +3489,227 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       return sparkChartViewBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Empty,
+            com.google.protobuf.Empty.Builder,
+            com.google.protobuf.EmptyOrBuilder>
+        blankViewBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     *
+     * @return Whether the blankView field is set.
+     */
+    @java.lang.Override
+    public boolean hasBlankView() {
+      return dataViewCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     *
+     * @return The blankView.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Empty getBlankView() {
+      if (blankViewBuilder_ == null) {
+        if (dataViewCase_ == 7) {
+          return (com.google.protobuf.Empty) dataView_;
+        }
+        return com.google.protobuf.Empty.getDefaultInstance();
+      } else {
+        if (dataViewCase_ == 7) {
+          return blankViewBuilder_.getMessage();
+        }
+        return com.google.protobuf.Empty.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    public Builder setBlankView(com.google.protobuf.Empty value) {
+      if (blankViewBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataView_ = value;
+        onChanged();
+      } else {
+        blankViewBuilder_.setMessage(value);
+      }
+      dataViewCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    public Builder setBlankView(com.google.protobuf.Empty.Builder builderForValue) {
+      if (blankViewBuilder_ == null) {
+        dataView_ = builderForValue.build();
+        onChanged();
+      } else {
+        blankViewBuilder_.setMessage(builderForValue.build());
+      }
+      dataViewCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    public Builder mergeBlankView(com.google.protobuf.Empty value) {
+      if (blankViewBuilder_ == null) {
+        if (dataViewCase_ == 7 && dataView_ != com.google.protobuf.Empty.getDefaultInstance()) {
+          dataView_ =
+              com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) dataView_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataView_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataViewCase_ == 7) {
+          blankViewBuilder_.mergeFrom(value);
+        } else {
+          blankViewBuilder_.setMessage(value);
+        }
+      }
+      dataViewCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    public Builder clearBlankView() {
+      if (blankViewBuilder_ == null) {
+        if (dataViewCase_ == 7) {
+          dataViewCase_ = 0;
+          dataView_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataViewCase_ == 7) {
+          dataViewCase_ = 0;
+          dataView_ = null;
+        }
+        blankViewBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    public com.google.protobuf.Empty.Builder getBlankViewBuilder() {
+      return getBlankViewFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.EmptyOrBuilder getBlankViewOrBuilder() {
+      if ((dataViewCase_ == 7) && (blankViewBuilder_ != null)) {
+        return blankViewBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataViewCase_ == 7) {
+          return (com.google.protobuf.Empty) dataView_;
+        }
+        return com.google.protobuf.Empty.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Will cause the `Scorecard` to show only the value, with no indicator to
+     * its value relative to its thresholds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Empty blank_view = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Empty,
+            com.google.protobuf.Empty.Builder,
+            com.google.protobuf.EmptyOrBuilder>
+        getBlankViewFieldBuilder() {
+      if (blankViewBuilder_ == null) {
+        if (!(dataViewCase_ == 7)) {
+          dataView_ = com.google.protobuf.Empty.getDefaultInstance();
+        }
+        blankViewBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Empty,
+                com.google.protobuf.Empty.Builder,
+                com.google.protobuf.EmptyOrBuilder>(
+                (com.google.protobuf.Empty) dataView_, getParentForChildren(), isClean());
+        dataView_ = null;
+      }
+      dataViewCase_ = 7;
+      onChanged();
+      return blankViewBuilder_;
+    }
+
     private java.util.List<com.google.monitoring.dashboard.v1.Threshold> thresholds_ =
         java.util.Collections.emptyList();
 
     private void ensureThresholdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         thresholds_ =
             new java.util.ArrayList<com.google.monitoring.dashboard.v1.Threshold>(thresholds_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -4030,7 +4332,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public Builder clearThresholds() {
       if (thresholdsBuilder_ == null) {
         thresholds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         thresholdsBuilder_.clear();
@@ -4411,7 +4713,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.dashboard.v1.Threshold,
                 com.google.monitoring.dashboard.v1.Threshold.Builder,
                 com.google.monitoring.dashboard.v1.ThresholdOrBuilder>(
-                thresholds_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                thresholds_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         thresholds_ = null;
       }
       return thresholdsBuilder_;

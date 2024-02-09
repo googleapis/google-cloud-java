@@ -20,6 +20,7 @@ package com.google.cloud.monitoring.dashboard.v1.samples;
 import com.google.cloud.monitoring.dashboard.v1.DashboardsServiceClient;
 import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
+import com.google.monitoring.dashboard.v1.ProjectName;
 
 public class SyncCreateDashboard {
 
@@ -36,7 +37,7 @@ public class SyncCreateDashboard {
     try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
       CreateDashboardRequest request =
           CreateDashboardRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setDashboard(Dashboard.newBuilder().build())
               .setValidateOnly(true)
               .build();

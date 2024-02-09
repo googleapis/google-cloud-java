@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.monitoring.dashboard.v1.DashboardsServiceClient;
 import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
+import com.google.monitoring.dashboard.v1.ProjectName;
 
 public class AsyncCreateDashboard {
 
@@ -37,7 +38,7 @@ public class AsyncCreateDashboard {
     try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
       CreateDashboardRequest request =
           CreateDashboardRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setDashboard(Dashboard.newBuilder().build())
               .setValidateOnly(true)
               .build();

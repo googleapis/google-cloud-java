@@ -29,13 +29,9 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.monitoring.dashboard.v1.stub.HttpJsonDashboardsServiceStub;
 import com.google.common.collect.Lists;
-import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
 import com.google.monitoring.dashboard.v1.DashboardFilter;
 import com.google.monitoring.dashboard.v1.DashboardName;
-import com.google.monitoring.dashboard.v1.DeleteDashboardRequest;
-import com.google.monitoring.dashboard.v1.GetDashboardRequest;
-import com.google.monitoring.dashboard.v1.ListDashboardsRequest;
 import com.google.monitoring.dashboard.v1.ListDashboardsResponse;
 import com.google.monitoring.dashboard.v1.ProjectName;
 import com.google.monitoring.dashboard.v1.UpdateDashboardRequest;
@@ -100,14 +96,10 @@ public class DashboardsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    CreateDashboardRequest request =
-        CreateDashboardRequest.newBuilder()
-            .setParent("projects/project-2353")
-            .setDashboard(Dashboard.newBuilder().build())
-            .setValidateOnly(true)
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    Dashboard dashboard = Dashboard.newBuilder().build();
 
-    Dashboard actualResponse = client.createDashboard(request);
+    Dashboard actualResponse = client.createDashboard(parent, dashboard);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -133,13 +125,59 @@ public class DashboardsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      CreateDashboardRequest request =
-          CreateDashboardRequest.newBuilder()
-              .setParent("projects/project-2353")
-              .setDashboard(Dashboard.newBuilder().build())
-              .setValidateOnly(true)
-              .build();
-      client.createDashboard(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      Dashboard dashboard = Dashboard.newBuilder().build();
+      client.createDashboard(parent, dashboard);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDashboardTest2() throws Exception {
+    Dashboard expectedResponse =
+        Dashboard.newBuilder()
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
+            .addAllDashboardFilters(new ArrayList<DashboardFilter>())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-2353";
+    Dashboard dashboard = Dashboard.newBuilder().build();
+
+    Dashboard actualResponse = client.createDashboard(parent, dashboard);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDashboardExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2353";
+      Dashboard dashboard = Dashboard.newBuilder().build();
+      client.createDashboard(parent, dashboard);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -156,14 +194,9 @@ public class DashboardsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ListDashboardsRequest request =
-        ListDashboardsRequest.newBuilder()
-            .setParent(ProjectName.of("[PROJECT]").toString())
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListDashboardsPagedResponse pagedListResponse = client.listDashboards(request);
+    ListDashboardsPagedResponse pagedListResponse = client.listDashboards(parent);
 
     List<Dashboard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -193,13 +226,58 @@ public class DashboardsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ListDashboardsRequest request =
-          ListDashboardsRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      client.listDashboards(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listDashboards(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDashboardsTest2() throws Exception {
+    Dashboard responsesElement = Dashboard.newBuilder().build();
+    ListDashboardsResponse expectedResponse =
+        ListDashboardsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDashboards(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-2353";
+
+    ListDashboardsPagedResponse pagedListResponse = client.listDashboards(parent);
+
+    List<Dashboard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDashboardsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDashboardsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2353";
+      client.listDashboards(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -218,12 +296,9 @@ public class DashboardsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    GetDashboardRequest request =
-        GetDashboardRequest.newBuilder()
-            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
-            .build();
+    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
 
-    Dashboard actualResponse = client.getDashboard(request);
+    Dashboard actualResponse = client.getDashboard(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -249,11 +324,56 @@ public class DashboardsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      GetDashboardRequest request =
-          GetDashboardRequest.newBuilder()
-              .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
-              .build();
-      client.getDashboard(request);
+      DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
+      client.getDashboard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDashboardTest2() throws Exception {
+    Dashboard expectedResponse =
+        Dashboard.newBuilder()
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
+            .addAllDashboardFilters(new ArrayList<DashboardFilter>())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3783/dashboards/dashboard-3783";
+
+    Dashboard actualResponse = client.getDashboard(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDashboardExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3783/dashboards/dashboard-3783";
+      client.getDashboard(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -265,12 +385,9 @@ public class DashboardsServiceClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    DeleteDashboardRequest request =
-        DeleteDashboardRequest.newBuilder()
-            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
-            .build();
+    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
 
-    client.deleteDashboard(request);
+    client.deleteDashboard(name);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -295,11 +412,48 @@ public class DashboardsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      DeleteDashboardRequest request =
-          DeleteDashboardRequest.newBuilder()
-              .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
-              .build();
-      client.deleteDashboard(request);
+      DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
+      client.deleteDashboard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDashboardTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3783/dashboards/dashboard-3783";
+
+    client.deleteDashboard(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDashboardExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3783/dashboards/dashboard-3783";
+      client.deleteDashboard(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
