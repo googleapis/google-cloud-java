@@ -28,6 +28,7 @@
 * **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240202-2.0.0 ([#10323](https://github.com/googleapis/google-cloud-java/issues/10323)) ([f1bca3c](https://github.com/googleapis/google-cloud-java/commit/f1bca3c0d0f2021247b95a0897d51b1b1a3229a0))
 * **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.126.1 ([#10292](https://github.com/googleapis/google-cloud-java/issues/10292)) ([afec9c6](https://github.com/googleapis/google-cloud-java/commit/afec9c657ecff46170b05ccdd3fe629261b01928))
 * **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.126.2 ([#10293](https://github.com/googleapis/google-cloud-java/issues/10293)) ([7c337f0](https://github.com/googleapis/google-cloud-java/commit/7c337f0fa9d654e0bb7c84c0a22c9fdff75c77f9))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.126.3 ([#10353](https://github.com/googleapis/google-cloud-java/issues/10353)) ([6f5018b](https://github.com/googleapis/google-cloud-java/commit/6f5018be552d8ffb2011f076ef13e7dda0388506))
 
 
 ### Documentation
