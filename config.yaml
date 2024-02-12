@@ -492,6 +492,8 @@ libraries:
 
     '
   release_level: stable
+  excluded_poms: grpc-google-cloud-compute-v1
+  excluded_dependencies: grpc-google-cloud-compute-v1
   GAPICs:
   - proto_path: google/cloud/compute/v1
   - proto_path: google/cloud/compute/v1small
@@ -946,6 +948,8 @@ libraries:
   release_level: stable
   cloud_api: false
   client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
+  excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
+  excluded_dependencies: google-iam-policy
   GAPICs:
   - proto_path: google/iam/v1
   - proto_path: google/iam/v1beta
