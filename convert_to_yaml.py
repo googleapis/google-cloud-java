@@ -107,7 +107,7 @@ def generate(path: str = ".") -> None:
             # define library-name if the module name
             # is NOT the same as java-{api-shortname}
             index = module.name.find("-")
-            library["library-name"] = module.name[index + 1 :]
+            library["library_name"] = module.name[index + 1 :]
         if "release_level" in metadata and metadata["release_level"] == "stable":
             library["release_level"] = "stable"
         if (
