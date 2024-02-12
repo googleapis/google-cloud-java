@@ -129,6 +129,10 @@ def generate(path: str = ".") -> None:
             library["api_reference"] = metadata["api_reference"]
         if "codeowner_team" in metadata:
             library["codeowner_team"] = metadata["codeowner_team"]
+        if "excluded_poms" in metadata:
+            library["excluded_poms"] = metadata["excluded_poms"]
+        if "excluded_dependencies" in metadata:
+            library["excluded_dependencies"] = metadata["excluded_dependencies"]
         if "issue_tracker" in metadata:
             library["issue_tracker"] = metadata["issue_tracker"]
         if "rest_documentation" in metadata:
