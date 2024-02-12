@@ -20,6 +20,34 @@ java_gapic_assembly_gradle_pkg\(
 \)
 """
 
+# keys are not in the list will produce a WARNING.
+metadata_keys = [
+    "api_shortname",
+    "api_description",
+    "name_pretty",
+    "product_documentation",
+    "library_type",
+    "release_level",
+    "api_id",
+    "api_reference",
+    "codeowner_team",
+    "client_documentation",
+    "excluded_dependencies",
+    "excluded_poms",
+    "distribution_name",
+    "group_id",
+    "issue_tracker",
+    "language",
+    "library_name",
+    "rest_documentation",
+    "rpc_documentation",
+    "cloud_api",
+    "requires_billing",
+    "transport",
+    "repo",
+    "repo_short",
+]
+
 
 @click.group(invoke_without_command=False)
 @click.pass_context
@@ -33,12 +61,39 @@ def main(ctx):
     "--path", required=False, type=str, prompt="path", help="path to google-cloud-java"
 )
 def generate(path: str = ".") -> None:
+    config = {
+        "gapic_generator_version": "2.34.0",
+        "protobuf_version": "25.2",
+        "googleapis_commitish": "1a45bf7393b52407188c82e63101db7dc9c72026",
+        "owlbot_cli_image": "sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409",
+        "synthtool_commitish": "6612ab8f3afcd5e292aecd647f0fa68812c9f5b5",
+        "template_excludes": [
+            ".github/*",
+            ".kokoro/*",
+            "samples/*",
+            "CODE_OF_CONDUCT.md",
+            "CONTRIBUTING.md",
+            "LICENSE",
+            "SECURITY.md",
+            "java.header",
+            "license-checks.xml",
+            "renovate.json",
+            ".gitignore",
+        ],
+    }
     libraries = []
     for module in sorted(Path(path).resolve().iterdir()):
         if (not module.name.startswith("java-")) or module.name in module_excludes:
             continue
         with open(f"{module}/.repo-metadata.json") as f:
             metadata = json.load(f)
+        new_keys = []
+        for key in metadata:
+            if key not in metadata_keys:
+                new_keys.append(key)
+        if len(new_keys) > 0:
+            print(f"WARN: new keys in {module}: {new_keys}")
+
         # add required value
         library = {
             "api_shortname": metadata["api_shortname"],
@@ -93,8 +148,9 @@ def generate(path: str = ".") -> None:
         proto_path = source[1:regex_index]
         library["GAPICs"] = __get_versioned_proto_path(proto_path)
         libraries.append(library)
+    config["libraries"] = libraries
     with open(f"{path}/config.yaml", "w") as out:
-        yaml.dump(libraries, out, indent=2, Dumper=MyDumper, sort_keys=False)
+        yaml.dump(config, out, indent=2, Dumper=MyDumper, sort_keys=False)
 
 
 def __get_versioned_proto_path(path: str) -> List[Dict[str, str]]:
@@ -125,7 +181,7 @@ class MyDumper(yaml.SafeDumper):
     def write_line_break(self, data=None):
         super().write_line_break(data)
 
-        if len(self.indents) == 1:
+        if len(self.indents) == 2:
             super().write_line_break()
 
 
