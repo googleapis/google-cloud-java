@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.126.5](https://github.com/googleapis/java-pubsub/compare/v1.126.4...v1.126.5) (2024-02-12)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.37.1 ([#1898](https://github.com/googleapis/java-pubsub/issues/1898)) ([fc0dc96](https://github.com/googleapis/java-pubsub/commit/fc0dc962bcb7467fe4008263a80d1ed1e29167a0))
+* Update dependency com.google.cloud:google-cloud-storage to v2.33.0 ([#1900](https://github.com/googleapis/java-pubsub/issues/1900)) ([0efceb4](https://github.com/googleapis/java-pubsub/commit/0efceb4f4068c70565676dc2ddcf629ec4f0489f))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.10.0 ([#1887](https://github.com/googleapis/java-pubsub/issues/1887)) ([2bfa5cc](https://github.com/googleapis/java-pubsub/commit/2bfa5cc894e5a14b1d890bdcad348eeb14520f95))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.0 ([#1888](https://github.com/googleapis/java-pubsub/issues/1888)) ([5017789](https://github.com/googleapis/java-pubsub/commit/5017789c996246ece0c5428c68c9c6681b760bca))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.2 ([#1891](https://github.com/googleapis/java-pubsub/issues/1891)) ([231ba51](https://github.com/googleapis/java-pubsub/commit/231ba51c8bd2e6a8f3e0171626d35761bd07ae19))
+
 ## [1.126.4](https://github.com/googleapis/java-pubsub/compare/v1.126.3...v1.126.4) (2024-02-09)
 
 
