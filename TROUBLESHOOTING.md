@@ -200,7 +200,7 @@ There are different strategies to resolve conflicts, but you must understand the
   ...
 ```
 
-- The release note of the libraries-bom also shows the compatible dependency libraries.
+- The release note of the libraries-bom shows the compatible dependency libraries.
   For example, https://github.com/googleapis/java-cloud-bom/releases/tag/v26.31.0 shows
   
   > These client libraries are built with the following Java libraries:
