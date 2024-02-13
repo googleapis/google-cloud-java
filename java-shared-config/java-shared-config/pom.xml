@@ -572,14 +572,9 @@
       </activation>
       <properties>
         <!-- default config values -->
-        <docletName>java-docfx-doclet-1.9.0</docletName>
-        <docletPath>${env.KOKORO_GFILE_DIR}/${docletName}.jar</docletPath>
         <outputpath>${project.build.directory}/docfx-yml</outputpath>
         <projectname>${project.artifactId}</projectname>
-        <excludeclasses></excludeclasses>
-        <excludePackages></excludePackages>
-        <source>8</source>            
-        <sourceFileExclude></sourceFileExclude>
+        <source>17</source>
       </properties>
       <build>
         <plugins>
@@ -592,17 +587,12 @@
               <useStandardDocletOptions>false</useStandardDocletOptions>              
               <additionalOptions>
                 -outputpath ${outputpath} 
-                -projectname ${projectname} 
-                -excludeclasses ${excludeclasses}: 
-                -excludepackages ${excludePackages}:
+                -projectname ${projectname}
               </additionalOptions>
               <doclint>none</doclint>
               <show>protected</show>
               <nohelp>true</nohelp>
               <source>${source}</source>
-              <sourceFileExcludes>
-                <exclude>${sourceFileExclude}</exclude>
-              </sourceFileExcludes>
             </configuration>
           </plugin>
         </plugins>
