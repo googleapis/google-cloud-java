@@ -200,9 +200,26 @@ There are different strategies to resolve conflicts, but you must understand the
   ...
 ```
 
+- The release note of the libraries-bom also shows the compatible dependency libraries.
+  For example, https://github.com/googleapis/java-cloud-bom/releases/tag/v26.31.0 shows
+  
+  > These client libraries are built with the following Java libraries:
+  >
+  > - Guava: 32.1.3-jre
+  > - Protobuf Java: 3.25.2
+  > - Google Auth Library: 1.22.0
+  > - Google API Client: 2.2.0
+  > - gRPC: 1.61.0
+  > - GAX: 2.41.0
+  > - Google Cloud Core: 2.31.0
+  
+  By examining the dependency graph of your project (`mvn dependency:tree -Dverbose`
+  or `gradle dependencies`), you may find some of the dependencies having unexpected
+  versions. They might cause dependency conflicts.
+
 - If changing dependency versions causes other failures, 
   consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/)
-  that conflict with `google-cloud-java`.
+  that conflict with Google Cloud Java libraries.
 
   For example, to shade `guava` and `protobuf-java`:
 
