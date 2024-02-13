@@ -42,7 +42,6 @@ libraries:
   product_documentation: n/a
   api_description: n/a
   release_level: stable
-  cloud_api: false
   GAPICs:
   - proto_path: google/identity/accesscontextmanager/v1
 
@@ -946,7 +945,6 @@ libraries:
   product_documentation: n/a
   api_description: n/a
   release_level: stable
-  cloud_api: false
   client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
   excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
   excluded_dependencies: google-iam-policy
@@ -962,7 +960,6 @@ libraries:
   api_description: you to manage your Service Accounts and IAM bindings.
   release_level: stable
   api_id: iam.googleapis.com
-  cloud_api: false
   GAPICs:
   - proto_path: google/iam/admin/v1
 

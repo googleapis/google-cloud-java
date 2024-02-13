@@ -116,7 +116,7 @@ def generate(path: str = ".") -> None:
         ):
             library["api_id"] = metadata["api_id"]
         distribution_name = str(metadata["distribution_name"])
-        if "cloud-" not in distribution_name:
+        if "cloud" not in distribution_name:
             library["cloud_api"] = False
         distribution_name_short = re.split(r"[:/]", distribution_name)[-1]
         if (
