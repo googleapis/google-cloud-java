@@ -213,9 +213,9 @@ There are different strategies to resolve conflicts, but you must understand the
   > - GAX: 2.41.0
   > - Google Cloud Core: 2.31.0
   
-  By examining the dependency graph of your project (`mvn dependency:tree -Dverbose`
-  or `gradle dependencies`), you may find some of the dependencies having unexpected
-  versions. They might cause dependency conflicts.
+  By examining the dependency graph of your project (`mvn dependency:tree -Dverbose`,
+  `gradle dependencies`, or `sbt dependencyTree`), you may find some of the dependencies
+  having unexpected versions. They might cause dependency conflicts.
 
 - If changing dependency versions causes other failures, 
   consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/)
