@@ -86,6 +86,7 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * Updatable fields:
    *
    *   * `big_query_source`
+   *   * `bigtable`
    *   * `labels`
    *   * `sync_config`
    * </pre>
@@ -110,6 +111,7 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * Updatable fields:
    *
    *   * `big_query_source`
+   *   * `bigtable`
    *   * `labels`
    *   * `sync_config`
    * </pre>
@@ -134,6 +136,7 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * Updatable fields:
    *
    *   * `big_query_source`
+   *   * `bigtable`
    *   * `labels`
    *   * `sync_config`
    * </pre>

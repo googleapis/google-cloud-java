@@ -751,10 +751,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Use case (CUJ) of the resource.
      * </pre>
      *
-     * <code>string use_case = 3;</code>
+     * <code>string use_case = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
      * @return Whether the useCase field is set.
      */
+    @java.lang.Deprecated
     boolean hasUseCase();
     /**
      *
@@ -763,10 +766,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Use case (CUJ) of the resource.
      * </pre>
      *
-     * <code>string use_case = 3;</code>
+     * <code>string use_case = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
      * @return The useCase.
      */
+    @java.lang.Deprecated
     java.lang.String getUseCase();
     /**
      *
@@ -775,10 +781,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Use case (CUJ) of the resource.
      * </pre>
      *
-     * <code>string use_case = 3;</code>
+     * <code>string use_case = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
      * @return The bytes for useCase.
      */
+    @java.lang.Deprecated
     com.google.protobuf.ByteString getUseCaseBytes();
 
     /**
@@ -788,10 +797,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Description of the resource.
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
      * @return Whether the description field is set.
      */
+    @java.lang.Deprecated
     boolean hasDescription();
     /**
      *
@@ -800,10 +812,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Description of the resource.
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
      * @return The description.
      */
+    @java.lang.Deprecated
     java.lang.String getDescription();
     /**
      *
@@ -812,10 +827,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Description of the resource.
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
      * @return The bytes for description.
      */
+    @java.lang.Deprecated
     com.google.protobuf.ByteString getDescriptionBytes();
 
     com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.ReferenceCase
@@ -874,7 +892,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       URI(1),
       RESOURCE_NAME(2),
+      @java.lang.Deprecated
       USE_CASE(3),
+      @java.lang.Deprecated
       DESCRIPTION(4),
       REFERENCE_NOT_SET(0);
       private final int value;
@@ -1066,10 +1086,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Use case (CUJ) of the resource.
      * </pre>
      *
-     * <code>string use_case = 3;</code>
+     * <code>string use_case = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
      * @return Whether the useCase field is set.
      */
+    @java.lang.Deprecated
     public boolean hasUseCase() {
       return referenceCase_ == 3;
     }
@@ -1080,10 +1103,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Use case (CUJ) of the resource.
      * </pre>
      *
-     * <code>string use_case = 3;</code>
+     * <code>string use_case = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
      * @return The useCase.
      */
+    @java.lang.Deprecated
     public java.lang.String getUseCase() {
       java.lang.Object ref = "";
       if (referenceCase_ == 3) {
@@ -1107,10 +1133,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Use case (CUJ) of the resource.
      * </pre>
      *
-     * <code>string use_case = 3;</code>
+     * <code>string use_case = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
      * @return The bytes for useCase.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getUseCaseBytes() {
       java.lang.Object ref = "";
       if (referenceCase_ == 3) {
@@ -1136,10 +1165,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Description of the resource.
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
      * @return Whether the description field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDescription() {
       return referenceCase_ == 4;
     }
@@ -1150,10 +1182,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Description of the resource.
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
      * @return The description.
      */
+    @java.lang.Deprecated
     public java.lang.String getDescription() {
       java.lang.Object ref = "";
       if (referenceCase_ == 4) {
@@ -1177,10 +1212,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * Description of the resource.
      * </pre>
      *
-     * <code>string description = 4;</code>
+     * <code>string description = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
      * @return The bytes for description.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = "";
       if (referenceCase_ == 4) {
@@ -1951,11 +1989,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Use case (CUJ) of the resource.
        * </pre>
        *
-       * <code>string use_case = 3;</code>
+       * <code>string use_case = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
        * @return Whether the useCase field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasUseCase() {
         return referenceCase_ == 3;
       }
@@ -1966,11 +2007,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Use case (CUJ) of the resource.
        * </pre>
        *
-       * <code>string use_case = 3;</code>
+       * <code>string use_case = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
        * @return The useCase.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public java.lang.String getUseCase() {
         java.lang.Object ref = "";
         if (referenceCase_ == 3) {
@@ -1994,11 +2038,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Use case (CUJ) of the resource.
        * </pre>
        *
-       * <code>string use_case = 3;</code>
+       * <code>string use_case = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
        * @return The bytes for useCase.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getUseCaseBytes() {
         java.lang.Object ref = "";
         if (referenceCase_ == 3) {
@@ -2022,11 +2069,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Use case (CUJ) of the resource.
        * </pre>
        *
-       * <code>string use_case = 3;</code>
+       * <code>string use_case = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
        * @param value The useCase to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setUseCase(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2043,10 +2093,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Use case (CUJ) of the resource.
        * </pre>
        *
-       * <code>string use_case = 3;</code>
+       * <code>string use_case = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearUseCase() {
         if (referenceCase_ == 3) {
           referenceCase_ = 0;
@@ -2062,11 +2115,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Use case (CUJ) of the resource.
        * </pre>
        *
-       * <code>string use_case = 3;</code>
+       * <code>string use_case = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.use_case is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=48
        * @param value The bytes for useCase to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setUseCaseBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2085,11 +2141,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Description of the resource.
        * </pre>
        *
-       * <code>string description = 4;</code>
+       * <code>string description = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
        * @return Whether the description field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasDescription() {
         return referenceCase_ == 4;
       }
@@ -2100,11 +2159,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Description of the resource.
        * </pre>
        *
-       * <code>string description = 4;</code>
+       * <code>string description = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
        * @return The description.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public java.lang.String getDescription() {
         java.lang.Object ref = "";
         if (referenceCase_ == 4) {
@@ -2128,11 +2190,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Description of the resource.
        * </pre>
        *
-       * <code>string description = 4;</code>
+       * <code>string description = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
        * @return The bytes for description.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getDescriptionBytes() {
         java.lang.Object ref = "";
         if (referenceCase_ == 4) {
@@ -2156,11 +2221,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Description of the resource.
        * </pre>
        *
-       * <code>string description = 4;</code>
+       * <code>string description = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
        * @param value The description to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setDescription(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2177,10 +2245,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Description of the resource.
        * </pre>
        *
-       * <code>string description = 4;</code>
+       * <code>string description = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearDescription() {
         if (referenceCase_ == 4) {
           referenceCase_ = 0;
@@ -2196,11 +2267,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * Description of the resource.
        * </pre>
        *
-       * <code>string description = 4;</code>
+       * <code>string description = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.description is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/publisher_model.proto;l=51
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -4252,6 +4326,49 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. Open notebooks of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the openNotebooks field is set.
+     */
+    boolean hasOpenNotebooks();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open notebooks of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The openNotebooks.
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+        getOpenNotebooks();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open notebooks of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooksOrBuilder
+        getOpenNotebooksOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Create application using the PublisherModel.
      * </pre>
      *
@@ -4335,6 +4452,49 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferencesOrBuilder
         getOpenFineTuningPipelineOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open fine-tuning pipelines of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the openFineTuningPipelines field is set.
+     */
+    boolean hasOpenFineTuningPipelines();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open fine-tuning pipelines of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The openFineTuningPipelines.
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+        getOpenFineTuningPipelines();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open fine-tuning pipelines of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelinesOrBuilder
+        getOpenFineTuningPipelinesOrBuilder();
 
     /**
      *
@@ -4465,6 +4625,48 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder
         getDeployOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the deployGke field is set.
+     */
+    boolean hasDeployGke();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deployGke.
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke getDeployGke();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder
+        getDeployGkeOrBuilder();
 
     /**
      *
@@ -4724,7 +4926,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The title of the regional resource reference.
+       * Required.
        * </pre>
        *
        * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4736,7 +4938,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The title of the regional resource reference.
+       * Required.
        * </pre>
        *
        * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4744,6 +4946,123 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the resourceTitle field is set.
+       */
+      boolean hasResourceTitle();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The resourceTitle.
+       */
+      java.lang.String getResourceTitle();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for resourceTitle.
+       */
+      com.google.protobuf.ByteString getResourceTitleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the resourceUseCase field is set.
+       */
+      boolean hasResourceUseCase();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The resourceUseCase.
+       */
+      java.lang.String getResourceUseCase();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for resourceUseCase.
+       */
+      com.google.protobuf.ByteString getResourceUseCaseBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the resourceDescription field is set.
+       */
+      boolean hasResourceDescription();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The resourceDescription.
+       */
+      java.lang.String getResourceDescription();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for resourceDescription.
+       */
+      com.google.protobuf.ByteString getResourceDescriptionBytes();
     }
     /**
      *
@@ -4770,6 +5089,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       private RegionalResourceReferences() {
         title_ = "";
+        resourceTitle_ = "";
+        resourceUseCase_ = "";
+        resourceDescription_ = "";
       }
 
       @java.lang.Override
@@ -4807,6 +5129,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                     .RegionalResourceReferences.Builder.class);
       }
 
+      private int bitField0_;
       public static final int REFERENCES_FIELD_NUMBER = 1;
 
       private static final class ReferencesDefaultEntryHolder {
@@ -4953,7 +5276,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The title of the regional resource reference.
+       * Required.
        * </pre>
        *
        * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4976,7 +5299,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The title of the regional resource reference.
+       * Required.
        * </pre>
        *
        * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4990,6 +5313,210 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RESOURCE_TITLE_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object resourceTitle_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the resourceTitle field is set.
+       */
+      @java.lang.Override
+      public boolean hasResourceTitle() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The resourceTitle.
+       */
+      @java.lang.Override
+      public java.lang.String getResourceTitle() {
+        java.lang.Object ref = resourceTitle_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceTitle_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for resourceTitle.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResourceTitleBytes() {
+        java.lang.Object ref = resourceTitle_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resourceTitle_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RESOURCE_USE_CASE_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object resourceUseCase_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the resourceUseCase field is set.
+       */
+      @java.lang.Override
+      public boolean hasResourceUseCase() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The resourceUseCase.
+       */
+      @java.lang.Override
+      public java.lang.String getResourceUseCase() {
+        java.lang.Object ref = resourceUseCase_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceUseCase_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for resourceUseCase.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResourceUseCaseBytes() {
+        java.lang.Object ref = resourceUseCase_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resourceUseCase_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RESOURCE_DESCRIPTION_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object resourceDescription_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the resourceDescription field is set.
+       */
+      @java.lang.Override
+      public boolean hasResourceDescription() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The resourceDescription.
+       */
+      @java.lang.Override
+      public java.lang.String getResourceDescription() {
+        java.lang.Object ref = resourceDescription_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceDescription_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the resource.
+       * </pre>
+       *
+       * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for resourceDescription.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResourceDescriptionBytes() {
+        java.lang.Object ref = resourceDescription_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resourceDescription_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5014,6 +5541,15 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             output, internalGetReferences(), ReferencesDefaultEntryHolder.defaultEntry, 1);
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceTitle_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceUseCase_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourceDescription_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -5042,6 +5578,15 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceTitle_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceUseCase_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resourceDescription_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -5066,6 +5611,18 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
         if (!internalGetReferences().equals(other.internalGetReferences())) return false;
         if (!getTitle().equals(other.getTitle())) return false;
+        if (hasResourceTitle() != other.hasResourceTitle()) return false;
+        if (hasResourceTitle()) {
+          if (!getResourceTitle().equals(other.getResourceTitle())) return false;
+        }
+        if (hasResourceUseCase() != other.hasResourceUseCase()) return false;
+        if (hasResourceUseCase()) {
+          if (!getResourceUseCase().equals(other.getResourceUseCase())) return false;
+        }
+        if (hasResourceDescription() != other.hasResourceDescription()) return false;
+        if (hasResourceDescription()) {
+          if (!getResourceDescription().equals(other.getResourceDescription())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -5083,6 +5640,18 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         hash = (37 * hash) + TITLE_FIELD_NUMBER;
         hash = (53 * hash) + getTitle().hashCode();
+        if (hasResourceTitle()) {
+          hash = (37 * hash) + RESOURCE_TITLE_FIELD_NUMBER;
+          hash = (53 * hash) + getResourceTitle().hashCode();
+        }
+        if (hasResourceUseCase()) {
+          hash = (37 * hash) + RESOURCE_USE_CASE_FIELD_NUMBER;
+          hash = (53 * hash) + getResourceUseCase().hashCode();
+        }
+        if (hasResourceDescription()) {
+          hash = (37 * hash) + RESOURCE_DESCRIPTION_FIELD_NUMBER;
+          hash = (53 * hash) + getResourceDescription().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -5276,6 +5845,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           internalGetMutableReferences().clear();
           title_ = "";
+          resourceTitle_ = "";
+          resourceUseCase_ = "";
+          resourceDescription_ = "";
           return this;
         }
 
@@ -5332,6 +5904,20 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.title_ = title_;
           }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.resourceTitle_ = resourceTitle_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.resourceUseCase_ = resourceUseCase_;
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.resourceDescription_ = resourceDescription_;
+            to_bitField0_ |= 0x00000004;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -5399,6 +5985,21 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000002;
             onChanged();
           }
+          if (other.hasResourceTitle()) {
+            resourceTitle_ = other.resourceTitle_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (other.hasResourceUseCase()) {
+            resourceUseCase_ = other.resourceUseCase_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          if (other.hasResourceDescription()) {
+            resourceDescription_ = other.resourceDescription_;
+            bitField0_ |= 0x00000010;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -5446,6 +6047,24 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 18
+                case 26:
+                  {
+                    resourceTitle_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    resourceUseCase_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    resourceDescription_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5751,7 +6370,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The title of the regional resource reference.
+         * Required.
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5773,7 +6392,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The title of the regional resource reference.
+         * Required.
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5795,7 +6414,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The title of the regional resource reference.
+         * Required.
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5816,7 +6435,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The title of the regional resource reference.
+         * Required.
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5833,7 +6452,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The title of the regional resource reference.
+         * Required.
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5848,6 +6467,384 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           title_ = value;
           bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object resourceTitle_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the resourceTitle field is set.
+         */
+        public boolean hasResourceTitle() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The resourceTitle.
+         */
+        public java.lang.String getResourceTitle() {
+          java.lang.Object ref = resourceTitle_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            resourceTitle_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The bytes for resourceTitle.
+         */
+        public com.google.protobuf.ByteString getResourceTitleBytes() {
+          java.lang.Object ref = resourceTitle_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            resourceTitle_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The resourceTitle to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceTitle(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourceTitle_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResourceTitle() {
+          resourceTitle_ = getDefaultInstance().getResourceTitle();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_title = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes for resourceTitle to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceTitleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resourceTitle_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object resourceUseCase_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use case (CUJ) of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the resourceUseCase field is set.
+         */
+        public boolean hasResourceUseCase() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use case (CUJ) of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The resourceUseCase.
+         */
+        public java.lang.String getResourceUseCase() {
+          java.lang.Object ref = resourceUseCase_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            resourceUseCase_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use case (CUJ) of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The bytes for resourceUseCase.
+         */
+        public com.google.protobuf.ByteString getResourceUseCaseBytes() {
+          java.lang.Object ref = resourceUseCase_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            resourceUseCase_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use case (CUJ) of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The resourceUseCase to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceUseCase(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourceUseCase_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use case (CUJ) of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResourceUseCase() {
+          resourceUseCase_ = getDefaultInstance().getResourceUseCase();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use case (CUJ) of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_use_case = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes for resourceUseCase to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceUseCaseBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resourceUseCase_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object resourceDescription_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the resourceDescription field is set.
+         */
+        public boolean hasResourceDescription() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The resourceDescription.
+         */
+        public java.lang.String getResourceDescription() {
+          java.lang.Object ref = resourceDescription_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            resourceDescription_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The bytes for resourceDescription.
+         */
+        public com.google.protobuf.ByteString getResourceDescriptionBytes() {
+          java.lang.Object ref = resourceDescription_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            resourceDescription_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The resourceDescription to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceDescription(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourceDescription_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResourceDescription() {
+          resourceDescription_ = getDefaultInstance().getResourceDescription();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the resource.
+         * </pre>
+         *
+         * <code>optional string resource_description = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes for resourceDescription to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceDescriptionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resourceDescription_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -7233,6 +8230,2358 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApi
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface OpenNotebooksOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .RegionalResourceReferences>
+          getNotebooksList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
+          getNotebooks(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      int getNotebooksCount();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferencesOrBuilder>
+          getNotebooksOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .RegionalResourceReferencesOrBuilder
+          getNotebooksOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Open notebooks.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks}
+     */
+    public static final class OpenNotebooks extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
+        OpenNotebooksOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use OpenNotebooks.newBuilder() to construct.
+      private OpenNotebooks(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private OpenNotebooks() {
+        notebooks_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new OpenNotebooks();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenNotebooks_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenNotebooks_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks.class,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                    .Builder.class);
+      }
+
+      public static final int NOTEBOOKS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .RegionalResourceReferences>
+          notebooks_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .RegionalResourceReferences>
+          getNotebooksList() {
+        return notebooks_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferencesOrBuilder>
+          getNotebooksOrBuilderList() {
+        return notebooks_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public int getNotebooksCount() {
+        return notebooks_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .RegionalResourceReferences
+          getNotebooks(int index) {
+        return notebooks_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to notebooks.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .RegionalResourceReferencesOrBuilder
+          getNotebooksOrBuilder(int index) {
+        return notebooks_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < notebooks_.size(); i++) {
+          output.writeMessage(1, notebooks_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < notebooks_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, notebooks_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks other =
+            (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks) obj;
+
+        if (!getNotebooksList().equals(other.getNotebooksList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getNotebooksCount() > 0) {
+          hash = (37 * hash) + NOTEBOOKS_FIELD_NUMBER;
+          hash = (53 * hash) + getNotebooksList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Open notebooks.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooksOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenNotebooks_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenNotebooks_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                      .class,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (notebooksBuilder_ == null) {
+            notebooks_ = java.util.Collections.emptyList();
+          } else {
+            notebooks_ = null;
+            notebooksBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenNotebooks_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+            build() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks result =
+              new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks(
+                  this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks result) {
+          if (notebooksBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              notebooks_ = java.util.Collections.unmodifiableList(notebooks_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.notebooks_ = notebooks_;
+          } else {
+            result.notebooks_ = notebooksBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                  .getDefaultInstance()) return this;
+          if (notebooksBuilder_ == null) {
+            if (!other.notebooks_.isEmpty()) {
+              if (notebooks_.isEmpty()) {
+                notebooks_ = other.notebooks_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureNotebooksIsMutable();
+                notebooks_.addAll(other.notebooks_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.notebooks_.isEmpty()) {
+              if (notebooksBuilder_.isEmpty()) {
+                notebooksBuilder_.dispose();
+                notebooksBuilder_ = null;
+                notebooks_ = other.notebooks_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                notebooksBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getNotebooksFieldBuilder()
+                        : null;
+              } else {
+                notebooksBuilder_.addAllMessages(other.notebooks_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                            .RegionalResourceReferences
+                        m =
+                            input.readMessage(
+                                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                                    .RegionalResourceReferences.parser(),
+                                extensionRegistry);
+                    if (notebooksBuilder_ == null) {
+                      ensureNotebooksIsMutable();
+                      notebooks_.add(m);
+                    } else {
+                      notebooksBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences>
+            notebooks_ = java.util.Collections.emptyList();
+
+        private void ensureNotebooksIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            notebooks_ =
+                new java.util.ArrayList<
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferences>(notebooks_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferencesOrBuilder>
+            notebooksBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences>
+            getNotebooksList() {
+          if (notebooksBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(notebooks_);
+          } else {
+            return notebooksBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public int getNotebooksCount() {
+          if (notebooksBuilder_ == null) {
+            return notebooks_.size();
+          } else {
+            return notebooksBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences
+            getNotebooks(int index) {
+          if (notebooksBuilder_ == null) {
+            return notebooks_.get(index);
+          } else {
+            return notebooksBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setNotebooks(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences
+                value) {
+          if (notebooksBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNotebooksIsMutable();
+            notebooks_.set(index, value);
+            onChanged();
+          } else {
+            notebooksBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setNotebooks(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder
+                builderForValue) {
+          if (notebooksBuilder_ == null) {
+            ensureNotebooksIsMutable();
+            notebooks_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            notebooksBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addNotebooks(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences
+                value) {
+          if (notebooksBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNotebooksIsMutable();
+            notebooks_.add(value);
+            onChanged();
+          } else {
+            notebooksBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addNotebooks(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences
+                value) {
+          if (notebooksBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNotebooksIsMutable();
+            notebooks_.add(index, value);
+            onChanged();
+          } else {
+            notebooksBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addNotebooks(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder
+                builderForValue) {
+          if (notebooksBuilder_ == null) {
+            ensureNotebooksIsMutable();
+            notebooks_.add(builderForValue.build());
+            onChanged();
+          } else {
+            notebooksBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addNotebooks(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder
+                builderForValue) {
+          if (notebooksBuilder_ == null) {
+            ensureNotebooksIsMutable();
+            notebooks_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            notebooksBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addAllNotebooks(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                            .RegionalResourceReferences>
+                values) {
+          if (notebooksBuilder_ == null) {
+            ensureNotebooksIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, notebooks_);
+            onChanged();
+          } else {
+            notebooksBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearNotebooks() {
+          if (notebooksBuilder_ == null) {
+            notebooks_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            notebooksBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder removeNotebooks(int index) {
+          if (notebooksBuilder_ == null) {
+            ensureNotebooksIsMutable();
+            notebooks_.remove(index);
+            onChanged();
+          } else {
+            notebooksBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences.Builder
+            getNotebooksBuilder(int index) {
+          return getNotebooksFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferencesOrBuilder
+            getNotebooksOrBuilder(int index) {
+          if (notebooksBuilder_ == null) {
+            return notebooks_.get(index);
+          } else {
+            return notebooksBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferencesOrBuilder>
+            getNotebooksOrBuilderList() {
+          if (notebooksBuilder_ != null) {
+            return notebooksBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(notebooks_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences.Builder
+            addNotebooksBuilder() {
+          return getNotebooksFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferences.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences.Builder
+            addNotebooksBuilder(int index) {
+          return getNotebooksFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferences.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to notebooks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences notebooks = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder>
+            getNotebooksBuilderList() {
+          return getNotebooksFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferencesOrBuilder>
+            getNotebooksFieldBuilder() {
+          if (notebooksBuilder_ == null) {
+            notebooksBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferences,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferences.Builder,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferencesOrBuilder>(
+                    notebooks_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            notebooks_ = null;
+          }
+          return notebooksBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks)
+      private static final com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenNotebooks
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<OpenNotebooks> PARSER =
+          new com.google.protobuf.AbstractParser<OpenNotebooks>() {
+            @java.lang.Override
+            public OpenNotebooks parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<OpenNotebooks> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OpenNotebooks> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface OpenFineTuningPipelinesOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .RegionalResourceReferences>
+          getFineTuningPipelinesList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
+          getFineTuningPipelines(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      int getFineTuningPipelinesCount();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferencesOrBuilder>
+          getFineTuningPipelinesOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .RegionalResourceReferencesOrBuilder
+          getFineTuningPipelinesOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Open fine tuning pipelines.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines}
+     */
+    public static final class OpenFineTuningPipelines extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines)
+        OpenFineTuningPipelinesOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use OpenFineTuningPipelines.newBuilder() to construct.
+      private OpenFineTuningPipelines(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private OpenFineTuningPipelines() {
+        fineTuningPipelines_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new OpenFineTuningPipelines();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenFineTuningPipelines_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenFineTuningPipelines_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .OpenFineTuningPipelines.class,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .OpenFineTuningPipelines.Builder.class);
+      }
+
+      public static final int FINE_TUNING_PIPELINES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .RegionalResourceReferences>
+          fineTuningPipelines_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .RegionalResourceReferences>
+          getFineTuningPipelinesList() {
+        return fineTuningPipelines_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferencesOrBuilder>
+          getFineTuningPipelinesOrBuilderList() {
+        return fineTuningPipelines_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public int getFineTuningPipelinesCount() {
+        return fineTuningPipelines_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .RegionalResourceReferences
+          getFineTuningPipelines(int index) {
+        return fineTuningPipelines_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Regional resource references to fine tuning pipelines.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .RegionalResourceReferencesOrBuilder
+          getFineTuningPipelinesOrBuilder(int index) {
+        return fineTuningPipelines_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < fineTuningPipelines_.size(); i++) {
+          output.writeMessage(1, fineTuningPipelines_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < fineTuningPipelines_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, fineTuningPipelines_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .OpenFineTuningPipelines)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+            other =
+                (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .OpenFineTuningPipelines)
+                    obj;
+
+        if (!getFineTuningPipelinesList().equals(other.getFineTuningPipelinesList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getFineTuningPipelinesCount() > 0) {
+          hash = (37 * hash) + FINE_TUNING_PIPELINES_FIELD_NUMBER;
+          hash = (53 * hash) + getFineTuningPipelinesList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Open fine tuning pipelines.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines)
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelinesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenFineTuningPipelines_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenFineTuningPipelines_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelines.class,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelines.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (fineTuningPipelinesBuilder_ == null) {
+            fineTuningPipelines_ = java.util.Collections.emptyList();
+          } else {
+            fineTuningPipelines_ = null;
+            fineTuningPipelinesBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_OpenFineTuningPipelines_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .OpenFineTuningPipelines
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .OpenFineTuningPipelines
+            build() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .OpenFineTuningPipelines
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelines(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+                result) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              fineTuningPipelines_ = java.util.Collections.unmodifiableList(fineTuningPipelines_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.fineTuningPipelines_ = fineTuningPipelines_;
+          } else {
+            result.fineTuningPipelines_ = fineTuningPipelinesBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .OpenFineTuningPipelines)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines.getDefaultInstance()) return this;
+          if (fineTuningPipelinesBuilder_ == null) {
+            if (!other.fineTuningPipelines_.isEmpty()) {
+              if (fineTuningPipelines_.isEmpty()) {
+                fineTuningPipelines_ = other.fineTuningPipelines_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureFineTuningPipelinesIsMutable();
+                fineTuningPipelines_.addAll(other.fineTuningPipelines_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.fineTuningPipelines_.isEmpty()) {
+              if (fineTuningPipelinesBuilder_.isEmpty()) {
+                fineTuningPipelinesBuilder_.dispose();
+                fineTuningPipelinesBuilder_ = null;
+                fineTuningPipelines_ = other.fineTuningPipelines_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                fineTuningPipelinesBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getFineTuningPipelinesFieldBuilder()
+                        : null;
+              } else {
+                fineTuningPipelinesBuilder_.addAllMessages(other.fineTuningPipelines_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                            .RegionalResourceReferences
+                        m =
+                            input.readMessage(
+                                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                                    .RegionalResourceReferences.parser(),
+                                extensionRegistry);
+                    if (fineTuningPipelinesBuilder_ == null) {
+                      ensureFineTuningPipelinesIsMutable();
+                      fineTuningPipelines_.add(m);
+                    } else {
+                      fineTuningPipelinesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences>
+            fineTuningPipelines_ = java.util.Collections.emptyList();
+
+        private void ensureFineTuningPipelinesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            fineTuningPipelines_ =
+                new java.util.ArrayList<
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferences>(fineTuningPipelines_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferencesOrBuilder>
+            fineTuningPipelinesBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences>
+            getFineTuningPipelinesList() {
+          if (fineTuningPipelinesBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(fineTuningPipelines_);
+          } else {
+            return fineTuningPipelinesBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public int getFineTuningPipelinesCount() {
+          if (fineTuningPipelinesBuilder_ == null) {
+            return fineTuningPipelines_.size();
+          } else {
+            return fineTuningPipelinesBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences
+            getFineTuningPipelines(int index) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            return fineTuningPipelines_.get(index);
+          } else {
+            return fineTuningPipelinesBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setFineTuningPipelines(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences
+                value) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.set(index, value);
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setFineTuningPipelines(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder
+                builderForValue) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addFineTuningPipelines(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences
+                value) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.add(value);
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addFineTuningPipelines(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences
+                value) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.add(index, value);
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addFineTuningPipelines(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder
+                builderForValue) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.add(builderForValue.build());
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addFineTuningPipelines(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder
+                builderForValue) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder addAllFineTuningPipelines(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                            .RegionalResourceReferences>
+                values) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            ensureFineTuningPipelinesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fineTuningPipelines_);
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearFineTuningPipelines() {
+          if (fineTuningPipelinesBuilder_ == null) {
+            fineTuningPipelines_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder removeFineTuningPipelines(int index) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            ensureFineTuningPipelinesIsMutable();
+            fineTuningPipelines_.remove(index);
+            onChanged();
+          } else {
+            fineTuningPipelinesBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences.Builder
+            getFineTuningPipelinesBuilder(int index) {
+          return getFineTuningPipelinesFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferencesOrBuilder
+            getFineTuningPipelinesOrBuilder(int index) {
+          if (fineTuningPipelinesBuilder_ == null) {
+            return fineTuningPipelines_.get(index);
+          } else {
+            return fineTuningPipelinesBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferencesOrBuilder>
+            getFineTuningPipelinesOrBuilderList() {
+          if (fineTuningPipelinesBuilder_ != null) {
+            return fineTuningPipelinesBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(fineTuningPipelines_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences.Builder
+            addFineTuningPipelinesBuilder() {
+          return getFineTuningPipelinesFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferences.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .RegionalResourceReferences.Builder
+            addFineTuningPipelinesBuilder(int index) {
+          return getFineTuningPipelinesFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .RegionalResourceReferences.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Regional resource references to fine tuning pipelines.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences fine_tuning_pipelines = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder>
+            getFineTuningPipelinesBuilderList() {
+          return getFineTuningPipelinesFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferences.Builder,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                    .RegionalResourceReferencesOrBuilder>
+            getFineTuningPipelinesFieldBuilder() {
+          if (fineTuningPipelinesBuilder_ == null) {
+            fineTuningPipelinesBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferences,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferences.Builder,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .RegionalResourceReferencesOrBuilder>(
+                    fineTuningPipelines_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            fineTuningPipelines_ = null;
+          }
+          return fineTuningPipelinesBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines)
+      private static final com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                .OpenFineTuningPipelines();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<OpenFineTuningPipelines> PARSER =
+          new com.google.protobuf.AbstractParser<OpenFineTuningPipelines>() {
+            @java.lang.Override
+            public OpenFineTuningPipelines parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<OpenFineTuningPipelines> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OpenFineTuningPipelines> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -10370,6 +13719,812 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface DeployGkeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the gkeYamlConfigs.
+       */
+      java.util.List<java.lang.String> getGkeYamlConfigsList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of gkeYamlConfigs.
+       */
+      int getGkeYamlConfigsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The gkeYamlConfigs at the given index.
+       */
+      java.lang.String getGkeYamlConfigs(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the gkeYamlConfigs at the given index.
+       */
+      com.google.protobuf.ByteString getGkeYamlConfigsBytes(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for PublisherModel GKE deployment
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke}
+     */
+    public static final class DeployGke extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)
+        DeployGkeOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use DeployGke.newBuilder() to construct.
+      private DeployGke(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DeployGke() {
+        gkeYamlConfigs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DeployGke();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.class,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder
+                    .class);
+      }
+
+      public static final int GKE_YAML_CONFIGS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList gkeYamlConfigs_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the gkeYamlConfigs.
+       */
+      public com.google.protobuf.ProtocolStringList getGkeYamlConfigsList() {
+        return gkeYamlConfigs_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of gkeYamlConfigs.
+       */
+      public int getGkeYamlConfigsCount() {
+        return gkeYamlConfigs_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The gkeYamlConfigs at the given index.
+       */
+      public java.lang.String getGkeYamlConfigs(int index) {
+        return gkeYamlConfigs_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. GKE deployment configuration in yaml format.
+       * </pre>
+       *
+       * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the gkeYamlConfigs at the given index.
+       */
+      public com.google.protobuf.ByteString getGkeYamlConfigsBytes(int index) {
+        return gkeYamlConfigs_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < gkeYamlConfigs_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gkeYamlConfigs_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < gkeYamlConfigs_.size(); i++) {
+            dataSize += computeStringSizeNoTag(gkeYamlConfigs_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getGkeYamlConfigsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke other =
+            (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke) obj;
+
+        if (!getGkeYamlConfigsList().equals(other.getGkeYamlConfigsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getGkeYamlConfigsCount() > 0) {
+          hash = (37 * hash) + GKE_YAML_CONFIGS_FIELD_NUMBER;
+          hash = (53 * hash) + getGkeYamlConfigsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations for PublisherModel GKE deployment
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.class,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          gkeYamlConfigs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke build() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke result =
+              new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            gkeYamlConfigs_.makeImmutable();
+            result.gkeYamlConfigs_ = gkeYamlConfigs_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+                  .getDefaultInstance()) return this;
+          if (!other.gkeYamlConfigs_.isEmpty()) {
+            if (gkeYamlConfigs_.isEmpty()) {
+              gkeYamlConfigs_ = other.gkeYamlConfigs_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureGkeYamlConfigsIsMutable();
+              gkeYamlConfigs_.addAll(other.gkeYamlConfigs_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureGkeYamlConfigsIsMutable();
+                    gkeYamlConfigs_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList gkeYamlConfigs_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureGkeYamlConfigsIsMutable() {
+          if (!gkeYamlConfigs_.isModifiable()) {
+            gkeYamlConfigs_ = new com.google.protobuf.LazyStringArrayList(gkeYamlConfigs_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the gkeYamlConfigs.
+         */
+        public com.google.protobuf.ProtocolStringList getGkeYamlConfigsList() {
+          gkeYamlConfigs_.makeImmutable();
+          return gkeYamlConfigs_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of gkeYamlConfigs.
+         */
+        public int getGkeYamlConfigsCount() {
+          return gkeYamlConfigs_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The gkeYamlConfigs at the given index.
+         */
+        public java.lang.String getGkeYamlConfigs(int index) {
+          return gkeYamlConfigs_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the gkeYamlConfigs at the given index.
+         */
+        public com.google.protobuf.ByteString getGkeYamlConfigsBytes(int index) {
+          return gkeYamlConfigs_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The gkeYamlConfigs to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGkeYamlConfigs(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGkeYamlConfigsIsMutable();
+          gkeYamlConfigs_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The gkeYamlConfigs to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGkeYamlConfigs(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGkeYamlConfigsIsMutable();
+          gkeYamlConfigs_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The gkeYamlConfigs to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllGkeYamlConfigs(java.lang.Iterable<java.lang.String> values) {
+          ensureGkeYamlConfigsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gkeYamlConfigs_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGkeYamlConfigs() {
+          gkeYamlConfigs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. GKE deployment configuration in yaml format.
+         * </pre>
+         *
+         * <code>repeated string gke_yaml_configs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the gkeYamlConfigs to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGkeYamlConfigsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureGkeYamlConfigsIsMutable();
+          gkeYamlConfigs_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke)
+      private static final com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DeployGke> PARSER =
+          new com.google.protobuf.AbstractParser<DeployGke>() {
+            @java.lang.Override
+            public DeployGke parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DeployGke> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeployGke> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int VIEW_REST_API_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.ViewRestApi
@@ -10496,6 +14651,67 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           : openNotebook_;
     }
 
+    public static final int OPEN_NOTEBOOKS_FIELD_NUMBER = 12;
+    private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+        openNotebooks_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open notebooks of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the openNotebooks field is set.
+     */
+    @java.lang.Override
+    public boolean hasOpenNotebooks() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open notebooks of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The openNotebooks.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+        getOpenNotebooks() {
+      return openNotebooks_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+              .getDefaultInstance()
+          : openNotebooks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open notebooks of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooksOrBuilder
+        getOpenNotebooksOrBuilder() {
+      return openNotebooks_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+              .getDefaultInstance()
+          : openNotebooks_;
+    }
+
     public static final int CREATE_APPLICATION_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
@@ -10515,7 +14731,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasCreateApplication() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -10579,7 +14795,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenFineTuningPipeline() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -10624,6 +14840,68 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           : openFineTuningPipeline_;
     }
 
+    public static final int OPEN_FINE_TUNING_PIPELINES_FIELD_NUMBER = 13;
+    private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+        openFineTuningPipelines_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open fine-tuning pipelines of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the openFineTuningPipelines field is set.
+     */
+    @java.lang.Override
+    public boolean hasOpenFineTuningPipelines() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open fine-tuning pipelines of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The openFineTuningPipelines.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+        getOpenFineTuningPipelines() {
+      return openFineTuningPipelines_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              .getDefaultInstance()
+          : openFineTuningPipelines_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open fine-tuning pipelines of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+            .OpenFineTuningPipelinesOrBuilder
+        getOpenFineTuningPipelinesOrBuilder() {
+      return openFineTuningPipelines_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              .getDefaultInstance()
+          : openFineTuningPipelines_;
+    }
+
     public static final int OPEN_PROMPT_TUNING_PIPELINE_FIELD_NUMBER = 5;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
@@ -10643,7 +14921,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenPromptTuningPipeline() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -10707,7 +14985,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenGenie() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -10769,7 +15047,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDeploy() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -10811,6 +15089,66 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           : deploy_;
     }
 
+    public static final int DEPLOY_GKE_FIELD_NUMBER = 14;
+    private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deployGke_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the deployGke field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeployGke() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deployGke.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+        getDeployGke() {
+      return deployGke_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+              .getDefaultInstance()
+          : deployGke_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder
+        getDeployGkeOrBuilder() {
+      return deployGke_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+              .getDefaultInstance()
+          : deployGke_;
+    }
+
     public static final int OPEN_GENERATION_AI_STUDIO_FIELD_NUMBER = 8;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
             .RegionalResourceReferences
@@ -10830,7 +15168,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenGenerationAiStudio() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -10894,7 +15232,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRequestAccess() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -10958,7 +15296,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenEvaluationPipeline() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -11023,29 +15361,38 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getOpenNotebook());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(3, getCreateApplication());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(4, getOpenFineTuningPipeline());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeMessage(5, getOpenPromptTuningPipeline());
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeMessage(6, getOpenGenie());
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeMessage(7, getDeploy());
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeMessage(8, getOpenGenerationAiStudio());
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeMessage(9, getRequestAccess());
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         output.writeMessage(11, getOpenEvaluationPipeline());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(12, getOpenNotebooks());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeMessage(13, getOpenFineTuningPipelines());
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeMessage(14, getDeployGke());
       }
       getUnknownFields().writeTo(output);
     }
@@ -11062,37 +15409,48 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getOpenNotebook());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateApplication());
-      }
       if (((bitField0_ & 0x00000008) != 0)) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                4, getOpenFineTuningPipeline());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateApplication());
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
-                5, getOpenPromptTuningPipeline());
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getOpenGenie());
+                4, getOpenFineTuningPipeline());
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDeploy());
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, getOpenPromptTuningPipeline());
       }
       if (((bitField0_ & 0x00000080) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getOpenGenie());
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDeploy());
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 8, getOpenGenerationAiStudio());
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRequestAccess());
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 11, getOpenEvaluationPipeline());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getOpenNotebooks());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                13, getOpenFineTuningPipelines());
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getDeployGke());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -11118,6 +15476,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasOpenNotebook()) {
         if (!getOpenNotebook().equals(other.getOpenNotebook())) return false;
       }
+      if (hasOpenNotebooks() != other.hasOpenNotebooks()) return false;
+      if (hasOpenNotebooks()) {
+        if (!getOpenNotebooks().equals(other.getOpenNotebooks())) return false;
+      }
       if (hasCreateApplication() != other.hasCreateApplication()) return false;
       if (hasCreateApplication()) {
         if (!getCreateApplication().equals(other.getCreateApplication())) return false;
@@ -11125,6 +15487,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasOpenFineTuningPipeline() != other.hasOpenFineTuningPipeline()) return false;
       if (hasOpenFineTuningPipeline()) {
         if (!getOpenFineTuningPipeline().equals(other.getOpenFineTuningPipeline())) return false;
+      }
+      if (hasOpenFineTuningPipelines() != other.hasOpenFineTuningPipelines()) return false;
+      if (hasOpenFineTuningPipelines()) {
+        if (!getOpenFineTuningPipelines().equals(other.getOpenFineTuningPipelines())) return false;
       }
       if (hasOpenPromptTuningPipeline() != other.hasOpenPromptTuningPipeline()) return false;
       if (hasOpenPromptTuningPipeline()) {
@@ -11138,6 +15504,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasDeploy() != other.hasDeploy()) return false;
       if (hasDeploy()) {
         if (!getDeploy().equals(other.getDeploy())) return false;
+      }
+      if (hasDeployGke() != other.hasDeployGke()) return false;
+      if (hasDeployGke()) {
+        if (!getDeployGke().equals(other.getDeployGke())) return false;
       }
       if (hasOpenGenerationAiStudio() != other.hasOpenGenerationAiStudio()) return false;
       if (hasOpenGenerationAiStudio()) {
@@ -11170,6 +15540,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + OPEN_NOTEBOOK_FIELD_NUMBER;
         hash = (53 * hash) + getOpenNotebook().hashCode();
       }
+      if (hasOpenNotebooks()) {
+        hash = (37 * hash) + OPEN_NOTEBOOKS_FIELD_NUMBER;
+        hash = (53 * hash) + getOpenNotebooks().hashCode();
+      }
       if (hasCreateApplication()) {
         hash = (37 * hash) + CREATE_APPLICATION_FIELD_NUMBER;
         hash = (53 * hash) + getCreateApplication().hashCode();
@@ -11177,6 +15551,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasOpenFineTuningPipeline()) {
         hash = (37 * hash) + OPEN_FINE_TUNING_PIPELINE_FIELD_NUMBER;
         hash = (53 * hash) + getOpenFineTuningPipeline().hashCode();
+      }
+      if (hasOpenFineTuningPipelines()) {
+        hash = (37 * hash) + OPEN_FINE_TUNING_PIPELINES_FIELD_NUMBER;
+        hash = (53 * hash) + getOpenFineTuningPipelines().hashCode();
       }
       if (hasOpenPromptTuningPipeline()) {
         hash = (37 * hash) + OPEN_PROMPT_TUNING_PIPELINE_FIELD_NUMBER;
@@ -11189,6 +15567,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasDeploy()) {
         hash = (37 * hash) + DEPLOY_FIELD_NUMBER;
         hash = (53 * hash) + getDeploy().hashCode();
+      }
+      if (hasDeployGke()) {
+        hash = (37 * hash) + DEPLOY_GKE_FIELD_NUMBER;
+        hash = (53 * hash) + getDeployGke().hashCode();
       }
       if (hasOpenGenerationAiStudio()) {
         hash = (37 * hash) + OPEN_GENERATION_AI_STUDIO_FIELD_NUMBER;
@@ -11349,11 +15731,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getViewRestApiFieldBuilder();
           getOpenNotebookFieldBuilder();
+          getOpenNotebooksFieldBuilder();
           getCreateApplicationFieldBuilder();
           getOpenFineTuningPipelineFieldBuilder();
+          getOpenFineTuningPipelinesFieldBuilder();
           getOpenPromptTuningPipelineFieldBuilder();
           getOpenGenieFieldBuilder();
           getDeployFieldBuilder();
+          getDeployGkeFieldBuilder();
           getOpenGenerationAiStudioFieldBuilder();
           getRequestAccessFieldBuilder();
           getOpenEvaluationPipelineFieldBuilder();
@@ -11374,6 +15759,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openNotebookBuilder_.dispose();
           openNotebookBuilder_ = null;
         }
+        openNotebooks_ = null;
+        if (openNotebooksBuilder_ != null) {
+          openNotebooksBuilder_.dispose();
+          openNotebooksBuilder_ = null;
+        }
         createApplication_ = null;
         if (createApplicationBuilder_ != null) {
           createApplicationBuilder_.dispose();
@@ -11383,6 +15773,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (openFineTuningPipelineBuilder_ != null) {
           openFineTuningPipelineBuilder_.dispose();
           openFineTuningPipelineBuilder_ = null;
+        }
+        openFineTuningPipelines_ = null;
+        if (openFineTuningPipelinesBuilder_ != null) {
+          openFineTuningPipelinesBuilder_.dispose();
+          openFineTuningPipelinesBuilder_ = null;
         }
         openPromptTuningPipeline_ = null;
         if (openPromptTuningPipelineBuilder_ != null) {
@@ -11398,6 +15793,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (deployBuilder_ != null) {
           deployBuilder_.dispose();
           deployBuilder_ = null;
+        }
+        deployGke_ = null;
+        if (deployGkeBuilder_ != null) {
+          deployGkeBuilder_.dispose();
+          deployGkeBuilder_ = null;
         }
         openGenerationAiStudio_ = null;
         if (openGenerationAiStudioBuilder_ != null) {
@@ -11464,52 +15864,68 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.openNotebooks_ =
+              openNotebooksBuilder_ == null ? openNotebooks_ : openNotebooksBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.createApplication_ =
               createApplicationBuilder_ == null
                   ? createApplication_
                   : createApplicationBuilder_.build();
-          to_bitField0_ |= 0x00000004;
+          to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.openFineTuningPipeline_ =
               openFineTuningPipelineBuilder_ == null
                   ? openFineTuningPipeline_
                   : openFineTuningPipelineBuilder_.build();
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.openFineTuningPipelines_ =
+              openFineTuningPipelinesBuilder_ == null
+                  ? openFineTuningPipelines_
+                  : openFineTuningPipelinesBuilder_.build();
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.openPromptTuningPipeline_ =
               openPromptTuningPipelineBuilder_ == null
                   ? openPromptTuningPipeline_
                   : openPromptTuningPipelineBuilder_.build();
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.openGenie_ = openGenieBuilder_ == null ? openGenie_ : openGenieBuilder_.build();
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.deploy_ = deployBuilder_ == null ? deploy_ : deployBuilder_.build();
           to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.openGenie_ = openGenieBuilder_ == null ? openGenie_ : openGenieBuilder_.build();
+          to_bitField0_ |= 0x00000080;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.deploy_ = deployBuilder_ == null ? deploy_ : deployBuilder_.build();
+          to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.deployGke_ = deployGkeBuilder_ == null ? deployGke_ : deployGkeBuilder_.build();
+          to_bitField0_ |= 0x00000200;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.openGenerationAiStudio_ =
               openGenerationAiStudioBuilder_ == null
                   ? openGenerationAiStudio_
                   : openGenerationAiStudioBuilder_.build();
-          to_bitField0_ |= 0x00000080;
+          to_bitField0_ |= 0x00000400;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.requestAccess_ =
               requestAccessBuilder_ == null ? requestAccess_ : requestAccessBuilder_.build();
-          to_bitField0_ |= 0x00000100;
+          to_bitField0_ |= 0x00000800;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.openEvaluationPipeline_ =
               openEvaluationPipelineBuilder_ == null
                   ? openEvaluationPipeline_
                   : openEvaluationPipelineBuilder_.build();
-          to_bitField0_ |= 0x00000200;
+          to_bitField0_ |= 0x00001000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -11570,11 +15986,17 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (other.hasOpenNotebook()) {
           mergeOpenNotebook(other.getOpenNotebook());
         }
+        if (other.hasOpenNotebooks()) {
+          mergeOpenNotebooks(other.getOpenNotebooks());
+        }
         if (other.hasCreateApplication()) {
           mergeCreateApplication(other.getCreateApplication());
         }
         if (other.hasOpenFineTuningPipeline()) {
           mergeOpenFineTuningPipeline(other.getOpenFineTuningPipeline());
+        }
+        if (other.hasOpenFineTuningPipelines()) {
+          mergeOpenFineTuningPipelines(other.getOpenFineTuningPipelines());
         }
         if (other.hasOpenPromptTuningPipeline()) {
           mergeOpenPromptTuningPipeline(other.getOpenPromptTuningPipeline());
@@ -11584,6 +16006,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasDeploy()) {
           mergeDeploy(other.getDeploy());
+        }
+        if (other.hasDeployGke()) {
+          mergeDeployGke(other.getDeployGke());
         }
         if (other.hasOpenGenerationAiStudio()) {
           mergeOpenGenerationAiStudio(other.getOpenGenerationAiStudio());
@@ -11636,55 +16061,74 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getCreateApplicationFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getOpenFineTuningPipelineFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(
                       getOpenPromptTuningPipelineFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(getOpenGenieFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(getDeployFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getOpenGenerationAiStudioFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 66
               case 74:
                 {
                   input.readMessage(getRequestAccessFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000100;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 74
               case 90:
                 {
                   input.readMessage(
                       getOpenEvaluationPipelineFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 90
+              case 98:
+                {
+                  input.readMessage(getOpenNotebooksFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 98
+              case 106:
+                {
+                  input.readMessage(
+                      getOpenFineTuningPipelinesFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 106
+              case 114:
+                {
+                  input.readMessage(getDeployGkeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 114
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12151,6 +16595,225 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return openNotebookBuilder_;
       }
 
+      private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          openNotebooks_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenNotebooksOrBuilder>
+          openNotebooksBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the openNotebooks field is set.
+       */
+      public boolean hasOpenNotebooks() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The openNotebooks.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+          getOpenNotebooks() {
+        if (openNotebooksBuilder_ == null) {
+          return openNotebooks_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                  .getDefaultInstance()
+              : openNotebooks_;
+        } else {
+          return openNotebooksBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOpenNotebooks(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks value) {
+        if (openNotebooksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          openNotebooks_ = value;
+        } else {
+          openNotebooksBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOpenNotebooks(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks.Builder
+              builderForValue) {
+        if (openNotebooksBuilder_ == null) {
+          openNotebooks_ = builderForValue.build();
+        } else {
+          openNotebooksBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeOpenNotebooks(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks value) {
+        if (openNotebooksBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && openNotebooks_ != null
+              && openNotebooks_
+                  != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                      .getDefaultInstance()) {
+            getOpenNotebooksBuilder().mergeFrom(value);
+          } else {
+            openNotebooks_ = value;
+          }
+        } else {
+          openNotebooksBuilder_.mergeFrom(value);
+        }
+        if (openNotebooks_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearOpenNotebooks() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        openNotebooks_ = null;
+        if (openNotebooksBuilder_ != null) {
+          openNotebooksBuilder_.dispose();
+          openNotebooksBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks.Builder
+          getOpenNotebooksBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getOpenNotebooksFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooksOrBuilder
+          getOpenNotebooksOrBuilder() {
+        if (openNotebooksBuilder_ != null) {
+          return openNotebooksBuilder_.getMessageOrBuilder();
+        } else {
+          return openNotebooks_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                  .getDefaultInstance()
+              : openNotebooks_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open notebooks of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks open_notebooks = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenNotebooksOrBuilder>
+          getOpenNotebooksFieldBuilder() {
+        if (openNotebooksBuilder_ == null) {
+          openNotebooksBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenNotebooks
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenNotebooksOrBuilder>(
+                  getOpenNotebooks(), getParentForChildren(), isClean());
+          openNotebooks_ = null;
+        }
+        return openNotebooksBuilder_;
+      }
+
       private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences
           createApplication_;
@@ -12176,7 +16839,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the createApplication field is set.
        */
       public boolean hasCreateApplication() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -12225,7 +16888,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           createApplicationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12249,7 +16912,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           createApplicationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12268,7 +16931,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (createApplicationBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && createApplication_ != null
               && createApplication_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -12281,7 +16944,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           createApplicationBuilder_.mergeFrom(value);
         }
         if (createApplication_ != null) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
@@ -12298,7 +16961,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearCreateApplication() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         createApplication_ = null;
         if (createApplicationBuilder_ != null) {
           createApplicationBuilder_.dispose();
@@ -12321,7 +16984,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getCreateApplicationBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getCreateApplicationFieldBuilder().getBuilder();
       }
@@ -12407,7 +17070,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openFineTuningPipeline field is set.
        */
       public boolean hasOpenFineTuningPipeline() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -12456,7 +17119,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openFineTuningPipelineBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12480,7 +17143,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openFineTuningPipelineBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12499,7 +17162,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openFineTuningPipelineBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && openFineTuningPipeline_ != null
               && openFineTuningPipeline_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -12512,7 +17175,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openFineTuningPipelineBuilder_.mergeFrom(value);
         }
         if (openFineTuningPipeline_ != null) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
@@ -12529,7 +17192,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenFineTuningPipeline() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         openFineTuningPipeline_ = null;
         if (openFineTuningPipelineBuilder_ != null) {
           openFineTuningPipelineBuilder_.dispose();
@@ -12552,7 +17215,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenFineTuningPipelineBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getOpenFineTuningPipelineFieldBuilder().getBuilder();
       }
@@ -12614,6 +17277,236 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelines
+          openFineTuningPipelines_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelinesOrBuilder>
+          openFineTuningPipelinesBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the openFineTuningPipelines field is set.
+       */
+      public boolean hasOpenFineTuningPipelines() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The openFineTuningPipelines.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+          getOpenFineTuningPipelines() {
+        if (openFineTuningPipelinesBuilder_ == null) {
+          return openFineTuningPipelines_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines.getDefaultInstance()
+              : openFineTuningPipelines_;
+        } else {
+          return openFineTuningPipelinesBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOpenFineTuningPipelines(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              value) {
+        if (openFineTuningPipelinesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          openFineTuningPipelines_ = value;
+        } else {
+          openFineTuningPipelinesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOpenFineTuningPipelines(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+                  .Builder
+              builderForValue) {
+        if (openFineTuningPipelinesBuilder_ == null) {
+          openFineTuningPipelines_ = builderForValue.build();
+        } else {
+          openFineTuningPipelinesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeOpenFineTuningPipelines(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              value) {
+        if (openFineTuningPipelinesBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && openFineTuningPipelines_ != null
+              && openFineTuningPipelines_
+                  != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelines.getDefaultInstance()) {
+            getOpenFineTuningPipelinesBuilder().mergeFrom(value);
+          } else {
+            openFineTuningPipelines_ = value;
+          }
+        } else {
+          openFineTuningPipelinesBuilder_.mergeFrom(value);
+        }
+        if (openFineTuningPipelines_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearOpenFineTuningPipelines() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        openFineTuningPipelines_ = null;
+        if (openFineTuningPipelinesBuilder_ != null) {
+          openFineTuningPipelinesBuilder_.dispose();
+          openFineTuningPipelinesBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines
+              .Builder
+          getOpenFineTuningPipelinesBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getOpenFineTuningPipelinesFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .OpenFineTuningPipelinesOrBuilder
+          getOpenFineTuningPipelinesOrBuilder() {
+        if (openFineTuningPipelinesBuilder_ != null) {
+          return openFineTuningPipelinesBuilder_.getMessageOrBuilder();
+        } else {
+          return openFineTuningPipelines_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines.getDefaultInstance()
+              : openFineTuningPipelines_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open fine-tuning pipelines of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.OpenFineTuningPipelines open_fine_tuning_pipelines = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelines.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                  .OpenFineTuningPipelinesOrBuilder>
+          getOpenFineTuningPipelinesFieldBuilder() {
+        if (openFineTuningPipelinesBuilder_ == null) {
+          openFineTuningPipelinesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelines,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelines.Builder,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .OpenFineTuningPipelinesOrBuilder>(
+                  getOpenFineTuningPipelines(), getParentForChildren(), isClean());
+          openFineTuningPipelines_ = null;
+        }
+        return openFineTuningPipelinesBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences
           openPromptTuningPipeline_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -12638,7 +17531,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openPromptTuningPipeline field is set.
        */
       public boolean hasOpenPromptTuningPipeline() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -12687,7 +17580,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openPromptTuningPipelineBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12711,7 +17604,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openPromptTuningPipelineBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12730,7 +17623,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openPromptTuningPipelineBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && openPromptTuningPipeline_ != null
               && openPromptTuningPipeline_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -12743,7 +17636,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openPromptTuningPipelineBuilder_.mergeFrom(value);
         }
         if (openPromptTuningPipeline_ != null) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         return this;
@@ -12760,7 +17653,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenPromptTuningPipeline() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         openPromptTuningPipeline_ = null;
         if (openPromptTuningPipelineBuilder_ != null) {
           openPromptTuningPipelineBuilder_.dispose();
@@ -12783,7 +17676,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenPromptTuningPipelineBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getOpenPromptTuningPipelineFieldBuilder().getBuilder();
       }
@@ -12869,7 +17762,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openGenie field is set.
        */
       public boolean hasOpenGenie() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        *
@@ -12918,7 +17811,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openGenieBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -12942,7 +17835,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openGenieBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -12961,7 +17854,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openGenieBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000080) != 0)
               && openGenie_ != null
               && openGenie_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -12974,7 +17867,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openGenieBuilder_.mergeFrom(value);
         }
         if (openGenie_ != null) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         return this;
@@ -12991,7 +17884,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenGenie() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         openGenie_ = null;
         if (openGenieBuilder_ != null) {
           openGenieBuilder_.dispose();
@@ -13014,7 +17907,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenGenieBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
         return getOpenGenieFieldBuilder().getBuilder();
       }
@@ -13095,7 +17988,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the deploy field is set.
        */
       public boolean hasDeploy() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        *
@@ -13141,7 +18034,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           deployBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -13164,7 +18057,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           deployBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -13182,7 +18075,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeDeploy(
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy value) {
         if (deployBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)
+          if (((bitField0_ & 0x00000100) != 0)
               && deploy_ != null
               && deploy_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
@@ -13195,7 +18088,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           deployBuilder_.mergeFrom(value);
         }
         if (deploy_ != null) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
@@ -13212,7 +18105,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearDeploy() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         deploy_ = null;
         if (deployBuilder_ != null) {
           deployBuilder_.dispose();
@@ -13234,7 +18127,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
           getDeployBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getDeployFieldBuilder().getBuilder();
       }
@@ -13288,6 +18181,220 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return deployBuilder_;
       }
 
+      private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deployGke_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder>
+          deployGkeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the deployGke field is set.
+       */
+      public boolean hasDeployGke() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The deployGke.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+          getDeployGke() {
+        if (deployGkeBuilder_ == null) {
+          return deployGke_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+                  .getDefaultInstance()
+              : deployGke_;
+        } else {
+          return deployGkeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDeployGke(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke value) {
+        if (deployGkeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deployGke_ = value;
+        } else {
+          deployGkeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDeployGke(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder
+              builderForValue) {
+        if (deployGkeBuilder_ == null) {
+          deployGke_ = builderForValue.build();
+        } else {
+          deployGkeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDeployGke(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke value) {
+        if (deployGkeBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)
+              && deployGke_ != null
+              && deployGke_
+                  != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+                      .getDefaultInstance()) {
+            getDeployGkeBuilder().mergeFrom(value);
+          } else {
+            deployGke_ = value;
+          }
+        } else {
+          deployGkeBuilder_.mergeFrom(value);
+        }
+        if (deployGke_ != null) {
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDeployGke() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        deployGke_ = null;
+        if (deployGkeBuilder_ != null) {
+          deployGkeBuilder_.dispose();
+          deployGkeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder
+          getDeployGkeBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return getDeployGkeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder
+          getDeployGkeOrBuilder() {
+        if (deployGkeBuilder_ != null) {
+          return deployGkeBuilder_.getMessageOrBuilder();
+        } else {
+          return deployGke_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
+                  .getDefaultInstance()
+              : deployGke_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Deploy PublisherModel to Google Kubernetes Engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deploy_gke = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGkeOrBuilder>
+          getDeployGkeFieldBuilder() {
+        if (deployGkeBuilder_ == null) {
+          deployGkeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .DeployGkeOrBuilder>(getDeployGke(), getParentForChildren(), isClean());
+          deployGke_ = null;
+        }
+        return deployGkeBuilder_;
+      }
+
       private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences
           openGenerationAiStudio_;
@@ -13313,7 +18420,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openGenerationAiStudio field is set.
        */
       public boolean hasOpenGenerationAiStudio() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -13362,7 +18469,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openGenerationAiStudioBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -13386,7 +18493,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openGenerationAiStudioBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -13405,7 +18512,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openGenerationAiStudioBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)
+          if (((bitField0_ & 0x00000400) != 0)
               && openGenerationAiStudio_ != null
               && openGenerationAiStudio_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -13418,7 +18525,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openGenerationAiStudioBuilder_.mergeFrom(value);
         }
         if (openGenerationAiStudio_ != null) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         return this;
@@ -13435,7 +18542,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenGenerationAiStudio() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000400);
         openGenerationAiStudio_ = null;
         if (openGenerationAiStudioBuilder_ != null) {
           openGenerationAiStudioBuilder_.dispose();
@@ -13458,7 +18565,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenGenerationAiStudioBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getOpenGenerationAiStudioFieldBuilder().getBuilder();
       }
@@ -13544,7 +18651,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the requestAccess field is set.
        */
       public boolean hasRequestAccess() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        *
@@ -13593,7 +18700,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           requestAccessBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -13617,7 +18724,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           requestAccessBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -13636,7 +18743,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (requestAccessBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)
+          if (((bitField0_ & 0x00000800) != 0)
               && requestAccess_ != null
               && requestAccess_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -13649,7 +18756,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           requestAccessBuilder_.mergeFrom(value);
         }
         if (requestAccess_ != null) {
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         return this;
@@ -13666,7 +18773,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearRequestAccess() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000800);
         requestAccess_ = null;
         if (requestAccessBuilder_ != null) {
           requestAccessBuilder_.dispose();
@@ -13689,7 +18796,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getRequestAccessBuilder() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getRequestAccessFieldBuilder().getBuilder();
       }
@@ -13775,7 +18882,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openEvaluationPipeline field is set.
        */
       public boolean hasOpenEvaluationPipeline() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        *
@@ -13824,7 +18931,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openEvaluationPipelineBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -13848,7 +18955,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openEvaluationPipelineBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -13867,7 +18974,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openEvaluationPipelineBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)
+          if (((bitField0_ & 0x00001000) != 0)
               && openEvaluationPipeline_ != null
               && openEvaluationPipeline_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -13880,7 +18987,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openEvaluationPipelineBuilder_.mergeFrom(value);
         }
         if (openEvaluationPipeline_ != null) {
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         return this;
@@ -13897,7 +19004,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenEvaluationPipeline() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00001000);
         openEvaluationPipeline_ = null;
         if (openEvaluationPipelineBuilder_ != null) {
           openEvaluationPipelineBuilder_.dispose();
@@ -13920,7 +19027,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenEvaluationPipelineBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
         return getOpenEvaluationPipelineFieldBuilder().getBuilder();
       }

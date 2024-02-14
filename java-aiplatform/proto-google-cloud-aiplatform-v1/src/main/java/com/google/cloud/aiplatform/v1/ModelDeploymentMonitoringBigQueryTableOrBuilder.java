@@ -108,4 +108,35 @@ public interface ModelDeploymentMonitoringBigQueryTableOrBuilder
    * @return The bytes for bigqueryTablePath.
    */
   com.google.protobuf.ByteString getBigqueryTablePathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version of the request/response logging BigQuery
+   * table. Default to v1 if unset.
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requestResponseLoggingSchemaVersion.
+   */
+  java.lang.String getRequestResponseLoggingSchemaVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version of the request/response logging BigQuery
+   * table. Default to v1 if unset.
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for requestResponseLoggingSchemaVersion.
+   */
+  com.google.protobuf.ByteString getRequestResponseLoggingSchemaVersionBytes();
 }

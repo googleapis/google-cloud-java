@@ -236,8 +236,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model. The only supported tool is currently
-   * `Function`
+   * knowledge and scope of the model.
    * </pre>
    *
    * <code>
@@ -257,8 +256,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model. The only supported tool is currently
-   * `Function`
+   * knowledge and scope of the model.
    * </pre>
    *
    * <code>
@@ -279,8 +277,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model. The only supported tool is currently
-   * `Function`
+   * knowledge and scope of the model.
    * </pre>
    *
    * <code>
@@ -300,8 +297,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model. The only supported tool is currently
-   * `Function`
+   * knowledge and scope of the model.
    * </pre>
    *
    * <code>
@@ -321,8 +317,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model. The only supported tool is currently
-   * `Function`
+   * knowledge and scope of the model.
    * </pre>
    *
    * <code>
@@ -1671,8 +1666,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1695,8 +1689,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1719,8 +1712,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1743,8 +1735,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1773,8 +1764,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1801,8 +1791,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1831,8 +1820,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1861,8 +1849,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1888,8 +1875,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1916,8 +1902,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1944,8 +1929,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1971,8 +1955,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -1998,8 +1981,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -2018,8 +2000,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -2042,8 +2023,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -2067,8 +2047,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -2088,8 +2067,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>
@@ -2109,8 +2087,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      * A `Tool` is a piece of code that enables the system to interact with
      * external systems to perform an action, or set of actions, outside of
-     * knowledge and scope of the model. The only supported tool is currently
-     * `Function`
+     * knowledge and scope of the model.
      * </pre>
      *
      * <code>

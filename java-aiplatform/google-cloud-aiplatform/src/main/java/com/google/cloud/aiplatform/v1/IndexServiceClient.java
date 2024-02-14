@@ -1089,6 +1089,7 @@ public class IndexServiceClient implements BackgroundResource {
    *       UpsertDatapointsRequest.newBuilder()
    *           .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
    *           .addAllDatapoints(new ArrayList<IndexDatapoint>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   UpsertDatapointsResponse response = indexServiceClient.upsertDatapoints(request);
    * }
@@ -1118,6 +1119,7 @@ public class IndexServiceClient implements BackgroundResource {
    *       UpsertDatapointsRequest.newBuilder()
    *           .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
    *           .addAllDatapoints(new ArrayList<IndexDatapoint>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<UpsertDatapointsResponse> future =
    *       indexServiceClient.upsertDatapointsCallable().futureCall(request);

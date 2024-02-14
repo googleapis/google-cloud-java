@@ -296,6 +296,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BatchCancelPipelineJobs</td>
+ *      <td><p> Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal states, and skip the jobs that are already terminated. If the operation failed, none of the pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs periodically to check the cancellation status. This operation will return an LRO.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCancelPipelineJobsAsync(BatchCancelPipelineJobsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> batchCancelPipelineJobsAsync(LocationName parent, List&lt;String&gt; names)
+ *           <li><p> batchCancelPipelineJobsAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCancelPipelineJobsOperationCallable()
+ *           <li><p> batchCancelPipelineJobsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1314,6 +1334,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPipelineJob(PipelineJob.newBuilder().build())
    *           .setPipelineJobId("pipelineJobId-1711315914")
+   *           .setPreflightValidations(true)
    *           .build();
    *   PipelineJob response = pipelineServiceClient.createPipelineJob(request);
    * }
@@ -1344,6 +1365,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPipelineJob(PipelineJob.newBuilder().build())
    *           .setPipelineJobId("pipelineJobId-1711315914")
+   *           .setPreflightValidations(true)
    *           .build();
    *   ApiFuture<PipelineJob> future =
    *       pipelineServiceClient.createPipelineJobCallable().futureCall(request);
@@ -2098,6 +2120,190 @@ public class PipelineServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {
     return stub.cancelPipelineJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal
+   * states, and skip the jobs that are already terminated. If the operation failed, none of the
+   * pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs
+   * periodically to check the cancellation status. This operation will return an LRO.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchCancelPipelineJobsResponse response =
+   *       pipelineServiceClient.batchCancelPipelineJobsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the PipelineJobs' parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param names Required. The names of the PipelineJobs to cancel. A maximum of 32 PipelineJobs
+   *     can be cancelled in a batch. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipelineJob}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BatchCancelPipelineJobsResponse, BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsAsync(LocationName parent, List<String> names) {
+    BatchCancelPipelineJobsRequest request =
+        BatchCancelPipelineJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchCancelPipelineJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal
+   * states, and skip the jobs that are already terminated. If the operation failed, none of the
+   * pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs
+   * periodically to check the cancellation status. This operation will return an LRO.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchCancelPipelineJobsResponse response =
+   *       pipelineServiceClient.batchCancelPipelineJobsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the PipelineJobs' parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param names Required. The names of the PipelineJobs to cancel. A maximum of 32 PipelineJobs
+   *     can be cancelled in a batch. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipelineJob}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BatchCancelPipelineJobsResponse, BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsAsync(String parent, List<String> names) {
+    BatchCancelPipelineJobsRequest request =
+        BatchCancelPipelineJobsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchCancelPipelineJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal
+   * states, and skip the jobs that are already terminated. If the operation failed, none of the
+   * pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs
+   * periodically to check the cancellation status. This operation will return an LRO.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   BatchCancelPipelineJobsRequest request =
+   *       BatchCancelPipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchCancelPipelineJobsResponse response =
+   *       pipelineServiceClient.batchCancelPipelineJobsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BatchCancelPipelineJobsResponse, BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsAsync(BatchCancelPipelineJobsRequest request) {
+    return batchCancelPipelineJobsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal
+   * states, and skip the jobs that are already terminated. If the operation failed, none of the
+   * pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs
+   * periodically to check the cancellation status. This operation will return an LRO.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   BatchCancelPipelineJobsRequest request =
+   *       BatchCancelPipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<BatchCancelPipelineJobsResponse, BatchCancelPipelineJobsOperationMetadata>
+   *       future =
+   *           pipelineServiceClient.batchCancelPipelineJobsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCancelPipelineJobsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationCallable() {
+    return stub.batchCancelPipelineJobsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal
+   * states, and skip the jobs that are already terminated. If the operation failed, none of the
+   * pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs
+   * periodically to check the cancellation status. This operation will return an LRO.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   BatchCancelPipelineJobsRequest request =
+   *       BatchCancelPipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       pipelineServiceClient.batchCancelPipelineJobsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsCallable() {
+    return stub.batchCancelPipelineJobsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

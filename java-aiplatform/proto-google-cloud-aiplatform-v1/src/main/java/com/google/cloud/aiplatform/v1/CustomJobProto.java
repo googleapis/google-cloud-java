@@ -136,17 +136,16 @@ public final class CustomJobProto {
           + "c\022\037\n\022executor_image_uri\030\001 \001(\tB\003\340A\002\022\031\n\014pa"
           + "ckage_uris\030\002 \003(\tB\003\340A\002\022\032\n\rpython_module\030\003"
           + " \001(\tB\003\340A\002\022\014\n\004args\030\004 \003(\t\022/\n\003env\030\005 \003(\0132\".g"
-          + "oogle.cloud.aiplatform.v1.EnvVar\"\270\001\n\nSch"
-          + "eduling\022*\n\007timeout\030\001 \001(\0132\031.google.protob"
-          + "uf.Duration\022%\n\035restart_job_on_worker_res"
-          + "tart\030\003 \001(\010\022\034\n\017disable_retries\030\005 \001(\010B\003\340A\001"
-          + "\0229\n\021max_wait_duration\030\006 \001(\0132\031.google.pro"
-          + "tobuf.DurationB\003\340A\001B\314\001\n\036com.google.cloud"
-          + ".aiplatform.v1B\016CustomJobProtoP\001Z>cloud."
-          + "google.com/go/aiplatform/apiv1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
-          + "gle::Cloud::AIPlatform::V1b\006proto3"
+          + "oogle.cloud.aiplatform.v1.EnvVar\"}\n\nSche"
+          + "duling\022*\n\007timeout\030\001 \001(\0132\031.google.protobu"
+          + "f.Duration\022%\n\035restart_job_on_worker_rest"
+          + "art\030\003 \001(\010\022\034\n\017disable_retries\030\005 \001(\010B\003\340A\001B"
+          + "\314\001\n\036com.google.cloud.aiplatform.v1B\016Cust"
+          + "omJobProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -254,7 +253,7 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Scheduling_descriptor,
             new java.lang.String[] {
-              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries", "MaxWaitDuration",
+              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

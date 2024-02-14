@@ -142,6 +142,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
    * Updatable fields:
    *
    *   * `labels`
+   *   * `serviceAgentType`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -167,6 +168,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
    * Updatable fields:
    *
    *   * `labels`
+   *   * `serviceAgentType`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -192,6 +194,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
    * Updatable fields:
    *
    *   * `labels`
+   *   * `serviceAgentType`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -841,6 +844,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -865,6 +869,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -895,6 +900,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -927,6 +933,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -956,6 +963,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -993,6 +1001,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1022,6 +1031,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1046,6 +1056,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1074,6 +1085,7 @@ public final class UpdateFeatureViewRequest extends com.google.protobuf.Generate
      * Updatable fields:
      *
      *   * `labels`
+     *   * `serviceAgentType`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

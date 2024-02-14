@@ -667,9 +667,6 @@
             "ComputeTokens": {
               "methods": ["computeTokens", "computeTokens", "computeTokens", "computeTokensCallable"]
             },
-            "CountTokens": {
-              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
-            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1021,6 +1018,9 @@
         "grpc": {
           "libraryClient": "PipelineServiceClient",
           "rpcs": {
+            "BatchCancelPipelineJobs": {
+              "methods": ["batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsOperationCallable", "batchCancelPipelineJobsCallable"]
+            },
             "BatchDeletePipelineJobs": {
               "methods": ["batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsOperationCallable", "batchDeletePipelineJobsCallable"]
             },

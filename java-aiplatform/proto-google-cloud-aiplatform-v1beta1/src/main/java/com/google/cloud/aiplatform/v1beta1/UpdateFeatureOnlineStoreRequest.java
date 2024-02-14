@@ -144,6 +144,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
    * Updatable fields:
    *
    *   * `big_query_source`
+   *   * `bigtable`
    *   * `labels`
    *   * `sync_config`
    * </pre>
@@ -171,6 +172,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
    * Updatable fields:
    *
    *   * `big_query_source`
+   *   * `bigtable`
    *   * `labels`
    *   * `sync_config`
    * </pre>
@@ -198,6 +200,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
    * Updatable fields:
    *
    *   * `big_query_source`
+   *   * `bigtable`
    *   * `labels`
    *   * `sync_config`
    * </pre>
@@ -865,6 +868,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -891,6 +895,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -923,6 +928,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -957,6 +963,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -988,6 +995,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -1027,6 +1035,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -1058,6 +1067,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -1084,6 +1094,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>
@@ -1114,6 +1125,7 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * Updatable fields:
      *
      *   * `big_query_source`
+     *   * `bigtable`
      *   * `labels`
      *   * `sync_config`
      * </pre>

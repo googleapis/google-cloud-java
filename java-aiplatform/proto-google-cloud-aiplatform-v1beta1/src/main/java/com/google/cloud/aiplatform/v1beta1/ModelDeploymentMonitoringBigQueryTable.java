@@ -45,6 +45,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
     logSource_ = 0;
     logType_ = 0;
     bigqueryTablePath_ = "";
+    requestResponseLoggingSchemaVersion_ = "";
   }
 
   @java.lang.Override
@@ -534,6 +535,63 @@ public final class ModelDeploymentMonitoringBigQueryTable
     }
   }
 
+  public static final int REQUEST_RESPONSE_LOGGING_SCHEMA_VERSION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestResponseLoggingSchemaVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version of the request/response logging BigQuery
+   * table. Default to v1 if unset.
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requestResponseLoggingSchemaVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestResponseLoggingSchemaVersion() {
+    java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestResponseLoggingSchemaVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version of the request/response logging BigQuery
+   * table. Default to v1 if unset.
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for requestResponseLoggingSchemaVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestResponseLoggingSchemaVersionBytes() {
+    java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestResponseLoggingSchemaVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -563,6 +621,11 @@ public final class ModelDeploymentMonitoringBigQueryTable
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bigqueryTablePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bigqueryTablePath_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        requestResponseLoggingSchemaVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 4, requestResponseLoggingSchemaVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -587,6 +650,12 @@ public final class ModelDeploymentMonitoringBigQueryTable
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bigqueryTablePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bigqueryTablePath_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        requestResponseLoggingSchemaVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              4, requestResponseLoggingSchemaVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -607,6 +676,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
     if (logSource_ != other.logSource_) return false;
     if (logType_ != other.logType_) return false;
     if (!getBigqueryTablePath().equals(other.getBigqueryTablePath())) return false;
+    if (!getRequestResponseLoggingSchemaVersion()
+        .equals(other.getRequestResponseLoggingSchemaVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -624,6 +695,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
     hash = (53 * hash) + logType_;
     hash = (37 * hash) + BIGQUERY_TABLE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getBigqueryTablePath().hashCode();
+    hash = (37 * hash) + REQUEST_RESPONSE_LOGGING_SCHEMA_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestResponseLoggingSchemaVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -776,6 +849,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
       logSource_ = 0;
       logType_ = 0;
       bigqueryTablePath_ = "";
+      requestResponseLoggingSchemaVersion_ = "";
       return this;
     }
 
@@ -825,6 +899,9 @@ public final class ModelDeploymentMonitoringBigQueryTable
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.bigqueryTablePath_ = bigqueryTablePath_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestResponseLoggingSchemaVersion_ = requestResponseLoggingSchemaVersion_;
       }
     }
 
@@ -889,6 +966,11 @@ public final class ModelDeploymentMonitoringBigQueryTable
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getRequestResponseLoggingSchemaVersion().isEmpty()) {
+        requestResponseLoggingSchemaVersion_ = other.requestResponseLoggingSchemaVersion_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -933,6 +1015,12 @@ public final class ModelDeploymentMonitoringBigQueryTable
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                requestResponseLoggingSchemaVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1277,6 +1365,129 @@ public final class ModelDeploymentMonitoringBigQueryTable
       checkByteStringIsUtf8(value);
       bigqueryTablePath_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestResponseLoggingSchemaVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version of the request/response logging BigQuery
+     * table. Default to v1 if unset.
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The requestResponseLoggingSchemaVersion.
+     */
+    public java.lang.String getRequestResponseLoggingSchemaVersion() {
+      java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestResponseLoggingSchemaVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version of the request/response logging BigQuery
+     * table. Default to v1 if unset.
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for requestResponseLoggingSchemaVersion.
+     */
+    public com.google.protobuf.ByteString getRequestResponseLoggingSchemaVersionBytes() {
+      java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestResponseLoggingSchemaVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version of the request/response logging BigQuery
+     * table. Default to v1 if unset.
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The requestResponseLoggingSchemaVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestResponseLoggingSchemaVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestResponseLoggingSchemaVersion_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version of the request/response logging BigQuery
+     * table. Default to v1 if unset.
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestResponseLoggingSchemaVersion() {
+      requestResponseLoggingSchemaVersion_ =
+          getDefaultInstance().getRequestResponseLoggingSchemaVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version of the request/response logging BigQuery
+     * table. Default to v1 if unset.
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for requestResponseLoggingSchemaVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestResponseLoggingSchemaVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestResponseLoggingSchemaVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

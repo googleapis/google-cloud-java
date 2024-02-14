@@ -3309,7 +3309,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models or Large Models.
+   * Not required for AutoML Models.
    * </pre>
    *
    * <code>
@@ -3330,7 +3330,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models or Large Models.
+   * Not required for AutoML Models.
    * </pre>
    *
    * <code>
@@ -3353,7 +3353,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models or Large Models.
+   * Not required for AutoML Models.
    * </pre>
    *
    * <code>
@@ -3377,7 +3377,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The path to the directory containing the Model artifact and any
-   * of its supporting files. Not present for AutoML Models or Large Models.
+   * of its supporting files. Not required for AutoML Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3401,7 +3401,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The path to the directory containing the Model artifact and any
-   * of its supporting files. Not present for AutoML Models or Large Models.
+   * of its supporting files. Not required for AutoML Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4665,7 +4665,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Source of a model. It can either be automl training pipeline,
-   * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+   * Model Garden.
    * </pre>
    *
    * <code>
@@ -4683,7 +4684,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Source of a model. It can either be automl training pipeline,
-   * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+   * Model Garden.
    * </pre>
    *
    * <code>
@@ -4703,7 +4705,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Source of a model. It can either be automl training pipeline,
-   * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+   * Model Garden.
    * </pre>
    *
    * <code>
@@ -8523,7 +8526,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8543,7 +8546,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8569,7 +8572,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8597,7 +8600,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8623,7 +8626,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8658,7 +8661,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8683,7 +8686,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8704,7 +8707,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8729,7 +8732,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models or Large Models.
+     * Not required for AutoML Models.
      * </pre>
      *
      * <code>
@@ -8759,7 +8762,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models or Large Models.
+     * of its supporting files. Not required for AutoML Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8782,7 +8785,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models or Large Models.
+     * of its supporting files. Not required for AutoML Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8805,7 +8808,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models or Large Models.
+     * of its supporting files. Not required for AutoML Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8827,7 +8830,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models or Large Models.
+     * of its supporting files. Not required for AutoML Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8845,7 +8848,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models or Large Models.
+     * of its supporting files. Not required for AutoML Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -12271,7 +12274,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12288,7 +12292,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12311,7 +12316,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12336,7 +12342,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12359,7 +12366,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12390,7 +12398,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12412,7 +12421,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12429,7 +12439,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>
@@ -12451,7 +12462,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Source of a model. It can either be automl training pipeline,
-     * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+     * Model Garden.
      * </pre>
      *
      * <code>

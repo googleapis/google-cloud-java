@@ -40,6 +40,7 @@ public class SyncCreatePipelineJob {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPipelineJob(PipelineJob.newBuilder().build())
               .setPipelineJobId("pipelineJobId-1711315914")
+              .setPreflightValidations(true)
               .build();
       PipelineJob response = pipelineServiceClient.createPipelineJob(request);
     }

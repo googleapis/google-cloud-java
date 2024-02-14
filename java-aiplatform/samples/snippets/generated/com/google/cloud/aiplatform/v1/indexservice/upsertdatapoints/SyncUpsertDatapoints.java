@@ -22,6 +22,7 @@ import com.google.cloud.aiplatform.v1.IndexName;
 import com.google.cloud.aiplatform.v1.IndexServiceClient;
 import com.google.cloud.aiplatform.v1.UpsertDatapointsRequest;
 import com.google.cloud.aiplatform.v1.UpsertDatapointsResponse;
+import com.google.protobuf.FieldMask;
 import java.util.ArrayList;
 
 public class SyncUpsertDatapoints {
@@ -41,6 +42,7 @@ public class SyncUpsertDatapoints {
           UpsertDatapointsRequest.newBuilder()
               .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
               .addAllDatapoints(new ArrayList<IndexDatapoint>())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       UpsertDatapointsResponse response = indexServiceClient.upsertDatapoints(request);
     }

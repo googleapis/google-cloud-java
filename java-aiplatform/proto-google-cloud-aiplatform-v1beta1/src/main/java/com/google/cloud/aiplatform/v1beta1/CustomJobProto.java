@@ -141,18 +141,16 @@ public final class CustomJobProto {
           + "utor_image_uri\030\001 \001(\tB\003\340A\002\022\031\n\014package_uri"
           + "s\030\002 \003(\tB\003\340A\002\022\032\n\rpython_module\030\003 \001(\tB\003\340A\002"
           + "\022\014\n\004args\030\004 \003(\t\0224\n\003env\030\005 \003(\0132\'.google.clo"
-          + "ud.aiplatform.v1beta1.EnvVar\"\270\001\n\nSchedul"
-          + "ing\022*\n\007timeout\030\001 \001(\0132\031.google.protobuf.D"
-          + "uration\022%\n\035restart_job_on_worker_restart"
-          + "\030\003 \001(\010\022\034\n\017disable_retries\030\005 \001(\010B\003\340A\001\0229\n\021"
-          + "max_wait_duration\030\006 \001(\0132\031.google.protobu"
-          + "f.DurationB\003\340A\001B\345\001\n#com.google.cloud.aip"
-          + "latform.v1beta1B\016CustomJobProtoP\001ZCcloud"
-          + ".google.com/go/aiplatform/apiv1beta1/aip"
-          + "latformpb;aiplatformpb\252\002\037Google.Cloud.AI"
-          + "Platform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfo"
-          + "rm\\V1beta1\352\002\"Google::Cloud::AIPlatform::"
-          + "V1beta1b\006proto3"
+          + "ud.aiplatform.v1beta1.EnvVar\"}\n\nScheduli"
+          + "ng\022*\n\007timeout\030\001 \001(\0132\031.google.protobuf.Du"
+          + "ration\022%\n\035restart_job_on_worker_restart\030"
+          + "\003 \001(\010\022\034\n\017disable_retries\030\005 \001(\010B\003\340A\001B\345\001\n#"
+          + "com.google.cloud.aiplatform.v1beta1B\016Cus"
+          + "tomJobProtoP\001ZCcloud.google.com/go/aipla"
+          + "tform/apiv1beta1/aiplatformpb;aiplatform"
+          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -265,7 +263,7 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Scheduling_descriptor,
             new java.lang.String[] {
-              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries", "MaxWaitDuration",
+              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
