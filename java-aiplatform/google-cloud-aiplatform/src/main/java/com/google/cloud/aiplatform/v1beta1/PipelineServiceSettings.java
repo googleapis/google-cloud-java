@@ -175,6 +175,22 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     return ((PipelineServiceStubSettings) getStubSettings()).cancelPipelineJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchCancelPipelineJobs. */
+  public UnaryCallSettings<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).batchCancelPipelineJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCancelPipelineJobs. */
+  public OperationCallSettings<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings())
+        .batchCancelPipelineJobsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -387,6 +403,21 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     /** Returns the builder for the settings used for calls to cancelPipelineJob. */
     public UnaryCallSettings.Builder<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
       return getStubSettingsBuilder().cancelPipelineJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
+    public UnaryCallSettings.Builder<BatchCancelPipelineJobsRequest, Operation>
+        batchCancelPipelineJobsSettings() {
+      return getStubSettingsBuilder().batchCancelPipelineJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
+    public OperationCallSettings.Builder<
+            BatchCancelPipelineJobsRequest,
+            BatchCancelPipelineJobsResponse,
+            BatchCancelPipelineJobsOperationMetadata>
+        batchCancelPipelineJobsOperationSettings() {
+      return getStubSettingsBuilder().batchCancelPipelineJobsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

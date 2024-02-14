@@ -38,6 +38,14 @@ public interface ExplanationOrBuilder
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
    *
+   * By default, we provide Shapley values for the predicted class. However,
+   * you can configure the explanation request to generate Shapley values for
+   * any other classes too. For example, if a model predicts a probability of
+   * `0.4` for approving a loan application, the model's decision is to reject
+   * the application since `p(reject) = 0.6 &gt; p(approve) = 0.4`, and the default
+   * Shapley values would be computed for rejection decision and not approval,
+   * even though the latter might be the positive class.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -67,6 +75,14 @@ public interface ExplanationOrBuilder
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
+   * By default, we provide Shapley values for the predicted class. However,
+   * you can configure the explanation request to generate Shapley values for
+   * any other classes too. For example, if a model predicts a probability of
+   * `0.4` for approving a loan application, the model's decision is to reject
+   * the application since `p(reject) = 0.6 &gt; p(approve) = 0.4`, and the default
+   * Shapley values would be computed for rejection decision and not approval,
+   * even though the latter might be the positive class.
    *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
@@ -98,6 +114,14 @@ public interface ExplanationOrBuilder
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
    *
+   * By default, we provide Shapley values for the predicted class. However,
+   * you can configure the explanation request to generate Shapley values for
+   * any other classes too. For example, if a model predicts a probability of
+   * `0.4` for approving a loan application, the model's decision is to reject
+   * the application since `p(reject) = 0.6 &gt; p(approve) = 0.4`, and the default
+   * Shapley values would be computed for rejection decision and not approval,
+   * even though the latter might be the positive class.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -127,6 +151,14 @@ public interface ExplanationOrBuilder
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
+   * By default, we provide Shapley values for the predicted class. However,
+   * you can configure the explanation request to generate Shapley values for
+   * any other classes too. For example, if a model predicts a probability of
+   * `0.4` for approving a loan application, the model's decision is to reject
+   * the application since `p(reject) = 0.6 &gt; p(approve) = 0.4`, and the default
+   * Shapley values would be computed for rejection decision and not approval,
+   * even though the latter might be the positive class.
    *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
@@ -158,6 +190,14 @@ public interface ExplanationOrBuilder
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
+   * By default, we provide Shapley values for the predicted class. However,
+   * you can configure the explanation request to generate Shapley values for
+   * any other classes too. For example, if a model predicts a probability of
+   * `0.4` for approving a loan application, the model's decision is to reject
+   * the application since `p(reject) = 0.6 &gt; p(approve) = 0.4`, and the default
+   * Shapley values would be computed for rejection decision and not approval,
+   * even though the latter might be the positive class.
    *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],

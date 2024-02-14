@@ -32,6 +32,10 @@ public final class ServiceNetworkingProto {
       internal_static_google_cloud_aiplatform_v1beta1_PrivateServiceConnectConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PrivateServiceConnectConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -47,13 +51,15 @@ public final class ServiceNetworkingProto {
           + "roto\032\031google/api/resource.proto\"e\n\033Priva"
           + "teServiceConnectConfig\022+\n\036enable_private"
           + "_service_connect\030\001 \001(\010B\003\340A\002\022\031\n\021project_a"
-          + "llowlist\030\002 \003(\tB\355\001\n#com.google.cloud.aipl"
-          + "atform.v1beta1B\026ServiceNetworkingProtoP\001"
-          + "ZCcloud.google.com/go/aiplatform/apiv1be"
-          + "ta1/aiplatformpb;aiplatformpb\252\002\037Google.C"
-          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
-          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
-          + "tform::V1beta1b\006proto3"
+          + "llowlist\030\002 \003(\t\"S\n\025PscAutomatedEndpoints\022"
+          + "\022\n\nproject_id\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\r"
+          + "match_address\030\003 \001(\tB\355\001\n#com.google.cloud"
+          + ".aiplatform.v1beta1B\026ServiceNetworkingPr"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
+          + "AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,6 +75,14 @@ public final class ServiceNetworkingProto {
             internal_static_google_cloud_aiplatform_v1beta1_PrivateServiceConnectConfig_descriptor,
             new java.lang.String[] {
               "EnablePrivateServiceConnect", "ProjectAllowlist",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "Network", "MatchAddress",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

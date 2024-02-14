@@ -68,6 +68,10 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Source of the model.
+   * Different from `objective` field, this `ModelSourceType` enum
+   * indicates the source from which the model was accessed or obtained,
+   * whereas the `objective` indicates the overall aim or function of this
+   * model.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.aiplatform.v1beta1.ModelSourceInfo.ModelSourceType}
@@ -143,6 +147,16 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
      */
     CUSTOM_TEXT_EMBEDDING(6),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Marketplace.
+     * </pre>
+     *
+     * <code>MARKETPLACE = 7;</code>
+     */
+    MARKETPLACE(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -216,6 +230,16 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
      */
     public static final int CUSTOM_TEXT_EMBEDDING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Marketplace.
+     * </pre>
+     *
+     * <code>MARKETPLACE = 7;</code>
+     */
+    public static final int MARKETPLACE_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -255,6 +279,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
           return GENIE;
         case 6:
           return CUSTOM_TEXT_EMBEDDING;
+        case 7:
+          return MARKETPLACE;
         default:
           return null;
       }

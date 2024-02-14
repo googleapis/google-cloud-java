@@ -111,15 +111,17 @@ public final class IndexEndpointProto {
           + "\001 \001(\0132@.google.cloud.aiplatform.v1.Deplo"
           + "yedIndexAuthConfig.AuthProvider\032:\n\014AuthP"
           + "rovider\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allowed_is"
-          + "suers\030\002 \003(\t\"Y\n\025IndexPrivateEndpoints\022\037\n\022"
-          + "match_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n\022service"
-          + "_attachment\030\002 \001(\tB\003\340A\003B\320\001\n\036com.google.cl"
-          + "oud.aiplatform.v1B\022IndexEndpointProtoP\001Z"
-          + ">cloud.google.com/go/aiplatform/apiv1/ai"
-          + "platformpb;aiplatformpb\252\002\032Google.Cloud.A"
-          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V"
-          + "1\352\002\035Google::Cloud::AIPlatform::V1b\006proto"
-          + "3"
+          + "suers\030\002 \003(\t\"\262\001\n\025IndexPrivateEndpoints\022\037\n"
+          + "\022match_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n\022servic"
+          + "e_attachment\030\002 \001(\tB\003\340A\003\022W\n\027psc_automated"
+          + "_endpoints\030\003 \003(\01321.google.cloud.aiplatfo"
+          + "rm.v1.PscAutomatedEndpointsB\003\340A\003B\320\001\n\036com"
+          + ".google.cloud.aiplatform.v1B\022IndexEndpoi"
+          + "ntProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -204,7 +206,7 @@ public final class IndexEndpointProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_IndexPrivateEndpoints_descriptor,
             new java.lang.String[] {
-              "MatchGrpcAddress", "ServiceAttachment",
+              "MatchGrpcAddress", "ServiceAttachment", "PscAutomatedEndpoints",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

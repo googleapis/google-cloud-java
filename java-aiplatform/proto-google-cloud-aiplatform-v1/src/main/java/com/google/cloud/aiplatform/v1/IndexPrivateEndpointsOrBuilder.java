@@ -75,4 +75,73 @@ public interface IndexPrivateEndpointsOrBuilder
    * @return The bytes for serviceAttachment.
    */
   com.google.protobuf.ByteString getServiceAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PscAutomatedEndpoints is populated if private service connect
+   * is enabled if PscAutomatedConfig is set.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PscAutomatedEndpoints psc_automated_endpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.PscAutomatedEndpoints>
+      getPscAutomatedEndpointsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PscAutomatedEndpoints is populated if private service connect
+   * is enabled if PscAutomatedConfig is set.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PscAutomatedEndpoints psc_automated_endpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PscAutomatedEndpoints getPscAutomatedEndpoints(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PscAutomatedEndpoints is populated if private service connect
+   * is enabled if PscAutomatedConfig is set.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PscAutomatedEndpoints psc_automated_endpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPscAutomatedEndpointsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PscAutomatedEndpoints is populated if private service connect
+   * is enabled if PscAutomatedConfig is set.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PscAutomatedEndpoints psc_automated_endpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.PscAutomatedEndpointsOrBuilder>
+      getPscAutomatedEndpointsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PscAutomatedEndpoints is populated if private service connect
+   * is enabled if PscAutomatedConfig is set.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PscAutomatedEndpoints psc_automated_endpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PscAutomatedEndpointsOrBuilder getPscAutomatedEndpointsOrBuilder(
+      int index);
 }

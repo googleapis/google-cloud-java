@@ -86,6 +86,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    * Updatable fields:
    *
    *   * `labels`
+   *   * `serviceAgentType`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -108,6 +109,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    * Updatable fields:
    *
    *   * `labels`
+   *   * `serviceAgentType`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -130,6 +132,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    * Updatable fields:
    *
    *   * `labels`
+   *   * `serviceAgentType`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

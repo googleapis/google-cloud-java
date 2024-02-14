@@ -16,32 +16,31 @@
 
 package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_LlmUtilityService_CountTokens_EndpointnameListvalue_sync]
-import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
-import com.google.cloud.aiplatform.v1beta1.LlmUtilityServiceClient;
-import com.google.protobuf.Value;
+// [START aiplatform_v1beta1_generated_PipelineService_BatchCancelPipelineJobs_LocationnameListstring_sync]
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SyncCountTokensEndpointnameListvalue {
+public class SyncBatchCancelPipelineJobsLocationnameListstring {
 
   public static void main(String[] args) throws Exception {
-    syncCountTokensEndpointnameListvalue();
+    syncBatchCancelPipelineJobsLocationnameListstring();
   }
 
-  public static void syncCountTokensEndpointnameListvalue() throws Exception {
+  public static void syncBatchCancelPipelineJobsLocationnameListstring() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
-      EndpointName endpoint =
-          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-      List<Value> instances = new ArrayList<>();
-      CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
+    try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> names = new ArrayList<>();
+      BatchCancelPipelineJobsResponse response =
+          pipelineServiceClient.batchCancelPipelineJobsAsync(parent, names).get();
     }
   }
 }
-// [END aiplatform_v1beta1_generated_LlmUtilityService_CountTokens_EndpointnameListvalue_sync]
+// [END aiplatform_v1beta1_generated_PipelineService_BatchCancelPipelineJobs_LocationnameListstring_sync]

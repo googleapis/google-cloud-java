@@ -145,6 +145,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *     * A key including a space must be quoted. `labels."a key"`.
    *
    * Some examples:
+   *
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
@@ -183,6 +184,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *     * A key including a space must be quoted. `labels."a key"`.
    *
    * Some examples:
+   *
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
@@ -929,6 +931,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * A key including a space must be quoted. `labels."a key"`.
      *
      * Some examples:
+     *
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
@@ -966,6 +969,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * A key including a space must be quoted. `labels."a key"`.
      *
      * Some examples:
+     *
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
@@ -1003,6 +1007,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * A key including a space must be quoted. `labels."a key"`.
      *
      * Some examples:
+     *
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
@@ -1039,6 +1044,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * A key including a space must be quoted. `labels."a key"`.
      *
      * Some examples:
+     *
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
@@ -1071,6 +1077,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * A key including a space must be quoted. `labels."a key"`.
      *
      * Some examples:
+     *
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`

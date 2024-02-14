@@ -108,4 +108,60 @@ public interface UpsertDatapointsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.IndexDatapoint datapoints = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapointOrBuilder getDatapointsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update mask is used to specify the fields to be overwritten in
+   * the datapoints by the update. The fields specified in the update_mask are
+   * relative to each IndexDatapoint inside datapoints, not the full request.
+   *
+   * Updatable fields:
+   *
+   *   * Use `all_restricts` to update both restricts and numeric_restricts.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update mask is used to specify the fields to be overwritten in
+   * the datapoints by the update. The fields specified in the update_mask are
+   * relative to each IndexDatapoint inside datapoints, not the full request.
+   *
+   * Updatable fields:
+   *
+   *   * Use `all_restricts` to update both restricts and numeric_restricts.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update mask is used to specify the fields to be overwritten in
+   * the datapoints by the update. The fields specified in the update_mask are
+   * relative to each IndexDatapoint inside datapoints, not the full request.
+   *
+   * Updatable fields:
+   *
+   *   * Use `all_restricts` to update both restricts and numeric_restricts.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

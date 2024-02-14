@@ -261,4 +261,45 @@ public interface CandidateOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.CitationMetadataOrBuilder getCitationMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the groundingMetadata field is set.
+   */
+  boolean hasGroundingMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The groundingMetadata.
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingMetadata getGroundingMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingMetadataOrBuilder getGroundingMetadataOrBuilder();
 }

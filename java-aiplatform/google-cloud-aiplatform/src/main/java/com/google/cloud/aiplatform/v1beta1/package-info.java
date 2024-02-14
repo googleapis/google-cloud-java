@@ -251,7 +251,7 @@
  *   EndpointName endpoint =
  *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   List<Value> instances = new ArrayList<>();
- *   CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
+ *   ComputeTokensResponse response = llmUtilityServiceClient.computeTokens(endpoint, instances);
  * }
  * }</pre>
  *

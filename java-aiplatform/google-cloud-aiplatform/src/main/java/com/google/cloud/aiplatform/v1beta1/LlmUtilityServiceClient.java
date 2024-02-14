@@ -60,7 +60,7 @@ import javax.annotation.Generated;
  *   EndpointName endpoint =
  *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   List<Value> instances = new ArrayList<>();
- *   CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
+ *   ComputeTokensResponse response = llmUtilityServiceClient.computeTokens(endpoint, instances);
  * }
  * }</pre>
  *
@@ -74,25 +74,6 @@ import javax.annotation.Generated;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
- *    </tr>
- *    <tr>
- *      <td><p> CountTokens</td>
- *      <td><p> Perform a token counting.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> countTokens(CountTokensRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> countTokens(EndpointName endpoint, List&lt;Value&gt; instances)
- *           <li><p> countTokens(String endpoint, List&lt;Value&gt; instances)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> countTokensCallable()
- *      </ul>
- *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> ComputeTokens</td>
@@ -278,142 +259,6 @@ public class LlmUtilityServiceClient implements BackgroundResource {
 
   public LlmUtilityServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
-   *   EndpointName endpoint =
-   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List<Value> instances = new ArrayList<>();
-   *   CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
-   * }
-   * }</pre>
-   *
-   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
-   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
-   *     identical to the prediction schema of the underlying model.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CountTokensResponse countTokens(EndpointName endpoint, List<Value> instances) {
-    CountTokensRequest request =
-        CountTokensRequest.newBuilder()
-            .setEndpoint(endpoint == null ? null : endpoint.toString())
-            .addAllInstances(instances)
-            .build();
-    return countTokens(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
-   *   String endpoint =
-   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *           .toString();
-   *   List<Value> instances = new ArrayList<>();
-   *   CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
-   * }
-   * }</pre>
-   *
-   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
-   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
-   *     identical to the prediction schema of the underlying model.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CountTokensResponse countTokens(String endpoint, List<Value> instances) {
-    CountTokensRequest request =
-        CountTokensRequest.newBuilder().setEndpoint(endpoint).addAllInstances(instances).build();
-    return countTokens(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
-   *   CountTokensRequest request =
-   *       CountTokensRequest.newBuilder()
-   *           .setEndpoint(
-   *               EndpointName.ofProjectLocationEndpointName(
-   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *                   .toString())
-   *           .setModel("model104069929")
-   *           .addAllInstances(new ArrayList<Value>())
-   *           .addAllContents(new ArrayList<Content>())
-   *           .build();
-   *   CountTokensResponse response = llmUtilityServiceClient.countTokens(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CountTokensResponse countTokens(CountTokensRequest request) {
-    return countTokensCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
-   *   CountTokensRequest request =
-   *       CountTokensRequest.newBuilder()
-   *           .setEndpoint(
-   *               EndpointName.ofProjectLocationEndpointName(
-   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *                   .toString())
-   *           .setModel("model104069929")
-   *           .addAllInstances(new ArrayList<Value>())
-   *           .addAllContents(new ArrayList<Content>())
-   *           .build();
-   *   ApiFuture<CountTokensResponse> future =
-   *       llmUtilityServiceClient.countTokensCallable().futureCall(request);
-   *   // Do something.
-   *   CountTokensResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
-    return stub.countTokensCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
