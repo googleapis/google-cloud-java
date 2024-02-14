@@ -396,6 +396,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.securitycenter.v1.Application",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.securitycenter.v1.Application$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.securitycenter.v1.Asset",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

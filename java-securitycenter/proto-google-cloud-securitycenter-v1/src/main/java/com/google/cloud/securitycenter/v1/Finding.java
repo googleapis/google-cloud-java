@@ -3353,6 +3353,56 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         : kernelRootkit_;
   }
 
+  public static final int APPLICATION_FIELD_NUMBER = 53;
+  private com.google.cloud.securitycenter.v1.Application application_;
+  /**
+   *
+   *
+   * <pre>
+   * Represents an application associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+   *
+   * @return Whether the application field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplication() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents an application associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+   *
+   * @return The application.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Application getApplication() {
+    return application_ == null
+        ? com.google.cloud.securitycenter.v1.Application.getDefaultInstance()
+        : application_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents an application associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ApplicationOrBuilder getApplicationOrBuilder() {
+    return application_ == null
+        ? com.google.cloud.securitycenter.v1.Application.getDefaultInstance()
+        : application_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3480,6 +3530,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(50, getKernelRootkit());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(53, getApplication());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3633,6 +3686,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getKernelRootkit());
     }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getApplication());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3728,6 +3784,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasKernelRootkit() != other.hasKernelRootkit()) return false;
     if (hasKernelRootkit()) {
       if (!getKernelRootkit().equals(other.getKernelRootkit())) return false;
+    }
+    if (hasApplication() != other.hasApplication()) return false;
+    if (hasApplication()) {
+      if (!getApplication().equals(other.getApplication())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3861,6 +3921,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasKernelRootkit()) {
       hash = (37 * hash) + KERNEL_ROOTKIT_FIELD_NUMBER;
       hash = (53 * hash) + getKernelRootkit().hashCode();
+    }
+    if (hasApplication()) {
+      hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getApplication().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4058,6 +4122,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getCloudDlpInspectionFieldBuilder();
         getCloudDlpDataProfileFieldBuilder();
         getKernelRootkitFieldBuilder();
+        getApplicationFieldBuilder();
       }
     }
 
@@ -4195,6 +4260,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (kernelRootkitBuilder_ != null) {
         kernelRootkitBuilder_.dispose();
         kernelRootkitBuilder_ = null;
+      }
+      application_ = null;
+      if (applicationBuilder_ != null) {
+        applicationBuilder_.dispose();
+        applicationBuilder_ = null;
       }
       return this;
     }
@@ -4423,6 +4493,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.kernelRootkit_ =
             kernelRootkitBuilder_ == null ? kernelRootkit_ : kernelRootkitBuilder_.build();
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField1_ & 0x00000040) != 0)) {
+        result.application_ =
+            applicationBuilder_ == null ? application_ : applicationBuilder_.build();
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4749,6 +4824,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other.hasKernelRootkit()) {
         mergeKernelRootkit(other.getKernelRootkit());
       }
+      if (other.hasApplication()) {
+        mergeApplication(other.getApplication());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5070,6 +5148,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000020;
                 break;
               } // case 402
+            case 426:
+              {
+                input.readMessage(getApplicationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000040;
+                break;
+              } // case 426
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12610,6 +12694,193 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         kernelRootkit_ = null;
       }
       return kernelRootkitBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.Application application_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Application,
+            com.google.cloud.securitycenter.v1.Application.Builder,
+            com.google.cloud.securitycenter.v1.ApplicationOrBuilder>
+        applicationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     *
+     * @return Whether the application field is set.
+     */
+    public boolean hasApplication() {
+      return ((bitField1_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     *
+     * @return The application.
+     */
+    public com.google.cloud.securitycenter.v1.Application getApplication() {
+      if (applicationBuilder_ == null) {
+        return application_ == null
+            ? com.google.cloud.securitycenter.v1.Application.getDefaultInstance()
+            : application_;
+      } else {
+        return applicationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    public Builder setApplication(com.google.cloud.securitycenter.v1.Application value) {
+      if (applicationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        application_ = value;
+      } else {
+        applicationBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    public Builder setApplication(
+        com.google.cloud.securitycenter.v1.Application.Builder builderForValue) {
+      if (applicationBuilder_ == null) {
+        application_ = builderForValue.build();
+      } else {
+        applicationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    public Builder mergeApplication(com.google.cloud.securitycenter.v1.Application value) {
+      if (applicationBuilder_ == null) {
+        if (((bitField1_ & 0x00000040) != 0)
+            && application_ != null
+            && application_
+                != com.google.cloud.securitycenter.v1.Application.getDefaultInstance()) {
+          getApplicationBuilder().mergeFrom(value);
+        } else {
+          application_ = value;
+        }
+      } else {
+        applicationBuilder_.mergeFrom(value);
+      }
+      if (application_ != null) {
+        bitField1_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    public Builder clearApplication() {
+      bitField1_ = (bitField1_ & ~0x00000040);
+      application_ = null;
+      if (applicationBuilder_ != null) {
+        applicationBuilder_.dispose();
+        applicationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Application.Builder getApplicationBuilder() {
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return getApplicationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ApplicationOrBuilder getApplicationOrBuilder() {
+      if (applicationBuilder_ != null) {
+        return applicationBuilder_.getMessageOrBuilder();
+      } else {
+        return application_ == null
+            ? com.google.cloud.securitycenter.v1.Application.getDefaultInstance()
+            : application_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an application associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Application,
+            com.google.cloud.securitycenter.v1.Application.Builder,
+            com.google.cloud.securitycenter.v1.ApplicationOrBuilder>
+        getApplicationFieldBuilder() {
+      if (applicationBuilder_ == null) {
+        applicationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Application,
+                com.google.cloud.securitycenter.v1.Application.Builder,
+                com.google.cloud.securitycenter.v1.ApplicationOrBuilder>(
+                getApplication(), getParentForChildren(), isClean());
+        application_ = null;
+      }
+      return applicationBuilder_;
     }
 
     @java.lang.Override
