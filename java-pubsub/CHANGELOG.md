@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.126.6](https://github.com/googleapis/java-pubsub/compare/v1.126.5...v1.126.6) (2024-02-14)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.33.0 ([#1912](https://github.com/googleapis/java-pubsub/issues/1912)) ([9691c6f](https://github.com/googleapis/java-pubsub/commit/9691c6fabd82eb07fcb5135019be8d6fb260ce6f))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.25.0 ([#1913](https://github.com/googleapis/java-pubsub/issues/1913)) ([9636c55](https://github.com/googleapis/java-pubsub/commit/9636c5526e5cf4507bed69349321b686ddf7ab27))
+
 ## [1.126.5](https://github.com/googleapis/java-pubsub/compare/v1.126.4...v1.126.5) (2024-02-12)
 
 
