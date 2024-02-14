@@ -42,6 +42,7 @@ libraries:
   product_documentation: n/a
   api_description: n/a
   release_level: stable
+  distribution_name: com.google.cloud:google-identity-accesscontextmanager
   GAPICs:
   - proto_path: google/identity/accesscontextmanager/v1
 
@@ -52,6 +53,7 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/advisorynotifications/v1
 
+# code difference
 - api_shortname: aiplatform
   name_pretty: Vertex AI
   product_documentation: https://cloud.google.com/vertex-ai/docs
@@ -76,6 +78,7 @@ libraries:
   - proto_path: google/cloud/alloydb/v1alpha
   - proto_path: google/cloud/alloydb/v1beta
 
+# the temp folder needs to use library_name, not api_shortname
 - api_shortname: alloydb
   name_pretty: AlloyDB connectors
   product_documentation: https://cloud.google.com/alloydb/docs
@@ -95,6 +98,7 @@ libraries:
   api_description: allows you to manage Google Analytics accounts and properties.
   library_name: analytics-admin
   cloud_api: false
+  distribution_name: com.google.analytics:google-analytics-admin
   codeowner_team: '@googleapis/analytics-dpe'
   GAPICs:
   - proto_path: google/analytics/admin/v1alpha
@@ -108,11 +112,13 @@ libraries:
   library_name: analytics-data
   api_id: analytics-data.googleapis.com
   cloud_api: false
+  distribution_name: com.google.analytics:google-analytics-data
   codeowner_team: '@googleapis/analytics-dpe'
   GAPICs:
   - proto_path: google/analytics/data/v1alpha
   - proto_path: google/analytics/data/v1beta
 
+# has the same api_shortname with java-bigquery-data-exchange
 - api_shortname: analyticshub
   name_pretty: Analytics Hub API
   product_documentation: https://cloud.google.com/bigquery/TBD
@@ -178,6 +184,7 @@ libraries:
   api_description: provides programmatic methods to the Area 120 Tables API.
   library_name: area120-tables
   cloud_api: false
+  distribution_name: com.google.area120:google-area120-tables
   GAPICs:
   - proto_path: google/area120/tables/v1alpha1
 
@@ -348,6 +355,7 @@ libraries:
   - proto_path: google/cloud/bigquery/datapolicies/v1
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
 
+# code difference
 - api_shortname: bigquerydatatransfer
   name_pretty: BigQuery Data Transfer Service
   product_documentation: https://cloud.google.com/bigquery/transfer/
@@ -446,6 +454,7 @@ libraries:
     multiple environments such as VMs, serverless, Kubernetes, or Firebase.
   release_level: stable
   codeowner_team: '@googleapis/aap-dpes'
+  distribution_name: com.google.cloud:google-cloud-build
   issue_tracker: https://issuetracker.google.com/savedsearches/5226584
   GAPICs:
   - proto_path: google/devtools/cloudbuild/v1
@@ -819,6 +828,7 @@ libraries:
   library_name: errorreporting
   codeowner_team: '@googleapis/api-logging'
   issue_tracker: https://issuetracker.google.com/savedsearches/559780
+  requires_billing: false
   GAPICs:
   - proto_path: google/devtools/clouderrorreporting/v1beta1
 
@@ -945,6 +955,7 @@ libraries:
   product_documentation: n/a
   api_description: n/a
   release_level: stable
+  distribution_name: com.google.cloud:google-iam-policy
   client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
   excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
   excluded_dependencies: google-iam-policy
@@ -959,6 +970,7 @@ libraries:
   product_documentation: https://cloud.google.com/iam/docs/apis
   api_description: you to manage your Service Accounts and IAM bindings.
   release_level: stable
+  distribution_name: com.google.cloud:google-iam-admin
   api_id: iam.googleapis.com
   GAPICs:
   - proto_path: google/iam/admin/v1
@@ -969,6 +981,7 @@ libraries:
   api_description: creates short-lived, limited-privilege credentials for IAM service
     accounts.
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/issues/new?component=187161&template=0
   GAPICs:
   - proto_path: google/iam/credentials/v1
@@ -1077,6 +1090,7 @@ libraries:
     of the parsed address.
   api_id: addressvalidation.googleapis.com
   cloud_api: false
+  distribution_name: com.google.maps:google-maps-addressvalidation
   GAPICs:
   - proto_path: google/maps/addressvalidation/v1
 
@@ -1087,6 +1101,7 @@ libraries:
     \ datasets\n    that they can use to enrich their experience of Maps Platform\
     \ solutions (e.g. styling, routing)."
   api_id: mapsplatformdatasets.googleapis.com
+  distribution_name: com.google.maps:google-maps-mapsplatformdatasets
   cloud_api: false
   GAPICs:
   - proto_path: google/maps/mapsplatformdatasets/v1
@@ -1098,6 +1113,7 @@ libraries:
   api_description: The Places API allows developers to access a variety of search
     and retrieval endpoints for a Place.
   api_id: places.googleapis.com
+  distribution_name: com.google.maps:google-maps-places
   cloud_api: false
   GAPICs:
   - proto_path: google/maps/places/v1
@@ -1111,6 +1127,7 @@ libraries:
     and destination locations, and also offers new features.
   release_level: stable
   api_id: routes.googleapis.com
+  distribution_name: com.google.maps:google-maps-routing
   cloud_api: false
   GAPICs:
   - proto_path: google/maps/routing/v2
@@ -1119,6 +1136,7 @@ libraries:
   name_pretty: Media Translation API
   product_documentation: https://cloud.google.com/
   api_description: provides enterprise quality translation from/to various media types.
+  requires_billing: false
   GAPICs:
   - proto_path: google/cloud/mediatranslation/v1beta1
 
@@ -1136,6 +1154,7 @@ libraries:
   product_documentation: https://cloud.google.com/memorystore/
   api_description: is a fully-managed in-memory data store service for Memcache.
   release_level: stable
+  requires_billing: false
   GAPICs:
   - proto_path: google/cloud/memcache/v1
   - proto_path: google/cloud/memcache/v1beta2
@@ -1171,6 +1190,7 @@ libraries:
     You can also define custom dashboards. With custom dashboards, you have complete
     control over the charts that are displayed and their configuration.
   release_level: stable
+  distribution_name: com.google.cloud:google-cloud-monitoring-dashboard
   api_id: monitoring.googleapis.com
   GAPICs:
   - proto_path: google/monitoring/dashboard/v1
@@ -1181,6 +1201,7 @@ libraries:
   api_description: The metrics scope defines the set of Google Cloud projects whose
     metrics the current Google Cloud project can access.
   api_id: monitoring.googleapis.com
+  distribution_name: com.google.cloud:google-cloud-monitoring-metricsscope
   GAPICs:
   - proto_path: google/monitoring/metricsscope/v1
 
@@ -1284,6 +1305,7 @@ libraries:
     patch compliance, and configuration management on VM instances.
   library_name: os-config
   release_level: stable
+  requires_billing: false
   api_id: os-config.googleapis.com
   GAPICs:
   - proto_path: google/cloud/osconfig/v1
@@ -1310,6 +1332,7 @@ libraries:
     URLs to Google Safe Browsing. Once a site is propagated to Safe Browsing, users
     will see warnings across more than 4 billion devices.
   issue_tracker: ''
+  requires_billing: false
   GAPICs:
   - proto_path: google/cloud/phishingprotection/v1beta1
 
