@@ -163,6 +163,14 @@ public class JobStatisticsTest {
   private static final String UNUSED_INDEX_USAGE_MODE = "UNUSED";
   private static final SearchStats SEARCH_STATS =
       SearchStats.newBuilder().setIndexUsageMode(UNUSED_INDEX_USAGE_MODE).build();
+
+  private static final MetadataCacheStats METADATA_CACHE_STATS =
+      MetadataCacheStats.newBuilder()
+          .setTableMetadataCacheUsage(
+              ImmutableList.of(
+                  TableMetadataCacheUsage.newBuilder().setExplanation("test explanation").build()))
+          .build();
+
   private static final QueryStatistics QUERY_STATISTICS =
       QueryStatistics.newBuilder()
           .setCreationTimestamp(CREATION_TIME)
@@ -187,6 +195,7 @@ public class JobStatisticsTest {
           .setTimeline(TIMELINE)
           .setSchema(SCHEMA)
           .setSearchStats(SEARCH_STATS)
+          .setMetadataCacheStats(METADATA_CACHE_STATS)
           .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE =
       QueryStatistics.newBuilder()
@@ -196,6 +205,7 @@ public class JobStatisticsTest {
           .setBillingTier(BILLING_TIER)
           .setCacheHit(CACHE_HIT)
           .setSearchStats(SEARCH_STATS)
+          .setMetadataCacheStats(METADATA_CACHE_STATS)
           .build();
   private static final ScriptStackFrame STATEMENT_STACK_FRAME =
       ScriptStackFrame.newBuilder()
@@ -417,6 +427,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(
         expected.getSearchStats().getIndexUsageMode(), value.getSearchStats().getIndexUsageMode());
+    assertEquals(expected.getMetadataCacheStats(), value.getMetadataCacheStats());
     assertEquals(expected.getStatementType(), value.getStatementType());
     assertEquals(expected.getTimeline(), value.getTimeline());
   }

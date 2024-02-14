@@ -358,6 +358,7 @@ public abstract class JobStatistics implements Serializable {
     private final List<TimelineSample> timeline;
     private final Schema schema;
     private final SearchStats searchStats;
+    private final MetadataCacheStats metadataCacheStats;
     private final List<QueryParameter> queryParameters;
 
     /**
@@ -444,6 +445,8 @@ public abstract class JobStatistics implements Serializable {
       private List<QueryParameter> queryParameters;
       private SearchStats searchStats;
 
+      private MetadataCacheStats metadataCacheStats;
+
       private Builder() {}
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
@@ -492,6 +495,10 @@ public abstract class JobStatistics implements Serializable {
           }
           if (statisticsPb.getQuery().getSearchStatistics() != null) {
             this.searchStats = SearchStats.fromPb(statisticsPb.getQuery().getSearchStatistics());
+          }
+          if (statisticsPb.getQuery().getMetadataCacheStatistics() != null) {
+            this.metadataCacheStats =
+                MetadataCacheStats.fromPb(statisticsPb.getQuery().getMetadataCacheStatistics());
           }
           if (statisticsPb.getQuery().getDmlStats() != null) {
             this.dmlStats = DmlStats.fromPb(statisticsPb.getQuery().getDmlStats());
@@ -599,6 +606,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setMetadataCacheStats(MetadataCacheStats metadataCacheStats) {
+        this.metadataCacheStats = metadataCacheStats;
+        return self();
+      }
+
       Builder setQueryParameters(List<QueryParameter> queryParameters) {
         this.queryParameters = queryParameters;
         return self();
@@ -631,6 +643,7 @@ public abstract class JobStatistics implements Serializable {
       this.timeline = builder.timeline;
       this.schema = builder.schema;
       this.searchStats = builder.searchStats;
+      this.metadataCacheStats = builder.metadataCacheStats;
       this.queryParameters = builder.queryParameters;
     }
 
@@ -761,6 +774,11 @@ public abstract class JobStatistics implements Serializable {
       return searchStats;
     }
 
+    /** Statistics for metadata caching in BigLake tables. */
+    public MetadataCacheStats getMetadataCacheStats() {
+      return metadataCacheStats;
+    }
+
     /**
      * Standard SQL only: Returns a list of undeclared query parameters detected during a dry run
      * validation.
@@ -781,6 +799,7 @@ public abstract class JobStatistics implements Serializable {
           .add("timeline", timeline)
           .add("schema", schema)
           .add("searchStats", searchStats)
+          .add("metadataCacheStats", metadataCacheStats)
           .add("queryParameters", queryParameters);
     }
 
@@ -804,6 +823,7 @@ public abstract class JobStatistics implements Serializable {
           queryPlan,
           schema,
           searchStats,
+          metadataCacheStats,
           queryParameters);
     }
 
@@ -848,6 +868,9 @@ public abstract class JobStatistics implements Serializable {
       }
       if (searchStats != null) {
         queryStatisticsPb.setSearchStatistics(searchStats.toPb());
+      }
+      if (metadataCacheStats != null) {
+        queryStatisticsPb.setMetadataCacheStatistics(metadataCacheStats.toPb());
       }
       if (queryParameters != null) {
         queryStatisticsPb.setUndeclaredQueryParameters(queryParameters);

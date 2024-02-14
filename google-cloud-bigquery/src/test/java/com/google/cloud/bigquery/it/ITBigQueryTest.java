@@ -126,6 +126,7 @@ import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TableMetadataCacheUsage.UnusedReason;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.TimePartitioning.Type;
@@ -6498,6 +6499,47 @@ public class ITBigQueryTest {
     for (String type : PUBLIC_DATASETS) {
       assertTrue(datasetNames.contains(type));
     }
+  }
+
+  @Test
+  public void testExternalTableMetadataCachingNotEnable() throws InterruptedException {
+    String tableName = "test_metadata_cache_not_enable";
+    TableId tableId = TableId.of(DATASET, tableName);
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.of(
+            "gs://" + BUCKET + "/" + JSON_LOAD_FILE, TABLE_SCHEMA, FormatOptions.json());
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.getDefinition() instanceof ExternalTableDefinition);
+    assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+    assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
+
+    String query = String.format("SELECT * FROM  %s.%s", DATASET, tableName);
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+
+    Job remoteJob = bigquery.create(JobInfo.of(config));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+
+    Job queryJob = bigquery.getJob(remoteJob.getJobId());
+    JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    assertNotNull(statistics);
+    assertNotNull(statistics.getMetadataCacheStats());
+    assertThat(statistics.getMetadataCacheStats().getTableMetadataCacheUsage().size()).isEqualTo(1);
+    assertThat(
+            statistics
+                .getMetadataCacheStats()
+                .getTableMetadataCacheUsage()
+                .get(0)
+                .getUnusedReason())
+        .isEqualTo(UnusedReason.METADATA_CACHING_NOT_ENABLED);
+
+    assertTrue(remoteTable.delete());
   }
 
   static GoogleCredentials loadCredentials(String credentialFile) {
