@@ -4,30 +4,18 @@ googleapis_commitish: 7d73737e0e826ac683a4b5b19352feabf51bbc57
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
 synthtool_commitish: 6612ab8f3afcd5e292aecd647f0fa68812c9f5b5
 template_excludes:
-
 - .github/*
-
 - .kokoro/*
-
 - samples/*
-
 - CODE_OF_CONDUCT.md
-
 - CONTRIBUTING.md
-
 - LICENSE
-
 - SECURITY.md
-
 - java.header
-
 - license-checks.xml
-
 - renovate.json
-
 - .gitignore
 libraries:
-
 - api_shortname: accessapproval
   name_pretty: Access Approval
   product_documentation: https://cloud.google.com/access-approval/docs/
@@ -496,8 +484,6 @@ libraries:
     enable scaling from single instances to global, load-balanced cloud computing.
     Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver
     consistent performance and are available in many configurations.
-
-
     '
   release_level: stable
   excluded_poms: grpc-google-cloud-compute-v1
@@ -1406,6 +1392,7 @@ libraries:
   api_description: is a service that protects your site from spam and abuse.
   release_level: stable
   issue_tracker: ''
+  requires_billing: false
   rest_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rest
   rpc_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rpc
   GAPICs:
@@ -1461,6 +1448,7 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/resourcesettings/v1
 
+  # one line difference: java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/v3/package-info.java
 - api_shortname: cloudresourcemanager
   name_pretty: Resource Manager API
   product_documentation: https://cloud.google.com/resource-manager
@@ -1468,6 +1456,7 @@ libraries:
     and organization.
   library_name: resourcemanager
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/savedsearches/559757
   GAPICs:
   - proto_path: google/cloud/resourcemanager/v3
@@ -1502,6 +1491,7 @@ libraries:
     hour.
   library_name: scheduler
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/savedsearches/5411429
   rest_documentation: https://cloud.google.com/scheduler/docs/reference/rest
   rpc_documentation: https://cloud.google.com/scheduler/docs/reference/rpc
@@ -1515,6 +1505,7 @@ libraries:
   api_description: allows you to encrypt, store, manage, and audit infrastructure
     and application-level secrets.
   release_level: stable
+  requires_billing: false
   GAPICs:
   - proto_path: google/cloud/secretmanager/v1
 
@@ -1540,6 +1531,7 @@ libraries:
   - proto_path: google/cloud/security/privateca/v1
   - proto_path: google/cloud/security/privateca/v1beta1
 
+ # duplicated api_shortname
 - api_shortname: securitycenter
   name_pretty: Security Command Center
   product_documentation: https://cloud.google.com/security-command-center
@@ -1551,6 +1543,7 @@ libraries:
     virtual machines. Respond to threats by following actionable recommendations or
     exporting logs to your SIEM for further investigation.
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/savedsearches/559748
   rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
   GAPICs:
@@ -1566,6 +1559,7 @@ libraries:
     surface by providing asset inventory, discovery, search, and management.
   library_name: securitycenter-settings
   api_id: securitycenter-settings.googleapis.com
+  requires_billing: false
   rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
   GAPICs:
   - proto_path: google/cloud/securitycenter/settings/v1beta1
@@ -1619,6 +1613,7 @@ libraries:
   product_documentation: https://cloud.google.com/service-directory/
   api_description: allows the registration and lookup of service endpoints.
   release_level: stable
+  requires_billing: false
   rest_documentation: https://cloud.google.com/service-directory/docs/reference/rest
   rpc_documentation: https://cloud.google.com/service-directory/docs/reference/rpc
   GAPICs:
@@ -1655,15 +1650,18 @@ libraries:
     portfolio
   library_name: shopping-css
   cloud_api: false
+  distribution_name: com.google.shopping:google-shopping-css
   GAPICs:
   - proto_path: google/shopping/css/v1
 
+  # duplicated api_shortname
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
   library_name: shopping-merchant-inventories
   cloud_api: false
+  distribution_name: com.google.shopping:google-shopping-merchant-inventories
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1beta
 
@@ -1673,6 +1671,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   library_name: shopping-merchant-reports
   cloud_api: false
+  distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1beta
 
@@ -1683,6 +1682,7 @@ libraries:
     into developer applications. Send audio and receive a text transcription from
     the Speech-to-Text API service.
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/savedsearches/559758
   rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
   rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
@@ -1758,6 +1758,7 @@ libraries:
     into developer applications. Send text and receive synthesized audio output from
     the Cloud Text-to-Speech API service.
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/savedsearches/5235428
   rest_documentation: https://cloud.google.com/text-to-speech/docs/reference/rest
   rpc_documentation: https://cloud.google.com/text-to-speech/docs/reference/rpc
@@ -1786,6 +1787,7 @@ libraries:
     real-time performance insights.
   library_name: trace
   release_level: stable
+  requires_billing: false
   GAPICs:
   - proto_path: google/devtools/cloudtrace/v1
   - proto_path: google/devtools/cloudtrace/v2
@@ -1829,6 +1831,7 @@ libraries:
     formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and
     HTTP Live Streaming (HLS), for multiple device platforms.
   library_name: video-live-stream
+  distribution_name: com.google.cloud:google-cloud-live-stream
   GAPICs:
   - proto_path: google/cloud/video/livestream/v1
 
@@ -1914,6 +1917,7 @@ libraries:
     \ from your site. The Web Risk API includes data on more than a million unsafe\
     \ URLs and stays up to date by examining billions of URLs each day."
   release_level: stable
+  requires_billing: false
   issue_tracker: ''
   rest_documentation: https://cloud.google.com/web-risk/docs/reference/rest
   rpc_documentation: https://cloud.google.com/web-risk/docs/reference/rpc
@@ -1929,6 +1933,7 @@ libraries:
     following all links within the scope of your starting URLs, and attempts to exercise
     as many user inputs and event handlers as possible.
   release_level: stable
+  requires_billing: false
   issue_tracker: https://issuetracker.google.com/savedsearches/559748
   GAPICs:
   - proto_path: google/cloud/websecurityscanner/v1
