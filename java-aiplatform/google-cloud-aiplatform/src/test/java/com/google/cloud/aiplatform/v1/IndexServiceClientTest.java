@@ -566,6 +566,7 @@ public class IndexServiceClientTest {
         UpsertDatapointsRequest.newBuilder()
             .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
             .addAllDatapoints(new ArrayList<IndexDatapoint>())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     UpsertDatapointsResponse actualResponse = client.upsertDatapoints(request);
@@ -577,6 +578,7 @@ public class IndexServiceClientTest {
 
     Assert.assertEquals(request.getIndex(), actualRequest.getIndex());
     Assert.assertEquals(request.getDatapointsList(), actualRequest.getDatapointsList());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -593,6 +595,7 @@ public class IndexServiceClientTest {
           UpsertDatapointsRequest.newBuilder()
               .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
               .addAllDatapoints(new ArrayList<IndexDatapoint>())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.upsertDatapoints(request);
       Assert.fail("No exception raised");
