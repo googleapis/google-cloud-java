@@ -1,0 +1,105 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.orchestration.airflow.service.v1beta1",
+  "libraryPackage": "com.google.cloud.orchestration.airflow.service.v1beta1",
+  "services": {
+    "Environments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EnvironmentsClient",
+          "rpcs": {
+            "CheckUpgrade": {
+              "methods": ["checkUpgradeAsync", "checkUpgradeOperationCallable", "checkUpgradeCallable"]
+            },
+            "CreateEnvironment": {
+              "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
+            },
+            "CreateUserWorkloadsConfigMap": {
+              "methods": ["createUserWorkloadsConfigMap", "createUserWorkloadsConfigMap", "createUserWorkloadsConfigMap", "createUserWorkloadsConfigMapCallable"]
+            },
+            "CreateUserWorkloadsSecret": {
+              "methods": ["createUserWorkloadsSecret", "createUserWorkloadsSecret", "createUserWorkloadsSecret", "createUserWorkloadsSecretCallable"]
+            },
+            "DatabaseFailover": {
+              "methods": ["databaseFailoverAsync", "databaseFailoverOperationCallable", "databaseFailoverCallable"]
+            },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentOperationCallable", "deleteEnvironmentCallable"]
+            },
+            "DeleteUserWorkloadsConfigMap": {
+              "methods": ["deleteUserWorkloadsConfigMap", "deleteUserWorkloadsConfigMap", "deleteUserWorkloadsConfigMap", "deleteUserWorkloadsConfigMapCallable"]
+            },
+            "DeleteUserWorkloadsSecret": {
+              "methods": ["deleteUserWorkloadsSecret", "deleteUserWorkloadsSecret", "deleteUserWorkloadsSecret", "deleteUserWorkloadsSecretCallable"]
+            },
+            "ExecuteAirflowCommand": {
+              "methods": ["executeAirflowCommand", "executeAirflowCommandCallable"]
+            },
+            "FetchDatabaseProperties": {
+              "methods": ["fetchDatabaseProperties", "fetchDatabasePropertiesCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironment", "getEnvironmentCallable"]
+            },
+            "GetUserWorkloadsConfigMap": {
+              "methods": ["getUserWorkloadsConfigMap", "getUserWorkloadsConfigMap", "getUserWorkloadsConfigMap", "getUserWorkloadsConfigMapCallable"]
+            },
+            "GetUserWorkloadsSecret": {
+              "methods": ["getUserWorkloadsSecret", "getUserWorkloadsSecret", "getUserWorkloadsSecret", "getUserWorkloadsSecretCallable"]
+            },
+            "ListEnvironments": {
+              "methods": ["listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "ListUserWorkloadsConfigMaps": {
+              "methods": ["listUserWorkloadsConfigMaps", "listUserWorkloadsConfigMaps", "listUserWorkloadsConfigMaps", "listUserWorkloadsConfigMapsPagedCallable", "listUserWorkloadsConfigMapsCallable"]
+            },
+            "ListUserWorkloadsSecrets": {
+              "methods": ["listUserWorkloadsSecrets", "listUserWorkloadsSecrets", "listUserWorkloadsSecrets", "listUserWorkloadsSecretsPagedCallable", "listUserWorkloadsSecretsCallable"]
+            },
+            "ListWorkloads": {
+              "methods": ["listWorkloads", "listWorkloads", "listWorkloads", "listWorkloadsPagedCallable", "listWorkloadsCallable"]
+            },
+            "LoadSnapshot": {
+              "methods": ["loadSnapshotAsync", "loadSnapshotOperationCallable", "loadSnapshotCallable"]
+            },
+            "PollAirflowCommand": {
+              "methods": ["pollAirflowCommand", "pollAirflowCommandCallable"]
+            },
+            "RestartWebServer": {
+              "methods": ["restartWebServerAsync", "restartWebServerOperationCallable", "restartWebServerCallable"]
+            },
+            "SaveSnapshot": {
+              "methods": ["saveSnapshotAsync", "saveSnapshotOperationCallable", "saveSnapshotCallable"]
+            },
+            "StopAirflowCommand": {
+              "methods": ["stopAirflowCommand", "stopAirflowCommandCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
+            },
+            "UpdateUserWorkloadsConfigMap": {
+              "methods": ["updateUserWorkloadsConfigMap", "updateUserWorkloadsConfigMap", "updateUserWorkloadsConfigMapCallable"]
+            },
+            "UpdateUserWorkloadsSecret": {
+              "methods": ["updateUserWorkloadsSecret", "updateUserWorkloadsSecret", "updateUserWorkloadsSecretCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ImageVersions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageVersionsClient",
+          "rpcs": {
+            "ListImageVersions": {
+              "methods": ["listImageVersions", "listImageVersions", "listImageVersionsPagedCallable", "listImageVersionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
