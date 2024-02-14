@@ -162,7 +162,6 @@ public class LlmUtilityServiceSettings extends ClientSettings<LlmUtilityServiceS
     return LlmUtilityServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return LlmUtilityServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }

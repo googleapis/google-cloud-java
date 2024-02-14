@@ -49,6 +49,11 @@ import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.PredictRequest;
 import com.google.cloud.vertexai.api.PredictResponse;
 import com.google.cloud.vertexai.api.RawPredictRequest;
+import com.google.cloud.vertexai.api.StreamDirectPredictRequest;
+import com.google.cloud.vertexai.api.StreamDirectPredictResponse;
+import com.google.cloud.vertexai.api.StreamDirectRawPredictRequest;
+import com.google.cloud.vertexai.api.StreamDirectRawPredictResponse;
+import com.google.cloud.vertexai.api.StreamRawPredictRequest;
 import com.google.cloud.vertexai.api.StreamingPredictRequest;
 import com.google.cloud.vertexai.api.StreamingPredictResponse;
 import com.google.cloud.vertexai.api.StreamingRawPredictRequest;
@@ -152,6 +157,44 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<StreamRawPredictRequest, HttpBody>
+      streamRawPredictMethodDescriptor =
+          ApiMethodDescriptor.<StreamRawPredictRequest, HttpBody>newBuilder()
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/StreamRawPredict")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StreamRawPredictRequest>newBuilder()
+                      .setPath(
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:streamRawPredict",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StreamRawPredictRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "endpoint", request.getEndpoint());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:streamRawPredict")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StreamRawPredictRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<HttpBody>newBuilder()
+                      .setDefaultInstance(HttpBody.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DirectPredictRequest, DirectPredictResponse>
       directPredictMethodDescriptor =
@@ -301,6 +344,44 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
               .build();
 
   private static final ApiMethodDescriptor<GenerateContentRequest, GenerateContentResponse>
+      generateContentMethodDescriptor =
+          ApiMethodDescriptor.<GenerateContentRequest, GenerateContentResponse>newBuilder()
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/GenerateContent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateContentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{model=projects/*/locations/*/endpoints/*}:generateContent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "model", request.getModel());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:generateContent")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearModel().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateContentResponse>newBuilder()
+                      .setDefaultInstance(GenerateContentResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentMethodDescriptor =
           ApiMethodDescriptor.<GenerateContentRequest, GenerateContentResponse>newBuilder()
               .setFullMethodName(
@@ -426,6 +507,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
@@ -470,6 +552,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
@@ -512,6 +595,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
@@ -536,12 +620,15 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable;
+  private final ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable;
   private final UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable;
   private final UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable;
   private final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictCallable;
   private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
+  private final UnaryCallable<GenerateContentRequest, GenerateContentResponse>
+      generateContentCallable;
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -617,6 +704,17 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictTransportSettings =
+        HttpJsonCallSettings.<StreamRawPredictRequest, HttpBody>newBuilder()
+            .setMethodDescriptor(streamRawPredictMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DirectPredictRequest, DirectPredictResponse>
         directPredictTransportSettings =
             HttpJsonCallSettings.<DirectPredictRequest, DirectPredictResponse>newBuilder()
@@ -664,6 +762,18 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GenerateContentRequest, GenerateContentResponse>
+        generateContentTransportSettings =
+            HttpJsonCallSettings.<GenerateContentRequest, GenerateContentResponse>newBuilder()
+                .setMethodDescriptor(generateContentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("model", String.valueOf(request.getModel()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentTransportSettings =
             HttpJsonCallSettings.<GenerateContentRequest, GenerateContentResponse>newBuilder()
@@ -740,6 +850,9 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
     this.rawPredictCallable =
         callableFactory.createUnaryCallable(
             rawPredictTransportSettings, settings.rawPredictSettings(), clientContext);
+    this.streamRawPredictCallable =
+        callableFactory.createServerStreamingCallable(
+            streamRawPredictTransportSettings, settings.streamRawPredictSettings(), clientContext);
     this.directPredictCallable =
         callableFactory.createUnaryCallable(
             directPredictTransportSettings, settings.directPredictSettings(), clientContext);
@@ -754,6 +867,9 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
     this.explainCallable =
         callableFactory.createUnaryCallable(
             explainTransportSettings, settings.explainSettings(), clientContext);
+    this.generateContentCallable =
+        callableFactory.createUnaryCallable(
+            generateContentTransportSettings, settings.generateContentSettings(), clientContext);
     this.streamGenerateContentCallable =
         callableFactory.createServerStreamingCallable(
             streamGenerateContentTransportSettings,
@@ -789,10 +905,12 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(predictMethodDescriptor);
     methodDescriptors.add(rawPredictMethodDescriptor);
+    methodDescriptors.add(streamRawPredictMethodDescriptor);
     methodDescriptors.add(directPredictMethodDescriptor);
     methodDescriptors.add(directRawPredictMethodDescriptor);
     methodDescriptors.add(serverStreamingPredictMethodDescriptor);
     methodDescriptors.add(explainMethodDescriptor);
+    methodDescriptors.add(generateContentMethodDescriptor);
     methodDescriptors.add(streamGenerateContentMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
@@ -810,6 +928,11 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     return rawPredictCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    return streamRawPredictCallable;
   }
 
   @Override
@@ -832,6 +955,11 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return explainCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateContentRequest, GenerateContentResponse> generateContentCallable() {
+    return generateContentCallable;
   }
 
   @Override
@@ -870,6 +998,20 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamDirectPredictCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamDirectRawPredictCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

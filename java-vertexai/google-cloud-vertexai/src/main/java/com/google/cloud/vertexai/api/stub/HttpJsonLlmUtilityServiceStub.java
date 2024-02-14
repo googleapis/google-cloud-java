@@ -228,6 +228,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
@@ -272,6 +273,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
@@ -314,6 +316,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",

@@ -487,6 +487,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
@@ -531,6 +532,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
@@ -573,6 +575,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
@@ -774,6 +777,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/ui/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
@@ -924,6 +947,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setPost(
                                     "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1089,6 +1132,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setDelete(
                                     "/ui/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1263,6 +1326,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setDelete(
                                     "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1455,6 +1538,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/ui/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -1621,6 +1724,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1803,6 +1926,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/artifacts/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/contexts/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/executions/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/ui/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -1966,6 +2109,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/indexEndpoints/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/artifacts/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/contexts/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/executions/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -2152,6 +2315,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/ui/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
@@ -2322,6 +2505,26 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setPost(
                                     "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/artifacts/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/contexts/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/metadataStores/*/executions/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
