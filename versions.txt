@@ -727,3 +727,6 @@ proto-google-cloud-servicehealth-v1:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-servicehealth-v1:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-meet-v2:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-meet-v2:0.2.0:0.3.0-SNAPSHOT
+google-cloud-securityposture:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-securityposture-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-securityposture-v1:0.0.0:0.0.1-SNAPSHOT
