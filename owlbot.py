@@ -20,6 +20,8 @@ java.common_templates(excludes=[
     '.kokoro/nightly/samples.cfg',
     '.kokoro/nightly/integration.cfg',
     '.kokoro/presubmit/samples.cfg',
+    '.kokoro/presubmit/graalvm-native.cfg',
+    '.kokoro/presubmit/graalvm-native-17.cfg',
     'codecov.yaml',
     'renovate.json',
     '.kokoro/build.sh'
