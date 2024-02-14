@@ -11,6 +11,17 @@
     ":autodetectPinVersions"
   ],
   "ignorePaths": [".kokoro/requirements.txt"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.kokoro/continuous/graalvm-native.*.cfg$"
+      ],
+      "matchStrings": ["value: \"gcr.io/cloud-devrel-public-resources/graalvm.*:(?<currentValue>.*?)\""],
+      "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
+      "datasourceTemplate": "maven"
+    }
+  ],
   "packageRules": [
     {
       "packagePatterns": [
