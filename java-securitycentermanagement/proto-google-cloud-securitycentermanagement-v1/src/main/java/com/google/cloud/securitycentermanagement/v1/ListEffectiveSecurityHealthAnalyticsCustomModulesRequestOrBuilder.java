@@ -79,7 +79,7 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation
+   * Optional. The value returned by the last call indicating a continuation.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,7 +91,7 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation
+   * Optional. The value returned by the last call indicating a continuation.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
