@@ -456,6 +456,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -540,6 +541,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3911,6 +3913,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3997,6 +4000,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4081,6 +4085,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4165,6 +4170,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4552,6 +4558,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4594,6 +4601,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -4661,6 +4669,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
               .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
               .setKernelRootkit(KernelRootkit.newBuilder().build())
+              .setApplication(Application.newBuilder().build())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");

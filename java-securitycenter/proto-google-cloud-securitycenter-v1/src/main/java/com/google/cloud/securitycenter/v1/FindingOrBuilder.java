@@ -1632,4 +1632,39 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
    */
   com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder getKernelRootkitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents an application associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+   *
+   * @return Whether the application field is set.
+   */
+  boolean hasApplication();
+  /**
+   *
+   *
+   * <pre>
+   * Represents an application associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+   *
+   * @return The application.
+   */
+  com.google.cloud.securitycenter.v1.Application getApplication();
+  /**
+   *
+   *
+   * <pre>
+   * Represents an application associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
+   */
+  com.google.cloud.securitycenter.v1.ApplicationOrBuilder getApplicationOrBuilder();
 }

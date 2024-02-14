@@ -443,6 +443,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -523,6 +524,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3588,6 +3590,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3670,6 +3673,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3750,6 +3754,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3829,6 +3834,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4168,6 +4174,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .setApplication(Application.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
