@@ -175,6 +175,7 @@
 
   <modules>
     <module>google-cloud-bigquery</module>
+    <module>google-cloud-bigquery-bom</module>
   </modules>
 
   <build>
