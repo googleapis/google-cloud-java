@@ -106,12 +106,14 @@
         <version>4.11.0</version>
         <scope>test</scope>
       </dependency>
+      <!-- for java-vertexai unit tests, can be removed once we update to mockito-core >= 5.0.0 -->
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-inline</artifactId>
         <version>4.11.0</version>
         <scope>test</scope>
       </dependency>
+      <!-- for java-vertexai unit tests, can be removed once we update to mockito-core >= 5.3.0 -->
       <dependency>
         <groupId>net.bytebuddy</groupId>
         <artifactId>byte-buddy</artifactId>
