@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConne
 import static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServicesServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -217,7 +216,6 @@ public class ClientConnectorServicesServiceSettings
     return ClientConnectorServicesServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ClientConnectorServicesServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
