@@ -54,6 +54,18 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         .internal_static_google_cloud_documentai_v1_BatchProcessRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 9:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -313,6 +325,128 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         : processOptions_;
   }
 
+  public static final int LABELS_FIELD_NUMBER = 9;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.documentai.v1.DocumentAiProcessorService
+                .internal_static_google_cloud_documentai_v1_BatchProcessRequest_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -342,6 +476,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getProcessOptions());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
     getUnknownFields().writeTo(output);
   }
 
@@ -366,6 +502,16 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProcessOptions());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -397,6 +543,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (hasProcessOptions()) {
       if (!getProcessOptions().equals(other.getProcessOptions())) return false;
     }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -423,6 +570,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (hasProcessOptions()) {
       hash = (37 * hash) + PROCESS_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getProcessOptions().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -543,6 +694,28 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           .internal_static_google_cloud_documentai_v1_BatchProcessRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -592,6 +765,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         processOptionsBuilder_.dispose();
         processOptionsBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       return this;
     }
 
@@ -651,6 +825,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         result.processOptions_ =
             processOptionsBuilder_ == null ? processOptions_ : processOptionsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -718,6 +896,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (other.hasProcessOptions()) {
         mergeProcessOptions(other.getProcessOptions());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -775,6 +955,18 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 74:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1594,6 +1786,204 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         processOptions_ = null;
       }
       return processOptionsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000020;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
+      return this;
     }
 
     @java.lang.Override

@@ -53770,7 +53770,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Identifies the bounding polygon of a layout element on the
-       * page.
+       * page. If `layout_type` is set, the bounding polygon must be exactly the
+       * same to the layout element it's referring to.
        * </pre>
        *
        * <code>
@@ -53785,7 +53786,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Identifies the bounding polygon of a layout element on the
-       * page.
+       * page. If `layout_type` is set, the bounding polygon must be exactly the
+       * same to the layout element it's referring to.
        * </pre>
        *
        * <code>
@@ -53800,7 +53802,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Identifies the bounding polygon of a layout element on the
-       * page.
+       * page. If `layout_type` is set, the bounding polygon must be exactly the
+       * same to the layout element it's referring to.
        * </pre>
        *
        * <code>
@@ -54302,7 +54305,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Identifies the bounding polygon of a layout element on the
-       * page.
+       * page. If `layout_type` is set, the bounding polygon must be exactly the
+       * same to the layout element it's referring to.
        * </pre>
        *
        * <code>
@@ -54320,7 +54324,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Identifies the bounding polygon of a layout element on the
-       * page.
+       * page. If `layout_type` is set, the bounding polygon must be exactly the
+       * same to the layout element it's referring to.
        * </pre>
        *
        * <code>
@@ -54340,7 +54345,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Identifies the bounding polygon of a layout element on the
-       * page.
+       * page. If `layout_type` is set, the bounding polygon must be exactly the
+       * same to the layout element it's referring to.
        * </pre>
        *
        * <code>
@@ -55166,7 +55172,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55183,7 +55190,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55206,7 +55214,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55231,7 +55240,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55254,7 +55264,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55285,7 +55296,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55307,7 +55319,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55324,7 +55337,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -55345,7 +55359,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Identifies the bounding polygon of a layout element on the
-         * page.
+         * page. If `layout_type` is set, the bounding polygon must be exactly the
+         * same to the layout element it's referring to.
          * </pre>
          *
          * <code>
@@ -56427,7 +56442,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=819
+     *     google/cloud/documentai/v1/document.proto;l=820
      * @return The revision.
      */
     @java.lang.Deprecated
@@ -56444,7 +56459,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=823
+     *     google/cloud/documentai/v1/document.proto;l=824
      * @return The id.
      */
     @java.lang.Deprecated
@@ -56902,7 +56917,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=782
+       *     google/cloud/documentai/v1/document.proto;l=783
        * @return The id.
        */
       @java.lang.Deprecated
@@ -57000,7 +57015,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=782
+       *     google/cloud/documentai/v1/document.proto;l=783
        * @return The id.
        */
       @java.lang.Override
@@ -57522,7 +57537,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=782
+         *     google/cloud/documentai/v1/document.proto;l=783
          * @return The id.
          */
         @java.lang.Override
@@ -57540,7 +57555,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=782
+         *     google/cloud/documentai/v1/document.proto;l=783
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -57562,7 +57577,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=782
+         *     google/cloud/documentai/v1/document.proto;l=783
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -57650,7 +57665,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=819
+     *     google/cloud/documentai/v1/document.proto;l=820
      * @return The revision.
      */
     @java.lang.Override
@@ -57672,7 +57687,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=823
+     *     google/cloud/documentai/v1/document.proto;l=824
      * @return The id.
      */
     @java.lang.Override
@@ -58271,7 +58286,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=819
+       *     google/cloud/documentai/v1/document.proto;l=820
        * @return The revision.
        */
       @java.lang.Override
@@ -58289,7 +58304,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=819
+       *     google/cloud/documentai/v1/document.proto;l=820
        * @param value The revision to set.
        * @return This builder for chaining.
        */
@@ -58311,7 +58326,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=819
+       *     google/cloud/documentai/v1/document.proto;l=820
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -58334,7 +58349,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=823
+       *     google/cloud/documentai/v1/document.proto;l=824
        * @return The id.
        */
       @java.lang.Override
@@ -58353,7 +58368,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=823
+       *     google/cloud/documentai/v1/document.proto;l=824
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -58376,7 +58391,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=823
+       *     google/cloud/documentai/v1/document.proto;l=824
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -59033,7 +59048,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=862
+     *     google/cloud/documentai/v1/document.proto;l=863
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -59050,7 +59065,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=862
+     *     google/cloud/documentai/v1/document.proto;l=863
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -59067,7 +59082,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=862
+     *     google/cloud/documentai/v1/document.proto;l=863
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -60384,7 +60399,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=862
+     *     google/cloud/documentai/v1/document.proto;l=863
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -60404,7 +60419,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=862
+     *     google/cloud/documentai/v1/document.proto;l=863
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -60423,7 +60438,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=862
+     *     google/cloud/documentai/v1/document.proto;l=863
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -61630,7 +61645,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -61650,7 +61665,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -61669,7 +61684,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -61689,7 +61704,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -61715,7 +61730,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -61740,7 +61755,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -61764,7 +61779,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=862
+       *     google/cloud/documentai/v1/document.proto;l=863
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
