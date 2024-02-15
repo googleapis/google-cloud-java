@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferMessage;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
+import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -161,6 +162,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings;
   private final UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings;
+  private final UnaryCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -547,6 +549,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return enrollDataSourcesSettings;
   }
 
+  /** Returns the object with the settings used for calls to unenrollDataSources. */
+  public UnaryCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesSettings() {
+    return unenrollDataSourcesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -633,7 +640,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -642,7 +648,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -694,6 +699,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     listTransferLogsSettings = settingsBuilder.listTransferLogsSettings().build();
     checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
     enrollDataSourcesSettings = settingsBuilder.enrollDataSourcesSettings().build();
+    unenrollDataSourcesSettings = settingsBuilder.unenrollDataSourcesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -739,6 +745,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         checkValidCredsSettings;
     private final UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty>
         enrollDataSourcesSettings;
+    private final UnaryCallSettings.Builder<UnenrollDataSourcesRequest, Empty>
+        unenrollDataSourcesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -812,6 +820,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferLogsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_LOGS_PAGE_STR_FACT);
       checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       enrollDataSourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      unenrollDataSourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -832,6 +841,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               listTransferLogsSettings,
               checkValidCredsSettings,
               enrollDataSourcesSettings,
+              unenrollDataSourcesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -855,6 +865,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferLogsSettings = settings.listTransferLogsSettings.toBuilder();
       checkValidCredsSettings = settings.checkValidCredsSettings.toBuilder();
       enrollDataSourcesSettings = settings.enrollDataSourcesSettings.toBuilder();
+      unenrollDataSourcesSettings = settings.unenrollDataSourcesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -875,6 +886,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               listTransferLogsSettings,
               checkValidCredsSettings,
               enrollDataSourcesSettings,
+              unenrollDataSourcesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -976,6 +988,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
       builder
           .enrollDataSourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .unenrollDataSourcesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1103,6 +1120,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     /** Returns the builder for the settings used for calls to enrollDataSources. */
     public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
       return enrollDataSourcesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unenrollDataSources. */
+    public UnaryCallSettings.Builder<UnenrollDataSourcesRequest, Empty>
+        unenrollDataSourcesSettings() {
+      return unenrollDataSourcesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

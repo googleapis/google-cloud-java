@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -349,6 +349,20 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> enrollDataSourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UnenrollDataSources</td>
+ *      <td><p> Unenroll data sources in a user project. This allows users to remove transfer configurations for these data sources. They will no longer appear in the ListDataSources RPC and will also no longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> unenrollDataSources(UnenrollDataSourcesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> unenrollDataSourcesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2594,6 +2608,68 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
     return stub.enrollDataSourcesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unenroll data sources in a user project. This allows users to remove transfer configurations
+   * for these data sources. They will no longer appear in the ListDataSources RPC and will also no
+   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   UnenrollDataSourcesRequest request =
+   *       UnenrollDataSourcesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllDataSourceIds(new ArrayList<String>())
+   *           .build();
+   *   dataTransferServiceClient.unenrollDataSources(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void unenrollDataSources(UnenrollDataSourcesRequest request) {
+    unenrollDataSourcesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unenroll data sources in a user project. This allows users to remove transfer configurations
+   * for these data sources. They will no longer appear in the ListDataSources RPC and will also no
+   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   UnenrollDataSourcesRequest request =
+   *       UnenrollDataSourcesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllDataSourceIds(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataTransferServiceClient.unenrollDataSourcesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
+    return stub.unenrollDataSourcesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

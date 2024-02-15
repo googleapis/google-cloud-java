@@ -16,35 +16,36 @@
 
 package com.google.cloud.bigquery.datatransfer.v1.samples;
 
-// [START bigquerydatatransfer_v1_generated_DataTransferServiceSettings_GetDataSource_sync]
-import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceSettings;
-import java.time.Duration;
+// [START bigquerydatatransfer_v1_generated_DataTransferService_UnenrollDataSources_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
+import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
+import com.google.protobuf.Empty;
+import java.util.ArrayList;
 
-public class SyncGetDataSource {
+public class AsyncUnenrollDataSources {
 
   public static void main(String[] args) throws Exception {
-    syncGetDataSource();
+    asyncUnenrollDataSources();
   }
 
-  public static void syncGetDataSource() throws Exception {
+  public static void asyncUnenrollDataSources() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    DataTransferServiceSettings.Builder dataTransferServiceSettingsBuilder =
-        DataTransferServiceSettings.newBuilder();
-    dataTransferServiceSettingsBuilder
-        .getDataSourceSettings()
-        .setRetrySettings(
-            dataTransferServiceSettingsBuilder
-                .getDataSourceSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    DataTransferServiceSettings dataTransferServiceSettings =
-        dataTransferServiceSettingsBuilder.build();
+    try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+      UnenrollDataSourcesRequest request =
+          UnenrollDataSourcesRequest.newBuilder()
+              .setName("name3373707")
+              .addAllDataSourceIds(new ArrayList<String>())
+              .build();
+      ApiFuture<Empty> future =
+          dataTransferServiceClient.unenrollDataSourcesCallable().futureCall(request);
+      // Do something.
+      future.get();
+    }
   }
 }
-// [END bigquerydatatransfer_v1_generated_DataTransferServiceSettings_GetDataSource_sync]
+// [END bigquerydatatransfer_v1_generated_DataTransferService_UnenrollDataSources_async]
