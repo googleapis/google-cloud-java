@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.1.0...v3.2.0) (2024-02-15)
+
+
+### Features
+
+* Introduce MaximumRequestCallbackWaitTimeExceededException ([#2401](https://github.com/googleapis/java-bigquerystorage/issues/2401)) ([0dbbfb8](https://github.com/googleapis/java-bigquerystorage/commit/0dbbfb80632e17b06bff04760e129df16149be4b))
+
+
+### Bug Fixes
+
+* Add client id and update trace id population for StreamWriter and JsonWriter ([#2389](https://github.com/googleapis/java-bigquerystorage/issues/2389)) ([4258af4](https://github.com/googleapis/java-bigquerystorage/commit/4258af42f8ab4494a254637fd018159ea426e0b7))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.35.0 ([#2407](https://github.com/googleapis/java-bigquerystorage/issues/2407)) ([59a1ede](https://github.com/googleapis/java-bigquerystorage/commit/59a1ede76bf37d4f71e8d0b89a1610277091f5ec))
+
+
+### Dependencies
+
+* Update core dependencies to v1.23.0 ([#2403](https://github.com/googleapis/java-bigquerystorage/issues/2403)) ([68eaae7](https://github.com/googleapis/java-bigquerystorage/commit/68eaae7851ccc2b698eb06a88c11719905fca049))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.37.1 ([#2402](https://github.com/googleapis/java-bigquerystorage/issues/2402)) ([ac13acc](https://github.com/googleapis/java-bigquerystorage/commit/ac13acc3b363ac954c2efdeff86fe7ca1eaeb0a8))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.37.2 ([#2409](https://github.com/googleapis/java-bigquerystorage/issues/2409)) ([c95f4b4](https://github.com/googleapis/java-bigquerystorage/commit/c95f4b46e1040be606deace3bd0ec952d07cfc4d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.25.0 ([#2406](https://github.com/googleapis/java-bigquerystorage/issues/2406)) ([2184b82](https://github.com/googleapis/java-bigquerystorage/commit/2184b82f322737b952d2ddab68bc37ded02f30a5))
+* Update dependency com.google.truth:truth to v1.4.0 ([#2394](https://github.com/googleapis/java-bigquerystorage/issues/2394)) ([3234fc9](https://github.com/googleapis/java-bigquerystorage/commit/3234fc93476342774a92febd14fb4a9a08bca330))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.0 ([#2392](https://github.com/googleapis/java-bigquerystorage/issues/2392)) ([9106284](https://github.com/googleapis/java-bigquerystorage/commit/91062842986166f156abbf5eefa986e3a134ef46))
+* Update dependency org.json:json to v20240205 ([#2398](https://github.com/googleapis/java-bigquerystorage/issues/2398)) ([7e6481d](https://github.com/googleapis/java-bigquerystorage/commit/7e6481d3daf1c3930c48670ccd774f1629e22360))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.2 ([#2397](https://github.com/googleapis/java-bigquerystorage/issues/2397)) ([f01182b](https://github.com/googleapis/java-bigquerystorage/commit/f01182b63fb31dd8a1d95f5e084b3f2ddb2e8580))
+
 ## [3.1.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.0.1...v3.1.0) (2024-02-02)
 
 
