@@ -31,6 +31,8 @@ java.common_templates(
         "renovate.json",
         ".kokoro/presubmit/graalvm-native.cfg",
         ".kokoro/presubmit/graalvm-native-17.cfg",
-        ".kokoro/presubmit/common.cfg"
+        ".kokoro/presubmit/common.cfg",
+        ".kokoro/requirements.txt",
+        ".kokoro/requirements.in"
     ]
 )
