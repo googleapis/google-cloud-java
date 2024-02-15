@@ -23,6 +23,7 @@ jobs:
         - lint  # fmt-maven-plugin and google-java-format
         - clirr # clirr-maven-plugin
         - javadoc # maven-javadoc-plugin
+        - javadoc-with-doclet # test javadoc generation with doclet
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
     - uses: actions/setup-java@v3
@@ -45,8 +46,8 @@ jobs:
     - uses: actions/setup-java@v3
       with:
         distribution: temurin
-        java-version: 11
+        java-version: 17
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
-    - run: .kokoro/client-library-check-javadoc-with-doclet.sh ${{matrix.repo}}
+    - run: .kokoro/client-library-check-doclet.sh ${{matrix.repo}}
