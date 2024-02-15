@@ -1455,6 +1455,68 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int DATA_RETENTION_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+      dataRetentionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration setting for Airflow database data retention
+   * mechanism.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataRetentionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataRetentionConfig() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration setting for Airflow database data retention
+   * mechanism.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataRetentionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+      getDataRetentionConfig() {
+    return dataRetentionConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.getDefaultInstance()
+        : dataRetentionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration setting for Airflow database data retention
+   * mechanism.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfigOrBuilder
+      getDataRetentionConfigOrBuilder() {
+    return dataRetentionConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.getDefaultInstance()
+        : dataRetentionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1528,6 +1590,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowByoidUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, airflowByoidUri_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(21, getDataRetentionConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1604,6 +1669,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowByoidUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, airflowByoidUri_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(21, getDataRetentionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1675,6 +1744,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (!getRecoveryConfig().equals(other.getRecoveryConfig())) return false;
     }
     if (resilienceMode_ != other.resilienceMode_) return false;
+    if (hasDataRetentionConfig() != other.hasDataRetentionConfig()) return false;
+    if (hasDataRetentionConfig()) {
+      if (!getDataRetentionConfig().equals(other.getDataRetentionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1744,6 +1817,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + RESILIENCE_MODE_FIELD_NUMBER;
     hash = (53 * hash) + resilienceMode_;
+    if (hasDataRetentionConfig()) {
+      hash = (37 * hash) + DATA_RETENTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDataRetentionConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1898,6 +1975,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         getWorkloadsConfigFieldBuilder();
         getMasterAuthorizedNetworksConfigFieldBuilder();
         getRecoveryConfigFieldBuilder();
+        getDataRetentionConfigFieldBuilder();
       }
     }
 
@@ -1967,6 +2045,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         recoveryConfigBuilder_ = null;
       }
       resilienceMode_ = 0;
+      dataRetentionConfig_ = null;
+      if (dataRetentionConfigBuilder_ != null) {
+        dataRetentionConfigBuilder_.dispose();
+        dataRetentionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2090,6 +2173,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.resilienceMode_ = resilienceMode_;
       }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.dataRetentionConfig_ =
+            dataRetentionConfigBuilder_ == null
+                ? dataRetentionConfig_
+                : dataRetentionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2203,6 +2293,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.resilienceMode_ != 0) {
         setResilienceModeValue(other.getResilienceModeValue());
+      }
+      if (other.hasDataRetentionConfig()) {
+        mergeDataRetentionConfig(other.getDataRetentionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2344,6 +2437,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00004000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getDataRetentionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5729,6 +5829,230 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       resilienceMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+        dataRetentionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig,
+            com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfigOrBuilder>
+        dataRetentionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataRetentionConfig field is set.
+     */
+    public boolean hasDataRetentionConfig() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataRetentionConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+        getDataRetentionConfig() {
+      if (dataRetentionConfigBuilder_ == null) {
+        return dataRetentionConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+                .getDefaultInstance()
+            : dataRetentionConfig_;
+      } else {
+        return dataRetentionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataRetentionConfig(
+        com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig value) {
+      if (dataRetentionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataRetentionConfig_ = value;
+      } else {
+        dataRetentionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataRetentionConfig(
+        com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.Builder
+            builderForValue) {
+      if (dataRetentionConfigBuilder_ == null) {
+        dataRetentionConfig_ = builderForValue.build();
+      } else {
+        dataRetentionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataRetentionConfig(
+        com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig value) {
+      if (dataRetentionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && dataRetentionConfig_ != null
+            && dataRetentionConfig_
+                != com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+                    .getDefaultInstance()) {
+          getDataRetentionConfigBuilder().mergeFrom(value);
+        } else {
+          dataRetentionConfig_ = value;
+        }
+      } else {
+        dataRetentionConfigBuilder_.mergeFrom(value);
+      }
+      if (dataRetentionConfig_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataRetentionConfig() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      dataRetentionConfig_ = null;
+      if (dataRetentionConfigBuilder_ != null) {
+        dataRetentionConfigBuilder_.dispose();
+        dataRetentionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.Builder
+        getDataRetentionConfigBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getDataRetentionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfigOrBuilder
+        getDataRetentionConfigOrBuilder() {
+      if (dataRetentionConfigBuilder_ != null) {
+        return dataRetentionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dataRetentionConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
+                .getDefaultInstance()
+            : dataRetentionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration setting for Airflow database data retention
+     * mechanism.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig data_retention_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig,
+            com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfigOrBuilder>
+        getDataRetentionConfigFieldBuilder() {
+      if (dataRetentionConfigBuilder_ == null) {
+        dataRetentionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig,
+                com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfigOrBuilder>(
+                getDataRetentionConfig(), getParentForChildren(), isClean());
+        dataRetentionConfig_ = null;
+      }
+      return dataRetentionConfigBuilder_;
     }
 
     @java.lang.Override

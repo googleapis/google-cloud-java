@@ -598,4 +598,42 @@ public interface SoftwareConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.CloudDataLineageIntegrationOrBuilder
       getCloudDataLineageIntegrationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not the web server uses custom plugins.
+   * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for webServerPluginsMode.
+   */
+  int getWebServerPluginsModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not the web server uses custom plugins.
+   * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The webServerPluginsMode.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.WebServerPluginsMode
+      getWebServerPluginsMode();
 }

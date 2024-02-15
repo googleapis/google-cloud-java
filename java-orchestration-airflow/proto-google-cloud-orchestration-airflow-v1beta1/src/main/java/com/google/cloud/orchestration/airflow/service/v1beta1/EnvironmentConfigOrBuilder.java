@@ -756,6 +756,52 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The configuration setting for Airflow database data retention
+   * mechanism.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig data_retention_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataRetentionConfig field is set.
+   */
+  boolean hasDataRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration setting for Airflow database data retention
+   * mechanism.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig data_retention_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataRetentionConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig
+      getDataRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration setting for Airflow database data retention
+   * mechanism.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig data_retention_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfigOrBuilder
+      getDataRetentionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Resilience mode of the Cloud Composer Environment.
    *
    * This field is supported for Cloud Composer environments in versions

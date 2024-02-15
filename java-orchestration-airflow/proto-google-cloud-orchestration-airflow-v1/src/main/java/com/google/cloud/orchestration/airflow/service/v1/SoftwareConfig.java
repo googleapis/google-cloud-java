@@ -41,6 +41,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   private SoftwareConfig() {
     imageVersion_ = "";
     pythonVersion_ = "";
+    webServerPluginsMode_ = 0;
   }
 
   @java.lang.Override
@@ -80,6 +81,170 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Web server plugins mode of the Cloud Composer environment.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode}
+   */
+  public enum WebServerPluginsMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default mode.
+     * </pre>
+     *
+     * <code>WEB_SERVER_PLUGINS_MODE_UNSPECIFIED = 0;</code>
+     */
+    WEB_SERVER_PLUGINS_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Web server plugins are not supported.
+     * </pre>
+     *
+     * <code>PLUGINS_DISABLED = 1;</code>
+     */
+    PLUGINS_DISABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Web server plugins are supported.
+     * </pre>
+     *
+     * <code>PLUGINS_ENABLED = 2;</code>
+     */
+    PLUGINS_ENABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default mode.
+     * </pre>
+     *
+     * <code>WEB_SERVER_PLUGINS_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int WEB_SERVER_PLUGINS_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Web server plugins are not supported.
+     * </pre>
+     *
+     * <code>PLUGINS_DISABLED = 1;</code>
+     */
+    public static final int PLUGINS_DISABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Web server plugins are supported.
+     * </pre>
+     *
+     * <code>PLUGINS_ENABLED = 2;</code>
+     */
+    public static final int PLUGINS_ENABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WebServerPluginsMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WebServerPluginsMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return WEB_SERVER_PLUGINS_MODE_UNSPECIFIED;
+        case 1:
+          return PLUGINS_DISABLED;
+        case 2:
+          return PLUGINS_ENABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WebServerPluginsMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<WebServerPluginsMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<WebServerPluginsMode>() {
+              public WebServerPluginsMode findValueByNumber(int number) {
+                return WebServerPluginsMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final WebServerPluginsMode[] VALUES = values();
+
+    public static WebServerPluginsMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WebServerPluginsMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode)
+  }
+
+  private int bitField0_;
   public static final int IMAGE_VERSION_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -747,6 +912,119 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     return schedulerCount_;
   }
 
+  public static final int CLOUD_DATA_LINEAGE_INTEGRATION_FIELD_NUMBER = 8;
+  private com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+      cloudDataLineageIntegration_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Cloud Data Lineage integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cloudDataLineageIntegration field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudDataLineageIntegration() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Cloud Data Lineage integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloudDataLineageIntegration.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+      getCloudDataLineageIntegration() {
+    return cloudDataLineageIntegration_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+            .getDefaultInstance()
+        : cloudDataLineageIntegration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Cloud Data Lineage integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegrationOrBuilder
+      getCloudDataLineageIntegrationOrBuilder() {
+    return cloudDataLineageIntegration_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+            .getDefaultInstance()
+        : cloudDataLineageIntegration_;
+  }
+
+  public static final int WEB_SERVER_PLUGINS_MODE_FIELD_NUMBER = 10;
+  private int webServerPluginsMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not the web server uses custom plugins.
+   * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for webServerPluginsMode.
+   */
+  @java.lang.Override
+  public int getWebServerPluginsModeValue() {
+    return webServerPluginsMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not the web server uses custom plugins.
+   * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The webServerPluginsMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+      getWebServerPluginsMode() {
+    com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode result =
+        com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+            .forNumber(webServerPluginsMode_);
+    return result == null
+        ? com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -778,6 +1056,15 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (schedulerCount_ != 0) {
       output.writeInt32(7, schedulerCount_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getCloudDataLineageIntegration());
+    }
+    if (webServerPluginsMode_
+        != com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+            .WEB_SERVER_PLUGINS_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, webServerPluginsMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -827,6 +1114,17 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (schedulerCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, schedulerCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getCloudDataLineageIntegration());
+    }
+    if (webServerPluginsMode_
+        != com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+            .WEB_SERVER_PLUGINS_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, webServerPluginsMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -850,6 +1148,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetEnvVariables().equals(other.internalGetEnvVariables())) return false;
     if (!getPythonVersion().equals(other.getPythonVersion())) return false;
     if (getSchedulerCount() != other.getSchedulerCount()) return false;
+    if (hasCloudDataLineageIntegration() != other.hasCloudDataLineageIntegration()) return false;
+    if (hasCloudDataLineageIntegration()) {
+      if (!getCloudDataLineageIntegration().equals(other.getCloudDataLineageIntegration()))
+        return false;
+    }
+    if (webServerPluginsMode_ != other.webServerPluginsMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -879,6 +1183,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPythonVersion().hashCode();
     hash = (37 * hash) + SCHEDULER_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getSchedulerCount();
+    if (hasCloudDataLineageIntegration()) {
+      hash = (37 * hash) + CLOUD_DATA_LINEAGE_INTEGRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudDataLineageIntegration().hashCode();
+    }
+    hash = (37 * hash) + WEB_SERVER_PLUGINS_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + webServerPluginsMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1039,10 +1349,19 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCloudDataLineageIntegrationFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1055,6 +1374,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvVariables().clear();
       pythonVersion_ = "";
       schedulerCount_ = 0;
+      cloudDataLineageIntegration_ = null;
+      if (cloudDataLineageIntegrationBuilder_ != null) {
+        cloudDataLineageIntegrationBuilder_.dispose();
+        cloudDataLineageIntegrationBuilder_ = null;
+      }
+      webServerPluginsMode_ = 0;
       return this;
     }
 
@@ -1114,6 +1439,18 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.schedulerCount_ = schedulerCount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cloudDataLineageIntegration_ =
+            cloudDataLineageIntegrationBuilder_ == null
+                ? cloudDataLineageIntegration_
+                : cloudDataLineageIntegrationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.webServerPluginsMode_ = webServerPluginsMode_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1183,6 +1520,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSchedulerCount() != 0) {
         setSchedulerCount(other.getSchedulerCount());
+      }
+      if (other.hasCloudDataLineageIntegration()) {
+        mergeCloudDataLineageIntegration(other.getCloudDataLineageIntegration());
+      }
+      if (other.webServerPluginsMode_ != 0) {
+        setWebServerPluginsModeValue(other.getWebServerPluginsModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1266,6 +1609,19 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 56
+            case 66:
+              {
+                input.readMessage(
+                    getCloudDataLineageIntegrationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
+            case 80:
+              {
+                webServerPluginsMode_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2507,6 +2863,350 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSchedulerCount() {
       bitField0_ = (bitField0_ & ~0x00000020);
       schedulerCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+        cloudDataLineageIntegration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration,
+            com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegrationOrBuilder>
+        cloudDataLineageIntegrationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the cloudDataLineageIntegration field is set.
+     */
+    public boolean hasCloudDataLineageIntegration() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cloudDataLineageIntegration.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+        getCloudDataLineageIntegration() {
+      if (cloudDataLineageIntegrationBuilder_ == null) {
+        return cloudDataLineageIntegration_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+                .getDefaultInstance()
+            : cloudDataLineageIntegration_;
+      } else {
+        return cloudDataLineageIntegrationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCloudDataLineageIntegration(
+        com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration value) {
+      if (cloudDataLineageIntegrationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudDataLineageIntegration_ = value;
+      } else {
+        cloudDataLineageIntegrationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCloudDataLineageIntegration(
+        com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration.Builder
+            builderForValue) {
+      if (cloudDataLineageIntegrationBuilder_ == null) {
+        cloudDataLineageIntegration_ = builderForValue.build();
+      } else {
+        cloudDataLineageIntegrationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCloudDataLineageIntegration(
+        com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration value) {
+      if (cloudDataLineageIntegrationBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && cloudDataLineageIntegration_ != null
+            && cloudDataLineageIntegration_
+                != com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+                    .getDefaultInstance()) {
+          getCloudDataLineageIntegrationBuilder().mergeFrom(value);
+        } else {
+          cloudDataLineageIntegration_ = value;
+        }
+      } else {
+        cloudDataLineageIntegrationBuilder_.mergeFrom(value);
+      }
+      if (cloudDataLineageIntegration_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCloudDataLineageIntegration() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      cloudDataLineageIntegration_ = null;
+      if (cloudDataLineageIntegrationBuilder_ != null) {
+        cloudDataLineageIntegrationBuilder_.dispose();
+        cloudDataLineageIntegrationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration.Builder
+        getCloudDataLineageIntegrationBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getCloudDataLineageIntegrationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegrationOrBuilder
+        getCloudDataLineageIntegrationOrBuilder() {
+      if (cloudDataLineageIntegrationBuilder_ != null) {
+        return cloudDataLineageIntegrationBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudDataLineageIntegration_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+                .getDefaultInstance()
+            : cloudDataLineageIntegration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Cloud Data Lineage integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration cloud_data_lineage_integration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration,
+            com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegrationOrBuilder>
+        getCloudDataLineageIntegrationFieldBuilder() {
+      if (cloudDataLineageIntegrationBuilder_ == null) {
+        cloudDataLineageIntegrationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration,
+                com.google.cloud.orchestration.airflow.service.v1.CloudDataLineageIntegration
+                    .Builder,
+                com.google.cloud.orchestration.airflow.service.v1
+                    .CloudDataLineageIntegrationOrBuilder>(
+                getCloudDataLineageIntegration(), getParentForChildren(), isClean());
+        cloudDataLineageIntegration_ = null;
+      }
+      return cloudDataLineageIntegrationBuilder_;
+    }
+
+    private int webServerPluginsMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not the web server uses custom plugins.
+     * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for webServerPluginsMode.
+     */
+    @java.lang.Override
+    public int getWebServerPluginsModeValue() {
+      return webServerPluginsMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not the web server uses custom plugins.
+     * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for webServerPluginsMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebServerPluginsModeValue(int value) {
+      webServerPluginsMode_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not the web server uses custom plugins.
+     * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The webServerPluginsMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+        getWebServerPluginsMode() {
+      com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode result =
+          com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+              .forNumber(webServerPluginsMode_);
+      return result == null
+          ? com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not the web server uses custom plugins.
+     * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The webServerPluginsMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebServerPluginsMode(
+        com.google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      webServerPluginsMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not the web server uses custom plugins.
+     * If unspecified, the field defaults to `PLUGINS_ENABLED`.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig.WebServerPluginsMode web_server_plugins_mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebServerPluginsMode() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      webServerPluginsMode_ = 0;
       onChanged();
       return this;
     }

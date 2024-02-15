@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsGrpc.EnvironmentsImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -268,6 +269,244 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
                   "Unrecognized response type %s for method PollAirflowCommand, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PollAirflowCommandResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listWorkloads(
+      ListWorkloadsRequest request, StreamObserver<ListWorkloadsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListWorkloadsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWorkloadsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkloads, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListWorkloadsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createUserWorkloadsSecret(
+      CreateUserWorkloadsSecretRequest request,
+      StreamObserver<UserWorkloadsSecret> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserWorkloadsSecret) {
+      requests.add(request);
+      responseObserver.onNext(((UserWorkloadsSecret) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUserWorkloadsSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserWorkloadsSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getUserWorkloadsSecret(
+      GetUserWorkloadsSecretRequest request, StreamObserver<UserWorkloadsSecret> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserWorkloadsSecret) {
+      requests.add(request);
+      responseObserver.onNext(((UserWorkloadsSecret) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserWorkloadsSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserWorkloadsSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listUserWorkloadsSecrets(
+      ListUserWorkloadsSecretsRequest request,
+      StreamObserver<ListUserWorkloadsSecretsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListUserWorkloadsSecretsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListUserWorkloadsSecretsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUserWorkloadsSecrets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListUserWorkloadsSecretsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateUserWorkloadsSecret(
+      UpdateUserWorkloadsSecretRequest request,
+      StreamObserver<UserWorkloadsSecret> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserWorkloadsSecret) {
+      requests.add(request);
+      responseObserver.onNext(((UserWorkloadsSecret) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUserWorkloadsSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserWorkloadsSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteUserWorkloadsSecret(
+      DeleteUserWorkloadsSecretRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUserWorkloadsSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createUserWorkloadsConfigMap(
+      CreateUserWorkloadsConfigMapRequest request,
+      StreamObserver<UserWorkloadsConfigMap> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserWorkloadsConfigMap) {
+      requests.add(request);
+      responseObserver.onNext(((UserWorkloadsConfigMap) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUserWorkloadsConfigMap, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserWorkloadsConfigMap.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getUserWorkloadsConfigMap(
+      GetUserWorkloadsConfigMapRequest request,
+      StreamObserver<UserWorkloadsConfigMap> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserWorkloadsConfigMap) {
+      requests.add(request);
+      responseObserver.onNext(((UserWorkloadsConfigMap) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserWorkloadsConfigMap, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserWorkloadsConfigMap.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listUserWorkloadsConfigMaps(
+      ListUserWorkloadsConfigMapsRequest request,
+      StreamObserver<ListUserWorkloadsConfigMapsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListUserWorkloadsConfigMapsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListUserWorkloadsConfigMapsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUserWorkloadsConfigMaps, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListUserWorkloadsConfigMapsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateUserWorkloadsConfigMap(
+      UpdateUserWorkloadsConfigMapRequest request,
+      StreamObserver<UserWorkloadsConfigMap> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserWorkloadsConfigMap) {
+      requests.add(request);
+      responseObserver.onNext(((UserWorkloadsConfigMap) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUserWorkloadsConfigMap, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserWorkloadsConfigMap.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteUserWorkloadsConfigMap(
+      DeleteUserWorkloadsConfigMapRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUserWorkloadsConfigMap, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

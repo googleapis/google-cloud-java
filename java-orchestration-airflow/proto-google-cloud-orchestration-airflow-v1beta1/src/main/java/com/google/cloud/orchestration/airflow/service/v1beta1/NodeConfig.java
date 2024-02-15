@@ -47,6 +47,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    composerNetworkAttachment_ = "";
+    composerInternalIpv4CidrBlock_ = "";
   }
 
   @java.lang.Override
@@ -740,6 +742,144 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return enableIpMasqAgent_;
   }
 
+  public static final int COMPOSER_NETWORK_ATTACHMENT_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object composerNetworkAttachment_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network Attachment that Cloud Composer environment is connected
+   * to, which provides connectivity with a user's VPC network. Takes precedence
+   * over network and subnetwork settings. If not provided, but network and
+   * subnetwork are defined during environment, it will be provisioned. If not
+   * provided and network and subnetwork are also empty, then connectivity to
+   * user's VPC network is disabled. Network attachment must be provided in
+   * format
+   * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The composerNetworkAttachment.
+   */
+  @java.lang.Override
+  public java.lang.String getComposerNetworkAttachment() {
+    java.lang.Object ref = composerNetworkAttachment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      composerNetworkAttachment_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network Attachment that Cloud Composer environment is connected
+   * to, which provides connectivity with a user's VPC network. Takes precedence
+   * over network and subnetwork settings. If not provided, but network and
+   * subnetwork are defined during environment, it will be provisioned. If not
+   * provided and network and subnetwork are also empty, then connectivity to
+   * user's VPC network is disabled. Network attachment must be provided in
+   * format
+   * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for composerNetworkAttachment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getComposerNetworkAttachmentBytes() {
+    java.lang.Object ref = composerNetworkAttachment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      composerNetworkAttachment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COMPOSER_INTERNAL_IPV4_CIDR_BLOCK_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object composerInternalIpv4CidrBlock_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP range in CIDR notation to use internally by Cloud
+   * Composer. IP addresses are not reserved - and the same range can be used by
+   * multiple Cloud Composer environments. In case of overlap, IPs from this
+   * range will not be accessible in the user's VPC network. Cannot be updated.
+   * If not specified, the default value of '100.64.128.0/20' is used.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The composerInternalIpv4CidrBlock.
+   */
+  @java.lang.Override
+  public java.lang.String getComposerInternalIpv4CidrBlock() {
+    java.lang.Object ref = composerInternalIpv4CidrBlock_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      composerInternalIpv4CidrBlock_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP range in CIDR notation to use internally by Cloud
+   * Composer. IP addresses are not reserved - and the same range can be used by
+   * multiple Cloud Composer environments. In case of overlap, IPs from this
+   * range will not be accessible in the user's VPC network. Cannot be updated.
+   * If not specified, the default value of '100.64.128.0/20' is used.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for composerInternalIpv4CidrBlock.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getComposerInternalIpv4CidrBlockBytes() {
+    java.lang.Object ref = composerInternalIpv4CidrBlock_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      composerInternalIpv4CidrBlock_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -786,6 +926,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableIpMasqAgent_ != false) {
       output.writeBool(11, enableIpMasqAgent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(composerNetworkAttachment_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, composerNetworkAttachment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(composerInternalIpv4CidrBlock_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 13, composerInternalIpv4CidrBlock_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -839,6 +986,15 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableIpMasqAgent_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableIpMasqAgent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(composerNetworkAttachment_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(12, composerNetworkAttachment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(composerInternalIpv4CidrBlock_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              13, composerInternalIpv4CidrBlock_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -869,6 +1025,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (getMaxPodsPerNode() != other.getMaxPodsPerNode()) return false;
     if (getEnableIpMasqAgent() != other.getEnableIpMasqAgent()) return false;
+    if (!getComposerNetworkAttachment().equals(other.getComposerNetworkAttachment())) return false;
+    if (!getComposerInternalIpv4CidrBlock().equals(other.getComposerInternalIpv4CidrBlock()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -908,6 +1067,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMaxPodsPerNode();
     hash = (37 * hash) + ENABLE_IP_MASQ_AGENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIpMasqAgent());
+    hash = (37 * hash) + COMPOSER_NETWORK_ATTACHMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getComposerNetworkAttachment().hashCode();
+    hash = (37 * hash) + COMPOSER_INTERNAL_IPV4_CIDR_BLOCK_FIELD_NUMBER;
+    hash = (53 * hash) + getComposerInternalIpv4CidrBlock().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1075,6 +1238,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       maxPodsPerNode_ = 0;
       enableIpMasqAgent_ = false;
+      composerNetworkAttachment_ = "";
+      composerInternalIpv4CidrBlock_ = "";
       return this;
     }
 
@@ -1152,6 +1317,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.enableIpMasqAgent_ = enableIpMasqAgent_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.composerNetworkAttachment_ = composerNetworkAttachment_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.composerInternalIpv4CidrBlock_ = composerInternalIpv4CidrBlock_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1261,6 +1432,16 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableIpMasqAgent() != false) {
         setEnableIpMasqAgent(other.getEnableIpMasqAgent());
       }
+      if (!other.getComposerNetworkAttachment().isEmpty()) {
+        composerNetworkAttachment_ = other.composerNetworkAttachment_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.getComposerInternalIpv4CidrBlock().isEmpty()) {
+        composerInternalIpv4CidrBlock_ = other.composerInternalIpv4CidrBlock_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1356,6 +1537,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
+            case 98:
+              {
+                composerNetworkAttachment_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+            case 106:
+              {
+                composerInternalIpv4CidrBlock_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3053,6 +3246,318 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableIpMasqAgent() {
       bitField0_ = (bitField0_ & ~0x00000400);
       enableIpMasqAgent_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object composerNetworkAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network Attachment that Cloud Composer environment is connected
+     * to, which provides connectivity with a user's VPC network. Takes precedence
+     * over network and subnetwork settings. If not provided, but network and
+     * subnetwork are defined during environment, it will be provisioned. If not
+     * provided and network and subnetwork are also empty, then connectivity to
+     * user's VPC network is disabled. Network attachment must be provided in
+     * format
+     * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The composerNetworkAttachment.
+     */
+    public java.lang.String getComposerNetworkAttachment() {
+      java.lang.Object ref = composerNetworkAttachment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        composerNetworkAttachment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network Attachment that Cloud Composer environment is connected
+     * to, which provides connectivity with a user's VPC network. Takes precedence
+     * over network and subnetwork settings. If not provided, but network and
+     * subnetwork are defined during environment, it will be provisioned. If not
+     * provided and network and subnetwork are also empty, then connectivity to
+     * user's VPC network is disabled. Network attachment must be provided in
+     * format
+     * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for composerNetworkAttachment.
+     */
+    public com.google.protobuf.ByteString getComposerNetworkAttachmentBytes() {
+      java.lang.Object ref = composerNetworkAttachment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        composerNetworkAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network Attachment that Cloud Composer environment is connected
+     * to, which provides connectivity with a user's VPC network. Takes precedence
+     * over network and subnetwork settings. If not provided, but network and
+     * subnetwork are defined during environment, it will be provisioned. If not
+     * provided and network and subnetwork are also empty, then connectivity to
+     * user's VPC network is disabled. Network attachment must be provided in
+     * format
+     * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The composerNetworkAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComposerNetworkAttachment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      composerNetworkAttachment_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network Attachment that Cloud Composer environment is connected
+     * to, which provides connectivity with a user's VPC network. Takes precedence
+     * over network and subnetwork settings. If not provided, but network and
+     * subnetwork are defined during environment, it will be provisioned. If not
+     * provided and network and subnetwork are also empty, then connectivity to
+     * user's VPC network is disabled. Network attachment must be provided in
+     * format
+     * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearComposerNetworkAttachment() {
+      composerNetworkAttachment_ = getDefaultInstance().getComposerNetworkAttachment();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network Attachment that Cloud Composer environment is connected
+     * to, which provides connectivity with a user's VPC network. Takes precedence
+     * over network and subnetwork settings. If not provided, but network and
+     * subnetwork are defined during environment, it will be provisioned. If not
+     * provided and network and subnetwork are also empty, then connectivity to
+     * user's VPC network is disabled. Network attachment must be provided in
+     * format
+     * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for composerNetworkAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComposerNetworkAttachmentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      composerNetworkAttachment_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object composerInternalIpv4CidrBlock_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP range in CIDR notation to use internally by Cloud
+     * Composer. IP addresses are not reserved - and the same range can be used by
+     * multiple Cloud Composer environments. In case of overlap, IPs from this
+     * range will not be accessible in the user's VPC network. Cannot be updated.
+     * If not specified, the default value of '100.64.128.0/20' is used.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The composerInternalIpv4CidrBlock.
+     */
+    public java.lang.String getComposerInternalIpv4CidrBlock() {
+      java.lang.Object ref = composerInternalIpv4CidrBlock_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        composerInternalIpv4CidrBlock_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP range in CIDR notation to use internally by Cloud
+     * Composer. IP addresses are not reserved - and the same range can be used by
+     * multiple Cloud Composer environments. In case of overlap, IPs from this
+     * range will not be accessible in the user's VPC network. Cannot be updated.
+     * If not specified, the default value of '100.64.128.0/20' is used.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for composerInternalIpv4CidrBlock.
+     */
+    public com.google.protobuf.ByteString getComposerInternalIpv4CidrBlockBytes() {
+      java.lang.Object ref = composerInternalIpv4CidrBlock_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        composerInternalIpv4CidrBlock_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP range in CIDR notation to use internally by Cloud
+     * Composer. IP addresses are not reserved - and the same range can be used by
+     * multiple Cloud Composer environments. In case of overlap, IPs from this
+     * range will not be accessible in the user's VPC network. Cannot be updated.
+     * If not specified, the default value of '100.64.128.0/20' is used.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The composerInternalIpv4CidrBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComposerInternalIpv4CidrBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      composerInternalIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP range in CIDR notation to use internally by Cloud
+     * Composer. IP addresses are not reserved - and the same range can be used by
+     * multiple Cloud Composer environments. In case of overlap, IPs from this
+     * range will not be accessible in the user's VPC network. Cannot be updated.
+     * If not specified, the default value of '100.64.128.0/20' is used.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearComposerInternalIpv4CidrBlock() {
+      composerInternalIpv4CidrBlock_ = getDefaultInstance().getComposerInternalIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP range in CIDR notation to use internally by Cloud
+     * Composer. IP addresses are not reserved - and the same range can be used by
+     * multiple Cloud Composer environments. In case of overlap, IPs from this
+     * range will not be accessible in the user's VPC network. Cannot be updated.
+     * If not specified, the default value of '100.64.128.0/20' is used.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for composerInternalIpv4CidrBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComposerInternalIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      composerInternalIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

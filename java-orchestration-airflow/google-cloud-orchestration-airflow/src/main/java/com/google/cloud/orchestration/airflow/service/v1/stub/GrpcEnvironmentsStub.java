@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package com.google.cloud.orchestration.airflow.service.v1.stub;
 
 import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListUserWorkloadsConfigMapsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListUserWorkloadsSecretsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListWorkloadsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -27,17 +30,29 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesRequest;
 import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
@@ -48,6 +63,10 @@ import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandRequest;
 import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap;
+import com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -157,6 +176,140 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(PollAirflowCommandResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
+      listWorkloadsMethodDescriptor =
+          MethodDescriptor.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ListWorkloads")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWorkloadsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretMethodDescriptor =
+          MethodDescriptor.<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CreateUserWorkloadsSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateUserWorkloadsSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserWorkloadsSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretMethodDescriptor =
+          MethodDescriptor.<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/GetUserWorkloadsSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetUserWorkloadsSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserWorkloadsSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsMethodDescriptor =
+          MethodDescriptor
+              .<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ListUserWorkloadsSecrets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUserWorkloadsSecretsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUserWorkloadsSecretsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretMethodDescriptor =
+          MethodDescriptor.<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/UpdateUserWorkloadsSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateUserWorkloadsSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserWorkloadsSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretMethodDescriptor =
+          MethodDescriptor.<DeleteUserWorkloadsSecretRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/DeleteUserWorkloadsSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteUserWorkloadsSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapMethodDescriptor =
+          MethodDescriptor.<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CreateUserWorkloadsConfigMap")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateUserWorkloadsConfigMapRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserWorkloadsConfigMap.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapMethodDescriptor =
+          MethodDescriptor.<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/GetUserWorkloadsConfigMap")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetUserWorkloadsConfigMapRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserWorkloadsConfigMap.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsMethodDescriptor =
+          MethodDescriptor
+              .<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ListUserWorkloadsConfigMaps")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUserWorkloadsConfigMapsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUserWorkloadsConfigMapsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapMethodDescriptor =
+          MethodDescriptor.<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/UpdateUserWorkloadsConfigMap")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateUserWorkloadsConfigMapRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserWorkloadsConfigMap.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapMethodDescriptor =
+          MethodDescriptor.<DeleteUserWorkloadsConfigMapRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/DeleteUserWorkloadsConfigMap")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteUserWorkloadsConfigMapRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SaveSnapshotRequest, Operation>
       saveSnapshotMethodDescriptor =
           MethodDescriptor.<SaveSnapshotRequest, Operation>newBuilder()
@@ -222,6 +375,36 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
       stopAirflowCommandCallable;
   private final UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
       pollAirflowCommandCallable;
+  private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
+  private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
+      listWorkloadsPagedCallable;
+  private final UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretCallable;
+  private final UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretCallable;
+  private final UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsCallable;
+  private final UnaryCallable<
+          ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsPagedCallable;
+  private final UnaryCallable<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretCallable;
+  private final UnaryCallable<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretCallable;
+  private final UnaryCallable<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapCallable;
+  private final UnaryCallable<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapCallable;
+  private final UnaryCallable<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsCallable;
+  private final UnaryCallable<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsPagedCallable;
+  private final UnaryCallable<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapCallable;
+  private final UnaryCallable<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapCallable;
   private final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable;
   private final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationCallable;
@@ -362,6 +545,135 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsTransportSettings =
+        GrpcCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
+            .setMethodDescriptor(listWorkloadsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        createUserWorkloadsSecretTransportSettings =
+            GrpcCallSettings.<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+                .setMethodDescriptor(createUserWorkloadsSecretMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        getUserWorkloadsSecretTransportSettings =
+            GrpcCallSettings.<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+                .setMethodDescriptor(getUserWorkloadsSecretMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+        listUserWorkloadsSecretsTransportSettings =
+            GrpcCallSettings
+                .<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>newBuilder()
+                .setMethodDescriptor(listUserWorkloadsSecretsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        updateUserWorkloadsSecretTransportSettings =
+            GrpcCallSettings.<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+                .setMethodDescriptor(updateUserWorkloadsSecretMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "user_workloads_secret.name",
+                          String.valueOf(request.getUserWorkloadsSecret().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteUserWorkloadsSecretRequest, Empty>
+        deleteUserWorkloadsSecretTransportSettings =
+            GrpcCallSettings.<DeleteUserWorkloadsSecretRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteUserWorkloadsSecretMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        createUserWorkloadsConfigMapTransportSettings =
+            GrpcCallSettings
+                .<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+                .setMethodDescriptor(createUserWorkloadsConfigMapMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        getUserWorkloadsConfigMapTransportSettings =
+            GrpcCallSettings.<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+                .setMethodDescriptor(getUserWorkloadsConfigMapMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+        listUserWorkloadsConfigMapsTransportSettings =
+            GrpcCallSettings
+                .<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listUserWorkloadsConfigMapsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        updateUserWorkloadsConfigMapTransportSettings =
+            GrpcCallSettings
+                .<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+                .setMethodDescriptor(updateUserWorkloadsConfigMapMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "user_workloads_config_map.name",
+                          String.valueOf(request.getUserWorkloadsConfigMap().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteUserWorkloadsConfigMapRequest, Empty>
+        deleteUserWorkloadsConfigMapTransportSettings =
+            GrpcCallSettings.<DeleteUserWorkloadsConfigMapRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteUserWorkloadsConfigMapMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         GrpcCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(saveSnapshotMethodDescriptor)
@@ -461,6 +773,72 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
         callableFactory.createUnaryCallable(
             pollAirflowCommandTransportSettings,
             settings.pollAirflowCommandSettings(),
+            clientContext);
+    this.listWorkloadsCallable =
+        callableFactory.createUnaryCallable(
+            listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.listWorkloadsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.createUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            createUserWorkloadsSecretTransportSettings,
+            settings.createUserWorkloadsSecretSettings(),
+            clientContext);
+    this.getUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            getUserWorkloadsSecretTransportSettings,
+            settings.getUserWorkloadsSecretSettings(),
+            clientContext);
+    this.listUserWorkloadsSecretsCallable =
+        callableFactory.createUnaryCallable(
+            listUserWorkloadsSecretsTransportSettings,
+            settings.listUserWorkloadsSecretsSettings(),
+            clientContext);
+    this.listUserWorkloadsSecretsPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserWorkloadsSecretsTransportSettings,
+            settings.listUserWorkloadsSecretsSettings(),
+            clientContext);
+    this.updateUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            updateUserWorkloadsSecretTransportSettings,
+            settings.updateUserWorkloadsSecretSettings(),
+            clientContext);
+    this.deleteUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserWorkloadsSecretTransportSettings,
+            settings.deleteUserWorkloadsSecretSettings(),
+            clientContext);
+    this.createUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            createUserWorkloadsConfigMapTransportSettings,
+            settings.createUserWorkloadsConfigMapSettings(),
+            clientContext);
+    this.getUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            getUserWorkloadsConfigMapTransportSettings,
+            settings.getUserWorkloadsConfigMapSettings(),
+            clientContext);
+    this.listUserWorkloadsConfigMapsCallable =
+        callableFactory.createUnaryCallable(
+            listUserWorkloadsConfigMapsTransportSettings,
+            settings.listUserWorkloadsConfigMapsSettings(),
+            clientContext);
+    this.listUserWorkloadsConfigMapsPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserWorkloadsConfigMapsTransportSettings,
+            settings.listUserWorkloadsConfigMapsSettings(),
+            clientContext);
+    this.updateUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            updateUserWorkloadsConfigMapTransportSettings,
+            settings.updateUserWorkloadsConfigMapSettings(),
+            clientContext);
+    this.deleteUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserWorkloadsConfigMapTransportSettings,
+            settings.deleteUserWorkloadsConfigMapSettings(),
             clientContext);
     this.saveSnapshotCallable =
         callableFactory.createUnaryCallable(
@@ -569,6 +947,89 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
       pollAirflowCommandCallable() {
     return pollAirflowCommandCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
+    return listWorkloadsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
+      listWorkloadsPagedCallable() {
+    return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretCallable() {
+    return createUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretCallable() {
+    return getUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsCallable() {
+    return listUserWorkloadsSecretsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsPagedCallable() {
+    return listUserWorkloadsSecretsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretCallable() {
+    return updateUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretCallable() {
+    return deleteUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapCallable() {
+    return createUserWorkloadsConfigMapCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapCallable() {
+    return getUserWorkloadsConfigMapCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsCallable() {
+    return listUserWorkloadsConfigMapsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsPagedCallable() {
+    return listUserWorkloadsConfigMapsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapCallable() {
+    return updateUserWorkloadsConfigMapCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapCallable() {
+    return deleteUserWorkloadsConfigMapCallable;
   }
 
   @Override
