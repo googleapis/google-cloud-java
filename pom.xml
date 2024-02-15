@@ -152,6 +152,7 @@
     <module>java-securitycentermanagement</module>
     <module>java-securitycenter</module>
     <module>java-securitycenter-settings</module>
+    <module>java-securityposture</module>
     <module>java-security-private-ca</module>
     <module>java-service-control</module>
     <module>java-servicedirectory</module>
