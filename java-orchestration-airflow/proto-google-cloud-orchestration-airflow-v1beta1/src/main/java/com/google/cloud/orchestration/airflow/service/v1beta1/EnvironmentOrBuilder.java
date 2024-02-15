@@ -313,4 +313,59 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage configuration for this environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the storageConfig field is set.
+   */
+  boolean hasStorageConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage configuration for this environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The storageConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.StorageConfig getStorageConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage configuration for this environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.StorageConfigOrBuilder
+      getStorageConfigOrBuilder();
 }

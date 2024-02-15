@@ -58,37 +58,37 @@ public final class DocumentAiDocumentSchema {
   static {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/documentai/v1/document_sc"
-          + "hema.proto\022\032google.cloud.documentai.v1\"\247"
+          + "hema.proto\022\032google.cloud.documentai.v1\"\275"
           + "\007\n\016DocumentSchema\022\024\n\014display_name\030\001 \001(\t\022"
           + "\023\n\013description\030\002 \001(\t\022K\n\014entity_types\030\003 \003"
           + "(\01325.google.cloud.documentai.v1.Document"
           + "Schema.EntityType\022E\n\010metadata\030\004 \001(\01323.go"
           + "ogle.cloud.documentai.v1.DocumentSchema."
-          + "Metadata\032\276\004\n\nEntityType\022W\n\013enum_values\030\016"
+          + "Metadata\032\324\004\n\nEntityType\022W\n\013enum_values\030\016"
           + " \001(\0132@.google.cloud.documentai.v1.Docume"
           + "ntSchema.EntityType.EnumValuesH\000\022\024\n\014disp"
           + "lay_name\030\r \001(\t\022\014\n\004name\030\001 \001(\t\022\022\n\nbase_typ"
           + "es\030\002 \003(\t\022R\n\nproperties\030\006 \003(\0132>.google.cl"
           + "oud.documentai.v1.DocumentSchema.EntityT"
           + "ype.Property\032\034\n\nEnumValues\022\016\n\006values\030\001 \003"
-          + "(\t\032\234\002\n\010Property\022\014\n\004name\030\001 \001(\t\022\022\n\nvalue_t"
-          + "ype\030\002 \001(\t\022f\n\017occurrence_type\030\003 \001(\0162M.goo"
-          + "gle.cloud.documentai.v1.DocumentSchema.E"
-          + "ntityType.Property.OccurrenceType\"\205\001\n\016Oc"
-          + "currenceType\022\037\n\033OCCURRENCE_TYPE_UNSPECIF"
-          + "IED\020\000\022\021\n\rOPTIONAL_ONCE\020\001\022\025\n\021OPTIONAL_MUL"
-          + "TIPLE\020\002\022\021\n\rREQUIRED_ONCE\020\003\022\025\n\021REQUIRED_M"
-          + "ULTIPLE\020\004B\016\n\014value_source\032\224\001\n\010Metadata\022\031"
-          + "\n\021document_splitter\030\001 \001(\010\022&\n\036document_al"
-          + "low_multiple_labels\030\002 \001(\010\022%\n\035prefixed_na"
-          + "ming_on_properties\030\006 \001(\010\022\036\n\026skip_naming_"
-          + "validation\030\007 \001(\010B\326\001\n\036com.google.cloud.do"
-          + "cumentai.v1B\030DocumentAiDocumentSchemaP\001Z"
-          + ">cloud.google.com/go/documentai/apiv1/do"
-          + "cumentaipb;documentaipb\252\002\032Google.Cloud.D"
-          + "ocumentAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V"
-          + "1\352\002\035Google::Cloud::DocumentAI::V1b\006proto"
-          + "3"
+          + "(\t\032\262\002\n\010Property\022\014\n\004name\030\001 \001(\t\022\024\n\014display"
+          + "_name\030\006 \001(\t\022\022\n\nvalue_type\030\002 \001(\t\022f\n\017occur"
+          + "rence_type\030\003 \001(\0162M.google.cloud.document"
+          + "ai.v1.DocumentSchema.EntityType.Property"
+          + ".OccurrenceType\"\205\001\n\016OccurrenceType\022\037\n\033OC"
+          + "CURRENCE_TYPE_UNSPECIFIED\020\000\022\021\n\rOPTIONAL_"
+          + "ONCE\020\001\022\025\n\021OPTIONAL_MULTIPLE\020\002\022\021\n\rREQUIRE"
+          + "D_ONCE\020\003\022\025\n\021REQUIRED_MULTIPLE\020\004B\016\n\014value"
+          + "_source\032\224\001\n\010Metadata\022\031\n\021document_splitte"
+          + "r\030\001 \001(\010\022&\n\036document_allow_multiple_label"
+          + "s\030\002 \001(\010\022%\n\035prefixed_naming_on_properties"
+          + "\030\006 \001(\010\022\036\n\026skip_naming_validation\030\007 \001(\010B\326"
+          + "\001\n\036com.google.cloud.documentai.v1B\030Docum"
+          + "entAiDocumentSchemaP\001Z>cloud.google.com/"
+          + "go/documentai/apiv1/documentaipb;documen"
+          + "taipb\252\002\032Google.Cloud.DocumentAI.V1\312\002\032Goo"
+          + "gle\\Cloud\\DocumentAI\\V1\352\002\035Google::Cloud:"
+          + ":DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -129,7 +129,7 @@ public final class DocumentAiDocumentSchema {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_DocumentSchema_EntityType_Property_descriptor,
             new java.lang.String[] {
-              "Name", "ValueType", "OccurrenceType",
+              "Name", "DisplayName", "ValueType", "OccurrenceType",
             });
     internal_static_google_cloud_documentai_v1_DocumentSchema_Metadata_descriptor =
         internal_static_google_cloud_documentai_v1_DocumentSchema_descriptor

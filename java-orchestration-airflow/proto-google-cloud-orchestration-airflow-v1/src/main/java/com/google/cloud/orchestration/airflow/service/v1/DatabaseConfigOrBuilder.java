@@ -56,4 +56,37 @@ public interface DatabaseConfigOrBuilder
    * @return The bytes for machineType.
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Compute Engine zone where the Airflow database is created. If
+   * zone is provided, it must be in the region selected for the environment. If
+   * zone is not provided, a zone is automatically selected. The zone can only
+   * be set during environment creation. Supported for Cloud Composer
+   * environments in versions composer-2.*.*-airflow-*.*.*.
+   * </pre>
+   *
+   * <code>string zone = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The zone.
+   */
+  java.lang.String getZone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Compute Engine zone where the Airflow database is created. If
+   * zone is provided, it must be in the region selected for the environment. If
+   * zone is not provided, a zone is automatically selected. The zone can only
+   * be set during environment creation. Supported for Cloud Composer
+   * environments in versions composer-2.*.*-airflow-*.*.*.
+   * </pre>
+   *
+   * <code>string zone = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for zone.
+   */
+  com.google.protobuf.ByteString getZoneBytes();
 }

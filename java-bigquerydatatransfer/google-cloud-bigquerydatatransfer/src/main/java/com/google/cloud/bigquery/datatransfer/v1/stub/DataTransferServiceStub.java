@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
+import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -149,6 +150,10 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
 
   public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
     throw new UnsupportedOperationException("Not implemented: enrollDataSourcesCallable()");
+  }
+
+  public UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: unenrollDataSourcesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

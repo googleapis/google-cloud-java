@@ -336,7 +336,7 @@ public class VertexAI implements AutoCloseable {
   public LlmUtilityServiceClient getLlmUtilityClient() throws IOException {
     if (llmUtilityClient == null) {
       LlmUtilityServiceSettings.Builder settingsBuilder = LlmUtilityServiceSettings.newBuilder();
-      settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
+      settingsBuilder.setEndpoint(String.format("%s:443", this.apiEndpoint));
       if (this.credentialsProvider != null) {
         settingsBuilder.setCredentialsProvider(this.credentialsProvider);
       }
@@ -370,7 +370,7 @@ public class VertexAI implements AutoCloseable {
     if (llmUtilityRestClient == null) {
       LlmUtilityServiceSettings.Builder settingsBuilder =
           LlmUtilityServiceSettings.newHttpJsonBuilder();
-      settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
+      settingsBuilder.setEndpoint(String.format("%s:443", this.apiEndpoint));
       if (this.credentialsProvider != null) {
         settingsBuilder.setCredentialsProvider(this.credentialsProvider);
       }

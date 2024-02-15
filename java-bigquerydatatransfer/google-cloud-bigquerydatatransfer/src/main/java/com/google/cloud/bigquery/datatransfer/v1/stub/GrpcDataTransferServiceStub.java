@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
+import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -248,6 +249,17 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UnenrollDataSourcesRequest, Empty>
+      unenrollDataSourcesMethodDescriptor =
+          MethodDescriptor.<UnenrollDataSourcesRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/UnenrollDataSources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UnenrollDataSourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -299,6 +311,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
   private final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable;
+  private final UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -510,6 +523,16 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesTransportSettings =
+        GrpcCallSettings.<UnenrollDataSourcesRequest, Empty>newBuilder()
+            .setMethodDescriptor(unenrollDataSourcesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -607,6 +630,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
         callableFactory.createUnaryCallable(
             enrollDataSourcesTransportSettings,
             settings.enrollDataSourcesSettings(),
+            clientContext);
+    this.unenrollDataSourcesCallable =
+        callableFactory.createUnaryCallable(
+            unenrollDataSourcesTransportSettings,
+            settings.unenrollDataSourcesSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -728,6 +756,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   @Override
   public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
     return enrollDataSourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
+    return unenrollDataSourcesCallable;
   }
 
   @Override

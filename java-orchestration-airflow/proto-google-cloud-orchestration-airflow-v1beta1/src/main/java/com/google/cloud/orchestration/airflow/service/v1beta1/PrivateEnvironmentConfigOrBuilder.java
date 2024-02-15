@@ -44,6 +44,27 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. If `true`, builds performed during operations that install Python
+   * packages have only private connectivity to Google services (including
+   * Artifact Registry) and VPC network (if either `NodeConfig.network` and
+   * `NodeConfig.subnetwork` fields or `NodeConfig.composer_network_attachment`
+   * field are specified). If `false`, the builds also have access to the
+   * internet.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>bool enable_private_builds_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enablePrivateBuildsOnly.
+   */
+  boolean getEnablePrivateBuildsOnly();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Configuration for the private GKE cluster for a Private IP
    * Cloud Composer environment.
    * </pre>

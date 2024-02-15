@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -232,6 +232,227 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> pollAirflowCommandCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListWorkloads</td>
+ *      <td><p> Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer component.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listWorkloads(ListWorkloadsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listWorkloads(EnvironmentName parent)
+ *           <li><p> listWorkloads(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listWorkloadsPagedCallable()
+ *           <li><p> listWorkloadsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateUserWorkloadsSecret</td>
+ *      <td><p> Creates a user workloads Secret.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createUserWorkloadsSecret(CreateUserWorkloadsSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createUserWorkloadsSecret(EnvironmentName parent, UserWorkloadsSecret userWorkloadsSecret)
+ *           <li><p> createUserWorkloadsSecret(String parent, UserWorkloadsSecret userWorkloadsSecret)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createUserWorkloadsSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetUserWorkloadsSecret</td>
+ *      <td><p> Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getUserWorkloadsSecret(GetUserWorkloadsSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getUserWorkloadsSecret(UserWorkloadsSecretName name)
+ *           <li><p> getUserWorkloadsSecret(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getUserWorkloadsSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListUserWorkloadsSecrets</td>
+ *      <td><p> Lists user workloads Secrets.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listUserWorkloadsSecrets(ListUserWorkloadsSecretsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listUserWorkloadsSecrets(EnvironmentName parent)
+ *           <li><p> listUserWorkloadsSecrets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listUserWorkloadsSecretsPagedCallable()
+ *           <li><p> listUserWorkloadsSecretsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateUserWorkloadsSecret</td>
+ *      <td><p> Updates a user workloads Secret.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateUserWorkloadsSecret(UpdateUserWorkloadsSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateUserWorkloadsSecret(UserWorkloadsSecret userWorkloadsSecret)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateUserWorkloadsSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteUserWorkloadsSecret</td>
+ *      <td><p> Deletes a user workloads Secret.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteUserWorkloadsSecret(DeleteUserWorkloadsSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteUserWorkloadsSecret(UserWorkloadsSecretName name)
+ *           <li><p> deleteUserWorkloadsSecret(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteUserWorkloadsSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateUserWorkloadsConfigMap</td>
+ *      <td><p> Creates a user workloads ConfigMap.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createUserWorkloadsConfigMap(CreateUserWorkloadsConfigMapRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createUserWorkloadsConfigMap(EnvironmentName parent, UserWorkloadsConfigMap userWorkloadsConfigMap)
+ *           <li><p> createUserWorkloadsConfigMap(String parent, UserWorkloadsConfigMap userWorkloadsConfigMap)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createUserWorkloadsConfigMapCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetUserWorkloadsConfigMap</td>
+ *      <td><p> Gets an existing user workloads ConfigMap.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getUserWorkloadsConfigMap(GetUserWorkloadsConfigMapRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getUserWorkloadsConfigMap(UserWorkloadsConfigMapName name)
+ *           <li><p> getUserWorkloadsConfigMap(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getUserWorkloadsConfigMapCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListUserWorkloadsConfigMaps</td>
+ *      <td><p> Lists user workloads ConfigMaps.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listUserWorkloadsConfigMaps(ListUserWorkloadsConfigMapsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listUserWorkloadsConfigMaps(EnvironmentName parent)
+ *           <li><p> listUserWorkloadsConfigMaps(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listUserWorkloadsConfigMapsPagedCallable()
+ *           <li><p> listUserWorkloadsConfigMapsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateUserWorkloadsConfigMap</td>
+ *      <td><p> Updates a user workloads ConfigMap.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateUserWorkloadsConfigMap(UpdateUserWorkloadsConfigMapRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateUserWorkloadsConfigMap(UserWorkloadsConfigMap userWorkloadsConfigMap)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateUserWorkloadsConfigMapCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteUserWorkloadsConfigMap</td>
+ *      <td><p> Deletes a user workloads ConfigMap.
+ * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteUserWorkloadsConfigMap(DeleteUserWorkloadsConfigMapRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteUserWorkloadsConfigMap(UserWorkloadsConfigMapName name)
+ *           <li><p> deleteUserWorkloadsConfigMap(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteUserWorkloadsConfigMapCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1457,6 +1678,1605 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer
+   * component.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+   *   for (ListWorkloadsResponse.ComposerWorkload element :
+   *       environmentsClient.listWorkloads(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment name to get workloads for, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkloadsPagedResponse listWorkloads(EnvironmentName parent) {
+    ListWorkloadsRequest request =
+        ListWorkloadsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listWorkloads(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer
+   * component.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString();
+   *   for (ListWorkloadsResponse.ComposerWorkload element :
+   *       environmentsClient.listWorkloads(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment name to get workloads for, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkloadsPagedResponse listWorkloads(String parent) {
+    ListWorkloadsRequest request = ListWorkloadsRequest.newBuilder().setParent(parent).build();
+    return listWorkloads(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer
+   * component.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListWorkloadsRequest request =
+   *       ListWorkloadsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (ListWorkloadsResponse.ComposerWorkload element :
+   *       environmentsClient.listWorkloads(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkloadsPagedResponse listWorkloads(ListWorkloadsRequest request) {
+    return listWorkloadsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer
+   * component.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListWorkloadsRequest request =
+   *       ListWorkloadsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<ListWorkloadsResponse.ComposerWorkload> future =
+   *       environmentsClient.listWorkloadsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ListWorkloadsResponse.ComposerWorkload element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
+      listWorkloadsPagedCallable() {
+    return stub.listWorkloadsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer
+   * component.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListWorkloadsRequest request =
+   *       ListWorkloadsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListWorkloadsResponse response = environmentsClient.listWorkloadsCallable().call(request);
+   *     for (ListWorkloadsResponse.ComposerWorkload element : response.getWorkloadsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
+    return stub.listWorkloadsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+   *   UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+   *   UserWorkloadsSecret response =
+   *       environmentsClient.createUserWorkloadsSecret(parent, userWorkloadsSecret);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment name to create a Secret for, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @param userWorkloadsSecret Required. User workloads Secret to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret createUserWorkloadsSecret(
+      EnvironmentName parent, UserWorkloadsSecret userWorkloadsSecret) {
+    CreateUserWorkloadsSecretRequest request =
+        CreateUserWorkloadsSecretRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setUserWorkloadsSecret(userWorkloadsSecret)
+            .build();
+    return createUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString();
+   *   UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+   *   UserWorkloadsSecret response =
+   *       environmentsClient.createUserWorkloadsSecret(parent, userWorkloadsSecret);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment name to create a Secret for, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @param userWorkloadsSecret Required. User workloads Secret to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret createUserWorkloadsSecret(
+      String parent, UserWorkloadsSecret userWorkloadsSecret) {
+    CreateUserWorkloadsSecretRequest request =
+        CreateUserWorkloadsSecretRequest.newBuilder()
+            .setParent(parent)
+            .setUserWorkloadsSecret(userWorkloadsSecret)
+            .build();
+    return createUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateUserWorkloadsSecretRequest request =
+   *       CreateUserWorkloadsSecretRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setUserWorkloadsSecret(UserWorkloadsSecret.newBuilder().build())
+   *           .build();
+   *   UserWorkloadsSecret response = environmentsClient.createUserWorkloadsSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret createUserWorkloadsSecret(
+      CreateUserWorkloadsSecretRequest request) {
+    return createUserWorkloadsSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateUserWorkloadsSecretRequest request =
+   *       CreateUserWorkloadsSecretRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setUserWorkloadsSecret(UserWorkloadsSecret.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserWorkloadsSecret> future =
+   *       environmentsClient.createUserWorkloadsSecretCallable().futureCall(request);
+   *   // Do something.
+   *   UserWorkloadsSecret response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretCallable() {
+    return stub.createUserWorkloadsSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UserWorkloadsSecretName name =
+   *       UserWorkloadsSecretName.of(
+   *           "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]");
+   *   UserWorkloadsSecret response = environmentsClient.getUserWorkloadsSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Secret to get, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret getUserWorkloadsSecret(UserWorkloadsSecretName name) {
+    GetUserWorkloadsSecretRequest request =
+        GetUserWorkloadsSecretRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       UserWorkloadsSecretName.of(
+   *               "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+   *           .toString();
+   *   UserWorkloadsSecret response = environmentsClient.getUserWorkloadsSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Secret to get, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret getUserWorkloadsSecret(String name) {
+    GetUserWorkloadsSecretRequest request =
+        GetUserWorkloadsSecretRequest.newBuilder().setName(name).build();
+    return getUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetUserWorkloadsSecretRequest request =
+   *       GetUserWorkloadsSecretRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsSecretName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   UserWorkloadsSecret response = environmentsClient.getUserWorkloadsSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret getUserWorkloadsSecret(GetUserWorkloadsSecretRequest request) {
+    return getUserWorkloadsSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads Secret. Values of the "data" field in the response are cleared.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetUserWorkloadsSecretRequest request =
+   *       GetUserWorkloadsSecretRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsSecretName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<UserWorkloadsSecret> future =
+   *       environmentsClient.getUserWorkloadsSecretCallable().futureCall(request);
+   *   // Do something.
+   *   UserWorkloadsSecret response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretCallable() {
+    return stub.getUserWorkloadsSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads Secrets.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+   *   for (UserWorkloadsSecret element :
+   *       environmentsClient.listUserWorkloadsSecrets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. List Secrets in the given environment, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUserWorkloadsSecretsPagedResponse listUserWorkloadsSecrets(
+      EnvironmentName parent) {
+    ListUserWorkloadsSecretsRequest request =
+        ListUserWorkloadsSecretsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listUserWorkloadsSecrets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads Secrets.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString();
+   *   for (UserWorkloadsSecret element :
+   *       environmentsClient.listUserWorkloadsSecrets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. List Secrets in the given environment, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUserWorkloadsSecretsPagedResponse listUserWorkloadsSecrets(String parent) {
+    ListUserWorkloadsSecretsRequest request =
+        ListUserWorkloadsSecretsRequest.newBuilder().setParent(parent).build();
+    return listUserWorkloadsSecrets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads Secrets.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListUserWorkloadsSecretsRequest request =
+   *       ListUserWorkloadsSecretsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (UserWorkloadsSecret element :
+   *       environmentsClient.listUserWorkloadsSecrets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUserWorkloadsSecretsPagedResponse listUserWorkloadsSecrets(
+      ListUserWorkloadsSecretsRequest request) {
+    return listUserWorkloadsSecretsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads Secrets.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListUserWorkloadsSecretsRequest request =
+   *       ListUserWorkloadsSecretsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<UserWorkloadsSecret> future =
+   *       environmentsClient.listUserWorkloadsSecretsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (UserWorkloadsSecret element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsPagedCallable() {
+    return stub.listUserWorkloadsSecretsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads Secrets.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListUserWorkloadsSecretsRequest request =
+   *       ListUserWorkloadsSecretsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListUserWorkloadsSecretsResponse response =
+   *         environmentsClient.listUserWorkloadsSecretsCallable().call(request);
+   *     for (UserWorkloadsSecret element : response.getUserWorkloadsSecretsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsCallable() {
+    return stub.listUserWorkloadsSecretsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+   *   UserWorkloadsSecret response =
+   *       environmentsClient.updateUserWorkloadsSecret(userWorkloadsSecret);
+   * }
+   * }</pre>
+   *
+   * @param userWorkloadsSecret Optional. User workloads Secret to override.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret updateUserWorkloadsSecret(
+      UserWorkloadsSecret userWorkloadsSecret) {
+    UpdateUserWorkloadsSecretRequest request =
+        UpdateUserWorkloadsSecretRequest.newBuilder()
+            .setUserWorkloadsSecret(userWorkloadsSecret)
+            .build();
+    return updateUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateUserWorkloadsSecretRequest request =
+   *       UpdateUserWorkloadsSecretRequest.newBuilder()
+   *           .setUserWorkloadsSecret(UserWorkloadsSecret.newBuilder().build())
+   *           .build();
+   *   UserWorkloadsSecret response = environmentsClient.updateUserWorkloadsSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsSecret updateUserWorkloadsSecret(
+      UpdateUserWorkloadsSecretRequest request) {
+    return updateUserWorkloadsSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateUserWorkloadsSecretRequest request =
+   *       UpdateUserWorkloadsSecretRequest.newBuilder()
+   *           .setUserWorkloadsSecret(UserWorkloadsSecret.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserWorkloadsSecret> future =
+   *       environmentsClient.updateUserWorkloadsSecretCallable().futureCall(request);
+   *   // Do something.
+   *   UserWorkloadsSecret response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretCallable() {
+    return stub.updateUserWorkloadsSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UserWorkloadsSecretName name =
+   *       UserWorkloadsSecretName.of(
+   *           "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]");
+   *   environmentsClient.deleteUserWorkloadsSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Secret to delete, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUserWorkloadsSecret(UserWorkloadsSecretName name) {
+    DeleteUserWorkloadsSecretRequest request =
+        DeleteUserWorkloadsSecretRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       UserWorkloadsSecretName.of(
+   *               "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+   *           .toString();
+   *   environmentsClient.deleteUserWorkloadsSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Secret to delete, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUserWorkloadsSecret(String name) {
+    DeleteUserWorkloadsSecretRequest request =
+        DeleteUserWorkloadsSecretRequest.newBuilder().setName(name).build();
+    deleteUserWorkloadsSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteUserWorkloadsSecretRequest request =
+   *       DeleteUserWorkloadsSecretRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsSecretName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   environmentsClient.deleteUserWorkloadsSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUserWorkloadsSecret(DeleteUserWorkloadsSecretRequest request) {
+    deleteUserWorkloadsSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads Secret.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteUserWorkloadsSecretRequest request =
+   *       DeleteUserWorkloadsSecretRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsSecretName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       environmentsClient.deleteUserWorkloadsSecretCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretCallable() {
+    return stub.deleteUserWorkloadsSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+   *   UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+   *   UserWorkloadsConfigMap response =
+   *       environmentsClient.createUserWorkloadsConfigMap(parent, userWorkloadsConfigMap);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment name to create a ConfigMap for, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @param userWorkloadsConfigMap Required. User workloads ConfigMap to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap createUserWorkloadsConfigMap(
+      EnvironmentName parent, UserWorkloadsConfigMap userWorkloadsConfigMap) {
+    CreateUserWorkloadsConfigMapRequest request =
+        CreateUserWorkloadsConfigMapRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setUserWorkloadsConfigMap(userWorkloadsConfigMap)
+            .build();
+    return createUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString();
+   *   UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+   *   UserWorkloadsConfigMap response =
+   *       environmentsClient.createUserWorkloadsConfigMap(parent, userWorkloadsConfigMap);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment name to create a ConfigMap for, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @param userWorkloadsConfigMap Required. User workloads ConfigMap to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap createUserWorkloadsConfigMap(
+      String parent, UserWorkloadsConfigMap userWorkloadsConfigMap) {
+    CreateUserWorkloadsConfigMapRequest request =
+        CreateUserWorkloadsConfigMapRequest.newBuilder()
+            .setParent(parent)
+            .setUserWorkloadsConfigMap(userWorkloadsConfigMap)
+            .build();
+    return createUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateUserWorkloadsConfigMapRequest request =
+   *       CreateUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setUserWorkloadsConfigMap(UserWorkloadsConfigMap.newBuilder().build())
+   *           .build();
+   *   UserWorkloadsConfigMap response = environmentsClient.createUserWorkloadsConfigMap(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap createUserWorkloadsConfigMap(
+      CreateUserWorkloadsConfigMapRequest request) {
+    return createUserWorkloadsConfigMapCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateUserWorkloadsConfigMapRequest request =
+   *       CreateUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setUserWorkloadsConfigMap(UserWorkloadsConfigMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserWorkloadsConfigMap> future =
+   *       environmentsClient.createUserWorkloadsConfigMapCallable().futureCall(request);
+   *   // Do something.
+   *   UserWorkloadsConfigMap response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapCallable() {
+    return stub.createUserWorkloadsConfigMapCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UserWorkloadsConfigMapName name =
+   *       UserWorkloadsConfigMapName.of(
+   *           "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]");
+   *   UserWorkloadsConfigMap response = environmentsClient.getUserWorkloadsConfigMap(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ConfigMap to get, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap getUserWorkloadsConfigMap(UserWorkloadsConfigMapName name) {
+    GetUserWorkloadsConfigMapRequest request =
+        GetUserWorkloadsConfigMapRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       UserWorkloadsConfigMapName.of(
+   *               "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+   *           .toString();
+   *   UserWorkloadsConfigMap response = environmentsClient.getUserWorkloadsConfigMap(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ConfigMap to get, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap getUserWorkloadsConfigMap(String name) {
+    GetUserWorkloadsConfigMapRequest request =
+        GetUserWorkloadsConfigMapRequest.newBuilder().setName(name).build();
+    return getUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetUserWorkloadsConfigMapRequest request =
+   *       GetUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsConfigMapName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+   *                   .toString())
+   *           .build();
+   *   UserWorkloadsConfigMap response = environmentsClient.getUserWorkloadsConfigMap(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap getUserWorkloadsConfigMap(
+      GetUserWorkloadsConfigMapRequest request) {
+    return getUserWorkloadsConfigMapCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an existing user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetUserWorkloadsConfigMapRequest request =
+   *       GetUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsConfigMapName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<UserWorkloadsConfigMap> future =
+   *       environmentsClient.getUserWorkloadsConfigMapCallable().futureCall(request);
+   *   // Do something.
+   *   UserWorkloadsConfigMap response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapCallable() {
+    return stub.getUserWorkloadsConfigMapCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads ConfigMaps.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+   *   for (UserWorkloadsConfigMap element :
+   *       environmentsClient.listUserWorkloadsConfigMaps(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. List ConfigMaps in the given environment, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUserWorkloadsConfigMapsPagedResponse listUserWorkloadsConfigMaps(
+      EnvironmentName parent) {
+    ListUserWorkloadsConfigMapsRequest request =
+        ListUserWorkloadsConfigMapsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listUserWorkloadsConfigMaps(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads ConfigMaps.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString();
+   *   for (UserWorkloadsConfigMap element :
+   *       environmentsClient.listUserWorkloadsConfigMaps(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. List ConfigMaps in the given environment, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUserWorkloadsConfigMapsPagedResponse listUserWorkloadsConfigMaps(String parent) {
+    ListUserWorkloadsConfigMapsRequest request =
+        ListUserWorkloadsConfigMapsRequest.newBuilder().setParent(parent).build();
+    return listUserWorkloadsConfigMaps(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads ConfigMaps.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListUserWorkloadsConfigMapsRequest request =
+   *       ListUserWorkloadsConfigMapsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (UserWorkloadsConfigMap element :
+   *       environmentsClient.listUserWorkloadsConfigMaps(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUserWorkloadsConfigMapsPagedResponse listUserWorkloadsConfigMaps(
+      ListUserWorkloadsConfigMapsRequest request) {
+    return listUserWorkloadsConfigMapsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads ConfigMaps.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListUserWorkloadsConfigMapsRequest request =
+   *       ListUserWorkloadsConfigMapsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<UserWorkloadsConfigMap> future =
+   *       environmentsClient.listUserWorkloadsConfigMapsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (UserWorkloadsConfigMap element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsPagedCallable() {
+    return stub.listUserWorkloadsConfigMapsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists user workloads ConfigMaps.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListUserWorkloadsConfigMapsRequest request =
+   *       ListUserWorkloadsConfigMapsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListUserWorkloadsConfigMapsResponse response =
+   *         environmentsClient.listUserWorkloadsConfigMapsCallable().call(request);
+   *     for (UserWorkloadsConfigMap element : response.getUserWorkloadsConfigMapsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsCallable() {
+    return stub.listUserWorkloadsConfigMapsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+   *   UserWorkloadsConfigMap response =
+   *       environmentsClient.updateUserWorkloadsConfigMap(userWorkloadsConfigMap);
+   * }
+   * }</pre>
+   *
+   * @param userWorkloadsConfigMap Optional. User workloads ConfigMap to override.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap updateUserWorkloadsConfigMap(
+      UserWorkloadsConfigMap userWorkloadsConfigMap) {
+    UpdateUserWorkloadsConfigMapRequest request =
+        UpdateUserWorkloadsConfigMapRequest.newBuilder()
+            .setUserWorkloadsConfigMap(userWorkloadsConfigMap)
+            .build();
+    return updateUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateUserWorkloadsConfigMapRequest request =
+   *       UpdateUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setUserWorkloadsConfigMap(UserWorkloadsConfigMap.newBuilder().build())
+   *           .build();
+   *   UserWorkloadsConfigMap response = environmentsClient.updateUserWorkloadsConfigMap(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserWorkloadsConfigMap updateUserWorkloadsConfigMap(
+      UpdateUserWorkloadsConfigMapRequest request) {
+    return updateUserWorkloadsConfigMapCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateUserWorkloadsConfigMapRequest request =
+   *       UpdateUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setUserWorkloadsConfigMap(UserWorkloadsConfigMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserWorkloadsConfigMap> future =
+   *       environmentsClient.updateUserWorkloadsConfigMapCallable().futureCall(request);
+   *   // Do something.
+   *   UserWorkloadsConfigMap response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapCallable() {
+    return stub.updateUserWorkloadsConfigMapCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UserWorkloadsConfigMapName name =
+   *       UserWorkloadsConfigMapName.of(
+   *           "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]");
+   *   environmentsClient.deleteUserWorkloadsConfigMap(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ConfigMap to delete, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUserWorkloadsConfigMap(UserWorkloadsConfigMapName name) {
+    DeleteUserWorkloadsConfigMapRequest request =
+        DeleteUserWorkloadsConfigMapRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       UserWorkloadsConfigMapName.of(
+   *               "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+   *           .toString();
+   *   environmentsClient.deleteUserWorkloadsConfigMap(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ConfigMap to delete, in the form:
+   *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUserWorkloadsConfigMap(String name) {
+    DeleteUserWorkloadsConfigMapRequest request =
+        DeleteUserWorkloadsConfigMapRequest.newBuilder().setName(name).build();
+    deleteUserWorkloadsConfigMap(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteUserWorkloadsConfigMapRequest request =
+   *       DeleteUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsConfigMapName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+   *                   .toString())
+   *           .build();
+   *   environmentsClient.deleteUserWorkloadsConfigMap(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUserWorkloadsConfigMap(DeleteUserWorkloadsConfigMapRequest request) {
+    deleteUserWorkloadsConfigMapCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a user workloads ConfigMap.
+   *
+   * <p>This method is supported for Cloud Composer environments in versions
+   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteUserWorkloadsConfigMapRequest request =
+   *       DeleteUserWorkloadsConfigMapRequest.newBuilder()
+   *           .setName(
+   *               UserWorkloadsConfigMapName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       environmentsClient.deleteUserWorkloadsConfigMapCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapCallable() {
+    return stub.deleteUserWorkloadsConfigMapCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a snapshots of a Cloud Composer environment.
    *
    * <p>As a result of this operation, snapshot of environment's state is stored in a location
@@ -1907,6 +3727,286 @@ public class EnvironmentsClient implements BackgroundResource {
     protected ListEnvironmentsFixedSizeCollection createCollection(
         List<ListEnvironmentsPage> pages, int collectionSize) {
       return new ListEnvironmentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListWorkloadsPagedResponse
+      extends AbstractPagedListResponse<
+          ListWorkloadsRequest,
+          ListWorkloadsResponse,
+          ListWorkloadsResponse.ComposerWorkload,
+          ListWorkloadsPage,
+          ListWorkloadsFixedSizeCollection> {
+
+    public static ApiFuture<ListWorkloadsPagedResponse> createAsync(
+        PageContext<
+                ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
+            context,
+        ApiFuture<ListWorkloadsResponse> futureResponse) {
+      ApiFuture<ListWorkloadsPage> futurePage =
+          ListWorkloadsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListWorkloadsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListWorkloadsPagedResponse(ListWorkloadsPage page) {
+      super(page, ListWorkloadsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListWorkloadsPage
+      extends AbstractPage<
+          ListWorkloadsRequest,
+          ListWorkloadsResponse,
+          ListWorkloadsResponse.ComposerWorkload,
+          ListWorkloadsPage> {
+
+    private ListWorkloadsPage(
+        PageContext<
+                ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
+            context,
+        ListWorkloadsResponse response) {
+      super(context, response);
+    }
+
+    private static ListWorkloadsPage createEmptyPage() {
+      return new ListWorkloadsPage(null, null);
+    }
+
+    @Override
+    protected ListWorkloadsPage createPage(
+        PageContext<
+                ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
+            context,
+        ListWorkloadsResponse response) {
+      return new ListWorkloadsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListWorkloadsPage> createPageAsync(
+        PageContext<
+                ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
+            context,
+        ApiFuture<ListWorkloadsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListWorkloadsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListWorkloadsRequest,
+          ListWorkloadsResponse,
+          ListWorkloadsResponse.ComposerWorkload,
+          ListWorkloadsPage,
+          ListWorkloadsFixedSizeCollection> {
+
+    private ListWorkloadsFixedSizeCollection(List<ListWorkloadsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListWorkloadsFixedSizeCollection createEmptyCollection() {
+      return new ListWorkloadsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListWorkloadsFixedSizeCollection createCollection(
+        List<ListWorkloadsPage> pages, int collectionSize) {
+      return new ListWorkloadsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUserWorkloadsSecretsPagedResponse
+      extends AbstractPagedListResponse<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          UserWorkloadsSecret,
+          ListUserWorkloadsSecretsPage,
+          ListUserWorkloadsSecretsFixedSizeCollection> {
+
+    public static ApiFuture<ListUserWorkloadsSecretsPagedResponse> createAsync(
+        PageContext<
+                ListUserWorkloadsSecretsRequest,
+                ListUserWorkloadsSecretsResponse,
+                UserWorkloadsSecret>
+            context,
+        ApiFuture<ListUserWorkloadsSecretsResponse> futureResponse) {
+      ApiFuture<ListUserWorkloadsSecretsPage> futurePage =
+          ListUserWorkloadsSecretsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListUserWorkloadsSecretsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListUserWorkloadsSecretsPagedResponse(ListUserWorkloadsSecretsPage page) {
+      super(page, ListUserWorkloadsSecretsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUserWorkloadsSecretsPage
+      extends AbstractPage<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          UserWorkloadsSecret,
+          ListUserWorkloadsSecretsPage> {
+
+    private ListUserWorkloadsSecretsPage(
+        PageContext<
+                ListUserWorkloadsSecretsRequest,
+                ListUserWorkloadsSecretsResponse,
+                UserWorkloadsSecret>
+            context,
+        ListUserWorkloadsSecretsResponse response) {
+      super(context, response);
+    }
+
+    private static ListUserWorkloadsSecretsPage createEmptyPage() {
+      return new ListUserWorkloadsSecretsPage(null, null);
+    }
+
+    @Override
+    protected ListUserWorkloadsSecretsPage createPage(
+        PageContext<
+                ListUserWorkloadsSecretsRequest,
+                ListUserWorkloadsSecretsResponse,
+                UserWorkloadsSecret>
+            context,
+        ListUserWorkloadsSecretsResponse response) {
+      return new ListUserWorkloadsSecretsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUserWorkloadsSecretsPage> createPageAsync(
+        PageContext<
+                ListUserWorkloadsSecretsRequest,
+                ListUserWorkloadsSecretsResponse,
+                UserWorkloadsSecret>
+            context,
+        ApiFuture<ListUserWorkloadsSecretsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUserWorkloadsSecretsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          UserWorkloadsSecret,
+          ListUserWorkloadsSecretsPage,
+          ListUserWorkloadsSecretsFixedSizeCollection> {
+
+    private ListUserWorkloadsSecretsFixedSizeCollection(
+        List<ListUserWorkloadsSecretsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUserWorkloadsSecretsFixedSizeCollection createEmptyCollection() {
+      return new ListUserWorkloadsSecretsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUserWorkloadsSecretsFixedSizeCollection createCollection(
+        List<ListUserWorkloadsSecretsPage> pages, int collectionSize) {
+      return new ListUserWorkloadsSecretsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUserWorkloadsConfigMapsPagedResponse
+      extends AbstractPagedListResponse<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          UserWorkloadsConfigMap,
+          ListUserWorkloadsConfigMapsPage,
+          ListUserWorkloadsConfigMapsFixedSizeCollection> {
+
+    public static ApiFuture<ListUserWorkloadsConfigMapsPagedResponse> createAsync(
+        PageContext<
+                ListUserWorkloadsConfigMapsRequest,
+                ListUserWorkloadsConfigMapsResponse,
+                UserWorkloadsConfigMap>
+            context,
+        ApiFuture<ListUserWorkloadsConfigMapsResponse> futureResponse) {
+      ApiFuture<ListUserWorkloadsConfigMapsPage> futurePage =
+          ListUserWorkloadsConfigMapsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListUserWorkloadsConfigMapsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListUserWorkloadsConfigMapsPagedResponse(ListUserWorkloadsConfigMapsPage page) {
+      super(page, ListUserWorkloadsConfigMapsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUserWorkloadsConfigMapsPage
+      extends AbstractPage<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          UserWorkloadsConfigMap,
+          ListUserWorkloadsConfigMapsPage> {
+
+    private ListUserWorkloadsConfigMapsPage(
+        PageContext<
+                ListUserWorkloadsConfigMapsRequest,
+                ListUserWorkloadsConfigMapsResponse,
+                UserWorkloadsConfigMap>
+            context,
+        ListUserWorkloadsConfigMapsResponse response) {
+      super(context, response);
+    }
+
+    private static ListUserWorkloadsConfigMapsPage createEmptyPage() {
+      return new ListUserWorkloadsConfigMapsPage(null, null);
+    }
+
+    @Override
+    protected ListUserWorkloadsConfigMapsPage createPage(
+        PageContext<
+                ListUserWorkloadsConfigMapsRequest,
+                ListUserWorkloadsConfigMapsResponse,
+                UserWorkloadsConfigMap>
+            context,
+        ListUserWorkloadsConfigMapsResponse response) {
+      return new ListUserWorkloadsConfigMapsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUserWorkloadsConfigMapsPage> createPageAsync(
+        PageContext<
+                ListUserWorkloadsConfigMapsRequest,
+                ListUserWorkloadsConfigMapsResponse,
+                UserWorkloadsConfigMap>
+            context,
+        ApiFuture<ListUserWorkloadsConfigMapsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUserWorkloadsConfigMapsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          UserWorkloadsConfigMap,
+          ListUserWorkloadsConfigMapsPage,
+          ListUserWorkloadsConfigMapsFixedSizeCollection> {
+
+    private ListUserWorkloadsConfigMapsFixedSizeCollection(
+        List<ListUserWorkloadsConfigMapsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUserWorkloadsConfigMapsFixedSizeCollection createEmptyCollection() {
+      return new ListUserWorkloadsConfigMapsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUserWorkloadsConfigMapsFixedSizeCollection createCollection(
+        List<ListUserWorkloadsConfigMapsPage> pages, int collectionSize) {
+      return new ListUserWorkloadsConfigMapsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

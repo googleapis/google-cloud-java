@@ -727,6 +727,81 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 8;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int STORAGE_CONFIG_FIELD_NUMBER = 9;
+  private com.google.cloud.orchestration.airflow.service.v1.StorageConfig storageConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage configuration for this environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the storageConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStorageConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage configuration for this environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The storageConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.StorageConfig getStorageConfig() {
+    return storageConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.StorageConfig.getDefaultInstance()
+        : storageConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage configuration for this environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.StorageConfigOrBuilder
+      getStorageConfigOrBuilder() {
+    return storageConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.StorageConfig.getDefaultInstance()
+        : storageConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -763,6 +838,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 7);
+    if (satisfiesPzs_ != false) {
+      output.writeBool(8, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getStorageConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -802,6 +883,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, labels__);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getStorageConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -834,6 +921,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasStorageConfig() != other.hasStorageConfig()) return false;
+    if (hasStorageConfig()) {
+      if (!getStorageConfig().equals(other.getStorageConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -866,6 +958,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasStorageConfig()) {
+      hash = (37 * hash) + STORAGE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStorageConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1033,6 +1131,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         getConfigFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getStorageConfigFieldBuilder();
       }
     }
 
@@ -1059,6 +1158,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      satisfiesPzs_ = false;
+      storageConfig_ = null;
+      if (storageConfigBuilder_ != null) {
+        storageConfigBuilder_.dispose();
+        storageConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1122,6 +1227,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.storageConfig_ =
+            storageConfigBuilder_ == null ? storageConfig_ : storageConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1197,6 +1310,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000040;
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasStorageConfig()) {
+        mergeStorageConfig(other.getStorageConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1271,6 +1390,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(getStorageConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2395,6 +2526,269 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000040;
       return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.StorageConfig storageConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.StorageConfig,
+            com.google.cloud.orchestration.airflow.service.v1.StorageConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.StorageConfigOrBuilder>
+        storageConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the storageConfig field is set.
+     */
+    public boolean hasStorageConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The storageConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.StorageConfig getStorageConfig() {
+      if (storageConfigBuilder_ == null) {
+        return storageConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.StorageConfig.getDefaultInstance()
+            : storageConfig_;
+      } else {
+        return storageConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStorageConfig(
+        com.google.cloud.orchestration.airflow.service.v1.StorageConfig value) {
+      if (storageConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        storageConfig_ = value;
+      } else {
+        storageConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStorageConfig(
+        com.google.cloud.orchestration.airflow.service.v1.StorageConfig.Builder builderForValue) {
+      if (storageConfigBuilder_ == null) {
+        storageConfig_ = builderForValue.build();
+      } else {
+        storageConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStorageConfig(
+        com.google.cloud.orchestration.airflow.service.v1.StorageConfig value) {
+      if (storageConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && storageConfig_ != null
+            && storageConfig_
+                != com.google.cloud.orchestration.airflow.service.v1.StorageConfig
+                    .getDefaultInstance()) {
+          getStorageConfigBuilder().mergeFrom(value);
+        } else {
+          storageConfig_ = value;
+        }
+      } else {
+        storageConfigBuilder_.mergeFrom(value);
+      }
+      if (storageConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStorageConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      storageConfig_ = null;
+      if (storageConfigBuilder_ != null) {
+        storageConfigBuilder_.dispose();
+        storageConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.StorageConfig.Builder
+        getStorageConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getStorageConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.StorageConfigOrBuilder
+        getStorageConfigOrBuilder() {
+      if (storageConfigBuilder_ != null) {
+        return storageConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return storageConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.StorageConfig.getDefaultInstance()
+            : storageConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage configuration for this environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.StorageConfig storage_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.StorageConfig,
+            com.google.cloud.orchestration.airflow.service.v1.StorageConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.StorageConfigOrBuilder>
+        getStorageConfigFieldBuilder() {
+      if (storageConfigBuilder_ == null) {
+        storageConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.StorageConfig,
+                com.google.cloud.orchestration.airflow.service.v1.StorageConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1.StorageConfigOrBuilder>(
+                getStorageConfig(), getParentForChildren(), isClean());
+        storageConfig_ = null;
+      }
+      return storageConfigBuilder_;
     }
 
     @java.lang.Override

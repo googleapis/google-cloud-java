@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,6 +179,11 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).enrollDataSourcesSettings();
   }
 
+  /** Returns the object with the settings used for calls to unenrollDataSources. */
+  public UnaryCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).unenrollDataSourcesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -231,7 +236,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return DataTransferServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return DataTransferServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -401,6 +405,12 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     /** Returns the builder for the settings used for calls to enrollDataSources. */
     public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
       return getStubSettingsBuilder().enrollDataSourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unenrollDataSources. */
+    public UnaryCallSettings.Builder<UnenrollDataSourcesRequest, Empty>
+        unenrollDataSourcesSettings() {
+      return getStubSettingsBuilder().unenrollDataSourcesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
