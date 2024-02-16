@@ -1,0 +1,17 @@
+steps:
+- name: gcr.io/cloud-devrel-kokoro-resources/java8
+  entrypoint: ls
+  args: [
+    '-alt',
+  ]
+- name: gcr.io/cloud-devrel-kokoro-resources/java8
+  entrypoint: pwd
+- name: gcr.io/cloud-devrel-kokoro-resources/java8
+  entrypoint: bash
+  args: [
+    './kokoro/build.sh'
+  ]
+  env:
+  - 'JOB_TYPE=samples'
+
+timeout: 300m
