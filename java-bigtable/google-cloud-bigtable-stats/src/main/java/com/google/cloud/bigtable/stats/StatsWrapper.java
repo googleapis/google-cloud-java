@@ -40,6 +40,11 @@ public class StatsWrapper {
         operationType, spanName, statsAttributes, Stats.getStatsRecorder());
   }
 
+  public static StatsRecorderWrapperForConnection createRecorderForConnection(
+      Map<String, String> statsAttributes) {
+    return new StatsRecorderWrapperForConnection(statsAttributes, Stats.getStatsRecorder());
+  }
+
   // This is used in integration tests to get the tag value strings from view manager because Stats
   // is relocated to com.google.bigtable.veneer.repackaged.io.opencensus.
   @InternalApi("Visible for testing")

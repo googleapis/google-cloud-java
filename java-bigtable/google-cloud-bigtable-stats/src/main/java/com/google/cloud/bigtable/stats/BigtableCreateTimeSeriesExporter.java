@@ -51,6 +51,10 @@ final class BigtableCreateTimeSeriesExporter extends MetricExporter {
       if (!metric.getMetricDescriptor().getName().contains("bigtable")) {
         continue;
       }
+      // TODO: temporarily skip exporting per connection metrics.
+      if (metric.getMetricDescriptor().getName().contains("per_connection_error_count")) {
+        continue;
+      }
 
       projectToTimeSeries =
           metric.getTimeSeriesList().stream()

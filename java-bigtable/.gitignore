@@ -42,3 +42,4 @@ api_key
 artman-genfiles
 
 .flattened-pom.xml
+dependency-reduced-pom.xml

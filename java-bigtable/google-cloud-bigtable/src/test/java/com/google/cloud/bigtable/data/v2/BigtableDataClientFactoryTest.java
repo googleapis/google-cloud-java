@@ -266,7 +266,7 @@ public class BigtableDataClientFactoryTest {
     factory.createForAppProfile("other-appprofile");
     factory.createForInstance("other-project", "other-instance");
 
-    // Make sure that only 1 instance is created for all clients
+    // Make sure that only 1 instance is created by each provider
     Mockito.verify(credentialsProvider, Mockito.times(1)).getCredentials();
     Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
     Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
