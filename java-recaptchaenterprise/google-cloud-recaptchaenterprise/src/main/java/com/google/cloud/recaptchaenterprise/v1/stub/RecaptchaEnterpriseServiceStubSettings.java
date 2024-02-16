@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -74,6 +73,8 @@ import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -156,6 +157,8 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<UpdateFirewallPolicyRequest, FirewallPolicy>
       updateFirewallPolicySettings;
   private final UnaryCallSettings<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicySettings;
+  private final UnaryCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesSettings;
   private final PagedCallSettings<
           ListRelatedAccountGroupsRequest,
           ListRelatedAccountGroupsResponse,
@@ -611,6 +614,12 @@ public class RecaptchaEnterpriseServiceStubSettings
     return deleteFirewallPolicySettings;
   }
 
+  /** Returns the object with the settings used for calls to reorderFirewallPolicies. */
+  public UnaryCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesSettings() {
+    return reorderFirewallPoliciesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listRelatedAccountGroups. */
   public PagedCallSettings<
           ListRelatedAccountGroupsRequest,
@@ -703,7 +712,6 @@ public class RecaptchaEnterpriseServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -745,6 +753,7 @@ public class RecaptchaEnterpriseServiceStubSettings
     getFirewallPolicySettings = settingsBuilder.getFirewallPolicySettings().build();
     updateFirewallPolicySettings = settingsBuilder.updateFirewallPolicySettings().build();
     deleteFirewallPolicySettings = settingsBuilder.deleteFirewallPolicySettings().build();
+    reorderFirewallPoliciesSettings = settingsBuilder.reorderFirewallPoliciesSettings().build();
     listRelatedAccountGroupsSettings = settingsBuilder.listRelatedAccountGroupsSettings().build();
     listRelatedAccountGroupMembershipsSettings =
         settingsBuilder.listRelatedAccountGroupMembershipsSettings().build();
@@ -785,6 +794,9 @@ public class RecaptchaEnterpriseServiceStubSettings
         updateFirewallPolicySettings;
     private final UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
         deleteFirewallPolicySettings;
+    private final UnaryCallSettings.Builder<
+            ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesSettings;
     private final PagedCallSettings.Builder<
             ListRelatedAccountGroupsRequest,
             ListRelatedAccountGroupsResponse,
@@ -853,6 +865,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       getFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reorderFirewallPoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRelatedAccountGroupsSettings =
           PagedCallSettings.newBuilder(LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_FACT);
       listRelatedAccountGroupMembershipsSettings =
@@ -877,6 +890,7 @@ public class RecaptchaEnterpriseServiceStubSettings
               getFirewallPolicySettings,
               updateFirewallPolicySettings,
               deleteFirewallPolicySettings,
+              reorderFirewallPoliciesSettings,
               listRelatedAccountGroupsSettings,
               listRelatedAccountGroupMembershipsSettings,
               searchRelatedAccountGroupMembershipsSettings);
@@ -901,6 +915,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       getFirewallPolicySettings = settings.getFirewallPolicySettings.toBuilder();
       updateFirewallPolicySettings = settings.updateFirewallPolicySettings.toBuilder();
       deleteFirewallPolicySettings = settings.deleteFirewallPolicySettings.toBuilder();
+      reorderFirewallPoliciesSettings = settings.reorderFirewallPoliciesSettings.toBuilder();
       listRelatedAccountGroupsSettings = settings.listRelatedAccountGroupsSettings.toBuilder();
       listRelatedAccountGroupMembershipsSettings =
           settings.listRelatedAccountGroupMembershipsSettings.toBuilder();
@@ -924,6 +939,7 @@ public class RecaptchaEnterpriseServiceStubSettings
               getFirewallPolicySettings,
               updateFirewallPolicySettings,
               deleteFirewallPolicySettings,
+              reorderFirewallPoliciesSettings,
               listRelatedAccountGroupsSettings,
               listRelatedAccountGroupMembershipsSettings,
               searchRelatedAccountGroupMembershipsSettings);
@@ -1014,6 +1030,11 @@ public class RecaptchaEnterpriseServiceStubSettings
 
       builder
           .deleteFirewallPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .reorderFirewallPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1136,6 +1157,13 @@ public class RecaptchaEnterpriseServiceStubSettings
     public UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
         deleteFirewallPolicySettings() {
       return deleteFirewallPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reorderFirewallPolicies. */
+    public UnaryCallSettings.Builder<
+            ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesSettings() {
+      return reorderFirewallPoliciesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRelatedAccountGroups. */

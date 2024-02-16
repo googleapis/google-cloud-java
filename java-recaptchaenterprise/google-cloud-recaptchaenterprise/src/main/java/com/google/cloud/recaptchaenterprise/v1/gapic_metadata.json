@@ -52,6 +52,9 @@
             "MigrateKey": {
               "methods": ["migrateKey", "migrateKeyCallable"]
             },
+            "ReorderFirewallPolicies": {
+              "methods": ["reorderFirewallPolicies", "reorderFirewallPolicies", "reorderFirewallPolicies", "reorderFirewallPoliciesCallable"]
+            },
             "RetrieveLegacySecretKey": {
               "methods": ["retrieveLegacySecretKey", "retrieveLegacySecretKey", "retrieveLegacySecretKey", "retrieveLegacySecretKeyCallable"]
             },
