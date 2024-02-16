@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.SearchRelatedAccountGroupMembershipsPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -58,6 +57,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -201,6 +202,13 @@ public class RecaptchaEnterpriseServiceSettings
         .deleteFirewallPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to reorderFirewallPolicies. */
+  public UnaryCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings())
+        .reorderFirewallPoliciesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRelatedAccountGroups. */
   public PagedCallSettings<
           ListRelatedAccountGroupsRequest,
@@ -267,7 +275,6 @@ public class RecaptchaEnterpriseServiceSettings
     return RecaptchaEnterpriseServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return RecaptchaEnterpriseServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -417,6 +424,13 @@ public class RecaptchaEnterpriseServiceSettings
     public UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
         deleteFirewallPolicySettings() {
       return getStubSettingsBuilder().deleteFirewallPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reorderFirewallPolicies. */
+    public UnaryCallSettings.Builder<
+            ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesSettings() {
+      return getStubSettingsBuilder().reorderFirewallPoliciesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRelatedAccountGroups. */

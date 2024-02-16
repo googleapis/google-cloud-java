@@ -3438,6 +3438,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest$FoundationModelTuningOptions",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest$FoundationModelTuningOptions$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest$InputData",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

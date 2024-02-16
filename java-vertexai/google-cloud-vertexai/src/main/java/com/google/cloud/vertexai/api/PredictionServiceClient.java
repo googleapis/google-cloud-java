@@ -71,19 +71,268 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Predict</td>
+ *      <td><p> Perform an online prediction.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> predict(PredictRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> predict(EndpointName endpoint, List&lt;Value&gt; instances, Value parameters)
+ *           <li><p> predict(String endpoint, List&lt;Value&gt; instances, Value parameters)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> predictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RawPredict</td>
+ *      <td><p> Perform an online prediction with an arbitrary HTTP payload.
+ * <p>  The response includes the following HTTP headers:
+ * <ul>
+ * <li>  `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this prediction.
+ * </ul>
+ * <ul>
+ * <li>  `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] that served this prediction.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rawPredict(RawPredictRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> rawPredict(EndpointName endpoint, HttpBody httpBody)
+ *           <li><p> rawPredict(String endpoint, HttpBody httpBody)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamRawPredict</td>
+ *      <td><p> Perform a streaming online prediction with an arbitrary HTTP payload.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamRawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DirectPredict</td>
+ *      <td><p> Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> directPredict(DirectPredictRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> directPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DirectRawPredict</td>
+ *      <td><p> Perform an unary online prediction request to a gRPC model server for custom containers.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> directRawPredict(DirectRawPredictRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> directRawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamDirectPredict</td>
+ *      <td><p> Perform a streaming online prediction request to a gRPC model server for Vertex first-party products and frameworks.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamDirectPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamDirectRawPredict</td>
+ *      <td><p> Perform a streaming online prediction request to a gRPC model server for custom containers.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamDirectRawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamingPredict</td>
+ *      <td><p> Perform a streaming online prediction request for Vertex first-party products and frameworks.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamingPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ServerStreamingPredict</td>
+ *      <td><p> Perform a server-side streaming online prediction request for Vertex LLM streaming.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> serverStreamingPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamingRawPredict</td>
+ *      <td><p> Perform a streaming online prediction request through gRPC.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamingRawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Explain</td>
+ *      <td><p> Perform an online explanation.
+ * <p>  If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is specified, the corresponding DeployModel must have [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not specified, all DeployedModels must have [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> explain(ExplainRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> explain(EndpointName endpoint, List&lt;Value&gt; instances, Value parameters, String deployedModelId)
+ *           <li><p> explain(String endpoint, List&lt;Value&gt; instances, Value parameters, String deployedModelId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> explainCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateContent</td>
+ *      <td><p> Generate content with multimodal inputs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateContent(GenerateContentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateContent(String model, List&lt;Content&gt; contents)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamGenerateContent</td>
+ *      <td><p> Generate content with multimodal inputs with streaming support.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamGenerateContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -554,7 +803,42 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an unary online prediction request for Vertex first-party products and frameworks.
+   * Perform a streaming online prediction with an arbitrary HTTP payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   StreamRawPredictRequest request =
+   *       StreamRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setHttpBody(HttpBody.newBuilder().build())
+   *           .build();
+   *   ServerStream<HttpBody> stream =
+   *       predictionServiceClient.streamRawPredictCallable().call(request);
+   *   for (HttpBody response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamRawPredictRequest, HttpBody>
+      streamRawPredictCallable() {
+    return stub.streamRawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an unary online prediction request to a gRPC model server for Vertex first-party
+   * products and frameworks.
    *
    * <p>Sample code:
    *
@@ -587,7 +871,8 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an unary online prediction request for Vertex first-party products and frameworks.
+   * Perform an unary online prediction request to a gRPC model server for Vertex first-party
+   * products and frameworks.
    *
    * <p>Sample code:
    *
@@ -620,7 +905,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction request through gRPC.
+   * Perform an unary online prediction request to a gRPC model server for custom containers.
    *
    * <p>Sample code:
    *
@@ -653,7 +938,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Perform an online prediction request through gRPC.
+   * Perform an unary online prediction request to a gRPC model server for custom containers.
    *
    * <p>Sample code:
    *
@@ -683,6 +968,79 @@ public class PredictionServiceClient implements BackgroundResource {
   public final UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable() {
     return stub.directRawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction request to a gRPC model server for Vertex first-party
+   * products and frameworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BidiStream<StreamDirectPredictRequest, StreamDirectPredictResponse> bidiStream =
+   *       predictionServiceClient.streamDirectPredictCallable().call();
+   *   StreamDirectPredictRequest request =
+   *       StreamDirectPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamDirectPredictResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    return stub.streamDirectPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction request to a gRPC model server for custom containers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BidiStream<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse> bidiStream =
+   *       predictionServiceClient.streamDirectRawPredictCallable().call();
+   *   StreamDirectRawPredictRequest request =
+   *       StreamDirectRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setMethodName("methodName-723163380")
+   *           .setInput(ByteString.EMPTY)
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamDirectRawPredictResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    return stub.streamDirectRawPredictCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -999,6 +1357,103 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return stub.explainCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String model = "model104069929";
+   *   List<Content> contents = new ArrayList<>();
+   *   GenerateContentResponse response = predictionServiceClient.generateContent(model, contents);
+   * }
+   * }</pre>
+   *
+   * @param model Required. The name of the publisher model requested to serve the prediction.
+   *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   * @param contents Required. The content of the current conversation with the model.
+   *     <p>For single-turn queries, this is a single instance. For multi-turn queries, this is a
+   *     repeated field that contains conversation history + latest request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateContentResponse generateContent(String model, List<Content> contents) {
+    GenerateContentRequest request =
+        GenerateContentRequest.newBuilder().setModel(model).addAllContents(contents).build();
+    return generateContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   GenerateContentRequest request =
+   *       GenerateContentRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
+   *           .build();
+   *   GenerateContentResponse response = predictionServiceClient.generateContent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateContentResponse generateContent(GenerateContentRequest request) {
+    return generateContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   GenerateContentRequest request =
+   *       GenerateContentRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GenerateContentResponse> future =
+   *       predictionServiceClient.generateContentCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateContentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateContentRequest, GenerateContentResponse>
+      generateContentCallable() {
+    return stub.generateContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

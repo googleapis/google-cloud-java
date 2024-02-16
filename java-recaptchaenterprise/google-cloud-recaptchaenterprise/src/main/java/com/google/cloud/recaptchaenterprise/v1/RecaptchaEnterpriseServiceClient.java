@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,8 @@ import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -381,6 +383,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReorderFirewallPolicies</td>
+ *      <td><p> Reorders all firewall policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPolicies(ReorderFirewallPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPolicies(ProjectName parent, List&lt;String&gt; names)
+ *           <li><p> reorderFirewallPolicies(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPoliciesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2368,6 +2389,140 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
     return stub.deleteFirewallPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List<String> names = new ArrayList<>();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @param names Required. A list containing all policy names, in the new order. Each name is in
+   *     the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      ProjectName parent, List<String> names) {
+    ReorderFirewallPoliciesRequest request =
+        ReorderFirewallPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return reorderFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @param names Required. A list containing all policy names, in the new order. Each name is in
+   *     the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      String parent, List<String> names) {
+    ReorderFirewallPoliciesRequest request =
+        ReorderFirewallPoliciesRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return reorderFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ReorderFirewallPoliciesRequest request =
+   *       ReorderFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      ReorderFirewallPoliciesRequest request) {
+    return reorderFirewallPoliciesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ReorderFirewallPoliciesRequest request =
+   *       ReorderFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<ReorderFirewallPoliciesResponse> future =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPoliciesCallable().futureCall(request);
+   *   // Do something.
+   *   ReorderFirewallPoliciesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable() {
+    return stub.reorderFirewallPoliciesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

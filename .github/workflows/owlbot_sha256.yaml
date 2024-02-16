@@ -15,8 +15,8 @@
 on:
   workflow_dispatch:
   schedule:
-  # every hour
-  - cron: '0 * * * *'
+  # Runs at 00:00 UTC every day
+  - cron: '0 0 * * *'
 name: owlbot_lock_update
 jobs:
   update:

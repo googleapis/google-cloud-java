@@ -2817,6 +2817,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_MANAGED_CONFIG(3),
+    @java.lang.Deprecated
     DOCUMENT_WAREHOUSE_CONFIG(5),
     UNMANAGED_DATASET_CONFIG(6),
     STORAGESOURCE_NOT_SET(0);
@@ -2974,16 +2975,20 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Document AI Warehouse-based dataset configuration.
+   * Optional. Deprecated. Warehouse-based dataset configuration is not
+   * supported.
    * </pre>
    *
    * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
+   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
    * @return Whether the documentWarehouseConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDocumentWarehouseConfig() {
     return storageSourceCase_ == 5;
   }
@@ -2991,16 +2996,20 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Document AI Warehouse-based dataset configuration.
+   * Optional. Deprecated. Warehouse-based dataset configuration is not
+   * supported.
    * </pre>
    *
    * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
+   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
    * @return The documentWarehouseConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig
       getDocumentWarehouseConfig() {
     if (storageSourceCase_ == 5) {
@@ -3012,14 +3021,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Document AI Warehouse-based dataset configuration.
+   * Optional. Deprecated. Warehouse-based dataset configuration is not
+   * supported.
    * </pre>
    *
    * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfigOrBuilder
       getDocumentWarehouseConfigOrBuilder() {
     if (storageSourceCase_ == 5) {
@@ -4087,16 +4098,20 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
+     *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
      * @return Whether the documentWarehouseConfig field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasDocumentWarehouseConfig() {
       return storageSourceCase_ == 5;
     }
@@ -4104,16 +4119,20 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
+     *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
      * @return The documentWarehouseConfig.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig
         getDocumentWarehouseConfig() {
       if (documentWarehouseConfigBuilder_ == null) {
@@ -4135,13 +4154,15 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDocumentWarehouseConfig(
         com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig value) {
       if (documentWarehouseConfigBuilder_ == null) {
@@ -4160,13 +4181,15 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDocumentWarehouseConfig(
         com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig.Builder
             builderForValue) {
@@ -4183,13 +4206,15 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDocumentWarehouseConfig(
         com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig value) {
       if (documentWarehouseConfigBuilder_ == null) {
@@ -4221,13 +4246,15 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDocumentWarehouseConfig() {
       if (documentWarehouseConfigBuilder_ == null) {
         if (storageSourceCase_ == 5) {
@@ -4248,13 +4275,15 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig.Builder
         getDocumentWarehouseConfigBuilder() {
       return getDocumentWarehouseConfigFieldBuilder().getBuilder();
@@ -4263,14 +4292,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfigOrBuilder
         getDocumentWarehouseConfigOrBuilder() {
       if ((storageSourceCase_ == 5) && (documentWarehouseConfigBuilder_ != null)) {
@@ -4288,11 +4319,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Document AI Warehouse-based dataset configuration.
+     * Optional. Deprecated. Warehouse-based dataset configuration is not
+     * supported.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

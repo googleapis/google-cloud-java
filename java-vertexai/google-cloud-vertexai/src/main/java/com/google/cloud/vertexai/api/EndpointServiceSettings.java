@@ -232,7 +232,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     return EndpointServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return EndpointServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }

@@ -123,8 +123,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
-   * processor types.
+   * Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
@@ -136,8 +136,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
-   * processor types.
+   * Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
@@ -149,8 +149,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
-   * processor types.
+   * Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
