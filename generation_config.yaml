@@ -41,7 +41,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/advisorynotifications/v1
 
-# code difference
 - api_shortname: aiplatform
   name_pretty: Vertex AI
   product_documentation: https://cloud.google.com/vertex-ai/docs
@@ -66,7 +65,6 @@ libraries:
   - proto_path: google/cloud/alloydb/v1alpha
   - proto_path: google/cloud/alloydb/v1beta
 
-# the temp folder needs to use library_name, not api_shortname
 - api_shortname: alloydb
   name_pretty: AlloyDB connectors
   product_documentation: https://cloud.google.com/alloydb/docs
@@ -1447,7 +1445,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/resourcesettings/v1
 
-  # one line difference: java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/v3/package-info.java
 - api_shortname: cloudresourcemanager
   name_pretty: Resource Manager API
   product_documentation: https://cloud.google.com/resource-manager
