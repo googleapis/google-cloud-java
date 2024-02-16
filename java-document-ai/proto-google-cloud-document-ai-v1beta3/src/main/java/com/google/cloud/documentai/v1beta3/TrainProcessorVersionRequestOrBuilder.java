@@ -72,6 +72,50 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
+   * Options to control foundation model tuning of a processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+   * </code>
+   *
+   * @return Whether the foundationModelTuningOptions field is set.
+   */
+  boolean hasFoundationModelTuningOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options to control foundation model tuning of a processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+   * </code>
+   *
+   * @return The foundationModelTuningOptions.
+   */
+  com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.FoundationModelTuningOptions
+      getFoundationModelTuningOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options to control foundation model tuning of a processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+          .FoundationModelTuningOptionsOrBuilder
+      getFoundationModelTuningOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent (project, location and processor) to create the new
    * version for. Format:
    * `projects/{project}/locations/{location}/processors/{processor}`.

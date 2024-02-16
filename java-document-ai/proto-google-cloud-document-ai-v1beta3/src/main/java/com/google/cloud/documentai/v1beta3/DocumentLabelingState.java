@@ -23,7 +23,7 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Describes the labelling status of a document.
+ * Describes the labeling status of a document.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.documentai.v1beta3.DocumentLabelingState}
@@ -43,7 +43,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * Document has been labelled.
+   * Document has been labeled.
    * </pre>
    *
    * <code>DOCUMENT_LABELED = 1;</code>
@@ -53,7 +53,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * Document has not been labelled.
+   * Document has not been labeled.
    * </pre>
    *
    * <code>DOCUMENT_UNLABELED = 2;</code>
@@ -63,7 +63,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * Document has been auto-labelled.
+   * Document has been auto-labeled.
    * </pre>
    *
    * <code>DOCUMENT_AUTO_LABELED = 3;</code>
@@ -86,7 +86,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * Document has been labelled.
+   * Document has been labeled.
    * </pre>
    *
    * <code>DOCUMENT_LABELED = 1;</code>
@@ -96,7 +96,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * Document has not been labelled.
+   * Document has not been labeled.
    * </pre>
    *
    * <code>DOCUMENT_UNLABELED = 2;</code>
@@ -106,7 +106,7 @@ public enum DocumentLabelingState implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * Document has been auto-labelled.
+   * Document has been auto-labeled.
    * </pre>
    *
    * <code>DOCUMENT_AUTO_LABELED = 3;</code>

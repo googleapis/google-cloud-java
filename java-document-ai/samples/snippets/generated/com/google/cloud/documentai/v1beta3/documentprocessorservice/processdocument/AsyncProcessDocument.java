@@ -25,6 +25,7 @@ import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.ProcessorName;
 import com.google.protobuf.FieldMask;
+import java.util.HashMap;
 
 public class AsyncProcessDocument {
 
@@ -47,6 +48,7 @@ public class AsyncProcessDocument {
               .setSkipHumanReview(true)
               .setFieldMask(FieldMask.newBuilder().build())
               .setProcessOptions(ProcessOptions.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       ApiFuture<ProcessResponse> future =
           documentProcessorServiceClient.processDocumentCallable().futureCall(request);

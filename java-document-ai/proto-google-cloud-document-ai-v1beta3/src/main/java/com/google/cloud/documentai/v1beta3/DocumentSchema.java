@@ -1228,6 +1228,31 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * User defined name for the property.
+       * </pre>
+       *
+       * <code>string display_name = 6;</code>
+       *
+       * @return The displayName.
+       */
+      java.lang.String getDisplayName();
+      /**
+       *
+       *
+       * <pre>
+       * User defined name for the property.
+       * </pre>
+       *
+       * <code>string display_name = 6;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      com.google.protobuf.ByteString getDisplayNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * A reference to the value type of the property.  This type is subject
        * to the same conventions as the `Entity.base_types` field.
        * </pre>
@@ -1339,6 +1364,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
       private Property() {
         name_ = "";
+        displayName_ = "";
         valueType_ = "";
         occurrenceType_ = 0;
       }
@@ -1370,14 +1396,14 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Types of occurrences of the entity type in the document.  This
-       * represents the number of instances of instances of an entity, not
-       * number of mentions of an entity.  For example, a bank statement may
-       * only have one `account_number`, but this account number may be
-       * mentioned in several places on the document.  In this case the
-       * 'account_number' would be considered a `REQUIRED_ONCE` entity type. If,
-       * on the other hand, we expect a bank statement to contain the status of
-       * multiple different accounts for the customers, the occurrence type will
-       * be set to `REQUIRED_MULTIPLE`.
+       * represents the number of instances, not mentions, of an entity.
+       * For example, a bank statement might only have one
+       * `account_number`, but this account number can be mentioned in several
+       * places on the document.  In this case, the `account_number` is
+       * considered a `REQUIRED_ONCE` entity type. If, on the other hand, we
+       * expect a bank statement to contain the status of multiple different
+       * accounts for the customers, the occurrence type is set to
+       * `REQUIRED_MULTIPLE`.
        * </pre>
        *
        * Protobuf enum {@code
@@ -1640,6 +1666,57 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int DISPLAY_NAME_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object displayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * User defined name for the property.
+       * </pre>
+       *
+       * <code>string display_name = 6;</code>
+       *
+       * @return The displayName.
+       */
+      @java.lang.Override
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User defined name for the property.
+       * </pre>
+       *
+       * <code>string display_name = 6;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int VALUE_TYPE_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
@@ -1820,6 +1897,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeMessage(5, getPropertyMetadata());
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 6, displayName_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1845,6 +1925,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPropertyMetadata());
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, displayName_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1863,6 +1946,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property) obj;
 
         if (!getName().equals(other.getName())) return false;
+        if (!getDisplayName().equals(other.getDisplayName())) return false;
         if (!getValueType().equals(other.getValueType())) return false;
         if (occurrenceType_ != other.occurrenceType_) return false;
         if (hasPropertyMetadata() != other.hasPropertyMetadata()) return false;
@@ -1882,6 +1966,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + NAME_FIELD_NUMBER;
         hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDisplayName().hashCode();
         hash = (37 * hash) + VALUE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getValueType().hashCode();
         hash = (37 * hash) + OCCURRENCE_TYPE_FIELD_NUMBER;
@@ -2052,6 +2138,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           name_ = "";
+          displayName_ = "";
           valueType_ = "";
           occurrenceType_ = 0;
           propertyMetadata_ = null;
@@ -2104,13 +2191,16 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             result.name_ = name_;
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.valueType_ = valueType_;
+            result.displayName_ = displayName_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.valueType_ = valueType_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
             result.occurrenceType_ = occurrenceType_;
           }
           int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000008) != 0)) {
+          if (((from_bitField0_ & 0x00000010) != 0)) {
             result.propertyMetadata_ =
                 propertyMetadataBuilder_ == null
                     ? propertyMetadata_
@@ -2177,9 +2267,14 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000001;
             onChanged();
           }
+          if (!other.getDisplayName().isEmpty()) {
+            displayName_ = other.displayName_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
           if (!other.getValueType().isEmpty()) {
             valueType_ = other.valueType_;
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           if (other.occurrenceType_ != 0) {
@@ -2223,22 +2318,28 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 case 18:
                   {
                     valueType_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000002;
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 18
                 case 24:
                   {
                     occurrenceType_ = input.readEnum();
-                    bitField0_ |= 0x00000004;
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 24
                 case 42:
                   {
                     input.readMessage(
                         getPropertyMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000008;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 42
+                case 50:
+                  {
+                    displayName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2369,6 +2470,112 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object displayName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * User defined name for the property.
+         * </pre>
+         *
+         * <code>string display_name = 6;</code>
+         *
+         * @return The displayName.
+         */
+        public java.lang.String getDisplayName() {
+          java.lang.Object ref = displayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            displayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * User defined name for the property.
+         * </pre>
+         *
+         * <code>string display_name = 6;</code>
+         *
+         * @return The bytes for displayName.
+         */
+        public com.google.protobuf.ByteString getDisplayNameBytes() {
+          java.lang.Object ref = displayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            displayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * User defined name for the property.
+         * </pre>
+         *
+         * <code>string display_name = 6;</code>
+         *
+         * @param value The displayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          displayName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * User defined name for the property.
+         * </pre>
+         *
+         * <code>string display_name = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisplayName() {
+          displayName_ = getDefaultInstance().getDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * User defined name for the property.
+         * </pre>
+         *
+         * <code>string display_name = 6;</code>
+         *
+         * @param value The bytes for displayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          displayName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
         private java.lang.Object valueType_ = "";
         /**
          *
@@ -2434,7 +2641,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           valueType_ = value;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2452,7 +2659,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearValueType() {
           valueType_ = getDefaultInstance().getValueType();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -2475,7 +2682,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           valueType_ = value;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2516,7 +2723,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder setOccurrenceTypeValue(int value) {
           occurrenceType_ = value;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2567,7 +2774,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           occurrenceType_ = value.getNumber();
           onChanged();
           return this;
@@ -2587,7 +2794,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearOccurrenceType() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           occurrenceType_ = 0;
           onChanged();
           return this;
@@ -2611,7 +2818,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the propertyMetadata field is set.
          */
         public boolean hasPropertyMetadata() {
-          return ((bitField0_ & 0x00000008) != 0);
+          return ((bitField0_ & 0x00000010) != 0);
         }
         /**
          *
@@ -2652,7 +2859,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           } else {
             propertyMetadataBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2672,7 +2879,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           } else {
             propertyMetadataBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2688,7 +2895,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public Builder mergePropertyMetadata(
             com.google.cloud.documentai.v1beta3.PropertyMetadata value) {
           if (propertyMetadataBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)
+            if (((bitField0_ & 0x00000010) != 0)
                 && propertyMetadata_ != null
                 && propertyMetadata_
                     != com.google.cloud.documentai.v1beta3.PropertyMetadata.getDefaultInstance()) {
@@ -2700,7 +2907,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             propertyMetadataBuilder_.mergeFrom(value);
           }
           if (propertyMetadata_ != null) {
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           return this;
@@ -2715,7 +2922,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
          */
         public Builder clearPropertyMetadata() {
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           propertyMetadata_ = null;
           if (propertyMetadataBuilder_ != null) {
             propertyMetadataBuilder_.dispose();
@@ -2735,7 +2942,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.documentai.v1beta3.PropertyMetadata.Builder
             getPropertyMetadataBuilder() {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return getPropertyMetadataFieldBuilder().getBuilder();
         }
