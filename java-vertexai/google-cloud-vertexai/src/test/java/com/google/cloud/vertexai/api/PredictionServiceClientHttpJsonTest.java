@@ -301,6 +301,17 @@ public class PredictionServiceClientHttpJsonTest {
   }
 
   @Test
+  public void streamRawPredictTest() throws Exception {}
+
+  @Test
+  public void streamRawPredictExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
+
+  @Test
   public void directPredictTest() throws Exception {
     DirectPredictResponse expectedResponse =
         DirectPredictResponse.newBuilder()
@@ -415,6 +426,18 @@ public class PredictionServiceClientHttpJsonTest {
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void streamDirectPredictUnsupportedMethodTest() throws Exception {
+    // The streamDirectPredict() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void streamDirectRawPredictUnsupportedMethodTest() throws Exception {
+    // The streamDirectRawPredict() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
   }
 
   @Test
@@ -542,6 +565,54 @@ public class PredictionServiceClientHttpJsonTest {
       Value parameters = Value.newBuilder().setBoolValue(true).build();
       String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateContentTest() throws Exception {
+    GenerateContentResponse expectedResponse =
+        GenerateContentResponse.newBuilder()
+            .addAllCandidates(new ArrayList<Candidate>())
+            .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
+            .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String model = "projects/project-1054/locations/location-1054/endpoints/endpoint-1054";
+    List<Content> contents = new ArrayList<>();
+
+    GenerateContentResponse actualResponse = client.generateContent(model, contents);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateContentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String model = "projects/project-1054/locations/location-1054/endpoints/endpoint-1054";
+      List<Content> contents = new ArrayList<>();
+      client.generateContent(model, contents);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

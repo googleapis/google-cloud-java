@@ -38,6 +38,11 @@ import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.PredictRequest;
 import com.google.cloud.vertexai.api.PredictResponse;
 import com.google.cloud.vertexai.api.RawPredictRequest;
+import com.google.cloud.vertexai.api.StreamDirectPredictRequest;
+import com.google.cloud.vertexai.api.StreamDirectPredictResponse;
+import com.google.cloud.vertexai.api.StreamDirectRawPredictRequest;
+import com.google.cloud.vertexai.api.StreamDirectRawPredictResponse;
+import com.google.cloud.vertexai.api.StreamRawPredictRequest;
 import com.google.cloud.vertexai.api.StreamingPredictRequest;
 import com.google.cloud.vertexai.api.StreamingPredictResponse;
 import com.google.cloud.vertexai.api.StreamingRawPredictRequest;
@@ -66,6 +71,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
   }
 
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamRawPredictCallable()");
+  }
+
   public UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: directPredictCallable()");
   }
@@ -73,6 +82,16 @@ public abstract class PredictionServiceStub implements BackgroundResource {
   public UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: directRawPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectRawPredictCallable()");
   }
 
   public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
@@ -92,6 +111,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     throw new UnsupportedOperationException("Not implemented: explainCallable()");
+  }
+
+  public UnaryCallable<GenerateContentRequest, GenerateContentResponse> generateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateContentCallable()");
   }
 
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
