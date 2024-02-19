@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.places.v1",
+  "libraryPackage": "com.google.maps.places.v1",
+  "services": {
+    "Places": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PlacesClient",
+          "rpcs": {
+            "AutocompletePlaces": {
+              "methods": ["autocompletePlaces", "autocompletePlacesCallable"]
+            },
+            "GetPhotoMedia": {
+              "methods": ["getPhotoMedia", "getPhotoMedia", "getPhotoMedia", "getPhotoMediaCallable"]
+            },
+            "GetPlace": {
+              "methods": ["getPlace", "getPlace", "getPlace", "getPlaceCallable"]
+            },
+            "SearchNearby": {
+              "methods": ["searchNearby", "searchNearbyCallable"]
+            },
+            "SearchText": {
+              "methods": ["searchText", "searchTextCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
