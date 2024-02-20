@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.37.0 (2024-02-20)
+
+### Features
+
+* Add Grounding feature to PredictionService.GenerateContent ([#10358](https://github.com/googleapis/google-cloud-java/issues/10358)) ([0ee1383](https://github.com/googleapis/google-cloud-java/commit/0ee13836cad20260d744c4604a3c4cd68f817e74))
+
+
+
 ## 3.36.0 (2024-02-09)
 
 ### Features

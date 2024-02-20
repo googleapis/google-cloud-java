@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.36.0 (2024-02-20)
+
+### Features
+
+* Clarify that the parent field in the CreateBillingAccountRequest must be a billing account ([#10365](https://github.com/googleapis/google-cloud-java/issues/10365)) ([b4e3e20](https://github.com/googleapis/google-cloud-java/commit/b4e3e20eddb0bab12bc1aea4ae107621fb14500b))
+
+
+
 ## 2.35.0 (2024-02-09)
 
 * No change

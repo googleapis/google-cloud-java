@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 (2024-02-20)
+
+### Features
+
+* Finish a sentence with a period ([#10366](https://github.com/googleapis/google-cloud-java/issues/10366)) ([e2329d4](https://github.com/googleapis/google-cloud-java/commit/e2329d48c8131eed3a1e5f6d656671159f8c6299))
+
+
+
 ## 0.3.0 (2024-02-09)
 
 * No change

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (2024-02-20)
+
+### Features
+
+* add AutoComplete API ([#10403](https://github.com/googleapis/google-cloud-java/issues/10403)) ([20075da](https://github.com/googleapis/google-cloud-java/commit/20075daaffe91d7550d81b21470e54a7c83f985a))
+
+
+
 ## 0.6.0 (2024-02-09)
 
 * No change
