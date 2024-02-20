@@ -20,17 +20,6 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - name: install pyenv
-      shell: bash
-      run: |
-        set -ex
-        curl https://pyenv.run | bash
-        # setup environment
-        export PYENV_ROOT="$HOME/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        echo "PYENV_ROOT=${PYENV_ROOT}" >> $GITHUB_ENV
-        echo "PATH=${PATH}" >> $GITHUB_ENV
-        set +ex
     - name: copy generation scripts
       shell: bash
       run: |
