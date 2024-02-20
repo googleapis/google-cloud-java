@@ -1,13 +1,11 @@
 Contributing
 ============
 
-1. **Please sign one of the contributor license agreements below.**
-2. Fork the repo, develop and test your code changes, add docs.
-3. Make sure that your commit messages clearly describe the changes.
-4. Send a pull request.
-
-
-Here are some guidelines for hacking on google-cloud-java.
+We'd love to accept your patches and contributions to this project. There are just a few small guidelines you need to follow before opening an issue or a PR:
+1. Ensure the issue was not already reported.
+2. Open a new issue if you are unable to find an existing issue addressing your problem. Make sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
+3. Discuss the priority and potential solutions with the maintainers in the issue. The maintainers would review the issue and add a label "Accepting Contributions" once the issue is ready for accepting contributions.
+4. Open a PR only if the issue is labeled with "Accepting Contributions", ensure the PR description clearly describes the problem and solution. Note that an open PR without an issue labeled with "Accepting Contributions" will not be accepted.
 
 Repository Structure
 --------------------
