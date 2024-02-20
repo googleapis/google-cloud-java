@@ -1,5 +1,49 @@
 # Changelog
 
+## [1.30.0](https://github.com/googleapis/google-cloud-java/compare/v1.29.0...v1.30.0) (2024-02-20)
+
+
+### Features
+
+* [aiplatform] Add Grounding feature to PredictionService.GenerateContent ([#10358](https://github.com/googleapis/google-cloud-java/issues/10358)) ([0ee1383](https://github.com/googleapis/google-cloud-java/commit/0ee13836cad20260d744c4604a3c4cd68f817e74))
+* [documentai] A new field `schema_override` is added to message `ProcessOptions` ([#10386](https://github.com/googleapis/google-cloud-java/issues/10386)) ([728f841](https://github.com/googleapis/google-cloud-java/commit/728f84161537795d9d4fd551bf680afe16e87e3a))
+* [Many APIs] Add an API method for reordering firewall policies ([#10377](https://github.com/googleapis/google-cloud-java/issues/10377)) ([4b4cab3](https://github.com/googleapis/google-cloud-java/commit/4b4cab316c7b533706e40b5651679b5515ba21d5))
+* [Many APIs] Add an API method for reordering firewall policies ([#10378](https://github.com/googleapis/google-cloud-java/issues/10378)) ([d90ecc7](https://github.com/googleapis/google-cloud-java/commit/d90ecc784cca24b7685dde6aef7f092a0de262ef))
+* [Many APIs] Add an API method for reordering firewall policies ([#10379](https://github.com/googleapis/google-cloud-java/issues/10379)) ([3abc481](https://github.com/googleapis/google-cloud-java/commit/3abc481dc2246d5a75a21c084d81aa7eb853a4ea))
+* [Many APIs] Add an API method for reordering firewall policies ([#10380](https://github.com/googleapis/google-cloud-java/issues/10380)) ([2315a47](https://github.com/googleapis/google-cloud-java/commit/2315a47343d05d06ca222b60499bd98ab690d83c))
+* [Many APIs] Add an API method for reordering firewall policies ([#10381](https://github.com/googleapis/google-cloud-java/issues/10381)) ([bac5385](https://github.com/googleapis/google-cloud-java/commit/bac5385eba17d8ce8f9c13810ea718775802cb70))
+* [Many APIs] Add an API method for reordering firewall policies ([#10382](https://github.com/googleapis/google-cloud-java/issues/10382)) ([973716d](https://github.com/googleapis/google-cloud-java/commit/973716d61920ef2cc865cea53603e2a7e6fb8f6a))
+* [Many APIs] Add an API method for reordering firewall policies ([#10383](https://github.com/googleapis/google-cloud-java/issues/10383)) ([ff767df](https://github.com/googleapis/google-cloud-java/commit/ff767df7e2f3adaf247280fc6b9fd443b12ef68f))
+* [maps-addressvalidation] add session token support for Autocomplete (New) sessions that end with a call to Address Validation ([#10405](https://github.com/googleapis/google-cloud-java/issues/10405)) ([7158e2d](https://github.com/googleapis/google-cloud-java/commit/7158e2d4b64483fa9f6d766ad00dcafa82e1c07a))
+* [maps-places] add AutoComplete API ([#10403](https://github.com/googleapis/google-cloud-java/issues/10403)) ([20075da](https://github.com/googleapis/google-cloud-java/commit/20075daaffe91d7550d81b21470e54a7c83f985a))
+* [meet] Add outh_scope values to services ([#10401](https://github.com/googleapis/google-cloud-java/issues/10401)) ([e8ae38e](https://github.com/googleapis/google-cloud-java/commit/e8ae38e9187104ab0f803ba062c4f4872c6b7afc))
+* [orchestration-airflow] Add an API method for reordering firewall policies ([#10363](https://github.com/googleapis/google-cloud-java/issues/10363)) ([3e269e6](https://github.com/googleapis/google-cloud-java/commit/3e269e6955f07d689d243193b56629249933c624))
+* [securitycenter] Add application field to finding's list of attributes ([#10367](https://github.com/googleapis/google-cloud-java/issues/10367)) ([cd8a6ef](https://github.com/googleapis/google-cloud-java/commit/cd8a6efa6710c2d9d278180ac6ef584a82dd1385))
+* [securityposture] new module for securityposture ([#10387](https://github.com/googleapis/google-cloud-java/issues/10387)) ([a0fad7d](https://github.com/googleapis/google-cloud-java/commit/a0fad7d7a7a25574c92b0215505922d1cc3e26f1))
+
+
+### Bug Fixes
+
+* [vertexai] make setApiEndpoint effective for LlmUtilityServiceClient. ([#10385](https://github.com/googleapis/google-cloud-java/issues/10385)) ([b4ec244](https://github.com/googleapis/google-cloud-java/commit/b4ec2449f092e6dca1c9cd169421311579b67777))
+* **deps:** [bigquerydatatransfer] Update the Java code generator (gapic-generator-java) to 2.35.0 ([#10362](https://github.com/googleapis/google-cloud-java/issues/10362)) ([651ba65](https://github.com/googleapis/google-cloud-java/commit/651ba652ad68c0d38f6a918a0e14326d831ae306))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.35.0 ([#10375](https://github.com/googleapis/google-cloud-java/issues/10375)) ([6fa1347](https://github.com/googleapis/google-cloud-java/commit/6fa13475f0028e56cabfba199413add7c92814b2))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.35.0 ([#10376](https://github.com/googleapis/google-cloud-java/issues/10376)) ([4df2fba](https://github.com/googleapis/google-cloud-java/commit/4df2fba522c5f6494616a1b3900ab26370bd0851))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240209-2.0.0 ([#10351](https://github.com/googleapis/google-cloud-java/issues/10351)) ([350d5a8](https://github.com/googleapis/google-cloud-java/commit/350d5a8ffed195dd3c4031f2bbca339ad75f7992))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.126.6 ([#10359](https://github.com/googleapis/google-cloud-java/issues/10359)) ([0f5834f](https://github.com/googleapis/google-cloud-java/commit/0f5834fd027a460246194ecc550ea133c8d526f5))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.33.0 ([#10289](https://github.com/googleapis/google-cloud-java/issues/10289)) ([713b7f0](https://github.com/googleapis/google-cloud-java/commit/713b7f0d61fda391cd1f87b11ffb30cf287d922d))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.33.0 ([#10371](https://github.com/googleapis/google-cloud-java/issues/10371)) ([15b3f90](https://github.com/googleapis/google-cloud-java/commit/15b3f90f4ff953a2c52ffdbbbaeb43a5fc2feece))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.34.0 ([#10384](https://github.com/googleapis/google-cloud-java/issues/10384)) ([23bb18b](https://github.com/googleapis/google-cloud-java/commit/23bb18b7a1289d52c0cb8eba6792e62997d1187a))
+
+
+### Documentation
+
+* [batch] refine proto comment for run_as_non_root ([#10404](https://github.com/googleapis/google-cloud-java/issues/10404)) ([05acf2d](https://github.com/googleapis/google-cloud-java/commit/05acf2d7f7013851268174810821b0892a9cee5e))
+* [cloudbilling] Clarify that the parent field in the CreateBillingAccountRequest must be a billing account ([#10365](https://github.com/googleapis/google-cloud-java/issues/10365)) ([b4e3e20](https://github.com/googleapis/google-cloud-java/commit/b4e3e20eddb0bab12bc1aea4ae107621fb14500b))
+* [documentai] updated comments ([#10392](https://github.com/googleapis/google-cloud-java/issues/10392)) ([71e4fdb](https://github.com/googleapis/google-cloud-java/commit/71e4fdb7c77b6b7b65c5aa2a90d0aef728bec22d))
+* [securitycentermanagement] Finish a sentence with a period ([#10366](https://github.com/googleapis/google-cloud-java/issues/10366)) ([e2329d4](https://github.com/googleapis/google-cloud-java/commit/e2329d48c8131eed3a1e5f6d656671159f8c6299))
+* [servicehealth] update proto comments ([#10393](https://github.com/googleapis/google-cloud-java/issues/10393)) ([96f8994](https://github.com/googleapis/google-cloud-java/commit/96f8994d09806e80879e583573258e61fbd80bcd))
+* release note helps dependency conflicts resolution ([#10364](https://github.com/googleapis/google-cloud-java/issues/10364)) ([8862e36](https://github.com/googleapis/google-cloud-java/commit/8862e36563df0d1616d48b714febee2a85e6700c))
+
 ## [1.29.0](https://github.com/googleapis/google-cloud-java/compare/v1.28.0...v1.29.0) (2024-02-09)
 
 
