@@ -11,13 +11,13 @@ jobs:
   generate-from-configuration:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         java-version: 11
         distribution: temurin
         cache: maven
-    - uses: actions/setup-python@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     - name: install pyenv
@@ -52,4 +52,4 @@ jobs:
     - name: generate from configuration
       shell: bash
       run: |
-        python library_generation/generate_repo.py --generation-config-yaml=generation_config.yaml --repository-path=.
+        python library_generation/generate_repo.py generate --generation-config-yaml=generation_config.yaml --repository-path=.
