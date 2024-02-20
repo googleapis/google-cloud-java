@@ -1,0 +1,52 @@
+name: Verify Generation Configuration
+on:
+  schedule:
+  - cron: '0 2 * * *' # nightly at 2 am UTC
+  workflow_dispatch:
+
+jobs:
+  generate-from-configuration:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: install pyenv
+      shell: bash
+      run: |
+        set -ex
+        curl https://pyenv.run | bash
+        # setup environment
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        echo "PYENV_ROOT=${PYENV_ROOT}" >> $GITHUB_ENV
+        echo "PATH=${PATH}" >> $GITHUB_ENV
+        set +ex
+    - name: copy generation scripts
+      shell: bash
+      run: |
+        # checkout `library_generation` directory from sdk-platform-java
+        git clone https://github.com/googleapis/sdk-platform-java.git
+        pushd sdk-platform-java
+        git pull
+        cp -r library_generation ../
+        popd
+        rm -rf sdk-platform-java
+    - name: install python dependencies
+      shell: bash
+      run: |
+        set -ex
+        pushd library_generation
+        pip install -r requirements.in
+        pip install .
+        popd
+    - name: generate from configuration
+      shell: bash
+      run: |
+        python library_generation/generate_repo.py --generation-config-yaml=generation_config.yaml --repository-path=.
