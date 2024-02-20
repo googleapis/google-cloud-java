@@ -124,7 +124,10 @@ public class ConferenceRecordsServiceStubSettings
     extends StubSettings<ConferenceRecordsServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/meetings.space.created")
+          .add("https://www.googleapis.com/auth/meetings.space.readonly")
+          .build();
 
   private final UnaryCallSettings<GetConferenceRecordRequest, ConferenceRecord>
       getConferenceRecordSettings;

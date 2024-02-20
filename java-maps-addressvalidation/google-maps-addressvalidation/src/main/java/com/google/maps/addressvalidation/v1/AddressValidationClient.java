@@ -43,6 +43,7 @@ import javax.annotation.Generated;
  *           .setAddress(PostalAddress.newBuilder().build())
  *           .setPreviousResponseId("previousResponseId468754323")
  *           .setEnableUspsCass(true)
+ *           .setSessionToken("sessionToken-696552189")
  *           .build();
  *   ValidateAddressResponse response = addressValidationClient.validateAddress(request);
  * }
@@ -213,6 +214,7 @@ public class AddressValidationClient implements BackgroundResource {
    *           .setAddress(PostalAddress.newBuilder().build())
    *           .setPreviousResponseId("previousResponseId468754323")
    *           .setEnableUspsCass(true)
+   *           .setSessionToken("sessionToken-696552189")
    *           .build();
    *   ValidateAddressResponse response = addressValidationClient.validateAddress(request);
    * }
@@ -243,6 +245,7 @@ public class AddressValidationClient implements BackgroundResource {
    *           .setAddress(PostalAddress.newBuilder().build())
    *           .setPreviousResponseId("previousResponseId468754323")
    *           .setEnableUspsCass(true)
+   *           .setSessionToken("sessionToken-696552189")
    *           .build();
    *   ApiFuture<ValidateAddressResponse> future =
    *       addressValidationClient.validateAddressCallable().futureCall(request);

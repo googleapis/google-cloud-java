@@ -155,6 +155,7 @@ public class PlacesClientHttpJsonTest {
             .setStrictTypeFiltering(true)
             .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
             .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+            .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -196,6 +197,7 @@ public class PlacesClientHttpJsonTest {
               .setStrictTypeFiltering(true)
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+              .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
@@ -494,6 +496,78 @@ public class PlacesClientHttpJsonTest {
     try {
       String name = "places/place-6606";
       client.getPlace(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void autocompletePlacesTest() throws Exception {
+    AutocompletePlacesResponse expectedResponse =
+        AutocompletePlacesResponse.newBuilder()
+            .addAllSuggestions(new ArrayList<AutocompletePlacesResponse.Suggestion>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutocompletePlacesRequest request =
+        AutocompletePlacesRequest.newBuilder()
+            .setInput("input100358090")
+            .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+            .setLocationRestriction(
+                AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+            .addAllIncludedPrimaryTypes(new ArrayList<String>())
+            .addAllIncludedRegionCodes(new ArrayList<String>())
+            .setLanguageCode("languageCode-2092349083")
+            .setRegionCode("regionCode-1991004415")
+            .setOrigin(LatLng.newBuilder().build())
+            .setInputOffset(1010406056)
+            .setIncludeQueryPredictions(true)
+            .setSessionToken("sessionToken-696552189")
+            .build();
+
+    AutocompletePlacesResponse actualResponse = client.autocompletePlaces(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void autocompletePlacesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutocompletePlacesRequest request =
+          AutocompletePlacesRequest.newBuilder()
+              .setInput("input100358090")
+              .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+              .setLocationRestriction(
+                  AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+              .addAllIncludedPrimaryTypes(new ArrayList<String>())
+              .addAllIncludedRegionCodes(new ArrayList<String>())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
+              .setOrigin(LatLng.newBuilder().build())
+              .setInputOffset(1010406056)
+              .setIncludeQueryPredictions(true)
+              .setSessionToken("sessionToken-696552189")
+              .build();
+      client.autocompletePlaces(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -41,6 +41,7 @@ public class AsyncGetPlace {
               .setName(PlaceName.of("[PLACE_ID]").toString())
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
+              .setSessionToken("sessionToken-696552189")
               .build();
       ApiFuture<Place> future = placesClient.getPlaceCallable().futureCall(request);
       // Do something.

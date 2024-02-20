@@ -2400,6 +2400,1074 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface EVOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.SearchTextRequest.EVOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filtering places by minimum charging rate. Any places with
+     * charging a rate less than the minimum charging rate are filtered out.
+     * </pre>
+     *
+     * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minimumChargingRateKw.
+     */
+    double getMinimumChargingRateKw();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the connectorTypes.
+     */
+    java.util.List<com.google.maps.places.v1.EVConnectorType> getConnectorTypesList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of connectorTypes.
+     */
+    int getConnectorTypesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The connectorTypes at the given index.
+     */
+    com.google.maps.places.v1.EVConnectorType getConnectorTypes(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for connectorTypes.
+     */
+    java.util.List<java.lang.Integer> getConnectorTypesValueList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of connectorTypes at the given index.
+     */
+    int getConnectorTypesValue(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Searchable EV options of a place search request.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.SearchTextRequest.EVOptions}
+   */
+  public static final class EVOptions extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.EVOptions)
+      EVOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EVOptions.newBuilder() to construct.
+    private EVOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EVOptions() {
+      connectorTypes_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EVOptions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlacesServiceProto
+          .internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlacesServiceProto
+          .internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.SearchTextRequest.EVOptions.class,
+              com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder.class);
+    }
+
+    public static final int MINIMUM_CHARGING_RATE_KW_FIELD_NUMBER = 1;
+    private double minimumChargingRateKw_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filtering places by minimum charging rate. Any places with
+     * charging a rate less than the minimum charging rate are filtered out.
+     * </pre>
+     *
+     * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minimumChargingRateKw.
+     */
+    @java.lang.Override
+    public double getMinimumChargingRateKw() {
+      return minimumChargingRateKw_;
+    }
+
+    public static final int CONNECTOR_TYPES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> connectorTypes_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer, com.google.maps.places.v1.EVConnectorType>
+        connectorTypes_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, com.google.maps.places.v1.EVConnectorType>() {
+              public com.google.maps.places.v1.EVConnectorType convert(java.lang.Integer from) {
+                com.google.maps.places.v1.EVConnectorType result =
+                    com.google.maps.places.v1.EVConnectorType.forNumber(from);
+                return result == null
+                    ? com.google.maps.places.v1.EVConnectorType.UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the connectorTypes.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.maps.places.v1.EVConnectorType> getConnectorTypesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.maps.places.v1.EVConnectorType>(
+          connectorTypes_, connectorTypes_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of connectorTypes.
+     */
+    @java.lang.Override
+    public int getConnectorTypesCount() {
+      return connectorTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The connectorTypes at the given index.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.EVConnectorType getConnectorTypes(int index) {
+      return connectorTypes_converter_.convert(connectorTypes_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for connectorTypes.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getConnectorTypesValueList() {
+      return connectorTypes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of preferred EV connector types. A place that does not
+     * support any of the listed connector types are filter out.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of connectorTypes at the given index.
+     */
+    @java.lang.Override
+    public int getConnectorTypesValue(int index) {
+      return connectorTypes_.get(index);
+    }
+
+    private int connectorTypesMemoizedSerializedSize;
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (java.lang.Double.doubleToRawLongBits(minimumChargingRateKw_) != 0) {
+        output.writeDouble(1, minimumChargingRateKw_);
+      }
+      if (getConnectorTypesList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(connectorTypesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < connectorTypes_.size(); i++) {
+        output.writeEnumNoTag(connectorTypes_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Double.doubleToRawLongBits(minimumChargingRateKw_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, minimumChargingRateKw_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < connectorTypes_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(connectorTypes_.get(i));
+        }
+        size += dataSize;
+        if (!getConnectorTypesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        connectorTypesMemoizedSerializedSize = dataSize;
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.places.v1.SearchTextRequest.EVOptions)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.SearchTextRequest.EVOptions other =
+          (com.google.maps.places.v1.SearchTextRequest.EVOptions) obj;
+
+      if (java.lang.Double.doubleToLongBits(getMinimumChargingRateKw())
+          != java.lang.Double.doubleToLongBits(other.getMinimumChargingRateKw())) return false;
+      if (!connectorTypes_.equals(other.connectorTypes_)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MINIMUM_CHARGING_RATE_KW_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getMinimumChargingRateKw()));
+      if (getConnectorTypesCount() > 0) {
+        hash = (37 * hash) + CONNECTOR_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + connectorTypes_.hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.places.v1.SearchTextRequest.EVOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Searchable EV options of a place search request.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.SearchTextRequest.EVOptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.SearchTextRequest.EVOptions)
+        com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlacesServiceProto
+            .internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlacesServiceProto
+            .internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.SearchTextRequest.EVOptions.class,
+                com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder.class);
+      }
+
+      // Construct using com.google.maps.places.v1.SearchTextRequest.EVOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        minimumChargingRateKw_ = 0D;
+        connectorTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlacesServiceProto
+            .internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.SearchTextRequest.EVOptions getDefaultInstanceForType() {
+        return com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.SearchTextRequest.EVOptions build() {
+        com.google.maps.places.v1.SearchTextRequest.EVOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.SearchTextRequest.EVOptions buildPartial() {
+        com.google.maps.places.v1.SearchTextRequest.EVOptions result =
+            new com.google.maps.places.v1.SearchTextRequest.EVOptions(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.maps.places.v1.SearchTextRequest.EVOptions result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          connectorTypes_ = java.util.Collections.unmodifiableList(connectorTypes_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.connectorTypes_ = connectorTypes_;
+      }
+
+      private void buildPartial0(com.google.maps.places.v1.SearchTextRequest.EVOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minimumChargingRateKw_ = minimumChargingRateKw_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.places.v1.SearchTextRequest.EVOptions) {
+          return mergeFrom((com.google.maps.places.v1.SearchTextRequest.EVOptions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.places.v1.SearchTextRequest.EVOptions other) {
+        if (other == com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance())
+          return this;
+        if (other.getMinimumChargingRateKw() != 0D) {
+          setMinimumChargingRateKw(other.getMinimumChargingRateKw());
+        }
+        if (!other.connectorTypes_.isEmpty()) {
+          if (connectorTypes_.isEmpty()) {
+            connectorTypes_ = other.connectorTypes_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureConnectorTypesIsMutable();
+            connectorTypes_.addAll(other.connectorTypes_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  minimumChargingRateKw_ = input.readDouble();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 9
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureConnectorTypesIsMutable();
+                  connectorTypes_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureConnectorTypesIsMutable();
+                    connectorTypes_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private double minimumChargingRateKw_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filtering places by minimum charging rate. Any places with
+       * charging a rate less than the minimum charging rate are filtered out.
+       * </pre>
+       *
+       * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The minimumChargingRateKw.
+       */
+      @java.lang.Override
+      public double getMinimumChargingRateKw() {
+        return minimumChargingRateKw_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filtering places by minimum charging rate. Any places with
+       * charging a rate less than the minimum charging rate are filtered out.
+       * </pre>
+       *
+       * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The minimumChargingRateKw to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinimumChargingRateKw(double value) {
+
+        minimumChargingRateKw_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filtering places by minimum charging rate. Any places with
+       * charging a rate less than the minimum charging rate are filtered out.
+       * </pre>
+       *
+       * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinimumChargingRateKw() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        minimumChargingRateKw_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> connectorTypes_ = java.util.Collections.emptyList();
+
+      private void ensureConnectorTypesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          connectorTypes_ = new java.util.ArrayList<java.lang.Integer>(connectorTypes_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the connectorTypes.
+       */
+      public java.util.List<com.google.maps.places.v1.EVConnectorType> getConnectorTypesList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, com.google.maps.places.v1.EVConnectorType>(
+            connectorTypes_, connectorTypes_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of connectorTypes.
+       */
+      public int getConnectorTypesCount() {
+        return connectorTypes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The connectorTypes at the given index.
+       */
+      public com.google.maps.places.v1.EVConnectorType getConnectorTypes(int index) {
+        return connectorTypes_converter_.convert(connectorTypes_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The connectorTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectorTypes(int index, com.google.maps.places.v1.EVConnectorType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConnectorTypesIsMutable();
+        connectorTypes_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The connectorTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addConnectorTypes(com.google.maps.places.v1.EVConnectorType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConnectorTypesIsMutable();
+        connectorTypes_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The connectorTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllConnectorTypes(
+          java.lang.Iterable<? extends com.google.maps.places.v1.EVConnectorType> values) {
+        ensureConnectorTypesIsMutable();
+        for (com.google.maps.places.v1.EVConnectorType value : values) {
+          connectorTypes_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConnectorTypes() {
+        connectorTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for connectorTypes.
+       */
+      public java.util.List<java.lang.Integer> getConnectorTypesValueList() {
+        return java.util.Collections.unmodifiableList(connectorTypes_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of connectorTypes at the given index.
+       */
+      public int getConnectorTypesValue(int index) {
+        return connectorTypes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for connectorTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectorTypesValue(int index, int value) {
+        ensureConnectorTypesIsMutable();
+        connectorTypes_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for connectorTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addConnectorTypesValue(int value) {
+        ensureConnectorTypesIsMutable();
+        connectorTypes_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of preferred EV connector types. A place that does not
+       * support any of the listed connector types are filter out.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.places.v1.EVConnectorType connector_types = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for connectorTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllConnectorTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureConnectorTypesIsMutable();
+        for (int value : values) {
+          connectorTypes_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.SearchTextRequest.EVOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.SearchTextRequest.EVOptions)
+    private static final com.google.maps.places.v1.SearchTextRequest.EVOptions DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.places.v1.SearchTextRequest.EVOptions();
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.EVOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EVOptions> PARSER =
+        new com.google.protobuf.AbstractParser<EVOptions>() {
+          @java.lang.Override
+          public EVOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EVOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EVOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.SearchTextRequest.EVOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int TEXT_QUERY_FIELD_NUMBER = 1;
 
@@ -2982,6 +4050,62 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         : locationRestriction_;
   }
 
+  public static final int EV_OPTIONS_FIELD_NUMBER = 15;
+  private com.google.maps.places.v1.SearchTextRequest.EVOptions evOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set the searchable EV options of a place search request.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvOptions() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set the searchable EV options of a place search request.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evOptions.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.SearchTextRequest.EVOptions getEvOptions() {
+    return evOptions_ == null
+        ? com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance()
+        : evOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set the searchable EV options of a place search request.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder getEvOptionsOrBuilder() {
+    return evOptions_ == null
+        ? com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance()
+        : evOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3038,6 +4162,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(14, getLocationRestriction());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(15, getEvOptions());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3096,6 +4223,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLocationRestriction());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getEvOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3130,6 +4260,10 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     if (hasLocationRestriction() != other.hasLocationRestriction()) return false;
     if (hasLocationRestriction()) {
       if (!getLocationRestriction().equals(other.getLocationRestriction())) return false;
+    }
+    if (hasEvOptions() != other.hasEvOptions()) return false;
+    if (hasEvOptions()) {
+      if (!getEvOptions().equals(other.getEvOptions())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3174,6 +4308,10 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     if (hasLocationRestriction()) {
       hash = (37 * hash) + LOCATION_RESTRICTION_FIELD_NUMBER;
       hash = (53 * hash) + getLocationRestriction().hashCode();
+    }
+    if (hasEvOptions()) {
+      hash = (37 * hash) + EV_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3317,6 +4455,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLocationBiasFieldBuilder();
         getLocationRestrictionFieldBuilder();
+        getEvOptionsFieldBuilder();
       }
     }
 
@@ -3344,6 +4483,11 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (locationRestrictionBuilder_ != null) {
         locationRestrictionBuilder_.dispose();
         locationRestrictionBuilder_ = null;
+      }
+      evOptions_ = null;
+      if (evOptionsBuilder_ != null) {
+        evOptionsBuilder_.dispose();
+        evOptionsBuilder_ = null;
       }
       return this;
     }
@@ -3429,6 +4573,10 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                 ? locationRestriction_
                 : locationRestrictionBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.evOptions_ = evOptionsBuilder_ == null ? evOptions_ : evOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3528,6 +4676,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasLocationRestriction()) {
         mergeLocationRestriction(other.getLocationRestriction());
+      }
+      if (other.hasEvOptions()) {
+        mergeEvOptions(other.getEvOptions());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3641,6 +4792,12 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(getEvOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5172,6 +6329,211 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         locationRestriction_ = null;
       }
       return locationRestrictionBuilder_;
+    }
+
+    private com.google.maps.places.v1.SearchTextRequest.EVOptions evOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.SearchTextRequest.EVOptions,
+            com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder,
+            com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder>
+        evOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evOptions field is set.
+     */
+    public boolean hasEvOptions() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evOptions.
+     */
+    public com.google.maps.places.v1.SearchTextRequest.EVOptions getEvOptions() {
+      if (evOptionsBuilder_ == null) {
+        return evOptions_ == null
+            ? com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance()
+            : evOptions_;
+      } else {
+        return evOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvOptions(com.google.maps.places.v1.SearchTextRequest.EVOptions value) {
+      if (evOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evOptions_ = value;
+      } else {
+        evOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvOptions(
+        com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder builderForValue) {
+      if (evOptionsBuilder_ == null) {
+        evOptions_ = builderForValue.build();
+      } else {
+        evOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvOptions(com.google.maps.places.v1.SearchTextRequest.EVOptions value) {
+      if (evOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && evOptions_ != null
+            && evOptions_
+                != com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance()) {
+          getEvOptionsBuilder().mergeFrom(value);
+        } else {
+          evOptions_ = value;
+        }
+      } else {
+        evOptionsBuilder_.mergeFrom(value);
+      }
+      if (evOptions_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvOptions() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      evOptions_ = null;
+      if (evOptionsBuilder_ != null) {
+        evOptionsBuilder_.dispose();
+        evOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder getEvOptionsBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getEvOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder getEvOptionsOrBuilder() {
+      if (evOptionsBuilder_ != null) {
+        return evOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return evOptions_ == null
+            ? com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance()
+            : evOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the searchable EV options of a place search request.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.SearchTextRequest.EVOptions,
+            com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder,
+            com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder>
+        getEvOptionsFieldBuilder() {
+      if (evOptionsBuilder_ == null) {
+        evOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.SearchTextRequest.EVOptions,
+                com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder,
+                com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder>(
+                getEvOptions(), getParentForChildren(), isClean());
+        evOptions_ = null;
+      }
+      return evOptionsBuilder_;
     }
 
     @java.lang.Override

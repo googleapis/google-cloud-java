@@ -39,7 +39,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub-bom</artifactId>
-        <version>1.126.3</version>
+        <version>1.126.6</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -85,7 +85,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>

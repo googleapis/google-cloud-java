@@ -86,6 +86,7 @@ public class AddressValidationClientHttpJsonTest {
             .setAddress(PostalAddress.newBuilder().build())
             .setPreviousResponseId("previousResponseId468754323")
             .setEnableUspsCass(true)
+            .setSessionToken("sessionToken-696552189")
             .build();
 
     ValidateAddressResponse actualResponse = client.validateAddress(request);
@@ -119,6 +120,7 @@ public class AddressValidationClientHttpJsonTest {
               .setAddress(PostalAddress.newBuilder().build())
               .setPreviousResponseId("previousResponseId468754323")
               .setEnableUspsCass(true)
+              .setSessionToken("sessionToken-696552189")
               .build();
       client.validateAddress(request);
       Assert.fail("No exception raised");

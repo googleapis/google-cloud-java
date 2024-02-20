@@ -207,6 +207,52 @@ public final class PlacesGrpc {
     return getGetPlaceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.AutocompletePlacesRequest,
+          com.google.maps.places.v1.AutocompletePlacesResponse>
+      getAutocompletePlacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AutocompletePlaces",
+      requestType = com.google.maps.places.v1.AutocompletePlacesRequest.class,
+      responseType = com.google.maps.places.v1.AutocompletePlacesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.AutocompletePlacesRequest,
+          com.google.maps.places.v1.AutocompletePlacesResponse>
+      getAutocompletePlacesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.places.v1.AutocompletePlacesRequest,
+            com.google.maps.places.v1.AutocompletePlacesResponse>
+        getAutocompletePlacesMethod;
+    if ((getAutocompletePlacesMethod = PlacesGrpc.getAutocompletePlacesMethod) == null) {
+      synchronized (PlacesGrpc.class) {
+        if ((getAutocompletePlacesMethod = PlacesGrpc.getAutocompletePlacesMethod) == null) {
+          PlacesGrpc.getAutocompletePlacesMethod =
+              getAutocompletePlacesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.places.v1.AutocompletePlacesRequest,
+                          com.google.maps.places.v1.AutocompletePlacesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AutocompletePlaces"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.AutocompletePlacesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.AutocompletePlacesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new PlacesMethodDescriptorSupplier("AutocompletePlaces"))
+                      .build();
+        }
+      }
+    }
+    return getAutocompletePlacesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PlacesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PlacesStub> factory =
@@ -308,13 +354,29 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
-     * Get place details with a place id (in a name) string.
+     * Get the details of a place based on its resource name, which is a string
+     * in the `places/{place_id}` format.
      * </pre>
      */
     default void getPlace(
         com.google.maps.places.v1.GetPlaceRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.places.v1.Place> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns predictions for the given input.
+     * </pre>
+     */
+    default void autocompletePlaces(
+        com.google.maps.places.v1.AutocompletePlacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.AutocompletePlacesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAutocompletePlacesMethod(), responseObserver);
     }
   }
 
@@ -412,7 +474,8 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
-     * Get place details with a place id (in a name) string.
+     * Get the details of a place based on its resource name, which is a string
+     * in the `places/{place_id}` format.
      * </pre>
      */
     public void getPlace(
@@ -420,6 +483,23 @@ public final class PlacesGrpc {
         io.grpc.stub.StreamObserver<com.google.maps.places.v1.Place> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPlaceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns predictions for the given input.
+     * </pre>
+     */
+    public void autocompletePlaces(
+        com.google.maps.places.v1.AutocompletePlacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.AutocompletePlacesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAutocompletePlacesMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
@@ -489,13 +569,27 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
-     * Get place details with a place id (in a name) string.
+     * Get the details of a place based on its resource name, which is a string
+     * in the `places/{place_id}` format.
      * </pre>
      */
     public com.google.maps.places.v1.Place getPlace(
         com.google.maps.places.v1.GetPlaceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPlaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns predictions for the given input.
+     * </pre>
+     */
+    public com.google.maps.places.v1.AutocompletePlacesResponse autocompletePlaces(
+        com.google.maps.places.v1.AutocompletePlacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAutocompletePlacesMethod(), getCallOptions(), request);
     }
   }
 
@@ -567,7 +661,8 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
-     * Get place details with a place id (in a name) string.
+     * Get the details of a place based on its resource name, which is a string
+     * in the `places/{place_id}` format.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.maps.places.v1.Place>
@@ -575,12 +670,27 @@ public final class PlacesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPlaceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns predictions for the given input.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.maps.places.v1.AutocompletePlacesResponse>
+        autocompletePlaces(com.google.maps.places.v1.AutocompletePlacesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAutocompletePlacesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEARCH_NEARBY = 0;
   private static final int METHODID_SEARCH_TEXT = 1;
   private static final int METHODID_GET_PHOTO_MEDIA = 2;
   private static final int METHODID_GET_PLACE = 3;
+  private static final int METHODID_AUTOCOMPLETE_PLACES = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -620,6 +730,12 @@ public final class PlacesGrpc {
           serviceImpl.getPlace(
               (com.google.maps.places.v1.GetPlaceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.places.v1.Place>) responseObserver);
+          break;
+        case METHODID_AUTOCOMPLETE_PLACES:
+          serviceImpl.autocompletePlaces(
+              (com.google.maps.places.v1.AutocompletePlacesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.maps.places.v1.AutocompletePlacesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -664,6 +780,13 @@ public final class PlacesGrpc {
                 new MethodHandlers<
                     com.google.maps.places.v1.GetPlaceRequest, com.google.maps.places.v1.Place>(
                     service, METHODID_GET_PLACE)))
+        .addMethod(
+            getAutocompletePlacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.places.v1.AutocompletePlacesRequest,
+                    com.google.maps.places.v1.AutocompletePlacesResponse>(
+                    service, METHODID_AUTOCOMPLETE_PLACES)))
         .build();
   }
 
@@ -717,6 +840,7 @@ public final class PlacesGrpc {
                       .addMethod(getSearchTextMethod())
                       .addMethod(getGetPhotoMediaMethod())
                       .addMethod(getGetPlaceMethod())
+                      .addMethod(getAutocompletePlacesMethod())
                       .build();
         }
       }

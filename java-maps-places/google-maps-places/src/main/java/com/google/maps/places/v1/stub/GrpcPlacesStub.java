@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.maps.places.v1.AutocompletePlacesRequest;
+import com.google.maps.places.v1.AutocompletePlacesResponse;
 import com.google.maps.places.v1.GetPhotoMediaRequest;
 import com.google.maps.places.v1.GetPlaceRequest;
 import com.google.maps.places.v1.PhotoMedia;
@@ -83,10 +85,23 @@ public class GrpcPlacesStub extends PlacesStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Place.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesMethodDescriptor =
+          MethodDescriptor.<AutocompletePlacesRequest, AutocompletePlacesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.maps.places.v1.Places/AutocompletePlaces")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AutocompletePlacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutocompletePlacesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable;
   private final UnaryCallable<SearchTextRequest, SearchTextResponse> searchTextCallable;
   private final UnaryCallable<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaCallable;
   private final UnaryCallable<GetPlaceRequest, Place> getPlaceCallable;
+  private final UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -155,6 +170,11 @@ public class GrpcPlacesStub extends PlacesStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
+        autocompletePlacesTransportSettings =
+            GrpcCallSettings.<AutocompletePlacesRequest, AutocompletePlacesResponse>newBuilder()
+                .setMethodDescriptor(autocompletePlacesMethodDescriptor)
+                .build();
 
     this.searchNearbyCallable =
         callableFactory.createUnaryCallable(
@@ -168,6 +188,11 @@ public class GrpcPlacesStub extends PlacesStub {
     this.getPlaceCallable =
         callableFactory.createUnaryCallable(
             getPlaceTransportSettings, settings.getPlaceSettings(), clientContext);
+    this.autocompletePlacesCallable =
+        callableFactory.createUnaryCallable(
+            autocompletePlacesTransportSettings,
+            settings.autocompletePlacesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -195,6 +220,12 @@ public class GrpcPlacesStub extends PlacesStub {
   @Override
   public UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
     return getPlaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesCallable() {
+    return autocompletePlacesCallable;
   }
 
   @Override

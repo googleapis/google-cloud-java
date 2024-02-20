@@ -28,8 +28,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * An ID representing this place which may be used to look up this place
-   * again (a.k.a. the API "resource" name: places/place_id).
+   * This Place's resource name, in `places/{place_id}` format.  Can be used to
+   * look up the Place.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,8 +41,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * An ID representing this place which may be used to look up this place
-   * again (a.k.a. the API "resource" name: places/place_id).
+   * This Place's resource name, in `places/{place_id}` format.  Can be used to
+   * look up the Place.
    * </pre>
    *
    * <code>string name = 1;</code>
