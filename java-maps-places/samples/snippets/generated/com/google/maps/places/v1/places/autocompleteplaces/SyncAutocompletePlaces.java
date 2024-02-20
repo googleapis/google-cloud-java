@@ -16,37 +16,43 @@
 
 package com.google.maps.places.v1.samples;
 
-// [START places_v1_generated_Places_GetPlace_async]
-import com.google.api.core.ApiFuture;
-import com.google.maps.places.v1.GetPlaceRequest;
-import com.google.maps.places.v1.Place;
-import com.google.maps.places.v1.PlaceName;
+// [START places_v1_generated_Places_AutocompletePlaces_sync]
+import com.google.maps.places.v1.AutocompletePlacesRequest;
+import com.google.maps.places.v1.AutocompletePlacesResponse;
 import com.google.maps.places.v1.PlacesClient;
+import com.google.type.LatLng;
+import java.util.ArrayList;
 
-public class AsyncGetPlace {
+public class SyncAutocompletePlaces {
 
   public static void main(String[] args) throws Exception {
-    asyncGetPlace();
+    syncAutocompletePlaces();
   }
 
-  public static void asyncGetPlace() throws Exception {
+  public static void syncAutocompletePlaces() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (PlacesClient placesClient = PlacesClient.create()) {
-      GetPlaceRequest request =
-          GetPlaceRequest.newBuilder()
-              .setName(PlaceName.of("[PLACE_ID]").toString())
+      AutocompletePlacesRequest request =
+          AutocompletePlacesRequest.newBuilder()
+              .setInput("input100358090")
+              .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+              .setLocationRestriction(
+                  AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+              .addAllIncludedPrimaryTypes(new ArrayList<String>())
+              .addAllIncludedRegionCodes(new ArrayList<String>())
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
+              .setOrigin(LatLng.newBuilder().build())
+              .setInputOffset(1010406056)
+              .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
               .build();
-      ApiFuture<Place> future = placesClient.getPlaceCallable().futureCall(request);
-      // Do something.
-      Place response = future.get();
+      AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
     }
   }
 }
-// [END places_v1_generated_Places_GetPlace_async]
+// [END places_v1_generated_Places_AutocompletePlaces_sync]
