@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.44.0 (2024-02-20)
+
+### Features
+
+* Add application field to finding's list of attributes ([#10367](https://github.com/googleapis/google-cloud-java/issues/10367)) ([cd8a6ef](https://github.com/googleapis/google-cloud-java/commit/cd8a6efa6710c2d9d278180ac6ef584a82dd1385))
+
+
+
 ## 2.43.0 (2024-02-09)
 
 * No change

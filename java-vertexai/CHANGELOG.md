@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 (2024-02-20)
+
+### Features
+
+* make setApiEndpoint effective for LlmUtilityServiceClient. ([#10385](https://github.com/googleapis/google-cloud-java/issues/10385)) ([b4ec244](https://github.com/googleapis/google-cloud-java/commit/b4ec2449f092e6dca1c9cd169421311579b67777))
+
+
+
 ## 0.4.0 (2024-02-09)
 
 ### Features

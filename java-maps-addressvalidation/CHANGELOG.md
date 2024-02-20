@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.30.0 (2024-02-20)
+
+### Features
+
+* add session token support for Autocomplete (New) sessions that end with a call to Address Validation ([#10405](https://github.com/googleapis/google-cloud-java/issues/10405)) ([7158e2d](https://github.com/googleapis/google-cloud-java/commit/7158e2d4b64483fa9f6d766ad00dcafa82e1c07a))
+
+
+
 ## 0.29.0 (2024-02-09)
 
 * No change

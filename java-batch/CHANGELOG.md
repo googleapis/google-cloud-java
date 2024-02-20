@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.36.0 (2024-02-20)
+
+### Features
+
+* refine proto comment for run_as_non_root ([#10404](https://github.com/googleapis/google-cloud-java/issues/10404)) ([05acf2d](https://github.com/googleapis/google-cloud-java/commit/05acf2d7f7013851268174810821b0892a9cee5e))
+
+
+
 ## 0.35.0 (2024-02-09)
 
 * No change

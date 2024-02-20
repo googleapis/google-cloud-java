@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.40.0 (2024-02-20)
+
+### Features
+
+* A new field `schema_override` is added to message `ProcessOptions` ([#10386](https://github.com/googleapis/google-cloud-java/issues/10386)) ([728f841](https://github.com/googleapis/google-cloud-java/commit/728f84161537795d9d4fd551bf680afe16e87e3a))
+* updated comments ([#10392](https://github.com/googleapis/google-cloud-java/issues/10392)) ([71e4fdb](https://github.com/googleapis/google-cloud-java/commit/71e4fdb7c77b6b7b65c5aa2a90d0aef728bec22d))
+
+
+
 ## 2.39.0 (2024-02-09)
 
 ### Features

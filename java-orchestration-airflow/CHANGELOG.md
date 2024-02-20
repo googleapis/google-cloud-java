@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.36.0 (2024-02-20)
+
+### Features
+
+* Add an API method for reordering firewall policies ([#10363](https://github.com/googleapis/google-cloud-java/issues/10363)) ([3e269e6](https://github.com/googleapis/google-cloud-java/commit/3e269e6955f07d689d243193b56629249933c624))
+
+
+
 ## 1.35.0 (2024-02-09)
 
 * No change

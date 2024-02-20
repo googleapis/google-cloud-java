@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.36.0 (2024-02-20)
+
+### Features
+
+* Update the Java code generator (gapic-generator-java) to 2.35.0 ([#10362](https://github.com/googleapis/google-cloud-java/issues/10362)) ([651ba65](https://github.com/googleapis/google-cloud-java/commit/651ba652ad68c0d38f6a918a0e14326d831ae306))
+
+
+
 ## 2.35.0 (2024-02-09)
 
 * No change

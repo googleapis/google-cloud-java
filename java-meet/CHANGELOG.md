@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (2024-02-20)
+
+### Features
+
+* Add outh_scope values to services ([#10401](https://github.com/googleapis/google-cloud-java/issues/10401)) ([e8ae38e](https://github.com/googleapis/google-cloud-java/commit/e8ae38e9187104ab0f803ba062c4f4872c6b7afc))
+
+
+
 ## 0.2.0 (2024-02-09)
 
 ### Features
