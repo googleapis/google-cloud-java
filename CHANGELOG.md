@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.16.0](https://github.com/googleapis/java-logging/compare/v3.15.17...v3.16.0) (2024-02-20)
+
+
+### Features
+
+* Add an API method for reordering firewall policies ([#1538](https://github.com/googleapis/java-logging/issues/1538)) ([9cd6b96](https://github.com/googleapis/java-logging/commit/9cd6b96d9946828c02ccff2ff846a06cc6fff329))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.25.0 ([#1535](https://github.com/googleapis/java-logging/issues/1535)) ([7fde779](https://github.com/googleapis/java-logging/commit/7fde7795f03ac96353912829b42adc0035a41d26))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.10.0 ([#1528](https://github.com/googleapis/java-logging/issues/1528)) ([b3e4f9b](https://github.com/googleapis/java-logging/commit/b3e4f9b77bffc49a4f9569d4b7a9318a0d5ea5c0))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.0 ([#1456](https://github.com/googleapis/java-logging/issues/1456)) ([f27713e](https://github.com/googleapis/java-logging/commit/f27713ed55159754715cca5ff205364e315a7c05))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.1 ([#1542](https://github.com/googleapis/java-logging/issues/1542)) ([af784bc](https://github.com/googleapis/java-logging/commit/af784bce7c5272a346ce5016464c87af7d69b442))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.2 ([#1530](https://github.com/googleapis/java-logging/issues/1530)) ([20981dc](https://github.com/googleapis/java-logging/commit/20981dc90ca1b73b74d9f5a0c7f0dfa4d9960ab9))
+
 ## [3.15.17](https://github.com/googleapis/java-logging/compare/v3.15.16...v3.15.17) (2024-02-07)
 
 
