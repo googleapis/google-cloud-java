@@ -118,6 +118,7 @@ public final class GenerativeModelTest {
 
   @Mock private UnaryCallable<GenerateContentRequest, GenerateContentResponse> mockUnaryCallable;
 
+  @Mock private GenerateContentResponse mockGenerateContentResponse;
   @Mock private ServerStream<GenerateContentResponse> mockServerStream;
   @Mock private Iterator<GenerateContentResponse> mockServerStreamIterator;
 
@@ -285,17 +286,15 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     GenerateContentResponse unused = model.generateContent(TEXT);
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
@@ -307,11 +306,9 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     Content content =
         Content.newBuilder().setRole("user").addParts(Part.newBuilder().setText(TEXT)).build();
@@ -319,7 +316,7 @@ public final class GenerativeModelTest {
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
@@ -331,11 +328,9 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     Content content =
         Content.newBuilder().setRole("user").addParts(Part.newBuilder().setText(TEXT)).build();
@@ -343,7 +338,7 @@ public final class GenerativeModelTest {
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
@@ -355,17 +350,15 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     GenerateContentResponse unused = model.generateContent(TEXT, GENERATION_CONFIG);
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
   }
@@ -378,17 +371,15 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     GenerateContentResponse unused = model.generateContent(TEXT);
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(DEFAULT_GENERATION_CONFIG);
   }
@@ -401,17 +392,15 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     GenerateContentResponse unused = model.generateContent(TEXT, safetySettings);
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
   }
@@ -424,17 +413,15 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     GenerateContentResponse unused = model.generateContent(TEXT);
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(DEFAULT_SAFETY_SETTING);
   }
@@ -452,17 +439,15 @@ public final class GenerativeModelTest {
     field.setAccessible(true);
     field.set(vertexAi, mockPredictionServiceClient);
 
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
 
     GenerateContentResponse unused = model.generateContent(TEXT);
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
+    verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
     assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
   }
