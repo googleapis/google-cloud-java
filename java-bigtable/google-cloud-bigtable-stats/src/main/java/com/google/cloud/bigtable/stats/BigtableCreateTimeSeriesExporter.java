@@ -33,14 +33,14 @@ final class BigtableCreateTimeSeriesExporter extends MetricExporter {
   private static final Logger logger =
       Logger.getLogger(BigtableCreateTimeSeriesExporter.class.getName());
   private final MetricServiceClient metricServiceClient;
-  private final MonitoredResource monitoredResource;
+  private final MonitoredResource gceOrGkeMonitoredResource;
   private final String clientId;
 
   BigtableCreateTimeSeriesExporter(
-      MetricServiceClient metricServiceClient, MonitoredResource monitoredResource) {
+      MetricServiceClient metricServiceClient, MonitoredResource gceOrGkeMonitoredResource) {
     this.metricServiceClient = metricServiceClient;
-    this.monitoredResource = monitoredResource;
     this.clientId = BigtableStackdriverExportUtils.getDefaultTaskValue();
+    this.gceOrGkeMonitoredResource = gceOrGkeMonitoredResource;
   }
 
   public void export(Collection<Metric> metrics) {
@@ -48,11 +48,7 @@ final class BigtableCreateTimeSeriesExporter extends MetricExporter {
 
     for (Metric metric : metrics) {
       // only export bigtable metrics
-      if (!metric.getMetricDescriptor().getName().contains("bigtable")) {
-        continue;
-      }
-      // TODO: temporarily skip exporting per connection metrics.
-      if (metric.getMetricDescriptor().getName().contains("per_connection_error_count")) {
+      if (!BigtableStackdriverExportUtils.shouldExportMetric(metric.getMetricDescriptor())) {
         continue;
       }
 
@@ -69,7 +65,7 @@ final class BigtableCreateTimeSeriesExporter extends MetricExporter {
                                   metric.getMetricDescriptor(),
                                   timeSeries,
                                   clientId,
-                                  monitoredResource),
+                                  gceOrGkeMonitoredResource),
                           Collectors.toList())));
 
       for (Map.Entry<String, List<com.google.monitoring.v3.TimeSeries>> entry :

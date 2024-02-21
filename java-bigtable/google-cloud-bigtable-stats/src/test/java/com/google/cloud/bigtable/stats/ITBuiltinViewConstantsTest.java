@@ -27,7 +27,7 @@ import org.junit.runners.JUnit4;
 public class ITBuiltinViewConstantsTest {
   @Test
   public void testBasicTagsExistForAllViews() {
-    Map<String, List<String>> viewToTagMap = StatsWrapper.getViewToTagMap();
+    Map<String, List<String>> viewToTagMap = StatsWrapper.getBigtableViewToTagMap();
     for (String view : viewToTagMap.keySet()) {
       assertWithMessage(view + " should have all basic tags")
           .that(viewToTagMap.get(view))

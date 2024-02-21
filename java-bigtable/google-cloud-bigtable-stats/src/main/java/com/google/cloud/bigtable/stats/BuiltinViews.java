@@ -37,10 +37,17 @@ public class BuiltinViews {
           BuiltinViewConstants.CONNECTIVITY_ERROR_COUNT_VIEW,
           BuiltinViewConstants.APPLICATION_LATENCIES_VIEW,
           BuiltinViewConstants.THROTTLING_LATENCIES_VIEW);
+  // We store views that don't use the Bigtable schema and need different tags in a separate set to
+  // simplify testing.
+  static final ImmutableSet<View> NON_BIGTABLE_BUILTIN_VIEWS =
+      ImmutableSet.of(BuiltinViewConstants.PER_CONNECTION_ERROR_COUNT_VIEW);
 
   @VisibleForTesting
   void registerPrivateViews(ViewManager viewManager) {
     for (View view : BIGTABLE_BUILTIN_VIEWS) {
+      viewManager.registerView(view);
+    }
+    for (View view : NON_BIGTABLE_BUILTIN_VIEWS) {
       viewManager.registerView(view);
     }
   }
@@ -48,6 +55,9 @@ public class BuiltinViews {
   public static void registerBigtableBuiltinViews() {
     ViewManager viewManager = Stats.getViewManager();
     for (View view : BIGTABLE_BUILTIN_VIEWS) {
+      viewManager.registerView(view);
+    }
+    for (View view : NON_BIGTABLE_BUILTIN_VIEWS) {
       viewManager.registerView(view);
     }
   }

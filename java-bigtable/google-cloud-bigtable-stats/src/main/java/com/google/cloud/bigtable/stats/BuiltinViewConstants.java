@@ -15,7 +15,25 @@
  */
 package com.google.cloud.bigtable.stats;
 
-import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.*;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.APPLICATION_LATENCIES;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.APP_PROFILE;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.ATTEMPT_LATENCIES;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.CLIENT_NAME;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.CLUSTER;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.CONNECTIVITY_ERROR_COUNT;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.FIRST_RESPONSE_LATENCIES;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.INSTANCE_ID;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.METHOD;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.OPERATION_LATENCIES;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.PER_CONNECTION_ERROR_COUNT;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.PROJECT_ID;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.RETRY_COUNT;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.SERVER_LATENCIES;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.STATUS;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.STREAMING;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.TABLE;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.THROTTLING_LATENCIES;
+import static com.google.cloud.bigtable.stats.BuiltinMeasureConstants.ZONE;
 import static io.opencensus.stats.Aggregation.Distribution;
 import static io.opencensus.stats.Aggregation.Sum;
 

@@ -61,7 +61,7 @@ public class StatsWrapper {
   // the packaging step. Opencensus classes will be relocated when they are packaged but the
   // integration test files will not be. So the integration tests can't reference any transitive
   // dependencies that have been relocated.
-  static Map<String, List<String>> getViewToTagMap() {
+  static Map<String, List<String>> getBigtableViewToTagMap() {
     Map<String, List<String>> map = new HashMap<>();
     for (View view : BuiltinViews.BIGTABLE_BUILTIN_VIEWS) {
       List<TagKey> tagKeys = view.getColumns();
