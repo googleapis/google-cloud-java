@@ -28,13 +28,9 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-gkehub/v1beta/proto-google-cloud-gkehub-v1beta/src"
 - source: "/google/cloud/gkehub/v1beta1/.*-java/proto-google-.*/src/main/java/com/google/cloud/gkehub"
   dest: "/owl-bot-staging/java-gkehub/v1beta1/proto-google-cloud-gkehub-v1beta1/src/main/java/com/google/cloud/gkehub"
-- source: "/google/cloud/gkehub/v1alpha2/.*-java/proto-google-.*/src/main/java/com/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha2/proto-google-cloud-gkehub-v1alpha2/src/main/java/com/google/cloud/gkehub"
 
 - source: "/google/cloud/gkehub/v1beta1/.*-java/proto-google-.*/src/main/proto/google/cloud/gkehub"
   dest: "/owl-bot-staging/java-gkehub/v1beta1/proto-google-cloud-gkehub-v1beta1/src/main/proto/google/cloud/gkehub"
-- source: "/google/cloud/gkehub/v1alpha2/.*-java/proto-google-.*/src/main/proto/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha2/proto-google-cloud-gkehub-v1alpha2/src/main/proto/google/cloud/gkehub"
 
 - source: "/google/cloud/gkehub/v1/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-gkehub/v1/grpc-google-cloud-gkehub-v1/src"
@@ -44,8 +40,6 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-gkehub/v1beta/grpc-google-cloud-gkehub-v1beta/src"
 - source: "/google/cloud/gkehub/v1beta1/.*-java/grpc-google-.*/src/main/java/com/google/cloud/gkehub"
   dest: "/owl-bot-staging/java-gkehub/v1beta1/grpc-google-cloud-gkehub-v1beta1/src/main/java/com/google/cloud/gkehub"
-- source: "/google/cloud/gkehub/v1alpha2/.*-java/grpc-google-.*/src/main/java/com/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha2/grpc-google-cloud-gkehub-v1alpha2/src/main/java/com/google/cloud/gkehub"
 
 - source: "/google/cloud/gkehub/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-gkehub/$1/google-cloud-gkehub/src"
