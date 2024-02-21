@@ -2,9 +2,6 @@ name: Verify Generation Configuration
 on:
   schedule:
   - cron: '0 2 * * *' # nightly at 2 am UTC
-  push:
-    branches:
-    - "chore/add-nightly-ci"
   workflow_dispatch:
 
 jobs:
