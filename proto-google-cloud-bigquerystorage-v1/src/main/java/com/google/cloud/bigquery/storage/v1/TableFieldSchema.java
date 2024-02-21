@@ -230,6 +230,16 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * <code>JSON = 15;</code>
      */
     JSON(15),
+    /**
+     *
+     *
+     * <pre>
+     * RANGE
+     * </pre>
+     *
+     * <code>RANGE = 16;</code>
+     */
+    RANGE(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -393,6 +403,16 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * <code>JSON = 15;</code>
      */
     public static final int JSON_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * RANGE
+     * </pre>
+     *
+     * <code>RANGE = 16;</code>
+     */
+    public static final int RANGE_VALUE = 16;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -450,6 +470,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
           return INTERVAL;
         case 15:
           return JSON;
+        case 16:
+          return RANGE;
         default:
           return null;
       }
@@ -630,6 +652,657 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.TableFieldSchema.Mode)
   }
 
+  public interface FieldElementTypeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type getType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the type of a field element.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType}
+   */
+  public static final class FieldElementType extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType)
+      FieldElementTypeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FieldElementType.newBuilder() to construct.
+    private FieldElementType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FieldElementType() {
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FieldElementType();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1.TableProto
+          .internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_FieldElementType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.storage.v1.TableProto
+          .internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_FieldElementType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.class,
+              com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type getType() {
+      com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type result =
+          com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type.TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_
+          != com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type.TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType other =
+          (com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType) obj;
+
+      if (type_ != other.type_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the type of a field element.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType)
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1.TableProto
+            .internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_FieldElementType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.storage.v1.TableProto
+            .internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_FieldElementType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.class,
+                com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1.TableProto
+            .internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_FieldElementType_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType build() {
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType buildPartial() {
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType result =
+            new com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+                .getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int type_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type getType() {
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type result =
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type.forNumber(type_);
+        return result == null
+            ? com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloud.bigquery.storage.v1.TableFieldSchema.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType)
+    private static final com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType();
+    }
+
+    public static com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FieldElementType> PARSER =
+        new com.google.protobuf.AbstractParser<FieldElementType>() {
+          @java.lang.Override
+          public FieldElementType parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FieldElementType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FieldElementType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1054,6 +1727,81 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int RANGE_ELEMENT_TYPE_FIELD_NUMBER = 11;
+  private com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType rangeElementType_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rangeElementType field is set.
+   */
+  @java.lang.Override
+  public boolean hasRangeElementType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rangeElementType.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+      getRangeElementType() {
+    return rangeElementType_ == null
+        ? com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+            .getDefaultInstance()
+        : rangeElementType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder
+      getRangeElementTypeOrBuilder() {
+    return rangeElementType_ == null
+        ? com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+            .getDefaultInstance()
+        : rangeElementType_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1099,6 +1847,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValueExpression_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, defaultValueExpression_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(11, getRangeElementType());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1139,6 +1890,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValueExpression_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, defaultValueExpression_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getRangeElementType());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1164,6 +1918,10 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (getPrecision() != other.getPrecision()) return false;
     if (getScale() != other.getScale()) return false;
     if (!getDefaultValueExpression().equals(other.getDefaultValueExpression())) return false;
+    if (hasRangeElementType() != other.hasRangeElementType()) return false;
+    if (hasRangeElementType()) {
+      if (!getRangeElementType().equals(other.getRangeElementType())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1195,6 +1953,10 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getScale());
     hash = (37 * hash) + DEFAULT_VALUE_EXPRESSION_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultValueExpression().hashCode();
+    if (hasRangeElementType()) {
+      hash = (37 * hash) + RANGE_ELEMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getRangeElementType().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1325,10 +2087,20 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.bigquery.storage.v1.TableFieldSchema.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getFieldsFieldBuilder();
+        getRangeElementTypeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1350,6 +2122,11 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       precision_ = 0L;
       scale_ = 0L;
       defaultValueExpression_ = "";
+      rangeElementType_ = null;
+      if (rangeElementTypeBuilder_ != null) {
+        rangeElementTypeBuilder_.dispose();
+        rangeElementTypeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1424,6 +2201,13 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.defaultValueExpression_ = defaultValueExpression_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.rangeElementType_ =
+            rangeElementTypeBuilder_ == null ? rangeElementType_ : rangeElementTypeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1529,6 +2313,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasRangeElementType()) {
+        mergeRangeElementType(other.getRangeElementType());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1617,6 +2404,13 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getRangeElementTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2868,6 +3662,266 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        rangeElementType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType,
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder,
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder>
+        rangeElementTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rangeElementType field is set.
+     */
+    public boolean hasRangeElementType() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rangeElementType.
+     */
+    public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+        getRangeElementType() {
+      if (rangeElementTypeBuilder_ == null) {
+        return rangeElementType_ == null
+            ? com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+                .getDefaultInstance()
+            : rangeElementType_;
+      } else {
+        return rangeElementTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRangeElementType(
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType value) {
+      if (rangeElementTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rangeElementType_ = value;
+      } else {
+        rangeElementTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRangeElementType(
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder
+            builderForValue) {
+      if (rangeElementTypeBuilder_ == null) {
+        rangeElementType_ = builderForValue.build();
+      } else {
+        rangeElementTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRangeElementType(
+        com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType value) {
+      if (rangeElementTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && rangeElementType_ != null
+            && rangeElementType_
+                != com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+                    .getDefaultInstance()) {
+          getRangeElementTypeBuilder().mergeFrom(value);
+        } else {
+          rangeElementType_ = value;
+        }
+      } else {
+        rangeElementTypeBuilder_.mergeFrom(value);
+      }
+      if (rangeElementType_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRangeElementType() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      rangeElementType_ = null;
+      if (rangeElementTypeBuilder_ != null) {
+        rangeElementTypeBuilder_.dispose();
+        rangeElementTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder
+        getRangeElementTypeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getRangeElementTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder
+        getRangeElementTypeOrBuilder() {
+      if (rangeElementTypeBuilder_ != null) {
+        return rangeElementTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return rangeElementType_ == null
+            ? com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
+                .getDefaultInstance()
+            : rangeElementType_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType,
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder,
+            com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder>
+        getRangeElementTypeFieldBuilder() {
+      if (rangeElementTypeBuilder_ == null) {
+        rangeElementTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType,
+                com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder,
+                com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder>(
+                getRangeElementType(), getParentForChildren(), isClean());
+        rangeElementType_ = null;
+      }
+      return rangeElementTypeBuilder_;
     }
 
     @java.lang.Override

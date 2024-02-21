@@ -310,4 +310,61 @@ public interface TableFieldSchemaOrBuilder
    * @return The bytes for defaultValueExpression.
    */
   com.google.protobuf.ByteString getDefaultValueExpressionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rangeElementType field is set.
+   */
+  boolean hasRangeElementType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rangeElementType.
+   */
+  com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType getRangeElementType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeOrBuilder
+      getRangeElementTypeOrBuilder();
 }
