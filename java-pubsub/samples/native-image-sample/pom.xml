@@ -113,7 +113,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependency>
           <groupId>org.graalvm.buildtools</groupId>
           <artifactId>junit-platform-native</artifactId>
-          <version>0.10.0</version>
+          <version>0.10.1</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
