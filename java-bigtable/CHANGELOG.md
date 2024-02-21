@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.34.0](https://github.com/googleapis/java-bigtable/compare/v2.33.0...v2.34.0) (2024-02-21)
+
+
+### Features
+
+* Add the export logic for per-connection error rate metric ([#2121](https://github.com/googleapis/java-bigtable/issues/2121)) ([d053f2d](https://github.com/googleapis/java-bigtable/commit/d053f2dc98eb8576f33471d728c6fbf32d537ece))
+* Create the backbone of counting errors per connection each minute. ([#2094](https://github.com/googleapis/java-bigtable/issues/2094)) ([7d27816](https://github.com/googleapis/java-bigtable/commit/7d27816b959a06412f59f49023611f0bca8e3536))
+
+
+### Dependencies
+
+* Update actions/setup-java action to v4 ([#2106](https://github.com/googleapis/java-bigtable/issues/2106)) ([a694296](https://github.com/googleapis/java-bigtable/commit/a694296a76faefe31585aabc9dce0adcf4a342bf))
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.30.0 ([#2126](https://github.com/googleapis/java-bigtable/issues/2126)) ([f613bd0](https://github.com/googleapis/java-bigtable/commit/f613bd0dd449d218a0d8b6d20344155f9762cfb1))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.25.0 ([#2113](https://github.com/googleapis/java-bigtable/issues/2113)) ([ba1973e](https://github.com/googleapis/java-bigtable/commit/ba1973e20c4cbb9be778840cc202eb7e4daf04f4))
+* Update dependency com.google.truth.extensions:truth-proto-extension to v1.4.1 ([#2119](https://github.com/googleapis/java-bigtable/issues/2119)) ([0a7ad66](https://github.com/googleapis/java-bigtable/commit/0a7ad66fa9e2c1858f51c25d1ea01b26da0b944f))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.10.1 ([#2122](https://github.com/googleapis/java-bigtable/issues/2122)) ([99ec284](https://github.com/googleapis/java-bigtable/commit/99ec28425c2caac6a992cb7edd83f2029cce92ec))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.1 ([#2123](https://github.com/googleapis/java-bigtable/issues/2123)) ([12d961a](https://github.com/googleapis/java-bigtable/commit/12d961aad5d15feb27a7996de8b9a626fcdfbc5b))
+
 ## [2.33.0](https://github.com/googleapis/java-bigtable/compare/v2.32.0...v2.33.0) (2024-02-12)
 
 
