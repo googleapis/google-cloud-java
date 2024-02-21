@@ -544,7 +544,28 @@ public class GenerativeModel {
     if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
-    return ResponseHandler.aggregateStreamIntoResponse(generateContentStream(requestBuilder));
+    return generateContent(requestBuilder);
+  }
+
+  /**
+   * A base generateContent method that will be used internally.
+   *
+   * @param requestBuilder a {@link com.google.cloud.vertexai.api.GenerateContentRequest.Builder}
+   *     instance
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  private GenerateContentResponse generateContent(GenerateContentRequest.Builder requestBuilder)
+      throws IOException {
+    GenerateContentRequest request = requestBuilder.setModel(this.resourceName).build();
+    GenerateContentResponse response;
+    if (this.transport == Transport.REST) {
+      response = vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
+    } else {
+      response = vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
+    }
+    return response;
   }
 
   /**
