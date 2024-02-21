@@ -56,7 +56,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.4.0</version>
+      <version>1.4.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
