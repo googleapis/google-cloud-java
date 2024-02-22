@@ -49,10 +49,11 @@ jobs:
       run: |
         # create and push to branch in origin
         # random_id allows multiple runs of this workflow
-        generation_time=$(date -u)
-        branch_name="generation/${generation_time}"
+        random_id=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 5; echo)
+        branch_name="generation/${random_id}"
         git checkout -b "${branch_name}"
         git add java-* gapic-libraries-bom/ pom.xml versions.txt
+        generation_time=$(date -u)
         commit_message="chore: library generation at ${generation_time}"
         git commit -m "${commit_message}"
         git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
