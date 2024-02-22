@@ -1417,6 +1417,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1479,6 +1480,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1539,6 +1541,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1599,6 +1602,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1664,6 +1668,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1727,6 +1732,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1888,6 +1894,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1941,6 +1948,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -2124,6 +2132,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
