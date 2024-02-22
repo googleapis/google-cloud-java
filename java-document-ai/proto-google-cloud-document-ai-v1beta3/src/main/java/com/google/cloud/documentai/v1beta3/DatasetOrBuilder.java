@@ -76,51 +76,41 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Optional. Deprecated. Warehouse-based dataset configuration is not
-   * supported.
+   * Optional. Document AI Warehouse-based dataset configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
    * @return Whether the documentWarehouseConfig field is set.
    */
-  @java.lang.Deprecated
   boolean hasDocumentWarehouseConfig();
   /**
    *
    *
    * <pre>
-   * Optional. Deprecated. Warehouse-based dataset configuration is not
-   * supported.
+   * Optional. Document AI Warehouse-based dataset configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
    * @return The documentWarehouseConfig.
    */
-  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig getDocumentWarehouseConfig();
   /**
    *
    *
    * <pre>
-   * Optional. Deprecated. Warehouse-based dataset configuration is not
-   * supported.
+   * Optional. Document AI Warehouse-based dataset configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig document_warehouse_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfigOrBuilder
       getDocumentWarehouseConfigOrBuilder();
 

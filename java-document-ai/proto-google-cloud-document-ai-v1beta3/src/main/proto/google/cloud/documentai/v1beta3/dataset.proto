@@ -94,10 +94,9 @@ message Dataset {
     GCSManagedConfig gcs_managed_config = 3
         [(google.api.field_behavior) = OPTIONAL];
 
-    // Optional. Deprecated. Warehouse-based dataset configuration is not
-    // supported.
+    // Optional. Document AI Warehouse-based dataset configuration.
     DocumentWarehouseConfig document_warehouse_config = 5
-        [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+        [(google.api.field_behavior) = OPTIONAL];
 
     // Optional. Unmanaged dataset configuration. Use this configuration if the
     // dataset documents are managed by the document service internally (not

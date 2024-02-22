@@ -24,7 +24,6 @@ import com.google.cloud.documentai.v1.DocumentOutputConfig;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1.ProcessOptions;
 import com.google.cloud.documentai.v1.ProcessorName;
-import java.util.HashMap;
 
 public class SyncBatchProcessDocuments {
 
@@ -47,7 +46,6 @@ public class SyncBatchProcessDocuments {
               .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
               .setSkipHumanReview(true)
               .setProcessOptions(ProcessOptions.newBuilder().build())
-              .putAllLabels(new HashMap<String, String>())
               .build();
       BatchProcessResponse response =
           documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();

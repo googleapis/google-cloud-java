@@ -28,7 +28,9 @@ public interface GetPlaceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of a place, in the `places/{place_id}` format.
+   * Required. A place ID returned in a Place (with "places/" prefix), or
+   * equivalently the name in the same Place. Format:
+   * `places/{place_id}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface GetPlaceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of a place, in the `places/{place_id}` format.
+   * Required. A place ID returned in a Place (with "places/" prefix), or
+   * equivalently the name in the same Place. Format:
+   * `places/{place_id}`.
    * </pre>
    *
    * <code>
@@ -126,75 +130,4 @@ public interface GetPlaceRequestOrBuilder
    * @return The bytes for regionCode.
    */
   com.google.protobuf.ByteString getRegionCodeBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. An arbitrary string which identifies an autocomplete session for
-   * billing purposes. Must be at most 36 characters in length. Otherwise an
-   * INVALID_ARGUMENT error is returned.
-   *
-   * The session begins when the user starts typing a query, and concludes when
-   * they select a place and a call to Place Details or Address Validation is
-   * made. Each session can have multiple queries, followed by one Place
-   * selection. The credentials used for each request within a session must
-   * belong to the same Google Cloud Console project. Once a session has
-   * concluded, the token is no longer valid; your app must generate a fresh
-   * token for each session. If the `session_token` parameter is omitted, or if
-   * you reuse a session token, the session is charged as if no session token
-   * was provided (each request is billed separately).
-   *
-   * We recommend the following guidelines:
-   * * Use session tokens for all Place Autocomplete calls.
-   * * Generate a fresh token for each session. Using a version 4 UUID is
-   *   recommended.
-   * * Ensure that the credentials used for all Place Autocomplete, Place
-   *   Details, and Address Validation requests within a session belong to the
-   *   same Cloud Console project.
-   * * Be sure to pass a unique session token for each new session. Using the
-   *   same token for more than one session will result in each request being
-   *   billed individually.
-   * </pre>
-   *
-   * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The sessionToken.
-   */
-  java.lang.String getSessionToken();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. An arbitrary string which identifies an autocomplete session for
-   * billing purposes. Must be at most 36 characters in length. Otherwise an
-   * INVALID_ARGUMENT error is returned.
-   *
-   * The session begins when the user starts typing a query, and concludes when
-   * they select a place and a call to Place Details or Address Validation is
-   * made. Each session can have multiple queries, followed by one Place
-   * selection. The credentials used for each request within a session must
-   * belong to the same Google Cloud Console project. Once a session has
-   * concluded, the token is no longer valid; your app must generate a fresh
-   * token for each session. If the `session_token` parameter is omitted, or if
-   * you reuse a session token, the session is charged as if no session token
-   * was provided (each request is billed separately).
-   *
-   * We recommend the following guidelines:
-   * * Use session tokens for all Place Autocomplete calls.
-   * * Generate a fresh token for each session. Using a version 4 UUID is
-   *   recommended.
-   * * Ensure that the credentials used for all Place Autocomplete, Place
-   *   Details, and Address Validation requests within a session belong to the
-   *   same Cloud Console project.
-   * * Be sure to pass a unique session token for each new session. Using the
-   *   same token for more than one session will result in each request being
-   *   billed individually.
-   * </pre>
-   *
-   * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for sessionToken.
-   */
-  com.google.protobuf.ByteString getSessionTokenBytes();
 }

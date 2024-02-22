@@ -435,11 +435,9 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Indicates a correction to a misspelling in the component name.  The API
-   * does not always flag changes from one spelling variant to another, such as
-   * when changing "centre" to "center". It also does not always flag common
-   * misspellings, such as when changing "Amphitheater Pkwy" to "Amphitheatre
-   * Pkwy".
+   * Indicates the spelling of the component name was corrected in a minor way,
+   * for example by switching two characters that appeared in the wrong order.
+   * This indicates a cosmetic change.
    * </pre>
    *
    * <code>bool spell_corrected = 5;</code>
@@ -1477,11 +1475,9 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates a correction to a misspelling in the component name.  The API
-     * does not always flag changes from one spelling variant to another, such as
-     * when changing "centre" to "center". It also does not always flag common
-     * misspellings, such as when changing "Amphitheater Pkwy" to "Amphitheatre
-     * Pkwy".
+     * Indicates the spelling of the component name was corrected in a minor way,
+     * for example by switching two characters that appeared in the wrong order.
+     * This indicates a cosmetic change.
      * </pre>
      *
      * <code>bool spell_corrected = 5;</code>
@@ -1496,11 +1492,9 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates a correction to a misspelling in the component name.  The API
-     * does not always flag changes from one spelling variant to another, such as
-     * when changing "centre" to "center". It also does not always flag common
-     * misspellings, such as when changing "Amphitheater Pkwy" to "Amphitheatre
-     * Pkwy".
+     * Indicates the spelling of the component name was corrected in a minor way,
+     * for example by switching two characters that appeared in the wrong order.
+     * This indicates a cosmetic change.
      * </pre>
      *
      * <code>bool spell_corrected = 5;</code>
@@ -1519,11 +1513,9 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates a correction to a misspelling in the component name.  The API
-     * does not always flag changes from one spelling variant to another, such as
-     * when changing "centre" to "center". It also does not always flag common
-     * misspellings, such as when changing "Amphitheater Pkwy" to "Amphitheatre
-     * Pkwy".
+     * Indicates the spelling of the component name was corrected in a minor way,
+     * for example by switching two characters that appeared in the wrong order.
+     * This indicates a cosmetic change.
      * </pre>
      *
      * <code>bool spell_corrected = 5;</code>

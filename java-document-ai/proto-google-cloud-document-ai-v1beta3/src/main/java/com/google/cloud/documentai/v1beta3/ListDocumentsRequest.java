@@ -285,9 +285,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Controls if the request requires a total size of matched
-   * documents. See
-   * [ListDocumentsResponse.total_size][google.cloud.documentai.v1beta3.ListDocumentsResponse.total_size].
+   * Optional. Controls if the ListDocuments request requires a total size
+   * of matched documents. See ListDocumentsResponse.total_size.
    *
    * Enabling this flag may adversely impact performance.
    *
@@ -311,13 +310,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Number of results to skip beginning from the `page_token` if
    * provided. https://google.aip.dev/158#skipping-results. It must be a
-   * non-negative integer. Negative values will be rejected. Note that this is
+   * non-negative integer. Negative values wil be rejected. Note that this is
    * not the number of pages to skip. If this value causes the cursor to move
-   * past the end of results,
-   * [ListDocumentsResponse.document_metadata][google.cloud.documentai.v1beta3.ListDocumentsResponse.document_metadata]
-   * and
-   * [ListDocumentsResponse.next_page_token][google.cloud.documentai.v1beta3.ListDocumentsResponse.next_page_token]
-   * will be empty.
+   * past the end of results, `ListDocumentsResponse.document_metadata` and
+   * `ListDocumentsResponse.next_page_token` will be empty.
    * </pre>
    *
    * <code>int32 skip = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1283,9 +1279,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Controls if the request requires a total size of matched
-     * documents. See
-     * [ListDocumentsResponse.total_size][google.cloud.documentai.v1beta3.ListDocumentsResponse.total_size].
+     * Optional. Controls if the ListDocuments request requires a total size
+     * of matched documents. See ListDocumentsResponse.total_size.
      *
      * Enabling this flag may adversely impact performance.
      *
@@ -1304,9 +1299,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Controls if the request requires a total size of matched
-     * documents. See
-     * [ListDocumentsResponse.total_size][google.cloud.documentai.v1beta3.ListDocumentsResponse.total_size].
+     * Optional. Controls if the ListDocuments request requires a total size
+     * of matched documents. See ListDocumentsResponse.total_size.
      *
      * Enabling this flag may adversely impact performance.
      *
@@ -1329,9 +1323,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Controls if the request requires a total size of matched
-     * documents. See
-     * [ListDocumentsResponse.total_size][google.cloud.documentai.v1beta3.ListDocumentsResponse.total_size].
+     * Optional. Controls if the ListDocuments request requires a total size
+     * of matched documents. See ListDocumentsResponse.total_size.
      *
      * Enabling this flag may adversely impact performance.
      *
@@ -1356,13 +1349,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Number of results to skip beginning from the `page_token` if
      * provided. https://google.aip.dev/158#skipping-results. It must be a
-     * non-negative integer. Negative values will be rejected. Note that this is
+     * non-negative integer. Negative values wil be rejected. Note that this is
      * not the number of pages to skip. If this value causes the cursor to move
-     * past the end of results,
-     * [ListDocumentsResponse.document_metadata][google.cloud.documentai.v1beta3.ListDocumentsResponse.document_metadata]
-     * and
-     * [ListDocumentsResponse.next_page_token][google.cloud.documentai.v1beta3.ListDocumentsResponse.next_page_token]
-     * will be empty.
+     * past the end of results, `ListDocumentsResponse.document_metadata` and
+     * `ListDocumentsResponse.next_page_token` will be empty.
      * </pre>
      *
      * <code>int32 skip = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1379,13 +1369,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Number of results to skip beginning from the `page_token` if
      * provided. https://google.aip.dev/158#skipping-results. It must be a
-     * non-negative integer. Negative values will be rejected. Note that this is
+     * non-negative integer. Negative values wil be rejected. Note that this is
      * not the number of pages to skip. If this value causes the cursor to move
-     * past the end of results,
-     * [ListDocumentsResponse.document_metadata][google.cloud.documentai.v1beta3.ListDocumentsResponse.document_metadata]
-     * and
-     * [ListDocumentsResponse.next_page_token][google.cloud.documentai.v1beta3.ListDocumentsResponse.next_page_token]
-     * will be empty.
+     * past the end of results, `ListDocumentsResponse.document_metadata` and
+     * `ListDocumentsResponse.next_page_token` will be empty.
      * </pre>
      *
      * <code>int32 skip = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1406,13 +1393,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Number of results to skip beginning from the `page_token` if
      * provided. https://google.aip.dev/158#skipping-results. It must be a
-     * non-negative integer. Negative values will be rejected. Note that this is
+     * non-negative integer. Negative values wil be rejected. Note that this is
      * not the number of pages to skip. If this value causes the cursor to move
-     * past the end of results,
-     * [ListDocumentsResponse.document_metadata][google.cloud.documentai.v1beta3.ListDocumentsResponse.document_metadata]
-     * and
-     * [ListDocumentsResponse.next_page_token][google.cloud.documentai.v1beta3.ListDocumentsResponse.next_page_token]
-     * will be empty.
+     * past the end of results, `ListDocumentsResponse.document_metadata` and
+     * `ListDocumentsResponse.next_page_token` will be empty.
      * </pre>
      *
      * <code>int32 skip = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

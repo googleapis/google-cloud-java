@@ -115,7 +115,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetPlace</td>
- *      <td><p> Get the details of a place based on its resource name, which is a string in the `places/{place_id}` format.</td>
+ *      <td><p> Get place details with a place id (in a name) string.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -129,20 +129,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getPlaceCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> AutocompletePlaces</td>
- *      <td><p> Returns predictions for the given input.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> autocompletePlaces(AutocompletePlacesRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> autocompletePlacesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -343,7 +329,6 @@ public class PlacesClient implements BackgroundResource {
    *           .setStrictTypeFiltering(true)
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
-   *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
    *           .build();
    *   SearchTextResponse response = placesClient.searchText(request);
    * }
@@ -382,7 +367,6 @@ public class PlacesClient implements BackgroundResource {
    *           .setStrictTypeFiltering(true)
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
-   *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
    *   // Do something.
@@ -518,8 +502,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the details of a place based on its resource name, which is a string in the
-   * `places/{place_id}` format.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -535,7 +518,8 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of a place, in the `places/{place_id}` format.
+   * @param name Required. A place ID returned in a Place (with "places/" prefix), or equivalently
+   *     the name in the same Place. Format: `places/{place_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Place getPlace(PlaceName name) {
@@ -546,8 +530,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the details of a place based on its resource name, which is a string in the
-   * `places/{place_id}` format.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -563,7 +546,8 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of a place, in the `places/{place_id}` format.
+   * @param name Required. A place ID returned in a Place (with "places/" prefix), or equivalently
+   *     the name in the same Place. Format: `places/{place_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Place getPlace(String name) {
@@ -573,8 +557,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the details of a place based on its resource name, which is a string in the
-   * `places/{place_id}` format.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -590,7 +573,6 @@ public class PlacesClient implements BackgroundResource {
    *           .setName(PlaceName.of("[PLACE_ID]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
-   *           .setSessionToken("sessionToken-696552189")
    *           .build();
    *   Place response = placesClient.getPlace(request);
    * }
@@ -605,8 +587,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the details of a place based on its resource name, which is a string in the
-   * `places/{place_id}` format.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -622,7 +603,6 @@ public class PlacesClient implements BackgroundResource {
    *           .setName(PlaceName.of("[PLACE_ID]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
-   *           .setSessionToken("sessionToken-696552189")
    *           .build();
    *   ApiFuture<Place> future = placesClient.getPlaceCallable().futureCall(request);
    *   // Do something.
@@ -632,85 +612,6 @@ public class PlacesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
     return stub.getPlaceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns predictions for the given input.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (PlacesClient placesClient = PlacesClient.create()) {
-   *   AutocompletePlacesRequest request =
-   *       AutocompletePlacesRequest.newBuilder()
-   *           .setInput("input100358090")
-   *           .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
-   *           .setLocationRestriction(
-   *               AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
-   *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
-   *           .addAllIncludedRegionCodes(new ArrayList<String>())
-   *           .setLanguageCode("languageCode-2092349083")
-   *           .setRegionCode("regionCode-1991004415")
-   *           .setOrigin(LatLng.newBuilder().build())
-   *           .setInputOffset(1010406056)
-   *           .setIncludeQueryPredictions(true)
-   *           .setSessionToken("sessionToken-696552189")
-   *           .build();
-   *   AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AutocompletePlacesResponse autocompletePlaces(AutocompletePlacesRequest request) {
-    return autocompletePlacesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns predictions for the given input.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (PlacesClient placesClient = PlacesClient.create()) {
-   *   AutocompletePlacesRequest request =
-   *       AutocompletePlacesRequest.newBuilder()
-   *           .setInput("input100358090")
-   *           .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
-   *           .setLocationRestriction(
-   *               AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
-   *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
-   *           .addAllIncludedRegionCodes(new ArrayList<String>())
-   *           .setLanguageCode("languageCode-2092349083")
-   *           .setRegionCode("regionCode-1991004415")
-   *           .setOrigin(LatLng.newBuilder().build())
-   *           .setInputOffset(1010406056)
-   *           .setIncludeQueryPredictions(true)
-   *           .setSessionToken("sessionToken-696552189")
-   *           .build();
-   *   ApiFuture<AutocompletePlacesResponse> future =
-   *       placesClient.autocompletePlacesCallable().futureCall(request);
-   *   // Do something.
-   *   AutocompletePlacesResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
-      autocompletePlacesCallable() {
-    return stub.autocompletePlacesCallable();
   }
 
   @Override

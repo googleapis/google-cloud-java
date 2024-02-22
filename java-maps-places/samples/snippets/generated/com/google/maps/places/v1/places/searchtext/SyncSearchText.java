@@ -49,7 +49,6 @@ public class SyncSearchText {
               .setStrictTypeFiltering(true)
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
-              .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
               .build();
       SearchTextResponse response = placesClient.searchText(request);
     }

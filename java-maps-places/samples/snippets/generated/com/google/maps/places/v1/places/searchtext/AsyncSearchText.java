@@ -50,7 +50,6 @@ public class AsyncSearchText {
               .setStrictTypeFiltering(true)
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
-              .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
               .build();
       ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
       // Do something.

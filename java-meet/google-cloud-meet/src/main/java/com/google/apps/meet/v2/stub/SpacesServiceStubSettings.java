@@ -90,10 +90,7 @@ import org.threeten.bp.Duration;
 public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/meetings.space.created")
-          .add("https://www.googleapis.com/auth/meetings.space.readonly")
-          .build();
+      ImmutableList.<String>builder().build();
 
   private final UnaryCallSettings<CreateSpaceRequest, Space> createSpaceSettings;
   private final UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings;

@@ -23,8 +23,7 @@ package com.google.maps.places.v1;
  *
  *
  * <pre>
- * Request for fetching a Place based on its resource name, which is a string in
- * the `places/{place_id}` format.
+ * Request for fetching a Place with a place id (in a name) string.
  * </pre>
  *
  * Protobuf type {@code google.maps.places.v1.GetPlaceRequest}
@@ -43,7 +42,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
     name_ = "";
     languageCode_ = "";
     regionCode_ = "";
-    sessionToken_ = "";
   }
 
   @java.lang.Override
@@ -75,7 +73,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The resource name of a place, in the `places/{place_id}` format.
+   * Required. A place ID returned in a Place (with "places/" prefix), or
+   * equivalently the name in the same Place. Format:
+   * `places/{place_id}`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The resource name of a place, in the `places/{place_id}` format.
+   * Required. A place ID returned in a Place (with "places/" prefix), or
+   * equivalently the name in the same Place. Format:
+   * `places/{place_id}`.
    * </pre>
    *
    * <code>
@@ -248,103 +250,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int SESSION_TOKEN_FIELD_NUMBER = 4;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object sessionToken_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Optional. An arbitrary string which identifies an autocomplete session for
-   * billing purposes. Must be at most 36 characters in length. Otherwise an
-   * INVALID_ARGUMENT error is returned.
-   *
-   * The session begins when the user starts typing a query, and concludes when
-   * they select a place and a call to Place Details or Address Validation is
-   * made. Each session can have multiple queries, followed by one Place
-   * selection. The credentials used for each request within a session must
-   * belong to the same Google Cloud Console project. Once a session has
-   * concluded, the token is no longer valid; your app must generate a fresh
-   * token for each session. If the `session_token` parameter is omitted, or if
-   * you reuse a session token, the session is charged as if no session token
-   * was provided (each request is billed separately).
-   *
-   * We recommend the following guidelines:
-   * * Use session tokens for all Place Autocomplete calls.
-   * * Generate a fresh token for each session. Using a version 4 UUID is
-   *   recommended.
-   * * Ensure that the credentials used for all Place Autocomplete, Place
-   *   Details, and Address Validation requests within a session belong to the
-   *   same Cloud Console project.
-   * * Be sure to pass a unique session token for each new session. Using the
-   *   same token for more than one session will result in each request being
-   *   billed individually.
-   * </pre>
-   *
-   * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The sessionToken.
-   */
-  @java.lang.Override
-  public java.lang.String getSessionToken() {
-    java.lang.Object ref = sessionToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sessionToken_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. An arbitrary string which identifies an autocomplete session for
-   * billing purposes. Must be at most 36 characters in length. Otherwise an
-   * INVALID_ARGUMENT error is returned.
-   *
-   * The session begins when the user starts typing a query, and concludes when
-   * they select a place and a call to Place Details or Address Validation is
-   * made. Each session can have multiple queries, followed by one Place
-   * selection. The credentials used for each request within a session must
-   * belong to the same Google Cloud Console project. Once a session has
-   * concluded, the token is no longer valid; your app must generate a fresh
-   * token for each session. If the `session_token` parameter is omitted, or if
-   * you reuse a session token, the session is charged as if no session token
-   * was provided (each request is billed separately).
-   *
-   * We recommend the following guidelines:
-   * * Use session tokens for all Place Autocomplete calls.
-   * * Generate a fresh token for each session. Using a version 4 UUID is
-   *   recommended.
-   * * Ensure that the credentials used for all Place Autocomplete, Place
-   *   Details, and Address Validation requests within a session belong to the
-   *   same Cloud Console project.
-   * * Be sure to pass a unique session token for each new session. Using the
-   *   same token for more than one session will result in each request being
-   *   billed individually.
-   * </pre>
-   *
-   * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for sessionToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSessionTokenBytes() {
-    java.lang.Object ref = sessionToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      sessionToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -368,9 +273,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, regionCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sessionToken_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -388,9 +290,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, regionCode_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sessionToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -411,7 +310,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
     if (!getName().equals(other.getName())) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
-    if (!getSessionToken().equals(other.getSessionToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -429,8 +327,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getRegionCode().hashCode();
-    hash = (37 * hash) + SESSION_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getSessionToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -535,8 +431,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request for fetching a Place based on its resource name, which is a string in
-   * the `places/{place_id}` format.
+   * Request for fetching a Place with a place id (in a name) string.
    * </pre>
    *
    * Protobuf type {@code google.maps.places.v1.GetPlaceRequest}
@@ -574,7 +469,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
       name_ = "";
       languageCode_ = "";
       regionCode_ = "";
-      sessionToken_ = "";
       return this;
     }
 
@@ -619,9 +513,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.regionCode_ = regionCode_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.sessionToken_ = sessionToken_;
       }
     }
 
@@ -685,11 +576,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getSessionToken().isEmpty()) {
-        sessionToken_ = other.sessionToken_;
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -734,12 +620,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 34:
-              {
-                sessionToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -764,7 +644,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name of a place, in the `places/{place_id}` format.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -788,7 +670,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name of a place, in the `places/{place_id}` format.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -812,7 +696,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name of a place, in the `places/{place_id}` format.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -835,7 +721,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name of a place, in the `places/{place_id}` format.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -854,7 +742,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name of a place, in the `places/{place_id}` format.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -1143,227 +1033,6 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       regionCode_ = value;
       bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object sessionToken_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. An arbitrary string which identifies an autocomplete session for
-     * billing purposes. Must be at most 36 characters in length. Otherwise an
-     * INVALID_ARGUMENT error is returned.
-     *
-     * The session begins when the user starts typing a query, and concludes when
-     * they select a place and a call to Place Details or Address Validation is
-     * made. Each session can have multiple queries, followed by one Place
-     * selection. The credentials used for each request within a session must
-     * belong to the same Google Cloud Console project. Once a session has
-     * concluded, the token is no longer valid; your app must generate a fresh
-     * token for each session. If the `session_token` parameter is omitted, or if
-     * you reuse a session token, the session is charged as if no session token
-     * was provided (each request is billed separately).
-     *
-     * We recommend the following guidelines:
-     * * Use session tokens for all Place Autocomplete calls.
-     * * Generate a fresh token for each session. Using a version 4 UUID is
-     *   recommended.
-     * * Ensure that the credentials used for all Place Autocomplete, Place
-     *   Details, and Address Validation requests within a session belong to the
-     *   same Cloud Console project.
-     * * Be sure to pass a unique session token for each new session. Using the
-     *   same token for more than one session will result in each request being
-     *   billed individually.
-     * </pre>
-     *
-     * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The sessionToken.
-     */
-    public java.lang.String getSessionToken() {
-      java.lang.Object ref = sessionToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sessionToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. An arbitrary string which identifies an autocomplete session for
-     * billing purposes. Must be at most 36 characters in length. Otherwise an
-     * INVALID_ARGUMENT error is returned.
-     *
-     * The session begins when the user starts typing a query, and concludes when
-     * they select a place and a call to Place Details or Address Validation is
-     * made. Each session can have multiple queries, followed by one Place
-     * selection. The credentials used for each request within a session must
-     * belong to the same Google Cloud Console project. Once a session has
-     * concluded, the token is no longer valid; your app must generate a fresh
-     * token for each session. If the `session_token` parameter is omitted, or if
-     * you reuse a session token, the session is charged as if no session token
-     * was provided (each request is billed separately).
-     *
-     * We recommend the following guidelines:
-     * * Use session tokens for all Place Autocomplete calls.
-     * * Generate a fresh token for each session. Using a version 4 UUID is
-     *   recommended.
-     * * Ensure that the credentials used for all Place Autocomplete, Place
-     *   Details, and Address Validation requests within a session belong to the
-     *   same Cloud Console project.
-     * * Be sure to pass a unique session token for each new session. Using the
-     *   same token for more than one session will result in each request being
-     *   billed individually.
-     * </pre>
-     *
-     * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for sessionToken.
-     */
-    public com.google.protobuf.ByteString getSessionTokenBytes() {
-      java.lang.Object ref = sessionToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        sessionToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. An arbitrary string which identifies an autocomplete session for
-     * billing purposes. Must be at most 36 characters in length. Otherwise an
-     * INVALID_ARGUMENT error is returned.
-     *
-     * The session begins when the user starts typing a query, and concludes when
-     * they select a place and a call to Place Details or Address Validation is
-     * made. Each session can have multiple queries, followed by one Place
-     * selection. The credentials used for each request within a session must
-     * belong to the same Google Cloud Console project. Once a session has
-     * concluded, the token is no longer valid; your app must generate a fresh
-     * token for each session. If the `session_token` parameter is omitted, or if
-     * you reuse a session token, the session is charged as if no session token
-     * was provided (each request is billed separately).
-     *
-     * We recommend the following guidelines:
-     * * Use session tokens for all Place Autocomplete calls.
-     * * Generate a fresh token for each session. Using a version 4 UUID is
-     *   recommended.
-     * * Ensure that the credentials used for all Place Autocomplete, Place
-     *   Details, and Address Validation requests within a session belong to the
-     *   same Cloud Console project.
-     * * Be sure to pass a unique session token for each new session. Using the
-     *   same token for more than one session will result in each request being
-     *   billed individually.
-     * </pre>
-     *
-     * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The sessionToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionToken(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      sessionToken_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. An arbitrary string which identifies an autocomplete session for
-     * billing purposes. Must be at most 36 characters in length. Otherwise an
-     * INVALID_ARGUMENT error is returned.
-     *
-     * The session begins when the user starts typing a query, and concludes when
-     * they select a place and a call to Place Details or Address Validation is
-     * made. Each session can have multiple queries, followed by one Place
-     * selection. The credentials used for each request within a session must
-     * belong to the same Google Cloud Console project. Once a session has
-     * concluded, the token is no longer valid; your app must generate a fresh
-     * token for each session. If the `session_token` parameter is omitted, or if
-     * you reuse a session token, the session is charged as if no session token
-     * was provided (each request is billed separately).
-     *
-     * We recommend the following guidelines:
-     * * Use session tokens for all Place Autocomplete calls.
-     * * Generate a fresh token for each session. Using a version 4 UUID is
-     *   recommended.
-     * * Ensure that the credentials used for all Place Autocomplete, Place
-     *   Details, and Address Validation requests within a session belong to the
-     *   same Cloud Console project.
-     * * Be sure to pass a unique session token for each new session. Using the
-     *   same token for more than one session will result in each request being
-     *   billed individually.
-     * </pre>
-     *
-     * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSessionToken() {
-      sessionToken_ = getDefaultInstance().getSessionToken();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. An arbitrary string which identifies an autocomplete session for
-     * billing purposes. Must be at most 36 characters in length. Otherwise an
-     * INVALID_ARGUMENT error is returned.
-     *
-     * The session begins when the user starts typing a query, and concludes when
-     * they select a place and a call to Place Details or Address Validation is
-     * made. Each session can have multiple queries, followed by one Place
-     * selection. The credentials used for each request within a session must
-     * belong to the same Google Cloud Console project. Once a session has
-     * concluded, the token is no longer valid; your app must generate a fresh
-     * token for each session. If the `session_token` parameter is omitted, or if
-     * you reuse a session token, the session is charged as if no session token
-     * was provided (each request is billed separately).
-     *
-     * We recommend the following guidelines:
-     * * Use session tokens for all Place Autocomplete calls.
-     * * Generate a fresh token for each session. Using a version 4 UUID is
-     *   recommended.
-     * * Ensure that the credentials used for all Place Autocomplete, Place
-     *   Details, and Address Validation requests within a session belong to the
-     *   same Cloud Console project.
-     * * Be sure to pass a unique session token for each new session. Using the
-     *   same token for more than one session will result in each request being
-     *   billed individually.
-     * </pre>
-     *
-     * <code>string session_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for sessionToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionTokenBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      sessionToken_ = value;
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

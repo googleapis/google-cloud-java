@@ -101,7 +101,7 @@ public interface DocumentMetadataOrBuilder
    *
    *
    * <pre>
-   * Labeling state of the document.
+   * Labelling state of the document.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentLabelingState labeling_state = 5;</code>
@@ -113,7 +113,7 @@ public interface DocumentMetadataOrBuilder
    *
    *
    * <pre>
-   * Labeling state of the document.
+   * Labelling state of the document.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentLabelingState labeling_state = 5;</code>

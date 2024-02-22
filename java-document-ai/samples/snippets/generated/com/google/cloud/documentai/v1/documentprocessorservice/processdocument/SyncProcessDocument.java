@@ -23,7 +23,6 @@ import com.google.cloud.documentai.v1.ProcessRequest;
 import com.google.cloud.documentai.v1.ProcessResponse;
 import com.google.cloud.documentai.v1.ProcessorName;
 import com.google.protobuf.FieldMask;
-import java.util.HashMap;
 
 public class SyncProcessDocument {
 
@@ -45,7 +44,6 @@ public class SyncProcessDocument {
               .setSkipHumanReview(true)
               .setFieldMask(FieldMask.newBuilder().build())
               .setProcessOptions(ProcessOptions.newBuilder().build())
-              .putAllLabels(new HashMap<String, String>())
               .build();
       ProcessResponse response = documentProcessorServiceClient.processDocument(request);
     }

@@ -55,18 +55,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_documentai_v1beta3_ProcessRequest_descriptor;
   }
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-      int number) {
-    switch (number) {
-      case 10:
-        return internalGetLabels();
-      default:
-        throw new RuntimeException("Invalid map field number: " + number);
-    }
-  }
-
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -371,7 +359,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=415
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -392,7 +380,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=415
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
    * @return The document.
    */
   @java.lang.Override
@@ -546,128 +534,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         : processOptions_;
   }
 
-  public static final int LABELS_FIELD_NUMBER = 10;
-
-  private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
-                .internal_static_google_cloud_documentai_v1beta3_ProcessRequest_LabelsEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
-  }
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
-    if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
-    }
-    return labels_;
-  }
-
-  public int getLabelsCount() {
-    return internalGetLabels().getMap().size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The labels with user-defined metadata for the request.
-   *
-   * Label keys and values can be no longer than 63 characters
-   * (Unicode codepoints) and can only contain lowercase letters, numeric
-   * characters, underscores, and dashes. International characters are allowed.
-   * Label values are optional. Label keys must start with a letter.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  @java.lang.Override
-  public boolean containsLabels(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    return internalGetLabels().getMap().containsKey(key);
-  }
-  /** Use {@link #getLabelsMap()} instead. */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-    return getLabelsMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The labels with user-defined metadata for the request.
-   *
-   * Label keys and values can be no longer than 63 characters
-   * (Unicode codepoints) and can only contain lowercase letters, numeric
-   * characters, underscores, and dashes. International characters are allowed.
-   * Label values are optional. Label keys must start with a letter.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-    return internalGetLabels().getMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The labels with user-defined metadata for the request.
-   *
-   * Label keys and values can be no longer than 63 characters
-   * (Unicode codepoints) and can only contain lowercase letters, numeric
-   * characters, underscores, and dashes. International characters are allowed.
-   * Label values are optional. Label keys must start with a letter.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  @java.lang.Override
-  public /* nullable */ java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      /* nullable */
-      java.lang.String defaultValue) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The labels with user-defined metadata for the request.
-   *
-   * Label keys and values can be no longer than 63 characters
-   * (Unicode codepoints) and can only contain lowercase letters, numeric
-   * characters, underscores, and dashes. International characters are allowed.
-   * Label values are optional. Label keys must start with a letter.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  @java.lang.Override
-  public java.lang.String getLabelsOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -706,8 +572,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.documentai.v1beta3.GcsDocument) source_);
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
     getUnknownFields().writeTo(output);
   }
 
@@ -747,16 +611,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.documentai.v1beta3.GcsDocument) source_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-          LabelsDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -787,7 +641,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasProcessOptions()) {
       if (!getProcessOptions().equals(other.getProcessOptions())) return false;
     }
-    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 4:
@@ -828,10 +681,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasProcessOptions()) {
       hash = (37 * hash) + PROCESS_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getProcessOptions().hashCode();
-    }
-    if (!internalGetLabels().getMap().isEmpty()) {
-      hash = (37 * hash) + LABELS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     switch (sourceCase_) {
       case 4:
@@ -969,28 +818,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_documentai_v1beta3_ProcessRequest_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 10:
-          return internalGetLabels();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 10:
-          return internalGetMutableLabels();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1049,7 +876,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         processOptionsBuilder_.dispose();
         processOptionsBuilder_ = null;
       }
-      internalGetMutableLabels().clear();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1108,10 +934,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         result.processOptions_ =
             processOptionsBuilder_ == null ? processOptions_ : processOptionsBuilder_.build();
         to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.labels_ = internalGetLabels();
-        result.labels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1193,8 +1015,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasProcessOptions()) {
         mergeProcessOptions(other.getProcessOptions());
       }
-      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
       switch (other.getSourceCase()) {
         case INLINE_DOCUMENT:
           {
@@ -1290,18 +1110,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
                 sourceCase_ = 8;
                 break;
               } // case 66
-            case 82:
-              {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                    input.readMessage(
-                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
-                        extensionRegistry);
-                internalGetMutableLabels()
-                    .getMutableMap()
-                    .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2142,7 +1950,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=415
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -2162,7 +1970,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=415
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
      * @return The document.
      */
     @java.lang.Deprecated
@@ -2798,204 +2606,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         processOptions_ = null;
       }
       return processOptionsBuilder_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
-      if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
-      }
-      return labels_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableLabels() {
-      if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-      }
-      if (!labels_.isMutable()) {
-        labels_ = labels_.copy();
-      }
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return labels_;
-    }
-
-    public int getLabelsCount() {
-      return internalGetLabels().getMap().size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public boolean containsLabels(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      return internalGetLabels().getMap().containsKey(key);
-    }
-    /** Use {@link #getLabelsMap()} instead. */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-      return getLabelsMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-      return internalGetLabels().getMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public /* nullable */ java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        /* nullable */
-        java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public java.lang.String getLabelsOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      internalGetMutableLabels().getMutableMap().clear();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder removeLabels(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      internalGetMutableLabels().getMutableMap().remove(key);
-      return this;
-    }
-    /** Use alternate mutation accessors instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
-      return internalGetMutableLabels().getMutableMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder putLabels(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      if (value == null) {
-        throw new NullPointerException("map value");
-      }
-      internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The labels with user-defined metadata for the request.
-     *
-     * Label keys and values can be no longer than 63 characters
-     * (Unicode codepoints) and can only contain lowercase letters, numeric
-     * characters, underscores, and dashes. International characters are allowed.
-     * Label values are optional. Label keys must start with a letter.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
-      return this;
     }
 
     @java.lang.Override

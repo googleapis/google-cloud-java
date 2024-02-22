@@ -119,18 +119,15 @@ public interface UspsDataOrBuilder
    *
    *
    * <pre>
-   * The possible values for DPV confirmation. Returns a single character or
-   * returns no value.
+   * The possible values for DPV confirmation. Returns a single character.
    *
+   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
    * * `N`: Primary and any secondary number information failed to
    * DPV confirm.
+   * * `S`: Address was DPV confirmed for the primary number only, and the
+   * secondary number information was present by not confirmed.
    * * `D`: Address was DPV confirmed for the primary number only, and the
    * secondary number information was missing.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present but not confirmed.
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * Empty: If the response does not contain a `dpv_confirmation` value, the
-   * address was not submitted for DPV confirmation.
    * </pre>
    *
    * <code>string dpv_confirmation = 4;</code>
@@ -142,18 +139,15 @@ public interface UspsDataOrBuilder
    *
    *
    * <pre>
-   * The possible values for DPV confirmation. Returns a single character or
-   * returns no value.
+   * The possible values for DPV confirmation. Returns a single character.
    *
+   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
    * * `N`: Primary and any secondary number information failed to
    * DPV confirm.
+   * * `S`: Address was DPV confirmed for the primary number only, and the
+   * secondary number information was present by not confirmed.
    * * `D`: Address was DPV confirmed for the primary number only, and the
    * secondary number information was missing.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present but not confirmed.
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * Empty: If the response does not contain a `dpv_confirmation` value, the
-   * address was not submitted for DPV confirmation.
    * </pre>
    *
    * <code>string dpv_confirmation = 4;</code>
@@ -172,12 +166,11 @@ public interface UspsDataOrBuilder
    * * `AA`: Input address matched to the ZIP+4 file
    * * `A1`: Input address was not matched to the ZIP+4 file
    * * `BB`: Matched to DPV (all components)
-   * * `CC`: Secondary number not matched and not required
-   * * `C1`: Secondary number not matched but required
+   * * `CC`: Secondary number not matched (present but invalid)
    * * `N1`: High-rise address missing secondary number
    * * `M1`: Primary number missing
    * * `M3`: Primary number invalid
-   * * `P1`: Input address PO, RR or HC box number missing
+   * * `P1`: Input address RR or HC box number missing
    * * `P3`: Input address PO, RR, or HC Box number invalid
    * * `F1`: Input address matched to a military address
    * * `G1`: Input address matched to a general delivery address
@@ -186,8 +179,6 @@ public interface UspsDataOrBuilder
    * * `RR`: DPV confirmed address with PMB information
    * * `R1`: DPV confirmed address without PMB information
    * * `R7`: Carrier Route R777 or R779 record
-   * * `IA`: Informed Address identified
-   * * `TA`: Primary number matched by dropping a trailing alpha
    * </pre>
    *
    * <code>string dpv_footnote = 5;</code>
@@ -205,12 +196,11 @@ public interface UspsDataOrBuilder
    * * `AA`: Input address matched to the ZIP+4 file
    * * `A1`: Input address was not matched to the ZIP+4 file
    * * `BB`: Matched to DPV (all components)
-   * * `CC`: Secondary number not matched and not required
-   * * `C1`: Secondary number not matched but required
+   * * `CC`: Secondary number not matched (present but invalid)
    * * `N1`: High-rise address missing secondary number
    * * `M1`: Primary number missing
    * * `M3`: Primary number invalid
-   * * `P1`: Input address PO, RR or HC box number missing
+   * * `P1`: Input address RR or HC box number missing
    * * `P3`: Input address PO, RR, or HC Box number invalid
    * * `F1`: Input address matched to a military address
    * * `G1`: Input address matched to a general delivery address
@@ -219,8 +209,6 @@ public interface UspsDataOrBuilder
    * * `RR`: DPV confirmed address with PMB information
    * * `R1`: DPV confirmed address without PMB information
    * * `R7`: Carrier Route R777 or R779 record
-   * * `IA`: Informed Address identified
-   * * `TA`: Primary number matched by dropping a trailing alpha
    * </pre>
    *
    * <code>string dpv_footnote = 5;</code>
@@ -329,306 +317,6 @@ public interface UspsDataOrBuilder
    * @return The bytes for dpvNoStat.
    */
   com.google.protobuf.ByteString getDpvNoStatBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates the NoStat type. Returns a reason code as int.
-   *
-   * * `1`: IDA (Internal Drop Address) – Addresses that do not receive mail
-   * directly from the USPS but are delivered to a drop address that services
-   * them.
-   * * `2`: CDS - Addresses that have not yet become deliverable. For example, a
-   * new subdivision where lots and primary numbers have been determined, but no
-   * structure exists yet for occupancy.
-   * * `3`: Collision - Addresses that do not actually DPV confirm.
-   * * `4`: CMZ (College, Military and Other Types) - ZIP + 4 records USPS has
-   * incorporated into the data.
-   * * `5`: Regular - Indicates addresses not receiving delivery and the
-   * addresses are not counted as possible deliveries.
-   * * `6`: Secondary Required - The address requires secondary information.
-   * </pre>
-   *
-   * <code>int32 dpv_no_stat_reason_code = 29;</code>
-   *
-   * @return The dpvNoStatReasonCode.
-   */
-  int getDpvNoStatReasonCode();
-
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail is delivered to a single receptable at a site.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is delivered to a single receptable at a site.
-   * * `N`: The mail is not delivered to a single receptable at a site.
-   * </pre>
-   *
-   * <code>string dpv_drop = 30;</code>
-   *
-   * @return The dpvDrop.
-   */
-  java.lang.String getDpvDrop();
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail is delivered to a single receptable at a site.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is delivered to a single receptable at a site.
-   * * `N`: The mail is not delivered to a single receptable at a site.
-   * </pre>
-   *
-   * <code>string dpv_drop = 30;</code>
-   *
-   * @return The bytes for dpvDrop.
-   */
-  com.google.protobuf.ByteString getDpvDropBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that mail is not delivered to the street address.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is not delivered to the street address.
-   * * `N`: The mail is delivered to the street address.
-   * </pre>
-   *
-   * <code>string dpv_throwback = 31;</code>
-   *
-   * @return The dpvThrowback.
-   */
-  java.lang.String getDpvThrowback();
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that mail is not delivered to the street address.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is not delivered to the street address.
-   * * `N`: The mail is delivered to the street address.
-   * </pre>
-   *
-   * <code>string dpv_throwback = 31;</code>
-   *
-   * @return The bytes for dpvThrowback.
-   */
-  com.google.protobuf.ByteString getDpvThrowbackBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail delivery is not performed every day of the week.
-   * Returns a single character.
-   *
-   * * `Y`: The mail delivery is not performed every day of the week.
-   * * `N`: No indication the mail delivery is not performed every day of the
-   * week.
-   * </pre>
-   *
-   * <code>string dpv_non_delivery_days = 32;</code>
-   *
-   * @return The dpvNonDeliveryDays.
-   */
-  java.lang.String getDpvNonDeliveryDays();
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail delivery is not performed every day of the week.
-   * Returns a single character.
-   *
-   * * `Y`: The mail delivery is not performed every day of the week.
-   * * `N`: No indication the mail delivery is not performed every day of the
-   * week.
-   * </pre>
-   *
-   * <code>string dpv_non_delivery_days = 32;</code>
-   *
-   * @return The bytes for dpvNonDeliveryDays.
-   */
-  com.google.protobuf.ByteString getDpvNonDeliveryDaysBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Integer identifying non-delivery days. It can be interrogated using bit
-   * flags:
-   * 0x40 – Sunday is a non-delivery day
-   * 0x20 – Monday is a non-delivery day
-   * 0x10 – Tuesday is a non-delivery day
-   * 0x08 – Wednesday is a non-delivery day
-   * 0x04 – Thursday is a non-delivery day
-   * 0x02 – Friday is a non-delivery day
-   * 0x01 – Saturday is a non-delivery day
-   * </pre>
-   *
-   * <code>int32 dpv_non_delivery_days_values = 33;</code>
-   *
-   * @return The dpvNonDeliveryDaysValues.
-   */
-  int getDpvNonDeliveryDaysValues();
-
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates door is accessible, but package will not be left due to
-   * security concerns.
-   * Returns a single character.
-   *
-   * * `Y`: The package will not be left due to security concerns.
-   * * `N`: No indication the package will not be left due to security concerns.
-   * </pre>
-   *
-   * <code>string dpv_no_secure_location = 34;</code>
-   *
-   * @return The dpvNoSecureLocation.
-   */
-  java.lang.String getDpvNoSecureLocation();
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates door is accessible, but package will not be left due to
-   * security concerns.
-   * Returns a single character.
-   *
-   * * `Y`: The package will not be left due to security concerns.
-   * * `N`: No indication the package will not be left due to security concerns.
-   * </pre>
-   *
-   * <code>string dpv_no_secure_location = 34;</code>
-   *
-   * @return The bytes for dpvNoSecureLocation.
-   */
-  com.google.protobuf.ByteString getDpvNoSecureLocationBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates the address was matched to PBSA record.
-   * Returns a single character.
-   *
-   * * `Y`: The address was matched to PBSA record.
-   * * `N`: The address was not matched to PBSA record.
-   * </pre>
-   *
-   * <code>string dpv_pbsa = 35;</code>
-   *
-   * @return The dpvPbsa.
-   */
-  java.lang.String getDpvPbsa();
-  /**
-   *
-   *
-   * <pre>
-   * Indicates the address was matched to PBSA record.
-   * Returns a single character.
-   *
-   * * `Y`: The address was matched to PBSA record.
-   * * `N`: The address was not matched to PBSA record.
-   * </pre>
-   *
-   * <code>string dpv_pbsa = 35;</code>
-   *
-   * @return The bytes for dpvPbsa.
-   */
-  com.google.protobuf.ByteString getDpvPbsaBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-   * Returns a single character.
-   *
-   * * `Y`: The door is not accessible.
-   * * `N`: No indication the door is not accessible.
-   * </pre>
-   *
-   * <code>string dpv_door_not_accessible = 36;</code>
-   *
-   * @return The dpvDoorNotAccessible.
-   */
-  java.lang.String getDpvDoorNotAccessible();
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-   * Returns a single character.
-   *
-   * * `Y`: The door is not accessible.
-   * * `N`: No indication the door is not accessible.
-   * </pre>
-   *
-   * <code>string dpv_door_not_accessible = 36;</code>
-   *
-   * @return The bytes for dpvDoorNotAccessible.
-   */
-  com.google.protobuf.ByteString getDpvDoorNotAccessibleBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that more than one DPV return code is valid for the address.
-   * Returns a single character.
-   *
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * `N`: Primary and any secondary number information failed to
-   * DPV confirm.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present by not confirmed,  or a single
-   * trailing alpha on a primary number was dropped to make a DPV match and
-   * secondary information required.
-   * * `D`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was missing.
-   * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-   * USPS delivery is not provided.
-   * </pre>
-   *
-   * <code>string dpv_enhanced_delivery_code = 37;</code>
-   *
-   * @return The dpvEnhancedDeliveryCode.
-   */
-  java.lang.String getDpvEnhancedDeliveryCode();
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that more than one DPV return code is valid for the address.
-   * Returns a single character.
-   *
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * `N`: Primary and any secondary number information failed to
-   * DPV confirm.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present by not confirmed,  or a single
-   * trailing alpha on a primary number was dropped to make a DPV match and
-   * secondary information required.
-   * * `D`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was missing.
-   * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-   * USPS delivery is not provided.
-   * </pre>
-   *
-   * <code>string dpv_enhanced_delivery_code = 37;</code>
-   *
-   * @return The bytes for dpvEnhancedDeliveryCode.
-   */
-  com.google.protobuf.ByteString getDpvEnhancedDeliveryCodeBytes();
 
   /**
    *

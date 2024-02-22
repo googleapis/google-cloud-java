@@ -402,45 +402,4 @@ public interface SearchTextRequestOrBuilder
    */
   com.google.maps.places.v1.SearchTextRequest.LocationRestrictionOrBuilder
       getLocationRestrictionOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Set the searchable EV options of a place search request.
-   * </pre>
-   *
-   * <code>
-   * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the evOptions field is set.
-   */
-  boolean hasEvOptions();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Set the searchable EV options of a place search request.
-   * </pre>
-   *
-   * <code>
-   * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The evOptions.
-   */
-  com.google.maps.places.v1.SearchTextRequest.EVOptions getEvOptions();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Set the searchable EV options of a place search request.
-   * </pre>
-   *
-   * <code>
-   * .google.maps.places.v1.SearchTextRequest.EVOptions ev_options = 15 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder getEvOptionsOrBuilder();
 }

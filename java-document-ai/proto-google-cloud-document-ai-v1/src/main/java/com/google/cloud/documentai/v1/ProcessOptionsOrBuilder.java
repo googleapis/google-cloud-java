@@ -122,8 +122,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`.
-   * Returns error if set on other processor types.
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
+   * processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.OcrConfig ocr_config = 1;</code>
@@ -135,8 +135,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`.
-   * Returns error if set on other processor types.
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
+   * processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.OcrConfig ocr_config = 1;</code>
@@ -148,66 +148,13 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`.
-   * Returns error if set on other processor types.
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
+   * processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.OcrConfig ocr_config = 1;</code>
    */
   com.google.cloud.documentai.v1.OcrConfigOrBuilder getOcrConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Override the schema of the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
-   * return an Invalid Argument error if this field is set when the underlying
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't
-   * support schema override.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the schemaOverride field is set.
-   */
-  boolean hasSchemaOverride();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Override the schema of the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
-   * return an Invalid Argument error if this field is set when the underlying
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't
-   * support schema override.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The schemaOverride.
-   */
-  com.google.cloud.documentai.v1.DocumentSchema getSchemaOverride();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Override the schema of the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
-   * return an Invalid Argument error if this field is set when the underlying
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't
-   * support schema override.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getSchemaOverrideOrBuilder();
 
   com.google.cloud.documentai.v1.ProcessOptions.PageRangeCase getPageRangeCase();
 }

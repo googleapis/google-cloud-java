@@ -49,13 +49,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     dpvCmra_ = "";
     dpvVacant_ = "";
     dpvNoStat_ = "";
-    dpvDrop_ = "";
-    dpvThrowback_ = "";
-    dpvNonDeliveryDays_ = "";
-    dpvNoSecureLocation_ = "";
-    dpvPbsa_ = "";
-    dpvDoorNotAccessible_ = "";
-    dpvEnhancedDeliveryCode_ = "";
     carrierRoute_ = "";
     carrierRouteIndicator_ = "";
     postOfficeCity_ = "";
@@ -263,18 +256,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The possible values for DPV confirmation. Returns a single character or
-   * returns no value.
+   * The possible values for DPV confirmation. Returns a single character.
    *
+   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
    * * `N`: Primary and any secondary number information failed to
    * DPV confirm.
+   * * `S`: Address was DPV confirmed for the primary number only, and the
+   * secondary number information was present by not confirmed.
    * * `D`: Address was DPV confirmed for the primary number only, and the
    * secondary number information was missing.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present but not confirmed.
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * Empty: If the response does not contain a `dpv_confirmation` value, the
-   * address was not submitted for DPV confirmation.
    * </pre>
    *
    * <code>string dpv_confirmation = 4;</code>
@@ -297,18 +287,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The possible values for DPV confirmation. Returns a single character or
-   * returns no value.
+   * The possible values for DPV confirmation. Returns a single character.
    *
+   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
    * * `N`: Primary and any secondary number information failed to
    * DPV confirm.
+   * * `S`: Address was DPV confirmed for the primary number only, and the
+   * secondary number information was present by not confirmed.
    * * `D`: Address was DPV confirmed for the primary number only, and the
    * secondary number information was missing.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present but not confirmed.
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * Empty: If the response does not contain a `dpv_confirmation` value, the
-   * address was not submitted for DPV confirmation.
    * </pre>
    *
    * <code>string dpv_confirmation = 4;</code>
@@ -342,12 +329,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    * * `AA`: Input address matched to the ZIP+4 file
    * * `A1`: Input address was not matched to the ZIP+4 file
    * * `BB`: Matched to DPV (all components)
-   * * `CC`: Secondary number not matched and not required
-   * * `C1`: Secondary number not matched but required
+   * * `CC`: Secondary number not matched (present but invalid)
    * * `N1`: High-rise address missing secondary number
    * * `M1`: Primary number missing
    * * `M3`: Primary number invalid
-   * * `P1`: Input address PO, RR or HC box number missing
+   * * `P1`: Input address RR or HC box number missing
    * * `P3`: Input address PO, RR, or HC Box number invalid
    * * `F1`: Input address matched to a military address
    * * `G1`: Input address matched to a general delivery address
@@ -356,8 +342,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    * * `RR`: DPV confirmed address with PMB information
    * * `R1`: DPV confirmed address without PMB information
    * * `R7`: Carrier Route R777 or R779 record
-   * * `IA`: Informed Address identified
-   * * `TA`: Primary number matched by dropping a trailing alpha
    * </pre>
    *
    * <code>string dpv_footnote = 5;</code>
@@ -386,12 +370,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    * * `AA`: Input address matched to the ZIP+4 file
    * * `A1`: Input address was not matched to the ZIP+4 file
    * * `BB`: Matched to DPV (all components)
-   * * `CC`: Secondary number not matched and not required
-   * * `C1`: Secondary number not matched but required
+   * * `CC`: Secondary number not matched (present but invalid)
    * * `N1`: High-rise address missing secondary number
    * * `M1`: Primary number missing
    * * `M3`: Primary number invalid
-   * * `P1`: Input address PO, RR or HC box number missing
+   * * `P1`: Input address RR or HC box number missing
    * * `P3`: Input address PO, RR, or HC Box number invalid
    * * `F1`: Input address matched to a military address
    * * `G1`: Input address matched to a general delivery address
@@ -400,8 +383,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    * * `RR`: DPV confirmed address with PMB information
    * * `R1`: DPV confirmed address without PMB information
    * * `R7`: Carrier Route R777 or R779 record
-   * * `IA`: Informed Address identified
-   * * `TA`: Primary number matched by dropping a trailing alpha
    * </pre>
    *
    * <code>string dpv_footnote = 5;</code>
@@ -594,498 +575,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       dpvNoStat_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_NO_STAT_REASON_CODE_FIELD_NUMBER = 29;
-  private int dpvNoStatReasonCode_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * Indicates the NoStat type. Returns a reason code as int.
-   *
-   * * `1`: IDA (Internal Drop Address) – Addresses that do not receive mail
-   * directly from the USPS but are delivered to a drop address that services
-   * them.
-   * * `2`: CDS - Addresses that have not yet become deliverable. For example, a
-   * new subdivision where lots and primary numbers have been determined, but no
-   * structure exists yet for occupancy.
-   * * `3`: Collision - Addresses that do not actually DPV confirm.
-   * * `4`: CMZ (College, Military and Other Types) - ZIP + 4 records USPS has
-   * incorporated into the data.
-   * * `5`: Regular - Indicates addresses not receiving delivery and the
-   * addresses are not counted as possible deliveries.
-   * * `6`: Secondary Required - The address requires secondary information.
-   * </pre>
-   *
-   * <code>int32 dpv_no_stat_reason_code = 29;</code>
-   *
-   * @return The dpvNoStatReasonCode.
-   */
-  @java.lang.Override
-  public int getDpvNoStatReasonCode() {
-    return dpvNoStatReasonCode_;
-  }
-
-  public static final int DPV_DROP_FIELD_NUMBER = 30;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvDrop_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail is delivered to a single receptable at a site.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is delivered to a single receptable at a site.
-   * * `N`: The mail is not delivered to a single receptable at a site.
-   * </pre>
-   *
-   * <code>string dpv_drop = 30;</code>
-   *
-   * @return The dpvDrop.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvDrop() {
-    java.lang.Object ref = dpvDrop_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvDrop_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail is delivered to a single receptable at a site.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is delivered to a single receptable at a site.
-   * * `N`: The mail is not delivered to a single receptable at a site.
-   * </pre>
-   *
-   * <code>string dpv_drop = 30;</code>
-   *
-   * @return The bytes for dpvDrop.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvDropBytes() {
-    java.lang.Object ref = dpvDrop_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvDrop_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_THROWBACK_FIELD_NUMBER = 31;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvThrowback_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that mail is not delivered to the street address.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is not delivered to the street address.
-   * * `N`: The mail is delivered to the street address.
-   * </pre>
-   *
-   * <code>string dpv_throwback = 31;</code>
-   *
-   * @return The dpvThrowback.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvThrowback() {
-    java.lang.Object ref = dpvThrowback_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvThrowback_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that mail is not delivered to the street address.
-   * Returns a single character.
-   *
-   * * `Y`: The mail is not delivered to the street address.
-   * * `N`: The mail is delivered to the street address.
-   * </pre>
-   *
-   * <code>string dpv_throwback = 31;</code>
-   *
-   * @return The bytes for dpvThrowback.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvThrowbackBytes() {
-    java.lang.Object ref = dpvThrowback_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvThrowback_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_NON_DELIVERY_DAYS_FIELD_NUMBER = 32;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvNonDeliveryDays_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail delivery is not performed every day of the week.
-   * Returns a single character.
-   *
-   * * `Y`: The mail delivery is not performed every day of the week.
-   * * `N`: No indication the mail delivery is not performed every day of the
-   * week.
-   * </pre>
-   *
-   * <code>string dpv_non_delivery_days = 32;</code>
-   *
-   * @return The dpvNonDeliveryDays.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvNonDeliveryDays() {
-    java.lang.Object ref = dpvNonDeliveryDays_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvNonDeliveryDays_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates mail delivery is not performed every day of the week.
-   * Returns a single character.
-   *
-   * * `Y`: The mail delivery is not performed every day of the week.
-   * * `N`: No indication the mail delivery is not performed every day of the
-   * week.
-   * </pre>
-   *
-   * <code>string dpv_non_delivery_days = 32;</code>
-   *
-   * @return The bytes for dpvNonDeliveryDays.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvNonDeliveryDaysBytes() {
-    java.lang.Object ref = dpvNonDeliveryDays_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvNonDeliveryDays_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_NON_DELIVERY_DAYS_VALUES_FIELD_NUMBER = 33;
-  private int dpvNonDeliveryDaysValues_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * Integer identifying non-delivery days. It can be interrogated using bit
-   * flags:
-   * 0x40 – Sunday is a non-delivery day
-   * 0x20 – Monday is a non-delivery day
-   * 0x10 – Tuesday is a non-delivery day
-   * 0x08 – Wednesday is a non-delivery day
-   * 0x04 – Thursday is a non-delivery day
-   * 0x02 – Friday is a non-delivery day
-   * 0x01 – Saturday is a non-delivery day
-   * </pre>
-   *
-   * <code>int32 dpv_non_delivery_days_values = 33;</code>
-   *
-   * @return The dpvNonDeliveryDaysValues.
-   */
-  @java.lang.Override
-  public int getDpvNonDeliveryDaysValues() {
-    return dpvNonDeliveryDaysValues_;
-  }
-
-  public static final int DPV_NO_SECURE_LOCATION_FIELD_NUMBER = 34;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvNoSecureLocation_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates door is accessible, but package will not be left due to
-   * security concerns.
-   * Returns a single character.
-   *
-   * * `Y`: The package will not be left due to security concerns.
-   * * `N`: No indication the package will not be left due to security concerns.
-   * </pre>
-   *
-   * <code>string dpv_no_secure_location = 34;</code>
-   *
-   * @return The dpvNoSecureLocation.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvNoSecureLocation() {
-    java.lang.Object ref = dpvNoSecureLocation_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvNoSecureLocation_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates door is accessible, but package will not be left due to
-   * security concerns.
-   * Returns a single character.
-   *
-   * * `Y`: The package will not be left due to security concerns.
-   * * `N`: No indication the package will not be left due to security concerns.
-   * </pre>
-   *
-   * <code>string dpv_no_secure_location = 34;</code>
-   *
-   * @return The bytes for dpvNoSecureLocation.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvNoSecureLocationBytes() {
-    java.lang.Object ref = dpvNoSecureLocation_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvNoSecureLocation_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_PBSA_FIELD_NUMBER = 35;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvPbsa_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Indicates the address was matched to PBSA record.
-   * Returns a single character.
-   *
-   * * `Y`: The address was matched to PBSA record.
-   * * `N`: The address was not matched to PBSA record.
-   * </pre>
-   *
-   * <code>string dpv_pbsa = 35;</code>
-   *
-   * @return The dpvPbsa.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvPbsa() {
-    java.lang.Object ref = dpvPbsa_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvPbsa_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Indicates the address was matched to PBSA record.
-   * Returns a single character.
-   *
-   * * `Y`: The address was matched to PBSA record.
-   * * `N`: The address was not matched to PBSA record.
-   * </pre>
-   *
-   * <code>string dpv_pbsa = 35;</code>
-   *
-   * @return The bytes for dpvPbsa.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvPbsaBytes() {
-    java.lang.Object ref = dpvPbsa_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvPbsa_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_DOOR_NOT_ACCESSIBLE_FIELD_NUMBER = 36;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvDoorNotAccessible_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-   * Returns a single character.
-   *
-   * * `Y`: The door is not accessible.
-   * * `N`: No indication the door is not accessible.
-   * </pre>
-   *
-   * <code>string dpv_door_not_accessible = 36;</code>
-   *
-   * @return The dpvDoorNotAccessible.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvDoorNotAccessible() {
-    java.lang.Object ref = dpvDoorNotAccessible_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvDoorNotAccessible_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-   * Returns a single character.
-   *
-   * * `Y`: The door is not accessible.
-   * * `N`: No indication the door is not accessible.
-   * </pre>
-   *
-   * <code>string dpv_door_not_accessible = 36;</code>
-   *
-   * @return The bytes for dpvDoorNotAccessible.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvDoorNotAccessibleBytes() {
-    java.lang.Object ref = dpvDoorNotAccessible_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvDoorNotAccessible_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DPV_ENHANCED_DELIVERY_CODE_FIELD_NUMBER = 37;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object dpvEnhancedDeliveryCode_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that more than one DPV return code is valid for the address.
-   * Returns a single character.
-   *
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * `N`: Primary and any secondary number information failed to
-   * DPV confirm.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present by not confirmed,  or a single
-   * trailing alpha on a primary number was dropped to make a DPV match and
-   * secondary information required.
-   * * `D`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was missing.
-   * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-   * USPS delivery is not provided.
-   * </pre>
-   *
-   * <code>string dpv_enhanced_delivery_code = 37;</code>
-   *
-   * @return The dpvEnhancedDeliveryCode.
-   */
-  @java.lang.Override
-  public java.lang.String getDpvEnhancedDeliveryCode() {
-    java.lang.Object ref = dpvEnhancedDeliveryCode_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dpvEnhancedDeliveryCode_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that more than one DPV return code is valid for the address.
-   * Returns a single character.
-   *
-   * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-   * * `N`: Primary and any secondary number information failed to
-   * DPV confirm.
-   * * `S`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was present by not confirmed,  or a single
-   * trailing alpha on a primary number was dropped to make a DPV match and
-   * secondary information required.
-   * * `D`: Address was DPV confirmed for the primary number only, and the
-   * secondary number information was missing.
-   * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-   * USPS delivery is not provided.
-   * </pre>
-   *
-   * <code>string dpv_enhanced_delivery_code = 37;</code>
-   *
-   * @return The bytes for dpvEnhancedDeliveryCode.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDpvEnhancedDeliveryCodeBytes() {
-    java.lang.Object ref = dpvEnhancedDeliveryCode_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      dpvEnhancedDeliveryCode_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2140,33 +1629,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     if (cassProcessed_ != false) {
       output.writeBool(28, cassProcessed_);
     }
-    if (dpvNoStatReasonCode_ != 0) {
-      output.writeInt32(29, dpvNoStatReasonCode_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvDrop_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, dpvDrop_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvThrowback_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 31, dpvThrowback_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvNonDeliveryDays_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 32, dpvNonDeliveryDays_);
-    }
-    if (dpvNonDeliveryDaysValues_ != 0) {
-      output.writeInt32(33, dpvNonDeliveryDaysValues_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvNoSecureLocation_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 34, dpvNoSecureLocation_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvPbsa_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 35, dpvPbsa_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvDoorNotAccessible_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, dpvDoorNotAccessible_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvEnhancedDeliveryCode_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 37, dpvEnhancedDeliveryCode_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2260,34 +1722,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     if (cassProcessed_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, cassProcessed_);
     }
-    if (dpvNoStatReasonCode_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(29, dpvNoStatReasonCode_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvDrop_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, dpvDrop_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvThrowback_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, dpvThrowback_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvNonDeliveryDays_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(32, dpvNonDeliveryDays_);
-    }
-    if (dpvNonDeliveryDaysValues_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(33, dpvNonDeliveryDaysValues_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvNoSecureLocation_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, dpvNoSecureLocation_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvPbsa_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(35, dpvPbsa_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvDoorNotAccessible_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, dpvDoorNotAccessible_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dpvEnhancedDeliveryCode_)) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(37, dpvEnhancedDeliveryCode_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2315,15 +1749,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     if (!getDpvCmra().equals(other.getDpvCmra())) return false;
     if (!getDpvVacant().equals(other.getDpvVacant())) return false;
     if (!getDpvNoStat().equals(other.getDpvNoStat())) return false;
-    if (getDpvNoStatReasonCode() != other.getDpvNoStatReasonCode()) return false;
-    if (!getDpvDrop().equals(other.getDpvDrop())) return false;
-    if (!getDpvThrowback().equals(other.getDpvThrowback())) return false;
-    if (!getDpvNonDeliveryDays().equals(other.getDpvNonDeliveryDays())) return false;
-    if (getDpvNonDeliveryDaysValues() != other.getDpvNonDeliveryDaysValues()) return false;
-    if (!getDpvNoSecureLocation().equals(other.getDpvNoSecureLocation())) return false;
-    if (!getDpvPbsa().equals(other.getDpvPbsa())) return false;
-    if (!getDpvDoorNotAccessible().equals(other.getDpvDoorNotAccessible())) return false;
-    if (!getDpvEnhancedDeliveryCode().equals(other.getDpvEnhancedDeliveryCode())) return false;
     if (!getCarrierRoute().equals(other.getCarrierRoute())) return false;
     if (!getCarrierRouteIndicator().equals(other.getCarrierRouteIndicator())) return false;
     if (getEwsNoMatch() != other.getEwsNoMatch()) return false;
@@ -2373,24 +1798,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDpvVacant().hashCode();
     hash = (37 * hash) + DPV_NO_STAT_FIELD_NUMBER;
     hash = (53 * hash) + getDpvNoStat().hashCode();
-    hash = (37 * hash) + DPV_NO_STAT_REASON_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvNoStatReasonCode();
-    hash = (37 * hash) + DPV_DROP_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvDrop().hashCode();
-    hash = (37 * hash) + DPV_THROWBACK_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvThrowback().hashCode();
-    hash = (37 * hash) + DPV_NON_DELIVERY_DAYS_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvNonDeliveryDays().hashCode();
-    hash = (37 * hash) + DPV_NON_DELIVERY_DAYS_VALUES_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvNonDeliveryDaysValues();
-    hash = (37 * hash) + DPV_NO_SECURE_LOCATION_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvNoSecureLocation().hashCode();
-    hash = (37 * hash) + DPV_PBSA_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvPbsa().hashCode();
-    hash = (37 * hash) + DPV_DOOR_NOT_ACCESSIBLE_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvDoorNotAccessible().hashCode();
-    hash = (37 * hash) + DPV_ENHANCED_DELIVERY_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getDpvEnhancedDeliveryCode().hashCode();
     hash = (37 * hash) + CARRIER_ROUTE_FIELD_NUMBER;
     hash = (53 * hash) + getCarrierRoute().hashCode();
     hash = (37 * hash) + CARRIER_ROUTE_INDICATOR_FIELD_NUMBER;
@@ -2582,7 +1989,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      bitField1_ = 0;
       standardizedAddress_ = null;
       if (standardizedAddressBuilder_ != null) {
         standardizedAddressBuilder_.dispose();
@@ -2595,15 +2001,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       dpvCmra_ = "";
       dpvVacant_ = "";
       dpvNoStat_ = "";
-      dpvNoStatReasonCode_ = 0;
-      dpvDrop_ = "";
-      dpvThrowback_ = "";
-      dpvNonDeliveryDays_ = "";
-      dpvNonDeliveryDaysValues_ = 0;
-      dpvNoSecureLocation_ = "";
-      dpvPbsa_ = "";
-      dpvDoorNotAccessible_ = "";
-      dpvEnhancedDeliveryCode_ = "";
       carrierRoute_ = "";
       carrierRouteIndicator_ = "";
       ewsNoMatch_ = false;
@@ -2654,9 +2051,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
-      if (bitField1_ != 0) {
-        buildPartial1(result);
-      }
       onBuilt();
       return result;
     }
@@ -2693,97 +2087,66 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         result.dpvNoStat_ = dpvNoStat_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.dpvNoStatReasonCode_ = dpvNoStatReasonCode_;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.dpvDrop_ = dpvDrop_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.dpvThrowback_ = dpvThrowback_;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.dpvNonDeliveryDays_ = dpvNonDeliveryDays_;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.dpvNonDeliveryDaysValues_ = dpvNonDeliveryDaysValues_;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.dpvNoSecureLocation_ = dpvNoSecureLocation_;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.dpvPbsa_ = dpvPbsa_;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.dpvDoorNotAccessible_ = dpvDoorNotAccessible_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.dpvEnhancedDeliveryCode_ = dpvEnhancedDeliveryCode_;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.carrierRoute_ = carrierRoute_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.carrierRouteIndicator_ = carrierRouteIndicator_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.ewsNoMatch_ = ewsNoMatch_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.postOfficeCity_ = postOfficeCity_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.postOfficeState_ = postOfficeState_;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.abbreviatedCity_ = abbreviatedCity_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.fipsCountyCode_ = fipsCountyCode_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.county_ = county_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.elotNumber_ = elotNumber_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.elotFlag_ = elotFlag_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.lacsLinkReturnCode_ = lacsLinkReturnCode_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.lacsLinkIndicator_ = lacsLinkIndicator_;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.poBoxOnlyPostalCode_ = poBoxOnlyPostalCode_;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.suitelinkFootnote_ = suitelinkFootnote_;
       }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.pmbDesignator_ = pmbDesignator_;
       }
-      result.bitField0_ |= to_bitField0_;
-    }
-
-    private void buildPartial1(com.google.maps.addressvalidation.v1.UspsData result) {
-      int from_bitField1_ = bitField1_;
-      if (((from_bitField1_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.pmbNumber_ = pmbNumber_;
       }
-      if (((from_bitField1_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.addressRecordType_ = addressRecordType_;
       }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.defaultAddress_ = defaultAddress_;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.errorMessage_ = errorMessage_;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.cassProcessed_ = cassProcessed_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2869,55 +2232,14 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
-      if (other.getDpvNoStatReasonCode() != 0) {
-        setDpvNoStatReasonCode(other.getDpvNoStatReasonCode());
-      }
-      if (!other.getDpvDrop().isEmpty()) {
-        dpvDrop_ = other.dpvDrop_;
-        bitField0_ |= 0x00000200;
-        onChanged();
-      }
-      if (!other.getDpvThrowback().isEmpty()) {
-        dpvThrowback_ = other.dpvThrowback_;
-        bitField0_ |= 0x00000400;
-        onChanged();
-      }
-      if (!other.getDpvNonDeliveryDays().isEmpty()) {
-        dpvNonDeliveryDays_ = other.dpvNonDeliveryDays_;
-        bitField0_ |= 0x00000800;
-        onChanged();
-      }
-      if (other.getDpvNonDeliveryDaysValues() != 0) {
-        setDpvNonDeliveryDaysValues(other.getDpvNonDeliveryDaysValues());
-      }
-      if (!other.getDpvNoSecureLocation().isEmpty()) {
-        dpvNoSecureLocation_ = other.dpvNoSecureLocation_;
-        bitField0_ |= 0x00002000;
-        onChanged();
-      }
-      if (!other.getDpvPbsa().isEmpty()) {
-        dpvPbsa_ = other.dpvPbsa_;
-        bitField0_ |= 0x00004000;
-        onChanged();
-      }
-      if (!other.getDpvDoorNotAccessible().isEmpty()) {
-        dpvDoorNotAccessible_ = other.dpvDoorNotAccessible_;
-        bitField0_ |= 0x00008000;
-        onChanged();
-      }
-      if (!other.getDpvEnhancedDeliveryCode().isEmpty()) {
-        dpvEnhancedDeliveryCode_ = other.dpvEnhancedDeliveryCode_;
-        bitField0_ |= 0x00010000;
-        onChanged();
-      }
       if (!other.getCarrierRoute().isEmpty()) {
         carrierRoute_ = other.carrierRoute_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getCarrierRouteIndicator().isEmpty()) {
         carrierRouteIndicator_ = other.carrierRouteIndicator_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.getEwsNoMatch() != false) {
@@ -2925,47 +2247,47 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPostOfficeCity().isEmpty()) {
         postOfficeCity_ = other.postOfficeCity_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getPostOfficeState().isEmpty()) {
         postOfficeState_ = other.postOfficeState_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getAbbreviatedCity().isEmpty()) {
         abbreviatedCity_ = other.abbreviatedCity_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getFipsCountyCode().isEmpty()) {
         fipsCountyCode_ = other.fipsCountyCode_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getCounty().isEmpty()) {
         county_ = other.county_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (!other.getElotNumber().isEmpty()) {
         elotNumber_ = other.elotNumber_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getElotFlag().isEmpty()) {
         elotFlag_ = other.elotFlag_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getLacsLinkReturnCode().isEmpty()) {
         lacsLinkReturnCode_ = other.lacsLinkReturnCode_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.getLacsLinkIndicator().isEmpty()) {
         lacsLinkIndicator_ = other.lacsLinkIndicator_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.getPoBoxOnlyPostalCode() != false) {
@@ -2973,22 +2295,22 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSuitelinkFootnote().isEmpty()) {
         suitelinkFootnote_ = other.suitelinkFootnote_;
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (!other.getPmbDesignator().isEmpty()) {
         pmbDesignator_ = other.pmbDesignator_;
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (!other.getPmbNumber().isEmpty()) {
         pmbNumber_ = other.pmbNumber_;
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (!other.getAddressRecordType().isEmpty()) {
         addressRecordType_ = other.addressRecordType_;
-        bitField1_ |= 0x00000002;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.getDefaultAddress() != false) {
@@ -2996,7 +2318,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
-        bitField1_ |= 0x00000008;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.getCassProcessed() != false) {
@@ -3080,177 +2402,123 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 carrierRoute_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 carrierRouteIndicator_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 ewsNoMatch_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 postOfficeCity_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 postOfficeState_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 abbreviatedCity_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 fipsCountyCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 county_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
               {
                 elotNumber_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
               {
                 elotFlag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             case 154:
               {
                 lacsLinkReturnCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             case 162:
               {
                 lacsLinkIndicator_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
             case 168:
               {
                 poBoxOnlyPostalCode_ = input.readBool();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 168
             case 178:
               {
                 suitelinkFootnote_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 186:
               {
                 pmbDesignator_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 186
             case 194:
               {
                 pmbNumber_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 194
             case 202:
               {
                 addressRecordType_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 202
             case 208:
               {
                 defaultAddress_ = input.readBool();
-                bitField1_ |= 0x00000004;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 208
             case 218:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000008;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 218
             case 224:
               {
                 cassProcessed_ = input.readBool();
-                bitField1_ |= 0x00000010;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 224
-            case 232:
-              {
-                dpvNoStatReasonCode_ = input.readInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 232
-            case 242:
-              {
-                dpvDrop_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 242
-            case 250:
-              {
-                dpvThrowback_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 250
-            case 258:
-              {
-                dpvNonDeliveryDays_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 258
-            case 264:
-              {
-                dpvNonDeliveryDaysValues_ = input.readInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 264
-            case 274:
-              {
-                dpvNoSecureLocation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 274
-            case 282:
-              {
-                dpvPbsa_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 282
-            case 290:
-              {
-                dpvDoorNotAccessible_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 290
-            case 298:
-              {
-                dpvEnhancedDeliveryCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3269,7 +2537,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
-    private int bitField1_;
 
     private com.google.maps.addressvalidation.v1.UspsAddress standardizedAddress_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3693,18 +2960,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The possible values for DPV confirmation. Returns a single character or
-     * returns no value.
+     * The possible values for DPV confirmation. Returns a single character.
      *
+     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
      * * `N`: Primary and any secondary number information failed to
      * DPV confirm.
+     * * `S`: Address was DPV confirmed for the primary number only, and the
+     * secondary number information was present by not confirmed.
      * * `D`: Address was DPV confirmed for the primary number only, and the
      * secondary number information was missing.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present but not confirmed.
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * Empty: If the response does not contain a `dpv_confirmation` value, the
-     * address was not submitted for DPV confirmation.
      * </pre>
      *
      * <code>string dpv_confirmation = 4;</code>
@@ -3726,18 +2990,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The possible values for DPV confirmation. Returns a single character or
-     * returns no value.
+     * The possible values for DPV confirmation. Returns a single character.
      *
+     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
      * * `N`: Primary and any secondary number information failed to
      * DPV confirm.
+     * * `S`: Address was DPV confirmed for the primary number only, and the
+     * secondary number information was present by not confirmed.
      * * `D`: Address was DPV confirmed for the primary number only, and the
      * secondary number information was missing.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present but not confirmed.
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * Empty: If the response does not contain a `dpv_confirmation` value, the
-     * address was not submitted for DPV confirmation.
      * </pre>
      *
      * <code>string dpv_confirmation = 4;</code>
@@ -3759,18 +3020,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The possible values for DPV confirmation. Returns a single character or
-     * returns no value.
+     * The possible values for DPV confirmation. Returns a single character.
      *
+     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
      * * `N`: Primary and any secondary number information failed to
      * DPV confirm.
+     * * `S`: Address was DPV confirmed for the primary number only, and the
+     * secondary number information was present by not confirmed.
      * * `D`: Address was DPV confirmed for the primary number only, and the
      * secondary number information was missing.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present but not confirmed.
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * Empty: If the response does not contain a `dpv_confirmation` value, the
-     * address was not submitted for DPV confirmation.
      * </pre>
      *
      * <code>string dpv_confirmation = 4;</code>
@@ -3791,18 +3049,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The possible values for DPV confirmation. Returns a single character or
-     * returns no value.
+     * The possible values for DPV confirmation. Returns a single character.
      *
+     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
      * * `N`: Primary and any secondary number information failed to
      * DPV confirm.
+     * * `S`: Address was DPV confirmed for the primary number only, and the
+     * secondary number information was present by not confirmed.
      * * `D`: Address was DPV confirmed for the primary number only, and the
      * secondary number information was missing.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present but not confirmed.
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * Empty: If the response does not contain a `dpv_confirmation` value, the
-     * address was not submitted for DPV confirmation.
      * </pre>
      *
      * <code>string dpv_confirmation = 4;</code>
@@ -3819,18 +3074,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The possible values for DPV confirmation. Returns a single character or
-     * returns no value.
+     * The possible values for DPV confirmation. Returns a single character.
      *
+     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
      * * `N`: Primary and any secondary number information failed to
      * DPV confirm.
+     * * `S`: Address was DPV confirmed for the primary number only, and the
+     * secondary number information was present by not confirmed.
      * * `D`: Address was DPV confirmed for the primary number only, and the
      * secondary number information was missing.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present but not confirmed.
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * Empty: If the response does not contain a `dpv_confirmation` value, the
-     * address was not submitted for DPV confirmation.
      * </pre>
      *
      * <code>string dpv_confirmation = 4;</code>
@@ -3860,12 +3112,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `AA`: Input address matched to the ZIP+4 file
      * * `A1`: Input address was not matched to the ZIP+4 file
      * * `BB`: Matched to DPV (all components)
-     * * `CC`: Secondary number not matched and not required
-     * * `C1`: Secondary number not matched but required
+     * * `CC`: Secondary number not matched (present but invalid)
      * * `N1`: High-rise address missing secondary number
      * * `M1`: Primary number missing
      * * `M3`: Primary number invalid
-     * * `P1`: Input address PO, RR or HC box number missing
+     * * `P1`: Input address RR or HC box number missing
      * * `P3`: Input address PO, RR, or HC Box number invalid
      * * `F1`: Input address matched to a military address
      * * `G1`: Input address matched to a general delivery address
@@ -3874,8 +3125,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `RR`: DPV confirmed address with PMB information
      * * `R1`: DPV confirmed address without PMB information
      * * `R7`: Carrier Route R777 or R779 record
-     * * `IA`: Informed Address identified
-     * * `TA`: Primary number matched by dropping a trailing alpha
      * </pre>
      *
      * <code>string dpv_footnote = 5;</code>
@@ -3903,12 +3152,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `AA`: Input address matched to the ZIP+4 file
      * * `A1`: Input address was not matched to the ZIP+4 file
      * * `BB`: Matched to DPV (all components)
-     * * `CC`: Secondary number not matched and not required
-     * * `C1`: Secondary number not matched but required
+     * * `CC`: Secondary number not matched (present but invalid)
      * * `N1`: High-rise address missing secondary number
      * * `M1`: Primary number missing
      * * `M3`: Primary number invalid
-     * * `P1`: Input address PO, RR or HC box number missing
+     * * `P1`: Input address RR or HC box number missing
      * * `P3`: Input address PO, RR, or HC Box number invalid
      * * `F1`: Input address matched to a military address
      * * `G1`: Input address matched to a general delivery address
@@ -3917,8 +3165,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `RR`: DPV confirmed address with PMB information
      * * `R1`: DPV confirmed address without PMB information
      * * `R7`: Carrier Route R777 or R779 record
-     * * `IA`: Informed Address identified
-     * * `TA`: Primary number matched by dropping a trailing alpha
      * </pre>
      *
      * <code>string dpv_footnote = 5;</code>
@@ -3946,12 +3192,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `AA`: Input address matched to the ZIP+4 file
      * * `A1`: Input address was not matched to the ZIP+4 file
      * * `BB`: Matched to DPV (all components)
-     * * `CC`: Secondary number not matched and not required
-     * * `C1`: Secondary number not matched but required
+     * * `CC`: Secondary number not matched (present but invalid)
      * * `N1`: High-rise address missing secondary number
      * * `M1`: Primary number missing
      * * `M3`: Primary number invalid
-     * * `P1`: Input address PO, RR or HC box number missing
+     * * `P1`: Input address RR or HC box number missing
      * * `P3`: Input address PO, RR, or HC Box number invalid
      * * `F1`: Input address matched to a military address
      * * `G1`: Input address matched to a general delivery address
@@ -3960,8 +3205,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `RR`: DPV confirmed address with PMB information
      * * `R1`: DPV confirmed address without PMB information
      * * `R7`: Carrier Route R777 or R779 record
-     * * `IA`: Informed Address identified
-     * * `TA`: Primary number matched by dropping a trailing alpha
      * </pre>
      *
      * <code>string dpv_footnote = 5;</code>
@@ -3988,12 +3231,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `AA`: Input address matched to the ZIP+4 file
      * * `A1`: Input address was not matched to the ZIP+4 file
      * * `BB`: Matched to DPV (all components)
-     * * `CC`: Secondary number not matched and not required
-     * * `C1`: Secondary number not matched but required
+     * * `CC`: Secondary number not matched (present but invalid)
      * * `N1`: High-rise address missing secondary number
      * * `M1`: Primary number missing
      * * `M3`: Primary number invalid
-     * * `P1`: Input address PO, RR or HC box number missing
+     * * `P1`: Input address RR or HC box number missing
      * * `P3`: Input address PO, RR, or HC Box number invalid
      * * `F1`: Input address matched to a military address
      * * `G1`: Input address matched to a general delivery address
@@ -4002,8 +3244,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `RR`: DPV confirmed address with PMB information
      * * `R1`: DPV confirmed address without PMB information
      * * `R7`: Carrier Route R777 or R779 record
-     * * `IA`: Informed Address identified
-     * * `TA`: Primary number matched by dropping a trailing alpha
      * </pre>
      *
      * <code>string dpv_footnote = 5;</code>
@@ -4026,12 +3266,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `AA`: Input address matched to the ZIP+4 file
      * * `A1`: Input address was not matched to the ZIP+4 file
      * * `BB`: Matched to DPV (all components)
-     * * `CC`: Secondary number not matched and not required
-     * * `C1`: Secondary number not matched but required
+     * * `CC`: Secondary number not matched (present but invalid)
      * * `N1`: High-rise address missing secondary number
      * * `M1`: Primary number missing
      * * `M3`: Primary number invalid
-     * * `P1`: Input address PO, RR or HC box number missing
+     * * `P1`: Input address RR or HC box number missing
      * * `P3`: Input address PO, RR, or HC Box number invalid
      * * `F1`: Input address matched to a military address
      * * `G1`: Input address matched to a general delivery address
@@ -4040,8 +3279,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * * `RR`: DPV confirmed address with PMB information
      * * `R1`: DPV confirmed address without PMB information
      * * `R7`: Carrier Route R777 or R779 record
-     * * `IA`: Informed Address identified
-     * * `TA`: Primary number matched by dropping a trailing alpha
      * </pre>
      *
      * <code>string dpv_footnote = 5;</code>
@@ -4443,1112 +3680,6 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int dpvNoStatReasonCode_;
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the NoStat type. Returns a reason code as int.
-     *
-     * * `1`: IDA (Internal Drop Address) – Addresses that do not receive mail
-     * directly from the USPS but are delivered to a drop address that services
-     * them.
-     * * `2`: CDS - Addresses that have not yet become deliverable. For example, a
-     * new subdivision where lots and primary numbers have been determined, but no
-     * structure exists yet for occupancy.
-     * * `3`: Collision - Addresses that do not actually DPV confirm.
-     * * `4`: CMZ (College, Military and Other Types) - ZIP + 4 records USPS has
-     * incorporated into the data.
-     * * `5`: Regular - Indicates addresses not receiving delivery and the
-     * addresses are not counted as possible deliveries.
-     * * `6`: Secondary Required - The address requires secondary information.
-     * </pre>
-     *
-     * <code>int32 dpv_no_stat_reason_code = 29;</code>
-     *
-     * @return The dpvNoStatReasonCode.
-     */
-    @java.lang.Override
-    public int getDpvNoStatReasonCode() {
-      return dpvNoStatReasonCode_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the NoStat type. Returns a reason code as int.
-     *
-     * * `1`: IDA (Internal Drop Address) – Addresses that do not receive mail
-     * directly from the USPS but are delivered to a drop address that services
-     * them.
-     * * `2`: CDS - Addresses that have not yet become deliverable. For example, a
-     * new subdivision where lots and primary numbers have been determined, but no
-     * structure exists yet for occupancy.
-     * * `3`: Collision - Addresses that do not actually DPV confirm.
-     * * `4`: CMZ (College, Military and Other Types) - ZIP + 4 records USPS has
-     * incorporated into the data.
-     * * `5`: Regular - Indicates addresses not receiving delivery and the
-     * addresses are not counted as possible deliveries.
-     * * `6`: Secondary Required - The address requires secondary information.
-     * </pre>
-     *
-     * <code>int32 dpv_no_stat_reason_code = 29;</code>
-     *
-     * @param value The dpvNoStatReasonCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvNoStatReasonCode(int value) {
-
-      dpvNoStatReasonCode_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the NoStat type. Returns a reason code as int.
-     *
-     * * `1`: IDA (Internal Drop Address) – Addresses that do not receive mail
-     * directly from the USPS but are delivered to a drop address that services
-     * them.
-     * * `2`: CDS - Addresses that have not yet become deliverable. For example, a
-     * new subdivision where lots and primary numbers have been determined, but no
-     * structure exists yet for occupancy.
-     * * `3`: Collision - Addresses that do not actually DPV confirm.
-     * * `4`: CMZ (College, Military and Other Types) - ZIP + 4 records USPS has
-     * incorporated into the data.
-     * * `5`: Regular - Indicates addresses not receiving delivery and the
-     * addresses are not counted as possible deliveries.
-     * * `6`: Secondary Required - The address requires secondary information.
-     * </pre>
-     *
-     * <code>int32 dpv_no_stat_reason_code = 29;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvNoStatReasonCode() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      dpvNoStatReasonCode_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvDrop_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail is delivered to a single receptable at a site.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is delivered to a single receptable at a site.
-     * * `N`: The mail is not delivered to a single receptable at a site.
-     * </pre>
-     *
-     * <code>string dpv_drop = 30;</code>
-     *
-     * @return The dpvDrop.
-     */
-    public java.lang.String getDpvDrop() {
-      java.lang.Object ref = dpvDrop_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvDrop_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail is delivered to a single receptable at a site.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is delivered to a single receptable at a site.
-     * * `N`: The mail is not delivered to a single receptable at a site.
-     * </pre>
-     *
-     * <code>string dpv_drop = 30;</code>
-     *
-     * @return The bytes for dpvDrop.
-     */
-    public com.google.protobuf.ByteString getDpvDropBytes() {
-      java.lang.Object ref = dpvDrop_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvDrop_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail is delivered to a single receptable at a site.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is delivered to a single receptable at a site.
-     * * `N`: The mail is not delivered to a single receptable at a site.
-     * </pre>
-     *
-     * <code>string dpv_drop = 30;</code>
-     *
-     * @param value The dpvDrop to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvDrop(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvDrop_ = value;
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail is delivered to a single receptable at a site.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is delivered to a single receptable at a site.
-     * * `N`: The mail is not delivered to a single receptable at a site.
-     * </pre>
-     *
-     * <code>string dpv_drop = 30;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvDrop() {
-      dpvDrop_ = getDefaultInstance().getDpvDrop();
-      bitField0_ = (bitField0_ & ~0x00000200);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail is delivered to a single receptable at a site.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is delivered to a single receptable at a site.
-     * * `N`: The mail is not delivered to a single receptable at a site.
-     * </pre>
-     *
-     * <code>string dpv_drop = 30;</code>
-     *
-     * @param value The bytes for dpvDrop to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvDropBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvDrop_ = value;
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvThrowback_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that mail is not delivered to the street address.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is not delivered to the street address.
-     * * `N`: The mail is delivered to the street address.
-     * </pre>
-     *
-     * <code>string dpv_throwback = 31;</code>
-     *
-     * @return The dpvThrowback.
-     */
-    public java.lang.String getDpvThrowback() {
-      java.lang.Object ref = dpvThrowback_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvThrowback_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that mail is not delivered to the street address.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is not delivered to the street address.
-     * * `N`: The mail is delivered to the street address.
-     * </pre>
-     *
-     * <code>string dpv_throwback = 31;</code>
-     *
-     * @return The bytes for dpvThrowback.
-     */
-    public com.google.protobuf.ByteString getDpvThrowbackBytes() {
-      java.lang.Object ref = dpvThrowback_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvThrowback_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that mail is not delivered to the street address.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is not delivered to the street address.
-     * * `N`: The mail is delivered to the street address.
-     * </pre>
-     *
-     * <code>string dpv_throwback = 31;</code>
-     *
-     * @param value The dpvThrowback to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvThrowback(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvThrowback_ = value;
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that mail is not delivered to the street address.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is not delivered to the street address.
-     * * `N`: The mail is delivered to the street address.
-     * </pre>
-     *
-     * <code>string dpv_throwback = 31;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvThrowback() {
-      dpvThrowback_ = getDefaultInstance().getDpvThrowback();
-      bitField0_ = (bitField0_ & ~0x00000400);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that mail is not delivered to the street address.
-     * Returns a single character.
-     *
-     * * `Y`: The mail is not delivered to the street address.
-     * * `N`: The mail is delivered to the street address.
-     * </pre>
-     *
-     * <code>string dpv_throwback = 31;</code>
-     *
-     * @param value The bytes for dpvThrowback to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvThrowbackBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvThrowback_ = value;
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvNonDeliveryDays_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail delivery is not performed every day of the week.
-     * Returns a single character.
-     *
-     * * `Y`: The mail delivery is not performed every day of the week.
-     * * `N`: No indication the mail delivery is not performed every day of the
-     * week.
-     * </pre>
-     *
-     * <code>string dpv_non_delivery_days = 32;</code>
-     *
-     * @return The dpvNonDeliveryDays.
-     */
-    public java.lang.String getDpvNonDeliveryDays() {
-      java.lang.Object ref = dpvNonDeliveryDays_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvNonDeliveryDays_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail delivery is not performed every day of the week.
-     * Returns a single character.
-     *
-     * * `Y`: The mail delivery is not performed every day of the week.
-     * * `N`: No indication the mail delivery is not performed every day of the
-     * week.
-     * </pre>
-     *
-     * <code>string dpv_non_delivery_days = 32;</code>
-     *
-     * @return The bytes for dpvNonDeliveryDays.
-     */
-    public com.google.protobuf.ByteString getDpvNonDeliveryDaysBytes() {
-      java.lang.Object ref = dpvNonDeliveryDays_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvNonDeliveryDays_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail delivery is not performed every day of the week.
-     * Returns a single character.
-     *
-     * * `Y`: The mail delivery is not performed every day of the week.
-     * * `N`: No indication the mail delivery is not performed every day of the
-     * week.
-     * </pre>
-     *
-     * <code>string dpv_non_delivery_days = 32;</code>
-     *
-     * @param value The dpvNonDeliveryDays to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvNonDeliveryDays(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvNonDeliveryDays_ = value;
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail delivery is not performed every day of the week.
-     * Returns a single character.
-     *
-     * * `Y`: The mail delivery is not performed every day of the week.
-     * * `N`: No indication the mail delivery is not performed every day of the
-     * week.
-     * </pre>
-     *
-     * <code>string dpv_non_delivery_days = 32;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvNonDeliveryDays() {
-      dpvNonDeliveryDays_ = getDefaultInstance().getDpvNonDeliveryDays();
-      bitField0_ = (bitField0_ & ~0x00000800);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates mail delivery is not performed every day of the week.
-     * Returns a single character.
-     *
-     * * `Y`: The mail delivery is not performed every day of the week.
-     * * `N`: No indication the mail delivery is not performed every day of the
-     * week.
-     * </pre>
-     *
-     * <code>string dpv_non_delivery_days = 32;</code>
-     *
-     * @param value The bytes for dpvNonDeliveryDays to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvNonDeliveryDaysBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvNonDeliveryDays_ = value;
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-
-    private int dpvNonDeliveryDaysValues_;
-    /**
-     *
-     *
-     * <pre>
-     * Integer identifying non-delivery days. It can be interrogated using bit
-     * flags:
-     * 0x40 – Sunday is a non-delivery day
-     * 0x20 – Monday is a non-delivery day
-     * 0x10 – Tuesday is a non-delivery day
-     * 0x08 – Wednesday is a non-delivery day
-     * 0x04 – Thursday is a non-delivery day
-     * 0x02 – Friday is a non-delivery day
-     * 0x01 – Saturday is a non-delivery day
-     * </pre>
-     *
-     * <code>int32 dpv_non_delivery_days_values = 33;</code>
-     *
-     * @return The dpvNonDeliveryDaysValues.
-     */
-    @java.lang.Override
-    public int getDpvNonDeliveryDaysValues() {
-      return dpvNonDeliveryDaysValues_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integer identifying non-delivery days. It can be interrogated using bit
-     * flags:
-     * 0x40 – Sunday is a non-delivery day
-     * 0x20 – Monday is a non-delivery day
-     * 0x10 – Tuesday is a non-delivery day
-     * 0x08 – Wednesday is a non-delivery day
-     * 0x04 – Thursday is a non-delivery day
-     * 0x02 – Friday is a non-delivery day
-     * 0x01 – Saturday is a non-delivery day
-     * </pre>
-     *
-     * <code>int32 dpv_non_delivery_days_values = 33;</code>
-     *
-     * @param value The dpvNonDeliveryDaysValues to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvNonDeliveryDaysValues(int value) {
-
-      dpvNonDeliveryDaysValues_ = value;
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integer identifying non-delivery days. It can be interrogated using bit
-     * flags:
-     * 0x40 – Sunday is a non-delivery day
-     * 0x20 – Monday is a non-delivery day
-     * 0x10 – Tuesday is a non-delivery day
-     * 0x08 – Wednesday is a non-delivery day
-     * 0x04 – Thursday is a non-delivery day
-     * 0x02 – Friday is a non-delivery day
-     * 0x01 – Saturday is a non-delivery day
-     * </pre>
-     *
-     * <code>int32 dpv_non_delivery_days_values = 33;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvNonDeliveryDaysValues() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      dpvNonDeliveryDaysValues_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvNoSecureLocation_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates door is accessible, but package will not be left due to
-     * security concerns.
-     * Returns a single character.
-     *
-     * * `Y`: The package will not be left due to security concerns.
-     * * `N`: No indication the package will not be left due to security concerns.
-     * </pre>
-     *
-     * <code>string dpv_no_secure_location = 34;</code>
-     *
-     * @return The dpvNoSecureLocation.
-     */
-    public java.lang.String getDpvNoSecureLocation() {
-      java.lang.Object ref = dpvNoSecureLocation_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvNoSecureLocation_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates door is accessible, but package will not be left due to
-     * security concerns.
-     * Returns a single character.
-     *
-     * * `Y`: The package will not be left due to security concerns.
-     * * `N`: No indication the package will not be left due to security concerns.
-     * </pre>
-     *
-     * <code>string dpv_no_secure_location = 34;</code>
-     *
-     * @return The bytes for dpvNoSecureLocation.
-     */
-    public com.google.protobuf.ByteString getDpvNoSecureLocationBytes() {
-      java.lang.Object ref = dpvNoSecureLocation_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvNoSecureLocation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates door is accessible, but package will not be left due to
-     * security concerns.
-     * Returns a single character.
-     *
-     * * `Y`: The package will not be left due to security concerns.
-     * * `N`: No indication the package will not be left due to security concerns.
-     * </pre>
-     *
-     * <code>string dpv_no_secure_location = 34;</code>
-     *
-     * @param value The dpvNoSecureLocation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvNoSecureLocation(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvNoSecureLocation_ = value;
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates door is accessible, but package will not be left due to
-     * security concerns.
-     * Returns a single character.
-     *
-     * * `Y`: The package will not be left due to security concerns.
-     * * `N`: No indication the package will not be left due to security concerns.
-     * </pre>
-     *
-     * <code>string dpv_no_secure_location = 34;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvNoSecureLocation() {
-      dpvNoSecureLocation_ = getDefaultInstance().getDpvNoSecureLocation();
-      bitField0_ = (bitField0_ & ~0x00002000);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates door is accessible, but package will not be left due to
-     * security concerns.
-     * Returns a single character.
-     *
-     * * `Y`: The package will not be left due to security concerns.
-     * * `N`: No indication the package will not be left due to security concerns.
-     * </pre>
-     *
-     * <code>string dpv_no_secure_location = 34;</code>
-     *
-     * @param value The bytes for dpvNoSecureLocation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvNoSecureLocationBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvNoSecureLocation_ = value;
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvPbsa_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the address was matched to PBSA record.
-     * Returns a single character.
-     *
-     * * `Y`: The address was matched to PBSA record.
-     * * `N`: The address was not matched to PBSA record.
-     * </pre>
-     *
-     * <code>string dpv_pbsa = 35;</code>
-     *
-     * @return The dpvPbsa.
-     */
-    public java.lang.String getDpvPbsa() {
-      java.lang.Object ref = dpvPbsa_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvPbsa_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the address was matched to PBSA record.
-     * Returns a single character.
-     *
-     * * `Y`: The address was matched to PBSA record.
-     * * `N`: The address was not matched to PBSA record.
-     * </pre>
-     *
-     * <code>string dpv_pbsa = 35;</code>
-     *
-     * @return The bytes for dpvPbsa.
-     */
-    public com.google.protobuf.ByteString getDpvPbsaBytes() {
-      java.lang.Object ref = dpvPbsa_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvPbsa_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the address was matched to PBSA record.
-     * Returns a single character.
-     *
-     * * `Y`: The address was matched to PBSA record.
-     * * `N`: The address was not matched to PBSA record.
-     * </pre>
-     *
-     * <code>string dpv_pbsa = 35;</code>
-     *
-     * @param value The dpvPbsa to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvPbsa(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvPbsa_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the address was matched to PBSA record.
-     * Returns a single character.
-     *
-     * * `Y`: The address was matched to PBSA record.
-     * * `N`: The address was not matched to PBSA record.
-     * </pre>
-     *
-     * <code>string dpv_pbsa = 35;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvPbsa() {
-      dpvPbsa_ = getDefaultInstance().getDpvPbsa();
-      bitField0_ = (bitField0_ & ~0x00004000);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates the address was matched to PBSA record.
-     * Returns a single character.
-     *
-     * * `Y`: The address was matched to PBSA record.
-     * * `N`: The address was not matched to PBSA record.
-     * </pre>
-     *
-     * <code>string dpv_pbsa = 35;</code>
-     *
-     * @param value The bytes for dpvPbsa to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvPbsaBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvPbsa_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvDoorNotAccessible_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-     * Returns a single character.
-     *
-     * * `Y`: The door is not accessible.
-     * * `N`: No indication the door is not accessible.
-     * </pre>
-     *
-     * <code>string dpv_door_not_accessible = 36;</code>
-     *
-     * @return The dpvDoorNotAccessible.
-     */
-    public java.lang.String getDpvDoorNotAccessible() {
-      java.lang.Object ref = dpvDoorNotAccessible_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvDoorNotAccessible_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-     * Returns a single character.
-     *
-     * * `Y`: The door is not accessible.
-     * * `N`: No indication the door is not accessible.
-     * </pre>
-     *
-     * <code>string dpv_door_not_accessible = 36;</code>
-     *
-     * @return The bytes for dpvDoorNotAccessible.
-     */
-    public com.google.protobuf.ByteString getDpvDoorNotAccessibleBytes() {
-      java.lang.Object ref = dpvDoorNotAccessible_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvDoorNotAccessible_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-     * Returns a single character.
-     *
-     * * `Y`: The door is not accessible.
-     * * `N`: No indication the door is not accessible.
-     * </pre>
-     *
-     * <code>string dpv_door_not_accessible = 36;</code>
-     *
-     * @param value The dpvDoorNotAccessible to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvDoorNotAccessible(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvDoorNotAccessible_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-     * Returns a single character.
-     *
-     * * `Y`: The door is not accessible.
-     * * `N`: No indication the door is not accessible.
-     * </pre>
-     *
-     * <code>string dpv_door_not_accessible = 36;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvDoorNotAccessible() {
-      dpvDoorNotAccessible_ = getDefaultInstance().getDpvDoorNotAccessible();
-      bitField0_ = (bitField0_ & ~0x00008000);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Flag indicates addresses where USPS cannot knock on a door to deliver mail.
-     * Returns a single character.
-     *
-     * * `Y`: The door is not accessible.
-     * * `N`: No indication the door is not accessible.
-     * </pre>
-     *
-     * <code>string dpv_door_not_accessible = 36;</code>
-     *
-     * @param value The bytes for dpvDoorNotAccessible to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvDoorNotAccessibleBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvDoorNotAccessible_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object dpvEnhancedDeliveryCode_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that more than one DPV return code is valid for the address.
-     * Returns a single character.
-     *
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * `N`: Primary and any secondary number information failed to
-     * DPV confirm.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present by not confirmed,  or a single
-     * trailing alpha on a primary number was dropped to make a DPV match and
-     * secondary information required.
-     * * `D`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was missing.
-     * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-     * USPS delivery is not provided.
-     * </pre>
-     *
-     * <code>string dpv_enhanced_delivery_code = 37;</code>
-     *
-     * @return The dpvEnhancedDeliveryCode.
-     */
-    public java.lang.String getDpvEnhancedDeliveryCode() {
-      java.lang.Object ref = dpvEnhancedDeliveryCode_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dpvEnhancedDeliveryCode_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that more than one DPV return code is valid for the address.
-     * Returns a single character.
-     *
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * `N`: Primary and any secondary number information failed to
-     * DPV confirm.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present by not confirmed,  or a single
-     * trailing alpha on a primary number was dropped to make a DPV match and
-     * secondary information required.
-     * * `D`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was missing.
-     * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-     * USPS delivery is not provided.
-     * </pre>
-     *
-     * <code>string dpv_enhanced_delivery_code = 37;</code>
-     *
-     * @return The bytes for dpvEnhancedDeliveryCode.
-     */
-    public com.google.protobuf.ByteString getDpvEnhancedDeliveryCodeBytes() {
-      java.lang.Object ref = dpvEnhancedDeliveryCode_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        dpvEnhancedDeliveryCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that more than one DPV return code is valid for the address.
-     * Returns a single character.
-     *
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * `N`: Primary and any secondary number information failed to
-     * DPV confirm.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present by not confirmed,  or a single
-     * trailing alpha on a primary number was dropped to make a DPV match and
-     * secondary information required.
-     * * `D`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was missing.
-     * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-     * USPS delivery is not provided.
-     * </pre>
-     *
-     * <code>string dpv_enhanced_delivery_code = 37;</code>
-     *
-     * @param value The dpvEnhancedDeliveryCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvEnhancedDeliveryCode(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      dpvEnhancedDeliveryCode_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that more than one DPV return code is valid for the address.
-     * Returns a single character.
-     *
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * `N`: Primary and any secondary number information failed to
-     * DPV confirm.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present by not confirmed,  or a single
-     * trailing alpha on a primary number was dropped to make a DPV match and
-     * secondary information required.
-     * * `D`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was missing.
-     * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-     * USPS delivery is not provided.
-     * </pre>
-     *
-     * <code>string dpv_enhanced_delivery_code = 37;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDpvEnhancedDeliveryCode() {
-      dpvEnhancedDeliveryCode_ = getDefaultInstance().getDpvEnhancedDeliveryCode();
-      bitField0_ = (bitField0_ & ~0x00010000);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that more than one DPV return code is valid for the address.
-     * Returns a single character.
-     *
-     * * `Y`: Address was DPV confirmed for primary and any secondary numbers.
-     * * `N`: Primary and any secondary number information failed to
-     * DPV confirm.
-     * * `S`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was present by not confirmed,  or a single
-     * trailing alpha on a primary number was dropped to make a DPV match and
-     * secondary information required.
-     * * `D`: Address was DPV confirmed for the primary number only, and the
-     * secondary number information was missing.
-     * * `R`: Address confirmed but assigned to phantom route R777 and R779 and
-     * USPS delivery is not provided.
-     * </pre>
-     *
-     * <code>string dpv_enhanced_delivery_code = 37;</code>
-     *
-     * @param value The bytes for dpvEnhancedDeliveryCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDpvEnhancedDeliveryCodeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      dpvEnhancedDeliveryCode_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object carrierRoute_ = "";
     /**
      *
@@ -5641,7 +3772,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       carrierRoute_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5668,7 +3799,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCarrierRoute() {
       carrierRoute_ = getDefaultInstance().getCarrierRoute();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -5700,7 +3831,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       carrierRoute_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5767,7 +3898,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       carrierRouteIndicator_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5784,7 +3915,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCarrierRouteIndicator() {
       carrierRouteIndicator_ = getDefaultInstance().getCarrierRouteIndicator();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -5806,7 +3937,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       carrierRouteIndicator_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5844,7 +3975,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setEwsNoMatch(boolean value) {
 
       ewsNoMatch_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5861,7 +3992,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEwsNoMatch() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ewsNoMatch_ = false;
       onChanged();
       return this;
@@ -5929,7 +4060,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       postOfficeCity_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5946,7 +4077,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPostOfficeCity() {
       postOfficeCity_ = getDefaultInstance().getPostOfficeCity();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5968,7 +4099,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       postOfficeCity_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6035,7 +4166,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       postOfficeState_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6052,7 +4183,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPostOfficeState() {
       postOfficeState_ = getDefaultInstance().getPostOfficeState();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -6074,7 +4205,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       postOfficeState_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6141,7 +4272,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       abbreviatedCity_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6158,7 +4289,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAbbreviatedCity() {
       abbreviatedCity_ = getDefaultInstance().getAbbreviatedCity();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -6180,7 +4311,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       abbreviatedCity_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6247,7 +4378,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       fipsCountyCode_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6264,7 +4395,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFipsCountyCode() {
       fipsCountyCode_ = getDefaultInstance().getFipsCountyCode();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6286,7 +4417,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       fipsCountyCode_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6353,7 +4484,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       county_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6370,7 +4501,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCounty() {
       county_ = getDefaultInstance().getCounty();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6392,7 +4523,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       county_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6459,7 +4590,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       elotNumber_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6476,7 +4607,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearElotNumber() {
       elotNumber_ = getDefaultInstance().getElotNumber();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6498,7 +4629,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       elotNumber_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6565,7 +4696,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       elotFlag_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6582,7 +4713,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearElotFlag() {
       elotFlag_ = getDefaultInstance().getElotFlag();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -6604,7 +4735,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       elotFlag_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6671,7 +4802,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       lacsLinkReturnCode_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6688,7 +4819,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLacsLinkReturnCode() {
       lacsLinkReturnCode_ = getDefaultInstance().getLacsLinkReturnCode();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6710,7 +4841,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       lacsLinkReturnCode_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6777,7 +4908,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       lacsLinkIndicator_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6794,7 +4925,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLacsLinkIndicator() {
       lacsLinkIndicator_ = getDefaultInstance().getLacsLinkIndicator();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6816,7 +4947,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       lacsLinkIndicator_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6852,7 +4983,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setPoBoxOnlyPostalCode(boolean value) {
 
       poBoxOnlyPostalCode_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6868,7 +4999,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPoBoxOnlyPostalCode() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       poBoxOnlyPostalCode_ = false;
       onChanged();
       return this;
@@ -6948,7 +5079,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       suitelinkFootnote_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6969,7 +5100,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSuitelinkFootnote() {
       suitelinkFootnote_ = getDefaultInstance().getSuitelinkFootnote();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6995,7 +5126,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       suitelinkFootnote_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7062,7 +5193,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pmbDesignator_ = value;
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7079,7 +5210,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPmbDesignator() {
       pmbDesignator_ = getDefaultInstance().getPmbDesignator();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7101,7 +5232,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pmbDesignator_ = value;
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7168,7 +5299,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pmbNumber_ = value;
-      bitField1_ |= 0x00000001;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7185,7 +5316,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPmbNumber() {
       pmbNumber_ = getDefaultInstance().getPmbNumber();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7207,7 +5338,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pmbNumber_ = value;
-      bitField1_ |= 0x00000001;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7310,7 +5441,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       addressRecordType_ = value;
-      bitField1_ |= 0x00000002;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7339,7 +5470,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAddressRecordType() {
       addressRecordType_ = getDefaultInstance().getAddressRecordType();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7373,7 +5504,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       addressRecordType_ = value;
-      bitField1_ |= 0x00000002;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7411,7 +5542,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setDefaultAddress(boolean value) {
 
       defaultAddress_ = value;
-      bitField1_ |= 0x00000004;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7428,7 +5559,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultAddress() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x02000000);
       defaultAddress_ = false;
       onChanged();
       return this;
@@ -7508,7 +5639,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       errorMessage_ = value;
-      bitField1_ |= 0x00000008;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7529,7 +5660,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearErrorMessage() {
       errorMessage_ = getDefaultInstance().getErrorMessage();
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -7555,7 +5686,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       errorMessage_ = value;
-      bitField1_ |= 0x00000008;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7591,7 +5722,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setCassProcessed(boolean value) {
 
       cassProcessed_ = value;
-      bitField1_ |= 0x00000010;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7607,7 +5738,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCassProcessed() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x08000000);
       cassProcessed_ = false;
       onChanged();
       return this;

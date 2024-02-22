@@ -10,9 +10,6 @@
         "grpc": {
           "libraryClient": "PlacesClient",
           "rpcs": {
-            "AutocompletePlaces": {
-              "methods": ["autocompletePlaces", "autocompletePlacesCallable"]
-            },
             "GetPhotoMedia": {
               "methods": ["getPhotoMedia", "getPhotoMedia", "getPhotoMedia", "getPhotoMediaCallable"]
             },

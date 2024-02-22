@@ -41,7 +41,6 @@ public class AsyncValidateAddress {
               .setAddress(PostalAddress.newBuilder().build())
               .setPreviousResponseId("previousResponseId468754323")
               .setEnableUspsCass(true)
-              .setSessionToken("sessionToken-696552189")
               .build();
       ApiFuture<ValidateAddressResponse> future =
           addressValidationClient.validateAddressCallable().futureCall(request);

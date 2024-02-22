@@ -40,7 +40,6 @@ public class SyncValidateAddress {
               .setAddress(PostalAddress.newBuilder().build())
               .setPreviousResponseId("previousResponseId468754323")
               .setEnableUspsCass(true)
-              .setSessionToken("sessionToken-696552189")
               .build();
       ValidateAddressResponse response = addressValidationClient.validateAddress(request);
     }

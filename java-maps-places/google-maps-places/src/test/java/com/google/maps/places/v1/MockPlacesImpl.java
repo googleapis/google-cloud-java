@@ -140,26 +140,4 @@ public class MockPlacesImpl extends PlacesImplBase {
                   Exception.class.getName())));
     }
   }
-
-  @Override
-  public void autocompletePlaces(
-      AutocompletePlacesRequest request,
-      StreamObserver<AutocompletePlacesResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof AutocompletePlacesResponse) {
-      requests.add(request);
-      responseObserver.onNext(((AutocompletePlacesResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method AutocompletePlaces, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  AutocompletePlacesResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
 }

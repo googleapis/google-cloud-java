@@ -91,12 +91,6 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
     return ((PlacesStubSettings) getStubSettings()).getPlaceSettings();
   }
 
-  /** Returns the object with the settings used for calls to autocompletePlaces. */
-  public UnaryCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
-      autocompletePlacesSettings() {
-    return ((PlacesStubSettings) getStubSettings()).autocompletePlacesSettings();
-  }
-
   public static final PlacesSettings create(PlacesStubSettings stub) throws IOException {
     return new PlacesSettings.Builder(stub.toBuilder()).build();
   }
@@ -229,12 +223,6 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
     /** Returns the builder for the settings used for calls to getPlace. */
     public UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings() {
       return getStubSettingsBuilder().getPlaceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to autocompletePlaces. */
-    public UnaryCallSettings.Builder<AutocompletePlacesRequest, AutocompletePlacesResponse>
-        autocompletePlacesSettings() {
-      return getStubSettingsBuilder().autocompletePlacesSettings();
     }
 
     @Override

@@ -770,7 +770,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
-   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -804,7 +803,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
-   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
@@ -910,7 +908,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
-   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();
@@ -949,7 +946,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
-   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
    *       documentProcessorServiceClient
@@ -989,7 +985,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
-   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);
@@ -2725,9 +2720,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @param processor Required. The processor to be created, requires
    *     [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   *     [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name] to be set.
-   *     Also, the [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
-   *     field must be set if the processor is under CMEK.
+   *     [Processor.display_name]][] to be set. Also, the
+   *     [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name] field must
+   *     be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Processor createProcessor(LocationName parent, Processor processor) {
@@ -2764,9 +2759,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @param processor Required. The processor to be created, requires
    *     [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   *     [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name] to be set.
-   *     Also, the [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
-   *     field must be set if the processor is under CMEK.
+   *     [Processor.display_name]][] to be set. Also, the
+   *     [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name] field must
+   *     be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Processor createProcessor(String parent, Processor processor) {

@@ -133,8 +133,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The processor to be created, requires
    * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-   * to be set. Also, the
+   * [Processor.display_name]][] to be set. Also, the
    * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
    * field must be set if the processor is under CMEK.
    * </pre>
@@ -155,8 +154,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The processor to be created, requires
    * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-   * to be set. Also, the
+   * [Processor.display_name]][] to be set. Also, the
    * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
    * field must be set if the processor is under CMEK.
    * </pre>
@@ -179,8 +177,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The processor to be created, requires
    * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-   * to be set. Also, the
+   * [Processor.display_name]][] to be set. Also, the
    * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
    * field must be set if the processor is under CMEK.
    * </pre>
@@ -719,8 +716,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -740,8 +736,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -767,8 +762,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -796,8 +790,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -823,8 +816,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -857,8 +849,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -883,8 +874,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -904,8 +894,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>
@@ -929,8 +918,7 @@ public final class CreateProcessorRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The processor to be created, requires
      * [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-     * [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name]
-     * to be set. Also, the
+     * [Processor.display_name]][] to be set. Also, the
      * [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
      * field must be set if the processor is under CMEK.
      * </pre>

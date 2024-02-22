@@ -26,7 +26,6 @@ import com.google.cloud.documentai.v1.DocumentOutputConfig;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1.ProcessOptions;
 import com.google.cloud.documentai.v1.ProcessorName;
-import java.util.HashMap;
 
 public class AsyncBatchProcessDocumentsLRO {
 
@@ -49,7 +48,6 @@ public class AsyncBatchProcessDocumentsLRO {
               .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
               .setSkipHumanReview(true)
               .setProcessOptions(ProcessOptions.newBuilder().build())
-              .putAllLabels(new HashMap<String, String>())
               .build();
       OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
           documentProcessorServiceClient
