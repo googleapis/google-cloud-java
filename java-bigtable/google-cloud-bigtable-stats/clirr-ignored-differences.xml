@@ -19,4 +19,17 @@
         <className>com/google/cloud/bigtable/stats/StatsRecorderWrapper</className>
         <method>void putBatchRequestThrottled(long)</method>
     </difference>
+    <!-- Internal API is updated -->
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/stats/StatsRecorderWrapperForConnection</className>
+        <method>*StatsRecorderWrapperForConnection*</method>
+        <to>*</to>
+    </difference>
+    <!-- Internal API is updated -->
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/stats/ConsumerEnvironmentUtils$ResourceUtilsWrapper</className>
+        <method>*detectResource*</method>
+    </difference>
 </differences>

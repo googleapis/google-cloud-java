@@ -34,14 +34,14 @@ class ConsumerEnvironmentUtils {
   }
 
   public static boolean isEnvGce() {
-    Resource resource = resourceUtilsWrapper.detectResource();
+    Resource resource = resourceUtilsWrapper.detectOpenCensusResource();
     return Objects.equals(resource.getType(), HostResource.TYPE)
         && Objects.equals(
             resource.getLabels().get(CloudResource.PROVIDER_KEY), CloudResource.PROVIDER_GCP);
   }
 
   public static boolean isEnvGke() {
-    Resource resource = resourceUtilsWrapper.detectResource();
+    Resource resource = resourceUtilsWrapper.detectOpenCensusResource();
     return Objects.equals(resource.getType(), ContainerResource.TYPE)
         && Objects.equals(
             resource.getLabels().get(CloudResource.PROVIDER_KEY), CloudResource.PROVIDER_GCP);
@@ -50,7 +50,7 @@ class ConsumerEnvironmentUtils {
   // We wrap the static ResourceUtils.detectResource() method in a non-static method for mocking.
   @VisibleForTesting
   public static class ResourceUtilsWrapper {
-    public Resource detectResource() {
+    public Resource detectOpenCensusResource() {
       return ResourceUtils.detectResource();
     }
   }

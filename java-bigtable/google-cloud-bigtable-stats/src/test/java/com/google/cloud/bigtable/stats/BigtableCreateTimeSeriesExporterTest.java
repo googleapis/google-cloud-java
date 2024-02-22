@@ -161,7 +161,7 @@ public class BigtableCreateTimeSeriesExporterTest {
     ConsumerEnvironmentUtils.ResourceUtilsWrapper resourceUtilsWrapperMock =
         Mockito.mock(ConsumerEnvironmentUtils.ResourceUtilsWrapper.class);
     ConsumerEnvironmentUtils.setResourceUtilsWrapper(resourceUtilsWrapperMock);
-    Mockito.when(resourceUtilsWrapperMock.detectResource())
+    Mockito.when(resourceUtilsWrapperMock.detectOpenCensusResource())
         .thenReturn(
             Resource.create(
                 HostResource.TYPE,
@@ -239,7 +239,7 @@ public class BigtableCreateTimeSeriesExporterTest {
         Mockito.mock(ConsumerEnvironmentUtils.ResourceUtilsWrapper.class);
     ConsumerEnvironmentUtils.setResourceUtilsWrapper(resourceUtilsWrapperMock);
 
-    Mockito.when(resourceUtilsWrapperMock.detectResource())
+    Mockito.when(resourceUtilsWrapperMock.detectOpenCensusResource())
         .thenReturn(
             Resource.create(
                 ContainerResource.TYPE,
