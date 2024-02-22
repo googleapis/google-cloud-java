@@ -410,6 +410,22 @@ public class GenerativeModel {
   }
 
   /**
+   * Generates content from generative model given a text and configs.
+   *
+   * @param text a text message to send to the generative model
+   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
+   *     generate content api call
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  @BetaApi
+  public GenerateContentResponse generateContent(String text, GenerateContentConfig config)
+      throws IOException {
+    return generateContent(ContentMaker.fromString(text), config);
+  }
+
+  /**
    * Generate content from generative model given a text and generation config.
    *
    * @param text a text message to send to the generative model
@@ -512,6 +528,41 @@ public class GenerativeModel {
   }
 
   /**
+   * Generates content from generative model given a list of contents and configs.
+   *
+   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
+   *     generative model
+   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
+   *     generate content api call
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  @BetaApi
+  public GenerateContentResponse generateContent(
+      List<Content> contents, GenerateContentConfig config) throws IOException {
+    GenerateContentRequest.Builder requestBuilder =
+        GenerateContentRequest.newBuilder().addAllContents(contents);
+    if (config.getGenerationConfig() != null) {
+      requestBuilder.setGenerationConfig(config.getGenerationConfig());
+    } else if (this.generationConfig != null) {
+      requestBuilder.setGenerationConfig(this.generationConfig);
+    }
+    if (config.getSafetySettings().isEmpty() == false) {
+      requestBuilder.addAllSafetySettings(config.getSafetySettings());
+    } else if (this.safetySettings != null) {
+      requestBuilder.addAllSafetySettings(this.safetySettings);
+    }
+    if (config.getTools().isEmpty() == false) {
+      requestBuilder.addAllTools(config.getTools());
+    } else if (this.tools != null) {
+      requestBuilder.addAllTools(this.tools);
+    }
+
+    return generateContent(requestBuilder);
+  }
+
+  /**
    * Generate content from generative model given a list of contents, generation config, and safety
    * settings.
    *
@@ -579,6 +630,22 @@ public class GenerativeModel {
   @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(Content content) throws IOException {
     return generateContent(content, null, null);
+  }
+
+  /**
+   * Generates content from generative model given a single content and configs.
+   *
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
+   *     generate content api call
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  @BetaApi
+  public GenerateContentResponse generateContent(Content content, GenerateContentConfig config)
+      throws IOException {
+    return generateContent(Arrays.asList(content), config);
   }
 
   /**
