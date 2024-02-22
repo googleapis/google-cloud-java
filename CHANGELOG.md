@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.38.0](https://github.com/googleapis/java-bigquery/compare/v2.37.2...v2.38.0) (2024-02-22)
+
+
+### Features
+
+* Add MetadataCacheStatistics to Job QueryStatistics ([#3133](https://github.com/googleapis/java-bigquery/issues/3133)) ([f3f387b](https://github.com/googleapis/java-bigquery/commit/f3f387b2265d527f3b5bf567c1eaf7ecdad6e096))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20240211-2.0.0 ([#3152](https://github.com/googleapis/java-bigquery/issues/3152)) ([e5d6888](https://github.com/googleapis/java-bigquery/commit/e5d688872e4c125a68ed6f666bffd0a41efc3f30))
+* Update github/codeql-action action to v2.24.3 ([#3148](https://github.com/googleapis/java-bigquery/issues/3148)) ([a0a7b01](https://github.com/googleapis/java-bigquery/commit/a0a7b0186ae47fcfcf75fe4f35cce50044c6926c))
+* Update github/codeql-action action to v2.24.3 ([#3150](https://github.com/googleapis/java-bigquery/issues/3150)) ([042fcf0](https://github.com/googleapis/java-bigquery/commit/042fcf0aca46d349103211c3d04ae4b49868933c))
+* Update github/codeql-action action to v2.24.4 ([#3161](https://github.com/googleapis/java-bigquery/issues/3161)) ([531b1a0](https://github.com/googleapis/java-bigquery/commit/531b1a0b93ee19a7479a006207c30f7399869773))
+
 ## [2.37.2](https://github.com/googleapis/java-bigquery/compare/v2.37.1...v2.37.2) (2024-02-14)
 
 
