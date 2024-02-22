@@ -647,6 +647,21 @@ public class GenerativeModel {
   }
 
   /**
+   * Generate content with streaming support from generative model given a text and configs.
+   *
+   * @param text a text message to send to the generative model
+   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
+   *     generate content api call
+   * @return a {@link ResponseStream} that contains a streaming of {@link
+   *     com.google.cloud.vertexai.api.GenerateContentResponse}
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public ResponseStream<GenerateContentResponse> generateContentStream(
+      String text, GenerateContentConfig config) throws IOException {
+    return generateContentStream(ContentMaker.fromString(text), config);
+  }
+
+  /**
    * Generate content with streaming support from generative model given a text and generation
    * config.
    *
@@ -714,6 +729,22 @@ public class GenerativeModel {
   public ResponseStream<GenerateContentResponse> generateContentStream(Content content)
       throws IOException {
     return generateContentStream(content, null, null);
+  }
+
+  /**
+   * Generate content with streaming support from generative model given a single content and
+   * configs.
+   *
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
+   *     generate content api call
+   * @return a {@link ResponseStream} that contains a streaming of {@link
+   *     com.google.cloud.vertexai.api.GenerateContentResponse}
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public ResponseStream<GenerateContentResponse> generateContentStream(
+      Content content, GenerateContentConfig config) throws IOException {
+    return generateContentStream(Arrays.asList(content), config);
   }
 
   /**
@@ -853,6 +884,41 @@ public class GenerativeModel {
     if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
+    return generateContentStream(requestBuilder);
+  }
+
+  /**
+   * Generate content with streaming support from generative model given a list of contents and
+   * configs.
+   *
+   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
+   *     generative model
+   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
+   *     generate content api call
+   * @return a {@link ResponseStream} that contains a streaming of {@link
+   *     com.google.cloud.vertexai.api.GenerateContentResponse}
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public ResponseStream<GenerateContentResponse> generateContentStream(
+      List<Content> contents, GenerateContentConfig config) throws IOException {
+    GenerateContentRequest.Builder requestBuilder =
+        GenerateContentRequest.newBuilder().addAllContents(contents);
+    if (config.getGenerationConfig() != null) {
+      requestBuilder.setGenerationConfig(config.getGenerationConfig());
+    } else if (this.generationConfig != null) {
+      requestBuilder.setGenerationConfig(this.generationConfig);
+    }
+    if (config.getSafetySettings().isEmpty() == false) {
+      requestBuilder.addAllSafetySettings(config.getSafetySettings());
+    } else if (this.safetySettings != null) {
+      requestBuilder.addAllSafetySettings(this.safetySettings);
+    }
+    if (config.getTools().isEmpty() == false) {
+      requestBuilder.addAllTools(config.getTools());
+    } else if (this.tools != null) {
+      requestBuilder.addAllTools(this.tools);
+    }
+
     return generateContentStream(requestBuilder);
   }
 

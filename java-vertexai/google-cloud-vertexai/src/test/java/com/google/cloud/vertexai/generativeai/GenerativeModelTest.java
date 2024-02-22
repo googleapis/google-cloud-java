@@ -639,4 +639,35 @@ public final class GenerativeModelTest {
     verify(mockServerStreamCallable).call(request.capture());
     assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
   }
+
+  @Test
+  public void testGenerateContentStreamwithGenerateContentConfig() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+    GenerateContentConfig config =
+        GenerateContentConfig.newBuilder()
+            .setGenerationConfig(GENERATION_CONFIG)
+            .setSafetySettings(safetySettings)
+            .setTools(tools)
+            .build();
+
+    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    field.setAccessible(true);
+    field.set(vertexAi, mockPredictionServiceClient);
+
+    when(mockPredictionServiceClient.streamGenerateContentCallable())
+        .thenReturn(mockServerStreamCallable);
+    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockServerStream);
+    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
+
+    ResponseStream unused = model.generateContentStream(TEXT, config);
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockServerStreamCallable).call(request.capture());
+
+    assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
+    assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
+    assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
+  }
 }
