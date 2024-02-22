@@ -53,7 +53,8 @@ public class TableResultTest {
 
   @Test
   public void testNullSchema() {
-    TableResult result = new TableResult(null, 3, INNER_PAGE_0, null);
+    TableResult result =
+        TableResult.newBuilder().setTotalRows(3L).setPageNoSchema(INNER_PAGE_0).build();
     assertThat(result.getSchema()).isNull();
     assertThat(result.hasNextPage()).isTrue();
     assertThat(result.getNextPageToken()).isNotNull();
@@ -75,7 +76,12 @@ public class TableResultTest {
 
   @Test
   public void testSchema() {
-    TableResult result = new TableResult(SCHEMA, 3, INNER_PAGE_0, null);
+    TableResult result =
+        TableResult.newBuilder()
+            .setSchema(SCHEMA)
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .build();
     assertThat(result.getSchema()).isEqualTo(SCHEMA);
     assertThat(result.hasNextPage()).isTrue();
     assertThat(result.getNextPageToken()).isNotNull();

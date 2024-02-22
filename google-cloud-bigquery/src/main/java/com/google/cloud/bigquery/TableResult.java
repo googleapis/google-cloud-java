@@ -16,10 +16,9 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
+import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
@@ -28,100 +27,87 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
-public class TableResult implements Page<FieldValueList>, Serializable {
+@InternalApi
+@AutoValue
+public abstract class TableResult implements Page<FieldValueList>, Serializable {
 
-  private static final long serialVersionUID = -4831062717210349819L;
+  private static final long serialVersionUID = 1L;
 
-  @Nullable private final Schema schema;
-  private final long totalRows;
-  private final Page<FieldValueList> pageNoSchema;
-  @Nullable private JobId jobId = null;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract TableResult.Builder setSchema(Schema schema);
 
-  @Nullable private final String queryId;
+    /**
+     * Sets the total number of rows in the complete result set, which can be more than the number
+     * of rows in the first page of results returned by {@link #getValues()}.
+     */
+    public abstract TableResult.Builder setTotalRows(Long totalRows);
 
-  // package-private so job id is not set outside the package.
-  void setJobId(@Nullable JobId jobId) {
-    this.jobId = jobId;
+    public abstract TableResult.Builder setJobId(JobId jobId);
+
+    public abstract TableResult.Builder setPageNoSchema(Page<FieldValueList> pageNoSchema);
+
+    public abstract TableResult.Builder setQueryId(String queryId);
+
+    /** Creates a @code TableResult} object. */
+    public abstract TableResult build();
   }
 
-  public JobId getJobId() {
-    return jobId;
-  }
+  public abstract Builder toBuilder();
 
-  public String getQueryId() {
-    return queryId;
-  }
-
-  /**
-   * If {@code schema} is non-null, {@code TableResult} adds the schema to {@code FieldValueList}s
-   * when iterating through them. {@code pageNoSchema} must not be null.
-   */
-  @InternalApi("Exposed for testing")
-  public TableResult(
-      Schema schema, long totalRows, Page<FieldValueList> pageNoSchema, String queryId) {
-    this.schema = schema;
-    this.totalRows = totalRows;
-    this.pageNoSchema = checkNotNull(pageNoSchema);
-    this.queryId = queryId;
-  }
-
-  @InternalApi("Exposed for testing")
-  public TableResult(
-      Schema schema,
-      long totalRows,
-      Page<FieldValueList> pageNoSchema,
-      JobId jobId,
-      String queryId) {
-    this.schema = schema;
-    this.totalRows = totalRows;
-    this.pageNoSchema = checkNotNull(pageNoSchema);
-    this.jobId = jobId;
-    this.queryId = queryId;
+  public static Builder newBuilder() {
+    return new AutoValue_TableResult.Builder();
   }
 
   /** Returns the schema of the results. Null if the schema is not supplied. */
-  public Schema getSchema() {
-    return schema;
-  }
+  @Nullable
+  public abstract Schema getSchema();
 
-  /**
-   * Returns the total number of rows in the complete result set, which can be more than the number
-   * of rows in the first page of results returned by {@link #getValues()}.
-   */
-  public long getTotalRows() {
-    return totalRows;
-  }
+  public abstract long getTotalRows();
+
+  public abstract Page<FieldValueList> getPageNoSchema();
+
+  @Nullable
+  public abstract JobId getJobId();
+
+  @Nullable
+  public abstract String getQueryId();
 
   @Override
   public boolean hasNextPage() {
-    return pageNoSchema.hasNextPage();
+    return getPageNoSchema().hasNextPage();
   }
 
   @Override
   public String getNextPageToken() {
-    return pageNoSchema.getNextPageToken();
+    return getPageNoSchema().getNextPageToken();
   }
 
   @Override
   public TableResult getNextPage() {
-    if (pageNoSchema.hasNextPage()) {
-      return new TableResult(schema, totalRows, pageNoSchema.getNextPage(), queryId);
+    if (getPageNoSchema().hasNextPage()) {
+      return TableResult.newBuilder()
+          .setSchema(getSchema())
+          .setTotalRows(getTotalRows())
+          .setPageNoSchema(getPageNoSchema().getNextPage())
+          .setQueryId(getQueryId())
+          .build();
     }
     return null;
   }
 
   @Override
   public Iterable<FieldValueList> iterateAll() {
-    return addSchema(pageNoSchema.iterateAll());
+    return addSchema(getPageNoSchema().iterateAll());
   }
 
   @Override
   public Iterable<FieldValueList> getValues() {
-    return addSchema(pageNoSchema.getValues());
+    return addSchema(getPageNoSchema().getValues());
   }
 
   private Iterable<FieldValueList> addSchema(Iterable<FieldValueList> iter) {
-    if (schema == null) {
+    if (getSchema() == null) {
       return iter;
     }
     return Iterables.transform(
@@ -129,7 +115,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
         new Function<FieldValueList, FieldValueList>() {
           @Override
           public FieldValueList apply(FieldValueList list) {
-            return list.withSchema(schema.getFields());
+            return list.withSchema(getSchema().getFields());
           }
         });
   }
@@ -138,15 +124,16 @@ public class TableResult implements Page<FieldValueList>, Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("rows", getValues())
-        .add("schema", schema)
-        .add("totalRows", totalRows)
+        .add("schema", getSchema())
+        .add("totalRows", getTotalRows())
         .add("cursor", getNextPageToken())
+        .add("queryId", getQueryId())
         .toString();
   }
 
   @Override
   public final int hashCode() {
-    return Objects.hash(pageNoSchema, schema, totalRows);
+    return Objects.hash(getPageNoSchema(), getSchema(), getTotalRows(), getQueryId());
   }
 
   @Override
@@ -154,13 +141,14 @@ public class TableResult implements Page<FieldValueList>, Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !obj.getClass().equals(TableResult.class)) {
+    if (obj == null || !obj.getClass().equals(AutoValue_TableResult.class)) {
       return false;
     }
     TableResult response = (TableResult) obj;
     return Objects.equals(getNextPageToken(), response.getNextPageToken())
         && Iterators.elementsEqual(getValues().iterator(), response.getValues().iterator())
-        && Objects.equals(schema, response.schema)
-        && totalRows == response.totalRows;
+        && Objects.equals(getSchema(), response.getSchema())
+        && getTotalRows() == response.getTotalRows()
+        && getQueryId() == response.getQueryId();
   }
 }

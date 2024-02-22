@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
@@ -311,8 +312,13 @@ public class Job extends JobInfo {
     // Listing table data might fail, such as with CREATE VIEW queries.
     // Avoid a tabledata.list API request by returning an empty TableResult.
     if (response.getTotalRows() == 0) {
-      TableResult emptyTableResult = new EmptyTableResult(response.getSchema());
-      emptyTableResult.setJobId(job.getJobId());
+      TableResult emptyTableResult =
+          TableResult.newBuilder()
+              .setSchema(response.getSchema())
+              .setJobId(job.getJobId())
+              .setTotalRows(0L)
+              .setPageNoSchema(new PageImpl<FieldValueList>(null, "", null))
+              .build();
       return emptyTableResult;
     }
 
@@ -323,8 +329,8 @@ public class Job extends JobInfo {
     TableResult tableResult =
         bigquery.listTableData(
             table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
-    tableResult.setJobId(job.getJobId());
-    return tableResult;
+    TableResult tableResultWithJobId = tableResult.toBuilder().setJobId(job.getJobId()).build();
+    return tableResultWithJobId;
   }
 
   private QueryResponse waitForQueryResults(

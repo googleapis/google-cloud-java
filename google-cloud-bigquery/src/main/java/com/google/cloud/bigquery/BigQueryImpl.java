@@ -1156,7 +1156,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options) {
     Tuple<? extends Page<FieldValueList>, Long> data =
         listTableData(tableId, schema, getOptions(), optionMap(options));
-    return new TableResult(schema, data.y(), data.x(), null);
+    return TableResult.newBuilder()
+        .setSchema(schema)
+        .setTotalRows(data.y())
+        .setPageNoSchema(data.x())
+        .build();
   }
 
   private static Tuple<? extends Page<FieldValueList>, Long> listTableData(
@@ -1400,30 +1404,33 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (results.getPageToken() != null) {
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
-      return new TableResult(
-          schema,
-          numRows,
-          new PageImpl<>(
-              // fetch next pages of results
-              new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
-              cursor,
-              // cache first page of result
-              transformTableData(results.getRows(), schema)),
-          // Return the JobID of the successful job
-          jobId,
-          results.getQueryId());
+      return TableResult.newBuilder()
+          .setSchema(schema)
+          .setTotalRows(numRows)
+          .setPageNoSchema(
+              new PageImpl<>(
+                  // fetch next pages of results
+                  new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
+                  cursor,
+                  transformTableData(results.getRows(), schema)))
+          .setJobId(jobId)
+          .setQueryId(results.getQueryId())
+          .build();
     }
     // only 1 page of result
-    return new TableResult(
-        schema,
-        numRows,
-        new PageImpl<>(
-            new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
-            null,
-            transformTableData(results.getRows(), schema)),
+    return TableResult.newBuilder()
+        .setSchema(schema)
+        .setTotalRows(numRows)
+        .setPageNoSchema(
+            new PageImpl<>(
+                new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
+                null,
+                transformTableData(results.getRows(), schema)))
         // Return the JobID of the successful job
-        results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null,
-        results.getQueryId());
+        .setJobId(
+            results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
+        .setQueryId(results.getQueryId())
+        .build();
   }
 
   @Override
