@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -40,6 +41,7 @@ import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
+import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
@@ -47,6 +49,7 @@ import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
+import com.google.cloud.compute.v1.ListUsableBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
@@ -54,6 +57,8 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsBackendServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -178,6 +183,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -515,6 +526,60 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListUsableBackendServicesRequest, BackendServiceListUsable>
+      listUsableMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListUsableBackendServicesRequest, BackendServiceListUsable>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/ListUsable")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListUsableBackendServicesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendServices/listUsable",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsableBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsableBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackendServiceListUsable>newBuilder()
+                      .setDefaultInstance(BackendServiceListUsable.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<PatchBackendServiceRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchBackendServiceRequest, Operation>newBuilder()
@@ -724,6 +789,48 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendServices/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateBackendServiceRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateBackendServiceRequest, Operation>newBuilder()
@@ -804,6 +911,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
       insertOperationCallable;
   private final UnaryCallable<ListBackendServicesRequest, BackendServiceList> listCallable;
   private final UnaryCallable<ListBackendServicesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<ListUsableBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable;
+  private final UnaryCallable<ListUsableBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable;
   private final UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable;
   private final OperationCallable<PatchBackendServiceRequest, Operation, Operation>
       patchOperationCallable;
@@ -816,6 +927,8 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
       setSecurityPolicyCallable;
   private final OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
       setSecurityPolicyOperationCallable;
+  private final UnaryCallable<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable;
   private final OperationCallable<UpdateBackendServiceRequest, Operation, Operation>
       updateOperationCallable;
@@ -976,6 +1089,19 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListUsableBackendServicesRequest, BackendServiceListUsable>
+        listUsableTransportSettings =
+            HttpJsonCallSettings
+                .<ListUsableBackendServicesRequest, BackendServiceListUsable>newBuilder()
+                .setMethodDescriptor(listUsableMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<PatchBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
@@ -1023,6 +1149,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("backend_service", String.valueOf(request.getBackendService()));
                       builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
                 .build();
@@ -1098,6 +1238,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.listUsableCallable =
+        callableFactory.createUnaryCallable(
+            listUsableTransportSettings, settings.listUsableSettings(), clientContext);
+    this.listUsablePagedCallable =
+        callableFactory.createPagedCallable(
+            listUsableTransportSettings, settings.listUsableSettings(), clientContext);
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
@@ -1132,6 +1278,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
             settings.setSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -1158,10 +1309,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listUsableMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setEdgeSecurityPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -1250,6 +1403,18 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   }
 
   @Override
+  public UnaryCallable<ListUsableBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable() {
+    return listUsableCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsableBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    return listUsablePagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable() {
     return patchCallable;
   }
@@ -1287,6 +1452,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   public OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
       setSecurityPolicyOperationCallable() {
     return setSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

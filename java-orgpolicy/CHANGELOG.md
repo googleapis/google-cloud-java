@@ -1,5 +1,40 @@
 # Changelog
 
+## 2.36.0 (2024-02-20)
+
+* No change
+
+
+## 2.35.0 (2024-02-09)
+
+* No change
+
+
+## 2.34.0 (2024-01-23)
+
+* No change
+
+
+## 2.33.0 (2024-01-10)
+
+### Features
+
+* Add custom constraints CRUD APIs, proper etag support in Org Policy Update/Delete API ([#10163](https://github.com/googleapis/google-cloud-java/issues/10163)) ([04b5953](https://github.com/googleapis/google-cloud-java/commit/04b5953ee19ade4cd42bdfaf8d5220c2df5c361f))
+
+
+
+## 2.32.0 (2023-12-12)
+
+* No change
+
+
+## 2.31.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 2.30.0 (2023-11-06)
 
 ### Dependencies

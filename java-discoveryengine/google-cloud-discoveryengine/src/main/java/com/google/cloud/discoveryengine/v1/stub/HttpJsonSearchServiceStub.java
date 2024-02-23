@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,8 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                         return fields;
                       })
                   .setAdditionalPaths(
-                      "/v1/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:search")
+                      "/v1/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:search",
+                      "/v1/{servingConfig=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}:search")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();

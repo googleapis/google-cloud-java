@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.aiplatform.v1.PredictionServiceClient.ListLocatio
 
 import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -96,6 +95,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).rawPredictSettings();
   }
 
+  /** Returns the object with the settings used for calls to streamRawPredict. */
+  public ServerStreamingCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamRawPredictSettings();
+  }
+
   /** Returns the object with the settings used for calls to directPredict. */
   public UnaryCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).directPredictSettings();
@@ -105,6 +109,18 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   public UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).directRawPredictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamDirectPredict. */
+  public StreamingCallSettings<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamDirectPredictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamDirectRawPredict. */
+  public StreamingCallSettings<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamDirectRawPredictSettings();
   }
 
   /** Returns the object with the settings used for calls to streamingPredict. */
@@ -128,6 +144,18 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).explainSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateContent. */
+  public UnaryCallSettings<GenerateContentRequest, GenerateContentResponse>
+      generateContentSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).generateContentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamGenerateContent. */
+  public ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamGenerateContentSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -191,7 +219,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return PredictionServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return PredictionServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -264,6 +291,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
       return getStubSettingsBuilder().rawPredictSettings();
     }
 
+    /** Returns the builder for the settings used for calls to streamRawPredict. */
+    public ServerStreamingCallSettings.Builder<StreamRawPredictRequest, HttpBody>
+        streamRawPredictSettings() {
+      return getStubSettingsBuilder().streamRawPredictSettings();
+    }
+
     /** Returns the builder for the settings used for calls to directPredict. */
     public UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
         directPredictSettings() {
@@ -274,6 +307,19 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     public UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
         directRawPredictSettings() {
       return getStubSettingsBuilder().directRawPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamDirectPredict. */
+    public StreamingCallSettings.Builder<StreamDirectPredictRequest, StreamDirectPredictResponse>
+        streamDirectPredictSettings() {
+      return getStubSettingsBuilder().streamDirectPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamDirectRawPredict. */
+    public StreamingCallSettings.Builder<
+            StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+        streamDirectRawPredictSettings() {
+      return getStubSettingsBuilder().streamDirectRawPredictSettings();
     }
 
     /** Returns the builder for the settings used for calls to streamingPredict. */
@@ -297,6 +343,18 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return getStubSettingsBuilder().explainSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateContent. */
+    public UnaryCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        generateContentSettings() {
+      return getStubSettingsBuilder().generateContentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateContent. */
+    public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings() {
+      return getStubSettingsBuilder().streamGenerateContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

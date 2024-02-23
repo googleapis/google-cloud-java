@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package com.google.cloud.netapp.v1;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
@@ -423,6 +426,140 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).reverseReplicationDirectionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackupVault. */
+  public UnaryCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupVaults. */
+  public PagedCallSettings<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      listBackupVaultsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupVaultsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public UnaryCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public OperationCallSettings<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public UnaryCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public OperationCallSettings<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPolicy. */
+  public UnaryCallSettings<CreateBackupPolicyRequest, Operation> createBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPolicy. */
+  public OperationCallSettings<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackupPolicy. */
+  public UnaryCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).getBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPolicies. */
+  public PagedCallSettings<
+          ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPolicy. */
+  public UnaryCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPolicy. */
+  public OperationCallSettings<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPolicy. */
+  public UnaryCallSettings<DeleteBackupPolicyRequest, Operation> deleteBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPolicy. */
+  public OperationCallSettings<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -474,7 +611,6 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return NetAppStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return NetAppStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -894,6 +1030,148 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return getStubSettingsBuilder().reverseReplicationDirectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
+        createBackupVaultSettings() {
+      return getStubSettingsBuilder().createBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public OperationCallSettings.Builder<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+        createBackupVaultOperationSettings() {
+      return getStubSettingsBuilder().createBackupVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupVault. */
+    public UnaryCallSettings.Builder<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+      return getStubSettingsBuilder().getBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupVaults. */
+    public PagedCallSettings.Builder<
+            ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+        listBackupVaultsSettings() {
+      return getStubSettingsBuilder().listBackupVaultsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public UnaryCallSettings.Builder<UpdateBackupVaultRequest, Operation>
+        updateBackupVaultSettings() {
+      return getStubSettingsBuilder().updateBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public OperationCallSettings.Builder<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+        updateBackupVaultOperationSettings() {
+      return getStubSettingsBuilder().updateBackupVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public UnaryCallSettings.Builder<DeleteBackupVaultRequest, Operation>
+        deleteBackupVaultSettings() {
+      return getStubSettingsBuilder().deleteBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
+        deleteBackupVaultOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return getStubSettingsBuilder().createBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings() {
+      return getStubSettingsBuilder().createBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings() {
+      return getStubSettingsBuilder().updateBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
+        updateBackupOperationSettings() {
+      return getStubSettingsBuilder().updateBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPolicy. */
+    public UnaryCallSettings.Builder<CreateBackupPolicyRequest, Operation>
+        createBackupPolicySettings() {
+      return getStubSettingsBuilder().createBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPolicy. */
+    public OperationCallSettings.Builder<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        createBackupPolicyOperationSettings() {
+      return getStubSettingsBuilder().createBackupPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupPolicy. */
+    public UnaryCallSettings.Builder<GetBackupPolicyRequest, BackupPolicy>
+        getBackupPolicySettings() {
+      return getStubSettingsBuilder().getBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPolicies. */
+    public PagedCallSettings.Builder<
+            ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+        listBackupPoliciesSettings() {
+      return getStubSettingsBuilder().listBackupPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPolicy. */
+    public UnaryCallSettings.Builder<UpdateBackupPolicyRequest, Operation>
+        updateBackupPolicySettings() {
+      return getStubSettingsBuilder().updateBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPolicy. */
+    public OperationCallSettings.Builder<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        updateBackupPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateBackupPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
+    public UnaryCallSettings.Builder<DeleteBackupPolicyRequest, Operation>
+        deleteBackupPolicySettings() {
+      return getStubSettingsBuilder().deleteBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
+    public OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+        deleteBackupPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

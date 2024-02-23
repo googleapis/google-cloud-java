@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.ProcessorName;
 import com.google.protobuf.FieldMask;
+import java.util.HashMap;
 
 public class SyncProcessDocument {
 
@@ -46,6 +47,7 @@ public class SyncProcessDocument {
               .setSkipHumanReview(true)
               .setFieldMask(FieldMask.newBuilder().build())
               .setProcessOptions(ProcessOptions.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       ProcessResponse response = documentProcessorServiceClient.processDocument(request);
     }

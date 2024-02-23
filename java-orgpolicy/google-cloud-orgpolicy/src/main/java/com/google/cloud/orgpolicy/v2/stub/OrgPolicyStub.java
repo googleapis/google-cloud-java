@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,19 +17,27 @@
 package com.google.cloud.orgpolicy.v2.stub;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.CreatePolicyRequest;
+import com.google.cloud.orgpolicy.v2.CustomConstraint;
+import com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.DeletePolicyRequest;
+import com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest;
 import com.google.cloud.orgpolicy.v2.GetPolicyRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsResponse;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsResponse;
 import com.google.cloud.orgpolicy.v2.ListPoliciesRequest;
 import com.google.cloud.orgpolicy.v2.ListPoliciesResponse;
 import com.google.cloud.orgpolicy.v2.Policy;
+import com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.UpdatePolicyRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
@@ -78,6 +86,35 @@ public abstract class OrgPolicyStub implements BackgroundResource {
 
   public UnaryCallable<DeletePolicyRequest, Empty> deletePolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePolicyCallable()");
+  }
+
+  public UnaryCallable<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomConstraintCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomConstraintCallable()");
+  }
+
+  public UnaryCallable<GetCustomConstraintRequest, CustomConstraint> getCustomConstraintCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCustomConstraintCallable()");
+  }
+
+  public UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsPagedResponse>
+      listCustomConstraintsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCustomConstraintsPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomConstraintsCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCustomConstraintCallable()");
   }
 
   @Override

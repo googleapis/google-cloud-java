@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1;
 import static com.google.cloud.compute.v1.InterconnectsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -96,6 +95,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     return ((InterconnectsStubSettings) getStubSettings()).getDiagnosticsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getMacsecConfig. */
+  public UnaryCallSettings<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).getMacsecConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInterconnectRequest, Operation> insertSettings() {
     return ((InterconnectsStubSettings) getStubSettings()).insertSettings();
@@ -170,7 +175,6 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     return InterconnectsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return InterconnectsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -254,6 +258,13 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
             GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
         getDiagnosticsSettings() {
       return getStubSettingsBuilder().getDiagnosticsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMacsecConfig. */
+    public UnaryCallSettings.Builder<
+            GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigSettings() {
+      return getStubSettingsBuilder().getMacsecConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */

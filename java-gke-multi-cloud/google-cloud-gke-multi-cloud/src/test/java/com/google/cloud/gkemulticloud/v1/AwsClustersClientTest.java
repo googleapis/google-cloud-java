@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,6 +111,7 @@ public class AwsClustersClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .addAllErrors(new ArrayList<AwsClusterError>())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -182,6 +183,7 @@ public class AwsClustersClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .addAllErrors(new ArrayList<AwsClusterError>())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -253,6 +255,7 @@ public class AwsClustersClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .addAllErrors(new ArrayList<AwsClusterError>())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -320,6 +323,7 @@ public class AwsClustersClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .addAllErrors(new ArrayList<AwsClusterError>())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -376,6 +380,7 @@ public class AwsClustersClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .addAllErrors(new ArrayList<AwsClusterError>())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -582,6 +587,82 @@ public class AwsClustersClientTest {
   }
 
   @Test
+  public void generateAwsClusterAgentTokenTest() throws Exception {
+    GenerateAwsClusterAgentTokenResponse expectedResponse =
+        GenerateAwsClusterAgentTokenResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpiresIn(-833810928)
+            .setTokenType("tokenType141498579")
+            .build();
+    mockAwsClusters.addResponse(expectedResponse);
+
+    GenerateAwsClusterAgentTokenRequest request =
+        GenerateAwsClusterAgentTokenRequest.newBuilder()
+            .setAwsCluster(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+            .setSubjectToken("subjectToken-1519661011")
+            .setSubjectTokenType("subjectTokenType1839592711")
+            .setVersion("version351608024")
+            .setNodePoolId("nodePoolId1121557241")
+            .setGrantType("grantType-1219832202")
+            .setAudience("audience975628804")
+            .setScope("scope109264468")
+            .setRequestedTokenType("requestedTokenType1733106949")
+            .setOptions("options-1249474914")
+            .build();
+
+    GenerateAwsClusterAgentTokenResponse actualResponse =
+        client.generateAwsClusterAgentToken(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAwsClusters.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateAwsClusterAgentTokenRequest actualRequest =
+        ((GenerateAwsClusterAgentTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAwsCluster(), actualRequest.getAwsCluster());
+    Assert.assertEquals(request.getSubjectToken(), actualRequest.getSubjectToken());
+    Assert.assertEquals(request.getSubjectTokenType(), actualRequest.getSubjectTokenType());
+    Assert.assertEquals(request.getVersion(), actualRequest.getVersion());
+    Assert.assertEquals(request.getNodePoolId(), actualRequest.getNodePoolId());
+    Assert.assertEquals(request.getGrantType(), actualRequest.getGrantType());
+    Assert.assertEquals(request.getAudience(), actualRequest.getAudience());
+    Assert.assertEquals(request.getScope(), actualRequest.getScope());
+    Assert.assertEquals(request.getRequestedTokenType(), actualRequest.getRequestedTokenType());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateAwsClusterAgentTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAwsClusters.addException(exception);
+
+    try {
+      GenerateAwsClusterAgentTokenRequest request =
+          GenerateAwsClusterAgentTokenRequest.newBuilder()
+              .setAwsCluster(
+                  AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+              .setSubjectToken("subjectToken-1519661011")
+              .setSubjectTokenType("subjectTokenType1839592711")
+              .setVersion("version351608024")
+              .setNodePoolId("nodePoolId1121557241")
+              .setGrantType("grantType-1219832202")
+              .setAudience("audience975628804")
+              .setScope("scope109264468")
+              .setRequestedTokenType("requestedTokenType1733106949")
+              .setOptions("options-1249474914")
+              .build();
+      client.generateAwsClusterAgentToken(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void generateAwsAccessTokenTest() throws Exception {
     GenerateAwsAccessTokenResponse expectedResponse =
         GenerateAwsAccessTokenResponse.newBuilder()
@@ -647,6 +728,8 @@ public class AwsClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -714,6 +797,8 @@ public class AwsClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -781,6 +866,8 @@ public class AwsClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -826,6 +913,134 @@ public class AwsClustersClientTest {
   }
 
   @Test
+  public void rollbackAwsNodePoolUpdateTest() throws Exception {
+    AwsNodePool expectedResponse =
+        AwsNodePool.newBuilder()
+            .setName(
+                AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]")
+                    .toString())
+            .setVersion("version351608024")
+            .setConfig(AwsNodeConfig.newBuilder().build())
+            .setAutoscaling(AwsNodePoolAutoscaling.newBuilder().build())
+            .setSubnetId("subnetId-2066159272")
+            .setUid("uid115792")
+            .setReconciling(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rollbackAwsNodePoolUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAwsClusters.addResponse(resultOperation);
+
+    AwsNodePoolName name =
+        AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]");
+
+    AwsNodePool actualResponse = client.rollbackAwsNodePoolUpdateAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAwsClusters.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackAwsNodePoolUpdateRequest actualRequest =
+        ((RollbackAwsNodePoolUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackAwsNodePoolUpdateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAwsClusters.addException(exception);
+
+    try {
+      AwsNodePoolName name =
+          AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]");
+      client.rollbackAwsNodePoolUpdateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rollbackAwsNodePoolUpdateTest2() throws Exception {
+    AwsNodePool expectedResponse =
+        AwsNodePool.newBuilder()
+            .setName(
+                AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]")
+                    .toString())
+            .setVersion("version351608024")
+            .setConfig(AwsNodeConfig.newBuilder().build())
+            .setAutoscaling(AwsNodePoolAutoscaling.newBuilder().build())
+            .setSubnetId("subnetId-2066159272")
+            .setUid("uid115792")
+            .setReconciling(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rollbackAwsNodePoolUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAwsClusters.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    AwsNodePool actualResponse = client.rollbackAwsNodePoolUpdateAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAwsClusters.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackAwsNodePoolUpdateRequest actualRequest =
+        ((RollbackAwsNodePoolUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackAwsNodePoolUpdateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAwsClusters.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.rollbackAwsNodePoolUpdateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getAwsNodePoolTest() throws Exception {
     AwsNodePool expectedResponse =
         AwsNodePool.newBuilder()
@@ -844,6 +1059,8 @@ public class AwsClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -898,6 +1115,8 @@ public class AwsClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
+            .setManagement(AwsNodeManagement.newBuilder().build())
+            .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -1102,6 +1321,100 @@ public class AwsClustersClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getAwsOpenIdConfigTest() throws Exception {
+    AwsOpenIdConfig expectedResponse =
+        AwsOpenIdConfig.newBuilder()
+            .setIssuer("issuer-1179159879")
+            .setJwksUri("jwksUri-1199660617")
+            .addAllResponseTypesSupported(new ArrayList<String>())
+            .addAllSubjectTypesSupported(new ArrayList<String>())
+            .addAllIdTokenSigningAlgValuesSupported(new ArrayList<String>())
+            .addAllClaimsSupported(new ArrayList<String>())
+            .addAllGrantTypes(new ArrayList<String>())
+            .build();
+    mockAwsClusters.addResponse(expectedResponse);
+
+    GetAwsOpenIdConfigRequest request =
+        GetAwsOpenIdConfigRequest.newBuilder()
+            .setAwsCluster(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+            .build();
+
+    AwsOpenIdConfig actualResponse = client.getAwsOpenIdConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAwsClusters.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAwsOpenIdConfigRequest actualRequest = ((GetAwsOpenIdConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAwsCluster(), actualRequest.getAwsCluster());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAwsOpenIdConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAwsClusters.addException(exception);
+
+    try {
+      GetAwsOpenIdConfigRequest request =
+          GetAwsOpenIdConfigRequest.newBuilder()
+              .setAwsCluster(
+                  AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+              .build();
+      client.getAwsOpenIdConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAwsJsonWebKeysTest() throws Exception {
+    AwsJsonWebKeys expectedResponse =
+        AwsJsonWebKeys.newBuilder().addAllKeys(new ArrayList<Jwk>()).build();
+    mockAwsClusters.addResponse(expectedResponse);
+
+    GetAwsJsonWebKeysRequest request =
+        GetAwsJsonWebKeysRequest.newBuilder()
+            .setAwsCluster(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+            .build();
+
+    AwsJsonWebKeys actualResponse = client.getAwsJsonWebKeys(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAwsClusters.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAwsJsonWebKeysRequest actualRequest = ((GetAwsJsonWebKeysRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAwsCluster(), actualRequest.getAwsCluster());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAwsJsonWebKeysExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAwsClusters.addException(exception);
+
+    try {
+      GetAwsJsonWebKeysRequest request =
+          GetAwsJsonWebKeysRequest.newBuilder()
+              .setAwsCluster(
+                  AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+              .build();
+      client.getAwsJsonWebKeys(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

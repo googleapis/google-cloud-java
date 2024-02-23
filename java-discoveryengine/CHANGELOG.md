@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.32.0 (2024-02-20)
+
+* No change
+
+
+## 0.31.0 (2024-02-09)
+
+### Features
+
+* add data store, engine and site search engine services ([#10350](https://github.com/googleapis/google-cloud-java/issues/10350)) ([3bf2de6](https://github.com/googleapis/google-cloud-java/commit/3bf2de6efe3f6e54c7460474d5b7b703d2d5fe02))
+
+
+
+## 0.30.0 (2024-01-23)
+
+* No change
+
+
+## 0.29.0 (2024-01-10)
+
+### Features
+
+* add site search engine service ([#10149](https://github.com/googleapis/google-cloud-java/issues/10149)) ([ebfda8b](https://github.com/googleapis/google-cloud-java/commit/ebfda8bd48f56684dcbb8b910dc54471038180db))
+
+
+
+## 0.28.0 (2023-12-12)
+
+* No change
+
+
+## 0.27.0 (2023-12-04)
+
+### Features
+
+* add data store and engine services ([#10054](https://github.com/googleapis/google-cloud-java/issues/10054)) ([5a71294](https://github.com/googleapis/google-cloud-java/commit/5a71294201f9007512a0c669bbc93f3eda04acba))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 0.26.0 (2023-11-06)
 
 ### Dependencies

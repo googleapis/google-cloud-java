@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package com.google.cloud.advisorynotifications.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,19 +33,34 @@ import javax.annotation.Generated;
 public class LocationName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/locations/{location}");
+  private static final PathTemplate PROJECT_LOCATION =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String location;
+  private final String project;
 
   @Deprecated
   protected LocationName() {
     organization = null;
     location = null;
+    project = null;
   }
 
   private LocationName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     location = Preconditions.checkNotNull(builder.getLocation());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION;
+  }
+
+  private LocationName(ProjectLocationBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION;
   }
 
   public String getOrganization() {
@@ -54,8 +71,22 @@ public class LocationName implements ResourceName {
     return location;
   }
 
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newOrganizationLocationBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationBuilder newProjectLocationBuilder() {
+    return new ProjectLocationBuilder();
   }
 
   public Builder toBuilder() {
@@ -66,18 +97,42 @@ public class LocationName implements ResourceName {
     return newBuilder().setOrganization(organization).setLocation(location).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static LocationName ofOrganizationLocationName(String organization, String location) {
+    return newBuilder().setOrganization(organization).setLocation(location).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static LocationName ofProjectLocationName(String project, String location) {
+    return newProjectLocationBuilder().setProject(project).setLocation(location).build();
+  }
+
   public static String format(String organization, String location) {
     return newBuilder().setOrganization(organization).setLocation(location).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationLocationName(String organization, String location) {
+    return newBuilder().setOrganization(organization).setLocation(location).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationName(String project, String location) {
+    return newProjectLocationBuilder().setProject(project).setLocation(location).build().toString();
   }
 
   public static LocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_LOCATION.validatedMatch(
-            formattedString, "LocationName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("location"));
+    if (ORGANIZATION_LOCATION.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION.match(formattedString);
+      return ofOrganizationLocationName(matchMap.get("organization"), matchMap.get("location"));
+    } else if (PROJECT_LOCATION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION.match(formattedString);
+      return ofProjectLocationName(matchMap.get("project"), matchMap.get("location"));
+    }
+    throw new ValidationException("LocationName.parse: formattedString not in valid format");
   }
 
   public static List<LocationName> parseList(List<String> formattedStrings) {
@@ -101,7 +156,8 @@ public class LocationName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_LOCATION.matches(formattedString);
+    return ORGANIZATION_LOCATION.matches(formattedString)
+        || PROJECT_LOCATION.matches(formattedString);
   }
 
   @Override
@@ -116,6 +172,9 @@ public class LocationName implements ResourceName {
           if (location != null) {
             fieldMapBuilder.put("location", location);
           }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -129,7 +188,7 @@ public class LocationName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_LOCATION.instantiate("organization", organization, "location", location);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -140,7 +199,8 @@ public class LocationName implements ResourceName {
     if (o != null && getClass() == o.getClass()) {
       LocationName that = ((LocationName) o);
       return Objects.equals(this.organization, that.organization)
-          && Objects.equals(this.location, that.location);
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -149,9 +209,13 @@ public class LocationName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -181,8 +245,42 @@ public class LocationName implements ResourceName {
     }
 
     private Builder(LocationName locationName) {
+      Preconditions.checkArgument(
+          Objects.equals(locationName.pathTemplate, ORGANIZATION_LOCATION),
+          "toBuilder is only supported when LocationName has the pattern of organizations/{organization}/locations/{location}");
       this.organization = locationName.organization;
       this.location = locationName.location;
+    }
+
+    public LocationName build() {
+      return new LocationName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationBuilder {
+    private String project;
+    private String location;
+
+    protected ProjectLocationBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public ProjectLocationBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationBuilder setLocation(String location) {
+      this.location = location;
+      return this;
     }
 
     public LocationName build() {

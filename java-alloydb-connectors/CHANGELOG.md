@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.14.0 (2024-02-20)
+
+* No change
+
+
+## 0.13.0 (2024-02-09)
+
+* No change
+
+
+## 0.12.0 (2024-01-23)
+
+* No change
+
+
+## 0.11.0 (2024-01-10)
+
+### Features
+
+* added PSC config, PSC interface config, PSC instance config ([#10166](https://github.com/googleapis/google-cloud-java/issues/10166)) ([24577d1](https://github.com/googleapis/google-cloud-java/commit/24577d17a6b547fe10993d8ad4ec5e1b83c6ba30))
+
+
+
+## 0.10.0 (2023-12-12)
+
+* No change
+
+
+## 0.9.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 0.8.0 (2023-11-06)
 
 ### Features

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.TargetPoolsClient.AggregatedListPagedR
 import static com.google.cloud.compute.v1.TargetPoolsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -177,6 +176,18 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return ((TargetPoolsStubSettings) getStubSettings()).setBackupOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
   public static final TargetPoolsSettings create(TargetPoolsStubSettings stub) throws IOException {
     return new TargetPoolsSettings.Builder(stub.toBuilder()).build();
   }
@@ -211,7 +222,6 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return TargetPoolsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return TargetPoolsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -377,6 +387,18 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     public OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
         setBackupOperationSettings() {
       return getStubSettingsBuilder().setBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,31 @@
  * A client to Retail API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= AnalyticsServiceClient =======================
+ *
+ * <p>Service Description: Service for managing &amp; accessing retail search business metric.
+ * Retail recommendation business metric is currently not available.
+ *
+ * <p>Sample for AnalyticsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AnalyticsServiceClient analyticsServiceClient = AnalyticsServiceClient.create()) {
+ *   ExportAnalyticsMetricsRequest request =
+ *       ExportAnalyticsMetricsRequest.newBuilder()
+ *           .setCatalog("catalog555704345")
+ *           .setOutputConfig(OutputConfig.newBuilder().build())
+ *           .setFilter("filter-1274492040")
+ *           .build();
+ *   ExportAnalyticsMetricsResponse response =
+ *       analyticsServiceClient.exportAnalyticsMetricsAsync(request).get();
+ * }
+ * }</pre>
  *
  * <p>======================= CatalogServiceClient =======================
  *

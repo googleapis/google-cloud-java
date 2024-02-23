@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.tasks.v2beta3.BufferTaskRequest;
-import com.google.cloud.tasks.v2beta3.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta3.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta3.CreateTaskRequest;
 import com.google.cloud.tasks.v2beta3.DeleteQueueRequest;
@@ -206,15 +204,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<BufferTaskRequest, BufferTaskResponse>
-      bufferTaskMethodDescriptor =
-          MethodDescriptor.<BufferTaskRequest, BufferTaskResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/BufferTask")
-              .setRequestMarshaller(ProtoUtils.marshaller(BufferTaskRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(BufferTaskResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -253,7 +242,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<CreateTaskRequest, Task> createTaskCallable;
   private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
-  private final UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -462,17 +450,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskTransportSettings =
-        GrpcCallSettings.<BufferTaskRequest, BufferTaskResponse>newBuilder()
-            .setMethodDescriptor(bufferTaskMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("queue", String.valueOf(request.getQueue()));
-                  builder.add("task_id", String.valueOf(request.getTaskId()));
-                  return builder.build();
-                })
-            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -550,9 +527,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     this.runTaskCallable =
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
-    this.bufferTaskCallable =
-        callableFactory.createUnaryCallable(
-            bufferTaskTransportSettings, settings.bufferTaskSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -660,11 +634,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
-  }
-
-  @Override
-  public UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
-    return bufferTaskCallable;
   }
 
   @Override

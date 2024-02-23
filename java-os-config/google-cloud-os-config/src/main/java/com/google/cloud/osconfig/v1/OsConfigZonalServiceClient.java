@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,19 +67,261 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateOSPolicyAssignment</td>
+ *      <td><p> Create an OS policy assignment.
+ * <p>  This method also creates the first revision of the OS policy assignment.
+ * <p>  This method returns a long running operation (LRO) that contains the rollout details. The rollout can be cancelled by cancelling the LRO.
+ * <p>  For more information, see [Method: projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createOSPolicyAssignmentAsync(CreateOSPolicyAssignmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createOSPolicyAssignmentAsync(LocationName parent, OSPolicyAssignment osPolicyAssignment, String osPolicyAssignmentId)
+ *           <li><p> createOSPolicyAssignmentAsync(String parent, OSPolicyAssignment osPolicyAssignment, String osPolicyAssignmentId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createOSPolicyAssignmentOperationCallable()
+ *           <li><p> createOSPolicyAssignmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateOSPolicyAssignment</td>
+ *      <td><p> Update an existing OS policy assignment.
+ * <p>  This method creates a new revision of the OS policy assignment.
+ * <p>  This method returns a long running operation (LRO) that contains the rollout details. The rollout can be cancelled by cancelling the LRO.
+ * <p>  For more information, see [Method: projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateOSPolicyAssignmentAsync(UpdateOSPolicyAssignmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateOSPolicyAssignmentAsync(OSPolicyAssignment osPolicyAssignment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOSPolicyAssignmentOperationCallable()
+ *           <li><p> updateOSPolicyAssignmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOSPolicyAssignment</td>
+ *      <td><p> Retrieve an existing OS policy assignment.
+ * <p>  This method always returns the latest revision. In order to retrieve a previous revision of the assignment, also provide the revision ID in the `name` parameter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOSPolicyAssignment(GetOSPolicyAssignmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getOSPolicyAssignment(OSPolicyAssignmentName name)
+ *           <li><p> getOSPolicyAssignment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOSPolicyAssignmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOSPolicyAssignments</td>
+ *      <td><p> List the OS policy assignments under the parent resource.
+ * <p>  For each OS policy assignment, the latest revision is returned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignments(ListOSPolicyAssignmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignments(LocationName parent)
+ *           <li><p> listOSPolicyAssignments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentsPagedCallable()
+ *           <li><p> listOSPolicyAssignmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOSPolicyAssignmentRevisions</td>
+ *      <td><p> List the OS policy assignment revisions for a given OS policy assignment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentRevisions(ListOSPolicyAssignmentRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentRevisions(OSPolicyAssignmentName name)
+ *           <li><p> listOSPolicyAssignmentRevisions(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentRevisionsPagedCallable()
+ *           <li><p> listOSPolicyAssignmentRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteOSPolicyAssignment</td>
+ *      <td><p> Delete the OS policy assignment.
+ * <p>  This method creates a new revision of the OS policy assignment.
+ * <p>  This method returns a long running operation (LRO) that contains the rollout details. The rollout can be cancelled by cancelling the LRO.
+ * <p>  If the LRO completes and is not cancelled, all revisions associated with the OS policy assignment are deleted.
+ * <p>  For more information, see [Method: projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteOSPolicyAssignmentAsync(DeleteOSPolicyAssignmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteOSPolicyAssignmentAsync(OSPolicyAssignmentName name)
+ *           <li><p> deleteOSPolicyAssignmentAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOSPolicyAssignmentOperationCallable()
+ *           <li><p> deleteOSPolicyAssignmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOSPolicyAssignmentReport</td>
+ *      <td><p> Get the OS policy asssignment report for the specified Compute Engine VM instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOSPolicyAssignmentReport(GetOSPolicyAssignmentReportRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getOSPolicyAssignmentReport(OSPolicyAssignmentReportName name)
+ *           <li><p> getOSPolicyAssignmentReport(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOSPolicyAssignmentReportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOSPolicyAssignmentReports</td>
+ *      <td><p> List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentReports(ListOSPolicyAssignmentReportsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentReports(InstanceOSPolicyAssignmentName parent)
+ *           <li><p> listOSPolicyAssignmentReports(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOSPolicyAssignmentReportsPagedCallable()
+ *           <li><p> listOSPolicyAssignmentReportsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetInventory</td>
+ *      <td><p> Get inventory data for the specified VM instance. If the VM has no associated inventory, the message `NOT_FOUND` is returned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getInventory(GetInventoryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getInventory(InventoryName name)
+ *           <li><p> getInventory(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getInventoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListInventories</td>
+ *      <td><p> List inventory data for all VM instances in the specified zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listInventories(ListInventoriesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listInventories(InstanceName parent)
+ *           <li><p> listInventories(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listInventoriesPagedCallable()
+ *           <li><p> listInventoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVulnerabilityReport</td>
+ *      <td><p> Gets the vulnerability report for the specified VM instance. Only VMs with inventory data have vulnerability reports associated with them.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVulnerabilityReport(GetVulnerabilityReportRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getVulnerabilityReport(VulnerabilityReportName name)
+ *           <li><p> getVulnerabilityReport(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVulnerabilityReportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListVulnerabilityReports</td>
+ *      <td><p> List vulnerability reports for all VM instances in the specified zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listVulnerabilityReports(ListVulnerabilityReportsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listVulnerabilityReports(InstanceName parent)
+ *           <li><p> listVulnerabilityReports(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listVulnerabilityReportsPagedCallable()
+ *           <li><p> listVulnerabilityReportsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

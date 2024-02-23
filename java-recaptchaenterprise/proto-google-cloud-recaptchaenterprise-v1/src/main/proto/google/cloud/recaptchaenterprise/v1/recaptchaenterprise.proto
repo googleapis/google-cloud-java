@@ -183,6 +183,16 @@ service RecaptchaEnterpriseService {
     option (google.api.method_signature) = "name";
   }
 
+  // Reorders all firewall policies.
+  rpc ReorderFirewallPolicies(ReorderFirewallPoliciesRequest)
+      returns (ReorderFirewallPoliciesResponse) {
+    option (google.api.http) = {
+      post: "/v1/{parent=projects/*}/firewallpolicies:reorder"
+      body: "*"
+    };
+    option (google.api.method_signature) = "parent,names";
+  }
+
   // List groups of related accounts.
   rpc ListRelatedAccountGroups(ListRelatedAccountGroupsRequest)
       returns (ListRelatedAccountGroupsResponse) {
@@ -553,7 +563,7 @@ message AccountVerificationInfo {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Username of the account that is being verified. Deprecated. Customers
-  // should now provide the hashed account ID field in Event.
+  // should now provide the `account_id` field in `event.user_info`.
   string username = 2 [deprecated = true];
 }
 
@@ -590,9 +600,12 @@ message Assessment {
     pattern: "projects/{project}/assessments/{assessment}"
   };
 
-  // Output only. The resource name for the Assessment in the format
+  // Output only. Identifier. The resource name for the Assessment in the format
   // `projects/{project}/assessments/{assessment}`.
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.field_behavior) = IDENTIFIER
+  ];
 
   // Optional. The event being assessed.
   Event event = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -1276,6 +1289,30 @@ message DeleteFirewallPolicyRequest {
   ];
 }
 
+// The reorder firewall policies request message.
+message ReorderFirewallPoliciesRequest {
+  // Required. The name of the project to list the policies for, in the format
+  // `projects/{project}`.
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "cloudresourcemanager.googleapis.com/Project"
+    }
+  ];
+
+  // Required. A list containing all policy names, in the new order. Each name
+  // is in the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+  repeated string names = 2 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "recaptchaenterprise.googleapis.com/FirewallPolicy"
+    }
+  ];
+}
+
+// The reorder firewall policies response message.
+message ReorderFirewallPoliciesResponse {}
+
 // The migrate key request message.
 message MigrateKeyRequest {
   // Required. The name of the key to be migrated, in the format
@@ -1317,9 +1354,12 @@ message Metrics {
     pattern: "projects/{project}/keys/{key}/metrics"
   };
 
-  // Output only. The name of the metrics, in the format
+  // Output only. Identifier. The name of the metrics, in the format
   // `projects/{project}/keys/{key}/metrics`.
-  string name = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 4 [
+    (google.api.field_behavior) = IDENTIFIER,
+    (google.api.field_behavior) = OUTPUT_ONLY
+  ];
 
   // Inclusive start time aligned to a day (UTC).
   google.protobuf.Timestamp start_time = 1;
@@ -1352,9 +1392,9 @@ message Key {
     pattern: "projects/{project}/keys/{key}"
   };
 
-  // The resource name for the Key in the format
+  // Identifier. The resource name for the Key in the format
   // `projects/{project}/keys/{key}`.
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Required. Human-readable display name of this key. Modifiable by user.
   string display_name = 2 [(google.api.field_behavior) = REQUIRED];
@@ -1645,9 +1685,9 @@ message FirewallPolicy {
     pattern: "projects/{project}/firewallpolicies/{firewallpolicy}"
   };
 
-  // The resource name for the FirewallPolicy in the format
+  // Identifier. The resource name for the FirewallPolicy in the format
   // `projects/{project}/firewallpolicies/{firewallpolicy}`.
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Optional. A description of what this policy aims to achieve, for
   // convenience purposes. The description can at most include 256 UTF-8
@@ -1762,10 +1802,19 @@ message SearchRelatedAccountGroupMembershipsRequest {
     }
   ];
 
-  // Optional. The unique stable hashed user identifier used to search
-  // connections. The identifier should correspond to a `hashed_account_id`
-  // provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
-  bytes hashed_account_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Optional. The unique stable account identifier used to search connections.
+  // The identifier should correspond to an `account_id` provided in a previous
+  // `CreateAssessment` or `AnnotateAssessment` call. Either hashed_account_id
+  // or account_id must be set, but not both.
+  string account_id = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Deprecated: use `account_id` instead.
+  // The unique stable hashed account identifier used to search connections. The
+  // identifier should correspond to a `hashed_account_id` provided in a
+  // previous `CreateAssessment` or `AnnotateAssessment` call. Either
+  // hashed_account_id or account_id must be set, but not both.
+  bytes hashed_account_id = 2
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
 
   // Optional. The maximum number of groups to return. The service might return
   // fewer than this value. If unspecified, at most 50 groups are returned. The
@@ -1799,19 +1848,26 @@ message RelatedAccountGroupMembership {
     pattern: "projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}"
   };
 
-  // Required. The resource name for this membership in the format
+  // Required. Identifier. The resource name for this membership in the format
   // `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
   string name = 1 [
+    (google.api.field_behavior) = IDENTIFIER,
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
       type: "recaptchaenterprise.googleapis.com/RelatedAccountGroupMembership"
     }
   ];
 
-  // The unique stable hashed user identifier of the member. The identifier
+  // The unique stable account identifier of the member. The identifier
+  // corresponds to an `account_id` provided in a previous `CreateAssessment` or
+  // `AnnotateAssessment` call.
+  string account_id = 4;
+
+  // Deprecated: use `account_id` instead.
+  // The unique stable hashed account identifier of the member. The identifier
   // corresponds to a `hashed_account_id` provided in a previous
   // `CreateAssessment` or `AnnotateAssessment` call.
-  bytes hashed_account_id = 2;
+  bytes hashed_account_id = 2 [deprecated = true];
 }
 
 // A group of related accounts.
@@ -1821,9 +1877,11 @@ message RelatedAccountGroup {
     pattern: "projects/{project}/relatedaccountgroups/{relatedaccountgroup}"
   };
 
-  // Required. The resource name for the related account group in the format
+  // Required. Identifier. The resource name for the related account group in
+  // the format
   // `projects/{project}/relatedaccountgroups/{related_account_group}`.
   string name = 1 [
+    (google.api.field_behavior) = IDENTIFIER,
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
       type: "recaptchaenterprise.googleapis.com/RelatedAccountGroup"

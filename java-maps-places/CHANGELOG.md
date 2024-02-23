@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.7.0 (2024-02-20)
+
+### Features
+
+* add AutoComplete API ([#10403](https://github.com/googleapis/google-cloud-java/issues/10403)) ([20075da](https://github.com/googleapis/google-cloud-java/commit/20075daaffe91d7550d81b21470e54a7c83f985a))
+
+
+
+## 0.6.0 (2024-02-09)
+
+* No change
+
+
+## 0.5.0 (2024-01-23)
+
+* No change
+
+
+## 0.4.0 (2024-01-10)
+
+### Features
+
+* change comments for some fields in Places API ([#10124](https://github.com/googleapis/google-cloud-java/issues/10124)) ([f2f275e](https://github.com/googleapis/google-cloud-java/commit/f2f275e3acaf6031f6666ab9346a5854755310e2))
+
+
+
+## 0.3.0 (2023-12-12)
+
+* No change
+
+
+## 0.2.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 0.1.0 (2023-11-06)
 
 ### Features

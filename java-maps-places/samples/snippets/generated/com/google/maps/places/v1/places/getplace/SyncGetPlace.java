@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public class SyncGetPlace {
               .setName(PlaceName.of("[PLACE_ID]").toString())
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
+              .setSessionToken("sessionToken-696552189")
               .build();
       Place response = placesClient.getPlace(request);
     }

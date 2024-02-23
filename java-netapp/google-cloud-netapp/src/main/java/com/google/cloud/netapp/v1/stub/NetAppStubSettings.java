@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
@@ -58,13 +61,22 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.netapp.v1.ActiveDirectory;
+import com.google.cloud.netapp.v1.Backup;
+import com.google.cloud.netapp.v1.BackupPolicy;
+import com.google.cloud.netapp.v1.BackupVault;
 import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
+import com.google.cloud.netapp.v1.CreateBackupRequest;
+import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
 import com.google.cloud.netapp.v1.CreateVolumeRequest;
 import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
+import com.google.cloud.netapp.v1.DeleteBackupRequest;
+import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
@@ -72,6 +84,9 @@ import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
+import com.google.cloud.netapp.v1.GetBackupRequest;
+import com.google.cloud.netapp.v1.GetBackupVaultRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
@@ -80,6 +95,12 @@ import com.google.cloud.netapp.v1.GetVolumeRequest;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
+import com.google.cloud.netapp.v1.ListBackupPoliciesRequest;
+import com.google.cloud.netapp.v1.ListBackupPoliciesResponse;
+import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
+import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
+import com.google.cloud.netapp.v1.ListBackupsRequest;
+import com.google.cloud.netapp.v1.ListBackupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
@@ -99,6 +120,9 @@ import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
+import com.google.cloud.netapp.v1.UpdateBackupRequest;
+import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
@@ -264,6 +288,44 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final OperationCallSettings<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationSettings;
+  private final UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings;
+  private final OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationSettings;
+  private final UnaryCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultSettings;
+  private final PagedCallSettings<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      listBackupVaultsSettings;
+  private final UnaryCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultSettings;
+  private final OperationCallSettings<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationSettings;
+  private final UnaryCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultSettings;
+  private final OperationCallSettings<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationSettings;
+  private final UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings;
+  private final OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
+  private final OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings;
+  private final UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings;
+  private final OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationSettings;
+  private final UnaryCallSettings<CreateBackupPolicyRequest, Operation> createBackupPolicySettings;
+  private final OperationCallSettings<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationSettings;
+  private final UnaryCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicySettings;
+  private final PagedCallSettings<
+          ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesSettings;
+  private final UnaryCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicySettings;
+  private final OperationCallSettings<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteBackupPolicyRequest, Operation> deleteBackupPolicySettings;
+  private final OperationCallSettings<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -499,6 +561,122 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+      LIST_BACKUP_VAULTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupVaultsRequest injectToken(
+                ListBackupVaultsRequest payload, String token) {
+              return ListBackupVaultsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupVaultsRequest injectPageSize(
+                ListBackupVaultsRequest payload, int pageSize) {
+              return ListBackupVaultsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupVaultsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupVaultsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupVault> extractResources(ListBackupVaultsResponse payload) {
+              return payload.getBackupVaultsList() == null
+                  ? ImmutableList.<BackupVault>of()
+                  : payload.getBackupVaultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList() == null
+                  ? ImmutableList.<Backup>of()
+                  : payload.getBackupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy>
+      LIST_BACKUP_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupPoliciesRequest injectToken(
+                ListBackupPoliciesRequest payload, String token) {
+              return ListBackupPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupPoliciesRequest injectPageSize(
+                ListBackupPoliciesRequest payload, int pageSize) {
+              return ListBackupPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupPolicy> extractResources(ListBackupPoliciesResponse payload) {
+              return payload.getBackupPoliciesList() == null
+                  ? ImmutableList.<BackupPolicy>of()
+                  : payload.getBackupPoliciesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -645,6 +823,63 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       PageContext.create(
                           callable, LIST_REPLICATIONS_PAGE_STR_DESC, request, context);
               return ListReplicationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      LIST_BACKUP_VAULTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupVaultsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse> callable,
+                ListBackupVaultsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupVaultsResponse> futureResponse) {
+              PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_VAULTS_PAGE_STR_DESC, request, context);
+              return ListBackupVaultsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+      LIST_BACKUP_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupPoliciesRequest,
+              ListBackupPoliciesResponse,
+              ListBackupPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesResponse> callable,
+                ListBackupPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupPoliciesResponse> futureResponse) {
+              PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_POLICIES_PAGE_STR_DESC, request, context);
+              return ListBackupPoliciesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1001,6 +1236,140 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return reverseReplicationDirectionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
+    return createBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationSettings() {
+    return createBackupVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupVault. */
+  public UnaryCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+    return getBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupVaults. */
+  public PagedCallSettings<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      listBackupVaultsSettings() {
+    return listBackupVaultsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public UnaryCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultSettings() {
+    return updateBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public OperationCallSettings<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationSettings() {
+    return updateBackupVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public UnaryCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultSettings() {
+    return deleteBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public OperationCallSettings<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationSettings() {
+    return deleteBackupVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return createBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings() {
+    return createBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return deleteBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings() {
+    return updateBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationSettings() {
+    return updateBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPolicy. */
+  public UnaryCallSettings<CreateBackupPolicyRequest, Operation> createBackupPolicySettings() {
+    return createBackupPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPolicy. */
+  public OperationCallSettings<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationSettings() {
+    return createBackupPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupPolicy. */
+  public UnaryCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicySettings() {
+    return getBackupPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPolicies. */
+  public PagedCallSettings<
+          ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesSettings() {
+    return listBackupPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPolicy. */
+  public UnaryCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicySettings() {
+    return updateBackupPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPolicy. */
+  public OperationCallSettings<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationSettings() {
+    return updateBackupPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPolicy. */
+  public UnaryCallSettings<DeleteBackupPolicyRequest, Operation> deleteBackupPolicySettings() {
+    return deleteBackupPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPolicy. */
+  public OperationCallSettings<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationSettings() {
+    return deleteBackupPolicyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1026,6 +1395,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "netapp";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -1072,7 +1456,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(NetAppStubSettings.class))
@@ -1080,7 +1463,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(NetAppStubSettings.class))
@@ -1187,6 +1569,36 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         settingsBuilder.reverseReplicationDirectionSettings().build();
     reverseReplicationDirectionOperationSettings =
         settingsBuilder.reverseReplicationDirectionOperationSettings().build();
+    createBackupVaultSettings = settingsBuilder.createBackupVaultSettings().build();
+    createBackupVaultOperationSettings =
+        settingsBuilder.createBackupVaultOperationSettings().build();
+    getBackupVaultSettings = settingsBuilder.getBackupVaultSettings().build();
+    listBackupVaultsSettings = settingsBuilder.listBackupVaultsSettings().build();
+    updateBackupVaultSettings = settingsBuilder.updateBackupVaultSettings().build();
+    updateBackupVaultOperationSettings =
+        settingsBuilder.updateBackupVaultOperationSettings().build();
+    deleteBackupVaultSettings = settingsBuilder.deleteBackupVaultSettings().build();
+    deleteBackupVaultOperationSettings =
+        settingsBuilder.deleteBackupVaultOperationSettings().build();
+    createBackupSettings = settingsBuilder.createBackupSettings().build();
+    createBackupOperationSettings = settingsBuilder.createBackupOperationSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
+    updateBackupSettings = settingsBuilder.updateBackupSettings().build();
+    updateBackupOperationSettings = settingsBuilder.updateBackupOperationSettings().build();
+    createBackupPolicySettings = settingsBuilder.createBackupPolicySettings().build();
+    createBackupPolicyOperationSettings =
+        settingsBuilder.createBackupPolicyOperationSettings().build();
+    getBackupPolicySettings = settingsBuilder.getBackupPolicySettings().build();
+    listBackupPoliciesSettings = settingsBuilder.listBackupPoliciesSettings().build();
+    updateBackupPolicySettings = settingsBuilder.updateBackupPolicySettings().build();
+    updateBackupPolicyOperationSettings =
+        settingsBuilder.updateBackupPolicyOperationSettings().build();
+    deleteBackupPolicySettings = settingsBuilder.deleteBackupPolicySettings().build();
+    deleteBackupPolicyOperationSettings =
+        settingsBuilder.deleteBackupPolicyOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1325,6 +1737,57 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final OperationCallSettings.Builder<
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
+        createBackupVaultSettings;
+    private final OperationCallSettings.Builder<
+            CreateBackupVaultRequest, BackupVault, OperationMetadata>
+        createBackupVaultOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupVaultRequest, BackupVault>
+        getBackupVaultSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+        listBackupVaultsSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupVaultRequest, Operation>
+        updateBackupVaultSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+        updateBackupVaultOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupVaultRequest, Operation>
+        deleteBackupVaultSettings;
+    private final OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
+        deleteBackupVaultOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings;
+    private final OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
+    private final OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings;
+    private final OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
+        updateBackupOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupPolicyRequest, Operation>
+        createBackupPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        createBackupPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupPolicyRequest, BackupPolicy>
+        getBackupPolicySettings;
+    private final PagedCallSettings.Builder<
+            ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+        listBackupPoliciesSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupPolicyRequest, Operation>
+        updateBackupPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        updateBackupPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupPolicyRequest, Operation>
+        deleteBackupPolicySettings;
+    private final OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+        deleteBackupPolicyOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1440,6 +1903,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       resumeReplicationOperationSettings = OperationCallSettings.newBuilder();
       reverseReplicationDirectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reverseReplicationDirectionOperationSettings = OperationCallSettings.newBuilder();
+      createBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupVaultOperationSettings = OperationCallSettings.newBuilder();
+      getBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupVaultsSettings = PagedCallSettings.newBuilder(LIST_BACKUP_VAULTS_PAGE_STR_FACT);
+      updateBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupVaultOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupVaultOperationSettings = OperationCallSettings.newBuilder();
+      createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupOperationSettings = OperationCallSettings.newBuilder();
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupOperationSettings = OperationCallSettings.newBuilder();
+      updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupOperationSettings = OperationCallSettings.newBuilder();
+      createBackupPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
+      getBackupPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupPoliciesSettings = PagedCallSettings.newBuilder(LIST_BACKUP_POLICIES_PAGE_STR_FACT);
+      updateBackupPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackupPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1481,6 +1968,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               stopReplicationSettings,
               resumeReplicationSettings,
               reverseReplicationDirectionSettings,
+              createBackupVaultSettings,
+              getBackupVaultSettings,
+              listBackupVaultsSettings,
+              updateBackupVaultSettings,
+              deleteBackupVaultSettings,
+              createBackupSettings,
+              getBackupSettings,
+              listBackupsSettings,
+              deleteBackupSettings,
+              updateBackupSettings,
+              createBackupPolicySettings,
+              getBackupPolicySettings,
+              listBackupPoliciesSettings,
+              updateBackupPolicySettings,
+              deleteBackupPolicySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1553,6 +2055,33 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           settings.reverseReplicationDirectionSettings.toBuilder();
       reverseReplicationDirectionOperationSettings =
           settings.reverseReplicationDirectionOperationSettings.toBuilder();
+      createBackupVaultSettings = settings.createBackupVaultSettings.toBuilder();
+      createBackupVaultOperationSettings = settings.createBackupVaultOperationSettings.toBuilder();
+      getBackupVaultSettings = settings.getBackupVaultSettings.toBuilder();
+      listBackupVaultsSettings = settings.listBackupVaultsSettings.toBuilder();
+      updateBackupVaultSettings = settings.updateBackupVaultSettings.toBuilder();
+      updateBackupVaultOperationSettings = settings.updateBackupVaultOperationSettings.toBuilder();
+      deleteBackupVaultSettings = settings.deleteBackupVaultSettings.toBuilder();
+      deleteBackupVaultOperationSettings = settings.deleteBackupVaultOperationSettings.toBuilder();
+      createBackupSettings = settings.createBackupSettings.toBuilder();
+      createBackupOperationSettings = settings.createBackupOperationSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
+      updateBackupSettings = settings.updateBackupSettings.toBuilder();
+      updateBackupOperationSettings = settings.updateBackupOperationSettings.toBuilder();
+      createBackupPolicySettings = settings.createBackupPolicySettings.toBuilder();
+      createBackupPolicyOperationSettings =
+          settings.createBackupPolicyOperationSettings.toBuilder();
+      getBackupPolicySettings = settings.getBackupPolicySettings.toBuilder();
+      listBackupPoliciesSettings = settings.listBackupPoliciesSettings.toBuilder();
+      updateBackupPolicySettings = settings.updateBackupPolicySettings.toBuilder();
+      updateBackupPolicyOperationSettings =
+          settings.updateBackupPolicyOperationSettings.toBuilder();
+      deleteBackupPolicySettings = settings.deleteBackupPolicySettings.toBuilder();
+      deleteBackupPolicyOperationSettings =
+          settings.deleteBackupPolicyOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1594,6 +2123,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               stopReplicationSettings,
               resumeReplicationSettings,
               reverseReplicationDirectionSettings,
+              createBackupVaultSettings,
+              getBackupVaultSettings,
+              listBackupVaultsSettings,
+              updateBackupVaultSettings,
+              deleteBackupVaultSettings,
+              createBackupSettings,
+              getBackupSettings,
+              listBackupsSettings,
+              deleteBackupSettings,
+              updateBackupSettings,
+              createBackupPolicySettings,
+              getBackupPolicySettings,
+              listBackupPoliciesSettings,
+              updateBackupPolicySettings,
+              deleteBackupPolicySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1604,7 +2148,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1617,7 +2160,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1802,6 +2344,81 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
       builder
           .reverseReplicationDirectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBackupVaultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createBackupPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getBackupPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBackupPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateBackupPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -2368,6 +2985,222 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createBackupVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupVaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupVault.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupVaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupVault.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupVaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2780,6 +3613,166 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       return reverseReplicationDirectionOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
+        createBackupVaultSettings() {
+      return createBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+        createBackupVaultOperationSettings() {
+      return createBackupVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupVault. */
+    public UnaryCallSettings.Builder<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+      return getBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupVaults. */
+    public PagedCallSettings.Builder<
+            ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+        listBackupVaultsSettings() {
+      return listBackupVaultsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public UnaryCallSettings.Builder<UpdateBackupVaultRequest, Operation>
+        updateBackupVaultSettings() {
+      return updateBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+        updateBackupVaultOperationSettings() {
+      return updateBackupVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public UnaryCallSettings.Builder<DeleteBackupVaultRequest, Operation>
+        deleteBackupVaultSettings() {
+      return deleteBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
+        deleteBackupVaultOperationSettings() {
+      return deleteBackupVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return createBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings() {
+      return createBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return deleteBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings() {
+      return updateBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
+        updateBackupOperationSettings() {
+      return updateBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPolicy. */
+    public UnaryCallSettings.Builder<CreateBackupPolicyRequest, Operation>
+        createBackupPolicySettings() {
+      return createBackupPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        createBackupPolicyOperationSettings() {
+      return createBackupPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupPolicy. */
+    public UnaryCallSettings.Builder<GetBackupPolicyRequest, BackupPolicy>
+        getBackupPolicySettings() {
+      return getBackupPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPolicies. */
+    public PagedCallSettings.Builder<
+            ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+        listBackupPoliciesSettings() {
+      return listBackupPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPolicy. */
+    public UnaryCallSettings.Builder<UpdateBackupPolicyRequest, Operation>
+        updateBackupPolicySettings() {
+      return updateBackupPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        updateBackupPolicyOperationSettings() {
+      return updateBackupPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
+    public UnaryCallSettings.Builder<DeleteBackupPolicyRequest, Operation>
+        deleteBackupPolicySettings() {
+      return deleteBackupPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+        deleteBackupPolicyOperationSettings() {
+      return deleteBackupPolicyOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -2790,6 +3783,15 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

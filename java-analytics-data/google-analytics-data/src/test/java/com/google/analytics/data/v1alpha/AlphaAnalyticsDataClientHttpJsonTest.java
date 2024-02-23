@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -164,6 +164,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentageCompleted(-1292047642)
             .setRecurringAudienceList("recurringAudienceList1055738943")
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,6 +225,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentageCompleted(-1292047642)
             .setRecurringAudienceList("recurringAudienceList1055738943")
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -424,6 +426,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentageCompleted(-1292047642)
             .setRecurringAudienceList("recurringAudienceList1055738943")
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -477,6 +480,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentageCompleted(-1292047642)
             .setRecurringAudienceList("recurringAudienceList1055738943")
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -627,6 +631,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setActiveDaysRemaining(-1427137945)
             .addAllAudienceLists(new ArrayList<String>())
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -680,6 +685,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setActiveDaysRemaining(-1427137945)
             .addAllAudienceLists(new ArrayList<String>())
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -733,6 +739,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setActiveDaysRemaining(-1427137945)
             .addAllAudienceLists(new ArrayList<String>())
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -785,6 +792,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setActiveDaysRemaining(-1427137945)
             .addAllAudienceLists(new ArrayList<String>())
+            .setWebhookNotification(WebhookNotification.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

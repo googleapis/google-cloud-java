@@ -1,0 +1,9 @@
+# This file controls who is tagged for review for any given pull request.
+#
+# For syntax help see:
+# https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
+
+*   @googleapis/cloud-java-team-teamsync
+
+# java-vertexai has maintainers
+/java-vertexai/   @googleapis/vertex-java-sdk @googleapis/cloud-java-team-teamsync

@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.46.0 (2024-02-20)
+
+* No change
+
+
+## 0.45.0 (2024-02-09)
+
+* No change
+
+
+## 0.44.0 (2024-01-23)
+
+* No change
+
+
+## 0.43.0 (2024-01-10)
+
+### Features
+
+* add `GetSubpropertyEventFilter`, `ListSubpropertyEventFilters` methods to the Admin API v1 alpha ([#10152](https://github.com/googleapis/google-cloud-java/issues/10152)) ([ea758cf](https://github.com/googleapis/google-cloud-java/commit/ea758cf21b8358a7b54b10d0c3c68371e6523e05))
+* add `GetSubpropertyEventFilter`, `ListSubpropertyEventFilters` methods to the Admin API v1 alpha ([#10153](https://github.com/googleapis/google-cloud-java/issues/10153)) ([2e1425f](https://github.com/googleapis/google-cloud-java/commit/2e1425fb52d88d6d507bcea172533274b542c945))
+
+
+
+## 0.42.0 (2023-12-12)
+
+* No change
+
+
+## 0.41.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 0.40.0 (2023-11-06)
 
 ### Dependencies

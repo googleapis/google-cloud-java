@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -453,6 +453,59 @@ public final class AzureClustersGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest,
+          com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+      getGenerateAzureClusterAgentTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAzureClusterAgentToken",
+      requestType = com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest.class,
+      responseType = com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest,
+          com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+      getGenerateAzureClusterAgentTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest,
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+        getGenerateAzureClusterAgentTokenMethod;
+    if ((getGenerateAzureClusterAgentTokenMethod =
+            AzureClustersGrpc.getGenerateAzureClusterAgentTokenMethod)
+        == null) {
+      synchronized (AzureClustersGrpc.class) {
+        if ((getGenerateAzureClusterAgentTokenMethod =
+                AzureClustersGrpc.getGenerateAzureClusterAgentTokenMethod)
+            == null) {
+          AzureClustersGrpc.getGenerateAzureClusterAgentTokenMethod =
+              getGenerateAzureClusterAgentTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest,
+                          com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateAzureClusterAgentToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1
+                                  .GenerateAzureClusterAgentTokenRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1
+                                  .GenerateAzureClusterAgentTokenResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AzureClustersMethodDescriptorSupplier(
+                              "GenerateAzureClusterAgentToken"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateAzureClusterAgentTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest,
           com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse>
       getGenerateAzureAccessTokenMethod;
@@ -741,6 +794,104 @@ public final class AzureClustersGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest,
+          com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+      getGetAzureOpenIdConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAzureOpenIdConfig",
+      requestType = com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest.class,
+      responseType = com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest,
+          com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+      getGetAzureOpenIdConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest,
+            com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+        getGetAzureOpenIdConfigMethod;
+    if ((getGetAzureOpenIdConfigMethod = AzureClustersGrpc.getGetAzureOpenIdConfigMethod) == null) {
+      synchronized (AzureClustersGrpc.class) {
+        if ((getGetAzureOpenIdConfigMethod = AzureClustersGrpc.getGetAzureOpenIdConfigMethod)
+            == null) {
+          AzureClustersGrpc.getGetAzureOpenIdConfigMethod =
+              getGetAzureOpenIdConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest,
+                          com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAzureOpenIdConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AzureClustersMethodDescriptorSupplier("GetAzureOpenIdConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetAzureOpenIdConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest,
+          com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+      getGetAzureJsonWebKeysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAzureJsonWebKeys",
+      requestType = com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest.class,
+      responseType = com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest,
+          com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+      getGetAzureJsonWebKeysMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest,
+            com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+        getGetAzureJsonWebKeysMethod;
+    if ((getGetAzureJsonWebKeysMethod = AzureClustersGrpc.getGetAzureJsonWebKeysMethod) == null) {
+      synchronized (AzureClustersGrpc.class) {
+        if ((getGetAzureJsonWebKeysMethod = AzureClustersGrpc.getGetAzureJsonWebKeysMethod)
+            == null) {
+          AzureClustersGrpc.getGetAzureJsonWebKeysMethod =
+              getGetAzureJsonWebKeysMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest,
+                          com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAzureJsonWebKeys"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AzureClustersMethodDescriptorSupplier("GetAzureJsonWebKeys"))
+                      .build();
+        }
+      }
+    }
+    return getGetAzureJsonWebKeysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest,
           com.google.cloud.gkemulticloud.v1.AzureServerConfig>
       getGetAzureServerConfigMethod;
@@ -1001,6 +1152,22 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    default void generateAzureClusterAgentToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateAzureClusterAgentTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
@@ -1096,6 +1263,41 @@ public final class AzureClustersGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAzureNodePoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    default void getAzureOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAzureOpenIdConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    default void getAzureJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAzureJsonWebKeysMethod(), responseObserver);
     }
 
     /**
@@ -1330,6 +1532,24 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public void generateAzureClusterAgentToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAzureClusterAgentTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
@@ -1435,6 +1655,45 @@ public final class AzureClustersGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAzureNodePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public void getAzureOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAzureOpenIdConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public void getAzureJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAzureJsonWebKeysMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1626,6 +1885,20 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse
+        generateAzureClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAzureClusterAgentTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
@@ -1712,6 +1985,37 @@ public final class AzureClustersGrpc {
         com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAzureNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig getAzureOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureOpenIdConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys getAzureJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureJsonWebKeysMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1901,6 +2205,22 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAzureClusterAgentTokenMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
@@ -1996,6 +2316,40 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
+        getAzureOpenIdConfig(
+            com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAzureOpenIdConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
+        getAzureJsonWebKeys(com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAzureJsonWebKeysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns information, such as supported Azure regions and Kubernetes
      * versions, on a given Google Cloud location.
      * </pre>
@@ -2018,13 +2372,16 @@ public final class AzureClustersGrpc {
   private static final int METHODID_GET_AZURE_CLUSTER = 6;
   private static final int METHODID_LIST_AZURE_CLUSTERS = 7;
   private static final int METHODID_DELETE_AZURE_CLUSTER = 8;
-  private static final int METHODID_GENERATE_AZURE_ACCESS_TOKEN = 9;
-  private static final int METHODID_CREATE_AZURE_NODE_POOL = 10;
-  private static final int METHODID_UPDATE_AZURE_NODE_POOL = 11;
-  private static final int METHODID_GET_AZURE_NODE_POOL = 12;
-  private static final int METHODID_LIST_AZURE_NODE_POOLS = 13;
-  private static final int METHODID_DELETE_AZURE_NODE_POOL = 14;
-  private static final int METHODID_GET_AZURE_SERVER_CONFIG = 15;
+  private static final int METHODID_GENERATE_AZURE_CLUSTER_AGENT_TOKEN = 9;
+  private static final int METHODID_GENERATE_AZURE_ACCESS_TOKEN = 10;
+  private static final int METHODID_CREATE_AZURE_NODE_POOL = 11;
+  private static final int METHODID_UPDATE_AZURE_NODE_POOL = 12;
+  private static final int METHODID_GET_AZURE_NODE_POOL = 13;
+  private static final int METHODID_LIST_AZURE_NODE_POOLS = 14;
+  private static final int METHODID_DELETE_AZURE_NODE_POOL = 15;
+  private static final int METHODID_GET_AZURE_OPEN_ID_CONFIG = 16;
+  private static final int METHODID_GET_AZURE_JSON_WEB_KEYS = 17;
+  private static final int METHODID_GET_AZURE_SERVER_CONFIG = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2094,6 +2451,13 @@ public final class AzureClustersGrpc {
               (com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GENERATE_AZURE_CLUSTER_AGENT_TOKEN:
+          serviceImpl.generateAzureClusterAgentToken(
+              (com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>)
+                  responseObserver);
+          break;
         case METHODID_GENERATE_AZURE_ACCESS_TOKEN:
           serviceImpl.generateAzureAccessToken(
               (com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest) request,
@@ -2128,6 +2492,18 @@ public final class AzureClustersGrpc {
           serviceImpl.deleteAzureNodePool(
               (com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_AZURE_OPEN_ID_CONFIG:
+          serviceImpl.getAzureOpenIdConfig(
+              (com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AZURE_JSON_WEB_KEYS:
+          serviceImpl.getAzureJsonWebKeys(
+              (com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>)
+                  responseObserver);
           break;
         case METHODID_GET_AZURE_SERVER_CONFIG:
           serviceImpl.getAzureServerConfig(
@@ -2212,6 +2588,13 @@ public final class AzureClustersGrpc {
                     com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_AZURE_CLUSTER)))
         .addMethod(
+            getGenerateAzureClusterAgentTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest,
+                    com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>(
+                    service, METHODID_GENERATE_AZURE_CLUSTER_AGENT_TOKEN)))
+        .addMethod(
             getGenerateAzureAccessTokenMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2250,6 +2633,20 @@ public final class AzureClustersGrpc {
                 new MethodHandlers<
                     com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_AZURE_NODE_POOL)))
+        .addMethod(
+            getGetAzureOpenIdConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest,
+                    com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>(
+                    service, METHODID_GET_AZURE_OPEN_ID_CONFIG)))
+        .addMethod(
+            getGetAzureJsonWebKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest,
+                    com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>(
+                    service, METHODID_GET_AZURE_JSON_WEB_KEYS)))
         .addMethod(
             getGetAzureServerConfigMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2317,12 +2714,15 @@ public final class AzureClustersGrpc {
                       .addMethod(getGetAzureClusterMethod())
                       .addMethod(getListAzureClustersMethod())
                       .addMethod(getDeleteAzureClusterMethod())
+                      .addMethod(getGenerateAzureClusterAgentTokenMethod())
                       .addMethod(getGenerateAzureAccessTokenMethod())
                       .addMethod(getCreateAzureNodePoolMethod())
                       .addMethod(getUpdateAzureNodePoolMethod())
                       .addMethod(getGetAzureNodePoolMethod())
                       .addMethod(getListAzureNodePoolsMethod())
                       .addMethod(getDeleteAzureNodePoolMethod())
+                      .addMethod(getGetAzureOpenIdConfigMethod())
+                      .addMethod(getGetAzureJsonWebKeysMethod())
                       .addMethod(getGetAzureServerConfigMethod())
                       .build();
         }

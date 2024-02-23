@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
 import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -80,6 +81,99 @@ public class RegionNetworkEndpointGroupsClientTest {
   }
 
   @Test
+  public void attachNetworkEndpointsTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String networkEndpointGroup = "networkEndpointGroup-386";
+    RegionNetworkEndpointGroupsAttachEndpointsRequest
+        regionNetworkEndpointGroupsAttachEndpointsRequestResource =
+            RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .attachNetworkEndpointsAsync(
+                project,
+                region,
+                networkEndpointGroup,
+                regionNetworkEndpointGroupsAttachEndpointsRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void attachNetworkEndpointsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String networkEndpointGroup = "networkEndpointGroup-386";
+      RegionNetworkEndpointGroupsAttachEndpointsRequest
+          regionNetworkEndpointGroupsAttachEndpointsRequestResource =
+              RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+      client
+          .attachNetworkEndpointsAsync(
+              project,
+              region,
+              networkEndpointGroup,
+              regionNetworkEndpointGroupsAttachEndpointsRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void deleteTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -92,6 +186,8 @@ public class RegionNetworkEndpointGroupsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -99,6 +195,8 @@ public class RegionNetworkEndpointGroupsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -144,6 +242,99 @@ public class RegionNetworkEndpointGroupsClientTest {
       String region = "region-9622";
       String networkEndpointGroup = "networkEndpointGroup-386";
       client.deleteAsync(project, region, networkEndpointGroup).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void detachNetworkEndpointsTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String networkEndpointGroup = "networkEndpointGroup-386";
+    RegionNetworkEndpointGroupsDetachEndpointsRequest
+        regionNetworkEndpointGroupsDetachEndpointsRequestResource =
+            RegionNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .detachNetworkEndpointsAsync(
+                project,
+                region,
+                networkEndpointGroup,
+                regionNetworkEndpointGroupsDetachEndpointsRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void detachNetworkEndpointsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String networkEndpointGroup = "networkEndpointGroup-386";
+      RegionNetworkEndpointGroupsDetachEndpointsRequest
+          regionNetworkEndpointGroupsDetachEndpointsRequestResource =
+              RegionNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
+      client
+          .detachNetworkEndpointsAsync(
+              project,
+              region,
+              networkEndpointGroup,
+              regionNetworkEndpointGroupsDetachEndpointsRequestResource)
+          .get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -228,6 +419,8 @@ public class RegionNetworkEndpointGroupsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -235,6 +428,8 @@ public class RegionNetworkEndpointGroupsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -332,6 +527,63 @@ public class RegionNetworkEndpointGroupsClientTest {
       String project = "project-6911";
       String region = "region-9622";
       client.list(project, region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNetworkEndpointsTest() throws Exception {
+    NetworkEndpointWithHealthStatus responsesElement =
+        NetworkEndpointWithHealthStatus.newBuilder().build();
+    NetworkEndpointGroupsListNetworkEndpoints expectedResponse =
+        NetworkEndpointGroupsListNetworkEndpoints.newBuilder()
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String networkEndpointGroup = "networkEndpointGroup-386";
+
+    ListNetworkEndpointsPagedResponse pagedListResponse =
+        client.listNetworkEndpoints(project, region, networkEndpointGroup);
+
+    List<NetworkEndpointWithHealthStatus> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNetworkEndpointsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String networkEndpointGroup = "networkEndpointGroup-386";
+      client.listNetworkEndpoints(project, region, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

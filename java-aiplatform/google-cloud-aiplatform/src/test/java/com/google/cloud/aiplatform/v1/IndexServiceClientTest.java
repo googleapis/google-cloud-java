@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -566,6 +566,7 @@ public class IndexServiceClientTest {
         UpsertDatapointsRequest.newBuilder()
             .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
             .addAllDatapoints(new ArrayList<IndexDatapoint>())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     UpsertDatapointsResponse actualResponse = client.upsertDatapoints(request);
@@ -577,6 +578,7 @@ public class IndexServiceClientTest {
 
     Assert.assertEquals(request.getIndex(), actualRequest.getIndex());
     Assert.assertEquals(request.getDatapointsList(), actualRequest.getDatapointsList());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -593,6 +595,7 @@ public class IndexServiceClientTest {
           UpsertDatapointsRequest.newBuilder()
               .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
               .addAllDatapoints(new ArrayList<IndexDatapoint>())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.upsertDatapoints(request);
       Assert.fail("No exception raised");

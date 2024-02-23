@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,19 +59,2505 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAccount</td>
+ *      <td><p> Lookup for a single Account.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAccount(GetAccountRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAccount(AccountName name)
+ *           <li><p> getAccount(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAccountCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAccounts</td>
+ *      <td><p> Returns all accounts accessible by the caller.
+ * <p>  Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAccounts(ListAccountsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAccountsPagedCallable()
+ *           <li><p> listAccountsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAccount</td>
+ *      <td><p> Marks target Account as soft-deleted (ie: "trashed") and returns it.
+ * <p>  This API does not have a method to restore soft-deleted accounts. However, they can be restored using the Trash Can UI.
+ * <p>  If the accounts are not restored before the expiration time, the account and all child resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772
+ * <p>  Returns an error if the target is not found.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAccount(DeleteAccountRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAccount(AccountName name)
+ *           <li><p> deleteAccount(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccountCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAccount</td>
+ *      <td><p> Updates an account.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAccount(UpdateAccountRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAccount(Account account, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAccountCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ProvisionAccountTicket</td>
+ *      <td><p> Requests a ticket for creating an account.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> provisionAccountTicket(ProvisionAccountTicketRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> provisionAccountTicketCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAccountSummaries</td>
+ *      <td><p> Returns summaries of all accounts accessible by the caller.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAccountSummaries(ListAccountSummariesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAccountSummariesPagedCallable()
+ *           <li><p> listAccountSummariesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProperty</td>
+ *      <td><p> Lookup for a single "GA4" Property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProperty(GetPropertyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProperty(PropertyName name)
+ *           <li><p> getProperty(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProperties</td>
+ *      <td><p> Returns child Properties under the specified parent Account.
+ * <p>  Only "GA4" properties will be returned. Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProperties(ListPropertiesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPropertiesPagedCallable()
+ *           <li><p> listPropertiesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateProperty</td>
+ *      <td><p> Creates an "GA4" property with the specified location and attributes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createProperty(CreatePropertyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createProperty(Property property)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createPropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteProperty</td>
+ *      <td><p> Marks target Property as soft-deleted (ie: "trashed") and returns it.
+ * <p>  This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI.
+ * <p>  If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772
+ * <p>  Returns an error if the target is not found, or is not a GA4 Property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteProperty(DeletePropertyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteProperty(PropertyName name)
+ *           <li><p> deleteProperty(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deletePropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateProperty</td>
+ *      <td><p> Updates a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateProperty(UpdatePropertyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateProperty(Property property, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFirebaseLink</td>
+ *      <td><p> Creates a FirebaseLink.
+ * <p>  Properties can have at most one FirebaseLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFirebaseLink(CreateFirebaseLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createFirebaseLink(PropertyName parent, FirebaseLink firebaseLink)
+ *           <li><p> createFirebaseLink(String parent, FirebaseLink firebaseLink)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFirebaseLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFirebaseLink</td>
+ *      <td><p> Deletes a FirebaseLink on a property</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFirebaseLink(DeleteFirebaseLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteFirebaseLink(FirebaseLinkName name)
+ *           <li><p> deleteFirebaseLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFirebaseLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFirebaseLinks</td>
+ *      <td><p> Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFirebaseLinks(ListFirebaseLinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFirebaseLinks(PropertyName parent)
+ *           <li><p> listFirebaseLinks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFirebaseLinksPagedCallable()
+ *           <li><p> listFirebaseLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGlobalSiteTag</td>
+ *      <td><p> Returns the Site Tag for the specified web stream. Site Tags are immutable singletons.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGlobalSiteTag(GetGlobalSiteTagRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGlobalSiteTag(GlobalSiteTagName name)
+ *           <li><p> getGlobalSiteTag(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGlobalSiteTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateGoogleAdsLink</td>
+ *      <td><p> Creates a GoogleAdsLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createGoogleAdsLink(CreateGoogleAdsLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createGoogleAdsLink(PropertyName parent, GoogleAdsLink googleAdsLink)
+ *           <li><p> createGoogleAdsLink(String parent, GoogleAdsLink googleAdsLink)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createGoogleAdsLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGoogleAdsLink</td>
+ *      <td><p> Updates a GoogleAdsLink on a property</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGoogleAdsLink(UpdateGoogleAdsLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateGoogleAdsLink(GoogleAdsLink googleAdsLink, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGoogleAdsLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteGoogleAdsLink</td>
+ *      <td><p> Deletes a GoogleAdsLink on a property</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteGoogleAdsLink(DeleteGoogleAdsLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteGoogleAdsLink(GoogleAdsLinkName name)
+ *           <li><p> deleteGoogleAdsLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteGoogleAdsLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListGoogleAdsLinks</td>
+ *      <td><p> Lists GoogleAdsLinks on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listGoogleAdsLinks(ListGoogleAdsLinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listGoogleAdsLinks(PropertyName parent)
+ *           <li><p> listGoogleAdsLinks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listGoogleAdsLinksPagedCallable()
+ *           <li><p> listGoogleAdsLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataSharingSettings</td>
+ *      <td><p> Get data sharing settings on an account. Data sharing settings are singletons.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataSharingSettings(GetDataSharingSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataSharingSettings(DataSharingSettingsName name)
+ *           <li><p> getDataSharingSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDataSharingSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMeasurementProtocolSecret</td>
+ *      <td><p> Lookup for a single "GA4" MeasurementProtocolSecret.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMeasurementProtocolSecret(GetMeasurementProtocolSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMeasurementProtocolSecret(MeasurementProtocolSecretName name)
+ *           <li><p> getMeasurementProtocolSecret(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMeasurementProtocolSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMeasurementProtocolSecrets</td>
+ *      <td><p> Returns child MeasurementProtocolSecrets under the specified parent Property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMeasurementProtocolSecrets(ListMeasurementProtocolSecretsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMeasurementProtocolSecrets(DataStreamName parent)
+ *           <li><p> listMeasurementProtocolSecrets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMeasurementProtocolSecretsPagedCallable()
+ *           <li><p> listMeasurementProtocolSecretsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateMeasurementProtocolSecret</td>
+ *      <td><p> Creates a measurement protocol secret.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createMeasurementProtocolSecret(CreateMeasurementProtocolSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createMeasurementProtocolSecret(DataStreamName parent, MeasurementProtocolSecret measurementProtocolSecret)
+ *           <li><p> createMeasurementProtocolSecret(String parent, MeasurementProtocolSecret measurementProtocolSecret)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createMeasurementProtocolSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteMeasurementProtocolSecret</td>
+ *      <td><p> Deletes target MeasurementProtocolSecret.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteMeasurementProtocolSecret(DeleteMeasurementProtocolSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteMeasurementProtocolSecret(MeasurementProtocolSecretName name)
+ *           <li><p> deleteMeasurementProtocolSecret(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteMeasurementProtocolSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateMeasurementProtocolSecret</td>
+ *      <td><p> Updates a measurement protocol secret.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMeasurementProtocolSecret(UpdateMeasurementProtocolSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateMeasurementProtocolSecret(MeasurementProtocolSecret measurementProtocolSecret, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMeasurementProtocolSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AcknowledgeUserDataCollection</td>
+ *      <td><p> Acknowledges the terms of user data collection for the specified property.
+ * <p>  This acknowledgement must be completed (either in the Google Analytics UI or through this API) before MeasurementProtocolSecret resources may be created.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> acknowledgeUserDataCollection(AcknowledgeUserDataCollectionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> acknowledgeUserDataCollectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSKAdNetworkConversionValueSchema</td>
+ *      <td><p> Looks up a single SKAdNetworkConversionValueSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSKAdNetworkConversionValueSchema(GetSKAdNetworkConversionValueSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchemaName name)
+ *           <li><p> getSKAdNetworkConversionValueSchema(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSKAdNetworkConversionValueSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSKAdNetworkConversionValueSchema</td>
+ *      <td><p> Creates a SKAdNetworkConversionValueSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSKAdNetworkConversionValueSchema(CreateSKAdNetworkConversionValueSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSKAdNetworkConversionValueSchema(DataStreamName parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema)
+ *           <li><p> createSKAdNetworkConversionValueSchema(String parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSKAdNetworkConversionValueSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSKAdNetworkConversionValueSchema</td>
+ *      <td><p> Deletes target SKAdNetworkConversionValueSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSKAdNetworkConversionValueSchema(DeleteSKAdNetworkConversionValueSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchemaName name)
+ *           <li><p> deleteSKAdNetworkConversionValueSchema(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSKAdNetworkConversionValueSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSKAdNetworkConversionValueSchema</td>
+ *      <td><p> Updates a SKAdNetworkConversionValueSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSKAdNetworkConversionValueSchema(UpdateSKAdNetworkConversionValueSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSKAdNetworkConversionValueSchema(SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSKAdNetworkConversionValueSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSKAdNetworkConversionValueSchemas</td>
+ *      <td><p> Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one SKAdNetworkConversionValueSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSKAdNetworkConversionValueSchemas(ListSKAdNetworkConversionValueSchemasRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSKAdNetworkConversionValueSchemas(DataStreamName parent)
+ *           <li><p> listSKAdNetworkConversionValueSchemas(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSKAdNetworkConversionValueSchemasPagedCallable()
+ *           <li><p> listSKAdNetworkConversionValueSchemasCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchChangeHistoryEvents</td>
+ *      <td><p> Searches through all changes to an account or its children given the specified set of filters.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchChangeHistoryEvents(SearchChangeHistoryEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchChangeHistoryEventsPagedCallable()
+ *           <li><p> searchChangeHistoryEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGoogleSignalsSettings</td>
+ *      <td><p> Lookup for Google Signals settings for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGoogleSignalsSettings(GetGoogleSignalsSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGoogleSignalsSettings(GoogleSignalsSettingsName name)
+ *           <li><p> getGoogleSignalsSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGoogleSignalsSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGoogleSignalsSettings</td>
+ *      <td><p> Updates Google Signals settings for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGoogleSignalsSettings(UpdateGoogleSignalsSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateGoogleSignalsSettings(GoogleSignalsSettings googleSignalsSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGoogleSignalsSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateConversionEvent</td>
+ *      <td><p> Creates a conversion event with the specified attributes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createConversionEvent(CreateConversionEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createConversionEvent(PropertyName parent, ConversionEvent conversionEvent)
+ *           <li><p> createConversionEvent(String parent, ConversionEvent conversionEvent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createConversionEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateConversionEvent</td>
+ *      <td><p> Updates a conversion event with the specified attributes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateConversionEvent(UpdateConversionEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateConversionEvent(ConversionEvent conversionEvent, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateConversionEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetConversionEvent</td>
+ *      <td><p> Retrieve a single conversion event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getConversionEvent(GetConversionEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getConversionEvent(ConversionEventName name)
+ *           <li><p> getConversionEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getConversionEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteConversionEvent</td>
+ *      <td><p> Deletes a conversion event in a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteConversionEvent(DeleteConversionEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteConversionEvent(ConversionEventName name)
+ *           <li><p> deleteConversionEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteConversionEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListConversionEvents</td>
+ *      <td><p> Returns a list of conversion events in the specified parent property.
+ * <p>  Returns an empty list if no conversion events are found.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listConversionEvents(ListConversionEventsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listConversionEvents(PropertyName parent)
+ *           <li><p> listConversionEvents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listConversionEventsPagedCallable()
+ *           <li><p> listConversionEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDisplayVideo360AdvertiserLink</td>
+ *      <td><p> Look up a single DisplayVideo360AdvertiserLink</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDisplayVideo360AdvertiserLink(GetDisplayVideo360AdvertiserLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name)
+ *           <li><p> getDisplayVideo360AdvertiserLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDisplayVideo360AdvertiserLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDisplayVideo360AdvertiserLinks</td>
+ *      <td><p> Lists all DisplayVideo360AdvertiserLinks on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDisplayVideo360AdvertiserLinks(ListDisplayVideo360AdvertiserLinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDisplayVideo360AdvertiserLinks(PropertyName parent)
+ *           <li><p> listDisplayVideo360AdvertiserLinks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDisplayVideo360AdvertiserLinksPagedCallable()
+ *           <li><p> listDisplayVideo360AdvertiserLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDisplayVideo360AdvertiserLink</td>
+ *      <td><p> Creates a DisplayVideo360AdvertiserLink. This can only be utilized by users who have proper authorization both on the Google Analytics property and on the Display &amp; Video 360 advertiser. Users who do not have access to the Display &amp; Video 360 advertiser should instead seek to create a DisplayVideo360LinkProposal.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDisplayVideo360AdvertiserLink(CreateDisplayVideo360AdvertiserLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDisplayVideo360AdvertiserLink(PropertyName parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink)
+ *           <li><p> createDisplayVideo360AdvertiserLink(String parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDisplayVideo360AdvertiserLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDisplayVideo360AdvertiserLink</td>
+ *      <td><p> Deletes a DisplayVideo360AdvertiserLink on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDisplayVideo360AdvertiserLink(DeleteDisplayVideo360AdvertiserLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name)
+ *           <li><p> deleteDisplayVideo360AdvertiserLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDisplayVideo360AdvertiserLink</td>
+ *      <td><p> Updates a DisplayVideo360AdvertiserLink on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDisplayVideo360AdvertiserLink(UpdateDisplayVideo360AdvertiserLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDisplayVideo360AdvertiserLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> Lookup for a single DisplayVideo360AdvertiserLinkProposal.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposal(GetDisplayVideo360AdvertiserLinkProposalRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposal(DisplayVideo360AdvertiserLinkProposalName name)
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposal(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDisplayVideo360AdvertiserLinkProposalCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDisplayVideo360AdvertiserLinkProposals</td>
+ *      <td><p> Lists DisplayVideo360AdvertiserLinkProposals on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposals(ListDisplayVideo360AdvertiserLinkProposalsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposals(PropertyName parent)
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposals(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposalsPagedCallable()
+ *           <li><p> listDisplayVideo360AdvertiserLinkProposalsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> Creates a DisplayVideo360AdvertiserLinkProposal.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposal(CreateDisplayVideo360AdvertiserLinkProposalRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposal(PropertyName parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal)
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposal(String parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDisplayVideo360AdvertiserLinkProposalCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> Deletes a DisplayVideo360AdvertiserLinkProposal on a property. This can only be used on cancelled proposals.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposal(DeleteDisplayVideo360AdvertiserLinkProposalRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposal(DisplayVideo360AdvertiserLinkProposalName name)
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposal(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDisplayVideo360AdvertiserLinkProposalCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ApproveDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> Approves a DisplayVideo360AdvertiserLinkProposal. The DisplayVideo360AdvertiserLinkProposal will be deleted and a new DisplayVideo360AdvertiserLink will be created.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> approveDisplayVideo360AdvertiserLinkProposal(ApproveDisplayVideo360AdvertiserLinkProposalRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> approveDisplayVideo360AdvertiserLinkProposalCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelDisplayVideo360AdvertiserLinkProposal</td>
+ *      <td><p> Cancels a DisplayVideo360AdvertiserLinkProposal. Cancelling can mean either: - Declining a proposal initiated from Display &amp; Video 360 - Withdrawing a proposal initiated from Google Analytics After being cancelled, a proposal will eventually be deleted automatically.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelDisplayVideo360AdvertiserLinkProposal(CancelDisplayVideo360AdvertiserLinkProposalRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelDisplayVideo360AdvertiserLinkProposalCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCustomDimension</td>
+ *      <td><p> Creates a CustomDimension.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCustomDimension(CreateCustomDimensionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCustomDimension(PropertyName parent, CustomDimension customDimension)
+ *           <li><p> createCustomDimension(String parent, CustomDimension customDimension)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCustomDimensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCustomDimension</td>
+ *      <td><p> Updates a CustomDimension on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCustomDimension(UpdateCustomDimensionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCustomDimension(CustomDimension customDimension, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCustomDimensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListCustomDimensions</td>
+ *      <td><p> Lists CustomDimensions on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listCustomDimensions(ListCustomDimensionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listCustomDimensions(PropertyName parent)
+ *           <li><p> listCustomDimensions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listCustomDimensionsPagedCallable()
+ *           <li><p> listCustomDimensionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ArchiveCustomDimension</td>
+ *      <td><p> Archives a CustomDimension on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> archiveCustomDimension(ArchiveCustomDimensionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> archiveCustomDimension(CustomDimensionName name)
+ *           <li><p> archiveCustomDimension(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> archiveCustomDimensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCustomDimension</td>
+ *      <td><p> Lookup for a single CustomDimension.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCustomDimension(GetCustomDimensionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCustomDimension(CustomDimensionName name)
+ *           <li><p> getCustomDimension(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCustomDimensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCustomMetric</td>
+ *      <td><p> Creates a CustomMetric.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCustomMetric(CreateCustomMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCustomMetric(PropertyName parent, CustomMetric customMetric)
+ *           <li><p> createCustomMetric(String parent, CustomMetric customMetric)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCustomMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCustomMetric</td>
+ *      <td><p> Updates a CustomMetric on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCustomMetric(UpdateCustomMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCustomMetric(CustomMetric customMetric, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCustomMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListCustomMetrics</td>
+ *      <td><p> Lists CustomMetrics on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listCustomMetrics(ListCustomMetricsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listCustomMetrics(PropertyName parent)
+ *           <li><p> listCustomMetrics(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listCustomMetricsPagedCallable()
+ *           <li><p> listCustomMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ArchiveCustomMetric</td>
+ *      <td><p> Archives a CustomMetric on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> archiveCustomMetric(ArchiveCustomMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> archiveCustomMetric(CustomMetricName name)
+ *           <li><p> archiveCustomMetric(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> archiveCustomMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCustomMetric</td>
+ *      <td><p> Lookup for a single CustomMetric.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCustomMetric(GetCustomMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCustomMetric(CustomMetricName name)
+ *           <li><p> getCustomMetric(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCustomMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataRetentionSettings</td>
+ *      <td><p> Returns the singleton data retention settings for this property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataRetentionSettings(GetDataRetentionSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataRetentionSettings(DataRetentionSettingsName name)
+ *           <li><p> getDataRetentionSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDataRetentionSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDataRetentionSettings</td>
+ *      <td><p> Updates the singleton data retention settings for this property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDataRetentionSettings(UpdateDataRetentionSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDataRetentionSettings(DataRetentionSettings dataRetentionSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDataRetentionSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDataStream</td>
+ *      <td><p> Creates a DataStream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDataStream(CreateDataStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDataStream(PropertyName parent, DataStream dataStream)
+ *           <li><p> createDataStream(String parent, DataStream dataStream)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDataStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDataStream</td>
+ *      <td><p> Deletes a DataStream on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDataStream(DeleteDataStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDataStream(DataStreamName name)
+ *           <li><p> deleteDataStream(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDataStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDataStream</td>
+ *      <td><p> Updates a DataStream on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDataStream(UpdateDataStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDataStream(DataStream dataStream, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDataStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDataStreams</td>
+ *      <td><p> Lists DataStreams on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDataStreams(ListDataStreamsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDataStreams(PropertyName parent)
+ *           <li><p> listDataStreams(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDataStreamsPagedCallable()
+ *           <li><p> listDataStreamsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataStream</td>
+ *      <td><p> Lookup for a single DataStream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataStream(GetDataStreamRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataStream(DataStreamName name)
+ *           <li><p> getDataStream(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDataStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAudience</td>
+ *      <td><p> Lookup for a single Audience. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAudience(GetAudienceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAudience(AudienceName name)
+ *           <li><p> getAudience(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAudienceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAudiences</td>
+ *      <td><p> Lists Audiences on a property. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAudiences(ListAudiencesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAudiences(PropertyName parent)
+ *           <li><p> listAudiences(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAudiencesPagedCallable()
+ *           <li><p> listAudiencesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAudience</td>
+ *      <td><p> Creates an Audience.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAudience(CreateAudienceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAudience(PropertyName parent, Audience audience)
+ *           <li><p> createAudience(String parent, Audience audience)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAudienceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAudience</td>
+ *      <td><p> Updates an Audience on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAudience(UpdateAudienceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAudience(Audience audience, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAudienceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ArchiveAudience</td>
+ *      <td><p> Archives an Audience on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> archiveAudience(ArchiveAudienceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> archiveAudienceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSearchAds360Link</td>
+ *      <td><p> Look up a single SearchAds360Link</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSearchAds360Link(GetSearchAds360LinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSearchAds360Link(SearchAds360LinkName name)
+ *           <li><p> getSearchAds360Link(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSearchAds360LinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSearchAds360Links</td>
+ *      <td><p> Lists all SearchAds360Links on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSearchAds360Links(ListSearchAds360LinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSearchAds360Links(PropertyName parent)
+ *           <li><p> listSearchAds360Links(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSearchAds360LinksPagedCallable()
+ *           <li><p> listSearchAds360LinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSearchAds360Link</td>
+ *      <td><p> Creates a SearchAds360Link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSearchAds360Link(CreateSearchAds360LinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSearchAds360Link(PropertyName parent, SearchAds360Link searchAds360Link)
+ *           <li><p> createSearchAds360Link(String parent, SearchAds360Link searchAds360Link)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSearchAds360LinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSearchAds360Link</td>
+ *      <td><p> Deletes a SearchAds360Link on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSearchAds360Link(DeleteSearchAds360LinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSearchAds360Link(SearchAds360LinkName name)
+ *           <li><p> deleteSearchAds360Link(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSearchAds360LinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSearchAds360Link</td>
+ *      <td><p> Updates a SearchAds360Link on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSearchAds360Link(UpdateSearchAds360LinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSearchAds360Link(SearchAds360Link searchAds360Link, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSearchAds360LinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAttributionSettings</td>
+ *      <td><p> Lookup for a AttributionSettings singleton.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAttributionSettings(GetAttributionSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAttributionSettings(AttributionSettingsName name)
+ *           <li><p> getAttributionSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAttributionSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAttributionSettings</td>
+ *      <td><p> Updates attribution settings on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAttributionSettings(UpdateAttributionSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAttributionSettings(AttributionSettings attributionSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAttributionSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunAccessReport</td>
+ *      <td><p> Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years.
+ * <p>  Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators.
+ * <p>  These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runAccessReport(RunAccessReportRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runAccessReportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAccessBinding</td>
+ *      <td><p> Creates an access binding on an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAccessBinding(CreateAccessBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAccessBinding(AccountName parent, AccessBinding accessBinding)
+ *           <li><p> createAccessBinding(PropertyName parent, AccessBinding accessBinding)
+ *           <li><p> createAccessBinding(String parent, AccessBinding accessBinding)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAccessBinding</td>
+ *      <td><p> Gets information about an access binding.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAccessBinding(GetAccessBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAccessBinding(AccessBindingName name)
+ *           <li><p> getAccessBinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAccessBinding</td>
+ *      <td><p> Updates an access binding on an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAccessBinding(UpdateAccessBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAccessBinding(AccessBinding accessBinding)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAccessBinding</td>
+ *      <td><p> Deletes an access binding on an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAccessBinding(DeleteAccessBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAccessBinding(AccessBindingName name)
+ *           <li><p> deleteAccessBinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAccessBindings</td>
+ *      <td><p> Lists all access bindings on an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAccessBindings(ListAccessBindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAccessBindings(AccountName parent)
+ *           <li><p> listAccessBindings(PropertyName parent)
+ *           <li><p> listAccessBindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAccessBindingsPagedCallable()
+ *           <li><p> listAccessBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateAccessBindings</td>
+ *      <td><p> Creates information about multiple access bindings to an account or property.
+ * <p>  This method is transactional. If any AccessBinding cannot be created, none of the AccessBindings will be created.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateAccessBindings(BatchCreateAccessBindingsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateAccessBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchGetAccessBindings</td>
+ *      <td><p> Gets information about multiple access bindings to an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchGetAccessBindings(BatchGetAccessBindingsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchGetAccessBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateAccessBindings</td>
+ *      <td><p> Updates information about multiple access bindings to an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateAccessBindings(BatchUpdateAccessBindingsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateAccessBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeleteAccessBindings</td>
+ *      <td><p> Deletes information about multiple users' links to an account or property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteAccessBindings(BatchDeleteAccessBindingsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteAccessBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetExpandedDataSet</td>
+ *      <td><p> Lookup for a single ExpandedDataSet.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getExpandedDataSet(GetExpandedDataSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getExpandedDataSet(ExpandedDataSetName name)
+ *           <li><p> getExpandedDataSet(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getExpandedDataSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListExpandedDataSets</td>
+ *      <td><p> Lists ExpandedDataSets on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listExpandedDataSets(ListExpandedDataSetsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listExpandedDataSets(PropertyName parent)
+ *           <li><p> listExpandedDataSets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listExpandedDataSetsPagedCallable()
+ *           <li><p> listExpandedDataSetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateExpandedDataSet</td>
+ *      <td><p> Creates a ExpandedDataSet.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createExpandedDataSet(CreateExpandedDataSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createExpandedDataSet(PropertyName parent, ExpandedDataSet expandedDataSet)
+ *           <li><p> createExpandedDataSet(String parent, ExpandedDataSet expandedDataSet)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createExpandedDataSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateExpandedDataSet</td>
+ *      <td><p> Updates a ExpandedDataSet on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateExpandedDataSet(UpdateExpandedDataSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateExpandedDataSet(ExpandedDataSet expandedDataSet, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateExpandedDataSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteExpandedDataSet</td>
+ *      <td><p> Deletes a ExpandedDataSet on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteExpandedDataSet(DeleteExpandedDataSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteExpandedDataSet(ExpandedDataSetName name)
+ *           <li><p> deleteExpandedDataSet(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteExpandedDataSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetChannelGroup</td>
+ *      <td><p> Lookup for a single ChannelGroup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getChannelGroup(GetChannelGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getChannelGroup(ChannelGroupName name)
+ *           <li><p> getChannelGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getChannelGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListChannelGroups</td>
+ *      <td><p> Lists ChannelGroups on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listChannelGroups(ListChannelGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listChannelGroups(PropertyName parent)
+ *           <li><p> listChannelGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listChannelGroupsPagedCallable()
+ *           <li><p> listChannelGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateChannelGroup</td>
+ *      <td><p> Creates a ChannelGroup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createChannelGroup(CreateChannelGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createChannelGroup(PropertyName parent, ChannelGroup channelGroup)
+ *           <li><p> createChannelGroup(String parent, ChannelGroup channelGroup)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createChannelGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateChannelGroup</td>
+ *      <td><p> Updates a ChannelGroup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateChannelGroup(UpdateChannelGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateChannelGroup(ChannelGroup channelGroup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateChannelGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteChannelGroup</td>
+ *      <td><p> Deletes a ChannelGroup on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteChannelGroup(DeleteChannelGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteChannelGroup(ChannelGroupName name)
+ *           <li><p> deleteChannelGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteChannelGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetAutomatedGa4ConfigurationOptOut</td>
+ *      <td><p> Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setAutomatedGa4ConfigurationOptOut(SetAutomatedGa4ConfigurationOptOutRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setAutomatedGa4ConfigurationOptOutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchAutomatedGa4ConfigurationOptOut</td>
+ *      <td><p> Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchAutomatedGa4ConfigurationOptOut(FetchAutomatedGa4ConfigurationOptOutRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchAutomatedGa4ConfigurationOptOutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBigQueryLink</td>
+ *      <td><p> Lookup for a single BigQuery Link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBigQueryLink(GetBigQueryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBigQueryLink(BigQueryLinkName name)
+ *           <li><p> getBigQueryLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBigQueryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBigQueryLinks</td>
+ *      <td><p> Lists BigQuery Links on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBigQueryLinks(ListBigQueryLinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBigQueryLinks(PropertyName parent)
+ *           <li><p> listBigQueryLinks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBigQueryLinksPagedCallable()
+ *           <li><p> listBigQueryLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEnhancedMeasurementSettings</td>
+ *      <td><p> Returns the enhanced measurement settings for this data stream. Note that the stream must enable enhanced measurement for these settings to take effect.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEnhancedMeasurementSettings(GetEnhancedMeasurementSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEnhancedMeasurementSettings(EnhancedMeasurementSettingsName name)
+ *           <li><p> getEnhancedMeasurementSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEnhancedMeasurementSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEnhancedMeasurementSettings</td>
+ *      <td><p> Updates the enhanced measurement settings for this data stream. Note that the stream must enable enhanced measurement for these settings to take effect.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEnhancedMeasurementSettings(UpdateEnhancedMeasurementSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateEnhancedMeasurementSettings(EnhancedMeasurementSettings enhancedMeasurementSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEnhancedMeasurementSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateConnectedSiteTag</td>
+ *      <td><p> Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20 connected site tags per property. Note: This API cannot be used on GA4 properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createConnectedSiteTag(CreateConnectedSiteTagRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createConnectedSiteTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteConnectedSiteTag</td>
+ *      <td><p> Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on GA4 properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteConnectedSiteTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListConnectedSiteTags</td>
+ *      <td><p> Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected site tags will be returned. Note: this has no effect on GA4 property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listConnectedSiteTags(ListConnectedSiteTagsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listConnectedSiteTagsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchConnectedGa4Property</td>
+ *      <td><p> Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be used with GA4 properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchConnectedGa4Property(FetchConnectedGa4PropertyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchConnectedGa4PropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAdSenseLink</td>
+ *      <td><p> Looks up a single AdSenseLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAdSenseLink(GetAdSenseLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAdSenseLink(AdSenseLinkName name)
+ *           <li><p> getAdSenseLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAdSenseLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAdSenseLink</td>
+ *      <td><p> Creates an AdSenseLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAdSenseLink(CreateAdSenseLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAdSenseLink(PropertyName parent, AdSenseLink adsenseLink)
+ *           <li><p> createAdSenseLink(String parent, AdSenseLink adsenseLink)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAdSenseLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAdSenseLink</td>
+ *      <td><p> Deletes an AdSenseLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAdSenseLink(DeleteAdSenseLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAdSenseLink(AdSenseLinkName name)
+ *           <li><p> deleteAdSenseLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAdSenseLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAdSenseLinks</td>
+ *      <td><p> Lists AdSenseLinks on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAdSenseLinks(ListAdSenseLinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAdSenseLinks(PropertyName parent)
+ *           <li><p> listAdSenseLinks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAdSenseLinksPagedCallable()
+ *           <li><p> listAdSenseLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEventCreateRule</td>
+ *      <td><p> Lookup for a single EventCreateRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEventCreateRule(GetEventCreateRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEventCreateRule(EventCreateRuleName name)
+ *           <li><p> getEventCreateRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEventCreateRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListEventCreateRules</td>
+ *      <td><p> Lists EventCreateRules on a web data stream.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listEventCreateRules(ListEventCreateRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listEventCreateRules(DataStreamName parent)
+ *           <li><p> listEventCreateRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listEventCreateRulesPagedCallable()
+ *           <li><p> listEventCreateRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateEventCreateRule</td>
+ *      <td><p> Creates an EventCreateRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createEventCreateRule(CreateEventCreateRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createEventCreateRule(DataStreamName parent, EventCreateRule eventCreateRule)
+ *           <li><p> createEventCreateRule(String parent, EventCreateRule eventCreateRule)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createEventCreateRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEventCreateRule</td>
+ *      <td><p> Updates an EventCreateRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEventCreateRule(UpdateEventCreateRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateEventCreateRule(EventCreateRule eventCreateRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEventCreateRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteEventCreateRule</td>
+ *      <td><p> Deletes an EventCreateRule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteEventCreateRule(DeleteEventCreateRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteEventCreateRule(EventCreateRuleName name)
+ *           <li><p> deleteEventCreateRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteEventCreateRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDataRedactionSettings</td>
+ *      <td><p> Updates a DataRedactionSettings on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDataRedactionSettings(UpdateDataRedactionSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDataRedactionSettings(DataRedactionSettings dataRedactionSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDataRedactionSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataRedactionSettings</td>
+ *      <td><p> Lookup for a single DataRedactionSettings.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataRedactionSettings(GetDataRedactionSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataRedactionSettings(DataRedactionSettingsName name)
+ *           <li><p> getDataRedactionSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDataRedactionSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCalculatedMetric</td>
+ *      <td><p> Lookup for a single CalculatedMetric.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCalculatedMetric(GetCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCalculatedMetric(CalculatedMetricName name)
+ *           <li><p> getCalculatedMetric(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCalculatedMetric</td>
+ *      <td><p> Creates a CalculatedMetric.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCalculatedMetric(CreateCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCalculatedMetric(PropertyName parent, CalculatedMetric calculatedMetric, String calculatedMetricId)
+ *           <li><p> createCalculatedMetric(String parent, CalculatedMetric calculatedMetric, String calculatedMetricId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListCalculatedMetrics</td>
+ *      <td><p> Lists CalculatedMetrics on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listCalculatedMetrics(ListCalculatedMetricsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listCalculatedMetrics(PropertyName parent)
+ *           <li><p> listCalculatedMetrics(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listCalculatedMetricsPagedCallable()
+ *           <li><p> listCalculatedMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCalculatedMetric</td>
+ *      <td><p> Updates a CalculatedMetric on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCalculatedMetric(UpdateCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCalculatedMetric(CalculatedMetric calculatedMetric, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCalculatedMetric</td>
+ *      <td><p> Deletes a CalculatedMetric on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCalculatedMetric(DeleteCalculatedMetricRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteCalculatedMetric(CalculatedMetricName name)
+ *           <li><p> deleteCalculatedMetric(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCalculatedMetricCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRollupProperty</td>
+ *      <td><p> Create a roll-up property and all roll-up property source links.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRollupProperty(CreateRollupPropertyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRollupPropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRollupPropertySourceLink</td>
+ *      <td><p> Lookup for a single roll-up property source Link. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRollupPropertySourceLink(GetRollupPropertySourceLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRollupPropertySourceLink(RollupPropertySourceLinkName name)
+ *           <li><p> getRollupPropertySourceLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRollupPropertySourceLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRollupPropertySourceLinks</td>
+ *      <td><p> Lists roll-up property source Links on a property. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRollupPropertySourceLinks(ListRollupPropertySourceLinksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRollupPropertySourceLinks(PropertyName parent)
+ *           <li><p> listRollupPropertySourceLinks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRollupPropertySourceLinksPagedCallable()
+ *           <li><p> listRollupPropertySourceLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRollupPropertySourceLink</td>
+ *      <td><p> Creates a roll-up property source link. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRollupPropertySourceLink(CreateRollupPropertySourceLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createRollupPropertySourceLink(PropertyName parent, RollupPropertySourceLink rollupPropertySourceLink)
+ *           <li><p> createRollupPropertySourceLink(String parent, RollupPropertySourceLink rollupPropertySourceLink)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRollupPropertySourceLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRollupPropertySourceLink</td>
+ *      <td><p> Deletes a roll-up property source link. Only roll-up properties can have source links, so this method will throw an error if used on other types of properties.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRollupPropertySourceLink(DeleteRollupPropertySourceLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteRollupPropertySourceLink(RollupPropertySourceLinkName name)
+ *           <li><p> deleteRollupPropertySourceLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRollupPropertySourceLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSubproperty</td>
+ *      <td><p> Create a subproperty and a subproperty event filter that applies to the created subproperty.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSubproperty(CreateSubpropertyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSubpropertyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSubpropertyEventFilter</td>
+ *      <td><p> Creates a subproperty Event Filter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSubpropertyEventFilter(CreateSubpropertyEventFilterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSubpropertyEventFilter(PropertyName parent, SubpropertyEventFilter subpropertyEventFilter)
+ *           <li><p> createSubpropertyEventFilter(String parent, SubpropertyEventFilter subpropertyEventFilter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSubpropertyEventFilterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSubpropertyEventFilter</td>
+ *      <td><p> Lookup for a single subproperty Event Filter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSubpropertyEventFilter(GetSubpropertyEventFilterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSubpropertyEventFilter(SubpropertyEventFilterName name)
+ *           <li><p> getSubpropertyEventFilter(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSubpropertyEventFilterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSubpropertyEventFilters</td>
+ *      <td><p> List all subproperty Event Filters on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSubpropertyEventFilters(ListSubpropertyEventFiltersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSubpropertyEventFilters(PropertyName parent)
+ *           <li><p> listSubpropertyEventFilters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSubpropertyEventFiltersPagedCallable()
+ *           <li><p> listSubpropertyEventFiltersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSubpropertyEventFilter</td>
+ *      <td><p> Updates a subproperty Event Filter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertyEventFilter(UpdateSubpropertyEventFilterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertyEventFilter(SubpropertyEventFilter subpropertyEventFilter, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertyEventFilterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSubpropertyEventFilter</td>
+ *      <td><p> Deletes a subproperty event filter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSubpropertyEventFilter(SubpropertyEventFilterName name)
+ *           <li><p> deleteSubpropertyEventFilter(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSubpropertyEventFilterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -10056,8 +12542,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns a customized report of data access records. The report provides records of each time a
    * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
    *
-   * <p>Data Access Reports can be requested for a property. The property must be in Google
-   * Analytics 360. This method is only available to Administrators.
+   * <p>Data Access Reports can be requested for a property. Reports may be requested for any
+   * property, but dimensions that aren't related to quota can only be requested on Google Analytics
+   * 360 properties. This method is only available to Administrators.
    *
    * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
@@ -10107,8 +12594,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns a customized report of data access records. The report provides records of each time a
    * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
    *
-   * <p>Data Access Reports can be requested for a property. The property must be in Google
-   * Analytics 360. This method is only available to Administrators.
+   * <p>Data Access Reports can be requested for a property. Reports may be requested for any
+   * property, but dimensions that aren't related to quota can only be requested on Google Analytics
+   * 360 properties. This method is only available to Administrators.
    *
    * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
@@ -14711,6 +17199,671 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+   *   CalculatedMetric response = analyticsAdminServiceClient.getCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to get. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric getCalculatedMetric(CalculatedMetricName name) {
+    GetCalculatedMetricRequest request =
+        GetCalculatedMetricRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString();
+   *   CalculatedMetric response = analyticsAdminServiceClient.getCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to get. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric getCalculatedMetric(String name) {
+    GetCalculatedMetricRequest request =
+        GetCalculatedMetricRequest.newBuilder().setName(name).build();
+    return getCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCalculatedMetricRequest request =
+   *       GetCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   CalculatedMetric response = analyticsAdminServiceClient.getCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric getCalculatedMetric(GetCalculatedMetricRequest request) {
+    return getCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCalculatedMetricRequest request =
+   *       GetCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.getCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CalculatedMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricCallable() {
+    return stub.getCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+   *   String calculatedMetricId = "calculatedMetricId-277970231";
+   *   CalculatedMetric response =
+   *       analyticsAdminServiceClient.createCalculatedMetric(
+   *           parent, calculatedMetric, calculatedMetricId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param calculatedMetric Required. The CalculatedMetric to create.
+   * @param calculatedMetricId Required. The ID to use for the calculated metric which will become
+   *     the final component of the calculated metric's resource name.
+   *     <p>This value should be 1-80 characters and valid characters are /[a-zA-Z0-9_]/, no spaces
+   *     allowed. calculated_metric_id must be unique between all calculated metrics under a
+   *     property. The calculated_metric_id is used when referencing this calculated metric from
+   *     external APIs, for example, "calcMetric:{calculated_metric_id}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric createCalculatedMetric(
+      PropertyName parent, CalculatedMetric calculatedMetric, String calculatedMetricId) {
+    CreateCalculatedMetricRequest request =
+        CreateCalculatedMetricRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCalculatedMetric(calculatedMetric)
+            .setCalculatedMetricId(calculatedMetricId)
+            .build();
+    return createCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+   *   String calculatedMetricId = "calculatedMetricId-277970231";
+   *   CalculatedMetric response =
+   *       analyticsAdminServiceClient.createCalculatedMetric(
+   *           parent, calculatedMetric, calculatedMetricId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param calculatedMetric Required. The CalculatedMetric to create.
+   * @param calculatedMetricId Required. The ID to use for the calculated metric which will become
+   *     the final component of the calculated metric's resource name.
+   *     <p>This value should be 1-80 characters and valid characters are /[a-zA-Z0-9_]/, no spaces
+   *     allowed. calculated_metric_id must be unique between all calculated metrics under a
+   *     property. The calculated_metric_id is used when referencing this calculated metric from
+   *     external APIs, for example, "calcMetric:{calculated_metric_id}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric createCalculatedMetric(
+      String parent, CalculatedMetric calculatedMetric, String calculatedMetricId) {
+    CreateCalculatedMetricRequest request =
+        CreateCalculatedMetricRequest.newBuilder()
+            .setParent(parent)
+            .setCalculatedMetric(calculatedMetric)
+            .setCalculatedMetricId(calculatedMetricId)
+            .build();
+    return createCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCalculatedMetricRequest request =
+   *       CreateCalculatedMetricRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setCalculatedMetricId("calculatedMetricId-277970231")
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .build();
+   *   CalculatedMetric response = analyticsAdminServiceClient.createCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric createCalculatedMetric(CreateCalculatedMetricRequest request) {
+    return createCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CalculatedMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCalculatedMetricRequest request =
+   *       CreateCalculatedMetricRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setCalculatedMetricId("calculatedMetricId-277970231")
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.createCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CalculatedMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    return stub.createCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (CalculatedMetric element :
+   *       analyticsAdminServiceClient.listCalculatedMetrics(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCalculatedMetricsPagedResponse listCalculatedMetrics(PropertyName parent) {
+    ListCalculatedMetricsRequest request =
+        ListCalculatedMetricsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCalculatedMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (CalculatedMetric element :
+   *       analyticsAdminServiceClient.listCalculatedMetrics(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCalculatedMetricsPagedResponse listCalculatedMetrics(String parent) {
+    ListCalculatedMetricsRequest request =
+        ListCalculatedMetricsRequest.newBuilder().setParent(parent).build();
+    return listCalculatedMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCalculatedMetricsRequest request =
+   *       ListCalculatedMetricsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CalculatedMetric element :
+   *       analyticsAdminServiceClient.listCalculatedMetrics(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCalculatedMetricsPagedResponse listCalculatedMetrics(
+      ListCalculatedMetricsRequest request) {
+    return listCalculatedMetricsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCalculatedMetricsRequest request =
+   *       ListCalculatedMetricsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.listCalculatedMetricsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CalculatedMetric element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    return stub.listCalculatedMetricsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CalculatedMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCalculatedMetricsRequest request =
+   *       ListCalculatedMetricsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListCalculatedMetricsResponse response =
+   *         analyticsAdminServiceClient.listCalculatedMetricsCallable().call(request);
+   *     for (CalculatedMetric element : response.getCalculatedMetricsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    return stub.listCalculatedMetricsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CalculatedMetric calculatedMetric = CalculatedMetric.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CalculatedMetric response =
+   *       analyticsAdminServiceClient.updateCalculatedMetric(calculatedMetric, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param calculatedMetric Required. The CalculatedMetric to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric updateCalculatedMetric(
+      CalculatedMetric calculatedMetric, FieldMask updateMask) {
+    UpdateCalculatedMetricRequest request =
+        UpdateCalculatedMetricRequest.newBuilder()
+            .setCalculatedMetric(calculatedMetric)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCalculatedMetricRequest request =
+   *       UpdateCalculatedMetricRequest.newBuilder()
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CalculatedMetric response = analyticsAdminServiceClient.updateCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CalculatedMetric updateCalculatedMetric(UpdateCalculatedMetricRequest request) {
+    return updateCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCalculatedMetricRequest request =
+   *       UpdateCalculatedMetricRequest.newBuilder()
+   *           .setCalculatedMetric(CalculatedMetric.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CalculatedMetric> future =
+   *       analyticsAdminServiceClient.updateCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CalculatedMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    return stub.updateCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CalculatedMetricName name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]");
+   *   analyticsAdminServiceClient.deleteCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to delete. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCalculatedMetric(CalculatedMetricName name) {
+    DeleteCalculatedMetricRequest request =
+        DeleteCalculatedMetricRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString();
+   *   analyticsAdminServiceClient.deleteCalculatedMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CalculatedMetric to delete. Format:
+   *     properties/{property_id}/calculatedMetrics/{calculated_metric_id} Example:
+   *     properties/1234/calculatedMetrics/Metric01
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCalculatedMetric(String name) {
+    DeleteCalculatedMetricRequest request =
+        DeleteCalculatedMetricRequest.newBuilder().setName(name).build();
+    deleteCalculatedMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteCalculatedMetricRequest request =
+   *       DeleteCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteCalculatedMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCalculatedMetric(DeleteCalculatedMetricRequest request) {
+    deleteCalculatedMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a CalculatedMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteCalculatedMetricRequest request =
+   *       DeleteCalculatedMetricRequest.newBuilder()
+   *           .setName(CalculatedMetricName.of("[PROPERTY]", "[CALCULATED_METRIC]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteCalculatedMetricCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricCallable() {
+    return stub.deleteCalculatedMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Create a roll-up property and all roll-up property source links.
    *
    * <p>Sample code:
@@ -15432,133 +18585,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   SubpropertyEventFilterName name =
-   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
-   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Resource name of the subproperty event filter to delete. Format:
-   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
-   *     properties/123/subpropertyEventFilters/456
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSubpropertyEventFilter(SubpropertyEventFilterName name) {
-    DeleteSubpropertyEventFilterRequest request =
-        DeleteSubpropertyEventFilterRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteSubpropertyEventFilter(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String name =
-   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
-   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Resource name of the subproperty event filter to delete. Format:
-   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
-   *     properties/123/subpropertyEventFilters/456
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSubpropertyEventFilter(String name) {
-    DeleteSubpropertyEventFilterRequest request =
-        DeleteSubpropertyEventFilterRequest.newBuilder().setName(name).build();
-    deleteSubpropertyEventFilter(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteSubpropertyEventFilterRequest request =
-   *       DeleteSubpropertyEventFilterRequest.newBuilder()
-   *           .setName(
-   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
-   *                   .toString())
-   *           .build();
-   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request) {
-    deleteSubpropertyEventFilterCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteSubpropertyEventFilterRequest request =
-   *       DeleteSubpropertyEventFilterRequest.newBuilder()
-   *           .setName(
-   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       analyticsAdminServiceClient.deleteSubpropertyEventFilterCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterCallable() {
-    return stub.deleteSubpropertyEventFilterCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Creates a subproperty Event Filter.
    *
    * <p>Sample code:
@@ -15690,6 +18716,544 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterCallable() {
     return stub.createSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilterName name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+   *   SubpropertyEventFilter response = analyticsAdminServiceClient.getSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to lookup. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter getSubpropertyEventFilter(SubpropertyEventFilterName name) {
+    GetSubpropertyEventFilterRequest request =
+        GetSubpropertyEventFilterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
+   *   SubpropertyEventFilter response = analyticsAdminServiceClient.getSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to lookup. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter getSubpropertyEventFilter(String name) {
+    GetSubpropertyEventFilterRequest request =
+        GetSubpropertyEventFilterRequest.newBuilder().setName(name).build();
+    return getSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertyEventFilterRequest request =
+   *       GetSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.getSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter getSubpropertyEventFilter(
+      GetSubpropertyEventFilterRequest request) {
+    return getSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertyEventFilterRequest request =
+   *       GetSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient.getSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertyEventFilter response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable() {
+    return stub.getSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (SubpropertyEventFilter element :
+   *       analyticsAdminServiceClient.listSubpropertyEventFilters(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the ordinary property. Format: properties/property_id
+   *     Example: properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertyEventFiltersPagedResponse listSubpropertyEventFilters(
+      PropertyName parent) {
+    ListSubpropertyEventFiltersRequest request =
+        ListSubpropertyEventFiltersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubpropertyEventFilters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (SubpropertyEventFilter element :
+   *       analyticsAdminServiceClient.listSubpropertyEventFilters(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the ordinary property. Format: properties/property_id
+   *     Example: properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertyEventFiltersPagedResponse listSubpropertyEventFilters(String parent) {
+    ListSubpropertyEventFiltersRequest request =
+        ListSubpropertyEventFiltersRequest.newBuilder().setParent(parent).build();
+    return listSubpropertyEventFilters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertyEventFiltersRequest request =
+   *       ListSubpropertyEventFiltersRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SubpropertyEventFilter element :
+   *       analyticsAdminServiceClient.listSubpropertyEventFilters(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertyEventFiltersPagedResponse listSubpropertyEventFilters(
+      ListSubpropertyEventFiltersRequest request) {
+    return listSubpropertyEventFiltersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertyEventFiltersRequest request =
+   *       ListSubpropertyEventFiltersRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient
+   *           .listSubpropertyEventFiltersPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SubpropertyEventFilter element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable() {
+    return stub.listSubpropertyEventFiltersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertyEventFiltersRequest request =
+   *       ListSubpropertyEventFiltersRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubpropertyEventFiltersResponse response =
+   *         analyticsAdminServiceClient.listSubpropertyEventFiltersCallable().call(request);
+   *     for (SubpropertyEventFilter element : response.getSubpropertyEventFiltersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable() {
+    return stub.listSubpropertyEventFiltersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.updateSubpropertyEventFilter(
+   *           subpropertyEventFilter, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param subpropertyEventFilter Required. The subproperty event filter to update.
+   * @param updateMask Required. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter updateSubpropertyEventFilter(
+      SubpropertyEventFilter subpropertyEventFilter, FieldMask updateMask) {
+    UpdateSubpropertyEventFilterRequest request =
+        UpdateSubpropertyEventFilterRequest.newBuilder()
+            .setSubpropertyEventFilter(subpropertyEventFilter)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertyEventFilterRequest request =
+   *       UpdateSubpropertyEventFilterRequest.newBuilder()
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.updateSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter updateSubpropertyEventFilter(
+      UpdateSubpropertyEventFilterRequest request) {
+    return updateSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertyEventFilterRequest request =
+   *       UpdateSubpropertyEventFilterRequest.newBuilder()
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient.updateSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertyEventFilter response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable() {
+    return stub.updateSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilterName name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to delete. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(SubpropertyEventFilterName name) {
+    DeleteSubpropertyEventFilterRequest request =
+        DeleteSubpropertyEventFilterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to delete. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(String name) {
+    DeleteSubpropertyEventFilterRequest request =
+        DeleteSubpropertyEventFilterRequest.newBuilder().setName(name).build();
+    deleteSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSubpropertyEventFilterRequest request =
+   *       DeleteSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request) {
+    deleteSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSubpropertyEventFilterRequest request =
+   *       DeleteSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    return stub.deleteSubpropertyEventFilterCallable();
   }
 
   @Override
@@ -17579,6 +21143,90 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     }
   }
 
+  public static class ListCalculatedMetricsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          CalculatedMetric,
+          ListCalculatedMetricsPage,
+          ListCalculatedMetricsFixedSizeCollection> {
+
+    public static ApiFuture<ListCalculatedMetricsPagedResponse> createAsync(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ApiFuture<ListCalculatedMetricsResponse> futureResponse) {
+      ApiFuture<ListCalculatedMetricsPage> futurePage =
+          ListCalculatedMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCalculatedMetricsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCalculatedMetricsPagedResponse(ListCalculatedMetricsPage page) {
+      super(page, ListCalculatedMetricsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCalculatedMetricsPage
+      extends AbstractPage<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          CalculatedMetric,
+          ListCalculatedMetricsPage> {
+
+    private ListCalculatedMetricsPage(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ListCalculatedMetricsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCalculatedMetricsPage createEmptyPage() {
+      return new ListCalculatedMetricsPage(null, null);
+    }
+
+    @Override
+    protected ListCalculatedMetricsPage createPage(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ListCalculatedMetricsResponse response) {
+      return new ListCalculatedMetricsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCalculatedMetricsPage> createPageAsync(
+        PageContext<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+            context,
+        ApiFuture<ListCalculatedMetricsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCalculatedMetricsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          CalculatedMetric,
+          ListCalculatedMetricsPage,
+          ListCalculatedMetricsFixedSizeCollection> {
+
+    private ListCalculatedMetricsFixedSizeCollection(
+        List<ListCalculatedMetricsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCalculatedMetricsFixedSizeCollection createEmptyCollection() {
+      return new ListCalculatedMetricsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCalculatedMetricsFixedSizeCollection createCollection(
+        List<ListCalculatedMetricsPage> pages, int collectionSize) {
+      return new ListCalculatedMetricsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListRollupPropertySourceLinksPagedResponse
       extends AbstractPagedListResponse<
           ListRollupPropertySourceLinksRequest,
@@ -17673,6 +21321,103 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListRollupPropertySourceLinksFixedSizeCollection createCollection(
         List<ListRollupPropertySourceLinksPage> pages, int collectionSize) {
       return new ListRollupPropertySourceLinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubpropertyEventFiltersPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter,
+          ListSubpropertyEventFiltersPage,
+          ListSubpropertyEventFiltersFixedSizeCollection> {
+
+    public static ApiFuture<ListSubpropertyEventFiltersPagedResponse> createAsync(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ApiFuture<ListSubpropertyEventFiltersResponse> futureResponse) {
+      ApiFuture<ListSubpropertyEventFiltersPage> futurePage =
+          ListSubpropertyEventFiltersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubpropertyEventFiltersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubpropertyEventFiltersPagedResponse(ListSubpropertyEventFiltersPage page) {
+      super(page, ListSubpropertyEventFiltersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubpropertyEventFiltersPage
+      extends AbstractPage<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter,
+          ListSubpropertyEventFiltersPage> {
+
+    private ListSubpropertyEventFiltersPage(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ListSubpropertyEventFiltersResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubpropertyEventFiltersPage createEmptyPage() {
+      return new ListSubpropertyEventFiltersPage(null, null);
+    }
+
+    @Override
+    protected ListSubpropertyEventFiltersPage createPage(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ListSubpropertyEventFiltersResponse response) {
+      return new ListSubpropertyEventFiltersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubpropertyEventFiltersPage> createPageAsync(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ApiFuture<ListSubpropertyEventFiltersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubpropertyEventFiltersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter,
+          ListSubpropertyEventFiltersPage,
+          ListSubpropertyEventFiltersFixedSizeCollection> {
+
+    private ListSubpropertyEventFiltersFixedSizeCollection(
+        List<ListSubpropertyEventFiltersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubpropertyEventFiltersFixedSizeCollection createEmptyCollection() {
+      return new ListSubpropertyEventFiltersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubpropertyEventFiltersFixedSizeCollection createCollection(
+        List<ListSubpropertyEventFiltersPage> pages, int collectionSize) {
+      return new ListSubpropertyEventFiltersFixedSizeCollection(pages, collectionSize);
     }
   }
 }

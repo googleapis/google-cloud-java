@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -164,6 +164,7 @@ public class PlacesClientTest {
             .setStrictTypeFiltering(true)
             .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
             .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+            .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -185,6 +186,7 @@ public class PlacesClientTest {
     Assert.assertEquals(request.getStrictTypeFiltering(), actualRequest.getStrictTypeFiltering());
     Assert.assertEquals(request.getLocationBias(), actualRequest.getLocationBias());
     Assert.assertEquals(request.getLocationRestriction(), actualRequest.getLocationRestriction());
+    Assert.assertEquals(request.getEvOptions(), actualRequest.getEvOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -210,6 +212,7 @@ public class PlacesClientTest {
               .setStrictTypeFiltering(true)
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+              .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
@@ -304,9 +307,12 @@ public class PlacesClientTest {
             .setId("id3355")
             .setDisplayName(LocalizedText.newBuilder().build())
             .addAllTypes(new ArrayList<String>())
+            .setPrimaryType("primaryType-867549092")
+            .setPrimaryTypeDisplayName(LocalizedText.newBuilder().build())
             .setNationalPhoneNumber("nationalPhoneNumber-1432446651")
             .setInternationalPhoneNumber("internationalPhoneNumber-74125591")
             .setFormattedAddress("formattedAddress1036810136")
+            .setShortFormattedAddress("shortFormattedAddress282445876")
             .addAllAddressComponents(new ArrayList<Place.AddressComponent>())
             .setPlusCode(Place.PlusCode.newBuilder().build())
             .setLocation(LatLng.newBuilder().build())
@@ -398,9 +404,12 @@ public class PlacesClientTest {
             .setId("id3355")
             .setDisplayName(LocalizedText.newBuilder().build())
             .addAllTypes(new ArrayList<String>())
+            .setPrimaryType("primaryType-867549092")
+            .setPrimaryTypeDisplayName(LocalizedText.newBuilder().build())
             .setNationalPhoneNumber("nationalPhoneNumber-1432446651")
             .setInternationalPhoneNumber("internationalPhoneNumber-74125591")
             .setFormattedAddress("formattedAddress1036810136")
+            .setShortFormattedAddress("shortFormattedAddress282445876")
             .addAllAddressComponents(new ArrayList<Place.AddressComponent>())
             .setPlusCode(Place.PlusCode.newBuilder().build())
             .setLocation(LatLng.newBuilder().build())
@@ -478,6 +487,85 @@ public class PlacesClientTest {
     try {
       String name = "name3373707";
       client.getPlace(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void autocompletePlacesTest() throws Exception {
+    AutocompletePlacesResponse expectedResponse =
+        AutocompletePlacesResponse.newBuilder()
+            .addAllSuggestions(new ArrayList<AutocompletePlacesResponse.Suggestion>())
+            .build();
+    mockPlaces.addResponse(expectedResponse);
+
+    AutocompletePlacesRequest request =
+        AutocompletePlacesRequest.newBuilder()
+            .setInput("input100358090")
+            .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+            .setLocationRestriction(
+                AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+            .addAllIncludedPrimaryTypes(new ArrayList<String>())
+            .addAllIncludedRegionCodes(new ArrayList<String>())
+            .setLanguageCode("languageCode-2092349083")
+            .setRegionCode("regionCode-1991004415")
+            .setOrigin(LatLng.newBuilder().build())
+            .setInputOffset(1010406056)
+            .setIncludeQueryPredictions(true)
+            .setSessionToken("sessionToken-696552189")
+            .build();
+
+    AutocompletePlacesResponse actualResponse = client.autocompletePlaces(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPlaces.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AutocompletePlacesRequest actualRequest = ((AutocompletePlacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getInput(), actualRequest.getInput());
+    Assert.assertEquals(request.getLocationBias(), actualRequest.getLocationBias());
+    Assert.assertEquals(request.getLocationRestriction(), actualRequest.getLocationRestriction());
+    Assert.assertEquals(
+        request.getIncludedPrimaryTypesList(), actualRequest.getIncludedPrimaryTypesList());
+    Assert.assertEquals(
+        request.getIncludedRegionCodesList(), actualRequest.getIncludedRegionCodesList());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertEquals(request.getRegionCode(), actualRequest.getRegionCode());
+    Assert.assertEquals(request.getOrigin(), actualRequest.getOrigin());
+    Assert.assertEquals(request.getInputOffset(), actualRequest.getInputOffset());
+    Assert.assertEquals(
+        request.getIncludeQueryPredictions(), actualRequest.getIncludeQueryPredictions());
+    Assert.assertEquals(request.getSessionToken(), actualRequest.getSessionToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void autocompletePlacesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPlaces.addException(exception);
+
+    try {
+      AutocompletePlacesRequest request =
+          AutocompletePlacesRequest.newBuilder()
+              .setInput("input100358090")
+              .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+              .setLocationRestriction(
+                  AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+              .addAllIncludedPrimaryTypes(new ArrayList<String>())
+              .addAllIncludedRegionCodes(new ArrayList<String>())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
+              .setOrigin(LatLng.newBuilder().build())
+              .setInputOffset(1010406056)
+              .setIncludeQueryPredictions(true)
+              .setSessionToken("sessionToken-696552189")
+              .build();
+      client.autocompletePlaces(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

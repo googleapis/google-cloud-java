@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,57 @@ public final class SessionsGrpc {
       }
     }
     return getDetectIntentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+      getServerStreamingDetectIntentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ServerStreamingDetectIntent",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+      getServerStreamingDetectIntentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+        getServerStreamingDetectIntentMethod;
+    if ((getServerStreamingDetectIntentMethod = SessionsGrpc.getServerStreamingDetectIntentMethod)
+        == null) {
+      synchronized (SessionsGrpc.class) {
+        if ((getServerStreamingDetectIntentMethod =
+                SessionsGrpc.getServerStreamingDetectIntentMethod)
+            == null) {
+          SessionsGrpc.getServerStreamingDetectIntentMethod =
+              getServerStreamingDetectIntentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ServerStreamingDetectIntent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SessionsMethodDescriptorSupplier("ServerStreamingDetectIntent"))
+                      .build();
+        }
+      }
+    }
+    return getServerStreamingDetectIntentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -350,6 +401,25 @@ public final class SessionsGrpc {
      *
      *
      * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result through server-side streaming. Server-side streaming allows
+     * Dialogflow to send [partial
+     * responses](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#partial-response)
+     * earlier in a single request.
+     * </pre>
+     */
+    default void serverStreamingDetectIntent(
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getServerStreamingDetectIntentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Processes a natural language query in audio format in a streaming fashion
      * and returns structured, actionable data as a result. This method is only
      * available via the gRPC API (not REST).
@@ -487,6 +557,27 @@ public final class SessionsGrpc {
      *
      *
      * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result through server-side streaming. Server-side streaming allows
+     * Dialogflow to send [partial
+     * responses](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#partial-response)
+     * earlier in a single request.
+     * </pre>
+     */
+    public void serverStreamingDetectIntent(
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getServerStreamingDetectIntentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Processes a natural language query in audio format in a streaming fashion
      * and returns structured, actionable data as a result. This method is only
      * available via the gRPC API (not REST).
@@ -604,6 +695,24 @@ public final class SessionsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDetectIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result through server-side streaming. Server-side streaming allows
+     * Dialogflow to send [partial
+     * responses](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#partial-response)
+     * earlier in a single request.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
+        serverStreamingDetectIntent(
+            com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getServerStreamingDetectIntentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -748,10 +857,11 @@ public final class SessionsGrpc {
   }
 
   private static final int METHODID_DETECT_INTENT = 0;
-  private static final int METHODID_MATCH_INTENT = 1;
-  private static final int METHODID_FULFILL_INTENT = 2;
-  private static final int METHODID_SUBMIT_ANSWER_FEEDBACK = 3;
-  private static final int METHODID_STREAMING_DETECT_INTENT = 4;
+  private static final int METHODID_SERVER_STREAMING_DETECT_INTENT = 1;
+  private static final int METHODID_MATCH_INTENT = 2;
+  private static final int METHODID_FULFILL_INTENT = 3;
+  private static final int METHODID_SUBMIT_ANSWER_FEEDBACK = 4;
+  private static final int METHODID_STREAMING_DETECT_INTENT = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -772,6 +882,13 @@ public final class SessionsGrpc {
       switch (methodId) {
         case METHODID_DETECT_INTENT:
           serviceImpl.detectIntent(
+              (com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SERVER_STREAMING_DETECT_INTENT:
+          serviceImpl.serverStreamingDetectIntent(
               (com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>)
@@ -828,6 +945,13 @@ public final class SessionsGrpc {
                     com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
                     com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>(
                     service, METHODID_DETECT_INTENT)))
+        .addMethod(
+            getServerStreamingDetectIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>(
+                    service, METHODID_SERVER_STREAMING_DETECT_INTENT)))
         .addMethod(
             getStreamingDetectIntentMethod(),
             io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
@@ -906,6 +1030,7 @@ public final class SessionsGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SessionsFileDescriptorSupplier())
                       .addMethod(getDetectIntentMethod())
+                      .addMethod(getServerStreamingDetectIntentMethod())
                       .addMethod(getStreamingDetectIntentMethod())
                       .addMethod(getMatchIntentMethod())
                       .addMethod(getFulfillIntentMethod())

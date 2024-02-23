@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@
  * <p>Service Description: CloudChannelReportsService lets Google Cloud resellers and distributors
  * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud,
  * Google Voice, and Google Workspace.)
+ *
+ * <p>Deprecated: This service is being deprecated. Please use [Export Channel Services data to
+ * BigQuery](https://cloud.google.com/channel/docs/rebilling/export-data-to-bigquery) instead.
  *
  * <p>Sample for CloudChannelReportsServiceClient:
  *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -258,6 +258,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             ProtoRestSerializer<ImportSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "projectId", request.getProjectId());
+                            serializer.putQueryParam(fields, "regions", request.getRegionsList());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

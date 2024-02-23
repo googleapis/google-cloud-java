@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.2
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -70,6 +71,7 @@ public final class UpdateClientConnectorServiceRequest
                 .UpdateClientConnectorServiceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
   /**
@@ -92,7 +94,7 @@ public final class UpdateClientConnectorServiceRequest
    */
   @java.lang.Override
   public boolean hasUpdateMask() {
-    return updateMask_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -155,7 +157,7 @@ public final class UpdateClientConnectorServiceRequest
    */
   @java.lang.Override
   public boolean hasClientConnectorService() {
-    return clientConnectorService_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -324,10 +326,10 @@ public final class UpdateClientConnectorServiceRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (updateMask_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getUpdateMask());
     }
-    if (clientConnectorService_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getClientConnectorService());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
@@ -348,10 +350,10 @@ public final class UpdateClientConnectorServiceRequest
     if (size != -1) return size;
 
     size = 0;
-    if (updateMask_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getUpdateMask());
     }
-    if (clientConnectorService_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getClientConnectorService());
     }
@@ -578,10 +580,20 @@ public final class UpdateClientConnectorServiceRequest
 
     // Construct using
     // com.google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getUpdateMaskFieldBuilder();
+        getClientConnectorServiceFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -650,14 +662,17 @@ public final class UpdateClientConnectorServiceRequest
         com.google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.clientConnectorService_ =
             clientConnectorServiceBuilder_ == null
                 ? clientConnectorService_
                 : clientConnectorServiceBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.requestId_ = requestId_;
@@ -668,6 +683,7 @@ public final class UpdateClientConnectorServiceRequest
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.allowMissing_ = allowMissing_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -955,8 +971,10 @@ public final class UpdateClientConnectorServiceRequest
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (updateMask_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1185,8 +1203,10 @@ public final class UpdateClientConnectorServiceRequest
       } else {
         clientConnectorServiceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (clientConnectorService_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**

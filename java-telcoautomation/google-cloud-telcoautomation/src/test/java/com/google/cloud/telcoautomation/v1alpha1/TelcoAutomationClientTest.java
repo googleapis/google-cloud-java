@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -906,6 +906,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -965,6 +967,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1022,6 +1026,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1076,6 +1082,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1129,6 +1137,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1226,70 +1236,6 @@ public class TelcoAutomationClientTest {
     try {
       String name = "name3373707";
       client.deleteBlueprint(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteBlueprintRevisionTest() throws Exception {
-    Blueprint expectedResponse =
-        Blueprint.newBuilder()
-            .setName(
-                BlueprintName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-                    .toString())
-            .setRevisionId("revisionId-1507445162")
-            .setSourceBlueprint("sourceBlueprint-1648799560")
-            .setRevisionCreateTime(Timestamp.newBuilder().build())
-            .setDisplayName("displayName1714148973")
-            .setRepository("repository1950800714")
-            .addAllFiles(new ArrayList<File>())
-            .putAllLabels(new HashMap<String, String>())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setSourceProvider("sourceProvider1943963436")
-            .build();
-    mockTelcoAutomation.addResponse(expectedResponse);
-
-    DeleteBlueprintRevisionRequest request =
-        DeleteBlueprintRevisionRequest.newBuilder()
-            .setName(
-                BlueprintName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-                    .toString())
-            .build();
-
-    Blueprint actualResponse = client.deleteBlueprintRevision(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockTelcoAutomation.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteBlueprintRevisionRequest actualRequest =
-        ((DeleteBlueprintRevisionRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteBlueprintRevisionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockTelcoAutomation.addException(exception);
-
-    try {
-      DeleteBlueprintRevisionRequest request =
-          DeleteBlueprintRevisionRequest.newBuilder()
-              .setName(
-                  BlueprintName.of(
-                          "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-                      .toString())
-              .build();
-      client.deleteBlueprintRevision(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1404,6 +1350,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1457,6 +1405,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1508,6 +1458,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1561,6 +1513,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1612,6 +1566,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -1665,6 +1621,8 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2164,7 +2122,9 @@ public class TelcoAutomationClientTest {
                 PublicBlueprintName.of("[PROJECT]", "[LOCATION]", "[PUBLIC_LUEPRINT]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
             .setSourceProvider("sourceProvider1943963436")
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2208,7 +2168,9 @@ public class TelcoAutomationClientTest {
                 PublicBlueprintName.of("[PROJECT]", "[LOCATION]", "[PUBLIC_LUEPRINT]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
             .setSourceProvider("sourceProvider1943963436")
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2260,6 +2222,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2319,6 +2284,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2376,6 +2344,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2430,6 +2401,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2483,6 +2457,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -2510,76 +2487,6 @@ public class TelcoAutomationClientTest {
     try {
       String name = "name3373707";
       client.getDeployment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteDeploymentTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockTelcoAutomation.addResponse(expectedResponse);
-
-    DeploymentName name =
-        DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]");
-
-    client.deleteDeployment(name);
-
-    List<AbstractMessage> actualRequests = mockTelcoAutomation.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDeploymentRequest actualRequest = ((DeleteDeploymentRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteDeploymentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockTelcoAutomation.addException(exception);
-
-    try {
-      DeploymentName name =
-          DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]");
-      client.deleteDeployment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteDeploymentTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockTelcoAutomation.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    client.deleteDeployment(name);
-
-    List<AbstractMessage> actualRequests = mockTelcoAutomation.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDeploymentRequest actualRequest = ((DeleteDeploymentRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteDeploymentExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockTelcoAutomation.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deleteDeployment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2650,70 +2557,6 @@ public class TelcoAutomationClientTest {
     try {
       String name = "name3373707";
       client.removeDeployment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteDeploymentRevisionTest() throws Exception {
-    Deployment expectedResponse =
-        Deployment.newBuilder()
-            .setName(
-                DeploymentName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-                    .toString())
-            .setRevisionId("revisionId-1507445162")
-            .setSourceBlueprintRevision("sourceBlueprintRevision-1125632845")
-            .setRevisionCreateTime(Timestamp.newBuilder().build())
-            .setDisplayName("displayName1714148973")
-            .setRepository("repository1950800714")
-            .addAllFiles(new ArrayList<File>())
-            .putAllLabels(new HashMap<String, String>())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setSourceProvider("sourceProvider1943963436")
-            .build();
-    mockTelcoAutomation.addResponse(expectedResponse);
-
-    DeleteDeploymentRevisionRequest request =
-        DeleteDeploymentRevisionRequest.newBuilder()
-            .setName(
-                DeploymentName.of(
-                        "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-                    .toString())
-            .build();
-
-    Deployment actualResponse = client.deleteDeploymentRevision(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockTelcoAutomation.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDeploymentRevisionRequest actualRequest =
-        ((DeleteDeploymentRevisionRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteDeploymentRevisionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockTelcoAutomation.addException(exception);
-
-    try {
-      DeleteDeploymentRevisionRequest request =
-          DeleteDeploymentRevisionRequest.newBuilder()
-              .setName(
-                  DeploymentName.of(
-                          "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-                      .toString())
-              .build();
-      client.deleteDeploymentRevision(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2996,6 +2839,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -3049,6 +2895,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -3087,7 +2936,7 @@ public class TelcoAutomationClientTest {
     ComputeDeploymentStatusResponse expectedResponse =
         ComputeDeploymentStatusResponse.newBuilder()
             .setName("name3373707")
-            .setStatus(Status.forNumber(0))
+            .setAggregatedStatus(Status.forNumber(0))
             .addAllResourceStatuses(new ArrayList<ResourceStatus>())
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
@@ -3130,7 +2979,7 @@ public class TelcoAutomationClientTest {
     ComputeDeploymentStatusResponse expectedResponse =
         ComputeDeploymentStatusResponse.newBuilder()
             .setName("name3373707")
-            .setStatus(Status.forNumber(0))
+            .setAggregatedStatus(Status.forNumber(0))
             .addAllResourceStatuses(new ArrayList<ResourceStatus>())
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
@@ -3184,6 +3033,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 
@@ -3240,6 +3092,9 @@ public class TelcoAutomationClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProvider("sourceProvider1943963436")
+            .setWorkloadCluster("workloadCluster925665923")
+            .setDeploymentLevel(DeploymentLevel.forNumber(0))
+            .setRollbackSupport(true)
             .build();
     mockTelcoAutomation.addResponse(expectedResponse);
 

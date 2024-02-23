@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -180,6 +182,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -253,6 +257,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -284,6 +290,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -337,6 +345,8 @@ public class AttachedClustersClientHttpJsonTest {
               .addAllErrors(new ArrayList<AttachedClusterError>())
               .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
               .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+              .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+              .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAttachedClusterAsync(attachedCluster, updateMask).get();
@@ -369,6 +379,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -440,6 +452,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -511,6 +525,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -576,6 +592,8 @@ public class AttachedClustersClientHttpJsonTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -989,6 +1007,78 @@ public class AttachedClustersClientHttpJsonTest {
       String parent = "projects/project-5833/locations/location-5833";
       String attachedClusterId = "attachedClusterId865943409";
       client.generateAttachedClusterInstallManifest(parent, attachedClusterId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateAttachedClusterAgentTokenTest() throws Exception {
+    GenerateAttachedClusterAgentTokenResponse expectedResponse =
+        GenerateAttachedClusterAgentTokenResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpiresIn(-833810928)
+            .setTokenType("tokenType141498579")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GenerateAttachedClusterAgentTokenRequest request =
+        GenerateAttachedClusterAgentTokenRequest.newBuilder()
+            .setAttachedCluster(
+                AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]").toString())
+            .setSubjectToken("subjectToken-1519661011")
+            .setSubjectTokenType("subjectTokenType1839592711")
+            .setVersion("version351608024")
+            .setGrantType("grantType-1219832202")
+            .setAudience("audience975628804")
+            .setScope("scope109264468")
+            .setRequestedTokenType("requestedTokenType1733106949")
+            .setOptions("options-1249474914")
+            .build();
+
+    GenerateAttachedClusterAgentTokenResponse actualResponse =
+        client.generateAttachedClusterAgentToken(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateAttachedClusterAgentTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GenerateAttachedClusterAgentTokenRequest request =
+          GenerateAttachedClusterAgentTokenRequest.newBuilder()
+              .setAttachedCluster(
+                  AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]")
+                      .toString())
+              .setSubjectToken("subjectToken-1519661011")
+              .setSubjectTokenType("subjectTokenType1839592711")
+              .setVersion("version351608024")
+              .setGrantType("grantType-1219832202")
+              .setAudience("audience975628804")
+              .setScope("scope109264468")
+              .setRequestedTokenType("requestedTokenType1733106949")
+              .setOptions("options-1249474914")
+              .build();
+      client.generateAttachedClusterAgentToken(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

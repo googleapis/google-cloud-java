@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
+import com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
+import com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AwsServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest;
@@ -45,14 +47,19 @@ import com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
+import com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest;
 import com.google.common.collect.ImmutableMap;
@@ -264,6 +271,8 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
+                                fields, "ignoreErrors", request.getIgnoreErrors());
+                            serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             return fields;
                           })
@@ -277,6 +286,47 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
               .setOperationSnapshotFactory(
                   (DeleteAwsClusterRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AwsClusters/GenerateAwsClusterAgentToken")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateAwsClusterAgentTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1/{awsCluster=projects/*/locations/*/awsClusters/*}:generateAwsClusterAgentToken",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAwsClusterAgentTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "awsCluster", request.getAwsCluster());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAwsClusterAgentTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearAwsCluster().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateAwsClusterAgentTokenResponse>newBuilder()
+                      .setDefaultInstance(GenerateAwsClusterAgentTokenResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<
@@ -400,6 +450,46 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateMethodDescriptor =
+          ApiMethodDescriptor.<RollbackAwsNodePoolUpdateRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AwsClusters/RollbackAwsNodePoolUpdate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RollbackAwsNodePoolUpdateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/awsClusters/*/awsNodePools/*}:rollback",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RollbackAwsNodePoolUpdateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RollbackAwsNodePoolUpdateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RollbackAwsNodePoolUpdateRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<GetAwsNodePoolRequest, AwsNodePool>
       getAwsNodePoolMethodDescriptor =
           ApiMethodDescriptor.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
@@ -494,6 +584,8 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
+                                fields, "ignoreErrors", request.getIgnoreErrors());
+                            serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             return fields;
                           })
@@ -507,6 +599,72 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
               .setOperationSnapshotFactory(
                   (DeleteAwsNodePoolRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>newBuilder()
+              .setFullMethodName("google.cloud.gkemulticloud.v1.AwsClusters/GetAwsOpenIdConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAwsOpenIdConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{awsCluster=projects/*/locations/*/awsClusters/*}/.well-known/openid-configuration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAwsOpenIdConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "awsCluster", request.getAwsCluster());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAwsOpenIdConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AwsOpenIdConfig>newBuilder()
+                      .setDefaultInstance(AwsOpenIdConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+      getAwsJsonWebKeysMethodDescriptor =
+          ApiMethodDescriptor.<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>newBuilder()
+              .setFullMethodName("google.cloud.gkemulticloud.v1.AwsClusters/GetAwsJsonWebKeys")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAwsJsonWebKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{awsCluster=projects/*/locations/*/awsClusters/*}/jwks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAwsJsonWebKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "awsCluster", request.getAwsCluster());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAwsJsonWebKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AwsJsonWebKeys>newBuilder()
+                      .setDefaultInstance(AwsJsonWebKeys.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<GetAwsServerConfigRequest, AwsServerConfig>
@@ -556,6 +714,9 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
   private final UnaryCallable<DeleteAwsClusterRequest, Operation> deleteAwsClusterCallable;
   private final OperationCallable<DeleteAwsClusterRequest, Empty, OperationMetadata>
       deleteAwsClusterOperationCallable;
+  private final UnaryCallable<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenCallable;
   private final UnaryCallable<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenCallable;
   private final UnaryCallable<CreateAwsNodePoolRequest, Operation> createAwsNodePoolCallable;
@@ -564,6 +725,10 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
   private final UnaryCallable<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolCallable;
   private final OperationCallable<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       updateAwsNodePoolOperationCallable;
+  private final UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateCallable;
+  private final OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationCallable;
   private final UnaryCallable<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolCallable;
   private final UnaryCallable<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
       listAwsNodePoolsCallable;
@@ -572,6 +737,9 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
   private final UnaryCallable<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolCallable;
   private final OperationCallable<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationCallable;
+  private final UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigCallable;
+  private final UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable;
   private final UnaryCallable<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigCallable;
 
@@ -702,6 +870,20 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateAwsClusterAgentTokenMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenTransportSettings =
             HttpJsonCallSettings
@@ -738,6 +920,18 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateTransportSettings =
+            HttpJsonCallSettings.<RollbackAwsNodePoolUpdateRequest, Operation>newBuilder()
+                .setMethodDescriptor(rollbackAwsNodePoolUpdateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
         HttpJsonCallSettings.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
             .setMethodDescriptor(getAwsNodePoolMethodDescriptor)
@@ -772,6 +966,30 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigTransportSettings =
+            HttpJsonCallSettings.<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>newBuilder()
+                .setMethodDescriptor(getAwsOpenIdConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+        getAwsJsonWebKeysTransportSettings =
+            HttpJsonCallSettings.<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>newBuilder()
+                .setMethodDescriptor(getAwsJsonWebKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigTransportSettings =
             HttpJsonCallSettings.<GetAwsServerConfigRequest, AwsServerConfig>newBuilder()
@@ -821,6 +1039,11 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
             settings.deleteAwsClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.generateAwsClusterAgentTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateAwsClusterAgentTokenTransportSettings,
+            settings.generateAwsClusterAgentTokenSettings(),
+            clientContext);
     this.generateAwsAccessTokenCallable =
         callableFactory.createUnaryCallable(
             generateAwsAccessTokenTransportSettings,
@@ -848,6 +1071,17 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
             settings.updateAwsNodePoolOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.rollbackAwsNodePoolUpdateCallable =
+        callableFactory.createUnaryCallable(
+            rollbackAwsNodePoolUpdateTransportSettings,
+            settings.rollbackAwsNodePoolUpdateSettings(),
+            clientContext);
+    this.rollbackAwsNodePoolUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            rollbackAwsNodePoolUpdateTransportSettings,
+            settings.rollbackAwsNodePoolUpdateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getAwsNodePoolCallable =
         callableFactory.createUnaryCallable(
             getAwsNodePoolTransportSettings, settings.getAwsNodePoolSettings(), clientContext);
@@ -868,6 +1102,16 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
             settings.deleteAwsNodePoolOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getAwsOpenIdConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAwsOpenIdConfigTransportSettings,
+            settings.getAwsOpenIdConfigSettings(),
+            clientContext);
+    this.getAwsJsonWebKeysCallable =
+        callableFactory.createUnaryCallable(
+            getAwsJsonWebKeysTransportSettings,
+            settings.getAwsJsonWebKeysSettings(),
+            clientContext);
     this.getAwsServerConfigCallable =
         callableFactory.createUnaryCallable(
             getAwsServerConfigTransportSettings,
@@ -886,12 +1130,16 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
     methodDescriptors.add(getAwsClusterMethodDescriptor);
     methodDescriptors.add(listAwsClustersMethodDescriptor);
     methodDescriptors.add(deleteAwsClusterMethodDescriptor);
+    methodDescriptors.add(generateAwsClusterAgentTokenMethodDescriptor);
     methodDescriptors.add(generateAwsAccessTokenMethodDescriptor);
     methodDescriptors.add(createAwsNodePoolMethodDescriptor);
     methodDescriptors.add(updateAwsNodePoolMethodDescriptor);
+    methodDescriptors.add(rollbackAwsNodePoolUpdateMethodDescriptor);
     methodDescriptors.add(getAwsNodePoolMethodDescriptor);
     methodDescriptors.add(listAwsNodePoolsMethodDescriptor);
     methodDescriptors.add(deleteAwsNodePoolMethodDescriptor);
+    methodDescriptors.add(getAwsOpenIdConfigMethodDescriptor);
+    methodDescriptors.add(getAwsJsonWebKeysMethodDescriptor);
     methodDescriptors.add(getAwsServerConfigMethodDescriptor);
     return methodDescriptors;
   }
@@ -950,6 +1198,12 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
   }
 
   @Override
+  public UnaryCallable<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenCallable() {
+    return generateAwsClusterAgentTokenCallable;
+  }
+
+  @Override
   public UnaryCallable<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenCallable() {
     return generateAwsAccessTokenCallable;
@@ -978,6 +1232,18 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
   }
 
   @Override
+  public UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateCallable() {
+    return rollbackAwsNodePoolUpdateCallable;
+  }
+
+  @Override
+  public OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationCallable() {
+    return rollbackAwsNodePoolUpdateOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolCallable() {
     return getAwsNodePoolCallable;
   }
@@ -1003,6 +1269,16 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
   public OperationCallable<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationCallable() {
     return deleteAwsNodePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig> getAwsOpenIdConfigCallable() {
+    return getAwsOpenIdConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable() {
+    return getAwsJsonWebKeysCallable;
   }
 
   @Override

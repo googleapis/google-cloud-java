@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -654,7 +654,10 @@ public class DatasetServiceClientTest {
   @Test
   public void exportDataTest() throws Exception {
     ExportDataResponse expectedResponse =
-        ExportDataResponse.newBuilder().addAllExportedFiles(new ArrayList<String>()).build();
+        ExportDataResponse.newBuilder()
+            .addAllExportedFiles(new ArrayList<String>())
+            .setDataStats(Model.DataStats.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportDataTest")
@@ -701,7 +704,10 @@ public class DatasetServiceClientTest {
   @Test
   public void exportDataTest2() throws Exception {
     ExportDataResponse expectedResponse =
-        ExportDataResponse.newBuilder().addAllExportedFiles(new ArrayList<String>()).build();
+        ExportDataResponse.newBuilder()
+            .addAllExportedFiles(new ArrayList<String>())
+            .setDataStats(Model.DataStats.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportDataTest")

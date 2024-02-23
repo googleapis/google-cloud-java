@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
  * <p>======================= PlacesClient =======================
  *
  * <p>Service Description: Service definition for the Places API. Note: every request actually
- * requires a field mask set outside of the request proto (all/'&#42;' is not assumed). That can be
+ * requires a field mask set outside of the request proto (all/'&#42;', is not assumed). That can be
  * set via either a side channel (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask)
  * over HTTP. See: https://cloud.google.com/apis/docs/system-parameters
  *

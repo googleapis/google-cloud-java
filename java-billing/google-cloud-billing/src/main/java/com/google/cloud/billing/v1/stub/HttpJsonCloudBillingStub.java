@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ import com.google.cloud.billing.v1.ListBillingAccountsRequest;
 import com.google.cloud.billing.v1.ListBillingAccountsResponse;
 import com.google.cloud.billing.v1.ListProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ListProjectBillingInfoResponse;
+import com.google.cloud.billing.v1.MoveBillingAccountRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
 import com.google.cloud.billing.v1.UpdateBillingAccountRequest;
 import com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest;
@@ -116,8 +117,12 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListBillingAccountsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=organizations/*}/billingAccounts",
+                          "/v1/{parent=billingAccounts/*}/subAccounts")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -190,8 +195,12 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<CreateBillingAccountRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=organizations/*}/billingAccounts",
+                          "/v1/{parent=billingAccounts/*}/subAccounts")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -431,6 +440,54 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<MoveBillingAccountRequest, BillingAccount>
+      moveBillingAccountMethodDescriptor =
+          ApiMethodDescriptor.<MoveBillingAccountRequest, BillingAccount>newBuilder()
+              .setFullMethodName("google.cloud.billing.v1.CloudBilling/MoveBillingAccount")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveBillingAccountRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=billingAccounts/*}:move",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveBillingAccountRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "destinationParent", request.getDestinationParent());
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{destinationParent=organizations/*}/{name=billingAccounts/*}:move")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveBillingAccountRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request
+                                          .toBuilder()
+                                          .clearDestinationParent()
+                                          .clearName()
+                                          .build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BillingAccount>newBuilder()
+                      .setDefaultInstance(BillingAccount.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable;
   private final UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsResponse>
       listBillingAccountsCallable;
@@ -452,6 +509,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<MoveBillingAccountRequest, BillingAccount> moveBillingAccountCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -513,6 +571,12 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                 .<ListBillingAccountsRequest, ListBillingAccountsResponse>newBuilder()
                 .setMethodDescriptor(listBillingAccountsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateBillingAccountRequest, BillingAccount>
         updateBillingAccountTransportSettings =
@@ -531,6 +595,12 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
             HttpJsonCallSettings.<CreateBillingAccountRequest, BillingAccount>newBuilder()
                 .setMethodDescriptor(createBillingAccountMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>
         listProjectBillingInfoTransportSettings =
@@ -603,6 +673,20 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountTransportSettings =
+            HttpJsonCallSettings.<MoveBillingAccountRequest, BillingAccount>newBuilder()
+                .setMethodDescriptor(moveBillingAccountMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "destination_parent", String.valueOf(request.getDestinationParent()));
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getBillingAccountCallable =
         callableFactory.createUnaryCallable(
@@ -660,6 +744,11 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.moveBillingAccountCallable =
+        callableFactory.createUnaryCallable(
+            moveBillingAccountTransportSettings,
+            settings.moveBillingAccountSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -678,6 +767,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(moveBillingAccountMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -746,6 +836,11 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveBillingAccountRequest, BillingAccount> moveBillingAccountCallable() {
+    return moveBillingAccountCallable;
   }
 
   @Override

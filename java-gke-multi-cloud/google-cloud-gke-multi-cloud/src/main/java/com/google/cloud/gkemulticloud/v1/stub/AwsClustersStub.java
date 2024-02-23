@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
+import com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
+import com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AwsServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest;
@@ -31,14 +33,19 @@ import com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
+import com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest;
 import com.google.longrunning.Operation;
@@ -103,6 +110,12 @@ public abstract class AwsClustersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteAwsClusterCallable()");
   }
 
+  public UnaryCallable<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateAwsClusterAgentTokenCallable()");
+  }
+
   public UnaryCallable<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenCallable() {
     throw new UnsupportedOperationException("Not implemented: generateAwsAccessTokenCallable()");
@@ -128,6 +141,17 @@ public abstract class AwsClustersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateAwsNodePoolCallable()");
   }
 
+  public OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rollbackAwsNodePoolUpdateOperationCallable()");
+  }
+
+  public UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: rollbackAwsNodePoolUpdateCallable()");
+  }
+
   public UnaryCallable<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: getAwsNodePoolCallable()");
   }
@@ -150,6 +174,14 @@ public abstract class AwsClustersStub implements BackgroundResource {
 
   public UnaryCallable<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAwsNodePoolCallable()");
+  }
+
+  public UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig> getAwsOpenIdConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAwsOpenIdConfigCallable()");
+  }
+
+  public UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAwsJsonWebKeysCallable()");
   }
 
   public UnaryCallable<GetAwsServerConfigRequest, AwsServerConfig> getAwsServerConfigCallable() {

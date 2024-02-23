@@ -13,8 +13,14 @@
             "CreateDeployment": {
               "methods": ["createDeploymentAsync", "createDeploymentAsync", "createDeploymentAsync", "createDeploymentOperationCallable", "createDeploymentCallable"]
             },
+            "CreatePreview": {
+              "methods": ["createPreviewAsync", "createPreviewAsync", "createPreviewAsync", "createPreviewOperationCallable", "createPreviewCallable"]
+            },
             "DeleteDeployment": {
               "methods": ["deleteDeploymentAsync", "deleteDeploymentAsync", "deleteDeploymentAsync", "deleteDeploymentOperationCallable", "deleteDeploymentCallable"]
+            },
+            "DeletePreview": {
+              "methods": ["deletePreviewAsync", "deletePreviewAsync", "deletePreviewAsync", "deletePreviewOperationCallable", "deletePreviewCallable"]
             },
             "DeleteStatefile": {
               "methods": ["deleteStatefile", "deleteStatefile", "deleteStatefile", "deleteStatefileCallable"]
@@ -24,6 +30,9 @@
             },
             "ExportLockInfo": {
               "methods": ["exportLockInfo", "exportLockInfo", "exportLockInfo", "exportLockInfoCallable"]
+            },
+            "ExportPreviewResult": {
+              "methods": ["exportPreviewResult", "exportPreviewResultCallable"]
             },
             "ExportRevisionStatefile": {
               "methods": ["exportRevisionStatefile", "exportRevisionStatefileCallable"]
@@ -36,6 +45,9 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPreview": {
+              "methods": ["getPreview", "getPreview", "getPreview", "getPreviewCallable"]
             },
             "GetResource": {
               "methods": ["getResource", "getResource", "getResource", "getResourceCallable"]
@@ -51,6 +63,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPreviews": {
+              "methods": ["listPreviews", "listPreviews", "listPreviews", "listPreviewsPagedCallable", "listPreviewsCallable"]
             },
             "ListResources": {
               "methods": ["listResources", "listResources", "listResources", "listResourcesPagedCallable", "listResourcesCallable"]

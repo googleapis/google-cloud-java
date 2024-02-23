@@ -1018,6 +1018,9 @@
         "grpc": {
           "libraryClient": "PipelineServiceClient",
           "rpcs": {
+            "BatchCancelPipelineJobs": {
+              "methods": ["batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsOperationCallable", "batchCancelPipelineJobsCallable"]
+            },
             "BatchDeletePipelineJobs": {
               "methods": ["batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsOperationCallable", "batchDeletePipelineJobsCallable"]
             },
@@ -1087,6 +1090,9 @@
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },
+            "GenerateContent": {
+              "methods": ["generateContent", "generateContent", "generateContentCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1107,6 +1113,15 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamDirectPredict": {
+              "methods": ["streamDirectPredictCallable"]
+            },
+            "StreamDirectRawPredict": {
+              "methods": ["streamDirectRawPredictCallable"]
+            },
+            "StreamGenerateContent": {
+              "methods": ["streamGenerateContentCallable"]
             },
             "StreamingPredict": {
               "methods": ["streamingPredictCallable"]

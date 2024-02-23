@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.PublicDelegatedPrefixesClient.Aggregat
 import static com.google.cloud.compute.v1.PublicDelegatedPrefixesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -87,6 +86,17 @@ public class PublicDelegatedPrefixesSettings
     return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).aggregatedListSettings();
   }
 
+  /** Returns the object with the settings used for calls to announce. */
+  public UnaryCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation> announceSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).announceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to announce. */
+  public OperationCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).announceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteSettings() {
     return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).deleteSettings();
@@ -132,6 +142,17 @@ public class PublicDelegatedPrefixesSettings
     return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to withdraw. */
+  public UnaryCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).withdrawSettings();
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public OperationCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).withdrawOperationSettings();
+  }
+
   public static final PublicDelegatedPrefixesSettings create(
       PublicDelegatedPrefixesStubSettings stub) throws IOException {
     return new PublicDelegatedPrefixesSettings.Builder(stub.toBuilder()).build();
@@ -167,7 +188,6 @@ public class PublicDelegatedPrefixesSettings
     return PublicDelegatedPrefixesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return PublicDelegatedPrefixesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -240,6 +260,19 @@ public class PublicDelegatedPrefixesSettings
       return getStubSettingsBuilder().aggregatedListSettings();
     }
 
+    /** Returns the builder for the settings used for calls to announce. */
+    public UnaryCallSettings.Builder<AnnouncePublicDelegatedPrefixeRequest, Operation>
+        announceSettings() {
+      return getStubSettingsBuilder().announceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to announce. */
+    public OperationCallSettings.Builder<
+            AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+        announceOperationSettings() {
+      return getStubSettingsBuilder().announceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeletePublicDelegatedPrefixeRequest, Operation>
         deleteSettings() {
@@ -287,6 +320,19 @@ public class PublicDelegatedPrefixesSettings
     public OperationCallSettings.Builder<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public UnaryCallSettings.Builder<WithdrawPublicDelegatedPrefixeRequest, Operation>
+        withdrawSettings() {
+      return getStubSettingsBuilder().withdrawSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public OperationCallSettings.Builder<
+            WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings() {
+      return getStubSettingsBuilder().withdrawOperationSettings();
     }
 
     @Override

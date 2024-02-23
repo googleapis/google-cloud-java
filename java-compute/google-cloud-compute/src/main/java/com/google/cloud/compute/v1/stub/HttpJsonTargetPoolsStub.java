@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetPoolRequest;
 import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
@@ -232,6 +233,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -652,6 +659,63 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetSecurityPolicyTargetPoolRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/SetSecurityPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetSecurityPolicyTargetPoolRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/setSecurityPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityPolicyReferenceResource",
+                                      request.getSecurityPolicyReferenceResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetSecurityPolicyTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable;
   private final OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
       addHealthCheckOperationCallable;
@@ -683,6 +747,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   private final UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable;
   private final OperationCallable<SetBackupTargetPoolRequest, Operation, Operation>
       setBackupOperationCallable;
+  private final UnaryCallable<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicyCallable;
+  private final OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -873,6 +941,20 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicyTransportSettings =
+            HttpJsonCallSettings.<SetSecurityPolicyTargetPoolRequest, Operation>newBuilder()
+                .setMethodDescriptor(setSecurityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                      return builder.build();
+                    })
+                .build();
 
     this.addHealthCheckCallable =
         callableFactory.createUnaryCallable(
@@ -957,6 +1039,17 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
             settings.setBackupOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setSecurityPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicySettings(),
+            clientContext);
+    this.setSecurityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -976,6 +1069,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
     methodDescriptors.add(removeHealthCheckMethodDescriptor);
     methodDescriptors.add(removeInstanceMethodDescriptor);
     methodDescriptors.add(setBackupMethodDescriptor);
+    methodDescriptors.add(setSecurityPolicyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1086,6 +1180,17 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   public OperationCallable<SetBackupTargetPoolRequest, Operation, Operation>
       setBackupOperationCallable() {
     return setBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetSecurityPolicyTargetPoolRequest, Operation> setSecurityPolicyCallable() {
+    return setSecurityPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    return setSecurityPolicyOperationCallable;
   }
 
   @Override

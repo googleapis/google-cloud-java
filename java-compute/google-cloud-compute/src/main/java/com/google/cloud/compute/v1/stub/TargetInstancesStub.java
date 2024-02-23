@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.GetTargetInstanceRequest;
 import com.google.cloud.compute.v1.InsertTargetInstanceRequest;
 import com.google.cloud.compute.v1.ListTargetInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetInstanceRequest;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import com.google.cloud.compute.v1.TargetInstanceList;
@@ -80,6 +81,17 @@ public abstract class TargetInstancesStub implements BackgroundResource {
 
   public UnaryCallable<ListTargetInstancesRequest, TargetInstanceList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
   }
 
   @Override

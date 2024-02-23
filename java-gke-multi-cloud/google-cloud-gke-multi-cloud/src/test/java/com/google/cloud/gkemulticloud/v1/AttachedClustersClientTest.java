@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,6 +111,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -184,6 +186,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -257,6 +261,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -327,6 +333,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -397,6 +405,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -467,6 +477,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     mockAttachedClusters.addResponse(expectedResponse);
 
@@ -526,6 +538,8 @@ public class AttachedClustersClientTest {
             .addAllErrors(new ArrayList<AttachedClusterError>())
             .setAuthorization(AttachedClustersAuthorization.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setProxyConfig(AttachedProxyConfig.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .build();
     mockAttachedClusters.addResponse(expectedResponse);
 
@@ -897,6 +911,81 @@ public class AttachedClustersClientTest {
       String parent = "parent-995424086";
       String attachedClusterId = "attachedClusterId865943409";
       client.generateAttachedClusterInstallManifest(parent, attachedClusterId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateAttachedClusterAgentTokenTest() throws Exception {
+    GenerateAttachedClusterAgentTokenResponse expectedResponse =
+        GenerateAttachedClusterAgentTokenResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpiresIn(-833810928)
+            .setTokenType("tokenType141498579")
+            .build();
+    mockAttachedClusters.addResponse(expectedResponse);
+
+    GenerateAttachedClusterAgentTokenRequest request =
+        GenerateAttachedClusterAgentTokenRequest.newBuilder()
+            .setAttachedCluster(
+                AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]").toString())
+            .setSubjectToken("subjectToken-1519661011")
+            .setSubjectTokenType("subjectTokenType1839592711")
+            .setVersion("version351608024")
+            .setGrantType("grantType-1219832202")
+            .setAudience("audience975628804")
+            .setScope("scope109264468")
+            .setRequestedTokenType("requestedTokenType1733106949")
+            .setOptions("options-1249474914")
+            .build();
+
+    GenerateAttachedClusterAgentTokenResponse actualResponse =
+        client.generateAttachedClusterAgentToken(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAttachedClusters.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateAttachedClusterAgentTokenRequest actualRequest =
+        ((GenerateAttachedClusterAgentTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAttachedCluster(), actualRequest.getAttachedCluster());
+    Assert.assertEquals(request.getSubjectToken(), actualRequest.getSubjectToken());
+    Assert.assertEquals(request.getSubjectTokenType(), actualRequest.getSubjectTokenType());
+    Assert.assertEquals(request.getVersion(), actualRequest.getVersion());
+    Assert.assertEquals(request.getGrantType(), actualRequest.getGrantType());
+    Assert.assertEquals(request.getAudience(), actualRequest.getAudience());
+    Assert.assertEquals(request.getScope(), actualRequest.getScope());
+    Assert.assertEquals(request.getRequestedTokenType(), actualRequest.getRequestedTokenType());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateAttachedClusterAgentTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAttachedClusters.addException(exception);
+
+    try {
+      GenerateAttachedClusterAgentTokenRequest request =
+          GenerateAttachedClusterAgentTokenRequest.newBuilder()
+              .setAttachedCluster(
+                  AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]")
+                      .toString())
+              .setSubjectToken("subjectToken-1519661011")
+              .setSubjectTokenType("subjectTokenType1839592711")
+              .setVersion("version351608024")
+              .setGrantType("grantType-1219832202")
+              .setAudience("audience975628804")
+              .setScope("scope109264468")
+              .setRequestedTokenType("requestedTokenType1733106949")
+              .setOptions("options-1249474914")
+              .build();
+      client.generateAttachedClusterAgentToken(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

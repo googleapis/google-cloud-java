@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,19 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3.EntityType;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesMetadata;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesMetadata;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest;
 import com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest;
@@ -37,6 +44,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -104,6 +112,26 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportEntityTypesRequest, Operation>
+      exportEntityTypesMethodDescriptor =
+          MethodDescriptor.<ExportEntityTypesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.EntityTypes/ExportEntityTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportEntityTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportEntityTypesRequest, Operation>
+      importEntityTypesMethodDescriptor =
+          MethodDescriptor.<ImportEntityTypesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.EntityTypes/ImportEntityTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportEntityTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -131,6 +159,14 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
       listEntityTypesCallable;
   private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
       listEntityTypesPagedCallable;
+  private final UnaryCallable<ExportEntityTypesRequest, Operation> exportEntityTypesCallable;
+  private final OperationCallable<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationCallable;
+  private final UnaryCallable<ImportEntityTypesRequest, Operation> importEntityTypesCallable;
+  private final OperationCallable<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -230,6 +266,26 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesTransportSettings =
+        GrpcCallSettings.<ExportEntityTypesRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportEntityTypesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesTransportSettings =
+        GrpcCallSettings.<ImportEntityTypesRequest, Operation>newBuilder()
+            .setMethodDescriptor(importEntityTypesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -269,6 +325,28 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     this.listEntityTypesPagedCallable =
         callableFactory.createPagedCallable(
             listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
+    this.exportEntityTypesCallable =
+        callableFactory.createUnaryCallable(
+            exportEntityTypesTransportSettings,
+            settings.exportEntityTypesSettings(),
+            clientContext);
+    this.exportEntityTypesOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEntityTypesTransportSettings,
+            settings.exportEntityTypesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importEntityTypesCallable =
+        callableFactory.createUnaryCallable(
+            importEntityTypesTransportSettings,
+            settings.importEntityTypesSettings(),
+            clientContext);
+    this.importEntityTypesOperationCallable =
+        callableFactory.createOperationCallable(
+            importEntityTypesTransportSettings,
+            settings.importEntityTypesOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -316,6 +394,30 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
       listEntityTypesPagedCallable() {
     return listEntityTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEntityTypesRequest, Operation> exportEntityTypesCallable() {
+    return exportEntityTypesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationCallable() {
+    return exportEntityTypesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportEntityTypesRequest, Operation> importEntityTypesCallable() {
+    return importEntityTypesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationCallable() {
+    return importEntityTypesOperationCallable;
   }
 
   @Override

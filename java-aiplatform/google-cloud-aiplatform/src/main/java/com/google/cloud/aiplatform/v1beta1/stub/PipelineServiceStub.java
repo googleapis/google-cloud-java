@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
@@ -145,6 +148,20 @@ public abstract class PipelineServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelPipelineJobCallable()");
+  }
+
+  public OperationCallable<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCancelPipelineJobsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCancelPipelineJobsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

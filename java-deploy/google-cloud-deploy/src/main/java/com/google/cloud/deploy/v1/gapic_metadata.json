@@ -28,6 +28,9 @@
             "CreateAutomation": {
               "methods": ["createAutomationAsync", "createAutomationAsync", "createAutomationAsync", "createAutomationOperationCallable", "createAutomationCallable"]
             },
+            "CreateCustomTargetType": {
+              "methods": ["createCustomTargetTypeAsync", "createCustomTargetTypeAsync", "createCustomTargetTypeAsync", "createCustomTargetTypeOperationCallable", "createCustomTargetTypeCallable"]
+            },
             "CreateDeliveryPipeline": {
               "methods": ["createDeliveryPipelineAsync", "createDeliveryPipelineAsync", "createDeliveryPipelineAsync", "createDeliveryPipelineOperationCallable", "createDeliveryPipelineCallable"]
             },
@@ -43,6 +46,9 @@
             "DeleteAutomation": {
               "methods": ["deleteAutomationAsync", "deleteAutomationAsync", "deleteAutomationAsync", "deleteAutomationOperationCallable", "deleteAutomationCallable"]
             },
+            "DeleteCustomTargetType": {
+              "methods": ["deleteCustomTargetTypeAsync", "deleteCustomTargetTypeAsync", "deleteCustomTargetTypeAsync", "deleteCustomTargetTypeOperationCallable", "deleteCustomTargetTypeCallable"]
+            },
             "DeleteDeliveryPipeline": {
               "methods": ["deleteDeliveryPipelineAsync", "deleteDeliveryPipelineAsync", "deleteDeliveryPipelineAsync", "deleteDeliveryPipelineOperationCallable", "deleteDeliveryPipelineCallable"]
             },
@@ -57,6 +63,9 @@
             },
             "GetConfig": {
               "methods": ["getConfig", "getConfig", "getConfig", "getConfigCallable"]
+            },
+            "GetCustomTargetType": {
+              "methods": ["getCustomTargetType", "getCustomTargetType", "getCustomTargetType", "getCustomTargetTypeCallable"]
             },
             "GetDeliveryPipeline": {
               "methods": ["getDeliveryPipeline", "getDeliveryPipeline", "getDeliveryPipeline", "getDeliveryPipelineCallable"]
@@ -87,6 +96,9 @@
             },
             "ListAutomations": {
               "methods": ["listAutomations", "listAutomations", "listAutomations", "listAutomationsPagedCallable", "listAutomationsCallable"]
+            },
+            "ListCustomTargetTypes": {
+              "methods": ["listCustomTargetTypes", "listCustomTargetTypes", "listCustomTargetTypes", "listCustomTargetTypesPagedCallable", "listCustomTargetTypesCallable"]
             },
             "ListDeliveryPipelines": {
               "methods": ["listDeliveryPipelines", "listDeliveryPipelines", "listDeliveryPipelines", "listDeliveryPipelinesPagedCallable", "listDeliveryPipelinesCallable"]
@@ -123,6 +135,9 @@
             },
             "UpdateAutomation": {
               "methods": ["updateAutomationAsync", "updateAutomationAsync", "updateAutomationOperationCallable", "updateAutomationCallable"]
+            },
+            "UpdateCustomTargetType": {
+              "methods": ["updateCustomTargetTypeAsync", "updateCustomTargetTypeAsync", "updateCustomTargetTypeOperationCallable", "updateCustomTargetTypeCallable"]
             },
             "UpdateDeliveryPipeline": {
               "methods": ["updateDeliveryPipelineAsync", "updateDeliveryPipelineAsync", "updateDeliveryPipelineOperationCallable", "updateDeliveryPipelineCallable"]

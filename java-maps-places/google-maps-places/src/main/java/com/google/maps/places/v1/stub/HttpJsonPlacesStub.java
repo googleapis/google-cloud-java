@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.maps.places.v1.AutocompletePlacesRequest;
+import com.google.maps.places.v1.AutocompletePlacesResponse;
 import com.google.maps.places.v1.GetPhotoMediaRequest;
 import com.google.maps.places.v1.GetPlaceRequest;
 import com.google.maps.places.v1.PhotoMedia;
@@ -191,6 +193,7 @@ public class HttpJsonPlacesStub extends PlacesStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "languageCode", request.getLanguageCode());
                         serializer.putQueryParam(fields, "regionCode", request.getRegionCode());
+                        serializer.putQueryParam(fields, "sessionToken", request.getSessionToken());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -203,10 +206,48 @@ public class HttpJsonPlacesStub extends PlacesStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesMethodDescriptor =
+          ApiMethodDescriptor.<AutocompletePlacesRequest, AutocompletePlacesResponse>newBuilder()
+              .setFullMethodName("google.maps.places.v1.Places/AutocompletePlaces")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AutocompletePlacesRequest>newBuilder()
+                      .setPath(
+                          "/v1/places:autocomplete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AutocompletePlacesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AutocompletePlacesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutocompletePlacesResponse>newBuilder()
+                      .setDefaultInstance(AutocompletePlacesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable;
   private final UnaryCallable<SearchTextRequest, SearchTextResponse> searchTextCallable;
   private final UnaryCallable<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaCallable;
   private final UnaryCallable<GetPlaceRequest, Place> getPlaceCallable;
+  private final UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -279,6 +320,12 @@ public class HttpJsonPlacesStub extends PlacesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
+        autocompletePlacesTransportSettings =
+            HttpJsonCallSettings.<AutocompletePlacesRequest, AutocompletePlacesResponse>newBuilder()
+                .setMethodDescriptor(autocompletePlacesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.searchNearbyCallable =
         callableFactory.createUnaryCallable(
@@ -292,6 +339,11 @@ public class HttpJsonPlacesStub extends PlacesStub {
     this.getPlaceCallable =
         callableFactory.createUnaryCallable(
             getPlaceTransportSettings, settings.getPlaceSettings(), clientContext);
+    this.autocompletePlacesCallable =
+        callableFactory.createUnaryCallable(
+            autocompletePlacesTransportSettings,
+            settings.autocompletePlacesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -304,6 +356,7 @@ public class HttpJsonPlacesStub extends PlacesStub {
     methodDescriptors.add(searchTextMethodDescriptor);
     methodDescriptors.add(getPhotoMediaMethodDescriptor);
     methodDescriptors.add(getPlaceMethodDescriptor);
+    methodDescriptors.add(autocompletePlacesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -325,6 +378,12 @@ public class HttpJsonPlacesStub extends PlacesStub {
   @Override
   public UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
     return getPlaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesCallable() {
+    return autocompletePlacesCallable;
   }
 
   @Override

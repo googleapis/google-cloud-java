@@ -31,6 +31,7 @@ option java_package = "com.google.cloud.aiplatform.v1beta1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1beta1";
 option ruby_package = "Google::Cloud::AIPlatform::V1beta1";
 
+// A service for fetching feature values from the online store.
 service FeatureOnlineStoreService {
   option (google.api.default_host) = "aiplatform.googleapis.com";
   option (google.api.oauth_scopes) =
@@ -168,12 +169,13 @@ message NearestNeighborQuery {
   }
 
   // String filter is used to search a subset of the entities by using boolean
-  // rules. For example: if a query specifies string filter with 'name
-  // = color, allow_tokens = {red, blue}, deny_tokens = {purple}','  then that
-  // query will match entities that are red or blue, but if those points are
-  // also purple, then they will be excluded even if they are red/blue. Only
-  // string filter is supported for now, numeric filter will be supported in the
-  // near future.
+  // rules on string columns.
+  // For example: if a query specifies string filter
+  // with 'name = color, allow_tokens = {red, blue}, deny_tokens = {purple}','
+  // then that query will match entities that are red or blue, but if those
+  // points are also purple, then they will be excluded even if they are
+  // red/blue. Only string filter is supported for now, numeric filter will be
+  // supported in the near future.
   message StringFilter {
     // Required. Column names in BigQuery that used as filters.
     string name = 1 [(google.api.field_behavior) = REQUIRED];

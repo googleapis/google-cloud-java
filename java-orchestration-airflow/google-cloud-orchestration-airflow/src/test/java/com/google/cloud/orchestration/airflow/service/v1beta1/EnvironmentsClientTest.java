@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package com.google.cloud.orchestration.airflow.service.v1beta1;
 
 import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListUserWorkloadsConfigMapsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListUserWorkloadsSecretsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListWorkloadsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -97,6 +100,8 @@ public class EnvironmentsClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -151,6 +156,8 @@ public class EnvironmentsClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -238,6 +245,8 @@ public class EnvironmentsClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -337,6 +346,8 @@ public class EnvironmentsClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -604,6 +615,885 @@ public class EnvironmentsClientTest {
               .setNextLineNumber(1176642216)
               .build();
       client.pollAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkloadsTest() throws Exception {
+    ListWorkloadsResponse.ComposerWorkload responsesElement =
+        ListWorkloadsResponse.ComposerWorkload.newBuilder().build();
+    ListWorkloadsResponse expectedResponse =
+        ListWorkloadsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkloads(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+
+    ListWorkloadsPagedResponse pagedListResponse = client.listWorkloads(parent);
+
+    List<ListWorkloadsResponse.ComposerWorkload> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkloadsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkloadsRequest actualRequest = ((ListWorkloadsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkloadsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+      client.listWorkloads(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkloadsTest2() throws Exception {
+    ListWorkloadsResponse.ComposerWorkload responsesElement =
+        ListWorkloadsResponse.ComposerWorkload.newBuilder().build();
+    ListWorkloadsResponse expectedResponse =
+        ListWorkloadsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkloads(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListWorkloadsPagedResponse pagedListResponse = client.listWorkloads(parent);
+
+    List<ListWorkloadsResponse.ComposerWorkload> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkloadsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkloadsRequest actualRequest = ((ListWorkloadsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkloadsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listWorkloads(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserWorkloadsSecretTest() throws Exception {
+    UserWorkloadsSecret expectedResponse =
+        UserWorkloadsSecret.newBuilder()
+            .setName(
+                UserWorkloadsSecretName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+    UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+
+    UserWorkloadsSecret actualResponse =
+        client.createUserWorkloadsSecret(parent, userWorkloadsSecret);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateUserWorkloadsSecretRequest actualRequest =
+        ((CreateUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(userWorkloadsSecret, actualRequest.getUserWorkloadsSecret());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createUserWorkloadsSecretExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+      UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+      client.createUserWorkloadsSecret(parent, userWorkloadsSecret);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserWorkloadsSecretTest2() throws Exception {
+    UserWorkloadsSecret expectedResponse =
+        UserWorkloadsSecret.newBuilder()
+            .setName(
+                UserWorkloadsSecretName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+
+    UserWorkloadsSecret actualResponse =
+        client.createUserWorkloadsSecret(parent, userWorkloadsSecret);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateUserWorkloadsSecretRequest actualRequest =
+        ((CreateUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(userWorkloadsSecret, actualRequest.getUserWorkloadsSecret());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createUserWorkloadsSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+      client.createUserWorkloadsSecret(parent, userWorkloadsSecret);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserWorkloadsSecretTest() throws Exception {
+    UserWorkloadsSecret expectedResponse =
+        UserWorkloadsSecret.newBuilder()
+            .setName(
+                UserWorkloadsSecretName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    UserWorkloadsSecretName name =
+        UserWorkloadsSecretName.of(
+            "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]");
+
+    UserWorkloadsSecret actualResponse = client.getUserWorkloadsSecret(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUserWorkloadsSecretRequest actualRequest =
+        ((GetUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUserWorkloadsSecretExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      UserWorkloadsSecretName name =
+          UserWorkloadsSecretName.of(
+              "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]");
+      client.getUserWorkloadsSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserWorkloadsSecretTest2() throws Exception {
+    UserWorkloadsSecret expectedResponse =
+        UserWorkloadsSecret.newBuilder()
+            .setName(
+                UserWorkloadsSecretName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    UserWorkloadsSecret actualResponse = client.getUserWorkloadsSecret(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUserWorkloadsSecretRequest actualRequest =
+        ((GetUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUserWorkloadsSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getUserWorkloadsSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUserWorkloadsSecretsTest() throws Exception {
+    UserWorkloadsSecret responsesElement = UserWorkloadsSecret.newBuilder().build();
+    ListUserWorkloadsSecretsResponse expectedResponse =
+        ListUserWorkloadsSecretsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUserWorkloadsSecrets(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+
+    ListUserWorkloadsSecretsPagedResponse pagedListResponse =
+        client.listUserWorkloadsSecrets(parent);
+
+    List<UserWorkloadsSecret> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUserWorkloadsSecretsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListUserWorkloadsSecretsRequest actualRequest =
+        ((ListUserWorkloadsSecretsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listUserWorkloadsSecretsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+      client.listUserWorkloadsSecrets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUserWorkloadsSecretsTest2() throws Exception {
+    UserWorkloadsSecret responsesElement = UserWorkloadsSecret.newBuilder().build();
+    ListUserWorkloadsSecretsResponse expectedResponse =
+        ListUserWorkloadsSecretsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUserWorkloadsSecrets(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListUserWorkloadsSecretsPagedResponse pagedListResponse =
+        client.listUserWorkloadsSecrets(parent);
+
+    List<UserWorkloadsSecret> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUserWorkloadsSecretsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListUserWorkloadsSecretsRequest actualRequest =
+        ((ListUserWorkloadsSecretsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listUserWorkloadsSecretsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listUserWorkloadsSecrets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateUserWorkloadsSecretTest() throws Exception {
+    UserWorkloadsSecret expectedResponse =
+        UserWorkloadsSecret.newBuilder()
+            .setName(
+                UserWorkloadsSecretName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+
+    UserWorkloadsSecret actualResponse = client.updateUserWorkloadsSecret(userWorkloadsSecret);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateUserWorkloadsSecretRequest actualRequest =
+        ((UpdateUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(userWorkloadsSecret, actualRequest.getUserWorkloadsSecret());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateUserWorkloadsSecretExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      UserWorkloadsSecret userWorkloadsSecret = UserWorkloadsSecret.newBuilder().build();
+      client.updateUserWorkloadsSecret(userWorkloadsSecret);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserWorkloadsSecretTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    UserWorkloadsSecretName name =
+        UserWorkloadsSecretName.of(
+            "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]");
+
+    client.deleteUserWorkloadsSecret(name);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteUserWorkloadsSecretRequest actualRequest =
+        ((DeleteUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteUserWorkloadsSecretExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      UserWorkloadsSecretName name =
+          UserWorkloadsSecretName.of(
+              "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_SECRET]");
+      client.deleteUserWorkloadsSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserWorkloadsSecretTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteUserWorkloadsSecret(name);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteUserWorkloadsSecretRequest actualRequest =
+        ((DeleteUserWorkloadsSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteUserWorkloadsSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteUserWorkloadsSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserWorkloadsConfigMapTest() throws Exception {
+    UserWorkloadsConfigMap expectedResponse =
+        UserWorkloadsConfigMap.newBuilder()
+            .setName(
+                UserWorkloadsConfigMapName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+    UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+
+    UserWorkloadsConfigMap actualResponse =
+        client.createUserWorkloadsConfigMap(parent, userWorkloadsConfigMap);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateUserWorkloadsConfigMapRequest actualRequest =
+        ((CreateUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(userWorkloadsConfigMap, actualRequest.getUserWorkloadsConfigMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createUserWorkloadsConfigMapExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+      UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+      client.createUserWorkloadsConfigMap(parent, userWorkloadsConfigMap);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserWorkloadsConfigMapTest2() throws Exception {
+    UserWorkloadsConfigMap expectedResponse =
+        UserWorkloadsConfigMap.newBuilder()
+            .setName(
+                UserWorkloadsConfigMapName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+
+    UserWorkloadsConfigMap actualResponse =
+        client.createUserWorkloadsConfigMap(parent, userWorkloadsConfigMap);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateUserWorkloadsConfigMapRequest actualRequest =
+        ((CreateUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(userWorkloadsConfigMap, actualRequest.getUserWorkloadsConfigMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createUserWorkloadsConfigMapExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+      client.createUserWorkloadsConfigMap(parent, userWorkloadsConfigMap);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserWorkloadsConfigMapTest() throws Exception {
+    UserWorkloadsConfigMap expectedResponse =
+        UserWorkloadsConfigMap.newBuilder()
+            .setName(
+                UserWorkloadsConfigMapName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    UserWorkloadsConfigMapName name =
+        UserWorkloadsConfigMapName.of(
+            "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]");
+
+    UserWorkloadsConfigMap actualResponse = client.getUserWorkloadsConfigMap(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUserWorkloadsConfigMapRequest actualRequest =
+        ((GetUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUserWorkloadsConfigMapExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      UserWorkloadsConfigMapName name =
+          UserWorkloadsConfigMapName.of(
+              "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]");
+      client.getUserWorkloadsConfigMap(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserWorkloadsConfigMapTest2() throws Exception {
+    UserWorkloadsConfigMap expectedResponse =
+        UserWorkloadsConfigMap.newBuilder()
+            .setName(
+                UserWorkloadsConfigMapName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    UserWorkloadsConfigMap actualResponse = client.getUserWorkloadsConfigMap(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUserWorkloadsConfigMapRequest actualRequest =
+        ((GetUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUserWorkloadsConfigMapExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getUserWorkloadsConfigMap(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUserWorkloadsConfigMapsTest() throws Exception {
+    UserWorkloadsConfigMap responsesElement = UserWorkloadsConfigMap.newBuilder().build();
+    ListUserWorkloadsConfigMapsResponse expectedResponse =
+        ListUserWorkloadsConfigMapsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUserWorkloadsConfigMaps(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+
+    ListUserWorkloadsConfigMapsPagedResponse pagedListResponse =
+        client.listUserWorkloadsConfigMaps(parent);
+
+    List<UserWorkloadsConfigMap> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUserWorkloadsConfigMapsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListUserWorkloadsConfigMapsRequest actualRequest =
+        ((ListUserWorkloadsConfigMapsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listUserWorkloadsConfigMapsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      EnvironmentName parent = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]");
+      client.listUserWorkloadsConfigMaps(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUserWorkloadsConfigMapsTest2() throws Exception {
+    UserWorkloadsConfigMap responsesElement = UserWorkloadsConfigMap.newBuilder().build();
+    ListUserWorkloadsConfigMapsResponse expectedResponse =
+        ListUserWorkloadsConfigMapsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUserWorkloadsConfigMaps(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListUserWorkloadsConfigMapsPagedResponse pagedListResponse =
+        client.listUserWorkloadsConfigMaps(parent);
+
+    List<UserWorkloadsConfigMap> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUserWorkloadsConfigMapsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListUserWorkloadsConfigMapsRequest actualRequest =
+        ((ListUserWorkloadsConfigMapsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listUserWorkloadsConfigMapsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listUserWorkloadsConfigMaps(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateUserWorkloadsConfigMapTest() throws Exception {
+    UserWorkloadsConfigMap expectedResponse =
+        UserWorkloadsConfigMap.newBuilder()
+            .setName(
+                UserWorkloadsConfigMapName.of(
+                        "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]")
+                    .toString())
+            .putAllData(new HashMap<String, String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+
+    UserWorkloadsConfigMap actualResponse =
+        client.updateUserWorkloadsConfigMap(userWorkloadsConfigMap);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateUserWorkloadsConfigMapRequest actualRequest =
+        ((UpdateUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(userWorkloadsConfigMap, actualRequest.getUserWorkloadsConfigMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateUserWorkloadsConfigMapExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      UserWorkloadsConfigMap userWorkloadsConfigMap = UserWorkloadsConfigMap.newBuilder().build();
+      client.updateUserWorkloadsConfigMap(userWorkloadsConfigMap);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserWorkloadsConfigMapTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    UserWorkloadsConfigMapName name =
+        UserWorkloadsConfigMapName.of(
+            "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]");
+
+    client.deleteUserWorkloadsConfigMap(name);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteUserWorkloadsConfigMapRequest actualRequest =
+        ((DeleteUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteUserWorkloadsConfigMapExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      UserWorkloadsConfigMapName name =
+          UserWorkloadsConfigMapName.of(
+              "[PROJECT]", "[LOCATION]", "[ENVIRONMENT]", "[USER_WORKLOADS_CONFIG_MAP]");
+      client.deleteUserWorkloadsConfigMap(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserWorkloadsConfigMapTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteUserWorkloadsConfigMap(name);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteUserWorkloadsConfigMapRequest actualRequest =
+        ((DeleteUserWorkloadsConfigMapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteUserWorkloadsConfigMapExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteUserWorkloadsConfigMap(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

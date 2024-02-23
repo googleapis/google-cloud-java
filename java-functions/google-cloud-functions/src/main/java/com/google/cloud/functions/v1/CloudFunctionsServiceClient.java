@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,19 +70,226 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFunctions</td>
+ *      <td><p> Returns a list of functions that belong to the requested project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFunctions(ListFunctionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFunctionsPagedCallable()
+ *           <li><p> listFunctionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFunction</td>
+ *      <td><p> Returns a function with the given name from the requested project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFunction(GetFunctionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFunction(CloudFunctionName name)
+ *           <li><p> getFunction(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFunctionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFunction</td>
+ *      <td><p> Creates a new function. If a function with the given name already exists in the specified project, the long running operation will return `ALREADY_EXISTS` error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFunctionAsync(CreateFunctionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createFunctionAsync(LocationName location, CloudFunction function)
+ *           <li><p> createFunctionAsync(String location, CloudFunction function)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFunctionOperationCallable()
+ *           <li><p> createFunctionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFunction</td>
+ *      <td><p> Updates existing function.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFunctionAsync(UpdateFunctionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateFunctionAsync(CloudFunction function)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFunctionOperationCallable()
+ *           <li><p> updateFunctionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFunction</td>
+ *      <td><p> Deletes a function with the given name from the specified project. If the given function is used by some trigger, the trigger will be updated to remove this function.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFunctionAsync(DeleteFunctionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteFunctionAsync(CloudFunctionName name)
+ *           <li><p> deleteFunctionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFunctionOperationCallable()
+ *           <li><p> deleteFunctionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CallFunction</td>
+ *      <td><p> Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very limited traffic is allowed. For more information on the actual limits, refer to [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> callFunction(CallFunctionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> callFunction(CloudFunctionName name, String data)
+ *           <li><p> callFunction(String name, String data)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> callFunctionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateUploadUrl</td>
+ *      <td><p> Returns a signed URL for uploading a function source code. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls. Once the function source code upload is complete, the used signed URL should be provided in CreateFunction or UpdateFunction request as a reference to the function source code.
+ * <p>  When uploading source code to the generated signed URL, please follow these restrictions:
+ * <ul>
+ * <li>  Source file type should be a zip file.
+ * <li>  Source file size should not exceed 100MB limit.
+ * <li>  No credentials should be attached - the signed URLs provide access to the   target bucket using internal service identity; if credentials were   attached, the identity from the credentials would be used, but that   identity does not have permissions to upload files to the URL.
+ * </ul>
+ * <p>  When making a HTTP PUT request, these two headers need to be specified:
+ * <ul>
+ * <li>  `content-type: application/zip`
+ * <li>  `x-goog-content-length-range: 0,104857600`
+ * </ul>
+ * <p>  And this header SHOULD NOT be specified:
+ * <ul>
+ * <li>  `Authorization: Bearer YOUR_TOKEN`
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateUploadUrl(GenerateUploadUrlRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateUploadUrlCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateDownloadUrl</td>
+ *      <td><p> Returns a signed URL for downloading deployed function source code. The URL is only valid for a limited period and should be used within minutes after generation. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateDownloadUrl(GenerateDownloadUrlRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateDownloadUrlCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the IAM access control policy on the specified function. Replaces any existing policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the IAM access control policy for a function. Returns an empty policy if the function exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Tests the specified permissions against the IAM access control policy for a function. If the function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -395,6 +602,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *   GetFunctionRequest request =
    *       GetFunctionRequest.newBuilder()
    *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setVersionId(-670497310)
    *           .build();
    *   CloudFunction response = cloudFunctionsServiceClient.getFunction(request);
    * }
@@ -424,6 +632,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *   GetFunctionRequest request =
    *       GetFunctionRequest.newBuilder()
    *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setVersionId(-670497310)
    *           .build();
    *   ApiFuture<CloudFunction> future =
    *       cloudFunctionsServiceClient.getFunctionCallable().futureCall(request);
@@ -439,7 +648,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -476,7 +685,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -510,7 +719,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -542,7 +751,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -574,7 +783,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation returns an `ALREADY_EXISTS` error.
+   * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -726,7 +935,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -756,7 +965,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -784,7 +993,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -815,7 +1024,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -846,7 +1055,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger is updated to remove this function.
+   * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -1022,14 +1231,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making an HTTP PUT request, these two headers must be specified:
+   * <p>When making a HTTP PUT request, these two headers need to be specified:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    *   <li>`x-goog-content-length-range: 0,104857600`
    * </ul>
    *
-   * <p>And this header must NOT be specified:
+   * <p>And this header SHOULD NOT be specified:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1081,14 +1290,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making an HTTP PUT request, these two headers must be specified:
+   * <p>When making a HTTP PUT request, these two headers need to be specified:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    *   <li>`x-goog-content-length-range: 0,104857600`
    * </ul>
    *
-   * <p>And this header must NOT be specified:
+   * <p>And this header SHOULD NOT be specified:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1126,8 +1335,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
-   * limited period and must be used within minutes after generation. For more information about the
-   * signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   * limited period and should be used within minutes after generation. For more information about
+   * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
    *
@@ -1159,8 +1368,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
-   * limited period and must be used within minutes after generation. For more information about the
-   * signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   * limited period and should be used within minutes after generation. For more information about
+   * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
    *
@@ -1316,7 +1525,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
-   * function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.
+   * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
@@ -1347,7 +1556,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
-   * function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.
+   * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *

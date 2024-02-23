@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.maps.places.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.maps.places.v1.AutocompletePlacesRequest;
+import com.google.maps.places.v1.AutocompletePlacesResponse;
 import com.google.maps.places.v1.GetPhotoMediaRequest;
 import com.google.maps.places.v1.GetPlaceRequest;
 import com.google.maps.places.v1.PhotoMedia;
@@ -51,6 +53,11 @@ public abstract class PlacesStub implements BackgroundResource {
 
   public UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
     throw new UnsupportedOperationException("Not implemented: getPlaceCallable()");
+  }
+
+  public UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: autocompletePlacesCallable()");
   }
 
   @Override

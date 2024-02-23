@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud POM Parent</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -14,8 +14,8 @@
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.6.1</version>
+    <artifactId>sdk-platform-java-config</artifactId>
+    <version>3.25.0</version>
     <relativePath/>
   </parent>
 

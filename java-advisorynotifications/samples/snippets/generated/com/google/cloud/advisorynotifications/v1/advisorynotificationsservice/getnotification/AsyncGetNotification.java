@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,9 @@ public class AsyncGetNotification {
       GetNotificationRequest request =
           GetNotificationRequest.newBuilder()
               .setName(
-                  NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                  NotificationName.ofOrganizationLocationNotificationName(
+                          "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                      .toString())
               .setLanguageCode("languageCode-2092349083")
               .build();
       ApiFuture<Notification> future =

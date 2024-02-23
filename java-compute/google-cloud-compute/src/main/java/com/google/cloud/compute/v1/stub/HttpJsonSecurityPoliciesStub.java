@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,6 +177,12 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -513,6 +519,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -568,6 +578,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                                 ProtoRestSerializer.create();
                             if (request.hasPriority()) {
                               serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
                             }
                             if (request.hasValidateOnly()) {
                               serializer.putQueryParam(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -728,6 +728,221 @@ public final class ConfigGrpc {
     return getExportLockInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.CreatePreviewRequest, com.google.longrunning.Operation>
+      getCreatePreviewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePreview",
+      requestType = com.google.cloud.config.v1.CreatePreviewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.CreatePreviewRequest, com.google.longrunning.Operation>
+      getCreatePreviewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.CreatePreviewRequest, com.google.longrunning.Operation>
+        getCreatePreviewMethod;
+    if ((getCreatePreviewMethod = ConfigGrpc.getCreatePreviewMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getCreatePreviewMethod = ConfigGrpc.getCreatePreviewMethod) == null) {
+          ConfigGrpc.getCreatePreviewMethod =
+              getCreatePreviewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.CreatePreviewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePreview"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.CreatePreviewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("CreatePreview"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePreviewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetPreviewRequest, com.google.cloud.config.v1.Preview>
+      getGetPreviewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPreview",
+      requestType = com.google.cloud.config.v1.GetPreviewRequest.class,
+      responseType = com.google.cloud.config.v1.Preview.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetPreviewRequest, com.google.cloud.config.v1.Preview>
+      getGetPreviewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetPreviewRequest, com.google.cloud.config.v1.Preview>
+        getGetPreviewMethod;
+    if ((getGetPreviewMethod = ConfigGrpc.getGetPreviewMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetPreviewMethod = ConfigGrpc.getGetPreviewMethod) == null) {
+          ConfigGrpc.getGetPreviewMethod =
+              getGetPreviewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetPreviewRequest,
+                          com.google.cloud.config.v1.Preview>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPreview"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetPreviewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.Preview.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetPreview"))
+                      .build();
+        }
+      }
+    }
+    return getGetPreviewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListPreviewsRequest,
+          com.google.cloud.config.v1.ListPreviewsResponse>
+      getListPreviewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPreviews",
+      requestType = com.google.cloud.config.v1.ListPreviewsRequest.class,
+      responseType = com.google.cloud.config.v1.ListPreviewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListPreviewsRequest,
+          com.google.cloud.config.v1.ListPreviewsResponse>
+      getListPreviewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListPreviewsRequest,
+            com.google.cloud.config.v1.ListPreviewsResponse>
+        getListPreviewsMethod;
+    if ((getListPreviewsMethod = ConfigGrpc.getListPreviewsMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListPreviewsMethod = ConfigGrpc.getListPreviewsMethod) == null) {
+          ConfigGrpc.getListPreviewsMethod =
+              getListPreviewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListPreviewsRequest,
+                          com.google.cloud.config.v1.ListPreviewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPreviews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListPreviewsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListPreviewsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("ListPreviews"))
+                      .build();
+        }
+      }
+    }
+    return getListPreviewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeletePreviewRequest, com.google.longrunning.Operation>
+      getDeletePreviewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePreview",
+      requestType = com.google.cloud.config.v1.DeletePreviewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeletePreviewRequest, com.google.longrunning.Operation>
+      getDeletePreviewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.DeletePreviewRequest, com.google.longrunning.Operation>
+        getDeletePreviewMethod;
+    if ((getDeletePreviewMethod = ConfigGrpc.getDeletePreviewMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getDeletePreviewMethod = ConfigGrpc.getDeletePreviewMethod) == null) {
+          ConfigGrpc.getDeletePreviewMethod =
+              getDeletePreviewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.DeletePreviewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePreview"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeletePreviewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("DeletePreview"))
+                      .build();
+        }
+      }
+    }
+    return getDeletePreviewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ExportPreviewResultRequest,
+          com.google.cloud.config.v1.ExportPreviewResultResponse>
+      getExportPreviewResultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportPreviewResult",
+      requestType = com.google.cloud.config.v1.ExportPreviewResultRequest.class,
+      responseType = com.google.cloud.config.v1.ExportPreviewResultResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ExportPreviewResultRequest,
+          com.google.cloud.config.v1.ExportPreviewResultResponse>
+      getExportPreviewResultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ExportPreviewResultRequest,
+            com.google.cloud.config.v1.ExportPreviewResultResponse>
+        getExportPreviewResultMethod;
+    if ((getExportPreviewResultMethod = ConfigGrpc.getExportPreviewResultMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getExportPreviewResultMethod = ConfigGrpc.getExportPreviewResultMethod) == null) {
+          ConfigGrpc.getExportPreviewResultMethod =
+              getExportPreviewResultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ExportPreviewResultRequest,
+                          com.google.cloud.config.v1.ExportPreviewResultResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ExportPreviewResult"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ExportPreviewResultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ExportPreviewResultResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ExportPreviewResult"))
+                      .build();
+        }
+      }
+    }
+    return getExportPreviewResultMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigStub> factory =
@@ -1006,6 +1221,78 @@ public final class ConfigGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.config.v1.LockInfo> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExportLockInfoMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    default void createPreview(
+        com.google.cloud.config.v1.CreatePreviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePreviewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    default void getPreview(
+        com.google.cloud.config.v1.GetPreviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.Preview> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPreviewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and
+     * location.
+     * </pre>
+     */
+    default void listPreviews(
+        com.google.cloud.config.v1.ListPreviewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListPreviewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPreviewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    default void deletePreview(
+        com.google.cloud.config.v1.DeletePreviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePreviewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export [Preview][google.cloud.config.v1.Preview] results.
+     * </pre>
+     */
+    default void exportPreviewResult(
+        com.google.cloud.config.v1.ExportPreviewResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ExportPreviewResultResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportPreviewResultMethod(), responseObserver);
     }
   }
 
@@ -1304,6 +1591,87 @@ public final class ConfigGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public void createPreview(
+        com.google.cloud.config.v1.CreatePreviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePreviewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public void getPreview(
+        com.google.cloud.config.v1.GetPreviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.Preview> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPreviewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and
+     * location.
+     * </pre>
+     */
+    public void listPreviews(
+        com.google.cloud.config.v1.ListPreviewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListPreviewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPreviewsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public void deletePreview(
+        com.google.cloud.config.v1.DeletePreviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePreviewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export [Preview][google.cloud.config.v1.Preview] results.
+     * </pre>
+     */
+    public void exportPreviewResult(
+        com.google.cloud.config.v1.ExportPreviewResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ExportPreviewResultResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportPreviewResultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1534,6 +1902,72 @@ public final class ConfigGrpc {
         com.google.cloud.config.v1.ExportLockInfoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportLockInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPreview(
+        com.google.cloud.config.v1.CreatePreviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Preview getPreview(
+        com.google.cloud.config.v1.GetPreviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListPreviewsResponse listPreviews(
+        com.google.cloud.config.v1.ListPreviewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPreviewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePreview(
+        com.google.cloud.config.v1.DeletePreviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export [Preview][google.cloud.config.v1.Preview] results.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ExportPreviewResultResponse exportPreviewResult(
+        com.google.cloud.config.v1.ExportPreviewResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportPreviewResultMethod(), getCallOptions(), request);
     }
   }
 
@@ -1770,6 +2204,74 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportLockInfoMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createPreview(com.google.cloud.config.v1.CreatePreviewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePreviewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.config.v1.Preview>
+        getPreview(com.google.cloud.config.v1.GetPreviewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPreviewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListPreviewsResponse>
+        listPreviews(com.google.cloud.config.v1.ListPreviewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPreviewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deletePreview(com.google.cloud.config.v1.DeletePreviewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePreviewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export [Preview][google.cloud.config.v1.Preview] results.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ExportPreviewResultResponse>
+        exportPreviewResult(com.google.cloud.config.v1.ExportPreviewResultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportPreviewResultMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DEPLOYMENTS = 0;
@@ -1788,6 +2290,11 @@ public final class ConfigGrpc {
   private static final int METHODID_LOCK_DEPLOYMENT = 13;
   private static final int METHODID_UNLOCK_DEPLOYMENT = 14;
   private static final int METHODID_EXPORT_LOCK_INFO = 15;
+  private static final int METHODID_CREATE_PREVIEW = 16;
+  private static final int METHODID_GET_PREVIEW = 17;
+  private static final int METHODID_LIST_PREVIEWS = 18;
+  private static final int METHODID_DELETE_PREVIEW = 19;
+  private static final int METHODID_EXPORT_PREVIEW_RESULT = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1889,6 +2396,33 @@ public final class ConfigGrpc {
           serviceImpl.exportLockInfo(
               (com.google.cloud.config.v1.ExportLockInfoRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.LockInfo>) responseObserver);
+          break;
+        case METHODID_CREATE_PREVIEW:
+          serviceImpl.createPreview(
+              (com.google.cloud.config.v1.CreatePreviewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PREVIEW:
+          serviceImpl.getPreview(
+              (com.google.cloud.config.v1.GetPreviewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.Preview>) responseObserver);
+          break;
+        case METHODID_LIST_PREVIEWS:
+          serviceImpl.listPreviews(
+              (com.google.cloud.config.v1.ListPreviewsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListPreviewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_PREVIEW:
+          serviceImpl.deletePreview(
+              (com.google.cloud.config.v1.DeletePreviewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_PREVIEW_RESULT:
+          serviceImpl.exportPreviewResult(
+              (com.google.cloud.config.v1.ExportPreviewResultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ExportPreviewResultResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2009,6 +2543,38 @@ public final class ConfigGrpc {
                 new MethodHandlers<
                     com.google.cloud.config.v1.ExportLockInfoRequest,
                     com.google.cloud.config.v1.LockInfo>(service, METHODID_EXPORT_LOCK_INFO)))
+        .addMethod(
+            getCreatePreviewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.CreatePreviewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PREVIEW)))
+        .addMethod(
+            getGetPreviewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetPreviewRequest,
+                    com.google.cloud.config.v1.Preview>(service, METHODID_GET_PREVIEW)))
+        .addMethod(
+            getListPreviewsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListPreviewsRequest,
+                    com.google.cloud.config.v1.ListPreviewsResponse>(
+                    service, METHODID_LIST_PREVIEWS)))
+        .addMethod(
+            getDeletePreviewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.DeletePreviewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PREVIEW)))
+        .addMethod(
+            getExportPreviewResultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ExportPreviewResultRequest,
+                    com.google.cloud.config.v1.ExportPreviewResultResponse>(
+                    service, METHODID_EXPORT_PREVIEW_RESULT)))
         .build();
   }
 
@@ -2074,6 +2640,11 @@ public final class ConfigGrpc {
                       .addMethod(getLockDeploymentMethod())
                       .addMethod(getUnlockDeploymentMethod())
                       .addMethod(getExportLockInfoMethod())
+                      .addMethod(getCreatePreviewMethod())
+                      .addMethod(getGetPreviewMethod())
+                      .addMethod(getListPreviewsMethod())
+                      .addMethod(getDeletePreviewMethod())
+                      .addMethod(getExportPreviewResultMethod())
                       .build();
         }
       }

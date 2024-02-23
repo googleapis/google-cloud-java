@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.texttospeech.v1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,6 +36,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata;
 import com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest;
 import com.google.cloud.texttospeech.v1.SynthesizeLongAudioResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -71,7 +73,7 @@ public class HttpJsonTextToSpeechLongAudioSynthesizeStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SynthesizeLongAudioRequest>newBuilder()
                       .setPath(
-                          "/v1/{parent=projects/*/locations/*/voices/*}:SynthesizeLongAudio",
+                          "/v1/{parent=projects/*/locations/*}:synthesizeLongAudio",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<SynthesizeLongAudioRequest> serializer =
@@ -154,7 +156,22 @@ public class HttpJsonTextToSpeechLongAudioSynthesizeStub
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<SynthesizeLongAudioRequest, Operation>
         synthesizeLongAudioTransportSettings =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
@@ -156,6 +159,13 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
           BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
       batchDeletePipelineJobsOperationSettings;
   private final UnaryCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings;
+  private final UnaryCallSettings<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsSettings;
+  private final OperationCallSettings<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -426,6 +436,21 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     return cancelPipelineJobSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchCancelPipelineJobs. */
+  public UnaryCallSettings<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsSettings() {
+    return batchCancelPipelineJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCancelPipelineJobs. */
+  public OperationCallSettings<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationSettings() {
+    return batchCancelPipelineJobsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -462,6 +487,21 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "aiplatform";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -501,7 +541,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -545,6 +584,9 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     batchDeletePipelineJobsOperationSettings =
         settingsBuilder.batchDeletePipelineJobsOperationSettings().build();
     cancelPipelineJobSettings = settingsBuilder.cancelPipelineJobSettings().build();
+    batchCancelPipelineJobsSettings = settingsBuilder.batchCancelPipelineJobsSettings().build();
+    batchCancelPipelineJobsOperationSettings =
+        settingsBuilder.batchCancelPipelineJobsOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -592,6 +634,13 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
         batchDeletePipelineJobsOperationSettings;
     private final UnaryCallSettings.Builder<CancelPipelineJobRequest, Empty>
         cancelPipelineJobSettings;
+    private final UnaryCallSettings.Builder<BatchCancelPipelineJobsRequest, Operation>
+        batchCancelPipelineJobsSettings;
+    private final OperationCallSettings.Builder<
+            BatchCancelPipelineJobsRequest,
+            BatchCancelPipelineJobsResponse,
+            BatchCancelPipelineJobsOperationMetadata>
+        batchCancelPipelineJobsOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -652,6 +701,8 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       batchDeletePipelineJobsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeletePipelineJobsOperationSettings = OperationCallSettings.newBuilder();
       cancelPipelineJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCancelPipelineJobsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCancelPipelineJobsOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -671,6 +722,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               deletePipelineJobSettings,
               batchDeletePipelineJobsSettings,
               cancelPipelineJobSettings,
+              batchCancelPipelineJobsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -698,6 +750,9 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       batchDeletePipelineJobsOperationSettings =
           settings.batchDeletePipelineJobsOperationSettings.toBuilder();
       cancelPipelineJobSettings = settings.cancelPipelineJobSettings.toBuilder();
+      batchCancelPipelineJobsSettings = settings.batchCancelPipelineJobsSettings.toBuilder();
+      batchCancelPipelineJobsOperationSettings =
+          settings.batchCancelPipelineJobsOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -717,6 +772,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               deletePipelineJobSettings,
               batchDeletePipelineJobsSettings,
               cancelPipelineJobSettings,
+              batchCancelPipelineJobsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -730,7 +786,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -790,6 +845,11 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
 
       builder
           .cancelPipelineJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCancelPipelineJobsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -879,6 +939,32 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
                   BatchDeletePipelineJobsResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchCancelPipelineJobsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchCancelPipelineJobsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchCancelPipelineJobsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BatchCancelPipelineJobsOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1005,6 +1091,23 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       return cancelPipelineJobSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
+    public UnaryCallSettings.Builder<BatchCancelPipelineJobsRequest, Operation>
+        batchCancelPipelineJobsSettings() {
+      return batchCancelPipelineJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            BatchCancelPipelineJobsRequest,
+            BatchCancelPipelineJobsResponse,
+            BatchCancelPipelineJobsOperationMetadata>
+        batchCancelPipelineJobsOperationSettings() {
+      return batchCancelPipelineJobsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -1031,6 +1134,15 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

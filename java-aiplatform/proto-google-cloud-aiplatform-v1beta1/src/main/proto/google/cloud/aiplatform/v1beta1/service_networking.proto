@@ -17,6 +17,7 @@ syntax = "proto3";
 package google.cloud.aiplatform.v1beta1;
 
 import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb";
@@ -35,4 +36,17 @@ message PrivateServiceConnectConfig {
   // A list of Projects from which the forwarding rule will target the service
   // attachment.
   repeated string project_allowlist = 2;
+}
+
+// PscAutomatedEndpoints defines the output of the forwarding rule
+// automatically created by each PscAutomationConfig.
+message PscAutomatedEndpoints {
+  // Corresponding project_id in pscAutomationConfigs
+  string project_id = 1;
+
+  // Corresponding network in pscAutomationConfigs.
+  string network = 2;
+
+  // Ip Address created by the automated forwarding rule.
+  string match_address = 3;
 }

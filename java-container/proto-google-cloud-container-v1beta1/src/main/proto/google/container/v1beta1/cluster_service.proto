@@ -288,8 +288,6 @@ service ClusterManager {
 
   // Gets the public component of the cluster signing keys in
   // JSON Web Key format.
-  // This API is not yet intended for general use, and is not available for all
-  // clusters.
   rpc GetJSONWebKeys(GetJSONWebKeysRequest) returns (GetJSONWebKeysResponse) {
     option (google.api.http) = {
       get: "/v1beta1/{parent=projects/*/locations/*/clusters/*}/jwks"
@@ -1370,6 +1368,10 @@ message AddonsConfig {
 
   // Configuration for the Cloud Storage Fuse CSI driver.
   GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;
+
+  // Optional. Configuration for the StatefulHA add-on.
+  StatefulHAConfig stateful_ha_config = 18
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Configuration options for the HTTP (L7) load balancing controller addon,
@@ -1420,6 +1422,12 @@ message KalmConfig {
 // Configuration for the Backup for GKE Agent.
 message GkeBackupAgentConfig {
   // Whether the Backup for GKE agent is enabled for this cluster.
+  bool enabled = 1;
+}
+
+// Configuration for the Stateful HA add-on.
+message StatefulHAConfig {
+  // Whether the Stateful HA add-on is enabled for this cluster.
   bool enabled = 1;
 }
 
@@ -3761,10 +3769,17 @@ message BlueGreenSettings {
     optional google.protobuf.Duration batch_soak_duration = 3;
   }
 
+  // Autoscaled rollout policy uses cluster autoscaler during
+  // blue-green upgrades to scale both the green and blue pools.
+  message AutoscaledRolloutPolicy {}
+
   // The rollout policy controls the general rollout progress of blue-green.
   oneof rollout_policy {
     // Standard policy for the blue-green upgrade.
     StandardRolloutPolicy standard_rollout_policy = 1;
+
+    // Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+    AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
   }
 
   // Time needed after draining entire blue pool. After this period, blue pool
@@ -5513,8 +5528,9 @@ message Autopilot {
   // Workload policy configuration for Autopilot.
   WorkloadPolicyConfig workload_policy_config = 2;
 
-  // ConversionStatus shows conversion status.
-  AutopilotConversionStatus conversion_status = 3;
+  // Output only. ConversionStatus shows conversion status.
+  AutopilotConversionStatus conversion_status = 3
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // WorkloadPolicyConfig is the configuration of workload policy for autopilot

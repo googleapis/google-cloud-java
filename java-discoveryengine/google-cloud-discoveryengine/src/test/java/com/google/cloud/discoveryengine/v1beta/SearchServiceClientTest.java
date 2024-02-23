@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,7 @@ public class SearchServiceClientTest {
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
             .setFilter("filter-1274492040")
+            .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
             .setUserInfo(UserInfo.newBuilder().build())
             .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
@@ -142,6 +143,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
     Assert.assertEquals(request.getUserInfo(), actualRequest.getUserInfo());
     Assert.assertEquals(request.getFacetSpecsList(), actualRequest.getFacetSpecsList());
@@ -183,6 +185,7 @@ public class SearchServiceClientTest {
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
               .setFilter("filter-1274492040")
+              .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())

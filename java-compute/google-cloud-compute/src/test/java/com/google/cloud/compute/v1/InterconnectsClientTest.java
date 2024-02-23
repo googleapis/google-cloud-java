@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,6 +92,8 @@ public class InterconnectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -99,6 +101,8 @@ public class InterconnectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -152,6 +156,7 @@ public class InterconnectsClientTest {
     Interconnect expectedResponse =
         Interconnect.newBuilder()
             .setAdminEnabled(true)
+            .addAllAvailableFeatures(new ArrayList<String>())
             .addAllCircuitInfos(new ArrayList<InterconnectCircuitInfo>())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setCustomerName("customerName900157321")
@@ -167,12 +172,15 @@ public class InterconnectsClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setLinkType("linkType1194206804")
             .setLocation("location1901043637")
+            .setMacsec(InterconnectMacsec.newBuilder().build())
+            .setMacsecEnabled(true)
             .setName("name3373707")
             .setNocContactEmail("nocContactEmail480425790")
             .setOperationalStatus("operationalStatus-2103166364")
             .setPeerIpAddress("peerIpAddress-1037076085")
             .setProvisionedLinkCount(-1199724171)
             .setRemoteLocation("remoteLocation699618843")
+            .addAllRequestedFeatures(new ArrayList<String>())
             .setRequestedLinkCount(1118793211)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
@@ -266,6 +274,54 @@ public class InterconnectsClientTest {
   }
 
   @Test
+  public void getMacsecConfigTest() throws Exception {
+    InterconnectsGetMacsecConfigResponse expectedResponse =
+        InterconnectsGetMacsecConfigResponse.newBuilder()
+            .setEtag("etag3123477")
+            .setResult(InterconnectMacsecConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String interconnect = "interconnect-4596";
+
+    InterconnectsGetMacsecConfigResponse actualResponse =
+        client.getMacsecConfig(project, interconnect);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMacsecConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String interconnect = "interconnect-4596";
+      client.getMacsecConfig(project, interconnect);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void insertTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -278,6 +334,8 @@ public class InterconnectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -285,6 +343,8 @@ public class InterconnectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -396,6 +456,8 @@ public class InterconnectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -403,6 +465,8 @@ public class InterconnectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -466,6 +530,8 @@ public class InterconnectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -473,6 +539,8 @@ public class InterconnectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")

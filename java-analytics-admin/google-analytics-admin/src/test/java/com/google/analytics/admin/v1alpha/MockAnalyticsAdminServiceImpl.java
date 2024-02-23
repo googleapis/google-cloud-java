@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2627,6 +2627,112 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getCalculatedMetric(
+      GetCalculatedMetricRequest request, StreamObserver<CalculatedMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CalculatedMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CalculatedMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CalculatedMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCalculatedMetric(
+      CreateCalculatedMetricRequest request, StreamObserver<CalculatedMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CalculatedMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CalculatedMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CalculatedMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCalculatedMetrics(
+      ListCalculatedMetricsRequest request,
+      StreamObserver<ListCalculatedMetricsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCalculatedMetricsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCalculatedMetricsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCalculatedMetrics, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCalculatedMetricsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCalculatedMetric(
+      UpdateCalculatedMetricRequest request, StreamObserver<CalculatedMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CalculatedMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CalculatedMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CalculatedMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCalculatedMetric(
+      DeleteCalculatedMetricRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCalculatedMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createRollupProperty(
       CreateRollupPropertyRequest request,
       StreamObserver<CreateRollupPropertyResponse> responseObserver) {
@@ -2758,27 +2864,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void deleteSubpropertyEventFilter(
-      DeleteSubpropertyEventFilterRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteSubpropertyEventFilter, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createSubpropertyEventFilter(
       CreateSubpropertyEventFilterRequest request,
       StreamObserver<SubpropertyEventFilter> responseObserver) {
@@ -2796,6 +2881,93 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method CreateSubpropertyEventFilter, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SubpropertyEventFilter.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSubpropertyEventFilter(
+      GetSubpropertyEventFilterRequest request,
+      StreamObserver<SubpropertyEventFilter> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertyEventFilter) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertyEventFilter) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertyEventFilter.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSubpropertyEventFilters(
+      ListSubpropertyEventFiltersRequest request,
+      StreamObserver<ListSubpropertyEventFiltersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSubpropertyEventFiltersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSubpropertyEventFiltersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSubpropertyEventFilters, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSubpropertyEventFiltersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSubpropertyEventFilter(
+      UpdateSubpropertyEventFilterRequest request,
+      StreamObserver<SubpropertyEventFilter> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertyEventFilter) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertyEventFilter) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertyEventFilter.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSubpropertyEventFilter(
+      DeleteSubpropertyEventFilterRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -232,6 +234,20 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .build();
 
   private static final MethodDescriptor<
+          ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesMethodDescriptor =
+          MethodDescriptor
+              .<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ReorderFirewallPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReorderFirewallPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReorderFirewallPoliciesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
       listRelatedAccountGroupsMethodDescriptor =
           MethodDescriptor
@@ -304,6 +320,8 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<UpdateFirewallPolicyRequest, FirewallPolicy>
       updateFirewallPolicyCallable;
   private final UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable;
+  private final UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable;
   private final UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
       listRelatedAccountGroupsCallable;
   private final UnaryCallable<
@@ -529,6 +547,18 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesTransportSettings =
+            GrpcCallSettings
+                .<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>newBuilder()
+                .setMethodDescriptor(reorderFirewallPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
         listRelatedAccountGroupsTransportSettings =
             GrpcCallSettings
@@ -639,6 +669,11 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
         callableFactory.createUnaryCallable(
             deleteFirewallPolicyTransportSettings,
             settings.deleteFirewallPolicySettings(),
+            clientContext);
+    this.reorderFirewallPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            reorderFirewallPoliciesTransportSettings,
+            settings.reorderFirewallPoliciesSettings(),
             clientContext);
     this.listRelatedAccountGroupsCallable =
         callableFactory.createUnaryCallable(
@@ -766,6 +801,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
     return deleteFirewallPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable() {
+    return reorderFirewallPoliciesCallable;
   }
 
   @Override

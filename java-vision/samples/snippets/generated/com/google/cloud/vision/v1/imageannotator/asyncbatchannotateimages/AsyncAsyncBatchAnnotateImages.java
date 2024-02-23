@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.OutputConfig;
 import com.google.longrunning.Operation;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncAsyncBatchAnnotateImages {
 
@@ -43,6 +44,7 @@ public class AsyncAsyncBatchAnnotateImages {
               .addAllRequests(new ArrayList<AnnotateImageRequest>())
               .setOutputConfig(OutputConfig.newBuilder().build())
               .setParent("parent-995424086")
+              .putAllLabels(new HashMap<String, String>())
               .build();
       ApiFuture<Operation> future =
           imageAnnotatorClient.asyncBatchAnnotateImagesCallable().futureCall(request);

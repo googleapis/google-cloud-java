@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,13 @@ package com.google.cloud.aiplatform.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service for fetching feature values from the online store.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1/feature_online_store_service.proto")
@@ -81,6 +87,59 @@ public final class FeatureOnlineStoreServiceGrpc {
     return getFetchFeatureValuesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest,
+          com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+      getSearchNearestEntitiesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchNearestEntities",
+      requestType = com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest,
+          com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+      getSearchNearestEntitiesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest,
+            com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+        getSearchNearestEntitiesMethod;
+    if ((getSearchNearestEntitiesMethod =
+            FeatureOnlineStoreServiceGrpc.getSearchNearestEntitiesMethod)
+        == null) {
+      synchronized (FeatureOnlineStoreServiceGrpc.class) {
+        if ((getSearchNearestEntitiesMethod =
+                FeatureOnlineStoreServiceGrpc.getSearchNearestEntitiesMethod)
+            == null) {
+          FeatureOnlineStoreServiceGrpc.getSearchNearestEntitiesMethod =
+              getSearchNearestEntitiesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest,
+                          com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SearchNearestEntities"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeatureOnlineStoreServiceMethodDescriptorSupplier(
+                              "SearchNearestEntities"))
+                      .build();
+        }
+      }
+    }
+    return getSearchNearestEntitiesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FeatureOnlineStoreServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreServiceStub> factory =
@@ -122,7 +181,13 @@ public final class FeatureOnlineStoreServiceGrpc {
     return FeatureOnlineStoreServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public interface AsyncService {
 
     /**
@@ -139,9 +204,32 @@ public final class FeatureOnlineStoreServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchFeatureValuesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search the nearest entities under a FeatureView.
+     * Search only works for indexable feature view; if a feature view isn't
+     * indexable, returns Invalid argument response.
+     * </pre>
+     */
+    default void searchNearestEntities(
+        com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchNearestEntitiesMethod(), responseObserver);
+    }
   }
 
-  /** Base class for the server implementation of the service FeatureOnlineStoreService. */
+  /**
+   * Base class for the server implementation of the service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public abstract static class FeatureOnlineStoreServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -151,7 +239,13 @@ public final class FeatureOnlineStoreServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do asynchronous rpc calls to service FeatureOnlineStoreService. */
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public static final class FeatureOnlineStoreServiceStub
       extends io.grpc.stub.AbstractAsyncStub<FeatureOnlineStoreServiceStub> {
     private FeatureOnlineStoreServiceStub(
@@ -181,9 +275,34 @@ public final class FeatureOnlineStoreServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search the nearest entities under a FeatureView.
+     * Search only works for indexable feature view; if a feature view isn't
+     * indexable, returns Invalid argument response.
+     * </pre>
+     */
+    public void searchNearestEntities(
+        com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchNearestEntitiesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
-  /** A stub to allow clients to do synchronous rpc calls to service FeatureOnlineStoreService. */
+  /**
+   * A stub to allow clients to do synchronous rpc calls to service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
   public static final class FeatureOnlineStoreServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<FeatureOnlineStoreServiceBlockingStub> {
     private FeatureOnlineStoreServiceBlockingStub(
@@ -209,11 +328,30 @@ public final class FeatureOnlineStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchFeatureValuesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search the nearest entities under a FeatureView.
+     * Search only works for indexable feature view; if a feature view isn't
+     * indexable, returns Invalid argument response.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse searchNearestEntities(
+        com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchNearestEntitiesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service
    * FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
    */
   public static final class FeatureOnlineStoreServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<FeatureOnlineStoreServiceFutureStub> {
@@ -241,9 +379,26 @@ public final class FeatureOnlineStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchFeatureValuesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search the nearest entities under a FeatureView.
+     * Search only works for indexable feature view; if a feature view isn't
+     * indexable, returns Invalid argument response.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>
+        searchNearestEntities(com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchNearestEntitiesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_FETCH_FEATURE_VALUES = 0;
+  private static final int METHODID_SEARCH_NEAREST_ENTITIES = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -267,6 +422,13 @@ public final class FeatureOnlineStoreServiceGrpc {
               (com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_NEAREST_ENTITIES:
+          serviceImpl.searchNearestEntities(
+              (com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>)
                   responseObserver);
           break;
         default:
@@ -294,6 +456,13 @@ public final class FeatureOnlineStoreServiceGrpc {
                     com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest,
                     com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse>(
                     service, METHODID_FETCH_FEATURE_VALUES)))
+        .addMethod(
+            getSearchNearestEntitiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest,
+                    com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>(
+                    service, METHODID_SEARCH_NEAREST_ENTITIES)))
         .build();
   }
 
@@ -346,6 +515,7 @@ public final class FeatureOnlineStoreServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new FeatureOnlineStoreServiceFileDescriptorSupplier())
                       .addMethod(getFetchFeatureValuesMethod())
+                      .addMethod(getSearchNearestEntitiesMethod())
                       .build();
         }
       }

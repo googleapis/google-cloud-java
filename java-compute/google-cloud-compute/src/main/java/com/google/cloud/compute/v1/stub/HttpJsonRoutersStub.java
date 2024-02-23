@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,11 +37,13 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
+import com.google.cloud.compute.v1.GetNatIpInfoRouterRequest;
 import com.google.cloud.compute.v1.GetNatMappingInfoRoutersRequest;
 import com.google.cloud.compute.v1.GetRouterRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
+import com.google.cloud.compute.v1.NatIpInfoResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRouterRequest;
@@ -118,6 +120,12 @@ public class HttpJsonRoutersStub extends RoutersStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -213,6 +221,44 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+      getNatIpInfoMethodDescriptor =
+          ApiMethodDescriptor.<GetNatIpInfoRouterRequest, NatIpInfoResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/GetNatIpInfo")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetNatIpInfoRouterRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/getNatIpInfo",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNatIpInfoRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNatIpInfoRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasNatName()) {
+                              serializer.putQueryParam(fields, "natName", request.getNatName());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NatIpInfoResponse>newBuilder()
+                      .setDefaultInstance(NatIpInfoResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<
           GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
@@ -561,6 +607,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private final OperationCallable<DeleteRouterRequest, Operation, Operation>
       deleteOperationCallable;
   private final UnaryCallable<GetRouterRequest, Router> getCallable;
+  private final UnaryCallable<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoCallable;
   private final UnaryCallable<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
       getNatMappingInfoCallable;
   private final UnaryCallable<GetNatMappingInfoRoutersRequest, GetNatMappingInfoPagedResponse>
@@ -659,6 +706,20 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoTransportSettings =
+            HttpJsonCallSettings.<GetNatIpInfoRouterRequest, NatIpInfoResponse>newBuilder()
+                .setMethodDescriptor(getNatIpInfoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
         getNatMappingInfoTransportSettings =
             HttpJsonCallSettings
@@ -770,6 +831,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getNatIpInfoCallable =
+        callableFactory.createUnaryCallable(
+            getNatIpInfoTransportSettings, settings.getNatIpInfoSettings(), clientContext);
     this.getNatMappingInfoCallable =
         callableFactory.createUnaryCallable(
             getNatMappingInfoTransportSettings,
@@ -830,6 +894,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getNatIpInfoMethodDescriptor);
     methodDescriptors.add(getNatMappingInfoMethodDescriptor);
     methodDescriptors.add(getRouterStatusMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
@@ -865,6 +930,11 @@ public class HttpJsonRoutersStub extends RoutersStub {
   @Override
   public UnaryCallable<GetRouterRequest, Router> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoCallable() {
+    return getNatIpInfoCallable;
   }
 
   @Override

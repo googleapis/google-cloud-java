@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.aiplatform.v1.FeatureOnlineStoreServiceClient.Lis
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -42,6 +41,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
+import com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -106,6 +107,8 @@ public class FeatureOnlineStoreServiceStubSettings
 
   private final UnaryCallSettings<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesSettings;
+  private final UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -174,6 +177,12 @@ public class FeatureOnlineStoreServiceStubSettings
     return fetchFeatureValuesSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchNearestEntities. */
+  public UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesSettings() {
+    return searchNearestEntitiesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -210,6 +219,21 @@ public class FeatureOnlineStoreServiceStubSettings
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "aiplatform";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -249,7 +273,6 @@ public class FeatureOnlineStoreServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -277,6 +300,7 @@ public class FeatureOnlineStoreServiceStubSettings
     super(settingsBuilder);
 
     fetchFeatureValuesSettings = settingsBuilder.fetchFeatureValuesSettings().build();
+    searchNearestEntitiesSettings = settingsBuilder.searchNearestEntitiesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -290,6 +314,9 @@ public class FeatureOnlineStoreServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings;
+    private final UnaryCallSettings.Builder<
+            SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+        searchNearestEntitiesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -326,6 +353,7 @@ public class FeatureOnlineStoreServiceStubSettings
       super(clientContext);
 
       fetchFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchNearestEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -335,6 +363,7 @@ public class FeatureOnlineStoreServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               fetchFeatureValuesSettings,
+              searchNearestEntitiesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -347,6 +376,7 @@ public class FeatureOnlineStoreServiceStubSettings
       super(settings);
 
       fetchFeatureValuesSettings = settings.fetchFeatureValuesSettings.toBuilder();
+      searchNearestEntitiesSettings = settings.searchNearestEntitiesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -356,6 +386,7 @@ public class FeatureOnlineStoreServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               fetchFeatureValuesSettings,
+              searchNearestEntitiesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -369,7 +400,6 @@ public class FeatureOnlineStoreServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -379,6 +409,11 @@ public class FeatureOnlineStoreServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .fetchFeatureValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchNearestEntitiesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -431,6 +466,12 @@ public class FeatureOnlineStoreServiceStubSettings
       return fetchFeatureValuesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to searchNearestEntities. */
+    public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+        searchNearestEntitiesSettings() {
+      return searchNearestEntitiesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -457,6 +498,15 @@ public class FeatureOnlineStoreServiceStubSettings
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

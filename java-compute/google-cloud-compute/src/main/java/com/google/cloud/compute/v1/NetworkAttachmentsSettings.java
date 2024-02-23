@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.NetworkAttachmentsClient.AggregatedLis
 import static com.google.cloud.compute.v1.NetworkAttachmentsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -124,6 +123,17 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
     return ((NetworkAttachmentsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+    return ((NetworkAttachmentsStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((NetworkAttachmentsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNetworkAttachmentRequest, Policy> setIamPolicySettings() {
     return ((NetworkAttachmentsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -170,7 +180,6 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
     return NetworkAttachmentsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return NetworkAttachmentsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -280,6 +289,17 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
             ListNetworkAttachmentsRequest, NetworkAttachmentList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchNetworkAttachmentRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

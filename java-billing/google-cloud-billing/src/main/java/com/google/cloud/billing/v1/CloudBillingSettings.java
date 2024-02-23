@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,6 +141,11 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
     return ((CloudBillingStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to moveBillingAccount. */
+  public UnaryCallSettings<MoveBillingAccountRequest, BillingAccount> moveBillingAccountSettings() {
+    return ((CloudBillingStubSettings) getStubSettings()).moveBillingAccountSettings();
+  }
+
   public static final CloudBillingSettings create(CloudBillingStubSettings stub)
       throws IOException {
     return new CloudBillingSettings.Builder(stub.toBuilder()).build();
@@ -182,7 +187,6 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
     return CloudBillingStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return CloudBillingStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -318,6 +322,12 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveBillingAccount. */
+    public UnaryCallSettings.Builder<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountSettings() {
+      return getStubSettingsBuilder().moveBillingAccountSettings();
     }
 
     @Override

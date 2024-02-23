@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.aiplatform.v1;
 import static com.google.cloud.aiplatform.v1.FeatureOnlineStoreServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -91,6 +90,13 @@ public class FeatureOnlineStoreServiceSettings
     return ((FeatureOnlineStoreServiceStubSettings) getStubSettings()).fetchFeatureValuesSettings();
   }
 
+  /** Returns the object with the settings used for calls to searchNearestEntities. */
+  public UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesSettings() {
+    return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
+        .searchNearestEntitiesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -152,7 +158,6 @@ public class FeatureOnlineStoreServiceSettings
     return FeatureOnlineStoreServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return FeatureOnlineStoreServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -220,6 +225,12 @@ public class FeatureOnlineStoreServiceSettings
     public UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings() {
       return getStubSettingsBuilder().fetchFeatureValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchNearestEntities. */
+    public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+        searchNearestEntitiesSettings() {
+      return getStubSettingsBuilder().searchNearestEntitiesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

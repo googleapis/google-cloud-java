@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,27 @@ public class MockSessionsImpl extends SessionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DetectIntent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DetectIntentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void serverStreamingDetectIntent(
+      DetectIntentRequest request, StreamObserver<DetectIntentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DetectIntentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DetectIntentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ServerStreamingDetectIntent, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DetectIntentResponse.class.getName(),
                   Exception.class.getName())));

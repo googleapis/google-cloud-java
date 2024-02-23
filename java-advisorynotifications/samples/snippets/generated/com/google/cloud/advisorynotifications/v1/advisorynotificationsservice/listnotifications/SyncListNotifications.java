@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ public class SyncListNotifications {
         AdvisoryNotificationsServiceClient.create()) {
       ListNotificationsRequest request =
           ListNotificationsRequest.newBuilder()
-              .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setParent(
+                  LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+                      .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setView(NotificationView.forNumber(0))

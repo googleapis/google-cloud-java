@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -28,6 +29,7 @@ import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
+import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
@@ -35,12 +37,15 @@ import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
+import com.google.cloud.compute.v1.ListUsableBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsBackendServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import javax.annotation.Generated;
 
@@ -122,6 +127,16 @@ public abstract class BackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public UnaryCallable<ListUsableBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsablePagedCallable()");
+  }
+
+  public UnaryCallable<ListUsableBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsableCallable()");
+  }
+
   public OperationCallable<PatchBackendServiceRequest, Operation, Operation>
       patchOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
@@ -155,6 +170,11 @@ public abstract class BackendServicesStub implements BackgroundResource {
   public UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateBackendServiceRequest, Operation, Operation>

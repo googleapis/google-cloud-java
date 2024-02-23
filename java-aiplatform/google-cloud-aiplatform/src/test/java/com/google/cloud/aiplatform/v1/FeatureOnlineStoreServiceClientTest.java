@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,6 +173,63 @@ public class FeatureOnlineStoreServiceClientTest {
       String featureView = "featureView-376914245";
       FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
       client.fetchFeatureValues(featureView, dataKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchNearestEntitiesTest() throws Exception {
+    SearchNearestEntitiesResponse expectedResponse =
+        SearchNearestEntitiesResponse.newBuilder()
+            .setNearestNeighbors(NearestNeighbors.newBuilder().build())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+
+    SearchNearestEntitiesRequest request =
+        SearchNearestEntitiesRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .setQuery(NearestNeighborQuery.newBuilder().build())
+            .setReturnFullEntity(true)
+            .build();
+
+    SearchNearestEntitiesResponse actualResponse = client.searchNearestEntities(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchNearestEntitiesRequest actualRequest =
+        ((SearchNearestEntitiesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getFeatureView(), actualRequest.getFeatureView());
+    Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getReturnFullEntity(), actualRequest.getReturnFullEntity());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchNearestEntitiesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+
+    try {
+      SearchNearestEntitiesRequest request =
+          SearchNearestEntitiesRequest.newBuilder()
+              .setFeatureView(
+                  FeatureViewName.of(
+                          "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                      .toString())
+              .setQuery(NearestNeighborQuery.newBuilder().build())
+              .setReturnFullEntity(true)
+              .build();
+      client.searchNearestEntities(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

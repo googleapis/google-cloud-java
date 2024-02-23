@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ import com.google.cloud.compute.v1.GetTargetInstanceRequest;
 import com.google.cloud.compute.v1.InsertTargetInstanceRequest;
 import com.google.cloud.compute.v1.ListTargetInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetInstanceRequest;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import com.google.cloud.compute.v1.TargetInstanceList;
@@ -126,6 +127,10 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       insertOperationSettings;
   private final PagedCallSettings<ListTargetInstancesRequest, TargetInstanceList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicySettings;
+  private final OperationCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetInstancesRequest,
@@ -301,6 +306,18 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return setSecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return setSecurityPolicyOperationSettings;
+  }
+
   public TargetInstancesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -310,6 +327,21 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -349,7 +381,6 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -384,6 +415,9 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
+    setSecurityPolicyOperationSettings =
+        settingsBuilder.setSecurityPolicyOperationSettings().build();
   }
 
   /** Builder for TargetInstancesStubSettings. */
@@ -404,6 +438,11 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     private final PagedCallSettings.Builder<
             ListTargetInstancesRequest, TargetInstanceList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<SetSecurityPolicyTargetInstanceRequest, Operation>
+        setSecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -461,10 +500,17 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              setSecurityPolicySettings);
       initDefaults(this);
     }
 
@@ -478,10 +524,17 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
+      setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              setSecurityPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -490,7 +543,6 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -524,6 +576,11 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .setSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -552,6 +609,31 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertTargetInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setSecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSecurityPolicyTargetInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -634,6 +716,30 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
             ListTargetInstancesRequest, TargetInstanceList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return setSecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return setSecurityPolicyOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

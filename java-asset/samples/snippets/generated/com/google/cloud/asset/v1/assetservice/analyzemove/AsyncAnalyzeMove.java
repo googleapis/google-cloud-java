@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.FolderName;
+import com.google.cloud.asset.v1.ProjectName;
 
 public class AsyncAnalyzeMove {
 
@@ -37,8 +39,8 @@ public class AsyncAnalyzeMove {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       AnalyzeMoveRequest request =
           AnalyzeMoveRequest.newBuilder()
-              .setResource("resource-341064690")
-              .setDestinationParent("destinationParent-1733659048")
+              .setResource(ProjectName.of("[PROJECT]").toString())
+              .setDestinationParent(FolderName.of("[FOLDER]").toString())
               .build();
       ApiFuture<AnalyzeMoveResponse> future =
           assetServiceClient.analyzeMoveCallable().futureCall(request);

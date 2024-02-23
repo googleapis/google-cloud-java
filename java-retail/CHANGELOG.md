@@ -1,5 +1,43 @@
 # Changelog
 
+## 2.38.0 (2024-02-20)
+
+* No change
+
+
+## 2.37.0 (2024-02-09)
+
+### Features
+
+* add analytics service ([#10352](https://github.com/googleapis/google-cloud-java/issues/10352)) ([8dceb3e](https://github.com/googleapis/google-cloud-java/commit/8dceb3e18b1a3eb0eeeb4d4840ddf3cc0a3a01b9))
+
+
+
+## 2.36.0 (2024-01-23)
+
+### Features
+
+* add analytics service ([#10261](https://github.com/googleapis/google-cloud-java/issues/10261)) ([458516b](https://github.com/googleapis/google-cloud-java/commit/458516b462e0a4494f32815fe9d0e6f0b30353f1))
+
+
+
+## 2.35.0 (2024-01-10)
+
+* No change
+
+
+## 2.34.0 (2023-12-12)
+
+* No change
+
+
+## 2.33.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 2.32.0 (2023-11-06)
 
 ### Dependencies

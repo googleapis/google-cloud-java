@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public class AsyncPatchLRO {
               .setRequestId("requestId693933066")
               .setSecurityPolicy("securityPolicy-788621166")
               .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+              .setUpdateMask("updateMask-296147115")
               .build();
       OperationFuture<Operation, Operation> future =
           securityPoliciesClient.patchOperationCallable().futureCall(request);

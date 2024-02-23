@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -153,6 +153,13 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).listUsableSettings();
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchBackendServiceRequest, Operation> patchSettings() {
     return ((BackendServicesStubSettings) getStubSettings()).patchSettings();
@@ -192,6 +199,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
   public OperationCallSettings<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
       setSecurityPolicyOperationSettings() {
     return ((BackendServicesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -240,7 +253,6 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return BackendServicesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return BackendServicesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -383,6 +395,13 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().listSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+        listUsableSettings() {
+      return getStubSettingsBuilder().listUsableSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchBackendServiceRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
@@ -424,6 +443,13 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
             SetSecurityPolicyBackendServiceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

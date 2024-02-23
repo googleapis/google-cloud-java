@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public class SyncPatchRule {
               .setProject("project-309310695")
               .setSecurityPolicy("securityPolicy-788621166")
               .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+              .setUpdateMask("updateMask-296147115")
               .setValidateOnly(true)
               .build();
       Operation response = securityPoliciesClient.patchRuleAsync(request).get();

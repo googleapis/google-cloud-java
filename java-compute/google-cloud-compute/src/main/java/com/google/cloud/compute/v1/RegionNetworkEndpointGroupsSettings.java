@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
 import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -77,6 +77,21 @@ import javax.annotation.Generated;
 public class RegionNetworkEndpointGroupsSettings
     extends ClientSettings<RegionNetworkEndpointGroupsSettings> {
 
+  /** Returns the object with the settings used for calls to attachNetworkEndpoints. */
+  public UnaryCallSettings<AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      attachNetworkEndpointsSettings() {
+    return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings())
+        .attachNetworkEndpointsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to attachNetworkEndpoints. */
+  public OperationCallSettings<
+          AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationSettings() {
+    return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings())
+        .attachNetworkEndpointsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation> deleteSettings() {
     return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings()).deleteSettings();
@@ -86,6 +101,21 @@ public class RegionNetworkEndpointGroupsSettings
   public OperationCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
       deleteOperationSettings() {
     return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
+  public UnaryCallSettings<DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      detachNetworkEndpointsSettings() {
+    return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings())
+        .detachNetworkEndpointsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
+  public OperationCallSettings<
+          DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationSettings() {
+    return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings())
+        .detachNetworkEndpointsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -110,6 +140,16 @@ public class RegionNetworkEndpointGroupsSettings
           ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
       listSettings() {
     return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNetworkEndpoints. */
+  public PagedCallSettings<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsSettings() {
+    return ((RegionNetworkEndpointGroupsStubSettings) getStubSettings())
+        .listNetworkEndpointsSettings();
   }
 
   public static final RegionNetworkEndpointGroupsSettings create(
@@ -147,7 +187,6 @@ public class RegionNetworkEndpointGroupsSettings
     return RegionNetworkEndpointGroupsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return RegionNetworkEndpointGroupsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -211,6 +250,20 @@ public class RegionNetworkEndpointGroupsSettings
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
+    public UnaryCallSettings.Builder<
+            AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+        attachNetworkEndpointsSettings() {
+      return getStubSettingsBuilder().attachNetworkEndpointsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
+    public OperationCallSettings.Builder<
+            AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+        attachNetworkEndpointsOperationSettings() {
+      return getStubSettingsBuilder().attachNetworkEndpointsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionNetworkEndpointGroupRequest, Operation>
         deleteSettings() {
@@ -222,6 +275,20 @@ public class RegionNetworkEndpointGroupsSettings
             DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
         deleteOperationSettings() {
       return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
+    public UnaryCallSettings.Builder<
+            DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+        detachNetworkEndpointsSettings() {
+      return getStubSettingsBuilder().detachNetworkEndpointsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
+    public OperationCallSettings.Builder<
+            DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+        detachNetworkEndpointsOperationSettings() {
+      return getStubSettingsBuilder().detachNetworkEndpointsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -248,6 +315,15 @@ public class RegionNetworkEndpointGroupsSettings
             ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNetworkEndpoints. */
+    public PagedCallSettings.Builder<
+            ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+            NetworkEndpointGroupsListNetworkEndpoints,
+            ListNetworkEndpointsPagedResponse>
+        listNetworkEndpointsSettings() {
+      return getStubSettingsBuilder().listNetworkEndpointsSettings();
     }
 
     @Override

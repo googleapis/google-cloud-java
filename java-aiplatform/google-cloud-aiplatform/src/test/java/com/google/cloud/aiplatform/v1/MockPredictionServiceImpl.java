@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,27 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
   }
 
   @Override
+  public void streamRawPredict(
+      StreamRawPredictRequest request, StreamObserver<HttpBody> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof HttpBody) {
+      requests.add(request);
+      responseObserver.onNext(((HttpBody) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamRawPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  HttpBody.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void directPredict(
       DirectPredictRequest request, StreamObserver<DirectPredictResponse> responseObserver) {
     Object response = responses.poll();
@@ -139,6 +160,80 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   DirectRawPredictResponse.class.getName(),
                   Exception.class.getName())));
     }
+  }
+
+  @Override
+  public StreamObserver<StreamDirectPredictRequest> streamDirectPredict(
+      final StreamObserver<StreamDirectPredictResponse> responseObserver) {
+    StreamObserver<StreamDirectPredictRequest> requestObserver =
+        new StreamObserver<StreamDirectPredictRequest>() {
+          @Override
+          public void onNext(StreamDirectPredictRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamDirectPredictResponse) {
+              responseObserver.onNext(((StreamDirectPredictResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamDirectPredict, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamDirectPredictResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
+  public StreamObserver<StreamDirectRawPredictRequest> streamDirectRawPredict(
+      final StreamObserver<StreamDirectRawPredictResponse> responseObserver) {
+    StreamObserver<StreamDirectRawPredictRequest> requestObserver =
+        new StreamObserver<StreamDirectRawPredictRequest>() {
+          @Override
+          public void onNext(StreamDirectRawPredictRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamDirectRawPredictResponse) {
+              responseObserver.onNext(((StreamDirectRawPredictResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamDirectRawPredict, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamDirectRawPredictResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
   }
 
   @Override
@@ -252,6 +347,48 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   "Unrecognized response type %s for method Explain, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExplainResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateContent(
+      GenerateContentRequest request, StreamObserver<GenerateContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateContentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void streamGenerateContent(
+      GenerateContentRequest request, StreamObserver<GenerateContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamGenerateContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateContentResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

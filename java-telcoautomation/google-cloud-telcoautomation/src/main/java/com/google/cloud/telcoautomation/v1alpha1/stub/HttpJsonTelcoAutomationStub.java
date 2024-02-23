@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,6 @@ import com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.Deployment;
@@ -606,41 +603,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionMethodDescriptor =
-          ApiMethodDescriptor.<DeleteBlueprintRevisionRequest, Blueprint>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/DeleteBlueprintRevision")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteBlueprintRevisionRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha1/{name=projects/*/locations/*/orchestrationClusters/*/blueprints/*}:deleteRevision",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteBlueprintRevisionRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteBlueprintRevisionRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Blueprint>newBuilder()
-                      .setDefaultInstance(Blueprint.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<ListBlueprintsRequest, ListBlueprintsResponse>
       listBlueprintsMethodDescriptor =
           ApiMethodDescriptor.<ListBlueprintsRequest, ListBlueprintsResponse>newBuilder()
@@ -1142,41 +1104,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<DeleteDeploymentRequest, Empty>
-      deleteDeploymentMethodDescriptor =
-          ApiMethodDescriptor.<DeleteDeploymentRequest, Empty>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/DeleteDeployment")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteDeploymentRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha1/{name=projects/*/locations/*/orchestrationClusters/*/deployments/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteDeploymentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteDeploymentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<RemoveDeploymentRequest, Empty>
       removeDeploymentMethodDescriptor =
           ApiMethodDescriptor.<RemoveDeploymentRequest, Empty>newBuilder()
@@ -1211,41 +1138,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
                       .setDefaultInstance(Empty.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionMethodDescriptor =
-          ApiMethodDescriptor.<DeleteDeploymentRevisionRequest, Deployment>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.telcoautomation.v1alpha1.TelcoAutomation/DeleteDeploymentRevision")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteDeploymentRevisionRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha1/{name=projects/*/locations/*/orchestrationClusters/*/deployments/*}:deleteRevision",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteDeploymentRevisionRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteDeploymentRevisionRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Deployment>newBuilder()
-                      .setDefaultInstance(Deployment.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1733,8 +1625,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
   private final UnaryCallable<UpdateBlueprintRequest, Blueprint> updateBlueprintCallable;
   private final UnaryCallable<GetBlueprintRequest, Blueprint> getBlueprintCallable;
   private final UnaryCallable<DeleteBlueprintRequest, Empty> deleteBlueprintCallable;
-  private final UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable;
   private final UnaryCallable<ListBlueprintsRequest, ListBlueprintsResponse> listBlueprintsCallable;
   private final UnaryCallable<ListBlueprintsRequest, ListBlueprintsPagedResponse>
       listBlueprintsPagedCallable;
@@ -1766,10 +1656,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
   private final UnaryCallable<CreateDeploymentRequest, Deployment> createDeploymentCallable;
   private final UnaryCallable<UpdateDeploymentRequest, Deployment> updateDeploymentCallable;
   private final UnaryCallable<GetDeploymentRequest, Deployment> getDeploymentCallable;
-  private final UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable;
   private final UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable;
-  private final UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable;
   private final UnaryCallable<ListDeploymentsRequest, ListDeploymentsResponse>
       listDeploymentsCallable;
   private final UnaryCallable<ListDeploymentsRequest, ListDeploymentsPagedResponse>
@@ -2006,18 +1893,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<DeleteBlueprintRevisionRequest, Blueprint>
-        deleteBlueprintRevisionTransportSettings =
-            HttpJsonCallSettings.<DeleteBlueprintRevisionRequest, Blueprint>newBuilder()
-                .setMethodDescriptor(deleteBlueprintRevisionMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<ListBlueprintsRequest, ListBlueprintsResponse>
         listBlueprintsTransportSettings =
             HttpJsonCallSettings.<ListBlueprintsRequest, ListBlueprintsResponse>newBuilder()
@@ -2173,17 +2048,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentTransportSettings =
-        HttpJsonCallSettings.<DeleteDeploymentRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteDeploymentMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
     HttpJsonCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentTransportSettings =
         HttpJsonCallSettings.<RemoveDeploymentRequest, Empty>newBuilder()
             .setMethodDescriptor(removeDeploymentMethodDescriptor)
@@ -2195,18 +2059,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<DeleteDeploymentRevisionRequest, Deployment>
-        deleteDeploymentRevisionTransportSettings =
-            HttpJsonCallSettings.<DeleteDeploymentRevisionRequest, Deployment>newBuilder()
-                .setMethodDescriptor(deleteDeploymentRevisionMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
             HttpJsonCallSettings.<ListDeploymentsRequest, ListDeploymentsResponse>newBuilder()
@@ -2432,11 +2284,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
     this.deleteBlueprintCallable =
         callableFactory.createUnaryCallable(
             deleteBlueprintTransportSettings, settings.deleteBlueprintSettings(), clientContext);
-    this.deleteBlueprintRevisionCallable =
-        callableFactory.createUnaryCallable(
-            deleteBlueprintRevisionTransportSettings,
-            settings.deleteBlueprintRevisionSettings(),
-            clientContext);
     this.listBlueprintsCallable =
         callableFactory.createUnaryCallable(
             listBlueprintsTransportSettings, settings.listBlueprintsSettings(), clientContext);
@@ -2511,17 +2358,9 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
     this.getDeploymentCallable =
         callableFactory.createUnaryCallable(
             getDeploymentTransportSettings, settings.getDeploymentSettings(), clientContext);
-    this.deleteDeploymentCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeploymentTransportSettings, settings.deleteDeploymentSettings(), clientContext);
     this.removeDeploymentCallable =
         callableFactory.createUnaryCallable(
             removeDeploymentTransportSettings, settings.removeDeploymentSettings(), clientContext);
-    this.deleteDeploymentRevisionCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeploymentRevisionTransportSettings,
-            settings.deleteDeploymentRevisionSettings(),
-            clientContext);
     this.listDeploymentsCallable =
         callableFactory.createUnaryCallable(
             listDeploymentsTransportSettings, settings.listDeploymentsSettings(), clientContext);
@@ -2610,7 +2449,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
     methodDescriptors.add(updateBlueprintMethodDescriptor);
     methodDescriptors.add(getBlueprintMethodDescriptor);
     methodDescriptors.add(deleteBlueprintMethodDescriptor);
-    methodDescriptors.add(deleteBlueprintRevisionMethodDescriptor);
     methodDescriptors.add(listBlueprintsMethodDescriptor);
     methodDescriptors.add(approveBlueprintMethodDescriptor);
     methodDescriptors.add(proposeBlueprintMethodDescriptor);
@@ -2624,9 +2462,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
     methodDescriptors.add(createDeploymentMethodDescriptor);
     methodDescriptors.add(updateDeploymentMethodDescriptor);
     methodDescriptors.add(getDeploymentMethodDescriptor);
-    methodDescriptors.add(deleteDeploymentMethodDescriptor);
     methodDescriptors.add(removeDeploymentMethodDescriptor);
-    methodDescriptors.add(deleteDeploymentRevisionMethodDescriptor);
     methodDescriptors.add(listDeploymentsMethodDescriptor);
     methodDescriptors.add(listDeploymentRevisionsMethodDescriptor);
     methodDescriptors.add(discardDeploymentChangesMethodDescriptor);
@@ -2747,12 +2583,6 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
   }
 
   @Override
-  public UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable() {
-    return deleteBlueprintRevisionCallable;
-  }
-
-  @Override
   public UnaryCallable<ListBlueprintsRequest, ListBlueprintsResponse> listBlueprintsCallable() {
     return listBlueprintsCallable;
   }
@@ -2853,19 +2683,8 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
   }
 
   @Override
-  public UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable() {
-    return deleteDeploymentCallable;
-  }
-
-  @Override
   public UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable() {
     return removeDeploymentCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable() {
-    return deleteDeploymentRevisionCallable;
   }
 
   @Override

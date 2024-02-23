@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AzureClient;
 import com.google.cloud.gkemulticloud.v1.AzureCluster;
+import com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AzureNodePool;
+import com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AzureServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest;
@@ -40,9 +42,13 @@ import com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAzureClientRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse;
@@ -163,6 +169,22 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .build();
 
   private static final MethodDescriptor<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenMethodDescriptor =
+          MethodDescriptor
+              .<GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AzureClusters/GenerateAzureClusterAgentToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateAzureClusterAgentTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateAzureClusterAgentTokenResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenMethodDescriptor =
           MethodDescriptor
@@ -227,6 +249,26 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigMethodDescriptor =
+          MethodDescriptor.<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gkemulticloud.v1.AzureClusters/GetAzureOpenIdConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAzureOpenIdConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AzureOpenIdConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysMethodDescriptor =
+          MethodDescriptor.<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gkemulticloud.v1.AzureClusters/GetAzureJsonWebKeys")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAzureJsonWebKeysRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AzureJsonWebKeys.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigMethodDescriptor =
           MethodDescriptor.<GetAzureServerConfigRequest, AzureServerConfig>newBuilder()
@@ -262,6 +304,9 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
   private final UnaryCallable<DeleteAzureClusterRequest, Operation> deleteAzureClusterCallable;
   private final OperationCallable<DeleteAzureClusterRequest, Empty, OperationMetadata>
       deleteAzureClusterOperationCallable;
+  private final UnaryCallable<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenCallable;
   private final UnaryCallable<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenCallable;
   private final UnaryCallable<CreateAzureNodePoolRequest, Operation> createAzureNodePoolCallable;
@@ -278,6 +323,10 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
   private final UnaryCallable<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolCallable;
   private final OperationCallable<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
       deleteAzureNodePoolOperationCallable;
+  private final UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigCallable;
+  private final UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysCallable;
   private final UnaryCallable<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigCallable;
 
@@ -416,6 +465,19 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentTokenTransportSettings =
+            GrpcCallSettings
+                .<GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateAzureClusterAgentTokenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenTransportSettings =
             GrpcCallSettings
@@ -480,6 +542,28 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+        getAzureOpenIdConfigTransportSettings =
+            GrpcCallSettings.<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>newBuilder()
+                .setMethodDescriptor(getAzureOpenIdConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+        getAzureJsonWebKeysTransportSettings =
+            GrpcCallSettings.<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>newBuilder()
+                .setMethodDescriptor(getAzureJsonWebKeysMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigTransportSettings =
             GrpcCallSettings.<GetAzureServerConfigRequest, AzureServerConfig>newBuilder()
@@ -569,6 +653,11 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             settings.deleteAzureClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.generateAzureClusterAgentTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateAzureClusterAgentTokenTransportSettings,
+            settings.generateAzureClusterAgentTokenSettings(),
+            clientContext);
     this.generateAzureAccessTokenCallable =
         callableFactory.createUnaryCallable(
             generateAzureAccessTokenTransportSettings,
@@ -620,6 +709,16 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
             settings.deleteAzureNodePoolOperationSettings(),
             clientContext,
             operationsStub);
+    this.getAzureOpenIdConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAzureOpenIdConfigTransportSettings,
+            settings.getAzureOpenIdConfigSettings(),
+            clientContext);
+    this.getAzureJsonWebKeysCallable =
+        callableFactory.createUnaryCallable(
+            getAzureJsonWebKeysTransportSettings,
+            settings.getAzureJsonWebKeysSettings(),
+            clientContext);
     this.getAzureServerConfigCallable =
         callableFactory.createUnaryCallable(
             getAzureServerConfigTransportSettings,
@@ -724,6 +823,13 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
   }
 
   @Override
+  public UnaryCallable<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenCallable() {
+    return generateAzureClusterAgentTokenCallable;
+  }
+
+  @Override
   public UnaryCallable<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenCallable() {
     return generateAzureAccessTokenCallable;
@@ -777,6 +883,17 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
   public OperationCallable<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
       deleteAzureNodePoolOperationCallable() {
     return deleteAzureNodePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigCallable() {
+    return getAzureOpenIdConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys> getAzureJsonWebKeysCallable() {
+    return getAzureJsonWebKeysCallable;
   }
 
   @Override

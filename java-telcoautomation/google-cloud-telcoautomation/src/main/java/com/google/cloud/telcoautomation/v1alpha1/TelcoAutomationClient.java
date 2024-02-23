@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,19 +70,738 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOrchestrationClusters</td>
+ *      <td><p> Lists OrchestrationClusters in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOrchestrationClusters(ListOrchestrationClustersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOrchestrationClusters(LocationName parent)
+ *           <li><p> listOrchestrationClusters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOrchestrationClustersPagedCallable()
+ *           <li><p> listOrchestrationClustersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOrchestrationCluster</td>
+ *      <td><p> Gets details of a single OrchestrationCluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOrchestrationCluster(GetOrchestrationClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getOrchestrationCluster(OrchestrationClusterName name)
+ *           <li><p> getOrchestrationCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOrchestrationClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateOrchestrationCluster</td>
+ *      <td><p> Creates a new OrchestrationCluster in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createOrchestrationClusterAsync(CreateOrchestrationClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createOrchestrationClusterAsync(LocationName parent, OrchestrationCluster orchestrationCluster, String orchestrationClusterId)
+ *           <li><p> createOrchestrationClusterAsync(String parent, OrchestrationCluster orchestrationCluster, String orchestrationClusterId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createOrchestrationClusterOperationCallable()
+ *           <li><p> createOrchestrationClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteOrchestrationCluster</td>
+ *      <td><p> Deletes a single OrchestrationCluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteOrchestrationClusterAsync(DeleteOrchestrationClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteOrchestrationClusterAsync(OrchestrationClusterName name)
+ *           <li><p> deleteOrchestrationClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOrchestrationClusterOperationCallable()
+ *           <li><p> deleteOrchestrationClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListEdgeSlms</td>
+ *      <td><p> Lists EdgeSlms in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listEdgeSlms(ListEdgeSlmsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listEdgeSlms(LocationName parent)
+ *           <li><p> listEdgeSlms(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listEdgeSlmsPagedCallable()
+ *           <li><p> listEdgeSlmsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEdgeSlm</td>
+ *      <td><p> Gets details of a single EdgeSlm.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEdgeSlm(GetEdgeSlmRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEdgeSlm(EdgeSlmName name)
+ *           <li><p> getEdgeSlm(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEdgeSlmCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateEdgeSlm</td>
+ *      <td><p> Creates a new EdgeSlm in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createEdgeSlmAsync(CreateEdgeSlmRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createEdgeSlmAsync(LocationName parent, EdgeSlm edgeSlm, String edgeSlmId)
+ *           <li><p> createEdgeSlmAsync(String parent, EdgeSlm edgeSlm, String edgeSlmId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createEdgeSlmOperationCallable()
+ *           <li><p> createEdgeSlmCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteEdgeSlm</td>
+ *      <td><p> Deletes a single EdgeSlm.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteEdgeSlmAsync(DeleteEdgeSlmRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteEdgeSlmAsync(EdgeSlmName name)
+ *           <li><p> deleteEdgeSlmAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteEdgeSlmOperationCallable()
+ *           <li><p> deleteEdgeSlmCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBlueprint</td>
+ *      <td><p> Creates a blueprint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBlueprint(CreateBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createBlueprint(OrchestrationClusterName parent, Blueprint blueprint, String blueprintId)
+ *           <li><p> createBlueprint(String parent, Blueprint blueprint, String blueprintId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBlueprint</td>
+ *      <td><p> Updates a blueprint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBlueprint(UpdateBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateBlueprint(Blueprint blueprint, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBlueprint</td>
+ *      <td><p> Returns the requested blueprint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBlueprint(GetBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBlueprint(BlueprintName name)
+ *           <li><p> getBlueprint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBlueprint</td>
+ *      <td><p> Deletes a blueprint and all its revisions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBlueprint(DeleteBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteBlueprint(BlueprintName name)
+ *           <li><p> deleteBlueprint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBlueprints</td>
+ *      <td><p> List all blueprints.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBlueprints(ListBlueprintsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBlueprints(OrchestrationClusterName parent)
+ *           <li><p> listBlueprints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBlueprintsPagedCallable()
+ *           <li><p> listBlueprintsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ApproveBlueprint</td>
+ *      <td><p> Approves a blueprint and commits a new revision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> approveBlueprint(ApproveBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> approveBlueprint(BlueprintName name)
+ *           <li><p> approveBlueprint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> approveBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ProposeBlueprint</td>
+ *      <td><p> Proposes a blueprint for approval of changes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> proposeBlueprint(ProposeBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> proposeBlueprint(BlueprintName name)
+ *           <li><p> proposeBlueprint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> proposeBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RejectBlueprint</td>
+ *      <td><p> Rejects a blueprint revision proposal and flips it back to Draft state.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rejectBlueprint(RejectBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> rejectBlueprint(BlueprintName name)
+ *           <li><p> rejectBlueprint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rejectBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBlueprintRevisions</td>
+ *      <td><p> List blueprint revisions of a given blueprint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBlueprintRevisions(ListBlueprintRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBlueprintRevisions(BlueprintName name)
+ *           <li><p> listBlueprintRevisions(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBlueprintRevisionsPagedCallable()
+ *           <li><p> listBlueprintRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchBlueprintRevisions</td>
+ *      <td><p> Searches across blueprint revisions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchBlueprintRevisions(SearchBlueprintRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchBlueprintRevisions(OrchestrationClusterName parent, String query)
+ *           <li><p> searchBlueprintRevisions(String parent, String query)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchBlueprintRevisionsPagedCallable()
+ *           <li><p> searchBlueprintRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchDeploymentRevisions</td>
+ *      <td><p> Searches across deployment revisions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchDeploymentRevisions(SearchDeploymentRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchDeploymentRevisions(OrchestrationClusterName parent, String query)
+ *           <li><p> searchDeploymentRevisions(String parent, String query)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchDeploymentRevisionsPagedCallable()
+ *           <li><p> searchDeploymentRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DiscardBlueprintChanges</td>
+ *      <td><p> Discards the changes in a blueprint and reverts the blueprint to the last approved blueprint revision. No changes take place if a blueprint does not have revisions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> discardBlueprintChanges(DiscardBlueprintChangesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> discardBlueprintChanges(BlueprintName name)
+ *           <li><p> discardBlueprintChanges(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> discardBlueprintChangesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPublicBlueprints</td>
+ *      <td><p> Lists the blueprints in TNA's public catalog. Default page size = 20, Max Page Size = 100.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPublicBlueprints(ListPublicBlueprintsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPublicBlueprints(LocationName parent)
+ *           <li><p> listPublicBlueprints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPublicBlueprintsPagedCallable()
+ *           <li><p> listPublicBlueprintsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPublicBlueprint</td>
+ *      <td><p> Returns the requested public blueprint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPublicBlueprint(GetPublicBlueprintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPublicBlueprint(PublicBlueprintName name)
+ *           <li><p> getPublicBlueprint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPublicBlueprintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDeployment</td>
+ *      <td><p> Creates a deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDeployment(CreateDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDeployment(OrchestrationClusterName parent, Deployment deployment, String deploymentId)
+ *           <li><p> createDeployment(String parent, Deployment deployment, String deploymentId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDeployment</td>
+ *      <td><p> Updates a deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDeployment(UpdateDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDeployment(Deployment deployment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDeployment</td>
+ *      <td><p> Returns the requested deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeployment(GetDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeployment(DeploymentName name)
+ *           <li><p> getDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveDeployment</td>
+ *      <td><p> Removes the deployment by marking it as DELETING. Post which deployment and it's revisions gets deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeDeployment(RemoveDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> removeDeployment(DeploymentName name)
+ *           <li><p> removeDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeployments</td>
+ *      <td><p> List all deployments.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeployments(ListDeploymentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeployments(OrchestrationClusterName parent)
+ *           <li><p> listDeployments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentsPagedCallable()
+ *           <li><p> listDeploymentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeploymentRevisions</td>
+ *      <td><p> List deployment revisions of a given deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeploymentRevisions(ListDeploymentRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeploymentRevisions(DeploymentName name)
+ *           <li><p> listDeploymentRevisions(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentRevisionsPagedCallable()
+ *           <li><p> listDeploymentRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DiscardDeploymentChanges</td>
+ *      <td><p> Discards the changes in a deployment and reverts the deployment to the last approved deployment revision. No changes take place if a deployment does not have revisions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> discardDeploymentChanges(DiscardDeploymentChangesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> discardDeploymentChanges(DeploymentName name)
+ *           <li><p> discardDeploymentChanges(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> discardDeploymentChangesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ApplyDeployment</td>
+ *      <td><p> Applies the deployment's YAML files to the parent orchestration cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> applyDeployment(ApplyDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> applyDeployment(DeploymentName name)
+ *           <li><p> applyDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> applyDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ComputeDeploymentStatus</td>
+ *      <td><p> Returns the requested deployment status.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> computeDeploymentStatus(ComputeDeploymentStatusRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> computeDeploymentStatus(DeploymentName name)
+ *           <li><p> computeDeploymentStatus(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> computeDeploymentStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RollbackDeployment</td>
+ *      <td><p> Rollback the active deployment to the given past approved deployment revision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rollbackDeployment(RollbackDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> rollbackDeployment(DeploymentName name, String revisionId)
+ *           <li><p> rollbackDeployment(String name, String revisionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rollbackDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHydratedDeployment</td>
+ *      <td><p> Returns the requested hydrated deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHydratedDeployment(GetHydratedDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHydratedDeployment(HydratedDeploymentName name)
+ *           <li><p> getHydratedDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHydratedDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHydratedDeployments</td>
+ *      <td><p> List all hydrated deployments present under a deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHydratedDeployments(ListHydratedDeploymentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHydratedDeployments(DeploymentName parent)
+ *           <li><p> listHydratedDeployments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHydratedDeploymentsPagedCallable()
+ *           <li><p> listHydratedDeploymentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateHydratedDeployment</td>
+ *      <td><p> Updates a hydrated deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateHydratedDeployment(UpdateHydratedDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateHydratedDeployment(HydratedDeployment hydratedDeployment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateHydratedDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ApplyHydratedDeployment</td>
+ *      <td><p> Applies a hydrated deployment to a workload cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> applyHydratedDeployment(ApplyHydratedDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> applyHydratedDeployment(HydratedDeploymentName name)
+ *           <li><p> applyHydratedDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> applyHydratedDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1922,69 +2641,6 @@ public class TelcoAutomationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified revision of the blueprint.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteBlueprintRevisionRequest request =
-   *       DeleteBlueprintRevisionRequest.newBuilder()
-   *           .setName(
-   *               BlueprintName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-   *                   .toString())
-   *           .build();
-   *   Blueprint response = telcoAutomationClient.deleteBlueprintRevision(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Blueprint deleteBlueprintRevision(DeleteBlueprintRevisionRequest request) {
-    return deleteBlueprintRevisionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified revision of the blueprint.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteBlueprintRevisionRequest request =
-   *       DeleteBlueprintRevisionRequest.newBuilder()
-   *           .setName(
-   *               BlueprintName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[BLUEPRINT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Blueprint> future =
-   *       telcoAutomationClient.deleteBlueprintRevisionCallable().futureCall(request);
-   *   // Do something.
-   *   Blueprint response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionCallable() {
-    return stub.deleteBlueprintRevisionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * List all blueprints.
    *
    * <p>Sample code:
@@ -2721,9 +3377,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all blueprints. 2.
-   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of blueprint with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of blueprint with name &lt;name&gt;
+   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name={name}" : Lists all
+   *     revisions of blueprint with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of blueprint with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchBlueprintRevisionsPagedResponse searchBlueprintRevisions(
@@ -2763,9 +3419,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all blueprints. 2.
-   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of blueprint with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of blueprint with name &lt;name&gt;
+   *     "latest=true" : Lists latest revisions across all blueprints. 3. "name={name}" : Lists all
+   *     revisions of blueprint with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of blueprint with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchBlueprintRevisionsPagedResponse searchBlueprintRevisions(
@@ -2917,9 +3573,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all deployments.
-   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of deployment with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of deployment with name &lt;name&gt;
+   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name={name}" : Lists
+   *     all revisions of deployment with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of deployment with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchDeploymentRevisionsPagedResponse searchDeploymentRevisions(
@@ -2959,9 +3615,9 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The name of parent orchestration cluster resource. Format should be -
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @param query Required. Supported queries: 1. "" : Lists all revisions across all deployments.
-   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name=&lt;name&gt;" :
-   *     Lists all revisions of deployment with name &lt;name&gt;. 4. "name=&lt;name&gt;
-   *     latest=true": Lists latest revision of deployment with name &lt;name&gt;
+   *     2. "latest=true" : Lists latest revisions across all deployments. 3. "name={name}" : Lists
+   *     all revisions of deployment with name {name}. 4. "name={name} latest=true": Lists latest
+   *     revision of deployment with name {name}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchDeploymentRevisionsPagedResponse searchDeploymentRevisions(
@@ -3868,124 +4524,6 @@ public class TelcoAutomationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeploymentName name =
-   *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]");
-   *   telcoAutomationClient.deleteDeployment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of deployment to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeployment(DeploymentName name) {
-    DeleteDeploymentRequest request =
-        DeleteDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteDeployment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   String name =
-   *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *           .toString();
-   *   telcoAutomationClient.deleteDeployment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of deployment to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeployment(String name) {
-    DeleteDeploymentRequest request = DeleteDeploymentRequest.newBuilder().setName(name).build();
-    deleteDeployment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRequest request =
-   *       DeleteDeploymentRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   telcoAutomationClient.deleteDeployment(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeployment(DeleteDeploymentRequest request) {
-    deleteDeploymentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a deployment and all its revisions.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRequest request =
-   *       DeleteDeploymentRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       telcoAutomationClient.deleteDeploymentCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable() {
-    return stub.deleteDeploymentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Removes the deployment by marking it as DELETING. Post which deployment and it's revisions gets
    * deleted.
    *
@@ -4104,69 +4642,6 @@ public class TelcoAutomationClient implements BackgroundResource {
    */
   public final UnaryCallable<RemoveDeploymentRequest, Empty> removeDeploymentCallable() {
     return stub.removeDeploymentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified revision of the deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRevisionRequest request =
-   *       DeleteDeploymentRevisionRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   Deployment response = telcoAutomationClient.deleteDeploymentRevision(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Deployment deleteDeploymentRevision(DeleteDeploymentRevisionRequest request) {
-    return deleteDeploymentRevisionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes the specified revision of the deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (TelcoAutomationClient telcoAutomationClient = TelcoAutomationClient.create()) {
-   *   DeleteDeploymentRevisionRequest request =
-   *       DeleteDeploymentRevisionRequest.newBuilder()
-   *           .setName(
-   *               DeploymentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[ORCHESTRATION_CLUSTER]", "[DEPLOYMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Deployment> future =
-   *       telcoAutomationClient.deleteDeploymentRevisionCallable().futureCall(request);
-   *   // Do something.
-   *   Deployment response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionCallable() {
-    return stub.deleteDeploymentRevisionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4794,7 +5269,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the deployment.
+   * @param name Required. The name of the deployment without revisionID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeDeploymentStatusResponse computeDeploymentStatus(DeploymentName name) {
@@ -4826,7 +5301,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the deployment.
+   * @param name Required. The name of the deployment without revisionID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeDeploymentStatusResponse computeDeploymentStatus(String name) {

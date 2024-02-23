@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -548,7 +548,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Resumes the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -717,7 +717,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Resumes the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -853,7 +853,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Resumes the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -988,7 +988,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Resumes the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */

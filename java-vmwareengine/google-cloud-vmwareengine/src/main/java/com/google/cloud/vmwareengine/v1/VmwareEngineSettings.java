@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,19 @@
 
 package com.google.cloud.vmwareengine.v1;
 
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.FetchNetworkPolicyExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListClustersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAccessRulesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListExternalAddressesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListHcxActivationKeysPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLoggingServersPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListManagementDnsZoneBindingsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPeeringsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
@@ -195,6 +203,78 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
     return ((VmwareEngineStubSettings) getStubSettings()).deleteClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to listNodes. */
+  public PagedCallSettings<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+      listNodesSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listNodesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNode. */
+  public UnaryCallSettings<GetNodeRequest, Node> getNodeSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getNodeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExternalAddresses. */
+  public PagedCallSettings<
+          ListExternalAddressesRequest,
+          ListExternalAddressesResponse,
+          ListExternalAddressesPagedResponse>
+      listExternalAddressesSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listExternalAddressesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchNetworkPolicyExternalAddresses. */
+  public PagedCallSettings<
+          FetchNetworkPolicyExternalAddressesRequest,
+          FetchNetworkPolicyExternalAddressesResponse,
+          FetchNetworkPolicyExternalAddressesPagedResponse>
+      fetchNetworkPolicyExternalAddressesSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .fetchNetworkPolicyExternalAddressesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getExternalAddress. */
+  public UnaryCallSettings<GetExternalAddressRequest, ExternalAddress>
+      getExternalAddressSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getExternalAddressSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExternalAddress. */
+  public UnaryCallSettings<CreateExternalAddressRequest, Operation>
+      createExternalAddressSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createExternalAddressSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExternalAddress. */
+  public OperationCallSettings<CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      createExternalAddressOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createExternalAddressOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExternalAddress. */
+  public UnaryCallSettings<UpdateExternalAddressRequest, Operation>
+      updateExternalAddressSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateExternalAddressSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExternalAddress. */
+  public OperationCallSettings<UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
+      updateExternalAddressOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateExternalAddressOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExternalAddress. */
+  public UnaryCallSettings<DeleteExternalAddressRequest, Operation>
+      deleteExternalAddressSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteExternalAddressSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExternalAddress. */
+  public OperationCallSettings<DeleteExternalAddressRequest, Empty, OperationMetadata>
+      deleteExternalAddressOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteExternalAddressOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSubnets. */
   public PagedCallSettings<ListSubnetsRequest, ListSubnetsResponse, ListSubnetsPagedResponse>
       listSubnetsSettings() {
@@ -215,6 +295,107 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
   public OperationCallSettings<UpdateSubnetRequest, Subnet, OperationMetadata>
       updateSubnetOperationSettings() {
     return ((VmwareEngineStubSettings) getStubSettings()).updateSubnetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExternalAccessRules. */
+  public PagedCallSettings<
+          ListExternalAccessRulesRequest,
+          ListExternalAccessRulesResponse,
+          ListExternalAccessRulesPagedResponse>
+      listExternalAccessRulesSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listExternalAccessRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getExternalAccessRule. */
+  public UnaryCallSettings<GetExternalAccessRuleRequest, ExternalAccessRule>
+      getExternalAccessRuleSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getExternalAccessRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExternalAccessRule. */
+  public UnaryCallSettings<CreateExternalAccessRuleRequest, Operation>
+      createExternalAccessRuleSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createExternalAccessRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExternalAccessRule. */
+  public OperationCallSettings<
+          CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      createExternalAccessRuleOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .createExternalAccessRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExternalAccessRule. */
+  public UnaryCallSettings<UpdateExternalAccessRuleRequest, Operation>
+      updateExternalAccessRuleSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateExternalAccessRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExternalAccessRule. */
+  public OperationCallSettings<
+          UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+      updateExternalAccessRuleOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .updateExternalAccessRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExternalAccessRule. */
+  public UnaryCallSettings<DeleteExternalAccessRuleRequest, Operation>
+      deleteExternalAccessRuleSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteExternalAccessRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExternalAccessRule. */
+  public OperationCallSettings<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
+      deleteExternalAccessRuleOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .deleteExternalAccessRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLoggingServers. */
+  public PagedCallSettings<
+          ListLoggingServersRequest, ListLoggingServersResponse, ListLoggingServersPagedResponse>
+      listLoggingServersSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listLoggingServersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLoggingServer. */
+  public UnaryCallSettings<GetLoggingServerRequest, LoggingServer> getLoggingServerSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getLoggingServerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLoggingServer. */
+  public UnaryCallSettings<CreateLoggingServerRequest, Operation> createLoggingServerSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createLoggingServerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLoggingServer. */
+  public OperationCallSettings<CreateLoggingServerRequest, LoggingServer, OperationMetadata>
+      createLoggingServerOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createLoggingServerOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLoggingServer. */
+  public UnaryCallSettings<UpdateLoggingServerRequest, Operation> updateLoggingServerSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateLoggingServerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLoggingServer. */
+  public OperationCallSettings<UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
+      updateLoggingServerOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateLoggingServerOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLoggingServer. */
+  public UnaryCallSettings<DeleteLoggingServerRequest, Operation> deleteLoggingServerSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteLoggingServerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLoggingServer. */
+  public OperationCallSettings<DeleteLoggingServerRequest, Empty, OperationMetadata>
+      deleteLoggingServerOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteLoggingServerOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listNodeTypes. */
@@ -261,6 +442,74 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
       resetVcenterCredentialsOperationSettings() {
     return ((VmwareEngineStubSettings) getStubSettings())
         .resetVcenterCredentialsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDnsForwarding. */
+  public UnaryCallSettings<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getDnsForwardingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDnsForwarding. */
+  public UnaryCallSettings<UpdateDnsForwardingRequest, Operation> updateDnsForwardingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateDnsForwardingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDnsForwarding. */
+  public OperationCallSettings<UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
+      updateDnsForwardingOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateDnsForwardingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNetworkPeering. */
+  public UnaryCallSettings<GetNetworkPeeringRequest, NetworkPeering> getNetworkPeeringSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getNetworkPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNetworkPeerings. */
+  public PagedCallSettings<
+          ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, ListNetworkPeeringsPagedResponse>
+      listNetworkPeeringsSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listNetworkPeeringsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNetworkPeering. */
+  public UnaryCallSettings<CreateNetworkPeeringRequest, Operation> createNetworkPeeringSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createNetworkPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNetworkPeering. */
+  public OperationCallSettings<CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      createNetworkPeeringOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createNetworkPeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkPeering. */
+  public UnaryCallSettings<DeleteNetworkPeeringRequest, Operation> deleteNetworkPeeringSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteNetworkPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkPeering. */
+  public OperationCallSettings<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
+      deleteNetworkPeeringOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteNetworkPeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNetworkPeering. */
+  public UnaryCallSettings<UpdateNetworkPeeringRequest, Operation> updateNetworkPeeringSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateNetworkPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNetworkPeering. */
+  public OperationCallSettings<UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+      updateNetworkPeeringOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateNetworkPeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPeeringRoutes. */
+  public PagedCallSettings<
+          ListPeeringRoutesRequest, ListPeeringRoutesResponse, ListPeeringRoutesPagedResponse>
+      listPeeringRoutesSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listPeeringRoutesSettings();
   }
 
   /** Returns the object with the settings used for calls to createHcxActivationKey. */
@@ -333,6 +582,76 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
   public OperationCallSettings<DeleteNetworkPolicyRequest, Empty, OperationMetadata>
       deleteNetworkPolicyOperationSettings() {
     return ((VmwareEngineStubSettings) getStubSettings()).deleteNetworkPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listManagementDnsZoneBindings. */
+  public PagedCallSettings<
+          ListManagementDnsZoneBindingsRequest,
+          ListManagementDnsZoneBindingsResponse,
+          ListManagementDnsZoneBindingsPagedResponse>
+      listManagementDnsZoneBindingsSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listManagementDnsZoneBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getManagementDnsZoneBinding. */
+  public UnaryCallSettings<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+      getManagementDnsZoneBindingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getManagementDnsZoneBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createManagementDnsZoneBinding. */
+  public UnaryCallSettings<CreateManagementDnsZoneBindingRequest, Operation>
+      createManagementDnsZoneBindingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createManagementDnsZoneBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createManagementDnsZoneBinding. */
+  public OperationCallSettings<
+          CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      createManagementDnsZoneBindingOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .createManagementDnsZoneBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateManagementDnsZoneBinding. */
+  public UnaryCallSettings<UpdateManagementDnsZoneBindingRequest, Operation>
+      updateManagementDnsZoneBindingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateManagementDnsZoneBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateManagementDnsZoneBinding. */
+  public OperationCallSettings<
+          UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      updateManagementDnsZoneBindingOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .updateManagementDnsZoneBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteManagementDnsZoneBinding. */
+  public UnaryCallSettings<DeleteManagementDnsZoneBindingRequest, Operation>
+      deleteManagementDnsZoneBindingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deleteManagementDnsZoneBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteManagementDnsZoneBinding. */
+  public OperationCallSettings<DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
+      deleteManagementDnsZoneBindingOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .deleteManagementDnsZoneBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repairManagementDnsZoneBinding. */
+  public UnaryCallSettings<RepairManagementDnsZoneBindingRequest, Operation>
+      repairManagementDnsZoneBindingSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).repairManagementDnsZoneBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repairManagementDnsZoneBinding. */
+  public OperationCallSettings<
+          RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+      repairManagementDnsZoneBindingOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .repairManagementDnsZoneBindingOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createVmwareEngineNetwork. */
@@ -455,6 +774,37 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
         .listPrivateConnectionPeeringRoutesSettings();
   }
 
+  /** Returns the object with the settings used for calls to grantDnsBindPermission. */
+  public UnaryCallSettings<GrantDnsBindPermissionRequest, Operation>
+      grantDnsBindPermissionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).grantDnsBindPermissionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to grantDnsBindPermission. */
+  public OperationCallSettings<GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      grantDnsBindPermissionOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).grantDnsBindPermissionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDnsBindPermission. */
+  public UnaryCallSettings<GetDnsBindPermissionRequest, DnsBindPermission>
+      getDnsBindPermissionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getDnsBindPermissionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to revokeDnsBindPermission. */
+  public UnaryCallSettings<RevokeDnsBindPermissionRequest, Operation>
+      revokeDnsBindPermissionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).revokeDnsBindPermissionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to revokeDnsBindPermission. */
+  public OperationCallSettings<RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+      revokeDnsBindPermissionOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .revokeDnsBindPermissionOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -523,7 +873,6 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
     return VmwareEngineStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return VmwareEngineStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -704,6 +1053,81 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
       return getStubSettingsBuilder().deleteClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listNodes. */
+    public PagedCallSettings.Builder<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+        listNodesSettings() {
+      return getStubSettingsBuilder().listNodesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNode. */
+    public UnaryCallSettings.Builder<GetNodeRequest, Node> getNodeSettings() {
+      return getStubSettingsBuilder().getNodeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExternalAddresses. */
+    public PagedCallSettings.Builder<
+            ListExternalAddressesRequest,
+            ListExternalAddressesResponse,
+            ListExternalAddressesPagedResponse>
+        listExternalAddressesSettings() {
+      return getStubSettingsBuilder().listExternalAddressesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to fetchNetworkPolicyExternalAddresses.
+     */
+    public PagedCallSettings.Builder<
+            FetchNetworkPolicyExternalAddressesRequest,
+            FetchNetworkPolicyExternalAddressesResponse,
+            FetchNetworkPolicyExternalAddressesPagedResponse>
+        fetchNetworkPolicyExternalAddressesSettings() {
+      return getStubSettingsBuilder().fetchNetworkPolicyExternalAddressesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getExternalAddress. */
+    public UnaryCallSettings.Builder<GetExternalAddressRequest, ExternalAddress>
+        getExternalAddressSettings() {
+      return getStubSettingsBuilder().getExternalAddressSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExternalAddress. */
+    public UnaryCallSettings.Builder<CreateExternalAddressRequest, Operation>
+        createExternalAddressSettings() {
+      return getStubSettingsBuilder().createExternalAddressSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExternalAddress. */
+    public OperationCallSettings.Builder<
+            CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
+        createExternalAddressOperationSettings() {
+      return getStubSettingsBuilder().createExternalAddressOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExternalAddress. */
+    public UnaryCallSettings.Builder<UpdateExternalAddressRequest, Operation>
+        updateExternalAddressSettings() {
+      return getStubSettingsBuilder().updateExternalAddressSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExternalAddress. */
+    public OperationCallSettings.Builder<
+            UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
+        updateExternalAddressOperationSettings() {
+      return getStubSettingsBuilder().updateExternalAddressOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExternalAddress. */
+    public UnaryCallSettings.Builder<DeleteExternalAddressRequest, Operation>
+        deleteExternalAddressSettings() {
+      return getStubSettingsBuilder().deleteExternalAddressSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExternalAddress. */
+    public OperationCallSettings.Builder<DeleteExternalAddressRequest, Empty, OperationMetadata>
+        deleteExternalAddressOperationSettings() {
+      return getStubSettingsBuilder().deleteExternalAddressOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSubnets. */
     public PagedCallSettings.Builder<
             ListSubnetsRequest, ListSubnetsResponse, ListSubnetsPagedResponse>
@@ -725,6 +1149,110 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
     public OperationCallSettings.Builder<UpdateSubnetRequest, Subnet, OperationMetadata>
         updateSubnetOperationSettings() {
       return getStubSettingsBuilder().updateSubnetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExternalAccessRules. */
+    public PagedCallSettings.Builder<
+            ListExternalAccessRulesRequest,
+            ListExternalAccessRulesResponse,
+            ListExternalAccessRulesPagedResponse>
+        listExternalAccessRulesSettings() {
+      return getStubSettingsBuilder().listExternalAccessRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getExternalAccessRule. */
+    public UnaryCallSettings.Builder<GetExternalAccessRuleRequest, ExternalAccessRule>
+        getExternalAccessRuleSettings() {
+      return getStubSettingsBuilder().getExternalAccessRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExternalAccessRule. */
+    public UnaryCallSettings.Builder<CreateExternalAccessRuleRequest, Operation>
+        createExternalAccessRuleSettings() {
+      return getStubSettingsBuilder().createExternalAccessRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExternalAccessRule. */
+    public OperationCallSettings.Builder<
+            CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+        createExternalAccessRuleOperationSettings() {
+      return getStubSettingsBuilder().createExternalAccessRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExternalAccessRule. */
+    public UnaryCallSettings.Builder<UpdateExternalAccessRuleRequest, Operation>
+        updateExternalAccessRuleSettings() {
+      return getStubSettingsBuilder().updateExternalAccessRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExternalAccessRule. */
+    public OperationCallSettings.Builder<
+            UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
+        updateExternalAccessRuleOperationSettings() {
+      return getStubSettingsBuilder().updateExternalAccessRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExternalAccessRule. */
+    public UnaryCallSettings.Builder<DeleteExternalAccessRuleRequest, Operation>
+        deleteExternalAccessRuleSettings() {
+      return getStubSettingsBuilder().deleteExternalAccessRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExternalAccessRule. */
+    public OperationCallSettings.Builder<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
+        deleteExternalAccessRuleOperationSettings() {
+      return getStubSettingsBuilder().deleteExternalAccessRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLoggingServers. */
+    public PagedCallSettings.Builder<
+            ListLoggingServersRequest, ListLoggingServersResponse, ListLoggingServersPagedResponse>
+        listLoggingServersSettings() {
+      return getStubSettingsBuilder().listLoggingServersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLoggingServer. */
+    public UnaryCallSettings.Builder<GetLoggingServerRequest, LoggingServer>
+        getLoggingServerSettings() {
+      return getStubSettingsBuilder().getLoggingServerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLoggingServer. */
+    public UnaryCallSettings.Builder<CreateLoggingServerRequest, Operation>
+        createLoggingServerSettings() {
+      return getStubSettingsBuilder().createLoggingServerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLoggingServer. */
+    public OperationCallSettings.Builder<
+            CreateLoggingServerRequest, LoggingServer, OperationMetadata>
+        createLoggingServerOperationSettings() {
+      return getStubSettingsBuilder().createLoggingServerOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLoggingServer. */
+    public UnaryCallSettings.Builder<UpdateLoggingServerRequest, Operation>
+        updateLoggingServerSettings() {
+      return getStubSettingsBuilder().updateLoggingServerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLoggingServer. */
+    public OperationCallSettings.Builder<
+            UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
+        updateLoggingServerOperationSettings() {
+      return getStubSettingsBuilder().updateLoggingServerOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLoggingServer. */
+    public UnaryCallSettings.Builder<DeleteLoggingServerRequest, Operation>
+        deleteLoggingServerSettings() {
+      return getStubSettingsBuilder().deleteLoggingServerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLoggingServer. */
+    public OperationCallSettings.Builder<DeleteLoggingServerRequest, Empty, OperationMetadata>
+        deleteLoggingServerOperationSettings() {
+      return getStubSettingsBuilder().deleteLoggingServerOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listNodeTypes. */
@@ -775,6 +1303,85 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
             ResetVcenterCredentialsRequest, PrivateCloud, OperationMetadata>
         resetVcenterCredentialsOperationSettings() {
       return getStubSettingsBuilder().resetVcenterCredentialsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDnsForwarding. */
+    public UnaryCallSettings.Builder<GetDnsForwardingRequest, DnsForwarding>
+        getDnsForwardingSettings() {
+      return getStubSettingsBuilder().getDnsForwardingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDnsForwarding. */
+    public UnaryCallSettings.Builder<UpdateDnsForwardingRequest, Operation>
+        updateDnsForwardingSettings() {
+      return getStubSettingsBuilder().updateDnsForwardingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDnsForwarding. */
+    public OperationCallSettings.Builder<
+            UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
+        updateDnsForwardingOperationSettings() {
+      return getStubSettingsBuilder().updateDnsForwardingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNetworkPeering. */
+    public UnaryCallSettings.Builder<GetNetworkPeeringRequest, NetworkPeering>
+        getNetworkPeeringSettings() {
+      return getStubSettingsBuilder().getNetworkPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNetworkPeerings. */
+    public PagedCallSettings.Builder<
+            ListNetworkPeeringsRequest,
+            ListNetworkPeeringsResponse,
+            ListNetworkPeeringsPagedResponse>
+        listNetworkPeeringsSettings() {
+      return getStubSettingsBuilder().listNetworkPeeringsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNetworkPeering. */
+    public UnaryCallSettings.Builder<CreateNetworkPeeringRequest, Operation>
+        createNetworkPeeringSettings() {
+      return getStubSettingsBuilder().createNetworkPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNetworkPeering. */
+    public OperationCallSettings.Builder<
+            CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+        createNetworkPeeringOperationSettings() {
+      return getStubSettingsBuilder().createNetworkPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkPeering. */
+    public UnaryCallSettings.Builder<DeleteNetworkPeeringRequest, Operation>
+        deleteNetworkPeeringSettings() {
+      return getStubSettingsBuilder().deleteNetworkPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkPeering. */
+    public OperationCallSettings.Builder<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
+        deleteNetworkPeeringOperationSettings() {
+      return getStubSettingsBuilder().deleteNetworkPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNetworkPeering. */
+    public UnaryCallSettings.Builder<UpdateNetworkPeeringRequest, Operation>
+        updateNetworkPeeringSettings() {
+      return getStubSettingsBuilder().updateNetworkPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNetworkPeering. */
+    public OperationCallSettings.Builder<
+            UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
+        updateNetworkPeeringOperationSettings() {
+      return getStubSettingsBuilder().updateNetworkPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPeeringRoutes. */
+    public PagedCallSettings.Builder<
+            ListPeeringRoutesRequest, ListPeeringRoutesResponse, ListPeeringRoutesPagedResponse>
+        listPeeringRoutesSettings() {
+      return getStubSettingsBuilder().listPeeringRoutesSettings();
     }
 
     /** Returns the builder for the settings used for calls to createHcxActivationKey. */
@@ -856,6 +1463,73 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
     public OperationCallSettings.Builder<DeleteNetworkPolicyRequest, Empty, OperationMetadata>
         deleteNetworkPolicyOperationSettings() {
       return getStubSettingsBuilder().deleteNetworkPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listManagementDnsZoneBindings. */
+    public PagedCallSettings.Builder<
+            ListManagementDnsZoneBindingsRequest,
+            ListManagementDnsZoneBindingsResponse,
+            ListManagementDnsZoneBindingsPagedResponse>
+        listManagementDnsZoneBindingsSettings() {
+      return getStubSettingsBuilder().listManagementDnsZoneBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getManagementDnsZoneBinding. */
+    public UnaryCallSettings.Builder<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
+        getManagementDnsZoneBindingSettings() {
+      return getStubSettingsBuilder().getManagementDnsZoneBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createManagementDnsZoneBinding. */
+    public UnaryCallSettings.Builder<CreateManagementDnsZoneBindingRequest, Operation>
+        createManagementDnsZoneBindingSettings() {
+      return getStubSettingsBuilder().createManagementDnsZoneBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createManagementDnsZoneBinding. */
+    public OperationCallSettings.Builder<
+            CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+        createManagementDnsZoneBindingOperationSettings() {
+      return getStubSettingsBuilder().createManagementDnsZoneBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateManagementDnsZoneBinding. */
+    public UnaryCallSettings.Builder<UpdateManagementDnsZoneBindingRequest, Operation>
+        updateManagementDnsZoneBindingSettings() {
+      return getStubSettingsBuilder().updateManagementDnsZoneBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateManagementDnsZoneBinding. */
+    public OperationCallSettings.Builder<
+            UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+        updateManagementDnsZoneBindingOperationSettings() {
+      return getStubSettingsBuilder().updateManagementDnsZoneBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteManagementDnsZoneBinding. */
+    public UnaryCallSettings.Builder<DeleteManagementDnsZoneBindingRequest, Operation>
+        deleteManagementDnsZoneBindingSettings() {
+      return getStubSettingsBuilder().deleteManagementDnsZoneBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteManagementDnsZoneBinding. */
+    public OperationCallSettings.Builder<
+            DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
+        deleteManagementDnsZoneBindingOperationSettings() {
+      return getStubSettingsBuilder().deleteManagementDnsZoneBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repairManagementDnsZoneBinding. */
+    public UnaryCallSettings.Builder<RepairManagementDnsZoneBindingRequest, Operation>
+        repairManagementDnsZoneBindingSettings() {
+      return getStubSettingsBuilder().repairManagementDnsZoneBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repairManagementDnsZoneBinding. */
+    public OperationCallSettings.Builder<
+            RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
+        repairManagementDnsZoneBindingOperationSettings() {
+      return getStubSettingsBuilder().repairManagementDnsZoneBindingOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createVmwareEngineNetwork. */
@@ -973,6 +1647,38 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
             ListPrivateConnectionPeeringRoutesPagedResponse>
         listPrivateConnectionPeeringRoutesSettings() {
       return getStubSettingsBuilder().listPrivateConnectionPeeringRoutesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to grantDnsBindPermission. */
+    public UnaryCallSettings.Builder<GrantDnsBindPermissionRequest, Operation>
+        grantDnsBindPermissionSettings() {
+      return getStubSettingsBuilder().grantDnsBindPermissionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to grantDnsBindPermission. */
+    public OperationCallSettings.Builder<
+            GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+        grantDnsBindPermissionOperationSettings() {
+      return getStubSettingsBuilder().grantDnsBindPermissionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDnsBindPermission. */
+    public UnaryCallSettings.Builder<GetDnsBindPermissionRequest, DnsBindPermission>
+        getDnsBindPermissionSettings() {
+      return getStubSettingsBuilder().getDnsBindPermissionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to revokeDnsBindPermission. */
+    public UnaryCallSettings.Builder<RevokeDnsBindPermissionRequest, Operation>
+        revokeDnsBindPermissionSettings() {
+      return getStubSettingsBuilder().revokeDnsBindPermissionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to revokeDnsBindPermission. */
+    public OperationCallSettings.Builder<
+            RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
+        revokeDnsBindPermissionOperationSettings() {
+      return getStubSettingsBuilder().revokeDnsBindPermissionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,16 @@ import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
+import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest;
+import com.google.cloud.compute.v1.SetIamPolicyBackendBucketRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsBackendBucketRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateBackendBucketRequest;
 import javax.annotation.Generated;
 
@@ -77,6 +82,10 @@ public abstract class BackendBucketsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
   }
 
+  public UnaryCallable<GetIamPolicyBackendBucketRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
   public OperationCallable<InsertBackendBucketRequest, Operation, Operation>
       insertOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
@@ -112,6 +121,15 @@ public abstract class BackendBucketsStub implements BackgroundResource {
   public UnaryCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
       setEdgeSecurityPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setEdgeSecurityPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyBackendBucketRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateBackendBucketRequest, Operation, Operation>

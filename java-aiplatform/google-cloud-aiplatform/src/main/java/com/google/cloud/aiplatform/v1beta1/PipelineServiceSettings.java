@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,6 +175,22 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     return ((PipelineServiceStubSettings) getStubSettings()).cancelPipelineJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchCancelPipelineJobs. */
+  public UnaryCallSettings<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).batchCancelPipelineJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCancelPipelineJobs. */
+  public OperationCallSettings<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings())
+        .batchCancelPipelineJobsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -236,7 +252,6 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     return PipelineServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return PipelineServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -387,6 +402,21 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     /** Returns the builder for the settings used for calls to cancelPipelineJob. */
     public UnaryCallSettings.Builder<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
       return getStubSettingsBuilder().cancelPipelineJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
+    public UnaryCallSettings.Builder<BatchCancelPipelineJobsRequest, Operation>
+        batchCancelPipelineJobsSettings() {
+      return getStubSettingsBuilder().batchCancelPipelineJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
+    public OperationCallSettings.Builder<
+            BatchCancelPipelineJobsRequest,
+            BatchCancelPipelineJobsResponse,
+            BatchCancelPipelineJobsOperationMetadata>
+        batchCancelPipelineJobsOperationSettings() {
+      return getStubSettingsBuilder().batchCancelPipelineJobsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

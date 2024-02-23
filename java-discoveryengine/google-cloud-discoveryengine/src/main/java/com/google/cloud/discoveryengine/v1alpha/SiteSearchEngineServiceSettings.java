@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package com.google.cloud.discoveryengine.v1alpha;
 
+import static com.google.cloud.discoveryengine.v1alpha.SiteSearchEngineServiceClient.FetchDomainVerificationStatusPagedResponse;
+import static com.google.cloud.discoveryengine.v1alpha.SiteSearchEngineServiceClient.ListTargetSitesPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -26,10 +29,12 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1alpha.stub.SiteSearchEngineServiceStubSettings;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -50,7 +55,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of recrawlUris to 30 seconds:
+ * <p>For example, to set the total timeout of getSiteSearchEngine to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -61,10 +66,10 @@ import javax.annotation.Generated;
  * SiteSearchEngineServiceSettings.Builder siteSearchEngineServiceSettingsBuilder =
  *     SiteSearchEngineServiceSettings.newBuilder();
  * siteSearchEngineServiceSettingsBuilder
- *     .recrawlUrisSettings()
+ *     .getSiteSearchEngineSettings()
  *     .setRetrySettings(
  *         siteSearchEngineServiceSettingsBuilder
- *             .recrawlUrisSettings()
+ *             .getSiteSearchEngineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -78,6 +83,111 @@ import javax.annotation.Generated;
 public class SiteSearchEngineServiceSettings
     extends ClientSettings<SiteSearchEngineServiceSettings> {
 
+  /** Returns the object with the settings used for calls to getSiteSearchEngine. */
+  public UnaryCallSettings<GetSiteSearchEngineRequest, SiteSearchEngine>
+      getSiteSearchEngineSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).getSiteSearchEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTargetSite. */
+  public UnaryCallSettings<CreateTargetSiteRequest, Operation> createTargetSiteSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).createTargetSiteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTargetSite. */
+  public OperationCallSettings<CreateTargetSiteRequest, TargetSite, CreateTargetSiteMetadata>
+      createTargetSiteOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .createTargetSiteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateTargetSites. */
+  public UnaryCallSettings<BatchCreateTargetSitesRequest, Operation>
+      batchCreateTargetSitesSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .batchCreateTargetSitesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateTargetSites. */
+  public OperationCallSettings<
+          BatchCreateTargetSitesRequest,
+          BatchCreateTargetSitesResponse,
+          BatchCreateTargetSiteMetadata>
+      batchCreateTargetSitesOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .batchCreateTargetSitesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTargetSite. */
+  public UnaryCallSettings<GetTargetSiteRequest, TargetSite> getTargetSiteSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).getTargetSiteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTargetSite. */
+  public UnaryCallSettings<UpdateTargetSiteRequest, Operation> updateTargetSiteSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).updateTargetSiteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTargetSite. */
+  public OperationCallSettings<UpdateTargetSiteRequest, TargetSite, UpdateTargetSiteMetadata>
+      updateTargetSiteOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .updateTargetSiteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTargetSite. */
+  public UnaryCallSettings<DeleteTargetSiteRequest, Operation> deleteTargetSiteSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).deleteTargetSiteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTargetSite. */
+  public OperationCallSettings<DeleteTargetSiteRequest, Empty, DeleteTargetSiteMetadata>
+      deleteTargetSiteOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .deleteTargetSiteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTargetSites. */
+  public PagedCallSettings<
+          ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
+      listTargetSitesSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).listTargetSitesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to enableAdvancedSiteSearch. */
+  public UnaryCallSettings<EnableAdvancedSiteSearchRequest, Operation>
+      enableAdvancedSiteSearchSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .enableAdvancedSiteSearchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to enableAdvancedSiteSearch. */
+  public OperationCallSettings<
+          EnableAdvancedSiteSearchRequest,
+          EnableAdvancedSiteSearchResponse,
+          EnableAdvancedSiteSearchMetadata>
+      enableAdvancedSiteSearchOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .enableAdvancedSiteSearchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disableAdvancedSiteSearch. */
+  public UnaryCallSettings<DisableAdvancedSiteSearchRequest, Operation>
+      disableAdvancedSiteSearchSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .disableAdvancedSiteSearchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disableAdvancedSiteSearch. */
+  public OperationCallSettings<
+          DisableAdvancedSiteSearchRequest,
+          DisableAdvancedSiteSearchResponse,
+          DisableAdvancedSiteSearchMetadata>
+      disableAdvancedSiteSearchOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .disableAdvancedSiteSearchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to recrawlUris. */
   public UnaryCallSettings<RecrawlUrisRequest, Operation> recrawlUrisSettings() {
     return ((SiteSearchEngineServiceStubSettings) getStubSettings()).recrawlUrisSettings();
@@ -87,6 +197,33 @@ public class SiteSearchEngineServiceSettings
   public OperationCallSettings<RecrawlUrisRequest, RecrawlUrisResponse, RecrawlUrisMetadata>
       recrawlUrisOperationSettings() {
     return ((SiteSearchEngineServiceStubSettings) getStubSettings()).recrawlUrisOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchVerifyTargetSites. */
+  public UnaryCallSettings<BatchVerifyTargetSitesRequest, Operation>
+      batchVerifyTargetSitesSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .batchVerifyTargetSitesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchVerifyTargetSites. */
+  public OperationCallSettings<
+          BatchVerifyTargetSitesRequest,
+          BatchVerifyTargetSitesResponse,
+          BatchVerifyTargetSitesMetadata>
+      batchVerifyTargetSitesOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .batchVerifyTargetSitesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchDomainVerificationStatus. */
+  public PagedCallSettings<
+          FetchDomainVerificationStatusRequest,
+          FetchDomainVerificationStatusResponse,
+          FetchDomainVerificationStatusPagedResponse>
+      fetchDomainVerificationStatusSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .fetchDomainVerificationStatusSettings();
   }
 
   public static final SiteSearchEngineServiceSettings create(
@@ -130,7 +267,6 @@ public class SiteSearchEngineServiceSettings
     return SiteSearchEngineServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return SiteSearchEngineServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -205,6 +341,107 @@ public class SiteSearchEngineServiceSettings
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to getSiteSearchEngine. */
+    public UnaryCallSettings.Builder<GetSiteSearchEngineRequest, SiteSearchEngine>
+        getSiteSearchEngineSettings() {
+      return getStubSettingsBuilder().getSiteSearchEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTargetSite. */
+    public UnaryCallSettings.Builder<CreateTargetSiteRequest, Operation>
+        createTargetSiteSettings() {
+      return getStubSettingsBuilder().createTargetSiteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTargetSite. */
+    public OperationCallSettings.Builder<
+            CreateTargetSiteRequest, TargetSite, CreateTargetSiteMetadata>
+        createTargetSiteOperationSettings() {
+      return getStubSettingsBuilder().createTargetSiteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateTargetSites. */
+    public UnaryCallSettings.Builder<BatchCreateTargetSitesRequest, Operation>
+        batchCreateTargetSitesSettings() {
+      return getStubSettingsBuilder().batchCreateTargetSitesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateTargetSites. */
+    public OperationCallSettings.Builder<
+            BatchCreateTargetSitesRequest,
+            BatchCreateTargetSitesResponse,
+            BatchCreateTargetSiteMetadata>
+        batchCreateTargetSitesOperationSettings() {
+      return getStubSettingsBuilder().batchCreateTargetSitesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTargetSite. */
+    public UnaryCallSettings.Builder<GetTargetSiteRequest, TargetSite> getTargetSiteSettings() {
+      return getStubSettingsBuilder().getTargetSiteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTargetSite. */
+    public UnaryCallSettings.Builder<UpdateTargetSiteRequest, Operation>
+        updateTargetSiteSettings() {
+      return getStubSettingsBuilder().updateTargetSiteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTargetSite. */
+    public OperationCallSettings.Builder<
+            UpdateTargetSiteRequest, TargetSite, UpdateTargetSiteMetadata>
+        updateTargetSiteOperationSettings() {
+      return getStubSettingsBuilder().updateTargetSiteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTargetSite. */
+    public UnaryCallSettings.Builder<DeleteTargetSiteRequest, Operation>
+        deleteTargetSiteSettings() {
+      return getStubSettingsBuilder().deleteTargetSiteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTargetSite. */
+    public OperationCallSettings.Builder<DeleteTargetSiteRequest, Empty, DeleteTargetSiteMetadata>
+        deleteTargetSiteOperationSettings() {
+      return getStubSettingsBuilder().deleteTargetSiteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTargetSites. */
+    public PagedCallSettings.Builder<
+            ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
+        listTargetSitesSettings() {
+      return getStubSettingsBuilder().listTargetSitesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enableAdvancedSiteSearch. */
+    public UnaryCallSettings.Builder<EnableAdvancedSiteSearchRequest, Operation>
+        enableAdvancedSiteSearchSettings() {
+      return getStubSettingsBuilder().enableAdvancedSiteSearchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enableAdvancedSiteSearch. */
+    public OperationCallSettings.Builder<
+            EnableAdvancedSiteSearchRequest,
+            EnableAdvancedSiteSearchResponse,
+            EnableAdvancedSiteSearchMetadata>
+        enableAdvancedSiteSearchOperationSettings() {
+      return getStubSettingsBuilder().enableAdvancedSiteSearchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableAdvancedSiteSearch. */
+    public UnaryCallSettings.Builder<DisableAdvancedSiteSearchRequest, Operation>
+        disableAdvancedSiteSearchSettings() {
+      return getStubSettingsBuilder().disableAdvancedSiteSearchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableAdvancedSiteSearch. */
+    public OperationCallSettings.Builder<
+            DisableAdvancedSiteSearchRequest,
+            DisableAdvancedSiteSearchResponse,
+            DisableAdvancedSiteSearchMetadata>
+        disableAdvancedSiteSearchOperationSettings() {
+      return getStubSettingsBuilder().disableAdvancedSiteSearchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to recrawlUris. */
     public UnaryCallSettings.Builder<RecrawlUrisRequest, Operation> recrawlUrisSettings() {
       return getStubSettingsBuilder().recrawlUrisSettings();
@@ -215,6 +452,30 @@ public class SiteSearchEngineServiceSettings
             RecrawlUrisRequest, RecrawlUrisResponse, RecrawlUrisMetadata>
         recrawlUrisOperationSettings() {
       return getStubSettingsBuilder().recrawlUrisOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchVerifyTargetSites. */
+    public UnaryCallSettings.Builder<BatchVerifyTargetSitesRequest, Operation>
+        batchVerifyTargetSitesSettings() {
+      return getStubSettingsBuilder().batchVerifyTargetSitesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchVerifyTargetSites. */
+    public OperationCallSettings.Builder<
+            BatchVerifyTargetSitesRequest,
+            BatchVerifyTargetSitesResponse,
+            BatchVerifyTargetSitesMetadata>
+        batchVerifyTargetSitesOperationSettings() {
+      return getStubSettingsBuilder().batchVerifyTargetSitesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchDomainVerificationStatus. */
+    public PagedCallSettings.Builder<
+            FetchDomainVerificationStatusRequest,
+            FetchDomainVerificationStatusResponse,
+            FetchDomainVerificationStatusPagedResponse>
+        fetchDomainVerificationStatusSettings() {
+      return getStubSettingsBuilder().fetchDomainVerificationStatusSettings();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1502,9 +1502,8 @@ public final class AssetServiceGrpc {
      * * compute.skipDefaultNetworkCreation
      * * compute.requireOsLogin
      * * compute.disableNestedVirtualization
-     * This RPC only returns either resources of types supported by [searchable
-     * asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * This RPC only returns either resources of types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * or IAM policies.
      * </pre>
      */
@@ -1968,9 +1967,8 @@ public final class AssetServiceGrpc {
      * * compute.skipDefaultNetworkCreation
      * * compute.requireOsLogin
      * * compute.disableNestedVirtualization
-     * This RPC only returns either resources of types supported by [searchable
-     * asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * This RPC only returns either resources of types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * or IAM policies.
      * </pre>
      */
@@ -2357,9 +2355,8 @@ public final class AssetServiceGrpc {
      * * compute.skipDefaultNetworkCreation
      * * compute.requireOsLogin
      * * compute.disableNestedVirtualization
-     * This RPC only returns either resources of types supported by [searchable
-     * asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * This RPC only returns either resources of types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * or IAM policies.
      * </pre>
      */
@@ -2756,9 +2753,8 @@ public final class AssetServiceGrpc {
      * * compute.skipDefaultNetworkCreation
      * * compute.requireOsLogin
      * * compute.disableNestedVirtualization
-     * This RPC only returns either resources of types supported by [searchable
-     * asset
-     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * This RPC only returns either resources of types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * or IAM policies.
      * </pre>
      */

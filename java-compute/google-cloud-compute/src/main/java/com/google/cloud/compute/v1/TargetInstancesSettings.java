@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.TargetInstancesClient.AggregatedListPa
 import static com.google.cloud.compute.v1.TargetInstancesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -118,6 +117,18 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
     return ((TargetInstancesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((TargetInstancesStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((TargetInstancesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
   public static final TargetInstancesSettings create(TargetInstancesStubSettings stub)
       throws IOException {
     return new TargetInstancesSettings.Builder(stub.toBuilder()).build();
@@ -153,7 +164,6 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
     return TargetInstancesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return TargetInstancesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -257,6 +267,19 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
             ListTargetInstancesRequest, TargetInstanceList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     @Override

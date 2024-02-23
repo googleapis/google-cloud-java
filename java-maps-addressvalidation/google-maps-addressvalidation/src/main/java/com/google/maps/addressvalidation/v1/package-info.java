@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@
  *           .setAddress(PostalAddress.newBuilder().build())
  *           .setPreviousResponseId("previousResponseId468754323")
  *           .setEnableUspsCass(true)
+ *           .setSessionToken("sessionToken-696552189")
  *           .build();
  *   ValidateAddressResponse response = addressValidationClient.validateAddress(request);
  * }

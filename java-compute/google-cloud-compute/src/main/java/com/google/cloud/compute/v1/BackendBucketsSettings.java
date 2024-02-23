@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -115,6 +114,11 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return ((BackendBucketsStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyBackendBucketRequest, Policy> getIamPolicySettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendBucketRequest, Operation> insertSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).insertSettings();
@@ -154,6 +158,17 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       setEdgeSecurityPolicyOperationSettings() {
     return ((BackendBucketsStubSettings) getStubSettings())
         .setEdgeSecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyBackendBucketRequest, Policy> setIamPolicySettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -202,7 +217,6 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return BackendBucketsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return BackendBucketsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -306,6 +320,12 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       return getStubSettingsBuilder().getSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyBackendBucketRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendBucketRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
@@ -346,6 +366,19 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
             SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setEdgeSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyBackendBucketRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,19 +62,146 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AttachNetworkEndpoints</td>
+ *      <td><p> Attach a list of network endpoints to the specified network endpoint group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> attachNetworkEndpointsAsync(AttachNetworkEndpointsRegionNetworkEndpointGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> attachNetworkEndpointsAsync(String project, String region, String networkEndpointGroup, RegionNetworkEndpointGroupsAttachEndpointsRequest regionNetworkEndpointGroupsAttachEndpointsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> attachNetworkEndpointsOperationCallable()
+ *           <li><p> attachNetworkEndpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Delete</td>
+ *      <td><p> Deletes the specified network endpoint group. Note that the NEG cannot be deleted if it is configured as a backend of a backend service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAsync(DeleteRegionNetworkEndpointGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAsync(String project, String region, String networkEndpointGroup)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DetachNetworkEndpoints</td>
+ *      <td><p> Detach the network endpoint from the specified network endpoint group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> detachNetworkEndpointsAsync(DetachNetworkEndpointsRegionNetworkEndpointGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> detachNetworkEndpointsAsync(String project, String region, String networkEndpointGroup, RegionNetworkEndpointGroupsDetachEndpointsRequest regionNetworkEndpointGroupsDetachEndpointsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> detachNetworkEndpointsOperationCallable()
+ *           <li><p> detachNetworkEndpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Get</td>
+ *      <td><p> Returns the specified network endpoint group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> get(GetRegionNetworkEndpointGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> get(String project, String region, String networkEndpointGroup)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Insert</td>
+ *      <td><p> Creates a network endpoint group in the specified project using the parameters that are included in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> insertAsync(InsertRegionNetworkEndpointGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> insertAsync(String project, String region, NetworkEndpointGroup networkEndpointGroupResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> List</td>
+ *      <td><p> Retrieves the list of regional network endpoint groups available to the specified project in the given region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> list(ListRegionNetworkEndpointGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> list(String project, String region)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNetworkEndpoints</td>
+ *      <td><p> Lists the network endpoints in the specified network endpoint group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNetworkEndpoints(ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNetworkEndpoints(String project, String region, String networkEndpointGroup)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNetworkEndpointsPagedCallable()
+ *           <li><p> listNetworkEndpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -168,6 +295,174 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
 
   public RegionNetworkEndpointGroupsStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Attach a list of network endpoints to the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   RegionNetworkEndpointGroupsAttachEndpointsRequest
+   *       regionNetworkEndpointGroupsAttachEndpointsRequestResource =
+   *           RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+   *   Operation response =
+   *       regionNetworkEndpointGroupsClient
+   *           .attachNetworkEndpointsAsync(
+   *               project,
+   *               region,
+   *               networkEndpointGroup,
+   *               regionNetworkEndpointGroupsAttachEndpointsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region where you want to create the network endpoint group. It
+   *     should comply with RFC1035.
+   * @param networkEndpointGroup The name of the network endpoint group where you are attaching
+   *     network endpoints to. It should comply with RFC1035.
+   * @param regionNetworkEndpointGroupsAttachEndpointsRequestResource The body resource for this
+   *     request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> attachNetworkEndpointsAsync(
+      String project,
+      String region,
+      String networkEndpointGroup,
+      RegionNetworkEndpointGroupsAttachEndpointsRequest
+          regionNetworkEndpointGroupsAttachEndpointsRequestResource) {
+    AttachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+        AttachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setNetworkEndpointGroup(networkEndpointGroup)
+            .setRegionNetworkEndpointGroupsAttachEndpointsRequestResource(
+                regionNetworkEndpointGroupsAttachEndpointsRequestResource)
+            .build();
+    return attachNetworkEndpointsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Attach a list of network endpoints to the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response =
+   *       regionNetworkEndpointGroupsClient.attachNetworkEndpointsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> attachNetworkEndpointsAsync(
+      AttachNetworkEndpointsRegionNetworkEndpointGroupRequest request) {
+    return attachNetworkEndpointsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Attach a list of network endpoints to the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNetworkEndpointGroupsClient
+   *           .attachNetworkEndpointsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable() {
+    return stub.attachNetworkEndpointsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Attach a list of network endpoints to the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionNetworkEndpointGroupsClient.attachNetworkEndpointsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      attachNetworkEndpointsCallable() {
+    return stub.attachNetworkEndpointsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -314,6 +609,174 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRegionNetworkEndpointGroupRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach the network endpoint from the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   RegionNetworkEndpointGroupsDetachEndpointsRequest
+   *       regionNetworkEndpointGroupsDetachEndpointsRequestResource =
+   *           RegionNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
+   *   Operation response =
+   *       regionNetworkEndpointGroupsClient
+   *           .detachNetworkEndpointsAsync(
+   *               project,
+   *               region,
+   *               networkEndpointGroup,
+   *               regionNetworkEndpointGroupsDetachEndpointsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region where the network endpoint group is located. It should
+   *     comply with RFC1035.
+   * @param networkEndpointGroup The name of the network endpoint group you are detaching network
+   *     endpoints from. It should comply with RFC1035.
+   * @param regionNetworkEndpointGroupsDetachEndpointsRequestResource The body resource for this
+   *     request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> detachNetworkEndpointsAsync(
+      String project,
+      String region,
+      String networkEndpointGroup,
+      RegionNetworkEndpointGroupsDetachEndpointsRequest
+          regionNetworkEndpointGroupsDetachEndpointsRequestResource) {
+    DetachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+        DetachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setNetworkEndpointGroup(networkEndpointGroup)
+            .setRegionNetworkEndpointGroupsDetachEndpointsRequestResource(
+                regionNetworkEndpointGroupsDetachEndpointsRequestResource)
+            .build();
+    return detachNetworkEndpointsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach the network endpoint from the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               RegionNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response =
+   *       regionNetworkEndpointGroupsClient.detachNetworkEndpointsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> detachNetworkEndpointsAsync(
+      DetachNetworkEndpointsRegionNetworkEndpointGroupRequest request) {
+    return detachNetworkEndpointsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach the network endpoint from the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               RegionNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNetworkEndpointGroupsClient
+   *           .detachNetworkEndpointsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable() {
+    return stub.detachNetworkEndpointsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach the network endpoint from the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsRegionNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               RegionNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionNetworkEndpointGroupsClient.detachNetworkEndpointsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      detachNetworkEndpointsCallable() {
+    return stub.detachNetworkEndpointsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -726,6 +1189,178 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
     return stub.listCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network endpoints in the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   for (NetworkEndpointWithHealthStatus element :
+   *       regionNetworkEndpointGroupsClient
+   *           .listNetworkEndpoints(project, region, networkEndpointGroup)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region where the network endpoint group is located. It should
+   *     comply with RFC1035.
+   * @param networkEndpointGroup The name of the network endpoint group from which you want to
+   *     generate a list of included network endpoints. It should comply with RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkEndpointsPagedResponse listNetworkEndpoints(
+      String project, String region, String networkEndpointGroup) {
+    ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request =
+        ListNetworkEndpointsRegionNetworkEndpointGroupsRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setNetworkEndpointGroup(networkEndpointGroup)
+            .build();
+    return listNetworkEndpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network endpoints in the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsRegionNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (NetworkEndpointWithHealthStatus element :
+   *       regionNetworkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkEndpointsPagedResponse listNetworkEndpoints(
+      ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request) {
+    return listNetworkEndpointsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network endpoints in the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsRegionNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<NetworkEndpointWithHealthStatus> future =
+   *       regionNetworkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NetworkEndpointWithHealthStatus element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsPagedCallable() {
+    return stub.listNetworkEndpointsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the network endpoints in the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsRegionNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   while (true) {
+   *     NetworkEndpointGroupsListNetworkEndpoints response =
+   *         regionNetworkEndpointGroupsClient.listNetworkEndpointsCallable().call(request);
+   *     for (NetworkEndpointWithHealthStatus element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints>
+      listNetworkEndpointsCallable() {
+    return stub.listNetworkEndpointsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -845,6 +1480,102 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
     @Override
     protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNetworkEndpointsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          NetworkEndpointWithHealthStatus,
+          ListNetworkEndpointsPage,
+          ListNetworkEndpointsFixedSizeCollection> {
+
+    public static ApiFuture<ListNetworkEndpointsPagedResponse> createAsync(
+        PageContext<
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+                NetworkEndpointGroupsListNetworkEndpoints,
+                NetworkEndpointWithHealthStatus>
+            context,
+        ApiFuture<NetworkEndpointGroupsListNetworkEndpoints> futureResponse) {
+      ApiFuture<ListNetworkEndpointsPage> futurePage =
+          ListNetworkEndpointsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNetworkEndpointsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNetworkEndpointsPagedResponse(ListNetworkEndpointsPage page) {
+      super(page, ListNetworkEndpointsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNetworkEndpointsPage
+      extends AbstractPage<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          NetworkEndpointWithHealthStatus,
+          ListNetworkEndpointsPage> {
+
+    private ListNetworkEndpointsPage(
+        PageContext<
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+                NetworkEndpointGroupsListNetworkEndpoints,
+                NetworkEndpointWithHealthStatus>
+            context,
+        NetworkEndpointGroupsListNetworkEndpoints response) {
+      super(context, response);
+    }
+
+    private static ListNetworkEndpointsPage createEmptyPage() {
+      return new ListNetworkEndpointsPage(null, null);
+    }
+
+    @Override
+    protected ListNetworkEndpointsPage createPage(
+        PageContext<
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+                NetworkEndpointGroupsListNetworkEndpoints,
+                NetworkEndpointWithHealthStatus>
+            context,
+        NetworkEndpointGroupsListNetworkEndpoints response) {
+      return new ListNetworkEndpointsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNetworkEndpointsPage> createPageAsync(
+        PageContext<
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+                NetworkEndpointGroupsListNetworkEndpoints,
+                NetworkEndpointWithHealthStatus>
+            context,
+        ApiFuture<NetworkEndpointGroupsListNetworkEndpoints> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNetworkEndpointsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          NetworkEndpointWithHealthStatus,
+          ListNetworkEndpointsPage,
+          ListNetworkEndpointsFixedSizeCollection> {
+
+    private ListNetworkEndpointsFixedSizeCollection(
+        List<ListNetworkEndpointsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNetworkEndpointsFixedSizeCollection createEmptyCollection() {
+      return new ListNetworkEndpointsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNetworkEndpointsFixedSizeCollection createCollection(
+        List<ListNetworkEndpointsPage> pages, int collectionSize) {
+      return new ListNetworkEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

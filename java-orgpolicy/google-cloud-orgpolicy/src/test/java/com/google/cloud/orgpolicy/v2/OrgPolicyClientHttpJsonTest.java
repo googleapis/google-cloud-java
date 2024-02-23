@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.orgpolicy.v2;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -31,7 +32,9 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.orgpolicy.v2.stub.HttpJsonOrgPolicyStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -484,6 +487,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -531,6 +535,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -578,6 +583,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -625,6 +631,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -672,6 +679,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -721,6 +729,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -770,6 +779,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -819,6 +829,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -868,6 +879,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -877,6 +889,7 @@ public class OrgPolicyClientHttpJsonTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
 
     Policy actualResponse = client.updatePolicy(policy);
@@ -911,6 +924,7 @@ public class OrgPolicyClientHttpJsonTest {
               .setSpec(PolicySpec.newBuilder().build())
               .setAlternate(AlternatePolicySpec.newBuilder().build())
               .setDryRunSpec(PolicySpec.newBuilder().build())
+              .setEtag("etag3123477")
               .build();
       client.updatePolicy(policy);
       Assert.fail("No exception raised");
@@ -993,6 +1007,458 @@ public class OrgPolicyClientHttpJsonTest {
     try {
       String name = "projects/project-3674/policies/policie-3674";
       client.deletePolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomConstraintTest() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+
+    CustomConstraint actualResponse = client.createCustomConstraint(parent, customConstraint);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomConstraintExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+      client.createCustomConstraint(parent, customConstraint);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomConstraintTest2() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-8287";
+    CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+
+    CustomConstraint actualResponse = client.createCustomConstraint(parent, customConstraint);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomConstraintExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-8287";
+      CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+      client.createCustomConstraint(parent, customConstraint);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCustomConstraintTest() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomConstraint customConstraint =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+
+    CustomConstraint actualResponse = client.updateCustomConstraint(customConstraint);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCustomConstraintExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomConstraint customConstraint =
+          CustomConstraint.newBuilder()
+              .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+              .addAllResourceTypes(new ArrayList<String>())
+              .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+              .setCondition("condition-861311717")
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      client.updateCustomConstraint(customConstraint);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomConstraintTest() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+
+    CustomConstraint actualResponse = client.getCustomConstraint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomConstraintExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+      client.getCustomConstraint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomConstraintTest2() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "organizations/organization-7217/customConstraints/customConstraint-7217";
+
+    CustomConstraint actualResponse = client.getCustomConstraint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomConstraintExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "organizations/organization-7217/customConstraints/customConstraint-7217";
+      client.getCustomConstraint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomConstraintsTest() throws Exception {
+    CustomConstraint responsesElement = CustomConstraint.newBuilder().build();
+    ListCustomConstraintsResponse expectedResponse =
+        ListCustomConstraintsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomConstraints(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListCustomConstraintsPagedResponse pagedListResponse = client.listCustomConstraints(parent);
+
+    List<CustomConstraint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomConstraintsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomConstraintsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listCustomConstraints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomConstraintsTest2() throws Exception {
+    CustomConstraint responsesElement = CustomConstraint.newBuilder().build();
+    ListCustomConstraintsResponse expectedResponse =
+        ListCustomConstraintsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomConstraints(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-8287";
+
+    ListCustomConstraintsPagedResponse pagedListResponse = client.listCustomConstraints(parent);
+
+    List<CustomConstraint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomConstraintsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomConstraintsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-8287";
+      client.listCustomConstraints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomConstraintTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+
+    client.deleteCustomConstraint(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomConstraintExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+      client.deleteCustomConstraint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomConstraintTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "organizations/organization-7217/customConstraints/customConstraint-7217";
+
+    client.deleteCustomConstraint(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomConstraintExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "organizations/organization-7217/customConstraints/customConstraint-7217";
+      client.deleteCustomConstraint(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

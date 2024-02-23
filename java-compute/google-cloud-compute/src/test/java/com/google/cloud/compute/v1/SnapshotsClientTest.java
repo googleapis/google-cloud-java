@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,8 @@ public class SnapshotsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -98,6 +100,8 @@ public class SnapshotsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -158,6 +162,8 @@ public class SnapshotsClientTest {
             .setDescription("description-1724546052")
             .setDiskSizeGb(-757478089)
             .setDownloadBytes(971924980)
+            .setEnableConfidentialCompute(true)
+            .addAllGuestOsFeatures(new ArrayList<GuestOsFeature>())
             .setId(3355)
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")
@@ -166,12 +172,14 @@ public class SnapshotsClientTest {
             .addAllLicenses(new ArrayList<String>())
             .setLocationHint("locationHint-58650660")
             .setName("name3373707")
+            .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSnapshotType("snapshotType-931506402")
             .setSourceDisk("sourceDisk-1111923624")
             .setSourceDiskEncryptionKey(CustomerEncryptionKey.newBuilder().build())
+            .setSourceDiskForRecoveryCheckpoint("sourceDiskForRecoveryCheckpoint-1997957586")
             .setSourceDiskId("sourceDiskId888256403")
             .setSourceSnapshotSchedulePolicy("sourceSnapshotSchedulePolicy-1664282744")
             .setSourceSnapshotSchedulePolicyId("sourceSnapshotSchedulePolicyId-1647880509")
@@ -284,6 +292,8 @@ public class SnapshotsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -291,6 +301,8 @@ public class SnapshotsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -457,6 +469,8 @@ public class SnapshotsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -464,6 +478,8 @@ public class SnapshotsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")

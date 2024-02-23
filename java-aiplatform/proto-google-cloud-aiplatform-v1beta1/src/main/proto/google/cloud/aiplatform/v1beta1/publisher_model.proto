@@ -44,6 +44,12 @@ message PublisherModel {
 
       // The resource name of the Google Cloud resource.
       string resource_name = 2;
+
+      // Use case (CUJ) of the resource.
+      string use_case = 3 [deprecated = true];
+
+      // Description of the resource.
+      string description = 4 [deprecated = true];
     }
   }
 
@@ -76,8 +82,20 @@ message PublisherModel {
       map<string, ResourceReference> references = 1
           [(google.api.field_behavior) = REQUIRED];
 
-      // Required. The title of the regional resource reference.
+      // Required.
       string title = 2 [(google.api.field_behavior) = REQUIRED];
+
+      // Optional. Title of the resource.
+      optional string resource_title = 3
+          [(google.api.field_behavior) = OPTIONAL];
+
+      // Optional. Use case (CUJ) of the resource.
+      optional string resource_use_case = 4
+          [(google.api.field_behavior) = OPTIONAL];
+
+      // Optional. Description of the resource.
+      optional string resource_description = 5
+          [(google.api.field_behavior) = OPTIONAL];
     }
 
     // Rest API docs.
@@ -88,6 +106,20 @@ message PublisherModel {
 
       // Required. The title of the view rest API.
       string title = 2 [(google.api.field_behavior) = REQUIRED];
+    }
+
+    // Open notebooks.
+    message OpenNotebooks {
+      // Required. Regional resource references to notebooks.
+      repeated RegionalResourceReferences notebooks = 1
+          [(google.api.field_behavior) = REQUIRED];
+    }
+
+    // Open fine tuning pipelines.
+    message OpenFineTuningPipelines {
+      // Required. Regional resource references to fine tuning pipelines.
+      repeated RegionalResourceReferences fine_tuning_pipelines = 1
+          [(google.api.field_behavior) = REQUIRED];
     }
 
     // Model metadata that is needed for UploadModel or
@@ -129,6 +161,17 @@ message PublisherModel {
 
       // Required. The title of the regional resource reference.
       string title = 8 [(google.api.field_behavior) = REQUIRED];
+
+      // Optional. The signed URI for ephemeral Cloud Storage access to model
+      // artifact.
+      string public_artifact_uri = 9 [(google.api.field_behavior) = OPTIONAL];
+    }
+
+    // Configurations for PublisherModel GKE deployment
+    message DeployGke {
+      // Optional. GKE deployment configuration in yaml format.
+      repeated string gke_yaml_configs = 1
+          [(google.api.field_behavior) = OPTIONAL];
     }
 
     // Optional. To view Rest API docs.
@@ -138,12 +181,20 @@ message PublisherModel {
     RegionalResourceReferences open_notebook = 2
         [(google.api.field_behavior) = OPTIONAL];
 
+    // Optional. Open notebooks of the PublisherModel.
+    optional OpenNotebooks open_notebooks = 12
+        [(google.api.field_behavior) = OPTIONAL];
+
     // Optional. Create application using the PublisherModel.
     RegionalResourceReferences create_application = 3
         [(google.api.field_behavior) = OPTIONAL];
 
     // Optional. Open fine-tuning pipeline of the PublisherModel.
     RegionalResourceReferences open_fine_tuning_pipeline = 4
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Open fine-tuning pipelines of the PublisherModel.
+    optional OpenFineTuningPipelines open_fine_tuning_pipelines = 13
         [(google.api.field_behavior) = OPTIONAL];
 
     // Optional. Open prompt-tuning pipeline of the PublisherModel.
@@ -156,6 +207,9 @@ message PublisherModel {
 
     // Optional. Deploy the PublisherModel to Vertex Endpoint.
     Deploy deploy = 7 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Deploy PublisherModel to Google Kubernetes Engine.
+    DeployGke deploy_gke = 14 [(google.api.field_behavior) = OPTIONAL];
 
     // Optional. Open in Generation AI Studio.
     RegionalResourceReferences open_generation_ai_studio = 8
@@ -212,6 +266,18 @@ message PublisherModel {
     GA = 4;
   }
 
+  // An enum representing the state of the PublicModelVersion.
+  enum VersionState {
+    // The version state is unspecified.
+    VERSION_STATE_UNSPECIFIED = 0;
+
+    // Used to indicate the version is stable.
+    VERSION_STATE_STABLE = 1;
+
+    // Used to indicate the version is unstable.
+    VERSION_STATE_UNSTABLE = 2;
+  }
+
   // Output only. The resource name of the PublisherModel.
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -240,6 +306,9 @@ message PublisherModel {
 
   // Optional. Indicates the launch stage of the model.
   LaunchStage launch_stage = 29 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Indicates the state of the model version.
+  VersionState version_state = 37 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Output only. Immutable. Used to indicate this model has a
   // publisher model and provide the template of the publisher model resource

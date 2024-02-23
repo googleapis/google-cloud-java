@@ -16,6 +16,7 @@ syntax = "proto3";
 
 package google.cloud.dataplex.v1;
 
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
@@ -391,6 +392,9 @@ message GovernanceEvent {
 
     // Rule processing errors.
     GOVERNANCE_RULE_ERRORS = 17;
+
+    // Governance rule processing Event.
+    GOVERNANCE_RULE_PROCESSING = 18;
   }
 
   // The log message.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -428,6 +428,592 @@ public final class EnvironmentsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest,
+          com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+      getListWorkloadsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkloads",
+      requestType = com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest.class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest,
+          com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+      getListWorkloadsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest,
+            com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+        getListWorkloadsMethod;
+    if ((getListWorkloadsMethod = EnvironmentsGrpc.getListWorkloadsMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getListWorkloadsMethod = EnvironmentsGrpc.getListWorkloadsMethod) == null) {
+          EnvironmentsGrpc.getListWorkloadsMethod =
+              getListWorkloadsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkloads"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .ListWorkloadsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("ListWorkloads"))
+                      .build();
+        }
+      }
+    }
+    return getListWorkloadsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+      getCreateUserWorkloadsSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUserWorkloadsSecret",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest.class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+      getCreateUserWorkloadsSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest,
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+        getCreateUserWorkloadsSecretMethod;
+    if ((getCreateUserWorkloadsSecretMethod = EnvironmentsGrpc.getCreateUserWorkloadsSecretMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getCreateUserWorkloadsSecretMethod =
+                EnvironmentsGrpc.getCreateUserWorkloadsSecretMethod)
+            == null) {
+          EnvironmentsGrpc.getCreateUserWorkloadsSecretMethod =
+              getCreateUserWorkloadsSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .CreateUserWorkloadsSecretRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateUserWorkloadsSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .CreateUserWorkloadsSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("CreateUserWorkloadsSecret"))
+                      .build();
+        }
+      }
+    }
+    return getCreateUserWorkloadsSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+      getGetUserWorkloadsSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserWorkloadsSecret",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest.class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+      getGetUserWorkloadsSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest,
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+        getGetUserWorkloadsSecretMethod;
+    if ((getGetUserWorkloadsSecretMethod = EnvironmentsGrpc.getGetUserWorkloadsSecretMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getGetUserWorkloadsSecretMethod = EnvironmentsGrpc.getGetUserWorkloadsSecretMethod)
+            == null) {
+          EnvironmentsGrpc.getGetUserWorkloadsSecretMethod =
+              getGetUserWorkloadsSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .GetUserWorkloadsSecretRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetUserWorkloadsSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .GetUserWorkloadsSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("GetUserWorkloadsSecret"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserWorkloadsSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest,
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse>
+      getListUserWorkloadsSecretsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserWorkloadsSecrets",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest.class,
+      responseType =
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest,
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse>
+      getListUserWorkloadsSecretsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest,
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse>
+        getListUserWorkloadsSecretsMethod;
+    if ((getListUserWorkloadsSecretsMethod = EnvironmentsGrpc.getListUserWorkloadsSecretsMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getListUserWorkloadsSecretsMethod = EnvironmentsGrpc.getListUserWorkloadsSecretsMethod)
+            == null) {
+          EnvironmentsGrpc.getListUserWorkloadsSecretsMethod =
+              getListUserWorkloadsSecretsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .ListUserWorkloadsSecretsRequest,
+                          com.google.cloud.orchestration.airflow.service.v1
+                              .ListUserWorkloadsSecretsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListUserWorkloadsSecrets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .ListUserWorkloadsSecretsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .ListUserWorkloadsSecretsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("ListUserWorkloadsSecrets"))
+                      .build();
+        }
+      }
+    }
+    return getListUserWorkloadsSecretsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+      getUpdateUserWorkloadsSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserWorkloadsSecret",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest.class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+      getUpdateUserWorkloadsSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest,
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+        getUpdateUserWorkloadsSecretMethod;
+    if ((getUpdateUserWorkloadsSecretMethod = EnvironmentsGrpc.getUpdateUserWorkloadsSecretMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getUpdateUserWorkloadsSecretMethod =
+                EnvironmentsGrpc.getUpdateUserWorkloadsSecretMethod)
+            == null) {
+          EnvironmentsGrpc.getUpdateUserWorkloadsSecretMethod =
+              getUpdateUserWorkloadsSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .UpdateUserWorkloadsSecretRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateUserWorkloadsSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .UpdateUserWorkloadsSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("UpdateUserWorkloadsSecret"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateUserWorkloadsSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserWorkloadsSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUserWorkloadsSecret",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserWorkloadsSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest,
+            com.google.protobuf.Empty>
+        getDeleteUserWorkloadsSecretMethod;
+    if ((getDeleteUserWorkloadsSecretMethod = EnvironmentsGrpc.getDeleteUserWorkloadsSecretMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getDeleteUserWorkloadsSecretMethod =
+                EnvironmentsGrpc.getDeleteUserWorkloadsSecretMethod)
+            == null) {
+          EnvironmentsGrpc.getDeleteUserWorkloadsSecretMethod =
+              getDeleteUserWorkloadsSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .DeleteUserWorkloadsSecretRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteUserWorkloadsSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .DeleteUserWorkloadsSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("DeleteUserWorkloadsSecret"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserWorkloadsSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+      getCreateUserWorkloadsConfigMapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUserWorkloadsConfigMap",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest
+              .class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+      getCreateUserWorkloadsConfigMapMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest,
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+        getCreateUserWorkloadsConfigMapMethod;
+    if ((getCreateUserWorkloadsConfigMapMethod =
+            EnvironmentsGrpc.getCreateUserWorkloadsConfigMapMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getCreateUserWorkloadsConfigMapMethod =
+                EnvironmentsGrpc.getCreateUserWorkloadsConfigMapMethod)
+            == null) {
+          EnvironmentsGrpc.getCreateUserWorkloadsConfigMapMethod =
+              getCreateUserWorkloadsConfigMapMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .CreateUserWorkloadsConfigMapRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateUserWorkloadsConfigMap"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .CreateUserWorkloadsConfigMapRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .UserWorkloadsConfigMap.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("CreateUserWorkloadsConfigMap"))
+                      .build();
+        }
+      }
+    }
+    return getCreateUserWorkloadsConfigMapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+      getGetUserWorkloadsConfigMapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserWorkloadsConfigMap",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest.class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+      getGetUserWorkloadsConfigMapMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest,
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+        getGetUserWorkloadsConfigMapMethod;
+    if ((getGetUserWorkloadsConfigMapMethod = EnvironmentsGrpc.getGetUserWorkloadsConfigMapMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getGetUserWorkloadsConfigMapMethod =
+                EnvironmentsGrpc.getGetUserWorkloadsConfigMapMethod)
+            == null) {
+          EnvironmentsGrpc.getGetUserWorkloadsConfigMapMethod =
+              getGetUserWorkloadsConfigMapMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .GetUserWorkloadsConfigMapRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetUserWorkloadsConfigMap"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .GetUserWorkloadsConfigMapRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .UserWorkloadsConfigMap.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("GetUserWorkloadsConfigMap"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserWorkloadsConfigMapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest,
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse>
+      getListUserWorkloadsConfigMapsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserWorkloadsConfigMaps",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest
+              .class,
+      responseType =
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest,
+          com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse>
+      getListUserWorkloadsConfigMapsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest,
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse>
+        getListUserWorkloadsConfigMapsMethod;
+    if ((getListUserWorkloadsConfigMapsMethod =
+            EnvironmentsGrpc.getListUserWorkloadsConfigMapsMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getListUserWorkloadsConfigMapsMethod =
+                EnvironmentsGrpc.getListUserWorkloadsConfigMapsMethod)
+            == null) {
+          EnvironmentsGrpc.getListUserWorkloadsConfigMapsMethod =
+              getListUserWorkloadsConfigMapsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .ListUserWorkloadsConfigMapsRequest,
+                          com.google.cloud.orchestration.airflow.service.v1
+                              .ListUserWorkloadsConfigMapsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListUserWorkloadsConfigMaps"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .ListUserWorkloadsConfigMapsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .ListUserWorkloadsConfigMapsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("ListUserWorkloadsConfigMaps"))
+                      .build();
+        }
+      }
+    }
+    return getListUserWorkloadsConfigMapsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+      getUpdateUserWorkloadsConfigMapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserWorkloadsConfigMap",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest
+              .class,
+      responseType = com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest,
+          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+      getUpdateUserWorkloadsConfigMapMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest,
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+        getUpdateUserWorkloadsConfigMapMethod;
+    if ((getUpdateUserWorkloadsConfigMapMethod =
+            EnvironmentsGrpc.getUpdateUserWorkloadsConfigMapMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getUpdateUserWorkloadsConfigMapMethod =
+                EnvironmentsGrpc.getUpdateUserWorkloadsConfigMapMethod)
+            == null) {
+          EnvironmentsGrpc.getUpdateUserWorkloadsConfigMapMethod =
+              getUpdateUserWorkloadsConfigMapMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .UpdateUserWorkloadsConfigMapRequest,
+                          com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateUserWorkloadsConfigMap"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .UpdateUserWorkloadsConfigMapRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .UserWorkloadsConfigMap.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("UpdateUserWorkloadsConfigMap"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateUserWorkloadsConfigMapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserWorkloadsConfigMapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUserWorkloadsConfigMap",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest
+              .class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserWorkloadsConfigMapMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest,
+            com.google.protobuf.Empty>
+        getDeleteUserWorkloadsConfigMapMethod;
+    if ((getDeleteUserWorkloadsConfigMapMethod =
+            EnvironmentsGrpc.getDeleteUserWorkloadsConfigMapMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getDeleteUserWorkloadsConfigMapMethod =
+                EnvironmentsGrpc.getDeleteUserWorkloadsConfigMapMethod)
+            == null) {
+          EnvironmentsGrpc.getDeleteUserWorkloadsConfigMapMethod =
+              getDeleteUserWorkloadsConfigMapMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1
+                              .DeleteUserWorkloadsConfigMapRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteUserWorkloadsConfigMap"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1
+                                  .DeleteUserWorkloadsConfigMapRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("DeleteUserWorkloadsConfigMap"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserWorkloadsConfigMapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest,
           com.google.longrunning.Operation>
       getSaveSnapshotMethod;
@@ -792,6 +1378,207 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Lists workloads in a Cloud Composer environment. Workload is a unit that
+     * runs a single Composer component.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void listWorkloads(
+        com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWorkloadsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void createUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateUserWorkloadsSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads Secret.
+     * Values of the "data" field in the response are cleared.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void getUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUserWorkloadsSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads Secrets.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void listUserWorkloadsSecrets(
+        com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUserWorkloadsSecretsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void updateUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateUserWorkloadsSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void deleteUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteUserWorkloadsSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void createUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateUserWorkloadsConfigMapMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void getUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUserWorkloadsConfigMapMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads ConfigMaps.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void listUserWorkloadsConfigMaps(
+        com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1
+                    .ListUserWorkloadsConfigMapsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUserWorkloadsConfigMapsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void updateUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateUserWorkloadsConfigMapMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    default void deleteUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteUserWorkloadsConfigMapMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -1026,6 +1813,229 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Lists workloads in a Cloud Composer environment. Workload is a unit that
+     * runs a single Composer component.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void listWorkloads(
+        com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWorkloadsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void createUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserWorkloadsSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads Secret.
+     * Values of the "data" field in the response are cleared.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void getUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserWorkloadsSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads Secrets.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void listUserWorkloadsSecrets(
+        com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserWorkloadsSecretsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void updateUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserWorkloadsSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void deleteUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserWorkloadsSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void createUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserWorkloadsConfigMapMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void getUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserWorkloadsConfigMapMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads ConfigMaps.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void listUserWorkloadsConfigMaps(
+        com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1
+                    .ListUserWorkloadsConfigMapsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserWorkloadsConfigMapsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void updateUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserWorkloadsConfigMapMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public void deleteUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserWorkloadsConfigMapMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -1219,6 +2229,191 @@ public final class EnvironmentsGrpc {
             com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPollAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workloads in a Cloud Composer environment. Workload is a unit that
+     * runs a single Composer component.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse listWorkloads(
+        com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
+        createUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads Secret.
+     * Values of the "data" field in the response are cleared.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
+        getUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads Secrets.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse
+        listUserWorkloadsSecrets(
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserWorkloadsSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
+        updateUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
+        createUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
+        getUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads ConfigMaps.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse
+        listUserWorkloadsConfigMaps(
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserWorkloadsConfigMapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
+        updateUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserWorkloadsConfigMapMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1421,6 +2616,203 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Lists workloads in a Cloud Composer environment. Workload is a unit that
+     * runs a single Composer component.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>
+        listWorkloads(
+            com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWorkloadsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+        createUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserWorkloadsSecretMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads Secret.
+     * Values of the "data" field in the response are cleared.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+        getUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserWorkloadsSecretMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads Secrets.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse>
+        listUserWorkloadsSecrets(
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserWorkloadsSecretsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
+        updateUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserWorkloadsSecretMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserWorkloadsSecretMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+        createUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserWorkloadsConfigMapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+        getUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserWorkloadsConfigMapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads ConfigMaps.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse>
+        listUserWorkloadsConfigMaps(
+            com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserWorkloadsConfigMapsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
+        updateUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserWorkloadsConfigMapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserWorkloadsConfigMapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -1488,10 +2880,21 @@ public final class EnvironmentsGrpc {
   private static final int METHODID_EXECUTE_AIRFLOW_COMMAND = 5;
   private static final int METHODID_STOP_AIRFLOW_COMMAND = 6;
   private static final int METHODID_POLL_AIRFLOW_COMMAND = 7;
-  private static final int METHODID_SAVE_SNAPSHOT = 8;
-  private static final int METHODID_LOAD_SNAPSHOT = 9;
-  private static final int METHODID_DATABASE_FAILOVER = 10;
-  private static final int METHODID_FETCH_DATABASE_PROPERTIES = 11;
+  private static final int METHODID_LIST_WORKLOADS = 8;
+  private static final int METHODID_CREATE_USER_WORKLOADS_SECRET = 9;
+  private static final int METHODID_GET_USER_WORKLOADS_SECRET = 10;
+  private static final int METHODID_LIST_USER_WORKLOADS_SECRETS = 11;
+  private static final int METHODID_UPDATE_USER_WORKLOADS_SECRET = 12;
+  private static final int METHODID_DELETE_USER_WORKLOADS_SECRET = 13;
+  private static final int METHODID_CREATE_USER_WORKLOADS_CONFIG_MAP = 14;
+  private static final int METHODID_GET_USER_WORKLOADS_CONFIG_MAP = 15;
+  private static final int METHODID_LIST_USER_WORKLOADS_CONFIG_MAPS = 16;
+  private static final int METHODID_UPDATE_USER_WORKLOADS_CONFIG_MAP = 17;
+  private static final int METHODID_DELETE_USER_WORKLOADS_CONFIG_MAP = 18;
+  private static final int METHODID_SAVE_SNAPSHOT = 19;
+  private static final int METHODID_LOAD_SNAPSHOT = 20;
+  private static final int METHODID_DATABASE_FAILOVER = 21;
+  private static final int METHODID_FETCH_DATABASE_PROPERTIES = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1561,6 +2964,94 @@ public final class EnvironmentsGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse>)
                   responseObserver);
+          break;
+        case METHODID_LIST_WORKLOADS:
+          serviceImpl.listWorkloads(
+              (com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_USER_WORKLOADS_SECRET:
+          serviceImpl.createUserWorkloadsSecret(
+              (com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>)
+                  responseObserver);
+          break;
+        case METHODID_GET_USER_WORKLOADS_SECRET:
+          serviceImpl.getUserWorkloadsSecret(
+              (com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_USER_WORKLOADS_SECRETS:
+          serviceImpl.listUserWorkloadsSecrets(
+              (com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1
+                          .ListUserWorkloadsSecretsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_USER_WORKLOADS_SECRET:
+          serviceImpl.updateUserWorkloadsSecret(
+              (com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_USER_WORKLOADS_SECRET:
+          serviceImpl.deleteUserWorkloadsSecret(
+              (com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_USER_WORKLOADS_CONFIG_MAP:
+          serviceImpl.createUserWorkloadsConfigMap(
+              (com.google.cloud.orchestration.airflow.service.v1
+                      .CreateUserWorkloadsConfigMapRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>)
+                  responseObserver);
+          break;
+        case METHODID_GET_USER_WORKLOADS_CONFIG_MAP:
+          serviceImpl.getUserWorkloadsConfigMap(
+              (com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_USER_WORKLOADS_CONFIG_MAPS:
+          serviceImpl.listUserWorkloadsConfigMaps(
+              (com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1
+                          .ListUserWorkloadsConfigMapsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_USER_WORKLOADS_CONFIG_MAP:
+          serviceImpl.updateUserWorkloadsConfigMap(
+              (com.google.cloud.orchestration.airflow.service.v1
+                      .UpdateUserWorkloadsConfigMapRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_USER_WORKLOADS_CONFIG_MAP:
+          serviceImpl.deleteUserWorkloadsConfigMap(
+              (com.google.cloud.orchestration.airflow.service.v1
+                      .DeleteUserWorkloadsConfigMapRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_SAVE_SNAPSHOT:
           serviceImpl.saveSnapshot(
@@ -1658,6 +3149,92 @@ public final class EnvironmentsGrpc {
                     com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse>(
                     service, METHODID_POLL_AIRFLOW_COMMAND)))
         .addMethod(
+            getListWorkloadsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>(
+                    service, METHODID_LIST_WORKLOADS)))
+        .addMethod(
+            getCreateUserWorkloadsSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .CreateUserWorkloadsSecretRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>(
+                    service, METHODID_CREATE_USER_WORKLOADS_SECRET)))
+        .addMethod(
+            getGetUserWorkloadsSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>(
+                    service, METHODID_GET_USER_WORKLOADS_SECRET)))
+        .addMethod(
+            getListUserWorkloadsSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .ListUserWorkloadsSecretsRequest,
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .ListUserWorkloadsSecretsResponse>(
+                    service, METHODID_LIST_USER_WORKLOADS_SECRETS)))
+        .addMethod(
+            getUpdateUserWorkloadsSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .UpdateUserWorkloadsSecretRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>(
+                    service, METHODID_UPDATE_USER_WORKLOADS_SECRET)))
+        .addMethod(
+            getDeleteUserWorkloadsSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .DeleteUserWorkloadsSecretRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_WORKLOADS_SECRET)))
+        .addMethod(
+            getCreateUserWorkloadsConfigMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .CreateUserWorkloadsConfigMapRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>(
+                    service, METHODID_CREATE_USER_WORKLOADS_CONFIG_MAP)))
+        .addMethod(
+            getGetUserWorkloadsConfigMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .GetUserWorkloadsConfigMapRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>(
+                    service, METHODID_GET_USER_WORKLOADS_CONFIG_MAP)))
+        .addMethod(
+            getListUserWorkloadsConfigMapsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .ListUserWorkloadsConfigMapsRequest,
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .ListUserWorkloadsConfigMapsResponse>(
+                    service, METHODID_LIST_USER_WORKLOADS_CONFIG_MAPS)))
+        .addMethod(
+            getUpdateUserWorkloadsConfigMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .UpdateUserWorkloadsConfigMapRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>(
+                    service, METHODID_UPDATE_USER_WORKLOADS_CONFIG_MAP)))
+        .addMethod(
+            getDeleteUserWorkloadsConfigMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1
+                        .DeleteUserWorkloadsConfigMapRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_WORKLOADS_CONFIG_MAP)))
+        .addMethod(
             getSaveSnapshotMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1744,6 +3321,17 @@ public final class EnvironmentsGrpc {
                       .addMethod(getExecuteAirflowCommandMethod())
                       .addMethod(getStopAirflowCommandMethod())
                       .addMethod(getPollAirflowCommandMethod())
+                      .addMethod(getListWorkloadsMethod())
+                      .addMethod(getCreateUserWorkloadsSecretMethod())
+                      .addMethod(getGetUserWorkloadsSecretMethod())
+                      .addMethod(getListUserWorkloadsSecretsMethod())
+                      .addMethod(getUpdateUserWorkloadsSecretMethod())
+                      .addMethod(getDeleteUserWorkloadsSecretMethod())
+                      .addMethod(getCreateUserWorkloadsConfigMapMethod())
+                      .addMethod(getGetUserWorkloadsConfigMapMethod())
+                      .addMethod(getListUserWorkloadsConfigMapsMethod())
+                      .addMethod(getUpdateUserWorkloadsConfigMapMethod())
+                      .addMethod(getDeleteUserWorkloadsConfigMapMethod())
                       .addMethod(getSaveSnapshotMethod())
                       .addMethod(getLoadSnapshotMethod())
                       .addMethod(getDatabaseFailoverMethod())

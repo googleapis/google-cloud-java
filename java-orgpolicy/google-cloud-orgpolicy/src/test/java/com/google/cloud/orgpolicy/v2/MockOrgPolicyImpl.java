@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +196,112 @@ public class MockOrgPolicyImpl extends OrgPolicyImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCustomConstraint(
+      CreateCustomConstraintRequest request, StreamObserver<CustomConstraint> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomConstraint) {
+      requests.add(request);
+      responseObserver.onNext(((CustomConstraint) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomConstraint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomConstraint.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCustomConstraint(
+      UpdateCustomConstraintRequest request, StreamObserver<CustomConstraint> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomConstraint) {
+      requests.add(request);
+      responseObserver.onNext(((CustomConstraint) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCustomConstraint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomConstraint.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCustomConstraint(
+      GetCustomConstraintRequest request, StreamObserver<CustomConstraint> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomConstraint) {
+      requests.add(request);
+      responseObserver.onNext(((CustomConstraint) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomConstraint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomConstraint.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCustomConstraints(
+      ListCustomConstraintsRequest request,
+      StreamObserver<ListCustomConstraintsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomConstraintsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomConstraintsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomConstraints, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomConstraintsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCustomConstraint(
+      DeleteCustomConstraintRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCustomConstraint, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

@@ -106,11 +106,17 @@
             "DeleteEntityType": {
               "methods": ["deleteEntityType", "deleteEntityType", "deleteEntityType", "deleteEntityTypeCallable"]
             },
+            "ExportEntityTypes": {
+              "methods": ["exportEntityTypesAsync", "exportEntityTypesOperationCallable", "exportEntityTypesCallable"]
+            },
             "GetEntityType": {
               "methods": ["getEntityType", "getEntityType", "getEntityType", "getEntityTypeCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportEntityTypes": {
+              "methods": ["importEntityTypesAsync", "importEntityTypesOperationCallable", "importEntityTypesCallable"]
             },
             "ListEntityTypes": {
               "methods": ["listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypesPagedCallable", "listEntityTypesCallable"]
@@ -393,6 +399,9 @@
             },
             "MatchIntent": {
               "methods": ["matchIntent", "matchIntentCallable"]
+            },
+            "ServerStreamingDetectIntent": {
+              "methods": ["serverStreamingDetectIntentCallable"]
             },
             "StreamingDetectIntent": {
               "methods": ["streamingDetectIntentCallable"]

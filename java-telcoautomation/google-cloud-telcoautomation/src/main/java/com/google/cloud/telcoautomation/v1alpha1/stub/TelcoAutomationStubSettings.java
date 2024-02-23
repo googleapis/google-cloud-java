@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,9 +72,6 @@ import com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRevisionRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRequest;
-import com.google.cloud.telcoautomation.v1alpha1.DeleteDeploymentRevisionRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest;
 import com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest;
 import com.google.cloud.telcoautomation.v1alpha1.Deployment;
@@ -206,8 +203,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
   private final UnaryCallSettings<UpdateBlueprintRequest, Blueprint> updateBlueprintSettings;
   private final UnaryCallSettings<GetBlueprintRequest, Blueprint> getBlueprintSettings;
   private final UnaryCallSettings<DeleteBlueprintRequest, Empty> deleteBlueprintSettings;
-  private final UnaryCallSettings<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionSettings;
   private final PagedCallSettings<
           ListBlueprintsRequest, ListBlueprintsResponse, ListBlueprintsPagedResponse>
       listBlueprintsSettings;
@@ -241,10 +236,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
   private final UnaryCallSettings<CreateDeploymentRequest, Deployment> createDeploymentSettings;
   private final UnaryCallSettings<UpdateDeploymentRequest, Deployment> updateDeploymentSettings;
   private final UnaryCallSettings<GetDeploymentRequest, Deployment> getDeploymentSettings;
-  private final UnaryCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentSettings;
   private final UnaryCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentSettings;
-  private final UnaryCallSettings<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionSettings;
   private final PagedCallSettings<
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
       listDeploymentsSettings;
@@ -1071,12 +1063,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     return deleteBlueprintSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteBlueprintRevision. */
-  public UnaryCallSettings<DeleteBlueprintRevisionRequest, Blueprint>
-      deleteBlueprintRevisionSettings() {
-    return deleteBlueprintRevisionSettings;
-  }
-
   /** Returns the object with the settings used for calls to listBlueprints. */
   public PagedCallSettings<
           ListBlueprintsRequest, ListBlueprintsResponse, ListBlueprintsPagedResponse>
@@ -1162,20 +1148,9 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     return getDeploymentSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDeployment. */
-  public UnaryCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentSettings() {
-    return deleteDeploymentSettings;
-  }
-
   /** Returns the object with the settings used for calls to removeDeployment. */
   public UnaryCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentSettings() {
     return removeDeploymentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDeploymentRevision. */
-  public UnaryCallSettings<DeleteDeploymentRevisionRequest, Deployment>
-      deleteDeploymentRevisionSettings() {
-    return deleteDeploymentRevisionSettings;
   }
 
   /** Returns the object with the settings used for calls to listDeployments. */
@@ -1270,6 +1245,21 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "telcoautomation";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -1314,7 +1304,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1323,7 +1312,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1380,7 +1368,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     updateBlueprintSettings = settingsBuilder.updateBlueprintSettings().build();
     getBlueprintSettings = settingsBuilder.getBlueprintSettings().build();
     deleteBlueprintSettings = settingsBuilder.deleteBlueprintSettings().build();
-    deleteBlueprintRevisionSettings = settingsBuilder.deleteBlueprintRevisionSettings().build();
     listBlueprintsSettings = settingsBuilder.listBlueprintsSettings().build();
     approveBlueprintSettings = settingsBuilder.approveBlueprintSettings().build();
     proposeBlueprintSettings = settingsBuilder.proposeBlueprintSettings().build();
@@ -1394,9 +1381,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     createDeploymentSettings = settingsBuilder.createDeploymentSettings().build();
     updateDeploymentSettings = settingsBuilder.updateDeploymentSettings().build();
     getDeploymentSettings = settingsBuilder.getDeploymentSettings().build();
-    deleteDeploymentSettings = settingsBuilder.deleteDeploymentSettings().build();
     removeDeploymentSettings = settingsBuilder.removeDeploymentSettings().build();
-    deleteDeploymentRevisionSettings = settingsBuilder.deleteDeploymentRevisionSettings().build();
     listDeploymentsSettings = settingsBuilder.listDeploymentsSettings().build();
     listDeploymentRevisionsSettings = settingsBuilder.listDeploymentRevisionsSettings().build();
     discardDeploymentChangesSettings = settingsBuilder.discardDeploymentChangesSettings().build();
@@ -1447,8 +1432,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
         updateBlueprintSettings;
     private final UnaryCallSettings.Builder<GetBlueprintRequest, Blueprint> getBlueprintSettings;
     private final UnaryCallSettings.Builder<DeleteBlueprintRequest, Empty> deleteBlueprintSettings;
-    private final UnaryCallSettings.Builder<DeleteBlueprintRevisionRequest, Blueprint>
-        deleteBlueprintRevisionSettings;
     private final PagedCallSettings.Builder<
             ListBlueprintsRequest, ListBlueprintsResponse, ListBlueprintsPagedResponse>
         listBlueprintsSettings;
@@ -1488,12 +1471,8 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     private final UnaryCallSettings.Builder<UpdateDeploymentRequest, Deployment>
         updateDeploymentSettings;
     private final UnaryCallSettings.Builder<GetDeploymentRequest, Deployment> getDeploymentSettings;
-    private final UnaryCallSettings.Builder<DeleteDeploymentRequest, Empty>
-        deleteDeploymentSettings;
     private final UnaryCallSettings.Builder<RemoveDeploymentRequest, Empty>
         removeDeploymentSettings;
-    private final UnaryCallSettings.Builder<DeleteDeploymentRevisionRequest, Deployment>
-        deleteDeploymentRevisionSettings;
     private final PagedCallSettings.Builder<
             ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
         listDeploymentsSettings;
@@ -1595,7 +1574,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       updateBlueprintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBlueprintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBlueprintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteBlueprintRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBlueprintsSettings = PagedCallSettings.newBuilder(LIST_BLUEPRINTS_PAGE_STR_FACT);
       approveBlueprintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       proposeBlueprintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1613,9 +1591,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       createDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteDeploymentRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDeploymentsSettings = PagedCallSettings.newBuilder(LIST_DEPLOYMENTS_PAGE_STR_FACT);
       listDeploymentRevisionsSettings =
           PagedCallSettings.newBuilder(LIST_DEPLOYMENT_REVISIONS_PAGE_STR_FACT);
@@ -1645,7 +1621,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
               updateBlueprintSettings,
               getBlueprintSettings,
               deleteBlueprintSettings,
-              deleteBlueprintRevisionSettings,
               listBlueprintsSettings,
               approveBlueprintSettings,
               proposeBlueprintSettings,
@@ -1659,9 +1634,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
               createDeploymentSettings,
               updateDeploymentSettings,
               getDeploymentSettings,
-              deleteDeploymentSettings,
               removeDeploymentSettings,
-              deleteDeploymentRevisionSettings,
               listDeploymentsSettings,
               listDeploymentRevisionsSettings,
               discardDeploymentChangesSettings,
@@ -1698,7 +1671,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       updateBlueprintSettings = settings.updateBlueprintSettings.toBuilder();
       getBlueprintSettings = settings.getBlueprintSettings.toBuilder();
       deleteBlueprintSettings = settings.deleteBlueprintSettings.toBuilder();
-      deleteBlueprintRevisionSettings = settings.deleteBlueprintRevisionSettings.toBuilder();
       listBlueprintsSettings = settings.listBlueprintsSettings.toBuilder();
       approveBlueprintSettings = settings.approveBlueprintSettings.toBuilder();
       proposeBlueprintSettings = settings.proposeBlueprintSettings.toBuilder();
@@ -1712,9 +1684,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       createDeploymentSettings = settings.createDeploymentSettings.toBuilder();
       updateDeploymentSettings = settings.updateDeploymentSettings.toBuilder();
       getDeploymentSettings = settings.getDeploymentSettings.toBuilder();
-      deleteDeploymentSettings = settings.deleteDeploymentSettings.toBuilder();
       removeDeploymentSettings = settings.removeDeploymentSettings.toBuilder();
-      deleteDeploymentRevisionSettings = settings.deleteDeploymentRevisionSettings.toBuilder();
       listDeploymentsSettings = settings.listDeploymentsSettings.toBuilder();
       listDeploymentRevisionsSettings = settings.listDeploymentRevisionsSettings.toBuilder();
       discardDeploymentChangesSettings = settings.discardDeploymentChangesSettings.toBuilder();
@@ -1742,7 +1712,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
               updateBlueprintSettings,
               getBlueprintSettings,
               deleteBlueprintSettings,
-              deleteBlueprintRevisionSettings,
               listBlueprintsSettings,
               approveBlueprintSettings,
               proposeBlueprintSettings,
@@ -1756,9 +1725,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
               createDeploymentSettings,
               updateDeploymentSettings,
               getDeploymentSettings,
-              deleteDeploymentSettings,
               removeDeploymentSettings,
-              deleteDeploymentRevisionSettings,
               listDeploymentsSettings,
               listDeploymentRevisionsSettings,
               discardDeploymentChangesSettings,
@@ -1779,7 +1746,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1792,7 +1758,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1857,11 +1822,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
 
       builder
           .deleteBlueprintSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .deleteBlueprintRevisionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1931,17 +1891,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-          .deleteDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .removeDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .deleteDeploymentRevisionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2224,12 +2174,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       return deleteBlueprintSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteBlueprintRevision. */
-    public UnaryCallSettings.Builder<DeleteBlueprintRevisionRequest, Blueprint>
-        deleteBlueprintRevisionSettings() {
-      return deleteBlueprintRevisionSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listBlueprints. */
     public PagedCallSettings.Builder<
             ListBlueprintsRequest, ListBlueprintsResponse, ListBlueprintsPagedResponse>
@@ -2320,20 +2264,9 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
       return getDeploymentSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDeployment. */
-    public UnaryCallSettings.Builder<DeleteDeploymentRequest, Empty> deleteDeploymentSettings() {
-      return deleteDeploymentSettings;
-    }
-
     /** Returns the builder for the settings used for calls to removeDeployment. */
     public UnaryCallSettings.Builder<RemoveDeploymentRequest, Empty> removeDeploymentSettings() {
       return removeDeploymentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDeploymentRevision. */
-    public UnaryCallSettings.Builder<DeleteDeploymentRevisionRequest, Deployment>
-        deleteDeploymentRevisionSettings() {
-      return deleteDeploymentRevisionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listDeployments. */
@@ -2414,6 +2347,15 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,14 +21,19 @@ import static com.google.cloud.compute.v1.RegionSecurityPoliciesClient.ListPaged
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.DeleteRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.GetRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.ListRegionSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.PatchRuleRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.RemoveRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
+import com.google.cloud.compute.v1.SecurityPolicyRule;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -39,6 +44,15 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionSecurityPoliciesStub implements BackgroundResource {
+
+  public OperationCallable<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addRuleOperationCallable()");
+  }
+
+  public UnaryCallable<AddRuleRegionSecurityPolicyRequest, Operation> addRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: addRuleCallable()");
+  }
 
   public OperationCallable<DeleteRegionSecurityPolicyRequest, Operation, Operation>
       deleteOperationCallable() {
@@ -51,6 +65,10 @@ public abstract class RegionSecurityPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<GetRegionSecurityPolicyRequest, SecurityPolicy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule> getRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRuleCallable()");
   }
 
   public OperationCallable<InsertRegionSecurityPolicyRequest, Operation, Operation>
@@ -77,6 +95,24 @@ public abstract class RegionSecurityPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<PatchRegionSecurityPolicyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchRuleOperationCallable()");
+  }
+
+  public UnaryCallable<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchRuleCallable()");
+  }
+
+  public OperationCallable<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeRuleOperationCallable()");
+  }
+
+  public UnaryCallable<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeRuleCallable()");
   }
 
   @Override

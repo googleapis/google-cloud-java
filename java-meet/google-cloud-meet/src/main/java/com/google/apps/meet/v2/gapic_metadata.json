@@ -1,0 +1,75 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.apps.meet.v2",
+  "libraryPackage": "com.google.apps.meet.v2",
+  "services": {
+    "SpacesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SpacesServiceClient",
+          "rpcs": {
+            "CreateSpace": {
+              "methods": ["createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "EndActiveConference": {
+              "methods": ["endActiveConference", "endActiveConference", "endActiveConference", "endActiveConferenceCallable"]
+            },
+            "GetSpace": {
+              "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
+            },
+            "UpdateSpace": {
+              "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ConferenceRecordsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConferenceRecordsServiceClient",
+          "rpcs": {
+            "GetConferenceRecord": {
+              "methods": ["getConferenceRecord", "getConferenceRecord", "getConferenceRecord", "getConferenceRecordCallable"]
+            },
+            "GetParticipant": {
+              "methods": ["getParticipant", "getParticipant", "getParticipant", "getParticipantCallable"]
+            },
+            "GetParticipantSession": {
+              "methods": ["getParticipantSession", "getParticipantSession", "getParticipantSession", "getParticipantSessionCallable"]
+            },
+            "GetRecording": {
+              "methods": ["getRecording", "getRecording", "getRecording", "getRecordingCallable"]
+            },
+            "GetTranscript": {
+              "methods": ["getTranscript", "getTranscript", "getTranscript", "getTranscriptCallable"]
+            },
+            "GetTranscriptEntry": {
+              "methods": ["getTranscriptEntry", "getTranscriptEntry", "getTranscriptEntry", "getTranscriptEntryCallable"]
+            },
+            "ListConferenceRecords": {
+              "methods": ["listConferenceRecords", "listConferenceRecordsPagedCallable", "listConferenceRecordsCallable"]
+            },
+            "ListParticipantSessions": {
+              "methods": ["listParticipantSessions", "listParticipantSessions", "listParticipantSessions", "listParticipantSessionsPagedCallable", "listParticipantSessionsCallable"]
+            },
+            "ListParticipants": {
+              "methods": ["listParticipants", "listParticipants", "listParticipants", "listParticipantsPagedCallable", "listParticipantsCallable"]
+            },
+            "ListRecordings": {
+              "methods": ["listRecordings", "listRecordings", "listRecordings", "listRecordingsPagedCallable", "listRecordingsCallable"]
+            },
+            "ListTranscriptEntries": {
+              "methods": ["listTranscriptEntries", "listTranscriptEntries", "listTranscriptEntries", "listTranscriptEntriesPagedCallable", "listTranscriptEntriesCallable"]
+            },
+            "ListTranscripts": {
+              "methods": ["listTranscripts", "listTranscripts", "listTranscripts", "listTranscriptsPagedCallable", "listTranscriptsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

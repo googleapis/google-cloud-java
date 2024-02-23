@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,13 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
+import com.google.cloud.compute.v1.GetNatIpInfoRouterRequest;
 import com.google.cloud.compute.v1.GetNatMappingInfoRoutersRequest;
 import com.google.cloud.compute.v1.GetRouterRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
+import com.google.cloud.compute.v1.NatIpInfoResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRouterRequest;
 import com.google.cloud.compute.v1.PreviewRouterRequest;
@@ -128,6 +130,8 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   private final OperationCallSettings<DeleteRouterRequest, Operation, Operation>
       deleteOperationSettings;
   private final UnaryCallSettings<GetRouterRequest, Router> getSettings;
+  private final UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+      getNatIpInfoSettings;
   private final PagedCallSettings<
           GetNatMappingInfoRoutersRequest,
           VmEndpointNatMappingsList,
@@ -358,6 +362,11 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getNatIpInfo. */
+  public UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoSettings() {
+    return getNatIpInfoSettings;
+  }
+
   /** Returns the object with the settings used for calls to getNatMappingInfo. */
   public PagedCallSettings<
           GetNatMappingInfoRoutersRequest,
@@ -426,6 +435,21 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -463,7 +487,6 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(RoutersStubSettings.class))
@@ -494,6 +517,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getNatIpInfoSettings = settingsBuilder.getNatIpInfoSettings().build();
     getNatMappingInfoSettings = settingsBuilder.getNatMappingInfoSettings().build();
     getRouterStatusSettings = settingsBuilder.getRouterStatusSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
@@ -516,6 +540,8 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     private final OperationCallSettings.Builder<DeleteRouterRequest, Operation, Operation>
         deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings;
+    private final UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoSettings;
     private final PagedCallSettings.Builder<
             GetNatMappingInfoRoutersRequest,
             VmEndpointNatMappingsList,
@@ -590,6 +616,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getNatIpInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNatMappingInfoSettings = PagedCallSettings.newBuilder(GET_NAT_MAPPING_INFO_PAGE_STR_FACT);
       getRouterStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -606,6 +633,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getNatIpInfoSettings,
               getNatMappingInfoSettings,
               getRouterStatusSettings,
               insertSettings,
@@ -623,6 +651,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getNatIpInfoSettings = settings.getNatIpInfoSettings.toBuilder();
       getNatMappingInfoSettings = settings.getNatMappingInfoSettings.toBuilder();
       getRouterStatusSettings = settings.getRouterStatusSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
@@ -639,6 +668,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getNatIpInfoSettings,
               getNatMappingInfoSettings,
               getRouterStatusSettings,
               insertSettings,
@@ -654,7 +684,6 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -674,6 +703,11 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getNatIpInfoSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -850,6 +884,12 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       return getSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getNatIpInfo. */
+    public UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoSettings() {
+      return getNatIpInfoSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getNatMappingInfo. */
     public PagedCallSettings.Builder<
             GetNatMappingInfoRoutersRequest,
@@ -914,6 +954,15 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     public OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

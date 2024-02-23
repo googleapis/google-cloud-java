@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,6 +137,28 @@ public class MockPlacesImpl extends PlacesImplBase {
                   "Unrecognized response type %s for method GetPlace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Place.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void autocompletePlaces(
+      AutocompletePlacesRequest request,
+      StreamObserver<AutocompletePlacesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutocompletePlacesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AutocompletePlacesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AutocompletePlaces, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutocompletePlacesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

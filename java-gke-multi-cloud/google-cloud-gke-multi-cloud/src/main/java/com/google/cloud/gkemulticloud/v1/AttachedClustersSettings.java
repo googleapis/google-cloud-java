@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,6 +162,14 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
         .generateAttachedClusterInstallManifestSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAttachedClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenSettings() {
+    return ((AttachedClustersStubSettings) getStubSettings())
+        .generateAttachedClusterAgentTokenSettings();
+  }
+
   public static final AttachedClustersSettings create(AttachedClustersStubSettings stub)
       throws IOException {
     return new AttachedClustersSettings.Builder(stub.toBuilder()).build();
@@ -203,7 +211,6 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
     return AttachedClustersStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return AttachedClustersStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -358,6 +365,13 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
             GenerateAttachedClusterInstallManifestResponse>
         generateAttachedClusterInstallManifestSettings() {
       return getStubSettingsBuilder().generateAttachedClusterInstallManifestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateAttachedClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentTokenSettings() {
+      return getStubSettingsBuilder().generateAttachedClusterAgentTokenSettings();
     }
 
     @Override

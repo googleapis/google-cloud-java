@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
@@ -91,6 +92,7 @@ import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
 import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceRequest;
@@ -211,6 +213,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final PagedCallSettings<
           ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
       listReferrersSettings;
+  private final UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings;
+  private final OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings;
   private final UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings;
   private final OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
@@ -256,6 +262,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings;
   private final OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationSettings;
+  private final UnaryCallSettings<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicySettings;
+  private final OperationCallSettings<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings;
   private final UnaryCallSettings<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountSettings;
   private final OperationCallSettings<SetServiceAccountInstanceRequest, Operation, Operation>
@@ -639,6 +649,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return listReferrersSettings;
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings() {
+    return performMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return performMaintenanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to removeResourcePolicies. */
   public UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings() {
@@ -786,6 +808,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   public OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationSettings() {
     return setSchedulingOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return setSecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return setSecurityPolicyOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setServiceAccount. */
@@ -956,6 +990,21 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -993,7 +1042,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(InstancesStubSettings.class))
@@ -1049,6 +1097,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listReferrersSettings = settingsBuilder.listReferrersSettings().build();
+    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
+    performMaintenanceOperationSettings =
+        settingsBuilder.performMaintenanceOperationSettings().build();
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
     removeResourcePoliciesOperationSettings =
         settingsBuilder.removeResourcePoliciesOperationSettings().build();
@@ -1080,6 +1131,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     setNameOperationSettings = settingsBuilder.setNameOperationSettings().build();
     setSchedulingSettings = settingsBuilder.setSchedulingSettings().build();
     setSchedulingOperationSettings = settingsBuilder.setSchedulingOperationSettings().build();
+    setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
+    setSecurityPolicyOperationSettings =
+        settingsBuilder.setSecurityPolicyOperationSettings().build();
     setServiceAccountSettings = settingsBuilder.setServiceAccountSettings().build();
     setServiceAccountOperationSettings =
         settingsBuilder.setServiceAccountOperationSettings().build();
@@ -1178,6 +1232,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final PagedCallSettings.Builder<
             ListReferrersInstancesRequest, InstanceListReferrers, ListReferrersPagedResponse>
         listReferrersSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings;
     private final UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings;
     private final OperationCallSettings.Builder<
@@ -1232,6 +1291,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         setSchedulingSettings;
     private final OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
         setSchedulingOperationSettings;
+    private final UnaryCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation>
+        setSecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetSecurityPolicyInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings;
     private final UnaryCallSettings.Builder<SetServiceAccountInstanceRequest, Operation>
         setServiceAccountSettings;
     private final OperationCallSettings.Builder<
@@ -1367,6 +1431,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listReferrersSettings = PagedCallSettings.newBuilder(LIST_REFERRERS_PAGE_STR_FACT);
+      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1393,6 +1459,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       setNameOperationSettings = OperationCallSettings.newBuilder();
       setSchedulingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSchedulingOperationSettings = OperationCallSettings.newBuilder();
+      setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
       setServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setServiceAccountOperationSettings = OperationCallSettings.newBuilder();
       setShieldedInstanceIntegrityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1441,6 +1509,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               insertSettings,
               listSettings,
               listReferrersSettings,
+              performMaintenanceSettings,
               removeResourcePoliciesSettings,
               resetSettings,
               resumeSettings,
@@ -1455,6 +1524,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               setMinCpuPlatformSettings,
               setNameSettings,
               setSchedulingSettings,
+              setSecurityPolicySettings,
               setServiceAccountSettings,
               setShieldedInstanceIntegrityPolicySettings,
               setTagsSettings,
@@ -1504,6 +1574,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listReferrersSettings = settings.listReferrersSettings.toBuilder();
+      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
+      performMaintenanceOperationSettings =
+          settings.performMaintenanceOperationSettings.toBuilder();
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
       removeResourcePoliciesOperationSettings =
           settings.removeResourcePoliciesOperationSettings.toBuilder();
@@ -1533,6 +1606,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       setNameOperationSettings = settings.setNameOperationSettings.toBuilder();
       setSchedulingSettings = settings.setSchedulingSettings.toBuilder();
       setSchedulingOperationSettings = settings.setSchedulingOperationSettings.toBuilder();
+      setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
+      setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
       setServiceAccountSettings = settings.setServiceAccountSettings.toBuilder();
       setServiceAccountOperationSettings = settings.setServiceAccountOperationSettings.toBuilder();
       setShieldedInstanceIntegrityPolicySettings =
@@ -1590,6 +1665,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               insertSettings,
               listSettings,
               listReferrersSettings,
+              performMaintenanceSettings,
               removeResourcePoliciesSettings,
               resetSettings,
               resumeSettings,
@@ -1604,6 +1680,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               setMinCpuPlatformSettings,
               setNameSettings,
               setSchedulingSettings,
+              setSecurityPolicySettings,
               setServiceAccountSettings,
               setShieldedInstanceIntegrityPolicySettings,
               setTagsSettings,
@@ -1626,7 +1703,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1725,6 +1801,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .performMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .removeResourcePoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1791,6 +1872,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .setSchedulingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setSecurityPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -2039,6 +2125,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .performMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2332,6 +2443,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<SetSchedulingInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setSecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSecurityPolicyInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2858,6 +2994,20 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return listReferrersSettings;
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings() {
+      return performMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return performMaintenanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */
     public UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings() {
@@ -3032,6 +3182,20 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
         setSchedulingOperationSettings() {
       return setSchedulingOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return setSecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return setSecurityPolicyOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setServiceAccount. */
@@ -3224,6 +3388,15 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
         updateShieldedInstanceConfigOperationSettings() {
       return updateShieldedInstanceConfigOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

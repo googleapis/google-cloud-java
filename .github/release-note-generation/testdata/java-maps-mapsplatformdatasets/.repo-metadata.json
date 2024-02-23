@@ -1,0 +1,16 @@
+{
+  "api_shortname": "maps-mapsplatformdatasets",
+  "name_pretty": "Maps Platform Datasets API",
+  "product_documentation": "https://developers.google.com/maps/documentation",
+  "api_description": "The Maps Platform Datasets API enables developers to ingest geospatially-tied datasets\n    that they can use to enrich their experience of Maps Platform solutions (e.g. styling, routing).",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-mapsplatformdatasets/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-maps-mapsplatformdatasets",
+  "repo_short": "java-maps-mapsplatformdatasets",
+  "distribution_name": "com.google.maps:google-maps-mapsplatformdatasets",
+  "api_id": "mapsplatformdatasets.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

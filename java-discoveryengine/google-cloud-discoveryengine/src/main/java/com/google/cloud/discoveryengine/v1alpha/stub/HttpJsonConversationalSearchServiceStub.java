@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,7 +82,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}:converse")
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}:converse",
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}:converse")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -122,7 +123,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations")
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations",
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/engines/*}/conversations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -162,7 +164,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}")
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}",
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -200,7 +203,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{conversation.name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}")
+                          "/v1alpha/{conversation.name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}",
+                          "/v1alpha/{conversation.name=projects/*/locations/*/collections/*/engines/*/conversations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -241,7 +245,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}")
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}",
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -278,7 +283,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations")
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations",
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/engines/*}/conversations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

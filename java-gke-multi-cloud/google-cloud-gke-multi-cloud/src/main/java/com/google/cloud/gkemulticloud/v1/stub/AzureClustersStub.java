@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AzureClient;
 import com.google.cloud.gkemulticloud.v1.AzureCluster;
+import com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AzureNodePool;
+import com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AzureServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest;
@@ -35,9 +37,13 @@ import com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAzureClientRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse;
@@ -148,6 +154,13 @@ public abstract class AzureClustersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteAzureClusterCallable()");
   }
 
+  public UnaryCallable<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateAzureClusterAgentTokenCallable()");
+  }
+
   public UnaryCallable<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenCallable() {
     throw new UnsupportedOperationException("Not implemented: generateAzureAccessTokenCallable()");
@@ -195,6 +208,15 @@ public abstract class AzureClustersStub implements BackgroundResource {
 
   public UnaryCallable<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAzureNodePoolCallable()");
+  }
+
+  public UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAzureOpenIdConfigCallable()");
+  }
+
+  public UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys> getAzureJsonWebKeysCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAzureJsonWebKeysCallable()");
   }
 
   public UnaryCallable<GetAzureServerConfigRequest, AzureServerConfig>

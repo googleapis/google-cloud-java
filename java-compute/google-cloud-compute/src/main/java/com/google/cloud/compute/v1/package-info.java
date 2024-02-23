@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1362,6 +1362,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= RegionZonesClient =======================
+ *
+ * <p>Service Description: The RegionZones API.
+ *
+ * <p>Sample for RegionZonesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionZonesClient regionZonesClient = RegionZonesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   for (Zone element : regionZonesClient.list(project, region).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= RegionsClient =======================
  *
  * <p>Service Description: The Regions API.
@@ -1496,6 +1517,25 @@
  *   String region = "region-934795532";
  *   String serviceAttachment = "serviceAttachment-398467656";
  *   ServiceAttachment response = serviceAttachmentsClient.get(project, region, serviceAttachment);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SnapshotSettingsServiceClient =======================
+ *
+ * <p>Service Description: The SnapshotSettings API.
+ *
+ * <p>Sample for SnapshotSettingsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SnapshotSettingsServiceClient snapshotSettingsServiceClient =
+ *     SnapshotSettingsServiceClient.create()) {
+ *   String project = "project-309310695";
+ *   SnapshotSettings response = snapshotSettingsServiceClient.get(project);
  * }
  * }</pre>
  *

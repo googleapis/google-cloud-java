@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -36,17 +37,22 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
+import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
+import com.google.cloud.compute.v1.ListUsableRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -351,6 +357,61 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListUsableRegionBackendServicesRequest, BackendServiceListUsable>
+      listUsableMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/ListUsable")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListUsableRegionBackendServicesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/backendServices/listUsable",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsableRegionBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsableRegionBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackendServiceListUsable>newBuilder()
+                      .setDefaultInstance(BackendServiceListUsable.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<PatchRegionBackendServiceRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionBackendServiceRequest, Operation>newBuilder()
@@ -450,6 +511,109 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetSecurityPolicyRegionBackendServiceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/SetSecurityPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SetSecurityPolicyRegionBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}/setSecurityPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityPolicyReferenceResource",
+                                      request.getSecurityPolicyReferenceResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetSecurityPolicyRegionBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestIamPermissionsRegionBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/backendServices/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateRegionBackendServiceRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionBackendServiceRequest, Operation>newBuilder()
@@ -521,10 +685,22 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   private final UnaryCallable<ListRegionBackendServicesRequest, BackendServiceList> listCallable;
   private final UnaryCallable<ListRegionBackendServicesRequest, ListPagedResponse>
       listPagedCallable;
+  private final UnaryCallable<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable;
+  private final UnaryCallable<ListUsableRegionBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable;
   private final UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable;
   private final OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationCallable;
   private final UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicyCallable;
+  private final OperationCallable<
+          SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable;
+  private final UnaryCallable<
+          TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable;
   private final OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>
       updateOperationCallable;
@@ -654,6 +830,20 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>
+        listUsableTransportSettings =
+            HttpJsonCallSettings
+                .<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>newBuilder()
+                .setMethodDescriptor(listUsableMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<PatchRegionBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
@@ -671,6 +861,37 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
         setIamPolicyTransportSettings =
             HttpJsonCallSettings.<SetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
                 .setMethodDescriptor(setIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+        setSecurityPolicyTransportSettings =
+            HttpJsonCallSettings
+                .<SetSecurityPolicyRegionBackendServiceRequest, Operation>newBuilder()
+                .setMethodDescriptor(setSecurityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -728,6 +949,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.listUsableCallable =
+        callableFactory.createUnaryCallable(
+            listUsableTransportSettings, settings.listUsableSettings(), clientContext);
+    this.listUsablePagedCallable =
+        callableFactory.createPagedCallable(
+            listUsableTransportSettings, settings.listUsableSettings(), clientContext);
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
@@ -740,6 +967,22 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.setSecurityPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicySettings(),
+            clientContext);
+    this.setSecurityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -763,8 +1006,11 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listUsableMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -818,6 +1064,18 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   }
 
   @Override
+  public UnaryCallable<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable() {
+    return listUsableCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsableRegionBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    return listUsablePagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable() {
     return patchCallable;
   }
@@ -831,6 +1089,24 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   @Override
   public UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicyCallable() {
+    return setSecurityPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    return setSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

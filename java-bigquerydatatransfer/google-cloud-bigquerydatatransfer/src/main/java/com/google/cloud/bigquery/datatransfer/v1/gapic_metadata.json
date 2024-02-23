@@ -58,6 +58,9 @@
             "StartManualTransferRuns": {
               "methods": ["startManualTransferRuns", "startManualTransferRunsCallable"]
             },
+            "UnenrollDataSources": {
+              "methods": ["unenrollDataSources", "unenrollDataSourcesCallable"]
+            },
             "UpdateTransferConfig": {
               "methods": ["updateTransferConfig", "updateTransferConfig", "updateTransferConfigCallable"]
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
+import com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -61,6 +63,18 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(FetchFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchFeatureValuesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesMethodDescriptor =
+          MethodDescriptor.<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.FeatureOnlineStoreService/SearchNearestEntities")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchNearestEntitiesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchNearestEntitiesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -111,6 +125,8 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
 
   private final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable;
+  private final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -176,6 +192,18 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+        searchNearestEntitiesTransportSettings =
+            GrpcCallSettings
+                .<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>newBuilder()
+                .setMethodDescriptor(searchNearestEntitiesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("feature_view", String.valueOf(request.getFeatureView()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -233,6 +261,11 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
             fetchFeatureValuesTransportSettings,
             settings.fetchFeatureValuesSettings(),
             clientContext);
+    this.searchNearestEntitiesCallable =
+        callableFactory.createUnaryCallable(
+            searchNearestEntitiesTransportSettings,
+            settings.searchNearestEntitiesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -266,6 +299,12 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
   public UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable() {
     return fetchFeatureValuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
+      searchNearestEntitiesCallable() {
+    return searchNearestEntitiesCallable;
   }
 
   @Override

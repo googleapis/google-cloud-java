@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,6 +90,7 @@ public class AddressValidationClientTest {
             .setAddress(PostalAddress.newBuilder().build())
             .setPreviousResponseId("previousResponseId468754323")
             .setEnableUspsCass(true)
+            .setSessionToken("sessionToken-696552189")
             .build();
 
     ValidateAddressResponse actualResponse = client.validateAddress(request);
@@ -102,6 +103,7 @@ public class AddressValidationClientTest {
     Assert.assertEquals(request.getAddress(), actualRequest.getAddress());
     Assert.assertEquals(request.getPreviousResponseId(), actualRequest.getPreviousResponseId());
     Assert.assertEquals(request.getEnableUspsCass(), actualRequest.getEnableUspsCass());
+    Assert.assertEquals(request.getSessionToken(), actualRequest.getSessionToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -119,6 +121,7 @@ public class AddressValidationClientTest {
               .setAddress(PostalAddress.newBuilder().build())
               .setPreviousResponseId("previousResponseId468754323")
               .setEnableUspsCass(true)
+              .setSessionToken("sessionToken-696552189")
               .build();
       client.validateAddress(request);
       Assert.fail("No exception raised");

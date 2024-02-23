@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -291,6 +291,175 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
   }
 
   @Override
+  public void listNodes(
+      ListNodesRequest request, StreamObserver<ListNodesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNodesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNodesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNodes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNodesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getNode(GetNodeRequest request, StreamObserver<Node> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Node) {
+      requests.add(request);
+      responseObserver.onNext(((Node) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNode, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Node.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExternalAddresses(
+      ListExternalAddressesRequest request,
+      StreamObserver<ListExternalAddressesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExternalAddressesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExternalAddressesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExternalAddresses, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExternalAddressesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchNetworkPolicyExternalAddresses(
+      FetchNetworkPolicyExternalAddressesRequest request,
+      StreamObserver<FetchNetworkPolicyExternalAddressesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchNetworkPolicyExternalAddressesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchNetworkPolicyExternalAddressesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchNetworkPolicyExternalAddresses, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchNetworkPolicyExternalAddressesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getExternalAddress(
+      GetExternalAddressRequest request, StreamObserver<ExternalAddress> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExternalAddress) {
+      requests.add(request);
+      responseObserver.onNext(((ExternalAddress) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExternalAddress, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExternalAddress.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createExternalAddress(
+      CreateExternalAddressRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateExternalAddress, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateExternalAddress(
+      UpdateExternalAddressRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExternalAddress, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteExternalAddress(
+      DeleteExternalAddressRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteExternalAddress, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listSubnets(
       ListSubnetsRequest request, StreamObserver<ListSubnetsResponse> responseObserver) {
     Object response = responses.poll();
@@ -346,6 +515,218 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExternalAccessRules(
+      ListExternalAccessRulesRequest request,
+      StreamObserver<ListExternalAccessRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExternalAccessRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExternalAccessRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExternalAccessRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExternalAccessRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getExternalAccessRule(
+      GetExternalAccessRuleRequest request, StreamObserver<ExternalAccessRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExternalAccessRule) {
+      requests.add(request);
+      responseObserver.onNext(((ExternalAccessRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExternalAccessRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExternalAccessRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createExternalAccessRule(
+      CreateExternalAccessRuleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateExternalAccessRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateExternalAccessRule(
+      UpdateExternalAccessRuleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExternalAccessRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteExternalAccessRule(
+      DeleteExternalAccessRuleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteExternalAccessRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listLoggingServers(
+      ListLoggingServersRequest request,
+      StreamObserver<ListLoggingServersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListLoggingServersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListLoggingServersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLoggingServers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListLoggingServersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getLoggingServer(
+      GetLoggingServerRequest request, StreamObserver<LoggingServer> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LoggingServer) {
+      requests.add(request);
+      responseObserver.onNext(((LoggingServer) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLoggingServer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LoggingServer.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createLoggingServer(
+      CreateLoggingServerRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateLoggingServer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateLoggingServer(
+      UpdateLoggingServerRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateLoggingServer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteLoggingServer(
+      DeleteLoggingServerRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteLoggingServer, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -473,6 +854,176 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
                   "Unrecognized response type %s for method ResetVcenterCredentials, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDnsForwarding(
+      GetDnsForwardingRequest request, StreamObserver<DnsForwarding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DnsForwarding) {
+      requests.add(request);
+      responseObserver.onNext(((DnsForwarding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDnsForwarding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DnsForwarding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDnsForwarding(
+      UpdateDnsForwardingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDnsForwarding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getNetworkPeering(
+      GetNetworkPeeringRequest request, StreamObserver<NetworkPeering> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NetworkPeering) {
+      requests.add(request);
+      responseObserver.onNext(((NetworkPeering) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNetworkPeering, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NetworkPeering.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listNetworkPeerings(
+      ListNetworkPeeringsRequest request,
+      StreamObserver<ListNetworkPeeringsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNetworkPeeringsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNetworkPeeringsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNetworkPeerings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNetworkPeeringsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createNetworkPeering(
+      CreateNetworkPeeringRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateNetworkPeering, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteNetworkPeering(
+      DeleteNetworkPeeringRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNetworkPeering, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateNetworkPeering(
+      UpdateNetworkPeeringRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateNetworkPeering, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPeeringRoutes(
+      ListPeeringRoutesRequest request,
+      StreamObserver<ListPeeringRoutesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPeeringRoutesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPeeringRoutesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPeeringRoutes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPeeringRoutesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -641,6 +1192,134 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteNetworkPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listManagementDnsZoneBindings(
+      ListManagementDnsZoneBindingsRequest request,
+      StreamObserver<ListManagementDnsZoneBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListManagementDnsZoneBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListManagementDnsZoneBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListManagementDnsZoneBindings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListManagementDnsZoneBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getManagementDnsZoneBinding(
+      GetManagementDnsZoneBindingRequest request,
+      StreamObserver<ManagementDnsZoneBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ManagementDnsZoneBinding) {
+      requests.add(request);
+      responseObserver.onNext(((ManagementDnsZoneBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetManagementDnsZoneBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ManagementDnsZoneBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createManagementDnsZoneBinding(
+      CreateManagementDnsZoneBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateManagementDnsZoneBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateManagementDnsZoneBinding(
+      UpdateManagementDnsZoneBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateManagementDnsZoneBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteManagementDnsZoneBinding(
+      DeleteManagementDnsZoneBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteManagementDnsZoneBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void repairManagementDnsZoneBinding(
+      RepairManagementDnsZoneBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RepairManagementDnsZoneBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -877,6 +1556,69 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
                   "Unrecognized response type %s for method ListPrivateConnectionPeeringRoutes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPrivateConnectionPeeringRoutesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void grantDnsBindPermission(
+      GrantDnsBindPermissionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GrantDnsBindPermission, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDnsBindPermission(
+      GetDnsBindPermissionRequest request, StreamObserver<DnsBindPermission> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DnsBindPermission) {
+      requests.add(request);
+      responseObserver.onNext(((DnsBindPermission) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDnsBindPermission, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DnsBindPermission.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void revokeDnsBindPermission(
+      RevokeDnsBindPermissionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RevokeDnsBindPermission, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

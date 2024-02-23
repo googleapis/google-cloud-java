@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,12 +39,17 @@ import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
+import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest;
+import com.google.cloud.compute.v1.SetIamPolicyBackendBucketRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsBackendBucketRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateBackendBucketRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -255,6 +260,46 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendBucket>newBuilder()
                       .setDefaultInstance(BackendBucket.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyBackendBucketRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyBackendBucketRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendBuckets/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyBackendBucketRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendBuckets/{resource}/getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyBackendBucketRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyBackendBucketRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -478,6 +523,88 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetIamPolicyBackendBucketRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyBackendBucketRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendBuckets/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyBackendBucketRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendBuckets/{resource}/setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyBackendBucketRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyBackendBucketRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetPolicyRequestResource",
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendBuckets/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsBackendBucketRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendBuckets/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsBackendBucketRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsBackendBucketRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateBackendBucketRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateBackendBucketRequest, Operation>newBuilder()
@@ -546,6 +673,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   private final OperationCallable<DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
       deleteSignedUrlKeyOperationCallable;
   private final UnaryCallable<GetBackendBucketRequest, BackendBucket> getCallable;
+  private final UnaryCallable<GetIamPolicyBackendBucketRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertBackendBucketRequest, Operation> insertCallable;
   private final OperationCallable<InsertBackendBucketRequest, Operation, Operation>
       insertOperationCallable;
@@ -558,6 +686,9 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       setEdgeSecurityPolicyCallable;
   private final OperationCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationCallable;
+  private final UnaryCallable<SetIamPolicyBackendBucketRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateBackendBucketRequest, Operation> updateCallable;
   private final OperationCallable<UpdateBackendBucketRequest, Operation, Operation>
       updateOperationCallable;
@@ -657,6 +788,18 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetIamPolicyBackendBucketRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyBackendBucketRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<InsertBackendBucketRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -701,6 +844,32 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("backend_bucket", String.valueOf(request.getBackendBucket()));
                       builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SetIamPolicyBackendBucketRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyBackendBucketRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
                 .build();
@@ -749,6 +918,9 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -784,6 +956,14 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
             settings.setEdgeSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -805,10 +985,13 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(deleteSignedUrlKeyMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setEdgeSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -853,6 +1036,11 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   }
 
   @Override
+  public UnaryCallable<GetIamPolicyBackendBucketRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
   public UnaryCallable<InsertBackendBucketRequest, Operation> insertCallable() {
     return insertCallable;
   }
@@ -894,6 +1082,17 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   public OperationCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationCallable() {
     return setEdgeSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyBackendBucketRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

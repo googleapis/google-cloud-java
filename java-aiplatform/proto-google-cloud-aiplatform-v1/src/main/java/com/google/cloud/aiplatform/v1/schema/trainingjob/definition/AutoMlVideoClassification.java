@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_classification.proto
 
+// Protobuf Java Version: 3.25.2
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
@@ -66,6 +67,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
                 .Builder.class);
   }
 
+  private int bitField0_;
   public static final int INPUTS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlVideoClassificationInputs
@@ -85,7 +87,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasInputs() {
-    return inputs_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -144,7 +146,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (inputs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getInputs());
     }
     getUnknownFields().writeTo(output);
@@ -156,7 +158,7 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (inputs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputs());
     }
     size += getUnknownFields().getSerializedSize();
@@ -353,10 +355,19 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
 
     // Construct using
     // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassification.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getInputsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -414,9 +425,12 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassification
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -655,8 +669,10 @@ public final class AutoMlVideoClassification extends com.google.protobuf.Generat
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (inputs_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**

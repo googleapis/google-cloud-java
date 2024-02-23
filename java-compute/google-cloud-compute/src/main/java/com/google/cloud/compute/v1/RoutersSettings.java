@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedRe
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -97,6 +96,11 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRouterRequest, Router> getSettings() {
     return ((RoutersStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNatIpInfo. */
+  public UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoSettings() {
+    return ((RoutersStubSettings) getStubSettings()).getNatIpInfoSettings();
   }
 
   /** Returns the object with the settings used for calls to getNatMappingInfo. */
@@ -190,7 +194,6 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     return RoutersStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return RoutersStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -274,6 +277,12 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNatIpInfo. */
+    public UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoSettings() {
+      return getStubSettingsBuilder().getNatIpInfoSettings();
     }
 
     /** Returns the builder for the settings used for calls to getNatMappingInfo. */

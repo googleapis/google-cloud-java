@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -810,8 +810,8 @@ public class AssetServiceClientTest {
 
     AnalyzeMoveRequest request =
         AnalyzeMoveRequest.newBuilder()
-            .setResource("resource-341064690")
-            .setDestinationParent("destinationParent-1733659048")
+            .setResource(ProjectName.of("[PROJECT]").toString())
+            .setDestinationParent(FolderName.of("[FOLDER]").toString())
             .build();
 
     AnalyzeMoveResponse actualResponse = client.analyzeMove(request);
@@ -838,8 +838,8 @@ public class AssetServiceClientTest {
     try {
       AnalyzeMoveRequest request =
           AnalyzeMoveRequest.newBuilder()
-              .setResource("resource-341064690")
-              .setDestinationParent("destinationParent-1733659048")
+              .setResource(ProjectName.of("[PROJECT]").toString())
+              .setDestinationParent(FolderName.of("[FOLDER]").toString())
               .build();
       client.analyzeMove(request);
       Assert.fail("No exception raised");

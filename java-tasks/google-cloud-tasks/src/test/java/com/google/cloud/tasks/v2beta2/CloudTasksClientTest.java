@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1780,90 +1780,6 @@ public class CloudTasksClientTest {
     try {
       String name = "name3373707";
       client.runTask(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void bufferTaskTest() throws Exception {
-    BufferTaskResponse expectedResponse =
-        BufferTaskResponse.newBuilder().setTask(Task.newBuilder().build()).build();
-    mockCloudTasks.addResponse(expectedResponse);
-
-    QueueName queue = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    String taskId = "taskId-880873088";
-    HttpBody body = HttpBody.newBuilder().build();
-
-    BufferTaskResponse actualResponse = client.bufferTask(queue, taskId, body);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BufferTaskRequest actualRequest = ((BufferTaskRequest) actualRequests.get(0));
-
-    Assert.assertEquals(queue.toString(), actualRequest.getQueue());
-    Assert.assertEquals(taskId, actualRequest.getTaskId());
-    Assert.assertEquals(body, actualRequest.getBody());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void bufferTaskExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudTasks.addException(exception);
-
-    try {
-      QueueName queue = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-      String taskId = "taskId-880873088";
-      HttpBody body = HttpBody.newBuilder().build();
-      client.bufferTask(queue, taskId, body);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void bufferTaskTest2() throws Exception {
-    BufferTaskResponse expectedResponse =
-        BufferTaskResponse.newBuilder().setTask(Task.newBuilder().build()).build();
-    mockCloudTasks.addResponse(expectedResponse);
-
-    String queue = "queue107944209";
-    String taskId = "taskId-880873088";
-    HttpBody body = HttpBody.newBuilder().build();
-
-    BufferTaskResponse actualResponse = client.bufferTask(queue, taskId, body);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BufferTaskRequest actualRequest = ((BufferTaskRequest) actualRequests.get(0));
-
-    Assert.assertEquals(queue, actualRequest.getQueue());
-    Assert.assertEquals(taskId, actualRequest.getTaskId());
-    Assert.assertEquals(body, actualRequest.getBody());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void bufferTaskExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudTasks.addException(exception);
-
-    try {
-      String queue = "queue107944209";
-      String taskId = "taskId-880873088";
-      HttpBody body = HttpBody.newBuilder().build();
-      client.bufferTask(queue, taskId, body);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

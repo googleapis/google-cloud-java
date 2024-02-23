@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,8 @@ import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -97,19 +99,373 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAssessment</td>
+ *      <td><p> Creates an Assessment of the likelihood an event is legitimate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAssessment(CreateAssessmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAssessment(ProjectName parent, Assessment assessment)
+ *           <li><p> createAssessment(String parent, Assessment assessment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAssessmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AnnotateAssessment</td>
+ *      <td><p> Annotates a previously created Assessment to provide additional information on whether the event turned out to be authentic or fraudulent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> annotateAssessment(AnnotateAssessmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation)
+ *           <li><p> annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> annotateAssessmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateKey</td>
+ *      <td><p> Creates a new reCAPTCHA Enterprise key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createKey(CreateKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createKey(ProjectName parent, Key key)
+ *           <li><p> createKey(String parent, Key key)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListKeys</td>
+ *      <td><p> Returns the list of all keys that belong to a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listKeys(ListKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listKeys(ProjectName parent)
+ *           <li><p> listKeys(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listKeysPagedCallable()
+ *           <li><p> listKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RetrieveLegacySecretKey</td>
+ *      <td><p> Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> retrieveLegacySecretKey(RetrieveLegacySecretKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> retrieveLegacySecretKey(KeyName key)
+ *           <li><p> retrieveLegacySecretKey(String key)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> retrieveLegacySecretKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetKey</td>
+ *      <td><p> Returns the specified key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getKey(GetKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getKey(KeyName name)
+ *           <li><p> getKey(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKey</td>
+ *      <td><p> Updates the specified key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKey(UpdateKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateKey(Key key, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteKey</td>
+ *      <td><p> Deletes the specified key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteKey(DeleteKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteKey(KeyName name)
+ *           <li><p> deleteKey(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MigrateKey</td>
+ *      <td><p> Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must be authenticated as one of the current owners of the reCAPTCHA Key, and your user must have the reCAPTCHA Enterprise Admin IAM role in the destination project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> migrateKey(MigrateKeyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> migrateKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMetrics</td>
+ *      <td><p> Get some aggregated metrics for a Key. This data can be used to build dashboards.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMetrics(GetMetricsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMetrics(MetricsName name)
+ *           <li><p> getMetrics(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFirewallPolicy</td>
+ *      <td><p> Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can be executed. A project may have a maximum of 1000 policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFirewallPolicy(CreateFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createFirewallPolicy(ProjectName parent, FirewallPolicy firewallPolicy)
+ *           <li><p> createFirewallPolicy(String parent, FirewallPolicy firewallPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFirewallPolicies</td>
+ *      <td><p> Returns the list of all firewall policies that belong to a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFirewallPolicies(ListFirewallPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFirewallPolicies(ProjectName parent)
+ *           <li><p> listFirewallPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFirewallPoliciesPagedCallable()
+ *           <li><p> listFirewallPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFirewallPolicy</td>
+ *      <td><p> Returns the specified firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFirewallPolicy(GetFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFirewallPolicy(FirewallPolicyName name)
+ *           <li><p> getFirewallPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFirewallPolicy</td>
+ *      <td><p> Updates the specified firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFirewallPolicy(UpdateFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateFirewallPolicy(FirewallPolicy firewallPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFirewallPolicy</td>
+ *      <td><p> Deletes the specified firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFirewallPolicy(DeleteFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteFirewallPolicy(FirewallPolicyName name)
+ *           <li><p> deleteFirewallPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReorderFirewallPolicies</td>
+ *      <td><p> Reorders all firewall policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPolicies(ReorderFirewallPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPolicies(ProjectName parent, List&lt;String&gt; names)
+ *           <li><p> reorderFirewallPolicies(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRelatedAccountGroups</td>
+ *      <td><p> List groups of related accounts.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroups(ListRelatedAccountGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroups(ProjectName parent)
+ *           <li><p> listRelatedAccountGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupsPagedCallable()
+ *           <li><p> listRelatedAccountGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRelatedAccountGroupMemberships</td>
+ *      <td><p> Get memberships in a group of related accounts.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupMemberships(ListRelatedAccountGroupMembershipsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupMemberships(RelatedAccountGroupName parent)
+ *           <li><p> listRelatedAccountGroupMemberships(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupMembershipsPagedCallable()
+ *           <li><p> listRelatedAccountGroupMembershipsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchRelatedAccountGroupMemberships</td>
+ *      <td><p> Search group memberships related to a given account.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchRelatedAccountGroupMemberships(SearchRelatedAccountGroupMembershipsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchRelatedAccountGroupMemberships(RelatedAccountGroupName project, ByteString hashedAccountId)
+ *           <li><p> searchRelatedAccountGroupMemberships(String project, ByteString hashedAccountId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchRelatedAccountGroupMembershipsPagedCallable()
+ *           <li><p> searchRelatedAccountGroupMembershipsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -2037,6 +2393,140 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List<String> names = new ArrayList<>();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @param names Required. A list containing all policy names, in the new order. Each name is in
+   *     the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      ProjectName parent, List<String> names) {
+    ReorderFirewallPoliciesRequest request =
+        ReorderFirewallPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return reorderFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @param names Required. A list containing all policy names, in the new order. Each name is in
+   *     the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      String parent, List<String> names) {
+    ReorderFirewallPoliciesRequest request =
+        ReorderFirewallPoliciesRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return reorderFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ReorderFirewallPoliciesRequest request =
+   *       ReorderFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      ReorderFirewallPoliciesRequest request) {
+    return reorderFirewallPoliciesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ReorderFirewallPoliciesRequest request =
+   *       ReorderFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<ReorderFirewallPoliciesResponse> future =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPoliciesCallable().futureCall(request);
+   *   // Do something.
+   *   ReorderFirewallPoliciesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable() {
+    return stub.reorderFirewallPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * List groups of related accounts.
    *
    * <p>Sample code:
@@ -2437,9 +2927,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param project Required. The name of the project to search related account group memberships
    *     from. Specify the project name in the following format: `projects/{project}`.
-   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
-   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous `CreateAssessment` or `AnnotateAssessment` call.
+   * @param hashedAccountId Optional. Deprecated: use `account_id` instead. The unique stable hashed
+   *     account identifier used to search connections. The identifier should correspond to a
+   *     `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   *     Either hashed_account_id or account_id must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
@@ -2480,9 +2971,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param project Required. The name of the project to search related account group memberships
    *     from. Specify the project name in the following format: `projects/{project}`.
-   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
-   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous `CreateAssessment` or `AnnotateAssessment` call.
+   * @param hashedAccountId Optional. Deprecated: use `account_id` instead. The unique stable hashed
+   *     account identifier used to search connections. The identifier should correspond to a
+   *     `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   *     Either hashed_account_id or account_id must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
@@ -2513,6 +3005,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2552,6 +3045,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2592,6 +3086,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

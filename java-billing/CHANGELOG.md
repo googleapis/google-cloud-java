@@ -1,5 +1,46 @@
 # Changelog
 
+## 2.36.0 (2024-02-20)
+
+### Features
+
+* Clarify that the parent field in the CreateBillingAccountRequest must be a billing account ([#10365](https://github.com/googleapis/google-cloud-java/issues/10365)) ([b4e3e20](https://github.com/googleapis/google-cloud-java/commit/b4e3e20eddb0bab12bc1aea4ae107621fb14500b))
+
+
+
+## 2.35.0 (2024-02-09)
+
+* No change
+
+
+## 2.34.0 (2024-01-23)
+
+### Features
+
+* update comments ([#10228](https://github.com/googleapis/google-cloud-java/issues/10228)) ([d20d370](https://github.com/googleapis/google-cloud-java/commit/d20d37071a4c2d345dd400444c616b06fe420a90))
+
+
+
+## 2.33.0 (2024-01-10)
+
+### Features
+
+* added the MoveBillingAccount method, which allows changing which organization a billing account belongs to ([#10115](https://github.com/googleapis/google-cloud-java/issues/10115)) ([615854d](https://github.com/googleapis/google-cloud-java/commit/615854db385e9e0808dbbdd32b35428a49773794))
+
+
+
+## 2.32.0 (2023-12-12)
+
+* No change
+
+
+## 2.31.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 2.30.0 (2023-11-06)
 
 ### Dependencies

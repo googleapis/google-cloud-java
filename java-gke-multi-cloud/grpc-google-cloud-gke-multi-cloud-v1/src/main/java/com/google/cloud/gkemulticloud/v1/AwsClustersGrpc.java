@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -267,6 +267,58 @@ public final class AwsClustersGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest,
+          com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+      getGenerateAwsClusterAgentTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAwsClusterAgentToken",
+      requestType = com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest.class,
+      responseType = com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest,
+          com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+      getGenerateAwsClusterAgentTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest,
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+        getGenerateAwsClusterAgentTokenMethod;
+    if ((getGenerateAwsClusterAgentTokenMethod =
+            AwsClustersGrpc.getGenerateAwsClusterAgentTokenMethod)
+        == null) {
+      synchronized (AwsClustersGrpc.class) {
+        if ((getGenerateAwsClusterAgentTokenMethod =
+                AwsClustersGrpc.getGenerateAwsClusterAgentTokenMethod)
+            == null) {
+          AwsClustersGrpc.getGenerateAwsClusterAgentTokenMethod =
+              getGenerateAwsClusterAgentTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest,
+                          com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateAwsClusterAgentToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AwsClustersMethodDescriptorSupplier("GenerateAwsClusterAgentToken"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateAwsClusterAgentTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest,
           com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse>
       getGenerateAwsAccessTokenMethod;
@@ -409,6 +461,56 @@ public final class AwsClustersGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest,
+          com.google.longrunning.Operation>
+      getRollbackAwsNodePoolUpdateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RollbackAwsNodePoolUpdate",
+      requestType = com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest,
+          com.google.longrunning.Operation>
+      getRollbackAwsNodePoolUpdateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest,
+            com.google.longrunning.Operation>
+        getRollbackAwsNodePoolUpdateMethod;
+    if ((getRollbackAwsNodePoolUpdateMethod = AwsClustersGrpc.getRollbackAwsNodePoolUpdateMethod)
+        == null) {
+      synchronized (AwsClustersGrpc.class) {
+        if ((getRollbackAwsNodePoolUpdateMethod =
+                AwsClustersGrpc.getRollbackAwsNodePoolUpdateMethod)
+            == null) {
+          AwsClustersGrpc.getRollbackAwsNodePoolUpdateMethod =
+              getRollbackAwsNodePoolUpdateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RollbackAwsNodePoolUpdate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AwsClustersMethodDescriptorSupplier("RollbackAwsNodePoolUpdate"))
+                      .build();
+        }
+      }
+    }
+    return getRollbackAwsNodePoolUpdateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest,
           com.google.cloud.gkemulticloud.v1.AwsNodePool>
       getGetAwsNodePoolMethod;
@@ -545,6 +647,100 @@ public final class AwsClustersGrpc {
       }
     }
     return getDeleteAwsNodePoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest,
+          com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+      getGetAwsOpenIdConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAwsOpenIdConfig",
+      requestType = com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest.class,
+      responseType = com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest,
+          com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+      getGetAwsOpenIdConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest,
+            com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+        getGetAwsOpenIdConfigMethod;
+    if ((getGetAwsOpenIdConfigMethod = AwsClustersGrpc.getGetAwsOpenIdConfigMethod) == null) {
+      synchronized (AwsClustersGrpc.class) {
+        if ((getGetAwsOpenIdConfigMethod = AwsClustersGrpc.getGetAwsOpenIdConfigMethod) == null) {
+          AwsClustersGrpc.getGetAwsOpenIdConfigMethod =
+              getGetAwsOpenIdConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest,
+                          com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAwsOpenIdConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AwsClustersMethodDescriptorSupplier("GetAwsOpenIdConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetAwsOpenIdConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest,
+          com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+      getGetAwsJsonWebKeysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAwsJsonWebKeys",
+      requestType = com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest.class,
+      responseType = com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest,
+          com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+      getGetAwsJsonWebKeysMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest,
+            com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+        getGetAwsJsonWebKeysMethod;
+    if ((getGetAwsJsonWebKeysMethod = AwsClustersGrpc.getGetAwsJsonWebKeysMethod) == null) {
+      synchronized (AwsClustersGrpc.class) {
+        if ((getGetAwsJsonWebKeysMethod = AwsClustersGrpc.getGetAwsJsonWebKeysMethod) == null) {
+          AwsClustersGrpc.getGetAwsJsonWebKeysMethod =
+              getGetAwsJsonWebKeysMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest,
+                          com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAwsJsonWebKeys"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AwsClustersMethodDescriptorSupplier("GetAwsJsonWebKeys"))
+                      .build();
+        }
+      }
+    }
+    return getGetAwsJsonWebKeysMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -732,6 +928,22 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    default void generateAwsClusterAgentToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateAwsClusterAgentTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
@@ -775,6 +987,25 @@ public final class AwsClustersGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateAwsNodePoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a previously aborted or failed
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request.
+     * Makes no changes if the last update request successfully finished.
+     * If an update request is in progress, you cannot rollback the update.
+     * You must first cancel or let it finish unsuccessfully before you can
+     * rollback.
+     * </pre>
+     */
+    default void rollbackAwsNodePoolUpdate(
+        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRollbackAwsNodePoolUpdateMethod(), responseObserver);
     }
 
     /**
@@ -826,6 +1057,41 @@ public final class AwsClustersGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAwsNodePoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    default void getAwsOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAwsOpenIdConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    default void getAwsJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAwsJsonWebKeysMethod(), responseObserver);
     }
 
     /**
@@ -979,6 +1245,24 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public void generateAwsClusterAgentToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAwsClusterAgentTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
@@ -1026,6 +1310,27 @@ public final class AwsClustersGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAwsNodePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a previously aborted or failed
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request.
+     * Makes no changes if the last update request successfully finished.
+     * If an update request is in progress, you cannot rollback the update.
+     * You must first cancel or let it finish unsuccessfully before you can
+     * rollback.
+     * </pre>
+     */
+    public void rollbackAwsNodePoolUpdate(
+        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRollbackAwsNodePoolUpdateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1083,6 +1388,45 @@ public final class AwsClustersGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAwsNodePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public void getAwsOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAwsOpenIdConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public void getAwsJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAwsJsonWebKeysMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1207,6 +1551,20 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse
+        generateAwsClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAwsClusterAgentTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
@@ -1245,6 +1603,24 @@ public final class AwsClustersGrpc {
         com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAwsNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a previously aborted or failed
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request.
+     * Makes no changes if the last update request successfully finished.
+     * If an update request is in progress, you cannot rollback the update.
+     * You must first cancel or let it finish unsuccessfully before you can
+     * rollback.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rollbackAwsNodePoolUpdate(
+        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackAwsNodePoolUpdateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1291,6 +1667,37 @@ public final class AwsClustersGrpc {
         com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAwsNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig getAwsOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsOpenIdConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys getAwsJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsJsonWebKeysMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1411,6 +1818,21 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAwsClusterAgentTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates a short-lived access token to authenticate to a given
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
@@ -1451,6 +1873,25 @@ public final class AwsClustersGrpc {
         updateAwsNodePool(com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAwsNodePoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a previously aborted or failed
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request.
+     * Makes no changes if the last update request successfully finished.
+     * If an update request is in progress, you cannot rollback the update.
+     * You must first cancel or let it finish unsuccessfully before you can
+     * rollback.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rollbackAwsNodePoolUpdate(
+            com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRollbackAwsNodePoolUpdateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1505,6 +1946,39 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
+        getAwsOpenIdConfig(com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAwsOpenIdConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
+        getAwsJsonWebKeys(com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAwsJsonWebKeysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns information, such as supported AWS regions and Kubernetes
      * versions, on a given Google Cloud location.
      * </pre>
@@ -1522,13 +1996,17 @@ public final class AwsClustersGrpc {
   private static final int METHODID_GET_AWS_CLUSTER = 2;
   private static final int METHODID_LIST_AWS_CLUSTERS = 3;
   private static final int METHODID_DELETE_AWS_CLUSTER = 4;
-  private static final int METHODID_GENERATE_AWS_ACCESS_TOKEN = 5;
-  private static final int METHODID_CREATE_AWS_NODE_POOL = 6;
-  private static final int METHODID_UPDATE_AWS_NODE_POOL = 7;
-  private static final int METHODID_GET_AWS_NODE_POOL = 8;
-  private static final int METHODID_LIST_AWS_NODE_POOLS = 9;
-  private static final int METHODID_DELETE_AWS_NODE_POOL = 10;
-  private static final int METHODID_GET_AWS_SERVER_CONFIG = 11;
+  private static final int METHODID_GENERATE_AWS_CLUSTER_AGENT_TOKEN = 5;
+  private static final int METHODID_GENERATE_AWS_ACCESS_TOKEN = 6;
+  private static final int METHODID_CREATE_AWS_NODE_POOL = 7;
+  private static final int METHODID_UPDATE_AWS_NODE_POOL = 8;
+  private static final int METHODID_ROLLBACK_AWS_NODE_POOL_UPDATE = 9;
+  private static final int METHODID_GET_AWS_NODE_POOL = 10;
+  private static final int METHODID_LIST_AWS_NODE_POOLS = 11;
+  private static final int METHODID_DELETE_AWS_NODE_POOL = 12;
+  private static final int METHODID_GET_AWS_OPEN_ID_CONFIG = 13;
+  private static final int METHODID_GET_AWS_JSON_WEB_KEYS = 14;
+  private static final int METHODID_GET_AWS_SERVER_CONFIG = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1575,6 +2053,13 @@ public final class AwsClustersGrpc {
               (com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GENERATE_AWS_CLUSTER_AGENT_TOKEN:
+          serviceImpl.generateAwsClusterAgentToken(
+              (com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>)
+                  responseObserver);
+          break;
         case METHODID_GENERATE_AWS_ACCESS_TOKEN:
           serviceImpl.generateAwsAccessToken(
               (com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest) request,
@@ -1590,6 +2075,11 @@ public final class AwsClustersGrpc {
         case METHODID_UPDATE_AWS_NODE_POOL:
           serviceImpl.updateAwsNodePool(
               (com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ROLLBACK_AWS_NODE_POOL_UPDATE:
+          serviceImpl.rollbackAwsNodePoolUpdate(
+              (com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_AWS_NODE_POOL:
@@ -1609,6 +2099,18 @@ public final class AwsClustersGrpc {
           serviceImpl.deleteAwsNodePool(
               (com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_AWS_OPEN_ID_CONFIG:
+          serviceImpl.getAwsOpenIdConfig(
+              (com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AWS_JSON_WEB_KEYS:
+          serviceImpl.getAwsJsonWebKeys(
+              (com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>)
+                  responseObserver);
           break;
         case METHODID_GET_AWS_SERVER_CONFIG:
           serviceImpl.getAwsServerConfig(
@@ -1667,6 +2169,13 @@ public final class AwsClustersGrpc {
                     com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_AWS_CLUSTER)))
         .addMethod(
+            getGenerateAwsClusterAgentTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest,
+                    com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>(
+                    service, METHODID_GENERATE_AWS_CLUSTER_AGENT_TOKEN)))
+        .addMethod(
             getGenerateAwsAccessTokenMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1685,6 +2194,13 @@ public final class AwsClustersGrpc {
                 new MethodHandlers<
                     com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_AWS_NODE_POOL)))
+        .addMethod(
+            getRollbackAwsNodePoolUpdateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ROLLBACK_AWS_NODE_POOL_UPDATE)))
         .addMethod(
             getGetAwsNodePoolMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1705,6 +2221,20 @@ public final class AwsClustersGrpc {
                 new MethodHandlers<
                     com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_AWS_NODE_POOL)))
+        .addMethod(
+            getGetAwsOpenIdConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest,
+                    com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>(
+                    service, METHODID_GET_AWS_OPEN_ID_CONFIG)))
+        .addMethod(
+            getGetAwsJsonWebKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest,
+                    com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>(
+                    service, METHODID_GET_AWS_JSON_WEB_KEYS)))
         .addMethod(
             getGetAwsServerConfigMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1768,12 +2298,16 @@ public final class AwsClustersGrpc {
                       .addMethod(getGetAwsClusterMethod())
                       .addMethod(getListAwsClustersMethod())
                       .addMethod(getDeleteAwsClusterMethod())
+                      .addMethod(getGenerateAwsClusterAgentTokenMethod())
                       .addMethod(getGenerateAwsAccessTokenMethod())
                       .addMethod(getCreateAwsNodePoolMethod())
                       .addMethod(getUpdateAwsNodePoolMethod())
+                      .addMethod(getRollbackAwsNodePoolUpdateMethod())
                       .addMethod(getGetAwsNodePoolMethod())
                       .addMethod(getListAwsNodePoolsMethod())
                       .addMethod(getDeleteAwsNodePoolMethod())
+                      .addMethod(getGetAwsOpenIdConfigMethod())
+                      .addMethod(getGetAwsJsonWebKeysMethod())
                       .addMethod(getGetAwsServerConfigMethod())
                       .build();
         }

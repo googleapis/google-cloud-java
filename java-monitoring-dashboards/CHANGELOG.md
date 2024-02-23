@@ -1,5 +1,40 @@
 # Changelog
 
+## 2.38.0 (2024-02-20)
+
+* No change
+
+
+## 2.37.0 (2024-02-09)
+
+### Features
+
+* Add support for pie charts, incident lists, dropdown groups, error reporting panels, section headers, and styling options on text widgets ([#10355](https://github.com/googleapis/google-cloud-java/issues/10355)) ([bc9cebd](https://github.com/googleapis/google-cloud-java/commit/bc9cebd014644e7e76ef147f522b5034b6fd64cc))
+
+
+
+## 2.36.0 (2024-01-23)
+
+* No change
+
+
+## 2.35.0 (2024-01-10)
+
+* No change
+
+
+## 2.34.0 (2023-12-12)
+
+* No change
+
+
+## 2.33.0 (2023-12-04)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 2.32.0 (2023-11-06)
 
 ### Dependencies

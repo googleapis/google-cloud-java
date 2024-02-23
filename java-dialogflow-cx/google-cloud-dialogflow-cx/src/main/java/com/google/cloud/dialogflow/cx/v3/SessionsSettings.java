@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -82,6 +83,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
   /** Returns the object with the settings used for calls to detectIntent. */
   public UnaryCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentSettings() {
     return ((SessionsStubSettings) getStubSettings()).detectIntentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to serverStreamingDetectIntent. */
+  public ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings() {
+    return ((SessionsStubSettings) getStubSettings()).serverStreamingDetectIntentSettings();
   }
 
   /** Returns the object with the settings used for calls to streamingDetectIntent. */
@@ -157,7 +164,6 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
     return SessionsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return SessionsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -235,6 +241,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
     public UnaryCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
         detectIntentSettings() {
       return getStubSettingsBuilder().detectIntentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to serverStreamingDetectIntent. */
+    public ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings() {
+      return getStubSettingsBuilder().serverStreamingDetectIntentSettings();
     }
 
     /** Returns the builder for the settings used for calls to streamingDetectIntent. */

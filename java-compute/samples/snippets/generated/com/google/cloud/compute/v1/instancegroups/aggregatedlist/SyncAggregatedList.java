@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public class SyncAggregatedList {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setReturnPartialSuccess(true)
+              .setServiceProjectNumber(-1293855239)
               .build();
       for (Map.Entry<String, InstanceGroupsScopedList> element :
           instanceGroupsClient.aggregatedList(request).iterateAll()) {

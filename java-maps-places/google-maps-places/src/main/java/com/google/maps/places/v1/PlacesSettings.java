@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,12 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
     return ((PlacesStubSettings) getStubSettings()).getPlaceSettings();
   }
 
+  /** Returns the object with the settings used for calls to autocompletePlaces. */
+  public UnaryCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesSettings() {
+    return ((PlacesStubSettings) getStubSettings()).autocompletePlacesSettings();
+  }
+
   public static final PlacesSettings create(PlacesStubSettings stub) throws IOException {
     return new PlacesSettings.Builder(stub.toBuilder()).build();
   }
@@ -131,7 +137,6 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
     return PlacesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return PlacesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -224,6 +229,12 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
     /** Returns the builder for the settings used for calls to getPlace. */
     public UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings() {
       return getStubSettingsBuilder().getPlaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to autocompletePlaces. */
+    public UnaryCallSettings.Builder<AutocompletePlacesRequest, AutocompletePlacesResponse>
+        autocompletePlacesSettings() {
+      return getStubSettingsBuilder().autocompletePlacesSettings();
     }
 
     @Override

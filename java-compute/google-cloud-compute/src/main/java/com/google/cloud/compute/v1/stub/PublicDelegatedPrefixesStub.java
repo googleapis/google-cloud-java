@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
+import com.google.cloud.compute.v1.AnnouncePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicDelegatedPrefixeRequest;
@@ -32,6 +33,7 @@ import com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicDelegatedPrefix;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixAggregatedList;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixList;
+import com.google.cloud.compute.v1.WithdrawPublicDelegatedPrefixeRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -52,6 +54,15 @@ public abstract class PublicDelegatedPrefixesStub implements BackgroundResource 
           AggregatedListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixAggregatedList>
       aggregatedListCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
+
+  public OperationCallable<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: announceOperationCallable()");
+  }
+
+  public UnaryCallable<AnnouncePublicDelegatedPrefixeRequest, Operation> announceCallable() {
+    throw new UnsupportedOperationException("Not implemented: announceCallable()");
   }
 
   public OperationCallable<DeletePublicDelegatedPrefixeRequest, Operation, Operation>
@@ -92,6 +103,15 @@ public abstract class PublicDelegatedPrefixesStub implements BackgroundResource 
 
   public UnaryCallable<PatchPublicDelegatedPrefixeRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: withdrawOperationCallable()");
+  }
+
+  public UnaryCallable<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawCallable() {
+    throw new UnsupportedOperationException("Not implemented: withdrawCallable()");
   }
 
   @Override

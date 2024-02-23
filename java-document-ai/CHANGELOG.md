@@ -1,5 +1,51 @@
 # Changelog
 
+## 2.40.0 (2024-02-20)
+
+### Features
+
+* A new field `schema_override` is added to message `ProcessOptions` ([#10386](https://github.com/googleapis/google-cloud-java/issues/10386)) ([728f841](https://github.com/googleapis/google-cloud-java/commit/728f84161537795d9d4fd551bf680afe16e87e3a))
+* updated comments ([#10392](https://github.com/googleapis/google-cloud-java/issues/10392)) ([71e4fdb](https://github.com/googleapis/google-cloud-java/commit/71e4fdb7c77b6b7b65c5aa2a90d0aef728bec22d))
+
+
+
+## 2.39.0 (2024-02-09)
+
+### Features
+
+* expose model_type in v1 processor, so that user can see the model_type after get or list processor version ([#10322](https://github.com/googleapis/google-cloud-java/issues/10322)) ([2dd5b35](https://github.com/googleapis/google-cloud-java/commit/2dd5b3512a1f9dde2e54d711a4984d5c6bdedf3d))
+
+
+
+## 2.38.0 (2024-01-23)
+
+* No change
+
+
+## 2.37.0 (2024-01-10)
+
+### Features
+
+* Clarify Properties documentation ([#10145](https://github.com/googleapis/google-cloud-java/issues/10145)) ([e95f706](https://github.com/googleapis/google-cloud-java/commit/e95f7060a9175a5570578c70b17586e80629c2fc))
+
+
+
+## 2.36.0 (2023-12-12)
+
+* No change
+
+
+## 2.35.0 (2023-12-04)
+
+### Features
+
+* update comment for ProcessOptions.page_range ([#10076](https://github.com/googleapis/google-cloud-java/issues/10076)) ([84fe051](https://github.com/googleapis/google-cloud-java/commit/84fe051733c88f13d0db34080b3191b09c742527))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 2.34.0 (2023-11-06)
 
 ### Features

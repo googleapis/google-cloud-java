@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,8 +50,6 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest;
-import com.google.cloud.tasks.v2beta2.BufferTaskRequest;
-import com.google.cloud.tasks.v2beta2.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta2.CreateTaskRequest;
@@ -156,7 +154,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   private final UnaryCallSettings<RenewLeaseRequest, Task> renewLeaseSettings;
   private final UnaryCallSettings<CancelLeaseRequest, Task> cancelLeaseSettings;
   private final UnaryCallSettings<RunTaskRequest, Task> runTaskSettings;
-  private final UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -429,11 +426,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     return runTaskSettings;
   }
 
-  /** Returns the object with the settings used for calls to bufferTask. */
-  public UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-    return bufferTaskSettings;
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -459,6 +451,21 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "cloudtasks";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -505,7 +512,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -514,7 +520,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -572,7 +577,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     renewLeaseSettings = settingsBuilder.renewLeaseSettings().build();
     cancelLeaseSettings = settingsBuilder.cancelLeaseSettings().build();
     runTaskSettings = settingsBuilder.runTaskSettings().build();
-    bufferTaskSettings = settingsBuilder.bufferTaskSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -607,8 +611,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     private final UnaryCallSettings.Builder<RenewLeaseRequest, Task> renewLeaseSettings;
     private final UnaryCallSettings.Builder<CancelLeaseRequest, Task> cancelLeaseSettings;
     private final UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings;
-    private final UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse>
-        bufferTaskSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -687,7 +689,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       renewLeaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelLeaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      bufferTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -714,7 +715,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               renewLeaseSettings,
               cancelLeaseSettings,
               runTaskSettings,
-              bufferTaskSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -744,7 +744,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       renewLeaseSettings = settings.renewLeaseSettings.toBuilder();
       cancelLeaseSettings = settings.cancelLeaseSettings.toBuilder();
       runTaskSettings = settings.runTaskSettings.toBuilder();
-      bufferTaskSettings = settings.bufferTaskSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -771,7 +770,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               renewLeaseSettings,
               cancelLeaseSettings,
               runTaskSettings,
-              bufferTaskSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -782,7 +780,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -795,7 +792,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -905,11 +901,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
       builder
           .runTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .bufferTaskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1049,11 +1040,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       return runTaskSettings;
     }
 
-    /** Returns the builder for the settings used for calls to bufferTask. */
-    public UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-      return bufferTaskSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -1064,6 +1050,15 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,19 +58,163 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the InterconnectsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Delete</td>
+ *      <td><p> Deletes the specified Interconnect.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAsync(DeleteInterconnectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAsync(String project, String interconnect)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Get</td>
+ *      <td><p> Returns the specified Interconnect. Get a list of available Interconnects by making a list() request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> get(GetInterconnectRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> get(String project, String interconnect)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDiagnostics</td>
+ *      <td><p> Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global outage, do not use this API to make decisions about where to redirect your network traffic. Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global resource. A global outage can prevent this API from functioning properly.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDiagnostics(GetDiagnosticsInterconnectRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDiagnostics(String project, String interconnect)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDiagnosticsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMacsecConfig</td>
+ *      <td><p> Returns the interconnectMacsecConfig for the specified Interconnect.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMacsecConfig(GetMacsecConfigInterconnectRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMacsecConfig(String project, String interconnect)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMacsecConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Insert</td>
+ *      <td><p> Creates an Interconnect in the specified project using the data included in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> insertAsync(InsertInterconnectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> insertAsync(String project, Interconnect interconnectResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> List</td>
+ *      <td><p> Retrieves the list of Interconnects available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> list(ListInterconnectsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> list(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Patch</td>
+ *      <td><p> Updates the specified Interconnect with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> patchAsync(PatchInterconnectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> patchAsync(String project, String interconnect, Interconnect interconnectResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetLabels</td>
+ *      <td><p> Sets the labels on an Interconnect. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setLabelsAsync(SetLabelsInterconnectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setLabelsAsync(String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setLabelsOperationCallable()
+ *           <li><p> setLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -381,7 +525,10 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified Interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global
+   * outage, do not use this API to make decisions about where to redirect your network traffic.
+   * Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global
+   * resource. A global outage can prevent this API from functioning properly.
    *
    * <p>Sample code:
    *
@@ -415,7 +562,10 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified Interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global
+   * outage, do not use this API to make decisions about where to redirect your network traffic.
+   * Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global
+   * resource. A global outage can prevent this API from functioning properly.
    *
    * <p>Sample code:
    *
@@ -445,7 +595,10 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified Interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global
+   * outage, do not use this API to make decisions about where to redirect your network traffic.
+   * Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global
+   * resource. A global outage can prevent this API from functioning properly.
    *
    * <p>Sample code:
    *
@@ -471,6 +624,101 @@ public class InterconnectsClient implements BackgroundResource {
   public final UnaryCallable<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable() {
     return stub.getDiagnosticsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the interconnectMacsecConfig for the specified Interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
+   *   InterconnectsGetMacsecConfigResponse response =
+   *       interconnectsClient.getMacsecConfig(project, interconnect);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param interconnect Name of the interconnect resource to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InterconnectsGetMacsecConfigResponse getMacsecConfig(
+      String project, String interconnect) {
+    GetMacsecConfigInterconnectRequest request =
+        GetMacsecConfigInterconnectRequest.newBuilder()
+            .setProject(project)
+            .setInterconnect(interconnect)
+            .build();
+    return getMacsecConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the interconnectMacsecConfig for the specified Interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   GetMacsecConfigInterconnectRequest request =
+   *       GetMacsecConfigInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   InterconnectsGetMacsecConfigResponse response = interconnectsClient.getMacsecConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InterconnectsGetMacsecConfigResponse getMacsecConfig(
+      GetMacsecConfigInterconnectRequest request) {
+    return getMacsecConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the interconnectMacsecConfig for the specified Interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   GetMacsecConfigInterconnectRequest request =
+   *       GetMacsecConfigInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<InterconnectsGetMacsecConfigResponse> future =
+   *       interconnectsClient.getMacsecConfigCallable().futureCall(request);
+   *   // Do something.
+   *   InterconnectsGetMacsecConfigResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigCallable() {
+    return stub.getMacsecConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

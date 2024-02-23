@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.gkemulticloud.v1.samples;
 // [START gkemulticloud_v1_generated_AttachedClusters_GenerateAttachedClusterInstallManifest_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.gkemulticloud.v1.AttachedClustersClient;
+import com.google.cloud.gkemulticloud.v1.AttachedProxyConfig;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse;
 import com.google.cloud.gkemulticloud.v1.LocationName;
@@ -41,6 +42,7 @@ public class AsyncGenerateAttachedClusterInstallManifest {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setAttachedClusterId("attachedClusterId865943409")
               .setPlatformVersion("platformVersion1848800485")
+              .setProxyConfig(AttachedProxyConfig.newBuilder().build())
               .build();
       ApiFuture<GenerateAttachedClusterInstallManifestResponse> future =
           attachedClustersClient

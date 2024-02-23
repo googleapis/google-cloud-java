@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.maps.places.v1.AutocompletePlacesRequest;
+import com.google.maps.places.v1.AutocompletePlacesResponse;
 import com.google.maps.places.v1.GetPhotoMediaRequest;
 import com.google.maps.places.v1.GetPlaceRequest;
 import com.google.maps.places.v1.PhotoMedia;
@@ -96,6 +98,8 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
   private final UnaryCallSettings<SearchTextRequest, SearchTextResponse> searchTextSettings;
   private final UnaryCallSettings<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings;
   private final UnaryCallSettings<GetPlaceRequest, Place> getPlaceSettings;
+  private final UnaryCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesSettings;
 
   /** Returns the object with the settings used for calls to searchNearby. */
   public UnaryCallSettings<SearchNearbyRequest, SearchNearbyResponse> searchNearbySettings() {
@@ -117,6 +121,12 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     return getPlaceSettings;
   }
 
+  /** Returns the object with the settings used for calls to autocompletePlaces. */
+  public UnaryCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesSettings() {
+    return autocompletePlacesSettings;
+  }
+
   public PlacesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -131,6 +141,21 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "places";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -177,7 +202,6 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(PlacesStubSettings.class))
@@ -185,7 +209,6 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(PlacesStubSettings.class))
@@ -225,6 +248,7 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     searchTextSettings = settingsBuilder.searchTextSettings().build();
     getPhotoMediaSettings = settingsBuilder.getPhotoMediaSettings().build();
     getPlaceSettings = settingsBuilder.getPlaceSettings().build();
+    autocompletePlacesSettings = settingsBuilder.autocompletePlacesSettings().build();
   }
 
   /** Builder for PlacesStubSettings. */
@@ -236,6 +260,8 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
         searchTextSettings;
     private final UnaryCallSettings.Builder<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings;
     private final UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings;
+    private final UnaryCallSettings.Builder<AutocompletePlacesRequest, AutocompletePlacesResponse>
+        autocompletePlacesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -267,10 +293,15 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
       searchTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getPhotoMediaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getPlaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      autocompletePlacesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchNearbySettings, searchTextSettings, getPhotoMediaSettings, getPlaceSettings);
+              searchNearbySettings,
+              searchTextSettings,
+              getPhotoMediaSettings,
+              getPlaceSettings,
+              autocompletePlacesSettings);
       initDefaults(this);
     }
 
@@ -281,10 +312,15 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
       searchTextSettings = settings.searchTextSettings.toBuilder();
       getPhotoMediaSettings = settings.getPhotoMediaSettings.toBuilder();
       getPlaceSettings = settings.getPlaceSettings.toBuilder();
+      autocompletePlacesSettings = settings.autocompletePlacesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchNearbySettings, searchTextSettings, getPhotoMediaSettings, getPlaceSettings);
+              searchNearbySettings,
+              searchTextSettings,
+              getPhotoMediaSettings,
+              getPlaceSettings,
+              autocompletePlacesSettings);
     }
 
     private static Builder createDefault() {
@@ -293,7 +329,6 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -306,7 +341,6 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -331,6 +365,11 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
 
       builder
           .getPlaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .autocompletePlacesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -371,6 +410,21 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     /** Returns the builder for the settings used for calls to getPlace. */
     public UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings() {
       return getPlaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to autocompletePlaces. */
+    public UnaryCallSettings.Builder<AutocompletePlacesRequest, AutocompletePlacesResponse>
+        autocompletePlacesSettings() {
+      return autocompletePlacesSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

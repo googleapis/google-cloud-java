@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.config.v1;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 
@@ -205,6 +206,45 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return ((ConfigStubSettings) getStubSettings()).exportLockInfoSettings();
   }
 
+  /** Returns the object with the settings used for calls to createPreview. */
+  public UnaryCallSettings<CreatePreviewRequest, Operation> createPreviewSettings() {
+    return ((ConfigStubSettings) getStubSettings()).createPreviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPreview. */
+  public OperationCallSettings<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).createPreviewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPreview. */
+  public UnaryCallSettings<GetPreviewRequest, Preview> getPreviewSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getPreviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPreviews. */
+  public PagedCallSettings<ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      listPreviewsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listPreviewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public UnaryCallSettings<DeletePreviewRequest, Operation> deletePreviewSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deletePreviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public OperationCallSettings<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deletePreviewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportPreviewResult. */
+  public UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultSettings() {
+    return ((ConfigStubSettings) getStubSettings()).exportPreviewResultSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -272,7 +312,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return ConfigStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ConfigStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -466,6 +505,46 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     /** Returns the builder for the settings used for calls to exportLockInfo. */
     public UnaryCallSettings.Builder<ExportLockInfoRequest, LockInfo> exportLockInfoSettings() {
       return getStubSettingsBuilder().exportLockInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public UnaryCallSettings.Builder<CreatePreviewRequest, Operation> createPreviewSettings() {
+      return getStubSettingsBuilder().createPreviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
+        createPreviewOperationSettings() {
+      return getStubSettingsBuilder().createPreviewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPreview. */
+    public UnaryCallSettings.Builder<GetPreviewRequest, Preview> getPreviewSettings() {
+      return getStubSettingsBuilder().getPreviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPreviews. */
+    public PagedCallSettings.Builder<
+            ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+        listPreviewsSettings() {
+      return getStubSettingsBuilder().listPreviewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public UnaryCallSettings.Builder<DeletePreviewRequest, Operation> deletePreviewSettings() {
+      return getStubSettingsBuilder().deletePreviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
+        deletePreviewOperationSettings() {
+      return getStubSettingsBuilder().deletePreviewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportPreviewResult. */
+    public UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultSettings() {
+      return getStubSettingsBuilder().exportPreviewResultSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

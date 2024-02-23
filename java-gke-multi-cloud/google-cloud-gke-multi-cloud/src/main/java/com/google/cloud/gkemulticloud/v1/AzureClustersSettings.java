@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,6 +158,13 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return ((AzureClustersStubSettings) getStubSettings()).deleteAzureClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAzureClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).generateAzureClusterAgentTokenSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateAzureAccessToken. */
   public UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings() {
@@ -209,6 +216,18 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return ((AzureClustersStubSettings) getStubSettings()).deleteAzureNodePoolOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getAzureOpenIdConfig. */
+  public UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).getAzureOpenIdConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAzureJsonWebKeys. */
+  public UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).getAzureJsonWebKeysSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAzureServerConfig. */
   public UnaryCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigSettings() {
@@ -256,7 +275,6 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return AzureClustersStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return AzureClustersStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -415,6 +433,13 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
       return getStubSettingsBuilder().deleteAzureClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to generateAzureClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentTokenSettings() {
+      return getStubSettingsBuilder().generateAzureClusterAgentTokenSettings();
+    }
+
     /** Returns the builder for the settings used for calls to generateAzureAccessToken. */
     public UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
@@ -471,6 +496,18 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     public OperationCallSettings.Builder<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
         deleteAzureNodePoolOperationSettings() {
       return getStubSettingsBuilder().deleteAzureNodePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+        getAzureOpenIdConfigSettings() {
+      return getStubSettingsBuilder().getAzureOpenIdConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+        getAzureJsonWebKeysSettings() {
+      return getStubSettingsBuilder().getAzureJsonWebKeysSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAzureServerConfig. */

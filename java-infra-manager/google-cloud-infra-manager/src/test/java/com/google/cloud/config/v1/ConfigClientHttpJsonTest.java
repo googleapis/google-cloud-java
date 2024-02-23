@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.config.v1;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 
@@ -50,6 +51,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1707,6 +1709,516 @@ public class ConfigClientHttpJsonTest {
     try {
       String name = "projects/project-4348/locations/location-4348/deployments/deployment-4348";
       client.exportLockInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPreviewTest() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Preview preview = Preview.newBuilder().build();
+
+    Preview actualResponse = client.createPreviewAsync(parent, preview).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createPreviewExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Preview preview = Preview.newBuilder().build();
+      client.createPreviewAsync(parent, preview).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createPreviewTest2() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Preview preview = Preview.newBuilder().build();
+
+    Preview actualResponse = client.createPreviewAsync(parent, preview).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createPreviewExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Preview preview = Preview.newBuilder().build();
+      client.createPreviewAsync(parent, preview).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getPreviewTest() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    Preview actualResponse = client.getPreview(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPreviewExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.getPreview(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPreviewTest2() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3835/locations/location-3835/previews/preview-3835";
+
+    Preview actualResponse = client.getPreview(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPreviewExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3835/locations/location-3835/previews/preview-3835";
+      client.getPreview(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPreviewsTest() throws Exception {
+    Preview responsesElement = Preview.newBuilder().build();
+    ListPreviewsResponse expectedResponse =
+        ListPreviewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPreviews(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPreviewsPagedResponse pagedListResponse = client.listPreviews(parent);
+
+    List<Preview> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPreviewsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPreviewsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPreviews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPreviewsTest2() throws Exception {
+    Preview responsesElement = Preview.newBuilder().build();
+    ListPreviewsResponse expectedResponse =
+        ListPreviewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPreviews(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListPreviewsPagedResponse pagedListResponse = client.listPreviews(parent);
+
+    List<Preview> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPreviewsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPreviewsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listPreviews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deletePreviewTest() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    Preview actualResponse = client.deletePreviewAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deletePreviewExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.deletePreviewAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deletePreviewTest2() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3835/locations/location-3835/previews/preview-3835";
+
+    Preview actualResponse = client.deletePreviewAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deletePreviewExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3835/locations/location-3835/previews/preview-3835";
+      client.deletePreviewAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportPreviewResultTest() throws Exception {
+    ExportPreviewResultResponse expectedResponse =
+        ExportPreviewResultResponse.newBuilder()
+            .setResult(PreviewResult.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExportPreviewResultRequest request =
+        ExportPreviewResultRequest.newBuilder()
+            .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .build();
+
+    ExportPreviewResultResponse actualResponse = client.exportPreviewResult(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportPreviewResultExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportPreviewResultRequest request =
+          ExportPreviewResultRequest.newBuilder()
+              .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+              .build();
+      client.exportPreviewResult(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

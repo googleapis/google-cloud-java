@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetPoolRequest;
 import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
@@ -137,6 +138,16 @@ public abstract class TargetPoolsStub implements BackgroundResource {
 
   public UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable() {
     throw new UnsupportedOperationException("Not implemented: setBackupCallable()");
+  }
+
+  public OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<SetSecurityPolicyTargetPoolRequest, Operation> setSecurityPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
   }
 
   @Override

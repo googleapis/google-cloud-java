@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -761,6 +761,59 @@ public final class RecaptchaEnterpriseServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest,
+          com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+      getReorderFirewallPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReorderFirewallPolicies",
+      requestType = com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest,
+          com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+      getReorderFirewallPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest,
+            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+        getReorderFirewallPoliciesMethod;
+    if ((getReorderFirewallPoliciesMethod =
+            RecaptchaEnterpriseServiceGrpc.getReorderFirewallPoliciesMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getReorderFirewallPoliciesMethod =
+                RecaptchaEnterpriseServiceGrpc.getReorderFirewallPoliciesMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getReorderFirewallPoliciesMethod =
+              getReorderFirewallPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest,
+                          com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReorderFirewallPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "ReorderFirewallPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getReorderFirewallPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
           com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
       getListRelatedAccountGroupsMethod;
@@ -1207,6 +1260,22 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Reorders all firewall policies.
+     * </pre>
+     */
+    default void reorderFirewallPolicies(
+        com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReorderFirewallPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List groups of related accounts.
      * </pre>
      */
@@ -1538,6 +1607,24 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Reorders all firewall policies.
+     * </pre>
+     */
+    public void reorderFirewallPolicies(
+        com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReorderFirewallPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List groups of related accounts.
      * </pre>
      */
@@ -1814,6 +1901,20 @@ public final class RecaptchaEnterpriseServiceGrpc {
         com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteFirewallPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reorders all firewall policies.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse
+        reorderFirewallPolicies(
+            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReorderFirewallPoliciesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2104,6 +2205,21 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Reorders all firewall policies.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>
+        reorderFirewallPolicies(
+            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReorderFirewallPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List groups of related accounts.
      * </pre>
      */
@@ -2163,9 +2279,10 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_GET_FIREWALL_POLICY = 12;
   private static final int METHODID_UPDATE_FIREWALL_POLICY = 13;
   private static final int METHODID_DELETE_FIREWALL_POLICY = 14;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 15;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 16;
-  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 17;
+  private static final int METHODID_REORDER_FIREWALL_POLICIES = 15;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 16;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 17;
+  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2274,6 +2391,13 @@ public final class RecaptchaEnterpriseServiceGrpc {
           serviceImpl.deleteFirewallPolicy(
               (com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_REORDER_FIREWALL_POLICIES:
+          serviceImpl.reorderFirewallPolicies(
+              (com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>)
+                  responseObserver);
           break;
         case METHODID_LIST_RELATED_ACCOUNT_GROUPS:
           serviceImpl.listRelatedAccountGroups(
@@ -2415,6 +2539,13 @@ public final class RecaptchaEnterpriseServiceGrpc {
                     com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_FIREWALL_POLICY)))
         .addMethod(
+            getReorderFirewallPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest,
+                    com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse>(
+                    service, METHODID_REORDER_FIREWALL_POLICIES)))
+        .addMethod(
             getListRelatedAccountGroupsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2501,6 +2632,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getGetFirewallPolicyMethod())
                       .addMethod(getUpdateFirewallPolicyMethod())
                       .addMethod(getDeleteFirewallPolicyMethod())
+                      .addMethod(getReorderFirewallPoliciesMethod())
                       .addMethod(getListRelatedAccountGroupsMethod())
                       .addMethod(getListRelatedAccountGroupMembershipsMethod())
                       .addMethod(getSearchRelatedAccountGroupMembershipsMethod())

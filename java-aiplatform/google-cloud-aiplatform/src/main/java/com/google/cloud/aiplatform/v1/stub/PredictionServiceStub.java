@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,16 @@ import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
+import com.google.cloud.aiplatform.v1.GenerateContentRequest;
+import com.google.cloud.aiplatform.v1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamDirectPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamDirectPredictResponse;
+import com.google.cloud.aiplatform.v1.StreamDirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1.StreamingRawPredictRequest;
@@ -64,6 +71,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
   }
 
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamRawPredictCallable()");
+  }
+
   public UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: directPredictCallable()");
   }
@@ -71,6 +82,16 @@ public abstract class PredictionServiceStub implements BackgroundResource {
   public UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: directRawPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectRawPredictCallable()");
   }
 
   public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
@@ -90,6 +111,15 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     throw new UnsupportedOperationException("Not implemented: explainCallable()");
+  }
+
+  public UnaryCallable<GenerateContentRequest, GenerateContentResponse> generateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateContentCallable()");
+  }
+
+  public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamGenerateContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,7 +104,10 @@ import org.threeten.bp.Duration;
  * CloudChannelReportsServiceStubSettings cloudChannelReportsServiceSettings =
  *     cloudChannelReportsServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class CloudChannelReportsServiceStubSettings
     extends StubSettings<CloudChannelReportsServiceStubSettings> {
@@ -235,7 +238,12 @@ public class CloudChannelReportsServiceStubSettings
             }
           };
 
-  /** Returns the object with the settings used for calls to runReportJob. */
+  /**
+   * Returns the object with the settings used for calls to runReportJob.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RunReportJobRequest, Operation> runReportJobSettings() {
     return runReportJobSettings;
   }
@@ -246,14 +254,24 @@ public class CloudChannelReportsServiceStubSettings
     return runReportJobOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to fetchReportResults. */
+  /**
+   * Returns the object with the settings used for calls to fetchReportResults.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           FetchReportResultsRequest, FetchReportResultsResponse, FetchReportResultsPagedResponse>
       fetchReportResultsSettings() {
     return fetchReportResultsSettings;
   }
 
-  /** Returns the object with the settings used for calls to listReports. */
+  /**
+   * Returns the object with the settings used for calls to listReports.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
       listReportsSettings() {
     return listReportsSettings;
@@ -273,6 +291,21 @@ public class CloudChannelReportsServiceStubSettings
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "cloudchannel";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -319,7 +352,6 @@ public class CloudChannelReportsServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -328,7 +360,6 @@ public class CloudChannelReportsServiceStubSettings
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -442,7 +473,6 @@ public class CloudChannelReportsServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -455,7 +485,6 @@ public class CloudChannelReportsServiceStubSettings
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -520,7 +549,12 @@ public class CloudChannelReportsServiceStubSettings
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to runReportJob. */
+    /**
+     * Returns the builder for the settings used for calls to runReportJob.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RunReportJobRequest, Operation> runReportJobSettings() {
       return runReportJobSettings;
     }
@@ -534,18 +568,37 @@ public class CloudChannelReportsServiceStubSettings
       return runReportJobOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to fetchReportResults. */
+    /**
+     * Returns the builder for the settings used for calls to fetchReportResults.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             FetchReportResultsRequest, FetchReportResultsResponse, FetchReportResultsPagedResponse>
         fetchReportResultsSettings() {
       return fetchReportResultsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listReports. */
+    /**
+     * Returns the builder for the settings used for calls to listReports.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
         listReportsSettings() {
       return listReportsSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

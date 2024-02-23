@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package com.google.cloud.billing.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,24 +33,53 @@ import javax.annotation.Generated;
 public class BillingAccountName implements ResourceName {
   private static final PathTemplate BILLING_ACCOUNT =
       PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}");
+  private static final PathTemplate ORGANIZATION_BILLING_ACCOUNT =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/billingAccounts/{billing_account}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String billingAccount;
+  private final String organization;
 
   @Deprecated
   protected BillingAccountName() {
     billingAccount = null;
+    organization = null;
   }
 
   private BillingAccountName(Builder builder) {
     billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    organization = null;
+    pathTemplate = BILLING_ACCOUNT;
+  }
+
+  private BillingAccountName(OrganizationBillingAccountBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    pathTemplate = ORGANIZATION_BILLING_ACCOUNT;
   }
 
   public String getBillingAccount() {
     return billingAccount;
   }
 
+  public String getOrganization() {
+    return organization;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newBillingAccountBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static OrganizationBillingAccountBuilder newOrganizationBillingAccountBuilder() {
+    return new OrganizationBillingAccountBuilder();
   }
 
   public Builder toBuilder() {
@@ -59,18 +90,52 @@ public class BillingAccountName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static BillingAccountName ofBillingAccountName(String billingAccount) {
+    return newBuilder().setBillingAccount(billingAccount).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static BillingAccountName ofOrganizationBillingAccountName(
+      String organization, String billingAccount) {
+    return newOrganizationBillingAccountBuilder()
+        .setOrganization(organization)
+        .setBillingAccount(billingAccount)
+        .build();
+  }
+
   public static String format(String billingAccount) {
     return newBuilder().setBillingAccount(billingAccount).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatBillingAccountName(String billingAccount) {
+    return newBuilder().setBillingAccount(billingAccount).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationBillingAccountName(
+      String organization, String billingAccount) {
+    return newOrganizationBillingAccountBuilder()
+        .setOrganization(organization)
+        .setBillingAccount(billingAccount)
+        .build()
+        .toString();
   }
 
   public static BillingAccountName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        BILLING_ACCOUNT.validatedMatch(
-            formattedString, "BillingAccountName.parse: formattedString not in valid format");
-    return of(matchMap.get("billing_account"));
+    if (BILLING_ACCOUNT.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT.match(formattedString);
+      return ofBillingAccountName(matchMap.get("billing_account"));
+    } else if (ORGANIZATION_BILLING_ACCOUNT.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_BILLING_ACCOUNT.match(formattedString);
+      return ofOrganizationBillingAccountName(
+          matchMap.get("organization"), matchMap.get("billing_account"));
+    }
+    throw new ValidationException("BillingAccountName.parse: formattedString not in valid format");
   }
 
   public static List<BillingAccountName> parseList(List<String> formattedStrings) {
@@ -94,7 +159,8 @@ public class BillingAccountName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return BILLING_ACCOUNT.matches(formattedString);
+    return BILLING_ACCOUNT.matches(formattedString)
+        || ORGANIZATION_BILLING_ACCOUNT.matches(formattedString);
   }
 
   @Override
@@ -105,6 +171,9 @@ public class BillingAccountName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (billingAccount != null) {
             fieldMapBuilder.put("billing_account", billingAccount);
+          }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +188,7 @@ public class BillingAccountName implements ResourceName {
 
   @Override
   public String toString() {
-    return BILLING_ACCOUNT.instantiate("billing_account", billingAccount);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -129,7 +198,8 @@ public class BillingAccountName implements ResourceName {
     }
     if (o != null && getClass() == o.getClass()) {
       BillingAccountName that = ((BillingAccountName) o);
-      return Objects.equals(this.billingAccount, that.billingAccount);
+      return Objects.equals(this.billingAccount, that.billingAccount)
+          && Objects.equals(this.organization, that.organization);
     }
     return false;
   }
@@ -138,7 +208,11 @@ public class BillingAccountName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(billingAccount);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
     return h;
   }
 
@@ -158,7 +232,41 @@ public class BillingAccountName implements ResourceName {
     }
 
     private Builder(BillingAccountName billingAccountName) {
+      Preconditions.checkArgument(
+          Objects.equals(billingAccountName.pathTemplate, BILLING_ACCOUNT),
+          "toBuilder is only supported when BillingAccountName has the pattern of billingAccounts/{billing_account}");
       this.billingAccount = billingAccountName.billingAccount;
+    }
+
+    public BillingAccountName build() {
+      return new BillingAccountName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/billingAccounts/{billing_account}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class OrganizationBillingAccountBuilder {
+    private String organization;
+    private String billingAccount;
+
+    protected OrganizationBillingAccountBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getBillingAccount() {
+      return billingAccount;
+    }
+
+    public OrganizationBillingAccountBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationBillingAccountBuilder setBillingAccount(String billingAccount) {
+      this.billingAccount = billingAccount;
+      return this;
     }
 
     public BillingAccountName build() {

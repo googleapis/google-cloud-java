@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.22.0 (2024-02-20)
+
+* No change
+
+
+## 0.21.0 (2024-02-09)
+
+* No change
+
+
+## 0.20.0 (2024-01-23)
+
+* No change
+
+
+## 0.19.0 (2024-01-10)
+
+* No change
+
+
+## 0.18.0 (2023-12-12)
+
+* No change
+
+
+## 0.17.0 (2023-12-04)
+
+### Features
+
+* Add a new field `token_type` to `TokenOptions` message proto ([#10051](https://github.com/googleapis/google-cloud-java/issues/10051)) ([e8c974b](https://github.com/googleapis/google-cloud-java/commit/e8c974b8781c12ac67d7e878cd869324086e75c0))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 0.16.0 (2023-11-06)
 
 ### Dependencies

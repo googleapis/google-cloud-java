@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -390,6 +390,111 @@ public class MockConfigImpl extends ConfigImplBase {
                   "Unrecognized response type %s for method ExportLockInfo, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   LockInfo.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createPreview(
+      CreatePreviewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePreview, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPreview(GetPreviewRequest request, StreamObserver<Preview> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Preview) {
+      requests.add(request);
+      responseObserver.onNext(((Preview) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPreview, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Preview.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPreviews(
+      ListPreviewsRequest request, StreamObserver<ListPreviewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPreviewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPreviewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPreviews, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPreviewsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deletePreview(
+      DeletePreviewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePreview, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void exportPreviewResult(
+      ExportPreviewResultRequest request,
+      StreamObserver<ExportPreviewResultResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExportPreviewResultResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExportPreviewResultResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportPreviewResult, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExportPreviewResultResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

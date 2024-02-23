@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public class SyncTestIamPermissionsStringListstring {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+      String resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
       List<String> permissions = new ArrayList<>();
       TestIamPermissionsResponse response =
           cloudBillingClient.testIamPermissions(resource, permissions);

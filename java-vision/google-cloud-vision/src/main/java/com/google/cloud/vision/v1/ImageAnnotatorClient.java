@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,19 +54,79 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the ImageAnnotatorClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchAnnotateImages</td>
+ *      <td><p> Run image detection and annotation for a batch of images.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchAnnotateImages(List&lt;AnnotateImageRequest&gt; requests)
+ *           <li><p> batchAnnotateImages(BatchAnnotateImagesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchAnnotateImagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchAnnotateFiles</td>
+ *      <td><p> Service that performs image detection and annotation for a batch of files. Now only "application/pdf", "image/tiff" and "image/gif" are supported.
+ * <p>  This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchAnnotateFiles(List&lt;AnnotateFileRequest&gt; requests)
+ *           <li><p> batchAnnotateFiles(BatchAnnotateFilesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchAnnotateFilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AsyncBatchAnnotateImages</td>
+ *      <td><p> Run asynchronous image detection and annotation for a list of images.
+ * <p>  Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
+ * <p>  This service will write image annotation outputs to json files in customer GCS bucket, each json file containing BatchAnnotateImagesResponse proto.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> asyncBatchAnnotateImagesAsync(List&lt;AnnotateImageRequest&gt; requests, OutputConfig outputConfig)
+ *           <li><p> asyncBatchAnnotateImagesAsync(AsyncBatchAnnotateImagesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> asyncBatchAnnotateImagesOperationCallable()
+ *           <li><p> asyncBatchAnnotateImagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AsyncBatchAnnotateFiles</td>
+ *      <td><p> Run asynchronous image detection and annotation for a list of generic files, such as PDF files, which may contain multiple pages and multiple images per page. Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> asyncBatchAnnotateFilesAsync(List&lt;AsyncAnnotateFileRequest&gt; requests)
+ *           <li><p> asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> asyncBatchAnnotateFilesOperationCallable()
+ *           <li><p> asyncBatchAnnotateFilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -241,6 +301,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateImagesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
    * }
@@ -270,6 +331,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateImagesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<BatchAnnotateImagesResponse> future =
    *       imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
@@ -338,6 +400,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   BatchAnnotateFilesResponse response = imageAnnotatorClient.batchAnnotateFiles(request);
    * }
@@ -372,6 +435,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       BatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<BatchAnnotateFilesResponse> future =
    *       imageAnnotatorClient.batchAnnotateFilesCallable().futureCall(request);
@@ -452,6 +516,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   AsyncBatchAnnotateImagesResponse response =
    *       imageAnnotatorClient.asyncBatchAnnotateImagesAsync(request).get();
@@ -491,6 +556,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata> future =
    *       imageAnnotatorClient.asyncBatchAnnotateImagesOperationCallable().futureCall(request);
@@ -530,6 +596,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       imageAnnotatorClient.asyncBatchAnnotateImagesCallable().futureCall(request);
@@ -597,6 +664,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   AsyncBatchAnnotateFilesResponse response =
    *       imageAnnotatorClient.asyncBatchAnnotateFilesAsync(request).get();
@@ -632,6 +700,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata> future =
    *       imageAnnotatorClient.asyncBatchAnnotateFilesOperationCallable().futureCall(request);
@@ -667,6 +736,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
    *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
    *           .setParent("parent-995424086")
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       imageAnnotatorClient.asyncBatchAnnotateFilesCallable().futureCall(request);

@@ -12,6 +12,12 @@
           "rpcs": {
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
+            },
+            "ImportSuggestionDenyListEntries": {
+              "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
+            },
+            "PurgeSuggestionDenyListEntries": {
+              "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
             }
           }
         }
@@ -44,6 +50,30 @@
         }
       }
     },
+    "DataStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataStoreServiceClient",
+          "rpcs": {
+            "CreateDataStore": {
+              "methods": ["createDataStoreAsync", "createDataStoreAsync", "createDataStoreAsync", "createDataStoreOperationCallable", "createDataStoreCallable"]
+            },
+            "DeleteDataStore": {
+              "methods": ["deleteDataStoreAsync", "deleteDataStoreAsync", "deleteDataStoreAsync", "deleteDataStoreOperationCallable", "deleteDataStoreCallable"]
+            },
+            "GetDataStore": {
+              "methods": ["getDataStore", "getDataStore", "getDataStore", "getDataStoreCallable"]
+            },
+            "ListDataStores": {
+              "methods": ["listDataStores", "listDataStores", "listDataStores", "listDataStoresPagedCallable", "listDataStoresCallable"]
+            },
+            "UpdateDataStore": {
+              "methods": ["updateDataStore", "updateDataStore", "updateDataStoreCallable"]
+            }
+          }
+        }
+      }
+    },
     "DocumentService": {
       "clients": {
         "grpc": {
@@ -69,6 +99,30 @@
             },
             "UpdateDocument": {
               "methods": ["updateDocument", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EngineServiceClient",
+          "rpcs": {
+            "CreateEngine": {
+              "methods": ["createEngineAsync", "createEngineAsync", "createEngineAsync", "createEngineOperationCallable", "createEngineCallable"]
+            },
+            "DeleteEngine": {
+              "methods": ["deleteEngineAsync", "deleteEngineAsync", "deleteEngineAsync", "deleteEngineOperationCallable", "deleteEngineCallable"]
+            },
+            "GetEngine": {
+              "methods": ["getEngine", "getEngine", "getEngine", "getEngineCallable"]
+            },
+            "ListEngines": {
+              "methods": ["listEngines", "listEngines", "listEngines", "listEnginesPagedCallable", "listEnginesCallable"]
+            },
+            "UpdateEngine": {
+              "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
             }
           }
         }
@@ -105,6 +159,51 @@
           "rpcs": {
             "Search": {
               "methods": ["search", "searchPagedCallable", "searchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SiteSearchEngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SiteSearchEngineServiceClient",
+          "rpcs": {
+            "BatchCreateTargetSites": {
+              "methods": ["batchCreateTargetSitesAsync", "batchCreateTargetSitesOperationCallable", "batchCreateTargetSitesCallable"]
+            },
+            "BatchVerifyTargetSites": {
+              "methods": ["batchVerifyTargetSitesAsync", "batchVerifyTargetSitesOperationCallable", "batchVerifyTargetSitesCallable"]
+            },
+            "CreateTargetSite": {
+              "methods": ["createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteOperationCallable", "createTargetSiteCallable"]
+            },
+            "DeleteTargetSite": {
+              "methods": ["deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteOperationCallable", "deleteTargetSiteCallable"]
+            },
+            "DisableAdvancedSiteSearch": {
+              "methods": ["disableAdvancedSiteSearchAsync", "disableAdvancedSiteSearchOperationCallable", "disableAdvancedSiteSearchCallable"]
+            },
+            "EnableAdvancedSiteSearch": {
+              "methods": ["enableAdvancedSiteSearchAsync", "enableAdvancedSiteSearchOperationCallable", "enableAdvancedSiteSearchCallable"]
+            },
+            "FetchDomainVerificationStatus": {
+              "methods": ["fetchDomainVerificationStatus", "fetchDomainVerificationStatusPagedCallable", "fetchDomainVerificationStatusCallable"]
+            },
+            "GetSiteSearchEngine": {
+              "methods": ["getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngineCallable"]
+            },
+            "GetTargetSite": {
+              "methods": ["getTargetSite", "getTargetSite", "getTargetSite", "getTargetSiteCallable"]
+            },
+            "ListTargetSites": {
+              "methods": ["listTargetSites", "listTargetSites", "listTargetSites", "listTargetSitesPagedCallable", "listTargetSitesCallable"]
+            },
+            "RecrawlUris": {
+              "methods": ["recrawlUrisAsync", "recrawlUrisOperationCallable", "recrawlUrisCallable"]
+            },
+            "UpdateTargetSite": {
+              "methods": ["updateTargetSiteAsync", "updateTargetSiteAsync", "updateTargetSiteOperationCallable", "updateTargetSiteCallable"]
             }
           }
         }

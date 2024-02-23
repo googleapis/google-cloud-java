@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,19 +75,483 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAccessPolicies</td>
+ *      <td><p> Lists all [access policies] [google.identity.accesscontextmanager.v1.AccessPolicy] in an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAccessPolicies(ListAccessPoliciesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAccessPoliciesPagedCallable()
+ *           <li><p> listAccessPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAccessPolicy</td>
+ *      <td><p> Returns an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAccessPolicy(GetAccessPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAccessPolicy(AccessPolicyName name)
+ *           <li><p> getAccessPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAccessPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAccessPolicy</td>
+ *      <td><p> Creates an access policy. This method fails if the organization already has an access policy. The long-running operation has a successful status after the access policy propagates to long-lasting storage. Syntactic and basic semantic errors are returned in `metadata` as a BadRequest proto.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAccessPolicyAsync(AccessPolicy request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAccessPolicyOperationCallable()
+ *           <li><p> createAccessPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAccessPolicy</td>
+ *      <td><p> Updates an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The long-running operation from this RPC has a successful status after the changes to the [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] propagate to long-lasting storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAccessPolicyAsync(UpdateAccessPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAccessPolicyAsync(AccessPolicy policy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAccessPolicyOperationCallable()
+ *           <li><p> updateAccessPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAccessPolicy</td>
+ *      <td><p> Deletes an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the resource name. The long-running operation has a successful status after the [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is removed from long-lasting storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAccessPolicyAsync(DeleteAccessPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccessPolicyAsync(AccessPolicyName name)
+ *           <li><p> deleteAccessPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccessPolicyOperationCallable()
+ *           <li><p> deleteAccessPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAccessLevels</td>
+ *      <td><p> Lists all [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAccessLevels(ListAccessLevelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAccessLevels(AccessPolicyName parent)
+ *           <li><p> listAccessLevels(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAccessLevelsPagedCallable()
+ *           <li><p> listAccessLevelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAccessLevel</td>
+ *      <td><p> Gets an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAccessLevel(GetAccessLevelRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAccessLevel(AccessLevelName name)
+ *           <li><p> getAccessLevel(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAccessLevelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAccessLevel</td>
+ *      <td><p> Creates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running operation from this RPC has a successful status after the [access level] [google.identity.accesscontextmanager.v1.AccessLevel] propagates to long-lasting storage. If [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error response is returned for the first error encountered.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAccessLevelAsync(CreateAccessLevelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAccessLevelAsync(AccessPolicyName parent, AccessLevel accessLevel)
+ *           <li><p> createAccessLevelAsync(String parent, AccessLevel accessLevel)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAccessLevelOperationCallable()
+ *           <li><p> createAccessLevelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAccessLevel</td>
+ *      <td><p> Updates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running operation from this RPC has a successful status after the changes to the [access level] [google.identity.accesscontextmanager.v1.AccessLevel] propagate to long-lasting storage. If [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error response is returned for the first error encountered.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAccessLevelAsync(UpdateAccessLevelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAccessLevelAsync(AccessLevel accessLevel, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAccessLevelOperationCallable()
+ *           <li><p> updateAccessLevelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAccessLevel</td>
+ *      <td><p> Deletes an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource name. The long-running operation from this RPC has a successful status after the [access level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from long-lasting storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAccessLevelAsync(DeleteAccessLevelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccessLevelAsync(AccessLevelName name)
+ *           <li><p> deleteAccessLevelAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccessLevelOperationCallable()
+ *           <li><p> deleteAccessLevelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReplaceAccessLevels</td>
+ *      <td><p> Replaces all existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] in an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done atomically. The long-running operation from this RPC has a successful status after all replacements propagate to long-lasting storage. If the replacement contains errors, an error response is returned for the first error encountered.  Upon error, the replacement is cancelled, and existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] are not affected. The Operation.response field contains ReplaceAccessLevelsResponse. Removing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> replaceAccessLevelsAsync(ReplaceAccessLevelsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> replaceAccessLevelsOperationCallable()
+ *           <li><p> replaceAccessLevelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListServicePerimeters</td>
+ *      <td><p> Lists all [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for an access policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listServicePerimeters(ListServicePerimetersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listServicePerimeters(AccessPolicyName parent)
+ *           <li><p> listServicePerimeters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listServicePerimetersPagedCallable()
+ *           <li><p> listServicePerimetersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetServicePerimeter</td>
+ *      <td><p> Gets a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the resource name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getServicePerimeter(GetServicePerimeterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getServicePerimeter(ServicePerimeterName name)
+ *           <li><p> getServicePerimeter(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getServicePerimeterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateServicePerimeter</td>
+ *      <td><p> Creates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The long-running operation from this RPC has a successful status after the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage. If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains errors, an error response is returned for the first error encountered.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createServicePerimeterAsync(CreateServicePerimeterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createServicePerimeterAsync(AccessPolicyName parent, ServicePerimeter servicePerimeter)
+ *           <li><p> createServicePerimeterAsync(String parent, ServicePerimeter servicePerimeter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createServicePerimeterOperationCallable()
+ *           <li><p> createServicePerimeterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateServicePerimeter</td>
+ *      <td><p> Updates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The long-running operation from this RPC has a successful status after the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage. If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains errors, an error response is returned for the first error encountered.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateServicePerimeterAsync(UpdateServicePerimeterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateServicePerimeterAsync(ServicePerimeter servicePerimeter, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateServicePerimeterOperationCallable()
+ *           <li><p> updateServicePerimeterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteServicePerimeter</td>
+ *      <td><p> Deletes a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the resource name. The long-running operation from this RPC has a successful status after the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed from long-lasting storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteServicePerimeterAsync(DeleteServicePerimeterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteServicePerimeterAsync(ServicePerimeterName name)
+ *           <li><p> deleteServicePerimeterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteServicePerimeterOperationCallable()
+ *           <li><p> deleteServicePerimeterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReplaceServicePerimeters</td>
+ *      <td><p> Replace all existing [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This is done atomically. The long-running operation from this RPC has a successful status after all replacements propagate to long-lasting storage. Replacements containing errors result in an error response for the first error encountered. Upon an error, replacement are cancelled and existing [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] are not affected. The Operation.response field contains ReplaceServicePerimetersResponse.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> replaceServicePerimetersAsync(ReplaceServicePerimetersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> replaceServicePerimetersOperationCallable()
+ *           <li><p> replaceServicePerimetersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CommitServicePerimeters</td>
+ *      <td><p> Commits the dry-run specification for all the [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a service perimeter involves copying its `spec` field to the `status` field of the service perimeter. Only [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The long-running operation from this RPC has a successful status after the dry-run specifications for all the [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] have been committed. If a commit fails, it causes the long-running operation to return an error response and the entire commit operation is cancelled. When successful, the Operation.response field contains CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are cleared after a successful commit operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> commitServicePerimetersAsync(CommitServicePerimetersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> commitServicePerimetersOperationCallable()
+ *           <li><p> commitServicePerimetersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListGcpUserAccessBindings</td>
+ *      <td><p> Lists all [GcpUserAccessBindings] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding] for a Google Cloud organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listGcpUserAccessBindings(ListGcpUserAccessBindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listGcpUserAccessBindings(OrganizationName parent)
+ *           <li><p> listGcpUserAccessBindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listGcpUserAccessBindingsPagedCallable()
+ *           <li><p> listGcpUserAccessBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGcpUserAccessBinding</td>
+ *      <td><p> Gets the [GcpUserAccessBinding] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding] with the given name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGcpUserAccessBinding(GetGcpUserAccessBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGcpUserAccessBinding(GcpUserAccessBindingName name)
+ *           <li><p> getGcpUserAccessBinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGcpUserAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateGcpUserAccessBinding</td>
+ *      <td><p> Creates a [GcpUserAccessBinding] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the client specifies a [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server ignores it. Fails if a resource already exists with the same [group_key] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key]. Completion of this long-running operation does not necessarily signify that the new binding is deployed onto all affected users, which may take more time.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createGcpUserAccessBindingAsync(CreateGcpUserAccessBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createGcpUserAccessBindingAsync(OrganizationName parent, GcpUserAccessBinding gcpUserAccessBinding)
+ *           <li><p> createGcpUserAccessBindingAsync(String parent, GcpUserAccessBinding gcpUserAccessBinding)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createGcpUserAccessBindingOperationCallable()
+ *           <li><p> createGcpUserAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGcpUserAccessBinding</td>
+ *      <td><p> Updates a [GcpUserAccessBinding] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. Completion of this long-running operation does not necessarily signify that the changed binding is deployed onto all affected users, which may take more time.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGcpUserAccessBindingAsync(UpdateGcpUserAccessBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGcpUserAccessBindingAsync(GcpUserAccessBinding gcpUserAccessBinding, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGcpUserAccessBindingOperationCallable()
+ *           <li><p> updateGcpUserAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteGcpUserAccessBinding</td>
+ *      <td><p> Deletes a [GcpUserAccessBinding] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. Completion of this long-running operation does not necessarily signify that the binding deletion is deployed onto all affected users, which may take more time.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteGcpUserAccessBindingAsync(DeleteGcpUserAccessBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteGcpUserAccessBindingAsync(GcpUserAccessBindingName name)
+ *           <li><p> deleteGcpUserAccessBindingAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteGcpUserAccessBindingOperationCallable()
+ *           <li><p> deleteGcpUserAccessBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the IAM policy for the specified Access Context Manager [access policy][google.identity.accesscontextmanager.v1.AccessPolicy]. This method replaces the existing IAM policy on the access policy. The IAM policy controls the set of users who can perform specific operations on the Access Context Manager [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the IAM policy for the specified Access Context Manager [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns the IAM permissions that the caller has on the specified Access Context Manager resource. The resource can be an [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy], [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter ]. This method does not support other resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

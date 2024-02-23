@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,9 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AzureClient;
 import com.google.cloud.gkemulticloud.v1.AzureCluster;
+import com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AzureNodePool;
+import com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AzureServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest;
@@ -61,9 +63,13 @@ import com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAzureClientRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse;
@@ -151,6 +157,9 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
   private final UnaryCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterSettings;
   private final OperationCallSettings<DeleteAzureClusterRequest, Empty, OperationMetadata>
       deleteAzureClusterOperationSettings;
+  private final UnaryCallSettings<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenSettings;
   private final UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings;
   private final UnaryCallSettings<CreateAzureNodePoolRequest, Operation>
@@ -169,6 +178,10 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       deleteAzureNodePoolSettings;
   private final OperationCallSettings<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
       deleteAzureNodePoolOperationSettings;
+  private final UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigSettings;
+  private final UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysSettings;
   private final UnaryCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigSettings;
 
@@ -432,6 +445,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateAzureClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenSettings() {
+    return generateAzureClusterAgentTokenSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateAzureAccessToken. */
   public UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings() {
@@ -483,6 +503,18 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureNodePoolOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getAzureOpenIdConfig. */
+  public UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigSettings() {
+    return getAzureOpenIdConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAzureJsonWebKeys. */
+  public UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysSettings() {
+    return getAzureJsonWebKeysSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAzureServerConfig. */
   public UnaryCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigSettings() {
@@ -503,6 +535,21 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "gkemulticloud";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -549,7 +596,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -558,7 +604,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -614,6 +659,8 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     deleteAzureClusterSettings = settingsBuilder.deleteAzureClusterSettings().build();
     deleteAzureClusterOperationSettings =
         settingsBuilder.deleteAzureClusterOperationSettings().build();
+    generateAzureClusterAgentTokenSettings =
+        settingsBuilder.generateAzureClusterAgentTokenSettings().build();
     generateAzureAccessTokenSettings = settingsBuilder.generateAzureAccessTokenSettings().build();
     createAzureNodePoolSettings = settingsBuilder.createAzureNodePoolSettings().build();
     createAzureNodePoolOperationSettings =
@@ -626,6 +673,8 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     deleteAzureNodePoolSettings = settingsBuilder.deleteAzureNodePoolSettings().build();
     deleteAzureNodePoolOperationSettings =
         settingsBuilder.deleteAzureNodePoolOperationSettings().build();
+    getAzureOpenIdConfigSettings = settingsBuilder.getAzureOpenIdConfigSettings().build();
+    getAzureJsonWebKeysSettings = settingsBuilder.getAzureJsonWebKeysSettings().build();
     getAzureServerConfigSettings = settingsBuilder.getAzureServerConfigSettings().build();
   }
 
@@ -666,6 +715,9 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     private final OperationCallSettings.Builder<DeleteAzureClusterRequest, Empty, OperationMetadata>
         deleteAzureClusterOperationSettings;
     private final UnaryCallSettings.Builder<
+            GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentTokenSettings;
+    private final UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenSettings;
     private final UnaryCallSettings.Builder<CreateAzureNodePoolRequest, Operation>
@@ -688,6 +740,10 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     private final OperationCallSettings.Builder<
             DeleteAzureNodePoolRequest, Empty, OperationMetadata>
         deleteAzureNodePoolOperationSettings;
+    private final UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+        getAzureOpenIdConfigSettings;
+    private final UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+        getAzureJsonWebKeysSettings;
     private final UnaryCallSettings.Builder<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -752,6 +808,7 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       listAzureClustersSettings = PagedCallSettings.newBuilder(LIST_AZURE_CLUSTERS_PAGE_STR_FACT);
       deleteAzureClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAzureClusterOperationSettings = OperationCallSettings.newBuilder();
+      generateAzureClusterAgentTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateAzureAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAzureNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAzureNodePoolOperationSettings = OperationCallSettings.newBuilder();
@@ -762,6 +819,8 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           PagedCallSettings.newBuilder(LIST_AZURE_NODE_POOLS_PAGE_STR_FACT);
       deleteAzureNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAzureNodePoolOperationSettings = OperationCallSettings.newBuilder();
+      getAzureOpenIdConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAzureJsonWebKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAzureServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -775,12 +834,15 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
               getAzureClusterSettings,
               listAzureClustersSettings,
               deleteAzureClusterSettings,
+              generateAzureClusterAgentTokenSettings,
               generateAzureAccessTokenSettings,
               createAzureNodePoolSettings,
               updateAzureNodePoolSettings,
               getAzureNodePoolSettings,
               listAzureNodePoolsSettings,
               deleteAzureNodePoolSettings,
+              getAzureOpenIdConfigSettings,
+              getAzureJsonWebKeysSettings,
               getAzureServerConfigSettings);
       initDefaults(this);
     }
@@ -805,6 +867,8 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       deleteAzureClusterSettings = settings.deleteAzureClusterSettings.toBuilder();
       deleteAzureClusterOperationSettings =
           settings.deleteAzureClusterOperationSettings.toBuilder();
+      generateAzureClusterAgentTokenSettings =
+          settings.generateAzureClusterAgentTokenSettings.toBuilder();
       generateAzureAccessTokenSettings = settings.generateAzureAccessTokenSettings.toBuilder();
       createAzureNodePoolSettings = settings.createAzureNodePoolSettings.toBuilder();
       createAzureNodePoolOperationSettings =
@@ -817,6 +881,8 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       deleteAzureNodePoolSettings = settings.deleteAzureNodePoolSettings.toBuilder();
       deleteAzureNodePoolOperationSettings =
           settings.deleteAzureNodePoolOperationSettings.toBuilder();
+      getAzureOpenIdConfigSettings = settings.getAzureOpenIdConfigSettings.toBuilder();
+      getAzureJsonWebKeysSettings = settings.getAzureJsonWebKeysSettings.toBuilder();
       getAzureServerConfigSettings = settings.getAzureServerConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -830,12 +896,15 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
               getAzureClusterSettings,
               listAzureClustersSettings,
               deleteAzureClusterSettings,
+              generateAzureClusterAgentTokenSettings,
               generateAzureAccessTokenSettings,
               createAzureNodePoolSettings,
               updateAzureNodePoolSettings,
               getAzureNodePoolSettings,
               listAzureNodePoolsSettings,
               deleteAzureNodePoolSettings,
+              getAzureOpenIdConfigSettings,
+              getAzureJsonWebKeysSettings,
               getAzureServerConfigSettings);
     }
 
@@ -845,7 +914,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -858,7 +926,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -912,6 +979,11 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .generateAzureClusterAgentTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .generateAzureAccessTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -940,6 +1012,16 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
           .deleteAzureNodePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAzureOpenIdConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAzureJsonWebKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getAzureServerConfigSettings()
@@ -1251,6 +1333,13 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureClusterOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to generateAzureClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentTokenSettings() {
+      return generateAzureClusterAgentTokenSettings;
+    }
+
     /** Returns the builder for the settings used for calls to generateAzureAccessToken. */
     public UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
@@ -1315,10 +1404,31 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureNodePoolOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getAzureOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+        getAzureOpenIdConfigSettings() {
+      return getAzureOpenIdConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+        getAzureJsonWebKeysSettings() {
+      return getAzureJsonWebKeysSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getAzureServerConfig. */
     public UnaryCallSettings.Builder<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigSettings() {
       return getAzureServerConfigSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

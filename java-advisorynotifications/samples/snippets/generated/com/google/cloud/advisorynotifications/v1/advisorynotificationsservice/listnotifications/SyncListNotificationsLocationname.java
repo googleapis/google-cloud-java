@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public class SyncListNotificationsLocationname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
         AdvisoryNotificationsServiceClient.create()) {
-      LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
       for (Notification element :
           advisoryNotificationsServiceClient.listNotifications(parent).iterateAll()) {
         // doThingsWith(element);

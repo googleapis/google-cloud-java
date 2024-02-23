@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -42,17 +43,21 @@ import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
+import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
+import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
+import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
@@ -65,6 +70,8 @@ import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
 import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
 import com.google.cloud.deploy.v1.ListAutomationsRequest;
 import com.google.cloud.deploy.v1.ListAutomationsResponse;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -86,6 +93,7 @@ import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
+import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -205,6 +213,51 @@ public abstract class CloudDeployStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTargetRequest, Operation> deleteTargetCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTargetCallable()");
+  }
+
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCustomTargetTypesPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomTargetTypesCallable()");
+  }
+
+  public UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType> getCustomTargetTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCustomTargetTypeCallable()");
+  }
+
+  public OperationCallable<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCustomTargetTypeOperationCallable()");
+  }
+
+  public UnaryCallable<CreateCustomTargetTypeRequest, Operation> createCustomTargetTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomTargetTypeCallable()");
+  }
+
+  public OperationCallable<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCustomTargetTypeOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomTargetTypeRequest, Operation> updateCustomTargetTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomTargetTypeCallable()");
+  }
+
+  public OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteCustomTargetTypeOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomTargetTypeRequest, Operation> deleteCustomTargetTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCustomTargetTypeCallable()");
   }
 
   public UnaryCallable<ListReleasesRequest, ListReleasesPagedResponse> listReleasesPagedCallable() {

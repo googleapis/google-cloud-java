@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service definition for the Places API. Note: every request actually requires
- * a field mask set outside of the request proto (all/'&#42;' is not assumed). That can be set via
+ * a field mask set outside of the request proto (all/'&#42;', is not assumed). That can be set via
  * either a side channel (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over
  * HTTP. See: https://cloud.google.com/apis/docs/system-parameters
  *
@@ -59,19 +59,94 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the PlacesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchNearby</td>
+ *      <td><p> Search for places near locations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchNearby(SearchNearbyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchNearbyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchText</td>
+ *      <td><p> Text query based place search.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchText(SearchTextRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchTextCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPhotoMedia</td>
+ *      <td><p> Get a photo media with a photo reference string.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPhotoMedia(GetPhotoMediaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPhotoMedia(PhotoMediaName name)
+ *           <li><p> getPhotoMedia(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPhotoMediaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPlace</td>
+ *      <td><p> Get the details of a place based on its resource name, which is a string in the `places/{place_id}` format.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPlace(GetPlaceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPlace(PlaceName name)
+ *           <li><p> getPlace(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPlaceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AutocompletePlaces</td>
+ *      <td><p> Returns predictions for the given input.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> autocompletePlaces(AutocompletePlacesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> autocompletePlacesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -268,6 +343,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setStrictTypeFiltering(true)
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+   *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
    *           .build();
    *   SearchTextResponse response = placesClient.searchText(request);
    * }
@@ -306,6 +382,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setStrictTypeFiltering(true)
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+   *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
    *   // Do something.
@@ -335,8 +412,11 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of a photo. It is returned in Place's photos.name
-   *     field. Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * @param name Required. The resource name of a photo media in the format:
+   *     `places/{place_id}/photos/{photo_reference}/media`.
+   *     <p>The resource name of a photo as returned in a Place object's `photos.name` field comes
+   *     with the format `places/{place_id}/photos/{photo_reference}`. You need to append `/media`
+   *     at the end of the photo resource to get the photo media resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhotoMedia getPhotoMedia(PhotoMediaName name) {
@@ -363,8 +443,11 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of a photo. It is returned in Place's photos.name
-   *     field. Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * @param name Required. The resource name of a photo media in the format:
+   *     `places/{place_id}/photos/{photo_reference}/media`.
+   *     <p>The resource name of a photo as returned in a Place object's `photos.name` field comes
+   *     with the format `places/{place_id}/photos/{photo_reference}`. You need to append `/media`
+   *     at the end of the photo resource to get the photo media resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhotoMedia getPhotoMedia(String name) {
@@ -435,7 +518,8 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get the details of a place based on its resource name, which is a string in the
+   * `places/{place_id}` format.
    *
    * <p>Sample code:
    *
@@ -451,8 +535,7 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. A place_id returned in a Place (with "places/" prefix), or equivalently
-   *     the name in the same Place. Format: places/&lt;place_id&gt;.
+   * @param name Required. The resource name of a place, in the `places/{place_id}` format.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Place getPlace(PlaceName name) {
@@ -463,7 +546,8 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get the details of a place based on its resource name, which is a string in the
+   * `places/{place_id}` format.
    *
    * <p>Sample code:
    *
@@ -479,8 +563,7 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. A place_id returned in a Place (with "places/" prefix), or equivalently
-   *     the name in the same Place. Format: places/&lt;place_id&gt;.
+   * @param name Required. The resource name of a place, in the `places/{place_id}` format.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Place getPlace(String name) {
@@ -490,7 +573,8 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get the details of a place based on its resource name, which is a string in the
+   * `places/{place_id}` format.
    *
    * <p>Sample code:
    *
@@ -506,6 +590,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setName(PlaceName.of("[PLACE_ID]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
+   *           .setSessionToken("sessionToken-696552189")
    *           .build();
    *   Place response = placesClient.getPlace(request);
    * }
@@ -520,7 +605,8 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get the details of a place based on its resource name, which is a string in the
+   * `places/{place_id}` format.
    *
    * <p>Sample code:
    *
@@ -536,6 +622,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setName(PlaceName.of("[PLACE_ID]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
+   *           .setSessionToken("sessionToken-696552189")
    *           .build();
    *   ApiFuture<Place> future = placesClient.getPlaceCallable().futureCall(request);
    *   // Do something.
@@ -545,6 +632,85 @@ public class PlacesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
     return stub.getPlaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns predictions for the given input.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   AutocompletePlacesRequest request =
+   *       AutocompletePlacesRequest.newBuilder()
+   *           .setInput("input100358090")
+   *           .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+   *           .setLocationRestriction(
+   *               AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+   *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
+   *           .addAllIncludedRegionCodes(new ArrayList<String>())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .setOrigin(LatLng.newBuilder().build())
+   *           .setInputOffset(1010406056)
+   *           .setIncludeQueryPredictions(true)
+   *           .setSessionToken("sessionToken-696552189")
+   *           .build();
+   *   AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutocompletePlacesResponse autocompletePlaces(AutocompletePlacesRequest request) {
+    return autocompletePlacesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns predictions for the given input.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   AutocompletePlacesRequest request =
+   *       AutocompletePlacesRequest.newBuilder()
+   *           .setInput("input100358090")
+   *           .setLocationBias(AutocompletePlacesRequest.LocationBias.newBuilder().build())
+   *           .setLocationRestriction(
+   *               AutocompletePlacesRequest.LocationRestriction.newBuilder().build())
+   *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
+   *           .addAllIncludedRegionCodes(new ArrayList<String>())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .setOrigin(LatLng.newBuilder().build())
+   *           .setInputOffset(1010406056)
+   *           .setIncludeQueryPredictions(true)
+   *           .setSessionToken("sessionToken-696552189")
+   *           .build();
+   *   ApiFuture<AutocompletePlacesResponse> future =
+   *       placesClient.autocompletePlacesCallable().futureCall(request);
+   *   // Do something.
+   *   AutocompletePlacesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AutocompletePlacesRequest, AutocompletePlacesResponse>
+      autocompletePlacesCallable() {
+    return stub.autocompletePlacesCallable();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,19 +70,481 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ProcessDocument</td>
+ *      <td><p> Processes a single document.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> processDocument(ProcessRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> processDocument(ResourceName name)
+ *           <li><p> processDocument(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> processDocumentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchProcessDocuments</td>
+ *      <td><p> LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchProcessDocumentsAsync(BatchProcessRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> batchProcessDocumentsAsync(ResourceName name)
+ *           <li><p> batchProcessDocumentsAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchProcessDocumentsOperationCallable()
+ *           <li><p> batchProcessDocumentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchProcessorTypes</td>
+ *      <td><p> Fetches processor types. Note that we don't use [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes] here, because it isn't paginated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchProcessorTypes(FetchProcessorTypesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchProcessorTypes(LocationName parent)
+ *           <li><p> fetchProcessorTypes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchProcessorTypesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProcessorTypes</td>
+ *      <td><p> Lists the processor types that exist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProcessorTypes(ListProcessorTypesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProcessorTypes(LocationName parent)
+ *           <li><p> listProcessorTypes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProcessorTypesPagedCallable()
+ *           <li><p> listProcessorTypesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProcessorType</td>
+ *      <td><p> Gets a processor type detail.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProcessorType(GetProcessorTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProcessorType(ProcessorTypeName name)
+ *           <li><p> getProcessorType(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProcessorTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProcessors</td>
+ *      <td><p> Lists all processors which belong to this project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProcessors(ListProcessorsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProcessors(LocationName parent)
+ *           <li><p> listProcessors(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProcessorsPagedCallable()
+ *           <li><p> listProcessorsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProcessor</td>
+ *      <td><p> Gets a processor detail.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProcessor(GetProcessorRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProcessor(ProcessorName name)
+ *           <li><p> getProcessor(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProcessorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TrainProcessorVersion</td>
+ *      <td><p> Trains a new processor version. Operation metadata is returned as [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> trainProcessorVersionAsync(TrainProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> trainProcessorVersionAsync(ProcessorName parent, ProcessorVersion processorVersion)
+ *           <li><p> trainProcessorVersionAsync(String parent, ProcessorVersion processorVersion)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> trainProcessorVersionOperationCallable()
+ *           <li><p> trainProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProcessorVersion</td>
+ *      <td><p> Gets a processor version detail.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProcessorVersion(GetProcessorVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProcessorVersion(ProcessorVersionName name)
+ *           <li><p> getProcessorVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProcessorVersions</td>
+ *      <td><p> Lists all versions of a processor.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProcessorVersions(ListProcessorVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProcessorVersions(ProcessorName parent)
+ *           <li><p> listProcessorVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProcessorVersionsPagedCallable()
+ *           <li><p> listProcessorVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteProcessorVersion</td>
+ *      <td><p> Deletes the processor version, all artifacts under the processor version will be deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteProcessorVersionAsync(DeleteProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteProcessorVersionAsync(ProcessorVersionName name)
+ *           <li><p> deleteProcessorVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteProcessorVersionOperationCallable()
+ *           <li><p> deleteProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeployProcessorVersion</td>
+ *      <td><p> Deploys the processor version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployProcessorVersionAsync(DeployProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deployProcessorVersionAsync(ProcessorVersionName name)
+ *           <li><p> deployProcessorVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployProcessorVersionOperationCallable()
+ *           <li><p> deployProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UndeployProcessorVersion</td>
+ *      <td><p> Undeploys the processor version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> undeployProcessorVersionAsync(UndeployProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> undeployProcessorVersionAsync(ProcessorVersionName name)
+ *           <li><p> undeployProcessorVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> undeployProcessorVersionOperationCallable()
+ *           <li><p> undeployProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateProcessor</td>
+ *      <td><p> Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided. The processor will be at `ENABLED` state by default after its creation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createProcessor(CreateProcessorRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createProcessor(LocationName parent, Processor processor)
+ *           <li><p> createProcessor(String parent, Processor processor)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createProcessorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteProcessor</td>
+ *      <td><p> Deletes the processor, unloads all deployed model artifacts if it was enabled and then deletes all artifacts associated with this processor.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteProcessorAsync(DeleteProcessorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteProcessorAsync(ProcessorName name)
+ *           <li><p> deleteProcessorAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteProcessorOperationCallable()
+ *           <li><p> deleteProcessorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EnableProcessor</td>
+ *      <td><p> Enables a processor</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> enableProcessorAsync(EnableProcessorRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> enableProcessorOperationCallable()
+ *           <li><p> enableProcessorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DisableProcessor</td>
+ *      <td><p> Disables a processor</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> disableProcessorAsync(DisableProcessorRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> disableProcessorOperationCallable()
+ *           <li><p> disableProcessorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetDefaultProcessorVersion</td>
+ *      <td><p> Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setDefaultProcessorVersionAsync(SetDefaultProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setDefaultProcessorVersionOperationCallable()
+ *           <li><p> setDefaultProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReviewDocument</td>
+ *      <td><p> Send a document for Human Review. The input document should be processed by the specified processor.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reviewDocumentAsync(ReviewDocumentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> reviewDocumentAsync(HumanReviewConfigName humanReviewConfig)
+ *           <li><p> reviewDocumentAsync(String humanReviewConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reviewDocumentOperationCallable()
+ *           <li><p> reviewDocumentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EvaluateProcessorVersion</td>
+ *      <td><p> Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> evaluateProcessorVersionAsync(EvaluateProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> evaluateProcessorVersionAsync(ProcessorVersionName processorVersion)
+ *           <li><p> evaluateProcessorVersionAsync(String processorVersion)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> evaluateProcessorVersionOperationCallable()
+ *           <li><p> evaluateProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEvaluation</td>
+ *      <td><p> Retrieves a specific evaluation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEvaluation(GetEvaluationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEvaluation(EvaluationName name)
+ *           <li><p> getEvaluation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEvaluationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListEvaluations</td>
+ *      <td><p> Retrieves a set of evaluations for a given processor version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listEvaluations(ListEvaluationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listEvaluations(ProcessorVersionName parent)
+ *           <li><p> listEvaluations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listEvaluationsPagedCallable()
+ *           <li><p> listEvaluationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportProcessorVersion</td>
+ *      <td><p> Imports a processor version from source processor version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importProcessorVersionAsync(ImportProcessorVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> importProcessorVersionAsync(ProcessorName parent)
+ *           <li><p> importProcessorVersionAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importProcessorVersionOperationCallable()
+ *           <li><p> importProcessorVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -308,6 +770,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -341,6 +804,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
@@ -446,6 +910,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();
@@ -484,6 +949,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
    *       documentProcessorServiceClient
@@ -523,6 +989,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);
@@ -2258,9 +2725,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @param processor Required. The processor to be created, requires
    *     [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   *     [Processor.display_name]][] to be set. Also, the
-   *     [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name] field must
-   *     be set if the processor is under CMEK.
+   *     [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name] to be set.
+   *     Also, the [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
+   *     field must be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Processor createProcessor(LocationName parent, Processor processor) {
@@ -2297,9 +2764,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @param processor Required. The processor to be created, requires
    *     [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
-   *     [Processor.display_name]][] to be set. Also, the
-   *     [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name] field must
-   *     be set if the processor is under CMEK.
+   *     [Processor.display_name][google.cloud.documentai.v1beta3.Processor.display_name] to be set.
+   *     Also, the [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name]
+   *     field must be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Processor createProcessor(String parent, Processor processor) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,16 @@ import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
+import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest;
+import com.google.cloud.compute.v1.SetIamPolicyBackendBucketRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsBackendBucketRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateBackendBucketRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -123,6 +128,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   private final OperationCallSettings<DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
       deleteSignedUrlKeyOperationSettings;
   private final UnaryCallSettings<GetBackendBucketRequest, BackendBucket> getSettings;
+  private final UnaryCallSettings<GetIamPolicyBackendBucketRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertBackendBucketRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertBackendBucketRequest, Operation, Operation>
       insertOperationSettings;
@@ -136,6 +142,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   private final OperationCallSettings<
           SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyBackendBucketRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateBackendBucketRequest, Operation, Operation>
       updateOperationSettings;
@@ -236,6 +245,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyBackendBucketRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendBucketRequest, Operation> insertSettings() {
     return insertSettings;
@@ -276,6 +290,17 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     return setEdgeSecurityPolicyOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyBackendBucketRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings() {
     return updateSettings;
@@ -296,6 +321,21 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -335,7 +375,6 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -371,6 +410,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     deleteSignedUrlKeyOperationSettings =
         settingsBuilder.deleteSignedUrlKeyOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -379,6 +419,8 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     setEdgeSecurityPolicySettings = settingsBuilder.setEdgeSecurityPolicySettings().build();
     setEdgeSecurityPolicyOperationSettings =
         settingsBuilder.setEdgeSecurityPolicyOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -400,6 +442,8 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
             DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
         deleteSignedUrlKeyOperationSettings;
     private final UnaryCallSettings.Builder<GetBackendBucketRequest, BackendBucket> getSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyBackendBucketRequest, Policy>
+        getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertBackendBucketRequest, Operation> insertSettings;
     private final OperationCallSettings.Builder<InsertBackendBucketRequest, Operation, Operation>
         insertOperationSettings;
@@ -414,6 +458,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     private final OperationCallSettings.Builder<
             SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyBackendBucketRequest, Policy>
+        setIamPolicySettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateBackendBucketRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateBackendBucketRequest, Operation, Operation>
         updateOperationSettings;
@@ -474,6 +523,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       deleteSignedUrlKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSignedUrlKeyOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -481,6 +531,8 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       patchOperationSettings = OperationCallSettings.newBuilder();
       setEdgeSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setEdgeSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -490,10 +542,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -509,6 +564,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       deleteSignedUrlKeyOperationSettings =
           settings.deleteSignedUrlKeyOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -517,6 +573,8 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       setEdgeSecurityPolicySettings = settings.setEdgeSecurityPolicySettings.toBuilder();
       setEdgeSecurityPolicyOperationSettings =
           settings.setEdgeSecurityPolicyOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -526,10 +584,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -539,7 +600,6 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -568,6 +628,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .insertSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -584,6 +649,16 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       builder
           .setEdgeSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -828,6 +903,12 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       return getSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyBackendBucketRequest, Policy>
+        getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendBucketRequest, Operation> insertSettings() {
       return insertSettings;
@@ -876,6 +957,19 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       return setEdgeSecurityPolicyOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyBackendBucketRequest, Policy>
+        setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateBackendBucketRequest, Operation> updateSettings() {
       return updateSettings;
@@ -887,6 +981,15 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     public OperationCallSettings.Builder<UpdateBackendBucketRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

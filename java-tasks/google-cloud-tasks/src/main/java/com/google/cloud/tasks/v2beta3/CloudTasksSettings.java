@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,11 +170,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     return ((CloudTasksStubSettings) getStubSettings()).runTaskSettings();
   }
 
-  /** Returns the object with the settings used for calls to bufferTask. */
-  public UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-    return ((CloudTasksStubSettings) getStubSettings()).bufferTaskSettings();
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -226,7 +221,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     return CloudTasksStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return CloudTasksStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -381,11 +375,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     /** Returns the builder for the settings used for calls to runTask. */
     public UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings() {
       return getStubSettingsBuilder().runTaskSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to bufferTask. */
-    public UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-      return getStubSettingsBuilder().bufferTaskSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

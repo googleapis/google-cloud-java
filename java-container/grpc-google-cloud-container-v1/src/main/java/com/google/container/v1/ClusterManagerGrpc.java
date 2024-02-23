@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1833,8 +1833,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     default void getJSONWebKeys(
@@ -2412,8 +2410,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     public void getJSONWebKeys(
@@ -2958,8 +2954,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     public com.google.container.v1.GetJSONWebKeysResponse getJSONWebKeys(
@@ -3453,8 +3447,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

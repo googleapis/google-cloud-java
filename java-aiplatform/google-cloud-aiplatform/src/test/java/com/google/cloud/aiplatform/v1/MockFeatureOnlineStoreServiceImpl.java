@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,28 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
                   "Unrecognized response type %s for method FetchFeatureValues, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchFeatureValuesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchNearestEntities(
+      SearchNearestEntitiesRequest request,
+      StreamObserver<SearchNearestEntitiesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchNearestEntitiesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchNearestEntitiesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchNearestEntities, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchNearestEntitiesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

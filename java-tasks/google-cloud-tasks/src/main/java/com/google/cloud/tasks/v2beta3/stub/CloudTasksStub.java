@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.tasks.v2beta3.BufferTaskRequest;
-import com.google.cloud.tasks.v2beta3.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta3.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta3.CreateTaskRequest;
 import com.google.cloud.tasks.v2beta3.DeleteQueueRequest;
@@ -135,10 +133,6 @@ public abstract class CloudTasksStub implements BackgroundResource {
 
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     throw new UnsupportedOperationException("Not implemented: runTaskCallable()");
-  }
-
-  public UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
-    throw new UnsupportedOperationException("Not implemented: bufferTaskCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

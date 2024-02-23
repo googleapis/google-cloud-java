@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,8 @@ public class InterconnectLocationsClientTest {
         InterconnectLocation.newBuilder()
             .setAddress("address-1147692044")
             .setAvailabilityZone("availabilityZone-1674934361")
+            .addAllAvailableFeatures(new ArrayList<String>())
+            .addAllAvailableLinkTypes(new ArrayList<String>())
             .setCity("city3053931")
             .setContinent("continent-403427916")
             .setCreationTimestamp("creationTimestamp-370203401")

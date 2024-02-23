@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.InstancesClient.ListReferrersPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -225,6 +224,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).listReferrersSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).performMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).performMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removeResourcePolicies. */
   public UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings() {
@@ -372,6 +383,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).setSchedulingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setServiceAccount. */
@@ -567,7 +590,6 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return InstancesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return InstancesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -783,6 +805,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().listReferrersSettings();
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings() {
+      return getStubSettingsBuilder().performMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */
     public UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings() {
@@ -933,6 +967,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
         setSchedulingOperationSettings() {
       return getStubSettingsBuilder().setSchedulingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setServiceAccount. */

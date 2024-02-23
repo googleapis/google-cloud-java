@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,32 @@
  *           .addAllProfileType(new ArrayList<ProfileType>())
  *           .build();
  *   Profile response = profilerServiceClient.createProfile(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ExportServiceClient =======================
+ *
+ * <p>Service Description: Service allows existing Cloud Profiler customers to export their profile
+ * data out of Google Cloud.
+ *
+ * <p>Sample for ExportServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ExportServiceClient exportServiceClient = ExportServiceClient.create()) {
+ *   ListProfilesRequest request =
+ *       ListProfilesRequest.newBuilder()
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .build();
+ *   for (Profile element : exportServiceClient.listProfiles(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
  * }
  * }</pre>
  */

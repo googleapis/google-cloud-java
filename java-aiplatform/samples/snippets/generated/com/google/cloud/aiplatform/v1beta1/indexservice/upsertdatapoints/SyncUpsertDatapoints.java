@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.aiplatform.v1beta1.IndexName;
 import com.google.cloud.aiplatform.v1beta1.IndexServiceClient;
 import com.google.cloud.aiplatform.v1beta1.UpsertDatapointsRequest;
 import com.google.cloud.aiplatform.v1beta1.UpsertDatapointsResponse;
+import com.google.protobuf.FieldMask;
 import java.util.ArrayList;
 
 public class SyncUpsertDatapoints {
@@ -41,6 +42,7 @@ public class SyncUpsertDatapoints {
           UpsertDatapointsRequest.newBuilder()
               .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
               .addAllDatapoints(new ArrayList<IndexDatapoint>())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       UpsertDatapointsResponse response = indexServiceClient.upsertDatapoints(request);
     }

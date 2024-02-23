@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.orgpolicy.v2;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -114,6 +115,38 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
     return ((OrgPolicyStubSettings) getStubSettings()).deletePolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to createCustomConstraint. */
+  public UnaryCallSettings<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).createCustomConstraintSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomConstraint. */
+  public UnaryCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).updateCustomConstraintSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomConstraint. */
+  public UnaryCallSettings<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).getCustomConstraintSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomConstraints. */
+  public PagedCallSettings<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          ListCustomConstraintsPagedResponse>
+      listCustomConstraintsSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).listCustomConstraintsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomConstraint. */
+  public UnaryCallSettings<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).deleteCustomConstraintSettings();
+  }
+
   public static final OrgPolicySettings create(OrgPolicyStubSettings stub) throws IOException {
     return new OrgPolicySettings.Builder(stub.toBuilder()).build();
   }
@@ -154,7 +187,6 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
     return OrgPolicyStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return OrgPolicyStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -266,6 +298,39 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
     /** Returns the builder for the settings used for calls to deletePolicy. */
     public UnaryCallSettings.Builder<DeletePolicyRequest, Empty> deletePolicySettings() {
       return getStubSettingsBuilder().deletePolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomConstraint. */
+    public UnaryCallSettings.Builder<CreateCustomConstraintRequest, CustomConstraint>
+        createCustomConstraintSettings() {
+      return getStubSettingsBuilder().createCustomConstraintSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomConstraint. */
+    public UnaryCallSettings.Builder<UpdateCustomConstraintRequest, CustomConstraint>
+        updateCustomConstraintSettings() {
+      return getStubSettingsBuilder().updateCustomConstraintSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomConstraint. */
+    public UnaryCallSettings.Builder<GetCustomConstraintRequest, CustomConstraint>
+        getCustomConstraintSettings() {
+      return getStubSettingsBuilder().getCustomConstraintSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomConstraints. */
+    public PagedCallSettings.Builder<
+            ListCustomConstraintsRequest,
+            ListCustomConstraintsResponse,
+            ListCustomConstraintsPagedResponse>
+        listCustomConstraintsSettings() {
+      return getStubSettingsBuilder().listCustomConstraintsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomConstraint. */
+    public UnaryCallSettings.Builder<DeleteCustomConstraintRequest, Empty>
+        deleteCustomConstraintSettings() {
+      return getStubSettingsBuilder().deleteCustomConstraintSettings();
     }
 
     @Override

@@ -49,6 +49,9 @@
             "CreateAudience": {
               "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
             },
+            "CreateCalculatedMetric": {
+              "methods": ["createCalculatedMetric", "createCalculatedMetric", "createCalculatedMetric", "createCalculatedMetricCallable"]
+            },
             "CreateChannelGroup": {
               "methods": ["createChannelGroup", "createChannelGroup", "createChannelGroup", "createChannelGroupCallable"]
             },
@@ -117,6 +120,9 @@
             },
             "DeleteAdSenseLink": {
               "methods": ["deleteAdSenseLink", "deleteAdSenseLink", "deleteAdSenseLink", "deleteAdSenseLinkCallable"]
+            },
+            "DeleteCalculatedMetric": {
+              "methods": ["deleteCalculatedMetric", "deleteCalculatedMetric", "deleteCalculatedMetric", "deleteCalculatedMetricCallable"]
             },
             "DeleteChannelGroup": {
               "methods": ["deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroupCallable"]
@@ -190,6 +196,9 @@
             "GetBigQueryLink": {
               "methods": ["getBigQueryLink", "getBigQueryLink", "getBigQueryLink", "getBigQueryLinkCallable"]
             },
+            "GetCalculatedMetric": {
+              "methods": ["getCalculatedMetric", "getCalculatedMetric", "getCalculatedMetric", "getCalculatedMetricCallable"]
+            },
             "GetChannelGroup": {
               "methods": ["getChannelGroup", "getChannelGroup", "getChannelGroup", "getChannelGroupCallable"]
             },
@@ -250,6 +259,9 @@
             "GetSearchAds360Link": {
               "methods": ["getSearchAds360Link", "getSearchAds360Link", "getSearchAds360Link", "getSearchAds360LinkCallable"]
             },
+            "GetSubpropertyEventFilter": {
+              "methods": ["getSubpropertyEventFilter", "getSubpropertyEventFilter", "getSubpropertyEventFilter", "getSubpropertyEventFilterCallable"]
+            },
             "ListAccessBindings": {
               "methods": ["listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindingsPagedCallable", "listAccessBindingsCallable"]
             },
@@ -267,6 +279,9 @@
             },
             "ListBigQueryLinks": {
               "methods": ["listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinksPagedCallable", "listBigQueryLinksCallable"]
+            },
+            "ListCalculatedMetrics": {
+              "methods": ["listCalculatedMetrics", "listCalculatedMetrics", "listCalculatedMetrics", "listCalculatedMetricsPagedCallable", "listCalculatedMetricsCallable"]
             },
             "ListChannelGroups": {
               "methods": ["listChannelGroups", "listChannelGroups", "listChannelGroups", "listChannelGroupsPagedCallable", "listChannelGroupsCallable"]
@@ -319,6 +334,9 @@
             "ListSearchAds360Links": {
               "methods": ["listSearchAds360Links", "listSearchAds360Links", "listSearchAds360Links", "listSearchAds360LinksPagedCallable", "listSearchAds360LinksCallable"]
             },
+            "ListSubpropertyEventFilters": {
+              "methods": ["listSubpropertyEventFilters", "listSubpropertyEventFilters", "listSubpropertyEventFilters", "listSubpropertyEventFiltersPagedCallable", "listSubpropertyEventFiltersCallable"]
+            },
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
             },
@@ -342,6 +360,9 @@
             },
             "UpdateAudience": {
               "methods": ["updateAudience", "updateAudience", "updateAudienceCallable"]
+            },
+            "UpdateCalculatedMetric": {
+              "methods": ["updateCalculatedMetric", "updateCalculatedMetric", "updateCalculatedMetricCallable"]
             },
             "UpdateChannelGroup": {
               "methods": ["updateChannelGroup", "updateChannelGroup", "updateChannelGroupCallable"]
@@ -393,6 +414,9 @@
             },
             "UpdateSearchAds360Link": {
               "methods": ["updateSearchAds360Link", "updateSearchAds360Link", "updateSearchAds360LinkCallable"]
+            },
+            "UpdateSubpropertyEventFilter": {
+              "methods": ["updateSubpropertyEventFilter", "updateSubpropertyEventFilter", "updateSubpropertyEventFilterCallable"]
             }
           }
         }

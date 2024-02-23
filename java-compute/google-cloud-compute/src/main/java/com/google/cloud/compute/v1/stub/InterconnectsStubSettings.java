@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,10 +47,12 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectRequest;
 import com.google.cloud.compute.v1.GetDiagnosticsInterconnectRequest;
 import com.google.cloud.compute.v1.GetInterconnectRequest;
+import com.google.cloud.compute.v1.GetMacsecConfigInterconnectRequest;
 import com.google.cloud.compute.v1.InsertInterconnectRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
 import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
+import com.google.cloud.compute.v1.InterconnectsGetMacsecConfigResponse;
 import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
@@ -117,6 +119,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
   private final UnaryCallSettings<
           GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsSettings;
+  private final UnaryCallSettings<
+          GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigSettings;
   private final UnaryCallSettings<InsertInterconnectRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertInterconnectRequest, Operation, Operation>
       insertOperationSettings;
@@ -206,6 +211,12 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     return getDiagnosticsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getMacsecConfig. */
+  public UnaryCallSettings<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigSettings() {
+    return getMacsecConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInterconnectRequest, Operation> insertSettings() {
     return insertSettings;
@@ -256,6 +267,21 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -293,7 +319,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -325,6 +350,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getDiagnosticsSettings = settingsBuilder.getDiagnosticsSettings().build();
+    getMacsecConfigSettings = settingsBuilder.getMacsecConfigSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -344,6 +370,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     private final UnaryCallSettings.Builder<
             GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
         getDiagnosticsSettings;
+    private final UnaryCallSettings.Builder<
+            GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigSettings;
     private final UnaryCallSettings.Builder<InsertInterconnectRequest, Operation> insertSettings;
     private final OperationCallSettings.Builder<InsertInterconnectRequest, Operation, Operation>
         insertOperationSettings;
@@ -411,6 +440,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDiagnosticsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMacsecConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -424,6 +454,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               deleteSettings,
               getSettings,
               getDiagnosticsSettings,
+              getMacsecConfigSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -438,6 +469,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getDiagnosticsSettings = settings.getDiagnosticsSettings.toBuilder();
+      getMacsecConfigSettings = settings.getMacsecConfigSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -451,6 +483,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               deleteSettings,
               getSettings,
               getDiagnosticsSettings,
+              getMacsecConfigSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -463,7 +496,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -483,6 +515,11 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
 
       builder
           .getDiagnosticsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getMacsecConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -645,6 +682,13 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       return getDiagnosticsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getMacsecConfig. */
+    public UnaryCallSettings.Builder<
+            GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigSettings() {
+      return getMacsecConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertInterconnectRequest, Operation> insertSettings() {
       return insertSettings;
@@ -688,6 +732,15 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     public OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

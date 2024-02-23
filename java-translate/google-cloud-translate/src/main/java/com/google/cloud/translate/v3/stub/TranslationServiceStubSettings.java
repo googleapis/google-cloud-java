@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package com.google.cloud.translate.v3.stub;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -47,22 +50,40 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.AdaptiveMtDataset;
+import com.google.cloud.translate.v3.AdaptiveMtFile;
+import com.google.cloud.translate.v3.AdaptiveMtSentence;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateRequest;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
 import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
 import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
+import com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest;
 import com.google.cloud.translate.v3.CreateGlossaryMetadata;
 import com.google.cloud.translate.v3.CreateGlossaryRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryMetadata;
 import com.google.cloud.translate.v3.DeleteGlossaryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryResponse;
 import com.google.cloud.translate.v3.DetectLanguageRequest;
 import com.google.cloud.translate.v3.DetectLanguageResponse;
+import com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.GetAdaptiveMtFileRequest;
 import com.google.cloud.translate.v3.GetGlossaryRequest;
 import com.google.cloud.translate.v3.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3.Glossary;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
@@ -75,6 +96,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -157,6 +179,32 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
   private final OperationCallSettings<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationSettings;
+  private final UnaryCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetSettings;
+  private final UnaryCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetSettings;
+  private final UnaryCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetSettings;
+  private final PagedCallSettings<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsSettings;
+  private final UnaryCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateSettings;
+  private final UnaryCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+      getAdaptiveMtFileSettings;
+  private final UnaryCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileSettings;
+  private final UnaryCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileSettings;
+  private final PagedCallSettings<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesSettings;
+  private final PagedCallSettings<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesSettings;
 
   private static final PagedListDescriptor<ListGlossariesRequest, ListGlossariesResponse, Glossary>
       LIST_GLOSSARIES_PAGE_STR_DESC =
@@ -195,6 +243,134 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
+      LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdaptiveMtDatasetsRequest injectToken(
+                ListAdaptiveMtDatasetsRequest payload, String token) {
+              return ListAdaptiveMtDatasetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdaptiveMtDatasetsRequest injectPageSize(
+                ListAdaptiveMtDatasetsRequest payload, int pageSize) {
+              return ListAdaptiveMtDatasetsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdaptiveMtDatasetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdaptiveMtDatasetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdaptiveMtDataset> extractResources(
+                ListAdaptiveMtDatasetsResponse payload) {
+              return payload.getAdaptiveMtDatasetsList() == null
+                  ? ImmutableList.<AdaptiveMtDataset>of()
+                  : payload.getAdaptiveMtDatasetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+      LIST_ADAPTIVE_MT_FILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdaptiveMtFilesRequest injectToken(
+                ListAdaptiveMtFilesRequest payload, String token) {
+              return ListAdaptiveMtFilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdaptiveMtFilesRequest injectPageSize(
+                ListAdaptiveMtFilesRequest payload, int pageSize) {
+              return ListAdaptiveMtFilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdaptiveMtFilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdaptiveMtFilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdaptiveMtFile> extractResources(ListAdaptiveMtFilesResponse payload) {
+              return payload.getAdaptiveMtFilesList() == null
+                  ? ImmutableList.<AdaptiveMtFile>of()
+                  : payload.getAdaptiveMtFilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
+      LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdaptiveMtSentencesRequest,
+              ListAdaptiveMtSentencesResponse,
+              AdaptiveMtSentence>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdaptiveMtSentencesRequest injectToken(
+                ListAdaptiveMtSentencesRequest payload, String token) {
+              return ListAdaptiveMtSentencesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdaptiveMtSentencesRequest injectPageSize(
+                ListAdaptiveMtSentencesRequest payload, int pageSize) {
+              return ListAdaptiveMtSentencesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdaptiveMtSentencesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdaptiveMtSentencesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdaptiveMtSentence> extractResources(
+                ListAdaptiveMtSentencesResponse payload) {
+              return payload.getAdaptiveMtSentencesList() == null
+                  ? ImmutableList.<AdaptiveMtSentence>of()
+                  : payload.getAdaptiveMtSentencesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
       LIST_GLOSSARIES_PAGE_STR_FACT =
@@ -209,6 +385,81 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> pageContext =
                   PageContext.create(callable, LIST_GLOSSARIES_PAGE_STR_DESC, request, context);
               return ListGlossariesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdaptiveMtDatasetsRequest,
+              ListAdaptiveMtDatasetsResponse,
+              ListAdaptiveMtDatasetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdaptiveMtDatasetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+                    callable,
+                ListAdaptiveMtDatasetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdaptiveMtDatasetsResponse> futureResponse) {
+              PageContext<
+                      ListAdaptiveMtDatasetsRequest,
+                      ListAdaptiveMtDatasetsResponse,
+                      AdaptiveMtDataset>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_DESC, request, context);
+              return ListAdaptiveMtDatasetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      LIST_ADAPTIVE_MT_FILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdaptiveMtFilesRequest,
+              ListAdaptiveMtFilesResponse,
+              ListAdaptiveMtFilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdaptiveMtFilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse> callable,
+                ListAdaptiveMtFilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdaptiveMtFilesResponse> futureResponse) {
+              PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADAPTIVE_MT_FILES_PAGE_STR_DESC, request, context);
+              return ListAdaptiveMtFilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdaptiveMtSentencesRequest,
+              ListAdaptiveMtSentencesResponse,
+              ListAdaptiveMtSentencesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdaptiveMtSentencesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+                    callable,
+                ListAdaptiveMtSentencesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdaptiveMtSentencesResponse> futureResponse) {
+              PageContext<
+                      ListAdaptiveMtSentencesRequest,
+                      ListAdaptiveMtSentencesResponse,
+                      AdaptiveMtSentence>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_DESC, request, context);
+              return ListAdaptiveMtSentencesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -296,6 +547,71 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return deleteGlossaryOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createAdaptiveMtDataset. */
+  public UnaryCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetSettings() {
+    return createAdaptiveMtDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdaptiveMtDataset. */
+  public UnaryCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetSettings() {
+    return deleteAdaptiveMtDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAdaptiveMtDataset. */
+  public UnaryCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetSettings() {
+    return getAdaptiveMtDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtDatasets. */
+  public PagedCallSettings<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsSettings() {
+    return listAdaptiveMtDatasetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to adaptiveMtTranslate. */
+  public UnaryCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateSettings() {
+    return adaptiveMtTranslateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAdaptiveMtFile. */
+  public UnaryCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileSettings() {
+    return getAdaptiveMtFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdaptiveMtFile. */
+  public UnaryCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileSettings() {
+    return deleteAdaptiveMtFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importAdaptiveMtFile. */
+  public UnaryCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileSettings() {
+    return importAdaptiveMtFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtFiles. */
+  public PagedCallSettings<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesSettings() {
+    return listAdaptiveMtFilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtSentences. */
+  public PagedCallSettings<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesSettings() {
+    return listAdaptiveMtSentencesSettings;
+  }
+
   public TranslationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -310,6 +626,21 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "translate";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -356,7 +687,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -365,7 +695,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -418,6 +747,16 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     getGlossarySettings = settingsBuilder.getGlossarySettings().build();
     deleteGlossarySettings = settingsBuilder.deleteGlossarySettings().build();
     deleteGlossaryOperationSettings = settingsBuilder.deleteGlossaryOperationSettings().build();
+    createAdaptiveMtDatasetSettings = settingsBuilder.createAdaptiveMtDatasetSettings().build();
+    deleteAdaptiveMtDatasetSettings = settingsBuilder.deleteAdaptiveMtDatasetSettings().build();
+    getAdaptiveMtDatasetSettings = settingsBuilder.getAdaptiveMtDatasetSettings().build();
+    listAdaptiveMtDatasetsSettings = settingsBuilder.listAdaptiveMtDatasetsSettings().build();
+    adaptiveMtTranslateSettings = settingsBuilder.adaptiveMtTranslateSettings().build();
+    getAdaptiveMtFileSettings = settingsBuilder.getAdaptiveMtFileSettings().build();
+    deleteAdaptiveMtFileSettings = settingsBuilder.deleteAdaptiveMtFileSettings().build();
+    importAdaptiveMtFileSettings = settingsBuilder.importAdaptiveMtFileSettings().build();
+    listAdaptiveMtFilesSettings = settingsBuilder.listAdaptiveMtFilesSettings().build();
+    listAdaptiveMtSentencesSettings = settingsBuilder.listAdaptiveMtSentencesSettings().build();
   }
 
   /** Builder for TranslationServiceStubSettings. */
@@ -458,6 +797,36 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     private final OperationCallSettings.Builder<
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings;
+    private final UnaryCallSettings.Builder<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetSettings;
+    private final UnaryCallSettings.Builder<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetSettings;
+    private final UnaryCallSettings.Builder<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetSettings;
+    private final PagedCallSettings.Builder<
+            ListAdaptiveMtDatasetsRequest,
+            ListAdaptiveMtDatasetsResponse,
+            ListAdaptiveMtDatasetsPagedResponse>
+        listAdaptiveMtDatasetsSettings;
+    private final UnaryCallSettings.Builder<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateSettings;
+    private final UnaryCallSettings.Builder<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+        getAdaptiveMtFileSettings;
+    private final UnaryCallSettings.Builder<DeleteAdaptiveMtFileRequest, Empty>
+        deleteAdaptiveMtFileSettings;
+    private final UnaryCallSettings.Builder<
+            ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileSettings;
+    private final PagedCallSettings.Builder<
+            ListAdaptiveMtFilesRequest,
+            ListAdaptiveMtFilesResponse,
+            ListAdaptiveMtFilesPagedResponse>
+        listAdaptiveMtFilesSettings;
+    private final PagedCallSettings.Builder<
+            ListAdaptiveMtSentencesRequest,
+            ListAdaptiveMtSentencesResponse,
+            ListAdaptiveMtSentencesPagedResponse>
+        listAdaptiveMtSentencesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -471,6 +840,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -498,6 +868,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -522,6 +894,19 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       getGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGlossaryOperationSettings = OperationCallSettings.newBuilder();
+      createAdaptiveMtDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAdaptiveMtDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAdaptiveMtDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAdaptiveMtDatasetsSettings =
+          PagedCallSettings.newBuilder(LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_FACT);
+      adaptiveMtTranslateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAdaptiveMtFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAdaptiveMtFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importAdaptiveMtFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAdaptiveMtFilesSettings =
+          PagedCallSettings.newBuilder(LIST_ADAPTIVE_MT_FILES_PAGE_STR_FACT);
+      listAdaptiveMtSentencesSettings =
+          PagedCallSettings.newBuilder(LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -534,7 +919,17 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               createGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
-              deleteGlossarySettings);
+              deleteGlossarySettings,
+              createAdaptiveMtDatasetSettings,
+              deleteAdaptiveMtDatasetSettings,
+              getAdaptiveMtDatasetSettings,
+              listAdaptiveMtDatasetsSettings,
+              adaptiveMtTranslateSettings,
+              getAdaptiveMtFileSettings,
+              deleteAdaptiveMtFileSettings,
+              importAdaptiveMtFileSettings,
+              listAdaptiveMtFilesSettings,
+              listAdaptiveMtSentencesSettings);
       initDefaults(this);
     }
 
@@ -557,6 +952,16 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       getGlossarySettings = settings.getGlossarySettings.toBuilder();
       deleteGlossarySettings = settings.deleteGlossarySettings.toBuilder();
       deleteGlossaryOperationSettings = settings.deleteGlossaryOperationSettings.toBuilder();
+      createAdaptiveMtDatasetSettings = settings.createAdaptiveMtDatasetSettings.toBuilder();
+      deleteAdaptiveMtDatasetSettings = settings.deleteAdaptiveMtDatasetSettings.toBuilder();
+      getAdaptiveMtDatasetSettings = settings.getAdaptiveMtDatasetSettings.toBuilder();
+      listAdaptiveMtDatasetsSettings = settings.listAdaptiveMtDatasetsSettings.toBuilder();
+      adaptiveMtTranslateSettings = settings.adaptiveMtTranslateSettings.toBuilder();
+      getAdaptiveMtFileSettings = settings.getAdaptiveMtFileSettings.toBuilder();
+      deleteAdaptiveMtFileSettings = settings.deleteAdaptiveMtFileSettings.toBuilder();
+      importAdaptiveMtFileSettings = settings.importAdaptiveMtFileSettings.toBuilder();
+      listAdaptiveMtFilesSettings = settings.listAdaptiveMtFilesSettings.toBuilder();
+      listAdaptiveMtSentencesSettings = settings.listAdaptiveMtSentencesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -569,7 +974,17 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               createGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
-              deleteGlossarySettings);
+              deleteGlossarySettings,
+              createAdaptiveMtDatasetSettings,
+              deleteAdaptiveMtDatasetSettings,
+              getAdaptiveMtDatasetSettings,
+              listAdaptiveMtDatasetsSettings,
+              adaptiveMtTranslateSettings,
+              getAdaptiveMtFileSettings,
+              deleteAdaptiveMtFileSettings,
+              importAdaptiveMtFileSettings,
+              listAdaptiveMtFilesSettings,
+              listAdaptiveMtSentencesSettings);
     }
 
     private static Builder createDefault() {
@@ -578,7 +993,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -591,7 +1005,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -648,6 +1061,56 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .deleteGlossarySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAdaptiveMtDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAdaptiveMtDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAdaptiveMtDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdaptiveMtDatasetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .adaptiveMtTranslateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAdaptiveMtFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAdaptiveMtFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importAdaptiveMtFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdaptiveMtFilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdaptiveMtSentencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .batchTranslateTextOperationSettings()
@@ -858,6 +1321,84 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {
       return deleteGlossaryOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetSettings() {
+      return createAdaptiveMtDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetSettings() {
+      return deleteAdaptiveMtDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetSettings() {
+      return getAdaptiveMtDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtDatasets. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtDatasetsRequest,
+            ListAdaptiveMtDatasetsResponse,
+            ListAdaptiveMtDatasetsPagedResponse>
+        listAdaptiveMtDatasetsSettings() {
+      return listAdaptiveMtDatasetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to adaptiveMtTranslate. */
+    public UnaryCallSettings.Builder<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateSettings() {
+      return adaptiveMtTranslateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+        getAdaptiveMtFileSettings() {
+      return getAdaptiveMtFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<DeleteAdaptiveMtFileRequest, Empty>
+        deleteAdaptiveMtFileSettings() {
+      return deleteAdaptiveMtFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileSettings() {
+      return importAdaptiveMtFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtFiles. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtFilesRequest,
+            ListAdaptiveMtFilesResponse,
+            ListAdaptiveMtFilesPagedResponse>
+        listAdaptiveMtFilesSettings() {
+      return listAdaptiveMtFilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtSentences. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtSentencesRequest,
+            ListAdaptiveMtSentencesResponse,
+            ListAdaptiveMtSentencesPagedResponse>
+        listAdaptiveMtSentencesSettings() {
+      return listAdaptiveMtSentencesSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

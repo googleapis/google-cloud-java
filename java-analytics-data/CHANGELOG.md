@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.47.0 (2024-02-20)
+
+* No change
+
+
+## 0.46.0 (2024-02-09)
+
+* No change
+
+
+## 0.45.0 (2024-01-23)
+
+* No change
+
+
+## 0.44.0 (2024-01-10)
+
+### Features
+
+* add `CreateAudienceExport`, `QueryAudienceExport`, `GetAudienceExport`, `ListAudienceExports` methods to the Data API v1 beta ([#10133](https://github.com/googleapis/google-cloud-java/issues/10133)) ([3ef3b0a](https://github.com/googleapis/google-cloud-java/commit/3ef3b0ada0c385e89a1fbda8faa1772b86acabf6))
+
+
+
+## 0.43.0 (2023-12-12)
+
+* No change
+
+
+## 0.42.0 (2023-12-04)
+
+### Features
+
+* add `CreateRecurringAudienceList`, `GetRecurringAudienceList`, `ListRecurringAudienceLists` methods to the Data API v1 alpha ([#10092](https://github.com/googleapis/google-cloud-java/issues/10092)) ([e4f430e](https://github.com/googleapis/google-cloud-java/commit/e4f430eb37c310c1f3caf1ddbc3b3b42bd7ae75f))
+* add the `SheetExportAudienceList` method to the Data API v1 alpha ([#10047](https://github.com/googleapis/google-cloud-java/issues/10047)) ([a6880a0](https://github.com/googleapis/google-cloud-java/commit/a6880a0581983878ca13a287f8bd956a6262735e))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 0.41.0 (2023-11-06)
 
 ### Dependencies

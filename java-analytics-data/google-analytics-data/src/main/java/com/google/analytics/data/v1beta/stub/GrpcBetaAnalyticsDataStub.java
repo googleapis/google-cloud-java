@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,24 @@
 
 package com.google.analytics.data.v1beta.stub;
 
+import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.ListAudienceExportsPagedResponse;
+
+import com.google.analytics.data.v1beta.AudienceExport;
+import com.google.analytics.data.v1beta.AudienceExportMetadata;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
 import com.google.analytics.data.v1beta.CheckCompatibilityRequest;
 import com.google.analytics.data.v1beta.CheckCompatibilityResponse;
+import com.google.analytics.data.v1beta.CreateAudienceExportRequest;
+import com.google.analytics.data.v1beta.GetAudienceExportRequest;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
+import com.google.analytics.data.v1beta.ListAudienceExportsRequest;
+import com.google.analytics.data.v1beta.ListAudienceExportsResponse;
 import com.google.analytics.data.v1beta.Metadata;
+import com.google.analytics.data.v1beta.QueryAudienceExportRequest;
+import com.google.analytics.data.v1beta.QueryAudienceExportResponse;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
 import com.google.analytics.data.v1beta.RunPivotReportResponse;
 import com.google.analytics.data.v1beta.RunRealtimeReportRequest;
@@ -36,8 +46,10 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -128,6 +140,51 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(CheckCompatibilityResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateAudienceExportRequest, Operation>
+      createAudienceExportMethodDescriptor =
+          MethodDescriptor.<CreateAudienceExportRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/CreateAudienceExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAudienceExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportMethodDescriptor =
+          MethodDescriptor.<QueryAudienceExportRequest, QueryAudienceExportResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/QueryAudienceExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryAudienceExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryAudienceExportResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAudienceExportRequest, AudienceExport>
+      getAudienceExportMethodDescriptor =
+          MethodDescriptor.<GetAudienceExportRequest, AudienceExport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.analytics.data.v1beta.BetaAnalyticsData/GetAudienceExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAudienceExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AudienceExport.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAudienceExportsRequest, ListAudienceExportsResponse>
+      listAudienceExportsMethodDescriptor =
+          MethodDescriptor.<ListAudienceExportsRequest, ListAudienceExportsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/ListAudienceExports")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAudienceExportsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAudienceExportsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
   private final UnaryCallable<RunPivotReportRequest, RunPivotReportResponse> runPivotReportCallable;
   private final UnaryCallable<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -139,6 +196,17 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
       runRealtimeReportCallable;
   private final UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
       checkCompatibilityCallable;
+  private final UnaryCallable<CreateAudienceExportRequest, Operation> createAudienceExportCallable;
+  private final OperationCallable<
+          CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationCallable;
+  private final UnaryCallable<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportCallable;
+  private final UnaryCallable<GetAudienceExportRequest, AudienceExport> getAudienceExportCallable;
+  private final UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsResponse>
+      listAudienceExportsCallable;
+  private final UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsPagedResponse>
+      listAudienceExportsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -259,6 +327,48 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateAudienceExportRequest, Operation> createAudienceExportTransportSettings =
+        GrpcCallSettings.<CreateAudienceExportRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAudienceExportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
+        queryAudienceExportTransportSettings =
+            GrpcCallSettings.<QueryAudienceExportRequest, QueryAudienceExportResponse>newBuilder()
+                .setMethodDescriptor(queryAudienceExportMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAudienceExportRequest, AudienceExport> getAudienceExportTransportSettings =
+        GrpcCallSettings.<GetAudienceExportRequest, AudienceExport>newBuilder()
+            .setMethodDescriptor(getAudienceExportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAudienceExportsRequest, ListAudienceExportsResponse>
+        listAudienceExportsTransportSettings =
+            GrpcCallSettings.<ListAudienceExportsRequest, ListAudienceExportsResponse>newBuilder()
+                .setMethodDescriptor(listAudienceExportsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.runReportCallable =
         callableFactory.createUnaryCallable(
@@ -286,6 +396,37 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
         callableFactory.createUnaryCallable(
             checkCompatibilityTransportSettings,
             settings.checkCompatibilitySettings(),
+            clientContext);
+    this.createAudienceExportCallable =
+        callableFactory.createUnaryCallable(
+            createAudienceExportTransportSettings,
+            settings.createAudienceExportSettings(),
+            clientContext);
+    this.createAudienceExportOperationCallable =
+        callableFactory.createOperationCallable(
+            createAudienceExportTransportSettings,
+            settings.createAudienceExportOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.queryAudienceExportCallable =
+        callableFactory.createUnaryCallable(
+            queryAudienceExportTransportSettings,
+            settings.queryAudienceExportSettings(),
+            clientContext);
+    this.getAudienceExportCallable =
+        callableFactory.createUnaryCallable(
+            getAudienceExportTransportSettings,
+            settings.getAudienceExportSettings(),
+            clientContext);
+    this.listAudienceExportsCallable =
+        callableFactory.createUnaryCallable(
+            listAudienceExportsTransportSettings,
+            settings.listAudienceExportsSettings(),
+            clientContext);
+    this.listAudienceExportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAudienceExportsTransportSettings,
+            settings.listAudienceExportsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -332,6 +473,40 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
   public UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
       checkCompatibilityCallable() {
     return checkCompatibilityCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAudienceExportRequest, Operation> createAudienceExportCallable() {
+    return createAudienceExportCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationCallable() {
+    return createAudienceExportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportCallable() {
+    return queryAudienceExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAudienceExportRequest, AudienceExport> getAudienceExportCallable() {
+    return getAudienceExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsResponse>
+      listAudienceExportsCallable() {
+    return listAudienceExportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsPagedResponse>
+      listAudienceExportsPagedCallable() {
+    return listAudienceExportsPagedCallable;
   }
 
   @Override

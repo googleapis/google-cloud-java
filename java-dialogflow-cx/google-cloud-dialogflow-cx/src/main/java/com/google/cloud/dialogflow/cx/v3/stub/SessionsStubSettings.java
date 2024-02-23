@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -113,6 +114,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
           .build();
 
   private final UnaryCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentSettings;
+  private final ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings;
   private final StreamingCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentSettings;
   private final UnaryCallSettings<MatchIntentRequest, MatchIntentResponse> matchIntentSettings;
@@ -183,6 +186,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     return detectIntentSettings;
   }
 
+  /** Returns the object with the settings used for calls to serverStreamingDetectIntent. */
+  public ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings() {
+    return serverStreamingDetectIntentSettings;
+  }
+
   /** Returns the object with the settings used for calls to streamingDetectIntent. */
   public StreamingCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentSettings() {
@@ -232,6 +241,21 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dialogflow";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -276,7 +300,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SessionsStubSettings.class))
@@ -284,7 +307,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SessionsStubSettings.class))
@@ -321,6 +343,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     super(settingsBuilder);
 
     detectIntentSettings = settingsBuilder.detectIntentSettings().build();
+    serverStreamingDetectIntentSettings =
+        settingsBuilder.serverStreamingDetectIntentSettings().build();
     streamingDetectIntentSettings = settingsBuilder.streamingDetectIntentSettings().build();
     matchIntentSettings = settingsBuilder.matchIntentSettings().build();
     fulfillIntentSettings = settingsBuilder.fulfillIntentSettings().build();
@@ -334,6 +358,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
         detectIntentSettings;
+    private final ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings;
     private final StreamingCallSettings.Builder<
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
         streamingDetectIntentSettings;
@@ -410,6 +436,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       super(clientContext);
 
       detectIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      serverStreamingDetectIntentSettings = ServerStreamingCallSettings.newBuilder();
       streamingDetectIntentSettings = StreamingCallSettings.newBuilder();
       matchIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fulfillIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -432,6 +459,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       super(settings);
 
       detectIntentSettings = settings.detectIntentSettings.toBuilder();
+      serverStreamingDetectIntentSettings =
+          settings.serverStreamingDetectIntentSettings.toBuilder();
       streamingDetectIntentSettings = settings.streamingDetectIntentSettings.toBuilder();
       matchIntentSettings = settings.matchIntentSettings.toBuilder();
       fulfillIntentSettings = settings.fulfillIntentSettings.toBuilder();
@@ -455,7 +484,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -468,7 +496,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -480,6 +507,11 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
           .detectIntentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .serverStreamingDetectIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .matchIntentSettings()
@@ -530,6 +562,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       return detectIntentSettings;
     }
 
+    /** Returns the builder for the settings used for calls to serverStreamingDetectIntent. */
+    public ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings() {
+      return serverStreamingDetectIntentSettings;
+    }
+
     /** Returns the builder for the settings used for calls to streamingDetectIntent. */
     public StreamingCallSettings.Builder<
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
@@ -565,6 +603,15 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

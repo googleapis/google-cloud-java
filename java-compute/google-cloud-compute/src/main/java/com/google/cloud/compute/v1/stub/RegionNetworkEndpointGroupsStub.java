@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,22 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
 import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AttachNetworkEndpointsRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DeleteRegionNetworkEndpointGroupRequest;
+import com.google.cloud.compute.v1.DetachNetworkEndpointsRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.GetRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.InsertRegionNetworkEndpointGroupRequest;
+import com.google.cloud.compute.v1.ListNetworkEndpointsRegionNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.ListRegionNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.NetworkEndpointGroup;
 import com.google.cloud.compute.v1.NetworkEndpointGroupList;
+import com.google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints;
 import com.google.cloud.compute.v1.Operation;
 import javax.annotation.Generated;
 
@@ -39,6 +44,18 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionNetworkEndpointGroupsStub implements BackgroundResource {
 
+  public OperationCallable<
+          AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: attachNetworkEndpointsOperationCallable()");
+  }
+
+  public UnaryCallable<AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      attachNetworkEndpointsCallable() {
+    throw new UnsupportedOperationException("Not implemented: attachNetworkEndpointsCallable()");
+  }
+
   public OperationCallable<DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
       deleteOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
@@ -46,6 +63,18 @@ public abstract class RegionNetworkEndpointGroupsStub implements BackgroundResou
 
   public UnaryCallable<DeleteRegionNetworkEndpointGroupRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<
+          DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: detachNetworkEndpointsOperationCallable()");
+  }
+
+  public UnaryCallable<DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      detachNetworkEndpointsCallable() {
+    throw new UnsupportedOperationException("Not implemented: detachNetworkEndpointsCallable()");
   }
 
   public UnaryCallable<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
@@ -69,6 +98,19 @@ public abstract class RegionNetworkEndpointGroupsStub implements BackgroundResou
   public UnaryCallable<ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public UnaryCallable<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworkEndpointsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints>
+      listNetworkEndpointsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworkEndpointsCallable()");
   }
 
   @Override

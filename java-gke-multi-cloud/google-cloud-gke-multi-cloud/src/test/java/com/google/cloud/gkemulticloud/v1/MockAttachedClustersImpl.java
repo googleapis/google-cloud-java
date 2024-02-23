@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,28 @@ public class MockAttachedClustersImpl extends AttachedClustersImplBase {
                   "Unrecognized response type %s for method GenerateAttachedClusterInstallManifest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAttachedClusterInstallManifestResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateAttachedClusterAgentToken(
+      GenerateAttachedClusterAgentTokenRequest request,
+      StreamObserver<GenerateAttachedClusterAgentTokenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateAttachedClusterAgentTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateAttachedClusterAgentTokenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateAttachedClusterAgentToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateAttachedClusterAgentTokenResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

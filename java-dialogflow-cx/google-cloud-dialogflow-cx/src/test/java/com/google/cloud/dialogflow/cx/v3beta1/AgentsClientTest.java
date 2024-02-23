@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,6 +195,8 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setStartPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -252,6 +254,8 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setStartPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -309,6 +313,8 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setStartPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -369,6 +375,8 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setStartPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -429,6 +437,8 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setStartPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -805,6 +815,7 @@ public class AgentsClientTest {
             .setKnowledgeConnectorSettings(
                 GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -855,6 +866,7 @@ public class AgentsClientTest {
             .setKnowledgeConnectorSettings(
                 GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -903,6 +915,7 @@ public class AgentsClientTest {
             .setKnowledgeConnectorSettings(
                 GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

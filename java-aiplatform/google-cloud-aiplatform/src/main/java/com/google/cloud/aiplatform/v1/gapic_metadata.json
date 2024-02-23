@@ -83,6 +83,45 @@
         }
       }
     },
+    "DeploymentResourcePoolService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeploymentResourcePoolServiceClient",
+          "rpcs": {
+            "CreateDeploymentResourcePool": {
+              "methods": ["createDeploymentResourcePoolAsync", "createDeploymentResourcePoolAsync", "createDeploymentResourcePoolAsync", "createDeploymentResourcePoolOperationCallable", "createDeploymentResourcePoolCallable"]
+            },
+            "DeleteDeploymentResourcePool": {
+              "methods": ["deleteDeploymentResourcePoolAsync", "deleteDeploymentResourcePoolAsync", "deleteDeploymentResourcePoolAsync", "deleteDeploymentResourcePoolOperationCallable", "deleteDeploymentResourcePoolCallable"]
+            },
+            "GetDeploymentResourcePool": {
+              "methods": ["getDeploymentResourcePool", "getDeploymentResourcePool", "getDeploymentResourcePool", "getDeploymentResourcePoolCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDeploymentResourcePools": {
+              "methods": ["listDeploymentResourcePools", "listDeploymentResourcePools", "listDeploymentResourcePools", "listDeploymentResourcePoolsPagedCallable", "listDeploymentResourcePoolsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryDeployedModels": {
+              "methods": ["queryDeployedModels", "queryDeployedModels", "queryDeployedModelsPagedCallable", "queryDeployedModelsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "EndpointService": {
       "clients": {
         "grpc": {
@@ -210,6 +249,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SearchNearestEntities": {
+              "methods": ["searchNearestEntities", "searchNearestEntitiesCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -1000,6 +1042,9 @@
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },
+            "GenerateContent": {
+              "methods": ["generateContent", "generateContent", "generateContentCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1020,6 +1065,18 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamDirectPredict": {
+              "methods": ["streamDirectPredictCallable"]
+            },
+            "StreamDirectRawPredict": {
+              "methods": ["streamDirectRawPredictCallable"]
+            },
+            "StreamGenerateContent": {
+              "methods": ["streamGenerateContentCallable"]
+            },
+            "StreamRawPredict": {
+              "methods": ["streamRawPredictCallable"]
             },
             "StreamingPredict": {
               "methods": ["streamingPredictCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-import com.google.api.HttpBody;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -71,19 +70,484 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the CloudTasksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQueues</td>
+ *      <td><p> Lists queues.
+ * <p>  Queues are returned in lexicographical order.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQueues(ListQueuesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQueues(LocationName parent)
+ *           <li><p> listQueues(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQueuesPagedCallable()
+ *           <li><p> listQueuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQueue</td>
+ *      <td><p> Gets a queue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQueue(GetQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQueue(QueueName name)
+ *           <li><p> getQueue(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQueue</td>
+ *      <td><p> Creates a queue.
+ * <p>  Queues created with this method allow tasks to live for a maximum of 31 days. After a task is 31 days old, the task will be deleted regardless of whether it was dispatched or not.
+ * <p>  WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQueue(CreateQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createQueue(LocationName parent, Queue queue)
+ *           <li><p> createQueue(String parent, Queue queue)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQueue</td>
+ *      <td><p> Updates a queue.
+ * <p>  This method creates the queue if it does not exist and updates the queue if it does exist.
+ * <p>  Queues created with this method allow tasks to live for a maximum of 31 days. After a task is 31 days old, the task will be deleted regardless of whether it was dispatched or not.
+ * <p>  WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQueue(UpdateQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateQueue(Queue queue, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQueue</td>
+ *      <td><p> Deletes a queue.
+ * <p>  This command will delete the queue even if it has tasks in it.
+ * <p>  Note: If you delete a queue, a queue with the same name can't be created for 7 days.
+ * <p>  WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQueue(DeleteQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteQueue(QueueName name)
+ *           <li><p> deleteQueue(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PurgeQueue</td>
+ *      <td><p> Purges a queue by deleting all of its tasks.
+ * <p>  All tasks created before this method is called are permanently deleted.
+ * <p>  Purge operations can take up to one minute to take effect. Tasks might be dispatched before the purge takes effect. A purge is irreversible.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> purgeQueue(PurgeQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> purgeQueue(QueueName name)
+ *           <li><p> purgeQueue(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> purgeQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PauseQueue</td>
+ *      <td><p> Pauses the queue.
+ * <p>  If a queue is paused then the system will stop dispatching tasks until the queue is resumed via [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue]. Tasks can still be added when the queue is paused. A queue is paused if its [state][google.cloud.tasks.v2beta2.Queue.state] is [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> pauseQueue(PauseQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> pauseQueue(QueueName name)
+ *           <li><p> pauseQueue(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> pauseQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ResumeQueue</td>
+ *      <td><p> Resume a queue.
+ * <p>  This method resumes a queue after it has been [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED] or [DISABLED][google.cloud.tasks.v2beta2.Queue.State.DISABLED]. The state of a queue is stored in the queue's [state][google.cloud.tasks.v2beta2.Queue.state]; after calling this method it will be set to [RUNNING][google.cloud.tasks.v2beta2.Queue.State.RUNNING].
+ * <p>  WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resumeQueue(ResumeQueueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> resumeQueue(QueueName name)
+ *           <li><p> resumeQueue(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resumeQueueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UploadQueueYaml</td>
+ *      <td><p> Update queue list by uploading a queue.yaml file.
+ * <p>  The queue.yaml file is supplied in the request body as a YAML encoded string. This method was added to support gcloud clients versions before 322.0.0. New clients should use CreateQueue instead of this method.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> uploadQueueYaml(UploadQueueYamlRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> uploadQueueYamlCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Returns an empty policy if the resource exists and does not have a policy set.
+ * <p>  Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission on the specified resource parent:
+ * <ul>
+ * <li>  `cloudtasks.queues.getIamPolicy`
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Replaces any existing policy.
+ * <p>  Note: The Cloud Console does not check queue-level IAM permissions yet. Project-level permissions are required to use the Cloud Console.
+ * <p>  Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission on the specified resource parent:
+ * <ul>
+ * <li>  `cloudtasks.queues.setIamPolicy`
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on a [Queue][google.cloud.tasks.v2beta2.Queue]. If the resource does not exist, this will return an empty set of permissions, not a [NOT_FOUND][google.rpc.Code.NOT_FOUND] error.
+ * <p>  Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListTasks</td>
+ *      <td><p> Lists the tasks in a queue.
+ * <p>  By default, only the [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC] view is retrieved due to performance considerations; [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset of information which is returned.
+ * <p>  The tasks may be returned in any order. The ordering may change at any time.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTasks(ListTasksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTasks(QueueName parent)
+ *           <li><p> listTasks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTasksPagedCallable()
+ *           <li><p> listTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTask</td>
+ *      <td><p> Gets a task.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTask(GetTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTask(TaskName name)
+ *           <li><p> getTask(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTask</td>
+ *      <td><p> Creates a task and adds it to a queue.
+ * <p>  Tasks cannot be updated after creation; there is no UpdateTask command.
+ * <ul>
+ * <li>  For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum task size is   100KB.
+ * <li>  For [pull queues][google.cloud.tasks.v2beta2.PullTarget], the maximum task size is 1MB.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTask(CreateTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createTask(QueueName parent, Task task)
+ *           <li><p> createTask(String parent, Task task)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTask</td>
+ *      <td><p> Deletes a task.
+ * <p>  A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has completed successfully or permanently failed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTask(DeleteTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTask(TaskName name)
+ *           <li><p> deleteTask(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> LeaseTasks</td>
+ *      <td><p> Leases tasks from a pull queue for [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+ * <p>  This method is invoked by the worker to obtain a lease. The worker must acknowledge the task via [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] after they have performed the work associated with the task.
+ * <p>  The [payload][google.cloud.tasks.v2beta2.PullMessage.payload] is intended to store data that the worker needs to perform the work associated with the task. To return the payloads in the [response][google.cloud.tasks.v2beta2.LeaseTasksResponse], set [response_view][google.cloud.tasks.v2beta2.LeaseTasksRequest.response_view] to [FULL][google.cloud.tasks.v2beta2.Task.View.FULL].
+ * <p>  A maximum of 10 qps of [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests are allowed per queue. [RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] is returned when this limit is exceeded. [RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] is also returned when [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second] is exceeded.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> leaseTasks(LeaseTasksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> leaseTasks(QueueName parent, Duration leaseDuration)
+ *           <li><p> leaseTasks(String parent, Duration leaseDuration)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> leaseTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AcknowledgeTask</td>
+ *      <td><p> Acknowledges a pull task.
+ * <p>  The worker, that is, the entity that [leased][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] this task must call this method to indicate that the work associated with the task has finished.
+ * <p>  The worker must acknowledge a task within the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration] or the lease will expire and the task will become available to be leased again. After the task is acknowledged, it will not be returned by a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks], [GetTask][google.cloud.tasks.v2beta2.CloudTasks.GetTask], or [ListTasks][google.cloud.tasks.v2beta2.CloudTasks.ListTasks].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> acknowledgeTask(AcknowledgeTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> acknowledgeTask(TaskName name, Timestamp scheduleTime)
+ *           <li><p> acknowledgeTask(String name, Timestamp scheduleTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> acknowledgeTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RenewLease</td>
+ *      <td><p> Renew the current lease of a pull task.
+ * <p>  The worker can use this method to extend the lease by a new duration, starting from now. The new task lease will be returned in the task's [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> renewLease(RenewLeaseRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> renewLease(TaskName name, Timestamp scheduleTime, Duration leaseDuration)
+ *           <li><p> renewLease(String name, Timestamp scheduleTime, Duration leaseDuration)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> renewLeaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelLease</td>
+ *      <td><p> Cancel a pull task's lease.
+ * <p>  The worker can use this method to cancel a task's lease by setting its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] to now. This will make the task available to be leased to the next caller of [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelLease(CancelLeaseRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> cancelLease(TaskName name, Timestamp scheduleTime)
+ *           <li><p> cancelLease(String name, Timestamp scheduleTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelLeaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunTask</td>
+ *      <td><p> Forces a task to run now.
+ * <p>  When this method is called, Cloud Tasks will dispatch the task, even if the task is already running, the queue has reached its [RateLimits][google.cloud.tasks.v2beta2.RateLimits] or is [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED].
+ * <p>  This command is meant to be used for manual debugging. For example, [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask] can be used to retry a failed task after a fix has been made or to manually force a task to be dispatched now.
+ * <p>  The dispatched task is returned. That is, the task that is returned contains the [status][google.cloud.tasks.v2beta2.Task.status] after the task is dispatched but before the task is received by its target.
+ * <p>  If Cloud Tasks receives a successful response from the task's target, then the task will be deleted; otherwise the task's [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be reset to the time that [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask] was called plus the retry delay specified in the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig].
+ * <p>  [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask] returns [NOT_FOUND][google.rpc.Code.NOT_FOUND] when it is called on a task that has already succeeded or permanently failed.
+ * <p>  [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask] cannot be called on a [pull task][google.cloud.tasks.v2beta2.PullMessage].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runTask(RunTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> runTask(TaskName name)
+ *           <li><p> runTask(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -3396,170 +3860,6 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return stub.runTaskCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName queue = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-   *   String taskId = "taskId-880873088";
-   *   HttpBody body = HttpBody.newBuilder().build();
-   *   BufferTaskResponse response = cloudTasksClient.bufferTask(queue, taskId, body);
-   * }
-   * }</pre>
-   *
-   * @param queue Required. The parent queue name. For example:
-   *     projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-   *     <p>The queue must already exist.
-   * @param taskId Optional. Task ID for the task being created. If not provided, a random task ID
-   *     is assigned to the task.
-   * @param body Optional. Body of the HTTP request.
-   *     <p>The body can take any generic value. The value is written to the [HttpRequest][payload]
-   *     of the [Task].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BufferTaskResponse bufferTask(QueueName queue, String taskId, HttpBody body) {
-    BufferTaskRequest request =
-        BufferTaskRequest.newBuilder()
-            .setQueue(queue == null ? null : queue.toString())
-            .setTaskId(taskId)
-            .setBody(body)
-            .build();
-    return bufferTask(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String queue = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
-   *   String taskId = "taskId-880873088";
-   *   HttpBody body = HttpBody.newBuilder().build();
-   *   BufferTaskResponse response = cloudTasksClient.bufferTask(queue, taskId, body);
-   * }
-   * }</pre>
-   *
-   * @param queue Required. The parent queue name. For example:
-   *     projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-   *     <p>The queue must already exist.
-   * @param taskId Optional. Task ID for the task being created. If not provided, a random task ID
-   *     is assigned to the task.
-   * @param body Optional. Body of the HTTP request.
-   *     <p>The body can take any generic value. The value is written to the [HttpRequest][payload]
-   *     of the [Task].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BufferTaskResponse bufferTask(String queue, String taskId, HttpBody body) {
-    BufferTaskRequest request =
-        BufferTaskRequest.newBuilder().setQueue(queue).setTaskId(taskId).setBody(body).build();
-    return bufferTask(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   BufferTaskRequest request =
-   *       BufferTaskRequest.newBuilder()
-   *           .setQueue(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
-   *           .setTaskId("taskId-880873088")
-   *           .setBody(HttpBody.newBuilder().build())
-   *           .build();
-   *   BufferTaskResponse response = cloudTasksClient.bufferTask(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BufferTaskResponse bufferTask(BufferTaskRequest request) {
-    return bufferTaskCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   BufferTaskRequest request =
-   *       BufferTaskRequest.newBuilder()
-   *           .setQueue(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
-   *           .setTaskId("taskId-880873088")
-   *           .setBody(HttpBody.newBuilder().build())
-   *           .build();
-   *   ApiFuture<BufferTaskResponse> future =
-   *       cloudTasksClient.bufferTaskCallable().futureCall(request);
-   *   // Do something.
-   *   BufferTaskResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
-    return stub.bufferTaskCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
