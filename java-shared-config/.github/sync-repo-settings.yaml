@@ -34,7 +34,6 @@ branchProtectionRules:
     - "units (8)"
     - "units (11)"
     - "Kokoro - Test: Integration"
-    - "Kokoro - Test: Docker Image Validation"
     - "dependencies (11, java-bigquery)"
     - "dependencies (11, java-spanner)"
     - "dependencies (11, java-storage)"
