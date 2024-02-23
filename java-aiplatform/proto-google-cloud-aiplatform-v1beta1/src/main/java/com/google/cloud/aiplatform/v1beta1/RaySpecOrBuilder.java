@@ -197,4 +197,45 @@ public interface RaySpecOrBuilder
    * @return The bytes for headNodeResourcePoolId.
    */
   com.google.protobuf.ByteString getHeadNodeResourcePoolIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ray metrics configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayMetricSpec field is set.
+   */
+  boolean hasRayMetricSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ray metrics configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayMetricSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.RayMetricSpec getRayMetricSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ray metrics configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RayMetricSpecOrBuilder getRayMetricSpecOrBuilder();
 }

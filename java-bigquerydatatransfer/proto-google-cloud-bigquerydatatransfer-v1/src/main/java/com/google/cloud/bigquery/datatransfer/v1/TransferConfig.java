@@ -425,8 +425,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Data transfer schedule.
    * If the data source does not support a custom schedule, this should be
-   * empty. If it is empty, the default value for the data source will be
-   * used.
+   * empty. If it is empty, the default value for the data source will be used.
    * The specified times are in UTC.
    * Examples of valid format:
    * `1st,3rd monday of month 15:30`,
@@ -461,8 +460,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Data transfer schedule.
    * If the data source does not support a custom schedule, this should be
-   * empty. If it is empty, the default value for the data source will be
-   * used.
+   * empty. If it is empty, the default value for the data source will be used.
    * The specified times are in UTC.
    * Examples of valid format:
    * `1st,3rd monday of month 15:30`,
@@ -553,7 +551,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * For example, if `data_refresh_window_days = 10`, then every day
    * BigQuery reingests data for [today-10, today-1], rather than ingesting data
    * for just [today-1].
-   * Only valid if the data source supports the feature. Set the value to  0
+   * Only valid if the data source supports the feature. Set the value to 0
    * to use the default value.
    * </pre>
    *
@@ -572,8 +570,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Is this config disabled. When set to true, no runs are scheduled
-   * for a given transfer.
+   * Is this config disabled. When set to true, no runs will be scheduled for
+   * this transfer config.
    * </pre>
    *
    * <code>bool disabled = 13;</code>
@@ -808,7 +806,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * associated with this transfer config finish.
    *
    * The format for specifying a pubsub topic is:
-   * `projects/{project}/topics/{topic}`
+   * `projects/{project_id}/topics/{topic_id}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
@@ -835,7 +833,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * associated with this transfer config finish.
    *
    * The format for specifying a pubsub topic is:
-   * `projects/{project}/topics/{topic}`
+   * `projects/{project_id}/topics/{topic_id}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
@@ -2626,8 +2624,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Data transfer schedule.
      * If the data source does not support a custom schedule, this should be
-     * empty. If it is empty, the default value for the data source will be
-     * used.
+     * empty. If it is empty, the default value for the data source will be used.
      * The specified times are in UTC.
      * Examples of valid format:
      * `1st,3rd monday of month 15:30`,
@@ -2661,8 +2658,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Data transfer schedule.
      * If the data source does not support a custom schedule, this should be
-     * empty. If it is empty, the default value for the data source will be
-     * used.
+     * empty. If it is empty, the default value for the data source will be used.
      * The specified times are in UTC.
      * Examples of valid format:
      * `1st,3rd monday of month 15:30`,
@@ -2696,8 +2692,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Data transfer schedule.
      * If the data source does not support a custom schedule, this should be
-     * empty. If it is empty, the default value for the data source will be
-     * used.
+     * empty. If it is empty, the default value for the data source will be used.
      * The specified times are in UTC.
      * Examples of valid format:
      * `1st,3rd monday of month 15:30`,
@@ -2730,8 +2725,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Data transfer schedule.
      * If the data source does not support a custom schedule, this should be
-     * empty. If it is empty, the default value for the data source will be
-     * used.
+     * empty. If it is empty, the default value for the data source will be used.
      * The specified times are in UTC.
      * Examples of valid format:
      * `1st,3rd monday of month 15:30`,
@@ -2760,8 +2754,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Data transfer schedule.
      * If the data source does not support a custom schedule, this should be
-     * empty. If it is empty, the default value for the data source will be
-     * used.
+     * empty. If it is empty, the default value for the data source will be used.
      * The specified times are in UTC.
      * Examples of valid format:
      * `1st,3rd monday of month 15:30`,
@@ -2990,7 +2983,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * For example, if `data_refresh_window_days = 10`, then every day
      * BigQuery reingests data for [today-10, today-1], rather than ingesting data
      * for just [today-1].
-     * Only valid if the data source supports the feature. Set the value to  0
+     * Only valid if the data source supports the feature. Set the value to 0
      * to use the default value.
      * </pre>
      *
@@ -3010,7 +3003,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * For example, if `data_refresh_window_days = 10`, then every day
      * BigQuery reingests data for [today-10, today-1], rather than ingesting data
      * for just [today-1].
-     * Only valid if the data source supports the feature. Set the value to  0
+     * Only valid if the data source supports the feature. Set the value to 0
      * to use the default value.
      * </pre>
      *
@@ -3034,7 +3027,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * For example, if `data_refresh_window_days = 10`, then every day
      * BigQuery reingests data for [today-10, today-1], rather than ingesting data
      * for just [today-1].
-     * Only valid if the data source supports the feature. Set the value to  0
+     * Only valid if the data source supports the feature. Set the value to 0
      * to use the default value.
      * </pre>
      *
@@ -3054,8 +3047,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Is this config disabled. When set to true, no runs are scheduled
-     * for a given transfer.
+     * Is this config disabled. When set to true, no runs will be scheduled for
+     * this transfer config.
      * </pre>
      *
      * <code>bool disabled = 13;</code>
@@ -3070,8 +3063,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Is this config disabled. When set to true, no runs are scheduled
-     * for a given transfer.
+     * Is this config disabled. When set to true, no runs will be scheduled for
+     * this transfer config.
      * </pre>
      *
      * <code>bool disabled = 13;</code>
@@ -3090,8 +3083,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Is this config disabled. When set to true, no runs are scheduled
-     * for a given transfer.
+     * Is this config disabled. When set to true, no runs will be scheduled for
+     * this transfer config.
      * </pre>
      *
      * <code>bool disabled = 13;</code>
@@ -3781,7 +3774,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * associated with this transfer config finish.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 15;</code>
@@ -3807,7 +3800,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * associated with this transfer config finish.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 15;</code>
@@ -3833,7 +3826,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * associated with this transfer config finish.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 15;</code>
@@ -3858,7 +3851,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * associated with this transfer config finish.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 15;</code>
@@ -3879,7 +3872,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * associated with this transfer config finish.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 15;</code>

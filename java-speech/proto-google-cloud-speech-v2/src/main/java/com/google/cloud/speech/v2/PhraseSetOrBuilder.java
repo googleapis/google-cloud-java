@@ -28,11 +28,13 @@ public interface PhraseSetOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the PhraseSet.
+   * Output only. Identifier. The resource name of the PhraseSet.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -41,11 +43,13 @@ public interface PhraseSetOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the PhraseSet.
+   * Output only. Identifier. The resource name of the PhraseSet.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */

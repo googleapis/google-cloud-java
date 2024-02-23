@@ -47,6 +47,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     monitoringStats_ = java.util.Collections.emptyList();
     monitoringStatsAnomalies_ = java.util.Collections.emptyList();
     versionColumnName_ = "";
+    pointOfContact_ = "";
   }
 
   @java.lang.Override
@@ -2424,6 +2425,59 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int POINT_OF_CONTACT_FIELD_NUMBER = 107;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pointOfContact_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Entity responsible for maintaining this feature. Can be comma separated
+   * list of email addresses or URIs.
+   * </pre>
+   *
+   * <code>string point_of_contact = 107;</code>
+   *
+   * @return The pointOfContact.
+   */
+  @java.lang.Override
+  public java.lang.String getPointOfContact() {
+    java.lang.Object ref = pointOfContact_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pointOfContact_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Entity responsible for maintaining this feature. Can be comma separated
+   * list of email addresses or URIs.
+   * </pre>
+   *
+   * <code>string point_of_contact = 107;</code>
+   *
+   * @return The bytes for pointOfContact.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPointOfContactBytes() {
+    java.lang.Object ref = pointOfContact_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pointOfContact_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2474,6 +2528,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106, versionColumnName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pointOfContact_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 107, pointOfContact_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2531,6 +2588,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(106, versionColumnName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pointOfContact_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(107, pointOfContact_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2569,6 +2629,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (!getMonitoringStatsAnomaliesList().equals(other.getMonitoringStatsAnomaliesList()))
       return false;
     if (!getVersionColumnName().equals(other.getVersionColumnName())) return false;
+    if (!getPointOfContact().equals(other.getPointOfContact())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2616,6 +2677,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + VERSION_COLUMN_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getVersionColumnName().hashCode();
+    hash = (37 * hash) + POINT_OF_CONTACT_FIELD_NUMBER;
+    hash = (53 * hash) + getPointOfContact().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2827,6 +2890,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000400);
       versionColumnName_ = "";
+      pointOfContact_ = "";
       return this;
     }
 
@@ -2921,6 +2985,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.versionColumnName_ = versionColumnName_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.pointOfContact_ = pointOfContact_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3061,6 +3128,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (!other.getPointOfContact().isEmpty()) {
+        pointOfContact_ = other.pointOfContact_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3182,6 +3254,12 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 850
+            case 858:
+              {
+                pointOfContact_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 858
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5783,6 +5861,117 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       versionColumnName_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pointOfContact_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Entity responsible for maintaining this feature. Can be comma separated
+     * list of email addresses or URIs.
+     * </pre>
+     *
+     * <code>string point_of_contact = 107;</code>
+     *
+     * @return The pointOfContact.
+     */
+    public java.lang.String getPointOfContact() {
+      java.lang.Object ref = pointOfContact_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pointOfContact_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entity responsible for maintaining this feature. Can be comma separated
+     * list of email addresses or URIs.
+     * </pre>
+     *
+     * <code>string point_of_contact = 107;</code>
+     *
+     * @return The bytes for pointOfContact.
+     */
+    public com.google.protobuf.ByteString getPointOfContactBytes() {
+      java.lang.Object ref = pointOfContact_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pointOfContact_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entity responsible for maintaining this feature. Can be comma separated
+     * list of email addresses or URIs.
+     * </pre>
+     *
+     * <code>string point_of_contact = 107;</code>
+     *
+     * @param value The pointOfContact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPointOfContact(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pointOfContact_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entity responsible for maintaining this feature. Can be comma separated
+     * list of email addresses or URIs.
+     * </pre>
+     *
+     * <code>string point_of_contact = 107;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPointOfContact() {
+      pointOfContact_ = getDefaultInstance().getPointOfContact();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entity responsible for maintaining this feature. Can be comma separated
+     * list of email addresses or URIs.
+     * </pre>
+     *
+     * <code>string point_of_contact = 107;</code>
+     *
+     * @param value The bytes for pointOfContact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPointOfContactBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pointOfContact_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

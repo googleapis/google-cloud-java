@@ -79,6 +79,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RaySpec.Builder.class);
   }
 
+  private int bitField0_;
   public static final int IMAGE_URI_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -343,6 +344,62 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RAY_METRIC_SPEC_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1beta1.RayMetricSpec rayMetricSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ray metrics configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayMetricSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRayMetricSpec() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ray metrics configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayMetricSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RayMetricSpec getRayMetricSpec() {
+    return rayMetricSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RayMetricSpec.getDefaultInstance()
+        : rayMetricSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ray metrics configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RayMetricSpecOrBuilder getRayMetricSpecOrBuilder() {
+    return rayMetricSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RayMetricSpec.getDefaultInstance()
+        : rayMetricSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -367,6 +424,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         6);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(headNodeResourcePoolId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, headNodeResourcePoolId_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getRayMetricSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -393,6 +453,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(headNodeResourcePoolId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, headNodeResourcePoolId_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRayMetricSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -413,6 +476,10 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetResourcePoolImages().equals(other.internalGetResourcePoolImages()))
       return false;
     if (!getHeadNodeResourcePoolId().equals(other.getHeadNodeResourcePoolId())) return false;
+    if (hasRayMetricSpec() != other.hasRayMetricSpec()) return false;
+    if (hasRayMetricSpec()) {
+      if (!getRayMetricSpec().equals(other.getRayMetricSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -432,6 +499,10 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + HEAD_NODE_RESOURCE_POOL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getHeadNodeResourcePoolId().hashCode();
+    if (hasRayMetricSpec()) {
+      hash = (37 * hash) + RAY_METRIC_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getRayMetricSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -586,10 +657,19 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.RaySpec.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRayMetricSpecFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -599,6 +679,11 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       imageUri_ = "";
       internalGetMutableResourcePoolImages().clear();
       headNodeResourcePoolId_ = "";
+      rayMetricSpec_ = null;
+      if (rayMetricSpecBuilder_ != null) {
+        rayMetricSpecBuilder_.dispose();
+        rayMetricSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -645,6 +730,13 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.headNodeResourcePoolId_ = headNodeResourcePoolId_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rayMetricSpec_ =
+            rayMetricSpecBuilder_ == null ? rayMetricSpec_ : rayMetricSpecBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -704,6 +796,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasRayMetricSpec()) {
+        mergeRayMetricSpec(other.getRayMetricSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -755,6 +850,12 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getRayMetricSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1264,6 +1365,211 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RayMetricSpec rayMetricSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RayMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.RayMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.RayMetricSpecOrBuilder>
+        rayMetricSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rayMetricSpec field is set.
+     */
+    public boolean hasRayMetricSpec() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rayMetricSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RayMetricSpec getRayMetricSpec() {
+      if (rayMetricSpecBuilder_ == null) {
+        return rayMetricSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RayMetricSpec.getDefaultInstance()
+            : rayMetricSpec_;
+      } else {
+        return rayMetricSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRayMetricSpec(com.google.cloud.aiplatform.v1beta1.RayMetricSpec value) {
+      if (rayMetricSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rayMetricSpec_ = value;
+      } else {
+        rayMetricSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRayMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.RayMetricSpec.Builder builderForValue) {
+      if (rayMetricSpecBuilder_ == null) {
+        rayMetricSpec_ = builderForValue.build();
+      } else {
+        rayMetricSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRayMetricSpec(com.google.cloud.aiplatform.v1beta1.RayMetricSpec value) {
+      if (rayMetricSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && rayMetricSpec_ != null
+            && rayMetricSpec_
+                != com.google.cloud.aiplatform.v1beta1.RayMetricSpec.getDefaultInstance()) {
+          getRayMetricSpecBuilder().mergeFrom(value);
+        } else {
+          rayMetricSpec_ = value;
+        }
+      } else {
+        rayMetricSpecBuilder_.mergeFrom(value);
+      }
+      if (rayMetricSpec_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRayMetricSpec() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rayMetricSpec_ = null;
+      if (rayMetricSpecBuilder_ != null) {
+        rayMetricSpecBuilder_.dispose();
+        rayMetricSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RayMetricSpec.Builder getRayMetricSpecBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getRayMetricSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RayMetricSpecOrBuilder getRayMetricSpecOrBuilder() {
+      if (rayMetricSpecBuilder_ != null) {
+        return rayMetricSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return rayMetricSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RayMetricSpec.getDefaultInstance()
+            : rayMetricSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ray metrics configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RayMetricSpec ray_metric_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RayMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.RayMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.RayMetricSpecOrBuilder>
+        getRayMetricSpecFieldBuilder() {
+      if (rayMetricSpecBuilder_ == null) {
+        rayMetricSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RayMetricSpec,
+                com.google.cloud.aiplatform.v1beta1.RayMetricSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.RayMetricSpecOrBuilder>(
+                getRayMetricSpec(), getParentForChildren(), isClean());
+        rayMetricSpec_ = null;
+      }
+      return rayMetricSpecBuilder_;
     }
 
     @java.lang.Override

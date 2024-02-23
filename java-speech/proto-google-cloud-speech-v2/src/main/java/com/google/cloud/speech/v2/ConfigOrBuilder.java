@@ -28,12 +28,14 @@ public interface ConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the config resource. There is exactly one config
-   * resource per project per location. The expected format is
+   * Output only. Identifier. The name of the config resource. There is exactly
+   * one config resource per project per location. The expected format is
    * `projects/{project}/locations/{location}/config`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -42,12 +44,14 @@ public interface ConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the config resource. There is exactly one config
-   * resource per project per location. The expected format is
+   * Output only. Identifier. The name of the config resource. There is exactly
+   * one config resource per project per location. The expected format is
    * `projects/{project}/locations/{location}/config`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */

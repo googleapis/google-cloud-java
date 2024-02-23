@@ -318,24 +318,6 @@
  * }
  * }</pre>
  *
- * <p>======================= ModelServiceClient =======================
- *
- * <p>Service Description: A service for managing Vertex AI's machine learning Models.
- *
- * <p>Sample for ModelServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   Model response = modelServiceClient.getModel(name);
- * }
- * }</pre>
- *
  * <p>======================= ModelGardenServiceClient =======================
  *
  * <p>Service Description: The interface of Model Garden Service.
@@ -351,6 +333,24 @@
  * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
  *   PublisherModelName name = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
  *   PublisherModel response = modelGardenServiceClient.getPublisherModel(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ModelServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Vertex AI's machine learning Models.
+ *
+ * <p>Sample for ModelServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+ *   Model response = modelServiceClient.getModel(name);
  * }
  * }</pre>
  *

@@ -560,6 +560,7 @@ public class FeatureRegistryServiceClientTest {
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -627,6 +628,7 @@ public class FeatureRegistryServiceClientTest {
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -692,6 +694,7 @@ public class FeatureRegistryServiceClientTest {
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -757,6 +760,7 @@ public class FeatureRegistryServiceClientTest {
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -812,6 +816,7 @@ public class FeatureRegistryServiceClientTest {
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -997,6 +1002,7 @@ public class FeatureRegistryServiceClientTest {
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

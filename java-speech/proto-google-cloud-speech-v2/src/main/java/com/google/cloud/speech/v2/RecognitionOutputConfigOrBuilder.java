@@ -109,5 +109,49 @@ public interface RecognitionOutputConfigOrBuilder
    */
   com.google.cloud.speech.v2.InlineOutputConfigOrBuilder getInlineResponseConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the format of the results stored to `output`.
+   * If unspecified transcripts will be written in the `NATIVE` format only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the outputFormatConfig field is set.
+   */
+  boolean hasOutputFormatConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the format of the results stored to `output`.
+   * If unspecified transcripts will be written in the `NATIVE` format only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The outputFormatConfig.
+   */
+  com.google.cloud.speech.v2.OutputFormatConfig getOutputFormatConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the format of the results stored to `output`.
+   * If unspecified transcripts will be written in the `NATIVE` format only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v2.OutputFormatConfigOrBuilder getOutputFormatConfigOrBuilder();
+
   com.google.cloud.speech.v2.RecognitionOutputConfig.OutputCase getOutputCase();
 }

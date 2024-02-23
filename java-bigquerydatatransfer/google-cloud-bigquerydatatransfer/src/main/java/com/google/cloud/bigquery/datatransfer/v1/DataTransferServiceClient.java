@@ -354,7 +354,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UnenrollDataSources</td>
- *      <td><p> Unenroll data sources in a user project. This allows users to remove transfer configurations for these data sources. They will no longer appear in the ListDataSources RPC and will also no longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery).</td>
+ *      <td><p> Unenroll data sources in a user project. This allows users to remove transfer configurations for these data sources. They will no longer appear in the ListDataSources RPC and will also no longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery). Data transfers configurations of unenrolled data sources will not be scheduled.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2614,7 +2614,8 @@ public class DataTransferServiceClient implements BackgroundResource {
   /**
    * Unenroll data sources in a user project. This allows users to remove transfer configurations
    * for these data sources. They will no longer appear in the ListDataSources RPC and will also no
-   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery).
+   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery). Data transfers
+   * configurations of unenrolled data sources will not be scheduled.
    *
    * <p>Sample code:
    *
@@ -2645,7 +2646,8 @@ public class DataTransferServiceClient implements BackgroundResource {
   /**
    * Unenroll data sources in a user project. This allows users to remove transfer configurations
    * for these data sources. They will no longer appear in the ListDataSources RPC and will also no
-   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery).
+   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery). Data transfers
+   * configurations of unenrolled data sources will not be scheduled.
    *
    * <p>Sample code:
    *

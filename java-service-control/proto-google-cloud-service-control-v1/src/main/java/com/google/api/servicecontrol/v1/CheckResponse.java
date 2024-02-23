@@ -164,6 +164,35 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo consumer_info = 2;</code>
      */
     com.google.api.servicecontrol.v1.CheckResponse.ConsumerInfoOrBuilder getConsumerInfoOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+     * This field will be populated when the consumer passed to Service Control
+     * is an API key and all the API key related validations are successful.
+     * </pre>
+     *
+     * <code>string api_key_uid = 5;</code>
+     *
+     * @return The apiKeyUid.
+     */
+    java.lang.String getApiKeyUid();
+    /**
+     *
+     *
+     * <pre>
+     * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+     * This field will be populated when the consumer passed to Service Control
+     * is an API key and all the API key related validations are successful.
+     * </pre>
+     *
+     * <code>string api_key_uid = 5;</code>
+     *
+     * @return The bytes for apiKeyUid.
+     */
+    com.google.protobuf.ByteString getApiKeyUidBytes();
   }
   /**
    *
@@ -186,6 +215,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
 
     private CheckInfo() {
       unusedArguments_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      apiKeyUid_ = "";
     }
 
     @java.lang.Override
@@ -333,6 +363,61 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
           : consumerInfo_;
     }
 
+    public static final int API_KEY_UID_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object apiKeyUid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+     * This field will be populated when the consumer passed to Service Control
+     * is an API key and all the API key related validations are successful.
+     * </pre>
+     *
+     * <code>string api_key_uid = 5;</code>
+     *
+     * @return The apiKeyUid.
+     */
+    @java.lang.Override
+    public java.lang.String getApiKeyUid() {
+      java.lang.Object ref = apiKeyUid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiKeyUid_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+     * This field will be populated when the consumer passed to Service Control
+     * is an API key and all the API key related validations are successful.
+     * </pre>
+     *
+     * <code>string api_key_uid = 5;</code>
+     *
+     * @return The bytes for apiKeyUid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getApiKeyUidBytes() {
+      java.lang.Object ref = apiKeyUid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        apiKeyUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -353,6 +438,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getConsumerInfo());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiKeyUid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, apiKeyUid_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -372,6 +460,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConsumerInfo());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiKeyUid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, apiKeyUid_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -394,6 +485,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasConsumerInfo()) {
         if (!getConsumerInfo().equals(other.getConsumerInfo())) return false;
       }
+      if (!getApiKeyUid().equals(other.getApiKeyUid())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -413,6 +505,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CONSUMER_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getConsumerInfo().hashCode();
       }
+      hash = (37 * hash) + API_KEY_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKeyUid().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -570,6 +664,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
           consumerInfoBuilder_.dispose();
           consumerInfoBuilder_ = null;
         }
+        apiKeyUid_ = "";
         return this;
       }
 
@@ -615,6 +710,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
           result.consumerInfo_ =
               consumerInfoBuilder_ == null ? consumerInfo_ : consumerInfoBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.apiKeyUid_ = apiKeyUid_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -680,6 +778,11 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasConsumerInfo()) {
           mergeConsumerInfo(other.getConsumerInfo());
         }
+        if (!other.getApiKeyUid().isEmpty()) {
+          apiKeyUid_ = other.apiKeyUid_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -719,6 +822,12 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 42:
+                {
+                  apiKeyUid_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1120,6 +1229,122 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
           consumerInfo_ = null;
         }
         return consumerInfoBuilder_;
+      }
+
+      private java.lang.Object apiKeyUid_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+       * This field will be populated when the consumer passed to Service Control
+       * is an API key and all the API key related validations are successful.
+       * </pre>
+       *
+       * <code>string api_key_uid = 5;</code>
+       *
+       * @return The apiKeyUid.
+       */
+      public java.lang.String getApiKeyUid() {
+        java.lang.Object ref = apiKeyUid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiKeyUid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+       * This field will be populated when the consumer passed to Service Control
+       * is an API key and all the API key related validations are successful.
+       * </pre>
+       *
+       * <code>string api_key_uid = 5;</code>
+       *
+       * @return The bytes for apiKeyUid.
+       */
+      public com.google.protobuf.ByteString getApiKeyUidBytes() {
+        java.lang.Object ref = apiKeyUid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          apiKeyUid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+       * This field will be populated when the consumer passed to Service Control
+       * is an API key and all the API key related validations are successful.
+       * </pre>
+       *
+       * <code>string api_key_uid = 5;</code>
+       *
+       * @param value The apiKeyUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiKeyUid(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiKeyUid_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+       * This field will be populated when the consumer passed to Service Control
+       * is an API key and all the API key related validations are successful.
+       * </pre>
+       *
+       * <code>string api_key_uid = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearApiKeyUid() {
+        apiKeyUid_ = getDefaultInstance().getApiKeyUid();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unique id of the api key in the format of "apikey:&lt;UID&gt;".
+       * This field will be populated when the consumer passed to Service Control
+       * is an API key and all the API key related validations are successful.
+       * </pre>
+       *
+       * <code>string api_key_uid = 5;</code>
+       *
+       * @param value The bytes for apiKeyUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiKeyUidBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        apiKeyUid_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

@@ -2287,6 +2287,24 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : resourceManagerTags_;
   }
 
+  public static final int ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER = 46;
+  private boolean enableConfidentialStorage_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableConfidentialStorage.
+   */
+  @java.lang.Override
+  public boolean getEnableConfidentialStorage() {
+    return enableConfidentialStorage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2402,6 +2420,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(45, getResourceManagerTags());
+    }
+    if (enableConfidentialStorage_ != false) {
+      output.writeBool(46, enableConfidentialStorage_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2558,6 +2579,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(45, getResourceManagerTags());
     }
+    if (enableConfidentialStorage_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, enableConfidentialStorage_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2661,6 +2685,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceManagerTags()) {
       if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
     }
+    if (getEnableConfidentialStorage() != other.getEnableConfidentialStorage()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2790,6 +2815,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceManagerTags().hashCode();
     }
+    hash = (37 * hash) + ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialStorage());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3106,6 +3133,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         resourceManagerTagsBuilder_.dispose();
         resourceManagerTagsBuilder_ = null;
       }
+      enableConfidentialStorage_ = false;
       return this;
     }
 
@@ -3325,6 +3353,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
         to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.enableConfidentialStorage_ = enableConfidentialStorage_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3551,6 +3582,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasResourceManagerTags()) {
         mergeResourceManagerTags(other.getResourceManagerTags());
+      }
+      if (other.getEnableConfidentialStorage() != false) {
+        setEnableConfidentialStorage(other.getEnableConfidentialStorage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3833,6 +3867,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000004;
                 break;
               } // case 362
+            case 368:
+              {
+                enableConfidentialStorage_ = input.readBool();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 368
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10268,6 +10308,59 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         resourceManagerTags_ = null;
       }
       return resourceManagerTagsBuilder_;
+    }
+
+    private boolean enableConfidentialStorage_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableConfidentialStorage.
+     */
+    @java.lang.Override
+    public boolean getEnableConfidentialStorage() {
+      return enableConfidentialStorage_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableConfidentialStorage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableConfidentialStorage(boolean value) {
+
+      enableConfidentialStorage_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableConfidentialStorage() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      enableConfidentialStorage_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

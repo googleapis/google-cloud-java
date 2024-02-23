@@ -597,6 +597,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -661,6 +662,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -723,6 +725,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -772,6 +775,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -909,6 +913,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

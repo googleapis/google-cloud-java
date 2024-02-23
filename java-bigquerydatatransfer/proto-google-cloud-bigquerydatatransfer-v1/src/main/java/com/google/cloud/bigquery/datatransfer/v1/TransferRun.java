@@ -774,7 +774,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * transfer run finishes.
    *
    * The format for specifying a pubsub topic is:
-   * `projects/{project}/topics/{topic}`
+   * `projects/{project_id}/topics/{topic_id}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -802,7 +802,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * transfer run finishes.
    *
    * The format for specifying a pubsub topic is:
-   * `projects/{project}/topics/{topic}`
+   * `projects/{project_id}/topics/{topic_id}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3703,7 +3703,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * transfer run finishes.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3730,7 +3730,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * transfer run finishes.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3757,7 +3757,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * transfer run finishes.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3783,7 +3783,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * transfer run finishes.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3805,7 +3805,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * transfer run finishes.
      *
      * The format for specifying a pubsub topic is:
-     * `projects/{project}/topics/{topic}`
+     * `projects/{project_id}/topics/{topic_id}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];

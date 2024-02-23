@@ -1667,4 +1667,43 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
    */
   com.google.cloud.securitycenter.v1.ApplicationOrBuilder getApplicationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return Whether the backupDisasterRecovery field is set.
+   */
+  boolean hasBackupDisasterRecovery();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return The backupDisasterRecovery.
+   */
+  com.google.cloud.securitycenter.v1.BackupDisasterRecovery getBackupDisasterRecovery();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder
+      getBackupDisasterRecoveryOrBuilder();
 }

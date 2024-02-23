@@ -3403,6 +3403,60 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         : application_;
   }
 
+  public static final int BACKUP_DISASTER_RECOVERY_FIELD_NUMBER = 55;
+  private com.google.cloud.securitycenter.v1.BackupDisasterRecovery backupDisasterRecovery_;
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return Whether the backupDisasterRecovery field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupDisasterRecovery() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return The backupDisasterRecovery.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.BackupDisasterRecovery getBackupDisasterRecovery() {
+    return backupDisasterRecovery_ == null
+        ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+        : backupDisasterRecovery_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder
+      getBackupDisasterRecoveryOrBuilder() {
+    return backupDisasterRecovery_ == null
+        ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+        : backupDisasterRecovery_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3533,6 +3587,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(53, getApplication());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(55, getBackupDisasterRecovery());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3689,6 +3746,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getApplication());
     }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(55, getBackupDisasterRecovery());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3788,6 +3849,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasApplication() != other.hasApplication()) return false;
     if (hasApplication()) {
       if (!getApplication().equals(other.getApplication())) return false;
+    }
+    if (hasBackupDisasterRecovery() != other.hasBackupDisasterRecovery()) return false;
+    if (hasBackupDisasterRecovery()) {
+      if (!getBackupDisasterRecovery().equals(other.getBackupDisasterRecovery())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3925,6 +3990,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasApplication()) {
       hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
       hash = (53 * hash) + getApplication().hashCode();
+    }
+    if (hasBackupDisasterRecovery()) {
+      hash = (37 * hash) + BACKUP_DISASTER_RECOVERY_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupDisasterRecovery().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4123,6 +4192,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getCloudDlpDataProfileFieldBuilder();
         getKernelRootkitFieldBuilder();
         getApplicationFieldBuilder();
+        getBackupDisasterRecoveryFieldBuilder();
       }
     }
 
@@ -4265,6 +4335,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (applicationBuilder_ != null) {
         applicationBuilder_.dispose();
         applicationBuilder_ = null;
+      }
+      backupDisasterRecovery_ = null;
+      if (backupDisasterRecoveryBuilder_ != null) {
+        backupDisasterRecoveryBuilder_.dispose();
+        backupDisasterRecoveryBuilder_ = null;
       }
       return this;
     }
@@ -4498,6 +4573,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.application_ =
             applicationBuilder_ == null ? application_ : applicationBuilder_.build();
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.backupDisasterRecovery_ =
+            backupDisasterRecoveryBuilder_ == null
+                ? backupDisasterRecovery_
+                : backupDisasterRecoveryBuilder_.build();
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4827,6 +4909,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other.hasApplication()) {
         mergeApplication(other.getApplication());
       }
+      if (other.hasBackupDisasterRecovery()) {
+        mergeBackupDisasterRecovery(other.getBackupDisasterRecovery());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5154,6 +5239,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000040;
                 break;
               } // case 426
+            case 442:
+              {
+                input.readMessage(
+                    getBackupDisasterRecoveryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000080;
+                break;
+              } // case 442
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12881,6 +12973,206 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         application_ = null;
       }
       return applicationBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.BackupDisasterRecovery backupDisasterRecovery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder>
+        backupDisasterRecoveryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     *
+     * @return Whether the backupDisasterRecovery field is set.
+     */
+    public boolean hasBackupDisasterRecovery() {
+      return ((bitField1_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     *
+     * @return The backupDisasterRecovery.
+     */
+    public com.google.cloud.securitycenter.v1.BackupDisasterRecovery getBackupDisasterRecovery() {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        return backupDisasterRecovery_ == null
+            ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+            : backupDisasterRecovery_;
+      } else {
+        return backupDisasterRecoveryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder setBackupDisasterRecovery(
+        com.google.cloud.securitycenter.v1.BackupDisasterRecovery value) {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupDisasterRecovery_ = value;
+      } else {
+        backupDisasterRecoveryBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder setBackupDisasterRecovery(
+        com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder builderForValue) {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        backupDisasterRecovery_ = builderForValue.build();
+      } else {
+        backupDisasterRecoveryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder mergeBackupDisasterRecovery(
+        com.google.cloud.securitycenter.v1.BackupDisasterRecovery value) {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        if (((bitField1_ & 0x00000080) != 0)
+            && backupDisasterRecovery_ != null
+            && backupDisasterRecovery_
+                != com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()) {
+          getBackupDisasterRecoveryBuilder().mergeFrom(value);
+        } else {
+          backupDisasterRecovery_ = value;
+        }
+      } else {
+        backupDisasterRecoveryBuilder_.mergeFrom(value);
+      }
+      if (backupDisasterRecovery_ != null) {
+        bitField1_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder clearBackupDisasterRecovery() {
+      bitField1_ = (bitField1_ & ~0x00000080);
+      backupDisasterRecovery_ = null;
+      if (backupDisasterRecoveryBuilder_ != null) {
+        backupDisasterRecoveryBuilder_.dispose();
+        backupDisasterRecoveryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder
+        getBackupDisasterRecoveryBuilder() {
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return getBackupDisasterRecoveryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder
+        getBackupDisasterRecoveryOrBuilder() {
+      if (backupDisasterRecoveryBuilder_ != null) {
+        return backupDisasterRecoveryBuilder_.getMessageOrBuilder();
+      } else {
+        return backupDisasterRecovery_ == null
+            ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+            : backupDisasterRecovery_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder>
+        getBackupDisasterRecoveryFieldBuilder() {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        backupDisasterRecoveryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.BackupDisasterRecovery,
+                com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder,
+                com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder>(
+                getBackupDisasterRecovery(), getParentForChildren(), isClean());
+        backupDisasterRecovery_ = null;
+      }
+      return backupDisasterRecoveryBuilder_;
     }
 
     @java.lang.Override

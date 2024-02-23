@@ -893,12 +893,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the CustomClass.
+   * Output only. Identifier. The resource name of the CustomClass.
    * Format:
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -918,12 +920,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the CustomClass.
+   * Output only. Identifier. The resource name of the CustomClass.
    * Format:
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -999,11 +1003,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-settable, human-readable name for the CustomClass. Must be 63
-   * characters or less.
+   * Optional. User-settable, human-readable name for the CustomClass. Must be
+   * 63 characters or less.
    * </pre>
    *
-   * <code>string display_name = 4;</code>
+   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -1023,11 +1027,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-settable, human-readable name for the CustomClass. Must be 63
-   * characters or less.
+   * Optional. User-settable, human-readable name for the CustomClass. Must be
+   * 63 characters or less.
    * </pre>
    *
-   * <code>string display_name = 4;</code>
+   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -1381,12 +1385,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows users to store small amounts of arbitrary data.
+   * Optional. Allows users to store small amounts of arbitrary data.
    * Both the key and the value must be 63 characters or less each.
    * At most 100 annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 10;</code>
+   * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -1405,12 +1410,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows users to store small amounts of arbitrary data.
+   * Optional. Allows users to store small amounts of arbitrary data.
    * Both the key and the value must be 63 characters or less each.
    * At most 100 annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 10;</code>
+   * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -1420,12 +1426,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows users to store small amounts of arbitrary data.
+   * Optional. Allows users to store small amounts of arbitrary data.
    * Both the key and the value must be 63 characters or less each.
    * At most 100 annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 10;</code>
+   * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -1442,12 +1449,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows users to store small amounts of arbitrary data.
+   * Optional. Allows users to store small amounts of arbitrary data.
    * Both the key and the value must be 63 characters or less each.
    * At most 100 annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 10;</code>
+   * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -2441,12 +2449,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the CustomClass.
+     * Output only. Identifier. The resource name of the CustomClass.
      * Format:
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -2465,12 +2475,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the CustomClass.
+     * Output only. Identifier. The resource name of the CustomClass.
      * Format:
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -2489,12 +2501,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the CustomClass.
+     * Output only. Identifier. The resource name of the CustomClass.
      * Format:
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2512,12 +2526,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the CustomClass.
+     * Output only. Identifier. The resource name of the CustomClass.
      * Format:
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2531,12 +2547,14 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the CustomClass.
+     * Output only. Identifier. The resource name of the CustomClass.
      * Format:
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2663,11 +2681,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-settable, human-readable name for the CustomClass. Must be 63
-     * characters or less.
+     * Optional. User-settable, human-readable name for the CustomClass. Must be
+     * 63 characters or less.
      * </pre>
      *
-     * <code>string display_name = 4;</code>
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -2686,11 +2704,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-settable, human-readable name for the CustomClass. Must be 63
-     * characters or less.
+     * Optional. User-settable, human-readable name for the CustomClass. Must be
+     * 63 characters or less.
      * </pre>
      *
-     * <code>string display_name = 4;</code>
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -2709,11 +2727,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-settable, human-readable name for the CustomClass. Must be 63
-     * characters or less.
+     * Optional. User-settable, human-readable name for the CustomClass. Must be
+     * 63 characters or less.
      * </pre>
      *
-     * <code>string display_name = 4;</code>
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2731,11 +2749,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-settable, human-readable name for the CustomClass. Must be 63
-     * characters or less.
+     * Optional. User-settable, human-readable name for the CustomClass. Must be
+     * 63 characters or less.
      * </pre>
      *
-     * <code>string display_name = 4;</code>
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2749,11 +2767,11 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-settable, human-readable name for the CustomClass. Must be 63
-     * characters or less.
+     * Optional. User-settable, human-readable name for the CustomClass. Must be
+     * 63 characters or less.
      * </pre>
      *
-     * <code>string display_name = 4;</code>
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -4063,12 +4081,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -4087,12 +4106,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -4102,12 +4122,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -4124,12 +4145,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -4152,12 +4174,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -4176,12 +4199,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -4198,12 +4222,13 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows users to store small amounts of arbitrary data.
+     * Optional. Allows users to store small amounts of arbitrary data.
      * Both the key and the value must be 63 characters or less each.
      * At most 100 annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 10;</code>
+     * <code>map&lt;string, string&gt; annotations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);

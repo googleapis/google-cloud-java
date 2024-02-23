@@ -444,6 +444,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -525,6 +526,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3591,6 +3593,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3674,6 +3677,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3755,6 +3759,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3835,6 +3840,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4175,6 +4181,7 @@ public class SecurityCenterClientTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

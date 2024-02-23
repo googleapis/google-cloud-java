@@ -61,6 +61,7 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.speech.v2.RecognitionOutputConfig.Builder.class);
   }
 
+  private int bitField0_;
   private int outputCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -227,6 +228,65 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     return com.google.cloud.speech.v2.InlineOutputConfig.getDefaultInstance();
   }
 
+  public static final int OUTPUT_FORMAT_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.speech.v2.OutputFormatConfig outputFormatConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the format of the results stored to `output`.
+   * If unspecified transcripts will be written in the `NATIVE` format only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the outputFormatConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputFormatConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the format of the results stored to `output`.
+   * If unspecified transcripts will be written in the `NATIVE` format only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The outputFormatConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.OutputFormatConfig getOutputFormatConfig() {
+    return outputFormatConfig_ == null
+        ? com.google.cloud.speech.v2.OutputFormatConfig.getDefaultInstance()
+        : outputFormatConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the format of the results stored to `output`.
+   * If unspecified transcripts will be written in the `NATIVE` format only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.OutputFormatConfigOrBuilder getOutputFormatConfigOrBuilder() {
+    return outputFormatConfig_ == null
+        ? com.google.cloud.speech.v2.OutputFormatConfig.getDefaultInstance()
+        : outputFormatConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -247,6 +307,9 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     if (outputCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.speech.v2.InlineOutputConfig) output_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getOutputFormatConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -266,6 +329,9 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.speech.v2.InlineOutputConfig) output_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOutputFormatConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -282,6 +348,10 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     com.google.cloud.speech.v2.RecognitionOutputConfig other =
         (com.google.cloud.speech.v2.RecognitionOutputConfig) obj;
 
+    if (hasOutputFormatConfig() != other.hasOutputFormatConfig()) return false;
+    if (hasOutputFormatConfig()) {
+      if (!getOutputFormatConfig().equals(other.getOutputFormatConfig())) return false;
+    }
     if (!getOutputCase().equals(other.getOutputCase())) return false;
     switch (outputCase_) {
       case 1:
@@ -304,6 +374,10 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasOutputFormatConfig()) {
+      hash = (37 * hash) + OUTPUT_FORMAT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputFormatConfig().hashCode();
+    }
     switch (outputCase_) {
       case 1:
         hash = (37 * hash) + GCS_OUTPUT_CONFIG_FIELD_NUMBER;
@@ -445,10 +519,19 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.speech.v2.RecognitionOutputConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getOutputFormatConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -460,6 +543,11 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       }
       if (inlineResponseConfigBuilder_ != null) {
         inlineResponseConfigBuilder_.clear();
+      }
+      outputFormatConfig_ = null;
+      if (outputFormatConfigBuilder_ != null) {
+        outputFormatConfigBuilder_.dispose();
+        outputFormatConfigBuilder_ = null;
       }
       outputCase_ = 0;
       output_ = null;
@@ -500,6 +588,15 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.speech.v2.RecognitionOutputConfig result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputFormatConfig_ =
+            outputFormatConfigBuilder_ == null
+                ? outputFormatConfig_
+                : outputFormatConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.speech.v2.RecognitionOutputConfig result) {
@@ -559,6 +656,9 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.speech.v2.RecognitionOutputConfig other) {
       if (other == com.google.cloud.speech.v2.RecognitionOutputConfig.getDefaultInstance())
         return this;
+      if (other.hasOutputFormatConfig()) {
+        mergeOutputFormatConfig(other.getOutputFormatConfig());
+      }
       switch (other.getOutputCase()) {
         case GCS_OUTPUT_CONFIG:
           {
@@ -614,6 +714,13 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
                 outputCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getOutputFormatConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1109,6 +1216,220 @@ public final class RecognitionOutputConfig extends com.google.protobuf.Generated
       outputCase_ = 2;
       onChanged();
       return inlineResponseConfigBuilder_;
+    }
+
+    private com.google.cloud.speech.v2.OutputFormatConfig outputFormatConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.OutputFormatConfig,
+            com.google.cloud.speech.v2.OutputFormatConfig.Builder,
+            com.google.cloud.speech.v2.OutputFormatConfigOrBuilder>
+        outputFormatConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the outputFormatConfig field is set.
+     */
+    public boolean hasOutputFormatConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The outputFormatConfig.
+     */
+    public com.google.cloud.speech.v2.OutputFormatConfig getOutputFormatConfig() {
+      if (outputFormatConfigBuilder_ == null) {
+        return outputFormatConfig_ == null
+            ? com.google.cloud.speech.v2.OutputFormatConfig.getDefaultInstance()
+            : outputFormatConfig_;
+      } else {
+        return outputFormatConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOutputFormatConfig(com.google.cloud.speech.v2.OutputFormatConfig value) {
+      if (outputFormatConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputFormatConfig_ = value;
+      } else {
+        outputFormatConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOutputFormatConfig(
+        com.google.cloud.speech.v2.OutputFormatConfig.Builder builderForValue) {
+      if (outputFormatConfigBuilder_ == null) {
+        outputFormatConfig_ = builderForValue.build();
+      } else {
+        outputFormatConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOutputFormatConfig(com.google.cloud.speech.v2.OutputFormatConfig value) {
+      if (outputFormatConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputFormatConfig_ != null
+            && outputFormatConfig_
+                != com.google.cloud.speech.v2.OutputFormatConfig.getDefaultInstance()) {
+          getOutputFormatConfigBuilder().mergeFrom(value);
+        } else {
+          outputFormatConfig_ = value;
+        }
+      } else {
+        outputFormatConfigBuilder_.mergeFrom(value);
+      }
+      if (outputFormatConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOutputFormatConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputFormatConfig_ = null;
+      if (outputFormatConfigBuilder_ != null) {
+        outputFormatConfigBuilder_.dispose();
+        outputFormatConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.OutputFormatConfig.Builder getOutputFormatConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getOutputFormatConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.OutputFormatConfigOrBuilder getOutputFormatConfigOrBuilder() {
+      if (outputFormatConfigBuilder_ != null) {
+        return outputFormatConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputFormatConfig_ == null
+            ? com.google.cloud.speech.v2.OutputFormatConfig.getDefaultInstance()
+            : outputFormatConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the format of the results stored to `output`.
+     * If unspecified transcripts will be written in the `NATIVE` format only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.OutputFormatConfig output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.OutputFormatConfig,
+            com.google.cloud.speech.v2.OutputFormatConfig.Builder,
+            com.google.cloud.speech.v2.OutputFormatConfigOrBuilder>
+        getOutputFormatConfigFieldBuilder() {
+      if (outputFormatConfigBuilder_ == null) {
+        outputFormatConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.OutputFormatConfig,
+                com.google.cloud.speech.v2.OutputFormatConfig.Builder,
+                com.google.cloud.speech.v2.OutputFormatConfigOrBuilder>(
+                getOutputFormatConfig(), getParentForChildren(), isClean());
+        outputFormatConfig_ = null;
+      }
+      return outputFormatConfigBuilder_;
     }
 
     @java.lang.Override

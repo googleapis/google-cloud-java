@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.32.0</version>
+      <version>26.33.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -85,9 +85,7 @@ to add `google-cloud-compute` as a dependency in your code.
 ## About Compute Engine
 
 
-[Compute Engine][product-docs] delivers virtual machines running in Google's innovative data centers and worldwide fiber network. Compute Engine's tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine's VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations.
-
-
+[Compute Engine][product-docs] delivers virtual machines running in Google's innovative data centers and worldwide fiber network. Compute Engine's tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine's VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations. 
 
 See the [Compute Engine client library docs][javadocs] to learn how to
 use this Compute Engine Client Library.
@@ -260,7 +258,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-compute/1.45.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-compute/1.46.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
