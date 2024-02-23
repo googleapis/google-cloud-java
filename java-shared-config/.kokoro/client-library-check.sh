@@ -111,6 +111,7 @@ replace_java_shared_config_version "${JAVA_SHARED_CONFIG_VERSION}"
 replace_java_shared_dependencies_version "${RELEASED_SHARED_DEPENDENCIES_VERSION}"
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
 popd
+popd
 
 # Check this BOM against a few java client libraries
 # java-bigquery
@@ -122,9 +123,9 @@ fi
 
 pushd ${REPO}
 
-# TODO(#748): Replace the version of sdk-platform-java-config for all libraries. This logic will no longer
-#  be needed after the rest of the handwritten libraries are migrated to use this artifact.
-if [ "$REPO" == "java-storage" ]; then
+# If using an older version of java-storage, continue replacing java-shared-config version otherwise replace
+# the version of sdk-platform-java-config.
+if [ "${REPO_TAG}" == "v2.9.3" ] && [ "${REPO}" == "java-storage" ]; then
   replace_java_shared_config_version "${JAVA_SHARED_CONFIG_VERSION}"
 else
   replace_sdk_platform_java_config_version "${SDK_PLATFORM_JAVA_CONFIG_VERSION}"
@@ -137,7 +138,9 @@ dependencies)
     ;;
 flatten-plugin)
     # This creates .flattened-pom.xml
+    echo "Before running .kokoro/build.sh"
     .kokoro/build.sh
+    echo "After running .kokoro/build.sh"
     pushd google-cloud-*
     mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
         | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
