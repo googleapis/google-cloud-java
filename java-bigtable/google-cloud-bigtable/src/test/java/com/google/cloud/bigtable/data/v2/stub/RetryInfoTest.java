@@ -88,7 +88,7 @@ public class RetryInfoTest {
   private BigtableDataSettings.Builder settings;
 
   private AtomicInteger attemptCounter = new AtomicInteger();
-  private com.google.protobuf.Duration delay =
+  private com.google.protobuf.Duration defaultDelay =
       com.google.protobuf.Duration.newBuilder().setSeconds(2).setNanos(0).build();
 
   @Before
@@ -328,7 +328,7 @@ public class RetryInfoTest {
     settings.stubSettings().setEnableRetryInfo(false);
 
     try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-      ApiException exception = enqueueNonRetryableExceptionWithDelay(delay);
+      ApiException exception = enqueueNonRetryableExceptionWithDelay(defaultDelay);
       try {
         client.checkAndMutateRow(
             ConditionalRowMutation.create("table", "key")
@@ -382,7 +382,7 @@ public class RetryInfoTest {
     settings.stubSettings().setEnableRetryInfo(false);
 
     try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-      ApiException exception = enqueueNonRetryableExceptionWithDelay(delay);
+      ApiException exception = enqueueNonRetryableExceptionWithDelay(defaultDelay);
       try {
         client.readModifyWriteRow(ReadModifyWriteRow.create("table", "row").append("cf", "q", "v"));
       } catch (ApiException e) {
@@ -460,7 +460,8 @@ public class RetryInfoTest {
                   .readChangeStream(ReadChangeStreamQuery.create("table"))
                   .iterator()
                   .hasNext(),
-          true);
+          true,
+          com.google.protobuf.Duration.newBuilder().setSeconds(5).setNanos(0).build());
     }
   }
 
@@ -507,30 +508,30 @@ public class RetryInfoTest {
   // Test the case where server returns retry info and client enables handling of retry info
   private void verifyRetryInfoIsUsed(Runnable runnable, boolean retryableError) {
     if (retryableError) {
-      enqueueRetryableExceptionWithDelay(delay);
+      enqueueRetryableExceptionWithDelay(defaultDelay);
     } else {
-      enqueueNonRetryableExceptionWithDelay(delay);
+      enqueueNonRetryableExceptionWithDelay(defaultDelay);
     }
     Stopwatch stopwatch = Stopwatch.createStarted();
     runnable.run();
     stopwatch.stop();
 
     assertThat(attemptCounter.get()).isEqualTo(2);
-    assertThat(stopwatch.elapsed()).isAtLeast(Duration.ofSeconds(delay.getSeconds()));
+    assertThat(stopwatch.elapsed()).isAtLeast(Duration.ofSeconds(defaultDelay.getSeconds()));
   }
 
   // Test the case where server returns retry info but client disabled handling of retry info
   private void verifyRetryInfoCanBeDisabled(Runnable runnable) {
-    enqueueRetryableExceptionWithDelay(delay);
+    enqueueRetryableExceptionWithDelay(defaultDelay);
     Stopwatch stopwatch = Stopwatch.createStarted();
     runnable.run();
     stopwatch.stop();
 
     assertThat(attemptCounter.get()).isEqualTo(2);
-    assertThat(stopwatch.elapsed()).isLessThan(Duration.ofSeconds(delay.getSeconds()));
+    assertThat(stopwatch.elapsed()).isLessThan(Duration.ofSeconds(defaultDelay.getSeconds()));
 
     attemptCounter.set(0);
-    ApiException expectedApiException = enqueueNonRetryableExceptionWithDelay(delay);
+    ApiException expectedApiException = enqueueNonRetryableExceptionWithDelay(defaultDelay);
     ApiException actualException =
         assertThrows("non retryable operations should fail", ApiException.class, runnable::run);
     if (actualException instanceof MutateRowsException) {
@@ -549,6 +550,12 @@ public class RetryInfoTest {
 
   // Test the case where server does not return retry info
   private void verifyNoRetryInfo(Runnable runnable, boolean operationRetryable) {
+    verifyNoRetryInfo(runnable, operationRetryable, defaultDelay);
+  }
+
+  // individual test can override the default delay
+  private void verifyNoRetryInfo(
+      Runnable runnable, boolean operationRetryable, com.google.protobuf.Duration delay) {
     enqueueRetryableExceptionNoRetryInfo();
 
     if (!operationRetryable) {
