@@ -3,41 +3,31 @@ on:
   schedule:
   - cron: '0 2 * * *' # nightly at 2 am UTC
   workflow_dispatch:
+  pull_request: # (we will remove this after testing)
 
 jobs:
   generate-from-configuration:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
-      with:
-        java-version: 11
-        distribution: temurin
-        cache: maven
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-    - name: copy generation scripts
+    - name: setup docker environment
       shell: bash
       run: |
-        # checkout `library_generation` directory from sdk-platform-java
-        git clone https://github.com/googleapis/sdk-platform-java.git
-        pushd sdk-platform-java
-        git pull
-        cp -r library_generation ../
-        popd
-        rm -rf sdk-platform-java
-    - name: install python dependencies
-      shell: bash
-      run: |
-        set -ex
-        pushd library_generation
-        pip install -r requirements.in
-        pip install .
-        popd
+        if [[ $(docker volume inspect repo) != '[]' ]]; then
+          docker volume rm repo
+        fi
+        docker volume create --name "repo" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
     - name: generate from configuration
       shell: bash
       run: |
         git config --global user.email "github-workflow@github.com"
         git config --global user.name "Github Workflow"
         python library_generation/generate_repo.py generate --generation-config-yaml=$(pwd)/generation_config.yaml --repository-path=.
+        docker run --rm \
+          -v repo:/workspace \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUME=repo" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+          python /src/generate_repo.py generate --generation-config-yaml=/workspace/generation_config.yaml --repository-path=/workspace
