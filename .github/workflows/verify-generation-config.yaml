@@ -3,7 +3,6 @@ on:
   schedule:
   - cron: '0 2 * * *' # nightly at 2 am UTC
   workflow_dispatch:
-  pull_request: # (we will remove this after testing)
 
 jobs:
   generate-from-configuration:
@@ -13,6 +12,8 @@ jobs:
     - name: setup docker environment
       shell: bash
       run: |
+        # we create a volume pointing to `pwd` (google-cloud-java) that will
+        # be referenced by the container and its children
         if [[ $(docker volume inspect repo) != '[]' ]]; then
           docker volume rm repo
         fi
