@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.7.2](https://github.com/googleapis/java-shared-config/compare/v1.7.1...v1.7.2) (2024-02-26)
+
+
+### Bug Fixes
+
+* Update docFX config ([#744](https://github.com/googleapis/java-shared-config/issues/744)) ([096cd22](https://github.com/googleapis/java-shared-config/commit/096cd225e22d39a0d2a03cb0dd5beafedc289454))
+
+
+### Dependencies
+
+* Update actions/github-script action to v7 ([#708](https://github.com/googleapis/java-shared-config/issues/708)) ([a4738d1](https://github.com/googleapis/java-shared-config/commit/a4738d13277edd15bb3f5f0cf69f2600cf93c607))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.28 ([#647](https://github.com/googleapis/java-shared-config/issues/647)) ([28b2c77](https://github.com/googleapis/java-shared-config/commit/28b2c77ddd2078d628cb8f2b16fae8efd0e673a5))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.2 ([#638](https://github.com/googleapis/java-shared-config/issues/638)) ([4fa0021](https://github.com/googleapis/java-shared-config/commit/4fa0021ec8d187d9c7c5775f0518aee83059ef65))
+
 ## [1.7.1](https://github.com/googleapis/java-shared-config/compare/v1.7.0...v1.7.1) (2023-12-07)
 
 
