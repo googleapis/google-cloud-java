@@ -20,6 +20,7 @@ package com.example.bigquerystorage;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -36,12 +37,12 @@ import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Message;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 import org.json.JSONObject;
+import org.threeten.bp.Duration;
 
 public class ParallelWriteCommittedStream {
 
@@ -157,6 +158,18 @@ public class ParallelWriteCommittedStream {
       lastMetricsSuccessCount = 0;
       lastMetricsFailureCount = 0;
     }
+    // Configure in-stream automatic retry settings.
+    // Error codes that are immediately retried:
+    // * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
+    // Error codes that are retried with exponential backoff:
+    // * RESOURCE_EXHAUSTED
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(500))
+            .setRetryDelayMultiplier(1.1)
+            .setMaxAttempts(5)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .build();
     Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
             writeStream.getTableSchema());
@@ -164,6 +177,7 @@ public class ParallelWriteCommittedStream {
     try (StreamWriter writer =
         StreamWriter.newBuilder(writeStream.getName())
             .setWriterSchema(protoSchema)
+            .setRetrySettings(retrySettings)
             .setTraceId("SAMPLE:parallel_append")
             .build()) {
       while (System.currentTimeMillis() < deadlineMillis) {

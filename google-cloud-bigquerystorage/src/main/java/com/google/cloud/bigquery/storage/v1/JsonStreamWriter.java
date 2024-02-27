@@ -362,7 +362,7 @@ public class JsonStreamWriter implements AutoCloseable {
      * Enable client lib automatic retries on request level errors.
      *
      * <pre>
-     * Immeidate Retry code:
+     * Immediate Retry code:
      * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
      * Backoff Retry code:
      * RESOURCE_EXHAUSTED

@@ -19,6 +19,7 @@ package com.example.bigquerystorage;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -37,6 +38,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.threeten.bp.Duration;
 
 public class JsonWriterStreamCdc {
 
@@ -108,6 +110,18 @@ public class JsonWriterStreamCdc {
   public static void writeToDefaultStream(
       String projectId, String datasetName, String tableName, JSONArray data)
       throws DescriptorValidationException, InterruptedException, IOException {
+    // Configure in-stream automatic retry settings.
+    // Error codes that are immediately retried:
+    // * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
+    // Error codes that are retried with exponential backoff:
+    // * RESOURCE_EXHAUSTED
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(500))
+            .setRetryDelayMultiplier(1.1)
+            .setMaxAttempts(5)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .build();
     // To use the UPSERT functionality, the table schema needs to be padded with an additional
     // column "_change_type".
     TableSchema tableSchema =
@@ -159,7 +173,9 @@ public class JsonWriterStreamCdc {
     // Use the JSON stream writer to send records in JSON format.
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
     try (JsonStreamWriter writer =
-        JsonStreamWriter.newBuilder(parentTable.toString(), tableSchema).build()) {
+        JsonStreamWriter.newBuilder(parentTable.toString(), tableSchema)
+            .setRetrySettings(retrySettings)
+            .build()) {
 
       ApiFuture<AppendRowsResponse> future = writer.append(data);
       // The append method is asynchronous. Rather than waiting for the method to complete,
