@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/googleapis/java-shared-config/compare/v1.7.2...v1.7.3) (2024-02-27)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.sdk:graal-sdk to v22.3.5 ([#751](https://github.com/googleapis/java-shared-config/issues/751)) ([4d76805](https://github.com/googleapis/java-shared-config/commit/4d7680580f30a26f7e6bb55ed5175948754b25f7))
+
 ## [1.7.2](https://github.com/googleapis/java-shared-config/compare/v1.7.1...v1.7.2) (2024-02-26)
 
 

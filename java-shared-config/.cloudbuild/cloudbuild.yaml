@@ -14,7 +14,7 @@
 
 timeout: 7200s # 2 hours
 substitutions:
-  _JAVA_SHARED_CONFIG_VERSION: '1.7.3-SNAPSHOT' # {x-version-update:google-cloud-shared-config:current}
+  _JAVA_SHARED_CONFIG_VERSION: '1.7.3' # {x-version-update:google-cloud-shared-config:current}
   _GRAALVM_A: 'graalvm22_3_jdk11'
   _GRAALVM_B: 'graalvm22_3_jdk17'
 steps:
