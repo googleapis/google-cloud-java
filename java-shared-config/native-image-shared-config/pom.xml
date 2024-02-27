@@ -59,7 +59,7 @@
 
   <properties>
     <surefire.version>3.2.1</surefire.version>
-    <graal-sdk.version>22.3.3</graal-sdk.version>
+    <graal-sdk.version>22.3.5</graal-sdk.version>
   </properties>
 
   <dependencyManagement>
