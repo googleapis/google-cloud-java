@@ -47,6 +47,23 @@ branchProtectionRules:
       - lint
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
+  - pattern: 1.25.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - header-check
 permissionRules:
   - team: yoshi-admins
     permission: admin

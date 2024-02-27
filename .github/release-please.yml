@@ -11,3 +11,8 @@ branches:
     releaseType: java-backport
     manifest: true
     handleGHRelease: true
+  - primaryBranch: main
+    releaseType: java-backport
+    manifest: true
+    handleGHRelease: true
+    branch: 1.25.x
