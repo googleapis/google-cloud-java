@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/googleapis/java-shared-config/compare/v1.7.3...v1.7.4) (2024-02-28)
+
+
+### Bug Fixes
+
+* **deps:** Revert dependency org.codehaus.mojo:flatten-maven-plugin to v1.3.0 ([2c3e38a](https://github.com/googleapis/java-shared-config/commit/2c3e38a531105b8c3ad5f70d3c17e0ef641ed24b))
+
 ## [1.7.3](https://github.com/googleapis/java-shared-config/compare/v1.7.2...v1.7.3) (2024-02-27)
 
 
