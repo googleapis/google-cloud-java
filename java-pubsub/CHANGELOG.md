@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.127.0](https://github.com/googleapis/java-pubsub/compare/v1.126.6...v1.127.0) (2024-02-28)
+
+
+### Features
+
+* Add an API method for reordering firewall policies ([#1868](https://github.com/googleapis/java-pubsub/issues/1868)) ([2039f7e](https://github.com/googleapis/java-pubsub/commit/2039f7e9bee9db1991fae1118e4a6b8ad88ea30c))
+* Add universe domain support for Java ([#1904](https://github.com/googleapis/java-pubsub/issues/1904)) ([1e316d3](https://github.com/googleapis/java-pubsub/commit/1e316d33d2b7c87f6b76580cd9f905fe90a664c7))
+* Next release from main branch is 1.126.0 ([#1933](https://github.com/googleapis/java-pubsub/issues/1933)) ([255d8bc](https://github.com/googleapis/java-pubsub/commit/255d8bca3509e9a9dc2d82c95fabb32590423565))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.37.2 ([#1918](https://github.com/googleapis/java-pubsub/issues/1918)) ([b8846f9](https://github.com/googleapis/java-pubsub/commit/b8846f9dbf71854af1379c40669e017dd4e005d1))
+* Update dependency com.google.cloud:google-cloud-storage to v2.34.0 ([#1917](https://github.com/googleapis/java-pubsub/issues/1917)) ([4a7d6b9](https://github.com/googleapis/java-pubsub/commit/4a7d6b971f0d16d867c56679d1e7bfbba4e4a67a))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.25.3 ([#1919](https://github.com/googleapis/java-pubsub/issues/1919)) ([4bf13bb](https://github.com/googleapis/java-pubsub/commit/4bf13bb5f346a53ecf8e1e73e5f3b6d1c99ddf93))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.1 ([#1923](https://github.com/googleapis/java-pubsub/issues/1923)) ([cd704bd](https://github.com/googleapis/java-pubsub/commit/cd704bd57b2596d82f2f791476a109a771995b4d))
+
 ## [1.126.6](https://github.com/googleapis/java-pubsub/compare/v1.126.5...v1.126.6) (2024-02-14)
 
 
