@@ -38,33 +38,42 @@ import javax.annotation.Generated;
  * Base stub class for the BigQueryWrite service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class BigQueryWriteStub implements BackgroundResource {
 
+  @Deprecated
   public UnaryCallable<CreateWriteStreamRequest, WriteStream> createWriteStreamCallable() {
     throw new UnsupportedOperationException("Not implemented: createWriteStreamCallable()");
   }
 
+  @Deprecated
   public BidiStreamingCallable<AppendRowsRequest, AppendRowsResponse> appendRowsCallable() {
     throw new UnsupportedOperationException("Not implemented: appendRowsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetWriteStreamRequest, WriteStream> getWriteStreamCallable() {
     throw new UnsupportedOperationException("Not implemented: getWriteStreamCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
       finalizeWriteStreamCallable() {
     throw new UnsupportedOperationException("Not implemented: finalizeWriteStreamCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchCommitWriteStreamsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<FlushRowsRequest, FlushRowsResponse> flushRowsCallable() {
     throw new UnsupportedOperationException("Not implemented: flushRowsCallable()");
   }

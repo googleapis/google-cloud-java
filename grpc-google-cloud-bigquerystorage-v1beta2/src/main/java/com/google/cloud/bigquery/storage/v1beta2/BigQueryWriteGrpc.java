@@ -32,6 +32,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/storage/v1beta2/storage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class BigQueryWriteGrpc {
 
   private BigQueryWriteGrpc() {}
@@ -378,6 +379,7 @@ public final class BigQueryWriteGrpc {
    *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -392,6 +394,7 @@ public final class BigQueryWriteGrpc {
      * soon as an acknowledgement is received.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -422,6 +425,7 @@ public final class BigQueryWriteGrpc {
      * operations after the stream is committed.
      * </pre>
      */
+    @java.lang.Deprecated
     default io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest>
         appendRows(
             io.grpc.stub.StreamObserver<
@@ -438,6 +442,7 @@ public final class BigQueryWriteGrpc {
      * Gets a write stream.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -454,6 +459,7 @@ public final class BigQueryWriteGrpc {
      * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
+    @java.lang.Deprecated
     default void finalizeWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<
@@ -474,6 +480,7 @@ public final class BigQueryWriteGrpc {
      * for read operations.
      * </pre>
      */
+    @java.lang.Deprecated
     default void batchCommitWriteStreams(
         com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -495,6 +502,7 @@ public final class BigQueryWriteGrpc {
      * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
+    @java.lang.Deprecated
     default void flushRows(
         com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse>
@@ -514,6 +522,7 @@ public final class BigQueryWriteGrpc {
    *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class BigQueryWriteImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -534,6 +543,7 @@ public final class BigQueryWriteGrpc {
    *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class BigQueryWriteStub
       extends io.grpc.stub.AbstractAsyncStub<BigQueryWriteStub> {
     private BigQueryWriteStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -557,6 +567,7 @@ public final class BigQueryWriteGrpc {
      * soon as an acknowledgement is received.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -589,6 +600,7 @@ public final class BigQueryWriteGrpc {
      * operations after the stream is committed.
      * </pre>
      */
+    @java.lang.Deprecated
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest>
         appendRows(
             io.grpc.stub.StreamObserver<
@@ -605,6 +617,7 @@ public final class BigQueryWriteGrpc {
      * Gets a write stream.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -623,6 +636,7 @@ public final class BigQueryWriteGrpc {
      * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
+    @java.lang.Deprecated
     public void finalizeWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<
@@ -645,6 +659,7 @@ public final class BigQueryWriteGrpc {
      * for read operations.
      * </pre>
      */
+    @java.lang.Deprecated
     public void batchCommitWriteStreams(
         com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -668,6 +683,7 @@ public final class BigQueryWriteGrpc {
      * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
+    @java.lang.Deprecated
     public void flushRows(
         com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse>
@@ -688,6 +704,7 @@ public final class BigQueryWriteGrpc {
    *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class BigQueryWriteBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<BigQueryWriteBlockingStub> {
     private BigQueryWriteBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -712,6 +729,7 @@ public final class BigQueryWriteGrpc {
      * soon as an acknowledgement is received.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.WriteStream createWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -725,6 +743,7 @@ public final class BigQueryWriteGrpc {
      * Gets a write stream.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.WriteStream getWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -739,6 +758,7 @@ public final class BigQueryWriteGrpc {
      * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse
         finalizeWriteStream(
             com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request) {
@@ -757,6 +777,7 @@ public final class BigQueryWriteGrpc {
      * for read operations.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse
         batchCommitWriteStreams(
             com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request) {
@@ -776,6 +797,7 @@ public final class BigQueryWriteGrpc {
      * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse flushRows(
         com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -794,6 +816,7 @@ public final class BigQueryWriteGrpc {
    *   should be used instead of the v1beta2 API for BigQueryWrite operations.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class BigQueryWriteFutureStub
       extends io.grpc.stub.AbstractFutureStub<BigQueryWriteFutureStub> {
     private BigQueryWriteFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -818,6 +841,7 @@ public final class BigQueryWriteGrpc {
      * soon as an acknowledgement is received.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.WriteStream>
         createWriteStream(
@@ -833,6 +857,7 @@ public final class BigQueryWriteGrpc {
      * Gets a write stream.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.WriteStream>
         getWriteStream(com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request) {
@@ -848,6 +873,7 @@ public final class BigQueryWriteGrpc {
      * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse>
         finalizeWriteStream(
@@ -867,6 +893,7 @@ public final class BigQueryWriteGrpc {
      * for read operations.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse>
         batchCommitWriteStreams(
@@ -887,6 +914,7 @@ public final class BigQueryWriteGrpc {
      * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse>
         flushRows(com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request) {

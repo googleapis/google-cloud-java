@@ -209,8 +209,11 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class BigQueryWriteClient implements BackgroundResource {
   private final BigQueryWriteSettings settings;
@@ -288,7 +291,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *     `projects/{project}/datasets/{dataset}/tables/{table}`.
    * @param writeStream Required. Stream to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final WriteStream createWriteStream(TableName parent, WriteStream writeStream) {
     CreateWriteStreamRequest request =
         CreateWriteStreamRequest.newBuilder()
@@ -325,7 +330,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *     `projects/{project}/datasets/{dataset}/tables/{table}`.
    * @param writeStream Required. Stream to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final WriteStream createWriteStream(String parent, WriteStream writeStream) {
     CreateWriteStreamRequest request =
         CreateWriteStreamRequest.newBuilder().setParent(parent).setWriteStream(writeStream).build();
@@ -360,7 +367,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final WriteStream createWriteStream(CreateWriteStreamRequest request) {
     return createWriteStreamCallable().call(request);
   }
@@ -393,7 +402,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   WriteStream response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateWriteStreamRequest, WriteStream> createWriteStreamCallable() {
     return stub.createWriteStreamCallable();
   }
@@ -441,7 +453,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final BidiStreamingCallable<AppendRowsRequest, AppendRowsResponse> appendRowsCallable() {
     return stub.appendRowsCallable();
   }
@@ -467,7 +482,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param name Required. Name of the stream to get, in the form of
    *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final WriteStream getWriteStream(WriteStreamName name) {
     GetWriteStreamRequest request =
         GetWriteStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -495,7 +512,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param name Required. Name of the stream to get, in the form of
    *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final WriteStream getWriteStream(String name) {
     GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().setName(name).build();
     return getWriteStream(request);
@@ -525,7 +544,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final WriteStream getWriteStream(GetWriteStreamRequest request) {
     return getWriteStreamCallable().call(request);
   }
@@ -554,7 +575,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   WriteStream response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetWriteStreamRequest, WriteStream> getWriteStreamCallable() {
     return stub.getWriteStreamCallable();
   }
@@ -581,7 +605,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param name Required. Name of the stream to finalize, in the form of
    *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final FinalizeWriteStreamResponse finalizeWriteStream(WriteStreamName name) {
     FinalizeWriteStreamRequest request =
         FinalizeWriteStreamRequest.newBuilder()
@@ -612,7 +638,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param name Required. Name of the stream to finalize, in the form of
    *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final FinalizeWriteStreamResponse finalizeWriteStream(String name) {
     FinalizeWriteStreamRequest request =
         FinalizeWriteStreamRequest.newBuilder().setName(name).build();
@@ -644,7 +672,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final FinalizeWriteStreamResponse finalizeWriteStream(FinalizeWriteStreamRequest request) {
     return finalizeWriteStreamCallable().call(request);
   }
@@ -674,7 +704,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   FinalizeWriteStreamResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
       finalizeWriteStreamCallable() {
     return stub.finalizeWriteStreamCallable();
@@ -704,7 +737,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param parent Required. Parent table that all the streams should belong to, in the form of
    *     `projects/{project}/datasets/{dataset}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(String parent) {
     BatchCommitWriteStreamsRequest request =
         BatchCommitWriteStreamsRequest.newBuilder().setParent(parent).build();
@@ -738,7 +773,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(
       BatchCommitWriteStreamsRequest request) {
     return batchCommitWriteStreamsCallable().call(request);
@@ -770,7 +807,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   BatchCommitWriteStreamsResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable() {
     return stub.batchCommitWriteStreamsCallable();
@@ -800,7 +840,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param writeStream Required. The stream that is the target of the flush operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final FlushRowsResponse flushRows(WriteStreamName writeStream) {
     FlushRowsRequest request =
         FlushRowsRequest.newBuilder()
@@ -833,7 +875,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param writeStream Required. The stream that is the target of the flush operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final FlushRowsResponse flushRows(String writeStream) {
     FlushRowsRequest request = FlushRowsRequest.newBuilder().setWriteStream(writeStream).build();
     return flushRows(request);
@@ -867,7 +911,9 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final FlushRowsResponse flushRows(FlushRowsRequest request) {
     return flushRowsCallable().call(request);
   }
@@ -900,7 +946,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   FlushRowsResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<FlushRowsRequest, FlushRowsResponse> flushRowsCallable() {
     return stub.flushRowsCallable();
   }

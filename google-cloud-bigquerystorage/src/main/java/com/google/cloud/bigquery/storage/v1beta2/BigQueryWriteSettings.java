@@ -68,39 +68,72 @@ import javax.annotation.Generated;
  *             .build());
  * BigQueryWriteSettings bigQueryWriteSettings = bigQueryWriteSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class BigQueryWriteSettings extends ClientSettings<BigQueryWriteSettings> {
 
-  /** Returns the object with the settings used for calls to createWriteStream. */
+  /**
+   * Returns the object with the settings used for calls to createWriteStream.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateWriteStreamRequest, WriteStream> createWriteStreamSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).createWriteStreamSettings();
   }
 
-  /** Returns the object with the settings used for calls to appendRows. */
+  /**
+   * Returns the object with the settings used for calls to appendRows.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public StreamingCallSettings<AppendRowsRequest, AppendRowsResponse> appendRowsSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).appendRowsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getWriteStream. */
+  /**
+   * Returns the object with the settings used for calls to getWriteStream.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetWriteStreamRequest, WriteStream> getWriteStreamSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).getWriteStreamSettings();
   }
 
-  /** Returns the object with the settings used for calls to finalizeWriteStream. */
+  /**
+   * Returns the object with the settings used for calls to finalizeWriteStream.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
       finalizeWriteStreamSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).finalizeWriteStreamSettings();
   }
 
-  /** Returns the object with the settings used for calls to batchCommitWriteStreams. */
+  /**
+   * Returns the object with the settings used for calls to batchCommitWriteStreams.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).batchCommitWriteStreamsSettings();
   }
 
-  /** Returns the object with the settings used for calls to flushRows. */
+  /**
+   * Returns the object with the settings used for calls to flushRows.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).flushRowsSettings();
   }
@@ -201,37 +234,67 @@ public class BigQueryWriteSettings extends ClientSettings<BigQueryWriteSettings>
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createWriteStream. */
+    /**
+     * Returns the builder for the settings used for calls to createWriteStream.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateWriteStreamRequest, WriteStream>
         createWriteStreamSettings() {
       return getStubSettingsBuilder().createWriteStreamSettings();
     }
 
-    /** Returns the builder for the settings used for calls to appendRows. */
+    /**
+     * Returns the builder for the settings used for calls to appendRows.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public StreamingCallSettings.Builder<AppendRowsRequest, AppendRowsResponse>
         appendRowsSettings() {
       return getStubSettingsBuilder().appendRowsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getWriteStream. */
+    /**
+     * Returns the builder for the settings used for calls to getWriteStream.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetWriteStreamRequest, WriteStream> getWriteStreamSettings() {
       return getStubSettingsBuilder().getWriteStreamSettings();
     }
 
-    /** Returns the builder for the settings used for calls to finalizeWriteStream. */
+    /**
+     * Returns the builder for the settings used for calls to finalizeWriteStream.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
         finalizeWriteStreamSettings() {
       return getStubSettingsBuilder().finalizeWriteStreamSettings();
     }
 
-    /** Returns the builder for the settings used for calls to batchCommitWriteStreams. */
+    /**
+     * Returns the builder for the settings used for calls to batchCommitWriteStreams.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsSettings() {
       return getStubSettingsBuilder().batchCommitWriteStreamsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to flushRows. */
+    /**
+     * Returns the builder for the settings used for calls to flushRows.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
       return getStubSettingsBuilder().flushRowsSettings();
     }
