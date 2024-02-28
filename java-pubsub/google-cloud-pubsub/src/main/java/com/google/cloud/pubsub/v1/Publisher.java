@@ -185,6 +185,7 @@ public class Publisher implements PublisherInterface {
             .setExecutorProvider(FixedExecutorProvider.create(executor))
             .setTransportChannelProvider(builder.channelProvider)
             .setEndpoint(builder.endpoint)
+            .setUniverseDomain(builder.universeDomain)
             .setHeaderProvider(builder.headerProvider);
     stubSettings
         .publishSettings()
@@ -717,7 +718,8 @@ public class Publisher implements PublisherInterface {
     static final long DEFAULT_COMPRESSION_BYTES_THRESHOLD = 240L;
 
     String topicName;
-    private String endpoint = PublisherStubSettings.getDefaultEndpoint();
+    private String endpoint = null;
+    private String universeDomain = null;
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -854,6 +856,12 @@ public class Publisher implements PublisherInterface {
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = endpoint;
+      return this;
+    }
+
+    /** Gives the ability to override the universe domain. */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 

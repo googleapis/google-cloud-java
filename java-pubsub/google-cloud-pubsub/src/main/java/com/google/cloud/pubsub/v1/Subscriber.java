@@ -192,6 +192,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
               .setTransportChannelProvider(channelProvider)
               .setHeaderProvider(builder.headerProvider)
               .setEndpoint(builder.endpoint)
+              .setUniverseDomain(builder.universeDomain)
               .build();
       // TODO(pongad): what about internal header??
     } catch (Exception e) {
@@ -491,7 +492,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     private Optional<ApiClock> clock = Optional.absent();
     private int parallelPullCount = 1;
-    private String endpoint = SubscriberStubSettings.getDefaultEndpoint();
+    private String endpoint = null;
+    private String universeDomain = null;
 
     Builder(String subscription, MessageReceiver receiver) {
       this.subscription = subscription;
@@ -667,6 +669,12 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = endpoint;
+      return this;
+    }
+
+    /** Gives the ability to override the universe domain. */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 
