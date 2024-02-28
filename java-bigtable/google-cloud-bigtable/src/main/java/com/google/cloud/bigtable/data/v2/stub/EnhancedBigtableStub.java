@@ -665,6 +665,72 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   /**
+   * Internal helper to create the base MutateRows callable chain. The chain is responsible for
+   * retrying individual entry in case of error.
+   *
+   * <p>NOTE: the caller is responsible for adding tracing & metrics.
+   *
+   * @see MutateRowsRetryingCallable for more details
+   */
+  private UnaryCallable<MutateRowsRequest, Void> createMutateRowsBaseCallable() {
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> base =
+        GrpcRawCallableFactory.createServerStreamingCallable(
+            GrpcCallSettings.<MutateRowsRequest, MutateRowsResponse>newBuilder()
+                .setMethodDescriptor(BigtableGrpc.getMutateRowsMethod())
+                .setParamsExtractor(
+                    new RequestParamsExtractor<MutateRowsRequest>() {
+                      @Override
+                      public Map<String, String> extract(MutateRowsRequest mutateRowsRequest) {
+                        return ImmutableMap.of(
+                            "table_name", mutateRowsRequest.getTableName(),
+                            "app_profile_id", mutateRowsRequest.getAppProfileId());
+                      }
+                    })
+                .build(),
+            settings.bulkMutateRowsSettings().getRetryableCodes());
+
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> callable =
+        new StatsHeadersServerStreamingCallable<>(base);
+
+    if (settings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled()) {
+      callable = new RateLimitingServerStreamingCallable(callable);
+    }
+
+    // Sometimes MutateRows connections are disconnected via an RST frame. This error is transient
+    // and
+    // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
+    // which by default is not retryable. Convert the exception so it can be retried in the client.
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> convertException =
+        new ConvertExceptionCallable<>(callable);
+
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withBigtableTracer =
+        new BigtableTracerStreamingCallable<>(convertException);
+
+    BasicResultRetryAlgorithm<Void> resultRetryAlgorithm;
+    if (settings.getEnableRetryInfo()) {
+      resultRetryAlgorithm = new RetryInfoRetryAlgorithm<>();
+    } else {
+      resultRetryAlgorithm = new ApiResultRetryAlgorithm<>();
+    }
+
+    RetryAlgorithm<Void> retryAlgorithm =
+        new RetryAlgorithm<>(
+            resultRetryAlgorithm,
+            new ExponentialRetryAlgorithm(
+                settings.bulkMutateRowsSettings().getRetrySettings(), clientContext.getClock()));
+
+    RetryingExecutorWithContext<Void> retryingExecutor =
+        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
+
+    return new MutateRowsRetryingCallable(
+        clientContext.getDefaultCallContext(),
+        withBigtableTracer,
+        retryingExecutor,
+        settings.bulkMutateRowsSettings().getRetryableCodes(),
+        retryAlgorithm);
+  }
+
+  /**
    * Creates a callable chain to handle MutatesRows RPCs. This is meant to be used for manual
    * batching. The chain will:
    *
@@ -771,72 +837,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
         clientContext.getExecutor(),
         null,
         MoreObjects.firstNonNull(ctx, clientContext.getDefaultCallContext()));
-  }
-
-  /**
-   * Internal helper to create the base MutateRows callable chain. The chain is responsible for
-   * retrying individual entry in case of error.
-   *
-   * <p>NOTE: the caller is responsible for adding tracing & metrics.
-   *
-   * @see MutateRowsRetryingCallable for more details
-   */
-  private UnaryCallable<MutateRowsRequest, Void> createMutateRowsBaseCallable() {
-    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> base =
-        GrpcRawCallableFactory.createServerStreamingCallable(
-            GrpcCallSettings.<MutateRowsRequest, MutateRowsResponse>newBuilder()
-                .setMethodDescriptor(BigtableGrpc.getMutateRowsMethod())
-                .setParamsExtractor(
-                    new RequestParamsExtractor<MutateRowsRequest>() {
-                      @Override
-                      public Map<String, String> extract(MutateRowsRequest mutateRowsRequest) {
-                        return ImmutableMap.of(
-                            "table_name", mutateRowsRequest.getTableName(),
-                            "app_profile_id", mutateRowsRequest.getAppProfileId());
-                      }
-                    })
-                .build(),
-            settings.bulkMutateRowsSettings().getRetryableCodes());
-
-    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> callable =
-        new StatsHeadersServerStreamingCallable<>(base);
-
-    if (settings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled()) {
-      callable = new RateLimitingServerStreamingCallable(callable);
-    }
-
-    // Sometimes MutateRows connections are disconnected via an RST frame. This error is transient
-    // and
-    // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
-    // which by default is not retryable. Convert the exception so it can be retried in the client.
-    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> convertException =
-        new ConvertExceptionCallable<>(callable);
-
-    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withBigtableTracer =
-        new BigtableTracerStreamingCallable<>(convertException);
-
-    BasicResultRetryAlgorithm<Void> resultRetryAlgorithm;
-    if (settings.getEnableRetryInfo()) {
-      resultRetryAlgorithm = new RetryInfoRetryAlgorithm<>();
-    } else {
-      resultRetryAlgorithm = new ApiResultRetryAlgorithm<>();
-    }
-
-    RetryAlgorithm<Void> retryAlgorithm =
-        new RetryAlgorithm<>(
-            resultRetryAlgorithm,
-            new ExponentialRetryAlgorithm(
-                settings.bulkMutateRowsSettings().getRetrySettings(), clientContext.getClock()));
-
-    RetryingExecutorWithContext<Void> retryingExecutor =
-        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
-
-    return new MutateRowsRetryingCallable(
-        clientContext.getDefaultCallContext(),
-        withBigtableTracer,
-        retryingExecutor,
-        settings.bulkMutateRowsSettings().getRetryableCodes(),
-        retryAlgorithm);
   }
 
   /**
