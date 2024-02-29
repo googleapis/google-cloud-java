@@ -74,8 +74,8 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
     // Configure the base settings.
     BigQueryStorageStubSettings.Builder baseSettingsBuilder =
         BigQueryStorageStubSettings.newBuilder()
+            .setUniverseDomain(settings.getUniverseDomain())
             .setTransportChannelProvider(settings.getTransportChannelProvider())
-            .setEndpoint(settings.getEndpoint())
             .setHeaderProvider(settings.getHeaderProvider())
             .setCredentialsProvider(settings.getCredentialsProvider())
             .setStreamWatchdogCheckInterval(settings.getStreamWatchdogCheckInterval())

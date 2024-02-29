@@ -159,7 +159,6 @@ public class EnhancedBigQueryReadStubSettings
 
       // Defaults provider
       BigQueryReadStubSettings.Builder baseDefaults = BigQueryReadStubSettings.newBuilder();
-      setEndpoint(baseDefaults.getEndpoint());
       setTransportChannelProvider(defaultTransportChannelProvider());
       setCredentialsProvider(baseDefaults.getCredentialsProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());

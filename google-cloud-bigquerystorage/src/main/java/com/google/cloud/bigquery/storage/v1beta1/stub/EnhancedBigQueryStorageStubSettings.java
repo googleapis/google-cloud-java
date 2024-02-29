@@ -186,7 +186,6 @@ public class EnhancedBigQueryStorageStubSettings
 
       // Defaults provider
       BigQueryStorageStubSettings.Builder baseDefaults = BigQueryStorageStubSettings.newBuilder();
-      setEndpoint(baseDefaults.getEndpoint());
       setTransportChannelProvider(defaultTransportChannelProvider());
       setCredentialsProvider(baseDefaults.getCredentialsProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());

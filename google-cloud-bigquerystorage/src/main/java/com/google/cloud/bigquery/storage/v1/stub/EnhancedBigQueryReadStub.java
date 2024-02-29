@@ -70,6 +70,7 @@ public class EnhancedBigQueryReadStub implements BackgroundResource {
     // Configure the base settings.
     BigQueryReadStubSettings.Builder baseSettingsBuilder =
         BigQueryReadStubSettings.newBuilder()
+            .setUniverseDomain(settings.getUniverseDomain())
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
             .setHeaderProvider(settings.getHeaderProvider())
